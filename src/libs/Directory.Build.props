@@ -14,13 +14,13 @@
   </ItemGroup>
 
   <PropertyGroup Label="Nuget">
-    <BUILD_NUMBER Condition="'$(BUILD_NUMBER)' == ''">1</BUILD_NUMBER>
-    <Version>13.20.0.$(BUILD_NUMBER)</Version>
     <PackageReleaseNotes>$(PACKAGE_RELEASE_NOTES)</PackageReleaseNotes>
     <GeneratePackageOnBuild Condition=" '$(Configuration)' == 'Release' ">true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
     <Authors>havendv</Authors>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Copyright>Konstantin Stukov, OpenApiGenerator contributors</Copyright>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <PackageIcon>nuget_icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
@@ -28,10 +28,24 @@
   <ItemGroup Label="Nuget">
     <None Include="$(SolutionDir)assets\nuget_icon.png" Pack="true" PackagePath="\" Visible="false"/>
     <None Include="$(SolutionDir)README.md" Pack="true" PackagePath="\" Visible="false"/>
+    <None Include="$(SolutionDir)LICENSE.md" Pack="true" PackagePath="\" Visible="false"/>
   </ItemGroup>
 
   <ItemGroup Label="Source Link">
     <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <PropertyGroup Label="Versioning">
+    <MinVerMinimumMajorMinor>0.1</MinVerMinimumMajorMinor>
+    <MinVerTagPrefix>v</MinVerTagPrefix>
+    <MinVerDefaultPreReleaseIdentifiers>dev</MinVerDefaultPreReleaseIdentifiers>
+  </PropertyGroup>
+
+  <ItemGroup Label="Versioning">
+    <PackageReference Include="MinVer" Version="4.3.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

@@ -10,12 +10,12 @@
     <DevelopmentDependency>true</DevelopmentDependency>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <IncludeSymbols>false</IncludeSymbols>
-    <Description>C# 9 Source Generator library for NSwag.</Description>
-    <PackageTags>nswag, generator, source generator, csharp 9</PackageTags>
+    <Description>Allows you to partially (for example, only models) or completely generate a native (without dependencies) C# client sdk according to the OpenAPI specification. Inspired by NSwag. Uses IncrementalGenerators for efficient generation and caching.</Description>
+    <PackageTags>openapi;sdk;generator;source generator;dotnet;netstandard;netframework;native;nswag;incremental</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.11" />
+    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.11" PrivateAssets="all" />
     <PackageReference Include="NSwag.CodeGeneration.CSharp" Version="13.20.0" PrivateAssets="all" />
     <PackageReference Include="NSwag.Core.Yaml" Version="13.20.0" PrivateAssets="all" />
     <PackageReference Include="NJsonSchema.CodeGeneration.CSharp" Version="10.9.0" PrivateAssets="all" />
