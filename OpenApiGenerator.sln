@@ -1,0 +1,51 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32314.265
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{6E5BF389-3D3F-4D74-9DD0-3B199CB529C5}"
+	ProjectSection(SolutionItems) = preProject
+		src\libs\Directory.Build.props = src\libs\Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9CAA231D-7BE1-46C9-ACD6-EB2E569CEBEA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{94FE90BF-FA05-46C6-A207-6E454A236659}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		src\Directory.Build.props = src\Directory.Build.props
+		README.md = README.md
+		.github\workflows\pull-request.yml = .github\workflows\pull-request.yml
+		LICENSE.md = LICENSE.md
+		.github\workflows\main.yml = .github\workflows\main.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenApiGenerator", "src\libs\OpenApiGenerator\OpenApiGenerator.csproj", "{A16594C6-F868-4564-AB59-F53DB2F57EAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenApiGenerator.SnapshotTests", "src\tests\OpenApiGenerator.SnapshotTests\OpenApiGenerator.SnapshotTests.csproj", "{440B9C75-CA33-47F3-9EDF-A7CD6886155C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A16594C6-F868-4564-AB59-F53DB2F57EAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A16594C6-F868-4564-AB59-F53DB2F57EAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A16594C6-F868-4564-AB59-F53DB2F57EAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A16594C6-F868-4564-AB59-F53DB2F57EAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{440B9C75-CA33-47F3-9EDF-A7CD6886155C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{440B9C75-CA33-47F3-9EDF-A7CD6886155C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{440B9C75-CA33-47F3-9EDF-A7CD6886155C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{440B9C75-CA33-47F3-9EDF-A7CD6886155C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A16594C6-F868-4564-AB59-F53DB2F57EAA} = {6E5BF389-3D3F-4D74-9DD0-3B199CB529C5}
+		{440B9C75-CA33-47F3-9EDF-A7CD6886155C} = {9CAA231D-7BE1-46C9-ACD6-EB2E569CEBEA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1493AEE4-9211-46E9-BFE6-8F629EAC5693}
+	EndGlobalSection
+EndGlobal
