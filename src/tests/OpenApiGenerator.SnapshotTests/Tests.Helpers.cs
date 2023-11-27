@@ -22,7 +22,7 @@ public partial class Tests : VerifyBase
             assemblyName: "Tests",
             references: references,
             options: new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
-        var generator = new NSwagGenerator();
+        var generator = new OpenApiGenerator();
         var driver = CSharpGeneratorDriver
             .Create(generator)
             .AddAdditionalTexts(ImmutableArray.Create(additionalTexts))
@@ -32,11 +32,11 @@ public partial class Tests : VerifyBase
         await Task.WhenAll(
             Verify(diagnostics.NormalizeLocations())
                 .UseDirectory($"Snapshots/{callerName}")
-                .AutoVerify()
+                //.AutoVerify()
                 .UseTextForParameters($"Diagnostics"),
             Verify(driver)
                 .UseDirectory($"Snapshots/{callerName}")
-                .AutoVerify()
+                //.AutoVerify()
                 );
     }
 }

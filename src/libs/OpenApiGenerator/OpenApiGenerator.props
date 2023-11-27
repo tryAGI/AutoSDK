@@ -5,11 +5,11 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <CompilerVisibleProperty Include="NSwagGenerator_UseCache"/>
+    <CompilerVisibleProperty Include="OpenApiGenerator_UseCache"/>
   </ItemGroup>
 
   <ItemGroup>
-    <AdditionalFiles Include="**\*.nswag" />
+    <AdditionalFiles Include="**\*.yaml" GenerateModels="true" />
   </ItemGroup>
 
 </Project>

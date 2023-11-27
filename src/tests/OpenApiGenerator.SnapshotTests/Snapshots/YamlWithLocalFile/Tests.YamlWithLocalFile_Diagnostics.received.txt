@@ -1667,51 +1667,6 @@
     Title: Field is never used,
     Severity: Warning,
     WarningLevel: 3,
-    Location: OpenApiGenerator/H.Generators.OpenApiGenerator/openapi.yaml.Models.FullResponse.cs: (165,72)-(165,93),
-    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0169),
-    MessageFormat: The field '{0}' is never used,
-    Message: The field 'Error1._additionalProperties' is never used,
-    Category: Compiler,
-    CustomTags: [
-      Compiler,
-      Telemetry
-    ]
-  },
-  {
-    Id: CS0169,
-    Title: Field is never used,
-    Severity: Warning,
-    WarningLevel: 3,
-    Location: OpenApiGenerator/H.Generators.OpenApiGenerator/openapi.yaml.Models.Prefix.cs: (131,72)-(131,93),
-    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0169),
-    MessageFormat: The field '{0}' is never used,
-    Message: The field 'Error1._additionalProperties' is never used,
-    Category: Compiler,
-    CustomTags: [
-      Compiler,
-      Telemetry
-    ]
-  },
-  {
-    Id: CS0169,
-    Title: Field is never used,
-    Severity: Warning,
-    WarningLevel: 3,
-    Location: OpenApiGenerator/H.Generators.OpenApiGenerator/openapi.yaml.Models.Carrier.cs: (110,72)-(110,93),
-    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0169),
-    MessageFormat: The field '{0}' is never used,
-    Message: The field 'Error1._additionalProperties' is never used,
-    Category: Compiler,
-    CustomTags: [
-      Compiler,
-      Telemetry
-    ]
-  },
-  {
-    Id: CS0169,
-    Title: Field is never used,
-    Severity: Warning,
-    WarningLevel: 3,
     Location: OpenApiGenerator/H.Generators.OpenApiGenerator/openapi.yaml.Models.PrivacyResponse.cs: (112,72)-(112,93),
     HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0169),
     MessageFormat: The field '{0}' is never used,
@@ -1727,52 +1682,7 @@
     Title: Field is never used,
     Severity: Warning,
     WarningLevel: 3,
-    Location: OpenApiGenerator/H.Generators.OpenApiGenerator/openapi.yaml.Models.RangesResponse.cs: (110,72)-(110,93),
-    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0169),
-    MessageFormat: The field '{0}' is never used,
-    Message: The field 'Error1._additionalProperties' is never used,
-    Category: Compiler,
-    CustomTags: [
-      Compiler,
-      Telemetry
-    ]
-  },
-  {
-    Id: CS0169,
-    Title: Field is never used,
-    Severity: Warning,
-    WarningLevel: 3,
-    Location: OpenApiGenerator/H.Generators.OpenApiGenerator/openapi.yaml.Models.AbuseResponse.cs: (122,72)-(122,93),
-    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0169),
-    MessageFormat: The field '{0}' is never used,
-    Message: The field 'Error1._additionalProperties' is never used,
-    Category: Compiler,
-    CustomTags: [
-      Compiler,
-      Telemetry
-    ]
-  },
-  {
-    Id: CS0169,
-    Title: Field is never used,
-    Severity: Warning,
-    WarningLevel: 3,
-    Location: OpenApiGenerator/H.Generators.OpenApiGenerator/openapi.yaml.Models.Prefix6.cs: (131,72)-(131,93),
-    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0169),
-    MessageFormat: The field '{0}' is never used,
-    Message: The field 'Error1._additionalProperties' is never used,
-    Category: Compiler,
-    CustomTags: [
-      Compiler,
-      Telemetry
-    ]
-  },
-  {
-    Id: CS0169,
-    Title: Field is never used,
-    Severity: Warning,
-    WarningLevel: 3,
-    Location: OpenApiGenerator/H.Generators.OpenApiGenerator/openapi.yaml.Models.Error.cs: (98,72)-(98,93),
+    Location: OpenApiGenerator/H.Generators.OpenApiGenerator/openapi.yaml.Models.FullResponse.cs: (165,72)-(165,93),
     HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0169),
     MessageFormat: The field '{0}' is never used,
     Message: The field 'Error1._additionalProperties' is never used,
@@ -1803,6 +1713,96 @@
     Severity: Warning,
     WarningLevel: 3,
     Location: OpenApiGenerator/H.Generators.OpenApiGenerator/openapi.yaml.Models.AsnResponse.cs: (167,72)-(167,93),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0169),
+    MessageFormat: The field '{0}' is never used,
+    Message: The field 'Error1._additionalProperties' is never used,
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry
+    ]
+  },
+  {
+    Id: CS0169,
+    Title: Field is never used,
+    Severity: Warning,
+    WarningLevel: 3,
+    Location: OpenApiGenerator/H.Generators.OpenApiGenerator/openapi.yaml.Models.Error.cs: (98,72)-(98,93),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0169),
+    MessageFormat: The field '{0}' is never used,
+    Message: The field 'Error1._additionalProperties' is never used,
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry
+    ]
+  },
+  {
+    Id: CS0169,
+    Title: Field is never used,
+    Severity: Warning,
+    WarningLevel: 3,
+    Location: OpenApiGenerator/H.Generators.OpenApiGenerator/openapi.yaml.Models.Carrier.cs: (110,72)-(110,93),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0169),
+    MessageFormat: The field '{0}' is never used,
+    Message: The field 'Error1._additionalProperties' is never used,
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry
+    ]
+  },
+  {
+    Id: CS0169,
+    Title: Field is never used,
+    Severity: Warning,
+    WarningLevel: 3,
+    Location: OpenApiGenerator/H.Generators.OpenApiGenerator/openapi.yaml.Models.Prefix.cs: (131,72)-(131,93),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0169),
+    MessageFormat: The field '{0}' is never used,
+    Message: The field 'Error1._additionalProperties' is never used,
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry
+    ]
+  },
+  {
+    Id: CS0169,
+    Title: Field is never used,
+    Severity: Warning,
+    WarningLevel: 3,
+    Location: OpenApiGenerator/H.Generators.OpenApiGenerator/openapi.yaml.Models.DomainsResponse.cs: (112,72)-(112,93),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0169),
+    MessageFormat: The field '{0}' is never used,
+    Message: The field 'Error1._additionalProperties' is never used,
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry
+    ]
+  },
+  {
+    Id: CS0169,
+    Title: Field is never used,
+    Severity: Warning,
+    WarningLevel: 3,
+    Location: OpenApiGenerator/H.Generators.OpenApiGenerator/openapi.yaml.Models.Prefix6.cs: (131,72)-(131,93),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0169),
+    MessageFormat: The field '{0}' is never used,
+    Message: The field 'Error1._additionalProperties' is never used,
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry
+    ]
+  },
+  {
+    Id: CS0169,
+    Title: Field is never used,
+    Severity: Warning,
+    WarningLevel: 3,
+    Location: OpenApiGenerator/H.Generators.OpenApiGenerator/openapi.yaml.Models.AbuseResponse.cs: (122,72)-(122,93),
     HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0169),
     MessageFormat: The field '{0}' is never used,
     Message: The field 'Error1._additionalProperties' is never used,
