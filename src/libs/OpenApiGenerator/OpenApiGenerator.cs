@@ -6,6 +6,7 @@ using NJsonSchema.CodeGeneration.CSharp;
 using NSwag;
 using NSwag.CodeGeneration.CSharp;
 using NSwag.CodeGeneration.OperationNameGenerators;
+using OpenApiSchema = Microsoft.OpenApi.Models.OpenApiSchema;
 
 namespace H.Generators;
 
@@ -38,13 +39,20 @@ public class OpenApiGenerator : IIncrementalGenerator
         var openApi = Task.Run(() =>
             OpenApiYamlDocument.FromYamlAsync(yaml, cancellationToken), cancellationToken).Result;
         var openApiDocument = new OpenApiStringReader().Read(yaml, out _);
-        var schemaKeys = openApiDocument.Components?.Schemas?.Keys ?? Array.Empty<string>();
+        var schemas = openApiDocument.Components?.Schemas ?? new Dictionary<string, OpenApiSchema>();
         var prefix = Path.GetFileName(text.Path);
-
+        var allAdditionalExcludedTypeNames = schemas.Keys
+            .Select(schemaKey => GetAdditionalExcludedTypeNames(schemaKey, schemas))
+            .SelectMany(x => x)
+            .ToArray();
+        
         var files = new List<FileWithName>();
-        files.AddRange(schemaKeys.Select(schemaKey =>
+        files.AddRange(schemas.Keys.Select(schemaKey =>
         {
-            var excludedTypeNames = schemaKeys.Where(x => x != schemaKey).ToArray();
+            var excludedTypeNames = schemas.Keys
+                .Where(x => x != schemaKey)
+                .Concat(allAdditionalExcludedTypeNames.Except(GetAdditionalExcludedTypeNames(schemaKey, schemas)))
+                .ToArray();
             
             return new FileWithName(
                 Name: $"{prefix}.Models.{schemaKey}.cs",
@@ -54,6 +62,31 @@ public class OpenApiGenerator : IIncrementalGenerator
         return files.ToImmutableArray();
     }
 
+    private static string[] GetAdditionalExcludedTypeNames(
+        string key,
+        IDictionary<string, OpenApiSchema> schemas)
+    {
+        var schema = schemas[key];
+        var existingNames = new HashSet<string>(
+            schemas.Keys.Select(x => x.ToPropertyName()).ToArray());
+        var enums = schema.Properties
+            .Where(x => x.Value.Enum != null && x.Value.Enum.Any())
+            .Select(x => $"{key}{x.Key.ToPropertyName()}")
+            .ToArray();
+        var objects = schema.Properties
+            .Where(static x => x.Value.Type == "object" && x.Value.Reference == null)
+            .SelectMany(x => existingNames.Contains(x.Key.ToPropertyName())
+                ? new[]
+                {
+                    $"{x.Key.ToPropertyName()}1",
+                } : Array.Empty<string>())
+            .ToArray();
+        
+        return enums
+            .Concat(objects)
+            .ToArray();
+    }
+    
     private static string Generate(
         OpenApiDocument openApi,
         string[]? excludedTypeNames = null)

@@ -46,42 +46,6 @@ namespace MyClients365
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.20.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum AsnResponseType
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"isp")]
-        Isp = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"business")]
-        Business = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"education")]
-        Education = 2,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"hosting")]
-        Hosting = 3,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.20.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum CompanyType
-    {
-
-        [System.Runtime.Serialization.EnumMember(Value = @"isp")]
-        Isp = 0,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"business")]
-        Business = 1,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"education")]
-        Education = 2,
-
-        [System.Runtime.Serialization.EnumMember(Value = @"hosting")]
-        Hosting = 3,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.20.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class Error1
     {
 

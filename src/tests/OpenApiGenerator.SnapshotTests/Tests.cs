@@ -46,15 +46,15 @@ public partial class Tests
         return CheckSourceAsync(
             Array.Empty<AdditionalText>());
     }
-    //
-    // [TestMethod]
-    // public Task YamlWithLocalFile()
-    // {
-    //     return CheckSourceAsync(new AdditionalText[]
-    //     {
-    //         new CustomAdditionalText("openapi.yaml", Resources.openapi_yaml.AsString()),
-    //     });
-    // }
+    
+    [TestMethod]
+    public Task YamlWithLocalFile()
+    {
+        return CheckSourceAsync(new AdditionalText[]
+        {
+            new CustomAdditionalText("openapi.yaml", Resources.openapi_yaml.AsString()),
+        });
+    }
 
     [TestMethod]
     public Task OpenApi3_0_Yaml()
