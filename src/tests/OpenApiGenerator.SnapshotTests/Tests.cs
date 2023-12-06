@@ -52,7 +52,7 @@ public partial class Tests
     {
         return CheckSourceAsync(new AdditionalText[]
         {
-            new CustomAdditionalText("openapi.yaml", Resources.openapi_yaml.AsString()),
+            new CustomAdditionalText("openapi.yaml", Resources.ipinfo_yaml.AsString()),
         });
     }
 

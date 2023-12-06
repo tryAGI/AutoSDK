@@ -1,11 +1,12 @@
 ﻿<Project>
 
   <PropertyGroup>
-    <WarningsAsErrors>$(WarningsAsErrors);NSG001</WarningsAsErrors>
+    <WarningsAsErrors>$(WarningsAsErrors);OAG001</WarningsAsErrors>
   </PropertyGroup>
   
   <ItemGroup>
     <CompilerVisibleProperty Include="OpenApiGenerator_UseCache"/>
+    <CompilerVisibleProperty Include="UseNSwag"/>
   </ItemGroup>
 
   <ItemGroup>

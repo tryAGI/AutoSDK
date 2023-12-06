@@ -1,38 +1,21 @@
-﻿using System.Collections.Immutable;
+using System.Collections.Immutable;
 using H.Generators.Extensions;
 using Microsoft.CodeAnalysis;
 using Microsoft.OpenApi.Readers;
 using NJsonSchema.CodeGeneration.CSharp;
-using NSwag;
 using NSwag.CodeGeneration.CSharp;
 using NSwag.CodeGeneration.OperationNameGenerators;
+using OpenApiGenerator.Models;
 using OpenApiSchema = Microsoft.OpenApi.Models.OpenApiSchema;
+using NSwag;
 
-namespace H.Generators;
+namespace OpenApiGenerator.Sources;
 
-[Generator]
-public class OpenApiGenerator : IIncrementalGenerator
+internal static partial class Sources
 {
-    #region Constants
-
-    private const string Id = "OAG";
-
-    #endregion
-
-    #region Methods
-
-    public void Initialize(IncrementalGeneratorInitializationContext context)
-    {
-        context.AdditionalTextsProvider
-            .Where(static text => text.Path.EndsWith(".yaml", StringComparison.InvariantCultureIgnoreCase))
-            // .Combine(context.AnalyzerConfigOptionsProvider
-            //     .Select(static (x, _) => bool.Parse(x.GetGlobalOption("UseCache", prefix: Name) ?? bool.FalseString)))
-            .SelectAndReportExceptions(GetSourceCode, context, Id)
-            .AddSource(context);
-    }
-
-    private static EquatableArray<FileWithName> GetSourceCode(
+    public static EquatableArray<FileWithName> GenerateUsingNSwag(
         AdditionalText text,
+        Settings settings,
         CancellationToken cancellationToken = default)
     {
         var yaml = text.GetText(cancellationToken)?.ToString() ?? string.Empty;
@@ -61,7 +44,8 @@ public class OpenApiGenerator : IIncrementalGenerator
         
         return files.ToImmutableArray();
     }
-
+    
+    
     private static string[] GetAdditionalExcludedTypeNames(
         string key,
         IDictionary<string, OpenApiSchema> schemas)
@@ -198,6 +182,4 @@ public class OpenApiGenerator : IIncrementalGenerator
 
         return generator.GenerateFile();
     }
-
-    #endregion
 }
