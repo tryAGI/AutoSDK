@@ -58,31 +58,38 @@ internal static class Extensions
     
     public static string GetCSharpType(
         this KeyValuePair<string, OpenApiSchema> schema,
-        string? parent = null)
+        KeyValuePair<string, OpenApiSchema> parent)
     {
-        return (schema.Value.Type, schema.Value.Format) switch
+        var (type, reference) = (schema.Value.Type, schema.Value.Format) switch
         {
-            ("object", _) when schema.Value.Reference != null => $"{schema.Value.Reference.Id.ToModelName(parent)}?",
-            ("object", _) when schema.Value.Reference == null => $"{schema.Key.ToModelName(parent)}?",
+            ("object", _) when schema.Value.Reference != null =>
+                ($"{schema.Value.Reference.Id.ToModelName(parent.Key)}", true),
+            ("object", _) when schema.Value.Reference == null =>
+                ($"{schema.Key.ToModelName(parent.Key)}", true),
             
-            ("boolean", _) => "bool",
-            ("integer", "int32") => "int",
-            ("integer", "int64") => "long",
-            ("number", "float") => "float",
-            ("number", "double") => "double",
-            ("string", "byte") => "byte",
-            ("string", "binary") => "byte[]?",
-            ("string", "date") => "global::System.DateTime",
-            ("string", "date-time") => "global::System.DateTime",
-            ("string", "password") => "string?",
+            ("boolean", _) => ("bool", false),
+            ("integer", "int32") => ("int", false),
+            ("integer", "int64") => ("long", false),
+            ("number", "float") => ("float", false),
+            ("number", "double") => ("double", false),
+            ("string", "byte") => ("byte", false),
+            ("string", "binary") => ("byte[]", true),
+            ("string", "date") => ("global::System.DateTime", false),
+            ("string", "date-time") => ("global::System.DateTime", false),
+            ("string", "password") => ("string", true),
             
-            ("integer", _) => "int",
-            ("number", _) => "double",
-            ("string", _) => "string?",
-            ("object", _) => "object?",
-            ("array", _) => "object[]?",
+            ("integer", _) => ("int", false),
+            ("number", _) => ("double", false),
+            ("string", _) => ("string", true),
+            ("object", _) => ("object", true),
+            ("array", _) => ("object[]", true),
             _ => throw new NotSupportedException($"Type {schema.Value.Type} is not supported."),
         };
+
+        return schema.Value.Nullable ||
+               reference && !parent.Value.Required.Contains(schema.Key)
+            ? type + "?"
+            : type;
     }
     
     public static string? GetDefaultValue(this OpenApiSchema schema)
@@ -232,7 +239,7 @@ internal static class Extensions
             Name: schema.Key.ToPropertyName()
                 .FixClassName(parent.Key.ToPropertyName())
                 .FixUnderscore(),
-            Type: schema.GetCSharpType(parent.Key),
+            Type: schema.GetCSharpType(parent),
             IsRequired: parent.Value.Required.Contains(schema.Key),
             DefaultValue: schema.Value.GetDefaultValue(),
             Summary: schema.Value.GetSummary());

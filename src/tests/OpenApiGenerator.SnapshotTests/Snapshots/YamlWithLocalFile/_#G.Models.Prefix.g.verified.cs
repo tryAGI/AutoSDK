@@ -13,25 +13,25 @@ namespace G
         /// Example: 104.69.216.0/22
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("netblock")]
-        public required string? Netblock { get; set; }
+        public required string Netblock { get; set; }
 
         /// <summary>
         /// Example: AKAMAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public required string? Id { get; set; }
+        public required string Id { get; set; }
 
         /// <summary>
         /// Example: Akamai Technologies, Inc.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public required string? Name { get; set; }
+        public required string Name { get; set; }
 
         /// <summary>
         /// Example: US
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("country")]
-        public required string? Country { get; set; }
+        public required string Country { get; set; }
 
         /// <summary>
         /// Example: 256
