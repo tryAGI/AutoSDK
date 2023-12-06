@@ -25,7 +25,7 @@ namespace G
         /// Example: 17939
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total")]
-        public int Total { get; set; }
+        public required int Total { get; set; }
 
         /// <summary>
         /// 

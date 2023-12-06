@@ -210,15 +210,7 @@ internal static class Extensions
             Namespace: settings.Namespace,
             Style: settings.ModelStyle,
             Properties: schema.Value.Properties
-                .Select(x => new Property(
-                    Id: x.Key,
-                    Name: x.Key.ToPropertyName()
-                        .FixClassName(schema.Key.ToPropertyName())
-                        .FixUnderscore(),
-                    Type: x.GetCSharpType(schema.Key),
-                    IsRequired: x.Value.Required.Contains(x.Key),
-                    DefaultValue: x.Value.GetDefaultValue(),
-                    Summary: x.Value.GetSummary()))
+                .Select(x => x.ToProperty(schema))
                 .ToImmutableArray(),
             Summary: schema.Value.GetSummary(),
             AdditionalModels: schema.Value.Properties
@@ -229,6 +221,21 @@ internal static class Extensions
                         ? $"{parent}.{schema.Key.ToPropertyName()}"
                         : schema.Key.ToPropertyName()))
                 .ToImmutableArray());
+    }
+    
+    public static Property ToProperty(
+        this KeyValuePair<string, OpenApiSchema> schema,
+        KeyValuePair<string, OpenApiSchema> parent)
+    {
+        return new Property(
+            Id: schema.Key,
+            Name: schema.Key.ToPropertyName()
+                .FixClassName(parent.Key.ToPropertyName())
+                .FixUnderscore(),
+            Type: schema.GetCSharpType(parent.Key),
+            IsRequired: parent.Value.Required.Contains(schema.Key),
+            DefaultValue: schema.Value.GetDefaultValue(),
+            Summary: schema.Value.GetSummary());
     }
 
     public static IEnumerable<Model> WithAdditionalModels(

@@ -13,13 +13,13 @@ namespace G
         /// Example: AS10507
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("asn")]
-        public string? Asn { get; set; }
+        public required string? Asn { get; set; }
 
         /// <summary>
         /// Example: Sprint Personal Communications Systems
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; }
+        public required string? Name { get; set; }
 
         /// <summary>
         /// Example: US
@@ -43,7 +43,7 @@ namespace G
         /// Example: sprint.net
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("domain")]
-        public string? Domain { get; set; }
+        public required string? Domain { get; set; }
 
         /// <summary>
         /// Example: 71224576
@@ -61,7 +61,7 @@ namespace G
         /// Example: isp
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
+        public required string? Type { get; set; }
 
         /// <summary>
         /// 

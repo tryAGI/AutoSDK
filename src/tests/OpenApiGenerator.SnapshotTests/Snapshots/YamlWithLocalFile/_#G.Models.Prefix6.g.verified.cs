@@ -13,25 +13,25 @@ namespace G
         /// Example: 2601::/20
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("netblock")]
-        public string? Netblock { get; set; }
+        public required string? Netblock { get; set; }
 
         /// <summary>
         /// Example: COMCAST6NET
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
+        public required string? Id { get; set; }
 
         /// <summary>
         /// Example: Comcast Cable Communications, LLC
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; }
+        public required string? Name { get; set; }
 
         /// <summary>
         /// Example: US
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("country")]
-        public string? Country { get; set; }
+        public required string? Country { get; set; }
 
         /// <summary>
         /// Example: 20282409603651670423947251286016

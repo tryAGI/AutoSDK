@@ -13,25 +13,25 @@ namespace G
         /// Example: True
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vpn")]
-        public bool Vpn { get; set; }
+        public required bool Vpn { get; set; }
 
         /// <summary>
         /// Example: False
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("proxy")]
-        public bool Proxy { get; set; }
+        public required bool Proxy { get; set; }
 
         /// <summary>
         /// Example: False
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tor")]
-        public bool Tor { get; set; }
+        public required bool Tor { get; set; }
 
         /// <summary>
         /// Example: False
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hosting")]
-        public bool Hosting { get; set; }
+        public required bool Hosting { get; set; }
 
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();

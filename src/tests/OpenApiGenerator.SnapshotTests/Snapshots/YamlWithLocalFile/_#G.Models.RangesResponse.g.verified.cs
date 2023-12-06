@@ -13,19 +13,19 @@ namespace G
         /// Example: comcast.net
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("domain")]
-        public string? Domain { get; set; }
+        public required string? Domain { get; set; }
 
         /// <summary>
         /// Example: 37330
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_ranges")]
-        public string? NumRanges { get; set; }
+        public required string? NumRanges { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ranges")]
-        public object[]? Ranges { get; set; }
+        public required object[]? Ranges { get; set; }
 
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();

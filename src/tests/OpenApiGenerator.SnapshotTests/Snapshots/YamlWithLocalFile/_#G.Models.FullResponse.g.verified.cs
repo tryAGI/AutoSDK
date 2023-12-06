@@ -13,7 +13,7 @@ namespace G
         /// Example: 66.87.125.72
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ip")]
-        public string? Ip { get; set; }
+        public required string? Ip { get; set; }
 
         /// <summary>
         /// Example: ip-66-87-125-72.spfdma.spcsdns.net
@@ -25,7 +25,7 @@ namespace G
         /// Example: Springfield
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("city")]
-        public string? City { get; set; }
+        public required string? City { get; set; }
 
         /// <summary>
         /// Example: Massachusetts
@@ -37,7 +37,7 @@ namespace G
         /// Example: US
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("country")]
-        public string? Country { get; set; }
+        public required string? Country { get; set; }
 
         /// <summary>
         /// Example: 42.0999,-72.5783
@@ -67,7 +67,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("asn")]
-        public required AsnResponse? Asn { get; set; }
+        public AsnResponse? Asn { get; set; }
 
         /// <summary>
         /// 
