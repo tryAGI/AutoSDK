@@ -2,4 +2,8 @@ namespace OpenApiGenerator.Models;
 
 internal readonly record struct Property(
     string Id,
-    string Type);
+    string Name,
+    string Type,
+    bool IsRequired,
+    string? DefaultValue,
+    string Summary);

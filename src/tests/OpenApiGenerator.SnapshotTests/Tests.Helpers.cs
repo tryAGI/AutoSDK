@@ -21,8 +21,7 @@ public partial class Tests : VerifyBase
         globalOptions ??= new Dictionary<string, string>();
         globalOptions.Add("build_property.OpenApiGenerator_Namespace", "G");
         
-        var referenceAssemblies = ReferenceAssemblies.Net.Net60
-            .WithPackages(ImmutableArray.Create(new PackageIdentity("Newtonsoft.Json", "13.0.1")));
+        var referenceAssemblies = LatestReferenceAssemblies.Net80;
         var references = await referenceAssemblies.ResolveAsync(null, cancellationToken);
         var compilation = (Compilation)CSharpCompilation.Create(
             assemblyName: "Tests",

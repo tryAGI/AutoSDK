@@ -1,6 +1,7 @@
 ﻿using System.Collections.Immutable;
 using H.Generators.Extensions;
 using Microsoft.CodeAnalysis;
+using Microsoft.OpenApi.Models;
 using OpenApiGenerator.Models;
 
 namespace OpenApiGenerator;
@@ -46,7 +47,18 @@ public class ModelGenerator : IIncrementalGenerator
                 Name: schema.Key.ToPropertyName(),
                 Namespace: settings.Namespace,
                 Style: settings.ModelStyle,
-                Properties: Array.Empty<Property>().ToImmutableArray()))
+                Properties: schema.Value.Properties
+                    .Select(x => new Property(
+                        Id: x.Key,
+                        Name: x.Key.ToPropertyName()
+                            .FixClassName(schema.Key.ToPropertyName())
+                            .FixUnderscore(),
+                        Type: x.Value.GetCSharpType(),
+                        IsRequired: x.Value.Required.Contains(x.Key),
+                        DefaultValue: x.Value.GetDefaultValue(),
+                        Summary: x.Value.GetSummary()))
+                    .ToImmutableArray(),
+                Summary: schema.Value.GetSummary()))
             .ToImmutableArray();
     }
     

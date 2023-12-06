@@ -6,4 +6,5 @@ internal readonly record struct Model(
     string Name,
     string Namespace,
     ModelStyle Style,
-    EquatableArray<Property> Properties);
+    EquatableArray<Property> Properties,
+    string Summary);
