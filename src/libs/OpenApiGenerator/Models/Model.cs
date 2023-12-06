@@ -4,7 +4,10 @@ namespace OpenApiGenerator.Models;
 
 internal readonly record struct Model(
     string Name,
+    string? Parent,
     string Namespace,
     ModelStyle Style,
     EquatableArray<Property> Properties,
-    string Summary);
+    string Summary,
+    EquatableArray<Model> AdditionalModels
+    );

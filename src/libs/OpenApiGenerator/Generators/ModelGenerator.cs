@@ -43,22 +43,8 @@ public class ModelGenerator : IIncrementalGenerator
         var openApiDocument = text.GetOpenApiDocument(cancellationToken);
         
         return openApiDocument.Components.Schemas
-            .Select(schema => new Model(
-                Name: schema.Key.ToPropertyName(),
-                Namespace: settings.Namespace,
-                Style: settings.ModelStyle,
-                Properties: schema.Value.Properties
-                    .Select(x => new Property(
-                        Id: x.Key,
-                        Name: x.Key.ToPropertyName()
-                            .FixClassName(schema.Key.ToPropertyName())
-                            .FixUnderscore(),
-                        Type: x.Value.GetCSharpType(),
-                        IsRequired: x.Value.Required.Contains(x.Key),
-                        DefaultValue: x.Value.GetDefaultValue(),
-                        Summary: x.Value.GetSummary()))
-                    .ToImmutableArray(),
-                Summary: schema.Value.GetSummary()))
+            .Select(schema => schema.ToModel(settings))
+            .SelectMany(model => model.WithAdditionalModels())
             .ToImmutableArray();
     }
     
@@ -67,7 +53,7 @@ public class ModelGenerator : IIncrementalGenerator
         CancellationToken cancellationToken = default)
     {
         return new FileWithName(
-            Name: $"{model.Namespace}.Models.{model.Name}.g.cs",
+            Name: $"{model.Namespace}.Models.{(model.Parent != null ? $"{model.Parent}." : "")}{model.Name}.g.cs",
             Text: Sources.GenerateModel(model, cancellationToken: cancellationToken));
     }
 

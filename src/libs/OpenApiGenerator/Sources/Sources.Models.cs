@@ -20,13 +20,36 @@ internal static partial class Sources
         Model model,
         CancellationToken cancellationToken = default)
     {
+        var parents = model.Parent != null
+            ? model.Parent.Split('.')
+            : Array.Empty<string>();
+        
         return $@"
 #nullable enable
 
 namespace {model.Namespace}
 {{
+    {(model.Parent != null
+        ? $@"
+    public sealed partial class {model.Parent}
+    {{"
+        : " ")}
+{GenerateClassModel(model, level: parents.Length, cancellationToken: cancellationToken)}
+    {(model.Parent != null
+        ? @"
+    }"
+        : " ")}
+}}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+    
+    public static string GenerateClassModel(
+        Model model,
+        int level,
+        CancellationToken cancellationToken = default)
+    {
+        return $@" 
     {model.Summary.ToXmlDocumentationSummary(level: 4)}
-    public sealed class {model.Name}
+    public sealed{(model.AdditionalModels.IsEmpty ? "" : " partial")} class {model.Name}
     {{
 {model.Properties.Select(property => @$"
         {property.Summary.ToXmlDocumentationSummary(level: 8)}
@@ -36,7 +59,6 @@ namespace {model.Namespace}
 
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties {{ get; set; }} = new global::System.Collections.Generic.Dictionary<string, object>();
-    }}
-}}";
+    }}".AddIndent(level: level);
     }
 }

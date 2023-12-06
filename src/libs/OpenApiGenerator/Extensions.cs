@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using System.Globalization;
 using H.Generators.Extensions;
 using Microsoft.CodeAnalysis;
@@ -53,10 +54,14 @@ internal static class Extensions
         return openApiDocument;
     }
     
-    public static string GetCSharpType(this OpenApiSchema schema)
+    public static string GetCSharpType(
+        this KeyValuePair<string, OpenApiSchema> schema,
+        string? parent = null)
     {
-        return (schema.Type, schema.Format) switch
+        return (schema.Value.Type, schema.Value.Format) switch
         {
+            ("object", _) when schema.Value.Reference == null => $"{schema.Key.ToModelName(parent)}?",
+            
             ("boolean", _) => "bool",
             ("integer", "int32") => "int",
             ("integer", "int64") => "long",
@@ -73,7 +78,7 @@ internal static class Extensions
             ("string", _) => "string?",
             ("object", _) => "object?",
             ("array", _) => "object[]?",
-            _ => throw new NotSupportedException($"Type {schema.Type} is not supported."),
+            _ => throw new NotSupportedException($"Type {schema.Value.Type} is not supported."),
         };
     }
     
@@ -125,7 +130,7 @@ internal static class Extensions
             lines = new[] { string.Empty };
         }
         
-        var spaces = string.Join(string.Empty, Enumerable.Repeat(" ", level));
+        var spaces = new string(' ', level);
         
         return $@"/// <summary>
 {string.Join("\n", lines
@@ -142,6 +147,15 @@ internal static class Extensions
             : propertyName;
     }
     
+    public static string FixParentClassName(
+        this string className,
+        string parent)
+    {
+        return parent == className
+            ? $"{className}_"
+            : className;
+    }
+    
     public static string FixUnderscore(
         this string propertyName)
     {
@@ -155,5 +169,68 @@ internal static class Extensions
             propertyName
                 .Split('_')
                 .Select(word => word.ToPropertyName()));
+    }
+    
+    public static string AddIndent(
+        this string text,
+        int level)
+    {
+        if (level < 1)
+        {
+            return text;
+        }
+        
+        var lines = text.Split(NewLine, StringSplitOptions.None);
+        var spaces = new string(' ', level * 4);
+        
+        return string.Join("\n", lines
+    .Select(line => string.IsNullOrEmpty(line) ? line : $"{spaces}{line}"));
+    }
+
+    public static string ToModelName(
+        this string text,
+        string? parent)
+    {
+        return text.ToPropertyName()
+            .FixParentClassName(parent ?? string.Empty);
+    }
+    
+    public static Model ToModel(
+        this KeyValuePair<string, OpenApiSchema> schema,
+        Settings settings,
+        string? parent = null)
+    {
+        return new Model(
+            Name: schema.Key.ToModelName(parent),
+            Parent: parent,
+            Namespace: settings.Namespace,
+            Style: settings.ModelStyle,
+            Properties: schema.Value.Properties
+                .Select(x => new Property(
+                    Id: x.Key,
+                    Name: x.Key.ToPropertyName()
+                        .FixClassName(schema.Key.ToPropertyName())
+                        .FixUnderscore(),
+                    Type: x.GetCSharpType(schema.Key),
+                    IsRequired: x.Value.Required.Contains(x.Key),
+                    DefaultValue: x.Value.GetDefaultValue(),
+                    Summary: x.Value.GetSummary()))
+                .ToImmutableArray(),
+            Summary: schema.Value.GetSummary(),
+            AdditionalModels: schema.Value.Properties
+                .Where(static x =>
+                    x.Value.Type == "object" && x.Value.Reference == null)
+                .Select(x => x.ToModel(settings, parent:
+                    parent != null 
+                        ? $"{parent}.{schema.Key.ToPropertyName()}"
+                        : schema.Key.ToPropertyName()))
+                .ToImmutableArray());
+    }
+
+    public static IEnumerable<Model> WithAdditionalModels(
+        this Model model)
+    {
+        return new []{ model }
+            .Concat(model.AdditionalModels.SelectMany(WithAdditionalModels));
     }
 }
