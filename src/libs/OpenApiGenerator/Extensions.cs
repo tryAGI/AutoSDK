@@ -1,10 +1,12 @@
 using H.Generators.Extensions;
 using Microsoft.CodeAnalysis;
+using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi.Readers;
 using OpenApiGenerator.Models;
 
 namespace OpenApiGenerator;
 
-internal static class OptionsExtensions
+internal static class Extensions
 {
     public static IncrementalValueProvider<Settings> DetectSettings(
         this IncrementalGeneratorInitializationContext context)
@@ -34,5 +36,18 @@ internal static class OptionsExtensions
                     out var modelStyle) ? modelStyle : default
                 
                 ));
+    }
+    
+    public static OpenApiDocument GetOpenApiDocument(
+        this AdditionalText text,
+        CancellationToken cancellationToken = default)
+    {
+        var yaml = text.GetText(cancellationToken)?.ToString() ?? string.Empty;
+        var openApiDocument = new OpenApiStringReader().Read(yaml, out _);
+
+        openApiDocument.Components ??= new OpenApiComponents();
+        openApiDocument.Components.Schemas ??= new Dictionary<string, OpenApiSchema>();
+
+        return openApiDocument;
     }
 }

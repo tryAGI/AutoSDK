@@ -1,7 +1,6 @@
 using System.Collections.Immutable;
 using H.Generators.Extensions;
 using Microsoft.CodeAnalysis;
-using Microsoft.OpenApi.Readers;
 using NJsonSchema.CodeGeneration.CSharp;
 using NSwag.CodeGeneration.CSharp;
 using NSwag.CodeGeneration.OperationNameGenerators;
@@ -19,11 +18,10 @@ internal static partial class Sources
         CancellationToken cancellationToken = default)
     {
         var yaml = text.GetText(cancellationToken)?.ToString() ?? string.Empty;
+        var openApiDocument = text.GetOpenApiDocument(cancellationToken);
         var openApi = Task.Run(() =>
             OpenApiYamlDocument.FromYamlAsync(yaml, cancellationToken), cancellationToken).Result;
-        var openApiDocument = new OpenApiStringReader().Read(yaml, out _);
-        var schemas = openApiDocument.Components?.Schemas ?? new Dictionary<string, OpenApiSchema>();
-        var prefix = Path.GetFileName(text.Path);
+        var schemas = openApiDocument.Components.Schemas;
         var allAdditionalExcludedTypeNames = schemas.Keys
             .Select(schemaKey => GetAdditionalExcludedTypeNames(schemaKey, schemas))
             .SelectMany(x => x)
@@ -38,13 +36,12 @@ internal static partial class Sources
                 .ToArray();
             
             return new FileWithName(
-                Name: $"{prefix}.Models.{schemaKey}.cs",
+                Name: $"{settings.Namespace}.Models.{schemaKey}.cs",
                 Text: Generate(openApi, settings, excludedTypeNames));
         }));
         
         return files.ToImmutableArray();
     }
-    
     
     private static string[] GetAdditionalExcludedTypeNames(
         string key,

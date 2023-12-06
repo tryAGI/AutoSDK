@@ -2,6 +2,7 @@
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Extensions;
 using Microsoft.OpenApi.Models;
+using OpenApiGenerator;
 
 namespace H.Generators.IntegrationTests;
 
@@ -43,14 +44,26 @@ public partial class Tests
     [TestMethod]
     public Task Empty()
     {
-        return CheckSourceAsync(
+        return CheckSourceAsync<ModelGenerator>(
             Array.Empty<AdditionalText>());
+    }
+    
+    [TestMethod]
+    public Task YamlWithLocalFileUseNSwag()
+    {
+        return CheckSourceAsync<NSwagGenerator>(new AdditionalText[]
+        {
+            new CustomAdditionalText("openapi.yaml", Resources.ipinfo_yaml.AsString()),
+        }, new Dictionary<string, string>
+        {
+            ["build_property.OpenApiGenerator_UseNSwag"] = "true",
+        });
     }
     
     [TestMethod]
     public Task YamlWithLocalFile()
     {
-        return CheckSourceAsync(new AdditionalText[]
+        return CheckSourceAsync<ModelGenerator>(new AdditionalText[]
         {
             new CustomAdditionalText("openapi.yaml", Resources.ipinfo_yaml.AsString()),
         });
@@ -61,7 +74,7 @@ public partial class Tests
     {
         var yaml = PetStore.Serialize(OpenApiSpecVersion.OpenApi3_0, OpenApiFormat.Yaml);
         
-        return CheckSourceAsync(new AdditionalText[]
+        return CheckSourceAsync<ModelGenerator>(new AdditionalText[]
         {
             new CustomAdditionalText("openapi.yaml", yaml),
         });
@@ -70,7 +83,7 @@ public partial class Tests
     [TestMethod]
     public Task YamlWithUrl()
     {
-        return CheckSourceAsync(new AdditionalText[]
+        return CheckSourceAsync<ModelGenerator>(new AdditionalText[]
         {
             new CustomAdditionalText("https://dedoose-rest-api.onrender.com/swagger/v1/swagger.json", string.Empty),
         });

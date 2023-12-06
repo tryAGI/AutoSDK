@@ -1,4 +1,5 @@
-﻿using H.Generators.Extensions;
+﻿using System.Collections.Immutable;
+using H.Generators.Extensions;
 using Microsoft.CodeAnalysis;
 using OpenApiGenerator.Models;
 
@@ -31,10 +32,13 @@ public class NSwagGenerator : IIncrementalGenerator
         CancellationToken cancellationToken = default)
     {
         var (text, settings) = tuple;
+        if (!settings.UseNSwag)
+        {
+            return ImmutableArray<FileWithName>.Empty;
+        }
         
         return Sources.GenerateUsingNSwag(text, settings, cancellationToken);
     }
-
 
     #endregion
 }
