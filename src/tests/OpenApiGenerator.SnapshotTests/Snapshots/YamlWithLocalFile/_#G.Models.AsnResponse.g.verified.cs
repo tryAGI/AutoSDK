@@ -67,31 +67,31 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prefixes")]
-        public object[]? Prefixes { get; set; }
+        public Prefix?[]? Prefixes { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prefixes6")]
-        public object[]? Prefixes6 { get; set; }
+        public Prefix6?[]? Prefixes6 { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("peers")]
-        public object[]? Peers { get; set; }
+        public string?[]? Peers { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upstreams")]
-        public object[]? Upstreams { get; set; }
+        public string?[]? Upstreams { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("downstreams")]
-        public object[]? Downstreams { get; set; }
+        public string?[]? Downstreams { get; set; }
 
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();

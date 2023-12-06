@@ -82,7 +82,9 @@ internal static class Extensions
             ("number", _) => ("double", false),
             ("string", _) => ("string", true),
             ("object", _) => ("object", true),
-            ("array", _) => ("object[]", true),
+            ("array", _) => (new KeyValuePair<string, OpenApiSchema>(
+                string.Empty,
+                schema.Value.Items).GetCSharpType(schema) + "[]", true),
             _ => throw new NotSupportedException($"Type {schema.Value.Type} is not supported."),
         };
 
