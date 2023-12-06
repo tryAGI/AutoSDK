@@ -1,4 +1,6 @@
 namespace OpenApiGenerator.Models;
 
-public readonly record struct Settings(
+internal readonly record struct Settings(
+    string TargetFramework,
+    string Namespace,
     bool UseNSwag);

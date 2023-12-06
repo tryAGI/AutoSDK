@@ -4,6 +4,7 @@ using H.Generators.Tests.Extensions;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Testing;
+using OpenApiGenerator;
 
 namespace H.Generators.IntegrationTests;
 
@@ -22,7 +23,7 @@ public partial class Tests : VerifyBase
             assemblyName: "Tests",
             references: references,
             options: new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
-        var generator = new OpenApiGenerator();
+        var generator = new NSwagGenerator();
         var driver = CSharpGeneratorDriver
             .Create(generator)
             .AddAdditionalTexts(ImmutableArray.Create(additionalTexts))
@@ -33,7 +34,7 @@ public partial class Tests : VerifyBase
             Verify(diagnostics.NormalizeLocations())
                 .UseDirectory($"Snapshots/{callerName}")
                 //.AutoVerify()
-                .UseTextForParameters($"Diagnostics"),
+                .UseTextForParameters("Diagnostics"),
             Verify(driver)
                 .UseDirectory($"Snapshots/{callerName}")
                 //.AutoVerify()

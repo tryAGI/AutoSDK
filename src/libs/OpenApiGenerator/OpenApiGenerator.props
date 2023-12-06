@@ -5,8 +5,19 @@
   </PropertyGroup>
   
   <ItemGroup>
+    <!-- Used as default namespace name if OpenApiGenerator_Namespace is not specified -->
+    <CompilerVisibleProperty Include="AssemblyName"/>
+    <CompilerVisibleProperty Include="PackageId"/>
+
+    <!-- Used as default TargetFramework if OpenApiGenerator_TargetFramework is not specified -->
+    <CompilerVisibleProperty Include="TargetFramework"/>
+
+    <CompilerVisibleProperty Include="OpenApiGenerator_TargetFramework"/>
+    <CompilerVisibleProperty Include="OpenApiGenerator_Namespace"/>
     <CompilerVisibleProperty Include="OpenApiGenerator_UseCache"/>
-    <CompilerVisibleProperty Include="UseNSwag"/>
+    <CompilerVisibleProperty Include="OpenApiGenerator_UseNSwag"/>
+    <CompilerVisibleProperty Include="OpenApiGenerator_Models_Generate"/>
+    <CompilerVisibleProperty Include="OpenApiGenerator_GenerateSdk"/>
   </ItemGroup>
 
   <ItemGroup>

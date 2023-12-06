@@ -9,7 +9,7 @@ using OpenApiGenerator.Models;
 using OpenApiSchema = Microsoft.OpenApi.Models.OpenApiSchema;
 using NSwag;
 
-namespace OpenApiGenerator.Sources;
+namespace OpenApiGenerator;
 
 internal static partial class Sources
 {
@@ -39,7 +39,7 @@ internal static partial class Sources
             
             return new FileWithName(
                 Name: $"{prefix}.Models.{schemaKey}.cs",
-                Text: Generate(openApi, excludedTypeNames));
+                Text: Generate(openApi, settings, excludedTypeNames));
         }));
         
         return files.ToImmutableArray();
@@ -73,27 +73,29 @@ internal static partial class Sources
     
     private static string Generate(
         OpenApiDocument openApi,
+        Settings settings,
         string[]? excludedTypeNames = null)
     {
         var generator = new CSharpClientGenerator(openApi, new CSharpClientGeneratorSettings
         {
             ClassName = "{controller}ApiClient",
-            OperationNameGenerator = "MultipleClientsFromOperationId" switch
-            {
-                // should implement all options of NSwag.Commands.CodeGeneration.OperationGenerationMode 
-
-                "MultipleClientsFromOperationId" => new MultipleClientsFromOperationIdOperationNameGenerator(),
-                "MultipleClientsFromPathSegments" => new MultipleClientsFromPathSegmentsOperationNameGenerator(),
-                // kept for backward compatibility
-                "MultipleClientsFromFirstTagAndPathSegmentsOperation" => new MultipleClientsFromFirstTagAndPathSegmentsOperationNameGenerator(),
-                "MultipleClientsFromFirstTagAndPathSegments" => new MultipleClientsFromFirstTagAndPathSegmentsOperationNameGenerator(),
-
-                "MultipleClientsFromFirstTagAndOperationId" => new MultipleClientsFromFirstTagAndOperationIdGenerator(),
-                "SingleClientFromOperationId" => new SingleClientFromOperationIdOperationNameGenerator(),
-                "SingleClientFromPathSegments" => new SingleClientFromPathSegmentsOperationNameGenerator(),
-                "MultipleClientsFromFirstTagAndOperationName" => new MultipleClientsFromFirstTagAndOperationNameGenerator(),
-                _ => throw new NotImplementedException($"OperationGenerationMode is not implemented."),
-            },
+            OperationNameGenerator = new MultipleClientsFromOperationIdOperationNameGenerator(),
+            // OperationNameGenerator = "MultipleClientsFromOperationId" switch
+            // {
+            //     // should implement all options of NSwag.Commands.CodeGeneration.OperationGenerationMode 
+            //
+            //     "MultipleClientsFromOperationId" => new MultipleClientsFromOperationIdOperationNameGenerator(),
+            //     "MultipleClientsFromPathSegments" => new MultipleClientsFromPathSegmentsOperationNameGenerator(),
+            //     // kept for backward compatibility
+            //     "MultipleClientsFromFirstTagAndPathSegmentsOperation" => new MultipleClientsFromFirstTagAndPathSegmentsOperationNameGenerator(),
+            //     "MultipleClientsFromFirstTagAndPathSegments" => new MultipleClientsFromFirstTagAndPathSegmentsOperationNameGenerator(),
+            //
+            //     "MultipleClientsFromFirstTagAndOperationId" => new MultipleClientsFromFirstTagAndOperationIdGenerator(),
+            //     "SingleClientFromOperationId" => new SingleClientFromOperationIdOperationNameGenerator(),
+            //     "SingleClientFromPathSegments" => new SingleClientFromPathSegmentsOperationNameGenerator(),
+            //     "MultipleClientsFromFirstTagAndOperationName" => new MultipleClientsFromFirstTagAndOperationNameGenerator(),
+            //     _ => throw new NotImplementedException($"OperationGenerationMode is not implemented."),
+            // },
             AdditionalContractNamespaceUsages = Array.Empty<string>(),
             AdditionalNamespaceUsages = Array.Empty<string>(),
             ClientBaseClass = string.Empty,
@@ -105,7 +107,7 @@ internal static partial class Sources
             ProtectedMethods = Array.Empty<string>(),
             CSharpGeneratorSettings =
             {
-                Namespace = "MyClients365",
+                Namespace = settings.Namespace,
                 GenerateNullableReferenceTypes = true,
                 GenerateNativeRecords = false,
                 GenerateOptionalPropertiesAsNullable = true,

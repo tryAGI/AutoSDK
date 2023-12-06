@@ -1,12 +1,11 @@
 ﻿using H.Generators.Extensions;
 using Microsoft.CodeAnalysis;
 using OpenApiGenerator.Models;
-using OpenApiGenerator.Sources;
 
-namespace H.Generators;
+namespace OpenApiGenerator;
 
 [Generator]
-public class OpenApiGenerator : IIncrementalGenerator
+public class NSwagGenerator : IIncrementalGenerator
 {
     #region Constants
 
@@ -18,9 +17,7 @@ public class OpenApiGenerator : IIncrementalGenerator
 
     public void Initialize(IncrementalGeneratorInitializationContext context)
     {
-        var settings = context.AnalyzerConfigOptionsProvider
-            .Select((options, _) => new Settings(
-                UseNSwag: bool.Parse(options.GetGlobalOption("UseNSwag") ?? bool.FalseString)));
+        var settings = context.DetectSettings();
         
         context.AdditionalTextsProvider
             .Where(static text => text.Path.EndsWith(".yaml", StringComparison.InvariantCultureIgnoreCase))
