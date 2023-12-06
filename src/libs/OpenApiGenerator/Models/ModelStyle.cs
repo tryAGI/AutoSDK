@@ -5,4 +5,5 @@ internal enum ModelStyle
     Class,
     Record,
     ReadonlyRecordStruct,
+    Enumeration,
 }

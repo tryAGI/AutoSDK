@@ -12,6 +12,7 @@ internal static partial class Sources
         return model.Style switch
         {
             ModelStyle.Class => GenerateClassModel(model, cancellationToken),
+            ModelStyle.Enumeration => GenerateEnumerationModel(model, cancellationToken),
             _ => throw new NotSupportedException($"Model style {model.Style} is not supported."),
         };
     }
@@ -39,6 +40,28 @@ namespace {model.Namespace}
         ? @"
     }"
         : " ")}
+}}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+    
+    public static string GenerateEnumerationModel(
+        Model model,
+        CancellationToken cancellationToken = default)
+    {
+        return $@"
+#nullable enable
+
+namespace {model.Namespace}
+{{
+    {model.Summary.ToXmlDocumentationSummary(level: 4)}
+    [global::System.Runtime.Serialization.DataContract]
+    public enum {model.Name}
+    {{
+{model.Properties.Select(property => @$"
+        {property.Summary.ToXmlDocumentationSummary(level: 8)}
+        [global::System.Runtime.Serialization.EnumMember(Value=""{property.Id}"")]
+        {property.Name},
+").Inject()}
+    }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
     

@@ -67,6 +67,12 @@ internal static class Extensions
             ("object", _) when schema.Value.Reference == null =>
                 ($"{schema.Key.ToModelName(parent.Key)}", true),
             
+            (null, _) when schema.Value.Reference != null =>
+                ($"{schema.Value.Reference.Id.ToModelName(parent.Key)}", true),
+            
+            ("string", _) when schema.Value.Enum.Any() =>
+                ($"{schema.Key.ToEnumName(parent.Key)}", true),
+            
             ("boolean", _) => ("bool", false),
             ("integer", "int32") => ("int", false),
             ("integer", "int64") => ("long", false),
@@ -206,6 +212,13 @@ internal static class Extensions
         return text.ToPropertyName()
             .FixParentClassName(parent ?? string.Empty);
     }
+
+    public static string ToEnumName(
+        this string text,
+        string parent)
+    {
+        return parent.ToPropertyName() + text.ToPropertyName();
+    }
     
     public static Model ToModel(
         this KeyValuePair<string, OpenApiSchema> schema,
@@ -229,7 +242,23 @@ internal static class Extensions
                     parent != null 
                         ? $"{parent}.{schema.Key.ToPropertyName()}"
                         : schema.Key.ToPropertyName()))
-                .ToImmutableArray());
+                .ToImmutableArray(),
+            Enumerations: schema.Value.Properties
+                .Where(static x =>
+                    x.Value.Type == "string" && x.Value.Enum.Any())
+                .Select(x => x.ToModel(settings) with
+                {
+                    Name = x.Key.ToEnumName(schema.Key),
+                    Style = ModelStyle.Enumeration,
+                    Properties = x.Value.Enum
+                        .Select(value => Property.Default with
+                        {
+                            Id = value.GetString(),
+                            Name = value.GetString().ToPropertyName(),
+                        }).ToImmutableArray(),
+                })
+                .ToImmutableArray()
+            );
     }
     
     public static Property ToProperty(
@@ -251,6 +280,7 @@ internal static class Extensions
         this Model model)
     {
         return new []{ model }
-            .Concat(model.AdditionalModels.SelectMany(WithAdditionalModels));
+            .Concat(model.AdditionalModels.SelectMany(WithAdditionalModels))
+            .Concat(model.Enumerations.SelectMany(WithAdditionalModels));
     }
 }

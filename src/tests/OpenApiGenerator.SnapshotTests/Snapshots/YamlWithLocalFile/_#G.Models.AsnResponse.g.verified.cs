@@ -61,7 +61,7 @@ namespace G
         /// Example: isp
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public required string Type { get; set; }
+        public required AsnResponseType Type { get; set; }
 
         /// <summary>
         /// 

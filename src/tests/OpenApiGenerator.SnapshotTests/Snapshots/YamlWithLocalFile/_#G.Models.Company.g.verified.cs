@@ -25,7 +25,7 @@ namespace G
         /// Example: isp
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public required string Type { get; set; }
+        public required CompanyType Type { get; set; }
 
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();

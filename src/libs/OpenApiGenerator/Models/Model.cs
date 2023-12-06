@@ -10,5 +10,6 @@ internal readonly record struct Model(
     ModelStyle Style,
     EquatableArray<Property> Properties,
     string Summary,
-    EquatableArray<Model> AdditionalModels
+    EquatableArray<Model> AdditionalModels,
+    EquatableArray<Model> Enumerations
     );
