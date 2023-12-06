@@ -20,7 +20,19 @@ internal static class OptionsExtensions
                            options.GetGlobalOption("PackageId") ??
                            options.GetGlobalOption("AssemblyName") ??
                            prefix,
-                UseNSwag: bool.Parse(options.GetGlobalOption("UseNSwag", prefix) ?? bool.FalseString)
+                UseNSwag: bool.TryParse(
+                    options.GetGlobalOption("UseNSwag", prefix),
+                    out var useNSwag) && useNSwag,
+                
+                GenerateModels: bool.TryParse(
+                    options.GetGlobalOption(nameof(Settings.GenerateModels), prefix),
+                    out var generateModels) && generateModels,
+                ModelStyle: Enum.TryParse<ModelStyle>(
+                    options.GetGlobalOption(nameof(Settings.ModelStyle), prefix) ??
+                        $"{default(ModelStyle):G}",
+                    ignoreCase: true,
+                    out var modelStyle) ? modelStyle : default
+                
                 ));
     }
 }

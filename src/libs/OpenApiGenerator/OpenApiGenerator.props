@@ -12,16 +12,26 @@
     <!-- Used as default TargetFramework if OpenApiGenerator_TargetFramework is not specified -->
     <CompilerVisibleProperty Include="TargetFramework"/>
 
+    <!-- Namespace. Default: $(TargetFramework) or "netstandard2.0" -->
     <CompilerVisibleProperty Include="OpenApiGenerator_TargetFramework"/>
+    <!-- Namespace. Default: $(PackageId) or $(AssemblyName) or "OpenApiGenerator" -->
     <CompilerVisibleProperty Include="OpenApiGenerator_Namespace"/>
+    <!-- true/false. Default: false -->
     <CompilerVisibleProperty Include="OpenApiGenerator_UseCache"/>
+    <!-- true/false. Default: false -->
     <CompilerVisibleProperty Include="OpenApiGenerator_UseNSwag"/>
-    <CompilerVisibleProperty Include="OpenApiGenerator_Models_Generate"/>
+    
+    <!-- true/false. Default: false -->
+    <CompilerVisibleProperty Include="OpenApiGenerator_GenerateModels"/>
+    <!-- Class/Record/ReadonlyRecordStruct. Default: Class -->
+    <CompilerVisibleProperty Include="OpenApiGenerator_ModelStyle"/>
+    
+    <!-- true/false. Default: false -->
     <CompilerVisibleProperty Include="OpenApiGenerator_GenerateSdk"/>
   </ItemGroup>
 
   <ItemGroup>
-    <AdditionalFiles Include="**\*.yaml" GenerateModels="true" />
+    <AdditionalFiles Include="**\*.yaml" />
   </ItemGroup>
 
 </Project>
