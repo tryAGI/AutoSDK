@@ -39,10 +39,14 @@ public class ModelGenerator : IIncrementalGenerator
         {
             return ImmutableArray<Model>.Empty;
         }
+        var includeModels = new HashSet<string>(settings.IncludeModels);
         
         var openApiDocument = text.GetOpenApiDocument(cancellationToken);
         
         return openApiDocument.Components.Schemas
+            .Where(schema =>
+                includeModels.Count == 0 ||
+                includeModels.Contains(schema.Key))
             .Select(schema => schema.ToModel(settings))
             .SelectMany(model => model.WithAdditionalModels())
             .ToImmutableArray();

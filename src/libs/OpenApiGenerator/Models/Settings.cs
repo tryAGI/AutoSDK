@@ -1,3 +1,5 @@
+using H.Generators.Extensions;
+
 namespace OpenApiGenerator.Models;
 
 internal readonly record struct Settings(
@@ -6,4 +8,5 @@ internal readonly record struct Settings(
     bool UseNSwag,
     
     bool GenerateModels,
-    ModelStyle ModelStyle);
+    ModelStyle ModelStyle,
+    EquatableArray<string> IncludeModels);

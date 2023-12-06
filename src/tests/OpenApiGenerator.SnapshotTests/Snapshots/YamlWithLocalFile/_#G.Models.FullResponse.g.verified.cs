@@ -67,31 +67,31 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("asn")]
-        public required object? Asn { get; set; }
+        public required AsnResponse? Asn { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("company")]
-        public object? Company { get; set; }
+        public Company? Company { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("carrier")]
-        public object? Carrier { get; set; }
+        public Carrier? Carrier { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("privacy")]
-        public object? Privacy { get; set; }
+        public PrivacyResponse? Privacy { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("domains")]
-        public object? Domains { get; set; }
+        public DomainsResponse? Domains { get; set; }
 
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();

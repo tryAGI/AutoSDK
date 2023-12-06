@@ -36,7 +36,9 @@ internal static class Extensions
                     options.GetGlobalOption(nameof(Settings.ModelStyle), prefix) ??
                         $"{default(ModelStyle):G}",
                     ignoreCase: true,
-                    out var modelStyle) ? modelStyle : default
+                    out var modelStyle) ? modelStyle : default,
+                IncludeModels: (options.GetGlobalOption(nameof(Settings.IncludeModels), prefix)?.Split(';') ??
+                               Array.Empty<string>()).ToImmutableArray()
                 
                 ));
     }
@@ -60,6 +62,7 @@ internal static class Extensions
     {
         return (schema.Value.Type, schema.Value.Format) switch
         {
+            ("object", _) when schema.Value.Reference != null => $"{schema.Value.Reference.Id.ToModelName(parent)}?",
             ("object", _) when schema.Value.Reference == null => $"{schema.Key.ToModelName(parent)}?",
             
             ("boolean", _) => "bool",
@@ -201,6 +204,7 @@ internal static class Extensions
         string? parent = null)
     {
         return new Model(
+            Id: schema.Key,
             Name: schema.Key.ToModelName(parent),
             Parent: parent,
             Namespace: settings.Namespace,

@@ -25,6 +25,8 @@
     <CompilerVisibleProperty Include="OpenApiGenerator_GenerateModels"/>
     <!-- Class/Record/ReadonlyRecordStruct. Default: Class -->
     <CompilerVisibleProperty Include="OpenApiGenerator_ModelStyle"/>
+    <!-- List of ids separated by ;. Default: Empty(all models) -->
+    <CompilerVisibleProperty Include="OpenApiGenerator_IncludeModels"/>
     
     <!-- true/false. Default: false -->
     <CompilerVisibleProperty Include="OpenApiGenerator_GenerateSdk"/>
