@@ -70,6 +70,10 @@ internal static class Extensions
             (null, _) when schema.Value.Reference != null =>
                 ($"{schema.Value.Reference.Id.ToModelName(parent.Key)}", true),
             
+            (null, _) when schema.Value.AnyOf.Any() => ("object", true),
+            (null, _) when schema.Value.OneOf.Any() => ("object", true),
+            (null, _) when schema.Value.AllOf.Any() => ("object", true),
+            
             ("string", _) when schema.Value.Enum.Any() =>
                 ($"{schema.Key.ToEnumName(parent.Key)}", true),
             
@@ -122,16 +126,17 @@ internal static class Extensions
         return summary;
     }
     
-    public static string GetString(this IOpenApiAny any)
+    public static string? GetString(this IOpenApiAny any)
     {
         return any switch
         {
+            OpenApiNull => null,
             OpenApiString @string => @string.Value,
             OpenApiInteger integer => integer.Value.ToString(CultureInfo.InvariantCulture),
             OpenApiLong @long => @long.Value.ToString(CultureInfo.InvariantCulture),
             OpenApiFloat @float => @float.Value.ToString(CultureInfo.InvariantCulture),
             OpenApiDouble @double => @double.Value.ToString(CultureInfo.InvariantCulture),
-            OpenApiBoolean boolean => boolean.Value.ToString(),
+            OpenApiBoolean boolean => boolean.Value ? "true" : "false",
             OpenApiArray array => $"[{string.Join(", ", array.Select(GetString))}]",
             OpenApiObject @object => $"{{{string.Join(", ", @object.Select(x => $"{x.Key}: {GetString(x.Value)}"))}}}",
             _ => string.Empty,
@@ -174,10 +179,11 @@ internal static class Extensions
             : className;
     }
     
-    public static string FixUnderscore(
-        this string propertyName)
+    public static string UseWordSeparator(
+        this string propertyName,
+        char separator)
     {
-        if (!propertyName.Contains('_'))
+        if (!propertyName.Contains(separator))
         {
             return propertyName;
         }
@@ -185,7 +191,7 @@ internal static class Extensions
         return string.Join(
             string.Empty,
             propertyName
-                .Split('_')
+                .Split(separator)
                 .Select(word => word.ToPropertyName()));
     }
     
@@ -220,6 +226,18 @@ internal static class Extensions
         return parent.ToPropertyName() + text.ToPropertyName();
     }
     
+    public static bool IsObjectWithoutReference(
+        this OpenApiSchema schema)
+    {
+        return schema is { Type: "object", Reference: null };
+    }
+    
+    public static bool IsEnum(
+        this OpenApiSchema schema)
+    {
+        return schema.Type == "string" && schema.Enum.Any();
+    }
+    
     public static Model ToModel(
         this KeyValuePair<string, OpenApiSchema> schema,
         Settings settings,
@@ -236,8 +254,25 @@ internal static class Extensions
                 .ToImmutableArray(),
             Summary: schema.Value.GetSummary(),
             AdditionalModels: schema.Value.Properties
-                .Where(static x =>
-                    x.Value.Type == "object" && x.Value.Reference == null)
+                .Where(static x => x.Value.IsObjectWithoutReference())
+                .Concat(schema.Value.Properties
+                    .SelectMany(static x => x.Value.AnyOf)
+                    .Where(IsObjectWithoutReference)
+                    .Select(x => new KeyValuePair<string, OpenApiSchema>(
+                        schema.Key + "AnyOf",
+                        x)))
+                .Concat(schema.Value.Properties
+                    .SelectMany(static x => x.Value.AllOf)
+                    .Where(IsObjectWithoutReference)
+                    .Select(x => new KeyValuePair<string, OpenApiSchema>(
+                        schema.Key + "AllOf",
+                        x)))
+                .Concat(schema.Value.Properties
+                    .SelectMany(static x => x.Value.OneOf)
+                    .Where(IsObjectWithoutReference)
+                    .Select(x => new KeyValuePair<string, OpenApiSchema>(
+                        schema.Key + "OneOf",
+                        x)))
                 .Select(x => x.ToModel(settings, parent:
                     parent != null 
                         ? $"{parent}.{schema.Key.ToPropertyName()}"
@@ -245,7 +280,25 @@ internal static class Extensions
                 .ToImmutableArray(),
             Enumerations: schema.Value.Properties
                 .Where(static x =>
-                    x.Value.Type == "string" && x.Value.Enum.Any())
+                    x.Value.IsEnum())
+                .Concat(schema.Value.Properties
+                    .SelectMany(static x => x.Value.AnyOf)
+                    .Where(IsEnum)
+                    .Select(x => new KeyValuePair<string, OpenApiSchema>(
+                        schema.Key + "AnyOf",
+                        x)))
+                .Concat(schema.Value.Properties
+                    .SelectMany(static x => x.Value.AllOf)
+                    .Where(IsEnum)
+                    .Select(x => new KeyValuePair<string, OpenApiSchema>(
+                        schema.Key + "AllOf",
+                        x)))
+                .Concat(schema.Value.Properties
+                    .SelectMany(static x => x.Value.OneOf)
+                    .Where(IsEnum)
+                    .Select(x => new KeyValuePair<string, OpenApiSchema>(
+                        schema.Key + "OneOf",
+                        x)))
                 .Select(x => x.ToModel(settings) with
                 {
                     Name = x.Key.ToEnumName(schema.Key),
@@ -253,8 +306,11 @@ internal static class Extensions
                     Properties = x.Value.Enum
                         .Select(value => Property.Default with
                         {
-                            Id = value.GetString(),
-                            Name = value.GetString().ToPropertyName(),
+                            Id = value.GetString() ?? string.Empty,
+                            Name = value.GetString()?
+                                .ToPropertyName()
+                                .UseWordSeparator('-')
+                                .Replace(".", string.Empty) ?? string.Empty,
                         }).ToImmutableArray(),
                 })
                 .ToImmutableArray()
@@ -269,7 +325,7 @@ internal static class Extensions
             Id: schema.Key,
             Name: schema.Key.ToPropertyName()
                 .FixClassName(parent.Key.ToPropertyName())
-                .FixUnderscore(),
+                .UseWordSeparator('_'),
             Type: schema.GetCSharpType(parent),
             IsRequired: parent.Value.Required.Contains(schema.Key),
             DefaultValue: schema.Value.GetDefaultValue(),

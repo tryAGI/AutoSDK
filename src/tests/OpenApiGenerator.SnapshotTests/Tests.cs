@@ -68,7 +68,7 @@ public partial class Tests
             new CustomAdditionalText(Resources.openai_yaml.FileName, Resources.openai_yaml.AsString()),
         }, new Dictionary<string, string>
         {
-            ["build_property.OpenApiGenerator_IncludeModels"] = "Error;ErrorResponse;ListModelsResponse;Model",
+            ["build_property.OpenApiGenerator_IncludeModels"] = "Error;ErrorResponse;ListModelsResponse;Model;DeleteModelResponse;CreateCompletionRequest",
         });
     }
     
