@@ -21,7 +21,7 @@ using System.Collections.Generic;
 namespace AnyOfTypes
 {
     [DebuggerDisplay("{_thisType}, AnyOfType = {_currentType}; Type = {_currentValueType?.Name}; Value = '{ToString()}'")]
-    public struct AnyOf<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TSeventh> : IEquatable<AnyOf<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TSeventh>>
+    public readonly struct AnyOf<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TSeventh> : IEquatable<AnyOf<TFirst, TSecond, TThird, TFourth, TFifth, TSixth, TSeventh>>
     {
         private readonly string _thisType => $"AnyOf<{typeof(TFirst).Name}, {typeof(TSecond).Name}, {typeof(TThird).Name}, {typeof(TFourth).Name}, {typeof(TFifth).Name}, {typeof(TSixth).Name}, {typeof(TSeventh).Name}>";
         private readonly int _numberOfTypes;
