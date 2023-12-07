@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed class AsnResponse
+    public sealed partial class AsnResponse
     {
         /// <summary>
         /// <br/>Example: AS10507

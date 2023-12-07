@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed class Error
+    public sealed partial class Error
     {
         /// <summary>
         /// 

@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed class Prefix
+    public sealed partial class Prefix
     {
         /// <summary>
         /// <br/>Example: 104.69.216.0/22

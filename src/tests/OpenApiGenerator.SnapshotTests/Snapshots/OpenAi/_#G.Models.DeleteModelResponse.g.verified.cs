@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed class DeleteModelResponse
+    public sealed partial class DeleteModelResponse
     {
         /// <summary>
         /// 

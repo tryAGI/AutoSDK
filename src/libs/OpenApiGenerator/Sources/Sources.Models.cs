@@ -72,7 +72,7 @@ namespace {model.Namespace}
     {
         return $@" 
     {model.Summary.ToXmlDocumentationSummary(level: 4)}
-    public sealed{(model.AdditionalModels.IsEmpty ? "" : " partial")} class {model.Name}
+    public sealed partial class {model.Name}
     {{
 {model.Properties.Select(property => @$"
         {property.Summary.ToXmlDocumentationSummary(level: 8)}

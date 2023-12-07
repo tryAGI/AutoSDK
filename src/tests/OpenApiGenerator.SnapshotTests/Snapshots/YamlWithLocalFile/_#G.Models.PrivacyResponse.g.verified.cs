@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed class PrivacyResponse
+    public sealed partial class PrivacyResponse
     {
         /// <summary>
         /// <br/>Example: true

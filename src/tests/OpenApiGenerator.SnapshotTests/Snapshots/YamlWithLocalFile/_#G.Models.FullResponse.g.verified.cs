@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed class FullResponse
+    public sealed partial class FullResponse
     {
         /// <summary>
         /// <br/>Example: 66.87.125.72

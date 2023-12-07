@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed class RangesResponse
+    public sealed partial class RangesResponse
     {
         /// <summary>
         /// <br/>Example: comcast.net

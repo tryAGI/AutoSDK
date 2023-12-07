@@ -278,9 +278,9 @@ internal static class Extensions
                 .ToImmutableArray(),
             Summary: schema.Value.GetSummary(),
             AdditionalModels: schema.Value.Properties
-                // .SelectMany(x => x.Value.Items != null && x.Value.Items.IsObjectWithoutReference()
-                //     ? new []{ x.Value.Items.WithKey(x.Key + "Item") }
-                //     : Array.Empty<KeyValuePair<string, OpenApiSchema>>())
+                .Concat(schema.Value.Properties.SelectMany(x => x.Value.Items != null && x.Value.Items.IsObjectWithoutReference()
+                    ? new []{ x.Value.Items.WithKey(x.Key + "Item") }
+                    : Array.Empty<KeyValuePair<string, OpenApiSchema>>()))
                 .Where(static x => x.Value.IsObjectWithoutReference())
                 .Concat(schema.Value.Properties
                     .SelectMany(x => x.Value.AnyOf.WithModelName(x.ToAnyOfName(), schema.Key))

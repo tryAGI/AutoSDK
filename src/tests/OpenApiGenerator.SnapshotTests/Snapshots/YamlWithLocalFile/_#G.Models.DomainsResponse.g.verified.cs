@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed class DomainsResponse
+    public sealed partial class DomainsResponse
     {
         /// <summary>
         /// <br/>Example: 1.1.1.1

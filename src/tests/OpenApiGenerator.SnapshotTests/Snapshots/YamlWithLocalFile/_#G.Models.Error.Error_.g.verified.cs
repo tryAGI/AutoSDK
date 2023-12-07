@@ -9,7 +9,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public sealed class Error_
+        public sealed partial class Error_
         {
             /// <summary>
             /// <br/>Example: Wrong ip

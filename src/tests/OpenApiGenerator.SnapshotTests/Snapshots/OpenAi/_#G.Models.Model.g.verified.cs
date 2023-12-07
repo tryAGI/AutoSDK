@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// Describes an OpenAI model offering that can be used with the API.
     /// </summary>
-    public sealed class Model
+    public sealed partial class Model
     {
         /// <summary>
         /// The model identifier, which can be referenced in the API endpoints.

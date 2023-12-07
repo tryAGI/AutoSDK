@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed class Prefix6
+    public sealed partial class Prefix6
     {
         /// <summary>
         /// <br/>Example: 2601::/20

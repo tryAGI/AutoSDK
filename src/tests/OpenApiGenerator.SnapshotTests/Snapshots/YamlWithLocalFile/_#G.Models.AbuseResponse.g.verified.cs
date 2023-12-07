@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed class AbuseResponse
+    public sealed partial class AbuseResponse
     {
         /// <summary>
         /// <br/>Example: US, CA, Mountain View, 1600 Amphitheatre Parkway, 94043

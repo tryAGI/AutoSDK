@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed class Company
+    public sealed partial class Company
     {
         /// <summary>
         /// <br/>Example: Sprint Springfield POP

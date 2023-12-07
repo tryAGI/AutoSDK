@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed class Carrier
+    public sealed partial class Carrier
     {
         /// <summary>
         /// <br/>Example: Sprint Corporation

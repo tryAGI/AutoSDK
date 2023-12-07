@@ -12,7 +12,7 @@ namespace G
         /// As an example, you can pass `{"50256": -100}` to prevent the <|endoftext|> token from being generated.
         /// <br/>Default Value: 
         /// </summary>
-        public sealed class Logit_bias
+        public sealed partial class Logit_bias
         {
 
             [global::System.Text.Json.Serialization.JsonExtensionData]
