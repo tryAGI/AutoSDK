@@ -10,55 +10,55 @@ namespace G
     public sealed class AsnResponse
     {
         /// <summary>
-        /// Example: AS10507
+        /// <br/>Example: AS10507
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("asn")]
         public required string Asn { get; set; }
 
         /// <summary>
-        /// Example: Sprint Personal Communications Systems
+        /// <br/>Example: Sprint Personal Communications Systems
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public required string Name { get; set; }
 
         /// <summary>
-        /// Example: US
+        /// <br/>Example: US
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("country")]
         public string? Country { get; set; }
 
         /// <summary>
-        /// Example: 1997-02-14
+        /// <br/>Example: 1997-02-14
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allocated")]
         public string? Allocated { get; set; }
 
         /// <summary>
-        /// Example: arin
+        /// <br/>Example: arin
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("registry")]
         public string? Registry { get; set; }
 
         /// <summary>
-        /// Example: sprint.net
+        /// <br/>Example: sprint.net
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("domain")]
         public required string Domain { get; set; }
 
         /// <summary>
-        /// Example: 71224576
+        /// <br/>Example: 71224576
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_ips")]
         public int NumIps { get; set; }
 
         /// <summary>
-        /// Example: 66.87.125.0/24
+        /// <br/>Example: 66.87.125.0/24
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("route")]
         public string? Route { get; set; }
 
         /// <summary>
-        /// Example: isp
+        /// <br/>Example: isp
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public required AsnResponseType Type { get; set; }

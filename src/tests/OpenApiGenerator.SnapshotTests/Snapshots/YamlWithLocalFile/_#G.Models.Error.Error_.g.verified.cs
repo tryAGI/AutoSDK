@@ -12,13 +12,13 @@ namespace G
         public sealed class Error_
         {
             /// <summary>
-            /// Example: Wrong ip
+            /// <br/>Example: Wrong ip
             /// </summary>
             [global::System.Text.Json.Serialization.JsonPropertyName("title")]
             public required string Title { get; set; }
 
             /// <summary>
-            /// Example: Please provide a valid IP address
+            /// <br/>Example: Please provide a valid IP address
             /// </summary>
             [global::System.Text.Json.Serialization.JsonPropertyName("message")]
             public required string Message { get; set; }

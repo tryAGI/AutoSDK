@@ -116,11 +116,11 @@ internal static class Extensions
         var summary = schema.Description ?? string.Empty;
         if (schema.Default != null)
         {
-            summary += $"\nDefault Value: {schema.Default.GetString()}";
+            summary += $"\n<br/>Default Value: {schema.Default.GetString()}";
         }
         if (schema.Example != null)
         {
-            summary += $"\nExample: {schema.Example.GetString()}";
+            summary += $"\n<br/>Example: {schema.Example.GetString()}";
         }
         
         return summary;

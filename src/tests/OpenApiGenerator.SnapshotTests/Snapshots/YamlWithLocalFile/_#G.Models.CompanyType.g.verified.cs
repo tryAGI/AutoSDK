@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Example: isp
+    /// <br/>Example: isp
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum CompanyType

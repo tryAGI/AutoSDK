@@ -10,43 +10,43 @@ namespace G
     public sealed class Prefix6
     {
         /// <summary>
-        /// Example: 2601::/20
+        /// <br/>Example: 2601::/20
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("netblock")]
         public required string Netblock { get; set; }
 
         /// <summary>
-        /// Example: COMCAST6NET
+        /// <br/>Example: COMCAST6NET
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public required string Id { get; set; }
 
         /// <summary>
-        /// Example: Comcast Cable Communications, LLC
+        /// <br/>Example: Comcast Cable Communications, LLC
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public required string Name { get; set; }
 
         /// <summary>
-        /// Example: US
+        /// <br/>Example: US
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("country")]
         public required string Country { get; set; }
 
         /// <summary>
-        /// Example: 20282409603651670423947251286016
+        /// <br/>Example: 20282409603651670423947251286016
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
         public string? Size { get; set; }
 
         /// <summary>
-        /// Example: ASSIGNMENT
+        /// <br/>Example: ASSIGNMENT
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         public string? Status { get; set; }
 
         /// <summary>
-        /// Example: comcast.com
+        /// <br/>Example: comcast.com
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("domain")]
         public string? Domain { get; set; }

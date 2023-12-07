@@ -10,13 +10,13 @@ namespace G
     public sealed class RangesResponse
     {
         /// <summary>
-        /// Example: comcast.net
+        /// <br/>Example: comcast.net
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("domain")]
         public required string Domain { get; set; }
 
         /// <summary>
-        /// Example: 37330
+        /// <br/>Example: 37330
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_ranges")]
         public required string NumRanges { get; set; }
