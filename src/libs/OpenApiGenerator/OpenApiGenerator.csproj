@@ -24,6 +24,17 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
+
+  <ItemGroup Label="Helpers">
+    <EmbeddedResource Include="../$(AssemblyName).Helpers/*.cs" Visible="false" />
+    <AdditionalFiles Include="../$(AssemblyName).Helpers/*.cs" Visible="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference
+        Include="..\OpenApiGenerator.Helpers\OpenApiGenerator.Helpers.csproj"
+        PrivateAssets="all" />
+  </ItemGroup>
   
   <ItemGroup>
     <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />

@@ -37,7 +37,9 @@ Enterprise License - If your company has more than 10 developers using OpenApiGe
 
 Remember, purchasing a license isn't just about adhering to our guidelines, but also supporting the development of OpenApiGenerator. Your contribution helps us to improve the library and offer top-notch support to all users.
 
+## Third-Party Code
 
+This project includes some code from the StefH/AnyOf project, which is licensed under the MIT license. For more details, please refer to the [AnyOf repository](https://github.com/StefH/AnyOf).
 
 ## OpenApiGenerator Community MIT License
 
