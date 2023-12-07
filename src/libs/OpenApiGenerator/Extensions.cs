@@ -92,9 +92,8 @@ internal static class Extensions
             ("number", _) => ("double", false),
             ("string", _) => ("string", true),
             ("object", _) => ("object", true),
-            ("array", _) => (new KeyValuePair<string, OpenApiSchema>(
-                string.Empty,
-                schema.Value.Items).GetCSharpType(schema) + "[]", true),
+            ("array", _) => (schema.Value.Items.WithKey(schema.Key.ToModelName(parent.Key))
+                .GetCSharpType(schema) + "[]", true),
             _ => throw new NotSupportedException($"Type {schema.Value.Type} is not supported."),
         };
 
@@ -238,6 +237,31 @@ internal static class Extensions
         return schema.Type == "string" && schema.Enum.Any();
     }
     
+    public static KeyValuePair<string, OpenApiSchema> WithKey(
+        this OpenApiSchema schema,
+        string key)
+    {
+        return new KeyValuePair<string, OpenApiSchema>(key, schema);
+    }
+    
+    public static IList<KeyValuePair<string, OpenApiSchema>> WithModelName(
+        this IList<OpenApiSchema> schemas,
+        string key,
+        string? parent)
+    {
+        return schemas
+            .Select(x => x.WithKey(key.ToModelName(parent)))
+            .ToArray();
+    }
+    
+    public static string ToAnyOfName(
+        this KeyValuePair<string, OpenApiSchema> schema)
+    {
+        return schema.Key + (string.IsNullOrWhiteSpace(schema.Value.Type)
+            ? string.Empty
+            : schema.Value.Type.ToPropertyName());
+    }
+    
     public static Model ToModel(
         this KeyValuePair<string, OpenApiSchema> schema,
         Settings settings,
@@ -254,25 +278,19 @@ internal static class Extensions
                 .ToImmutableArray(),
             Summary: schema.Value.GetSummary(),
             AdditionalModels: schema.Value.Properties
+                // .SelectMany(x => x.Value.Items != null && x.Value.Items.IsObjectWithoutReference()
+                //     ? new []{ x.Value.Items.WithKey(x.Key + "Item") }
+                //     : Array.Empty<KeyValuePair<string, OpenApiSchema>>())
                 .Where(static x => x.Value.IsObjectWithoutReference())
                 .Concat(schema.Value.Properties
-                    .SelectMany(static x => x.Value.AnyOf)
-                    .Where(IsObjectWithoutReference)
-                    .Select(x => new KeyValuePair<string, OpenApiSchema>(
-                        schema.Key + "AnyOf",
-                        x)))
+                    .SelectMany(x => x.Value.AnyOf.WithModelName(x.ToAnyOfName(), schema.Key))
+                    .Where(static x => x.Value.IsObjectWithoutReference()))
                 .Concat(schema.Value.Properties
-                    .SelectMany(static x => x.Value.AllOf)
-                    .Where(IsObjectWithoutReference)
-                    .Select(x => new KeyValuePair<string, OpenApiSchema>(
-                        schema.Key + "AllOf",
-                        x)))
+                    .SelectMany(x => x.Value.AllOf.WithModelName(x.ToAnyOfName(), schema.Key))
+                    .Where(static x => x.Value.IsObjectWithoutReference()))
                 .Concat(schema.Value.Properties
-                    .SelectMany(static x => x.Value.OneOf)
-                    .Where(IsObjectWithoutReference)
-                    .Select(x => new KeyValuePair<string, OpenApiSchema>(
-                        schema.Key + "OneOf",
-                        x)))
+                    .SelectMany(x => x.Value.OneOf.WithModelName(x.ToAnyOfName(), schema.Key))
+                    .Where(static x => x.Value.IsObjectWithoutReference()))
                 .Select(x => x.ToModel(settings, parent:
                     parent != null 
                         ? $"{parent}.{schema.Key.ToPropertyName()}"
@@ -282,23 +300,14 @@ internal static class Extensions
                 .Where(static x =>
                     x.Value.IsEnum())
                 .Concat(schema.Value.Properties
-                    .SelectMany(static x => x.Value.AnyOf)
-                    .Where(IsEnum)
-                    .Select(x => new KeyValuePair<string, OpenApiSchema>(
-                        schema.Key + "AnyOf",
-                        x)))
+                    .SelectMany(x => x.Value.AnyOf.WithModelName(x.Key + "Enum", schema.Key))
+                    .Where(static x => x.Value.IsEnum()))
                 .Concat(schema.Value.Properties
-                    .SelectMany(static x => x.Value.AllOf)
-                    .Where(IsEnum)
-                    .Select(x => new KeyValuePair<string, OpenApiSchema>(
-                        schema.Key + "AllOf",
-                        x)))
+                    .SelectMany(x => x.Value.AllOf.WithModelName(x.Key + "Enum", schema.Key))
+                    .Where(static x => x.Value.IsEnum()))
                 .Concat(schema.Value.Properties
-                    .SelectMany(static x => x.Value.OneOf)
-                    .Where(IsEnum)
-                    .Select(x => new KeyValuePair<string, OpenApiSchema>(
-                        schema.Key + "OneOf",
-                        x)))
+                    .SelectMany(x => x.Value.OneOf.WithModelName(x.Key + "Enum", schema.Key))
+                    .Where(static x => x.Value.IsEnum()))
                 .Select(x => x.ToModel(settings) with
                 {
                     Name = x.Key.ToEnumName(schema.Key),
@@ -338,5 +347,14 @@ internal static class Extensions
         return new []{ model }
             .Concat(model.AdditionalModels.SelectMany(WithAdditionalModels))
             .Concat(model.Enumerations.SelectMany(WithAdditionalModels));
+    }
+
+    public static IEnumerable<OpenApiReference> GetReferences(
+        this KeyValuePair<string, OpenApiSchema> schema)
+    {
+        return schema.Value.Properties
+            .Where(static x => x.Value.Reference != null)
+            .Select(static x => x.Value.Reference)
+            .Concat(schema.Value.Properties.SelectMany(GetReferences));
     }
 }
