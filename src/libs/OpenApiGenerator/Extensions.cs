@@ -63,19 +63,19 @@ internal static class Extensions
         var (type, reference) = (schema.Value.Type, schema.Value.Format) switch
         {
             ("object", _) when schema.Value.Reference != null =>
-                ($"{schema.Value.Reference.Id.ToModelName(parent.Key)}", true),
+                ($"{schema.Value.Reference.Id.ToModelName(new []{ parent.Key })}", true),
             ("object", _) when schema.Value.Reference == null =>
-                ($"{schema.Key.ToModelName(parent.Key)}", true),
+                ($"{schema.Key.ToModelName(new []{ parent.Key })}", true),
             
             (null, _) when schema.Value.Reference != null =>
-                ($"{schema.Value.Reference.Id.ToModelName(parent.Key)}", true),
+                ($"{schema.Value.Reference.Id.ToModelName(new []{ parent.Key })}", true),
             
             (null, _) when schema.Value.AnyOf.Any() => ("object", true),
             (null, _) when schema.Value.OneOf.Any() => ("object", true),
             (null, _) when schema.Value.AllOf.Any() => ("object", true),
             
             ("string", _) when schema.Value.Enum.Any() =>
-                ($"{schema.Key.ToEnumName(parent.Key)}", true),
+                ($"{schema.Key.ToEnumName()}", true),
             
             ("boolean", _) => ("bool", false),
             ("integer", "int32") => ("int", false),
@@ -92,7 +92,7 @@ internal static class Extensions
             ("number", _) => ("double", false),
             ("string", _) => ("string", true),
             ("object", _) => ("object", true),
-            ("array", _) => (schema.Value.Items.WithKey(schema.Key.ToModelName(parent.Key))
+            ("array", _) => (schema.Value.Items.WithKey(schema.Key.ToModelName(new []{ parent.Key }))
                 .GetCSharpType(schema) + "[]", true),
             _ => throw new NotSupportedException($"Type {schema.Value.Type} is not supported."),
         };
@@ -169,13 +169,18 @@ internal static class Extensions
             : propertyName;
     }
     
-    public static string FixParentClassName(
+    public static string FixClassNameIfParentsHasSameName(
         this string className,
-        string parent)
+        string[]? parents)
     {
-        return parent == className
-            ? $"{className}_"
-            : className;
+        if (parents == null)
+        {
+            return className;
+        }
+
+        return parents.Aggregate(className, (current, parent) => parent == current
+            ? $"{current}_"
+            : current);
     }
     
     public static string UseWordSeparator(
@@ -212,17 +217,16 @@ internal static class Extensions
 
     public static string ToModelName(
         this string text,
-        string? parent)
+        string[]? parents)
     {
         return text.ToPropertyName()
-            .FixParentClassName(parent ?? string.Empty);
+            .FixClassNameIfParentsHasSameName(parents);
     }
 
     public static string ToEnumName(
-        this string text,
-        string parent)
+        this string text)
     {
-        return parent.ToPropertyName() + text.ToPropertyName();
+        return text.ToPropertyName() + "Enum";
     }
     
     public static bool IsObjectWithoutReference(
@@ -237,6 +241,13 @@ internal static class Extensions
         return schema.Type == "string" && schema.Enum.Any();
     }
     
+    public static string[] Append(
+        this string[] parents,
+        KeyValuePair<string, OpenApiSchema> schema)
+    {
+        return parents.Append(schema.Key.ToPropertyName()).ToArray();
+    }
+    
     public static KeyValuePair<string, OpenApiSchema> WithKey(
         this OpenApiSchema schema,
         string key)
@@ -247,10 +258,10 @@ internal static class Extensions
     public static IList<KeyValuePair<string, OpenApiSchema>> WithModelName(
         this IList<OpenApiSchema> schemas,
         string key,
-        string? parent)
+        string[]? parents)
     {
         return schemas
-            .Select(x => x.WithKey(key.ToModelName(parent)))
+            .Select(x => x.WithKey(key.ToModelName(parents)))
             .ToArray();
     }
     
@@ -265,12 +276,12 @@ internal static class Extensions
     public static Model ToModel(
         this KeyValuePair<string, OpenApiSchema> schema,
         Settings settings,
-        string? parent = null)
+        string[] parents)
     {
         return new Model(
             Id: schema.Key,
-            Name: schema.Key.ToModelName(parent),
-            Parent: parent,
+            Name: schema.Key.ToModelName(parents),
+            Parents: parents.ToImmutableArray(),
             Namespace: settings.Namespace,
             Style: settings.ModelStyle,
             Properties: schema.Value.Properties
@@ -283,34 +294,32 @@ internal static class Extensions
                     : Array.Empty<KeyValuePair<string, OpenApiSchema>>()))
                 .Where(static x => x.Value.IsObjectWithoutReference())
                 .Concat(schema.Value.Properties
-                    .SelectMany(x => x.Value.AnyOf.WithModelName(x.ToAnyOfName(), schema.Key))
+                    .SelectMany(x => x.Value.AnyOf.WithModelName(x.ToAnyOfName(), parents.Append(schema)))
                     .Where(static x => x.Value.IsObjectWithoutReference()))
                 .Concat(schema.Value.Properties
-                    .SelectMany(x => x.Value.AllOf.WithModelName(x.ToAnyOfName(), schema.Key))
+                    .SelectMany(x => x.Value.AllOf.WithModelName(x.ToAnyOfName(), parents.Append(schema)))
                     .Where(static x => x.Value.IsObjectWithoutReference()))
                 .Concat(schema.Value.Properties
-                    .SelectMany(x => x.Value.OneOf.WithModelName(x.ToAnyOfName(), schema.Key))
+                    .SelectMany(x => x.Value.OneOf.WithModelName(x.ToAnyOfName(), parents.Append(schema)))
                     .Where(static x => x.Value.IsObjectWithoutReference()))
-                .Select(x => x.ToModel(settings, parent:
-                    parent != null 
-                        ? $"{parent}.{schema.Key.ToPropertyName()}"
-                        : schema.Key.ToPropertyName()))
+                .Select(x => x.ToModel(
+                    settings,
+                    parents: parents.Append(schema.Key.ToPropertyName()).ToArray()))
                 .ToImmutableArray(),
             Enumerations: schema.Value.Properties
-                .Where(static x =>
-                    x.Value.IsEnum())
+                .Where(static x => x.Value.IsEnum())
                 .Concat(schema.Value.Properties
-                    .SelectMany(x => x.Value.AnyOf.WithModelName(x.Key + "Enum", schema.Key))
+                    .SelectMany(x => x.Value.AnyOf.WithModelName(x.Key, parents.Append(schema)))
                     .Where(static x => x.Value.IsEnum()))
                 .Concat(schema.Value.Properties
-                    .SelectMany(x => x.Value.AllOf.WithModelName(x.Key + "Enum", schema.Key))
+                    .SelectMany(x => x.Value.AllOf.WithModelName(x.Key, parents.Append(schema)))
                     .Where(static x => x.Value.IsEnum()))
                 .Concat(schema.Value.Properties
-                    .SelectMany(x => x.Value.OneOf.WithModelName(x.Key + "Enum", schema.Key))
+                    .SelectMany(x => x.Value.OneOf.WithModelName(x.Key, parents.Append(schema)))
                     .Where(static x => x.Value.IsEnum()))
-                .Select(x => x.ToModel(settings) with
+                .Select(x => x.ToModel(settings, parents.Append(schema)) with
                 {
-                    Name = x.Key.ToEnumName(schema.Key),
+                    Name = x.Key.ToEnumName(),
                     Style = ModelStyle.Enumeration,
                     Properties = x.Value.Enum
                         .Select(value => Property.Default with

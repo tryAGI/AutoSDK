@@ -57,7 +57,7 @@ public class ModelGenerator : IIncrementalGenerator
                 includeModels.Count == 0 ||
                 includeModels.Contains(schema.Key) ||
                 referencesOfIncludedModels.Contains(schema.Key))
-            .Select(schema => schema.ToModel(settings))
+            .Select(schema => schema.ToModel(settings, parents: Array.Empty<string>()))
             .SelectMany(model => model.WithAdditionalModels())
             .ToImmutableArray();
     }
@@ -67,7 +67,7 @@ public class ModelGenerator : IIncrementalGenerator
         CancellationToken cancellationToken = default)
     {
         return new FileWithName(
-            Name: $"{model.Namespace}.Models.{(model.Parent != null ? $"{model.Parent}." : "")}{model.Name}.g.cs",
+            Name: $"{model.Namespace}.Models.{(model.Parents.IsEmpty ? "" : string.Join(".", model.Parents) + ".")}{model.Name}.g.cs",
             Text: Sources.GenerateModel(model, cancellationToken: cancellationToken));
     }
 
