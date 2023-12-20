@@ -185,9 +185,9 @@ internal static class Extensions
     
     public static string UseWordSeparator(
         this string propertyName,
-        char separator)
+        params char[] separator)
     {
-        if (!propertyName.Contains(separator))
+        if (!separator.Any(propertyName.Contains))
         {
             return propertyName;
         }
@@ -219,14 +219,18 @@ internal static class Extensions
         this string text,
         string[]? parents)
     {
-        return text.ToPropertyName()
+        return text
+            .ToPropertyName()
+            .UseWordSeparator('_', '-')
             .FixClassNameIfParentsHasSameName(parents);
     }
 
     public static string ToEnumName(
         this string text)
     {
-        return text.ToPropertyName() + "Enum";
+        return text
+            .ToPropertyName()
+            .UseWordSeparator('_', '-') + "Enum";
     }
     
     public static bool IsObjectWithoutReference(
@@ -304,7 +308,9 @@ internal static class Extensions
                     .Where(static x => x.Value.IsObjectWithoutReference()))
                 .Select(x => x.ToModel(
                     settings,
-                    parents: parents.Append(schema.Key.ToPropertyName()).ToArray()))
+                    parents: parents.Append(schema.Key
+                        .ToPropertyName()
+                        .UseWordSeparator('_', '-')).ToArray()))
                 .ToImmutableArray(),
             Enumerations: schema.Value.Properties
                 .Where(static x => x.Value.IsEnum())
@@ -322,17 +328,27 @@ internal static class Extensions
                     Name = x.Key.ToEnumName(),
                     Style = ModelStyle.Enumeration,
                     Properties = x.Value.Enum
-                        .Select(value => Property.Default with
-                        {
-                            Id = value.GetString() ?? string.Empty,
-                            Name = value.GetString()?
-                                .ToPropertyName()
-                                .UseWordSeparator('-')
-                                .Replace(".", string.Empty) ?? string.Empty,
-                        }).ToImmutableArray(),
+                        .Select(value => value.ToEnumValue())
+                        .ToImmutableArray(),
                 })
                 .ToImmutableArray()
             );
+    }
+    
+    public static Property ToEnumValue(
+        this IOpenApiAny any)
+    {
+        var id = any.GetString() ?? string.Empty;
+        var name = id
+           .ToPropertyName()
+           .UseWordSeparator('_', '-')
+           .Replace(".", string.Empty);
+        
+        return Property.Default with
+        {
+            Id = id,
+            Name = name,
+        };
     }
     
     public static Property ToProperty(
@@ -343,7 +359,7 @@ internal static class Extensions
             Id: schema.Key,
             Name: schema.Key.ToPropertyName()
                 .FixClassName(parent.Key.ToPropertyName())
-                .UseWordSeparator('_'),
+                .UseWordSeparator('_', '-'),
             Type: schema.GetCSharpType(parent),
             IsRequired: parent.Value.Required.Contains(schema.Key),
             DefaultValue: schema.Value.GetDefaultValue(),

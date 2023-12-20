@@ -54,7 +54,7 @@ namespace G
         /// <br/>Default Value: 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logit_bias")]
-        public Logit_bias? LogitBias { get; set; }
+        public LogitBias? LogitBias { get; set; }
 
         /// <summary>
         /// Include the log probabilities on the `logprobs` most likely tokens, as well the chosen tokens. For example, if `logprobs` is 5, the API will return a list of the 5 most likely tokens. The API will always return the `logprob` of the sampled token, so there may be up to `logprobs+1` elements in the response.
