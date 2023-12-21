@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ListModelsResponse.ObjectEnum.g.cs
+﻿//HintName: G.Models.ListModelsResponse._ObjectEnum.g.cs
 
 #nullable enable
 
@@ -10,7 +10,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.DataContract]
-        public enum ObjectEnum
+        public enum _ObjectEnum
         {
             /// <summary>
             /// 

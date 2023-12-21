@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Error.Error_.g.cs
+﻿//HintName: G.Models.Error._Error.g.cs
 
 #nullable enable
 
@@ -9,7 +9,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public sealed partial class Error_
+        public sealed partial class _Error
         {
             /// <summary>
             /// <br/>Example: Wrong ip

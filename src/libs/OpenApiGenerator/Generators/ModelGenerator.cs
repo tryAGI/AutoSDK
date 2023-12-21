@@ -1,7 +1,6 @@
 ﻿using System.Collections.Immutable;
 using H.Generators.Extensions;
 using Microsoft.CodeAnalysis;
-using Microsoft.OpenApi.Models;
 using OpenApiGenerator.Models;
 
 namespace OpenApiGenerator;
@@ -42,23 +41,27 @@ public class ModelGenerator : IIncrementalGenerator
         
         var openApiDocument = text.GetOpenApiDocument(cancellationToken);
         
-        var includeModels = new HashSet<string>(settings.IncludeModels);
-        var referencesOfIncludedModels = includeModels.Count == 0
-            ? new HashSet<string>()
+        var includedModels = new HashSet<string>(settings.IncludeModels);
+        var referencesOfIncludedModels = includedModels.Count == 0
+            ? []
             : new HashSet<string>(openApiDocument.Components.Schemas
                 .Where(schema =>
-                    includeModels.Count == 0 ||
-                    includeModels.Contains(schema.Key))
+                    includedModels.Count == 0 ||
+                    includedModels.Contains(schema.Key))
                 .SelectMany(schema => schema.GetReferences())
                 .Select(reference => reference.Id));
         
         return openApiDocument.Components.Schemas
             .Where(schema =>
-                includeModels.Count == 0 ||
-                includeModels.Contains(schema.Key) ||
+                includedModels.Count == 0 ||
+                includedModels.Contains(schema.Key) ||
                 referencesOfIncludedModels.Contains(schema.Key))
-            .Select(schema => schema.ToModel(settings, parents: Array.Empty<string>()))
+            .Select(schema => Model.FromSchema(schema, settings))
             .SelectMany(model => model.WithAdditionalModels())
+            .Select(model => model with
+            {
+                Schema = default,
+            })
             .ToImmutableArray();
     }
     
@@ -67,7 +70,7 @@ public class ModelGenerator : IIncrementalGenerator
         CancellationToken cancellationToken = default)
     {
         return new FileWithName(
-            Name: $"{model.Namespace}.Models.{(model.Parents.IsEmpty ? "" : string.Join(".", model.Parents) + ".")}{model.Name}.g.cs",
+            Name: $"{model.FileNameWithoutExtension}.g.cs",
             Text: Sources.GenerateModel(model, cancellationToken: cancellationToken));
     }
 

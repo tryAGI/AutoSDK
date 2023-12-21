@@ -14,30 +14,30 @@ internal static partial class Sources
 
 namespace {model.Namespace}
 {{
-{GenerateModel(model, parents: model.Parents.ToArray(), level: 0, cancellationToken: cancellationToken)}
+{GenerateModel(model, level: 0, cancellationToken: cancellationToken)}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
     
     private static string GenerateModel(
         Model model,
-        string[] parents,
         int level,
         CancellationToken cancellationToken = default)
     {
-        if (level == parents.Length)
+        if (model.NamingConvention == NamingConvention.ConcatNames ||
+            level == model.Parents.AsSpan().Length)
         {
-            return (model.Style switch
+            return model.Style switch
             {
                 ModelStyle.Class => GenerateClassModel(model, cancellationToken),
                 ModelStyle.Enumeration => GenerateEnumerationModel(model, cancellationToken),
                 _ => throw new NotSupportedException($"Model style {model.Style} is not supported."),
-            });
+            };
         }
         
         return $@" 
-public sealed partial class {parents[level]}
+public sealed partial class {model.Parents[level].ClassName}
 {{
-{GenerateModel(model, parents, level + 1, cancellationToken: cancellationToken)}
+{GenerateModel(model, level + 1, cancellationToken: cancellationToken)}
 }}".RemoveBlankLinesWhereOnlyWhitespaces().AddIndent(level: 1);
     }
     
@@ -48,7 +48,7 @@ public sealed partial class {parents[level]}
         return $@" 
     {model.Summary.ToXmlDocumentationSummary(level: 4)}
     [global::System.Runtime.Serialization.DataContract]
-    public enum {model.Name}
+    public enum {model.ClassName}
     {{
 {model.Properties.Select(property => @$"
         {property.Summary.ToXmlDocumentationSummary(level: 8)}
@@ -64,7 +64,7 @@ public sealed partial class {parents[level]}
     {
         return $@" 
     {model.Summary.ToXmlDocumentationSummary(level: 4)}
-    public sealed partial class {model.Name}
+    public sealed partial class {model.ClassName}
     {{
 {model.Properties.Select(property => @$"
         {property.Summary.ToXmlDocumentationSummary(level: 8)}

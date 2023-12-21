@@ -73,6 +73,18 @@ public partial class Tests
     }
     
     [TestMethod]
+    public Task OpenAi_CreateCompletionResponse()
+    {
+        return CheckSourceAsync<ModelGenerator>(new AdditionalText[]
+        {
+            new CustomAdditionalText(Resources.openai_yaml.FileName, Resources.openai_yaml.AsString()),
+        }, new Dictionary<string, string>
+        {
+            ["build_property.OpenApiGenerator_IncludeModels"] = "CreateCompletionResponse",
+        });
+    }
+    
+    [TestMethod]
     public Task YamlWithLocalFile()
     {
         return CheckSourceAsync<ModelGenerator>(new AdditionalText[]

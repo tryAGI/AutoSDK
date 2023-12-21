@@ -1,16 +1,16 @@
-﻿//HintName: G.Models.Company.TypeEnum.g.cs
+﻿//HintName: G.Models.AsnResponse._TypeEnum.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public sealed partial class Company
+    public sealed partial class AsnResponse
     {
         /// <summary>
         /// <br/>Example: isp
         /// </summary>
         [global::System.Runtime.Serialization.DataContract]
-        public enum TypeEnum
+        public enum _TypeEnum
         {
             /// <summary>
             /// 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateCompletionRequest.LogitBias.g.cs
+﻿//HintName: G.Models.CreateCompletionRequest._LogitBias.g.cs
 
 #nullable enable
 
@@ -12,7 +12,7 @@ namespace G
         /// As an example, you can pass `{"50256": -100}` to prevent the <|endoftext|> token from being generated.
         /// <br/>Default Value: 
         /// </summary>
-        public sealed partial class LogitBias
+        public sealed partial class _LogitBias
         {
 
             [global::System.Text.Json.Serialization.JsonExtensionData]
