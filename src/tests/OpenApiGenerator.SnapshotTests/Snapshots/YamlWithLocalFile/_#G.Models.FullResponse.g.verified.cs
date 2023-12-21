@@ -16,6 +16,12 @@ namespace G
         public required string Ip { get; set; }
 
         /// <summary>
+        /// <br/>Example: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("bogon")]
+        public bool Bogon { get; set; }
+
+        /// <summary>
         /// <br/>Example: ip-66-87-125-72.spfdma.spcsdns.net
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hostname")]
@@ -25,7 +31,7 @@ namespace G
         /// <br/>Example: Springfield
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("city")]
-        public required string City { get; set; }
+        public string? City { get; set; }
 
         /// <summary>
         /// <br/>Example: Massachusetts
@@ -37,7 +43,7 @@ namespace G
         /// <br/>Example: US
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("country")]
-        public required string Country { get; set; }
+        public string? Country { get; set; }
 
         /// <summary>
         /// <br/>Example: 42.0999,-72.5783

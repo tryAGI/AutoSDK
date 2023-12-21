@@ -130,6 +130,9 @@ namespace G
         [System.Runtime.Serialization.EnumMember(Value = @"hosting")]
         Hosting = 3,
 
+        [System.Runtime.Serialization.EnumMember(Value = @"inactive")]
+        Inactive = 4,
+
     }
 
 

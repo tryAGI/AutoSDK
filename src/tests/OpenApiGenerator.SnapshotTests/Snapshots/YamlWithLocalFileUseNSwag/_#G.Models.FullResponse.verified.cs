@@ -34,6 +34,11 @@ namespace G
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string Ip { get; set; } = default!;
 
+        [System.Text.Json.Serialization.JsonPropertyName("bogon")]
+
+        [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault)]   
+        public bool? Bogon { get; set; } = default!;
+
         [System.Text.Json.Serialization.JsonPropertyName("hostname")]
 
         [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault)]   
@@ -41,9 +46,8 @@ namespace G
 
         [System.Text.Json.Serialization.JsonPropertyName("city")]
 
-        [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.Never)]   
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string City { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault)]   
+        public string? City { get; set; } = default!;
 
         [System.Text.Json.Serialization.JsonPropertyName("region")]
 
@@ -52,9 +56,8 @@ namespace G
 
         [System.Text.Json.Serialization.JsonPropertyName("country")]
 
-        [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.Never)]   
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string Country { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault)]   
+        public string? Country { get; set; } = default!;
 
         [System.Text.Json.Serialization.JsonPropertyName("loc")]
 

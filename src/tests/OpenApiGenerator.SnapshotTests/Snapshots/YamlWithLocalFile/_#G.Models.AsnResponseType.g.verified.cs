@@ -30,5 +30,10 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="hosting")]
         Hosting,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="inactive")]
+        Inactive,
     }
 }
