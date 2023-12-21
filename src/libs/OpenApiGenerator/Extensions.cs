@@ -25,6 +25,11 @@ internal static class Extensions
                            options.GetGlobalOption("PackageId") ??
                            options.GetGlobalOption("AssemblyName") ??
                            prefix,
+                NamingConvention: Enum.TryParse<NamingConvention>(
+                    options.GetGlobalOption(nameof(Settings.NamingConvention), prefix) ??
+                    $"{default(NamingConvention):G}",
+                    ignoreCase: true,
+                    out var namingConvention) ? namingConvention : default,
                 UseNSwag: bool.TryParse(
                     options.GetGlobalOption("UseNSwag", prefix),
                     out var useNSwag) && useNSwag,

@@ -5,6 +5,7 @@ namespace OpenApiGenerator.Models;
 internal readonly record struct Settings(
     string TargetFramework,
     string Namespace,
+    NamingConvention NamingConvention,
     bool UseNSwag,
     
     bool GenerateModels,

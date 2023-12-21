@@ -16,8 +16,8 @@
     <CompilerVisibleProperty Include="OpenApiGenerator_TargetFramework"/>
     <!-- Namespace. Default: $(PackageId) or $(AssemblyName) or "OpenApiGenerator" -->
     <CompilerVisibleProperty Include="OpenApiGenerator_Namespace"/>
-    <!-- true/false. Default: false -->
-    <CompilerVisibleProperty Include="OpenApiGenerator_UseCache"/>
+    <!-- InnerClasses/ConcatNames. Default: InnerClasses -->
+    <CompilerVisibleProperty Include="OpenApiGenerator_NamingConvention"/>
     <!-- true/false. Default: false -->
     <CompilerVisibleProperty Include="OpenApiGenerator_UseNSwag"/>
     
