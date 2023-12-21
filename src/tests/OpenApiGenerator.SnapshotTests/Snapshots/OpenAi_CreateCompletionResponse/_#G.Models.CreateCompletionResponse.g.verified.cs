@@ -44,7 +44,7 @@ namespace G
         /// The object type, which is always "text_completion"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        public required CreateCompletionResponseObjectEnum Object { get; set; }
+        public required CreateCompletionResponseObject Object { get; set; }
 
         /// <summary>
         /// Usage statistics for the completion request.

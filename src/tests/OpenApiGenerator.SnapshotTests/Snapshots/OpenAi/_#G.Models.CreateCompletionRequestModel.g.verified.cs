@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateCompletionRequestModelEnum.g.cs
+﻿//HintName: G.Models.CreateCompletionRequestModel.g.cs
 
 #nullable enable
 
@@ -8,7 +8,7 @@ namespace G
     /// 
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
-    public enum CreateCompletionRequestModelEnum
+    public enum CreateCompletionRequestModel
     {
         /// <summary>
         /// 

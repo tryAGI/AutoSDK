@@ -125,7 +125,6 @@ internal readonly record struct Model(
     public string Name => Id
         .ToPropertyName()
         .UseWordSeparator('_', '-') + 
-        (Style == ModelStyle.Enumeration ? "Enum" : string.Empty) +
         (!AddTypeName || Schema.Value == null || string.IsNullOrWhiteSpace(Schema.Value.Type)
             ? string.Empty
             : Schema.Value.Type.ToPropertyName())

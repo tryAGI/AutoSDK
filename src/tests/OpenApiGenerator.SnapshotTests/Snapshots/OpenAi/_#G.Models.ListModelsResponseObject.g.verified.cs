@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ListModelsResponseObjectEnum.g.cs
+﻿//HintName: G.Models.ListModelsResponseObject.g.cs
 
 #nullable enable
 
@@ -8,7 +8,7 @@ namespace G
     /// 
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
-    public enum ListModelsResponseObjectEnum
+    public enum ListModelsResponseObject
     {
         /// <summary>
         /// 

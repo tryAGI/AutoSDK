@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ModelObjectEnum.g.cs
+﻿//HintName: G.Models.ModelObject.g.cs
 
 #nullable enable
 
@@ -8,7 +8,7 @@ namespace G
     /// The object type, which is always "model".
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
-    public enum ModelObjectEnum
+    public enum ModelObject
     {
         /// <summary>
         /// 

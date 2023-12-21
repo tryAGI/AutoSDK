@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AsnResponseTypeEnum.g.cs
+﻿//HintName: G.Models.AsnResponseType.g.cs
 
 #nullable enable
 
@@ -8,7 +8,7 @@ namespace G
     /// <br/>Example: isp
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
-    public enum AsnResponseTypeEnum
+    public enum AsnResponseType
     {
         /// <summary>
         /// 

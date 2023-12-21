@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateCompletionResponseChoicesFinishReasonEnum.g.cs
+﻿//HintName: G.Models.CreateCompletionResponseChoicesFinishReason.g.cs
 
 #nullable enable
 
@@ -10,7 +10,7 @@ namespace G
     /// or `content_filter` if content was omitted due to a flag from our content filters.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
-    public enum CreateCompletionResponseChoicesFinishReasonEnum
+    public enum CreateCompletionResponseChoicesFinishReason
     {
         /// <summary>
         /// 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CompanyTypeEnum.g.cs
+﻿//HintName: G.Models.CompanyType.g.cs
 
 #nullable enable
 
@@ -8,7 +8,7 @@ namespace G
     /// <br/>Example: isp
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
-    public enum CompanyTypeEnum
+    public enum CompanyType
     {
         /// <summary>
         /// 

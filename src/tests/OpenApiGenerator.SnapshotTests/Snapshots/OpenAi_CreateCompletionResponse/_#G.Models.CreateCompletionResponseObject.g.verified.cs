@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateCompletionResponseObjectEnum.g.cs
+﻿//HintName: G.Models.CreateCompletionResponseObject.g.cs
 
 #nullable enable
 
@@ -8,7 +8,7 @@ namespace G
     /// The object type, which is always "text_completion"
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
-    public enum CreateCompletionResponseObjectEnum
+    public enum CreateCompletionResponseObject
     {
         /// <summary>
         /// 
