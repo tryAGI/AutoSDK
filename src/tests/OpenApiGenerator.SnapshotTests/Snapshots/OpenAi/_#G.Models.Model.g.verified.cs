@@ -25,7 +25,7 @@ namespace G
         /// The object type, which is always "model".
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        public required Model._ObjectEnum Object { get; set; }
+        public required ModelObjectEnum Object { get; set; }
 
         /// <summary>
         /// The organization that owns the model.

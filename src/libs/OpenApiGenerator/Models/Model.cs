@@ -134,14 +134,14 @@ internal readonly record struct Model(
     public string ClassName => NamingConvention switch
     {
         NamingConvention.InnerClasses => Parents.IsEmpty ? Name : $"_{Name}",
-        NamingConvention.ConcatNames => string.Concat(Parents.Select(x => x.ClassName).Append(Name)),
+        NamingConvention.ConcatNames => Parents.IsEmpty ? Name : $"{Parents.Last().ClassName}{Name}",
         _ => throw new ArgumentOutOfRangeException()
     };
     
     public string ExternalClassName => NamingConvention switch
     {
         NamingConvention.InnerClasses => string.Join(".", Parents.Select(x => x.ClassName).Append(ClassName)),
-        NamingConvention.ConcatNames => string.Concat(Parents.Select(x => x.ClassName).Append(Name)),
+        NamingConvention.ConcatNames => ClassName,
         _ => throw new ArgumentOutOfRangeException()
     };
     

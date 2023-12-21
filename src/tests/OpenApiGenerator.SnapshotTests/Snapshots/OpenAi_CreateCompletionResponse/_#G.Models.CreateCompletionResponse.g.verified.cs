@@ -19,7 +19,7 @@ namespace G
         /// The list of completion choices the model generated for the input prompt.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("choices")]
-        public required CreateCompletionResponse._Choices[] Choices { get; set; }
+        public required CreateCompletionResponseChoices[] Choices { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the completion was created.
@@ -44,7 +44,7 @@ namespace G
         /// The object type, which is always "text_completion"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        public required CreateCompletionResponse._ObjectEnum Object { get; set; }
+        public required CreateCompletionResponseObjectEnum Object { get; set; }
 
         /// <summary>
         /// Usage statistics for the completion request.
