@@ -19,7 +19,7 @@ namespace G
         /// The list of completion choices the model generated for the input prompt.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("choices")]
-        public required CreateCompletionResponseChoices[] Choices { get; set; }
+        public required global::System.Collections.Generic.IList<CreateCompletionResponseChoices> Choices { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the completion was created.

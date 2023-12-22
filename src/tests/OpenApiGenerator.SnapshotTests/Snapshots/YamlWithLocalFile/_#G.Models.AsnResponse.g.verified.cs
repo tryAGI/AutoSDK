@@ -67,31 +67,31 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prefixes")]
-        public Prefix?[]? Prefixes { get; set; }
+        public global::System.Collections.Generic.IList<Prefix?>? Prefixes { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prefixes6")]
-        public Prefix6?[]? Prefixes6 { get; set; }
+        public global::System.Collections.Generic.IList<Prefix6?>? Prefixes6 { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("peers")]
-        public string?[]? Peers { get; set; }
+        public global::System.Collections.Generic.IList<string?>? Peers { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upstreams")]
-        public string?[]? Upstreams { get; set; }
+        public global::System.Collections.Generic.IList<string?>? Upstreams { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("downstreams")]
-        public string?[]? Downstreams { get; set; }
+        public global::System.Collections.Generic.IList<string?>? Downstreams { get; set; }
 
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();

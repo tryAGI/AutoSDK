@@ -58,7 +58,7 @@ internal static class Extensions
             ("string", _) => ("string", true),
             ("object", _) => ("object", true),
             ("array", _) => (schema.Value.Items.WithKey(schema.Key)
-                .GetCSharpType(settings, parents.ToArray()) + "[]", true),
+                .GetCSharpType(settings, parents.ToArray()).AsArray(), true),
             _ => throw new NotSupportedException($"Type {schema.Value.Type} is not supported."),
         };
 
@@ -66,6 +66,11 @@ internal static class Extensions
                reference && !parents.Last().Schema.Value.Required.Contains(schema.Key)
             ? type + "?"
             : type;
+    }
+    
+    public static string AsArray(this string type)
+    {
+        return $"global::System.Collections.Generic.IList<{type}>";
     }
     
     public static string? GetDefaultValue(this OpenApiSchema schema)

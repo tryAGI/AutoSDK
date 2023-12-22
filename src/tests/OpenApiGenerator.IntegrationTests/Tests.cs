@@ -19,7 +19,7 @@ public class NSwagGeneratorTests
         
         var error = JsonSerializer.Deserialize<Error>(json);
         error.Should().NotBeNull();
-        error!.Error1.Should().BeEquivalentTo(new Error._Error
+        error!.Error1.Should().BeEquivalentTo(new ErrorError
         {
             Title = "title",
             Message = "message",
