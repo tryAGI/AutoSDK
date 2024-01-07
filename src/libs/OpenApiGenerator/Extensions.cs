@@ -18,7 +18,7 @@ internal static class Extensions
 
         openApiDocument.Components ??= new OpenApiComponents();
         openApiDocument.Components.Schemas ??= new Dictionary<string, OpenApiSchema>();
-
+  
         return openApiDocument;
     }
     
@@ -71,6 +71,16 @@ internal static class Extensions
     public static string AsArray(this string type)
     {
         return $"global::System.Collections.Generic.IList<{type}>";
+    }
+    
+    public static string? WithPostfix(this string? type, string postfix)
+    {
+        if (type == null)
+        {
+            return null;
+        }
+        
+        return type + postfix;
     }
     
     public static string? GetDefaultValue(this OpenApiSchema schema)

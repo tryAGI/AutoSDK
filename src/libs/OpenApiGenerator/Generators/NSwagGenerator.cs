@@ -3,7 +3,7 @@ using H.Generators.Extensions;
 using Microsoft.CodeAnalysis;
 using OpenApiGenerator.Models;
 
-namespace OpenApiGenerator;
+namespace OpenApiGenerator.Generators;
 
 [Generator]
 public class NSwagGenerator : IIncrementalGenerator

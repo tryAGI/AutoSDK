@@ -2,9 +2,9 @@
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Extensions;
 using Microsoft.OpenApi.Models;
-using OpenApiGenerator;
+using OpenApiGenerator.Generators;
 
-namespace H.Generators.IntegrationTests;
+namespace OpenApiGenerator.SnapshotTests;
 
 public partial class Tests
 {
@@ -53,7 +53,7 @@ public partial class Tests
     {
         return CheckSourceAsync<NSwagGenerator>(new AdditionalText[]
         {
-            new CustomAdditionalText("openapi.yaml", Resources.ipinfo_yaml.AsString()),
+            new CustomAdditionalText("openapi.yaml", H.Resources.ipinfo_yaml.AsString()),
         }, new Dictionary<string, string>
         {
             ["build_property.OpenApiGenerator_UseNSwag"] = "true",
@@ -65,11 +65,14 @@ public partial class Tests
     {
         return CheckSourceAsync<ModelGenerator>(new AdditionalText[]
         {
-            new CustomAdditionalText(Resources.openai_yaml.FileName, Resources.openai_yaml.AsString()),
+            new CustomAdditionalText(
+                path: H.Resources.openai_yaml.FileName,
+                text: H.Resources.openai_yaml.AsString()),
         }, new Dictionary<string, string>
         {
+            ["build_property.OpenApiGenerator_IncludeOperationIds"] = "ListModels",
             ["build_property.OpenApiGenerator_IncludeModels"] = "Error;ErrorResponse;ListModelsResponse;Model;DeleteModelResponse;CreateCompletionRequest",
-        });
+        }, additionalGenerators: new IIncrementalGenerator[]{ new ClientGenerator() });
     }
     
     [TestMethod]
@@ -77,7 +80,9 @@ public partial class Tests
     {
         return CheckSourceAsync<ModelGenerator>(new AdditionalText[]
         {
-            new CustomAdditionalText(Resources.openai_yaml.FileName, Resources.openai_yaml.AsString()),
+            new CustomAdditionalText(
+                path: H.Resources.openai_yaml.FileName,
+                text: H.Resources.openai_yaml.AsString()),
         }, new Dictionary<string, string>
         {
             ["build_property.OpenApiGenerator_IncludeModels"] = "CreateCompletionResponse",
@@ -89,7 +94,9 @@ public partial class Tests
     {
         return CheckSourceAsync<ModelGenerator>(new AdditionalText[]
         {
-            new CustomAdditionalText("openapi.yaml", Resources.ipinfo_yaml.AsString()),
+            new CustomAdditionalText(
+                path: "openapi.yaml",
+                text: H.Resources.ipinfo_yaml.AsString()),
         });
     }
 

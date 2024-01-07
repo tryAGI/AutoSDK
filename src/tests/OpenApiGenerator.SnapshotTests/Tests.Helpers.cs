@@ -6,7 +6,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Testing;
 using OpenApiGenerator;
 
-namespace H.Generators.IntegrationTests;
+namespace OpenApiGenerator.SnapshotTests;
 
 [TestClass]
 public partial class Tests : VerifyBase
@@ -15,7 +15,8 @@ public partial class Tests : VerifyBase
         AdditionalText[] additionalTexts,
         Dictionary<string, string>? globalOptions = null,
         [CallerMemberName] string? callerName = null,
-        CancellationToken cancellationToken = default)
+        CancellationToken cancellationToken = default,
+        params IIncrementalGenerator[] additionalGenerators)
         where T : IIncrementalGenerator, new()
     {
         globalOptions ??= new Dictionary<string, string>();
@@ -28,8 +29,11 @@ public partial class Tests : VerifyBase
             references: references,
             options: new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
         var generator = new T();
-        var driver = CSharpGeneratorDriver
-            .Create(generator)
+        var driver = CSharpGeneratorDriver.Create(
+            generators: new IIncrementalGenerator[] { generator }
+                .Concat(additionalGenerators)
+                .Select(GeneratorExtensions.AsSourceGenerator)
+                .ToArray())
             .AddAdditionalTexts(ImmutableArray.Create(additionalTexts))
             .WithUpdatedAnalyzerConfigOptions(new DictionaryAnalyzerConfigOptionsProvider(globalOptions))
             .RunGeneratorsAndUpdateCompilation(compilation, out compilation, out _, cancellationToken);

@@ -16,10 +16,15 @@
     <CompilerVisibleProperty Include="OpenApiGenerator_TargetFramework"/>
     <!-- Namespace. Default: $(PackageId) or $(AssemblyName) or "OpenApiGenerator" -->
     <CompilerVisibleProperty Include="OpenApiGenerator_Namespace"/>
+    <!-- Namespace. Default: $(PackageId)Api or $(AssemblyName)Api or "Api" -->
+    <CompilerVisibleProperty Include="OpenApiGenerator_ClassName"/>
     <!-- InnerClasses/ConcatNames. Default: InnerClasses -->
     <CompilerVisibleProperty Include="OpenApiGenerator_NamingConvention"/>
     <!-- true/false. Default: false -->
     <CompilerVisibleProperty Include="OpenApiGenerator_UseNSwag"/>
+
+    <!-- List of ids separated by ;. Default: Empty(all models) -->
+    <CompilerVisibleProperty Include="OpenApiGenerator_IncludeOperationIds"/>
     
     <!-- true/false. Default: false -->
     <CompilerVisibleProperty Include="OpenApiGenerator_GenerateModels"/>

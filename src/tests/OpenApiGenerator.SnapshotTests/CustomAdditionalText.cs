@@ -1,7 +1,7 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Text;
 
-namespace H.Generators.IntegrationTests;
+namespace OpenApiGenerator.SnapshotTests;
 
 public class CustomAdditionalText(string path, string text) : AdditionalText
 {

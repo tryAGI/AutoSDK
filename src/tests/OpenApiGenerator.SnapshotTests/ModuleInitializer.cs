@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace H.Generators.IntegrationTests;
+namespace OpenApiGenerator.SnapshotTests;
 
 public static class ModuleInitializer
 {
