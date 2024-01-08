@@ -39,10 +39,10 @@
   <ItemGroup>
     <None Include="$(AssemblyName).props" Pack="true" PackagePath="build" />
     <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/roslyn4.3.1/cs" Visible="false" />
-    <None Include="$(OutputPath)\netstandard2.0\H.Generators.Extensions.dll" Pack="true" PackagePath="analyzers/dotnet/roslyn4.3.1/cs" Visible="false" />
-    <None Include="$(OutputPath)\netstandard2.0\SharpYaml.dll" Pack="true" PackagePath="analyzers/dotnet/roslyn4.3.1/cs" Visible="false" />
-    <None Include="$(OutputPath)\netstandard2.0\Microsoft.OpenApi.dll" Pack="true" PackagePath="analyzers/dotnet/roslyn4.3.1/cs" Visible="false" />
-    <None Include="$(OutputPath)\netstandard2.0\Microsoft.OpenApi.Readers.dll" Pack="true" PackagePath="analyzers/dotnet/roslyn4.3.1/cs" Visible="false" />
+    <None Include="$(OutputPath)\H.Generators.Extensions.dll" Pack="true" PackagePath="analyzers/dotnet/roslyn4.3.1/cs" Visible="false" />
+    <None Include="$(OutputPath)\SharpYaml.dll" Pack="true" PackagePath="analyzers/dotnet/roslyn4.3.1/cs" Visible="false" />
+    <None Include="$(OutputPath)\Microsoft.OpenApi.dll" Pack="true" PackagePath="analyzers/dotnet/roslyn4.3.1/cs" Visible="false" />
+    <None Include="$(OutputPath)\Microsoft.OpenApi.Readers.dll" Pack="true" PackagePath="analyzers/dotnet/roslyn4.3.1/cs" Visible="false" />
   </ItemGroup>
 
   <ItemGroup>
