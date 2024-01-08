@@ -234,7 +234,7 @@ internal static class Extensions
             Id: schema.Key,
             Name: schema.Key.ToPropertyName()
                 .FixPropertyName(parents.Last().ClassName)
-                .UseWordSeparator('_', '-'),
+                .UseWordSeparator('_', '-', '/'),
             Type: schema.GetCSharpType(settings, parents),
             IsRequired: requiredProperties.Contains(schema.Key),
             DefaultValue: schema.Value.GetDefaultValue(),

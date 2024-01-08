@@ -127,6 +127,7 @@ paths:
                     "role": "assistant",
                     "content": "\n\nHello there, how may I assist you today?",
                   },
+                  "logprobs": null,
                   "finish_reason": "stop"
                 }],
                 "usage": {
@@ -223,6 +224,7 @@ paths:
                     "role": "assistant",
                     "content": "\n\nHello there, how may I assist you today?",
                   },
+                  "logprobs": null,
                   "finish_reason": "stop"
                 }],
                 "usage": {
@@ -289,19 +291,19 @@ paths:
 
                 main();
             response: &chat_completion_chunk_example |
-              {"id":"chatcmpl-123","object":"chat.completion.chunk","created":1694268190,"model":"gpt-3.5-turbo-0613", "system_fingerprint": "fp_44709d6fcb", "choices":[{"index":0,"delta":{"role":"assistant","content":""},"finish_reason":null}]}
+              {"id":"chatcmpl-123","object":"chat.completion.chunk","created":1694268190,"model":"gpt-3.5-turbo-0613", "system_fingerprint": "fp_44709d6fcb", "choices":[{"index":0,"delta":{"role":"assistant","content":""},"logprobs":null,"finish_reason":null}]}
 
-              {"id":"chatcmpl-123","object":"chat.completion.chunk","created":1694268190,"model":"gpt-3.5-turbo-0613", "system_fingerprint": "fp_44709d6fcb", "choices":[{"index":0,"delta":{"content":"Hello"},"finish_reason":null}]}
+              {"id":"chatcmpl-123","object":"chat.completion.chunk","created":1694268190,"model":"gpt-3.5-turbo-0613", "system_fingerprint": "fp_44709d6fcb", "choices":[{"index":0,"delta":{"content":"Hello"},"logprobs":null,"finish_reason":null}]}
 
-              {"id":"chatcmpl-123","object":"chat.completion.chunk","created":1694268190,"model":"gpt-3.5-turbo-0613", "system_fingerprint": "fp_44709d6fcb", "choices":[{"index":0,"delta":{"content":"!"},"finish_reason":null}]}
+              {"id":"chatcmpl-123","object":"chat.completion.chunk","created":1694268190,"model":"gpt-3.5-turbo-0613", "system_fingerprint": "fp_44709d6fcb", "choices":[{"index":0,"delta":{"content":"!"},"logprobs":null,"finish_reason":null}]}
 
               ....
 
-              {"id":"chatcmpl-123","object":"chat.completion.chunk","created":1694268190,"model":"gpt-3.5-turbo-0613", "system_fingerprint": "fp_44709d6fcb", "choices":[{"index":0,"delta":{"content":" today"},"finish_reason":null}]}
+              {"id":"chatcmpl-123","object":"chat.completion.chunk","created":1694268190,"model":"gpt-3.5-turbo-0613", "system_fingerprint": "fp_44709d6fcb", "choices":[{"index":0,"delta":{"content":" today"},"logprobs":null,"finish_reason":null}]}
 
-              {"id":"chatcmpl-123","object":"chat.completion.chunk","created":1694268190,"model":"gpt-3.5-turbo-0613", "system_fingerprint": "fp_44709d6fcb", "choices":[{"index":0,"delta":{"content":"?"},"finish_reason":null}]}
+              {"id":"chatcmpl-123","object":"chat.completion.chunk","created":1694268190,"model":"gpt-3.5-turbo-0613", "system_fingerprint": "fp_44709d6fcb", "choices":[{"index":0,"delta":{"content":"?"},"logprobs":null,"finish_reason":null}]}
 
-              {"id":"chatcmpl-123","object":"chat.completion.chunk","created":1694268190,"model":"gpt-3.5-turbo-0613", "system_fingerprint": "fp_44709d6fcb", "choices":[{"index":0,"delta":{},"finish_reason":"stop"}]}
+              {"id":"chatcmpl-123","object":"chat.completion.chunk","created":1694268190,"model":"gpt-3.5-turbo-0613", "system_fingerprint": "fp_44709d6fcb", "choices":[{"index":0,"delta":{},"logprobs":null,"finish_reason":"stop"}]}
           - title: Functions
             request:
               curl: |
@@ -436,7 +438,8 @@ paths:
                         }
                       ]
                     },
-                    "finish_reason": "tool_calls",
+                    "logprobs": null,
+                    "finish_reason": "tool_calls"
                   }
                 ],
                 "usage": {
@@ -445,7 +448,7 @@ paths:
                   "total_tokens": 99
                 }
               }
-  
+
   /completions:
     post:
       operationId: createCompletion
@@ -467,6 +470,7 @@ paths:
                 $ref: "#/components/schemas/CreateCompletionResponse"
       x-oaiMeta:
         name: Create completion
+        group: completions
         returns: |
           Returns a [completion](/docs/api-reference/completions/object) object, or a sequence of completion objects if the request is streamed.
         legacy: true
@@ -687,6 +691,7 @@ paths:
                 $ref: "#/components/schemas/ImagesResponse"
       x-oaiMeta:
         name: Create image
+        group: images
         returns: Returns a list of [image](/docs/api-reference/images/object) objects.
         examples:
           request:
@@ -754,6 +759,7 @@ paths:
                 $ref: "#/components/schemas/ImagesResponse"
       x-oaiMeta:
         name: Create image edit
+        group: images
         returns: Returns a list of [image](/docs/api-reference/images/object) objects.
         examples:
           request:
@@ -825,6 +831,7 @@ paths:
                 $ref: "#/components/schemas/ImagesResponse"
       x-oaiMeta:
         name: Create image variation
+        group: images
         returns: Returns a list of [image](/docs/api-reference/images/object) objects.
         examples:
           request:
@@ -891,6 +898,7 @@ paths:
                 $ref: "#/components/schemas/CreateEmbeddingResponse"
       x-oaiMeta:
         name: Create embeddings
+        group: embeddings
         returns: A list of [embedding](/docs/api-reference/embeddings/object) objects.
         examples:
           request:
@@ -977,6 +985,7 @@ paths:
                 format: binary
       x-oaiMeta:
         name: Create speech
+        group: audio
         returns: The audio file content.
         examples:
           request:
@@ -1042,6 +1051,7 @@ paths:
                 $ref: "#/components/schemas/CreateTranscriptionResponse"
       x-oaiMeta:
         name: Create transcription
+        group: audio
         returns: The transcribed text.
         examples:
           request:
@@ -1057,7 +1067,7 @@ paths:
 
               audio_file = open("speech.mp3", "rb")
               transcript = client.audio.transcriptions.create(
-                model="whisper-1", 
+                model="whisper-1",
                 file=audio_file
               )
             node: |
@@ -1100,6 +1110,7 @@ paths:
                 $ref: "#/components/schemas/CreateTranslationResponse"
       x-oaiMeta:
         name: Create translation
+        group: audio
         returns: The translated text.
         examples:
           request:
@@ -1115,7 +1126,7 @@ paths:
 
               audio_file = open("speech.mp3", "rb")
               transcript = client.audio.translations.create(
-                model="whisper-1", 
+                model="whisper-1",
                 file=audio_file
               )
             node: |
@@ -1160,6 +1171,7 @@ paths:
                 $ref: "#/components/schemas/ListFilesResponse"
       x-oaiMeta:
         name: List files
+        group: files
         returns: A list of [File](/docs/api-reference/files/object) objects.
         examples:
           request:
@@ -1214,7 +1226,7 @@ paths:
       summary: |
         Upload a file that can be used across various endpoints. The size of all the files uploaded by one organization can be up to 100 GB.
 
-        The size of individual files can be a maximum of 512 MB. See the [Assistants Tools guide](/docs/assistants/tools) to learn more about the types of files supported. The Fine-tuning API only supports `.jsonl` files.
+        The size of individual files can be a maximum of 512 MB or 2 million tokens for Assistants. See the [Assistants Tools guide](/docs/assistants/tools) to learn more about the types of files supported. The Fine-tuning API only supports `.jsonl` files.
 
         Please [contact us](https://help.openai.com/) if you need to increase these storage limits.
       requestBody:
@@ -1232,6 +1244,7 @@ paths:
                 $ref: "#/components/schemas/OpenAIFile"
       x-oaiMeta:
         name: Upload file
+        group: files
         returns: The uploaded [File](/docs/api-reference/files/object) object.
         examples:
           request:
@@ -1295,6 +1308,7 @@ paths:
                 $ref: "#/components/schemas/DeleteFileResponse"
       x-oaiMeta:
         name: Delete file
+        group: files
         returns: Deletion status.
         examples:
           request:
@@ -1346,6 +1360,7 @@ paths:
                 $ref: "#/components/schemas/OpenAIFile"
       x-oaiMeta:
         name: Retrieve file
+        group: files
         returns: The [File](/docs/api-reference/files/object) object matching the specified ID.
         examples:
           request:
@@ -1400,6 +1415,7 @@ paths:
                 type: string
       x-oaiMeta:
         name: Retrieve file content
+        group: files
         returns: The file content.
         examples:
           request:
@@ -1450,6 +1466,7 @@ paths:
                 $ref: "#/components/schemas/FineTuningJob"
       x-oaiMeta:
         name: Create fine-tuning job
+        group: fine-tuning
         returns: A [fine-tuning.job](/docs/api-reference/fine-tuning/object) object.
         examples:
           - title: Default
@@ -1467,7 +1484,7 @@ paths:
                 client = OpenAI()
 
                 client.fine_tuning.jobs.create(
-                  training_file="file-abc123", 
+                  training_file="file-abc123",
                   model="gpt-3.5-turbo"
                 )
               node.js: |
@@ -1515,8 +1532,8 @@ paths:
                 client = OpenAI()
 
                 client.fine_tuning.jobs.create(
-                  training_file="file-abc123", 
-                  model="gpt-3.5-turbo", 
+                  training_file="file-abc123",
+                  model="gpt-3.5-turbo",
                   hyperparameters={
                     "n_epochs":2
                   }
@@ -1567,8 +1584,8 @@ paths:
                 client = OpenAI()
 
                 client.fine_tuning.jobs.create(
-                  training_file="file-abc123", 
-                  validation_file="file-def456", 
+                  training_file="file-abc123",
+                  validation_file="file-def456",
                   model="gpt-3.5-turbo"
                 )
               node.js: |
@@ -1628,6 +1645,7 @@ paths:
                 $ref: "#/components/schemas/ListPaginatedFineTuningJobsResponse"
       x-oaiMeta:
         name: List fine-tuning jobs
+        group: fine-tuning
         returns: A list of paginated [fine-tuning job](/docs/api-reference/fine-tuning/object) objects.
         examples:
           request:
@@ -1697,6 +1715,7 @@ paths:
                 $ref: "#/components/schemas/FineTuningJob"
       x-oaiMeta:
         name: Retrieve fine-tuning job
+        group: fine-tuning
         returns: The [fine-tuning](/docs/api-reference/fine-tunes/object) object with the given ID.
         examples:
           request:
@@ -1778,6 +1797,7 @@ paths:
                 $ref: "#/components/schemas/ListFineTuningJobEventsResponse"
       x-oaiMeta:
         name: List fine-tuning events
+        group: fine-tuning
         returns: A list of fine-tuning event objects.
         examples:
           request:
@@ -1789,7 +1809,7 @@ paths:
               client = OpenAI()
 
               client.fine_tuning.jobs.list_events(
-                fine_tuning_job_id="ftjob-abc123", 
+                fine_tuning_job_id="ftjob-abc123",
                 limit=2
               )
             node.js: |-
@@ -1856,6 +1876,7 @@ paths:
                 $ref: "#/components/schemas/FineTuningJob"
       x-oaiMeta:
         name: Cancel fine-tuning
+        group: fine-tuning
         returns: The cancelled [fine-tuning](/docs/api-reference/fine-tuning/object) object.
         examples:
           request:
@@ -1922,6 +1943,7 @@ paths:
                 $ref: "#/components/schemas/FineTune"
       x-oaiMeta:
         name: Create fine-tune
+        group: fine-tunes
         returns: A [fine-tune](/docs/api-reference/fine-tunes/object) object.
         examples:
           request:
@@ -1937,7 +1959,7 @@ paths:
               client = OpenAI()
 
               fine_tune = client.fine_tunes.create(
-                training_file="file-abc123", 
+                training_file="file-abc123",
                 model="davinci"
               }
               print(fine_tune)
@@ -2008,6 +2030,7 @@ paths:
                 $ref: "#/components/schemas/ListFineTunesResponse"
       x-oaiMeta:
         name: List fine-tunes
+        group: fine-tunes
         returns: A list of [fine-tune](/docs/api-reference/fine-tunes/object) objects.
         examples:
           request:
@@ -2084,6 +2107,7 @@ paths:
                 $ref: "#/components/schemas/FineTune"
       x-oaiMeta:
         name: Retrieve fine-tune
+        group: fine-tunes
         returns: The [fine-tune](/docs/api-reference/fine-tunes/object) object with the given ID.
         examples:
           request:
@@ -2204,6 +2228,7 @@ paths:
                 $ref: "#/components/schemas/FineTune"
       x-oaiMeta:
         name: Cancel fine-tune
+        group: fine-tunes
         returns: The cancelled [fine-tune](/docs/api-reference/fine-tunes/object) object.
         examples:
           request:
@@ -2293,6 +2318,7 @@ paths:
                 $ref: "#/components/schemas/ListFineTuneEventsResponse"
       x-oaiMeta:
         name: List fine-tune events
+        group: fine-tunes
         returns: A list of fine-tune event objects.
         examples:
           request:
@@ -2368,6 +2394,7 @@ paths:
                 $ref: "#/components/schemas/ListModelsResponse"
       x-oaiMeta:
         name: List models
+        group: models
         returns: A list of [model](/docs/api-reference/models/object) objects.
         examples:
           request:
@@ -2441,6 +2468,7 @@ paths:
                 $ref: "#/components/schemas/Model"
       x-oaiMeta:
         name: Retrieve model
+        group: models
         returns: The [model](/docs/api-reference/models/object) object matching the specified ID.
         examples:
           request:
@@ -2492,7 +2520,8 @@ paths:
               schema:
                 $ref: "#/components/schemas/DeleteModelResponse"
       x-oaiMeta:
-        name: Delete fine-tune model
+        name: Delete a fine-tuned model
+        group: models
         returns: Deletion status.
         examples:
           request:
@@ -2544,6 +2573,7 @@ paths:
                 $ref: "#/components/schemas/CreateModerationResponse"
       x-oaiMeta:
         name: Create moderation
+        group: moderations
         returns: A [moderation](/docs/api-reference/moderations/object) object.
         examples:
           request:
@@ -2651,6 +2681,7 @@ paths:
                 $ref: "#/components/schemas/ListAssistantsResponse"
       x-oaiMeta:
         name: List assistants
+        group: assistants
         beta: true
         returns: A list of [assistant](/docs/api-reference/assistants/object) objects.
         examples:
@@ -2749,6 +2780,7 @@ paths:
                 $ref: "#/components/schemas/AssistantObject"
       x-oaiMeta:
         name: Create assistant
+        group: assistants
         beta: true
         returns: An [assistant](/docs/api-reference/assistants/object) object.
         examples:
@@ -2898,6 +2930,7 @@ paths:
                 $ref: "#/components/schemas/AssistantObject"
       x-oaiMeta:
         name: Retrieve assistant
+        group: assistants
         beta: true
         returns: The [assistant](/docs/api-reference/assistants/object) object matching the specified ID.
         examples:
@@ -2973,6 +3006,7 @@ paths:
                 $ref: "#/components/schemas/AssistantObject"
       x-oaiMeta:
         name: Modify assistant
+        group: assistants
         beta: true
         returns: The modified [assistant](/docs/api-reference/assistants/object) object.
         examples:
@@ -3068,6 +3102,7 @@ paths:
                 $ref: "#/components/schemas/DeleteAssistantResponse"
       x-oaiMeta:
         name: Delete assistant
+        group: assistants
         beta: true
         returns: Deletion status
         examples:
@@ -3122,6 +3157,7 @@ paths:
                 $ref: "#/components/schemas/ThreadObject"
       x-oaiMeta:
         name: Create thread
+        group: threads
         beta: true
         returns: A [thread](/docs/api-reference/threads) object.
         examples:
@@ -3248,6 +3284,7 @@ paths:
                 $ref: "#/components/schemas/ThreadObject"
       x-oaiMeta:
         name: Retrieve thread
+        group: threads
         beta: true
         returns: The [thread](/docs/api-reference/threads/object) object matching the specified ID.
         examples:
@@ -3311,6 +3348,7 @@ paths:
                 $ref: "#/components/schemas/ThreadObject"
       x-oaiMeta:
         name: Modify thread
+        group: threads
         beta: true
         returns: The modified [thread](/docs/api-reference/threads/object) object matching the specified ID.
         examples:
@@ -3331,9 +3369,9 @@ paths:
               client = OpenAI()
 
               my_updated_thread = client.beta.threads.update(
-                "thread_abc123", 
+                "thread_abc123",
                 metadata={
-                  "modified": "true", 
+                  "modified": "true",
                   "user": "abc123"
                 }
               )
@@ -3386,6 +3424,7 @@ paths:
                 $ref: "#/components/schemas/DeleteThreadResponse"
       x-oaiMeta:
         name: Delete thread
+        group: threads
         beta: true
         returns: Deletion status
         examples:
@@ -3466,6 +3505,7 @@ paths:
                 $ref: "#/components/schemas/ListMessagesResponse"
       x-oaiMeta:
         name: List messages
+        group: threads
         beta: true
         returns: A list of [message](/docs/api-reference/messages) objects.
         examples:
@@ -3573,6 +3613,7 @@ paths:
                 $ref: "#/components/schemas/MessageObject"
       x-oaiMeta:
         name: Create message
+        group: threads
         beta: true
         returns: A [message](/docs/api-reference/messages/object) object.
         examples:
@@ -3661,6 +3702,7 @@ paths:
                 $ref: "#/components/schemas/MessageObject"
       x-oaiMeta:
         name: Retrieve message
+        group: threads
         beta: true
         returns: The [message](/docs/api-reference/threads/messages/object) object matching the specified ID.
         examples:
@@ -3748,6 +3790,7 @@ paths:
                 $ref: "#/components/schemas/MessageObject"
       x-oaiMeta:
         name: Modify message
+        group: threads
         beta: true
         returns: The modified [message](/docs/api-reference/threads/messages/object) object.
         examples:
@@ -3838,6 +3881,7 @@ paths:
                 $ref: "#/components/schemas/RunObject"
       x-oaiMeta:
         name: Create thread and run
+        group: threads
         beta: true
         returns: A [run](/docs/api-reference/runs/object) object.
         examples:
@@ -3953,6 +3997,7 @@ paths:
                 $ref: "#/components/schemas/ListRunsResponse"
       x-oaiMeta:
         name: List runs
+        group: threads
         beta: true
         returns: A list of [run](/docs/api-reference/runs/object) objects.
         examples:
@@ -4072,6 +4117,7 @@ paths:
                 $ref: "#/components/schemas/RunObject"
       x-oaiMeta:
         name: Create run
+        group: threads
         beta: true
         returns: A [run](/docs/api-reference/runs/object) object.
         examples:
@@ -4164,6 +4210,7 @@ paths:
                 $ref: "#/components/schemas/RunObject"
       x-oaiMeta:
         name: Retrieve run
+        group: threads
         beta: true
         returns: The [run](/docs/api-reference/runs/object) object matching the specified ID.
         examples:
@@ -4256,6 +4303,7 @@ paths:
                 $ref: "#/components/schemas/RunObject"
       x-oaiMeta:
         name: Modify run
+        group: threads
         beta: true
         returns: The modified [run](/docs/api-reference/runs/object) object matching the specified ID.
         examples:
@@ -4365,6 +4413,7 @@ paths:
                 $ref: "#/components/schemas/RunObject"
       x-oaiMeta:
         name: Submit tool outputs to run
+        group: threads
         beta: true
         returns: The modified [run](/docs/api-reference/runs/object) object matching the specified ID.
         examples:
@@ -4496,6 +4545,7 @@ paths:
                 $ref: "#/components/schemas/RunObject"
       x-oaiMeta:
         name: Cancel a run
+        group: threads
         beta: true
         returns: The modified [run](/docs/api-reference/runs/object) object matching the specified ID.
         examples:
@@ -4606,6 +4656,7 @@ paths:
                 $ref: "#/components/schemas/ListRunStepsResponse"
       x-oaiMeta:
         name: List run steps
+        group: threads
         beta: true
         returns: A list of [run step](/docs/api-reference/runs/step-object) objects.
         examples:
@@ -4702,6 +4753,7 @@ paths:
                 $ref: "#/components/schemas/RunStepObject"
       x-oaiMeta:
         name: Retrieve run step
+        group: threads
         beta: true
         returns: The [run step](/docs/api-reference/runs/step-object) object matching the specified ID.
         examples:
@@ -4804,6 +4856,7 @@ paths:
                 $ref: "#/components/schemas/ListAssistantFilesResponse"
       x-oaiMeta:
         name: List assistant files
+        group: assistants
         beta: true
         returns: A list of [assistant file](/docs/api-reference/assistants/file-object) objects.
         examples:
@@ -4883,6 +4936,7 @@ paths:
                 $ref: "#/components/schemas/AssistantFileObject"
       x-oaiMeta:
         name: Create assistant file
+        group: assistants
         beta: true
         returns: An [assistant file](/docs/api-reference/assistants/file-object) object.
         examples:
@@ -4900,7 +4954,7 @@ paths:
               client = OpenAI()
 
               assistant_file = client.beta.assistants.files.create(
-                assistant_id="asst_abc123", 
+                assistant_id="asst_abc123",
                 file_id="file-abc123"
               )
               print(assistant_file)
@@ -4910,8 +4964,8 @@ paths:
 
               async function main() {
                 const myAssistantFile = await openai.beta.assistants.files.create(
-                  "asst_abc123", 
-                  { 
+                  "asst_abc123",
+                  {
                     file_id: "file-abc123"
                   }
                 );
@@ -4955,6 +5009,7 @@ paths:
                 $ref: "#/components/schemas/AssistantFileObject"
       x-oaiMeta:
         name: Retrieve assistant file
+        group: assistants
         beta: true
         returns: The [assistant file](/docs/api-reference/assistants/file-object) object matching the specified ID.
         examples:
@@ -5014,6 +5069,7 @@ paths:
                 $ref: "#/components/schemas/DeleteAssistantFileResponse"
       x-oaiMeta:
         name: Delete assistant file
+        group: assistants
         beta: true
         returns: Deletion status
         examples:
@@ -5105,6 +5161,7 @@ paths:
                 $ref: "#/components/schemas/ListMessageFilesResponse"
       x-oaiMeta:
         name: List message files
+        group: threads
         beta: true
         returns: A list of [message file](/docs/api-reference/messages/file-object) objects.
         examples:
@@ -5195,6 +5252,7 @@ paths:
                 $ref: "#/components/schemas/MessageFileObject"
       x-oaiMeta:
         name: Retrieve message file
+        group: threads
         beta: true
         returns: The [message file](/docs/api-reference/messages/file-object) object.
         examples:
@@ -5398,7 +5456,7 @@ components:
           default: null
           nullable: true
           description: &completions_logprobs_description |
-            Include the log probabilities on the `logprobs` most likely tokens, as well the chosen tokens. For example, if `logprobs` is 5, the API will return a list of the 5 most likely tokens. The API will always return the `logprob` of the sampled token, so there may be up to `logprobs+1` elements in the response.
+            Include the log probabilities on the `logprobs` most likely output tokens, as well the chosen tokens. For example, if `logprobs` is 5, the API will return a list of the 5 most likely tokens. The API will always return the `logprob` of the sampled token, so there may be up to `logprobs+1` elements in the response.
 
             The maximum value for `logprobs` is 5.
         max_tokens:
@@ -5408,7 +5466,7 @@ components:
           example: 16
           nullable: true
           description: &completions_max_tokens_description |
-            The maximum number of [tokens](/tokenizer) to generate in the completion.
+            The maximum number of [tokens](/tokenizer) that can be generated in the completion.
 
             The token count of your prompt plus `max_tokens` cannot exceed the model's context length. [Example Python code](https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken) for counting tokens.
         n:
@@ -5662,7 +5720,6 @@ components:
       title: System message
       properties:
         content:
-          nullable: true
           description: The contents of the system message.
           type: string
         role:
@@ -5681,7 +5738,6 @@ components:
       title: User message
       properties:
         content:
-          nullable: true
           description: |
             The contents of the user message.
           oneOf:
@@ -5714,7 +5770,7 @@ components:
           nullable: true
           type: string
           description: |
-            The contents of the assistant message.
+            The contents of the assistant message. Required unless `tool_calls` or `function_call` is specified.
         role:
           type: string
           enum: ["assistant"]
@@ -5739,7 +5795,6 @@ components:
             - arguments
             - name
       required:
-        - content
         - role
 
     ChatCompletionRequestToolMessage:
@@ -5751,7 +5806,6 @@ components:
           enum: ["tool"]
           description: The role of the messages author, in this case `tool`.
         content:
-          nullable: true
           type: string
           description: The contents of the tool message.
         tool_call_id:
@@ -5771,20 +5825,21 @@ components:
           type: string
           enum: ["function"]
           description: The role of the messages author, in this case `function`.
-        arguments:
+        content:
+          nullable: true
           type: string
-          description: The arguments to call the function with, as generated by the model in JSON format. Note that the model does not always generate valid JSON, and may hallucinate parameters not defined by your function schema. Validate the arguments in your code before calling your function.
+          description: The contents of the function message.
         name:
           type: string
           description: The name of the function to call.
       required:
         - role
-        - arguments
         - content
+        - name
 
     FunctionParameters:
       type: object
-      description: "The parameters the functions accepts, described as a JSON Schema object. See the [guide](/docs/guides/text-generation/function-calling) for examples, and the [JSON Schema reference](https://json-schema.org/understanding-json-schema/) for documentation about the format.\n\nTo describe a function that accepts no parameters, provide the value `{\"type\": \"object\", \"properties\": {}}`."
+      description: "The parameters the functions accepts, described as a JSON Schema object. See the [guide](/docs/guides/text-generation/function-calling) for examples, and the [JSON Schema reference](https://json-schema.org/understanding-json-schema/) for documentation about the format. \n\nOmitting `parameters` defines a function with an empty parameter list."
       additionalProperties: true
 
     ChatCompletionFunctions:
@@ -5801,7 +5856,6 @@ components:
           $ref: "#/components/schemas/FunctionParameters"
       required:
         - name
-        - parameters
 
     ChatCompletionFunctionCallOption:
       type: object
@@ -5840,7 +5894,6 @@ components:
           $ref: "#/components/schemas/FunctionParameters"
       required:
         - name
-        - parameters
 
     ChatCompletionToolChoiceOption:
       description: |
@@ -5875,6 +5928,9 @@ components:
               description: The name of the function to call.
           required:
             - name
+      required:
+        - type
+        - function
 
     ChatCompletionMessageToolCalls:
       type: array
@@ -6057,12 +6113,22 @@ components:
             Modify the likelihood of specified tokens appearing in the completion.
 
             Accepts a JSON object that maps tokens (specified by their token ID in the tokenizer) to an associated bias value from -100 to 100. Mathematically, the bias is added to the logits generated by the model prior to sampling. The exact effect will vary per model, but values between -1 and 1 should decrease or increase likelihood of selection; values like -100 or 100 should result in a ban or exclusive selection of the relevant token.
+        logprobs:
+          description: Whether to return log probabilities of the output tokens or not. If true, returns the log probabilities of each output token returned in the `content` of `message`. This option is currently not available on the `gpt-4-vision-preview` model.
+          type: boolean
+          default: false
+          nullable: true
+        top_logprobs:
+          description: An integer between 0 and 5 specifying the number of most likely tokens to return at each token position, each with an associated log probability. `logprobs` must be set to `true` if this parameter is used.
+          type: integer
+          minimum: 0
+          maximum: 5
+          nullable: true
         max_tokens:
           description: |
-            The maximum number of [tokens](/tokenizer) to generate in the chat completion.
+            The maximum number of [tokens](/tokenizer) that can be generated in the chat completion.
 
             The total length of input tokens and generated tokens is limited by the model's context length. [Example Python code](https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken) for counting tokens.
-          default: inf
           type: integer
           nullable: true
         n:
@@ -6083,7 +6149,7 @@ components:
         response_format:
           type: object
           description: |
-            An object specifying the format that the model must output. 
+            An object specifying the format that the model must output. Compatible with `gpt-4-1106-preview` and `gpt-3.5-turbo-1106`.
 
             Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.
 
@@ -6101,7 +6167,7 @@ components:
           maximum: 9223372036854775807
           nullable: true
           description: |
-            This feature is in Beta. 
+            This feature is in Beta.
             If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same `seed` and parameters should return the same result.
             Determinism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.
           x-oaiMeta:
@@ -6161,7 +6227,7 @@ components:
             `auto` means the model can pick between generating a message or calling a function.
             Specifying a particular function via `{"name": "my_function"}` forces the model to call that function.
 
-            `none` is the default when no functions are present. `auto`` is the default if functions are present.
+            `none` is the default when no functions are present. `auto` is the default if functions are present.
           oneOf:
             - type: string
               description: >
@@ -6202,6 +6268,7 @@ components:
               - finish_reason
               - index
               - message
+              - logprobs
             properties:
               finish_reason:
                 type: string
@@ -6223,6 +6290,19 @@ components:
                 description: The index of the choice in the list of choices.
               message:
                 $ref: "#/components/schemas/ChatCompletionResponseMessage"
+              logprobs: &chat_completion_response_logprobs
+                description: Log probability information for the choice.
+                type: object
+                nullable: true
+                properties:
+                  content:
+                    description: A list of message content tokens with log probability information.
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ChatCompletionTokenLogprob'
+                    nullable: true
+                required:
+                  - content
         created:
           type: integer
           description: The Unix timestamp (in seconds) of when the chat completion was created.
@@ -6268,6 +6348,7 @@ components:
               - finish_reason
               - index
               - message
+              - logprobs
             properties:
               finish_reason:
                 type: string
@@ -6309,6 +6390,40 @@ components:
         group: chat
         example: *chat_completion_function_example
 
+    ChatCompletionTokenLogprob:
+      type: object
+      properties:
+        token: &chat_completion_response_logprobs_token
+          description: The token.
+          type: string
+        logprob: &chat_completion_response_logprobs_token_logprob
+          description: The log probability of this token.
+          type: number
+        bytes: &chat_completion_response_logprobs_bytes
+          description: A list of integers representing the UTF-8 bytes representation of the token. Useful in instances where characters are represented by multiple tokens and their byte representations must be combined to generate the correct text representation. Can be `null` if there is no bytes representation for the token.
+          type: array
+          items:
+            type: integer
+          nullable: true
+        top_logprobs:
+          description: List of the most likely tokens and their log probability, at this token position. In rare cases, there may be fewer than the number of requested `top_logprobs` returned.
+          type: array
+          items:
+            type: object
+            properties:
+              token: *chat_completion_response_logprobs_token
+              logprob: *chat_completion_response_logprobs_token_logprob
+              bytes: *chat_completion_response_logprobs_bytes
+            required:
+              - token
+              - logprob
+              - bytes
+      required:
+        - token
+        - logprob
+        - bytes
+        - top_logprobs
+
     ListPaginatedFineTuningJobsResponse:
       type: object
       properties:
@@ -6345,6 +6460,7 @@ components:
             properties:
               delta:
                 $ref: "#/components/schemas/ChatCompletionStreamResponseDelta"
+              logprobs: *chat_completion_response_logprobs
               finish_reason:
                 type: string
                 description: *chat_completion_finish_reason_description
@@ -6700,7 +6816,7 @@ components:
                 properties:
                   hate:
                     type: boolean
-                    description: Content that expresses, incites, or promotes hate based on race, gender, ethnicity, religion, nationality, sexual orientation, disability status, or caste. Hateful content aimed at non-protected groups (e.g., chess players) is harrassment.
+                    description: Content that expresses, incites, or promotes hate based on race, gender, ethnicity, religion, nationality, sexual orientation, disability status, or caste. Hateful content aimed at non-protected groups (e.g., chess players) is harassment.
                   hate/threatening:
                     type: boolean
                     description: Hateful content that also includes violence or serious harm towards the targeted group based on race, gender, ethnicity, religion, nationality, sexual orientation, disability status, or caste.
@@ -6905,7 +7021,7 @@ components:
               default: auto
             n_epochs:
               description: |
-                The number of epochs to train the model for. An epoch refers to one full cycle 
+                The number of epochs to train the model for. An epoch refers to one full cycle
                 through the training dataset.
               oneOf:
                 - type: string
@@ -7551,9 +7667,9 @@ components:
                   maximum: 50
               default: auto
               description:
-                  The number of epochs to train the model for. An epoch refers to one full cycle through the training dataset.
-                    
-                    "auto" decides the optimal number of epochs based on the size of the dataset. If setting the number manually, we support any number between 1 and 50 epochs.
+                The number of epochs to train the model for. An epoch refers to one full cycle through the training dataset.
+                
+                "auto" decides the optimal number of epochs based on the size of the dataset. If setting the number manually, we support any number between 1 and 50 epochs.
           required:
             - n_epochs
         model:
@@ -7965,7 +8081,7 @@ components:
             x-oaiExpandable: true
         file_ids:
           description: |
-            A list of [File](/docs/api-reference/files) IDs attached to this assistant. There can be a maximum of 20 files attached to the assistant. Files are ordered by their creation date in ascending order. If a file was previosuly attached to the list but does not show up in the list, it will be deleted from the assistant.
+            A list of [File](/docs/api-reference/files) IDs attached to this assistant. There can be a maximum of 20 files attached to the assistant. Files are ordered by their creation date in ascending order. If a file was previously attached to the list but does not show up in the list, it will be deleted from the assistant.
           default: []
           type: array
           maxItems: 20
@@ -8232,7 +8348,11 @@ components:
           type: string
           nullable: true
         instructions:
-          description: Override the default system message of the assistant. This is useful for modifying the behavior on a per-run basis.
+          description: Overrides the [instructions](/docs/api-reference/assistants/createAssistant) of the assistant. This is useful for modifying the behavior on a per-run basis.
+          type: string
+          nullable: true
+        additional_instructions:
+          description: Appends additional instructions at the end of the instructions for the run. This is useful for modifying the behavior on a per-run basis without overriding other instructions.
           type: string
           nullable: true
         tools:
@@ -8306,7 +8426,7 @@ components:
                 description: The output of the tool call to be submitted to continue the run.
       required:
         - tool_outputs
-    
+
     RunToolCallObject:
       type: object
       description: Tool call objects
@@ -8335,7 +8455,7 @@ components:
         - id
         - type
         - function
-    
+
     CreateThreadAndRunRequest:
       type: object
       additionalProperties: false
@@ -8770,7 +8890,7 @@ components:
           description: The identifier of the run step, which can be referenced in API endpoints.
           type: string
         object:
-          description: The object type, which is always `thread.run.step``.
+          description: The object type, which is always `thread.run.step`.
           type: string
           enum: ["thread.run.step"]
         created_at:
@@ -8888,7 +9008,7 @@ components:
       description: Details of the message creation by the run step.
       properties:
         type:
-          description: Always `message_creation``.
+          description: Always `message_creation`.
           type: string
           enum: ["message_creation"]
         message_creation:

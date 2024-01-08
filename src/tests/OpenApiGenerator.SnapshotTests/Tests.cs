@@ -71,7 +71,7 @@ public partial class Tests
         }, new Dictionary<string, string>
         {
             ["build_property.OpenApiGenerator_IncludeOperationIds"] = "ListModels",
-            ["build_property.OpenApiGenerator_IncludeModels"] = "Error;ErrorResponse;ListModelsResponse;Model;DeleteModelResponse;CreateCompletionRequest",
+            ["build_property.OpenApiGenerator_IncludeModels"] = "CreateModerationResponse;Error;ErrorResponse;ListModelsResponse;Model;DeleteModelResponse;CreateCompletionRequest",
         }, additionalGenerators: new IIncrementalGenerator[]{ new ClientGenerator() });
     }
     
