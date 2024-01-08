@@ -4,7 +4,7 @@ using Microsoft.CodeAnalysis.Diagnostics;
 
 namespace OpenApiGenerator.Models;
 
-internal readonly record struct Settings(
+public readonly record struct Settings(
     string TargetFramework,
     string Namespace,
     string ClassName,

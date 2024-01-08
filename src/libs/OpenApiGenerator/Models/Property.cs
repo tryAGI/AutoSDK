@@ -1,6 +1,6 @@
 namespace OpenApiGenerator.Models;
 
-internal readonly record struct Property(
+public readonly record struct Property(
     string Id,
     string Name,
     string Type,

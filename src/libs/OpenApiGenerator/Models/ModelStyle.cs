@@ -1,6 +1,6 @@
 namespace OpenApiGenerator.Models;
 
-internal enum ModelStyle
+public enum ModelStyle
 {
     Class,
     Record,

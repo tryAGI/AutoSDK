@@ -4,7 +4,7 @@ using Microsoft.OpenApi.Models;
 
 namespace OpenApiGenerator.Models;
 
-internal readonly record struct Model(
+public readonly record struct Model(
     KeyValuePair<string, OpenApiSchema> Schema,
     string Id,
     bool AddTypeName,

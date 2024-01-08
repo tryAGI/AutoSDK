@@ -1,6 +1,6 @@
 namespace OpenApiGenerator.Models;
 
-internal enum NamingConvention
+public enum NamingConvention
 {
     ConcatNames,
     InnerClasses,
