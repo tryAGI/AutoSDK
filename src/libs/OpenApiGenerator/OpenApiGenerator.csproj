@@ -16,10 +16,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.11" PrivateAssets="all" />
-    <PackageReference Include="NSwag.CodeGeneration.CSharp" Version="13.20.0" PrivateAssets="all" />
-    <PackageReference Include="NSwag.Core.Yaml" Version="13.20.0" PrivateAssets="all" />
-    <PackageReference Include="NJsonSchema.CodeGeneration.CSharp" Version="10.9.0" PrivateAssets="all" />
-    <PackageReference Include="PolySharp" Version="1.14.0">
+    <PackageReference Include="PolySharp" Version="1.14.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

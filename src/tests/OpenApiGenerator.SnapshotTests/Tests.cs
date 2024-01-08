@@ -47,18 +47,18 @@ public partial class Tests
         return CheckSourceAsync<ModelGenerator>(
             Array.Empty<AdditionalText>());
     }
-    
-    [TestMethod]
-    public Task YamlWithLocalFileUseNSwag()
-    {
-        return CheckSourceAsync<NSwagGenerator>(new AdditionalText[]
-        {
-            new CustomAdditionalText("openapi.yaml", H.Resources.ipinfo_yaml.AsString()),
-        }, new Dictionary<string, string>
-        {
-            ["build_property.OpenApiGenerator_UseNSwag"] = "true",
-        });
-    }
+    //
+    // [TestMethod]
+    // public Task YamlWithLocalFileUseNSwag()
+    // {
+    //     return CheckSourceAsync<NSwagGenerator>(new AdditionalText[]
+    //     {
+    //         new CustomAdditionalText("openapi.yaml", H.Resources.ipinfo_yaml.AsString()),
+    //     }, new Dictionary<string, string>
+    //     {
+    //         ["build_property.OpenApiGenerator_UseNSwag"] = "true",
+    //     });
+    // }
     
     [TestMethod]
     public Task OpenAi()

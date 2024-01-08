@@ -39,6 +39,7 @@
   </ItemGroup>
 
   <PropertyGroup Label="Versioning">
+    <Version>1.0.0</Version>
     <MinVerMinimumMajorMinor>0.1</MinVerMinimumMajorMinor>
     <MinVerTagPrefix>v</MinVerTagPrefix>
     <MinVerDefaultPreReleaseIdentifiers>dev</MinVerDefaultPreReleaseIdentifiers>
