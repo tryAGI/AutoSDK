@@ -18,31 +18,27 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="IsExternalInit" Version="1.0.3">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.11" PrivateAssets="all" />
+    <ProjectReference Include="..\OpenApiGenerator.Core\OpenApiGenerator.Core.csproj"
+                      PrivateAssets="all" />
+    <ProjectReference
+        Include="..\OpenApiGenerator.Helpers\OpenApiGenerator.Helpers.csproj"
+        PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup Label="Helpers">
     <EmbeddedResource Include="../$(AssemblyName).Helpers/*.cs" Visible="false" />
     <AdditionalFiles Include="../$(AssemblyName).Helpers/*.cs" Visible="false" />
   </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference
-        Include="..\OpenApiGenerator.Helpers\OpenApiGenerator.Helpers.csproj"
-        PrivateAssets="all" />
-  </ItemGroup>
   
   <ItemGroup>
     <None Include="$(AssemblyName).props" Pack="true" PackagePath="build" />
     <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/roslyn4.3.1/cs" Visible="false" />
+    <None Include="$(OutputPath)\$(AssemblyName).Core.dll" Pack="true" PackagePath="analyzers/dotnet/roslyn4.3.1/cs" Visible="false" />
     <None Include="$(OutputPath)\H.Generators.Extensions.dll" Pack="true" PackagePath="analyzers/dotnet/roslyn4.3.1/cs" Visible="false" />
     <None Include="$(OutputPath)\SharpYaml.dll" Pack="true" PackagePath="analyzers/dotnet/roslyn4.3.1/cs" Visible="false" />
     <None Include="$(OutputPath)\Microsoft.OpenApi.dll" Pack="true" PackagePath="analyzers/dotnet/roslyn4.3.1/cs" Visible="false" />
     <None Include="$(OutputPath)\Microsoft.OpenApi.Readers.dll" Pack="true" PackagePath="analyzers/dotnet/roslyn4.3.1/cs" Visible="false" />
+    <None Include="$(OutputPath)\System.Collections.Immutable.dll" Pack="true" PackagePath="analyzers/dotnet/roslyn4.3.1/cs" Visible="false" />
   </ItemGroup>
 
   <ItemGroup>

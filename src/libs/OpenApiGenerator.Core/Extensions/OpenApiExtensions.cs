@@ -1,19 +1,17 @@
 using System.Globalization;
-using H.Generators.Extensions;
-using Microsoft.CodeAnalysis;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
-using OpenApiGenerator.Models;
-namespace OpenApiGenerator;
+using OpenApiGenerator.Core.Models;
 
-internal static class Extensions
+namespace OpenApiGenerator.Core.Extensions;
+
+public static class OpenApiExtensions
 {
     public static OpenApiDocument GetOpenApiDocument(
-        this AdditionalText text,
+        this string yaml,
         CancellationToken cancellationToken = default)
     {
-        var yaml = text.GetText(cancellationToken)?.ToString() ?? string.Empty;
         var openApiDocument = new OpenApiStringReader().Read(yaml, out _);
 
         openApiDocument.Components ??= new OpenApiComponents();
@@ -25,13 +23,13 @@ internal static class Extensions
     public static string GetCSharpType(
         this KeyValuePair<string, OpenApiSchema> schema,
         Settings settings,
-        params Model[] parents)
+        params ModelData[] parents)
     {
-        var model = Model.FromSchema(schema, settings, parents);
+        var model = ModelData.FromSchema(schema, settings, parents);
         var (type, reference) = (schema.Value.Type, schema.Value.Format) switch
         {
             ("object", _) or (null, _) when schema.Value.Reference != null =>
-                ($"{Model.FromKey(schema.Value.Reference.Id, settings).ClassName}", true),
+                ($"{ModelData.FromKey(schema.Value.Reference.Id, settings).ClassName}", true),
             ("object", _) when schema.Value.Reference == null =>
                 ($"{model.ExternalClassName}", true),
             
@@ -68,30 +66,17 @@ internal static class Extensions
             : type;
     }
     
-    public static string AsArray(this string type)
-    {
-        return $"global::System.Collections.Generic.IList<{type}>";
-    }
-    
-    public static string? WithPostfix(this string? type, string postfix)
-    {
-        if (type == null)
-        {
-            return null;
-        }
-        
-        return type + postfix;
-    }
-    
     public static string? GetDefaultValue(this OpenApiSchema schema)
     {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+        
         return schema.Default?.GetString();
     }
 
-    private readonly static string[] NewLine = { "\n" };
-
     public static string GetSummary(this OpenApiSchema schema)
     {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+        
         var summary = schema.Description ?? string.Empty;
         if (schema.Default != null)
         {
@@ -122,56 +107,6 @@ internal static class Extensions
         };
     }
     
-    public static string ToXmlDocumentationSummary(
-        this string text,
-        int level = 4)
-    {
-        var lines = text.Split(NewLine, StringSplitOptions.RemoveEmptyEntries);
-        if (lines.Length == 0)
-        {
-            lines = new[] { string.Empty };
-        }
-        
-        var spaces = new string(' ', level);
-        
-        return $@"/// <summary>
-{string.Join("\n", lines
-            .Select(line => $"{spaces}/// {line}"))}
-{spaces}/// </summary>";
-    }
-    
-    public static string UseWordSeparator(
-        this string propertyName,
-        params char[] separator)
-    {
-        if (!separator.Any(propertyName.Contains))
-        {
-            return propertyName;
-        }
-        
-        return string.Join(
-            string.Empty,
-            propertyName
-                .Split(separator)
-                .Select(word => word.ToPropertyName()));
-    }
-    
-    public static string AddIndent(
-        this string text,
-        int level)
-    {
-        if (level < 1)
-        {
-            return text;
-        }
-        
-        var lines = text.Split(NewLine, StringSplitOptions.None);
-        var spaces = new string(' ', level * 4);
-        
-        return string.Join("\n", lines
-    .Select(line => string.IsNullOrEmpty(line) ? line : $"{spaces}{line}"));
-    }
-    
     public static bool IsObjectWithoutReference(
         this OpenApiSchema schema)
     {
@@ -181,6 +116,8 @@ internal static class Extensions
     public static bool IsEnum(
         this OpenApiSchema schema)
     {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+        
         return schema.Type == "string" && schema.Enum.Any();
     }
     
@@ -199,7 +136,7 @@ internal static class Extensions
     }
     
     
-    public static Property ToEnumValue(
+    public static PropertyData ToEnumValue(
         this IOpenApiAny any)
     {
         var id = any.GetString() ?? string.Empty;
@@ -208,29 +145,22 @@ internal static class Extensions
            .UseWordSeparator('_', '-')
            .Replace(".", string.Empty);
         
-        return Property.Default with
+        return PropertyData.Default with
         {
             Id = id,
             Name = name,
         };
     }
     
-    public static string FixPropertyName(
-        this string propertyName,
-        string className)
-    {
-        return propertyName == className
-            ? $"{propertyName}1"
-            : propertyName;
-    }
-    
-    public static Property ToProperty(
+    public static PropertyData ToProperty(
         this KeyValuePair<string, OpenApiSchema> schema,
         HashSet<string> requiredProperties,
         Settings settings,
-        params Model[] parents)
+        params ModelData[] parents)
     {
-        return new Property(
+        requiredProperties = requiredProperties ?? throw new ArgumentNullException(nameof(requiredProperties));
+        
+        return new PropertyData(
             Id: schema.Key,
             Name: schema.Key.ToPropertyName()
                 .FixPropertyName(parents.Last().ClassName)
@@ -241,12 +171,12 @@ internal static class Extensions
             Summary: schema.Value.GetSummary());
     }
 
-    public static IEnumerable<Model> WithAdditionalModels(
-        this Model model)
+    public static IEnumerable<ModelData> WithAdditionalModels(
+        this ModelData modelData)
     {
-        return new []{ model }
-            .Concat(model.AdditionalModels.SelectMany(WithAdditionalModels))
-            .Concat(model.Enumerations.SelectMany(WithAdditionalModels));
+        return new []{ modelData }
+            .Concat(modelData.AdditionalModels.SelectMany(WithAdditionalModels))
+            .Concat(modelData.Enumerations.SelectMany(WithAdditionalModels));
     }
 
     public static IEnumerable<OpenApiReference> GetReferences(

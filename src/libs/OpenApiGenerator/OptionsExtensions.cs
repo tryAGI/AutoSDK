@@ -1,61 +1,57 @@
 using System.Collections.Immutable;
 using H.Generators.Extensions;
+using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
+using OpenApiGenerator.Core.Models;
+using OpenApiGenerator.Core.Extensions;
 
-namespace OpenApiGenerator.Models;
+namespace OpenApiGenerator;
 
-public readonly record struct Settings(
-    string TargetFramework,
-    string Namespace,
-    string ClassName,
-    NamingConvention NamingConvention,
-    bool UseNSwag,
-
-    EquatableArray<string> IncludeOperationIds,
-    
-    bool GenerateModels,
-    ModelStyle ModelStyle,
-    EquatableArray<string> IncludeModels)
+public static class OptionsExtensions
 {
-    public static Settings FromOptions(
-        AnalyzerConfigOptionsProvider options,
+    public static Settings GetSettings(
+        this AnalyzerConfigOptionsProvider options,
         string prefix)
     {
         return new Settings(
             TargetFramework: options.GetGlobalOption("TargetFramework", prefix) ??
                              options.GetGlobalOption("TargetFramework") ??
                              "netstandard2.0",
-            Namespace: options.GetGlobalOption(nameof(Namespace), prefix) ??
+            Namespace: options.GetGlobalOption(nameof(Settings.Namespace), prefix) ??
                        options.GetGlobalOption("PackageId") ??
                        options.GetGlobalOption("AssemblyName") ??
                        prefix,
-            ClassName: options.GetGlobalOption(nameof(ClassName), prefix) ??
+            ClassName: options.GetGlobalOption(nameof(Settings.ClassName), prefix) ??
                        options.GetGlobalOption("PackageId")?.WithPostfix("Api") ??
                        options.GetGlobalOption("AssemblyName")?.WithPostfix("Api") ??
                        "Api",
             NamingConvention: Enum.TryParse<NamingConvention>(
-                options.GetGlobalOption(nameof(NamingConvention), prefix) ??
+                options.GetGlobalOption(nameof(Settings.NamingConvention), prefix) ??
                 $"{default(NamingConvention):G}",
                 ignoreCase: true,
                 out var namingConvention) ? namingConvention : default,
-            UseNSwag: bool.TryParse(
-                options.GetGlobalOption(nameof(UseNSwag), prefix),
-                out var useNSwag) && useNSwag,
             
-            IncludeOperationIds: (options.GetGlobalOption(nameof(IncludeOperationIds), prefix)?.Split(';') ??
+            IncludeOperationIds: (options.GetGlobalOption(nameof(Settings.IncludeOperationIds), prefix)?.Split(';') ??
                                    Array.Empty<string>()).ToImmutableArray(),
             
             GenerateModels: bool.TryParse(
-                options.GetGlobalOption(nameof(GenerateModels), prefix),
+                options.GetGlobalOption(nameof(Settings.GenerateModels), prefix),
                 out var generateModels) && generateModels,
             ModelStyle: Enum.TryParse<ModelStyle>(
                 options.GetGlobalOption(nameof(ModelStyle), prefix) ??
                 $"{default(ModelStyle):G}",
                 ignoreCase: true,
                 out var modelStyle) ? modelStyle : default,
-            IncludeModels: (options.GetGlobalOption(nameof(IncludeModels), prefix)?.Split(';') ??
+            IncludeModels: (options.GetGlobalOption(nameof(Settings.IncludeModels), prefix)?.Split(';') ??
                             Array.Empty<string>()).ToImmutableArray()
 
             );
+    }
+
+    public static IncrementalValueProvider<Settings> DetectSettings(
+        this IncrementalGeneratorInitializationContext context)
+    {
+        return context.AnalyzerConfigOptionsProvider
+            .Select((options, _) => options.GetSettings(prefix: "OpenApiGenerator"));
     }
 }

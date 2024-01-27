@@ -1,56 +1,56 @@
-using H.Generators.Extensions;
-using OpenApiGenerator.Models;
+using OpenApiGenerator.Core.Extensions;
+using OpenApiGenerator.Core.Models;
 
-namespace OpenApiGenerator;
+namespace OpenApiGenerator.Core.Generation;
 
-internal static partial class Sources
+public static partial class Sources
 {
     public static string GenerateModel(
-        Model model,
+        ModelData modelData,
         CancellationToken cancellationToken = default)
     {
         return $@"
 #nullable enable
 
-namespace {model.Namespace}
+namespace {modelData.Namespace}
 {{
-{GenerateModel(model, level: 0, cancellationToken: cancellationToken)}
+{GenerateModel(modelData, level: 0, cancellationToken: cancellationToken)}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
     
     private static string GenerateModel(
-        Model model,
+        ModelData modelData,
         int level,
         CancellationToken cancellationToken = default)
     {
-        if (model.NamingConvention == NamingConvention.ConcatNames ||
-            level == model.Parents.AsSpan().Length)
+        if (modelData.NamingConvention == NamingConvention.ConcatNames ||
+            level == modelData.Parents.AsSpan().Length)
         {
-            return model.Style switch
+            return modelData.Style switch
             {
-                ModelStyle.Class => GenerateClassModel(model, cancellationToken),
-                ModelStyle.Enumeration => GenerateEnumerationModel(model, cancellationToken),
-                _ => throw new NotSupportedException($"Model style {model.Style} is not supported."),
+                ModelStyle.Class => GenerateClassModel(modelData, cancellationToken),
+                ModelStyle.Enumeration => GenerateEnumerationModel(modelData, cancellationToken),
+                _ => throw new NotSupportedException($"Model style {modelData.Style} is not supported."),
             };
         }
         
         return $@" 
-public sealed partial class {model.Parents[level].ClassName}
+public sealed partial class {modelData.Parents[level].ClassName}
 {{
-{GenerateModel(model, level + 1, cancellationToken: cancellationToken)}
+{GenerateModel(modelData, level + 1, cancellationToken: cancellationToken)}
 }}".RemoveBlankLinesWhereOnlyWhitespaces().AddIndent(level: 1);
     }
     
     public static string GenerateEnumerationModel(
-        Model model,
+        ModelData modelData,
         CancellationToken cancellationToken = default)
     {
         return $@" 
-    {model.Summary.ToXmlDocumentationSummary(level: 4)}
+    {modelData.Summary.ToXmlDocumentationSummary(level: 4)}
     [global::System.Runtime.Serialization.DataContract]
-    public enum {model.ClassName}
+    public enum {modelData.ClassName}
     {{
-{model.Properties.Select(property => @$"
+{modelData.Properties.Select(property => @$"
         {property.Summary.ToXmlDocumentationSummary(level: 8)}
         [global::System.Runtime.Serialization.EnumMember(Value=""{property.Id}"")]
         {property.Name},
@@ -59,14 +59,14 @@ public sealed partial class {model.Parents[level].ClassName}
     }
     
     public static string GenerateClassModel(
-        Model model,
+        ModelData modelData,
         CancellationToken cancellationToken = default)
     {
         return $@" 
-    {model.Summary.ToXmlDocumentationSummary(level: 4)}
-    public sealed partial class {model.ClassName}
+    {modelData.Summary.ToXmlDocumentationSummary(level: 4)}
+    public sealed partial class {modelData.ClassName}
     {{
-{model.Properties.Select(property => @$"
+{modelData.Properties.Select(property => @$"
         {property.Summary.ToXmlDocumentationSummary(level: 8)}
         [global::System.Text.Json.Serialization.JsonPropertyName(""{property.Id}"")]
         public{(property.IsRequired ? " required" : "")} {property.Type} {property.Name} {{ get; set; }}{(property.IsRequired || property.DefaultValue == null ? string.Empty : $" = {property.DefaultValue};")}

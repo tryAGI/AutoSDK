@@ -1,7 +1,9 @@
 ﻿using System.Collections.Immutable;
 using H.Generators.Extensions;
 using Microsoft.CodeAnalysis;
-using OpenApiGenerator.Models;
+using OpenApiGenerator.Core.Generators;
+using OpenApiGenerator.Core.Models;
+using FileWithName = H.Generators.Extensions.FileWithName;
 
 namespace OpenApiGenerator.Generators;
 
@@ -29,49 +31,25 @@ public class ModelGenerator : IIncrementalGenerator
             .AddSource(context);
     }
 
-    private static EquatableArray<Model> PrepareData(
+    private static ImmutableArray<ModelData> PrepareData(
         (AdditionalText text, Settings settings) tuple,
         CancellationToken cancellationToken = default)
     {
         var (text, settings) = tuple;
-        if (settings.UseNSwag)
-        {
-            return ImmutableArray<Model>.Empty;
-        }
+        var yaml = text.GetText(cancellationToken)?.ToString() ?? string.Empty;
         
-        var openApiDocument = text.GetOpenApiDocument(cancellationToken);
-        
-        var includedModels = new HashSet<string>(settings.IncludeModels);
-        var referencesOfIncludedModels = includedModels.Count == 0
-            ? []
-            : new HashSet<string>(openApiDocument.Components.Schemas
-                .Where(schema =>
-                    includedModels.Count == 0 ||
-                    includedModels.Contains(schema.Key))
-                .SelectMany(schema => schema.GetReferences())
-                .Select(reference => reference.Id));
-        
-        return openApiDocument.Components.Schemas
-            .Where(schema =>
-                includedModels.Count == 0 ||
-                includedModels.Contains(schema.Key) ||
-                referencesOfIncludedModels.Contains(schema.Key))
-            .Select(schema => Model.FromSchema(schema, settings))
-            .SelectMany(model => model.WithAdditionalModels())
-            .Select(model => model with
-            {
-                Schema = default,
-            })
-            .ToImmutableArray();
+        return ModelGeneratorMethods.PrepareData((yaml, settings), cancellationToken);
     }
     
     private static FileWithName GetSourceCode(
-        Model model,
+        ModelData model,
         CancellationToken cancellationToken = default)
     {
+        var fileWithName = ModelGeneratorMethods.GetSourceCode(model, cancellationToken);
+        
         return new FileWithName(
-            Name: $"{model.FileNameWithoutExtension}.g.cs",
-            Text: Sources.GenerateModel(model, cancellationToken: cancellationToken));
+            Name: fileWithName.Name,
+            Text: fileWithName.Text);
     }
 
     #endregion

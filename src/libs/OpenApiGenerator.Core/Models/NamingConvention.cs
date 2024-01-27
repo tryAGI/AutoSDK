@@ -1,4 +1,4 @@
-namespace OpenApiGenerator.Models;
+namespace OpenApiGenerator.Core.Models;
 
 public enum NamingConvention
 {

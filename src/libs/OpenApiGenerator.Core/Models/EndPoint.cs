@@ -1,6 +1,6 @@
-using H.Generators.Extensions;
+using OpenApiGenerator.Core.Extensions;
 
-namespace OpenApiGenerator.Models;
+namespace OpenApiGenerator.Core.Models;
 
 public readonly record struct EndPoint(
     string Id,

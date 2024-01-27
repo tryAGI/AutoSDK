@@ -1,29 +1,29 @@
 using System.Collections.Immutable;
-using H.Generators.Extensions;
 using Microsoft.OpenApi.Models;
+using OpenApiGenerator.Core.Extensions;
 
-namespace OpenApiGenerator.Models;
+namespace OpenApiGenerator.Core.Models;
 
-public readonly record struct Model(
+public readonly record struct ModelData(
     KeyValuePair<string, OpenApiSchema> Schema,
     string Id,
     bool AddTypeName,
-    EquatableArray<Model> Parents,
+    ImmutableArray<ModelData> Parents,
     string Namespace,
     NamingConvention NamingConvention,
     ModelStyle Style,
-    EquatableArray<Property> Properties,
+    ImmutableArray<PropertyData> Properties,
     string Summary,
-    EquatableArray<Model> AdditionalModels,
-    EquatableArray<Model> Enumerations
+    ImmutableArray<ModelData> AdditionalModels,
+    ImmutableArray<ModelData> Enumerations
 )
 {
-    public static IList<Model> WithModelName(
+    public static IList<ModelData> WithModelName(
         IList<OpenApiSchema> schemas,
         string key,
         Settings settings,
         bool addTypeName,
-        params Model[] parents)
+        params ModelData[] parents)
     {
         return schemas
             .Select(x => FromSchema(x.WithKey(key), settings, parents) with
@@ -33,12 +33,12 @@ public readonly record struct Model(
             .ToArray();
     }
     
-    public static Model FromKey(
+    public static ModelData FromKey(
         string key,
         Settings settings,
-        params Model[] parents)
+        params ModelData[] parents)
     {
-        return new Model(
+        return new ModelData(
             Schema: default,
             Id: key,
             AddTypeName: false,
@@ -46,19 +46,19 @@ public readonly record struct Model(
             Namespace: settings.Namespace,
             NamingConvention: settings.NamingConvention,
             Style: settings.ModelStyle,
-            Properties: ImmutableArray<Property>.Empty,
+            Properties: ImmutableArray<PropertyData>.Empty,
             Summary: string.Empty,
-            AdditionalModels: ImmutableArray<Model>.Empty,
-            Enumerations: ImmutableArray<Model>.Empty
+            AdditionalModels: ImmutableArray<ModelData>.Empty,
+            Enumerations: ImmutableArray<ModelData>.Empty
         );
     }
     
-    public static Model FromSchema(
+    public static ModelData FromSchema(
         KeyValuePair<string, OpenApiSchema> schema,
         Settings settings,
-        params Model[] parents)
+        params ModelData[] parents)
     {
-        var model = new Model(
+        var model = new ModelData(
             Schema: schema,
             Id: schema.Key,
             AddTypeName: false,
@@ -66,10 +66,10 @@ public readonly record struct Model(
             Namespace: settings.Namespace,
             NamingConvention: settings.NamingConvention,
             Style: settings.ModelStyle,
-            Properties: ImmutableArray<Property>.Empty,
+            Properties: ImmutableArray<PropertyData>.Empty,
             Summary: schema.Value.GetSummary(),
-            AdditionalModels: ImmutableArray<Model>.Empty,
-            Enumerations: ImmutableArray<Model>.Empty
+            AdditionalModels: ImmutableArray<ModelData>.Empty,
+            Enumerations: ImmutableArray<ModelData>.Empty
             );
 
         var requiredProperties = new HashSet<string>(schema.Value.Required);
@@ -87,7 +87,7 @@ public readonly record struct Model(
                 .Select(x => FromSchema(x, settings, innerParents))
                 .Concat(schema.Value.Properties.SelectMany(x => x.Value.Items != null && x.Value.Items.IsObjectWithoutReference()
                     ? new []{ FromSchema(x.Value.Items.WithKey(x.Key), settings, innerParents) }
-                    : Array.Empty<Model>()))
+                    : Array.Empty<ModelData>()))
                 .Where(static x => x.Schema.Value.IsObjectWithoutReference())
                 .Concat(schema.Value.Properties
                     .SelectMany(x => WithModelName(x.Value.AnyOf, x.Key, settings, addTypeName: true, innerParents))
@@ -134,14 +134,14 @@ public readonly record struct Model(
     {
         NamingConvention.InnerClasses => Parents.IsEmpty ? Name : $"_{Name}",
         NamingConvention.ConcatNames => Parents.IsEmpty ? Name : $"{Parents.Last().ClassName}{Name}",
-        _ => throw new ArgumentOutOfRangeException()
+        _ => string.Empty,
     };
     
     public string ExternalClassName => NamingConvention switch
     {
         NamingConvention.InnerClasses => string.Join(".", Parents.Select(x => x.ClassName).Append(ClassName)),
         NamingConvention.ConcatNames => ClassName,
-        _ => throw new ArgumentOutOfRangeException()
+        _ => string.Empty,
     };
     
     public string FileNameWithoutExtension => $"{Namespace}.Models.{ExternalClassName}";

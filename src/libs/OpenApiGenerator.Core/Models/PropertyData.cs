@@ -1,6 +1,6 @@
-namespace OpenApiGenerator.Models;
+namespace OpenApiGenerator.Core.Models;
 
-public readonly record struct Property(
+public readonly record struct PropertyData(
     string Id,
     string Name,
     string Type,
@@ -8,7 +8,7 @@ public readonly record struct Property(
     string? DefaultValue,
     string Summary)
 {
-    public static Property Default => new(
+    public static PropertyData Default => new(
         Id: string.Empty,
         Name: string.Empty,
         Type: string.Empty,

@@ -1,7 +1,9 @@
 ﻿using System.Collections.Immutable;
 using H.Generators.Extensions;
 using Microsoft.CodeAnalysis;
-using OpenApiGenerator.Models;
+using OpenApiGenerator.Core.Generators;
+using OpenApiGenerator.Core.Models;
+using FileWithName = H.Generators.Extensions.FileWithName;
 
 namespace OpenApiGenerator.Generators;
 
@@ -29,40 +31,25 @@ public class ClientGenerator : IIncrementalGenerator
             .AddSource(context);
     }
 
-    private static EquatableArray<EndPoint> PrepareData(
+    private static ImmutableArray<EndPoint> PrepareData(
         (AdditionalText text, Settings settings) tuple,
         CancellationToken cancellationToken = default)
     {
         var (text, settings) = tuple;
-        if (settings.UseNSwag)
-        {
-            return ImmutableArray<EndPoint>.Empty;
-        }
+        var yaml = text.GetText(cancellationToken)?.ToString() ?? string.Empty;
         
-        var openApiDocument = text.GetOpenApiDocument(cancellationToken);
-        
-        var includedOperationIds = new HashSet<string>(settings.IncludeOperationIds);
-        
-        return openApiDocument.Paths.SelectMany(path =>
-            path.Value.Operations
-                .Where(x =>
-                    //includedOperationIds.Count == 0 ||
-                    includedOperationIds.Contains(x.Value.OperationId) ||
-                    includedOperationIds.Contains(x.Value.OperationId.ToPropertyName()))
-                .Select(operation => new EndPoint(
-                    Id: operation.Value.OperationId,
-                    Namespace: settings.Namespace,
-                    ClassName: settings.ClassName)))
-            .ToImmutableArray();
+        return ClientGeneratorMethods.PrepareData((yaml, settings), cancellationToken);
     }
     
     private static FileWithName GetSourceCode(
         EndPoint endPoint,
         CancellationToken cancellationToken = default)
     {
+        var fileWithName = ClientGeneratorMethods.GetSourceCode(endPoint, cancellationToken);
+        
         return new FileWithName(
-            Name: $"{endPoint.FileNameWithoutExtension}.g.cs",
-            Text: Sources.GenerateEndPoint(endPoint, cancellationToken: cancellationToken));
+            Name: fileWithName.Name,
+            Text: fileWithName.Text);
     }
 
     #endregion

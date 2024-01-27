@@ -32,9 +32,14 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0" />
+    <PackageReference Include="Microsoft.OpenApi" Version="1.6.11" />
+    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.11" />
+    <PackageReference Include="SharpYaml" Version="2.1.0" />
+    <PackageReference Include="System.Collections.Immutable" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\libs\OpenApiGenerator.Core\OpenApiGenerator.Core.csproj" OutputItemType="Analyzer" />
     <ProjectReference Include="..\..\libs\OpenApiGenerator\OpenApiGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
   </ItemGroup>
 

@@ -1,9 +1,9 @@
-using H.Generators.Extensions;
-using OpenApiGenerator.Models;
+using OpenApiGenerator.Core.Extensions;
+using OpenApiGenerator.Core.Models;
 
-namespace OpenApiGenerator;
+namespace OpenApiGenerator.Core.Generation;
 
-internal static partial class Sources
+public static partial class Sources
 {
     public static string GenerateEndPoint(
         EndPoint endPoint,

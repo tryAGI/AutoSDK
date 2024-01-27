@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <NoWarn>$(NoWarn);CA1031</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Label="NuGet">
+    <Description>Allows you to partially (for example, only models) or completely generate a native (without dependencies) C# client sdk according to the OpenAPI specification. Inspired by NSwag. Uses IncrementalGenerators for efficient generation and caching.</Description>
+    <PackageTags>openapi;sdk;generator;source generator;dotnet;netstandard;netframework;native;nswag;incremental</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PolySharp" Version="1.14.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.11" />
+    <PackageReference Include="System.Collections.Immutable" Version="8.0.0" />
+  </ItemGroup>
+  
+</Project>
