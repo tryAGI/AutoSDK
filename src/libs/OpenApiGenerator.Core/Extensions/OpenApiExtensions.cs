@@ -16,10 +16,10 @@ public static class OpenApiExtensions
 
         openApiDocument.Components ??= new OpenApiComponents();
         openApiDocument.Components.Schemas ??= new Dictionary<string, OpenApiSchema>();
-  
+
         return openApiDocument;
     }
-    
+
     public static string GetCSharpType(
         this KeyValuePair<string, OpenApiSchema> schema,
         Settings settings,
@@ -32,14 +32,14 @@ public static class OpenApiExtensions
                 ($"{ModelData.FromKey(schema.Value.Reference.Id, settings).ClassName}", true),
             ("object", _) when schema.Value.Reference == null =>
                 ($"{model.ExternalClassName}", true),
-            
+
             (null, _) when schema.Value.AnyOf.Any() => ("object", true),
             (null, _) when schema.Value.OneOf.Any() => ("object", true),
             (null, _) when schema.Value.AllOf.Any() => ("object", true),
-            
+
             ("string", _) when schema.Value.Enum.Any() =>
                 ($"{(model with { Style = ModelStyle.Enumeration }).ExternalClassName}", true),
-            
+
             ("boolean", _) => ("bool", false),
             ("integer", "int32") => ("int", false),
             ("integer", "int64") => ("long", false),
@@ -50,7 +50,7 @@ public static class OpenApiExtensions
             ("string", "date") => ("global::System.DateTime", false),
             ("string", "date-time") => ("global::System.DateTime", false),
             ("string", "password") => ("string", true),
-            
+
             ("integer", _) => ("int", false),
             ("number", _) => ("double", false),
             ("string", _) => ("string", true),
@@ -65,31 +65,32 @@ public static class OpenApiExtensions
             ? type + "?"
             : type;
     }
-    
+
     public static string? GetDefaultValue(this OpenApiSchema schema)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
-        
+
         return schema.Default?.GetString();
     }
 
     public static string GetSummary(this OpenApiSchema schema)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
-        
+
         var summary = schema.Description ?? string.Empty;
         if (schema.Default != null)
         {
             summary += $"\n<br/>Default Value: {schema.Default.GetString()}";
         }
+
         if (schema.Example != null)
         {
             summary += $"\n<br/>Example: {schema.Example.GetString()}";
         }
-        
+
         return summary;
     }
-    
+
     public static string? GetString(this IOpenApiAny any)
     {
         return any switch
@@ -106,52 +107,52 @@ public static class OpenApiExtensions
             _ => string.Empty,
         };
     }
-    
+
     public static bool IsObjectWithoutReference(
         this OpenApiSchema schema)
     {
         return schema is { Type: "object", Reference: null };
     }
-    
+
     public static bool IsEnum(
         this OpenApiSchema schema)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
-        
+
         return schema.Type == "string" && schema.Enum.Any();
     }
-    
+
     public static string[] Append(
         this string[] parents,
         KeyValuePair<string, OpenApiSchema> schema)
     {
         return parents.Append(schema.Key.ToPropertyName()).ToArray();
     }
-    
+
     public static KeyValuePair<string, OpenApiSchema> WithKey(
         this OpenApiSchema schema,
         string key)
     {
         return new KeyValuePair<string, OpenApiSchema>(key, schema);
     }
-    
-    
+
+
     public static PropertyData ToEnumValue(
         this IOpenApiAny any)
     {
         var id = any.GetString() ?? string.Empty;
         var name = id
-           .ToPropertyName()
-           .UseWordSeparator('_', '-')
-           .Replace(".", string.Empty);
-        
+            .ToPropertyName()
+            .UseWordSeparator('_', '-', ' ')
+            .Replace(".", string.Empty);
+
         return PropertyData.Default with
         {
             Id = id,
             Name = name,
         };
     }
-    
+
     public static PropertyData ToProperty(
         this KeyValuePair<string, OpenApiSchema> schema,
         HashSet<string> requiredProperties,
@@ -159,7 +160,7 @@ public static class OpenApiExtensions
         params ModelData[] parents)
     {
         requiredProperties = requiredProperties ?? throw new ArgumentNullException(nameof(requiredProperties));
-        
+
         return new PropertyData(
             Id: schema.Key,
             Name: schema.Key.ToPropertyName()
@@ -174,7 +175,14 @@ public static class OpenApiExtensions
     public static IEnumerable<ModelData> WithAdditionalModels(
         this ModelData modelData)
     {
-        return new []{ modelData }
+        return new[]
+            {
+                modelData with
+                {
+                    AdditionalModels = [],
+                    Enumerations = [],
+                }
+            }
             .Concat(modelData.AdditionalModels.SelectMany(WithAdditionalModels))
             .Concat(modelData.Enumerations.SelectMany(WithAdditionalModels));
     }
