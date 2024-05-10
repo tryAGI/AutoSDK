@@ -77,18 +77,26 @@ public static class OpenApiExtensions
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
-        var summary = schema.Description ?? string.Empty;
+        // Remove any XML tags from the description
+        var summary = schema.Description?.ClearForXml() ?? string.Empty;
         if (schema.Default != null)
         {
-            summary += $"\n<br/>Default Value: {schema.Default.GetString()}";
+            summary += $"\n<br/>Default Value: {schema.Default.GetString()?.ClearForXml()}";
         }
 
         if (schema.Example != null)
         {
-            summary += $"\n<br/>Example: {schema.Example.GetString()}";
+            summary += $"\n<br/>Example: {schema.Example.GetString()?.ClearForXml()}";
         }
 
         return summary;
+    }
+
+    public static string? ClearForXml(this string text)
+    {
+        return text?
+            .Replace("<", "&lt;")
+            .Replace(">", "&gt;");
     }
 
     public static string? GetString(this IOpenApiAny any)

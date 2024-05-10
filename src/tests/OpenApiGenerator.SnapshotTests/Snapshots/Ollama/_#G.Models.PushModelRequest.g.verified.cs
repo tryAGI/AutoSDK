@@ -10,7 +10,7 @@ namespace G
     public sealed partial class PushModelRequest
     {
         /// <summary>
-        /// The name of the model to push in the form of <namespace>/<model>:<tag>.
+        /// The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt;tag&gt;.
         /// <br/>Example: mattw/pygmalion:latest
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
