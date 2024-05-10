@@ -72,6 +72,7 @@ public sealed partial class {modelData.Parents[level].ClassName}
         public{(property.IsRequired ? " required" : "")} {property.Type} {property.Name} {{ get; set; }}{(property.IsRequired || property.DefaultValue == null ? string.Empty : $" = {property.DefaultValue};")}
 ").Inject()}
 
+        {"Additional properties that are not explicitly defined in the schema".ToXmlDocumentationSummary(level: 8)}
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties {{ get; set; }} = new global::System.Collections.Generic.Dictionary<string, object>();
     }}".RemoveBlankLinesWhereOnlyWhitespaces();
