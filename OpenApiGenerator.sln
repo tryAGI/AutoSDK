@@ -30,6 +30,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenApiGenerator.Helpers", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenApiGenerator.Core", "src\libs\OpenApiGenerator.Core\OpenApiGenerator.Core.csproj", "{3A3F5EE3-0076-4822-B3BA-2955EC802E25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenApiGenerator.UnitTests", "src\tests\OpenApiGenerator.UnitTests\OpenApiGenerator.UnitTests.csproj", "{88BE4AC5-6E7B-46FA-B656-5CCE8BF9F18E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{3A3F5EE3-0076-4822-B3BA-2955EC802E25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A3F5EE3-0076-4822-B3BA-2955EC802E25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A3F5EE3-0076-4822-B3BA-2955EC802E25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88BE4AC5-6E7B-46FA-B656-5CCE8BF9F18E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88BE4AC5-6E7B-46FA-B656-5CCE8BF9F18E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88BE4AC5-6E7B-46FA-B656-5CCE8BF9F18E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88BE4AC5-6E7B-46FA-B656-5CCE8BF9F18E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +72,7 @@ Global
 		{0EC09367-E7C5-4847-A9F3-DBC18A1C8395} = {9CAA231D-7BE1-46C9-ACD6-EB2E569CEBEA}
 		{CF6126AF-6934-46EC-A0F2-B75C673EA8D8} = {6E5BF389-3D3F-4D74-9DD0-3B199CB529C5}
 		{3A3F5EE3-0076-4822-B3BA-2955EC802E25} = {6E5BF389-3D3F-4D74-9DD0-3B199CB529C5}
+		{88BE4AC5-6E7B-46FA-B656-5CCE8BF9F18E} = {9CAA231D-7BE1-46C9-ACD6-EB2E569CEBEA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1493AEE4-9211-46E9-BFE6-8F629EAC5693}

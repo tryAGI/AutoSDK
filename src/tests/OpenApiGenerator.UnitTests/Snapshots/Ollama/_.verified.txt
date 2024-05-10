@@ -1,0 +1,1610 @@
+﻿[
+  {
+    Id: GenerateCompletionRequest,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Properties: [
+      {
+        Id: model,
+        Name: Model,
+        Type: string,
+        IsRequired: true,
+        Summary:
+The model name. 
+
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+
+<br/>Example: llama2:7b
+      },
+      {
+        Id: prompt,
+        Name: Prompt,
+        Type: string,
+        IsRequired: true,
+        Summary:
+The prompt to generate a response.
+<br/>Example: Why is the sky blue?
+      },
+      {
+        Id: images,
+        Name: Images,
+        Type: global::System.Collections.Generic.IList<string?>?,
+        IsRequired: false,
+        Summary: (optional) a list of Base64-encoded images to include in the message (for multimodal models such as llava)
+      },
+      {
+        Id: system,
+        Name: System,
+        Type: string?,
+        IsRequired: false,
+        Summary: The system prompt to (overrides what is defined in the Modelfile).
+      },
+      {
+        Id: template,
+        Name: Template,
+        Type: string?,
+        IsRequired: false,
+        Summary: The full prompt or prompt template (overrides what is defined in the Modelfile).
+      },
+      {
+        Id: context,
+        Name: Context,
+        Type: global::System.Collections.Generic.IList<int>?,
+        IsRequired: false,
+        Summary: The context parameter returned from a previous request to [generateCompletion], this can be used to keep a short conversational memory.
+      },
+      {
+        Id: options,
+        Name: Options,
+        Type: RequestOptions?,
+        IsRequired: false,
+        Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.
+      },
+      {
+        Id: format,
+        Name: Format,
+        Type: GenerateCompletionRequestFormat?,
+        IsRequired: false,
+        Summary:
+The format to return a response in. Currently the only accepted value is json.
+
+Enable JSON mode by setting the format parameter to json. This will structure the response as valid JSON.
+
+Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
+
+      },
+      {
+        Id: raw,
+        Name: Raw,
+        Type: bool,
+        IsRequired: false,
+        Summary:
+If `true` no formatting will be applied to the prompt and no context will be returned. 
+
+You may choose to use the `raw` parameter if you are specifying a full templated prompt in your request to the API, and are managing history yourself.
+
+      },
+      {
+        Id: stream,
+        Name: Stream,
+        Type: bool,
+        IsRequired: false,
+        DefaultValue: false,
+        Summary:
+If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
+
+<br/>Default Value: false
+      },
+      {
+        Id: keep_alive,
+        Name: KeepAlive,
+        Type: int,
+        IsRequired: false,
+        Summary:
+How long (in minutes) to keep the model loaded in memory.
+
+- If set to a positive duration (e.g. 20), the model will stay loaded for the provided duration.
+- If set to a negative duration (e.g. -1), the model will stay loaded indefinitely.
+- If set to 0, the model will be unloaded immediately once finished.
+- If not set, the model will stay loaded for 5 minutes by default
+
+      }
+    ],
+    Summary: Request class for the generate endpoint.,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: GenerateCompletionRequest,
+    ClassName: GenerateCompletionRequest,
+    ExternalClassName: GenerateCompletionRequest,
+    FileNameWithoutExtension: G.Models.GenerateCompletionRequest
+  },
+  {
+    Id: format,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: json,
+        Name: Json,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary:
+The format to return a response in. Currently the only accepted value is json.
+
+Enable JSON mode by setting the format parameter to json. This will structure the response as valid JSON.
+
+Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
+,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Format,
+    ClassName: Format,
+    ExternalClassName: Format,
+    FileNameWithoutExtension: G.Models.Format
+  },
+  {
+    Id: RequestOptions,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Properties: [
+      {
+        Id: num_keep,
+        Name: NumKeep,
+        Type: int,
+        IsRequired: false,
+        Summary:
+Number of tokens to keep from the prompt.
+
+      },
+      {
+        Id: seed,
+        Name: Seed,
+        Type: int,
+        IsRequired: false,
+        Summary:
+Sets the random number seed to use for generation. Setting this to a specific number will make the model generate the same text for the same prompt. (Default: 0)
+
+      },
+      {
+        Id: num_predict,
+        Name: NumPredict,
+        Type: int,
+        IsRequired: false,
+        Summary:
+Maximum number of tokens to predict when generating text. (Default: 128, -1 = infinite generation, -2 = fill context)
+
+      },
+      {
+        Id: top_k,
+        Name: TopK,
+        Type: int,
+        IsRequired: false,
+        Summary:
+Reduces the probability of generating nonsense. A higher value (e.g. 100) will give more diverse answers, while a lower value (e.g. 10) will be more conservative. (Default: 40)
+
+      },
+      {
+        Id: top_p,
+        Name: TopP,
+        Type: float,
+        IsRequired: false,
+        Summary:
+Works together with top-k. A higher value (e.g., 0.95) will lead to more diverse text, while a lower value (e.g., 0.5) will generate more focused and conservative text. (Default: 0.9)
+
+      },
+      {
+        Id: tfs_z,
+        Name: TfsZ,
+        Type: float,
+        IsRequired: false,
+        Summary:
+Tail free sampling is used to reduce the impact of less probable tokens from the output. A higher value (e.g., 2.0) will reduce the impact more, while a value of 1.0 disables this setting. (default: 1)
+
+      },
+      {
+        Id: typical_p,
+        Name: TypicalP,
+        Type: float,
+        IsRequired: false,
+        Summary:
+Typical p is used to reduce the impact of less probable tokens from the output.
+
+      },
+      {
+        Id: repeat_last_n,
+        Name: RepeatLastN,
+        Type: int,
+        IsRequired: false,
+        Summary:
+Sets how far back for the model to look back to prevent repetition. (Default: 64, 0 = disabled, -1 = num_ctx)
+
+      },
+      {
+        Id: temperature,
+        Name: Temperature,
+        Type: float,
+        IsRequired: false,
+        Summary:
+The temperature of the model. Increasing the temperature will make the model answer more creatively. (Default: 0.8)
+
+      },
+      {
+        Id: repeat_penalty,
+        Name: RepeatPenalty,
+        Type: float,
+        IsRequired: false,
+        Summary:
+Sets how strongly to penalize repetitions. A higher value (e.g., 1.5) will penalize repetitions more strongly, while a lower value (e.g., 0.9) will be more lenient. (Default: 1.1)
+
+      },
+      {
+        Id: presence_penalty,
+        Name: PresencePenalty,
+        Type: float,
+        IsRequired: false,
+        Summary:
+Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.
+
+      },
+      {
+        Id: frequency_penalty,
+        Name: FrequencyPenalty,
+        Type: float,
+        IsRequired: false,
+        Summary:
+Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.
+
+      },
+      {
+        Id: mirostat,
+        Name: Mirostat,
+        Type: int,
+        IsRequired: false,
+        Summary:
+Enable Mirostat sampling for controlling perplexity. (default: 0, 0 = disabled, 1 = Mirostat, 2 = Mirostat 2.0)
+
+      },
+      {
+        Id: mirostat_tau,
+        Name: MirostatTau,
+        Type: float,
+        IsRequired: false,
+        Summary:
+Controls the balance between coherence and diversity of the output. A lower value will result in more focused and coherent text. (Default: 5.0)
+
+      },
+      {
+        Id: mirostat_eta,
+        Name: MirostatEta,
+        Type: float,
+        IsRequired: false,
+        Summary:
+Influences how quickly the algorithm responds to feedback from the generated text. A lower learning rate will result in slower adjustments, while a higher learning rate will make the algorithm more responsive. (Default: 0.1)
+
+      },
+      {
+        Id: penalize_newline,
+        Name: PenalizeNewline,
+        Type: bool,
+        IsRequired: false,
+        Summary:
+Penalize newlines in the output. (Default: false)
+
+      },
+      {
+        Id: stop,
+        Name: Stop,
+        Type: global::System.Collections.Generic.IList<string?>?,
+        IsRequired: false,
+        Summary: Sequences where the API will stop generating further tokens. The returned text will not contain the stop sequence.
+      },
+      {
+        Id: numa,
+        Name: Numa,
+        Type: bool,
+        IsRequired: false,
+        Summary:
+Enable NUMA support. (Default: false)
+
+      },
+      {
+        Id: num_ctx,
+        Name: NumCtx,
+        Type: int,
+        IsRequired: false,
+        Summary:
+Sets the size of the context window used to generate the next token.
+
+      },
+      {
+        Id: num_batch,
+        Name: NumBatch,
+        Type: int,
+        IsRequired: false,
+        Summary:
+Sets the number of batches to use for generation. (Default: 1)
+
+      },
+      {
+        Id: num_gqa,
+        Name: NumGqa,
+        Type: int,
+        IsRequired: false,
+        Summary:
+The number of GQA groups in the transformer layer. Required for some models, for example it is 8 for `llama2:70b`.
+
+      },
+      {
+        Id: num_gpu,
+        Name: NumGpu,
+        Type: int,
+        IsRequired: false,
+        Summary:
+The number of layers to send to the GPU(s). On macOS it defaults to 1 to enable metal support, 0 to disable.
+
+      },
+      {
+        Id: main_gpu,
+        Name: MainGpu,
+        Type: int,
+        IsRequired: false,
+        Summary:
+The GPU to use for the main model. Default is 0.
+
+      },
+      {
+        Id: low_vram,
+        Name: LowVram,
+        Type: bool,
+        IsRequired: false,
+        Summary:
+Enable low VRAM mode. (Default: false)
+
+      },
+      {
+        Id: f16_kv,
+        Name: F16Kv,
+        Type: bool,
+        IsRequired: false,
+        Summary:
+Enable f16 key/value. (Default: false)
+
+      },
+      {
+        Id: logits_all,
+        Name: LogitsAll,
+        Type: bool,
+        IsRequired: false,
+        Summary:
+Enable logits all. (Default: false)
+
+      },
+      {
+        Id: vocab_only,
+        Name: VocabOnly,
+        Type: bool,
+        IsRequired: false,
+        Summary:
+Enable vocab only. (Default: false)
+
+      },
+      {
+        Id: use_mmap,
+        Name: UseMmap,
+        Type: bool,
+        IsRequired: false,
+        Summary:
+Enable mmap. (Default: false)
+
+      },
+      {
+        Id: use_mlock,
+        Name: UseMlock,
+        Type: bool,
+        IsRequired: false,
+        Summary:
+Enable mlock. (Default: false)
+
+      },
+      {
+        Id: embedding_only,
+        Name: EmbeddingOnly,
+        Type: bool,
+        IsRequired: false,
+        Summary:
+Enable embedding only. (Default: false)
+
+      },
+      {
+        Id: rope_frequency_base,
+        Name: RopeFrequencyBase,
+        Type: float,
+        IsRequired: false,
+        Summary:
+The base of the rope frequency scale. (Default: 1.0)
+
+      },
+      {
+        Id: rope_frequency_scale,
+        Name: RopeFrequencyScale,
+        Type: float,
+        IsRequired: false,
+        Summary:
+The scale of the rope frequency. (Default: 1.0)
+
+      },
+      {
+        Id: num_thread,
+        Name: NumThread,
+        Type: int,
+        IsRequired: false,
+        Summary:
+Sets the number of threads to use during computation. By default, Ollama will detect this for optimal performance. It is recommended to set this value to the number of physical CPU cores your system has (as opposed to the logical number of cores).
+
+      }
+    ],
+    Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: RequestOptions,
+    ClassName: RequestOptions,
+    ExternalClassName: RequestOptions,
+    FileNameWithoutExtension: G.Models.RequestOptions
+  },
+  {
+    Id: ResponseFormat,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Properties: null,
+    Summary:
+The format to return a response in. Currently the only accepted value is json.
+
+Enable JSON mode by setting the format parameter to json. This will structure the response as valid JSON.
+
+Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
+,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ResponseFormat,
+    ClassName: ResponseFormat,
+    ExternalClassName: ResponseFormat,
+    FileNameWithoutExtension: G.Models.ResponseFormat
+  },
+  {
+    Id: GenerateCompletionResponse,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Properties: [
+      {
+        Id: model,
+        Name: Model,
+        Type: string?,
+        IsRequired: false,
+        Summary:
+The model name. 
+
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+
+<br/>Example: llama2:7b
+      },
+      {
+        Id: created_at,
+        Name: CreatedAt,
+        Type: global::System.DateTime,
+        IsRequired: false,
+        Summary:
+Date on which a model was created.
+<br/>Example: 
+      },
+      {
+        Id: response,
+        Name: Response,
+        Type: string?,
+        IsRequired: false,
+        Summary:
+The response for a given prompt with a provided model.
+<br/>Example: The sky appears blue because of a phenomenon called Rayleigh scattering.
+      },
+      {
+        Id: done,
+        Name: Done,
+        Type: bool,
+        IsRequired: false,
+        Summary:
+Whether the response has completed.
+<br/>Example: true
+      },
+      {
+        Id: context,
+        Name: Context,
+        Type: global::System.Collections.Generic.IList<int>?,
+        IsRequired: false,
+        Summary:
+An encoding of the conversation used in this response, this can be sent in the next request to keep a conversational memory.
+
+<br/>Example: [1, 2, 3]
+      },
+      {
+        Id: total_duration,
+        Name: TotalDuration,
+        Type: int,
+        IsRequired: false,
+        Summary:
+Time spent generating the response.
+<br/>Example: 5589157167
+      },
+      {
+        Id: load_duration,
+        Name: LoadDuration,
+        Type: int,
+        IsRequired: false,
+        Summary:
+Time spent in nanoseconds loading the model.
+<br/>Example: 3013701500
+      },
+      {
+        Id: prompt_eval_count,
+        Name: PromptEvalCount,
+        Type: int,
+        IsRequired: false,
+        Summary:
+Number of tokens in the prompt.
+<br/>Example: 46
+      },
+      {
+        Id: prompt_eval_duration,
+        Name: PromptEvalDuration,
+        Type: int,
+        IsRequired: false,
+        Summary:
+Time spent in nanoseconds evaluating the prompt.
+<br/>Example: 1160282000
+      },
+      {
+        Id: eval_count,
+        Name: EvalCount,
+        Type: int,
+        IsRequired: false,
+        Summary:
+Number of tokens the response.
+<br/>Example: 113
+      },
+      {
+        Id: eval_duration,
+        Name: EvalDuration,
+        Type: int,
+        IsRequired: false,
+        Summary:
+Time in nanoseconds spent generating the response.
+<br/>Example: 1325948000
+      }
+    ],
+    Summary: The response class for the generate endpoint.,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: GenerateCompletionResponse,
+    ClassName: GenerateCompletionResponse,
+    ExternalClassName: GenerateCompletionResponse,
+    FileNameWithoutExtension: G.Models.GenerateCompletionResponse
+  },
+  {
+    Id: GenerateChatCompletionRequest,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Properties: [
+      {
+        Id: model,
+        Name: Model,
+        Type: string,
+        IsRequired: true,
+        Summary:
+The model name. 
+
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+
+<br/>Example: llama2:7b
+      },
+      {
+        Id: messages,
+        Name: Messages,
+        Type: global::System.Collections.Generic.IList<Message>,
+        IsRequired: true,
+        Summary: The messages of the chat, this can be used to keep a chat memory
+      },
+      {
+        Id: format,
+        Name: Format,
+        Type: GenerateChatCompletionRequestFormat?,
+        IsRequired: false,
+        Summary:
+The format to return a response in. Currently the only accepted value is json.
+
+Enable JSON mode by setting the format parameter to json. This will structure the response as valid JSON.
+
+Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
+
+      },
+      {
+        Id: options,
+        Name: Options,
+        Type: RequestOptions?,
+        IsRequired: false,
+        Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.
+      },
+      {
+        Id: stream,
+        Name: Stream,
+        Type: bool,
+        IsRequired: false,
+        DefaultValue: false,
+        Summary:
+If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
+
+<br/>Default Value: false
+      },
+      {
+        Id: keep_alive,
+        Name: KeepAlive,
+        Type: int,
+        IsRequired: false,
+        Summary:
+How long (in minutes) to keep the model loaded in memory.
+
+- If set to a positive duration (e.g. 20), the model will stay loaded for the provided duration.
+- If set to a negative duration (e.g. -1), the model will stay loaded indefinitely.
+- If set to 0, the model will be unloaded immediately once finished.
+- If not set, the model will stay loaded for 5 minutes by default
+
+      }
+    ],
+    Summary: Request class for the chat endpoint.,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: GenerateChatCompletionRequest,
+    ClassName: GenerateChatCompletionRequest,
+    ExternalClassName: GenerateChatCompletionRequest,
+    FileNameWithoutExtension: G.Models.GenerateChatCompletionRequest
+  },
+  {
+    Id: format,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: json,
+        Name: Json,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary:
+The format to return a response in. Currently the only accepted value is json.
+
+Enable JSON mode by setting the format parameter to json. This will structure the response as valid JSON.
+
+Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
+,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Format,
+    ClassName: Format,
+    ExternalClassName: Format,
+    FileNameWithoutExtension: G.Models.Format
+  },
+  {
+    Id: GenerateChatCompletionResponse,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Properties: [
+      {
+        Id: message,
+        Name: Message,
+        Type: Message?,
+        IsRequired: false,
+        Summary: A message in the chat endpoint
+      },
+      {
+        Id: model,
+        Name: Model,
+        Type: string?,
+        IsRequired: false,
+        Summary:
+The model name. 
+
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+
+<br/>Example: llama2:7b
+      },
+      {
+        Id: created_at,
+        Name: CreatedAt,
+        Type: global::System.DateTime,
+        IsRequired: false,
+        Summary:
+Date on which a model was created.
+<br/>Example: 
+      },
+      {
+        Id: done,
+        Name: Done,
+        Type: bool,
+        IsRequired: false,
+        Summary:
+Whether the response has completed.
+<br/>Example: true
+      },
+      {
+        Id: total_duration,
+        Name: TotalDuration,
+        Type: int,
+        IsRequired: false,
+        Summary:
+Time spent generating the response.
+<br/>Example: 5589157167
+      },
+      {
+        Id: load_duration,
+        Name: LoadDuration,
+        Type: int,
+        IsRequired: false,
+        Summary:
+Time spent in nanoseconds loading the model.
+<br/>Example: 3013701500
+      },
+      {
+        Id: prompt_eval_count,
+        Name: PromptEvalCount,
+        Type: int,
+        IsRequired: false,
+        Summary:
+Number of tokens in the prompt.
+<br/>Example: 46
+      },
+      {
+        Id: prompt_eval_duration,
+        Name: PromptEvalDuration,
+        Type: int,
+        IsRequired: false,
+        Summary:
+Time spent in nanoseconds evaluating the prompt.
+<br/>Example: 1160282000
+      },
+      {
+        Id: eval_count,
+        Name: EvalCount,
+        Type: int,
+        IsRequired: false,
+        Summary:
+Number of tokens the response.
+<br/>Example: 113
+      },
+      {
+        Id: eval_duration,
+        Name: EvalDuration,
+        Type: int,
+        IsRequired: false,
+        Summary:
+Time in nanoseconds spent generating the response.
+<br/>Example: 1325948000
+      }
+    ],
+    Summary: The response class for the chat endpoint.,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: GenerateChatCompletionResponse,
+    ClassName: GenerateChatCompletionResponse,
+    ExternalClassName: GenerateChatCompletionResponse,
+    FileNameWithoutExtension: G.Models.GenerateChatCompletionResponse
+  },
+  {
+    Id: Message,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Properties: [
+      {
+        Id: role,
+        Name: Role,
+        Type: MessageRole,
+        IsRequired: true,
+        Summary: The role of the message
+      },
+      {
+        Id: content,
+        Name: Content,
+        Type: string,
+        IsRequired: true,
+        Summary:
+The content of the message
+<br/>Example: Why is the sky blue?
+      },
+      {
+        Id: images,
+        Name: Images,
+        Type: global::System.Collections.Generic.IList<string?>?,
+        IsRequired: false,
+        Summary: (optional) a list of Base64-encoded images to include in the message (for multimodal models such as llava)
+      }
+    ],
+    Summary: A message in the chat endpoint,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Message,
+    ClassName: Message,
+    ExternalClassName: Message,
+    FileNameWithoutExtension: G.Models.Message
+  },
+  {
+    Id: role,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: system,
+        Name: System,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: user,
+        Name: User,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: assistant,
+        Name: Assistant,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary: The role of the message,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Role,
+    ClassName: Role,
+    ExternalClassName: Role,
+    FileNameWithoutExtension: G.Models.Role
+  },
+  {
+    Id: GenerateEmbeddingRequest,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Properties: [
+      {
+        Id: model,
+        Name: Model,
+        Type: string,
+        IsRequired: true,
+        Summary:
+The model name. 
+
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+
+<br/>Example: llama2:7b
+      },
+      {
+        Id: prompt,
+        Name: Prompt,
+        Type: string,
+        IsRequired: true,
+        Summary:
+Text to generate embeddings for.
+<br/>Example: Here is an article about llamas...
+      },
+      {
+        Id: options,
+        Name: Options,
+        Type: RequestOptions?,
+        IsRequired: false,
+        Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.
+      }
+    ],
+    Summary: Generate embeddings from a model.,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: GenerateEmbeddingRequest,
+    ClassName: GenerateEmbeddingRequest,
+    ExternalClassName: GenerateEmbeddingRequest,
+    FileNameWithoutExtension: G.Models.GenerateEmbeddingRequest
+  },
+  {
+    Id: GenerateEmbeddingResponse,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Properties: [
+      {
+        Id: embedding,
+        Name: Embedding,
+        Type: global::System.Collections.Generic.IList<double>?,
+        IsRequired: false,
+        Summary:
+The embedding for the prompt.
+<br/>Example: [0.5670403838157654, 0.009260174818336964, ...]
+      }
+    ],
+    Summary: Returns the embedding information.,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: GenerateEmbeddingResponse,
+    ClassName: GenerateEmbeddingResponse,
+    ExternalClassName: GenerateEmbeddingResponse,
+    FileNameWithoutExtension: G.Models.GenerateEmbeddingResponse
+  },
+  {
+    Id: CreateModelRequest,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Properties: [
+      {
+        Id: name,
+        Name: Name,
+        Type: string,
+        IsRequired: true,
+        Summary:
+The model name. 
+
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+
+<br/>Example: mario
+      },
+      {
+        Id: modelfile,
+        Name: Modelfile,
+        Type: string,
+        IsRequired: true,
+        Summary:
+The contents of the Modelfile.
+<br/>Example: FROM llama2\nSYSTEM You are mario from Super Mario Bros.
+      },
+      {
+        Id: stream,
+        Name: Stream,
+        Type: bool,
+        IsRequired: false,
+        DefaultValue: false,
+        Summary:
+If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
+
+<br/>Default Value: false
+      }
+    ],
+    Summary: Create model request object.,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: CreateModelRequest,
+    ClassName: CreateModelRequest,
+    ExternalClassName: CreateModelRequest,
+    FileNameWithoutExtension: G.Models.CreateModelRequest
+  },
+  {
+    Id: CreateModelResponse,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Properties: [
+      {
+        Id: status,
+        Name: Status,
+        Type: CreateModelResponseStatus?,
+        IsRequired: false,
+        Summary: Status creating the model
+      }
+    ],
+    Summary: Response object for creating a model. When finished, `status` is `success`.,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: CreateModelResponse,
+    ClassName: CreateModelResponse,
+    ExternalClassName: CreateModelResponse,
+    FileNameWithoutExtension: G.Models.CreateModelResponse
+  },
+  {
+    Id: status,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: creating system layer,
+        Name: CreatingSystemLayer,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: parsing modelfile,
+        Name: ParsingModelfile,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: success,
+        Name: Success,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary: Status creating the model,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Status,
+    ClassName: Status,
+    ExternalClassName: Status,
+    FileNameWithoutExtension: G.Models.Status
+  },
+  {
+    Id: CreateModelStatus,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Properties: null,
+    Summary: Status creating the model,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: CreateModelStatus,
+    ClassName: CreateModelStatus,
+    ExternalClassName: CreateModelStatus,
+    FileNameWithoutExtension: G.Models.CreateModelStatus
+  },
+  {
+    Id: ModelsResponse,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Properties: [
+      {
+        Id: models,
+        Name: Models,
+        Type: global::System.Collections.Generic.IList<Model?>?,
+        IsRequired: false,
+        Summary: List of models available locally.
+      }
+    ],
+    Summary: Response class for the list models endpoint.,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ModelsResponse,
+    ClassName: ModelsResponse,
+    ExternalClassName: ModelsResponse,
+    FileNameWithoutExtension: G.Models.ModelsResponse
+  },
+  {
+    Id: Model,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Properties: [
+      {
+        Id: name,
+        Name: Name,
+        Type: string?,
+        IsRequired: false,
+        Summary:
+The model name. 
+
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+
+<br/>Example: llama2:7b
+      },
+      {
+        Id: modified_at,
+        Name: ModifiedAt,
+        Type: global::System.DateTime,
+        IsRequired: false,
+        Summary:
+Model modification date.
+<br/>Example: 
+      },
+      {
+        Id: size,
+        Name: Size,
+        Type: int,
+        IsRequired: false,
+        Summary:
+Size of the model on disk.
+<br/>Example: 7323310500
+      }
+    ],
+    Summary: A model available locally.,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Model,
+    ClassName: Model,
+    ExternalClassName: Model,
+    FileNameWithoutExtension: G.Models.Model
+  },
+  {
+    Id: ModelInfoRequest,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Properties: [
+      {
+        Id: name,
+        Name: Name,
+        Type: string,
+        IsRequired: true,
+        Summary:
+The model name. 
+
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+
+<br/>Example: llama2:7b
+      }
+    ],
+    Summary: Request class for the show model info endpoint.,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ModelInfoRequest,
+    ClassName: ModelInfoRequest,
+    ExternalClassName: ModelInfoRequest,
+    FileNameWithoutExtension: G.Models.ModelInfoRequest
+  },
+  {
+    Id: ModelInfo,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Properties: [
+      {
+        Id: license,
+        Name: License,
+        Type: string?,
+        IsRequired: false,
+        Summary:
+The model's license.
+<br/>Example: <contents of license block>
+      },
+      {
+        Id: modelfile,
+        Name: Modelfile,
+        Type: string?,
+        IsRequired: false,
+        Summary:
+The modelfile associated with the model.
+<br/>Example: Modelfile generated by \"ollama show\"\n# To build a new Modelfile based on this one, replace the FROM line with:\n# FROM llama2:latest\n\nFROM /Users/username/.ollama/models/blobs/sha256:8daa9615cce30c259a9555b1cc250d461d1bc69980a274b44d7eda0be78076d8\nTEMPLATE \"\"\"[INST] {{ if and .First .System }}<<SYS>>{{ .System }}<</SYS>>\n\n{{ end }}{{ .Prompt }} [/INST] \"\"\"\nSYSTEM \"\"\"\"\"\"\nPARAMETER stop [INST]\nPARAMETER stop [/INST]\nPARAMETER stop <<SYS>>\nPARAMETER stop <</SYS>>\n"
+      },
+      {
+        Id: parameters,
+        Name: Parameters,
+        Type: string?,
+        IsRequired: false,
+        Summary:
+The model parameters.
+<br/>Example: stop [INST]\nstop [/INST]\nstop <<SYS>>\nstop <</SYS>>
+      },
+      {
+        Id: template,
+        Name: Template,
+        Type: string?,
+        IsRequired: false,
+        Summary:
+The prompt template for the model.
+<br/>Example: [INST] {{ if and .First .System }}<<SYS>>{{ .System }}<</SYS>>\n\n{{ end }}{{ .Prompt }} [/INST]
+      }
+    ],
+    Summary: Details about a model including modelfile, template, parameters, license, and system prompt.,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ModelInfo,
+    ClassName: ModelInfo,
+    ExternalClassName: ModelInfo,
+    FileNameWithoutExtension: G.Models.ModelInfo
+  },
+  {
+    Id: CopyModelRequest,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Properties: [
+      {
+        Id: source,
+        Name: Source,
+        Type: string,
+        IsRequired: true,
+        Summary:
+Name of the model to copy.
+<br/>Example: llama2:7b
+      },
+      {
+        Id: destination,
+        Name: Destination,
+        Type: string,
+        IsRequired: true,
+        Summary:
+Name of the new model.
+<br/>Example: llama2-backup
+      }
+    ],
+    Summary: Request class for copying a model.,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: CopyModelRequest,
+    ClassName: CopyModelRequest,
+    ExternalClassName: CopyModelRequest,
+    FileNameWithoutExtension: G.Models.CopyModelRequest
+  },
+  {
+    Id: DeleteModelRequest,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Properties: [
+      {
+        Id: name,
+        Name: Name,
+        Type: string,
+        IsRequired: true,
+        Summary:
+The model name. 
+
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+
+<br/>Example: llama2:13b
+      }
+    ],
+    Summary: Request class for deleting a model.,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: DeleteModelRequest,
+    ClassName: DeleteModelRequest,
+    ExternalClassName: DeleteModelRequest,
+    FileNameWithoutExtension: G.Models.DeleteModelRequest
+  },
+  {
+    Id: PullModelRequest,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Properties: [
+      {
+        Id: name,
+        Name: Name,
+        Type: string,
+        IsRequired: true,
+        Summary:
+The model name. 
+
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+
+<br/>Example: llama2:7b
+      },
+      {
+        Id: insecure,
+        Name: Insecure,
+        Type: bool,
+        IsRequired: false,
+        DefaultValue: false,
+        Summary:
+Allow insecure connections to the library. 
+
+Only use this if you are pulling from your own library during development.
+
+<br/>Default Value: false
+      },
+      {
+        Id: stream,
+        Name: Stream,
+        Type: bool,
+        IsRequired: false,
+        DefaultValue: false,
+        Summary:
+If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
+
+<br/>Default Value: false
+      }
+    ],
+    Summary: Request class for pulling a model.,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: PullModelRequest,
+    ClassName: PullModelRequest,
+    ExternalClassName: PullModelRequest,
+    FileNameWithoutExtension: G.Models.PullModelRequest
+  },
+  {
+    Id: PullModelResponse,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Properties: [
+      {
+        Id: status,
+        Name: Status,
+        Type: PullModelResponseStatus?,
+        IsRequired: false,
+        Summary:
+Status pulling the model.
+<br/>Example: pulling manifest
+      },
+      {
+        Id: digest,
+        Name: Digest,
+        Type: string?,
+        IsRequired: false,
+        Summary:
+The model's digest.
+<br/>Example: sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a
+      },
+      {
+        Id: total,
+        Name: Total,
+        Type: int,
+        IsRequired: false,
+        Summary:
+Total size of the model.
+<br/>Example: 2142590208
+      },
+      {
+        Id: completed,
+        Name: Completed,
+        Type: int,
+        IsRequired: false,
+        Summary:
+Total bytes transferred.
+<br/>Example: 2142590208
+      }
+    ],
+    Summary:
+Response class for pulling a model. 
+
+The first object is the manifest. Then there is a series of downloading responses. Until any of the download is completed, the `completed` key may not be included. 
+
+The number of files to be downloaded depends on the number of layers specified in the manifest.
+,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: PullModelResponse,
+    ClassName: PullModelResponse,
+    ExternalClassName: PullModelResponse,
+    FileNameWithoutExtension: G.Models.PullModelResponse
+  },
+  {
+    Id: status,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: pulling manifest,
+        Name: PullingManifest,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: downloading digestname,
+        Name: DownloadingDigestname,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: verifying sha256 digest,
+        Name: VerifyingSha256Digest,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: writing manifest,
+        Name: WritingManifest,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: removing any unused layers,
+        Name: RemovingAnyUnusedLayers,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: success,
+        Name: Success,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary:
+Status pulling the model.
+<br/>Example: pulling manifest,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Status,
+    ClassName: Status,
+    ExternalClassName: Status,
+    FileNameWithoutExtension: G.Models.Status
+  },
+  {
+    Id: PullModelStatus,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Properties: null,
+    Summary:
+Status pulling the model.
+<br/>Example: pulling manifest,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: PullModelStatus,
+    ClassName: PullModelStatus,
+    ExternalClassName: PullModelStatus,
+    FileNameWithoutExtension: G.Models.PullModelStatus
+  },
+  {
+    Id: PushModelRequest,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Properties: [
+      {
+        Id: name,
+        Name: Name,
+        Type: string,
+        IsRequired: true,
+        Summary:
+The name of the model to push in the form of <namespace>/<model>:<tag>.
+<br/>Example: mattw/pygmalion:latest
+      },
+      {
+        Id: insecure,
+        Name: Insecure,
+        Type: bool,
+        IsRequired: false,
+        DefaultValue: false,
+        Summary:
+Allow insecure connections to the library. 
+
+Only use this if you are pushing to your library during development.
+
+<br/>Default Value: false
+      },
+      {
+        Id: stream,
+        Name: Stream,
+        Type: bool,
+        IsRequired: false,
+        DefaultValue: false,
+        Summary:
+If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
+
+<br/>Default Value: false
+      }
+    ],
+    Summary: Request class for pushing a model.,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: PushModelRequest,
+    ClassName: PushModelRequest,
+    ExternalClassName: PushModelRequest,
+    FileNameWithoutExtension: G.Models.PushModelRequest
+  },
+  {
+    Id: PushModelResponse,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Properties: [
+      {
+        Id: status,
+        Name: Status,
+        Type: PushModelResponseStatus?,
+        IsRequired: false,
+        Summary: Status pushing the model.
+      },
+      {
+        Id: digest,
+        Name: Digest,
+        Type: string?,
+        IsRequired: false,
+        Summary:
+the model's digest
+<br/>Example: sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a
+      },
+      {
+        Id: total,
+        Name: Total,
+        Type: int,
+        IsRequired: false,
+        Summary:
+total size of the model
+<br/>Example: 2142590208
+      }
+    ],
+    Summary: Response class for pushing a model.,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: PushModelResponse,
+    ClassName: PushModelResponse,
+    ExternalClassName: PushModelResponse,
+    FileNameWithoutExtension: G.Models.PushModelResponse
+  },
+  {
+    Id: status,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: retrieving manifest,
+        Name: RetrievingManifest,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: starting upload,
+        Name: StartingUpload,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: pushing manifest,
+        Name: PushingManifest,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: success,
+        Name: Success,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary: Status pushing the model.,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Status,
+    ClassName: Status,
+    ExternalClassName: Status,
+    FileNameWithoutExtension: G.Models.Status
+  },
+  {
+    Id: PushModelStatus,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Properties: null,
+    Summary: Status pushing the model.,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: PushModelStatus,
+    ClassName: PushModelStatus,
+    ExternalClassName: PushModelStatus,
+    FileNameWithoutExtension: G.Models.PushModelStatus
+  }
+]
