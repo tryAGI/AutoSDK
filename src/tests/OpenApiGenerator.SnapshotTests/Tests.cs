@@ -44,34 +44,45 @@ public partial class Tests
     [TestMethod]
     public Task Empty()
     {
-        return CheckSourceAsync<ModelGenerator>(
-            Array.Empty<AdditionalText>());
+        return CheckSourceAsync<ModelGenerator>([]);
+    }
+    
+    [TestMethod]
+    public Task Ollama()
+    {
+        return CheckSourceAsync<ModelGenerator>([
+            new CustomAdditionalText(
+                path: H.Resources.ollamacurated_yaml.FileName,
+                text: H.Resources.ollamacurated_yaml.AsString())
+        ], new Dictionary<string, string>
+        {
+            //["build_property.OpenApiGenerator_IncludeOperationIds"] = "ListModels",
+            //["build_property.OpenApiGenerator_IncludeModels"] = "CreateModerationResponse;Error;ErrorResponse;ListModelsResponse;Model;DeleteModelResponse;CreateCompletionRequest",
+        }); //, additionalGenerators: [new ClientGenerator()]
     }
     
     [TestMethod]
     public Task OpenAi()
     {
-        return CheckSourceAsync<ModelGenerator>(new AdditionalText[]
-        {
+        return CheckSourceAsync<ModelGenerator>([
             new CustomAdditionalText(
                 path: H.Resources.openai_yaml.FileName,
-                text: H.Resources.openai_yaml.AsString()),
-        }, new Dictionary<string, string>
+                text: H.Resources.openai_yaml.AsString())
+        ], new Dictionary<string, string>
         {
             ["build_property.OpenApiGenerator_IncludeOperationIds"] = "ListModels",
             ["build_property.OpenApiGenerator_IncludeModels"] = "CreateModerationResponse;Error;ErrorResponse;ListModelsResponse;Model;DeleteModelResponse;CreateCompletionRequest",
-        }, additionalGenerators: new IIncrementalGenerator[]{ new ClientGenerator() });
+        }, additionalGenerators: [new ClientGenerator()]);
     }
     
     [TestMethod]
     public Task OpenAi_CreateCompletionResponse()
     {
-        return CheckSourceAsync<ModelGenerator>(new AdditionalText[]
-        {
+        return CheckSourceAsync<ModelGenerator>([
             new CustomAdditionalText(
                 path: H.Resources.openai_yaml.FileName,
-                text: H.Resources.openai_yaml.AsString()),
-        }, new Dictionary<string, string>
+                text: H.Resources.openai_yaml.AsString())
+        ], new Dictionary<string, string>
         {
             ["build_property.OpenApiGenerator_IncludeModels"] = "CreateCompletionResponse",
         });
@@ -80,12 +91,11 @@ public partial class Tests
     [TestMethod]
     public Task YamlWithLocalFile()
     {
-        return CheckSourceAsync<ModelGenerator>(new AdditionalText[]
-        {
+        return CheckSourceAsync<ModelGenerator>([
             new CustomAdditionalText(
                 path: "openapi.yaml",
                 text: H.Resources.ipinfo_yaml.AsString()),
-        });
+        ]);
     }
 
     [TestMethod]
@@ -93,18 +103,16 @@ public partial class Tests
     {
         var yaml = PetStore.Serialize(OpenApiSpecVersion.OpenApi3_0, OpenApiFormat.Yaml);
         
-        return CheckSourceAsync<ModelGenerator>(new AdditionalText[]
-        {
+        return CheckSourceAsync<ModelGenerator>([
             new CustomAdditionalText("openapi.yaml", yaml),
-        });
+        ]);
     }
 
     [TestMethod]
     public Task YamlWithUrl()
     {
-        return CheckSourceAsync<ModelGenerator>(new AdditionalText[]
-        {
+        return CheckSourceAsync<ModelGenerator>([
             new CustomAdditionalText("https://dedoose-rest-api.onrender.com/swagger/v1/swagger.json", string.Empty),
-        });
+        ]);
     }
 }
