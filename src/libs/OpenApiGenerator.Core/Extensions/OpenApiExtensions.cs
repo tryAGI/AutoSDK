@@ -134,7 +134,7 @@ public static class OpenApiExtensions
         this string[] parents,
         KeyValuePair<string, OpenApiSchema> schema)
     {
-        return parents.Append(schema.Key.ToPropertyName()).ToArray();
+        return parents.Concat([schema.Key.ToPropertyName()]).ToArray();
     }
 
     public static KeyValuePair<string, OpenApiSchema> WithKey(

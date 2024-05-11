@@ -73,7 +73,7 @@ public readonly record struct ModelData(
             );
 
         var requiredProperties = new HashSet<string>(schema.Value.Required);
-        var innerParents = parents.Append(model).ToArray();
+        var innerParents = parents.Concat([model]).ToArray();
         
         return model with
         {
@@ -139,7 +139,7 @@ public readonly record struct ModelData(
     
     public string ExternalClassName => NamingConvention switch
     {
-        NamingConvention.InnerClasses => string.Join(".", Parents.Select(x => x.ClassName).Append(ClassName)),
+        NamingConvention.InnerClasses => string.Join(".", Parents.Select(x => x.ClassName).Concat([ClassName])),
         NamingConvention.ConcatNames => ClassName,
         _ => string.Empty,
     };
