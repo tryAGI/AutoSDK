@@ -13,3 +13,26 @@ Inspired by NSwag
 - Available under MIT license for general users and most organizations
 - Uses https://github.com/microsoft/OpenAPI.NET for parsing OpenAPI specification
 - Supports trimming/native AOT compilation
+
+## 🚀Quick start🚀
+- Install the package
+```bash
+dotnet add package OpenApiGenerator
+```
+- Add the following to your csproj file. You can check all settings [here](https://github.com/HavenDV/OpenApiGenerator/blob/76c06e6e2265bc875d0619cfe96e28002fba1d3d/src/libs/OpenApiGenerator/OpenApiGenerator.props):
+```xml
+<!-- This generator automatically detects all .yaml files in the project directory and adds them to the generation -->
+<!-- If your yaml file is not in the project directory, you can specify the path to it -->
+<ItemGroup Label="OpenApiGenerator">
+    <AdditionalFiles Include="$(MSBuildThisFileDirectory)../../../docs/openapi.yaml" />
+</ItemGroup>
+
+<PropertyGroup Label="OpenApiGenerator">
+    <OpenApiGenerator_Namespace>Ollama</OpenApiGenerator_Namespace>
+    <OpenApiGenerator_ClassName>OllamaApi</OpenApiGenerator_ClassName>
+    <OpenApiGenerator_GenerateModels>true</OpenApiGenerator_GenerateModels>
+    <OpenApiGenerator_GenerateSdk>false</OpenApiGenerator_GenerateSdk>
+</PropertyGroup>
+```
+- It's all! Now you can build your project and use the generated code. You also can use IDE to see the generated code in any moment, this is a example for Rider:  
+![rider_show_generated_code.png](assets/rider_show_generated_code.png)
