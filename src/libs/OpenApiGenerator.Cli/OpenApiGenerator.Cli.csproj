@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\libs\OpenApiGenerator.Core\OpenApiGenerator.Core.csproj" />
+    <ProjectReference Include="..\OpenApiGenerator.Core\OpenApiGenerator.Core.csproj" />
   </ItemGroup>
 
 </Project>
