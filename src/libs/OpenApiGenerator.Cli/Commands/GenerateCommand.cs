@@ -25,15 +25,31 @@ public class GenerateCommand : Command
             aliases: ["--clientClassName", "-c"],
             getDefaultValue: () => string.Empty,
             description: "Client class name");
+        var singleFileOption = new Option<bool>(
+            aliases: ["--single-file", "-s"],
+            getDefaultValue: () => false,
+            description: "Generate all models in a single file");
         AddArgument(inputOption);
         AddOption(outputOption);
         AddOption(namespaceOption);
         AddOption(clientClassNameOption);
+        AddOption(singleFileOption);
 
-        this.SetHandler(HandleAsync, inputOption, outputOption, namespaceOption, clientClassNameOption);
+        this.SetHandler(
+            HandleAsync,
+            inputOption,
+            outputOption,
+            namespaceOption,
+            clientClassNameOption,
+            singleFileOption);
     }
 
-    private static async Task HandleAsync(string inputPath, string outputPath, string @namespace, string clientClassName)
+    private static async Task HandleAsync(
+        string inputPath,
+        string outputPath,
+        string @namespace,
+        string clientClassName,
+        bool generateAsSingleFile)
     {
         var yaml = await File.ReadAllTextAsync(inputPath).ConfigureAwait(false);
         
@@ -65,6 +81,13 @@ public class GenerateCommand : Command
         var files = models
             .Select(x => ModelGeneratorMethods.GetSourceCode(x))
             .ToArray();
+        
+        if (generateAsSingleFile)
+        {
+            var text = string.Join(Environment.NewLine, files.Select(x => x.Text));
+            await File.WriteAllTextAsync(Path.Combine(outputPath, $"{name}.cs"), text).ConfigureAwait(false);
+            return;
+        }
         
         if (string.IsNullOrWhiteSpace(outputPath))
         {

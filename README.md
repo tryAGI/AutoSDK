@@ -36,3 +36,12 @@ dotnet add package OpenApiGenerator
 ```
 - It's all! Now you can build your project and use the generated code. You also can use IDE to see the generated code in any moment, this is a example for Rider:  
 ![rider_show_generated_code.png](assets/rider_show_generated_code.png)
+
+## CLI
+You can use the CLI to generate the code.  
+```bash
+dotnet tool install --global openapigenerator.cli --prerelease
+oag --help
+oag generate openapi.yaml
+```
+It will generate the code in the "openapi" subdirectory.
