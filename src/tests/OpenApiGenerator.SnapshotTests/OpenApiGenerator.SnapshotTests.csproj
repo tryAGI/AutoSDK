@@ -35,6 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\libs\OpenApiGenerator.Core\OpenApiGenerator.Core.csproj" />
     <ProjectReference Include="..\..\libs\OpenApiGenerator\OpenApiGenerator.csproj" />
   </ItemGroup>
 

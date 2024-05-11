@@ -36,9 +36,10 @@ public static class OptionsExtensions
                 $"{default(JsonSerializerType):G}",
                 ignoreCase: true,
                 out var jsonSerializerType) ? jsonSerializerType : default,
+            UseRequiredKeyword: options.GetEnumGlobalOption<SdkFeatureUsage>(nameof(Settings.UseRequiredKeyword), prefix),
             
             IncludeOperationIds: (options.GetGlobalOption(nameof(Settings.IncludeOperationIds), prefix)?.Split(';') ??
-                                   Array.Empty<string>()).ToImmutableArray(),
+                                   []).ToImmutableArray(),
             
             GenerateModels: bool.TryParse(
                 options.GetGlobalOption(nameof(Settings.GenerateModels), prefix),
@@ -49,9 +50,24 @@ public static class OptionsExtensions
                 ignoreCase: true,
                 out var modelStyle) ? modelStyle : default,
             IncludeModels: (options.GetGlobalOption(nameof(Settings.IncludeModels), prefix)?.Split(';') ??
-                            Array.Empty<string>()).ToImmutableArray()
+                            []).ToImmutableArray()
 
             );
+    }
+    
+    public static T GetEnumGlobalOption<T>(
+        this AnalyzerConfigOptionsProvider provider,
+        string name,
+        string? prefix = null) where T : struct, Enum
+    {
+        provider = provider ?? throw new ArgumentNullException(nameof(provider));
+        name = name ?? throw new ArgumentNullException(nameof(name));
+
+        return Enum.TryParse<T>(
+            provider.GetGlobalOption(name, prefix) ??
+            $"{default(T):G}",
+            ignoreCase: true,
+            out var value) ? value : default;
     }
 
     public static IncrementalValueProvider<Settings> DetectSettings(

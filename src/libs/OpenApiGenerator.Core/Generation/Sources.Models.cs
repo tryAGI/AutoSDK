@@ -72,12 +72,37 @@ public sealed partial class {modelData.Parents[level].ClassName}
     ").Inject()}
     }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
+
+    private static bool IsSupported(SdkFeatureUsage usage, string targetFramework)
+    {
+        return usage switch
+        {
+            SdkFeatureUsage.Always => true,
+            SdkFeatureUsage.InSupportedTargetFrameworks
+                when targetFramework.StartsWith("net8", StringComparison.OrdinalIgnoreCase) => true,
+            _ => false,
+        };
+    }
+
+    private static string GetDefaultValue(PropertyData property, bool isRequiredKeywordSupported)
+    {
+        if (property.IsRequired && !isRequiredKeywordSupported)
+        {
+            return " = default!;";
+        }
+        
+        return property.IsRequired || property.DefaultValue == null ? string.Empty : $" = {property.DefaultValue};";
+    }
     
     public static string GenerateClassModel(
         ModelData modelData,
         CancellationToken cancellationToken = default)
     {
         var jsonSerializer = modelData.JsonSerializerType.GetSerializer();
+        var isRequiredKeywordSupported = IsSupported(modelData.UseRequiredKeyword, modelData.TargetFramework);
+        var requiredKeyword = isRequiredKeywordSupported
+            ? " required"
+            : string.Empty;
         
         return $@" 
     {modelData.Summary.ToXmlDocumentationSummary(level: 4)}
@@ -85,8 +110,9 @@ public sealed partial class {modelData.Parents[level].ClassName}
     {{
 {modelData.Properties.Select(property => @$"
         {property.Summary.ToXmlDocumentationSummary(level: 8)}
-        {jsonSerializer.GeneratePropertyAttribute(property.Id)}
-        public{(property.IsRequired ? " required" : "")} {property.Type} {property.Name} {{ get; set; }}{(property.IsRequired || property.DefaultValue == null ? string.Empty : $" = {property.DefaultValue};")}
+        {jsonSerializer.GeneratePropertyAttribute(property.Id, property.IsRequired)}
+        {(property.IsRequired ? jsonSerializer.GenerateRequiredAttribute() : string.Empty)}
+        public{(property.IsRequired ? requiredKeyword : "")} {property.Type} {property.Name} {{ get; set; }}{GetDefaultValue(property, isRequiredKeywordSupported)}
 ").Inject()}
 
         {"Additional properties that are not explicitly defined in the schema".ToXmlDocumentationSummary(level: 8)}

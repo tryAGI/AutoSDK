@@ -54,6 +54,7 @@ public class GenerateCommand : Command
             ClassName: clientClassName,
             NamingConvention: default,
             JsonSerializerType: default,
+            UseRequiredKeyword: default,
             IncludeOperationIds: [],
             GenerateModels: true,
             ModelStyle: default,

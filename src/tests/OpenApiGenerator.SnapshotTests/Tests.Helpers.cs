@@ -4,7 +4,7 @@ using H.Generators.Tests.Extensions;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Testing;
-using OpenApiGenerator;
+using OpenApiGenerator.Core.Json;
 
 namespace OpenApiGenerator.SnapshotTests;
 
@@ -12,6 +12,7 @@ namespace OpenApiGenerator.SnapshotTests;
 public partial class Tests : VerifyBase
 {
     private async Task CheckSourceAsync<T>(
+        JsonSerializerType jsonSerializerType,
         AdditionalText[] additionalTexts,
         Dictionary<string, string>? globalOptions = null,
         [CallerMemberName] string? callerName = null,
@@ -21,8 +22,22 @@ public partial class Tests : VerifyBase
     {
         globalOptions ??= new Dictionary<string, string>();
         globalOptions.Add("build_property.OpenApiGenerator_Namespace", "G");
-        
-        var referenceAssemblies = LatestReferenceAssemblies.Net80;
+        globalOptions.Add("build_property.OpenApiGenerator_JsonSerializerType", $"{jsonSerializerType:G}");
+        globalOptions.Add("build_property.TargetFramework", jsonSerializerType switch
+        {
+            JsonSerializerType.SystemTextJson => "net8.0",
+            JsonSerializerType.NewtonsoftJson => "net6.0",
+            _ => throw new ArgumentOutOfRangeException(nameof(jsonSerializerType), jsonSerializerType, null)
+        });
+
+        var referenceAssemblies = jsonSerializerType switch
+        {
+            JsonSerializerType.SystemTextJson => LatestReferenceAssemblies.Net80,
+            JsonSerializerType.NewtonsoftJson => ReferenceAssemblies.Net.Net60.AddPackages([
+                new PackageIdentity("Newtonsoft.Json", "13.0.3")
+            ]),
+            _ => throw new ArgumentOutOfRangeException(nameof(jsonSerializerType), jsonSerializerType, null)
+        };
         var references = await referenceAssemblies.ResolveAsync(null, cancellationToken);
         var compilation = (Compilation)CSharpCompilation.Create(
             assemblyName: "Tests",
@@ -41,11 +56,11 @@ public partial class Tests : VerifyBase
 
         await Task.WhenAll(
             Verify(diagnostics.NormalizeLocations())
-                .UseDirectory($"Snapshots/{callerName}")
+                .UseDirectory($"Snapshots/{callerName}/{jsonSerializerType:G}")
                 //.AutoVerify()
                 .UseTextForParameters("Diagnostics"),
             Verify(driver)
-                .UseDirectory($"Snapshots/{callerName}")
+                .UseDirectory($"Snapshots/{callerName}/{jsonSerializerType:G}")
                 .UseFileName("_")
                 //.AutoVerify()
                 );

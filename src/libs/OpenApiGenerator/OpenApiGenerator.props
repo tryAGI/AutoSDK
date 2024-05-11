@@ -22,6 +22,8 @@
     <CompilerVisibleProperty Include="OpenApiGenerator_NamingConvention"/>
     <!-- SystemTextJson/NewtonsoftJson. Default: SystemTextJson -->
     <CompilerVisibleProperty Include="OpenApiGenerator_JsonSerializerType"/>
+    <!-- InSupportedTargetFrameworks/Never/Always. Default: InSupportedTargetFrameworks -->
+    <CompilerVisibleProperty Include="OpenApiGenerator_UseRequiredKeyword"/>
 
     <!-- List of ids separated by ;. Default: Empty(all models) -->
     <CompilerVisibleProperty Include="OpenApiGenerator_IncludeOperationIds"/>

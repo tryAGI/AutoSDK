@@ -9,6 +9,7 @@ public readonly record struct Settings(
     string ClassName,
     NamingConvention NamingConvention,
     JsonSerializerType JsonSerializerType,
+    SdkFeatureUsage UseRequiredKeyword,
 
     ImmutableArray<string> IncludeOperationIds,
     

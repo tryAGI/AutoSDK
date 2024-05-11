@@ -1,7 +1,7 @@
-﻿using Microsoft.CodeAnalysis;
-using Microsoft.OpenApi;
+﻿using Microsoft.OpenApi;
 using Microsoft.OpenApi.Extensions;
 using Microsoft.OpenApi.Models;
+using OpenApiGenerator.Core.Json;
 using OpenApiGenerator.Generators;
 
 namespace OpenApiGenerator.SnapshotTests;
@@ -41,16 +41,20 @@ public partial class Tests
         },
     };
     
-    [TestMethod]
-    public Task Empty()
+    [DataTestMethod]
+    [DataRow(JsonSerializerType.SystemTextJson)]
+    [DataRow(JsonSerializerType.NewtonsoftJson)]
+    public Task Empty(JsonSerializerType jsonSerializerType)
     {
-        return CheckSourceAsync<ModelGenerator>([]);
+        return CheckSourceAsync<ModelGenerator>(jsonSerializerType, []);
     }
     
-    [TestMethod]
-    public Task Ollama()
+    [DataTestMethod]
+    [DataRow(JsonSerializerType.SystemTextJson)]
+    [DataRow(JsonSerializerType.NewtonsoftJson)]
+    public Task Ollama(JsonSerializerType jsonSerializerType)
     {
-        return CheckSourceAsync<ModelGenerator>([
+        return CheckSourceAsync<ModelGenerator>(jsonSerializerType, [
             new CustomAdditionalText(
                 path: H.Resources.ollamacurated_yaml.FileName,
                 text: H.Resources.ollamacurated_yaml.AsString())
@@ -61,10 +65,12 @@ public partial class Tests
         }); //, additionalGenerators: [new ClientGenerator()]
     }
     
-    [TestMethod]
-    public Task OpenAi()
+    [DataTestMethod]
+    [DataRow(JsonSerializerType.SystemTextJson)]
+    [DataRow(JsonSerializerType.NewtonsoftJson)]
+    public Task OpenAi(JsonSerializerType jsonSerializerType)
     {
-        return CheckSourceAsync<ModelGenerator>([
+        return CheckSourceAsync<ModelGenerator>(jsonSerializerType, [
             new CustomAdditionalText(
                 path: H.Resources.openai_yaml.FileName,
                 text: H.Resources.openai_yaml.AsString())
@@ -75,10 +81,12 @@ public partial class Tests
         }, additionalGenerators: [new ClientGenerator()]);
     }
     
-    [TestMethod]
-    public Task OpenAi_CreateCompletionResponse()
+    [DataTestMethod]
+    [DataRow(JsonSerializerType.SystemTextJson)]
+    [DataRow(JsonSerializerType.NewtonsoftJson)]
+    public Task OpenAi_CreateCompletionResponse(JsonSerializerType jsonSerializerType)
     {
-        return CheckSourceAsync<ModelGenerator>([
+        return CheckSourceAsync<ModelGenerator>(jsonSerializerType, [
             new CustomAdditionalText(
                 path: H.Resources.openai_yaml.FileName,
                 text: H.Resources.openai_yaml.AsString())
@@ -88,30 +96,36 @@ public partial class Tests
         });
     }
     
-    [TestMethod]
-    public Task YamlWithLocalFile()
+    [DataTestMethod]
+    [DataRow(JsonSerializerType.SystemTextJson)]
+    [DataRow(JsonSerializerType.NewtonsoftJson)]
+    public Task YamlWithLocalFile(JsonSerializerType jsonSerializerType)
     {
-        return CheckSourceAsync<ModelGenerator>([
+        return CheckSourceAsync<ModelGenerator>(jsonSerializerType, [
             new CustomAdditionalText(
                 path: "openapi.yaml",
                 text: H.Resources.ipinfo_yaml.AsString()),
         ]);
     }
 
-    [TestMethod]
-    public Task OpenApi3_0_Yaml()
+    [DataTestMethod]
+    [DataRow(JsonSerializerType.SystemTextJson)]
+    [DataRow(JsonSerializerType.NewtonsoftJson)]
+    public Task OpenApi3_0_Yaml(JsonSerializerType jsonSerializerType)
     {
         var yaml = PetStore.Serialize(OpenApiSpecVersion.OpenApi3_0, OpenApiFormat.Yaml);
         
-        return CheckSourceAsync<ModelGenerator>([
+        return CheckSourceAsync<ModelGenerator>(jsonSerializerType, [
             new CustomAdditionalText("openapi.yaml", yaml),
         ]);
     }
-
-    [TestMethod]
-    public Task YamlWithUrl()
+    
+    [DataTestMethod]
+    [DataRow(JsonSerializerType.SystemTextJson)]
+    [DataRow(JsonSerializerType.NewtonsoftJson)]
+    public Task YamlWithUrl(JsonSerializerType jsonSerializerType)
     {
-        return CheckSourceAsync<ModelGenerator>([
+        return CheckSourceAsync<ModelGenerator>(jsonSerializerType, [
             new CustomAdditionalText("https://dedoose-rest-api.onrender.com/swagger/v1/swagger.json", string.Empty),
         ]);
     }

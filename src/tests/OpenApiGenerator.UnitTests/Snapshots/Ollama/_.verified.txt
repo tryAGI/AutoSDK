@@ -3,6 +3,7 @@
     Id: GenerateCompletionRequest,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Properties: [
       {
@@ -123,6 +124,7 @@ How long (in minutes) to keep the model loaded in memory.
     Id: format,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
     Properties: [
@@ -152,6 +154,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
     Id: RequestOptions,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Properties: [
       {
@@ -462,6 +465,7 @@ Sets the number of threads to use during computation. By default, Ollama will de
     Id: ResponseFormat,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Properties: null,
     Summary:
@@ -482,6 +486,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
     Id: GenerateCompletionResponse,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Properties: [
       {
@@ -600,6 +605,7 @@ Time in nanoseconds spent generating the response.
     Id: GenerateChatCompletionRequest,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Properties: [
       {
@@ -679,6 +685,7 @@ How long (in minutes) to keep the model loaded in memory.
     Id: format,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
     Properties: [
@@ -708,6 +715,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
     Id: GenerateChatCompletionResponse,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Properties: [
       {
@@ -814,6 +822,7 @@ Time in nanoseconds spent generating the response.
     Id: Message,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Properties: [
       {
@@ -852,6 +861,7 @@ The content of the message
     Id: role,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
     Properties: [
@@ -889,6 +899,7 @@ The content of the message
     Id: GenerateEmbeddingRequest,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Properties: [
       {
@@ -932,6 +943,7 @@ Text to generate embeddings for.
     Id: GenerateEmbeddingResponse,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Properties: [
       {
@@ -956,6 +968,7 @@ The embedding for the prompt.
     Id: CreateModelRequest,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Properties: [
       {
@@ -1003,6 +1016,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Id: CreateModelResponse,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Properties: [
       {
@@ -1025,6 +1039,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Id: status,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
     Properties: [
@@ -1062,6 +1077,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Id: CreateModelStatus,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Properties: null,
     Summary: Status creating the model,
@@ -1076,6 +1092,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Id: ModelsResponse,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Properties: [
       {
@@ -1098,6 +1115,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Id: Model,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Properties: [
       {
@@ -1143,6 +1161,7 @@ Size of the model on disk.
     Id: ModelInfoRequest,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Properties: [
       {
@@ -1170,6 +1189,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     Id: ModelInfo,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Properties: [
       {
@@ -1221,6 +1241,7 @@ The prompt template for the model.
     Id: CopyModelRequest,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Properties: [
       {
@@ -1254,6 +1275,7 @@ Name of the new model.
     Id: DeleteModelRequest,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Properties: [
       {
@@ -1281,6 +1303,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     Id: PullModelRequest,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Properties: [
       {
@@ -1332,6 +1355,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Id: PullModelResponse,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Properties: [
       {
@@ -1389,6 +1413,7 @@ The number of files to be downloaded depends on the number of layers specified i
     Id: status,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
     Properties: [
@@ -1449,6 +1474,7 @@ Status pulling the model.
     Id: PullModelStatus,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Properties: null,
     Summary:
@@ -1465,6 +1491,7 @@ Status pulling the model.
     Id: PushModelRequest,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Properties: [
       {
@@ -1513,6 +1540,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Id: PushModelResponse,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Properties: [
       {
@@ -1553,6 +1581,7 @@ total size of the model
     Id: status,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
     Properties: [
@@ -1597,6 +1626,7 @@ total size of the model
     Id: PushModelStatus,
     AddTypeName: false,
     Parents: null,
+    TargetFramework: netstandard2.0,
     Namespace: G,
     Properties: null,
     Summary: Status pushing the model.,
