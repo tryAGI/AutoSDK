@@ -7,13 +7,11 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    [global::System.Runtime.Serialization.DataContract]
-    public enum ListModelsResponseObject
+    public abstract class ListModelsResponseObject
     {
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="list")]
-        List,
+        public const string List = "list";
     }
 }

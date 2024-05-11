@@ -13,7 +13,7 @@ namespace G
         /// Status pushing the model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        public PushModelResponseStatus? Status { get; set; }
+        public string? Status { get; set; }
 
         /// <summary>
         /// the model's digest

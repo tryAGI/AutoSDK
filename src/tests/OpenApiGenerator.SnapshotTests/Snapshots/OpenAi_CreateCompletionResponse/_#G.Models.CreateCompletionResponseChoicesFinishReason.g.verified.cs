@@ -9,23 +9,19 @@ namespace G
     /// `length` if the maximum number of tokens specified in the request was reached,
     /// or `content_filter` if content was omitted due to a flag from our content filters.
     /// </summary>
-    [global::System.Runtime.Serialization.DataContract]
-    public enum CreateCompletionResponseChoicesFinishReason
+    public abstract class CreateCompletionResponseChoicesFinishReason
     {
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="stop")]
-        Stop,
+        public const string Stop = "stop";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="length")]
-        Length,
+        public const string Length = "length";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="content_filter")]
-        ContentFilter,
+        public const string ContentFilter = "content_filter";
     }
 }

@@ -7,13 +7,11 @@ namespace G
     /// <summary>
     /// The object type, which is always "text_completion"
     /// </summary>
-    [global::System.Runtime.Serialization.DataContract]
-    public enum CreateCompletionResponseObject
+    public abstract class CreateCompletionResponseObject
     {
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text_completion")]
-        TextCompletion,
+        public const string TextCompletion = "text_completion";
     }
 }

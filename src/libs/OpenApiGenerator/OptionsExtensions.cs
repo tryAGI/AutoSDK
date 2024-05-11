@@ -4,6 +4,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
 using OpenApiGenerator.Core.Models;
 using OpenApiGenerator.Core.Extensions;
+using OpenApiGenerator.Core.Json;
 
 namespace OpenApiGenerator;
 
@@ -30,6 +31,11 @@ public static class OptionsExtensions
                 $"{default(NamingConvention):G}",
                 ignoreCase: true,
                 out var namingConvention) ? namingConvention : default,
+            JsonSerializerType: Enum.TryParse<JsonSerializerType>(
+                options.GetGlobalOption(nameof(Settings.JsonSerializerType), prefix) ??
+                $"{default(JsonSerializerType):G}",
+                ignoreCase: true,
+                out var jsonSerializerType) ? jsonSerializerType : default,
             
             IncludeOperationIds: (options.GetGlobalOption(nameof(Settings.IncludeOperationIds), prefix)?.Split(';') ??
                                    Array.Empty<string>()).ToImmutableArray(),

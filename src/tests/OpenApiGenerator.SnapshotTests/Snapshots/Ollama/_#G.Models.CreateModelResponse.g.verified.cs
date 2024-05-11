@@ -13,7 +13,7 @@ namespace G
         /// Status creating the model
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        public CreateModelResponseStatus? Status { get; set; }
+        public string? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

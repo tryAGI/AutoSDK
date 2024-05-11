@@ -1,4 +1,5 @@
 using System.Collections.Immutable;
+using OpenApiGenerator.Core.Json;
 
 namespace OpenApiGenerator.Core.Models;
 
@@ -7,6 +8,7 @@ public readonly record struct Settings(
     string Namespace,
     string ClassName,
     NamingConvention NamingConvention,
+    JsonSerializerType JsonSerializerType,
 
     ImmutableArray<string> IncludeOperationIds,
     

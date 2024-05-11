@@ -7,23 +7,19 @@ namespace G
     /// <summary>
     /// Status creating the model
     /// </summary>
-    [global::System.Runtime.Serialization.DataContract]
-    public enum CreateModelResponseStatus
+    public abstract class CreateModelResponseStatus
     {
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="creating system layer")]
-        CreatingSystemLayer,
+        public const string CreatingSystemLayer = "creating system layer";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="parsing modelfile")]
-        ParsingModelfile,
+        public const string ParsingModelfile = "parsing modelfile";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="success")]
-        Success,
+        public const string Success = "success";
     }
 }

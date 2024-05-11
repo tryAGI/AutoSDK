@@ -73,7 +73,7 @@
       {
         Id: object,
         Name: Object,
-        Type: ListModelsResponseObject,
+        Type: string,
         IsRequired: true,
         Summary: 
       },
@@ -530,7 +530,7 @@ Can be used in conjunction with the `seed` request parameter to understand when 
       {
         Id: object,
         Name: Object,
-        Type: CreateCompletionResponseObject,
+        Type: string,
         IsRequired: true,
         Summary: The object type, which is always "text_completion"
       },
@@ -561,7 +561,7 @@ Represents a completion response from the API. Note: both the streamed and non-s
       {
         Id: finish_reason,
         Name: FinishReason,
-        Type: CreateCompletionResponseChoicesFinishReason,
+        Type: string,
         IsRequired: true,
         Summary:
 The reason the model stopped generating tokens. This will be `stop` if the model hit a natural stop point or a provided stop sequence,
@@ -743,7 +743,7 @@ or `content_filter` if content was omitted due to a flag from our content filter
       {
         Id: type,
         Name: Type,
-        Type: ChatCompletionRequestMessageContentPartImageType,
+        Type: string,
         IsRequired: true,
         Summary: The type of the content part.
       },
@@ -779,7 +779,7 @@ or `content_filter` if content was omitted due to a flag from our content filter
       {
         Id: detail,
         Name: Detail,
-        Type: ChatCompletionRequestMessageContentPartImageImageUrlDetail?,
+        Type: string?,
         IsRequired: false,
         DefaultValue: auto,
         Summary:
@@ -866,7 +866,7 @@ Specifies the detail level of the image. Learn more in the [Vision guide](/docs/
       {
         Id: type,
         Name: Type,
-        Type: ChatCompletionRequestMessageContentPartTextType,
+        Type: string,
         IsRequired: true,
         Summary: The type of the content part.
       },
@@ -939,7 +939,7 @@ Specifies the detail level of the image. Learn more in the [Vision guide](/docs/
       {
         Id: role,
         Name: Role,
-        Type: ChatCompletionRequestSystemMessageRole,
+        Type: string,
         IsRequired: true,
         Summary: The role of the messages author, in this case `system`.
       },
@@ -1000,7 +1000,7 @@ The contents of the user message.
       {
         Id: role,
         Name: Role,
-        Type: ChatCompletionRequestUserMessageRole,
+        Type: string,
         IsRequired: true,
         Summary: The role of the messages author, in this case `user`.
       },
@@ -1061,7 +1061,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
       {
         Id: role,
         Name: Role,
-        Type: ChatCompletionRequestAssistantMessageRole,
+        Type: string,
         IsRequired: true,
         Summary: The role of the messages author, in this case `assistant`.
       },
@@ -1156,7 +1156,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
       {
         Id: role,
         Name: Role,
-        Type: ChatCompletionRequestToolMessageRole,
+        Type: string,
         IsRequired: true,
         Summary: The role of the messages author, in this case `tool`.
       },
@@ -1215,7 +1215,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
       {
         Id: role,
         Name: Role,
-        Type: ChatCompletionRequestFunctionMessageRole,
+        Type: string,
         IsRequired: true,
         Summary: The role of the messages author, in this case `function`.
       },
@@ -1354,7 +1354,7 @@ Specifying a particular function via `{"name": "my_function"}` forces the model 
       {
         Id: type,
         Name: Type,
-        Type: ChatCompletionToolType,
+        Type: string,
         IsRequired: true,
         Summary: The type of the tool. Currently, only `function` is supported.
       },
@@ -1466,7 +1466,7 @@ Specifying a particular function via `{"type: "function", "function": {"name": "
       {
         Id: type,
         Name: Type,
-        Type: ChatCompletionNamedToolChoiceType,
+        Type: string,
         IsRequired: true,
         Summary: The type of the tool. Currently, only `function` is supported.
       },
@@ -1561,7 +1561,7 @@ Specifying a particular function via `{"type: "function", "function": {"name": "
       {
         Id: type,
         Name: Type,
-        Type: ChatCompletionMessageToolCallType,
+        Type: string,
         IsRequired: true,
         Summary: The type of the tool. Currently, only `function` is supported.
       },
@@ -1656,7 +1656,7 @@ Specifying a particular function via `{"type: "function", "function": {"name": "
       {
         Id: type,
         Name: Type,
-        Type: ChatCompletionMessageToolCallChunkType?,
+        Type: string?,
         IsRequired: false,
         Summary: The type of the tool. Currently, only `function` is supported.
       },
@@ -1765,7 +1765,7 @@ Specifying a particular function via `{"type: "function", "function": {"name": "
       {
         Id: role,
         Name: Role,
-        Type: ChatCompletionResponseMessageRole,
+        Type: string,
         IsRequired: true,
         Summary: The role of the author of this message.
       },
@@ -1867,7 +1867,7 @@ Specifying a particular function via `{"type: "function", "function": {"name": "
       {
         Id: role,
         Name: Role,
-        Type: ChatCompletionStreamResponseDeltaRole?,
+        Type: string?,
         IsRequired: false,
         Summary: The role of the author of this message.
       }
@@ -2222,7 +2222,7 @@ Accepts a JSON object that maps tokens (specified by their token ID in the token
       {
         Id: type,
         Name: Type,
-        Type: CreateChatCompletionRequestResponseFormatType?,
+        Type: string?,
         IsRequired: false,
         DefaultValue: text,
         Summary:
@@ -2504,7 +2504,7 @@ Can be used in conjunction with the `seed` request parameter to understand when 
       {
         Id: object,
         Name: Object,
-        Type: CreateChatCompletionResponseObject,
+        Type: string,
         IsRequired: true,
         Summary: The object type, which is always `chat.completion`.
       },
@@ -2533,7 +2533,7 @@ Can be used in conjunction with the `seed` request parameter to understand when 
       {
         Id: finish_reason,
         Name: FinishReason,
-        Type: CreateChatCompletionResponseChoicesFinishReason,
+        Type: string,
         IsRequired: true,
         Summary:
 The reason the model stopped generating tokens. This will be `stop` if the model hit a natural stop point or a provided stop sequence,
@@ -2721,7 +2721,7 @@ Can be used in conjunction with the `seed` request parameter to understand when 
       {
         Id: object,
         Name: Object,
-        Type: CreateChatCompletionFunctionResponseObject,
+        Type: string,
         IsRequired: true,
         Summary: The object type, which is always `chat.completion`.
       },
@@ -2750,7 +2750,7 @@ Can be used in conjunction with the `seed` request parameter to understand when 
       {
         Id: finish_reason,
         Name: FinishReason,
-        Type: CreateChatCompletionFunctionResponseChoicesFinishReason,
+        Type: string,
         IsRequired: true,
         Summary:
 The reason the model stopped generating tokens. This will be `stop` if the model hit a natural stop point or a provided stop sequence, `length` if the maximum number of tokens specified in the request was reached, `content_filter` if content was omitted due to a flag from our content filters, or `function_call` if the model called a function.
@@ -2950,7 +2950,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       {
         Id: object,
         Name: Object,
-        Type: ListPaginatedFineTuningJobsResponseObject,
+        Type: string,
         IsRequired: true,
         Summary: 
       }
@@ -3033,7 +3033,7 @@ Can be used in conjunction with the `seed` request parameter to understand when 
       {
         Id: object,
         Name: Object,
-        Type: CreateChatCompletionStreamResponseObject,
+        Type: string,
         IsRequired: true,
         Summary: The object type, which is always `chat.completion.chunk`.
       }
@@ -3069,7 +3069,7 @@ Can be used in conjunction with the `seed` request parameter to understand when 
       {
         Id: finish_reason,
         Name: FinishReason,
-        Type: CreateChatCompletionStreamResponseChoicesFinishReason?,
+        Type: string?,
         IsRequired: true,
         Summary:
 The reason the model stopped generating tokens. This will be `stop` if the model hit a natural stop point or a provided stop sequence,
@@ -3338,7 +3338,7 @@ We generally recommend altering this or `temperature` but not both.
       {
         Id: object,
         Name: Object,
-        Type: CreateEditResponseObject,
+        Type: string,
         IsRequired: true,
         Summary: The object type, which is always `edit`.
       },
@@ -3374,7 +3374,7 @@ We generally recommend altering this or `temperature` but not both.
       {
         Id: finish_reason,
         Name: FinishReason,
-        Type: CreateEditResponseChoicesFinishReason,
+        Type: string,
         IsRequired: true,
         Summary:
 The reason the model stopped generating tokens. This will be `stop` if the model hit a natural stop point or a provided stop sequence,
@@ -3502,7 +3502,7 @@ The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only
       {
         Id: quality,
         Name: Quality,
-        Type: CreateImageRequestQuality?,
+        Type: string?,
         IsRequired: false,
         DefaultValue: standard,
         Summary:
@@ -3513,7 +3513,7 @@ The quality of the image that will be generated. `hd` creates images with finer 
       {
         Id: response_format,
         Name: ResponseFormat,
-        Type: CreateImageRequestResponseFormat?,
+        Type: string?,
         IsRequired: false,
         DefaultValue: url,
         Summary:
@@ -3524,7 +3524,7 @@ The format in which the generated images are returned. Must be one of `url` or `
       {
         Id: size,
         Name: Size,
-        Type: CreateImageRequestSize?,
+        Type: string?,
         IsRequired: false,
         DefaultValue: 1024x1024,
         Summary:
@@ -3535,7 +3535,7 @@ The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x
       {
         Id: style,
         Name: Style,
-        Type: CreateImageRequestStyle?,
+        Type: string?,
         IsRequired: false,
         DefaultValue: vivid,
         Summary:
@@ -3864,7 +3864,7 @@ The number of images to generate. Must be between 1 and 10.
       {
         Id: size,
         Name: Size,
-        Type: CreateImageEditRequestSize?,
+        Type: string?,
         IsRequired: false,
         DefaultValue: 1024x1024,
         Summary:
@@ -3875,7 +3875,7 @@ The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x
       {
         Id: response_format,
         Name: ResponseFormat,
-        Type: CreateImageEditRequestResponseFormat?,
+        Type: string?,
         IsRequired: false,
         DefaultValue: url,
         Summary:
@@ -4036,7 +4036,7 @@ The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only
       {
         Id: response_format,
         Name: ResponseFormat,
-        Type: CreateImageVariationRequestResponseFormat?,
+        Type: string?,
         IsRequired: false,
         DefaultValue: url,
         Summary:
@@ -4047,7 +4047,7 @@ The format in which the generated images are returned. Must be one of `url` or `
       {
         Id: size,
         Name: Size,
-        Type: CreateImageVariationRequestSize?,
+        Type: string?,
         IsRequired: false,
         DefaultValue: 1024x1024,
         Summary:
@@ -4508,7 +4508,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
       {
         Id: object,
         Name: Object,
-        Type: ListFilesResponseObject,
+        Type: string,
         IsRequired: true,
         Summary: 
       }
@@ -4562,7 +4562,7 @@ The File object (not file name) to be uploaded.
       {
         Id: purpose,
         Name: Purpose,
-        Type: CreateFileRequestPurpose,
+        Type: string,
         IsRequired: true,
         Summary:
 The intended purpose of the uploaded file.
@@ -4629,7 +4629,7 @@ Use "fine-tune" for [Fine-tuning](/docs/api-reference/fine-tuning) and "assistan
       {
         Id: object,
         Name: Object,
-        Type: DeleteFileResponseObject,
+        Type: string,
         IsRequired: true,
         Summary: 
       },
@@ -4925,7 +4925,7 @@ through the training dataset.
       {
         Id: object,
         Name: Object,
-        Type: ListFineTuningJobEventsResponseObject,
+        Type: string,
         IsRequired: true,
         Summary: 
       }
@@ -5272,7 +5272,7 @@ full cycle through the training dataset.
       {
         Id: object,
         Name: Object,
-        Type: ListFineTunesResponseObject,
+        Type: string,
         IsRequired: true,
         Summary: 
       }
@@ -5324,7 +5324,7 @@ full cycle through the training dataset.
       {
         Id: object,
         Name: Object,
-        Type: ListFineTuneEventsResponseObject,
+        Type: string,
         IsRequired: true,
         Summary: 
       }
@@ -5389,7 +5389,7 @@ ID of the model to use. You can use the [List models](/docs/api-reference/models
       {
         Id: encoding_format,
         Name: EncodingFormat,
-        Type: CreateEmbeddingRequestEncodingFormat?,
+        Type: string?,
         IsRequired: false,
         DefaultValue: float,
         Summary:
@@ -5495,7 +5495,7 @@ The format to return the embeddings in. Can be either `float` or [`base64`](http
       {
         Id: object,
         Name: Object,
-        Type: CreateEmbeddingResponseObject,
+        Type: string,
         IsRequired: true,
         Summary: The object type, which is always "list".
       },
@@ -5613,7 +5613,7 @@ An optional text to guide the model's style or continue a previous audio segment
       {
         Id: response_format,
         Name: ResponseFormat,
-        Type: CreateTranscriptionRequestResponseFormat?,
+        Type: string?,
         IsRequired: false,
         DefaultValue: json,
         Summary:
@@ -5875,14 +5875,14 @@ One of the available [TTS models](/docs/models/tts): `tts-1` or `tts-1-hd`
       {
         Id: voice,
         Name: Voice,
-        Type: CreateSpeechRequestVoice,
+        Type: string,
         IsRequired: true,
         Summary: The voice to use when generating the audio. Supported voices are `alloy`, `echo`, `fable`, `onyx`, `nova`, and `shimmer`. Previews of the voices are available in the [Text to speech guide](/docs/guides/text-to-speech/voice-options).
       },
       {
         Id: response_format,
         Name: ResponseFormat,
-        Type: CreateSpeechRequestResponseFormat?,
+        Type: string?,
         IsRequired: false,
         DefaultValue: mp3,
         Summary:
@@ -6065,7 +6065,7 @@ The format to audio in. Supported formats are `mp3`, `opus`, `aac`, and `flac`.
       {
         Id: object,
         Name: Object,
-        Type: ModelObject,
+        Type: string,
         IsRequired: true,
         Summary: The object type, which is always "model".
       },
@@ -6145,21 +6145,21 @@ The format to audio in. Supported formats are `mp3`, `opus`, `aac`, and `flac`.
       {
         Id: object,
         Name: Object,
-        Type: OpenAIFileObject,
+        Type: string,
         IsRequired: true,
         Summary: The object type, which is always `file`.
       },
       {
         Id: purpose,
         Name: Purpose,
-        Type: OpenAIFilePurpose,
+        Type: string,
         IsRequired: true,
         Summary: The intended purpose of the file. Supported values are `fine-tune`, `fine-tune-results`, `assistants`, and `assistants_output`.
       },
       {
         Id: status,
         Name: Status,
-        Type: OpenAIFileStatus,
+        Type: string,
         IsRequired: true,
         Summary: Deprecated. The current status of the file, which can be either `uploaded`, `processed`, or `error`.
       },
@@ -6308,7 +6308,7 @@ The embedding vector, which is a list of floats. The length of vector depends on
       {
         Id: object,
         Name: Object,
-        Type: EmbeddingObject,
+        Type: string,
         IsRequired: true,
         Summary: The object type, which is always "embedding".
       }
@@ -6404,7 +6404,7 @@ Represents an embedding vector returned by embedding endpoint.
       {
         Id: object,
         Name: Object,
-        Type: FineTuningJobObject,
+        Type: string,
         IsRequired: true,
         Summary: The object type, which is always "fine_tuning.job".
       },
@@ -6425,7 +6425,7 @@ Represents an embedding vector returned by embedding endpoint.
       {
         Id: status,
         Name: Status,
-        Type: FineTuningJobStatus,
+        Type: string,
         IsRequired: true,
         Summary: The current status of the fine-tuning job, which can be either `validating_files`, `queued`, `running`, `succeeded`, `failed`, or `cancelled`.
       },
@@ -6650,7 +6650,7 @@ The number of epochs to train the model for. An epoch refers to one full cycle t
       {
         Id: level,
         Name: Level,
-        Type: FineTuningJobEventLevel,
+        Type: string,
         IsRequired: true,
         Summary: 
       },
@@ -6664,7 +6664,7 @@ The number of epochs to train the model for. An epoch refers to one full cycle t
       {
         Id: object,
         Name: Object,
-        Type: FineTuningJobEventObject,
+        Type: string,
         IsRequired: true,
         Summary: 
       }
@@ -6788,7 +6788,7 @@ The number of epochs to train the model for. An epoch refers to one full cycle t
       {
         Id: object,
         Name: Object,
-        Type: FineTuneObject,
+        Type: string,
         IsRequired: true,
         Summary: The object type, which is always "fine-tune".
       },
@@ -6978,7 +6978,7 @@ The weight to use for loss on the prompt tokens.
       {
         Id: object,
         Name: Object,
-        Type: FineTuneEventObject,
+        Type: string,
         IsRequired: true,
         Summary: 
       }
@@ -7066,7 +7066,7 @@ The weight to use for loss on the prompt tokens.
       {
         Id: object,
         Name: Object,
-        Type: AssistantObjectObject,
+        Type: string,
         IsRequired: true,
         Summary: The object type, which is always `assistant`.
       },
@@ -7411,7 +7411,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: object,
         Name: Object,
-        Type: DeleteAssistantResponseObject,
+        Type: string,
         IsRequired: true,
         Summary: 
       }
@@ -7510,7 +7510,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: type,
         Name: Type,
-        Type: AssistantToolsCodeType,
+        Type: string,
         IsRequired: true,
         Summary: The type of tool being defined: `code_interpreter`
       }
@@ -7555,7 +7555,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: type,
         Name: Type,
-        Type: AssistantToolsRetrievalType,
+        Type: string,
         IsRequired: true,
         Summary: The type of tool being defined: `retrieval`
       }
@@ -7600,7 +7600,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: type,
         Name: Type,
-        Type: AssistantToolsFunctionType,
+        Type: string,
         IsRequired: true,
         Summary: The type of tool being defined: `function`
       },
@@ -7659,7 +7659,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: object,
         Name: Object,
-        Type: RunObjectObject,
+        Type: string,
         IsRequired: true,
         Summary: The object type, which is always `thread.run`.
       },
@@ -7687,7 +7687,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: status,
         Name: Status,
-        Type: RunObjectStatus,
+        Type: string,
         IsRequired: true,
         Summary: The status of the run, which can be either `queued`, `in_progress`, `requires_action`, `cancelling`, `cancelled`, `failed`, `completed`, or `expired`.
       },
@@ -7801,7 +7801,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: type,
         Name: Type,
-        Type: RunObjectRequiredActionType,
+        Type: string,
         IsRequired: true,
         Summary: For now, this is always `submit_tool_outputs`.
       },
@@ -7875,7 +7875,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: code,
         Name: Code,
-        Type: RunObjectLastErrorCode,
+        Type: string,
         IsRequired: true,
         Summary: One of `server_error` or `rate_limit_exceeded`.
       },
@@ -8272,7 +8272,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: type,
         Name: Type,
-        Type: RunToolCallObjectType,
+        Type: string,
         IsRequired: true,
         Summary: The type of tool call the output is required for. For now, this is always `function`.
       },
@@ -8435,7 +8435,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: object,
         Name: Object,
-        Type: ThreadObjectObject,
+        Type: string,
         IsRequired: true,
         Summary: The object type, which is always `thread`.
       },
@@ -8613,7 +8613,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: object,
         Name: Object,
-        Type: DeleteThreadResponseObject,
+        Type: string,
         IsRequired: true,
         Summary: 
       }
@@ -8719,7 +8719,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: object,
         Name: Object,
-        Type: MessageObjectObject,
+        Type: string,
         IsRequired: true,
         Summary: The object type, which is always `thread.message`.
       },
@@ -8740,7 +8740,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: role,
         Name: Role,
-        Type: MessageObjectRole,
+        Type: string,
         IsRequired: true,
         Summary: The entity that produced the message. One of `user` or `assistant`.
       },
@@ -8871,7 +8871,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: role,
         Name: Role,
-        Type: CreateMessageRequestRole,
+        Type: string,
         IsRequired: true,
         Summary: The role of the entity that is creating the message. Currently only `user` is supported.
       },
@@ -9012,7 +9012,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: object,
         Name: Object,
-        Type: DeleteMessageResponseObject,
+        Type: string,
         IsRequired: true,
         Summary: 
       }
@@ -9111,7 +9111,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: type,
         Name: Type,
-        Type: MessageContentImageFileObjectType,
+        Type: string,
         IsRequired: true,
         Summary: Always `image_file`.
       },
@@ -9185,7 +9185,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: type,
         Name: Type,
-        Type: MessageContentTextObjectType,
+        Type: string,
         IsRequired: true,
         Summary: Always `text`.
       },
@@ -9266,7 +9266,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: type,
         Name: Type,
-        Type: MessageContentTextAnnotationsFileCitationObjectType,
+        Type: string,
         IsRequired: true,
         Summary: Always `file_citation`.
       },
@@ -9368,7 +9368,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: type,
         Name: Type,
-        Type: MessageContentTextAnnotationsFilePathObjectType,
+        Type: string,
         IsRequired: true,
         Summary: Always `file_path`.
       },
@@ -9470,7 +9470,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: object,
         Name: Object,
-        Type: RunStepObjectObject,
+        Type: string,
         IsRequired: true,
         Summary: The object type, which is always `thread.run.step`.
       },
@@ -9505,14 +9505,14 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: type,
         Name: Type,
-        Type: RunStepObjectType,
+        Type: string,
         IsRequired: true,
         Summary: The type of run step, which can be either `message_creation` or `tool_calls`.
       },
       {
         Id: status,
         Name: Status,
-        Type: RunStepObjectStatus,
+        Type: string,
         IsRequired: true,
         Summary: The status of the run step, which can be either `in_progress`, `cancelled`, `failed`, `completed`, or `expired`.
       },
@@ -9601,7 +9601,7 @@ Represents a step in execution of a run.
       {
         Id: code,
         Name: Code,
-        Type: RunStepObjectLastErrorCode,
+        Type: string,
         IsRequired: true,
         Summary: One of `server_error` or `rate_limit_exceeded`.
       },
@@ -9834,7 +9834,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: type,
         Name: Type,
-        Type: RunStepDetailsMessageCreationObjectType,
+        Type: string,
         IsRequired: true,
         Summary: Always `message_creation`.
       },
@@ -9908,7 +9908,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: type,
         Name: Type,
-        Type: RunStepDetailsToolCallsObjectType,
+        Type: string,
         IsRequired: true,
         Summary: Always `tool_calls`.
       },
@@ -9983,7 +9983,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       {
         Id: type,
         Name: Type,
-        Type: RunStepDetailsToolCallsCodeObjectType,
+        Type: string,
         IsRequired: true,
         Summary: The type of tool call. This is always going to be `code_interpreter` for this type of tool call.
       },
@@ -10078,7 +10078,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       {
         Id: type,
         Name: Type,
-        Type: RunStepDetailsToolCallsCodeOutputLogsObjectType,
+        Type: string,
         IsRequired: true,
         Summary: Always `logs`.
       },
@@ -10130,7 +10130,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       {
         Id: type,
         Name: Type,
-        Type: RunStepDetailsToolCallsCodeOutputImageObjectType,
+        Type: string,
         IsRequired: true,
         Summary: Always `image`.
       },
@@ -10211,7 +10211,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       {
         Id: type,
         Name: Type,
-        Type: RunStepDetailsToolCallsRetrievalObjectType,
+        Type: string,
         IsRequired: true,
         Summary: The type of tool call. This is always going to be `retrieval` for this type of tool call.
       },
@@ -10284,7 +10284,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       {
         Id: type,
         Name: Type,
-        Type: RunStepDetailsToolCallsFunctionObjectType,
+        Type: string,
         IsRequired: true,
         Summary: The type of tool call. This is always going to be `function` for this type of tool call.
       },
@@ -10379,7 +10379,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       {
         Id: object,
         Name: Object,
-        Type: AssistantFileObjectObject,
+        Type: string,
         IsRequired: true,
         Summary: The object type, which is always `assistant.file`.
       },
@@ -10474,7 +10474,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       {
         Id: object,
         Name: Object,
-        Type: DeleteAssistantFileResponseObject,
+        Type: string,
         IsRequired: true,
         Summary: 
       }
@@ -10580,7 +10580,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       {
         Id: object,
         Name: Object,
-        Type: MessageFileObjectObject,
+        Type: string,
         IsRequired: true,
         Summary: The object type, which is always `thread.message.file`.
       },

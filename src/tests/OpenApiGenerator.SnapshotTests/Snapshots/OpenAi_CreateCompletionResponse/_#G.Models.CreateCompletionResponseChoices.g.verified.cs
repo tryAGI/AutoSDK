@@ -15,7 +15,7 @@ namespace G
         /// or `content_filter` if content was omitted due to a flag from our content filters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
-        public required CreateCompletionResponseChoicesFinishReason FinishReason { get; set; }
+        public required string FinishReason { get; set; }
 
         /// <summary>
         /// 

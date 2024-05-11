@@ -13,7 +13,7 @@ namespace G
         /// The role of the message
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        public required MessageRole Role { get; set; }
+        public required string Role { get; set; }
 
         /// <summary>
         /// The content of the message

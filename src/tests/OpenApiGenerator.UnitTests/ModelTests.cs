@@ -14,6 +14,7 @@ public class ModelTests :
         Namespace: "G",
         ClassName: "Api",
         NamingConvention: default,
+        JsonSerializerType: default,
         IncludeOperationIds: [],
         GenerateModels: true,
         ModelStyle: default,

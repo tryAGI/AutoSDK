@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        public required ListModelsResponseObject Object { get; set; }
+        public required string Object { get; set; }
 
         /// <summary>
         /// 

@@ -20,6 +20,8 @@
     <CompilerVisibleProperty Include="OpenApiGenerator_ClassName"/>
     <!-- InnerClasses/ConcatNames. Default: InnerClasses -->
     <CompilerVisibleProperty Include="OpenApiGenerator_NamingConvention"/>
+    <!-- SystemTextJson/NewtonsoftJson. Default: SystemTextJson -->
+    <CompilerVisibleProperty Include="OpenApiGenerator_JsonSerializerType"/>
 
     <!-- List of ids separated by ;. Default: Empty(all models) -->
     <CompilerVisibleProperty Include="OpenApiGenerator_IncludeOperationIds"/>

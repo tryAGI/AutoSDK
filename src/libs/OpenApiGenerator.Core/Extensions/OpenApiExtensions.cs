@@ -2,6 +2,7 @@ using System.Globalization;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
+using OpenApiGenerator.Core.Json;
 using OpenApiGenerator.Core.Models;
 
 namespace OpenApiGenerator.Core.Extensions;
@@ -37,8 +38,11 @@ public static class OpenApiExtensions
             (null, _) when schema.Value.OneOf.Any() => ("object", true),
             (null, _) when schema.Value.AllOf.Any() => ("object", true),
 
-            ("string", _) when schema.Value.Enum.Any() =>
+            // Only Newtonsoft.Json supports EnumMemberAttribute
+            ("string", _) when schema.Value.Enum.Any() && settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson =>
                 ($"{(model with { Style = ModelStyle.Enumeration }).ExternalClassName}", true),
+            ("string", _) when schema.Value.Enum.Any() && settings.JsonSerializerType != JsonSerializerType.NewtonsoftJson =>
+                ("string", true),
 
             ("boolean", _) => ("bool", false),
             ("integer", "int32") => ("int", false),

@@ -7,23 +7,19 @@ namespace G
     /// <summary>
     /// The role of the message
     /// </summary>
-    [global::System.Runtime.Serialization.DataContract]
-    public enum MessageRole
+    public abstract class MessageRole
     {
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="system")]
-        System,
+        public const string System = "system";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="user")]
-        User,
+        public const string User = "user";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="assistant")]
-        Assistant,
+        public const string Assistant = "assistant";
     }
 }

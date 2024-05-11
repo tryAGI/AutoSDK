@@ -64,7 +64,7 @@ The prompt to generate a response.
       {
         Id: format,
         Name: Format,
-        Type: GenerateCompletionRequestFormat?,
+        Type: string?,
         IsRequired: false,
         Summary:
 The format to return a response in. Currently the only accepted value is json.
@@ -624,7 +624,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
       {
         Id: format,
         Name: Format,
-        Type: GenerateChatCompletionRequestFormat?,
+        Type: string?,
         IsRequired: false,
         Summary:
 The format to return a response in. Currently the only accepted value is json.
@@ -819,7 +819,7 @@ Time in nanoseconds spent generating the response.
       {
         Id: role,
         Name: Role,
-        Type: MessageRole,
+        Type: string,
         IsRequired: true,
         Summary: The role of the message
       },
@@ -1008,7 +1008,7 @@ If `false` the response will be returned as a single response object, otherwise 
       {
         Id: status,
         Name: Status,
-        Type: CreateModelResponseStatus?,
+        Type: string?,
         IsRequired: false,
         Summary: Status creating the model
       }
@@ -1337,7 +1337,7 @@ If `false` the response will be returned as a single response object, otherwise 
       {
         Id: status,
         Name: Status,
-        Type: PullModelResponseStatus?,
+        Type: string?,
         IsRequired: false,
         Summary:
 Status pulling the model.
@@ -1518,7 +1518,7 @@ If `false` the response will be returned as a single response object, otherwise 
       {
         Id: status,
         Name: Status,
-        Type: PushModelResponseStatus?,
+        Type: string?,
         IsRequired: false,
         Summary: Status pushing the model.
       },

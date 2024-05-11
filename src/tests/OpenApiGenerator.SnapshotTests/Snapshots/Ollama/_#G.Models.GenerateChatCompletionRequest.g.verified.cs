@@ -29,7 +29,7 @@ namespace G
         /// Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
-        public GenerateChatCompletionRequestFormat? Format { get; set; }
+        public string? Format { get; set; }
 
         /// <summary>
         /// Additional model parameters listed in the documentation for the Modelfile such as `temperature`.

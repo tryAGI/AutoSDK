@@ -7,28 +7,23 @@ namespace G
     /// <summary>
     /// Status pushing the model.
     /// </summary>
-    [global::System.Runtime.Serialization.DataContract]
-    public enum PushModelResponseStatus
+    public abstract class PushModelResponseStatus
     {
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="retrieving manifest")]
-        RetrievingManifest,
+        public const string RetrievingManifest = "retrieving manifest";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="starting upload")]
-        StartingUpload,
+        public const string StartingUpload = "starting upload";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pushing manifest")]
-        PushingManifest,
+        public const string PushingManifest = "pushing manifest";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="success")]
-        Success,
+        public const string Success = "success";
     }
 }

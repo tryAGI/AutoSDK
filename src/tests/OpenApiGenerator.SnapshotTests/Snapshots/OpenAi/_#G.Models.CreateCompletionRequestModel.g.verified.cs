@@ -7,58 +7,47 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    [global::System.Runtime.Serialization.DataContract]
-    public enum CreateCompletionRequestModel
+    public abstract class CreateCompletionRequestModel
     {
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="babbage-002")]
-        Babbage002,
+        public const string Babbage002 = "babbage-002";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="davinci-002")]
-        Davinci002,
+        public const string Davinci002 = "davinci-002";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="gpt-3.5-turbo-instruct")]
-        Gpt35TurboInstruct,
+        public const string Gpt35TurboInstruct = "gpt-3.5-turbo-instruct";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text-davinci-003")]
-        TextDavinci003,
+        public const string TextDavinci003 = "text-davinci-003";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text-davinci-002")]
-        TextDavinci002,
+        public const string TextDavinci002 = "text-davinci-002";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text-davinci-001")]
-        TextDavinci001,
+        public const string TextDavinci001 = "text-davinci-001";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="code-davinci-002")]
-        CodeDavinci002,
+        public const string CodeDavinci002 = "code-davinci-002";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text-curie-001")]
-        TextCurie001,
+        public const string TextCurie001 = "text-curie-001";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text-babbage-001")]
-        TextBabbage001,
+        public const string TextBabbage001 = "text-babbage-001";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="text-ada-001")]
-        TextAda001,
+        public const string TextAda001 = "text-ada-001";
     }
 }

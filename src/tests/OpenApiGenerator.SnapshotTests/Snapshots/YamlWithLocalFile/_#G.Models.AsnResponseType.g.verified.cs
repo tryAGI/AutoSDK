@@ -7,33 +7,27 @@ namespace G
     /// <summary>
     /// <br/>Example: isp
     /// </summary>
-    [global::System.Runtime.Serialization.DataContract]
-    public enum AsnResponseType
+    public abstract class AsnResponseType
     {
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="isp")]
-        Isp,
+        public const string Isp = "isp";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="business")]
-        Business,
+        public const string Business = "business";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="education")]
-        Education,
+        public const string Education = "education";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="hosting")]
-        Hosting,
+        public const string Hosting = "hosting";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="inactive")]
-        Inactive,
+        public const string Inactive = "inactive";
     }
 }

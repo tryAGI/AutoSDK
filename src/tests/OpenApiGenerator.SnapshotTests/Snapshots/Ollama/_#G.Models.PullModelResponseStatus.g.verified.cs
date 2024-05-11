@@ -8,38 +8,31 @@ namespace G
     /// Status pulling the model.
     /// <br/>Example: pulling manifest
     /// </summary>
-    [global::System.Runtime.Serialization.DataContract]
-    public enum PullModelResponseStatus
+    public abstract class PullModelResponseStatus
     {
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="pulling manifest")]
-        PullingManifest,
+        public const string PullingManifest = "pulling manifest";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="downloading digestname")]
-        DownloadingDigestname,
+        public const string DownloadingDigestname = "downloading digestname";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="verifying sha256 digest")]
-        VerifyingSha256Digest,
+        public const string VerifyingSha256Digest = "verifying sha256 digest";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="writing manifest")]
-        WritingManifest,
+        public const string WritingManifest = "writing manifest";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="removing any unused layers")]
-        RemovingAnyUnusedLayers,
+        public const string RemovingAnyUnusedLayers = "removing any unused layers";
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="success")]
-        Success,
+        public const string Success = "success";
     }
 }

@@ -7,13 +7,11 @@ namespace G
     /// <summary>
     /// The object type, which is always "model".
     /// </summary>
-    [global::System.Runtime.Serialization.DataContract]
-    public enum ModelObject
+    public abstract class ModelObject
     {
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="model")]
-        Model,
+        public const string Model = "model";
     }
 }

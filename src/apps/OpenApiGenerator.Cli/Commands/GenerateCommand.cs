@@ -53,6 +53,7 @@ public class GenerateCommand : Command
             Namespace: @namespace,
             ClassName: clientClassName,
             NamingConvention: default,
+            JsonSerializerType: default,
             IncludeOperationIds: [],
             GenerateModels: true,
             ModelStyle: default,

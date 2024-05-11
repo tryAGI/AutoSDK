@@ -16,7 +16,7 @@ namespace G
         /// <br/>Example: pulling manifest
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        public PullModelResponseStatus? Status { get; set; }
+        public string? Status { get; set; }
 
         /// <summary>
         /// The model's digest.

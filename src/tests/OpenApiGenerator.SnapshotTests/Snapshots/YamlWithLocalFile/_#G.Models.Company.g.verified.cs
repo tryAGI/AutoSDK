@@ -25,7 +25,7 @@ namespace G
         /// <br/>Example: isp
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public required CompanyType Type { get; set; }
+        public required string Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

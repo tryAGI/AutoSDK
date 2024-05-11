@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using Microsoft.OpenApi.Models;
 using OpenApiGenerator.Core.Extensions;
+using OpenApiGenerator.Core.Json;
 
 namespace OpenApiGenerator.Core.Models;
 
@@ -12,6 +13,7 @@ public readonly record struct ModelData(
     string Namespace,
     NamingConvention NamingConvention,
     ModelStyle Style,
+    JsonSerializerType JsonSerializerType,
     ImmutableArray<PropertyData> Properties,
     string Summary,
     ImmutableArray<ModelData> AdditionalModels,
@@ -45,6 +47,7 @@ public readonly record struct ModelData(
             Parents: parents.ToImmutableArray(),
             Namespace: settings.Namespace,
             NamingConvention: settings.NamingConvention,
+            JsonSerializerType: settings.JsonSerializerType,
             Style: settings.ModelStyle,
             Properties: ImmutableArray<PropertyData>.Empty,
             Summary: string.Empty,
@@ -65,6 +68,7 @@ public readonly record struct ModelData(
             Parents: parents.ToImmutableArray(),
             Namespace: settings.Namespace,
             NamingConvention: settings.NamingConvention,
+            JsonSerializerType: settings.JsonSerializerType,
             Style: settings.ModelStyle,
             Properties: ImmutableArray<PropertyData>.Empty,
             Summary: schema.Value.GetSummary(),
