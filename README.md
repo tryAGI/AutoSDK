@@ -12,3 +12,4 @@ Inspired by NSwag
 - Allows partial generation (models only) or end points filtering
 - Available under MIT license for general users and most organizations
 - Uses https://github.com/microsoft/OpenAPI.NET for parsing OpenAPI specification
+- Supports trimming/native AOT compilation
