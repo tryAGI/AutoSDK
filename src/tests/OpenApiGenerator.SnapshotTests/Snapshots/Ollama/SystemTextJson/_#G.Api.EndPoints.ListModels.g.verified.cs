@@ -14,9 +14,14 @@ namespace G
         public async global::System.Threading.Tasks.Task<ModelsResponse> ListModelsAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            using var response = await _httpClient.GetAsync(
-                new global::System.Uri("/tags", global::System.UriKind.RelativeOrAbsolute),
-                cancellationToken).ConfigureAwait(false);
+            using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                method: global::System.Net.Http.HttpMethod.Get,
+                requestUri: "/tags");
+
+            using var response = await _httpClient.SendAsync(
+                request: httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
 
             var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);

@@ -23,15 +23,15 @@ namespace {endPoint.Namespace}
 {{
     public partial class {endPoint.ClassName}
     {{
-{(endPoint.HttpMethod == OperationType.Get ? GenerateGetMethod(endPoint) : " ")}
+{GenerateMethod(endPoint)}
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
     
     public static string GenerateConstructors(
-	    EndPoint endPoint)
+        EndPoint endPoint)
     {
-	    return $@"
+        return $@"
 #nullable enable
 
 namespace {endPoint.Namespace}
@@ -65,10 +65,13 @@ namespace {endPoint.Namespace}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
 
-    public static string GenerateGetMethod(
+    public static string GenerateMethod(
         EndPoint endPoint)
     {
         var jsonSerializer = endPoint.JsonSerializerType.GetSerializer();
+        var taskType = string.IsNullOrWhiteSpace(endPoint.ResponseType)
+            ? string.Empty
+            : $"<{endPoint.ResponseType}>";
         
         return $@" 
         /// <summary>
@@ -76,19 +79,34 @@ namespace {endPoint.Namespace}
         /// </summary>
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::System.InvalidOperationException""></exception>
-        public async global::System.Threading.Tasks.Task<{endPoint.ResponseType}> {endPoint.MethodName}(
+        public async global::System.Threading.Tasks.Task{taskType} {endPoint.MethodName}(
+{(string.IsNullOrWhiteSpace(endPoint.RequestType) ? " " : @$" 
+            {endPoint.RequestType} request,")}
             global::System.Threading.CancellationToken cancellationToken = default)
         {{
-            using var response = await _httpClient.GetAsync(
-                new global::System.Uri(""{endPoint.Path}"", global::System.UriKind.RelativeOrAbsolute),
-                cancellationToken).ConfigureAwait(false);
-            response.EnsureSuccessStatusCode();
+{(string.IsNullOrWhiteSpace(endPoint.RequestType) ? " " : @" 
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+")}
+            using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                method: global::System.Net.Http.HttpMethod.{endPoint.HttpMethod:G},
+                requestUri: ""{endPoint.Path}"");
+{(string.IsNullOrWhiteSpace(endPoint.RequestType) ? " " : $@" 
+            httpRequest.Content = new global::System.Net.Http.StringContent(
+                content: {jsonSerializer.GenerateSerializeCall(endPoint.RequestType)}(request),
+                encoding: global::System.Text.Encoding.UTF8,
+                mediaType: ""application/json"");")}
 
+            using var response = await _httpClient.SendAsync(
+                request: httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+            response.EnsureSuccessStatusCode();
+{(string.IsNullOrWhiteSpace(endPoint.ResponseType) ? " " : $@"
             var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
                 {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType)}(content) ??
-                throw new global::System.InvalidOperationException(""Response deserialization failed for \""{{content}}\"" "");
+                throw new global::System.InvalidOperationException(""Response deserialization failed for \""{{content}}\"" "");")}
         }}
  ".RemoveBlankLinesWhereOnlyWhitespaces();
     }

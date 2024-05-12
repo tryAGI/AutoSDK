@@ -99,7 +99,7 @@
     HttpMethod: Post,
     Summary: Generates audio from the input text.,
     RequestType: CreateSpeechRequest,
-    ResponseType: object,
+    ResponseType: ,
     MethodName: CreateSpeechAsync,
     FileNameWithoutExtension: G.Api.EndPoints.CreateSpeech
   },
@@ -136,7 +136,7 @@
     BaseUrl: ,
     Path: /files,
     Summary: Returns a list of files that belong to the user's organization.,
-    RequestType: object,
+    RequestType: ,
     ResponseType: ListFilesResponse,
     MethodName: ListFilesAsync,
     FileNameWithoutExtension: G.Api.EndPoints.ListFiles
@@ -168,7 +168,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
     Path: /files/{file_id},
     HttpMethod: Delete,
     Summary: Delete a file.,
-    RequestType: object,
+    RequestType: ,
     ResponseType: DeleteFileResponse,
     MethodName: DeleteFileAsync,
     FileNameWithoutExtension: G.Api.EndPoints.DeleteFile
@@ -180,7 +180,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
     BaseUrl: ,
     Path: /files/{file_id},
     Summary: Returns information about a specific file.,
-    RequestType: object,
+    RequestType: ,
     ResponseType: OpenAIFile,
     MethodName: RetrieveFileAsync,
     FileNameWithoutExtension: G.Api.EndPoints.RetrieveFile
@@ -192,8 +192,8 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
     BaseUrl: ,
     Path: /files/{file_id}/content,
     Summary: Returns the contents of the specified file.,
-    RequestType: object,
-    ResponseType: object,
+    RequestType: ,
+    ResponseType: ,
     MethodName: DownloadFileAsync,
     FileNameWithoutExtension: G.Api.EndPoints.DownloadFile
   },
@@ -225,7 +225,7 @@ Response includes details of the enqueued job including job status and the name 
     Summary:
 List your organization's fine-tuning jobs
 ,
-    RequestType: object,
+    RequestType: ,
     ResponseType: ListPaginatedFineTuningJobsResponse,
     MethodName: ListPaginatedFineTuningJobsAsync,
     FileNameWithoutExtension: G.Api.EndPoints.ListPaginatedFineTuningJobs
@@ -241,7 +241,7 @@ Get info about a fine-tuning job.
 
 [Learn more about fine-tuning](/docs/guides/fine-tuning)
 ,
-    RequestType: object,
+    RequestType: ,
     ResponseType: FineTuningJob,
     MethodName: RetrieveFineTuningJobAsync,
     FileNameWithoutExtension: G.Api.EndPoints.RetrieveFineTuningJob
@@ -255,7 +255,7 @@ Get info about a fine-tuning job.
     Summary:
 Get status updates for a fine-tuning job.
 ,
-    RequestType: object,
+    RequestType: ,
     ResponseType: ListFineTuningJobEventsResponse,
     MethodName: ListFineTuningEventsAsync,
     FileNameWithoutExtension: G.Api.EndPoints.ListFineTuningEvents
@@ -270,7 +270,7 @@ Get status updates for a fine-tuning job.
     Summary:
 Immediately cancel a fine-tune job.
 ,
-    RequestType: object,
+    RequestType: ,
     ResponseType: FineTuningJob,
     MethodName: CancelFineTuningJobAsync,
     FileNameWithoutExtension: G.Api.EndPoints.CancelFineTuningJob
@@ -303,7 +303,7 @@ Response includes details of the enqueued job including job status and the name 
     Summary:
 List your organization's fine-tuning jobs
 ,
-    RequestType: object,
+    RequestType: ,
     ResponseType: ListFineTunesResponse,
     MethodName: ListFineTunesAsync,
     FileNameWithoutExtension: G.Api.EndPoints.ListFineTunes
@@ -319,7 +319,7 @@ Gets info about the fine-tune job.
 
 [Learn more about fine-tuning](/docs/guides/legacy-fine-tuning)
 ,
-    RequestType: object,
+    RequestType: ,
     ResponseType: FineTune,
     MethodName: RetrieveFineTuneAsync,
     FileNameWithoutExtension: G.Api.EndPoints.RetrieveFineTune
@@ -334,7 +334,7 @@ Gets info about the fine-tune job.
     Summary:
 Immediately cancel a fine-tune job.
 ,
-    RequestType: object,
+    RequestType: ,
     ResponseType: FineTune,
     MethodName: CancelFineTuneAsync,
     FileNameWithoutExtension: G.Api.EndPoints.CancelFineTune
@@ -348,7 +348,7 @@ Immediately cancel a fine-tune job.
     Summary:
 Get fine-grained status updates for a fine-tune job.
 ,
-    RequestType: object,
+    RequestType: ,
     ResponseType: ListFineTuneEventsResponse,
     MethodName: ListFineTuneEventsAsync,
     FileNameWithoutExtension: G.Api.EndPoints.ListFineTuneEvents
@@ -360,7 +360,7 @@ Get fine-grained status updates for a fine-tune job.
     BaseUrl: ,
     Path: /models,
     Summary: Lists the currently available models, and provides basic information about each one such as the owner and availability.,
-    RequestType: object,
+    RequestType: ,
     ResponseType: ListModelsResponse,
     MethodName: ListModelsAsync,
     FileNameWithoutExtension: G.Api.EndPoints.ListModels
@@ -372,7 +372,7 @@ Get fine-grained status updates for a fine-tune job.
     BaseUrl: ,
     Path: /models/{model},
     Summary: Retrieves a model instance, providing basic information about the model such as the owner and permissioning.,
-    RequestType: object,
+    RequestType: ,
     ResponseType: Model,
     MethodName: RetrieveModelAsync,
     FileNameWithoutExtension: G.Api.EndPoints.RetrieveModel
@@ -385,7 +385,7 @@ Get fine-grained status updates for a fine-tune job.
     Path: /models/{model},
     HttpMethod: Delete,
     Summary: Delete a fine-tuned model. You must have the Owner role in your organization to delete a model.,
-    RequestType: object,
+    RequestType: ,
     ResponseType: DeleteModelResponse,
     MethodName: DeleteModelAsync,
     FileNameWithoutExtension: G.Api.EndPoints.DeleteModel
@@ -410,7 +410,7 @@ Get fine-grained status updates for a fine-tune job.
     BaseUrl: ,
     Path: /assistants,
     Summary: Returns a list of assistants.,
-    RequestType: object,
+    RequestType: ,
     ResponseType: ListAssistantsResponse,
     MethodName: ListAssistantsAsync,
     FileNameWithoutExtension: G.Api.EndPoints.ListAssistants
@@ -435,7 +435,7 @@ Get fine-grained status updates for a fine-tune job.
     BaseUrl: ,
     Path: /assistants/{assistant_id},
     Summary: Retrieves an assistant.,
-    RequestType: object,
+    RequestType: ,
     ResponseType: AssistantObject,
     MethodName: GetAssistantAsync,
     FileNameWithoutExtension: G.Api.EndPoints.GetAssistant
@@ -461,7 +461,7 @@ Get fine-grained status updates for a fine-tune job.
     Path: /assistants/{assistant_id},
     HttpMethod: Delete,
     Summary: Delete an assistant.,
-    RequestType: object,
+    RequestType: ,
     ResponseType: DeleteAssistantResponse,
     MethodName: DeleteAssistantAsync,
     FileNameWithoutExtension: G.Api.EndPoints.DeleteAssistant
@@ -486,7 +486,7 @@ Get fine-grained status updates for a fine-tune job.
     BaseUrl: ,
     Path: /threads/{thread_id},
     Summary: Retrieves a thread.,
-    RequestType: object,
+    RequestType: ,
     ResponseType: ThreadObject,
     MethodName: GetThreadAsync,
     FileNameWithoutExtension: G.Api.EndPoints.GetThread
@@ -512,7 +512,7 @@ Get fine-grained status updates for a fine-tune job.
     Path: /threads/{thread_id},
     HttpMethod: Delete,
     Summary: Delete a thread.,
-    RequestType: object,
+    RequestType: ,
     ResponseType: DeleteThreadResponse,
     MethodName: DeleteThreadAsync,
     FileNameWithoutExtension: G.Api.EndPoints.DeleteThread
@@ -524,7 +524,7 @@ Get fine-grained status updates for a fine-tune job.
     BaseUrl: ,
     Path: /threads/{thread_id}/messages,
     Summary: Returns a list of messages for a given thread.,
-    RequestType: object,
+    RequestType: ,
     ResponseType: ListMessagesResponse,
     MethodName: ListMessagesAsync,
     FileNameWithoutExtension: G.Api.EndPoints.ListMessages
@@ -549,7 +549,7 @@ Get fine-grained status updates for a fine-tune job.
     BaseUrl: ,
     Path: /threads/{thread_id}/messages/{message_id},
     Summary: Retrieve a message.,
-    RequestType: object,
+    RequestType: ,
     ResponseType: MessageObject,
     MethodName: GetMessageAsync,
     FileNameWithoutExtension: G.Api.EndPoints.GetMessage
@@ -587,7 +587,7 @@ Get fine-grained status updates for a fine-tune job.
     BaseUrl: ,
     Path: /threads/{thread_id}/runs,
     Summary: Returns a list of runs belonging to a thread.,
-    RequestType: object,
+    RequestType: ,
     ResponseType: ListRunsResponse,
     MethodName: ListRunsAsync,
     FileNameWithoutExtension: G.Api.EndPoints.ListRuns
@@ -612,7 +612,7 @@ Get fine-grained status updates for a fine-tune job.
     BaseUrl: ,
     Path: /threads/{thread_id}/runs/{run_id},
     Summary: Retrieves a run.,
-    RequestType: object,
+    RequestType: ,
     ResponseType: RunObject,
     MethodName: GetRunAsync,
     FileNameWithoutExtension: G.Api.EndPoints.GetRun
@@ -653,7 +653,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     Path: /threads/{thread_id}/runs/{run_id}/cancel,
     HttpMethod: Post,
     Summary: Cancels a run that is `in_progress`.,
-    RequestType: object,
+    RequestType: ,
     ResponseType: RunObject,
     MethodName: CancelRunAsync,
     FileNameWithoutExtension: G.Api.EndPoints.CancelRun
@@ -665,7 +665,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     BaseUrl: ,
     Path: /threads/{thread_id}/runs/{run_id}/steps,
     Summary: Returns a list of run steps belonging to a run.,
-    RequestType: object,
+    RequestType: ,
     ResponseType: ListRunStepsResponse,
     MethodName: ListRunStepsAsync,
     FileNameWithoutExtension: G.Api.EndPoints.ListRunSteps
@@ -677,7 +677,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     BaseUrl: ,
     Path: /threads/{thread_id}/runs/{run_id}/steps/{step_id},
     Summary: Retrieves a run step.,
-    RequestType: object,
+    RequestType: ,
     ResponseType: RunStepObject,
     MethodName: GetRunStepAsync,
     FileNameWithoutExtension: G.Api.EndPoints.GetRunStep
@@ -689,7 +689,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     BaseUrl: ,
     Path: /assistants/{assistant_id}/files,
     Summary: Returns a list of assistant files.,
-    RequestType: object,
+    RequestType: ,
     ResponseType: ListAssistantFilesResponse,
     MethodName: ListAssistantFilesAsync,
     FileNameWithoutExtension: G.Api.EndPoints.ListAssistantFiles
@@ -714,7 +714,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     BaseUrl: ,
     Path: /assistants/{assistant_id}/files/{file_id},
     Summary: Retrieves an AssistantFile.,
-    RequestType: object,
+    RequestType: ,
     ResponseType: AssistantFileObject,
     MethodName: GetAssistantFileAsync,
     FileNameWithoutExtension: G.Api.EndPoints.GetAssistantFile
@@ -727,7 +727,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     Path: /assistants/{assistant_id}/files/{file_id},
     HttpMethod: Delete,
     Summary: Delete an assistant file.,
-    RequestType: object,
+    RequestType: ,
     ResponseType: DeleteAssistantFileResponse,
     MethodName: DeleteAssistantFileAsync,
     FileNameWithoutExtension: G.Api.EndPoints.DeleteAssistantFile
@@ -739,7 +739,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     BaseUrl: ,
     Path: /threads/{thread_id}/messages/{message_id}/files,
     Summary: Returns a list of message files.,
-    RequestType: object,
+    RequestType: ,
     ResponseType: ListMessageFilesResponse,
     MethodName: ListMessageFilesAsync,
     FileNameWithoutExtension: G.Api.EndPoints.ListMessageFiles
@@ -751,7 +751,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     BaseUrl: ,
     Path: /threads/{thread_id}/messages/{message_id}/files/{file_id},
     Summary: Retrieves a message file.,
-    RequestType: object,
+    RequestType: ,
     ResponseType: MessageFileObject,
     MethodName: GetMessageFileAsync,
     FileNameWithoutExtension: G.Api.EndPoints.GetMessageFile

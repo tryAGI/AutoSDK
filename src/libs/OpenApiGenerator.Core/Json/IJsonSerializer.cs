@@ -6,4 +6,5 @@ public interface IJsonSerializer
     string GenerateExtensionDataAttribute();
     string GenerateRequiredAttribute();
     string GenerateDeserializeCall(string type);
+    string GenerateSerializeCall(string type);
 }

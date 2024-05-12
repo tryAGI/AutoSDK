@@ -33,9 +33,9 @@ public static class ClientGeneratorMethods
                     JsonSerializerType: settings.JsonSerializerType,
                     HttpMethod: operation.Key,
                     Summary: operation.Value.Summary,
-                    RequestType: operation.Value.RequestBody?.Content.Values.FirstOrDefault()?.Schema?.Reference?.Id ?? "object",
+                    RequestType: operation.Value.RequestBody?.Content.Values.FirstOrDefault()?.Schema?.Reference?.Id ?? string.Empty,
                     ResponseType: operation.Value.Responses.Values.FirstOrDefault()?
-                        .Content.Values.FirstOrDefault()?.Schema?.Reference?.Id ?? "object")))
+                        .Content.Values.FirstOrDefault()?.Schema?.Reference?.Id ?? string.Empty)))
             // Constructor
             .Concat(settings.GenerateConstructors ? [new EndPoint(
                 Id: "Constructors",

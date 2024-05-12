@@ -58,7 +58,7 @@
     BaseUrl: ,
     Path: /tags,
     Summary: List models that are available locally.,
-    RequestType: object,
+    RequestType: ,
     ResponseType: ModelsResponse,
     MethodName: ListModelsAsync,
     FileNameWithoutExtension: G.Api.EndPoints.ListModels
@@ -85,7 +85,7 @@
     HttpMethod: Post,
     Summary: Creates a model with another name from an existing model.,
     RequestType: CopyModelRequest,
-    ResponseType: object,
+    ResponseType: ,
     MethodName: CopyModelAsync,
     FileNameWithoutExtension: G.Api.EndPoints.CopyModel
   },
@@ -98,7 +98,7 @@
     HttpMethod: Delete,
     Summary: Delete a model and its data.,
     RequestType: DeleteModelRequest,
-    ResponseType: object,
+    ResponseType: ,
     MethodName: DeleteModelAsync,
     FileNameWithoutExtension: G.Api.EndPoints.DeleteModel
   },
@@ -136,8 +136,8 @@
     Path: /blobs/{digest},
     HttpMethod: Head,
     Summary: Check to see if a blob exists on the Ollama server which is useful when creating models.,
-    RequestType: object,
-    ResponseType: object,
+    RequestType: ,
+    ResponseType: ,
     MethodName: CheckBlobAsync,
     FileNameWithoutExtension: G.Api.EndPoints.CheckBlob
   },
@@ -149,8 +149,8 @@
     Path: /blobs/{digest},
     HttpMethod: Post,
     Summary: Create a blob from a file. Returns the server file path.,
-    RequestType: object,
-    ResponseType: object,
+    RequestType: ,
+    ResponseType: ,
     MethodName: CreateBlobAsync,
     FileNameWithoutExtension: G.Api.EndPoints.CreateBlob
   },

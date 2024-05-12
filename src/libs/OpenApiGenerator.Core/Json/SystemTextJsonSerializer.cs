@@ -19,6 +19,11 @@ public class SystemTextJsonSerializer : IJsonSerializer
         return "[global::System.Text.Json.Serialization.JsonRequired]";
     }
     
+    public string GenerateSerializeCall(string type)
+    {
+        return "global::System.Text.Json.JsonSerializer.Serialize";
+    }
+    
     public string GenerateDeserializeCall(string type)
     {
         return $"global::System.Text.Json.JsonSerializer.Deserialize<{type}>";
