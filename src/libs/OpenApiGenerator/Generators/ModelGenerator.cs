@@ -1,5 +1,4 @@
-﻿using System.Collections.Immutable;
-using H.Generators.Extensions;
+﻿using H.Generators.Extensions;
 using Microsoft.CodeAnalysis;
 using OpenApiGenerator.Core.Generators;
 using OpenApiGenerator.Core.Models;
@@ -31,7 +30,7 @@ public class ModelGenerator : IIncrementalGenerator
             .AddSource(context);
     }
 
-    private static ImmutableArray<ModelData> PrepareData(
+    private static EquatableArray<ModelData> PrepareData(
         (AdditionalText text, Settings settings) tuple,
         CancellationToken cancellationToken = default)
     {
