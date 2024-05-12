@@ -26,33 +26,34 @@ public static class OptionsExtensions
                        options.GetGlobalOption("PackageId")?.WithPostfix("Api") ??
                        options.GetGlobalOption("AssemblyName")?.WithPostfix("Api") ??
                        "Api",
-            NamingConvention: Enum.TryParse<NamingConvention>(
-                options.GetGlobalOption(nameof(Settings.NamingConvention), prefix) ??
-                $"{default(NamingConvention):G}",
-                ignoreCase: true,
-                out var namingConvention) ? namingConvention : default,
-            JsonSerializerType: Enum.TryParse<JsonSerializerType>(
-                options.GetGlobalOption(nameof(Settings.JsonSerializerType), prefix) ??
-                $"{default(JsonSerializerType):G}",
-                ignoreCase: true,
-                out var jsonSerializerType) ? jsonSerializerType : default,
+            NamingConvention: options.GetEnumGlobalOption<NamingConvention>(nameof(Settings.NamingConvention), prefix),
+            JsonSerializerType: options.GetEnumGlobalOption<JsonSerializerType>(nameof(Settings.JsonSerializerType), prefix),
             UseRequiredKeyword: options.GetEnumGlobalOption<SdkFeatureUsage>(nameof(Settings.UseRequiredKeyword), prefix),
             
+            GenerateConstructors: options.GetBoolGlobalOption(nameof(Settings.GenerateConstructors), prefix),
+            GenerateMethods: options.GetBoolGlobalOption(nameof(Settings.GenerateMethods), prefix),
             IncludeOperationIds: (options.GetGlobalOption(nameof(Settings.IncludeOperationIds), prefix)?.Split(';') ??
                                    []).ToImmutableArray(),
             
-            GenerateModels: bool.TryParse(
-                options.GetGlobalOption(nameof(Settings.GenerateModels), prefix),
-                out var generateModels) && generateModels,
-            ModelStyle: Enum.TryParse<ModelStyle>(
-                options.GetGlobalOption(nameof(ModelStyle), prefix) ??
-                $"{default(ModelStyle):G}",
-                ignoreCase: true,
-                out var modelStyle) ? modelStyle : default,
+            GenerateModels: options.GetBoolGlobalOption(nameof(Settings.GenerateModels), prefix),
+            ModelStyle: options.GetEnumGlobalOption<ModelStyle>(nameof(Settings.ModelStyle), prefix),
             IncludeModels: (options.GetGlobalOption(nameof(Settings.IncludeModels), prefix)?.Split(';') ??
                             []).ToImmutableArray()
 
             );
+    }
+    
+    public static bool GetBoolGlobalOption(
+        this AnalyzerConfigOptionsProvider provider,
+        string name,
+        string? prefix = null)
+    {
+        provider = provider ?? throw new ArgumentNullException(nameof(provider));
+        name = name ?? throw new ArgumentNullException(nameof(name));
+
+        return bool.TryParse(
+            provider.GetGlobalOption(name, prefix),
+            out var value) && value;
     }
     
     public static T GetEnumGlobalOption<T>(

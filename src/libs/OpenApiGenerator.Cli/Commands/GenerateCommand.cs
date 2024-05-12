@@ -68,6 +68,8 @@ public class GenerateCommand : Command
             TargetFramework: "netstandard2.0",
             Namespace: @namespace,
             ClassName: clientClassName,
+            GenerateConstructors: false,
+            GenerateMethods: false,
             NamingConvention: default,
             JsonSerializerType: default,
             UseRequiredKeyword: default,

@@ -11,6 +11,8 @@ public readonly record struct Settings(
     JsonSerializerType JsonSerializerType,
     SdkFeatureUsage UseRequiredKeyword,
 
+    bool GenerateConstructors,
+    bool GenerateMethods,
     ImmutableArray<string> IncludeOperationIds,
     
     bool GenerateModels,

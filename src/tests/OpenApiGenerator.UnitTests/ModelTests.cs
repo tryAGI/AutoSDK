@@ -16,6 +16,8 @@ public class ModelTests :
         NamingConvention: default,
         JsonSerializerType: default,
         UseRequiredKeyword: default,
+        GenerateConstructors: false,
+        GenerateMethods: false,
         IncludeOperationIds: [],
         GenerateModels: true,
         ModelStyle: default,
