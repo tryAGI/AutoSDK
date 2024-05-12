@@ -1,4 +1,5 @@
 ﻿using System.Collections.Immutable;
+using Microsoft.OpenApi.Models;
 using OpenApiGenerator.Core.Extensions;
 using OpenApiGenerator.Core.Generation;
 using OpenApiGenerator.Core.Models;
@@ -19,13 +20,34 @@ public static class ClientGeneratorMethods
         return openApiDocument.Paths.SelectMany(path =>
             path.Value.Operations
                 .Where(x =>
-                    //includedOperationIds.Count == 0 ||
+                    settings.GenerateMethods &&
+                    (includedOperationIds.Count == 0 ||
                     includedOperationIds.Contains(x.Value.OperationId) ||
-                    includedOperationIds.Contains(x.Value.OperationId.ToPropertyName()))
+                    includedOperationIds.Contains(x.Value.OperationId.ToPropertyName())))
                 .Select(operation => new EndPoint(
                     Id: operation.Value.OperationId,
                     Namespace: settings.Namespace,
-                    ClassName: settings.ClassName)))
+                    ClassName: settings.ClassName,
+                    BaseUrl: string.Empty,
+                    Path: path.Key,
+                    JsonSerializerType: settings.JsonSerializerType,
+                    HttpMethod: operation.Key,
+                    Summary: operation.Value.Summary,
+                    RequestType: operation.Value.RequestBody?.Content.Values.FirstOrDefault()?.Schema?.Reference?.Id ?? "object",
+                    ResponseType: operation.Value.Responses.Values.FirstOrDefault()?
+                        .Content.Values.FirstOrDefault()?.Schema?.Reference?.Id ?? "object")))
+            // Constructor
+            .Concat(settings.GenerateConstructors ? [new EndPoint(
+                Id: "Constructors",
+                Namespace: settings.Namespace,
+                ClassName: settings.ClassName,
+                BaseUrl: openApiDocument.Servers.FirstOrDefault()?.Url ?? string.Empty,
+                Path: string.Empty,
+                JsonSerializerType: settings.JsonSerializerType,
+                HttpMethod: OperationType.Get,
+                Summary: string.Empty,
+                RequestType: string.Empty,
+                ResponseType: string.Empty)] : [])
             .ToImmutableArray();
     }
     

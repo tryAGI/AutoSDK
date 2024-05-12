@@ -19,4 +19,9 @@ public class NewtonsoftJsonSerializer : IJsonSerializer
     {
         return string.Empty;
     }
+    
+    public string GenerateDeserializeCall(string type)
+    {
+        return $"global::Newtonsoft.Json.JsonConvert.DeserializeObject<{type}>";
+    }
 }

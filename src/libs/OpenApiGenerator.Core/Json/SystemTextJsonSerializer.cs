@@ -18,4 +18,9 @@ public class SystemTextJsonSerializer : IJsonSerializer
     {
         return "[global::System.Text.Json.Serialization.JsonRequired]";
     }
+    
+    public string GenerateDeserializeCall(string type)
+    {
+        return $"global::System.Text.Json.JsonSerializer.Deserialize<{type}>";
+    }
 }

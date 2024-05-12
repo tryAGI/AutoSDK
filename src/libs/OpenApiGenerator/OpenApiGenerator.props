@@ -29,6 +29,10 @@
     <CompilerVisibleProperty Include="OpenApiGenerator_GenerateConstructors"/>
     <!-- true/false. Default: false -->
     <CompilerVisibleProperty Include="OpenApiGenerator_GenerateMethods"/>
+    <!-- true/false. Default: false. Not Implemented. -->
+    <CompilerVisibleProperty Include="OpenApiGenerator_GenerateMethodsAsHttpClientExtensions"/>
+    <!-- true/false. Default: false. Not Implemented. -->
+    <CompilerVisibleProperty Include="OpenApiGenerator_GenerateMethodsUsingSystemNetHttpJson"/>
     <!-- List of ids separated by ;. Default: Empty(all models) -->
     <CompilerVisibleProperty Include="OpenApiGenerator_IncludeOperationIds"/>
     

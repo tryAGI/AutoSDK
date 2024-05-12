@@ -1,14 +1,23 @@
+using Microsoft.OpenApi.Models;
 using OpenApiGenerator.Core.Extensions;
+using OpenApiGenerator.Core.Json;
 
 namespace OpenApiGenerator.Core.Models;
 
 public readonly record struct EndPoint(
     string Id,
     string Namespace,
-    string ClassName
+    string ClassName,
+    string BaseUrl,
+    string Path,
+    JsonSerializerType JsonSerializerType,
+    OperationType HttpMethod,
+    string Summary,
+    string RequestType,
+    string ResponseType
 )
 {
-    public string MethodName => Id.ToPropertyName();
+    public string MethodName => $"{Id.ToPropertyName()}Async";
     
-    public string FileNameWithoutExtension => $"{Namespace}.{ClassName}.EndPoints.{MethodName}";
+    public string FileNameWithoutExtension => $"{Namespace}.{ClassName}.EndPoints.{Id.ToPropertyName()}";
 }

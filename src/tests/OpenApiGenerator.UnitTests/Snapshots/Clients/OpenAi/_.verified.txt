@@ -1,0 +1,771 @@
+﻿[
+  {
+    Id: createChatCompletion,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /chat/completions,
+    HttpMethod: Post,
+    Summary: Creates a model response for the given chat conversation.,
+    RequestType: CreateChatCompletionRequest,
+    ResponseType: CreateChatCompletionResponse,
+    MethodName: CreateChatCompletionAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateChatCompletion
+  },
+  {
+    Id: createCompletion,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /completions,
+    HttpMethod: Post,
+    Summary: Creates a completion for the provided prompt and parameters.,
+    RequestType: CreateCompletionRequest,
+    ResponseType: CreateCompletionResponse,
+    MethodName: CreateCompletionAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateCompletion
+  },
+  {
+    Id: createEdit,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /edits,
+    HttpMethod: Post,
+    Summary: Creates a new edit for the provided input, instruction, and parameters.,
+    RequestType: CreateEditRequest,
+    ResponseType: CreateEditResponse,
+    MethodName: CreateEditAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateEdit
+  },
+  {
+    Id: createImage,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /images/generations,
+    HttpMethod: Post,
+    Summary: Creates an image given a prompt.,
+    RequestType: CreateImageRequest,
+    ResponseType: ImagesResponse,
+    MethodName: CreateImageAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateImage
+  },
+  {
+    Id: createImageEdit,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /images/edits,
+    HttpMethod: Post,
+    Summary: Creates an edited or extended image given an original image and a prompt.,
+    RequestType: CreateImageEditRequest,
+    ResponseType: ImagesResponse,
+    MethodName: CreateImageEditAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateImageEdit
+  },
+  {
+    Id: createImageVariation,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /images/variations,
+    HttpMethod: Post,
+    Summary: Creates a variation of a given image.,
+    RequestType: CreateImageVariationRequest,
+    ResponseType: ImagesResponse,
+    MethodName: CreateImageVariationAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateImageVariation
+  },
+  {
+    Id: createEmbedding,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /embeddings,
+    HttpMethod: Post,
+    Summary: Creates an embedding vector representing the input text.,
+    RequestType: CreateEmbeddingRequest,
+    ResponseType: CreateEmbeddingResponse,
+    MethodName: CreateEmbeddingAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateEmbedding
+  },
+  {
+    Id: createSpeech,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /audio/speech,
+    HttpMethod: Post,
+    Summary: Generates audio from the input text.,
+    RequestType: CreateSpeechRequest,
+    ResponseType: object,
+    MethodName: CreateSpeechAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateSpeech
+  },
+  {
+    Id: createTranscription,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /audio/transcriptions,
+    HttpMethod: Post,
+    Summary: Transcribes audio into the input language.,
+    RequestType: CreateTranscriptionRequest,
+    ResponseType: CreateTranscriptionResponse,
+    MethodName: CreateTranscriptionAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateTranscription
+  },
+  {
+    Id: createTranslation,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /audio/translations,
+    HttpMethod: Post,
+    Summary: Translates audio into English.,
+    RequestType: CreateTranslationRequest,
+    ResponseType: CreateTranslationResponse,
+    MethodName: CreateTranslationAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateTranslation
+  },
+  {
+    Id: listFiles,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /files,
+    Summary: Returns a list of files that belong to the user's organization.,
+    RequestType: object,
+    ResponseType: ListFilesResponse,
+    MethodName: ListFilesAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ListFiles
+  },
+  {
+    Id: createFile,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /files,
+    HttpMethod: Post,
+    Summary:
+Upload a file that can be used across various endpoints. The size of all the files uploaded by one organization can be up to 100 GB.
+
+The size of individual files can be a maximum of 512 MB or 2 million tokens for Assistants. See the [Assistants Tools guide](/docs/assistants/tools) to learn more about the types of files supported. The Fine-tuning API only supports `.jsonl` files.
+
+Please [contact us](https://help.openai.com/) if you need to increase these storage limits.
+,
+    RequestType: CreateFileRequest,
+    ResponseType: OpenAIFile,
+    MethodName: CreateFileAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateFile
+  },
+  {
+    Id: deleteFile,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /files/{file_id},
+    HttpMethod: Delete,
+    Summary: Delete a file.,
+    RequestType: object,
+    ResponseType: DeleteFileResponse,
+    MethodName: DeleteFileAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.DeleteFile
+  },
+  {
+    Id: retrieveFile,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /files/{file_id},
+    Summary: Returns information about a specific file.,
+    RequestType: object,
+    ResponseType: OpenAIFile,
+    MethodName: RetrieveFileAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.RetrieveFile
+  },
+  {
+    Id: downloadFile,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /files/{file_id}/content,
+    Summary: Returns the contents of the specified file.,
+    RequestType: object,
+    ResponseType: object,
+    MethodName: DownloadFileAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.DownloadFile
+  },
+  {
+    Id: createFineTuningJob,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /fine_tuning/jobs,
+    HttpMethod: Post,
+    Summary:
+Creates a job that fine-tunes a specified model from a given dataset.
+
+Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.
+
+[Learn more about fine-tuning](/docs/guides/fine-tuning)
+,
+    RequestType: CreateFineTuningJobRequest,
+    ResponseType: FineTuningJob,
+    MethodName: CreateFineTuningJobAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateFineTuningJob
+  },
+  {
+    Id: listPaginatedFineTuningJobs,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /fine_tuning/jobs,
+    Summary:
+List your organization's fine-tuning jobs
+,
+    RequestType: object,
+    ResponseType: ListPaginatedFineTuningJobsResponse,
+    MethodName: ListPaginatedFineTuningJobsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ListPaginatedFineTuningJobs
+  },
+  {
+    Id: retrieveFineTuningJob,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /fine_tuning/jobs/{fine_tuning_job_id},
+    Summary:
+Get info about a fine-tuning job.
+
+[Learn more about fine-tuning](/docs/guides/fine-tuning)
+,
+    RequestType: object,
+    ResponseType: FineTuningJob,
+    MethodName: RetrieveFineTuningJobAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.RetrieveFineTuningJob
+  },
+  {
+    Id: listFineTuningEvents,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /fine_tuning/jobs/{fine_tuning_job_id}/events,
+    Summary:
+Get status updates for a fine-tuning job.
+,
+    RequestType: object,
+    ResponseType: ListFineTuningJobEventsResponse,
+    MethodName: ListFineTuningEventsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ListFineTuningEvents
+  },
+  {
+    Id: cancelFineTuningJob,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /fine_tuning/jobs/{fine_tuning_job_id}/cancel,
+    HttpMethod: Post,
+    Summary:
+Immediately cancel a fine-tune job.
+,
+    RequestType: object,
+    ResponseType: FineTuningJob,
+    MethodName: CancelFineTuningJobAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CancelFineTuningJob
+  },
+  {
+    Id: createFineTune,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /fine-tunes,
+    HttpMethod: Post,
+    Summary:
+Creates a job that fine-tunes a specified model from a given dataset.
+
+Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.
+
+[Learn more about fine-tuning](/docs/guides/legacy-fine-tuning)
+,
+    RequestType: CreateFineTuneRequest,
+    ResponseType: FineTune,
+    MethodName: CreateFineTuneAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateFineTune
+  },
+  {
+    Id: listFineTunes,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /fine-tunes,
+    Summary:
+List your organization's fine-tuning jobs
+,
+    RequestType: object,
+    ResponseType: ListFineTunesResponse,
+    MethodName: ListFineTunesAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ListFineTunes
+  },
+  {
+    Id: retrieveFineTune,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /fine-tunes/{fine_tune_id},
+    Summary:
+Gets info about the fine-tune job.
+
+[Learn more about fine-tuning](/docs/guides/legacy-fine-tuning)
+,
+    RequestType: object,
+    ResponseType: FineTune,
+    MethodName: RetrieveFineTuneAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.RetrieveFineTune
+  },
+  {
+    Id: cancelFineTune,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /fine-tunes/{fine_tune_id}/cancel,
+    HttpMethod: Post,
+    Summary:
+Immediately cancel a fine-tune job.
+,
+    RequestType: object,
+    ResponseType: FineTune,
+    MethodName: CancelFineTuneAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CancelFineTune
+  },
+  {
+    Id: listFineTuneEvents,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /fine-tunes/{fine_tune_id}/events,
+    Summary:
+Get fine-grained status updates for a fine-tune job.
+,
+    RequestType: object,
+    ResponseType: ListFineTuneEventsResponse,
+    MethodName: ListFineTuneEventsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ListFineTuneEvents
+  },
+  {
+    Id: listModels,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /models,
+    Summary: Lists the currently available models, and provides basic information about each one such as the owner and availability.,
+    RequestType: object,
+    ResponseType: ListModelsResponse,
+    MethodName: ListModelsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ListModels
+  },
+  {
+    Id: retrieveModel,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /models/{model},
+    Summary: Retrieves a model instance, providing basic information about the model such as the owner and permissioning.,
+    RequestType: object,
+    ResponseType: Model,
+    MethodName: RetrieveModelAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.RetrieveModel
+  },
+  {
+    Id: deleteModel,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /models/{model},
+    HttpMethod: Delete,
+    Summary: Delete a fine-tuned model. You must have the Owner role in your organization to delete a model.,
+    RequestType: object,
+    ResponseType: DeleteModelResponse,
+    MethodName: DeleteModelAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.DeleteModel
+  },
+  {
+    Id: createModeration,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /moderations,
+    HttpMethod: Post,
+    Summary: Classifies if text violates OpenAI's Content Policy,
+    RequestType: CreateModerationRequest,
+    ResponseType: CreateModerationResponse,
+    MethodName: CreateModerationAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateModeration
+  },
+  {
+    Id: listAssistants,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /assistants,
+    Summary: Returns a list of assistants.,
+    RequestType: object,
+    ResponseType: ListAssistantsResponse,
+    MethodName: ListAssistantsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ListAssistants
+  },
+  {
+    Id: createAssistant,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /assistants,
+    HttpMethod: Post,
+    Summary: Create an assistant with a model and instructions.,
+    RequestType: CreateAssistantRequest,
+    ResponseType: AssistantObject,
+    MethodName: CreateAssistantAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateAssistant
+  },
+  {
+    Id: getAssistant,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /assistants/{assistant_id},
+    Summary: Retrieves an assistant.,
+    RequestType: object,
+    ResponseType: AssistantObject,
+    MethodName: GetAssistantAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.GetAssistant
+  },
+  {
+    Id: modifyAssistant,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /assistants/{assistant_id},
+    HttpMethod: Post,
+    Summary: Modifies an assistant.,
+    RequestType: ModifyAssistantRequest,
+    ResponseType: AssistantObject,
+    MethodName: ModifyAssistantAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ModifyAssistant
+  },
+  {
+    Id: deleteAssistant,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /assistants/{assistant_id},
+    HttpMethod: Delete,
+    Summary: Delete an assistant.,
+    RequestType: object,
+    ResponseType: DeleteAssistantResponse,
+    MethodName: DeleteAssistantAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.DeleteAssistant
+  },
+  {
+    Id: createThread,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /threads,
+    HttpMethod: Post,
+    Summary: Create a thread.,
+    RequestType: CreateThreadRequest,
+    ResponseType: ThreadObject,
+    MethodName: CreateThreadAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateThread
+  },
+  {
+    Id: getThread,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /threads/{thread_id},
+    Summary: Retrieves a thread.,
+    RequestType: object,
+    ResponseType: ThreadObject,
+    MethodName: GetThreadAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.GetThread
+  },
+  {
+    Id: modifyThread,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /threads/{thread_id},
+    HttpMethod: Post,
+    Summary: Modifies a thread.,
+    RequestType: ModifyThreadRequest,
+    ResponseType: ThreadObject,
+    MethodName: ModifyThreadAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ModifyThread
+  },
+  {
+    Id: deleteThread,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /threads/{thread_id},
+    HttpMethod: Delete,
+    Summary: Delete a thread.,
+    RequestType: object,
+    ResponseType: DeleteThreadResponse,
+    MethodName: DeleteThreadAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.DeleteThread
+  },
+  {
+    Id: listMessages,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /threads/{thread_id}/messages,
+    Summary: Returns a list of messages for a given thread.,
+    RequestType: object,
+    ResponseType: ListMessagesResponse,
+    MethodName: ListMessagesAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ListMessages
+  },
+  {
+    Id: createMessage,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /threads/{thread_id}/messages,
+    HttpMethod: Post,
+    Summary: Create a message.,
+    RequestType: CreateMessageRequest,
+    ResponseType: MessageObject,
+    MethodName: CreateMessageAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateMessage
+  },
+  {
+    Id: getMessage,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /threads/{thread_id}/messages/{message_id},
+    Summary: Retrieve a message.,
+    RequestType: object,
+    ResponseType: MessageObject,
+    MethodName: GetMessageAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.GetMessage
+  },
+  {
+    Id: modifyMessage,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /threads/{thread_id}/messages/{message_id},
+    HttpMethod: Post,
+    Summary: Modifies a message.,
+    RequestType: ModifyMessageRequest,
+    ResponseType: MessageObject,
+    MethodName: ModifyMessageAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ModifyMessage
+  },
+  {
+    Id: createThreadAndRun,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /threads/runs,
+    HttpMethod: Post,
+    Summary: Create a thread and run it in one request.,
+    RequestType: CreateThreadAndRunRequest,
+    ResponseType: RunObject,
+    MethodName: CreateThreadAndRunAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateThreadAndRun
+  },
+  {
+    Id: listRuns,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /threads/{thread_id}/runs,
+    Summary: Returns a list of runs belonging to a thread.,
+    RequestType: object,
+    ResponseType: ListRunsResponse,
+    MethodName: ListRunsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ListRuns
+  },
+  {
+    Id: createRun,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /threads/{thread_id}/runs,
+    HttpMethod: Post,
+    Summary: Create a run.,
+    RequestType: CreateRunRequest,
+    ResponseType: RunObject,
+    MethodName: CreateRunAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateRun
+  },
+  {
+    Id: getRun,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /threads/{thread_id}/runs/{run_id},
+    Summary: Retrieves a run.,
+    RequestType: object,
+    ResponseType: RunObject,
+    MethodName: GetRunAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.GetRun
+  },
+  {
+    Id: modifyRun,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /threads/{thread_id}/runs/{run_id},
+    HttpMethod: Post,
+    Summary: Modifies a run.,
+    RequestType: ModifyRunRequest,
+    ResponseType: RunObject,
+    MethodName: ModifyRunAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ModifyRun
+  },
+  {
+    Id: submitToolOuputsToRun,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /threads/{thread_id}/runs/{run_id}/submit_tool_outputs,
+    HttpMethod: Post,
+    Summary:
+When a run has the `status: "requires_action"` and `required_action.type` is `submit_tool_outputs`, this endpoint can be used to submit the outputs from the tool calls once they're all completed. All outputs must be submitted in a single request.
+,
+    RequestType: SubmitToolOutputsRunRequest,
+    ResponseType: RunObject,
+    MethodName: SubmitToolOuputsToRunAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.SubmitToolOuputsToRun
+  },
+  {
+    Id: cancelRun,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /threads/{thread_id}/runs/{run_id}/cancel,
+    HttpMethod: Post,
+    Summary: Cancels a run that is `in_progress`.,
+    RequestType: object,
+    ResponseType: RunObject,
+    MethodName: CancelRunAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CancelRun
+  },
+  {
+    Id: listRunSteps,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /threads/{thread_id}/runs/{run_id}/steps,
+    Summary: Returns a list of run steps belonging to a run.,
+    RequestType: object,
+    ResponseType: ListRunStepsResponse,
+    MethodName: ListRunStepsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ListRunSteps
+  },
+  {
+    Id: getRunStep,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /threads/{thread_id}/runs/{run_id}/steps/{step_id},
+    Summary: Retrieves a run step.,
+    RequestType: object,
+    ResponseType: RunStepObject,
+    MethodName: GetRunStepAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.GetRunStep
+  },
+  {
+    Id: listAssistantFiles,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /assistants/{assistant_id}/files,
+    Summary: Returns a list of assistant files.,
+    RequestType: object,
+    ResponseType: ListAssistantFilesResponse,
+    MethodName: ListAssistantFilesAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ListAssistantFiles
+  },
+  {
+    Id: createAssistantFile,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /assistants/{assistant_id}/files,
+    HttpMethod: Post,
+    Summary: Create an assistant file by attaching a [File](/docs/api-reference/files) to an [assistant](/docs/api-reference/assistants).,
+    RequestType: CreateAssistantFileRequest,
+    ResponseType: AssistantFileObject,
+    MethodName: CreateAssistantFileAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateAssistantFile
+  },
+  {
+    Id: getAssistantFile,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /assistants/{assistant_id}/files/{file_id},
+    Summary: Retrieves an AssistantFile.,
+    RequestType: object,
+    ResponseType: AssistantFileObject,
+    MethodName: GetAssistantFileAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.GetAssistantFile
+  },
+  {
+    Id: deleteAssistantFile,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /assistants/{assistant_id}/files/{file_id},
+    HttpMethod: Delete,
+    Summary: Delete an assistant file.,
+    RequestType: object,
+    ResponseType: DeleteAssistantFileResponse,
+    MethodName: DeleteAssistantFileAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.DeleteAssistantFile
+  },
+  {
+    Id: listMessageFiles,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /threads/{thread_id}/messages/{message_id}/files,
+    Summary: Returns a list of message files.,
+    RequestType: object,
+    ResponseType: ListMessageFilesResponse,
+    MethodName: ListMessageFilesAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ListMessageFiles
+  },
+  {
+    Id: getMessageFile,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Path: /threads/{thread_id}/messages/{message_id}/files/{file_id},
+    Summary: Retrieves a message file.,
+    RequestType: object,
+    ResponseType: MessageFileObject,
+    MethodName: GetMessageFileAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.GetMessageFile
+  },
+  {
+    Id: Constructors,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: https://api.openai.com/v1,
+    Path: ,
+    Summary: ,
+    RequestType: ,
+    ResponseType: ,
+    MethodName: ConstructorsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.Constructors
+  }
+]
