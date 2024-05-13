@@ -30,7 +30,7 @@ public class ClientGenerator : IIncrementalGenerator
             .AddSource(context);
     }
 
-    private static EquatableArray<EndPoint> PrepareData(
+    private static Core.Models.EquatableArray<EndPoint> PrepareData(
         (AdditionalText text, Settings settings) tuple,
         CancellationToken cancellationToken = default)
     {

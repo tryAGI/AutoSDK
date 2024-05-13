@@ -30,7 +30,7 @@ public class ModelGenerator : IIncrementalGenerator
             .AddSource(context);
     }
 
-    private static EquatableArray<ModelData> PrepareData(
+    private static Core.Models.EquatableArray<ModelData> PrepareData(
         (AdditionalText text, Settings settings) tuple,
         CancellationToken cancellationToken = default)
     {
