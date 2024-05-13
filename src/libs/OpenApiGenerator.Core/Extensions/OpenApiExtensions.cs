@@ -13,7 +13,15 @@ public static class OpenApiExtensions
         this string yaml,
         CancellationToken cancellationToken = default)
     {
-        var openApiDocument = new OpenApiStringReader().Read(yaml, out _);
+        var openApiDocument = new OpenApiStringReader().Read(yaml, out var diagnostics);
+        if (diagnostics.Errors.Any())
+        {
+            throw new AggregateException(diagnostics.Errors.Select(x => new InvalidOperationException(x.Message)));
+        }
+        // if (diagnostics.Warnings.Any())
+        // {
+        //     throw new AggregateException(diagnostics.Warnings.Select(x => new InvalidOperationException(x.Message)));
+        // }
 
         openApiDocument.Components ??= new OpenApiComponents();
         openApiDocument.Components.Schemas ??= new Dictionary<string, OpenApiSchema>();
