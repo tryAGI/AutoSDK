@@ -163,6 +163,11 @@ public static class OpenApiExtensions
             .ToPropertyName()
             .UseWordSeparator('_', '-', ' ')
             .Replace(".", string.Empty);
+        if (name.Length > 0 &&
+            char.IsDigit(name[0]))
+        {
+            name = "_" + name;
+        }
 
         return PropertyData.Default with
         {
