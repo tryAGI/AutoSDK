@@ -74,10 +74,18 @@ public static class OpenApiExtensions
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
         type = type ?? throw new ArgumentNullException(nameof(type));
-        
+
+        if (type == "object?")
+        {
+            return string.Empty;
+        }
         if (schema.Enum.Any() && schema.Default != null)
         {
             return type.TrimEnd('?') + "." + schema.Default.ToEnumValue().Name;
+        }
+        if (schema.Default is OpenApiString @string)
+        {
+            return $"\"{@string.Value}\"";
         }
         
         return schema.Default?.GetString();
