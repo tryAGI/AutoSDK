@@ -43,5 +43,42 @@ namespace G
                 yield return streamedResponse;
             }
         }
+
+        /// <summary>
+        /// Generate the next message in a chat with a provided model.
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="messages"></param>
+        /// <param name="format"></param>
+        /// <param name="options"></param>
+        /// <param name="stream"></param>
+        /// <param name="keepAlive"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Collections.Generic.IAsyncEnumerable<GenerateChatCompletionResponse> GenerateChatCompletionAsync(
+            string model,
+            global::System.Collections.Generic.IList<Message> messages,
+            string? format,
+            RequestOptions? options,
+            bool stream,
+            int keepAlive,
+            [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var request = new GenerateChatCompletionRequest
+    	    {
+                Model = model,
+                Messages = messages,
+                Format = format,
+                Options = options,
+                Stream = stream,
+                KeepAlive = keepAlive,
+            };
+
+		    var enumerable = GenerateChatCompletionAsync(request, cancellationToken);
+		    await foreach (var response in enumerable)
+		    {
+			    yield return response;
+		    }
+        }
     }
 }

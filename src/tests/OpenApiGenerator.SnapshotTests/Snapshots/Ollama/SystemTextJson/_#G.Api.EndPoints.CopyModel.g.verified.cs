@@ -31,5 +31,26 @@ namespace G
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
         }
+
+        /// <summary>
+        /// Creates a model with another name from an existing model.
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="destination"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task CopyModelAsync(
+            string source,
+            string destination,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var request = new CopyModelRequest
+    	    {
+                Source = source,
+                Destination = destination,
+            };
+
+            await CopyModelAsync(request, cancellationToken).ConfigureAwait(false);
+        }
     }
 }

@@ -37,5 +37,29 @@ namespace G
                 global::System.Text.Json.JsonSerializer.Deserialize<GenerateEmbeddingResponse>(content) ??
                 throw new global::System.InvalidOperationException("Response deserialization failed for \"{content}\" ");
         }
+
+        /// <summary>
+        /// Generate embeddings from a model.
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="prompt"></param>
+        /// <param name="options"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task<GenerateEmbeddingResponse> GenerateEmbeddingAsync(
+            string model,
+            string prompt,
+            RequestOptions? options,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var request = new GenerateEmbeddingRequest
+    	    {
+                Model = model,
+                Prompt = prompt,
+                Options = options,
+            };
+
+            return await GenerateEmbeddingAsync(request, cancellationToken).ConfigureAwait(false);
+        }
     }
 }

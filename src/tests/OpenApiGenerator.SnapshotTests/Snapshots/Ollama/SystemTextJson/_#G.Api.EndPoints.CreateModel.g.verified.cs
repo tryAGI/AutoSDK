@@ -43,5 +43,33 @@ namespace G
                 yield return streamedResponse;
             }
         }
+
+        /// <summary>
+        /// Create a model from a Modelfile.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="modelfile"></param>
+        /// <param name="stream"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Collections.Generic.IAsyncEnumerable<CreateModelResponse> CreateModelAsync(
+            string name,
+            string modelfile,
+            bool stream,
+            [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var request = new CreateModelRequest
+    	    {
+                Name = name,
+                Modelfile = modelfile,
+                Stream = stream,
+            };
+
+		    var enumerable = CreateModelAsync(request, cancellationToken);
+		    await foreach (var response in enumerable)
+		    {
+			    yield return response;
+		    }
+        }
     }
 }

@@ -31,5 +31,23 @@ namespace G
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
         }
+
+        /// <summary>
+        /// Delete a model and its data.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task DeleteModelAsync(
+            string name,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var request = new DeleteModelRequest
+    	    {
+                Name = name,
+            };
+
+            await DeleteModelAsync(request, cancellationToken).ConfigureAwait(false);
+        }
     }
 }

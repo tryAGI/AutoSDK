@@ -6,6 +6,113 @@
     BaseUrl: ,
     Stream: true,
     Path: /generate,
+    Properties: [
+      {
+        Id: model,
+        Name: Model,
+        Type: string,
+        IsRequired: true,
+        Summary:
+The model name. 
+
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+
+<br/>Example: llama2:7b
+      },
+      {
+        Id: prompt,
+        Name: Prompt,
+        Type: string,
+        IsRequired: true,
+        Summary:
+The prompt to generate a response.
+<br/>Example: Why is the sky blue?
+      },
+      {
+        Id: images,
+        Name: Images,
+        Type: global::System.Collections.Generic.IList<string?>?,
+        IsRequired: false,
+        Summary: (optional) a list of Base64-encoded images to include in the message (for multimodal models such as llava)
+      },
+      {
+        Id: system,
+        Name: System,
+        Type: string?,
+        IsRequired: false,
+        Summary: The system prompt to (overrides what is defined in the Modelfile).
+      },
+      {
+        Id: template,
+        Name: Template,
+        Type: string?,
+        IsRequired: false,
+        Summary: The full prompt or prompt template (overrides what is defined in the Modelfile).
+      },
+      {
+        Id: context,
+        Name: Context,
+        Type: global::System.Collections.Generic.IList<int>?,
+        IsRequired: false,
+        Summary: The context parameter returned from a previous request to [generateCompletion], this can be used to keep a short conversational memory.
+      },
+      {
+        Id: options,
+        Name: Options,
+        Type: RequestOptions?,
+        IsRequired: false,
+        Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.
+      },
+      {
+        Id: format,
+        Name: Format,
+        Type: string?,
+        IsRequired: false,
+        Summary:
+The format to return a response in. Currently the only accepted value is json.
+
+Enable JSON mode by setting the format parameter to json. This will structure the response as valid JSON.
+
+Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
+
+      },
+      {
+        Id: raw,
+        Name: Raw,
+        Type: bool,
+        IsRequired: false,
+        Summary:
+If `true` no formatting will be applied to the prompt and no context will be returned. 
+
+You may choose to use the `raw` parameter if you are specifying a full templated prompt in your request to the API, and are managing history yourself.
+
+      },
+      {
+        Id: stream,
+        Name: Stream,
+        Type: bool,
+        IsRequired: false,
+        DefaultValue: false,
+        Summary:
+If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
+
+<br/>Default Value: false
+      },
+      {
+        Id: keep_alive,
+        Name: KeepAlive,
+        Type: int,
+        IsRequired: false,
+        Summary:
+How long (in minutes) to keep the model loaded in memory.
+
+- If set to a positive duration (e.g. 20), the model will stay loaded for the provided duration.
+- If set to a negative duration (e.g. -1), the model will stay loaded indefinitely.
+- If set to 0, the model will be unloaded immediately once finished.
+- If not set, the model will stay loaded for 5 minutes by default
+
+      }
+    ],
     HttpMethod: Post,
     Summary: Generate a response for a given prompt with a provided model.,
     RequestType: GenerateCompletionRequest,
@@ -20,6 +127,72 @@
     BaseUrl: ,
     Stream: true,
     Path: /chat,
+    Properties: [
+      {
+        Id: model,
+        Name: Model,
+        Type: string,
+        IsRequired: true,
+        Summary:
+The model name. 
+
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+
+<br/>Example: llama2:7b
+      },
+      {
+        Id: messages,
+        Name: Messages,
+        Type: global::System.Collections.Generic.IList<Message>,
+        IsRequired: true,
+        Summary: The messages of the chat, this can be used to keep a chat memory
+      },
+      {
+        Id: format,
+        Name: Format,
+        Type: string?,
+        IsRequired: false,
+        Summary:
+The format to return a response in. Currently the only accepted value is json.
+
+Enable JSON mode by setting the format parameter to json. This will structure the response as valid JSON.
+
+Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
+
+      },
+      {
+        Id: options,
+        Name: Options,
+        Type: RequestOptions?,
+        IsRequired: false,
+        Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.
+      },
+      {
+        Id: stream,
+        Name: Stream,
+        Type: bool,
+        IsRequired: false,
+        DefaultValue: false,
+        Summary:
+If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
+
+<br/>Default Value: false
+      },
+      {
+        Id: keep_alive,
+        Name: KeepAlive,
+        Type: int,
+        IsRequired: false,
+        Summary:
+How long (in minutes) to keep the model loaded in memory.
+
+- If set to a positive duration (e.g. 20), the model will stay loaded for the provided duration.
+- If set to a negative duration (e.g. -1), the model will stay loaded indefinitely.
+- If set to 0, the model will be unloaded immediately once finished.
+- If not set, the model will stay loaded for 5 minutes by default
+
+      }
+    ],
     HttpMethod: Post,
     Summary: Generate the next message in a chat with a provided model.,
     RequestType: GenerateChatCompletionRequest,
@@ -34,6 +207,36 @@
     BaseUrl: ,
     Stream: false,
     Path: /embeddings,
+    Properties: [
+      {
+        Id: model,
+        Name: Model,
+        Type: string,
+        IsRequired: true,
+        Summary:
+The model name. 
+
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+
+<br/>Example: llama2:7b
+      },
+      {
+        Id: prompt,
+        Name: Prompt,
+        Type: string,
+        IsRequired: true,
+        Summary:
+Text to generate embeddings for.
+<br/>Example: Here is an article about llamas...
+      },
+      {
+        Id: options,
+        Name: Options,
+        Type: RequestOptions?,
+        IsRequired: false,
+        Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.
+      }
+    ],
     HttpMethod: Post,
     Summary: Generate embeddings from a model.,
     RequestType: GenerateEmbeddingRequest,
@@ -48,6 +251,40 @@
     BaseUrl: ,
     Stream: true,
     Path: /create,
+    Properties: [
+      {
+        Id: name,
+        Name: Name,
+        Type: string,
+        IsRequired: true,
+        Summary:
+The model name. 
+
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+
+<br/>Example: mario
+      },
+      {
+        Id: modelfile,
+        Name: Modelfile,
+        Type: string,
+        IsRequired: true,
+        Summary:
+The contents of the Modelfile.
+<br/>Example: FROM llama2\nSYSTEM You are mario from Super Mario Bros.
+      },
+      {
+        Id: stream,
+        Name: Stream,
+        Type: bool,
+        IsRequired: false,
+        DefaultValue: false,
+        Summary:
+If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
+
+<br/>Default Value: false
+      }
+    ],
     HttpMethod: Post,
     Summary: Create a model from a Modelfile.,
     RequestType: CreateModelRequest,
@@ -62,6 +299,7 @@
     BaseUrl: ,
     Stream: false,
     Path: /tags,
+    Properties: null,
     Summary: List models that are available locally.,
     RequestType: ,
     ResponseType: ModelsResponse,
@@ -75,6 +313,20 @@
     BaseUrl: ,
     Stream: false,
     Path: /show,
+    Properties: [
+      {
+        Id: name,
+        Name: Name,
+        Type: string,
+        IsRequired: true,
+        Summary:
+The model name. 
+
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+
+<br/>Example: llama2:7b
+      }
+    ],
     HttpMethod: Post,
     Summary: Show details about a model including modelfile, template, parameters, license, and system prompt.,
     RequestType: ModelInfoRequest,
@@ -89,6 +341,26 @@
     BaseUrl: ,
     Stream: false,
     Path: /copy,
+    Properties: [
+      {
+        Id: source,
+        Name: Source,
+        Type: string,
+        IsRequired: true,
+        Summary:
+Name of the model to copy.
+<br/>Example: llama2:7b
+      },
+      {
+        Id: destination,
+        Name: Destination,
+        Type: string,
+        IsRequired: true,
+        Summary:
+Name of the new model.
+<br/>Example: llama2-backup
+      }
+    ],
     HttpMethod: Post,
     Summary: Creates a model with another name from an existing model.,
     RequestType: CopyModelRequest,
@@ -103,6 +375,20 @@
     BaseUrl: ,
     Stream: false,
     Path: /delete,
+    Properties: [
+      {
+        Id: name,
+        Name: Name,
+        Type: string,
+        IsRequired: true,
+        Summary:
+The model name. 
+
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+
+<br/>Example: llama2:13b
+      }
+    ],
     HttpMethod: Delete,
     Summary: Delete a model and its data.,
     RequestType: DeleteModelRequest,
@@ -117,6 +403,44 @@
     BaseUrl: ,
     Stream: false,
     Path: /pull,
+    Properties: [
+      {
+        Id: name,
+        Name: Name,
+        Type: string,
+        IsRequired: true,
+        Summary:
+The model name. 
+
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+
+<br/>Example: llama2:7b
+      },
+      {
+        Id: insecure,
+        Name: Insecure,
+        Type: bool,
+        IsRequired: false,
+        DefaultValue: false,
+        Summary:
+Allow insecure connections to the library. 
+
+Only use this if you are pulling from your own library during development.
+
+<br/>Default Value: false
+      },
+      {
+        Id: stream,
+        Name: Stream,
+        Type: bool,
+        IsRequired: false,
+        DefaultValue: false,
+        Summary:
+If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
+
+<br/>Default Value: false
+      }
+    ],
     HttpMethod: Post,
     Summary: Download a model from the ollama library.,
     RequestType: PullModelRequest,
@@ -131,6 +455,41 @@
     BaseUrl: ,
     Stream: false,
     Path: /push,
+    Properties: [
+      {
+        Id: name,
+        Name: Name,
+        Type: string,
+        IsRequired: true,
+        Summary:
+The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt;tag&gt;.
+<br/>Example: mattw/pygmalion:latest
+      },
+      {
+        Id: insecure,
+        Name: Insecure,
+        Type: bool,
+        IsRequired: false,
+        DefaultValue: false,
+        Summary:
+Allow insecure connections to the library. 
+
+Only use this if you are pushing to your library during development.
+
+<br/>Default Value: false
+      },
+      {
+        Id: stream,
+        Name: Stream,
+        Type: bool,
+        IsRequired: false,
+        DefaultValue: false,
+        Summary:
+If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
+
+<br/>Default Value: false
+      }
+    ],
     HttpMethod: Post,
     Summary: Upload a model to a model library.,
     RequestType: PushModelRequest,
@@ -145,6 +504,7 @@
     BaseUrl: ,
     Stream: false,
     Path: /blobs/{digest},
+    Properties: null,
     HttpMethod: Head,
     Summary: Check to see if a blob exists on the Ollama server which is useful when creating models.,
     RequestType: ,
@@ -159,6 +519,7 @@
     BaseUrl: ,
     Stream: false,
     Path: /blobs/{digest},
+    Properties: null,
     HttpMethod: Post,
     Summary: Create a blob from a file. Returns the server file path.,
     RequestType: ,
@@ -173,6 +534,7 @@
     BaseUrl: http://localhost:11434/api,
     Stream: false,
     Path: ,
+    Properties: null,
     Summary: ,
     RequestType: ,
     ResponseType: ,

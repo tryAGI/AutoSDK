@@ -37,5 +37,29 @@ namespace G
                 global::Newtonsoft.Json.JsonConvert.DeserializeObject<PushModelResponse>(content) ??
                 throw new global::System.InvalidOperationException("Response deserialization failed for \"{content}\" ");
         }
+
+        /// <summary>
+        /// Upload a model to a model library.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="insecure"></param>
+        /// <param name="stream"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task<PushModelResponse> PushModelAsync(
+            string name,
+            bool insecure,
+            bool stream,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var request = new PushModelRequest
+    	    {
+                Name = name,
+                Insecure = insecure,
+                Stream = stream,
+            };
+
+            return await PushModelAsync(request, cancellationToken).ConfigureAwait(false);
+        }
     }
 }

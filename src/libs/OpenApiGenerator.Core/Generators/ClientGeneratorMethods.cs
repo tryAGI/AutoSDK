@@ -24,19 +24,7 @@ public static class ClientGeneratorMethods
                     (includedOperationIds.Count == 0 ||
                     includedOperationIds.Contains(x.Value.OperationId) ||
                     includedOperationIds.Contains(x.Value.OperationId.ToPropertyName())))
-                .Select(operation => new EndPoint(
-                    Id: operation.Value.OperationId,
-                    Namespace: settings.Namespace,
-                    ClassName: settings.ClassName,
-                    BaseUrl: string.Empty,
-                    Stream: operation.Value.Responses.Values.FirstOrDefault()?.Content.Keys.Any(x => x.Contains("application/x-ndjson")) ?? false,
-                    Path: path.Key,
-                    JsonSerializerType: settings.JsonSerializerType,
-                    HttpMethod: operation.Key,
-                    Summary: operation.Value.Summary,
-                    RequestType: operation.Value.RequestBody?.Content.Values.FirstOrDefault()?.Schema?.Reference?.Id ?? string.Empty,
-                    ResponseType: operation.Value.Responses.Values.FirstOrDefault()?
-                        .Content.Values.FirstOrDefault()?.Schema?.Reference?.Id ?? string.Empty)))
+                .Select(operation => EndPoint.FromSchema(operation, settings, path.Key)))
             // Constructor
             .Concat(settings.GenerateConstructors ? [new EndPoint(
                 Id: "Constructors",
@@ -45,6 +33,7 @@ public static class ClientGeneratorMethods
                 BaseUrl: openApiDocument.Servers.FirstOrDefault()?.Url ?? string.Empty,
                 Stream: false,
                 Path: string.Empty,
+                Properties: ImmutableArray<PropertyData>.Empty,
                 JsonSerializerType: settings.JsonSerializerType,
                 HttpMethod: OperationType.Get,
                 Summary: string.Empty,

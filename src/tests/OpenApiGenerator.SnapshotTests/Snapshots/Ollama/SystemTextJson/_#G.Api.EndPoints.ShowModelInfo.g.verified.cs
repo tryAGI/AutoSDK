@@ -37,5 +37,23 @@ namespace G
                 global::System.Text.Json.JsonSerializer.Deserialize<ModelInfo>(content) ??
                 throw new global::System.InvalidOperationException("Response deserialization failed for \"{content}\" ");
         }
+
+        /// <summary>
+        /// Show details about a model including modelfile, template, parameters, license, and system prompt.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task<ModelInfo> ShowModelInfoAsync(
+            string name,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var request = new ModelInfoRequest
+    	    {
+                Name = name,
+            };
+
+            return await ShowModelInfoAsync(request, cancellationToken).ConfigureAwait(false);
+        }
     }
 }

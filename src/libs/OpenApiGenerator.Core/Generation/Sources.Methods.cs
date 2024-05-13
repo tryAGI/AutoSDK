@@ -24,6 +24,7 @@ namespace {endPoint.Namespace}
     public partial class {endPoint.ClassName}
     {{
 {GenerateMethod(endPoint)}
+{GenerateExtensionMethod(endPoint)}
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
@@ -129,6 +130,58 @@ namespace {endPoint.Namespace}
 
                 yield return streamedResponse;
             }}" : " ")}
+        }}
+ ".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+    
+    public static string GenerateExtensionMethod(
+        EndPoint endPoint)
+    {
+        if (string.IsNullOrWhiteSpace(endPoint.RequestType))
+        {
+            return " ";
+        }
+        
+        var taskType = endPoint.Stream
+            ? string.IsNullOrWhiteSpace(endPoint.ResponseType)
+                ? throw new InvalidOperationException($"Streamed responses must have a response type. OperationId: {endPoint.Id}.")
+                : $"global::System.Collections.Generic.IAsyncEnumerable<{endPoint.ResponseType}>"
+            : string.IsNullOrWhiteSpace(endPoint.ResponseType)
+                ? "global::System.Threading.Tasks.Task"
+                : $"global::System.Threading.Tasks.Task<{endPoint.ResponseType}>";
+        var cancellationTokenAttribute = endPoint.Stream
+            ? "[global::System.Runtime.CompilerServices.EnumeratorCancellation] "
+            : string.Empty;
+        
+        return $@"
+        /// <summary>
+        /// {endPoint.Summary}
+        /// </summary>
+{string.Join(Environment.NewLine, endPoint.Properties.Select(x => $@" 
+        /// <param name=""{x.Name.ToParameterName()}""></param>"))}
+        /// <param name=""cancellationToken"">The token to cancel the operation with</param>
+        /// <exception cref=""global::System.InvalidOperationException""></exception>
+        public async {taskType} {endPoint.MethodName}(
+{string.Join(Environment.NewLine, endPoint.Properties.Select(x => $@" 
+            {x.Type} {x.Name.ToParameterName()},"))}
+            {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default)
+        {{
+            var request = new {endPoint.RequestType}
+    	    {{
+{string.Join(Environment.NewLine, endPoint.Properties.Select(x => $@" 
+                {x.Name} = {x.Name.ToParameterName()},"))}
+            }};
+{(string.IsNullOrWhiteSpace(endPoint.ResponseType) && !endPoint.Stream ? $@"
+            await {endPoint.MethodName}(request, cancellationToken).ConfigureAwait(false);" : " ")}
+{(!string.IsNullOrWhiteSpace(endPoint.ResponseType) && !endPoint.Stream ? $@"
+            return await {endPoint.MethodName}(request, cancellationToken).ConfigureAwait(false);" : " ")}
+{(endPoint.Stream ? $@"
+		    var enumerable = {endPoint.MethodName}(request, cancellationToken);
+		    
+		    await foreach (var response in enumerable)
+		    {{
+			    yield return response;
+		    }}" : " ")}
         }}
  ".RemoveBlankLinesWhereOnlyWhitespaces();
     }

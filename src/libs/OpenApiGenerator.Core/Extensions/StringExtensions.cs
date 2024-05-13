@@ -47,6 +47,33 @@ public static class StringExtensions
     }
     
     /// <summary>
+    /// Makes the first letter of the name lowercase.
+    /// </summary>
+    /// <param name="input"></param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentNullException"></exception>
+    /// <exception cref="ArgumentException"></exception>
+    public static string ToParameterName(this string input)
+    {
+        return input switch
+        {
+            null => throw new ArgumentNullException(nameof(input)),
+            "" => throw new ArgumentException($"{nameof(input)} cannot be empty", nameof(input)),
+            "Event" => "@event",
+            "event" => "@event",
+            "Namespace" => "@namespace",
+            "namespace" => "@namespace",
+#pragma warning disable CA1308 // Normalize strings to uppercase
+#if NET6_0_OR_GREATER
+            _ => string.Concat(input[0].ToString().ToLower(CultureInfo.InvariantCulture), input.AsSpan(1)),
+#else
+            _ => input[0].ToString().ToLower(CultureInfo.InvariantCulture) + input.Substring(1),
+#endif
+#pragma warning restore CA1308 // Normalize strings to uppercase
+        };
+    }
+    
+    /// <summary>
     /// Normalizes line endings to '\n' or your endings.
     /// </summary>
     /// <param name="text"></param>
