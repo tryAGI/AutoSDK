@@ -70,10 +70,16 @@ public static class OpenApiExtensions
             : type;
     }
 
-    public static string? GetDefaultValue(this OpenApiSchema schema)
+    public static string? GetDefaultValue(this OpenApiSchema schema, string type)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
-
+        type = type ?? throw new ArgumentNullException(nameof(type));
+        
+        if (schema.Enum.Any() && schema.Default != null)
+        {
+            return type.TrimEnd('?') + "." + schema.Default.ToEnumValue().Name;
+        }
+        
         return schema.Default?.GetString();
     }
 
@@ -180,7 +186,10 @@ public static class OpenApiExtensions
                 .UseWordSeparator('_', '-', '/'),
             Type: schema.GetCSharpType(settings, parents),
             IsRequired: requiredProperties.Contains(schema.Key),
-            DefaultValue: schema.Value.GetDefaultValue(),
+            DefaultValue: schema.Value.GetDefaultValue(type: schema.GetCSharpType(settings with
+            {
+                JsonSerializerType = JsonSerializerType.NewtonsoftJson
+            }, parents)),
             Summary: schema.Value.GetSummary());
     }
 

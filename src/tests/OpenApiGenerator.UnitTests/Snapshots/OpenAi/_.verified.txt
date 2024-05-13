@@ -798,7 +798,7 @@ or `content_filter` if content was omitted due to a flag from our content filter
         Name: Detail,
         Type: string?,
         IsRequired: false,
-        DefaultValue: auto,
+        DefaultValue: ChatCompletionRequestMessageContentPartImageImageUrlDetail.Auto,
         Summary:
 Specifies the detail level of the image. Learn more in the [Vision guide](/docs/guides/vision/low-or-high-fidelity-image-understanding).
 <br/>Default Value: auto
@@ -2284,7 +2284,7 @@ Accepts a JSON object that maps tokens (specified by their token ID in the token
         Name: Type,
         Type: string?,
         IsRequired: false,
-        DefaultValue: text,
+        DefaultValue: CreateChatCompletionRequestResponseFormatType.Text,
         Summary:
 Must be one of `text` or `json_object`.
 <br/>Default Value: text
@@ -3594,7 +3594,7 @@ The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only
         Name: Quality,
         Type: string?,
         IsRequired: false,
-        DefaultValue: standard,
+        DefaultValue: CreateImageRequestQuality.Standard,
         Summary:
 The quality of the image that will be generated. `hd` creates images with finer details and greater consistency across the image. This param is only supported for `dall-e-3`.
 <br/>Default Value: standard
@@ -3605,7 +3605,7 @@ The quality of the image that will be generated. `hd` creates images with finer 
         Name: ResponseFormat,
         Type: string?,
         IsRequired: false,
-        DefaultValue: url,
+        DefaultValue: CreateImageRequestResponseFormat.Url,
         Summary:
 The format in which the generated images are returned. Must be one of `url` or `b64_json`.
 <br/>Default Value: url
@@ -3616,7 +3616,7 @@ The format in which the generated images are returned. Must be one of `url` or `
         Name: Size,
         Type: string?,
         IsRequired: false,
-        DefaultValue: 1024x1024,
+        DefaultValue: CreateImageRequestSize.1024x1024,
         Summary:
 The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024` for `dall-e-2`. Must be one of `1024x1024`, `1792x1024`, or `1024x1792` for `dall-e-3` models.
 <br/>Default Value: 1024x1024
@@ -3627,7 +3627,7 @@ The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x
         Name: Style,
         Type: string?,
         IsRequired: false,
-        DefaultValue: vivid,
+        DefaultValue: CreateImageRequestStyle.Vivid,
         Summary:
 The style of the generated images. Must be one of `vivid` or `natural`. Vivid causes the model to lean towards generating hyper-real and dramatic images. Natural causes the model to produce more natural, less hyper-real looking images. This param is only supported for `dall-e-3`.
 <br/>Default Value: vivid
@@ -3964,7 +3964,7 @@ The number of images to generate. Must be between 1 and 10.
         Name: Size,
         Type: string?,
         IsRequired: false,
-        DefaultValue: 1024x1024,
+        DefaultValue: CreateImageEditRequestSize.1024x1024,
         Summary:
 The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.
 <br/>Default Value: 1024x1024
@@ -3975,7 +3975,7 @@ The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x
         Name: ResponseFormat,
         Type: string?,
         IsRequired: false,
-        DefaultValue: url,
+        DefaultValue: CreateImageEditRequestResponseFormat.Url,
         Summary:
 The format in which the generated images are returned. Must be one of `url` or `b64_json`.
 <br/>Default Value: url
@@ -4140,7 +4140,7 @@ The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only
         Name: ResponseFormat,
         Type: string?,
         IsRequired: false,
-        DefaultValue: url,
+        DefaultValue: CreateImageVariationRequestResponseFormat.Url,
         Summary:
 The format in which the generated images are returned. Must be one of `url` or `b64_json`.
 <br/>Default Value: url
@@ -4151,7 +4151,7 @@ The format in which the generated images are returned. Must be one of `url` or `
         Name: Size,
         Type: string?,
         IsRequired: false,
-        DefaultValue: 1024x1024,
+        DefaultValue: CreateImageVariationRequestSize.1024x1024,
         Summary:
 The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.
 <br/>Default Value: 1024x1024
@@ -5525,7 +5525,7 @@ ID of the model to use. You can use the [List models](/docs/api-reference/models
         Name: EncodingFormat,
         Type: string?,
         IsRequired: false,
-        DefaultValue: float,
+        DefaultValue: CreateEmbeddingRequestEncodingFormat.Float,
         Summary:
 The format to return the embeddings in. Can be either `float` or [`base64`](https://pypi.org/project/pybase64/).
 <br/>Default Value: float
@@ -5755,7 +5755,7 @@ An optional text to guide the model's style or continue a previous audio segment
         Name: ResponseFormat,
         Type: string?,
         IsRequired: false,
-        DefaultValue: json,
+        DefaultValue: CreateTranscriptionRequestResponseFormat.Json,
         Summary:
 The format of the transcript output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.
 
@@ -6031,7 +6031,7 @@ One of the available [TTS models](/docs/models/tts): `tts-1` or `tts-1-hd`
         Name: ResponseFormat,
         Type: string?,
         IsRequired: false,
-        DefaultValue: mp3,
+        DefaultValue: CreateSpeechRequestResponseFormat.Mp3,
         Summary:
 The format to audio in. Supported formats are `mp3`, `opus`, `aac`, and `flac`.
 <br/>Default Value: mp3
