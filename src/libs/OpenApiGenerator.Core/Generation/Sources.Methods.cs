@@ -167,7 +167,7 @@ namespace {endPoint.Namespace}
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default)
         {{
             var request = new {endPoint.RequestType}
-    	    {{
+            {{
 {string.Join("\n", endPoint.Properties.Select(x => $@" 
                 {x.Name} = {x.Name.ToParameterName()},"))}
             }};
@@ -176,12 +176,12 @@ namespace {endPoint.Namespace}
 {(!string.IsNullOrWhiteSpace(endPoint.ResponseType) && !endPoint.Stream ? $@"
             return await {endPoint.MethodName}(request, cancellationToken).ConfigureAwait(false);" : " ")}
 {(endPoint.Stream ? $@"
-		    var enumerable = {endPoint.MethodName}(request, cancellationToken);
-		    
-		    await foreach (var response in enumerable)
-		    {{
-			    yield return response;
-		    }}" : " ")}
+            var enumerable = {endPoint.MethodName}(request, cancellationToken);
+            
+            await foreach (var response in enumerable)
+            {{
+                yield return response;
+            }}" : " ")}
         }}
  ".RemoveBlankLinesWhereOnlyWhitespaces();
     }
