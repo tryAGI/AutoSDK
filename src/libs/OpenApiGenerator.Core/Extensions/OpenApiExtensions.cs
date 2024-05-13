@@ -204,7 +204,9 @@ public static class OpenApiExtensions
         var name = id
             .ToPropertyName()
             .UseWordSeparator('_', '-', ' ')
-            .Replace(".", string.Empty);
+            .Replace(".", string.Empty)
+            .Replace("[", string.Empty)
+            .Replace("]", string.Empty);
         if (name.Length > 0 &&
             char.IsDigit(name[0]))
         {
