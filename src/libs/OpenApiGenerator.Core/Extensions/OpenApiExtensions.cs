@@ -109,7 +109,7 @@ public static class OpenApiExtensions
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
         type = type ?? throw new ArgumentNullException(nameof(type));
 
-        if (type == "object?")
+        if (type == "object?" || schema.Default is OpenApiArray)
         {
             return string.Empty;
         }
