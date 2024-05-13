@@ -157,18 +157,18 @@ namespace {endPoint.Namespace}
         /// <summary>
         /// {endPoint.Summary}
         /// </summary>
-{string.Join(Environment.NewLine, endPoint.Properties.Select(x => $@" 
+{string.Join("\n", endPoint.Properties.Select(x => $@" 
         /// <param name=""{x.Name.ToParameterName()}""></param>"))}
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::System.InvalidOperationException""></exception>
         public async {taskType} {endPoint.MethodName}(
-{string.Join(Environment.NewLine, endPoint.Properties.Select(x => $@" 
+{string.Join("\n", endPoint.Properties.Select(x => $@" 
             {x.Type} {x.Name.ToParameterName()},"))}
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default)
         {{
             var request = new {endPoint.RequestType}
     	    {{
-{string.Join(Environment.NewLine, endPoint.Properties.Select(x => $@" 
+{string.Join("\n", endPoint.Properties.Select(x => $@" 
                 {x.Name} = {x.Name.ToParameterName()},"))}
             }};
 {(string.IsNullOrWhiteSpace(endPoint.ResponseType) && !endPoint.Stream ? $@"
