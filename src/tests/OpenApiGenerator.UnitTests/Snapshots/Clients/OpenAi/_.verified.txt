@@ -1073,13 +1073,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
       }
     ],
     HttpMethod: Post,
-    Summary:
-Upload a file that can be used across various endpoints. The size of all the files uploaded by one organization can be up to 100 GB.
-
-The size of individual files can be a maximum of 512 MB or 2 million tokens for Assistants. See the [Assistants Tools guide](/docs/assistants/tools) to learn more about the types of files supported. The Fine-tuning API only supports `.jsonl` files.
-
-Please [contact us](https://help.openai.com/) if you need to increase these storage limits.
-,
+    Summary: Upload a file that can be used across various endpoints. The size of all the files uploaded by one organization can be up to 100 GB.The size of individual files can be a maximum of 512 MB or 2 million tokens for Assistants. See the [Assistants Tools guide](/docs/assistants/tools) to learn more about the types of files supported. The Fine-tuning API only supports `.jsonl` files.Please [contact us](https://help.openai.com/) if you need to increase these storage limits.,
     RequestType: CreateFileRequest,
     ResponseType: OpenAIFile,
     MethodName: CreateFileAsync,
@@ -1221,13 +1215,7 @@ If a seed is not specified, one will be generated for you.
       }
     ],
     HttpMethod: Post,
-    Summary:
-Creates a fine-tuning job which begins the process of creating a new model from a given dataset.
-
-Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.
-
-[Learn more about fine-tuning](/docs/guides/fine-tuning)
-,
+    Summary: Creates a fine-tuning job which begins the process of creating a new model from a given dataset.Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.[Learn more about fine-tuning](/docs/guides/fine-tuning),
     RequestType: CreateFineTuningJobRequest,
     ResponseType: FineTuningJob,
     MethodName: CreateFineTuningJobAsync,
@@ -1241,9 +1229,7 @@ Response includes details of the enqueued job including job status and the name 
     Stream: false,
     Path: /fine_tuning/jobs,
     Properties: null,
-    Summary:
-List your organization's fine-tuning jobs
-,
+    Summary: List your organization's fine-tuning jobs,
     RequestType: ,
     ResponseType: ListPaginatedFineTuningJobsResponse,
     MethodName: ListPaginatedFineTuningJobsAsync,
@@ -1257,11 +1243,7 @@ List your organization's fine-tuning jobs
     Stream: false,
     Path: /fine_tuning/jobs/{fine_tuning_job_id},
     Properties: null,
-    Summary:
-Get info about a fine-tuning job.
-
-[Learn more about fine-tuning](/docs/guides/fine-tuning)
-,
+    Summary: Get info about a fine-tuning job.[Learn more about fine-tuning](/docs/guides/fine-tuning),
     RequestType: ,
     ResponseType: FineTuningJob,
     MethodName: RetrieveFineTuningJobAsync,
@@ -1275,9 +1257,7 @@ Get info about a fine-tuning job.
     Stream: false,
     Path: /fine_tuning/jobs/{fine_tuning_job_id}/events,
     Properties: null,
-    Summary:
-Get status updates for a fine-tuning job.
-,
+    Summary: Get status updates for a fine-tuning job.,
     RequestType: ,
     ResponseType: ListFineTuningJobEventsResponse,
     MethodName: ListFineTuningEventsAsync,
@@ -1292,9 +1272,7 @@ Get status updates for a fine-tuning job.
     Path: /fine_tuning/jobs/{fine_tuning_job_id}/cancel,
     Properties: null,
     HttpMethod: Post,
-    Summary:
-Immediately cancel a fine-tune job.
-,
+    Summary: Immediately cancel a fine-tune job.,
     RequestType: ,
     ResponseType: FineTuningJob,
     MethodName: CancelFineTuningJobAsync,
@@ -1308,9 +1286,7 @@ Immediately cancel a fine-tune job.
     Stream: false,
     Path: /fine_tuning/jobs/{fine_tuning_job_id}/checkpoints,
     Properties: null,
-    Summary:
-List checkpoints for a fine-tuning job.
-,
+    Summary: List checkpoints for a fine-tuning job.,
     RequestType: ,
     ResponseType: ListFineTuningJobCheckpointsResponse,
     MethodName: ListFineTuningJobCheckpointsAsync,
@@ -2296,9 +2272,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       }
     ],
     HttpMethod: Post,
-    Summary:
-When a run has the `status: "requires_action"` and `required_action.type` is `submit_tool_outputs`, this endpoint can be used to submit the outputs from the tool calls once they're all completed. All outputs must be submitted in a single request.
-,
+    Summary: When a run has the `status: "requires_action"` and `required_action.type` is `submit_tool_outputs`, this endpoint can be used to submit the outputs from the tool calls once they're all completed. All outputs must be submitted in a single request.,
     RequestType: SubmitToolOutputsRunRequest,
     ResponseType: RunObject,
     MethodName: SubmitToolOuputsToRunAsync,

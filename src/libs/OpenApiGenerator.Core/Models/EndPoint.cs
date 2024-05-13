@@ -45,7 +45,7 @@ public readonly record struct EndPoint(
             Properties: requestModel.Properties,
             JsonSerializerType: settings.JsonSerializerType,
             HttpMethod: operation.Key,
-            Summary: operation.Value.Summary,
+            Summary: operation.Value.Summary?.Replace("\n", string.Empty) ?? string.Empty,
             RequestType: requestSchema?.Reference?.Id ?? string.Empty,
             ResponseType: response?
                 .Content.Values.FirstOrDefault()?.Schema?.Reference?.Id ?? string.Empty);

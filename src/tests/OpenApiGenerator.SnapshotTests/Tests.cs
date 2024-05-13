@@ -46,7 +46,11 @@ public partial class Tests
     [DataRow(JsonSerializerType.NewtonsoftJson)]
     public Task Empty(JsonSerializerType jsonSerializerType)
     {
-        return CheckSourceAsync<ModelGenerator>(jsonSerializerType, []);
+        return CheckSourceAsync<ModelGenerator>(jsonSerializerType, [], new Dictionary<string, string>
+        {
+            ["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
+            ["build_property.OpenApiGenerator_GenerateMethods"] = "true",
+        }, additionalGenerators: [new ClientGenerator()]);
     }
     
     [DataTestMethod]
@@ -80,7 +84,7 @@ public partial class Tests
         {
             ["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
             ["build_property.OpenApiGenerator_GenerateMethods"] = "true",
-            ["build_property.OpenApiGenerator_IncludeOperationIds"] = "ListModels",
+            //["build_property.OpenApiGenerator_IncludeOperationIds"] = "ListModels",
             //["build_property.OpenApiGenerator_IncludeModels"] = "CreateEmbeddingRequest;CreateModerationResponse;Error;ErrorResponse;ListModelsResponse;Model;DeleteModelResponse;CreateCompletionRequest",
         }, additionalGenerators: [new ClientGenerator()]);
     }
@@ -109,7 +113,11 @@ public partial class Tests
             new CustomAdditionalText(
                 path: "openapi.yaml",
                 text: H.Resources.ipinfo_yaml.AsString()),
-        ]);
+        ], new Dictionary<string, string>
+        {
+            ["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
+            ["build_property.OpenApiGenerator_GenerateMethods"] = "true",
+        }, additionalGenerators: [new ClientGenerator()]);
     }
 
     [DataTestMethod]
@@ -135,6 +143,10 @@ public partial class Tests
     {
         return CheckSourceAsync<ModelGenerator>(jsonSerializerType, [
             new CustomAdditionalText("https://dedoose-rest-api.onrender.com/swagger/v1/swagger.json", string.Empty),
-        ]);
+        ], new Dictionary<string, string>
+        {
+            ["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
+            ["build_property.OpenApiGenerator_GenerateMethods"] = "true",
+        }, additionalGenerators: [new ClientGenerator()]);
     }
 }
