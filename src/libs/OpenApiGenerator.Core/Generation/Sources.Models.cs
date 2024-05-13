@@ -91,7 +91,7 @@ public sealed partial class {modelData.Parents[level].ClassName}
             return " = default!;";
         }
         
-        return property.IsRequired || property.DefaultValue == null ? string.Empty : $" = {property.DefaultValue};";
+        return property.IsRequired || string.IsNullOrWhiteSpace(property.DefaultValue) ? string.Empty : $" = {property.DefaultValue};";
     }
     
     public static string GenerateClassModel(
