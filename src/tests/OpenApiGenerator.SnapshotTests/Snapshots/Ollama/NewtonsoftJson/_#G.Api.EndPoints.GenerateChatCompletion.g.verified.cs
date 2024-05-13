@@ -11,9 +11,9 @@ namespace G
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<GenerateChatCompletionResponse> GenerateChatCompletionAsync(
+        public async global::System.Collections.Generic.IAsyncEnumerable<GenerateChatCompletionResponse> GenerateChatCompletionAsync(
             GenerateChatCompletionRequest request,
-            global::System.Threading.CancellationToken cancellationToken = default)
+            [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
@@ -27,15 +27,21 @@ namespace G
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
-                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseHeadersRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
 
-            var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            using var stream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
+            using var reader = new global::System.IO.StreamReader(stream);
 
-            return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<GenerateChatCompletionResponse>(content) ??
-                throw new global::System.InvalidOperationException("Response deserialization failed for \"{content}\" ");
+            while (!reader.EndOfStream && !cancellationToken.IsCancellationRequested)
+            {
+                var content = await reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
+                var streamedResponse = global::Newtonsoft.Json.JsonConvert.DeserializeObject<GenerateChatCompletionResponse>(content) ??
+                                       throw new global::System.InvalidOperationException("Response deserialization failed for \"{content}\" ");
+
+                yield return streamedResponse;
+            }
         }
     }
 }

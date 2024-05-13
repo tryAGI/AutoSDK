@@ -9,6 +9,7 @@ public readonly record struct EndPoint(
     string Namespace,
     string ClassName,
     string BaseUrl,
+    bool Stream,
     string Path,
     JsonSerializerType JsonSerializerType,
     OperationType HttpMethod,

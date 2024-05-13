@@ -1,4 +1,4 @@
-using Microsoft.OpenApi.Models;
+using System.Net.Http;
 using OpenApiGenerator.Core.Extensions;
 using OpenApiGenerator.Core.Json;
 using OpenApiGenerator.Core.Models;
@@ -69,9 +69,19 @@ namespace {endPoint.Namespace}
         EndPoint endPoint)
     {
         var jsonSerializer = endPoint.JsonSerializerType.GetSerializer();
-        var taskType = string.IsNullOrWhiteSpace(endPoint.ResponseType)
-            ? string.Empty
-            : $"<{endPoint.ResponseType}>";
+        var taskType = endPoint.Stream
+            ? string.IsNullOrWhiteSpace(endPoint.ResponseType)
+                ? throw new InvalidOperationException($"Streamed responses must have a response type. OperationId: {endPoint.Id}.")
+                : $"global::System.Collections.Generic.IAsyncEnumerable<{endPoint.ResponseType}>"
+            : string.IsNullOrWhiteSpace(endPoint.ResponseType)
+                ? "global::System.Threading.Tasks.Task"
+                : $"global::System.Threading.Tasks.Task<{endPoint.ResponseType}>";
+        var httpCompletionOption = endPoint.Stream
+            ? nameof(HttpCompletionOption.ResponseHeadersRead)
+            : nameof(HttpCompletionOption.ResponseContentRead);
+        var cancellationTokenAttribute = endPoint.Stream
+            ? "[global::System.Runtime.CompilerServices.EnumeratorCancellation] "
+            : string.Empty;
         
         return $@" 
         /// <summary>
@@ -79,10 +89,10 @@ namespace {endPoint.Namespace}
         /// </summary>
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::System.InvalidOperationException""></exception>
-        public async global::System.Threading.Tasks.Task{taskType} {endPoint.MethodName}(
+        public async {taskType} {endPoint.MethodName}(
 {(string.IsNullOrWhiteSpace(endPoint.RequestType) ? " " : @$" 
             {endPoint.RequestType} request,")}
-            global::System.Threading.CancellationToken cancellationToken = default)
+            {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default)
         {{
 {(string.IsNullOrWhiteSpace(endPoint.RequestType) ? " " : @" 
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -98,15 +108,27 @@ namespace {endPoint.Namespace}
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
-                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                completionOption: global::System.Net.Http.HttpCompletionOption.{httpCompletionOption},
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
-{(string.IsNullOrWhiteSpace(endPoint.ResponseType) ? " " : $@"
+{(string.IsNullOrWhiteSpace(endPoint.ResponseType) || endPoint.Stream ? " " : $@"
             var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
                 {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType)}(content) ??
                 throw new global::System.InvalidOperationException(""Response deserialization failed for \""{{content}}\"" "");")}
+{(endPoint.Stream ? $@"
+            using var stream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
+            using var reader = new global::System.IO.StreamReader(stream);
+
+            while (!reader.EndOfStream && !cancellationToken.IsCancellationRequested)
+            {{
+                var content = await reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
+                var streamedResponse = {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType)}(content) ??
+                                       throw new global::System.InvalidOperationException(""Response deserialization failed for \""{{content}}\"" "");
+
+                yield return streamedResponse;
+            }}" : " ")}
         }}
  ".RemoveBlankLinesWhereOnlyWhitespaces();
     }
