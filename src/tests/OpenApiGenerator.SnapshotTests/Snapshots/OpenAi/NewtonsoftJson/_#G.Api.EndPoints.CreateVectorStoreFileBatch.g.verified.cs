@@ -49,7 +49,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateVectorStoreFileBatchRequest
-    	    {
+            {
                 FileIds = fileIds,
             };
 

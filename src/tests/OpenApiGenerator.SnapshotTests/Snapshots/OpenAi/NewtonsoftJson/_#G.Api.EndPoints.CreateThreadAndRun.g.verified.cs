@@ -77,7 +77,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateThreadAndRunRequest
-    	    {
+            {
                 AssistantId = assistantId,
                 Thread = thread,
                 Model = model,

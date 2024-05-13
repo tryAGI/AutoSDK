@@ -67,7 +67,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new ModifyAssistantRequest
-    	    {
+            {
                 Model = model,
                 Name = name,
                 Description = description,

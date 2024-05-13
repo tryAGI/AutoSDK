@@ -59,17 +59,17 @@ namespace G
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateModelRequest
-    	    {
+            {
                 Name = name,
                 Modelfile = modelfile,
                 Stream = stream,
             };
 
-		    var enumerable = CreateModelAsync(request, cancellationToken);
-		    await foreach (var response in enumerable)
-		    {
-			    yield return response;
-		    }
+            var enumerable = CreateModelAsync(request, cancellationToken);
+            await foreach (var response in enumerable)
+            {
+                yield return response;
+            }
         }
     }
 }

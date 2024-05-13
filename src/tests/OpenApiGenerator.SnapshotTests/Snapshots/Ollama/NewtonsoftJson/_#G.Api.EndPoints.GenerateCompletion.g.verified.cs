@@ -75,7 +75,7 @@ namespace G
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new GenerateCompletionRequest
-    	    {
+            {
                 Model = model,
                 Prompt = prompt,
                 Images = images,
@@ -89,11 +89,11 @@ namespace G
                 KeepAlive = keepAlive,
             };
 
-		    var enumerable = GenerateCompletionAsync(request, cancellationToken);
-		    await foreach (var response in enumerable)
-		    {
-			    yield return response;
-		    }
+            var enumerable = GenerateCompletionAsync(request, cancellationToken);
+            await foreach (var response in enumerable)
+            {
+                yield return response;
+            }
         }
     }
 }

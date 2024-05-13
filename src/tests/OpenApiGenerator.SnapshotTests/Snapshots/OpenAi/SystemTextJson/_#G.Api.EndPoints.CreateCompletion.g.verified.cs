@@ -83,7 +83,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateCompletionRequest
-    	    {
+            {
                 Model = model,
                 Prompt = prompt,
                 BestOf = bestOf,

@@ -65,7 +65,7 @@ namespace G
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new GenerateChatCompletionRequest
-    	    {
+            {
                 Model = model,
                 Messages = messages,
                 Format = format,
@@ -74,11 +74,11 @@ namespace G
                 KeepAlive = keepAlive,
             };
 
-		    var enumerable = GenerateChatCompletionAsync(request, cancellationToken);
-		    await foreach (var response in enumerable)
-		    {
-			    yield return response;
-		    }
+            var enumerable = GenerateChatCompletionAsync(request, cancellationToken);
+            await foreach (var response in enumerable)
+            {
+                yield return response;
+            }
         }
     }
 }

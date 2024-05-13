@@ -53,7 +53,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new GenerateEmbeddingRequest
-    	    {
+            {
                 Model = model,
                 Prompt = prompt,
                 Options = options,

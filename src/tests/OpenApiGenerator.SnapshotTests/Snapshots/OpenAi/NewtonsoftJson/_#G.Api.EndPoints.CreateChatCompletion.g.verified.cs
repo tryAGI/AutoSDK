@@ -89,7 +89,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateChatCompletionRequest
-    	    {
+            {
                 Messages = messages,
                 Model = model,
                 FrequencyPenalty = frequencyPenalty,

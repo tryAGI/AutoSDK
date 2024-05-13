@@ -51,7 +51,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateSpeechRequest
-    	    {
+            {
                 Model = model,
                 Input = input,
                 Voice = voice,

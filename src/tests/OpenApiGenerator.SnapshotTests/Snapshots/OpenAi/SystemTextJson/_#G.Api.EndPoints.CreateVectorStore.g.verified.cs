@@ -55,7 +55,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateVectorStoreRequest
-    	    {
+            {
                 FileIds = fileIds,
                 Name = name,
                 ExpiresAfter = expiresAfter,

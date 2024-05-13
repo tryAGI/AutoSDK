@@ -43,7 +43,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new DeleteModelRequest
-    	    {
+            {
                 Name = name,
             };
 

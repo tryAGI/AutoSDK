@@ -53,7 +53,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateThreadRequest
-    	    {
+            {
                 Messages = messages,
                 ToolResources = toolResources,
                 Metadata = metadata,

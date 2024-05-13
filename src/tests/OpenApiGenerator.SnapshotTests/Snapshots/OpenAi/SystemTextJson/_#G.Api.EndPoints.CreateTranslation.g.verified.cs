@@ -51,7 +51,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateTranslationRequest
-    	    {
+            {
                 File = file,
                 Model = model,
                 Prompt = prompt,

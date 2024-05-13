@@ -63,7 +63,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateImageRequest
-    	    {
+            {
                 Prompt = prompt,
                 Model = model,
                 N = n,

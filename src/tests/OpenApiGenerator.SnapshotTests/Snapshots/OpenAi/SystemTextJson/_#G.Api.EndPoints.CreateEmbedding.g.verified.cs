@@ -57,7 +57,7 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateEmbeddingRequest
-    	    {
+            {
                 Input = input,
                 Model = model,
                 EncodingFormat = encodingFormat,
