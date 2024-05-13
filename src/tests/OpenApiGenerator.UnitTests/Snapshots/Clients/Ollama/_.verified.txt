@@ -1,6 +1,6 @@
 ﻿[
   {
-    Id: generateCompletion,
+    Id: GenerateCompletion,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -121,7 +121,7 @@ How long (in minutes) to keep the model loaded in memory.
     FileNameWithoutExtension: G.Api.EndPoints.GenerateCompletion
   },
   {
-    Id: generateChatCompletion,
+    Id: GenerateChatCompletion,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -201,7 +201,7 @@ How long (in minutes) to keep the model loaded in memory.
     FileNameWithoutExtension: G.Api.EndPoints.GenerateChatCompletion
   },
   {
-    Id: generateEmbedding,
+    Id: GenerateEmbedding,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -245,7 +245,7 @@ Text to generate embeddings for.
     FileNameWithoutExtension: G.Api.EndPoints.GenerateEmbedding
   },
   {
-    Id: createModel,
+    Id: CreateModel,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -293,7 +293,7 @@ If `false` the response will be returned as a single response object, otherwise 
     FileNameWithoutExtension: G.Api.EndPoints.CreateModel
   },
   {
-    Id: listModels,
+    Id: ListModels,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -307,7 +307,7 @@ If `false` the response will be returned as a single response object, otherwise 
     FileNameWithoutExtension: G.Api.EndPoints.ListModels
   },
   {
-    Id: showModelInfo,
+    Id: ShowModelInfo,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -335,7 +335,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     FileNameWithoutExtension: G.Api.EndPoints.ShowModelInfo
   },
   {
-    Id: copyModel,
+    Id: CopyModel,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -369,7 +369,7 @@ Name of the new model.
     FileNameWithoutExtension: G.Api.EndPoints.CopyModel
   },
   {
-    Id: deleteModel,
+    Id: DeleteModel,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -397,7 +397,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     FileNameWithoutExtension: G.Api.EndPoints.DeleteModel
   },
   {
-    Id: pullModel,
+    Id: PullModel,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -449,7 +449,7 @@ If `false` the response will be returned as a single response object, otherwise 
     FileNameWithoutExtension: G.Api.EndPoints.PullModel
   },
   {
-    Id: pushModel,
+    Id: PushModel,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -498,7 +498,7 @@ If `false` the response will be returned as a single response object, otherwise 
     FileNameWithoutExtension: G.Api.EndPoints.PushModel
   },
   {
-    Id: checkBlob,
+    Id: CheckBlob,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -513,7 +513,7 @@ If `false` the response will be returned as a single response object, otherwise 
     FileNameWithoutExtension: G.Api.EndPoints.CheckBlob
   },
   {
-    Id: createBlob,
+    Id: CreateBlob,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,

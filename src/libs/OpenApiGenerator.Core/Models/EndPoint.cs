@@ -35,7 +35,7 @@ public readonly record struct EndPoint(
             : ModelData.FromKey("test", settings) with{ Schema = default };
         var response = operation.Value.Responses.Values.FirstOrDefault();
         var endPoint = new EndPoint(
-            Id: operation.Value.OperationId,
+            Id: operation.Value.GetOperationIdOrCompute(path: path, operationType: operation.Key),
             Namespace: settings.Namespace,
             ClassName: settings.ClassName,
             BaseUrl: string.Empty,

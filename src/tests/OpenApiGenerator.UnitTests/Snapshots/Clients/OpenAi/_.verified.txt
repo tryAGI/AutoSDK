@@ -1,6 +1,6 @@
 ﻿[
   {
-    Id: createChatCompletion,
+    Id: CreateChatCompletion,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -244,7 +244,7 @@ A list of functions the model may generate JSON inputs for.
     FileNameWithoutExtension: G.Api.EndPoints.CreateChatCompletion
   },
   {
-    Id: createCompletion,
+    Id: CreateCompletion,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -469,7 +469,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     FileNameWithoutExtension: G.Api.EndPoints.CreateCompletion
   },
   {
-    Id: createEdit,
+    Id: CreateEdit,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -553,7 +553,7 @@ We generally recommend altering this or `temperature` but not both.
     FileNameWithoutExtension: G.Api.EndPoints.CreateEdit
   },
   {
-    Id: createImage,
+    Id: CreateImage,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -654,7 +654,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     FileNameWithoutExtension: G.Api.EndPoints.CreateImage
   },
   {
-    Id: createImageEdit,
+    Id: CreateImageEdit,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -747,7 +747,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     FileNameWithoutExtension: G.Api.EndPoints.CreateImageEdit
   },
   {
-    Id: createImageVariation,
+    Id: CreateImageVariation,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -824,7 +824,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     FileNameWithoutExtension: G.Api.EndPoints.CreateImageVariation
   },
   {
-    Id: createEmbedding,
+    Id: CreateEmbedding,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -881,7 +881,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     FileNameWithoutExtension: G.Api.EndPoints.CreateEmbedding
   },
   {
-    Id: createSpeech,
+    Id: CreateSpeech,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -940,7 +940,7 @@ The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is 
     FileNameWithoutExtension: G.Api.EndPoints.CreateSpeech
   },
   {
-    Id: createTranscription,
+    Id: CreateTranscription,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1015,7 +1015,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     FileNameWithoutExtension: G.Api.EndPoints.CreateTranscription
   },
   {
-    Id: createTranslation,
+    Id: CreateTranslation,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1081,7 +1081,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     FileNameWithoutExtension: G.Api.EndPoints.CreateTranslation
   },
   {
-    Id: listFiles,
+    Id: ListFiles,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1095,7 +1095,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     FileNameWithoutExtension: G.Api.EndPoints.ListFiles
   },
   {
-    Id: createFile,
+    Id: CreateFile,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1137,7 +1137,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
     FileNameWithoutExtension: G.Api.EndPoints.CreateFile
   },
   {
-    Id: deleteFile,
+    Id: DeleteFile,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1152,7 +1152,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
     FileNameWithoutExtension: G.Api.EndPoints.DeleteFile
   },
   {
-    Id: retrieveFile,
+    Id: RetrieveFile,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1166,7 +1166,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
     FileNameWithoutExtension: G.Api.EndPoints.RetrieveFile
   },
   {
-    Id: downloadFile,
+    Id: DownloadFile,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1180,7 +1180,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
     FileNameWithoutExtension: G.Api.EndPoints.DownloadFile
   },
   {
-    Id: createFineTuningJob,
+    Id: CreateFineTuningJob,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1267,7 +1267,7 @@ Response includes details of the enqueued job including job status and the name 
     FileNameWithoutExtension: G.Api.EndPoints.CreateFineTuningJob
   },
   {
-    Id: listPaginatedFineTuningJobs,
+    Id: ListPaginatedFineTuningJobs,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1283,7 +1283,7 @@ List your organization's fine-tuning jobs
     FileNameWithoutExtension: G.Api.EndPoints.ListPaginatedFineTuningJobs
   },
   {
-    Id: retrieveFineTuningJob,
+    Id: RetrieveFineTuningJob,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1301,7 +1301,7 @@ Get info about a fine-tuning job.
     FileNameWithoutExtension: G.Api.EndPoints.RetrieveFineTuningJob
   },
   {
-    Id: listFineTuningEvents,
+    Id: ListFineTuningEvents,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1317,7 +1317,7 @@ Get status updates for a fine-tuning job.
     FileNameWithoutExtension: G.Api.EndPoints.ListFineTuningEvents
   },
   {
-    Id: cancelFineTuningJob,
+    Id: CancelFineTuningJob,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1334,7 +1334,7 @@ Immediately cancel a fine-tune job.
     FileNameWithoutExtension: G.Api.EndPoints.CancelFineTuningJob
   },
   {
-    Id: createFineTune,
+    Id: CreateFineTune,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1542,7 +1542,7 @@ Response includes details of the enqueued job including job status and the name 
     FileNameWithoutExtension: G.Api.EndPoints.CreateFineTune
   },
   {
-    Id: listFineTunes,
+    Id: ListFineTunes,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1558,7 +1558,7 @@ List your organization's fine-tuning jobs
     FileNameWithoutExtension: G.Api.EndPoints.ListFineTunes
   },
   {
-    Id: retrieveFineTune,
+    Id: RetrieveFineTune,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1576,7 +1576,7 @@ Gets info about the fine-tune job.
     FileNameWithoutExtension: G.Api.EndPoints.RetrieveFineTune
   },
   {
-    Id: cancelFineTune,
+    Id: CancelFineTune,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1593,7 +1593,7 @@ Immediately cancel a fine-tune job.
     FileNameWithoutExtension: G.Api.EndPoints.CancelFineTune
   },
   {
-    Id: listFineTuneEvents,
+    Id: ListFineTuneEvents,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1609,7 +1609,7 @@ Get fine-grained status updates for a fine-tune job.
     FileNameWithoutExtension: G.Api.EndPoints.ListFineTuneEvents
   },
   {
-    Id: listModels,
+    Id: ListModels,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1623,7 +1623,7 @@ Get fine-grained status updates for a fine-tune job.
     FileNameWithoutExtension: G.Api.EndPoints.ListModels
   },
   {
-    Id: retrieveModel,
+    Id: RetrieveModel,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1637,7 +1637,7 @@ Get fine-grained status updates for a fine-tune job.
     FileNameWithoutExtension: G.Api.EndPoints.RetrieveModel
   },
   {
-    Id: deleteModel,
+    Id: DeleteModel,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1652,7 +1652,7 @@ Get fine-grained status updates for a fine-tune job.
     FileNameWithoutExtension: G.Api.EndPoints.DeleteModel
   },
   {
-    Id: createModeration,
+    Id: CreateModeration,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1689,7 +1689,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
     FileNameWithoutExtension: G.Api.EndPoints.CreateModeration
   },
   {
-    Id: listAssistants,
+    Id: ListAssistants,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1703,7 +1703,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
     FileNameWithoutExtension: G.Api.EndPoints.ListAssistants
   },
   {
-    Id: createAssistant,
+    Id: CreateAssistant,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1786,7 +1786,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     FileNameWithoutExtension: G.Api.EndPoints.CreateAssistant
   },
   {
-    Id: getAssistant,
+    Id: GetAssistant,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1800,7 +1800,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     FileNameWithoutExtension: G.Api.EndPoints.GetAssistant
   },
   {
-    Id: modifyAssistant,
+    Id: ModifyAssistant,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1884,7 +1884,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     FileNameWithoutExtension: G.Api.EndPoints.ModifyAssistant
   },
   {
-    Id: deleteAssistant,
+    Id: DeleteAssistant,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1899,7 +1899,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     FileNameWithoutExtension: G.Api.EndPoints.DeleteAssistant
   },
   {
-    Id: createThread,
+    Id: CreateThread,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1931,7 +1931,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     FileNameWithoutExtension: G.Api.EndPoints.CreateThread
   },
   {
-    Id: getThread,
+    Id: GetThread,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1945,7 +1945,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     FileNameWithoutExtension: G.Api.EndPoints.GetThread
   },
   {
-    Id: modifyThread,
+    Id: ModifyThread,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1970,7 +1970,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     FileNameWithoutExtension: G.Api.EndPoints.ModifyThread
   },
   {
-    Id: deleteThread,
+    Id: DeleteThread,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1985,7 +1985,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     FileNameWithoutExtension: G.Api.EndPoints.DeleteThread
   },
   {
-    Id: listMessages,
+    Id: ListMessages,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1999,7 +1999,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     FileNameWithoutExtension: G.Api.EndPoints.ListMessages
   },
   {
-    Id: createMessage,
+    Id: CreateMessage,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -2048,7 +2048,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     FileNameWithoutExtension: G.Api.EndPoints.CreateMessage
   },
   {
-    Id: getMessage,
+    Id: GetMessage,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -2062,7 +2062,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     FileNameWithoutExtension: G.Api.EndPoints.GetMessage
   },
   {
-    Id: modifyMessage,
+    Id: ModifyMessage,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -2087,7 +2087,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     FileNameWithoutExtension: G.Api.EndPoints.ModifyMessage
   },
   {
-    Id: createThreadAndRun,
+    Id: CreateThreadAndRun,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -2147,7 +2147,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     FileNameWithoutExtension: G.Api.EndPoints.CreateThreadAndRun
   },
   {
-    Id: listRuns,
+    Id: ListRuns,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -2161,7 +2161,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     FileNameWithoutExtension: G.Api.EndPoints.ListRuns
   },
   {
-    Id: createRun,
+    Id: CreateRun,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -2221,7 +2221,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     FileNameWithoutExtension: G.Api.EndPoints.CreateRun
   },
   {
-    Id: getRun,
+    Id: GetRun,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -2235,7 +2235,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     FileNameWithoutExtension: G.Api.EndPoints.GetRun
   },
   {
-    Id: modifyRun,
+    Id: ModifyRun,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -2260,7 +2260,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     FileNameWithoutExtension: G.Api.EndPoints.ModifyRun
   },
   {
-    Id: submitToolOuputsToRun,
+    Id: SubmitToolOuputsToRun,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -2285,7 +2285,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     FileNameWithoutExtension: G.Api.EndPoints.SubmitToolOuputsToRun
   },
   {
-    Id: cancelRun,
+    Id: CancelRun,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -2300,7 +2300,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     FileNameWithoutExtension: G.Api.EndPoints.CancelRun
   },
   {
-    Id: listRunSteps,
+    Id: ListRunSteps,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -2314,7 +2314,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     FileNameWithoutExtension: G.Api.EndPoints.ListRunSteps
   },
   {
-    Id: getRunStep,
+    Id: GetRunStep,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -2328,7 +2328,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     FileNameWithoutExtension: G.Api.EndPoints.GetRunStep
   },
   {
-    Id: listAssistantFiles,
+    Id: ListAssistantFiles,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -2342,7 +2342,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     FileNameWithoutExtension: G.Api.EndPoints.ListAssistantFiles
   },
   {
-    Id: createAssistantFile,
+    Id: CreateAssistantFile,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -2365,7 +2365,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     FileNameWithoutExtension: G.Api.EndPoints.CreateAssistantFile
   },
   {
-    Id: getAssistantFile,
+    Id: GetAssistantFile,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -2379,7 +2379,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     FileNameWithoutExtension: G.Api.EndPoints.GetAssistantFile
   },
   {
-    Id: deleteAssistantFile,
+    Id: DeleteAssistantFile,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -2394,7 +2394,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     FileNameWithoutExtension: G.Api.EndPoints.DeleteAssistantFile
   },
   {
-    Id: listMessageFiles,
+    Id: ListMessageFiles,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -2408,7 +2408,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     FileNameWithoutExtension: G.Api.EndPoints.ListMessageFiles
   },
   {
-    Id: getMessageFile,
+    Id: GetMessageFile,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,

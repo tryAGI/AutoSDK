@@ -121,7 +121,11 @@ public partial class Tests
         
         return CheckSourceAsync<ModelGenerator>(jsonSerializerType, [
             new CustomAdditionalText("openapi.yaml", yaml),
-        ]);
+        ], new Dictionary<string, string>
+        {
+            ["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
+            ["build_property.OpenApiGenerator_GenerateMethods"] = "true",
+        }, additionalGenerators: [new ClientGenerator()]);
     }
     
     [DataTestMethod]

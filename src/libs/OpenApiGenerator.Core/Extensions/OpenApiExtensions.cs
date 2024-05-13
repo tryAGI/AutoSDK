@@ -70,6 +70,32 @@ public static class OpenApiExtensions
             : type;
     }
 
+    public static string GetOperationIdOrCompute(this OpenApiOperation operation, string path, OperationType operationType)
+    {
+        operation = operation ?? throw new ArgumentNullException(nameof(operation));
+        
+        if (operation.OperationId != null)
+        {
+            return operation.OperationId.ToPropertyName();
+        }
+        
+        path = path ?? throw new ArgumentNullException(nameof(path));
+        
+        var prefix = operationType switch
+        {
+            OperationType.Get => "get",
+            OperationType.Post => "create",
+            OperationType.Put => "put",
+            OperationType.Delete => "delete",
+            OperationType.Patch => "edit",
+            OperationType.Head => "head",
+            OperationType.Options => "options",
+            OperationType.Trace => "trace",
+            _ => throw new NotSupportedException($"OperationType {operationType} is not supported."),
+        };
+        return $"{prefix}{path.TrimStart('/').ToPropertyName().UseWordSeparator('/')}";
+    }
+
     public static string? GetDefaultValue(this OpenApiSchema schema, string type)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));

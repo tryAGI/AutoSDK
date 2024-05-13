@@ -22,8 +22,7 @@ public static class ClientGeneratorMethods
                 .Where(x =>
                     settings.GenerateMethods &&
                     (includedOperationIds.Count == 0 ||
-                    includedOperationIds.Contains(x.Value.OperationId) ||
-                    includedOperationIds.Contains(x.Value.OperationId.ToPropertyName())))
+                    includedOperationIds.Contains(x.Value.GetOperationIdOrCompute(path: path.Key, operationType: x.Key))))
                 .Select(operation => EndPoint.FromSchema(operation, settings, path.Key)))
             // Constructor
             .Concat(settings.GenerateConstructors ? [new EndPoint(
