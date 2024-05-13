@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, and `flac`.
+    /// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.
     /// <br/>Default Value: mp3
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
@@ -31,5 +31,15 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="flac")]
         Flac,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="wav")]
+        Wav,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="pcm")]
+        Pcm,
     }
 }

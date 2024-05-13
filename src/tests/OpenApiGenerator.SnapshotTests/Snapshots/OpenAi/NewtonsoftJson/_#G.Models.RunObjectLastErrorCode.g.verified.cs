@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// One of `server_error` or `rate_limit_exceeded`.
+    /// One of `server_error`, `rate_limit_exceeded`, or `invalid_prompt`.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum RunObjectLastErrorCode
@@ -20,5 +20,10 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="rate_limit_exceeded")]
         RateLimitExceeded,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="invalid_prompt")]
+        InvalidPrompt,
     }
 }

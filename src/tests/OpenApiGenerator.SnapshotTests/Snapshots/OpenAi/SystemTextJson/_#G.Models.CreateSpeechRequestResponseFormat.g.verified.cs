@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, and `flac`.
+    /// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.
     /// <br/>Default Value: mp3
     /// </summary>
     public abstract class CreateSpeechRequestResponseFormat
@@ -26,5 +26,13 @@ namespace G
         /// 
         /// </summary>
         public const string Flac = "flac";
+        /// <summary>
+        /// 
+        /// </summary>
+        public const string Wav = "wav";
+        /// <summary>
+        /// 
+        /// </summary>
+        public const string Pcm = "pcm";
     }
 }

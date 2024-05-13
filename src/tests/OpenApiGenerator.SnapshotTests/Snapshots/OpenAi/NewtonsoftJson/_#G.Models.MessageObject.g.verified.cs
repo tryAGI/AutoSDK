@@ -34,6 +34,30 @@ namespace G
         public string ThreadId { get; set; } = default!;
 
         /// <summary>
+        /// The status of the message, which can be either `in_progress`, `incomplete`, or `completed`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        public MessageObjectStatus Status { get; set; } = default!;
+
+        /// <summary>
+        /// On an incomplete message, details about why the message is incomplete.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("incomplete_details", Required = global::Newtonsoft.Json.Required.Always)]
+        public MessageObjectIncompleteDetails? IncompleteDetails { get; set; } = default!;
+
+        /// <summary>
+        /// The Unix timestamp (in seconds) for when the message was completed.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("completed_at", Required = global::Newtonsoft.Json.Required.Always)]
+        public int? CompletedAt { get; set; } = default!;
+
+        /// <summary>
+        /// The Unix timestamp (in seconds) for when the message was marked as incomplete.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("incomplete_at", Required = global::Newtonsoft.Json.Required.Always)]
+        public int? IncompleteAt { get; set; } = default!;
+
+        /// <summary>
         /// The entity that produced the message. One of `user` or `assistant`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
@@ -52,17 +76,16 @@ namespace G
         public string? AssistantId { get; set; } = default!;
 
         /// <summary>
-        /// If applicable, the ID of the [run](/docs/api-reference/runs) associated with the authoring of this message.
+        /// The ID of the [run](/docs/api-reference/runs) associated with the creation of this message. Value is `null` when messages are created manually using the create message or create thread endpoints.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string? RunId { get; set; } = default!;
 
         /// <summary>
-        /// A list of [file](/docs/api-reference/files) IDs that the assistant should use. Useful for tools like retrieval and code_interpreter that can access files. A maximum of 10 files can be attached to a message.
-        /// <br/>Default Value: []
+        /// A list of files attached to the message, and the tools they were added to.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("file_ids", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<string> FileIds { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("attachments", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<MessageObjectAttachments>? Attachments { get; set; } = default!;
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.

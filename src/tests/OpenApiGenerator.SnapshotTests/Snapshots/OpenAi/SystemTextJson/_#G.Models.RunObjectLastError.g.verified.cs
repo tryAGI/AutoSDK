@@ -10,7 +10,7 @@ namespace G
     public sealed partial class RunObjectLastError
     {
         /// <summary>
-        /// One of `server_error` or `rate_limit_exceeded`.
+        /// One of `server_error`, `rate_limit_exceeded`, or `invalid_prompt`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
         [global::System.Text.Json.Serialization.JsonRequired]

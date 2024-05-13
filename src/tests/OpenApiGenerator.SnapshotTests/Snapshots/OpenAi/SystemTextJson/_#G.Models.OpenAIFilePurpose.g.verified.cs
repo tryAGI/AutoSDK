@@ -5,10 +5,26 @@
 namespace G
 {
     /// <summary>
-    /// The intended purpose of the file. Supported values are `fine-tune`, `fine-tune-results`, `assistants`, and `assistants_output`.
+    /// The intended purpose of the file. Supported values are `assistants`, `assistants_output`, `batch`, `batch_output`, `fine-tune`, `fine-tune-results` and `vision`.
     /// </summary>
     public abstract class OpenAIFilePurpose
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        public const string Assistants = "assistants";
+        /// <summary>
+        /// 
+        /// </summary>
+        public const string AssistantsOutput = "assistants_output";
+        /// <summary>
+        /// 
+        /// </summary>
+        public const string Batch = "batch";
+        /// <summary>
+        /// 
+        /// </summary>
+        public const string BatchOutput = "batch_output";
         /// <summary>
         /// 
         /// </summary>
@@ -20,10 +36,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string Assistants = "assistants";
-        /// <summary>
-        /// 
-        /// </summary>
-        public const string AssistantsOutput = "assistants_output";
+        public const string Vision = "vision";
     }
 }

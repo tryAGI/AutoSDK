@@ -21,7 +21,7 @@
         IsRequired: true,
         Summary:
 ID of the model to use. See the [model endpoint compatibility](/docs/models/model-endpoint-compatibility) table for details on which models work with the Chat API.
-<br/>Example: gpt-3.5-turbo
+<br/>Example: gpt-4-turbo
       },
       {
         Id: frequency_penalty,
@@ -55,7 +55,7 @@ Accepts a JSON object that maps tokens (specified by their token ID in the token
         IsRequired: false,
         DefaultValue: false,
         Summary:
-Whether to return log probabilities of the output tokens or not. If true, returns the log probabilities of each output token returned in the `content` of `message`. This option is currently not available on the `gpt-4-vision-preview` model.
+Whether to return log probabilities of the output tokens or not. If true, returns the log probabilities of each output token returned in the `content` of `message`.
 <br/>Default Value: false
       },
       {
@@ -63,7 +63,7 @@ Whether to return log probabilities of the output tokens or not. If true, return
         Name: TopLogprobs,
         Type: int?,
         IsRequired: false,
-        Summary: An integer between 0 and 5 specifying the number of most likely tokens to return at each token position, each with an associated log probability. `logprobs` must be set to `true` if this parameter is used.
+        Summary: An integer between 0 and 20 specifying the number of most likely tokens to return at each token position, each with an associated log probability. `logprobs` must be set to `true` if this parameter is used.
       },
       {
         Id: max_tokens,
@@ -106,7 +106,7 @@ Number between -2.0 and 2.0. Positive values penalize new tokens based on whethe
         Type: CreateChatCompletionRequestResponseFormat?,
         IsRequired: false,
         Summary:
-An object specifying the format that the model must output. Compatible with `gpt-4-1106-preview` and `gpt-3.5-turbo-1106`.
+An object specifying the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models newer than `gpt-3.5-turbo-1106`.
 
 Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.
 
@@ -147,6 +147,16 @@ If set, partial message deltas will be sent, like in ChatGPT. Tokens will be sen
 <br/>Default Value: false
       },
       {
+        Id: stream_options,
+        Name: StreamOptions,
+        Type: ChatCompletionStreamOptions?,
+        IsRequired: false,
+        Summary:
+Options for streaming response. Only set this when you set `stream: true`.
+
+<br/>Default Value: 
+      },
+      {
         Id: temperature,
         Name: Temperature,
         Type: double?,
@@ -180,7 +190,7 @@ We generally recommend altering this or `temperature` but not both.
         Type: global::System.Collections.Generic.IList<ChatCompletionTool?>?,
         IsRequired: false,
         Summary:
-A list of tools the model may call. Currently, only functions are supported as a tool. Use this to provide a list of functions the model may generate JSON inputs for.
+A list of tools the model may call. Currently, only functions are supported as a tool. Use this to provide a list of functions the model may generate JSON inputs for. A max of 128 functions are supported.
 
       },
       {
@@ -189,12 +199,13 @@ A list of tools the model may call. Currently, only functions are supported as a
         Type: ChatCompletionToolChoiceOption?,
         IsRequired: false,
         Summary:
-Controls which (if any) function is called by the model.
-`none` means the model will not call a function and instead generates a message.
-`auto` means the model can pick between generating a message or calling a function.
-Specifying a particular function via `{"type: "function", "function": {"name": "my_function"}}` forces the model to call that function.
+Controls which (if any) tool is called by the model.
+`none` means the model will not call any tool and instead generates a message.
+`auto` means the model can pick between generating a message or calling one or more tools.
+`required` means the model must call one or more tools.
+Specifying a particular tool via `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.
 
-`none` is the default when no functions are present. `auto` is the default if functions are present.
+`none` is the default when no tools are present. `auto` is the default if tools are present.
 
       },
       {
@@ -320,7 +331,7 @@ Number between -2.0 and 2.0. Positive values penalize new tokens based on their 
         Summary:
 Modify the likelihood of specified tokens appearing in the completion.
 
-Accepts a JSON object that maps tokens (specified by their token ID in the GPT tokenizer) to an associated bias value from -100 to 100. You can use this [tokenizer tool](/tokenizer?view=bpe) (which works for both GPT-2 and GPT-3) to convert text to token IDs. Mathematically, the bias is added to the logits generated by the model prior to sampling. The exact effect will vary per model, but values between -1 and 1 should decrease or increase likelihood of selection; values like -100 or 100 should result in a ban or exclusive selection of the relevant token.
+Accepts a JSON object that maps tokens (specified by their token ID in the GPT tokenizer) to an associated bias value from -100 to 100. You can use this [tokenizer tool](/tokenizer?view=bpe) to convert text to token IDs. Mathematically, the bias is added to the logits generated by the model prior to sampling. The exact effect will vary per model, but values between -1 and 1 should decrease or increase likelihood of selection; values like -100 or 100 should result in a ban or exclusive selection of the relevant token.
 
 As an example, you can pass `{"50256": -100}` to prevent the &lt;|endoftext|&gt; token from being generated.
 
@@ -413,12 +424,25 @@ Whether to stream back partial progress. If set, tokens will be sent as data-onl
 <br/>Default Value: false
       },
       {
+        Id: stream_options,
+        Name: StreamOptions,
+        Type: ChatCompletionStreamOptions?,
+        IsRequired: false,
+        Summary:
+Options for streaming response. Only set this when you set `stream: true`.
+
+<br/>Default Value: 
+      },
+      {
         Id: suffix,
         Name: Suffix,
         Type: string?,
         IsRequired: false,
         Summary:
 The suffix that comes after a completion of inserted text.
+
+This parameter is only supported for `gpt-3.5-turbo-instruct`.
+
 <br/>Default Value: 
 <br/>Example: test.
       },
@@ -467,90 +491,6 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     ResponseType: CreateCompletionResponse,
     MethodName: CreateCompletionAsync,
     FileNameWithoutExtension: G.Api.EndPoints.CreateCompletion
-  },
-  {
-    Id: CreateEdit,
-    Namespace: G,
-    ClassName: Api,
-    BaseUrl: ,
-    Stream: false,
-    Path: /edits,
-    Properties: [
-      {
-        Id: instruction,
-        Name: Instruction,
-        Type: string,
-        IsRequired: true,
-        Summary:
-The instruction that tells the model how to edit the prompt.
-<br/>Example: Fix the spelling mistakes.
-      },
-      {
-        Id: model,
-        Name: Model,
-        Type: object,
-        IsRequired: true,
-        Summary:
-ID of the model to use. You can use the `text-davinci-edit-001` or `code-davinci-edit-001` model with this endpoint.
-<br/>Example: text-davinci-edit-001
-      },
-      {
-        Id: input,
-        Name: Input,
-        Type: string?,
-        IsRequired: false,
-        DefaultValue: "",
-        Summary:
-The input text to use as a starting point for the edit.
-<br/>Default Value: 
-<br/>Example: What day of the wek is it?
-      },
-      {
-        Id: n,
-        Name: N,
-        Type: int?,
-        IsRequired: false,
-        DefaultValue: 1,
-        Summary:
-How many edits to generate for the input and instruction.
-<br/>Default Value: 1
-<br/>Example: 1
-      },
-      {
-        Id: temperature,
-        Name: Temperature,
-        Type: double?,
-        IsRequired: false,
-        DefaultValue: 1,
-        Summary:
-What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
-
-We generally recommend altering this or `top_p` but not both.
-
-<br/>Default Value: 1
-<br/>Example: 1
-      },
-      {
-        Id: top_p,
-        Name: TopP,
-        Type: double?,
-        IsRequired: false,
-        DefaultValue: 1,
-        Summary:
-An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.
-
-We generally recommend altering this or `temperature` but not both.
-
-<br/>Default Value: 1
-<br/>Example: 1
-      }
-    ],
-    HttpMethod: Post,
-    Summary: Creates a new edit for the provided input, instruction, and parameters.,
-    RequestType: CreateEditRequest,
-    ResponseType: CreateEditResponse,
-    MethodName: CreateEditAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.CreateEdit
   },
   {
     Id: CreateImage,
@@ -609,7 +549,7 @@ The quality of the image that will be generated. `hd` creates images with finer 
         IsRequired: false,
         DefaultValue: CreateImageRequestResponseFormat.Url,
         Summary:
-The format in which the generated images are returned. Must be one of `url` or `b64_json`.
+The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.
 <br/>Default Value: url
 <br/>Example: url
       },
@@ -724,7 +664,7 @@ The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x
         IsRequired: false,
         DefaultValue: CreateImageEditRequestResponseFormat.Url,
         Summary:
-The format in which the generated images are returned. Must be one of `url` or `b64_json`.
+The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.
 <br/>Default Value: url
 <br/>Example: url
       },
@@ -790,7 +730,7 @@ The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only
         IsRequired: false,
         DefaultValue: CreateImageVariationRequestResponseFormat.Url,
         Summary:
-The format in which the generated images are returned. Must be one of `url` or `b64_json`.
+The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.
 <br/>Default Value: url
 <br/>Example: url
       },
@@ -849,7 +789,7 @@ Input text to embed, encoded as a string or array of tokens. To embed multiple i
         Summary:
 ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models/overview) for descriptions of them.
 
-<br/>Example: text-embedding-ada-002
+<br/>Example: text-embedding-3-small
       },
       {
         Id: encoding_format,
@@ -861,6 +801,15 @@ ID of the model to use. You can use the [List models](/docs/api-reference/models
 The format to return the embeddings in. Can be either `float` or [`base64`](https://pypi.org/project/pybase64/).
 <br/>Default Value: float
 <br/>Example: float
+      },
+      {
+        Id: dimensions,
+        Name: Dimensions,
+        Type: int,
+        IsRequired: false,
+        Summary:
+The number of dimensions the resulting output embeddings should have. Only supported in `text-embedding-3` and later models.
+
       },
       {
         Id: user,
@@ -918,7 +867,7 @@ One of the available [TTS models](/docs/models/tts): `tts-1` or `tts-1-hd`
         IsRequired: false,
         DefaultValue: CreateSpeechRequestResponseFormat.Mp3,
         Summary:
-The format to audio in. Supported formats are `mp3`, `opus`, `aac`, and `flac`.
+The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.
 <br/>Default Value: mp3
       },
       {
@@ -962,7 +911,7 @@ The audio file object (not file name) to transcribe, in one of these formats: fl
         Type: object,
         IsRequired: true,
         Summary:
-ID of the model to use. Only `whisper-1` is currently available.
+ID of the model to use. Only `whisper-1` (which is powered by our open source Whisper V2 model) is currently available.
 
 <br/>Example: whisper-1
       },
@@ -1010,7 +959,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     HttpMethod: Post,
     Summary: Transcribes audio into the input language.,
     RequestType: CreateTranscriptionRequest,
-    ResponseType: CreateTranscriptionResponse,
+    ResponseType: ,
     MethodName: CreateTranscriptionAsync,
     FileNameWithoutExtension: G.Api.EndPoints.CreateTranscription
   },
@@ -1037,7 +986,7 @@ The audio file object (not file name) translate, in one of these formats: flac, 
         Type: object,
         IsRequired: true,
         Summary:
-ID of the model to use. Only `whisper-1` is currently available.
+ID of the model to use. Only `whisper-1` (which is powered by our open source Whisper V2 model) is currently available.
 
 <br/>Example: whisper-1
       },
@@ -1076,7 +1025,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     HttpMethod: Post,
     Summary: Translates audio into English.,
     RequestType: CreateTranslationRequest,
-    ResponseType: CreateTranslationResponse,
+    ResponseType: ,
     MethodName: CreateTranslationAsync,
     FileNameWithoutExtension: G.Api.EndPoints.CreateTranslation
   },
@@ -1119,7 +1068,7 @@ The File object (not file name) to be uploaded.
         Summary:
 The intended purpose of the uploaded file.
 
-Use "fine-tune" for [Fine-tuning](/docs/api-reference/fine-tuning) and "assistants" for [Assistants](/docs/api-reference/assistants) and [Messages](/docs/api-reference/messages). This allows us to validate the format of the uploaded file is correct for fine-tuning.
+Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](/docs/api-reference/messages) files, "vision" for Assistants image file inputs, "batch" for [Batch API](/docs/guides/batch), and "fine-tune" for [Fine-tuning](/docs/api-reference/fine-tuning).
 
       }
     ],
@@ -1206,7 +1155,7 @@ The name of the model to fine-tune. You can select one of the
         Summary:
 The ID of an uploaded file that contains training data.
 
-See [upload file](/docs/api-reference/files/upload) for how to upload a file.
+See [upload file](/docs/api-reference/files/create) for how to upload a file.
 
 Your dataset must be formatted as a JSONL file. Additionally, you must upload your file with the purpose `fine-tune`.
 
@@ -1251,11 +1200,29 @@ Your dataset must be formatted as a JSONL file. You must upload your file with t
 See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
 
 <br/>Example: file-abc123
+      },
+      {
+        Id: integrations,
+        Name: Integrations,
+        Type: global::System.Collections.Generic.IList<CreateFineTuningJobRequestIntegrations?>?,
+        IsRequired: false,
+        Summary: A list of integrations to enable for your fine-tuning job.
+      },
+      {
+        Id: seed,
+        Name: Seed,
+        Type: int?,
+        IsRequired: false,
+        Summary:
+The seed controls the reproducibility of the job. Passing in the same seed and job parameters should produce the same results, but may differ in rare cases.
+If a seed is not specified, one will be generated for you.
+
+<br/>Example: 42
       }
     ],
     HttpMethod: Post,
     Summary:
-Creates a job that fine-tunes a specified model from a given dataset.
+Creates a fine-tuning job which begins the process of creating a new model from a given dataset.
 
 Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.
 
@@ -1334,279 +1301,20 @@ Immediately cancel a fine-tune job.
     FileNameWithoutExtension: G.Api.EndPoints.CancelFineTuningJob
   },
   {
-    Id: CreateFineTune,
+    Id: ListFineTuningJobCheckpoints,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /fine-tunes,
-    Properties: [
-      {
-        Id: training_file,
-        Name: TrainingFile,
-        Type: string,
-        IsRequired: true,
-        Summary:
-The ID of an uploaded file that contains training data.
-
-See [upload file](/docs/api-reference/files/upload) for how to upload a file.
-
-Your dataset must be formatted as a JSONL file, where each training
-example is a JSON object with the keys "prompt" and "completion".
-Additionally, you must upload your file with the purpose `fine-tune`.
-
-See the [fine-tuning guide](/docs/guides/legacy-fine-tuning/creating-training-data) for more details.
-
-<br/>Example: file-abc123
-      },
-      {
-        Id: batch_size,
-        Name: BatchSize,
-        Type: int?,
-        IsRequired: false,
-        Summary:
-The batch size to use for training. The batch size is the number of
-training examples used to train a single forward and backward pass.
-
-By default, the batch size will be dynamically configured to be
-~0.2% of the number of examples in the training set, capped at 256 -
-in general, we've found that larger batch sizes tend to work better
-for larger datasets.
-
-<br/>Default Value: 
-      },
-      {
-        Id: classification_betas,
-        Name: ClassificationBetas,
-        Type: global::System.Collections.Generic.IList<double>?,
-        IsRequired: false,
-        Summary:
-If this is provided, we calculate F-beta scores at the specified
-beta values. The F-beta score is a generalization of F-1 score.
-This is only used for binary classification.
-
-With a beta of 1 (i.e. the F-1 score), precision and recall are
-given the same weight. A larger beta score puts more weight on
-recall and less on precision. A smaller beta score puts more weight
-on precision and less on recall.
-
-<br/>Default Value: 
-<br/>Example: [0.6, 1, 1.5, 2]
-      },
-      {
-        Id: classification_n_classes,
-        Name: ClassificationNClasses,
-        Type: int?,
-        IsRequired: false,
-        Summary:
-The number of classes in a classification task.
-
-This parameter is required for multiclass classification.
-
-<br/>Default Value: 
-      },
-      {
-        Id: classification_positive_class,
-        Name: ClassificationPositiveClass,
-        Type: string?,
-        IsRequired: false,
-        Summary:
-The positive class in binary classification.
-
-This parameter is needed to generate precision, recall, and F1
-metrics when doing binary classification.
-
-<br/>Default Value: 
-      },
-      {
-        Id: compute_classification_metrics,
-        Name: ComputeClassificationMetrics,
-        Type: bool?,
-        IsRequired: false,
-        DefaultValue: false,
-        Summary:
-If set, we calculate classification-specific metrics such as accuracy
-and F-1 score using the validation set at the end of every epoch.
-These metrics can be viewed in the [results file](/docs/guides/legacy-fine-tuning/analyzing-your-fine-tuned-model).
-
-In order to compute classification metrics, you must provide a
-`validation_file`. Additionally, you must
-specify `classification_n_classes` for multiclass classification or
-`classification_positive_class` for binary classification.
-
-<br/>Default Value: false
-      },
-      {
-        Id: hyperparameters,
-        Name: Hyperparameters,
-        Type: CreateFineTuneRequestHyperparameters?,
-        IsRequired: false,
-        Summary: The hyperparameters used for the fine-tuning job.
-      },
-      {
-        Id: learning_rate_multiplier,
-        Name: LearningRateMultiplier,
-        Type: double?,
-        IsRequired: false,
-        Summary:
-The learning rate multiplier to use for training.
-The fine-tuning learning rate is the original learning rate used for
-pretraining multiplied by this value.
-
-By default, the learning rate multiplier is the 0.05, 0.1, or 0.2
-depending on final `batch_size` (larger learning rates tend to
-perform better with larger batch sizes). We recommend experimenting
-with values in the range 0.02 to 0.2 to see what produces the best
-results.
-
-<br/>Default Value: 
-      },
-      {
-        Id: model,
-        Name: Model,
-        Type: object?,
-        IsRequired: false,
-        DefaultValue: ,
-        Summary:
-The name of the base model to fine-tune. You can select one of "ada",
-"babbage", "curie", "davinci", or a fine-tuned model created after 2022-04-21 and before 2023-08-22.
-To learn more about these models, see the
-[Models](/docs/models) documentation.
-
-<br/>Default Value: curie
-<br/>Example: curie
-      },
-      {
-        Id: prompt_loss_weight,
-        Name: PromptLossWeight,
-        Type: double?,
-        IsRequired: false,
-        DefaultValue: 0.01,
-        Summary:
-The weight to use for loss on the prompt tokens. This controls how
-much the model tries to learn to generate the prompt (as compared
-to the completion which always has a weight of 1.0), and can add
-a stabilizing effect to training when completions are short.
-
-If prompts are extremely long (relative to completions), it may make
-sense to reduce this weight so as to avoid over-prioritizing
-learning the prompt.
-
-<br/>Default Value: 0.01
-      },
-      {
-        Id: suffix,
-        Name: Suffix,
-        Type: string?,
-        IsRequired: false,
-        Summary:
-A string of up to 40 characters that will be added to your fine-tuned model name.
-
-For example, a `suffix` of "custom-model-name" would produce a model name like `ada:ft-your-org:custom-model-name-2022-02-15-04-21-04`.
-
-<br/>Default Value: 
-      },
-      {
-        Id: validation_file,
-        Name: ValidationFile,
-        Type: string?,
-        IsRequired: false,
-        Summary:
-The ID of an uploaded file that contains validation data.
-
-If you provide this file, the data is used to generate validation
-metrics periodically during fine-tuning. These metrics can be viewed in
-the [fine-tuning results file](/docs/guides/legacy-fine-tuning/analyzing-your-fine-tuned-model).
-Your train and validation data should be mutually exclusive.
-
-Your dataset must be formatted as a JSONL file, where each validation
-example is a JSON object with the keys "prompt" and "completion".
-Additionally, you must upload your file with the purpose `fine-tune`.
-
-See the [fine-tuning guide](/docs/guides/legacy-fine-tuning/creating-training-data) for more details.
-
-<br/>Example: file-abc123
-      }
-    ],
-    HttpMethod: Post,
-    Summary:
-Creates a job that fine-tunes a specified model from a given dataset.
-
-Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.
-
-[Learn more about fine-tuning](/docs/guides/legacy-fine-tuning)
-,
-    RequestType: CreateFineTuneRequest,
-    ResponseType: FineTune,
-    MethodName: CreateFineTuneAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.CreateFineTune
-  },
-  {
-    Id: ListFineTunes,
-    Namespace: G,
-    ClassName: Api,
-    BaseUrl: ,
-    Stream: false,
-    Path: /fine-tunes,
+    Path: /fine_tuning/jobs/{fine_tuning_job_id}/checkpoints,
     Properties: null,
     Summary:
-List your organization's fine-tuning jobs
+List checkpoints for a fine-tuning job.
 ,
     RequestType: ,
-    ResponseType: ListFineTunesResponse,
-    MethodName: ListFineTunesAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.ListFineTunes
-  },
-  {
-    Id: RetrieveFineTune,
-    Namespace: G,
-    ClassName: Api,
-    BaseUrl: ,
-    Stream: false,
-    Path: /fine-tunes/{fine_tune_id},
-    Properties: null,
-    Summary:
-Gets info about the fine-tune job.
-
-[Learn more about fine-tuning](/docs/guides/legacy-fine-tuning)
-,
-    RequestType: ,
-    ResponseType: FineTune,
-    MethodName: RetrieveFineTuneAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.RetrieveFineTune
-  },
-  {
-    Id: CancelFineTune,
-    Namespace: G,
-    ClassName: Api,
-    BaseUrl: ,
-    Stream: false,
-    Path: /fine-tunes/{fine_tune_id}/cancel,
-    Properties: null,
-    HttpMethod: Post,
-    Summary:
-Immediately cancel a fine-tune job.
-,
-    RequestType: ,
-    ResponseType: FineTune,
-    MethodName: CancelFineTuneAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.CancelFineTune
-  },
-  {
-    Id: ListFineTuneEvents,
-    Namespace: G,
-    ClassName: Api,
-    BaseUrl: ,
-    Stream: false,
-    Path: /fine-tunes/{fine_tune_id}/events,
-    Properties: null,
-    Summary:
-Get fine-grained status updates for a fine-tune job.
-,
-    RequestType: ,
-    ResponseType: ListFineTuneEventsResponse,
-    MethodName: ListFineTuneEventsAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.ListFineTuneEvents
+    ResponseType: ListFineTuningJobCheckpointsResponse,
+    MethodName: ListFineTuningJobCheckpointsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ListFineTuningJobCheckpoints
   },
   {
     Id: ListModels,
@@ -1682,7 +1390,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
       }
     ],
     HttpMethod: Post,
-    Summary: Classifies if text violates OpenAI's Content Policy,
+    Summary: Classifies if text is potentially harmful.,
     RequestType: CreateModerationRequest,
     ResponseType: CreateModerationResponse,
     MethodName: CreateModerationAsync,
@@ -1718,6 +1426,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
         Summary:
 ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models/overview) for descriptions of them.
 
+<br/>Example: gpt-4-turbo
       },
       {
         Id: name,
@@ -1743,7 +1452,7 @@ The description of the assistant. The maximum length is 512 characters.
         Type: string?,
         IsRequired: false,
         Summary:
-The system instructions that the assistant uses. The maximum length is 32768 characters.
+The system instructions that the assistant uses. The maximum length is 256,000 characters.
 
       },
       {
@@ -1751,22 +1460,20 @@ The system instructions that the assistant uses. The maximum length is 32768 cha
         Name: Tools,
         Type: global::System.Collections.Generic.IList<object?>?,
         IsRequired: false,
-        DefaultValue: [],
+        DefaultValue: ,
         Summary:
-A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `retrieval`, or `function`.
+A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.
 
 <br/>Default Value: []
       },
       {
-        Id: file_ids,
-        Name: FileIds,
-        Type: global::System.Collections.Generic.IList<string?>?,
+        Id: tool_resources,
+        Name: ToolResources,
+        Type: CreateAssistantRequestToolResources?,
         IsRequired: false,
-        DefaultValue: [],
         Summary:
-A list of [file](/docs/api-reference/files) IDs attached to this assistant. There can be a maximum of 20 files attached to the assistant. Files are ordered by their creation date in ascending order.
+A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
 
-<br/>Default Value: []
       },
       {
         Id: metadata,
@@ -1775,6 +1482,45 @@ A list of [file](/docs/api-reference/files) IDs attached to this assistant. Ther
         IsRequired: false,
         Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
+
+      },
+      {
+        Id: temperature,
+        Name: Temperature,
+        Type: double?,
+        IsRequired: false,
+        DefaultValue: 1,
+        Summary:
+What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
+
+<br/>Default Value: 1
+<br/>Example: 1
+      },
+      {
+        Id: top_p,
+        Name: TopP,
+        Type: double?,
+        IsRequired: false,
+        DefaultValue: 1,
+        Summary:
+An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.
+
+We generally recommend altering this or temperature but not both.
+
+<br/>Default Value: 1
+<br/>Example: 1
+      },
+      {
+        Id: response_format,
+        Name: ResponseFormat,
+        Type: AssistantsApiResponseFormatOption?,
+        IsRequired: false,
+        Summary:
+Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
+
+Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.
+
+**Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
 
       }
     ],
@@ -1841,7 +1587,7 @@ The description of the assistant. The maximum length is 512 characters.
         Type: string?,
         IsRequired: false,
         Summary:
-The system instructions that the assistant uses. The maximum length is 32768 characters.
+The system instructions that the assistant uses. The maximum length is 256,000 characters.
 
       },
       {
@@ -1849,22 +1595,20 @@ The system instructions that the assistant uses. The maximum length is 32768 cha
         Name: Tools,
         Type: global::System.Collections.Generic.IList<object?>?,
         IsRequired: false,
-        DefaultValue: [],
+        DefaultValue: ,
         Summary:
-A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `retrieval`, or `function`.
+A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.
 
 <br/>Default Value: []
       },
       {
-        Id: file_ids,
-        Name: FileIds,
-        Type: global::System.Collections.Generic.IList<string?>?,
+        Id: tool_resources,
+        Name: ToolResources,
+        Type: ModifyAssistantRequestToolResources?,
         IsRequired: false,
-        DefaultValue: [],
         Summary:
-A list of [File](/docs/api-reference/files) IDs attached to this assistant. There can be a maximum of 20 files attached to the assistant. Files are ordered by their creation date in ascending order. If a file was previously attached to the list but does not show up in the list, it will be deleted from the assistant.
+A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
 
-<br/>Default Value: []
       },
       {
         Id: metadata,
@@ -1873,6 +1617,45 @@ A list of [File](/docs/api-reference/files) IDs attached to this assistant. Ther
         IsRequired: false,
         Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
+
+      },
+      {
+        Id: temperature,
+        Name: Temperature,
+        Type: double?,
+        IsRequired: false,
+        DefaultValue: 1,
+        Summary:
+What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
+
+<br/>Default Value: 1
+<br/>Example: 1
+      },
+      {
+        Id: top_p,
+        Name: TopP,
+        Type: double?,
+        IsRequired: false,
+        DefaultValue: 1,
+        Summary:
+An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.
+
+We generally recommend altering this or temperature but not both.
+
+<br/>Default Value: 1
+<br/>Example: 1
+      },
+      {
+        Id: response_format,
+        Name: ResponseFormat,
+        Type: AssistantsApiResponseFormatOption?,
+        IsRequired: false,
+        Summary:
+Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
+
+Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.
+
+**Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
 
       }
     ],
@@ -1914,6 +1697,15 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Summary: A list of [messages](/docs/api-reference/messages) to start the thread with.
       },
       {
+        Id: tool_resources,
+        Name: ToolResources,
+        Type: CreateThreadRequestToolResources?,
+        IsRequired: false,
+        Summary:
+A set of resources that are made available to the assistant's tools in this thread. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
+
+      },
+      {
         Id: metadata,
         Name: Metadata,
         Type: CreateThreadRequestMetadata?,
@@ -1952,6 +1744,15 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Stream: false,
     Path: /threads/{thread_id},
     Properties: [
+      {
+        Id: tool_resources,
+        Name: ToolResources,
+        Type: ModifyThreadRequestToolResources?,
+        IsRequired: false,
+        Summary:
+A set of resources that are made available to the assistant's tools in this thread. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
+
+      },
       {
         Id: metadata,
         Name: Metadata,
@@ -2011,24 +1812,25 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Name: Role,
         Type: string,
         IsRequired: true,
-        Summary: The role of the entity that is creating the message. Currently only `user` is supported.
+        Summary:
+The role of the entity that is creating the message. Allowed values include:
+- `user`: Indicates the message is sent by an actual user and should be used in most cases to represent user-generated messages.
+- `assistant`: Indicates the message is generated by the assistant. Use this value to insert messages from the assistant into the conversation.
+
       },
       {
         Id: content,
         Name: Content,
-        Type: string,
+        Type: object,
         IsRequired: true,
-        Summary: The content of the message.
+        Summary: 
       },
       {
-        Id: file_ids,
-        Name: FileIds,
-        Type: global::System.Collections.Generic.IList<string?>?,
+        Id: attachments,
+        Name: Attachments,
+        Type: global::System.Collections.Generic.IList<CreateMessageRequestAttachments?>?,
         IsRequired: false,
-        DefaultValue: [],
-        Summary:
-A list of [File](/docs/api-reference/files) IDs that the message should use. There can be a maximum of 10 files attached to a message. Useful for tools like `retrieval` and `code_interpreter` that can access and use files.
-<br/>Default Value: []
+        Summary: A list of files attached to the message, and the tools they should be added to.
       },
       {
         Id: metadata,
@@ -2087,6 +1889,21 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     FileNameWithoutExtension: G.Api.EndPoints.ModifyMessage
   },
   {
+    Id: DeleteMessage,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Stream: false,
+    Path: /threads/{thread_id}/messages/{message_id},
+    Properties: null,
+    HttpMethod: Delete,
+    Summary: Deletes a message.,
+    RequestType: ,
+    ResponseType: DeleteMessageResponse,
+    MethodName: DeleteMessageAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.DeleteMessage
+  },
+  {
     Id: CreateThreadAndRun,
     Namespace: G,
     ClassName: Api,
@@ -2111,9 +1928,12 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: model,
         Name: Model,
-        Type: string?,
+        Type: object?,
         IsRequired: false,
-        Summary: The ID of the [Model](/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.
+        DefaultValue: ,
+        Summary:
+The ID of the [Model](/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.
+<br/>Example: gpt-4-turbo
       },
       {
         Id: instructions,
@@ -2130,12 +1950,107 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Summary: Override the tools the assistant can use for this run. This is useful for modifying the behavior on a per-run basis.
       },
       {
+        Id: tool_resources,
+        Name: ToolResources,
+        Type: CreateThreadAndRunRequestToolResources?,
+        IsRequired: false,
+        Summary:
+A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
+
+      },
+      {
         Id: metadata,
         Name: Metadata,
         Type: CreateThreadAndRunRequestMetadata?,
         IsRequired: false,
         Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
+
+      },
+      {
+        Id: temperature,
+        Name: Temperature,
+        Type: double?,
+        IsRequired: false,
+        DefaultValue: 1,
+        Summary:
+What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
+
+<br/>Default Value: 1
+<br/>Example: 1
+      },
+      {
+        Id: top_p,
+        Name: TopP,
+        Type: double?,
+        IsRequired: false,
+        DefaultValue: 1,
+        Summary:
+An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.
+
+We generally recommend altering this or temperature but not both.
+
+<br/>Default Value: 1
+<br/>Example: 1
+      },
+      {
+        Id: stream,
+        Name: Stream,
+        Type: bool?,
+        IsRequired: false,
+        Summary:
+If `true`, returns a stream of events that happen during the Run as server-sent events, terminating when the Run enters a terminal state with a `data: [DONE]` message.
+
+      },
+      {
+        Id: max_prompt_tokens,
+        Name: MaxPromptTokens,
+        Type: int?,
+        IsRequired: false,
+        Summary:
+The maximum number of prompt tokens that may be used over the course of the run. The run will make a best effort to use only the number of prompt tokens specified, across multiple turns of the run. If the run exceeds the number of prompt tokens specified, the run will end with status `incomplete`. See `incomplete_details` for more info.
+
+      },
+      {
+        Id: max_completion_tokens,
+        Name: MaxCompletionTokens,
+        Type: int?,
+        IsRequired: false,
+        Summary:
+The maximum number of completion tokens that may be used over the course of the run. The run will make a best effort to use only the number of completion tokens specified, across multiple turns of the run. If the run exceeds the number of completion tokens specified, the run will end with status `incomplete`. See `incomplete_details` for more info.
+
+      },
+      {
+        Id: truncation_strategy,
+        Name: TruncationStrategy,
+        Type: TruncationObject?,
+        IsRequired: false,
+        Summary: Controls for how a thread will be truncated prior to the run. Use this to control the intial context window of the run.
+      },
+      {
+        Id: tool_choice,
+        Name: ToolChoice,
+        Type: AssistantsApiToolChoiceOption?,
+        IsRequired: false,
+        Summary:
+Controls which (if any) tool is called by the model.
+`none` means the model will not call any tools and instead generates a message.
+`auto` is the default value and means the model can pick between generating a message or calling one or more tools.
+`required` means the model must call one or more tools before responding to the user.
+Specifying a particular tool like `{"type": "file_search"}` or `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.
+
+      },
+      {
+        Id: response_format,
+        Name: ResponseFormat,
+        Type: AssistantsApiResponseFormatOption?,
+        IsRequired: false,
+        Summary:
+Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
+
+Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.
+
+**Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
 
       }
     ],
@@ -2178,9 +2093,12 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: model,
         Name: Model,
-        Type: string?,
+        Type: object?,
         IsRequired: false,
-        Summary: The ID of the [Model](/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.
+        DefaultValue: ,
+        Summary:
+The ID of the [Model](/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.
+<br/>Example: gpt-4-turbo
       },
       {
         Id: instructions,
@@ -2197,6 +2115,13 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Summary: Appends additional instructions at the end of the instructions for the run. This is useful for modifying the behavior on a per-run basis without overriding other instructions.
       },
       {
+        Id: additional_messages,
+        Name: AdditionalMessages,
+        Type: global::System.Collections.Generic.IList<CreateMessageRequest?>?,
+        IsRequired: false,
+        Summary: Adds additional messages to the thread before creating the run.
+      },
+      {
         Id: tools,
         Name: Tools,
         Type: global::System.Collections.Generic.IList<object?>?,
@@ -2210,6 +2135,92 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         IsRequired: false,
         Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
+
+      },
+      {
+        Id: temperature,
+        Name: Temperature,
+        Type: double?,
+        IsRequired: false,
+        DefaultValue: 1,
+        Summary:
+What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
+
+<br/>Default Value: 1
+<br/>Example: 1
+      },
+      {
+        Id: top_p,
+        Name: TopP,
+        Type: double?,
+        IsRequired: false,
+        DefaultValue: 1,
+        Summary:
+An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.
+
+We generally recommend altering this or temperature but not both.
+
+<br/>Default Value: 1
+<br/>Example: 1
+      },
+      {
+        Id: stream,
+        Name: Stream,
+        Type: bool?,
+        IsRequired: false,
+        Summary:
+If `true`, returns a stream of events that happen during the Run as server-sent events, terminating when the Run enters a terminal state with a `data: [DONE]` message.
+
+      },
+      {
+        Id: max_prompt_tokens,
+        Name: MaxPromptTokens,
+        Type: int?,
+        IsRequired: false,
+        Summary:
+The maximum number of prompt tokens that may be used over the course of the run. The run will make a best effort to use only the number of prompt tokens specified, across multiple turns of the run. If the run exceeds the number of prompt tokens specified, the run will end with status `incomplete`. See `incomplete_details` for more info.
+
+      },
+      {
+        Id: max_completion_tokens,
+        Name: MaxCompletionTokens,
+        Type: int?,
+        IsRequired: false,
+        Summary:
+The maximum number of completion tokens that may be used over the course of the run. The run will make a best effort to use only the number of completion tokens specified, across multiple turns of the run. If the run exceeds the number of completion tokens specified, the run will end with status `incomplete`. See `incomplete_details` for more info.
+
+      },
+      {
+        Id: truncation_strategy,
+        Name: TruncationStrategy,
+        Type: TruncationObject?,
+        IsRequired: false,
+        Summary: Controls for how a thread will be truncated prior to the run. Use this to control the intial context window of the run.
+      },
+      {
+        Id: tool_choice,
+        Name: ToolChoice,
+        Type: AssistantsApiToolChoiceOption?,
+        IsRequired: false,
+        Summary:
+Controls which (if any) tool is called by the model.
+`none` means the model will not call any tools and instead generates a message.
+`auto` is the default value and means the model can pick between generating a message or calling one or more tools.
+`required` means the model must call one or more tools before responding to the user.
+Specifying a particular tool like `{"type": "file_search"}` or `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.
+
+      },
+      {
+        Id: response_format,
+        Name: ResponseFormat,
+        Type: AssistantsApiResponseFormatOption?,
+        IsRequired: false,
+        Summary:
+Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
+
+Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.
+
+**Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
 
       }
     ],
@@ -2273,6 +2284,15 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Type: global::System.Collections.Generic.IList<SubmitToolOutputsRunRequestToolOutputs>,
         IsRequired: true,
         Summary: A list of tools for which the outputs are being submitted.
+      },
+      {
+        Id: stream,
+        Name: Stream,
+        Type: bool?,
+        IsRequired: false,
+        Summary:
+If `true`, returns a stream of events that happen during the Run as server-sent events, terminating when the Run enters a terminal state with a `data: [DONE]` message.
+
       }
     ],
     HttpMethod: Post,
@@ -2328,98 +2348,357 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     FileNameWithoutExtension: G.Api.EndPoints.GetRunStep
   },
   {
-    Id: ListAssistantFiles,
+    Id: ListVectorStores,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /assistants/{assistant_id}/files,
+    Path: /vector_stores,
     Properties: null,
-    Summary: Returns a list of assistant files.,
+    Summary: Returns a list of vector stores.,
     RequestType: ,
-    ResponseType: ListAssistantFilesResponse,
-    MethodName: ListAssistantFilesAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.ListAssistantFiles
+    ResponseType: ListVectorStoresResponse,
+    MethodName: ListVectorStoresAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ListVectorStores
   },
   {
-    Id: CreateAssistantFile,
+    Id: CreateVectorStore,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /assistants/{assistant_id}/files,
+    Path: /vector_stores,
+    Properties: [
+      {
+        Id: file_ids,
+        Name: FileIds,
+        Type: global::System.Collections.Generic.IList<string?>?,
+        IsRequired: false,
+        Summary: A list of [File](/docs/api-reference/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files.
+      },
+      {
+        Id: name,
+        Name: Name,
+        Type: string?,
+        IsRequired: false,
+        Summary: The name of the vector store.
+      },
+      {
+        Id: expires_after,
+        Name: ExpiresAfter,
+        Type: VectorStoreExpirationAfter?,
+        IsRequired: false,
+        Summary: The expiration policy for a vector store.
+      },
+      {
+        Id: metadata,
+        Name: Metadata,
+        Type: CreateVectorStoreRequestMetadata?,
+        IsRequired: false,
+        Summary:
+Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
+
+      }
+    ],
+    HttpMethod: Post,
+    Summary: Create a vector store.,
+    RequestType: CreateVectorStoreRequest,
+    ResponseType: VectorStoreObject,
+    MethodName: CreateVectorStoreAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateVectorStore
+  },
+  {
+    Id: GetVectorStore,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Stream: false,
+    Path: /vector_stores/{vector_store_id},
+    Properties: null,
+    Summary: Retrieves a vector store.,
+    RequestType: ,
+    ResponseType: VectorStoreObject,
+    MethodName: GetVectorStoreAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.GetVectorStore
+  },
+  {
+    Id: ModifyVectorStore,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Stream: false,
+    Path: /vector_stores/{vector_store_id},
+    Properties: [
+      {
+        Id: name,
+        Name: Name,
+        Type: string?,
+        IsRequired: false,
+        Summary: The name of the vector store.
+      },
+      {
+        Id: expires_after,
+        Name: ExpiresAfter,
+        Type: VectorStoreExpirationAfter?,
+        IsRequired: false,
+        Summary: The expiration policy for a vector store.
+      },
+      {
+        Id: metadata,
+        Name: Metadata,
+        Type: UpdateVectorStoreRequestMetadata?,
+        IsRequired: false,
+        Summary:
+Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
+
+      }
+    ],
+    HttpMethod: Post,
+    Summary: Modifies a vector store.,
+    RequestType: UpdateVectorStoreRequest,
+    ResponseType: VectorStoreObject,
+    MethodName: ModifyVectorStoreAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ModifyVectorStore
+  },
+  {
+    Id: DeleteVectorStore,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Stream: false,
+    Path: /vector_stores/{vector_store_id},
+    Properties: null,
+    HttpMethod: Delete,
+    Summary: Delete a vector store.,
+    RequestType: ,
+    ResponseType: DeleteVectorStoreResponse,
+    MethodName: DeleteVectorStoreAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.DeleteVectorStore
+  },
+  {
+    Id: ListVectorStoreFiles,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Stream: false,
+    Path: /vector_stores/{vector_store_id}/files,
+    Properties: null,
+    Summary: Returns a list of vector store files.,
+    RequestType: ,
+    ResponseType: ListVectorStoreFilesResponse,
+    MethodName: ListVectorStoreFilesAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ListVectorStoreFiles
+  },
+  {
+    Id: CreateVectorStoreFile,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Stream: false,
+    Path: /vector_stores/{vector_store_id}/files,
     Properties: [
       {
         Id: file_id,
         Name: FileId,
         Type: string,
         IsRequired: true,
-        Summary: A [File](/docs/api-reference/files) ID (with `purpose="assistants"`) that the assistant should use. Useful for tools like `retrieval` and `code_interpreter` that can access files.
+        Summary: A [File](/docs/api-reference/files) ID that the vector store should use. Useful for tools like `file_search` that can access files.
       }
     ],
     HttpMethod: Post,
-    Summary: Create an assistant file by attaching a [File](/docs/api-reference/files) to an [assistant](/docs/api-reference/assistants).,
-    RequestType: CreateAssistantFileRequest,
-    ResponseType: AssistantFileObject,
-    MethodName: CreateAssistantFileAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.CreateAssistantFile
+    Summary: Create a vector store file by attaching a [File](/docs/api-reference/files) to a [vector store](/docs/api-reference/vector-stores/object).,
+    RequestType: CreateVectorStoreFileRequest,
+    ResponseType: VectorStoreFileObject,
+    MethodName: CreateVectorStoreFileAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateVectorStoreFile
   },
   {
-    Id: GetAssistantFile,
+    Id: GetVectorStoreFile,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /assistants/{assistant_id}/files/{file_id},
+    Path: /vector_stores/{vector_store_id}/files/{file_id},
     Properties: null,
-    Summary: Retrieves an AssistantFile.,
+    Summary: Retrieves a vector store file.,
     RequestType: ,
-    ResponseType: AssistantFileObject,
-    MethodName: GetAssistantFileAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.GetAssistantFile
+    ResponseType: VectorStoreFileObject,
+    MethodName: GetVectorStoreFileAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.GetVectorStoreFile
   },
   {
-    Id: DeleteAssistantFile,
+    Id: DeleteVectorStoreFile,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /assistants/{assistant_id}/files/{file_id},
+    Path: /vector_stores/{vector_store_id}/files/{file_id},
     Properties: null,
     HttpMethod: Delete,
-    Summary: Delete an assistant file.,
+    Summary: Delete a vector store file. This will remove the file from the vector store but the file itself will not be deleted. To delete the file, use the [delete file](/docs/api-reference/files/delete) endpoint.,
     RequestType: ,
-    ResponseType: DeleteAssistantFileResponse,
-    MethodName: DeleteAssistantFileAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.DeleteAssistantFile
+    ResponseType: DeleteVectorStoreFileResponse,
+    MethodName: DeleteVectorStoreFileAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.DeleteVectorStoreFile
   },
   {
-    Id: ListMessageFiles,
+    Id: CreateVectorStoreFileBatch,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /threads/{thread_id}/messages/{message_id}/files,
-    Properties: null,
-    Summary: Returns a list of message files.,
-    RequestType: ,
-    ResponseType: ListMessageFilesResponse,
-    MethodName: ListMessageFilesAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.ListMessageFiles
+    Path: /vector_stores/{vector_store_id}/file_batches,
+    Properties: [
+      {
+        Id: file_ids,
+        Name: FileIds,
+        Type: global::System.Collections.Generic.IList<string>,
+        IsRequired: true,
+        Summary: A list of [File](/docs/api-reference/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files.
+      }
+    ],
+    HttpMethod: Post,
+    Summary: Create a vector store file batch.,
+    RequestType: CreateVectorStoreFileBatchRequest,
+    ResponseType: VectorStoreFileBatchObject,
+    MethodName: CreateVectorStoreFileBatchAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateVectorStoreFileBatch
   },
   {
-    Id: GetMessageFile,
+    Id: GetVectorStoreFileBatch,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /threads/{thread_id}/messages/{message_id}/files/{file_id},
+    Path: /vector_stores/{vector_store_id}/file_batches/{batch_id},
     Properties: null,
-    Summary: Retrieves a message file.,
+    Summary: Retrieves a vector store file batch.,
     RequestType: ,
-    ResponseType: MessageFileObject,
-    MethodName: GetMessageFileAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.GetMessageFile
+    ResponseType: VectorStoreFileBatchObject,
+    MethodName: GetVectorStoreFileBatchAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.GetVectorStoreFileBatch
+  },
+  {
+    Id: CancelVectorStoreFileBatch,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Stream: false,
+    Path: /vector_stores/{vector_store_id}/file_batches/{batch_id}/cancel,
+    Properties: null,
+    HttpMethod: Post,
+    Summary: Cancel a vector store file batch. This attempts to cancel the processing of files in this batch as soon as possible.,
+    RequestType: ,
+    ResponseType: VectorStoreFileBatchObject,
+    MethodName: CancelVectorStoreFileBatchAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CancelVectorStoreFileBatch
+  },
+  {
+    Id: ListFilesInVectorStoreBatch,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Stream: false,
+    Path: /vector_stores/{vector_store_id}/file_batches/{batch_id}/files,
+    Properties: null,
+    Summary: Returns a list of vector store files in a batch.,
+    RequestType: ,
+    ResponseType: ListVectorStoreFilesResponse,
+    MethodName: ListFilesInVectorStoreBatchAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ListFilesInVectorStoreBatch
+  },
+  {
+    Id: CreateBatch,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Stream: false,
+    Path: /batches,
+    Properties: [
+      {
+        Id: input_file_id,
+        Name: InputFileId,
+        Type: string,
+        IsRequired: true,
+        Summary:
+The ID of an uploaded file that contains requests for the new batch.
+
+See [upload file](/docs/api-reference/files/create) for how to upload a file.
+
+Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/requestInput), and must be uploaded with the purpose `batch`.
+
+      },
+      {
+        Id: endpoint,
+        Name: Endpoint,
+        Type: string,
+        IsRequired: true,
+        Summary: The endpoint to be used for all requests in the batch. Currently `/v1/chat/completions` and `/v1/embeddings` are supported.
+      },
+      {
+        Id: completion_window,
+        Name: CompletionWindow,
+        Type: string,
+        IsRequired: true,
+        Summary: The time frame within which the batch should be processed. Currently only `24h` is supported.
+      },
+      {
+        Id: metadata,
+        Name: Metadata,
+        Type: TestMetadata?,
+        IsRequired: false,
+        Summary: Optional custom metadata for the batch.
+      }
+    ],
+    HttpMethod: Post,
+    Summary: Creates and executes a batch from an uploaded file of requests,
+    RequestType: ,
+    ResponseType: Batch,
+    MethodName: CreateBatchAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateBatch
+  },
+  {
+    Id: ListBatches,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Stream: false,
+    Path: /batches,
+    Properties: null,
+    Summary: List your organization's batches.,
+    RequestType: ,
+    ResponseType: ListBatchesResponse,
+    MethodName: ListBatchesAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ListBatches
+  },
+  {
+    Id: RetrieveBatch,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Stream: false,
+    Path: /batches/{batch_id},
+    Properties: null,
+    Summary: Retrieves a batch.,
+    RequestType: ,
+    ResponseType: Batch,
+    MethodName: RetrieveBatchAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.RetrieveBatch
+  },
+  {
+    Id: CancelBatch,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Stream: false,
+    Path: /batches/{batch_id}/cancel,
+    Properties: null,
+    HttpMethod: Post,
+    Summary: Cancels an in-progress batch.,
+    RequestType: ,
+    ResponseType: Batch,
+    MethodName: CancelBatchAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CancelBatch
   },
   {
     Id: Constructors,

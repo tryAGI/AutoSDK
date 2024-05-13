@@ -19,7 +19,7 @@ namespace G
 
         /// <summary>
         /// The ID of an uploaded file that contains training data.
-        /// See [upload file](/docs/api-reference/files/upload) for how to upload a file.
+        /// See [upload file](/docs/api-reference/files/create) for how to upload a file.
         /// Your dataset must be formatted as a JSONL file. Additionally, you must upload your file with the purpose `fine-tune`.
         /// See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
         /// <br/>Example: file-abc123
@@ -53,6 +53,20 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("validation_file")]
         public string? ValidationFile { get; set; }
+
+        /// <summary>
+        /// A list of integrations to enable for your fine-tuning job.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("integrations")]
+        public global::System.Collections.Generic.IList<CreateFineTuningJobRequestIntegrations?>? Integrations { get; set; }
+
+        /// <summary>
+        /// The seed controls the reproducibility of the job. Passing in the same seed and job parameters should produce the same results, but may differ in rare cases.
+        /// If a seed is not specified, one will be generated for you.
+        /// <br/>Example: 42
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("seed")]
+        public int? Seed { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

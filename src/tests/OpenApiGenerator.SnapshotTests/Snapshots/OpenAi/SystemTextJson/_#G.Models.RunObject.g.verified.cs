@@ -70,7 +70,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ExpiresAt { get; set; }
+        public required int? ExpiresAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run was started.
@@ -101,6 +101,13 @@ namespace G
         public required int? CompletedAt { get; set; }
 
         /// <summary>
+        /// Details on why the run is incomplete. Will be `null` if the run is not incomplete.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("incomplete_details")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required RunObjectIncompleteDetails? IncompleteDetails { get; set; }
+
+        /// <summary>
         /// The model that the [assistant](/docs/api-reference/assistants) used for this run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
@@ -123,19 +130,71 @@ namespace G
         public required global::System.Collections.Generic.IList<object> Tools { get; set; }
 
         /// <summary>
-        /// The list of [File](/docs/api-reference/files) IDs the [assistant](/docs/api-reference/assistants) used for this run.
-        /// <br/>Default Value: []
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("file_ids")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> FileIds { get; set; }
-
-        /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required RunObjectMetadata? Metadata { get; set; }
+
+        /// <summary>
+        /// Usage statistics related to the run. This value will be `null` if the run is not in a terminal state (i.e. `in_progress`, `queued`, etc.).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required RunCompletionUsage? Usage { get; set; }
+
+        /// <summary>
+        /// The sampling temperature used for this run. If not set, defaults to 1.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
+        public double? Temperature { get; set; }
+
+        /// <summary>
+        /// The nucleus sampling value used for this run. If not set, defaults to 1.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("top_p")]
+        public double? TopP { get; set; }
+
+        /// <summary>
+        /// The maximum number of prompt tokens specified to have been used over the course of the run.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_prompt_tokens")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int? MaxPromptTokens { get; set; }
+
+        /// <summary>
+        /// The maximum number of completion tokens specified to have been used over the course of the run.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_completion_tokens")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int? MaxCompletionTokens { get; set; }
+
+        /// <summary>
+        /// Controls for how a thread will be truncated prior to the run. Use this to control the intial context window of the run.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("truncation_strategy")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required TruncationObject TruncationStrategy { get; set; }
+
+        /// <summary>
+        /// Controls which (if any) tool is called by the model.
+        /// `none` means the model will not call any tools and instead generates a message.
+        /// `auto` is the default value and means the model can pick between generating a message or calling one or more tools.
+        /// `required` means the model must call one or more tools before responding to the user.
+        /// Specifying a particular tool like `{"type": "file_search"}` or `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required AssistantsApiToolChoiceOption ToolChoice { get; set; }
+
+        /// <summary>
+        /// Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
+        /// Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.
+        /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required AssistantsApiResponseFormatOption ResponseFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

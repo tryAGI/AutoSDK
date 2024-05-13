@@ -40,7 +40,7 @@ namespace G
         public OpenAIFileObject Object { get; set; } = default!;
 
         /// <summary>
-        /// The intended purpose of the file. Supported values are `fine-tune`, `fine-tune-results`, `assistants`, and `assistants_output`.
+        /// The intended purpose of the file. Supported values are `assistants`, `assistants_output`, `batch`, `batch_output`, `fine-tune`, `fine-tune-results` and `vision`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("purpose", Required = global::Newtonsoft.Json.Required.Always)]
         public OpenAIFilePurpose Purpose { get; set; } = default!;

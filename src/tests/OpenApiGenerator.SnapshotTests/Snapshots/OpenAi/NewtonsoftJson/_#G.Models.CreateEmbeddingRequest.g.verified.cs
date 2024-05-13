@@ -18,7 +18,7 @@ namespace G
 
         /// <summary>
         /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models/overview) for descriptions of them.
-        /// <br/>Example: text-embedding-ada-002
+        /// <br/>Example: text-embedding-3-small
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
         public object Model { get; set; } = default!;
@@ -30,6 +30,12 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("encoding_format")]
         public CreateEmbeddingRequestEncodingFormat? EncodingFormat { get; set; } = CreateEmbeddingRequestEncodingFormat.Float;
+
+        /// <summary>
+        /// The number of dimensions the resulting output embeddings should have. Only supported in `text-embedding-3` and later models.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("dimensions")]
+        public int Dimensions { get; set; }
 
         /// <summary>
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).

@@ -10,7 +10,7 @@ namespace G
     public sealed partial class RunObjectLastError
     {
         /// <summary>
-        /// One of `server_error` or `rate_limit_exceeded`.
+        /// One of `server_error`, `rate_limit_exceeded`, or `invalid_prompt`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("code", Required = global::Newtonsoft.Json.Required.Always)]
         public RunObjectLastErrorCode Code { get; set; } = default!;

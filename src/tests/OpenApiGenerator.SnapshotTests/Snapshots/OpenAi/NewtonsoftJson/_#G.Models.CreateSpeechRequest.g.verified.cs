@@ -28,7 +28,7 @@ namespace G
         public CreateSpeechRequestVoice Voice { get; set; } = default!;
 
         /// <summary>
-        /// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, and `flac`.
+        /// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.
         /// <br/>Default Value: mp3
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]

@@ -17,7 +17,8 @@ namespace G
         public required string Id { get; set; }
 
         /// <summary>
-        /// A list of chat completion choices. Can be more than one if `n` is greater than 1.
+        /// A list of chat completion choices. Can contain more than one elements if `n` is greater than 1. Can also be empty for the
+        /// last chunk if you set `stream_options: {"include_usage": true}`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("choices")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -50,6 +51,13 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Object { get; set; }
+
+        /// <summary>
+        /// An optional field that will only be present when you set `stream_options: {"include_usage": true}` in your request.
+        /// When present, it contains a null value except for the last chunk which contains the token usage statistics for the entire request.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
+        public CreateChatCompletionStreamResponseUsage? Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

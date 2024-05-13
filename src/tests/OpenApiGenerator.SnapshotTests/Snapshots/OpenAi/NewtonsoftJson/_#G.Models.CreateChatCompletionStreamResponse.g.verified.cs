@@ -16,7 +16,8 @@ namespace G
         public string Id { get; set; } = default!;
 
         /// <summary>
-        /// A list of chat completion choices. Can be more than one if `n` is greater than 1.
+        /// A list of chat completion choices. Can contain more than one elements if `n` is greater than 1. Can also be empty for the
+        /// last chunk if you set `stream_options: {"include_usage": true}`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("choices", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<CreateChatCompletionStreamResponseChoices> Choices { get; set; } = default!;
@@ -45,6 +46,13 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
         public CreateChatCompletionStreamResponseObject Object { get; set; } = default!;
+
+        /// <summary>
+        /// An optional field that will only be present when you set `stream_options: {"include_usage": true}` in your request.
+        /// When present, it contains a null value except for the last chunk which contains the token usage statistics for the entire request.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("usage")]
+        public CreateChatCompletionStreamResponseUsage? Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -31,7 +31,7 @@ namespace G
         public required string Voice { get; set; }
 
         /// <summary>
-        /// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, and `flac`.
+        /// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.
         /// <br/>Default Value: mp3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]

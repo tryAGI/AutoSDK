@@ -16,6 +16,12 @@ namespace G
         public global::System.Collections.Generic.IList<SubmitToolOutputsRunRequestToolOutputs> ToolOutputs { get; set; } = default!;
 
         /// <summary>
+        /// If `true`, returns a stream of events that happen during the Run as server-sent events, terminating when the Run enters a terminal state with a `data: [DONE]` message.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("stream")]
+        public bool? Stream { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]

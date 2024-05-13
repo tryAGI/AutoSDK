@@ -108,6 +108,25 @@ namespace G
         public required string? ValidationFile { get; set; }
 
         /// <summary>
+        /// A list of integrations to enable for this fine-tuning job.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("integrations")]
+        public global::System.Collections.Generic.IList<object?>? Integrations { get; set; }
+
+        /// <summary>
+        /// The seed used for the fine-tuning job.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int Seed { get; set; }
+
+        /// <summary>
+        /// The Unix timestamp (in seconds) for when the fine-tuning job is estimated to finish. The value will be null if the fine-tuning job is not running.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("estimated_finish")]
+        public int? EstimatedFinish { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

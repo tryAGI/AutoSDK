@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Represents policy compliance report by OpenAI's content moderation model against a given input.
+    /// Represents if a given text input is potentially harmful.
     /// </summary>
     public sealed partial class CreateModerationResponse
     {

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// One of `server_error` or `rate_limit_exceeded`.
+    /// One of `server_error`, `rate_limit_exceeded`, or `invalid_prompt`.
     /// </summary>
     public abstract class RunObjectLastErrorCode
     {
@@ -17,5 +17,9 @@ namespace G
         /// 
         /// </summary>
         public const string RateLimitExceeded = "rate_limit_exceeded";
+        /// <summary>
+        /// 
+        /// </summary>
+        public const string InvalidPrompt = "invalid_prompt";
     }
 }

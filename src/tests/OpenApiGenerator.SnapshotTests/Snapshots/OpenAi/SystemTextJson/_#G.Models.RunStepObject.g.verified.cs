@@ -115,6 +115,13 @@ namespace G
         public required RunStepObjectMetadata? Metadata { get; set; }
 
         /// <summary>
+        /// Usage statistics related to the run step. This value will be `null` while the run step's status is `in_progress`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required RunStepCompletionUsage? Usage { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

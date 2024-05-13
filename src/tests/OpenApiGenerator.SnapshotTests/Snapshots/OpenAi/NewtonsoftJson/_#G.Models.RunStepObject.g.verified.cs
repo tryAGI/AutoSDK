@@ -100,6 +100,12 @@ namespace G
         public RunStepObjectMetadata? Metadata { get; set; } = default!;
 
         /// <summary>
+        /// Usage statistics related to the run step. This value will be `null` while the run step's status is `in_progress`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("usage", Required = global::Newtonsoft.Json.Required.Always)]
+        public RunStepCompletionUsage? Usage { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]

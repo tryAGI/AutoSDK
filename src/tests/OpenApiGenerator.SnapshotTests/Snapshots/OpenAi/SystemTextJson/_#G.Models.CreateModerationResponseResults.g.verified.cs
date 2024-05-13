@@ -10,7 +10,7 @@ namespace G
     public sealed partial class CreateModerationResponseResults
     {
         /// <summary>
-        /// Whether the content violates [OpenAI's usage policies](/policies/usage-policies).
+        /// Whether any of the below categories are flagged.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("flagged")]
         [global::System.Text.Json.Serialization.JsonRequired]

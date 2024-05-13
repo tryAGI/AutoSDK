@@ -6,17 +6,21 @@ namespace G
 {
     /// <summary>
     /// The intended purpose of the uploaded file.
-    /// Use "fine-tune" for [Fine-tuning](/docs/api-reference/fine-tuning) and "assistants" for [Assistants](/docs/api-reference/assistants) and [Messages](/docs/api-reference/messages). This allows us to validate the format of the uploaded file is correct for fine-tuning.
+    /// Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](/docs/api-reference/messages) files, "vision" for Assistants image file inputs, "batch" for [Batch API](/docs/guides/batch), and "fine-tune" for [Fine-tuning](/docs/api-reference/fine-tuning).
     /// </summary>
     public abstract class CreateFileRequestPurpose
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string FineTune = "fine-tune";
+        public const string Assistants = "assistants";
         /// <summary>
         /// 
         /// </summary>
-        public const string Assistants = "assistants";
+        public const string Batch = "batch";
+        /// <summary>
+        /// 
+        /// </summary>
+        public const string FineTune = "fine-tune";
     }
 }

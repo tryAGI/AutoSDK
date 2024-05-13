@@ -16,7 +16,7 @@ namespace G
         public byte[] File { get; set; } = default!;
 
         /// <summary>
-        /// ID of the model to use. Only `whisper-1` is currently available.
+        /// ID of the model to use. Only `whisper-1` (which is powered by our open source Whisper V2 model) is currently available.
         /// <br/>Example: whisper-1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]

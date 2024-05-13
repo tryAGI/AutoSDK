@@ -12,6 +12,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public const string Gpt4Turbo = "gpt-4-turbo";
+        /// <summary>
+        /// 
+        /// </summary>
+        public const string Gpt4Turbo20240409 = "gpt-4-turbo-2024-04-09";
+        /// <summary>
+        /// 
+        /// </summary>
+        public const string Gpt40125Preview = "gpt-4-0125-preview";
+        /// <summary>
+        /// 
+        /// </summary>
+        public const string Gpt4TurboPreview = "gpt-4-turbo-preview";
+        /// <summary>
+        /// 
+        /// </summary>
         public const string Gpt41106Preview = "gpt-4-1106-preview";
         /// <summary>
         /// 
@@ -61,6 +77,10 @@ namespace G
         /// 
         /// </summary>
         public const string Gpt35Turbo1106 = "gpt-3.5-turbo-1106";
+        /// <summary>
+        /// 
+        /// </summary>
+        public const string Gpt35Turbo0125 = "gpt-3.5-turbo-0125";
         /// <summary>
         /// 
         /// </summary>

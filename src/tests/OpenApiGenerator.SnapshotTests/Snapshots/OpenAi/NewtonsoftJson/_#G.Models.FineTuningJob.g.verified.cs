@@ -94,6 +94,24 @@ namespace G
         public string? ValidationFile { get; set; } = default!;
 
         /// <summary>
+        /// A list of integrations to enable for this fine-tuning job.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("integrations")]
+        public global::System.Collections.Generic.IList<object?>? Integrations { get; set; }
+
+        /// <summary>
+        /// The seed used for the fine-tuning job.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("seed", Required = global::Newtonsoft.Json.Required.Always)]
+        public int Seed { get; set; } = default!;
+
+        /// <summary>
+        /// The Unix timestamp (in seconds) for when the fine-tuning job is estimated to finish. The value will be null if the fine-tuning job is not running.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("estimated_finish")]
+        public int? EstimatedFinish { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]

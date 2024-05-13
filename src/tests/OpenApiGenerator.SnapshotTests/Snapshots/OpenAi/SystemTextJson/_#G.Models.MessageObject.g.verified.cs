@@ -38,6 +38,34 @@ namespace G
         public required string ThreadId { get; set; }
 
         /// <summary>
+        /// The status of the message, which can be either `in_progress`, `incomplete`, or `completed`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Status { get; set; }
+
+        /// <summary>
+        /// On an incomplete message, details about why the message is incomplete.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("incomplete_details")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required MessageObjectIncompleteDetails? IncompleteDetails { get; set; }
+
+        /// <summary>
+        /// The Unix timestamp (in seconds) for when the message was completed.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int? CompletedAt { get; set; }
+
+        /// <summary>
+        /// The Unix timestamp (in seconds) for when the message was marked as incomplete.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("incomplete_at")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int? IncompleteAt { get; set; }
+
+        /// <summary>
         /// The entity that produced the message. One of `user` or `assistant`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
@@ -59,19 +87,18 @@ namespace G
         public required string? AssistantId { get; set; }
 
         /// <summary>
-        /// If applicable, the ID of the [run](/docs/api-reference/runs) associated with the authoring of this message.
+        /// The ID of the [run](/docs/api-reference/runs) associated with the creation of this message. Value is `null` when messages are created manually using the create message or create thread endpoints.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? RunId { get; set; }
 
         /// <summary>
-        /// A list of [file](/docs/api-reference/files) IDs that the assistant should use. Useful for tools like retrieval and code_interpreter that can access files. A maximum of 10 files can be attached to a message.
-        /// <br/>Default Value: []
+        /// A list of files attached to the message, and the tools they were added to.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("file_ids")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("attachments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> FileIds { get; set; }
+        public required global::System.Collections.Generic.IList<MessageObjectAttachments>? Attachments { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
