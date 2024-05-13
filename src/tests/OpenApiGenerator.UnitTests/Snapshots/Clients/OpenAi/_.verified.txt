@@ -129,6 +129,7 @@ Determinism is not guaranteed, and you should refer to the `system_fingerprint` 
         Name: Stop,
         Type: object?,
         IsRequired: false,
+        DefaultValue: ,
         Summary:
 Up to 4 sequences where the API will stop generating further tokens.
 
@@ -211,6 +212,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
         Name: FunctionCall,
         Type: object?,
         IsRequired: false,
+        DefaultValue: ,
         Summary:
 Deprecated in favor of `tool_choice`.
 
@@ -263,7 +265,7 @@ ID of the model to use. You can use the [List models](/docs/api-reference/models
         Name: Prompt,
         Type: object?,
         IsRequired: true,
-        DefaultValue: <|endoftext|>,
+        DefaultValue: ,
         Summary:
 The prompt(s) to generate completions for, encoded as a string, array of strings, array of tokens, or array of token arrays.
 
@@ -393,6 +395,7 @@ Determinism is not guaranteed, and you should refer to the `system_fingerprint` 
         Name: Stop,
         Type: object?,
         IsRequired: false,
+        DefaultValue: ,
         Summary:
 Up to 4 sequences where the API will stop generating further tokens. The returned text will not contain the stop sequence.
 
@@ -496,7 +499,7 @@ ID of the model to use. You can use the `text-davinci-edit-001` or `code-davinci
         Name: Input,
         Type: string?,
         IsRequired: false,
-        DefaultValue: ,
+        DefaultValue: "",
         Summary:
 The input text to use as a starting point for the edit.
 <br/>Default Value: 
@@ -571,7 +574,7 @@ A text description of the desired image(s). The maximum length is 1000 character
         Name: Model,
         Type: object?,
         IsRequired: false,
-        DefaultValue: dall-e-2,
+        DefaultValue: ,
         Summary:
 The model to use for image generation.
 <br/>Default Value: dall-e-2
@@ -615,7 +618,7 @@ The format in which the generated images are returned. Must be one of `url` or `
         Name: Size,
         Type: string?,
         IsRequired: false,
-        DefaultValue: CreateImageRequestSize.1024x1024,
+        DefaultValue: CreateImageRequestSize._1024x1024,
         Summary:
 The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024` for `dall-e-2`. Must be one of `1024x1024`, `1792x1024`, or `1024x1792` for `dall-e-3` models.
 <br/>Default Value: 1024x1024
@@ -686,7 +689,7 @@ A text description of the desired image(s). The maximum length is 1000 character
         Name: Model,
         Type: object?,
         IsRequired: false,
-        DefaultValue: dall-e-2,
+        DefaultValue: ,
         Summary:
 The model to use for image generation. Only `dall-e-2` is supported at this time.
 <br/>Default Value: dall-e-2
@@ -708,7 +711,7 @@ The number of images to generate. Must be between 1 and 10.
         Name: Size,
         Type: string?,
         IsRequired: false,
-        DefaultValue: CreateImageEditRequestSize.1024x1024,
+        DefaultValue: CreateImageEditRequestSize._1024x1024,
         Summary:
 The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.
 <br/>Default Value: 1024x1024
@@ -763,7 +766,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
         Name: Model,
         Type: object?,
         IsRequired: false,
-        DefaultValue: dall-e-2,
+        DefaultValue: ,
         Summary:
 The model to use for image generation. Only `dall-e-2` is supported at this time.
 <br/>Default Value: dall-e-2
@@ -796,7 +799,7 @@ The format in which the generated images are returned. Must be one of `url` or `
         Name: Size,
         Type: string?,
         IsRequired: false,
-        DefaultValue: CreateImageVariationRequestSize.1024x1024,
+        DefaultValue: CreateImageVariationRequestSize._1024x1024,
         Summary:
 The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.
 <br/>Default Value: 1024x1024
@@ -1052,7 +1055,7 @@ An optional text to guide the model's style or continue a previous audio segment
         Name: ResponseFormat,
         Type: string?,
         IsRequired: false,
-        DefaultValue: json,
+        DefaultValue: "json",
         Summary:
 The format of the transcript output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.
 
@@ -1463,7 +1466,7 @@ results.
         Name: Model,
         Type: object?,
         IsRequired: false,
-        DefaultValue: curie,
+        DefaultValue: ,
         Summary:
 The name of the base model to fine-tune. You can select one of "ada",
 "babbage", "curie", "davinci", or a fine-tuned model created after 2022-04-21 and before 2023-08-22.
@@ -1668,7 +1671,7 @@ Get fine-grained status updates for a fine-tune job.
         Name: Model,
         Type: object?,
         IsRequired: false,
-        DefaultValue: text-moderation-latest,
+        DefaultValue: ,
         Summary:
 Two content moderations models are available: `text-moderation-stable` and `text-moderation-latest`.
 
@@ -1809,6 +1812,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Name: Model,
         Type: object?,
         IsRequired: false,
+        DefaultValue: ,
         Summary:
 ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models/overview) for descriptions of them.
 
