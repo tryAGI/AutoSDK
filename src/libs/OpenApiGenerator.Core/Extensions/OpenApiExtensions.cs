@@ -232,7 +232,9 @@ public static class OpenApiExtensions
             Id: schema.Key,
             Name: schema.Key.ToPropertyName()
                 .FixPropertyName(parents.Last().ClassName)
-                .UseWordSeparator('_', '-', '/'),
+                .UseWordSeparator('_', '-', '/')
+                .Replace("[", string.Empty)
+                .Replace("]", string.Empty),
             Type: schema.GetCSharpType(settings, parents),
             IsRequired: requiredProperties.Contains(schema.Key),
             DefaultValue: schema.Value.GetDefaultValue(type: schema.GetCSharpType(settings with
