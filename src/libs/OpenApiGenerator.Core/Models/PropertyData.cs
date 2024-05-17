@@ -27,14 +27,21 @@ public readonly record struct PropertyData(
         params ModelData[] parents)
     {
         requiredProperties = requiredProperties ?? throw new ArgumentNullException(nameof(requiredProperties));
+        parents = parents ?? throw new ArgumentNullException(nameof(parents));
 
+        var name = schema.Key.ToPropertyName();
+        if (parents.Length != 0)
+        {
+            name = name.FixPropertyName(parents.Last().ClassName);
+        }
+        name = name
+            .UseWordSeparator('_', '-', '/')
+            .Replace("[", string.Empty)
+            .Replace("]", string.Empty);
+        
         return new PropertyData(
             Id: schema.Key,
-            Name: schema.Key.ToPropertyName()
-                .FixPropertyName(parents.Last().ClassName)
-                .UseWordSeparator('_', '-', '/')
-                .Replace("[", string.Empty)
-                .Replace("]", string.Empty),
+            Name: name,
             Type: schema.GetCSharpType(settings, parents),
             IsRequired: requiredProperties.Contains(schema.Key),
             DefaultValue: schema.Value.GetDefaultValue(type: schema.GetCSharpType(settings with

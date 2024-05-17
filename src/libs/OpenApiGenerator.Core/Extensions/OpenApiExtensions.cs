@@ -34,6 +34,8 @@ public static class OpenApiExtensions
         Settings settings,
         params ModelData[] parents)
     {
+        parents = parents ?? throw new ArgumentNullException(nameof(parents));
+        
         var model = ModelData.FromSchema(schema, settings, parents);
         var (type, reference) = (schema.Value.Type, schema.Value.Format) switch
         {
@@ -75,7 +77,7 @@ public static class OpenApiExtensions
         };
 
         return schema.Value.Nullable ||
-               reference && !parents.Last().Schema.Value.Required.Contains(schema.Key)
+               reference && parents.Length > 0 && !parents.Last().Schema.Value.Required.Contains(schema.Key)
             ? type + "?"
             : type;
     }
