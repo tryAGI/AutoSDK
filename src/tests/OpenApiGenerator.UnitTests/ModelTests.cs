@@ -61,4 +61,18 @@ public class ModelTests :
 
         return VerifyAsync(models);
     }
+
+    [TestMethod]
+    public Task LangSmith()
+    {
+        var yaml = H.Resources.langsmith_yaml.AsString();
+        var settings = DefaultSettings with
+        {
+            //IncludeModels = ["ChatCompletionFunctionParameters"],
+        };
+
+        var models = ModelGeneratorMethods.PrepareData((yaml, settings));
+
+        return VerifyAsync(models);
+    }
 }

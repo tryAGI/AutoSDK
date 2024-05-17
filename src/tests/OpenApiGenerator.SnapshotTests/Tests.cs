@@ -56,6 +56,22 @@ public partial class Tests
     [DataTestMethod]
     [DataRow(JsonSerializerType.SystemTextJson)]
     [DataRow(JsonSerializerType.NewtonsoftJson)]
+    public Task LangSmith(JsonSerializerType jsonSerializerType)
+    {
+        return CheckSourceAsync<ModelGenerator>(jsonSerializerType, [
+            new CustomAdditionalText(
+                path: H.Resources.langsmith_yaml.FileName,
+                text: H.Resources.langsmith_yaml.AsString())
+        ], new Dictionary<string, string>
+        {
+            ["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
+            ["build_property.OpenApiGenerator_GenerateMethods"] = "true",
+        }, additionalGenerators: [new ClientGenerator()]);
+    }
+    
+    [DataTestMethod]
+    [DataRow(JsonSerializerType.SystemTextJson)]
+    [DataRow(JsonSerializerType.NewtonsoftJson)]
     public Task Ollama(JsonSerializerType jsonSerializerType)
     {
         return CheckSourceAsync<ModelGenerator>(jsonSerializerType, [

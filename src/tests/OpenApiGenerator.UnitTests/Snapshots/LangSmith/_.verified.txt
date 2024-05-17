@@ -1,0 +1,1574 @@
+﻿[
+  {
+    Id: RunUpdateSchemaExtended,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: end_time,
+        Name: EndTime,
+        Type: global::System.DateTime,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: error,
+        Name: Error,
+        Type: string?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: inputs,
+        Name: Inputs,
+        Type: object?,
+        IsRequired: false,
+        DefaultValue: ,
+        Summary: 
+      },
+      {
+        Id: outputs,
+        Name: Outputs,
+        Type: object?,
+        IsRequired: false,
+        DefaultValue: ,
+        Summary: 
+      },
+      {
+        Id: events,
+        Name: Events,
+        Type: global::System.Collections.Generic.IList<RunUpdateSchemaExtendedEvents?>?,
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: RunUpdateSchemaExtended,
+    ClassName: RunUpdateSchemaExtended,
+    ExternalClassName: RunUpdateSchemaExtended,
+    FileNameWithoutExtension: G.Models.RunUpdateSchemaExtended
+  },
+  {
+    Id: events,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: null,
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Events,
+    ClassName: Events,
+    ExternalClassName: Events,
+    FileNameWithoutExtension: G.Models.Events
+  },
+  {
+    Id: inputs,
+    AddTypeName: true,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: null,
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Inputs,
+    ClassName: Inputs,
+    ExternalClassName: Inputs,
+    FileNameWithoutExtension: G.Models.Inputs
+  },
+  {
+    Id: outputs,
+    AddTypeName: true,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: null,
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Outputs,
+    ClassName: Outputs,
+    ExternalClassName: Outputs,
+    FileNameWithoutExtension: G.Models.Outputs
+  },
+  {
+    Id: CreateChatCompletionRequest,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: model,
+        Name: Model,
+        Type: string?,
+        IsRequired: false,
+        DefaultValue: "",
+        Summary:
+<br/>Default Value: 
+      },
+      {
+        Id: messages,
+        Name: Messages,
+        Type: global::System.Collections.Generic.IList<ChatCompletionRequestMessage?>?,
+        IsRequired: false,
+        DefaultValue: ,
+        Summary:
+<br/>Default Value: []
+      },
+      {
+        Id: functions,
+        Name: Functions,
+        Type: global::System.Collections.Generic.IList<ChatCompletionFunctions?>?,
+        IsRequired: false,
+        DefaultValue: ,
+        Summary:
+<br/>Default Value: []
+      },
+      {
+        Id: temperature,
+        Name: Temperature,
+        Type: double,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: top_p,
+        Name: TopP,
+        Type: double,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: n,
+        Name: N,
+        Type: int,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: stream,
+        Name: Stream,
+        Type: bool,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: stop,
+        Name: Stop,
+        Type: object?,
+        IsRequired: false,
+        DefaultValue: ,
+        Summary: 
+      },
+      {
+        Id: max_tokens,
+        Name: MaxTokens,
+        Type: int,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: presence_penalty,
+        Name: PresencePenalty,
+        Type: double,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: frequency_penalty,
+        Name: FrequencyPenalty,
+        Type: double,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: logit_bias,
+        Name: LogitBias,
+        Type: CreateChatCompletionRequestLogitBias?,
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: CreateChatCompletionRequest,
+    ClassName: CreateChatCompletionRequest,
+    ExternalClassName: CreateChatCompletionRequest,
+    FileNameWithoutExtension: G.Models.CreateChatCompletionRequest
+  },
+  {
+    Id: logit_bias,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: null,
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: LogitBias,
+    ClassName: LogitBias,
+    ExternalClassName: LogitBias,
+    FileNameWithoutExtension: G.Models.LogitBias
+  },
+  {
+    Id: ChatCompletionRequestMessage,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: role,
+        Name: Role,
+        Type: string?,
+        IsRequired: false,
+        DefaultValue: "",
+        Summary:
+<br/>Default Value: 
+      },
+      {
+        Id: content,
+        Name: Content,
+        Type: string?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: name,
+        Name: Name,
+        Type: string?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: function_call,
+        Name: FunctionCall,
+        Type: ChatCompletionFunctionCall?,
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ChatCompletionRequestMessage,
+    ClassName: ChatCompletionRequestMessage,
+    ExternalClassName: ChatCompletionRequestMessage,
+    FileNameWithoutExtension: G.Models.ChatCompletionRequestMessage
+  },
+  {
+    Id: ChatCompletionFunctionCall,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: name,
+        Name: Name,
+        Type: string?,
+        IsRequired: false,
+        DefaultValue: "",
+        Summary:
+<br/>Default Value: 
+      },
+      {
+        Id: arguments,
+        Name: Arguments,
+        Type: string?,
+        IsRequired: false,
+        DefaultValue: "",
+        Summary:
+<br/>Default Value: 
+      }
+    ],
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ChatCompletionFunctionCall,
+    ClassName: ChatCompletionFunctionCall,
+    ExternalClassName: ChatCompletionFunctionCall,
+    FileNameWithoutExtension: G.Models.ChatCompletionFunctionCall
+  },
+  {
+    Id: ChatCompletionFunctions,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: name,
+        Name: Name,
+        Type: string?,
+        IsRequired: false,
+        DefaultValue: "",
+        Summary:
+<br/>Default Value: 
+      },
+      {
+        Id: description,
+        Name: Description,
+        Type: string?,
+        IsRequired: false,
+        DefaultValue: "",
+        Summary:
+<br/>Default Value: 
+      },
+      {
+        Id: parameters,
+        Name: Parameters,
+        Type: ChatCompletionFunctionParameters?,
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ChatCompletionFunctions,
+    ClassName: ChatCompletionFunctions,
+    ExternalClassName: ChatCompletionFunctions,
+    FileNameWithoutExtension: G.Models.ChatCompletionFunctions
+  },
+  {
+    Id: ChatCompletionFunctionParameters,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: type,
+        Name: Type,
+        Type: string?,
+        IsRequired: false,
+        DefaultValue: "",
+        Summary:
+<br/>Default Value: 
+      },
+      {
+        Id: properties,
+        Name: Properties,
+        Type: ChatCompletionFunctionParametersProperties?,
+        IsRequired: false,
+        DefaultValue: ,
+        Summary:
+<br/>Default Value: 
+      }
+    ],
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ChatCompletionFunctionParameters,
+    ClassName: ChatCompletionFunctionParameters,
+    ExternalClassName: ChatCompletionFunctionParameters,
+    FileNameWithoutExtension: G.Models.ChatCompletionFunctionParameters
+  },
+  {
+    Id: properties,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: null,
+    Summary:
+<br/>Default Value: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Properties,
+    ClassName: Properties,
+    ExternalClassName: Properties,
+    FileNameWithoutExtension: G.Models.Properties
+  },
+  {
+    Id: CreateCompletionRequest,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: model,
+        Name: Model,
+        Type: object,
+        IsRequired: true,
+        Summary: 
+      },
+      {
+        Id: prompt,
+        Name: Prompt,
+        Type: object,
+        IsRequired: true,
+        Summary: 
+      },
+      {
+        Id: suffix,
+        Name: Suffix,
+        Type: string?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: max_tokens,
+        Name: MaxTokens,
+        Type: int,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: temperature,
+        Name: Temperature,
+        Type: double,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: top_p,
+        Name: TopP,
+        Type: double,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: n,
+        Name: N,
+        Type: int,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: stream,
+        Name: Stream,
+        Type: bool,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: logprobs,
+        Name: Logprobs,
+        Type: int,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: echo,
+        Name: Echo,
+        Type: bool,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: stop,
+        Name: Stop,
+        Type: object?,
+        IsRequired: false,
+        DefaultValue: ,
+        Summary: 
+      },
+      {
+        Id: presence_penalty,
+        Name: PresencePenalty,
+        Type: double,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: frequency_penalty,
+        Name: FrequencyPenalty,
+        Type: double,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: best_of,
+        Name: BestOf,
+        Type: int,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: logit_bias,
+        Name: LogitBias,
+        Type: CreateCompletionRequestLogitBias?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: user,
+        Name: User,
+        Type: string?,
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: CreateCompletionRequest,
+    ClassName: CreateCompletionRequest,
+    ExternalClassName: CreateCompletionRequest,
+    FileNameWithoutExtension: G.Models.CreateCompletionRequest
+  },
+  {
+    Id: logit_bias,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: null,
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: LogitBias,
+    ClassName: LogitBias,
+    ExternalClassName: LogitBias,
+    FileNameWithoutExtension: G.Models.LogitBias
+  },
+  {
+    Id: model,
+    AddTypeName: true,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: null,
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Model,
+    ClassName: Model,
+    ExternalClassName: Model,
+    FileNameWithoutExtension: G.Models.Model
+  },
+  {
+    Id: CreateChatCompletionResponse,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: id,
+        Name: Id,
+        Type: string?,
+        IsRequired: false,
+        DefaultValue: "",
+        Summary:
+<br/>Default Value: 
+      },
+      {
+        Id: object,
+        Name: Object,
+        Type: string?,
+        IsRequired: false,
+        DefaultValue: "",
+        Summary:
+<br/>Default Value: 
+      },
+      {
+        Id: created,
+        Name: Created,
+        Type: int,
+        IsRequired: false,
+        DefaultValue: 0,
+        Summary:
+<br/>Default Value: 0
+      },
+      {
+        Id: model,
+        Name: Model,
+        Type: string?,
+        IsRequired: false,
+        DefaultValue: "",
+        Summary:
+<br/>Default Value: 
+      },
+      {
+        Id: choices,
+        Name: Choices,
+        Type: global::System.Collections.Generic.IList<ChatCompletionChoice?>?,
+        IsRequired: false,
+        DefaultValue: ,
+        Summary:
+<br/>Default Value: []
+      },
+      {
+        Id: usage,
+        Name: Usage,
+        Type: CompletionUsage?,
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: CreateChatCompletionResponse,
+    ClassName: CreateChatCompletionResponse,
+    ExternalClassName: CreateChatCompletionResponse,
+    FileNameWithoutExtension: G.Models.CreateChatCompletionResponse
+  },
+  {
+    Id: ChatCompletionChoice,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: index,
+        Name: Index,
+        Type: int,
+        IsRequired: false,
+        DefaultValue: 0,
+        Summary:
+<br/>Default Value: 0
+      },
+      {
+        Id: message,
+        Name: Message,
+        Type: ChatCompletionResponseMessage?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: finish_reason,
+        Name: FinishReason,
+        Type: string?,
+        IsRequired: false,
+        DefaultValue: "",
+        Summary:
+<br/>Default Value: 
+      }
+    ],
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ChatCompletionChoice,
+    ClassName: ChatCompletionChoice,
+    ExternalClassName: ChatCompletionChoice,
+    FileNameWithoutExtension: G.Models.ChatCompletionChoice
+  },
+  {
+    Id: ChatCompletionResponseMessage,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: role,
+        Name: Role,
+        Type: string?,
+        IsRequired: false,
+        DefaultValue: "",
+        Summary:
+<br/>Default Value: 
+      },
+      {
+        Id: content,
+        Name: Content,
+        Type: string?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: function_call,
+        Name: FunctionCall,
+        Type: ChatCompletionFunctionCall?,
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ChatCompletionResponseMessage,
+    ClassName: ChatCompletionResponseMessage,
+    ExternalClassName: ChatCompletionResponseMessage,
+    FileNameWithoutExtension: G.Models.ChatCompletionResponseMessage
+  },
+  {
+    Id: CompletionUsage,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: prompt_tokens,
+        Name: PromptTokens,
+        Type: int,
+        IsRequired: false,
+        DefaultValue: 0,
+        Summary:
+<br/>Default Value: 0
+      },
+      {
+        Id: completion_tokens,
+        Name: CompletionTokens,
+        Type: int,
+        IsRequired: false,
+        DefaultValue: 0,
+        Summary:
+<br/>Default Value: 0
+      },
+      {
+        Id: total_tokens,
+        Name: TotalTokens,
+        Type: int,
+        IsRequired: false,
+        DefaultValue: 0,
+        Summary:
+<br/>Default Value: 0
+      }
+    ],
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: CompletionUsage,
+    ClassName: CompletionUsage,
+    ExternalClassName: CompletionUsage,
+    FileNameWithoutExtension: G.Models.CompletionUsage
+  },
+  {
+    Id: CreateCompletionResponse,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: id,
+        Name: Id,
+        Type: string?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: object,
+        Name: Object,
+        Type: string?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: created,
+        Name: Created,
+        Type: string?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: model,
+        Name: Model,
+        Type: string?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: choices,
+        Name: Choices,
+        Type: global::System.Collections.Generic.IList<Choice?>?,
+        IsRequired: false,
+        DefaultValue: ,
+        Summary:
+<br/>Default Value: []
+      },
+      {
+        Id: usage,
+        Name: Usage,
+        Type: CompletionUsage?,
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: CreateCompletionResponse,
+    ClassName: CreateCompletionResponse,
+    ExternalClassName: CreateCompletionResponse,
+    FileNameWithoutExtension: G.Models.CreateCompletionResponse
+  },
+  {
+    Id: Choice,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: text,
+        Name: Text,
+        Type: string?,
+        IsRequired: false,
+        DefaultValue: "",
+        Summary:
+<br/>Default Value: 
+      },
+      {
+        Id: index,
+        Name: Index,
+        Type: int,
+        IsRequired: false,
+        DefaultValue: 0,
+        Summary:
+<br/>Default Value: 0
+      },
+      {
+        Id: logprobs,
+        Name: Logprobs,
+        Type: Logprobs?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: finish_reason,
+        Name: FinishReason,
+        Type: string?,
+        IsRequired: false,
+        DefaultValue: "",
+        Summary:
+<br/>Default Value: 
+      }
+    ],
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Choice,
+    ClassName: Choice,
+    ExternalClassName: Choice,
+    FileNameWithoutExtension: G.Models.Choice
+  },
+  {
+    Id: Logprobs,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: tokens,
+        Name: Tokens,
+        Type: global::System.Collections.Generic.IList<string?>?,
+        IsRequired: false,
+        DefaultValue: ,
+        Summary:
+<br/>Default Value: []
+      },
+      {
+        Id: token_logprobs,
+        Name: TokenLogprobs,
+        Type: global::System.Collections.Generic.IList<double>?,
+        IsRequired: false,
+        DefaultValue: ,
+        Summary:
+<br/>Default Value: []
+      },
+      {
+        Id: top_logprobs,
+        Name: TopLogprobs,
+        Type: global::System.Collections.Generic.IList<LogprobsTopLogprobs?>?,
+        IsRequired: false,
+        DefaultValue: ,
+        Summary:
+<br/>Default Value: []
+      },
+      {
+        Id: text_offset,
+        Name: TextOffset,
+        Type: global::System.Collections.Generic.IList<int>?,
+        IsRequired: false,
+        DefaultValue: ,
+        Summary:
+<br/>Default Value: []
+      }
+    ],
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Logprobs,
+    ClassName: Logprobs,
+    ExternalClassName: Logprobs,
+    FileNameWithoutExtension: G.Models.Logprobs
+  },
+  {
+    Id: top_logprobs,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: null,
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: TopLogprobs,
+    ClassName: TopLogprobs,
+    ExternalClassName: TopLogprobs,
+    FileNameWithoutExtension: G.Models.TopLogprobs
+  },
+  {
+    Id: HTTPValidationError,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: detail,
+        Name: Detail,
+        Type: global::System.Collections.Generic.IList<ValidationError?>?,
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: HTTPValidationError,
+    ClassName: HTTPValidationError,
+    ExternalClassName: HTTPValidationError,
+    FileNameWithoutExtension: G.Models.HTTPValidationError
+  },
+  {
+    Id: ValidationError,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: loc,
+        Name: Loc,
+        Type: global::System.Collections.Generic.IList<object>,
+        IsRequired: true,
+        Summary: 
+      },
+      {
+        Id: msg,
+        Name: Msg,
+        Type: string,
+        IsRequired: true,
+        Summary: 
+      },
+      {
+        Id: type,
+        Name: Type,
+        Type: string,
+        IsRequired: true,
+        Summary: 
+      }
+    ],
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ValidationError,
+    ClassName: ValidationError,
+    ExternalClassName: ValidationError,
+    FileNameWithoutExtension: G.Models.ValidationError
+  },
+  {
+    Id: RunCreateSchemaExtended,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: name,
+        Name: Name,
+        Type: string,
+        IsRequired: true,
+        Summary: 
+      },
+      {
+        Id: inputs,
+        Name: Inputs,
+        Type: object?,
+        IsRequired: false,
+        DefaultValue: ,
+        Summary: 
+      },
+      {
+        Id: run_type,
+        Name: RunType,
+        Type: string,
+        IsRequired: true,
+        Summary: Enum for run types.
+      },
+      {
+        Id: start_time,
+        Name: StartTime,
+        Type: global::System.DateTime,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: end_time,
+        Name: EndTime,
+        Type: global::System.DateTime,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: extra,
+        Name: Extra,
+        Type: RunCreateSchemaExtendedExtra?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: error,
+        Name: Error,
+        Type: string?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: execution_order,
+        Name: ExecutionOrder,
+        Type: int,
+        IsRequired: false,
+        DefaultValue: 1,
+        Summary:
+<br/>Default Value: 1
+      },
+      {
+        Id: serialized,
+        Name: Serialized,
+        Type: RunCreateSchemaExtendedSerialized?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: outputs,
+        Name: Outputs,
+        Type: object?,
+        IsRequired: false,
+        DefaultValue: ,
+        Summary: 
+      },
+      {
+        Id: parent_run_id,
+        Name: ParentRunId,
+        Type: string?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: manifest_id,
+        Name: ManifestId,
+        Type: string?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: events,
+        Name: Events,
+        Type: global::System.Collections.Generic.IList<RunCreateSchemaExtendedEvents?>?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: tags,
+        Name: Tags,
+        Type: global::System.Collections.Generic.IList<string?>?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: id,
+        Name: Id,
+        Type: string?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: session_id,
+        Name: SessionId,
+        Type: string?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: session_name,
+        Name: SessionName,
+        Type: string?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: child_runs,
+        Name: ChildRuns,
+        Type: global::System.Collections.Generic.IList<RunCreateSchema?>?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: reference_example_id,
+        Name: ReferenceExampleId,
+        Type: string?,
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary: Create class for a run object, with additional typehints.,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: RunCreateSchemaExtended,
+    ClassName: RunCreateSchemaExtended,
+    ExternalClassName: RunCreateSchemaExtended,
+    FileNameWithoutExtension: G.Models.RunCreateSchemaExtended
+  },
+  {
+    Id: extra,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: null,
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Extra,
+    ClassName: Extra,
+    ExternalClassName: Extra,
+    FileNameWithoutExtension: G.Models.Extra
+  },
+  {
+    Id: serialized,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: null,
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Serialized,
+    ClassName: Serialized,
+    ExternalClassName: Serialized,
+    FileNameWithoutExtension: G.Models.Serialized
+  },
+  {
+    Id: events,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: null,
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Events,
+    ClassName: Events,
+    ExternalClassName: Events,
+    FileNameWithoutExtension: G.Models.Events
+  },
+  {
+    Id: inputs,
+    AddTypeName: true,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: null,
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Inputs,
+    ClassName: Inputs,
+    ExternalClassName: Inputs,
+    FileNameWithoutExtension: G.Models.Inputs
+  },
+  {
+    Id: outputs,
+    AddTypeName: true,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: null,
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Outputs,
+    ClassName: Outputs,
+    ExternalClassName: Outputs,
+    FileNameWithoutExtension: G.Models.Outputs
+  },
+  {
+    Id: run_type,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: tool,
+        Name: Tool,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: chain,
+        Name: Chain,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: llm,
+        Name: Llm,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: retriever,
+        Name: Retriever,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: embedding,
+        Name: Embedding,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: prompt,
+        Name: Prompt,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: parser,
+        Name: Parser,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary: Enum for run types.,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: RunType,
+    ClassName: RunType,
+    ExternalClassName: RunType,
+    FileNameWithoutExtension: G.Models.RunType
+  },
+  {
+    Id: RunTypeEnum,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: null,
+    Summary: Enum for run types.,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: RunTypeEnum,
+    ClassName: RunTypeEnum,
+    ExternalClassName: RunTypeEnum,
+    FileNameWithoutExtension: G.Models.RunTypeEnum
+  },
+  {
+    Id: RunCreateSchema,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: name,
+        Name: Name,
+        Type: string,
+        IsRequired: true,
+        Summary: 
+      },
+      {
+        Id: inputs,
+        Name: Inputs,
+        Type: RunCreateSchemaInputs?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: run_type,
+        Name: RunType,
+        Type: string,
+        IsRequired: true,
+        Summary: Enum for run types.
+      },
+      {
+        Id: start_time,
+        Name: StartTime,
+        Type: global::System.DateTime,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: end_time,
+        Name: EndTime,
+        Type: global::System.DateTime,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: extra,
+        Name: Extra,
+        Type: RunCreateSchemaExtra?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: error,
+        Name: Error,
+        Type: string?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: execution_order,
+        Name: ExecutionOrder,
+        Type: int,
+        IsRequired: false,
+        DefaultValue: 1,
+        Summary:
+<br/>Default Value: 1
+      },
+      {
+        Id: serialized,
+        Name: Serialized,
+        Type: RunCreateSchemaSerialized?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: outputs,
+        Name: Outputs,
+        Type: RunCreateSchemaOutputs?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: parent_run_id,
+        Name: ParentRunId,
+        Type: string?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: manifest_id,
+        Name: ManifestId,
+        Type: string?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: events,
+        Name: Events,
+        Type: global::System.Collections.Generic.IList<RunCreateSchemaEvents?>?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: tags,
+        Name: Tags,
+        Type: global::System.Collections.Generic.IList<string?>?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: id,
+        Name: Id,
+        Type: string?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: session_id,
+        Name: SessionId,
+        Type: string?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: session_name,
+        Name: SessionName,
+        Type: string?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: reference_example_id,
+        Name: ReferenceExampleId,
+        Type: string?,
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary: Create class for a Run object.,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: RunCreateSchema,
+    ClassName: RunCreateSchema,
+    ExternalClassName: RunCreateSchema,
+    FileNameWithoutExtension: G.Models.RunCreateSchema
+  },
+  {
+    Id: inputs,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: null,
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Inputs,
+    ClassName: Inputs,
+    ExternalClassName: Inputs,
+    FileNameWithoutExtension: G.Models.Inputs
+  },
+  {
+    Id: extra,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: null,
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Extra,
+    ClassName: Extra,
+    ExternalClassName: Extra,
+    FileNameWithoutExtension: G.Models.Extra
+  },
+  {
+    Id: serialized,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: null,
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Serialized,
+    ClassName: Serialized,
+    ExternalClassName: Serialized,
+    FileNameWithoutExtension: G.Models.Serialized
+  },
+  {
+    Id: outputs,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: null,
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Outputs,
+    ClassName: Outputs,
+    ExternalClassName: Outputs,
+    FileNameWithoutExtension: G.Models.Outputs
+  },
+  {
+    Id: events,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: null,
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Events,
+    ClassName: Events,
+    ExternalClassName: Events,
+    FileNameWithoutExtension: G.Models.Events
+  },
+  {
+    Id: run_type,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: tool,
+        Name: Tool,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: chain,
+        Name: Chain,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: llm,
+        Name: Llm,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: retriever,
+        Name: Retriever,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: embedding,
+        Name: Embedding,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: prompt,
+        Name: Prompt,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: parser,
+        Name: Parser,
+        Type: ,
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary: Enum for run types.,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: RunType,
+    ClassName: RunType,
+    ExternalClassName: RunType,
+    FileNameWithoutExtension: G.Models.RunType
+  }
+]
