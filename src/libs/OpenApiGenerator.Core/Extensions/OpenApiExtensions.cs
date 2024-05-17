@@ -220,45 +220,6 @@ public static class OpenApiExtensions
         };
     }
 
-    public static PropertyData ToProperty(
-        this KeyValuePair<string, OpenApiSchema> schema,
-        HashSet<string> requiredProperties,
-        Settings settings,
-        params ModelData[] parents)
-    {
-        requiredProperties = requiredProperties ?? throw new ArgumentNullException(nameof(requiredProperties));
-
-        return new PropertyData(
-            Id: schema.Key,
-            Name: schema.Key.ToPropertyName()
-                .FixPropertyName(parents.Last().ClassName)
-                .UseWordSeparator('_', '-', '/')
-                .Replace("[", string.Empty)
-                .Replace("]", string.Empty),
-            Type: schema.GetCSharpType(settings, parents),
-            IsRequired: requiredProperties.Contains(schema.Key),
-            DefaultValue: schema.Value.GetDefaultValue(type: schema.GetCSharpType(settings with
-            {
-                JsonSerializerType = JsonSerializerType.NewtonsoftJson
-            }, parents)),
-            Summary: schema.Value.GetSummary());
-    }
-
-    public static IEnumerable<ModelData> WithAdditionalModels(
-        this ModelData modelData)
-    {
-        return new[]
-            {
-                modelData with
-                {
-                    AdditionalModels = [],
-                    Enumerations = [],
-                }
-            }
-            .Concat(modelData.AdditionalModels.SelectMany(WithAdditionalModels))
-            .Concat(modelData.Enumerations.SelectMany(WithAdditionalModels));
-    }
-
     public static IEnumerable<OpenApiReference> GetReferences(
         this KeyValuePair<string, OpenApiSchema> schema)
     {

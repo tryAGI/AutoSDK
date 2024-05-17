@@ -88,7 +88,8 @@ public readonly record struct ModelData(
         return model with
         {
             Properties = schema.Value.Properties
-                .Select(x => x.ToProperty(
+                .Select(x => PropertyData.FromSchema(
+                    schema: x,
                     requiredProperties: requiredProperties,
                     settings: settings,
                     parents: innerParents))
@@ -155,4 +156,18 @@ public readonly record struct ModelData(
     };
     
     public string FileNameWithoutExtension => $"{Namespace}.Models.{ExternalClassName}";
+
+    public IEnumerable<ModelData> WithAdditionalModels()
+    {
+        return new[]
+            {
+                this with
+                {
+                    AdditionalModels = [],
+                    Enumerations = [],
+                }
+            }
+            .Concat(AdditionalModels.SelectMany(x => x.WithAdditionalModels()))
+            .Concat(Enumerations.SelectMany(x => x.WithAdditionalModels()));
+    }
 }
