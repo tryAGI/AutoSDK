@@ -5,7 +5,7 @@
     ClassName: Api,
     BaseUrl: ,
     Stream: true,
-    Path: /generate,
+    Path: "/generate",
     Properties: [
       {
         Id: model,
@@ -126,7 +126,7 @@ How long (in minutes) to keep the model loaded in memory.
     ClassName: Api,
     BaseUrl: ,
     Stream: true,
-    Path: /chat,
+    Path: "/chat",
     Properties: [
       {
         Id: model,
@@ -206,7 +206,7 @@ How long (in minutes) to keep the model loaded in memory.
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /embeddings,
+    Path: "/embeddings",
     Properties: [
       {
         Id: model,
@@ -250,7 +250,7 @@ Text to generate embeddings for.
     ClassName: Api,
     BaseUrl: ,
     Stream: true,
-    Path: /create,
+    Path: "/create",
     Properties: [
       {
         Id: name,
@@ -298,7 +298,7 @@ If `false` the response will be returned as a single response object, otherwise 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /tags,
+    Path: "/tags",
     Properties: null,
     Summary: List models that are available locally.,
     RequestType: ,
@@ -312,7 +312,7 @@ If `false` the response will be returned as a single response object, otherwise 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /show,
+    Path: "/show",
     Properties: [
       {
         Id: name,
@@ -340,7 +340,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /copy,
+    Path: "/copy",
     Properties: [
       {
         Id: source,
@@ -374,7 +374,7 @@ Name of the new model.
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /delete,
+    Path: "/delete",
     Properties: [
       {
         Id: name,
@@ -402,7 +402,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /pull,
+    Path: "/pull",
     Properties: [
       {
         Id: name,
@@ -454,7 +454,7 @@ If `false` the response will be returned as a single response object, otherwise 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /push,
+    Path: "/push",
     Properties: [
       {
         Id: name,
@@ -503,8 +503,17 @@ If `false` the response will be returned as a single response object, otherwise 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /blobs/{digest},
-    Properties: null,
+    Path: "/blobs/{digest}",
+    Properties: [
+      {
+        Id: name,
+        Name: Name,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Query,
+        Summary: 
+      }
+    ],
     HttpMethod: Head,
     Summary: Check to see if a blob exists on the Ollama server which is useful when creating models.,
     RequestType: ,
@@ -518,8 +527,17 @@ If `false` the response will be returned as a single response object, otherwise 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /blobs/{digest},
-    Properties: null,
+    Path: "/blobs/{digest}",
+    Properties: [
+      {
+        Id: name,
+        Name: Name,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Query,
+        Summary: 
+      }
+    ],
     HttpMethod: Post,
     Summary: Create a blob from a file. Returns the server file path.,
     RequestType: ,

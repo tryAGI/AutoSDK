@@ -56,7 +56,9 @@ namespace G
                 Model = model,
             };
 
-            return await CreateModerationAsync(request, cancellationToken).ConfigureAwait(false);
+            return await CreateModerationAsync(
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

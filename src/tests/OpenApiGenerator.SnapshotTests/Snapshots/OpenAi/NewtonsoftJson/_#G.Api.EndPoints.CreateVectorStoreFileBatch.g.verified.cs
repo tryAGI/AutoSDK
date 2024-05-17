@@ -12,6 +12,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<VectorStoreFileBatchObject> CreateVectorStoreFileBatchAsync(
+            string vectorStoreId,
             CreateVectorStoreFileBatchRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -19,7 +20,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: "/vector_stores/{vector_store_id}/file_batches");
+                requestUri: $"/vector_stores/{vectorStoreId}/file_batches");
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: global::Newtonsoft.Json.JsonConvert.SerializeObject(request),
                 encoding: global::System.Text.Encoding.UTF8,
@@ -41,10 +42,12 @@ namespace G
         /// <summary>
         /// Create a vector store file batch.
         /// </summary>
+        /// <param name="vectorStoreId"></param>
         /// <param name="fileIds"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<VectorStoreFileBatchObject> CreateVectorStoreFileBatchAsync(
+            string vectorStoreId,
             global::System.Collections.Generic.IList<string> fileIds,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -53,7 +56,10 @@ namespace G
                 FileIds = fileIds,
             };
 
-            return await CreateVectorStoreFileBatchAsync(request, cancellationToken).ConfigureAwait(false);
+            return await CreateVectorStoreFileBatchAsync(
+                vectorStoreId: vectorStoreId,
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

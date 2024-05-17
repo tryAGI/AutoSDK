@@ -59,7 +59,9 @@ namespace G
                 Stream = stream,
             };
 
-            return await PullModelAsync(request, cancellationToken).ConfigureAwait(false);
+            return await PullModelAsync(
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

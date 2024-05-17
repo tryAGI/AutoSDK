@@ -12,6 +12,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<RunObject> ModifyRunAsync(
+            string threadId,
+            string runId,
             ModifyRunRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -19,7 +21,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: "/threads/{thread_id}/runs/{run_id}");
+                requestUri: $"/threads/{threadId}/runs/{runId}");
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: global::System.Text.Json.JsonSerializer.Serialize(request),
                 encoding: global::System.Text.Encoding.UTF8,
@@ -41,10 +43,14 @@ namespace G
         /// <summary>
         /// Modifies a run.
         /// </summary>
+        /// <param name="threadId"></param>
+        /// <param name="runId"></param>
         /// <param name="metadata"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<RunObject> ModifyRunAsync(
+            string threadId,
+            string runId,
             ModifyRunRequestMetadata? metadata,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -53,7 +59,11 @@ namespace G
                 Metadata = metadata,
             };
 
-            return await ModifyRunAsync(request, cancellationToken).ConfigureAwait(false);
+            return await ModifyRunAsync(
+                threadId: threadId,
+                runId: runId,
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

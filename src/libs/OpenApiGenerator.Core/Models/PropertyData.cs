@@ -9,6 +9,7 @@ public readonly record struct PropertyData(
     string Name,
     string Type,
     bool IsRequired,
+    ParameterLocation? ParameterLocation,
     string? DefaultValue,
     string Summary)
 {
@@ -17,12 +18,14 @@ public readonly record struct PropertyData(
         Name: string.Empty,
         Type: string.Empty,
         IsRequired: false,
+        ParameterLocation: null,
         DefaultValue: null,
         Summary: string.Empty);
 
     public static PropertyData FromSchema(
         KeyValuePair<string, OpenApiSchema> schema,
         HashSet<string> requiredProperties,
+        ParameterLocation? parameterLocation,
         Settings settings,
         params ModelData[] parents)
     {
@@ -44,6 +47,7 @@ public readonly record struct PropertyData(
             Name: name,
             Type: schema.GetCSharpType(settings, parents),
             IsRequired: requiredProperties.Contains(schema.Key),
+            ParameterLocation: parameterLocation,
             DefaultValue: schema.Value.GetDefaultValue(type: schema.GetCSharpType(settings with
             {
                 JsonSerializerType = JsonSerializerType.NewtonsoftJson

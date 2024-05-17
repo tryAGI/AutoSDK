@@ -53,7 +53,9 @@ namespace G
                 Name = name,
             };
 
-            return await ShowModelInfoAsync(request, cancellationToken).ConfigureAwait(false);
+            return await ShowModelInfoAsync(
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

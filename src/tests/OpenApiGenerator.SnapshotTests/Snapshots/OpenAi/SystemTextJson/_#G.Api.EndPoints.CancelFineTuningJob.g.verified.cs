@@ -12,11 +12,12 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<FineTuningJob> CancelFineTuningJobAsync(
+            string fineTuningJobId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: "/fine_tuning/jobs/{fine_tuning_job_id}/cancel");
+                requestUri: $"/fine_tuning/jobs/{fineTuningJobId}/cancel");
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

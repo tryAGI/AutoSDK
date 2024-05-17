@@ -113,7 +113,9 @@ namespace G
                 Functions = functions,
             };
 
-            return await CreateChatCompletionAsync(request, cancellationToken).ConfigureAwait(false);
+            return await CreateChatCompletionAsync(
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

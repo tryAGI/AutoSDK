@@ -1,4 +1,5 @@
 using System.Net.Http;
+using Microsoft.OpenApi.Models;
 using OpenApiGenerator.Core.Extensions;
 using OpenApiGenerator.Core.Json;
 using OpenApiGenerator.Core.Models;
@@ -91,6 +92,8 @@ namespace {endPoint.Namespace}
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::System.InvalidOperationException""></exception>
         public async {taskType} {endPoint.MethodName}(
+{endPoint.Properties.Where(x => x.ParameterLocation == ParameterLocation.Path).Select(x => $@"
+            {x.Type} {x.Name.ToParameterName()},").Inject()}
 {(string.IsNullOrWhiteSpace(endPoint.RequestType) ? " " : @$" 
             {endPoint.RequestType} request,")}
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default)
@@ -100,7 +103,7 @@ namespace {endPoint.Namespace}
 ")}
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.{endPoint.HttpMethod:G},
-                requestUri: ""{endPoint.Path}"");
+                requestUri: {endPoint.Path});
 {(string.IsNullOrWhiteSpace(endPoint.RequestType) ? " " : $@" 
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: {jsonSerializer.GenerateSerializeCall(endPoint.RequestType)}(request),
@@ -152,36 +155,45 @@ namespace {endPoint.Namespace}
         var cancellationTokenAttribute = endPoint.Stream
             ? "[global::System.Runtime.CompilerServices.EnumeratorCancellation] "
             : string.Empty;
+        var response = endPoint.Stream
+            ? "var enumerable = "
+            : string.IsNullOrWhiteSpace(endPoint.ResponseType)
+                ? "await "
+                : "return await ";
+        var configureAwaitResponse = !endPoint.Stream
+            ? ".ConfigureAwait(false)"
+            : string.Empty;
         
         return $@"
         /// <summary>
         /// {endPoint.Summary}
         /// </summary>
-{string.Join("\n", endPoint.Properties.Select(x => $@" 
-        /// <param name=""{x.Name.ToParameterName()}""></param>"))}
+{endPoint.Properties.Select(x => $@"
+        /// <param name=""{x.Name.ToParameterName()}""></param>").Inject()}
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::System.InvalidOperationException""></exception>
         public async {taskType} {endPoint.MethodName}(
-{string.Join("\n", endPoint.Properties.Select(x => $@" 
-            {x.Type} {x.Name.ToParameterName()},"))}
+{endPoint.Properties.Select(x => $@"
+            {x.Type} {x.Name.ToParameterName()},").Inject()}
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default)
         {{
             var request = new {endPoint.RequestType}
             {{
-{string.Join("\n", endPoint.Properties.Select(x => $@" 
-                {x.Name} = {x.Name.ToParameterName()},"))}
+{endPoint.Properties.Where(x => x.ParameterLocation == null).Select(x => $@"
+                {x.Name} = {x.Name.ToParameterName()},").Inject()}
             }};
-{(string.IsNullOrWhiteSpace(endPoint.ResponseType) && !endPoint.Stream ? $@"
-            await {endPoint.MethodName}(request, cancellationToken).ConfigureAwait(false);" : " ")}
-{(!string.IsNullOrWhiteSpace(endPoint.ResponseType) && !endPoint.Stream ? $@"
-            return await {endPoint.MethodName}(request, cancellationToken).ConfigureAwait(false);" : " ")}
-{(endPoint.Stream ? $@"
-            var enumerable = {endPoint.MethodName}(request, cancellationToken);
+
+            {response}{endPoint.MethodName}(
+{endPoint.Properties.Where(x => x.ParameterLocation == ParameterLocation.Path).Select(x => $@"
+                {x.Name.ToParameterName()}: {x.Name.ToParameterName()},").Inject()}
+                request: request,
+                cancellationToken: cancellationToken){configureAwaitResponse};
+{(endPoint.Stream ? @"
             
             await foreach (var response in enumerable)
-            {{
+            {
                 yield return response;
-            }}" : " ")}
+            }" : " ")}
         }}
  ".RemoveBlankLinesWhereOnlyWhitespaces();
     }

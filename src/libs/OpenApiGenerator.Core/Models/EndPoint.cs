@@ -29,6 +29,32 @@ public readonly record struct EndPoint(
         Settings settings,
         string path)
     {
+        path = path ?? throw new ArgumentNullException(nameof(path));
+        
+        var requiredParameters = new HashSet<string>(operation.Value.Parameters
+            .Where(x => x.Required || x.In == ParameterLocation.Path)
+            .Select(x => x.Name));
+        var parameters = operation.Value.Parameters
+            .Select(x => PropertyData.FromSchema(
+                schema: x.Schema.WithKey(x.Name),
+                requiredProperties: requiredParameters,
+                parameterLocation: x.In,
+                settings: settings,
+                parents: []))
+            .ToArray();
+
+        var preparedPath = $"\"{path}\"";
+        foreach (var parameter in parameters)
+        {
+            if (preparedPath.Contains($"{{{parameter.Id}}}") &&
+                !preparedPath.StartsWith("$", StringComparison.Ordinal))
+            {
+                preparedPath = $"${preparedPath}";
+            }
+            
+            preparedPath = preparedPath.Replace($"{{{parameter.Id}}}", $"{{{parameter.Name.ToParameterName()}}}");
+        }
+        
         var requestSchema = operation.Value.RequestBody?.Content.Values.FirstOrDefault()?.Schema;
         var requestModel =  requestSchema != null
             ? ModelData.FromSchema(new KeyValuePair<string, OpenApiSchema>(requestSchema.Reference?.Id ?? "Test", requestSchema), settings)
@@ -41,8 +67,8 @@ public readonly record struct EndPoint(
             BaseUrl: string.Empty,
             Stream: response?.Content.Keys
                 .Any(x => x.Contains("application/x-ndjson")) ?? false,
-            Path: path,
-            Properties: requestModel.Properties,
+            Path: preparedPath,
+            Properties: [..parameters.Concat(requestModel.Properties)],
             JsonSerializerType: settings.JsonSerializerType,
             HttpMethod: operation.Key,
             Summary: operation.Value.Summary?.Replace("\n", string.Empty) ?? string.Empty,

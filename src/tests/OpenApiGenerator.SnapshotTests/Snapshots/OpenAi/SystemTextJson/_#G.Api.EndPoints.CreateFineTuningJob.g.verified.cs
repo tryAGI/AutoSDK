@@ -71,7 +71,9 @@ namespace G
                 Seed = seed,
             };
 
-            return await CreateFineTuningJobAsync(request, cancellationToken).ConfigureAwait(false);
+            return await CreateFineTuningJobAsync(
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

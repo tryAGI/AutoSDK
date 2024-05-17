@@ -62,7 +62,9 @@ namespace G
                 Temperature = temperature,
             };
 
-            await CreateTranscriptionAsync(request, cancellationToken).ConfigureAwait(false);
+            await CreateTranscriptionAsync(
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

@@ -50,7 +50,9 @@ namespace G
                 Destination = destination,
             };
 
-            await CopyModelAsync(request, cancellationToken).ConfigureAwait(false);
+            await CopyModelAsync(
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

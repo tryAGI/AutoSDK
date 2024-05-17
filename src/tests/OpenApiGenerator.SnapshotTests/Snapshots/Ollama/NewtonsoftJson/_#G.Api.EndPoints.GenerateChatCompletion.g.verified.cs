@@ -74,7 +74,10 @@ namespace G
                 KeepAlive = keepAlive,
             };
 
-            var enumerable = GenerateChatCompletionAsync(request, cancellationToken);
+            var enumerable = GenerateChatCompletionAsync(
+                request: request,
+                cancellationToken: cancellationToken);
+
             await foreach (var response in enumerable)
             {
                 yield return response;

@@ -5,7 +5,7 @@
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /chat/completions,
+    Path: "/chat/completions",
     Properties: [
       {
         Id: messages,
@@ -260,7 +260,7 @@ A list of functions the model may generate JSON inputs for.
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /completions,
+    Path: "/completions",
     Properties: [
       {
         Id: model,
@@ -498,7 +498,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /images/generations,
+    Path: "/images/generations",
     Properties: [
       {
         Id: prompt,
@@ -599,7 +599,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /images/edits,
+    Path: "/images/edits",
     Properties: [
       {
         Id: image,
@@ -692,7 +692,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /images/variations,
+    Path: "/images/variations",
     Properties: [
       {
         Id: image,
@@ -769,7 +769,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /embeddings,
+    Path: "/embeddings",
     Properties: [
       {
         Id: input,
@@ -835,7 +835,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /audio/speech,
+    Path: "/audio/speech",
     Properties: [
       {
         Id: model,
@@ -894,7 +894,7 @@ The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /audio/transcriptions,
+    Path: "/audio/transcriptions",
     Properties: [
       {
         Id: file,
@@ -969,7 +969,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /audio/translations,
+    Path: "/audio/translations",
     Properties: [
       {
         Id: file,
@@ -1035,8 +1035,17 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /files,
-    Properties: null,
+    Path: "/files",
+    Properties: [
+      {
+        Id: purpose,
+        Name: Purpose,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        Summary: 
+      }
+    ],
     Summary: Returns a list of files that belong to the user's organization.,
     RequestType: ,
     ResponseType: ListFilesResponse,
@@ -1049,7 +1058,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /files,
+    Path: "/files",
     Properties: [
       {
         Id: file,
@@ -1085,8 +1094,17 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /files/{file_id},
-    Properties: null,
+    Path: $"/files/{fileId}",
+    Properties: [
+      {
+        Id: file_id,
+        Name: FileId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      }
+    ],
     HttpMethod: Delete,
     Summary: Delete a file.,
     RequestType: ,
@@ -1100,8 +1118,17 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /files/{file_id},
-    Properties: null,
+    Path: $"/files/{fileId}",
+    Properties: [
+      {
+        Id: file_id,
+        Name: FileId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      }
+    ],
     Summary: Returns information about a specific file.,
     RequestType: ,
     ResponseType: OpenAIFile,
@@ -1114,8 +1141,17 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /files/{file_id}/content,
-    Properties: null,
+    Path: $"/files/{fileId}/content",
+    Properties: [
+      {
+        Id: file_id,
+        Name: FileId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      }
+    ],
     Summary: Returns the contents of the specified file.,
     RequestType: ,
     ResponseType: ,
@@ -1128,7 +1164,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /fine_tuning/jobs,
+    Path: "/fine_tuning/jobs",
     Properties: [
       {
         Id: model,
@@ -1227,8 +1263,27 @@ If a seed is not specified, one will be generated for you.
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /fine_tuning/jobs,
-    Properties: null,
+    Path: "/fine_tuning/jobs",
+    Properties: [
+      {
+        Id: after,
+        Name: After,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        Summary: 
+      },
+      {
+        Id: limit,
+        Name: Limit,
+        Type: int,
+        IsRequired: false,
+        ParameterLocation: Query,
+        DefaultValue: 20,
+        Summary:
+<br/>Default Value: 20
+      }
+    ],
     Summary: List your organization's fine-tuning jobs,
     RequestType: ,
     ResponseType: ListPaginatedFineTuningJobsResponse,
@@ -1241,8 +1296,18 @@ If a seed is not specified, one will be generated for you.
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /fine_tuning/jobs/{fine_tuning_job_id},
-    Properties: null,
+    Path: $"/fine_tuning/jobs/{fineTuningJobId}",
+    Properties: [
+      {
+        Id: fine_tuning_job_id,
+        Name: FineTuningJobId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary:
+<br/>Example: ft-AF1WoRqd3aJAHsqc9NY7iL8F
+      }
+    ],
     Summary: Get info about a fine-tuning job.[Learn more about fine-tuning](/docs/guides/fine-tuning),
     RequestType: ,
     ResponseType: FineTuningJob,
@@ -1255,8 +1320,36 @@ If a seed is not specified, one will be generated for you.
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /fine_tuning/jobs/{fine_tuning_job_id}/events,
-    Properties: null,
+    Path: $"/fine_tuning/jobs/{fineTuningJobId}/events",
+    Properties: [
+      {
+        Id: fine_tuning_job_id,
+        Name: FineTuningJobId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary:
+<br/>Example: ft-AF1WoRqd3aJAHsqc9NY7iL8F
+      },
+      {
+        Id: after,
+        Name: After,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        Summary: 
+      },
+      {
+        Id: limit,
+        Name: Limit,
+        Type: int,
+        IsRequired: false,
+        ParameterLocation: Query,
+        DefaultValue: 20,
+        Summary:
+<br/>Default Value: 20
+      }
+    ],
     Summary: Get status updates for a fine-tuning job.,
     RequestType: ,
     ResponseType: ListFineTuningJobEventsResponse,
@@ -1269,8 +1362,18 @@ If a seed is not specified, one will be generated for you.
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /fine_tuning/jobs/{fine_tuning_job_id}/cancel,
-    Properties: null,
+    Path: $"/fine_tuning/jobs/{fineTuningJobId}/cancel",
+    Properties: [
+      {
+        Id: fine_tuning_job_id,
+        Name: FineTuningJobId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary:
+<br/>Example: ft-AF1WoRqd3aJAHsqc9NY7iL8F
+      }
+    ],
     HttpMethod: Post,
     Summary: Immediately cancel a fine-tune job.,
     RequestType: ,
@@ -1284,8 +1387,36 @@ If a seed is not specified, one will be generated for you.
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /fine_tuning/jobs/{fine_tuning_job_id}/checkpoints,
-    Properties: null,
+    Path: $"/fine_tuning/jobs/{fineTuningJobId}/checkpoints",
+    Properties: [
+      {
+        Id: fine_tuning_job_id,
+        Name: FineTuningJobId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary:
+<br/>Example: ft-AF1WoRqd3aJAHsqc9NY7iL8F
+      },
+      {
+        Id: after,
+        Name: After,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        Summary: 
+      },
+      {
+        Id: limit,
+        Name: Limit,
+        Type: int,
+        IsRequired: false,
+        ParameterLocation: Query,
+        DefaultValue: 10,
+        Summary:
+<br/>Default Value: 10
+      }
+    ],
     Summary: List checkpoints for a fine-tuning job.,
     RequestType: ,
     ResponseType: ListFineTuningJobCheckpointsResponse,
@@ -1298,7 +1429,7 @@ If a seed is not specified, one will be generated for you.
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /models,
+    Path: "/models",
     Properties: null,
     Summary: Lists the currently available models, and provides basic information about each one such as the owner and availability.,
     RequestType: ,
@@ -1312,8 +1443,18 @@ If a seed is not specified, one will be generated for you.
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /models/{model},
-    Properties: null,
+    Path: $"/models/{model}",
+    Properties: [
+      {
+        Id: model,
+        Name: Model,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary:
+<br/>Example: gpt-3.5-turbo
+      }
+    ],
     Summary: Retrieves a model instance, providing basic information about the model such as the owner and permissioning.,
     RequestType: ,
     ResponseType: Model,
@@ -1326,8 +1467,18 @@ If a seed is not specified, one will be generated for you.
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /models/{model},
-    Properties: null,
+    Path: $"/models/{model}",
+    Properties: [
+      {
+        Id: model,
+        Name: Model,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary:
+<br/>Example: ft:gpt-3.5-turbo:acemeco:suffix:abc123
+      }
+    ],
     HttpMethod: Delete,
     Summary: Delete a fine-tuned model. You must have the Owner role in your organization to delete a model.,
     RequestType: ,
@@ -1341,7 +1492,7 @@ If a seed is not specified, one will be generated for you.
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /moderations,
+    Path: "/moderations",
     Properties: [
       {
         Id: input,
@@ -1378,8 +1529,45 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /assistants,
-    Properties: null,
+    Path: "/assistants",
+    Properties: [
+      {
+        Id: limit,
+        Name: Limit,
+        Type: int,
+        IsRequired: false,
+        ParameterLocation: Query,
+        DefaultValue: 20,
+        Summary:
+<br/>Default Value: 20
+      },
+      {
+        Id: order,
+        Name: Order,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        DefaultValue: Order.Desc,
+        Summary:
+<br/>Default Value: desc
+      },
+      {
+        Id: after,
+        Name: After,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        Summary: 
+      },
+      {
+        Id: before,
+        Name: Before,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        Summary: 
+      }
+    ],
     Summary: Returns a list of assistants.,
     RequestType: ,
     ResponseType: ListAssistantsResponse,
@@ -1392,7 +1580,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /assistants,
+    Path: "/assistants",
     Properties: [
       {
         Id: model,
@@ -1513,8 +1701,17 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /assistants/{assistant_id},
-    Properties: null,
+    Path: $"/assistants/{assistantId}",
+    Properties: [
+      {
+        Id: assistant_id,
+        Name: AssistantId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      }
+    ],
     Summary: Retrieves an assistant.,
     RequestType: ,
     ResponseType: AssistantObject,
@@ -1527,8 +1724,16 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /assistants/{assistant_id},
+    Path: $"/assistants/{assistantId}",
     Properties: [
+      {
+        Id: assistant_id,
+        Name: AssistantId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      },
       {
         Id: model,
         Name: Model,
@@ -1648,8 +1853,17 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /assistants/{assistant_id},
-    Properties: null,
+    Path: $"/assistants/{assistantId}",
+    Properties: [
+      {
+        Id: assistant_id,
+        Name: AssistantId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      }
+    ],
     HttpMethod: Delete,
     Summary: Delete an assistant.,
     RequestType: ,
@@ -1663,7 +1877,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /threads,
+    Path: "/threads",
     Properties: [
       {
         Id: messages,
@@ -1704,8 +1918,17 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /threads/{thread_id},
-    Properties: null,
+    Path: $"/threads/{threadId}",
+    Properties: [
+      {
+        Id: thread_id,
+        Name: ThreadId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      }
+    ],
     Summary: Retrieves a thread.,
     RequestType: ,
     ResponseType: ThreadObject,
@@ -1718,8 +1941,16 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /threads/{thread_id},
+    Path: $"/threads/{threadId}",
     Properties: [
+      {
+        Id: thread_id,
+        Name: ThreadId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      },
       {
         Id: tool_resources,
         Name: ToolResources,
@@ -1752,8 +1983,17 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /threads/{thread_id},
-    Properties: null,
+    Path: $"/threads/{threadId}",
+    Properties: [
+      {
+        Id: thread_id,
+        Name: ThreadId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      }
+    ],
     HttpMethod: Delete,
     Summary: Delete a thread.,
     RequestType: ,
@@ -1767,8 +2007,61 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /threads/{thread_id}/messages,
-    Properties: null,
+    Path: $"/threads/{threadId}/messages",
+    Properties: [
+      {
+        Id: thread_id,
+        Name: ThreadId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      },
+      {
+        Id: limit,
+        Name: Limit,
+        Type: int,
+        IsRequired: false,
+        ParameterLocation: Query,
+        DefaultValue: 20,
+        Summary:
+<br/>Default Value: 20
+      },
+      {
+        Id: order,
+        Name: Order,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        DefaultValue: Order.Desc,
+        Summary:
+<br/>Default Value: desc
+      },
+      {
+        Id: after,
+        Name: After,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        Summary: 
+      },
+      {
+        Id: before,
+        Name: Before,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        Summary: 
+      },
+      {
+        Id: run_id,
+        Name: RunId,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        Summary: 
+      }
+    ],
     Summary: Returns a list of messages for a given thread.,
     RequestType: ,
     ResponseType: ListMessagesResponse,
@@ -1781,8 +2074,16 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /threads/{thread_id}/messages,
+    Path: $"/threads/{threadId}/messages",
     Properties: [
+      {
+        Id: thread_id,
+        Name: ThreadId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      },
       {
         Id: role,
         Name: Role,
@@ -1831,8 +2132,25 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /threads/{thread_id}/messages/{message_id},
-    Properties: null,
+    Path: $"/threads/{threadId}/messages/{messageId}",
+    Properties: [
+      {
+        Id: thread_id,
+        Name: ThreadId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      },
+      {
+        Id: message_id,
+        Name: MessageId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      }
+    ],
     Summary: Retrieve a message.,
     RequestType: ,
     ResponseType: MessageObject,
@@ -1845,8 +2163,24 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /threads/{thread_id}/messages/{message_id},
+    Path: $"/threads/{threadId}/messages/{messageId}",
     Properties: [
+      {
+        Id: thread_id,
+        Name: ThreadId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      },
+      {
+        Id: message_id,
+        Name: MessageId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      },
       {
         Id: metadata,
         Name: Metadata,
@@ -1870,8 +2204,25 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /threads/{thread_id}/messages/{message_id},
-    Properties: null,
+    Path: $"/threads/{threadId}/messages/{messageId}",
+    Properties: [
+      {
+        Id: thread_id,
+        Name: ThreadId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      },
+      {
+        Id: message_id,
+        Name: MessageId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      }
+    ],
     HttpMethod: Delete,
     Summary: Deletes a message.,
     RequestType: ,
@@ -1885,7 +2236,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /threads/runs,
+    Path: "/threads/runs",
     Properties: [
       {
         Id: assistant_id,
@@ -2043,8 +2394,53 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /threads/{thread_id}/runs,
-    Properties: null,
+    Path: $"/threads/{threadId}/runs",
+    Properties: [
+      {
+        Id: thread_id,
+        Name: ThreadId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      },
+      {
+        Id: limit,
+        Name: Limit,
+        Type: int,
+        IsRequired: false,
+        ParameterLocation: Query,
+        DefaultValue: 20,
+        Summary:
+<br/>Default Value: 20
+      },
+      {
+        Id: order,
+        Name: Order,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        DefaultValue: Order.Desc,
+        Summary:
+<br/>Default Value: desc
+      },
+      {
+        Id: after,
+        Name: After,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        Summary: 
+      },
+      {
+        Id: before,
+        Name: Before,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        Summary: 
+      }
+    ],
     Summary: Returns a list of runs belonging to a thread.,
     RequestType: ,
     ResponseType: ListRunsResponse,
@@ -2057,8 +2453,16 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /threads/{thread_id}/runs,
+    Path: $"/threads/{threadId}/runs",
     Properties: [
+      {
+        Id: thread_id,
+        Name: ThreadId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      },
       {
         Id: assistant_id,
         Name: AssistantId,
@@ -2213,8 +2617,25 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /threads/{thread_id}/runs/{run_id},
-    Properties: null,
+    Path: $"/threads/{threadId}/runs/{runId}",
+    Properties: [
+      {
+        Id: thread_id,
+        Name: ThreadId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      },
+      {
+        Id: run_id,
+        Name: RunId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      }
+    ],
     Summary: Retrieves a run.,
     RequestType: ,
     ResponseType: RunObject,
@@ -2227,8 +2648,24 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /threads/{thread_id}/runs/{run_id},
+    Path: $"/threads/{threadId}/runs/{runId}",
     Properties: [
+      {
+        Id: thread_id,
+        Name: ThreadId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      },
+      {
+        Id: run_id,
+        Name: RunId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      },
       {
         Id: metadata,
         Name: Metadata,
@@ -2252,8 +2689,24 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /threads/{thread_id}/runs/{run_id}/submit_tool_outputs,
+    Path: $"/threads/{threadId}/runs/{runId}/submit_tool_outputs",
     Properties: [
+      {
+        Id: thread_id,
+        Name: ThreadId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      },
+      {
+        Id: run_id,
+        Name: RunId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      },
       {
         Id: tool_outputs,
         Name: ToolOutputs,
@@ -2284,8 +2737,25 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /threads/{thread_id}/runs/{run_id}/cancel,
-    Properties: null,
+    Path: $"/threads/{threadId}/runs/{runId}/cancel",
+    Properties: [
+      {
+        Id: thread_id,
+        Name: ThreadId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      },
+      {
+        Id: run_id,
+        Name: RunId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      }
+    ],
     HttpMethod: Post,
     Summary: Cancels a run that is `in_progress`.,
     RequestType: ,
@@ -2299,8 +2769,61 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /threads/{thread_id}/runs/{run_id}/steps,
-    Properties: null,
+    Path: $"/threads/{threadId}/runs/{runId}/steps",
+    Properties: [
+      {
+        Id: thread_id,
+        Name: ThreadId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      },
+      {
+        Id: run_id,
+        Name: RunId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      },
+      {
+        Id: limit,
+        Name: Limit,
+        Type: int,
+        IsRequired: false,
+        ParameterLocation: Query,
+        DefaultValue: 20,
+        Summary:
+<br/>Default Value: 20
+      },
+      {
+        Id: order,
+        Name: Order,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        DefaultValue: Order.Desc,
+        Summary:
+<br/>Default Value: desc
+      },
+      {
+        Id: after,
+        Name: After,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        Summary: 
+      },
+      {
+        Id: before,
+        Name: Before,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        Summary: 
+      }
+    ],
     Summary: Returns a list of run steps belonging to a run.,
     RequestType: ,
     ResponseType: ListRunStepsResponse,
@@ -2313,8 +2836,33 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /threads/{thread_id}/runs/{run_id}/steps/{step_id},
-    Properties: null,
+    Path: $"/threads/{threadId}/runs/{runId}/steps/{stepId}",
+    Properties: [
+      {
+        Id: thread_id,
+        Name: ThreadId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      },
+      {
+        Id: run_id,
+        Name: RunId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      },
+      {
+        Id: step_id,
+        Name: StepId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      }
+    ],
     Summary: Retrieves a run step.,
     RequestType: ,
     ResponseType: RunStepObject,
@@ -2327,8 +2875,45 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /vector_stores,
-    Properties: null,
+    Path: "/vector_stores",
+    Properties: [
+      {
+        Id: limit,
+        Name: Limit,
+        Type: int,
+        IsRequired: false,
+        ParameterLocation: Query,
+        DefaultValue: 20,
+        Summary:
+<br/>Default Value: 20
+      },
+      {
+        Id: order,
+        Name: Order,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        DefaultValue: Order.Desc,
+        Summary:
+<br/>Default Value: desc
+      },
+      {
+        Id: after,
+        Name: After,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        Summary: 
+      },
+      {
+        Id: before,
+        Name: Before,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        Summary: 
+      }
+    ],
     Summary: Returns a list of vector stores.,
     RequestType: ,
     ResponseType: ListVectorStoresResponse,
@@ -2341,7 +2926,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /vector_stores,
+    Path: "/vector_stores",
     Properties: [
       {
         Id: file_ids,
@@ -2387,8 +2972,17 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /vector_stores/{vector_store_id},
-    Properties: null,
+    Path: $"/vector_stores/{vectorStoreId}",
+    Properties: [
+      {
+        Id: vector_store_id,
+        Name: VectorStoreId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      }
+    ],
     Summary: Retrieves a vector store.,
     RequestType: ,
     ResponseType: VectorStoreObject,
@@ -2401,8 +2995,16 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /vector_stores/{vector_store_id},
+    Path: $"/vector_stores/{vectorStoreId}",
     Properties: [
+      {
+        Id: vector_store_id,
+        Name: VectorStoreId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      },
       {
         Id: name,
         Name: Name,
@@ -2440,8 +3042,17 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /vector_stores/{vector_store_id},
-    Properties: null,
+    Path: $"/vector_stores/{vectorStoreId}",
+    Properties: [
+      {
+        Id: vector_store_id,
+        Name: VectorStoreId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      }
+    ],
     HttpMethod: Delete,
     Summary: Delete a vector store.,
     RequestType: ,
@@ -2455,8 +3066,61 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /vector_stores/{vector_store_id}/files,
-    Properties: null,
+    Path: $"/vector_stores/{vectorStoreId}/files",
+    Properties: [
+      {
+        Id: vector_store_id,
+        Name: VectorStoreId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      },
+      {
+        Id: limit,
+        Name: Limit,
+        Type: int,
+        IsRequired: false,
+        ParameterLocation: Query,
+        DefaultValue: 20,
+        Summary:
+<br/>Default Value: 20
+      },
+      {
+        Id: order,
+        Name: Order,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        DefaultValue: Order.Desc,
+        Summary:
+<br/>Default Value: desc
+      },
+      {
+        Id: after,
+        Name: After,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        Summary: 
+      },
+      {
+        Id: before,
+        Name: Before,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        Summary: 
+      },
+      {
+        Id: filter,
+        Name: Filter,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        Summary: 
+      }
+    ],
     Summary: Returns a list of vector store files.,
     RequestType: ,
     ResponseType: ListVectorStoreFilesResponse,
@@ -2469,8 +3133,17 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /vector_stores/{vector_store_id}/files,
+    Path: $"/vector_stores/{vectorStoreId}/files",
     Properties: [
+      {
+        Id: vector_store_id,
+        Name: VectorStoreId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary:
+<br/>Example: vs_abc123
+      },
       {
         Id: file_id,
         Name: FileId,
@@ -2492,8 +3165,27 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /vector_stores/{vector_store_id}/files/{file_id},
-    Properties: null,
+    Path: $"/vector_stores/{vectorStoreId}/files/{fileId}",
+    Properties: [
+      {
+        Id: vector_store_id,
+        Name: VectorStoreId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary:
+<br/>Example: vs_abc123
+      },
+      {
+        Id: file_id,
+        Name: FileId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary:
+<br/>Example: file-abc123
+      }
+    ],
     Summary: Retrieves a vector store file.,
     RequestType: ,
     ResponseType: VectorStoreFileObject,
@@ -2506,8 +3198,25 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /vector_stores/{vector_store_id}/files/{file_id},
-    Properties: null,
+    Path: $"/vector_stores/{vectorStoreId}/files/{fileId}",
+    Properties: [
+      {
+        Id: vector_store_id,
+        Name: VectorStoreId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      },
+      {
+        Id: file_id,
+        Name: FileId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      }
+    ],
     HttpMethod: Delete,
     Summary: Delete a vector store file. This will remove the file from the vector store but the file itself will not be deleted. To delete the file, use the [delete file](/docs/api-reference/files/delete) endpoint.,
     RequestType: ,
@@ -2521,8 +3230,17 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /vector_stores/{vector_store_id}/file_batches,
+    Path: $"/vector_stores/{vectorStoreId}/file_batches",
     Properties: [
+      {
+        Id: vector_store_id,
+        Name: VectorStoreId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary:
+<br/>Example: vs_abc123
+      },
       {
         Id: file_ids,
         Name: FileIds,
@@ -2544,8 +3262,27 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /vector_stores/{vector_store_id}/file_batches/{batch_id},
-    Properties: null,
+    Path: $"/vector_stores/{vectorStoreId}/file_batches/{batchId}",
+    Properties: [
+      {
+        Id: vector_store_id,
+        Name: VectorStoreId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary:
+<br/>Example: vs_abc123
+      },
+      {
+        Id: batch_id,
+        Name: BatchId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary:
+<br/>Example: vsfb_abc123
+      }
+    ],
     Summary: Retrieves a vector store file batch.,
     RequestType: ,
     ResponseType: VectorStoreFileBatchObject,
@@ -2558,8 +3295,25 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /vector_stores/{vector_store_id}/file_batches/{batch_id}/cancel,
-    Properties: null,
+    Path: $"/vector_stores/{vectorStoreId}/file_batches/{batchId}/cancel",
+    Properties: [
+      {
+        Id: vector_store_id,
+        Name: VectorStoreId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      },
+      {
+        Id: batch_id,
+        Name: BatchId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      }
+    ],
     HttpMethod: Post,
     Summary: Cancel a vector store file batch. This attempts to cancel the processing of files in this batch as soon as possible.,
     RequestType: ,
@@ -2573,8 +3327,69 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /vector_stores/{vector_store_id}/file_batches/{batch_id}/files,
-    Properties: null,
+    Path: $"/vector_stores/{vectorStoreId}/file_batches/{batchId}/files",
+    Properties: [
+      {
+        Id: vector_store_id,
+        Name: VectorStoreId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      },
+      {
+        Id: batch_id,
+        Name: BatchId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      },
+      {
+        Id: limit,
+        Name: Limit,
+        Type: int,
+        IsRequired: false,
+        ParameterLocation: Query,
+        DefaultValue: 20,
+        Summary:
+<br/>Default Value: 20
+      },
+      {
+        Id: order,
+        Name: Order,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        DefaultValue: Order.Desc,
+        Summary:
+<br/>Default Value: desc
+      },
+      {
+        Id: after,
+        Name: After,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        Summary: 
+      },
+      {
+        Id: before,
+        Name: Before,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        Summary: 
+      },
+      {
+        Id: filter,
+        Name: Filter,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        Summary: 
+      }
+    ],
     Summary: Returns a list of vector store files in a batch.,
     RequestType: ,
     ResponseType: ListVectorStoreFilesResponse,
@@ -2587,7 +3402,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /batches,
+    Path: "/batches",
     Properties: [
       {
         Id: input_file_id,
@@ -2637,8 +3452,27 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /batches,
-    Properties: null,
+    Path: "/batches",
+    Properties: [
+      {
+        Id: after,
+        Name: After,
+        Type: string,
+        IsRequired: false,
+        ParameterLocation: Query,
+        Summary: 
+      },
+      {
+        Id: limit,
+        Name: Limit,
+        Type: int,
+        IsRequired: false,
+        ParameterLocation: Query,
+        DefaultValue: 20,
+        Summary:
+<br/>Default Value: 20
+      }
+    ],
     Summary: List your organization's batches.,
     RequestType: ,
     ResponseType: ListBatchesResponse,
@@ -2651,8 +3485,17 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /batches/{batch_id},
-    Properties: null,
+    Path: $"/batches/{batchId}",
+    Properties: [
+      {
+        Id: batch_id,
+        Name: BatchId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      }
+    ],
     Summary: Retrieves a batch.,
     RequestType: ,
     ResponseType: Batch,
@@ -2665,8 +3508,17 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: /batches/{batch_id}/cancel,
-    Properties: null,
+    Path: $"/batches/{batchId}/cancel",
+    Properties: [
+      {
+        Id: batch_id,
+        Name: BatchId,
+        Type: string,
+        IsRequired: true,
+        ParameterLocation: Path,
+        Summary: 
+      }
+    ],
     HttpMethod: Post,
     Summary: Cancels an in-progress batch.,
     RequestType: ,

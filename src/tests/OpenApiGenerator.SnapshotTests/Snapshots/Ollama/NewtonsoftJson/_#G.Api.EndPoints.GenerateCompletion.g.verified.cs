@@ -89,7 +89,10 @@ namespace G
                 KeepAlive = keepAlive,
             };
 
-            var enumerable = GenerateCompletionAsync(request, cancellationToken);
+            var enumerable = GenerateCompletionAsync(
+                request: request,
+                cancellationToken: cancellationToken);
+
             await foreach (var response in enumerable)
             {
                 yield return response;

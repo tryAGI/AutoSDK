@@ -12,6 +12,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<MessageObject> CreateMessageAsync(
+            string threadId,
             CreateMessageRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -19,7 +20,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: "/threads/{thread_id}/messages");
+                requestUri: $"/threads/{threadId}/messages");
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: global::System.Text.Json.JsonSerializer.Serialize(request),
                 encoding: global::System.Text.Encoding.UTF8,
@@ -41,6 +42,7 @@ namespace G
         /// <summary>
         /// Create a message.
         /// </summary>
+        /// <param name="threadId"></param>
         /// <param name="role"></param>
         /// <param name="content"></param>
         /// <param name="attachments"></param>
@@ -48,6 +50,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<MessageObject> CreateMessageAsync(
+            string threadId,
             string role,
             object content,
             global::System.Collections.Generic.IList<CreateMessageRequestAttachments?>? attachments,
@@ -62,7 +65,10 @@ namespace G
                 Metadata = metadata,
             };
 
-            return await CreateMessageAsync(request, cancellationToken).ConfigureAwait(false);
+            return await CreateMessageAsync(
+                threadId: threadId,
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

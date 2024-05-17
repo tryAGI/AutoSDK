@@ -65,7 +65,10 @@ namespace G
                 Stream = stream,
             };
 
-            var enumerable = CreateModelAsync(request, cancellationToken);
+            var enumerable = CreateModelAsync(
+                request: request,
+                cancellationToken: cancellationToken);
+
             await foreach (var response in enumerable)
             {
                 yield return response;

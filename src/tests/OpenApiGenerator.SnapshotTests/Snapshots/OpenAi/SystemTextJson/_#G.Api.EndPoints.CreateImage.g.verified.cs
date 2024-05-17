@@ -74,7 +74,9 @@ namespace G
                 User = user,
             };
 
-            return await CreateImageAsync(request, cancellationToken).ConfigureAwait(false);
+            return await CreateImageAsync(
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

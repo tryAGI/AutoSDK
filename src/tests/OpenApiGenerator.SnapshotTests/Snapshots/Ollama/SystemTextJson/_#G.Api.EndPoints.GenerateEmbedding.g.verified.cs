@@ -59,7 +59,9 @@ namespace G
                 Options = options,
             };
 
-            return await GenerateEmbeddingAsync(request, cancellationToken).ConfigureAwait(false);
+            return await GenerateEmbeddingAsync(
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

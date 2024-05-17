@@ -104,7 +104,9 @@ namespace G
                 User = user,
             };
 
-            return await CreateCompletionAsync(request, cancellationToken).ConfigureAwait(false);
+            return await CreateCompletionAsync(
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

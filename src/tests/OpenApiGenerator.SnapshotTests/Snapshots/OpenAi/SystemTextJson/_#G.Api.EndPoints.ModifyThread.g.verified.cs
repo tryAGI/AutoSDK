@@ -12,6 +12,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<ThreadObject> ModifyThreadAsync(
+            string threadId,
             ModifyThreadRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -19,7 +20,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: "/threads/{thread_id}");
+                requestUri: $"/threads/{threadId}");
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: global::System.Text.Json.JsonSerializer.Serialize(request),
                 encoding: global::System.Text.Encoding.UTF8,
@@ -41,11 +42,13 @@ namespace G
         /// <summary>
         /// Modifies a thread.
         /// </summary>
+        /// <param name="threadId"></param>
         /// <param name="toolResources"></param>
         /// <param name="metadata"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<ThreadObject> ModifyThreadAsync(
+            string threadId,
             ModifyThreadRequestToolResources? toolResources,
             ModifyThreadRequestMetadata? metadata,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -56,7 +59,10 @@ namespace G
                 Metadata = metadata,
             };
 
-            return await ModifyThreadAsync(request, cancellationToken).ConfigureAwait(false);
+            return await ModifyThreadAsync(
+                threadId: threadId,
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

@@ -59,7 +59,9 @@ namespace G
                 Speed = speed,
             };
 
-            await CreateSpeechAsync(request, cancellationToken).ConfigureAwait(false);
+            await CreateSpeechAsync(
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

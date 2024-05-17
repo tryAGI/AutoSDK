@@ -12,11 +12,12 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<AsnResponse> GetAsnAsync(
+            int asn,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: "/AS{asn}/json");
+                requestUri: $"/AS{asn}/json");
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

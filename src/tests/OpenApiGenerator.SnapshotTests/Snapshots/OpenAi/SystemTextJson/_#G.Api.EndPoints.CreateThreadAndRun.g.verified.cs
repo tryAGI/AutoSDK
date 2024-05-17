@@ -95,7 +95,9 @@ namespace G
                 ResponseFormat = responseFormat,
             };
 
-            return await CreateThreadAndRunAsync(request, cancellationToken).ConfigureAwait(false);
+            return await CreateThreadAndRunAsync(
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

@@ -65,7 +65,9 @@ namespace G
                 User = user,
             };
 
-            return await CreateEmbeddingAsync(request, cancellationToken).ConfigureAwait(false);
+            return await CreateEmbeddingAsync(
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

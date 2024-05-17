@@ -12,6 +12,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<RunObject> CreateRunAsync(
+            string threadId,
             CreateRunRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -19,7 +20,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: "/threads/{thread_id}/runs");
+                requestUri: $"/threads/{threadId}/runs");
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: global::Newtonsoft.Json.JsonConvert.SerializeObject(request),
                 encoding: global::System.Text.Encoding.UTF8,
@@ -41,6 +42,7 @@ namespace G
         /// <summary>
         /// Create a run.
         /// </summary>
+        /// <param name="threadId"></param>
         /// <param name="assistantId"></param>
         /// <param name="model"></param>
         /// <param name="instructions"></param>
@@ -59,6 +61,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<RunObject> CreateRunAsync(
+            string threadId,
             string assistantId,
             object? model,
             string? instructions,
@@ -95,7 +98,10 @@ namespace G
                 ResponseFormat = responseFormat,
             };
 
-            return await CreateRunAsync(request, cancellationToken).ConfigureAwait(false);
+            return await CreateRunAsync(
+                threadId: threadId,
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

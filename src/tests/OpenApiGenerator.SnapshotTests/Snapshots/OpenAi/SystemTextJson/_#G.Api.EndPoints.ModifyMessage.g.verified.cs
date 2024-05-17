@@ -12,6 +12,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<MessageObject> ModifyMessageAsync(
+            string threadId,
+            string messageId,
             ModifyMessageRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -19,7 +21,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: "/threads/{thread_id}/messages/{message_id}");
+                requestUri: $"/threads/{threadId}/messages/{messageId}");
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: global::System.Text.Json.JsonSerializer.Serialize(request),
                 encoding: global::System.Text.Encoding.UTF8,
@@ -41,10 +43,14 @@ namespace G
         /// <summary>
         /// Modifies a message.
         /// </summary>
+        /// <param name="threadId"></param>
+        /// <param name="messageId"></param>
         /// <param name="metadata"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<MessageObject> ModifyMessageAsync(
+            string threadId,
+            string messageId,
             ModifyMessageRequestMetadata? metadata,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -53,7 +59,11 @@ namespace G
                 Metadata = metadata,
             };
 
-            return await ModifyMessageAsync(request, cancellationToken).ConfigureAwait(false);
+            return await ModifyMessageAsync(
+                threadId: threadId,
+                messageId: messageId,
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

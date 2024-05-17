@@ -80,7 +80,9 @@ namespace G
                 ResponseFormat = responseFormat,
             };
 
-            return await CreateAssistantAsync(request, cancellationToken).ConfigureAwait(false);
+            return await CreateAssistantAsync(
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

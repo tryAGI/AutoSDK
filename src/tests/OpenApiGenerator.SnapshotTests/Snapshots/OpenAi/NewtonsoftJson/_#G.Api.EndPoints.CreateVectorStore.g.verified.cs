@@ -62,7 +62,9 @@ namespace G
                 Metadata = metadata,
             };
 
-            return await CreateVectorStoreAsync(request, cancellationToken).ConfigureAwait(false);
+            return await CreateVectorStoreAsync(
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

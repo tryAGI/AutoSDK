@@ -12,11 +12,13 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<RunObject> GetRunAsync(
+            string threadId,
+            string runId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: "/threads/{thread_id}/runs/{run_id}");
+                requestUri: $"/threads/{threadId}/runs/{runId}");
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

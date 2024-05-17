@@ -12,6 +12,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<VectorStoreFileObject> CreateVectorStoreFileAsync(
+            string vectorStoreId,
             CreateVectorStoreFileRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -19,7 +20,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: "/vector_stores/{vector_store_id}/files");
+                requestUri: $"/vector_stores/{vectorStoreId}/files");
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: global::Newtonsoft.Json.JsonConvert.SerializeObject(request),
                 encoding: global::System.Text.Encoding.UTF8,
@@ -41,10 +42,12 @@ namespace G
         /// <summary>
         /// Create a vector store file by attaching a [File](/docs/api-reference/files) to a [vector store](/docs/api-reference/vector-stores/object).
         /// </summary>
+        /// <param name="vectorStoreId"></param>
         /// <param name="fileId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<VectorStoreFileObject> CreateVectorStoreFileAsync(
+            string vectorStoreId,
             string fileId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -53,7 +56,10 @@ namespace G
                 FileId = fileId,
             };
 
-            return await CreateVectorStoreFileAsync(request, cancellationToken).ConfigureAwait(false);
+            return await CreateVectorStoreFileAsync(
+                vectorStoreId: vectorStoreId,
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

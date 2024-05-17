@@ -91,6 +91,7 @@ public readonly record struct ModelData(
                 .Select(x => PropertyData.FromSchema(
                     schema: x,
                     requiredProperties: requiredProperties,
+                    parameterLocation: null,
                     settings: settings,
                     parents: innerParents))
                 .ToImmutableArray(),

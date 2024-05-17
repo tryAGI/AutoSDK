@@ -12,6 +12,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<AssistantObject> ModifyAssistantAsync(
+            string assistantId,
             ModifyAssistantRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -19,7 +20,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: "/assistants/{assistant_id}");
+                requestUri: $"/assistants/{assistantId}");
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: global::System.Text.Json.JsonSerializer.Serialize(request),
                 encoding: global::System.Text.Encoding.UTF8,
@@ -41,6 +42,7 @@ namespace G
         /// <summary>
         /// Modifies an assistant.
         /// </summary>
+        /// <param name="assistantId"></param>
         /// <param name="model"></param>
         /// <param name="name"></param>
         /// <param name="description"></param>
@@ -54,6 +56,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<AssistantObject> ModifyAssistantAsync(
+            string assistantId,
             object? model,
             string? name,
             string? description,
@@ -80,7 +83,10 @@ namespace G
                 ResponseFormat = responseFormat,
             };
 
-            return await ModifyAssistantAsync(request, cancellationToken).ConfigureAwait(false);
+            return await ModifyAssistantAsync(
+                assistantId: assistantId,
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

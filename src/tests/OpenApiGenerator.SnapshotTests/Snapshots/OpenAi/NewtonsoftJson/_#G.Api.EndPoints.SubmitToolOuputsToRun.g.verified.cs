@@ -12,6 +12,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<RunObject> SubmitToolOuputsToRunAsync(
+            string threadId,
+            string runId,
             SubmitToolOutputsRunRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -19,7 +21,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: "/threads/{thread_id}/runs/{run_id}/submit_tool_outputs");
+                requestUri: $"/threads/{threadId}/runs/{runId}/submit_tool_outputs");
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: global::Newtonsoft.Json.JsonConvert.SerializeObject(request),
                 encoding: global::System.Text.Encoding.UTF8,
@@ -41,11 +43,15 @@ namespace G
         /// <summary>
         /// When a run has the `status: "requires_action"` and `required_action.type` is `submit_tool_outputs`, this endpoint can be used to submit the outputs from the tool calls once they're all completed. All outputs must be submitted in a single request.
         /// </summary>
+        /// <param name="threadId"></param>
+        /// <param name="runId"></param>
         /// <param name="toolOutputs"></param>
         /// <param name="stream"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<RunObject> SubmitToolOuputsToRunAsync(
+            string threadId,
+            string runId,
             global::System.Collections.Generic.IList<SubmitToolOutputsRunRequestToolOutputs> toolOutputs,
             bool? stream,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -56,7 +62,11 @@ namespace G
                 Stream = stream,
             };
 
-            return await SubmitToolOuputsToRunAsync(request, cancellationToken).ConfigureAwait(false);
+            return await SubmitToolOuputsToRunAsync(
+                threadId: threadId,
+                runId: runId,
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

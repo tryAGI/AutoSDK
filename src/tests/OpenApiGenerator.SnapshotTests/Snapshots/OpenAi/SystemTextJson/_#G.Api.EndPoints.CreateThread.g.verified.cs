@@ -59,7 +59,9 @@ namespace G
                 Metadata = metadata,
             };
 
-            return await CreateThreadAsync(request, cancellationToken).ConfigureAwait(false);
+            return await CreateThreadAsync(
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

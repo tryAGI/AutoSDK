@@ -12,6 +12,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task Update_run_runs__run_id__patchAsync(
+            string runId,
             RunUpdateSchemaExtended request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -19,7 +20,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Patch,
-                requestUri: "/runs/{run_id}");
+                requestUri: $"/runs/{runId}");
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: global::System.Text.Json.JsonSerializer.Serialize(request),
                 encoding: global::System.Text.Encoding.UTF8,
@@ -35,6 +36,7 @@ namespace G
         /// <summary>
         /// Update Run
         /// </summary>
+        /// <param name="runId"></param>
         /// <param name="endTime"></param>
         /// <param name="error"></param>
         /// <param name="inputs"></param>
@@ -43,6 +45,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task Update_run_runs__run_id__patchAsync(
+            string runId,
             global::System.DateTime endTime,
             string? error,
             object? inputs,
@@ -59,7 +62,10 @@ namespace G
                 Events = events,
             };
 
-            await Update_run_runs__run_id__patchAsync(request, cancellationToken).ConfigureAwait(false);
+            await Update_run_runs__run_id__patchAsync(
+                runId: runId,
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

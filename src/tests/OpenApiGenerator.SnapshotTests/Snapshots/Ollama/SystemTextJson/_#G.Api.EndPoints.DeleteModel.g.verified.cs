@@ -47,7 +47,9 @@ namespace G
                 Name = name,
             };
 
-            await DeleteModelAsync(request, cancellationToken).ConfigureAwait(false);
+            await DeleteModelAsync(
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

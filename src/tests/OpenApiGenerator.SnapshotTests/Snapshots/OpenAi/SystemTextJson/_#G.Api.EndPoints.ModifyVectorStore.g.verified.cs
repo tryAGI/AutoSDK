@@ -12,6 +12,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<VectorStoreObject> ModifyVectorStoreAsync(
+            string vectorStoreId,
             UpdateVectorStoreRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -19,7 +20,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: "/vector_stores/{vector_store_id}");
+                requestUri: $"/vector_stores/{vectorStoreId}");
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: global::System.Text.Json.JsonSerializer.Serialize(request),
                 encoding: global::System.Text.Encoding.UTF8,
@@ -41,12 +42,14 @@ namespace G
         /// <summary>
         /// Modifies a vector store.
         /// </summary>
+        /// <param name="vectorStoreId"></param>
         /// <param name="name"></param>
         /// <param name="expiresAfter"></param>
         /// <param name="metadata"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<VectorStoreObject> ModifyVectorStoreAsync(
+            string vectorStoreId,
             string? name,
             VectorStoreExpirationAfter? expiresAfter,
             UpdateVectorStoreRequestMetadata? metadata,
@@ -59,7 +62,10 @@ namespace G
                 Metadata = metadata,
             };
 
-            return await ModifyVectorStoreAsync(request, cancellationToken).ConfigureAwait(false);
+            return await ModifyVectorStoreAsync(
+                vectorStoreId: vectorStoreId,
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }
