@@ -34,13 +34,13 @@ namespace G
         /// Extracted words and their corresponding timestamps.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("words")]
-        public global::System.Collections.Generic.IList<TranscriptionWord?>? Words { get; set; }
+        public global::System.Collections.Generic.IList<TranscriptionWord>? Words { get; set; }
 
         /// <summary>
         /// Segments of the transcribed text and their corresponding details.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("segments")]
-        public global::System.Collections.Generic.IList<TranscriptionSegment?>? Segments { get; set; }
+        public global::System.Collections.Generic.IList<TranscriptionSegment>? Segments { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

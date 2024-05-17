@@ -619,11 +619,11 @@ components:
         session_name:
           title: Session Name
           type: string
-        #        child_runs:
-        #          title: Child Runs
-        #          type: array
-        #          items:
-        #            $ref: '#/components/schemas/RunCreateSchema'
+        child_runs:
+          title: Child Runs
+          type: array
+          items:
+            $ref: '#/components/schemas/RunCreateSchema'
         reference_example_id:
           title: Reference Example Id
           type: string

@@ -1098,7 +1098,7 @@ If `false` the response will be returned as a single response object, otherwise 
       {
         Id: models,
         Name: Models,
-        Type: global::System.Collections.Generic.IList<Model?>?,
+        Type: global::System.Collections.Generic.IList<Model>?,
         IsRequired: false,
         Summary: List of models available locally.
       }

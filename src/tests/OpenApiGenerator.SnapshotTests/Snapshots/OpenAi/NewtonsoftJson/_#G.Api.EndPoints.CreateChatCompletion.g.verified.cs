@@ -81,11 +81,11 @@ namespace G
             ChatCompletionStreamOptions? streamOptions,
             double? temperature,
             double? topP,
-            global::System.Collections.Generic.IList<ChatCompletionTool?>? tools,
+            global::System.Collections.Generic.IList<ChatCompletionTool>? tools,
             ChatCompletionToolChoiceOption? toolChoice,
             string? user,
             object? functionCall,
-            global::System.Collections.Generic.IList<ChatCompletionFunctions?>? functions,
+            global::System.Collections.Generic.IList<ChatCompletionFunctions>? functions,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateChatCompletionRequest

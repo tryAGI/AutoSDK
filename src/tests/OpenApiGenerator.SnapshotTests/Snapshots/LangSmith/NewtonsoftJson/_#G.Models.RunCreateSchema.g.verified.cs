@@ -114,6 +114,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("child_runs")]
+        public global::System.Collections.Generic.IList<RunCreateSchema>? ChildRuns { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reference_example_id")]
         public string? ReferenceExampleId { get; set; }
 

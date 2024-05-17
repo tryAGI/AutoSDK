@@ -67,13 +67,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prefixes")]
-        public global::System.Collections.Generic.IList<Prefix?>? Prefixes { get; set; }
+        public global::System.Collections.Generic.IList<Prefix>? Prefixes { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prefixes6")]
-        public global::System.Collections.Generic.IList<Prefix6?>? Prefixes6 { get; set; }
+        public global::System.Collections.Generic.IList<Prefix6>? Prefixes6 { get; set; }
 
         /// <summary>
         /// 

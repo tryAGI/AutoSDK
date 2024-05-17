@@ -67,7 +67,9 @@ public static class OpenApiExtensions
             ("number", _) => ("double", false),
             ("string", _) => ("string", true),
             ("object", _) => ("object", true),
-            ("array", _) => (schema.Value.Items.WithKey(schema.Key)
+            ("array", _) when schema.Value.Items.Reference != null =>
+                ($"{ModelData.FromKey(schema.Value.Items.Reference.Id, settings).ClassName}".AsArray(), true),
+            ("array", _) when schema.Value.Items.Reference == null => (schema.Value.Items.WithKey(schema.Key)
                 .GetCSharpType(settings, parents.ToArray()).AsArray(), true),
             _ => throw new NotSupportedException($"Type {schema.Value.Type} is not supported."),
         };

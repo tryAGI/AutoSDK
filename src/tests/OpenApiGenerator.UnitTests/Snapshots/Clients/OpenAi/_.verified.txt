@@ -187,7 +187,7 @@ We generally recommend altering this or `temperature` but not both.
       {
         Id: tools,
         Name: Tools,
-        Type: global::System.Collections.Generic.IList<ChatCompletionTool?>?,
+        Type: global::System.Collections.Generic.IList<ChatCompletionTool>?,
         IsRequired: false,
         Summary:
 A list of tools the model may call. Currently, only functions are supported as a tool. Use this to provide a list of functions the model may generate JSON inputs for. A max of 128 functions are supported.
@@ -238,7 +238,7 @@ Specifying a particular function via `{"name": "my_function"}` forces the model 
       {
         Id: functions,
         Name: Functions,
-        Type: global::System.Collections.Generic.IList<ChatCompletionFunctions?>?,
+        Type: global::System.Collections.Generic.IList<ChatCompletionFunctions>?,
         IsRequired: false,
         Summary:
 Deprecated in favor of `tools`.
@@ -1668,7 +1668,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       {
         Id: messages,
         Name: Messages,
-        Type: global::System.Collections.Generic.IList<CreateMessageRequest?>?,
+        Type: global::System.Collections.Generic.IList<CreateMessageRequest>?,
         IsRequired: false,
         Summary: A list of [messages](/docs/api-reference/messages) to start the thread with.
       },
@@ -2093,7 +2093,7 @@ The ID of the [Model](/docs/api-reference/models) to be used to execute this run
       {
         Id: additional_messages,
         Name: AdditionalMessages,
-        Type: global::System.Collections.Generic.IList<CreateMessageRequest?>?,
+        Type: global::System.Collections.Generic.IList<CreateMessageRequest>?,
         IsRequired: false,
         Summary: Adds additional messages to the thread before creating the run.
       },

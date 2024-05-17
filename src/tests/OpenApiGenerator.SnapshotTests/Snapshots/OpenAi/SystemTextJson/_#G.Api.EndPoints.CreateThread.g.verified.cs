@@ -47,7 +47,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<ThreadObject> CreateThreadAsync(
-            global::System.Collections.Generic.IList<CreateMessageRequest?>? messages,
+            global::System.Collections.Generic.IList<CreateMessageRequest>? messages,
             CreateThreadRequestToolResources? toolResources,
             CreateThreadRequestMetadata? metadata,
             global::System.Threading.CancellationToken cancellationToken = default)

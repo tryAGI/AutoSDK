@@ -13,7 +13,7 @@ namespace G
         /// List of models available locally.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("models")]
-        public global::System.Collections.Generic.IList<Model?>? Models { get; set; }
+        public global::System.Collections.Generic.IList<Model>? Models { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

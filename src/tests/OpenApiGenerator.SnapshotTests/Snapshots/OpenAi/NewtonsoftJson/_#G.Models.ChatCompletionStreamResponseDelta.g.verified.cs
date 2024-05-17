@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_calls")]
-        public global::System.Collections.Generic.IList<ChatCompletionMessageToolCallChunk?>? ToolCalls { get; set; }
+        public global::System.Collections.Generic.IList<ChatCompletionMessageToolCallChunk>? ToolCalls { get; set; }
 
         /// <summary>
         /// The role of the author of this message.

@@ -117,7 +117,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("child_runs")]
-        public global::System.Collections.Generic.IList<RunCreateSchema?>? ChildRuns { get; set; }
+        public global::System.Collections.Generic.IList<RunCreateSchema>? ChildRuns { get; set; }
 
         /// <summary>
         /// 

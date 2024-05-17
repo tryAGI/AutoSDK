@@ -116,6 +116,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("child_runs")]
+        public global::System.Collections.Generic.IList<RunCreateSchema>? ChildRuns { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reference_example_id")]
         public string? ReferenceExampleId { get; set; }
 

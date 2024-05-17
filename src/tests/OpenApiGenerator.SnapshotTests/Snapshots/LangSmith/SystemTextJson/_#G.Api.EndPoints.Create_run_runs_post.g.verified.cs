@@ -74,7 +74,7 @@ namespace G
             string? id,
             string? sessionId,
             string? sessionName,
-            global::System.Collections.Generic.IList<RunCreateSchema?>? childRuns,
+            global::System.Collections.Generic.IList<RunCreateSchema>? childRuns,
             string? referenceExampleId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

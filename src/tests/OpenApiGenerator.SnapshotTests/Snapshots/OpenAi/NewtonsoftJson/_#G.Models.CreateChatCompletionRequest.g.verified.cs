@@ -133,7 +133,7 @@ namespace G
         /// A list of tools the model may call. Currently, only functions are supported as a tool. Use this to provide a list of functions the model may generate JSON inputs for. A max of 128 functions are supported.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tools")]
-        public global::System.Collections.Generic.IList<ChatCompletionTool?>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<ChatCompletionTool>? Tools { get; set; }
 
         /// <summary>
         /// Controls which (if any) tool is called by the model.
@@ -169,7 +169,7 @@ namespace G
         /// A list of functions the model may generate JSON inputs for.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("functions")]
-        public global::System.Collections.Generic.IList<ChatCompletionFunctions?>? Functions { get; set; }
+        public global::System.Collections.Generic.IList<ChatCompletionFunctions>? Functions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

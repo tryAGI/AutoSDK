@@ -115,7 +115,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("child_runs")]
-        public global::System.Collections.Generic.IList<RunCreateSchema?>? ChildRuns { get; set; }
+        public global::System.Collections.Generic.IList<RunCreateSchema>? ChildRuns { get; set; }
 
         /// <summary>
         /// 

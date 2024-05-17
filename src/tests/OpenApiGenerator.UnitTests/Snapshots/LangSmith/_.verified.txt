@@ -116,7 +116,7 @@
       {
         Id: messages,
         Name: Messages,
-        Type: global::System.Collections.Generic.IList<ChatCompletionRequestMessage?>?,
+        Type: global::System.Collections.Generic.IList<ChatCompletionRequestMessage>?,
         IsRequired: false,
         DefaultValue: ,
         Summary:
@@ -125,7 +125,7 @@
       {
         Id: functions,
         Name: Functions,
-        Type: global::System.Collections.Generic.IList<ChatCompletionFunctions?>?,
+        Type: global::System.Collections.Generic.IList<ChatCompletionFunctions>?,
         IsRequired: false,
         DefaultValue: ,
         Summary:
@@ -595,7 +595,7 @@
       {
         Id: choices,
         Name: Choices,
-        Type: global::System.Collections.Generic.IList<ChatCompletionChoice?>?,
+        Type: global::System.Collections.Generic.IList<ChatCompletionChoice>?,
         IsRequired: false,
         DefaultValue: ,
         Summary:
@@ -778,7 +778,7 @@
       {
         Id: choices,
         Name: Choices,
-        Type: global::System.Collections.Generic.IList<Choice?>?,
+        Type: global::System.Collections.Generic.IList<Choice>?,
         IsRequired: false,
         DefaultValue: ,
         Summary:
@@ -927,7 +927,7 @@
       {
         Id: detail,
         Name: Detail,
-        Type: global::System.Collections.Generic.IList<ValidationError?>?,
+        Type: global::System.Collections.Generic.IList<ValidationError>?,
         IsRequired: false,
         Summary: 
       }
@@ -1110,7 +1110,7 @@
       {
         Id: child_runs,
         Name: ChildRuns,
-        Type: global::System.Collections.Generic.IList<RunCreateSchema?>?,
+        Type: global::System.Collections.Generic.IList<RunCreateSchema>?,
         IsRequired: false,
         Summary: 
       },
@@ -1411,6 +1411,13 @@
         Id: session_name,
         Name: SessionName,
         Type: string?,
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: child_runs,
+        Name: ChildRuns,
+        Type: global::System.Collections.Generic.IList<RunCreateSchema>?,
         IsRequired: false,
         Summary: 
       },

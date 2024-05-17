@@ -31,13 +31,13 @@ namespace G
         /// Extracted words and their corresponding timestamps.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("words")]
-        public global::System.Collections.Generic.IList<TranscriptionWord?>? Words { get; set; }
+        public global::System.Collections.Generic.IList<TranscriptionWord>? Words { get; set; }
 
         /// <summary>
         /// Segments of the transcribed text and their corresponding details.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("segments")]
-        public global::System.Collections.Generic.IList<TranscriptionSegment?>? Segments { get; set; }
+        public global::System.Collections.Generic.IList<TranscriptionSegment>? Segments { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

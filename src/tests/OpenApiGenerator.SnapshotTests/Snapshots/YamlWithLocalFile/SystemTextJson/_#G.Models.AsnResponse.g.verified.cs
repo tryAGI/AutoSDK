@@ -71,13 +71,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prefixes")]
-        public global::System.Collections.Generic.IList<Prefix?>? Prefixes { get; set; }
+        public global::System.Collections.Generic.IList<Prefix>? Prefixes { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prefixes6")]
-        public global::System.Collections.Generic.IList<Prefix6?>? Prefixes6 { get; set; }
+        public global::System.Collections.Generic.IList<Prefix6>? Prefixes6 { get; set; }
 
         /// <summary>
         /// 

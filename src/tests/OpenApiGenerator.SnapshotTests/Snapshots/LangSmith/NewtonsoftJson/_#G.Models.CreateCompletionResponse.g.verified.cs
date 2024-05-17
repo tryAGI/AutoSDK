@@ -37,7 +37,7 @@ namespace G
         /// <br/>Default Value: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("choices")]
-        public global::System.Collections.Generic.IList<Choice?>? Choices { get; set; }
+        public global::System.Collections.Generic.IList<Choice>? Choices { get; set; }
 
         /// <summary>
         /// 

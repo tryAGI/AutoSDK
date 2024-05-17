@@ -37,7 +37,7 @@ namespace G
         /// <br/>Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("choices")]
-        public global::System.Collections.Generic.IList<ChatCompletionChoice?>? Choices { get; set; }
+        public global::System.Collections.Generic.IList<ChatCompletionChoice>? Choices { get; set; }
 
         /// <summary>
         /// 

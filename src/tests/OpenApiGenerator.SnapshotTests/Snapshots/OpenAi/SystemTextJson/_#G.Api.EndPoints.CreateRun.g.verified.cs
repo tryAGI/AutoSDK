@@ -63,7 +63,7 @@ namespace G
             object? model,
             string? instructions,
             string? additionalInstructions,
-            global::System.Collections.Generic.IList<CreateMessageRequest?>? additionalMessages,
+            global::System.Collections.Generic.IList<CreateMessageRequest>? additionalMessages,
             global::System.Collections.Generic.IList<object?>? tools,
             CreateRunRequestMetadata? metadata,
             double? temperature,

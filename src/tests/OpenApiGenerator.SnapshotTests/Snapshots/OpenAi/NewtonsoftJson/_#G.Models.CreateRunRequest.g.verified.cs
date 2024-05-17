@@ -38,7 +38,7 @@ namespace G
         /// Adds additional messages to the thread before creating the run.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("additional_messages")]
-        public global::System.Collections.Generic.IList<CreateMessageRequest?>? AdditionalMessages { get; set; }
+        public global::System.Collections.Generic.IList<CreateMessageRequest>? AdditionalMessages { get; set; }
 
         /// <summary>
         /// Override the tools the assistant can use for this run. This is useful for modifying the behavior on a per-run basis.

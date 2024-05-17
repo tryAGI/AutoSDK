@@ -19,13 +19,13 @@ namespace G
         /// <br/>Default Value: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("messages")]
-        public global::System.Collections.Generic.IList<ChatCompletionRequestMessage?>? Messages { get; set; }
+        public global::System.Collections.Generic.IList<ChatCompletionRequestMessage>? Messages { get; set; }
 
         /// <summary>
         /// <br/>Default Value: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("functions")]
-        public global::System.Collections.Generic.IList<ChatCompletionFunctions?>? Functions { get; set; }
+        public global::System.Collections.Generic.IList<ChatCompletionFunctions>? Functions { get; set; }
 
         /// <summary>
         /// 
