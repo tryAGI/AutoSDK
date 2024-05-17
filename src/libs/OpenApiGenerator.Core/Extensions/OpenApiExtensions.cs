@@ -163,7 +163,7 @@ public static class OpenApiExtensions
             OpenApiDouble @double => @double.Value.ToString(CultureInfo.InvariantCulture),
             OpenApiBoolean boolean => boolean.Value ? "true" : "false",
             OpenApiArray array => $"[{string.Join(", ", array.Select(GetString))}]",
-            OpenApiObject @object => $"{{{string.Join(", ", @object.Select(x => $"{x.Key}: {GetString(x.Value)}"))}}}",
+            //OpenApiObject @object => $"{{{string.Join(", ", @object.Select(x => $"{x.Key}: {GetString(x.Value)}"))}}}",
             _ => string.Empty,
         };
     }
