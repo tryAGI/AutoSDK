@@ -13,11 +13,13 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<DomainsResponse> GetDomainsAsync(
             string ip,
+            int page,
+            int limit,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: $"/domains/{ip}");
+                requestUri: $"/domains/{ip}?page={page}&limit={limit}");
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

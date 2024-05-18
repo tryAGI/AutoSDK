@@ -92,7 +92,7 @@ namespace {endPoint.Namespace}
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::System.InvalidOperationException""></exception>
         public async {taskType} {endPoint.MethodName}(
-{endPoint.Properties.Where(x => x.ParameterLocation == ParameterLocation.Path).Select(x => $@"
+{endPoint.Properties.Where(x => x.ParameterLocation != null).Select(x => $@"
             {x.Type} {x.Name.ToParameterName()},").Inject()}
 {(string.IsNullOrWhiteSpace(endPoint.RequestType) ? " " : @$" 
             {endPoint.RequestType} request,")}
@@ -184,7 +184,7 @@ namespace {endPoint.Namespace}
             }};
 
             {response}{endPoint.MethodName}(
-{endPoint.Properties.Where(x => x.ParameterLocation == ParameterLocation.Path).Select(x => $@"
+{endPoint.Properties.Where(x => x.ParameterLocation != null).Select(x => $@"
                 {x.Name.ToParameterName()}: {x.Name.ToParameterName()},").Inject()}
                 request: request,
                 cancellationToken: cancellationToken){configureAwaitResponse};

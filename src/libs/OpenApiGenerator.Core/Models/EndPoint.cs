@@ -42,18 +42,7 @@ public readonly record struct EndPoint(
                 settings: settings,
                 parents: []))
             .ToArray();
-
-        var preparedPath = $"\"{path}\"";
-        foreach (var parameter in parameters)
-        {
-            if (preparedPath.Contains($"{{{parameter.Id}}}") &&
-                !preparedPath.StartsWith("$", StringComparison.Ordinal))
-            {
-                preparedPath = $"${preparedPath}";
-            }
-            
-            preparedPath = preparedPath.Replace($"{{{parameter.Id}}}", $"{{{parameter.Name.ToParameterName()}}}");
-        }
+        var preparedPath = path.PreparePath(parameters);
         
         var requestSchema = operation.Value.RequestBody?.Content.Values.FirstOrDefault()?.Schema;
         var requestModel =  requestSchema != null

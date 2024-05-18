@@ -107,6 +107,48 @@ public static class OpenApiExtensions
         };
         return $"{prefix}{path.TrimStart('/').ToPropertyName().UseWordSeparator('/')}";
     }
+    
+    /// <summary>
+    /// https://swagger.io/docs/specification/describing-parameters/
+    /// https://swagger.io/docs/specification/serialization/
+    /// </summary>
+    /// <param name="path"></param>
+    /// <param name="parameters"></param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentNullException"></exception>
+    public static string PreparePath(
+        this string path,
+        IReadOnlyList<PropertyData> parameters)
+    {
+        path = path ?? throw new ArgumentNullException(nameof(path));
+        parameters = parameters ?? throw new ArgumentNullException(nameof(parameters));
+        
+        foreach (var parameter in parameters.Where(x => x.ParameterLocation == ParameterLocation.Path))
+        {
+            path = path.Replace($"{{{parameter.Id}}}", $"{{{parameter.Name.ToParameterName()}}}");
+            path = path.Replace($"{{{parameter.Id}*}}", $"{{{parameter.Name.ToParameterName()}}}");
+            path = path.Replace($"{{.{parameter.Id}}}", $"{{.{parameter.Name.ToParameterName()}}}");
+            path = path.Replace($"{{.{parameter.Id}*}}", $"{{.{parameter.Name.ToParameterName()}}}");
+            path = path.Replace($"{{;{parameter.Id}}}", $"{{;{parameter.Name.ToParameterName()}}}");
+            path = path.Replace($"{{;{parameter.Id}*}}", $"{{;{parameter.Name.ToParameterName()}}}");
+        }
+        var queryParameters = parameters
+            .Where(x => x.ParameterLocation == ParameterLocation.Query)
+            .Select(x => $"{x.Id}={{{x.Name.ToParameterName()}}}")
+            .ToArray();
+        if (queryParameters.Length != 0)
+        {
+            path += $"?{string.Join("&", queryParameters)}";
+        }
+        
+        path = $"\"{path}\"";
+        if (parameters.Any(x => x.ParameterLocation is ParameterLocation.Path or ParameterLocation.Query))
+        {
+            path = $"${path}";
+        }
+        
+        return path;
+    }
 
     public static string? GetDefaultValue(this OpenApiSchema schema, string type)
     {
