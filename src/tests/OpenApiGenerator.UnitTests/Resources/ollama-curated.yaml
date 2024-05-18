@@ -193,47 +193,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PushModelResponse'
-  /blobs/{digest}:
-    head:
-      operationId: checkBlob
-      tags:
-        - Models
-      summary: Check to see if a blob exists on the Ollama server which is useful when creating models.
-      parameters:
-        - in: query
-          name: name
-          schema:
-            type: string
-          required: true
-          description: the SHA256 digest of the blob
-          example: sha256:c8edda1f17edd2f1b60253b773d837bda7b9d249a61245931a4d7c9a8d350250
-      responses:
-        '200':
-          description: Blob exists on the server
-        '404':
-          description: Blob was not found
-    post:
-      operationId: createBlob
-      tags:
-        - Models
-      summary: Create a blob from a file. Returns the server file path.
-      parameters:
-        - in: query
-          name: name
-          schema:
-            type: string
-          required: true
-          description: the SHA256 digest of the blob
-          example: sha256:c8edda1f17edd2f1b60253b773d837bda7b9d249a61245931a4d7c9a8d350250
-      requestBody:
-        content:
-          application/octet-stream:
-            schema:
-              type: string
-              format: binary
-      responses:
-        '201':
-          description: Blob was successfully created
 
 components:
   schemas:

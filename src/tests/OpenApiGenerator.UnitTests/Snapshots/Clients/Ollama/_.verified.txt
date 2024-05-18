@@ -498,54 +498,6 @@ If `false` the response will be returned as a single response object, otherwise 
     FileNameWithoutExtension: G.Api.EndPoints.PushModel
   },
   {
-    Id: CheckBlob,
-    Namespace: G,
-    ClassName: Api,
-    BaseUrl: ,
-    Stream: false,
-    Path: "/blobs/{digest}",
-    Properties: [
-      {
-        Id: name,
-        Name: Name,
-        Type: string,
-        IsRequired: true,
-        ParameterLocation: Query,
-        Summary: 
-      }
-    ],
-    HttpMethod: Head,
-    Summary: Check to see if a blob exists on the Ollama server which is useful when creating models.,
-    RequestType: ,
-    ResponseType: ,
-    MethodName: CheckBlobAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.CheckBlob
-  },
-  {
-    Id: CreateBlob,
-    Namespace: G,
-    ClassName: Api,
-    BaseUrl: ,
-    Stream: false,
-    Path: "/blobs/{digest}",
-    Properties: [
-      {
-        Id: name,
-        Name: Name,
-        Type: string,
-        IsRequired: true,
-        ParameterLocation: Query,
-        Summary: 
-      }
-    ],
-    HttpMethod: Post,
-    Summary: Create a blob from a file. Returns the server file path.,
-    RequestType: ,
-    ResponseType: ,
-    MethodName: CreateBlobAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.CreateBlob
-  },
-  {
     Id: Constructors,
     Namespace: G,
     ClassName: Api,
