@@ -116,7 +116,7 @@ namespace {endPoint.Namespace}
                 requestUri: {endPoint.Path});
 {(string.IsNullOrWhiteSpace(endPoint.RequestType) ? " " : $@" 
             httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: {jsonSerializer.GenerateSerializeCall(endPoint.RequestType)}(request),
+                content: {jsonSerializer.GenerateSerializeCall(endPoint.RequestType, endPoint.JsonSerializerContext)},
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: ""application/json"");")}
 
@@ -129,7 +129,7 @@ namespace {endPoint.Namespace}
             var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType)}(content) ??
+                {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType, endPoint.JsonSerializerContext)} ??
                 throw new global::System.InvalidOperationException(""Response deserialization failed for \""{{content}}\"" "");")}
 {(endPoint.Stream ? $@"
             using var stream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
@@ -138,7 +138,7 @@ namespace {endPoint.Namespace}
             while (!reader.EndOfStream && !cancellationToken.IsCancellationRequested)
             {{
                 var content = await reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
-                var streamedResponse = {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType)}(content) ??
+                var streamedResponse = {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType, endPoint.JsonSerializerContext)} ??
                                        throw new global::System.InvalidOperationException(""Response deserialization failed for \""{{content}}\"" "");
 
                 yield return streamedResponse;

@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+  
+  <Import Project="../../libs/OpenApiGenerator/OpenApiGenerator.props" />
+
+  <PropertyGroup>
+    <OpenApiGenerator_Namespace>OpenApiGenerator.IntegrationTests</OpenApiGenerator_Namespace>
+    <OpenApiGenerator_GenerateSdk>false</OpenApiGenerator_GenerateSdk>
+    <OpenApiGenerator_GenerateModels>true</OpenApiGenerator_GenerateModels>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0" />
+    <PackageReference Include="Microsoft.OpenApi" Version="1.6.14" />
+    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.14" />
+    <PackageReference Include="SharpYaml" Version="2.1.1" />
+    <PackageReference Include="System.Collections.Immutable" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\libs\OpenApiGenerator.Core\OpenApiGenerator.Core.csproj" OutputItemType="Analyzer" />
+    <ProjectReference Include="..\..\libs\OpenApiGenerator\OpenApiGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+
+</Project>

@@ -7,7 +7,10 @@
   <Import Project="../../libs/OpenApiGenerator/OpenApiGenerator.props" />
 
   <PropertyGroup>
-    <OpenApiGenerator_GenerateModels>true</OpenApiGenerator_GenerateModels>
+    <OpenApiGenerator_GenerateSdk>false</OpenApiGenerator_GenerateSdk>
+    <OpenApiGenerator_GenerateMethods>true</OpenApiGenerator_GenerateMethods>
+    <OpenApiGenerator_GenerateConstructors>true</OpenApiGenerator_GenerateConstructors>
+    <OpenApiGenerator_JsonSerializerContext>OpenApiGenerator.IntegrationTests.SourceGenerationContext</OpenApiGenerator_JsonSerializerContext>
   </PropertyGroup>
 
   <ItemGroup Label="Base packages">
@@ -41,6 +44,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\libs\OpenApiGenerator.Core\OpenApiGenerator.Core.csproj" OutputItemType="Analyzer" />
     <ProjectReference Include="..\..\libs\OpenApiGenerator\OpenApiGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\OpenApiGenerator.IntegrationTests.Data\OpenApiGenerator.IntegrationTests.Data.csproj" />
   </ItemGroup>
 
 </Project>

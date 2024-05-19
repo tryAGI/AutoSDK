@@ -20,13 +20,13 @@ public class NewtonsoftJsonSerializer : IJsonSerializer
         return string.Empty;
     }
     
-    public string GenerateSerializeCall(string type)
+    public string GenerateSerializeCall(string type, string jsonSerializerContext)
     {
-        return "global::Newtonsoft.Json.JsonConvert.SerializeObject";
+        return "global::Newtonsoft.Json.JsonConvert.SerializeObject(request)";
     }
     
-    public string GenerateDeserializeCall(string type)
+    public string GenerateDeserializeCall(string type, string jsonSerializerContext)
     {
-        return $"global::Newtonsoft.Json.JsonConvert.DeserializeObject<{type}>";
+        return $"global::Newtonsoft.Json.JsonConvert.DeserializeObject<{type}>(content)";
     }
 }

@@ -40,6 +40,7 @@ public static class ClientGeneratorMethods
                 Path: string.Empty,
                 Properties: ImmutableArray<PropertyData>.Empty,
                 JsonSerializerType: settings.JsonSerializerType,
+                JsonSerializerContext: settings.JsonSerializerContext,
                 HttpMethod: OperationType.Get,
                 Summary: string.Empty,
                 RequestType: string.Empty,

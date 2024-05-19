@@ -228,6 +228,7 @@ How long (in minutes) to keep the model loaded in memory.
         ArgumentName: keepAlive
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Generate a response for a given prompt with a provided model.,
     RequestType: GenerateCompletionRequest,
@@ -388,6 +389,7 @@ How long (in minutes) to keep the model loaded in memory.
         ArgumentName: keepAlive
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Generate the next message in a chat with a provided model.,
     RequestType: GenerateChatCompletionRequest,
@@ -487,6 +489,7 @@ Text to generate embeddings for.
         ArgumentName: options
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Generate embeddings from a model.,
     RequestType: GenerateEmbeddingRequest,
@@ -556,6 +559,7 @@ If `false` the response will be returned as a single response object, otherwise 
         ArgumentName: stream
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a model from a Modelfile.,
     RequestType: CreateModelRequest,
@@ -571,6 +575,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Stream: false,
     Path: "/tags",
     Properties: null,
+    JsonSerializerContext: ,
     Summary: List models that are available locally.,
     RequestType: ,
     ResponseType: ModelsResponse,
@@ -605,6 +610,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         ArgumentName: name
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Show details about a model including modelfile, template, parameters, license, and system prompt.,
     RequestType: ModelInfoRequest,
@@ -653,6 +659,7 @@ Name of the new model.
         ArgumentName: destination
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Creates a model with another name from an existing model.,
     RequestType: CopyModelRequest,
@@ -688,6 +695,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         ArgumentName: name
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Delete,
     Summary: Delete a model and its data.,
     RequestType: DeleteModelRequest,
@@ -761,6 +769,7 @@ If `false` the response will be returned as a single response object, otherwise 
         ArgumentName: stream
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Download a model from the ollama library.,
     RequestType: PullModelRequest,
@@ -831,6 +840,7 @@ If `false` the response will be returned as a single response object, otherwise 
         ArgumentName: stream
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Upload a model to a model library.,
     RequestType: PushModelRequest,
@@ -846,6 +856,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Stream: false,
     Path: ,
     Properties: null,
+    JsonSerializerContext: ,
     Summary: ,
     RequestType: ,
     ResponseType: ,

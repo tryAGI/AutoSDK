@@ -396,6 +396,7 @@ A list of functions the model may generate JSON inputs for.
         ArgumentName: functions
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Creates a model response for the given chat conversation.,
     RequestType: CreateChatCompletionRequest,
@@ -762,6 +763,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
         ArgumentName: user
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Creates a completion for the provided prompt and parameters.,
     RequestType: CreateCompletionRequest,
@@ -949,6 +951,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
         ArgumentName: user
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Creates an image given a prompt.,
     RequestType: CreateImageRequest,
@@ -1112,6 +1115,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
         ArgumentName: user
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Creates an edited or extended image given an original image and a prompt.,
     RequestType: CreateImageEditRequest,
@@ -1245,6 +1249,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
         ArgumentName: user
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Creates a variation of a given image.,
     RequestType: CreateImageVariationRequest,
@@ -1352,6 +1357,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
         ArgumentName: user
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Creates an embedding vector representing the input text.,
     RequestType: CreateEmbeddingRequest,
@@ -1474,6 +1480,7 @@ The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is 
         ArgumentName: speed
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Generates audio from the input text.,
     RequestType: CreateSpeechRequest,
@@ -1603,6 +1610,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
         ArgumentName: temperature
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Transcribes audio into the input language.,
     RequestType: CreateTranscriptionRequest,
@@ -1704,6 +1712,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
         ArgumentName: temperature
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Translates audio into English.,
     RequestType: CreateTranslationRequest,
@@ -1737,6 +1746,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
         ArgumentName: purpose
       }
     ],
+    JsonSerializerContext: ,
     Summary: Returns a list of files that belong to the user's organization.,
     RequestType: ,
     ResponseType: ListFilesResponse,
@@ -1794,6 +1804,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
         ArgumentName: purpose
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Upload a file that can be used across various endpoints. The size of all the files uploaded by one organization can be up to 100 GB.The size of individual files can be a maximum of 512 MB or 2 million tokens for Assistants. See the [Assistants Tools guide](/docs/assistants/tools) to learn more about the types of files supported. The Fine-tuning API only supports `.jsonl` files.Please [contact us](https://help.openai.com/) if you need to increase these storage limits.,
     RequestType: CreateFileRequest,
@@ -1827,6 +1838,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
         ArgumentName: fileId
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Delete,
     Summary: Delete a file.,
     RequestType: ,
@@ -1860,6 +1872,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
         ArgumentName: fileId
       }
     ],
+    JsonSerializerContext: ,
     Summary: Returns information about a specific file.,
     RequestType: ,
     ResponseType: OpenAIFile,
@@ -1892,6 +1905,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
         ArgumentName: fileId
       }
     ],
+    JsonSerializerContext: ,
     Summary: Returns the contents of the specified file.,
     RequestType: ,
     ResponseType: ,
@@ -2039,6 +2053,7 @@ If a seed is not specified, one will be generated for you.
         ArgumentName: seed
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Creates a fine-tuning job which begins the process of creating a new model from a given dataset.Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.[Learn more about fine-tuning](/docs/guides/fine-tuning),
     RequestType: CreateFineTuningJobRequest,
@@ -2091,6 +2106,7 @@ If a seed is not specified, one will be generated for you.
         ArgumentName: limit
       }
     ],
+    JsonSerializerContext: ,
     Summary: List your organization's fine-tuning jobs,
     RequestType: ,
     ResponseType: ListPaginatedFineTuningJobsResponse,
@@ -2124,6 +2140,7 @@ If a seed is not specified, one will be generated for you.
         ArgumentName: fineTuningJobId
       }
     ],
+    JsonSerializerContext: ,
     Summary: Get info about a fine-tuning job.[Learn more about fine-tuning](/docs/guides/fine-tuning),
     RequestType: ,
     ResponseType: FineTuningJob,
@@ -2193,6 +2210,7 @@ If a seed is not specified, one will be generated for you.
         ArgumentName: limit
       }
     ],
+    JsonSerializerContext: ,
     Summary: Get status updates for a fine-tuning job.,
     RequestType: ,
     ResponseType: ListFineTuningJobEventsResponse,
@@ -2226,6 +2244,7 @@ If a seed is not specified, one will be generated for you.
         ArgumentName: fineTuningJobId
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Immediately cancel a fine-tune job.,
     RequestType: ,
@@ -2296,6 +2315,7 @@ If a seed is not specified, one will be generated for you.
         ArgumentName: limit
       }
     ],
+    JsonSerializerContext: ,
     Summary: List checkpoints for a fine-tuning job.,
     RequestType: ,
     ResponseType: ListFineTuningJobCheckpointsResponse,
@@ -2310,6 +2330,7 @@ If a seed is not specified, one will be generated for you.
     Stream: false,
     Path: "/models",
     Properties: null,
+    JsonSerializerContext: ,
     Summary: Lists the currently available models, and provides basic information about each one such as the owner and availability.,
     RequestType: ,
     ResponseType: ListModelsResponse,
@@ -2343,6 +2364,7 @@ If a seed is not specified, one will be generated for you.
         ArgumentName: model
       }
     ],
+    JsonSerializerContext: ,
     Summary: Retrieves a model instance, providing basic information about the model such as the owner and permissioning.,
     RequestType: ,
     ResponseType: Model,
@@ -2376,6 +2398,7 @@ If a seed is not specified, one will be generated for you.
         ArgumentName: model
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Delete,
     Summary: Delete a fine-tuned model. You must have the Owner role in your organization to delete a model.,
     RequestType: ,
@@ -2427,6 +2450,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
         ArgumentName: model
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Classifies if text is potentially harmful.,
     RequestType: CreateModerationRequest,
@@ -2521,6 +2545,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
         ArgumentName: before
       }
     ],
+    JsonSerializerContext: ,
     Summary: Returns a list of assistants.,
     RequestType: ,
     ResponseType: ListAssistantsResponse,
@@ -2711,6 +2736,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ArgumentName: responseFormat
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create an assistant with a model and instructions.,
     RequestType: CreateAssistantRequest,
@@ -2744,6 +2770,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ArgumentName: assistantId
       }
     ],
+    JsonSerializerContext: ,
     Summary: Retrieves an assistant.,
     RequestType: ,
     ResponseType: AssistantObject,
@@ -2951,6 +2978,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ArgumentName: responseFormat
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Modifies an assistant.,
     RequestType: ModifyAssistantRequest,
@@ -2984,6 +3012,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ArgumentName: assistantId
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Delete,
     Summary: Delete an assistant.,
     RequestType: ,
@@ -3046,6 +3075,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: metadata
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a thread.,
     RequestType: CreateThreadRequest,
@@ -3079,6 +3109,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: threadId
       }
     ],
+    JsonSerializerContext: ,
     Summary: Retrieves a thread.,
     RequestType: ,
     ResponseType: ThreadObject,
@@ -3143,6 +3174,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: metadata
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Modifies a thread.,
     RequestType: ModifyThreadRequest,
@@ -3176,6 +3208,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: threadId
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Delete,
     Summary: Delete a thread.,
     RequestType: ,
@@ -3304,6 +3337,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: runId
       }
     ],
+    JsonSerializerContext: ,
     Summary: Returns a list of messages for a given thread.,
     RequestType: ,
     ResponseType: ListMessagesResponse,
@@ -3404,6 +3438,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: metadata
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a message.,
     RequestType: CreateMessageRequest,
@@ -3454,6 +3489,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: messageId
       }
     ],
+    JsonSerializerContext: ,
     Summary: Retrieve a message.,
     RequestType: ,
     ResponseType: MessageObject,
@@ -3519,6 +3555,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: metadata
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Modifies a message.,
     RequestType: ModifyMessageRequest,
@@ -3569,6 +3606,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: messageId
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Delete,
     Summary: Deletes a message.,
     RequestType: ,
@@ -3839,6 +3877,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ArgumentName: responseFormat
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a thread and run it in one request.,
     RequestType: CreateThreadAndRunRequest,
@@ -3950,6 +3989,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ArgumentName: before
       }
     ],
+    JsonSerializerContext: ,
     Summary: Returns a list of runs belonging to a thread.,
     RequestType: ,
     ResponseType: ListRunsResponse,
@@ -4230,6 +4270,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ArgumentName: responseFormat
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a run.,
     RequestType: CreateRunRequest,
@@ -4280,6 +4321,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ArgumentName: runId
       }
     ],
+    JsonSerializerContext: ,
     Summary: Retrieves a run.,
     RequestType: ,
     ResponseType: RunObject,
@@ -4345,6 +4387,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: metadata
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Modifies a run.,
     RequestType: ModifyRunRequest,
@@ -4425,6 +4468,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
         ArgumentName: stream
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: When a run has the `status: "requires_action"` and `required_action.type` is `submit_tool_outputs`, this endpoint can be used to submit the outputs from the tool calls once they're all completed. All outputs must be submitted in a single request.,
     RequestType: SubmitToolOutputsRunRequest,
@@ -4475,6 +4519,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
         ArgumentName: runId
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Cancels a run that is `in_progress`.,
     RequestType: ,
@@ -4603,6 +4648,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
         ArgumentName: before
       }
     ],
+    JsonSerializerContext: ,
     Summary: Returns a list of run steps belonging to a run.,
     RequestType: ,
     ResponseType: ListRunStepsResponse,
@@ -4669,6 +4715,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
         ArgumentName: stepId
       }
     ],
+    JsonSerializerContext: ,
     Summary: Retrieves a run step.,
     RequestType: ,
     ResponseType: RunStepObject,
@@ -4762,6 +4809,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
         ArgumentName: before
       }
     ],
+    JsonSerializerContext: ,
     Summary: Returns a list of vector stores.,
     RequestType: ,
     ResponseType: ListVectorStoresResponse,
@@ -4838,6 +4886,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: metadata
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a vector store.,
     RequestType: CreateVectorStoreRequest,
@@ -4871,6 +4920,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: vectorStoreId
       }
     ],
+    JsonSerializerContext: ,
     Summary: Retrieves a vector store.,
     RequestType: ,
     ResponseType: VectorStoreObject,
@@ -4950,6 +5000,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: metadata
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Modifies a vector store.,
     RequestType: UpdateVectorStoreRequest,
@@ -4983,6 +5034,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: vectorStoreId
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Delete,
     Summary: Delete a vector store.,
     RequestType: ,
@@ -5121,6 +5173,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: filter
       }
     ],
+    JsonSerializerContext: ,
     Summary: Returns a list of vector store files.,
     RequestType: ,
     ResponseType: ListVectorStoreFilesResponse,
@@ -5168,6 +5221,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: fileId
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a vector store file by attaching a [File](/docs/api-reference/files) to a [vector store](/docs/api-reference/vector-stores/object).,
     RequestType: CreateVectorStoreFileRequest,
@@ -5220,6 +5274,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: fileId
       }
     ],
+    JsonSerializerContext: ,
     Summary: Retrieves a vector store file.,
     RequestType: ,
     ResponseType: VectorStoreFileObject,
@@ -5269,6 +5324,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: fileId
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Delete,
     Summary: Delete a vector store file. This will remove the file from the vector store but the file itself will not be deleted. To delete the file, use the [delete file](/docs/api-reference/files/delete) endpoint.,
     RequestType: ,
@@ -5317,6 +5373,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: fileIds
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a vector store file batch.,
     RequestType: CreateVectorStoreFileBatchRequest,
@@ -5369,6 +5426,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: batchId
       }
     ],
+    JsonSerializerContext: ,
     Summary: Retrieves a vector store file batch.,
     RequestType: ,
     ResponseType: VectorStoreFileBatchObject,
@@ -5418,6 +5476,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: batchId
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Cancel a vector store file batch. This attempts to cancel the processing of files in this batch as soon as possible.,
     RequestType: ,
@@ -5573,6 +5632,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: filter
       }
     ],
+    JsonSerializerContext: ,
     Summary: Returns a list of vector store files in a batch.,
     RequestType: ,
     ResponseType: ListVectorStoreFilesResponse,
@@ -5660,6 +5720,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
         ArgumentName: metadata
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Creates and executes a batch from an uploaded file of requests,
     RequestType: ,
@@ -5712,6 +5773,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
         ArgumentName: limit
       }
     ],
+    JsonSerializerContext: ,
     Summary: List your organization's batches.,
     RequestType: ,
     ResponseType: ListBatchesResponse,
@@ -5744,6 +5806,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
         ArgumentName: batchId
       }
     ],
+    JsonSerializerContext: ,
     Summary: Retrieves a batch.,
     RequestType: ,
     ResponseType: Batch,
@@ -5776,6 +5839,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
         ArgumentName: batchId
       }
     ],
+    JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Cancels an in-progress batch.,
     RequestType: ,
@@ -5791,6 +5855,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Stream: false,
     Path: ,
     Properties: null,
+    JsonSerializerContext: ,
     Summary: ,
     RequestType: ,
     ResponseType: ,

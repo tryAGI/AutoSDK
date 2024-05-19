@@ -77,6 +77,7 @@ public class GenerateCommand : Command
             GenerateMethodsUsingSystemNetHttpJson: false,
             IncludeOperationIds: [],
             ExcludeOperationIds: [],
+            JsonSerializerContext: string.Empty,
             GenerateModels: false,
             ModelStyle: default,
             IncludeModels: [],

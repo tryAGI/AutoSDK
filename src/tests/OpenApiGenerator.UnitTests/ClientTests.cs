@@ -22,6 +22,7 @@ public class ClientTests :
         GenerateMethodsUsingSystemNetHttpJson: false,
         IncludeOperationIds: [],
         ExcludeOperationIds: [],
+        JsonSerializerContext: string.Empty,
         GenerateModels: false,
         ModelStyle: default,
         IncludeModels: [],

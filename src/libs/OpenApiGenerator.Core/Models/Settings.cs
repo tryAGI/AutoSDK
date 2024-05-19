@@ -17,6 +17,7 @@ public readonly record struct Settings(
     bool GenerateMethodsUsingSystemNetHttpJson,
     ImmutableArray<string> IncludeOperationIds,
     ImmutableArray<string> ExcludeOperationIds,
+    string JsonSerializerContext,
     
     bool GenerateModels,
     ModelStyle ModelStyle,
