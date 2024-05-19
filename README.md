@@ -22,7 +22,7 @@ dotnet add package OpenApiGenerator
 - Add the following optional settings to your csproj file to customize generation. You can check all settings [here](https://github.com/HavenDV/OpenApiGenerator/blob/76c06e6e2265bc875d0619cfe96e28002fba1d3d/src/libs/OpenApiGenerator/OpenApiGenerator.props):
 ```xml
 <!-- This generator automatically detects all .yaml files in the project directory and adds them to the generation -->
-<!-- If your yaml file is not in the project directory, you can specify the path to it -->
+<!-- If your yaml file is not in the project directory, you can specify it manually -->
 <ItemGroup Label="OpenApiGenerator">
     <AdditionalFiles Include="$(MSBuildThisFileDirectory)../../../docs/openapi.yaml" />
 </ItemGroup>
