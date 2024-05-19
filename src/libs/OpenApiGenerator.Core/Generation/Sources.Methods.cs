@@ -101,6 +101,16 @@ namespace {endPoint.Namespace}
 {(string.IsNullOrWhiteSpace(endPoint.RequestType) ? " " : @" 
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 ")}
+{(endPoint.JsonSerializerType == JsonSerializerType.NewtonsoftJson ? endPoint.Properties
+    .Where(x => x is { ParameterLocation: not null, Type.EnumValues.Length: > 0 })
+    .Select(x => $@"
+            var {x.ArgumentName} = {x.Name.ToParameterName()} switch
+            {{
+{x.Type.Properties.Zip(x.Type.EnumValues, (property, value) => (Property: property, Value: value))
+    .Select(y => $@"
+                {x.Type.CSharpType}.{y.Property.ToPropertyName()} => ""{y.Value}"",").Inject()}
+                _ => throw new global::System.NotImplementedException(""Enum value not implemented.""),
+            }};").Inject() : " ")}
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.{endPoint.HttpMethod:G},
                 requestUri: {endPoint.Path});

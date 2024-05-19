@@ -21,9 +21,23 @@ namespace G
             ListFilesInVectorStoreBatchFilter filter,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var orderValue = order switch
+            {
+                ListFilesInVectorStoreBatchOrder.Asc => "asc",
+                ListFilesInVectorStoreBatchOrder.Desc => "desc",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
+            var filterValue = filter switch
+            {
+                ListFilesInVectorStoreBatchFilter.InProgress => "in_progress",
+                ListFilesInVectorStoreBatchFilter.Completed => "completed",
+                ListFilesInVectorStoreBatchFilter.Failed => "failed",
+                ListFilesInVectorStoreBatchFilter.Cancelled => "cancelled",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: $"/vector_stores/{vectorStoreId}/file_batches/{batchId}/files?limit={limit}&order={order}&after={after}&before={before}&filter={filter}");
+                requestUri: $"/vector_stores/{vectorStoreId}/file_batches/{batchId}/files?limit={limit}&order={orderValue}&after={after}&before={before}&filter={filterValue}");
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

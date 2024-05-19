@@ -12,6 +12,7 @@ public readonly record struct PropertyData(
     ParameterLocation? ParameterLocation,
     ParameterStyle? ParameterStyle,
     bool? ParameterExplode,
+    JsonSerializerType JsonSerializerType,
     string? DefaultValue,
     string Summary)
 {
@@ -24,6 +25,7 @@ public readonly record struct PropertyData(
         ParameterStyle: null,
         ParameterExplode: null,
         DefaultValue: null,
+        JsonSerializerType: JsonSerializerType.SystemTextJson,
         Summary: string.Empty);
 
     public static PropertyData FromSchema(
@@ -59,10 +61,24 @@ public readonly record struct PropertyData(
             ParameterLocation: parameterLocation,
             ParameterStyle: parameterStyle,
             ParameterExplode: parameterExplode,
+            JsonSerializerType: settings.JsonSerializerType,
             DefaultValue: schema.Value.GetDefaultValue(type: TypeData.FromSchema(schema, settings with
             {
                 JsonSerializerType = JsonSerializerType.NewtonsoftJson
             }, parents).CSharpType),
             Summary: schema.Value.GetSummary());
+    }
+    
+    public string ArgumentName
+    {
+        get
+        {
+            if (Type.EnumValues.Length != 0 && JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+            {
+                return Name.ToParameterName() + "Value";
+            }
+            
+            return Name.ToParameterName();
+        }
     }
 }

@@ -8,12 +8,16 @@ namespace OpenApiGenerator.Core.Models;
 public readonly record struct TypeData(
     string CSharpType,
     bool IsArray,
-    ImmutableArray<string> Properties)
+    bool IsEnum,
+    ImmutableArray<string> Properties,
+    ImmutableArray<string> EnumValues)
 {
     public static TypeData Default => new(
         CSharpType: string.Empty,
         IsArray: false,
-        Properties: []);
+        IsEnum: false,
+        Properties: [],
+        EnumValues: []);
 
     public static TypeData FromSchema(
         KeyValuePair<string, OpenApiSchema> schema,
@@ -30,10 +34,25 @@ public readonly record struct TypeData(
                 .ToImmutableArray();
         }
         
+        var enumValues = ImmutableArray<string>.Empty;
+        if (schema.Value.IsEnum())
+        {
+            var values = schema.Value.Enum
+                .Select(value => value.ToEnumValue()).ToArray();
+            properties = values
+                .Select(x => x.Name)
+                .ToImmutableArray();
+            enumValues = values
+                .Select(x => x.Id)
+                .ToImmutableArray();
+        }
+        
         return new TypeData(
             CSharpType: GetCSharpType(schema, settings, parents),
             IsArray: schema.Value.Type == "array",
-            Properties: properties);
+            IsEnum: schema.Value.IsEnum(),
+            Properties: properties,
+            EnumValues: enumValues);
     }
     
     public static string GetCSharpType(

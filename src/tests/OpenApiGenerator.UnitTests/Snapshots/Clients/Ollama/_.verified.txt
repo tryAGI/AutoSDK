@@ -13,7 +13,9 @@
         Type: {
           CSharpType: string,
           IsArray: false,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: true,
         Summary:
@@ -21,7 +23,8 @@ The model name.
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
-<br/>Example: llama2:7b
+<br/>Example: llama2:7b,
+        ArgumentName: model
       },
       {
         Id: prompt,
@@ -29,12 +32,15 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         Type: {
           CSharpType: string,
           IsArray: false,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: true,
         Summary:
 The prompt to generate a response.
-<br/>Example: Why is the sky blue?
+<br/>Example: Why is the sky blue?,
+        ArgumentName: prompt
       },
       {
         Id: images,
@@ -42,10 +48,13 @@ The prompt to generate a response.
         Type: {
           CSharpType: global::System.Collections.Generic.IList<string?>?,
           IsArray: true,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: false,
-        Summary: (optional) a list of Base64-encoded images to include in the message (for multimodal models such as llava)
+        Summary: (optional) a list of Base64-encoded images to include in the message (for multimodal models such as llava),
+        ArgumentName: images
       },
       {
         Id: system,
@@ -53,10 +62,13 @@ The prompt to generate a response.
         Type: {
           CSharpType: string?,
           IsArray: false,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: false,
-        Summary: The system prompt to (overrides what is defined in the Modelfile).
+        Summary: The system prompt to (overrides what is defined in the Modelfile).,
+        ArgumentName: system
       },
       {
         Id: template,
@@ -64,10 +76,13 @@ The prompt to generate a response.
         Type: {
           CSharpType: string?,
           IsArray: false,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: false,
-        Summary: The full prompt or prompt template (overrides what is defined in the Modelfile).
+        Summary: The full prompt or prompt template (overrides what is defined in the Modelfile).,
+        ArgumentName: template
       },
       {
         Id: context,
@@ -75,10 +90,13 @@ The prompt to generate a response.
         Type: {
           CSharpType: global::System.Collections.Generic.IList<int>?,
           IsArray: true,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: false,
-        Summary: The context parameter returned from a previous request to [generateCompletion], this can be used to keep a short conversational memory.
+        Summary: The context parameter returned from a previous request to [generateCompletion], this can be used to keep a short conversational memory.,
+        ArgumentName: context
       },
       {
         Id: options,
@@ -86,6 +104,7 @@ The prompt to generate a response.
         Type: {
           CSharpType: RequestOptions?,
           IsArray: false,
+          IsEnum: false,
           Properties: [
             num_keep,
             seed,
@@ -120,10 +139,12 @@ The prompt to generate a response.
             rope_frequency_base,
             rope_frequency_scale,
             num_thread
-          ]
+          ],
+          EnumValues: null
         },
         IsRequired: false,
-        Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.
+        Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.,
+        ArgumentName: options
       },
       {
         Id: format,
@@ -131,7 +152,13 @@ The prompt to generate a response.
         Type: {
           CSharpType: string?,
           IsArray: false,
-          Properties: null
+          IsEnum: true,
+          Properties: [
+            Json
+          ],
+          EnumValues: [
+            json
+          ]
         },
         IsRequired: false,
         Summary:
@@ -140,7 +167,8 @@ The format to return a response in. Currently the only accepted value is json.
 Enable JSON mode by setting the format parameter to json. This will structure the response as valid JSON.
 
 Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
-
+,
+        ArgumentName: format
       },
       {
         Id: raw,
@@ -148,14 +176,17 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
         Type: {
           CSharpType: bool,
           IsArray: false,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: false,
         Summary:
 If `true` no formatting will be applied to the prompt and no context will be returned. 
 
 You may choose to use the `raw` parameter if you are specifying a full templated prompt in your request to the API, and are managing history yourself.
-
+,
+        ArgumentName: raw
       },
       {
         Id: stream,
@@ -163,14 +194,17 @@ You may choose to use the `raw` parameter if you are specifying a full templated
         Type: {
           CSharpType: bool,
           IsArray: false,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: false,
         DefaultValue: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
 
-<br/>Default Value: false
+<br/>Default Value: false,
+        ArgumentName: stream
       },
       {
         Id: keep_alive,
@@ -178,7 +212,9 @@ If `false` the response will be returned as a single response object, otherwise 
         Type: {
           CSharpType: int,
           IsArray: false,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: false,
         Summary:
@@ -188,7 +224,8 @@ How long (in minutes) to keep the model loaded in memory.
 - If set to a negative duration (e.g. -1), the model will stay loaded indefinitely.
 - If set to 0, the model will be unloaded immediately once finished.
 - If not set, the model will stay loaded for 5 minutes by default
-
+,
+        ArgumentName: keepAlive
       }
     ],
     HttpMethod: Post,
@@ -212,7 +249,9 @@ How long (in minutes) to keep the model loaded in memory.
         Type: {
           CSharpType: string,
           IsArray: false,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: true,
         Summary:
@@ -220,7 +259,8 @@ The model name.
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
-<br/>Example: llama2:7b
+<br/>Example: llama2:7b,
+        ArgumentName: model
       },
       {
         Id: messages,
@@ -228,10 +268,13 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         Type: {
           CSharpType: global::System.Collections.Generic.IList<Message>,
           IsArray: true,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: true,
-        Summary: The messages of the chat, this can be used to keep a chat memory
+        Summary: The messages of the chat, this can be used to keep a chat memory,
+        ArgumentName: messages
       },
       {
         Id: format,
@@ -239,7 +282,13 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         Type: {
           CSharpType: string?,
           IsArray: false,
-          Properties: null
+          IsEnum: true,
+          Properties: [
+            Json
+          ],
+          EnumValues: [
+            json
+          ]
         },
         IsRequired: false,
         Summary:
@@ -248,7 +297,8 @@ The format to return a response in. Currently the only accepted value is json.
 Enable JSON mode by setting the format parameter to json. This will structure the response as valid JSON.
 
 Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
-
+,
+        ArgumentName: format
       },
       {
         Id: options,
@@ -256,6 +306,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
         Type: {
           CSharpType: RequestOptions?,
           IsArray: false,
+          IsEnum: false,
           Properties: [
             num_keep,
             seed,
@@ -290,10 +341,12 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
             rope_frequency_base,
             rope_frequency_scale,
             num_thread
-          ]
+          ],
+          EnumValues: null
         },
         IsRequired: false,
-        Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.
+        Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.,
+        ArgumentName: options
       },
       {
         Id: stream,
@@ -301,14 +354,17 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
         Type: {
           CSharpType: bool,
           IsArray: false,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: false,
         DefaultValue: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
 
-<br/>Default Value: false
+<br/>Default Value: false,
+        ArgumentName: stream
       },
       {
         Id: keep_alive,
@@ -316,7 +372,9 @@ If `false` the response will be returned as a single response object, otherwise 
         Type: {
           CSharpType: int,
           IsArray: false,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: false,
         Summary:
@@ -326,7 +384,8 @@ How long (in minutes) to keep the model loaded in memory.
 - If set to a negative duration (e.g. -1), the model will stay loaded indefinitely.
 - If set to 0, the model will be unloaded immediately once finished.
 - If not set, the model will stay loaded for 5 minutes by default
-
+,
+        ArgumentName: keepAlive
       }
     ],
     HttpMethod: Post,
@@ -350,7 +409,9 @@ How long (in minutes) to keep the model loaded in memory.
         Type: {
           CSharpType: string,
           IsArray: false,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: true,
         Summary:
@@ -358,7 +419,8 @@ The model name.
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
-<br/>Example: llama2:7b
+<br/>Example: llama2:7b,
+        ArgumentName: model
       },
       {
         Id: prompt,
@@ -366,12 +428,15 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         Type: {
           CSharpType: string,
           IsArray: false,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: true,
         Summary:
 Text to generate embeddings for.
-<br/>Example: Here is an article about llamas...
+<br/>Example: Here is an article about llamas...,
+        ArgumentName: prompt
       },
       {
         Id: options,
@@ -379,6 +444,7 @@ Text to generate embeddings for.
         Type: {
           CSharpType: RequestOptions?,
           IsArray: false,
+          IsEnum: false,
           Properties: [
             num_keep,
             seed,
@@ -413,10 +479,12 @@ Text to generate embeddings for.
             rope_frequency_base,
             rope_frequency_scale,
             num_thread
-          ]
+          ],
+          EnumValues: null
         },
         IsRequired: false,
-        Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.
+        Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.,
+        ArgumentName: options
       }
     ],
     HttpMethod: Post,
@@ -440,7 +508,9 @@ Text to generate embeddings for.
         Type: {
           CSharpType: string,
           IsArray: false,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: true,
         Summary:
@@ -448,7 +518,8 @@ The model name.
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
-<br/>Example: mario
+<br/>Example: mario,
+        ArgumentName: name
       },
       {
         Id: modelfile,
@@ -456,12 +527,15 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         Type: {
           CSharpType: string,
           IsArray: false,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: true,
         Summary:
 The contents of the Modelfile.
-<br/>Example: FROM llama2\nSYSTEM You are mario from Super Mario Bros.
+<br/>Example: FROM llama2\nSYSTEM You are mario from Super Mario Bros.,
+        ArgumentName: modelfile
       },
       {
         Id: stream,
@@ -469,14 +543,17 @@ The contents of the Modelfile.
         Type: {
           CSharpType: bool,
           IsArray: false,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: false,
         DefaultValue: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
 
-<br/>Default Value: false
+<br/>Default Value: false,
+        ArgumentName: stream
       }
     ],
     HttpMethod: Post,
@@ -514,7 +591,9 @@ If `false` the response will be returned as a single response object, otherwise 
         Type: {
           CSharpType: string,
           IsArray: false,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: true,
         Summary:
@@ -522,7 +601,8 @@ The model name.
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
-<br/>Example: llama2:7b
+<br/>Example: llama2:7b,
+        ArgumentName: name
       }
     ],
     HttpMethod: Post,
@@ -546,12 +626,15 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         Type: {
           CSharpType: string,
           IsArray: false,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: true,
         Summary:
 Name of the model to copy.
-<br/>Example: llama2:7b
+<br/>Example: llama2:7b,
+        ArgumentName: source
       },
       {
         Id: destination,
@@ -559,12 +642,15 @@ Name of the model to copy.
         Type: {
           CSharpType: string,
           IsArray: false,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: true,
         Summary:
 Name of the new model.
-<br/>Example: llama2-backup
+<br/>Example: llama2-backup,
+        ArgumentName: destination
       }
     ],
     HttpMethod: Post,
@@ -588,7 +674,9 @@ Name of the new model.
         Type: {
           CSharpType: string,
           IsArray: false,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: true,
         Summary:
@@ -596,7 +684,8 @@ The model name.
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
-<br/>Example: llama2:13b
+<br/>Example: llama2:13b,
+        ArgumentName: name
       }
     ],
     HttpMethod: Delete,
@@ -620,7 +709,9 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         Type: {
           CSharpType: string,
           IsArray: false,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: true,
         Summary:
@@ -628,7 +719,8 @@ The model name.
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
-<br/>Example: llama2:7b
+<br/>Example: llama2:7b,
+        ArgumentName: name
       },
       {
         Id: insecure,
@@ -636,7 +728,9 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         Type: {
           CSharpType: bool,
           IsArray: false,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: false,
         DefaultValue: false,
@@ -645,7 +739,8 @@ Allow insecure connections to the library.
 
 Only use this if you are pulling from your own library during development.
 
-<br/>Default Value: false
+<br/>Default Value: false,
+        ArgumentName: insecure
       },
       {
         Id: stream,
@@ -653,14 +748,17 @@ Only use this if you are pulling from your own library during development.
         Type: {
           CSharpType: bool,
           IsArray: false,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: false,
         DefaultValue: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
 
-<br/>Default Value: false
+<br/>Default Value: false,
+        ArgumentName: stream
       }
     ],
     HttpMethod: Post,
@@ -684,12 +782,15 @@ If `false` the response will be returned as a single response object, otherwise 
         Type: {
           CSharpType: string,
           IsArray: false,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: true,
         Summary:
 The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt;tag&gt;.
-<br/>Example: mattw/pygmalion:latest
+<br/>Example: mattw/pygmalion:latest,
+        ArgumentName: name
       },
       {
         Id: insecure,
@@ -697,7 +798,9 @@ The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt
         Type: {
           CSharpType: bool,
           IsArray: false,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: false,
         DefaultValue: false,
@@ -706,7 +809,8 @@ Allow insecure connections to the library.
 
 Only use this if you are pushing to your library during development.
 
-<br/>Default Value: false
+<br/>Default Value: false,
+        ArgumentName: insecure
       },
       {
         Id: stream,
@@ -714,14 +818,17 @@ Only use this if you are pushing to your library during development.
         Type: {
           CSharpType: bool,
           IsArray: false,
-          Properties: null
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
         },
         IsRequired: false,
         DefaultValue: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
 
-<br/>Default Value: false
+<br/>Default Value: false,
+        ArgumentName: stream
       }
     ],
     HttpMethod: Post,

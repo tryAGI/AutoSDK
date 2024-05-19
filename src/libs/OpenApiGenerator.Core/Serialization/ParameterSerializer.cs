@@ -12,12 +12,12 @@ public static class ParameterSerializer
         
         foreach (var parameter in parameters.Where(x => x.ParameterLocation == ParameterLocation.Path))
         {
-            path = path.Replace($"{{{parameter.Id}}}", $"{{{parameter.Name.ToParameterName()}}}");
-            path = path.Replace($"{{{parameter.Id}*}}", $"{{{parameter.Name.ToParameterName()}}}");
-            path = path.Replace($"{{.{parameter.Id}}}", $"{{.{parameter.Name.ToParameterName()}}}");
-            path = path.Replace($"{{.{parameter.Id}*}}", $"{{.{parameter.Name.ToParameterName()}}}");
-            path = path.Replace($"{{;{parameter.Id}}}", $"{{;{parameter.Name.ToParameterName()}}}");
-            path = path.Replace($"{{;{parameter.Id}*}}", $"{{;{parameter.Name.ToParameterName()}}}");
+            path = path.Replace($"{{{parameter.Id}}}", $"{{{parameter.ArgumentName}}}");
+            path = path.Replace($"{{{parameter.Id}*}}", $"{{{parameter.ArgumentName}}}");
+            path = path.Replace($"{{.{parameter.Id}}}", $"{{.{parameter.ArgumentName}}}");
+            path = path.Replace($"{{.{parameter.Id}*}}", $"{{.{parameter.ArgumentName}}}");
+            path = path.Replace($"{{;{parameter.Id}}}", $"{{;{parameter.ArgumentName}}}");
+            path = path.Replace($"{{;{parameter.Id}*}}", $"{{;{parameter.ArgumentName}}}");
         }
 
         return path;
@@ -46,26 +46,26 @@ public static class ParameterSerializer
         {
             if (parameter.ParameterExplode == true)
             {
-                return $"{{string.Join(\"&\", {parameter.Name.ToParameterName()}.Select(static x => $\"{parameter.Name.ToParameterName()}={{x}}\"))}}";
+                return $"{{string.Join(\"&\", {parameter.ArgumentName}.Select(static x => $\"{parameter.Name.ToParameterName()}={{x}}\"))}}";
             }
             
             switch (parameter.ParameterStyle)
             {
                 case ParameterStyle.Form:
-                    return $"{parameter.Name.ToParameterName()}={{string.Join(\",\", {parameter.Name.ToParameterName()})}}";
+                    return $"{parameter.Name.ToParameterName()}={{string.Join(\",\", {parameter.ArgumentName})}}";
                 case ParameterStyle.SpaceDelimited:
-                    return $"{parameter.Name.ToParameterName()}={{string.Join(\"%20\", {parameter.Name.ToParameterName()})}}";
+                    return $"{parameter.Name.ToParameterName()}={{string.Join(\"%20\", {parameter.ArgumentName})}}";
                 case ParameterStyle.PipeDelimited:
-                    return $"{parameter.Name.ToParameterName()}={{string.Join(\"|\", {parameter.Name.ToParameterName()})}}";
+                    return $"{parameter.Name.ToParameterName()}={{string.Join(\"|\", {parameter.ArgumentName})}}";
                 default:
                     throw new NotSupportedException($"Parameter style '{parameter.ParameterStyle}' is not supported.");
             }
         }
 
-        if (parameter.Type.Properties.Length != 0)
+        if (!parameter.Type.IsEnum && parameter.Type.Properties.Length != 0)
         {
             var pairs = parameter.Type.Properties
-                .Select(x => (Name: x.ToParameterName(), Value: $"{{{parameter.Name.ToParameterName()}}}"))
+                .Select(x => (Name: x.ToParameterName(), Value: $"{{{parameter.ArgumentName}}}"))
                 .ToArray();
             switch (parameter.ParameterStyle, parameter.ParameterExplode ?? true)
             {
@@ -80,6 +80,6 @@ public static class ParameterSerializer
             }
         }
         
-        return $"{parameter.Id}={{{parameter.Name.ToParameterName()}}}";
+        return $"{parameter.Id}={{{parameter.ArgumentName}}}";
     }
 }

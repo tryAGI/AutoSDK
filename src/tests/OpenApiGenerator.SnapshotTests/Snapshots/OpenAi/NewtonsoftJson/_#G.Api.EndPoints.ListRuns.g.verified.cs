@@ -19,9 +19,15 @@ namespace G
             string before,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var orderValue = order switch
+            {
+                ListRunsOrder.Asc => "asc",
+                ListRunsOrder.Desc => "desc",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: $"/threads/{threadId}/runs?limit={limit}&order={order}&after={after}&before={before}");
+                requestUri: $"/threads/{threadId}/runs?limit={limit}&order={orderValue}&after={after}&before={before}");
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

@@ -20,9 +20,23 @@ namespace G
             ListVectorStoreFilesFilter filter,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var orderValue = order switch
+            {
+                ListVectorStoreFilesOrder.Asc => "asc",
+                ListVectorStoreFilesOrder.Desc => "desc",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
+            var filterValue = filter switch
+            {
+                ListVectorStoreFilesFilter.InProgress => "in_progress",
+                ListVectorStoreFilesFilter.Completed => "completed",
+                ListVectorStoreFilesFilter.Failed => "failed",
+                ListVectorStoreFilesFilter.Cancelled => "cancelled",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: $"/vector_stores/{vectorStoreId}/files?limit={limit}&order={order}&after={after}&before={before}&filter={filter}");
+                requestUri: $"/vector_stores/{vectorStoreId}/files?limit={limit}&order={orderValue}&after={after}&before={before}&filter={filterValue}");
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
