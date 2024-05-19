@@ -4,6 +4,9 @@
 
 namespace G
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public sealed partial class OpenApiGeneratorTrimmableSupport
     {
         /// <summary>
