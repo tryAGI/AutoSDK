@@ -54,3 +54,45 @@ oag --help
 oag generate openapi.yaml
 ```
 It will generate the code in the "openapi" subdirectory.
+
+## Trimming support
+Since there are two source generators involved, we will have to create a second project so that the generator for the JsonSerializerContext will “see” our models
+- Create new project for your models. And disable methods/constructors generation:
+```xml
+<PropertyGroup Label="OpenApiGenerator">
+    <OpenApiGenerator_GenerateSdk>false</OpenApiGenerator_GenerateSdk>
+    <OpenApiGenerator_GenerateModels>true</OpenApiGenerator_GenerateModels>
+    <OpenApiGenerator_GenerateSuperTypeForJsonSerializerContext>true</OpenApiGenerator_GenerateSuperTypeForJsonSerializerContext>
+</PropertyGroup>
+```
+- Reference this project in your main project.
+- Add `SourceGenerationContext.cs` file to your main project with the following content:
+```csharp
+using System.Text.Json.Serialization;
+
+namespace Namespace;
+
+[JsonSourceGenerationOptions(DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull)]
+[JsonSerializable(typeof(OpenApiGeneratorTrimmableSupport))]
+internal sealed partial class SourceGenerationContext : JsonSerializerContext;
+```
+- Add the following settings to your main csproj file:
+```xml
+<PropertyGroup Label="OpenApiGenerator">
+    <OpenApiGenerator_GenerateSdk>false</OpenApiGenerator_GenerateSdk>
+    <OpenApiGenerator_GenerateMethods>true</OpenApiGenerator_GenerateMethods>
+    <OpenApiGenerator_GenerateConstructors>true</OpenApiGenerator_GenerateConstructors>
+    <OpenApiGenerator_JsonSerializerContext>Namespace.SourceGenerationContext</OpenApiGenerator_JsonSerializerContext>
+</PropertyGroup>
+```
+- Add these settings to your new and main csproj file to enable trimming(or use Directory.Build.props file):
+```xml
+<PropertyGroup Label="Trimmable" Condition="$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net6.0'))">
+    <IsAotCompatible>true</IsAotCompatible>
+    <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+    <IsTrimmable>true</IsTrimmable>
+    <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
+    <TrimmerSingleWarn>false</TrimmerSingleWarn>
+</PropertyGroup>
+```
+- It's all! Now you can build your project and use the generated code with full trimming/nativeAOT support.

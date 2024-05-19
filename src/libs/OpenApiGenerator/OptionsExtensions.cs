@@ -39,6 +39,7 @@ public static class OptionsExtensions
             ExcludeOperationIds: (options.GetGlobalOption(nameof(Settings.ExcludeOperationIds), prefix)?.Split(';') ??
                                   []).ToImmutableArray(),
             JsonSerializerContext: options.GetGlobalOption(nameof(Settings.JsonSerializerContext), prefix) ?? string.Empty,
+            GenerateSuperTypeForJsonSerializerContext: options.GetBoolGlobalOption(nameof(Settings.GenerateSuperTypeForJsonSerializerContext), prefix),
             
             GenerateModels: options.GetBoolGlobalOption(nameof(Settings.GenerateModels), prefix),
             ModelStyle: options.GetEnumGlobalOption<ModelStyle>(nameof(Settings.ModelStyle), prefix),

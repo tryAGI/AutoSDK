@@ -20,6 +20,7 @@ public class CacheTests
         IncludeOperationIds: ImmutableArray.Create(["123", "456"]),
         ExcludeOperationIds: [],
         JsonSerializerContext: string.Empty,
+        GenerateSuperTypeForJsonSerializerContext: false,
         GenerateModels: false,
         ModelStyle: default,
         IncludeModels: ImmutableArray.Create(["123", "456"]),

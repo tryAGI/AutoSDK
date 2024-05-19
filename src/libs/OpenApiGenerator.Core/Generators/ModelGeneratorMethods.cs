@@ -1,6 +1,7 @@
 ﻿using System.Collections.Immutable;
 using OpenApiGenerator.Core.Extensions;
 using OpenApiGenerator.Core.Generation;
+using OpenApiGenerator.Core.Json;
 using OpenApiGenerator.Core.Models;
 
 namespace OpenApiGenerator.Core.Generators;
@@ -88,6 +89,22 @@ public static class ModelGeneratorMethods
         return new FileWithName(
             Name: $"{modelData.FileNameWithoutExtension}.g.cs",
             Text: Sources.GenerateModel(modelData, cancellationToken: cancellationToken));
+    }
+    
+    public static FileWithName GetSourceCodeForSuperClass(
+        EquatableArray<ModelData> models,
+        CancellationToken cancellationToken = default)
+    {
+        if (models.IsEmpty ||
+            !models[0].GenerateSuperTypeForJsonSerializerContext ||
+            models[0].JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+        {
+            return FileWithName.Empty;
+        }
+        
+        return new FileWithName(
+            Name: "OpenApiGeneratorTrimmableSupport.g.cs",
+            Text: Sources.GenerateSuperClass(models, cancellationToken: cancellationToken));
     }
 
     #endregion

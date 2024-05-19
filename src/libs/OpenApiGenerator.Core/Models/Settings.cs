@@ -18,6 +18,7 @@ public readonly record struct Settings(
     ImmutableArray<string> IncludeOperationIds,
     ImmutableArray<string> ExcludeOperationIds,
     string JsonSerializerContext,
+    bool GenerateSuperTypeForJsonSerializerContext,
     
     bool GenerateModels,
     ModelStyle ModelStyle,

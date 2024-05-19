@@ -1,6 +1,7 @@
 ﻿using H.Generators.Extensions;
 using Microsoft.CodeAnalysis;
 using OpenApiGenerator.Core.Generators;
+using OpenApiGenerator.Core.Json;
 using OpenApiGenerator.Core.Models;
 using FileWithName = H.Generators.Extensions.FileWithName;
 
@@ -21,12 +22,18 @@ public class ModelGenerator : IIncrementalGenerator
     {
         var settings = context.DetectSettings();
         
-        context.AdditionalTextsProvider
+        var models = context.AdditionalTextsProvider
             .Where(static text => text.Path.EndsWith(".yaml", StringComparison.InvariantCultureIgnoreCase))
             .Combine(settings)
-            .SelectAndReportExceptions(PrepareData, context, Id)
+            .SelectAndReportExceptions(PrepareData, context, Id);
+        
+        models
             .SelectMany(static (x, _) => x)
             .SelectAndReportExceptions(GetSourceCode, context, Id)
+            .AddSource(context);
+        models
+            .Select(static (x, _) => x)
+            .SelectAndReportExceptions(GetSourceCodeForSuperType, context, Id)
             .AddSource(context);
     }
 
@@ -45,6 +52,22 @@ public class ModelGenerator : IIncrementalGenerator
         CancellationToken cancellationToken = default)
     {
         var fileWithName = ModelGeneratorMethods.GetSourceCode(model, cancellationToken);
+        
+        return new FileWithName(
+            Name: fileWithName.Name,
+            Text: fileWithName.Text);
+    }
+    
+    private static FileWithName GetSourceCodeForSuperType(
+        Core.Models.EquatableArray<ModelData> models,
+        CancellationToken cancellationToken = default)
+    {
+        if (models.IsEmpty)
+        {
+            return FileWithName.Empty;
+        }
+        
+        var fileWithName = ModelGeneratorMethods.GetSourceCodeForSuperClass(models, cancellationToken);
         
         return new FileWithName(
             Name: fileWithName.Name,

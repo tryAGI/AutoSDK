@@ -5,6 +5,7 @@
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: code,
@@ -77,6 +78,7 @@
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: error,
@@ -112,6 +114,7 @@
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: object,
@@ -161,6 +164,7 @@
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: list,
@@ -191,6 +195,7 @@
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -249,6 +254,7 @@
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: model,
@@ -615,6 +621,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Modify the likelihood of specified tokens appearing in the completion.
@@ -638,6 +645,7 @@ As an example, you can pass `{"50256": -100}` to prevent the &lt;|endoftext|&gt;
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: gpt-3.5-turbo-instruct,
@@ -696,6 +704,7 @@ As an example, you can pass `{"50256": -100}` to prevent the &lt;|endoftext|&gt;
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -824,6 +833,7 @@ Represents a completion response from the API. Note: both the streamed and non-s
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: finish_reason,
@@ -908,6 +918,7 @@ or `content_filter` if content was omitted due to a flag from our content filter
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: text_offset,
@@ -980,6 +991,7 @@ or `content_filter` if content was omitted due to a flag from our content filter
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: ,
     AdditionalModels: null,
@@ -996,6 +1008,7 @@ or `content_filter` if content was omitted due to a flag from our content filter
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: stop,
@@ -1059,6 +1072,7 @@ or `content_filter` if content was omitted due to a flag from our content filter
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: text_completion,
@@ -1089,6 +1103,7 @@ or `content_filter` if content was omitted due to a flag from our content filter
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: ,
     AdditionalModels: null,
@@ -1104,6 +1119,7 @@ or `content_filter` if content was omitted due to a flag from our content filter
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: type,
@@ -1152,6 +1168,7 @@ or `content_filter` if content was omitted due to a flag from our content filter
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: url,
@@ -1208,6 +1225,7 @@ Specifies the detail level of the image. Learn more in the [Vision guide](/docs/
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: auto,
@@ -1269,6 +1287,7 @@ Specifies the detail level of the image. Learn more in the [Vision guide](/docs/
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: image_url,
@@ -1299,6 +1318,7 @@ Specifies the detail level of the image. Learn more in the [Vision guide](/docs/
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: type,
@@ -1348,6 +1368,7 @@ Specifies the detail level of the image. Learn more in the [Vision guide](/docs/
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: text,
@@ -1378,6 +1399,7 @@ Specifies the detail level of the image. Learn more in the [Vision guide](/docs/
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: ,
     AdditionalModels: null,
@@ -1393,6 +1415,7 @@ Specifies the detail level of the image. Learn more in the [Vision guide](/docs/
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: content,
@@ -1456,6 +1479,7 @@ Specifies the detail level of the image. Learn more in the [Vision guide](/docs/
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: system,
@@ -1486,6 +1510,7 @@ Specifies the detail level of the image. Learn more in the [Vision guide](/docs/
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: content,
@@ -1551,6 +1576,7 @@ The contents of the user message.
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: user,
@@ -1581,6 +1607,7 @@ The contents of the user message.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: content,
@@ -1673,6 +1700,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: arguments,
@@ -1718,6 +1746,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: assistant,
@@ -1748,6 +1777,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: role,
@@ -1811,6 +1841,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: tool,
@@ -1841,6 +1872,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: role,
@@ -1904,6 +1936,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: function,
@@ -1934,6 +1967,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 The parameters the functions accepts, described as a JSON Schema object. See the [guide](/docs/guides/text-generation/function-calling) for examples, and the [JSON Schema reference](https://json-schema.org/understanding-json-schema/) for documentation about the format. 
@@ -1952,6 +1986,7 @@ Omitting `parameters` defines a function with an empty parameter list.,
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: description,
@@ -2013,6 +2048,7 @@ Omitting `parameters` defines a function with an empty parameter list.,
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: name,
@@ -2045,6 +2081,7 @@ Specifying a particular function via `{"name": "my_function"}` forces the model 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: type,
@@ -2098,6 +2135,7 @@ Specifying a particular function via `{"name": "my_function"}` forces the model 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: function,
@@ -2128,6 +2166,7 @@ Specifying a particular function via `{"name": "my_function"}` forces the model 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: description,
@@ -2189,6 +2228,7 @@ Omitting `parameters` defines a function with an empty parameter list.,
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Controls which (if any) tool is called by the model.
@@ -2212,6 +2252,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: type,
@@ -2260,6 +2301,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: name,
@@ -2291,6 +2333,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: function,
@@ -2321,6 +2364,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: The tool calls generated by the model, such as function calls.,
     AdditionalModels: null,
@@ -2336,6 +2380,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -2398,6 +2443,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: name,
@@ -2443,6 +2489,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: function,
@@ -2473,6 +2520,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: index,
@@ -2549,6 +2597,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: name,
@@ -2594,6 +2643,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: function,
@@ -2624,6 +2674,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: The role of the author of a message,
     AdditionalModels: null,
@@ -2639,6 +2690,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: include_usage,
@@ -2674,6 +2726,7 @@ Options for streaming response. Only set this when you set `stream: true`.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: content,
@@ -2750,6 +2803,7 @@ Options for streaming response. Only set this when you set `stream: true`.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: arguments,
@@ -2795,6 +2849,7 @@ Options for streaming response. Only set this when you set `stream: true`.
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: assistant,
@@ -2825,6 +2880,7 @@ Options for streaming response. Only set this when you set `stream: true`.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: content,
@@ -2907,6 +2963,7 @@ Options for streaming response. Only set this when you set `stream: true`.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: arguments,
@@ -2952,6 +3009,7 @@ Options for streaming response. Only set this when you set `stream: true`.
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: system,
@@ -3024,6 +3082,7 @@ Options for streaming response. Only set this when you set `stream: true`.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: messages,
@@ -3428,6 +3487,7 @@ A list of functions the model may generate JSON inputs for.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Modify the likelihood of specified tokens appearing in the completion.
@@ -3448,6 +3508,7 @@ Accepts a JSON object that maps tokens (specified by their token ID in the token
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: type,
@@ -3495,6 +3556,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: text,
@@ -3543,6 +3605,7 @@ Must be one of `text` or `json_object`.
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: gpt-4-turbo,
@@ -3826,6 +3889,7 @@ Must be one of `text` or `json_object`.
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: none,
@@ -3887,6 +3951,7 @@ Must be one of `text` or `json_object`.
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: none,
@@ -3933,6 +3998,7 @@ Must be one of `text` or `json_object`.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -4059,6 +4125,7 @@ Can be used in conjunction with the `seed` request parameter to understand when 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: finish_reason,
@@ -4153,6 +4220,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: content,
@@ -4184,6 +4252,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: stop,
@@ -4276,6 +4345,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: chat.completion,
@@ -4306,6 +4376,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -4432,6 +4503,7 @@ Can be used in conjunction with the `seed` request parameter to understand when 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: finish_reason,
@@ -4508,6 +4580,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: stop,
@@ -4583,6 +4656,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: chat.completion,
@@ -4613,6 +4687,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: token,
@@ -4685,6 +4760,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: token,
@@ -4743,6 +4819,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: data,
@@ -4806,6 +4883,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: list,
@@ -4836,6 +4914,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -4963,6 +5042,7 @@ When present, it contains a null value except for the last chunk which contains 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: completion_tokens,
@@ -5024,6 +5104,7 @@ When present, it contains a null value except for the last chunk which contains 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: delta,
@@ -5118,6 +5199,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: content,
@@ -5149,6 +5231,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: stop,
@@ -5241,6 +5324,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: chat.completion.chunk,
@@ -5271,6 +5355,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: Represents a streamed chunk of a chat completion response returned by model, based on the provided input.,
     AdditionalModels: null,
@@ -5286,6 +5371,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: prompt,
@@ -5474,6 +5560,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: standard,
@@ -5522,6 +5609,7 @@ The quality of the image that will be generated. `hd` creates images with finer 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: url,
@@ -5570,6 +5658,7 @@ The format in which the generated images are returned. Must be one of `url` or `
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: 256x256,
@@ -5660,6 +5749,7 @@ The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: vivid,
@@ -5708,6 +5798,7 @@ The style of the generated images. Must be one of `vivid` or `natural`. Vivid ca
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: dall-e-2,
@@ -5752,6 +5843,7 @@ The style of the generated images. Must be one of `vivid` or `natural`. Vivid ca
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: created,
@@ -5796,6 +5888,7 @@ The style of the generated images. Must be one of `vivid` or `natural`. Vivid ca
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: b64_json,
@@ -5854,6 +5947,7 @@ The style of the generated images. Must be one of `vivid` or `natural`. Vivid ca
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: image,
@@ -6018,6 +6112,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: 256x256,
@@ -6080,6 +6175,7 @@ The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: url,
@@ -6128,6 +6224,7 @@ The format in which the generated images are returned. Must be one of `url` or `
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: dall-e-2,
@@ -6158,6 +6255,7 @@ The format in which the generated images are returned. Must be one of `url` or `
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: image,
@@ -6292,6 +6390,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: url,
@@ -6340,6 +6439,7 @@ The format in which the generated images are returned. Must be one of `url` or `
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: 256x256,
@@ -6402,6 +6502,7 @@ The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: dall-e-2,
@@ -6432,6 +6533,7 @@ The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: input,
@@ -6484,6 +6586,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: text-moderation-latest,
@@ -6528,6 +6631,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -6586,6 +6690,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: flagged,
@@ -6644,6 +6749,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: hate,
@@ -6814,6 +6920,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: hate,
@@ -6984,6 +7091,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: data,
@@ -7033,6 +7141,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: list,
@@ -7063,6 +7172,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file,
@@ -7122,6 +7232,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: assistants,
@@ -7184,6 +7295,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -7247,6 +7359,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file,
@@ -7277,6 +7390,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: model,
@@ -7425,6 +7539,7 @@ If a seed is not specified, one will be generated for you.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: batch_size,
@@ -7499,6 +7614,7 @@ through the training dataset.
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: auto,
@@ -7530,6 +7646,7 @@ through the training dataset.
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: auto,
@@ -7561,6 +7678,7 @@ through the training dataset.
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: auto,
@@ -7591,6 +7709,7 @@ through the training dataset.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: type,
@@ -7641,6 +7760,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: project,
@@ -7729,6 +7849,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: wandb,
@@ -7760,6 +7881,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: babbage-002,
@@ -7818,6 +7940,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: data,
@@ -7867,6 +7990,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: list,
@@ -7897,6 +8021,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: data,
@@ -7988,6 +8113,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: list,
@@ -8018,6 +8144,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: input,
@@ -8126,6 +8253,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: float,
@@ -8174,6 +8302,7 @@ The format to return the embeddings in. Can be either `float` or [`base64`](http
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: text-embedding-ada-002,
@@ -8232,6 +8361,7 @@ The format to return the embeddings in. Can be either `float` or [`base64`](http
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: data,
@@ -8308,6 +8438,7 @@ The format to return the embeddings in. Can be either `float` or [`base64`](http
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: prompt_tokens,
@@ -8353,6 +8484,7 @@ The format to return the embeddings in. Can be either `float` or [`base64`](http
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: list,
@@ -8383,6 +8515,7 @@ The format to return the embeddings in. Can be either `float` or [`base64`](http
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file,
@@ -8513,6 +8646,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: json,
@@ -8603,6 +8737,7 @@ The format of the transcript output, in one of these options: `json`, `text`, `s
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: whisper-1,
@@ -8633,6 +8768,7 @@ The format of the transcript output, in one of these options: `json`, `text`, `s
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: text,
@@ -8663,6 +8799,7 @@ The format of the transcript output, in one of these options: `json`, `text`, `s
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -8819,6 +8956,7 @@ The format of the transcript output, in one of these options: `json`, `text`, `s
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: word,
@@ -8877,6 +9015,7 @@ The format of the transcript output, in one of these options: `json`, `text`, `s
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: language,
@@ -8963,6 +9102,7 @@ The format of the transcript output, in one of these options: `json`, `text`, `s
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file,
@@ -9065,6 +9205,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: whisper-1,
@@ -9095,6 +9236,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: text,
@@ -9125,6 +9267,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: language,
@@ -9197,6 +9340,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: model,
@@ -9320,6 +9464,7 @@ The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: alloy,
@@ -9421,6 +9566,7 @@ The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: mp3,
@@ -9524,6 +9670,7 @@ The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: tts-1,
@@ -9568,6 +9715,7 @@ The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -9645,6 +9793,7 @@ The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: model,
@@ -9675,6 +9824,7 @@ The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -9832,6 +9982,7 @@ The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file,
@@ -9863,6 +10014,7 @@ The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: assistants,
@@ -9978,6 +10130,7 @@ The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: uploaded,
@@ -10036,6 +10189,7 @@ The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: index,
@@ -10103,6 +10257,7 @@ Represents an embedding vector returned by embedding endpoint.
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: embedding,
@@ -10133,6 +10288,7 @@ Represents an embedding vector returned by embedding endpoint.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -10407,6 +10563,7 @@ The `fine_tuning.job` object represents a fine-tuning job that has been created 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: code,
@@ -10465,6 +10622,7 @@ The `fine_tuning.job` object represents a fine-tuning job that has been created 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: n_epochs,
@@ -10500,6 +10658,7 @@ The number of epochs to train the model for. An epoch refers to one full cycle t
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: auto,
@@ -10531,6 +10690,7 @@ The number of epochs to train the model for. An epoch refers to one full cycle t
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: fine_tuning.job,
@@ -10562,6 +10722,7 @@ The number of epochs to train the model for. An epoch refers to one full cycle t
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: validating_files,
@@ -10662,6 +10823,7 @@ The number of epochs to train the model for. An epoch refers to one full cycle t
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: type,
@@ -10714,6 +10876,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: project,
@@ -10802,6 +10965,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: wandb,
@@ -10832,6 +10996,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -10931,6 +11096,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: info,
@@ -10990,6 +11156,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: fine_tuning.job.event,
@@ -11020,6 +11187,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -11140,6 +11308,7 @@ The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: step,
@@ -11255,6 +11424,7 @@ The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: fine_tuning.job.checkpoint,
@@ -11285,6 +11455,7 @@ The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: completion_tokens,
@@ -11343,6 +11514,7 @@ The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: completion_tokens,
@@ -11401,6 +11573,7 @@ The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: completion_tokens,
@@ -11459,6 +11632,7 @@ The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
@@ -11480,6 +11654,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: type,
@@ -11523,6 +11698,7 @@ An object describing the expected output of the model. If `json_object` only `fu
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: text,
@@ -11570,6 +11746,7 @@ Must be one of `text` or `json_object`.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -11806,6 +11983,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: code_interpreter,
@@ -11852,6 +12030,7 @@ A set of resources that are used by the assistant's tools. The resources are spe
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_ids,
@@ -11886,6 +12065,7 @@ A list of [file](/docs/api-reference/files) IDs made available to the `code_inte
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: vector_store_ids,
@@ -11918,6 +12098,7 @@ The ID of the [vector store](/docs/api-reference/vector-stores/object) attached 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -11936,6 +12117,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: assistant,
@@ -11967,6 +12149,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: none,
@@ -12013,6 +12196,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: model,
@@ -12204,6 +12388,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: code_interpreter,
@@ -12250,6 +12435,7 @@ A set of resources that are used by the assistant's tools. The resources are spe
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_ids,
@@ -12284,6 +12470,7 @@ A list of [file](/docs/api-reference/files) IDs made available to the `code_inte
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: vector_store_ids,
@@ -12332,6 +12519,7 @@ A helper to create a [vector store](/docs/api-reference/vector-stores/object) wi
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_ids,
@@ -12380,6 +12568,7 @@ Set of 16 key-value pairs that can be attached to a vector store. This can be us
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Set of 16 key-value pairs that can be attached to a vector store. This can be useful for storing additional information about the vector store in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -12397,6 +12586,7 @@ Set of 16 key-value pairs that can be attached to a vector store. This can be us
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -12415,6 +12605,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: gpt-4-turbo,
@@ -12684,6 +12875,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: none,
@@ -12730,6 +12922,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: model,
@@ -12921,6 +13114,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: code_interpreter,
@@ -12967,6 +13161,7 @@ A set of resources that are used by the assistant's tools. The resources are spe
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_ids,
@@ -13001,6 +13196,7 @@ Overrides the list of [file](/docs/api-reference/files) IDs made available to th
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: vector_store_ids,
@@ -13033,6 +13229,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -13051,6 +13248,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: none,
@@ -13097,6 +13295,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -13160,6 +13359,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: assistant.deleted,
@@ -13190,6 +13390,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: object,
@@ -13280,6 +13481,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: type,
@@ -13315,6 +13517,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: code_interpreter,
@@ -13345,6 +13548,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: type,
@@ -13380,6 +13584,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_search,
@@ -13410,6 +13615,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: type,
@@ -13463,6 +13669,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: function,
@@ -13493,6 +13700,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: type,
@@ -13544,6 +13752,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: auto,
@@ -13588,6 +13797,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Controls which (if any) tool is called by the model.
@@ -13609,6 +13819,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: type,
@@ -13661,6 +13872,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: name,
@@ -13692,6 +13904,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: function,
@@ -13750,6 +13963,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -14180,6 +14394,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: type,
@@ -14228,6 +14443,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: tool_calls,
@@ -14259,6 +14475,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: submit_tool_outputs,
@@ -14289,6 +14506,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: code,
@@ -14342,6 +14560,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: server_error,
@@ -14400,6 +14619,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: reason,
@@ -14437,6 +14657,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: max_completion_tokens,
@@ -14481,6 +14702,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -14499,6 +14721,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: thread.run,
@@ -14530,6 +14753,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: queued,
@@ -14659,6 +14883,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: none,
@@ -14720,6 +14945,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: none,
@@ -14766,6 +14992,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: assistant_id,
@@ -15030,6 +15257,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -15048,6 +15276,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: gpt-4-turbo,
@@ -15317,6 +15546,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: none,
@@ -15378,6 +15608,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: none,
@@ -15424,6 +15655,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: object,
@@ -15514,6 +15746,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: metadata,
@@ -15546,6 +15779,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -15563,6 +15797,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: tool_outputs,
@@ -15609,6 +15844,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: tool_call_id,
@@ -15653,6 +15889,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -15715,6 +15952,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: name,
@@ -15760,6 +15998,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: function,
@@ -15790,6 +16029,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: assistant_id,
@@ -16060,6 +16300,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: code_interpreter,
@@ -16106,6 +16347,7 @@ A set of resources that are used by the assistant's tools. The resources are spe
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_ids,
@@ -16140,6 +16382,7 @@ A list of [file](/docs/api-reference/files) IDs made available to the `code_inte
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: vector_store_ids,
@@ -16172,6 +16415,7 @@ The ID of the [vector store](/docs/api-reference/vector-stores/object) attached 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -16190,6 +16434,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: gpt-4-turbo,
@@ -16459,6 +16704,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: none,
@@ -16520,6 +16766,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: none,
@@ -16566,6 +16813,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -16660,6 +16908,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: code_interpreter,
@@ -16706,6 +16955,7 @@ A set of resources that are made available to the assistant's tools in this thre
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_ids,
@@ -16740,6 +16990,7 @@ A list of [file](/docs/api-reference/files) IDs made available to the `code_inte
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: vector_store_ids,
@@ -16772,6 +17023,7 @@ The [vector store](/docs/api-reference/vector-stores/object) attached to this th
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -16790,6 +17042,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: thread,
@@ -16820,6 +17073,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: messages,
@@ -16882,6 +17136,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: code_interpreter,
@@ -16928,6 +17183,7 @@ A set of resources that are made available to the assistant's tools in this thre
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_ids,
@@ -16962,6 +17218,7 @@ A list of [file](/docs/api-reference/files) IDs made available to the `code_inte
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: vector_store_ids,
@@ -17010,6 +17267,7 @@ A helper to create a [vector store](/docs/api-reference/vector-stores/object) wi
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_ids,
@@ -17058,6 +17316,7 @@ Set of 16 key-value pairs that can be attached to a vector store. This can be us
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Set of 16 key-value pairs that can be attached to a vector store. This can be useful for storing additional information about the vector store in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -17075,6 +17334,7 @@ Set of 16 key-value pairs that can be attached to a vector store. This can be us
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -17092,6 +17352,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: tool_resources,
@@ -17140,6 +17401,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: code_interpreter,
@@ -17186,6 +17448,7 @@ A set of resources that are made available to the assistant's tools in this thre
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_ids,
@@ -17220,6 +17483,7 @@ A list of [file](/docs/api-reference/files) IDs made available to the `code_inte
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: vector_store_ids,
@@ -17252,6 +17516,7 @@ The [vector store](/docs/api-reference/vector-stores/object) attached to this th
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -17269,6 +17534,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -17332,6 +17598,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: thread.deleted,
@@ -17362,6 +17629,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: object,
@@ -17452,6 +17720,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -17684,6 +17953,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: reason,
@@ -17727,6 +17997,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: content_filter,
@@ -17813,6 +18084,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -17830,6 +18102,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_id,
@@ -17875,6 +18148,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: thread.message,
@@ -17906,6 +18180,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: in_progress,
@@ -17965,6 +18240,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: user,
@@ -18009,6 +18285,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -18073,6 +18350,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: role,
@@ -18124,6 +18402,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: user,
@@ -18169,6 +18448,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: thread.message.delta,
@@ -18199,6 +18479,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: role,
@@ -18283,6 +18564,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -18300,6 +18582,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_id,
@@ -18345,6 +18628,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: user,
@@ -18393,6 +18677,7 @@ The role of the entity that is creating the message. Allowed values include:
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: metadata,
@@ -18425,6 +18710,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -18442,6 +18728,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -18505,6 +18792,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: thread.message.deleted,
@@ -18535,6 +18823,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: object,
@@ -18625,6 +18914,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: type,
@@ -18673,6 +18963,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_id,
@@ -18729,6 +19020,7 @@ Specifies the detail level of the image if specified by the user. `low` uses few
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: auto,
@@ -18790,6 +19082,7 @@ Specifies the detail level of the image if specified by the user. `low` uses few
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: image_file,
@@ -18820,6 +19113,7 @@ Specifies the detail level of the image if specified by the user. `low` uses few
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: index,
@@ -18882,6 +19176,7 @@ Specifies the detail level of the image if specified by the user. `low` uses few
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_id,
@@ -18938,6 +19233,7 @@ Specifies the detail level of the image if specified by the user. `low` uses few
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: auto,
@@ -18999,6 +19295,7 @@ Specifies the detail level of the image if specified by the user. `low` uses few
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: image_file,
@@ -19029,6 +19326,7 @@ Specifies the detail level of the image if specified by the user. `low` uses few
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: type,
@@ -19077,6 +19375,7 @@ Specifies the detail level of the image if specified by the user. `low` uses few
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: url,
@@ -19133,6 +19432,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: auto,
@@ -19194,6 +19494,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: image_url,
@@ -19224,6 +19525,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: index,
@@ -19286,6 +19588,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: url,
@@ -19342,6 +19645,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: auto,
@@ -19403,6 +19707,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: image_url,
@@ -19433,6 +19738,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: type,
@@ -19481,6 +19787,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: value,
@@ -19526,6 +19833,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: text,
@@ -19556,6 +19864,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: type,
@@ -19605,6 +19914,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: text,
@@ -19635,6 +19945,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: type,
@@ -19725,6 +20036,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_id,
@@ -19770,6 +20082,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_citation,
@@ -19800,6 +20113,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: type,
@@ -19890,6 +20204,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_id,
@@ -19921,6 +20236,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_path,
@@ -19951,6 +20267,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: index,
@@ -20013,6 +20330,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: value,
@@ -20058,6 +20376,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: text,
@@ -20088,6 +20407,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: index,
@@ -20192,6 +20512,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_id,
@@ -20237,6 +20558,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_citation,
@@ -20267,6 +20589,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: index,
@@ -20371,6 +20694,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_id,
@@ -20402,6 +20726,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_path,
@@ -20432,6 +20757,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -20702,6 +21028,7 @@ Represents a step in execution of a run.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: The details of the run step.,
     AdditionalModels: null,
@@ -20717,6 +21044,7 @@ Represents a step in execution of a run.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: code,
@@ -20768,6 +21096,7 @@ Represents a step in execution of a run.
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: server_error,
@@ -20812,6 +21141,7 @@ Represents a step in execution of a run.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -20830,6 +21160,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: thread.run.step,
@@ -20861,6 +21192,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: message_creation,
@@ -20906,6 +21238,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: in_progress,
@@ -20992,6 +21325,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -21056,6 +21390,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: step_details,
@@ -21086,6 +21421,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: The details of the run step.,
     AdditionalModels: null,
@@ -21102,6 +21438,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: thread.run.step.delta,
@@ -21132,6 +21469,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: object,
@@ -21222,6 +21560,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: type,
@@ -21270,6 +21609,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: message_id,
@@ -21301,6 +21641,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: message_creation,
@@ -21331,6 +21672,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: type,
@@ -21379,6 +21721,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: message_id,
@@ -21410,6 +21753,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: message_creation,
@@ -21440,6 +21784,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: type,
@@ -21491,6 +21836,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: tool_calls,
@@ -21521,6 +21867,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: type,
@@ -21572,6 +21919,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: tool_calls,
@@ -21602,6 +21950,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -21664,6 +22013,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: input,
@@ -21708,6 +22058,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: ,
     AdditionalModels: null,
@@ -21724,6 +22075,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: code_interpreter,
@@ -21754,6 +22106,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: index,
@@ -21830,6 +22183,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: input,
@@ -21874,6 +22228,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: ,
     AdditionalModels: null,
@@ -21890,6 +22245,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: code_interpreter,
@@ -21920,6 +22276,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: type,
@@ -21969,6 +22326,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: logs,
@@ -21999,6 +22357,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: index,
@@ -22062,6 +22421,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: logs,
@@ -22092,6 +22452,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: type,
@@ -22140,6 +22501,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_id,
@@ -22171,6 +22533,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: image,
@@ -22201,6 +22564,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: index,
@@ -22263,6 +22627,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_id,
@@ -22294,6 +22659,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: image,
@@ -22324,6 +22690,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -22386,6 +22753,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: For now, this is always going to be an empty object.,
     AdditionalModels: null,
@@ -22402,6 +22770,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_search,
@@ -22432,6 +22801,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: index,
@@ -22508,6 +22878,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: For now, this is always going to be an empty object.,
     AdditionalModels: null,
@@ -22524,6 +22895,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_search,
@@ -22554,6 +22926,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -22616,6 +22989,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: name,
@@ -22675,6 +23049,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: function,
@@ -22705,6 +23080,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: index,
@@ -22781,6 +23157,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: name,
@@ -22840,6 +23217,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: function,
@@ -22870,6 +23248,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: anchor,
@@ -22919,6 +23298,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: last_active_at,
@@ -22949,6 +23329,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -23136,6 +23517,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: in_progress,
@@ -23222,6 +23604,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -23240,6 +23623,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: vector_store,
@@ -23271,6 +23655,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: expired,
@@ -23329,6 +23714,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_ids,
@@ -23406,6 +23792,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -23423,6 +23810,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: name,
@@ -23486,6 +23874,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -23503,6 +23892,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: object,
@@ -23593,6 +23983,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -23656,6 +24047,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: vector_store.deleted,
@@ -23686,6 +24078,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -23814,6 +24207,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: code,
@@ -23869,6 +24263,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: internal_error,
@@ -23942,6 +24337,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: vector_store.file,
@@ -23973,6 +24369,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: in_progress,
@@ -24045,6 +24442,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_id,
@@ -24075,6 +24473,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: object,
@@ -24165,6 +24564,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -24228,6 +24628,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: vector_store.file.deleted,
@@ -24258,6 +24659,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -24372,6 +24774,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: in_progress,
@@ -24459,6 +24862,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: vector_store.files_batch,
@@ -24490,6 +24894,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: in_progress,
@@ -24562,6 +24967,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: file_ids,
@@ -24592,6 +24998,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Represents an event emitted when streaming a Run.
@@ -24627,6 +25034,7 @@ integrate the Assistants API with streaming.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: ,
     AdditionalModels: null,
@@ -24642,6 +25050,7 @@ integrate the Assistants API with streaming.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: ,
     AdditionalModels: null,
@@ -24657,6 +25066,7 @@ integrate the Assistants API with streaming.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: ,
     AdditionalModels: null,
@@ -24672,6 +25082,7 @@ integrate the Assistants API with streaming.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: ,
     AdditionalModels: null,
@@ -24687,6 +25098,7 @@ integrate the Assistants API with streaming.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: event,
@@ -24741,6 +25153,7 @@ integrate the Assistants API with streaming.
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: error,
@@ -24771,6 +25184,7 @@ integrate the Assistants API with streaming.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: event,
@@ -24824,6 +25238,7 @@ integrate the Assistants API with streaming.
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: done,
@@ -24855,6 +25270,7 @@ integrate the Assistants API with streaming.
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: [DONE],
@@ -24885,6 +25301,7 @@ integrate the Assistants API with streaming.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -25205,6 +25622,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: object,
@@ -25249,6 +25667,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: code,
@@ -25321,6 +25740,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: total,
@@ -25379,6 +25799,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -25397,6 +25818,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: batch,
@@ -25428,6 +25850,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: validating,
@@ -25556,6 +25979,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: custom_id,
@@ -25619,6 +26043,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: POST,
@@ -25649,6 +26074,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: id,
@@ -25721,6 +26147,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: status_code,
@@ -25779,6 +26206,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: The JSON body of the response,
     AdditionalModels: null,
@@ -25794,6 +26222,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: code,
@@ -25838,6 +26267,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: data,
@@ -25931,6 +26361,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: list,
@@ -25962,6 +26393,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: asc,
@@ -26008,6 +26440,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: asc,
@@ -26054,6 +26487,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: asc,
@@ -26100,6 +26534,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: asc,
@@ -26146,6 +26581,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: asc,
@@ -26192,6 +26628,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: asc,
@@ -26238,6 +26675,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: in_progress,
@@ -26311,6 +26749,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: asc,
@@ -26357,6 +26796,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: in_progress,

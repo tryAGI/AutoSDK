@@ -23,6 +23,7 @@ public class ModelTests :
         IncludeOperationIds: [],
         ExcludeOperationIds: [],
         JsonSerializerContext: string.Empty,
+        GenerateSuperTypeForJsonSerializerContext: false,
         GenerateModels: false,
         ModelStyle: default,
         IncludeModels: [],

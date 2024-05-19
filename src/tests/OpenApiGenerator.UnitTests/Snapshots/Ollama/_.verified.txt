@@ -5,6 +5,7 @@
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: model,
@@ -242,6 +243,7 @@ How long (in minutes) to keep the model loaded in memory.
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: json,
@@ -278,6 +280,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: num_keep,
@@ -820,6 +823,7 @@ Sets the number of threads to use during computation. By default, Ollama will de
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 The format to return a response in. Currently the only accepted value is json.
@@ -841,6 +845,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: model,
@@ -1037,6 +1042,7 @@ Time in nanoseconds spent generating the response.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: model,
@@ -1198,6 +1204,7 @@ How long (in minutes) to keep the model loaded in memory.
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: json,
@@ -1234,6 +1241,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: message,
@@ -1415,6 +1423,7 @@ Time in nanoseconds spent generating the response.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: role,
@@ -1484,6 +1493,7 @@ The content of the message
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: system,
@@ -1542,6 +1552,7 @@ The content of the message
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: model,
@@ -1641,6 +1652,7 @@ Text to generate embeddings for.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: embedding,
@@ -1673,6 +1685,7 @@ The embedding for the prompt.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: name,
@@ -1742,6 +1755,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: status,
@@ -1781,6 +1795,7 @@ If `false` the response will be returned as a single response object, otherwise 
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: creating system layer,
@@ -1839,6 +1854,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: Status creating the model,
     AdditionalModels: null,
@@ -1854,6 +1870,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: models,
@@ -1884,6 +1901,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: name,
@@ -1951,6 +1969,7 @@ Size of the model on disk.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: name,
@@ -1986,6 +2005,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: license,
@@ -2066,6 +2086,7 @@ The prompt template for the model.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: source,
@@ -2114,6 +2135,7 @@ Name of the new model.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: name,
@@ -2149,6 +2171,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: name,
@@ -2222,6 +2245,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: status,
@@ -2323,6 +2347,7 @@ The number of files to be downloaded depends on the number of layers specified i
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: pulling manifest,
@@ -2425,6 +2450,7 @@ Status pulling the model.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary:
 Status pulling the model.
@@ -2442,6 +2468,7 @@ Status pulling the model.
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: name,
@@ -2512,6 +2539,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: status,
@@ -2585,6 +2613,7 @@ total size of the model
     TargetFramework: netstandard2.0,
     Namespace: G,
     Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: [
       {
         Id: retrieving manifest,
@@ -2657,6 +2686,7 @@ total size of the model
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: Status pushing the model.,
     AdditionalModels: null,
