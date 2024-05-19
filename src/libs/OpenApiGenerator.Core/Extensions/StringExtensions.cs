@@ -58,7 +58,7 @@ public static class StringExtensions
         return input switch
         {
             null => throw new ArgumentNullException(nameof(input)),
-            "" => throw new ArgumentException($"{nameof(input)} cannot be empty", nameof(input)),
+            "" => string.Empty,
             "Event" => "@event",
             "event" => "@event",
             "Namespace" => "@namespace",

@@ -67,6 +67,17 @@ public class ModelTests :
 
         return VerifyAsync(models);
     }
+    //
+    // [TestMethod]
+    // public Task GitHub()
+    // {
+    //     var yaml = H.Resources.api_github_com_yaml.AsString();
+    //     var settings = DefaultSettings;
+    //
+    //     var models = ModelGeneratorMethods.PrepareData((yaml, settings));
+    //
+    //     return VerifyAsync(models);
+    // }
 
     [TestMethod]
     public Task LangSmith()

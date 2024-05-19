@@ -98,6 +98,8 @@ public readonly record struct TypeData(
             ("array", _) when schema.Value.Items.Reference != null =>
                 ($"{ModelData.FromKey(schema.Value.Items.Reference.Id, settings).ClassName}".AsArray(), true),
             ("array", _) when schema.Value.Items.Reference == null => (GetCSharpType(schema.Value.Items.WithKey(schema.Key), settings, parents.ToArray()).AsArray(), true),
+            
+            (null, null)  => ("object", true),
             _ => throw new NotSupportedException($"Type {schema.Value.Type} is not supported."),
         };
 
