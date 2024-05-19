@@ -55,12 +55,12 @@ namespace G
         public async global::System.Threading.Tasks.Task<ImagesResponse> CreateImageEditAsync(
             byte[] image,
             string prompt,
-            byte[]? mask,
-            object? model,
-            int? n,
-            string? size,
-            string? responseFormat,
-            string? user,
+            byte[]? mask = default,
+            object? model = default,
+            int? n = default,
+            string? size = default,
+            string? responseFormat = default,
+            string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateImageEditRequest

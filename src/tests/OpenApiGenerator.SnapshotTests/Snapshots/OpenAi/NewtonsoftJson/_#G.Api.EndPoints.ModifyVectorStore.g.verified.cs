@@ -52,9 +52,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<VectorStoreObject> ModifyVectorStoreAsync(
             string vectorStoreId,
-            string? name,
-            VectorStoreExpirationAfter? expiresAfter,
-            UpdateVectorStoreRequestMetadata? metadata,
+            string? name = default,
+            VectorStoreExpirationAfter? expiresAfter = default,
+            UpdateVectorStoreRequestMetadata? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new UpdateVectorStoreRequest

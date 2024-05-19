@@ -52,11 +52,11 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<ImagesResponse> CreateImageVariationAsync(
             byte[] image,
-            object? model,
-            int? n,
-            string? responseFormat,
-            string? size,
-            string? user,
+            object? model = default,
+            int? n = default,
+            string? responseFormat = default,
+            string? size = default,
+            string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateImageVariationRequest

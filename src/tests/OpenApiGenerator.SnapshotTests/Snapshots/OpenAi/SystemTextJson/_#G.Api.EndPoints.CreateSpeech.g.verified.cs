@@ -47,8 +47,8 @@ namespace G
             object model,
             string input,
             string voice,
-            string? responseFormat,
-            double speed,
+            string? responseFormat = default,
+            double speed = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateSpeechRequest

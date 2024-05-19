@@ -54,11 +54,11 @@ namespace G
         public async global::System.Threading.Tasks.Task<FineTuningJob> CreateFineTuningJobAsync(
             object model,
             string trainingFile,
-            CreateFineTuningJobRequestHyperparameters? hyperparameters,
-            string? suffix,
-            string? validationFile,
-            global::System.Collections.Generic.IList<CreateFineTuningJobRequestIntegrations?>? integrations,
-            int? seed,
+            CreateFineTuningJobRequestHyperparameters? hyperparameters = default,
+            string? suffix = default,
+            string? validationFile = default,
+            global::System.Collections.Generic.IList<CreateFineTuningJobRequestIntegrations?>? integrations = default,
+            int? seed = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateFineTuningJobRequest

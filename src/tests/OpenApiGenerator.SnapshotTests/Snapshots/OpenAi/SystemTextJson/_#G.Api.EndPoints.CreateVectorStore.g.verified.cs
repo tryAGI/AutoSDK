@@ -49,10 +49,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<VectorStoreObject> CreateVectorStoreAsync(
-            global::System.Collections.Generic.IList<string?>? fileIds,
-            string? name,
-            VectorStoreExpirationAfter? expiresAfter,
-            CreateVectorStoreRequestMetadata? metadata,
+            global::System.Collections.Generic.IList<string?>? fileIds = default,
+            string? name = default,
+            VectorStoreExpirationAfter? expiresAfter = default,
+            CreateVectorStoreRequestMetadata? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateVectorStoreRequest

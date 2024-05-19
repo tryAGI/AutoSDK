@@ -64,15 +64,15 @@ namespace G
         public async global::System.Collections.Generic.IAsyncEnumerable<GenerateCompletionResponse> GenerateCompletionAsync(
             string model,
             string prompt,
-            global::System.Collections.Generic.IList<string?>? images,
-            string? system,
-            string? template,
-            global::System.Collections.Generic.IList<int>? context,
-            RequestOptions? options,
-            GenerateCompletionRequestFormat? format,
-            bool raw,
-            bool stream,
-            int keepAlive,
+            global::System.Collections.Generic.IList<string?>? images = default,
+            string? system = default,
+            string? template = default,
+            global::System.Collections.Generic.IList<int>? context = default,
+            RequestOptions? options = default,
+            GenerateCompletionRequestFormat? format = default,
+            bool raw = default,
+            bool stream = default,
+            int keepAlive = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new GenerateCompletionRequest

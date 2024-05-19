@@ -56,7 +56,7 @@ namespace G
         public async global::System.Collections.Generic.IAsyncEnumerable<CreateModelResponse> CreateModelAsync(
             string name,
             string modelfile,
-            bool stream,
+            bool stream = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateModelRequest

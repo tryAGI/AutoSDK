@@ -47,10 +47,10 @@ namespace G
         public async global::System.Threading.Tasks.Task CreateTranscriptionAsync(
             byte[] file,
             object model,
-            string? language,
-            string? prompt,
-            CreateTranscriptionRequestResponseFormat? responseFormat,
-            double temperature,
+            string? language = default,
+            string? prompt = default,
+            CreateTranscriptionRequestResponseFormat? responseFormat = default,
+            double temperature = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateTranscriptionRequest

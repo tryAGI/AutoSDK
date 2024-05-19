@@ -50,7 +50,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<GenerateEmbeddingResponse> GenerateEmbeddingAsync(
             string model,
             string prompt,
-            RequestOptions? options,
+            RequestOptions? options = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new GenerateEmbeddingRequest

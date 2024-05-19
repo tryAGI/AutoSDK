@@ -55,8 +55,8 @@ namespace G
             string threadId,
             CreateMessageRequestRole role,
             object content,
-            global::System.Collections.Generic.IList<CreateMessageRequestAttachments?>? attachments,
-            CreateMessageRequestMetadata? metadata,
+            global::System.Collections.Generic.IList<CreateMessageRequestAttachments?>? attachments = default,
+            CreateMessageRequestMetadata? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateMessageRequest

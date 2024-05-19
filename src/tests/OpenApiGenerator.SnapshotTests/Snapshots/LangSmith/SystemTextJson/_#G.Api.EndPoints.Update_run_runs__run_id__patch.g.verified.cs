@@ -48,11 +48,11 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task Update_run_runs__run_id__patchAsync(
             string runId,
-            global::System.DateTime endTime,
-            string? error,
-            object? inputs,
-            object? outputs,
-            global::System.Collections.Generic.IList<RunUpdateSchemaExtendedEvents?>? events,
+            global::System.DateTime endTime = default,
+            string? error = default,
+            object? inputs = default,
+            object? outputs = default,
+            global::System.Collections.Generic.IList<RunUpdateSchemaExtendedEvents?>? events = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new RunUpdateSchemaExtended

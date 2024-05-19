@@ -49,8 +49,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<PushModelResponse> PushModelAsync(
             string name,
-            bool insecure,
-            bool stream,
+            bool insecure = default,
+            bool stream = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new PushModelRequest

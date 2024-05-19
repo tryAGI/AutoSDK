@@ -56,15 +56,15 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<AssistantObject> CreateAssistantAsync(
             object model,
-            string? name,
-            string? description,
-            string? instructions,
-            global::System.Collections.Generic.IList<object?>? tools,
-            CreateAssistantRequestToolResources? toolResources,
-            CreateAssistantRequestMetadata? metadata,
-            double? temperature,
-            double? topP,
-            AssistantsApiResponseFormatOption? responseFormat,
+            string? name = default,
+            string? description = default,
+            string? instructions = default,
+            global::System.Collections.Generic.IList<object?>? tools = default,
+            CreateAssistantRequestToolResources? toolResources = default,
+            CreateAssistantRequestMetadata? metadata = default,
+            double? temperature = default,
+            double? topP = default,
+            AssistantsApiResponseFormatOption? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateAssistantRequest

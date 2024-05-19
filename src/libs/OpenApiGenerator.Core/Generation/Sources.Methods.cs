@@ -187,8 +187,10 @@ namespace {endPoint.Namespace}
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::System.InvalidOperationException""></exception>
         public async {taskType} {endPoint.MethodName}(
-{endPoint.Properties.Select(x => $@"
+{endPoint.Properties.Where(static x => x.IsRequired).Select(x => $@"
             {x.Type.CSharpType} {x.Name.ToParameterName()},").Inject()}
+{endPoint.Properties.Where(static x => !x.IsRequired).Select(x => $@"
+            {x.Type.CSharpType} {x.Name.ToParameterName()} = default,").Inject()}
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default)
         {{
             var request = new {endPoint.RequestType}

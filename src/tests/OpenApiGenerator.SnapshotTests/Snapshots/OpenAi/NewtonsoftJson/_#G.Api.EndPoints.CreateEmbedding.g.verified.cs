@@ -52,9 +52,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<CreateEmbeddingResponse> CreateEmbeddingAsync(
             object input,
             object model,
-            CreateEmbeddingRequestEncodingFormat? encodingFormat,
-            int dimensions,
-            string? user,
+            CreateEmbeddingRequestEncodingFormat? encodingFormat = default,
+            int dimensions = default,
+            string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateEmbeddingRequest

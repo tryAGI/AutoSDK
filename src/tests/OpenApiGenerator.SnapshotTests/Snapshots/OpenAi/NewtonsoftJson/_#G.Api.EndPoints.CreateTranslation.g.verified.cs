@@ -46,9 +46,9 @@ namespace G
         public async global::System.Threading.Tasks.Task CreateTranslationAsync(
             byte[] file,
             object model,
-            string? prompt,
-            string? responseFormat,
-            double temperature,
+            string? prompt = default,
+            string? responseFormat = default,
+            double temperature = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateTranslationRequest

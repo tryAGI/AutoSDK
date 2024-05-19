@@ -56,7 +56,7 @@ namespace G
             string threadId,
             string runId,
             global::System.Collections.Generic.IList<SubmitToolOutputsRunRequestToolOutputs> toolOutputs,
-            bool? stream,
+            bool? stream = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new SubmitToolOutputsRunRequest

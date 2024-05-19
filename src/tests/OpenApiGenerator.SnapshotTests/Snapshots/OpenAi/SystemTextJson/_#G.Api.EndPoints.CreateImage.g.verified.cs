@@ -54,13 +54,13 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<ImagesResponse> CreateImageAsync(
             string prompt,
-            object? model,
-            int? n,
-            string? quality,
-            string? responseFormat,
-            string? size,
-            string? style,
-            string? user,
+            object? model = default,
+            int? n = default,
+            string? quality = default,
+            string? responseFormat = default,
+            string? size = default,
+            string? style = default,
+            string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateImageRequest
