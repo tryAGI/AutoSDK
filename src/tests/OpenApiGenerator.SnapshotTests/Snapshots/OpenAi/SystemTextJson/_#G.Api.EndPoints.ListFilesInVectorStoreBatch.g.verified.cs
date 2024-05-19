@@ -14,11 +14,16 @@ namespace G
         public async global::System.Threading.Tasks.Task<ListVectorStoreFilesResponse> ListFilesInVectorStoreBatchAsync(
             string vectorStoreId,
             string batchId,
+            int limit,
+            string order,
+            string after,
+            string before,
+            string filter,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: $"/vector_stores/{vectorStoreId}/file_batches/{batchId}/files");
+                requestUri: $"/vector_stores/{vectorStoreId}/file_batches/{batchId}/files?limit={limit}&order={order}&after={after}&before={before}&filter={filter}");
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

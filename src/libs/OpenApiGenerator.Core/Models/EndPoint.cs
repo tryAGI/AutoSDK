@@ -41,6 +41,7 @@ public readonly record struct EndPoint(
                 parameterLocation: x.In,
                 parameterStyle: x.Style,
                 parameterExplode: x.Explode,
+                operationId: operation.Value.OperationId,
                 settings: settings,
                 parents: []))
             .ToArray();

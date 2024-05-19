@@ -37,7 +37,7 @@ public static class StringExtensions
         return input switch
         {
             null => throw new ArgumentNullException(nameof(input)),
-            "" => throw new ArgumentException($"{nameof(input)} cannot be empty", nameof(input)),
+            "" => string.Empty,
 #if NET6_0_OR_GREATER
             _ => string.Concat(input[0].ToString().ToUpper(CultureInfo.InvariantCulture), input.AsSpan(1)),
 #else

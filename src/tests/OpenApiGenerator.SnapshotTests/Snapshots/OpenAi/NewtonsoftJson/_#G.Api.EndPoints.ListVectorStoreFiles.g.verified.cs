@@ -13,11 +13,16 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<ListVectorStoreFilesResponse> ListVectorStoreFilesAsync(
             string vectorStoreId,
+            int limit,
+            ListVectorStoreFilesOrder order,
+            string after,
+            string before,
+            ListVectorStoreFilesFilter filter,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: $"/vector_stores/{vectorStoreId}/files");
+                requestUri: $"/vector_stores/{vectorStoreId}/files?limit={limit}&order={order}&after={after}&before={before}&filter={filter}");
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

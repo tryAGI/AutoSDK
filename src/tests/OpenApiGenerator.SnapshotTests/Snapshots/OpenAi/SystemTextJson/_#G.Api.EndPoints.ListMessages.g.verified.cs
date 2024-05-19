@@ -13,11 +13,16 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<ListMessagesResponse> ListMessagesAsync(
             string threadId,
+            int limit,
+            string order,
+            string after,
+            string before,
+            string runId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: $"/threads/{threadId}/messages");
+                requestUri: $"/threads/{threadId}/messages?limit={limit}&order={order}&after={after}&before={before}&run_id={runId}");
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

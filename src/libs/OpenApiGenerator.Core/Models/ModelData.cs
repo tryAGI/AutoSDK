@@ -94,6 +94,7 @@ public readonly record struct ModelData(
                     parameterLocation: null,
                     parameterStyle: null,
                     parameterExplode: null,
+                    operationId: string.Empty,
                     settings: settings,
                     parents: innerParents))
                 .ToImmutableArray(),

@@ -13,11 +13,13 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<ListFineTuningJobCheckpointsResponse> ListFineTuningJobCheckpointsAsync(
             string fineTuningJobId,
+            string after,
+            int limit,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: $"/fine_tuning/jobs/{fineTuningJobId}/checkpoints");
+                requestUri: $"/fine_tuning/jobs/{fineTuningJobId}/checkpoints?after={after}&limit={limit}");
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

@@ -27,7 +27,7 @@ public static class ModelGeneratorMethods
                 .SelectMany(schema => schema.GetReferences())
                 .Select(reference => reference.Id));
         
-        return openApiDocument.Components.Schemas
+        var components = openApiDocument.Components.Schemas
             .Where(schema =>
                 includedModels.Count == 0 ||
                 includedModels.Contains(schema.Key) ||
@@ -39,6 +39,39 @@ public static class ModelGeneratorMethods
                 Schema = default,
             })
             .ToImmutableArray();
+
+        var objectParameters = openApiDocument.Paths
+            .SelectMany(path => path.Value.Operations.Select(operation => (operation.Value.OperationId, Operation: operation)))
+            .SelectMany(x => x.Operation.Value.Parameters.Select(y => (x.OperationId, Parameter: y)))
+            .Where(x => x.Parameter.Schema.Type == "object")
+            .Select(x => ModelData.FromSchema(
+                x.Parameter.Schema.WithKey(x.OperationId + x.Parameter.Name.ToPropertyName()),
+                settings) with
+                {
+                    Schema = default,
+                })
+            .ToImmutableArray();
+        var enumParameters = openApiDocument.Paths
+            .SelectMany(path => path.Value.Operations.Select(operation => (operation.Value.OperationId, Operation: operation)))
+            .SelectMany(x => x.Operation.Value.Parameters.Select(y => (x.OperationId, Parameter: y)))
+            .Where(x => x.Parameter.Schema.Enum?.Any() == true)
+            .Select(x => ModelData.FromSchema(
+                    x.Parameter.Schema.WithKey(x.OperationId + x.Parameter.Name.ToPropertyName()),
+                    settings) with
+                {
+                    Style = ModelStyle.Enumeration,
+                    Properties = x.Parameter.Schema.Enum
+                        .Select(value => value.ToEnumValue())
+                        .ToImmutableArray(),
+                    Schema = default,
+                })
+            .ToImmutableArray();
+        
+        return [
+            ..components,
+            ..objectParameters,
+            ..enumParameters
+        ];
     }
     
     public static FileWithName GetSourceCode(

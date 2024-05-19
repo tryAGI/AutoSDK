@@ -83,7 +83,7 @@ public readonly record struct TypeData(
         };
 
         return schema.Value.Nullable ||
-               reference && parents.Length > 0 && !parents.Last().Schema.Value.Required.Contains(schema.Key)
+               reference && parents.Length > 0 && parents.Last().Schema.Value?.Required.Contains(schema.Key) == false
             ? type + "?"
             : type;
     }

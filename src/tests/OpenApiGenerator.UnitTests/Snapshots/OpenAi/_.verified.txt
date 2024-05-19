@@ -21543,5 +21543,407 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: Object,
     ExternalClassName: Object,
     FileNameWithoutExtension: G.Models.Object
+  },
+  {
+    Id: listAssistantsOrder,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: asc,
+        Name: Asc,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: desc,
+        Name: Desc,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary:
+<br/>Default Value: desc,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ListAssistantsOrder,
+    ClassName: ListAssistantsOrder,
+    ExternalClassName: ListAssistantsOrder,
+    FileNameWithoutExtension: G.Models.ListAssistantsOrder
+  },
+  {
+    Id: listMessagesOrder,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: asc,
+        Name: Asc,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: desc,
+        Name: Desc,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary:
+<br/>Default Value: desc,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ListMessagesOrder,
+    ClassName: ListMessagesOrder,
+    ExternalClassName: ListMessagesOrder,
+    FileNameWithoutExtension: G.Models.ListMessagesOrder
+  },
+  {
+    Id: listRunsOrder,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: asc,
+        Name: Asc,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: desc,
+        Name: Desc,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary:
+<br/>Default Value: desc,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ListRunsOrder,
+    ClassName: ListRunsOrder,
+    ExternalClassName: ListRunsOrder,
+    FileNameWithoutExtension: G.Models.ListRunsOrder
+  },
+  {
+    Id: listRunStepsOrder,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: asc,
+        Name: Asc,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: desc,
+        Name: Desc,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary:
+<br/>Default Value: desc,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ListRunStepsOrder,
+    ClassName: ListRunStepsOrder,
+    ExternalClassName: ListRunStepsOrder,
+    FileNameWithoutExtension: G.Models.ListRunStepsOrder
+  },
+  {
+    Id: listVectorStoresOrder,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: asc,
+        Name: Asc,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: desc,
+        Name: Desc,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary:
+<br/>Default Value: desc,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ListVectorStoresOrder,
+    ClassName: ListVectorStoresOrder,
+    ExternalClassName: ListVectorStoresOrder,
+    FileNameWithoutExtension: G.Models.ListVectorStoresOrder
+  },
+  {
+    Id: listVectorStoreFilesOrder,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: asc,
+        Name: Asc,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: desc,
+        Name: Desc,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary:
+<br/>Default Value: desc,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ListVectorStoreFilesOrder,
+    ClassName: ListVectorStoreFilesOrder,
+    ExternalClassName: ListVectorStoreFilesOrder,
+    FileNameWithoutExtension: G.Models.ListVectorStoreFilesOrder
+  },
+  {
+    Id: listVectorStoreFilesFilter,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: in_progress,
+        Name: InProgress,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: completed,
+        Name: Completed,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: failed,
+        Name: Failed,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: cancelled,
+        Name: Cancelled,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ListVectorStoreFilesFilter,
+    ClassName: ListVectorStoreFilesFilter,
+    ExternalClassName: ListVectorStoreFilesFilter,
+    FileNameWithoutExtension: G.Models.ListVectorStoreFilesFilter
+  },
+  {
+    Id: listFilesInVectorStoreBatchOrder,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: asc,
+        Name: Asc,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: desc,
+        Name: Desc,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary:
+<br/>Default Value: desc,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ListFilesInVectorStoreBatchOrder,
+    ClassName: ListFilesInVectorStoreBatchOrder,
+    ExternalClassName: ListFilesInVectorStoreBatchOrder,
+    FileNameWithoutExtension: G.Models.ListFilesInVectorStoreBatchOrder
+  },
+  {
+    Id: listFilesInVectorStoreBatchFilter,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: in_progress,
+        Name: InProgress,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: completed,
+        Name: Completed,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: failed,
+        Name: Failed,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
+        IsRequired: false,
+        Summary: 
+      },
+      {
+        Id: cancelled,
+        Name: Cancelled,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
+        IsRequired: false,
+        Summary: 
+      }
+    ],
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ListFilesInVectorStoreBatchFilter,
+    ClassName: ListFilesInVectorStoreBatchFilter,
+    ExternalClassName: ListFilesInVectorStoreBatchFilter,
+    FileNameWithoutExtension: G.Models.ListFilesInVectorStoreBatchFilter
   }
 ]

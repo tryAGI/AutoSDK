@@ -32,6 +32,7 @@ public readonly record struct PropertyData(
         ParameterLocation? parameterLocation,
         ParameterStyle? parameterStyle,
         bool? parameterExplode,
+        string operationId,
         Settings settings,
         params ModelData[] parents)
     {
@@ -51,7 +52,9 @@ public readonly record struct PropertyData(
         return new PropertyData(
             Id: schema.Key,
             Name: name,
-            Type: TypeData.FromSchema(schema, settings, parents),
+            Type: TypeData.FromSchema(schema, settings, string.IsNullOrWhiteSpace(operationId)
+                ? parents
+                : parents.Concat([ModelData.FromKey(operationId, settings) with{ Schema = default }]).ToArray()),
             IsRequired: requiredProperties.Contains(schema.Key),
             ParameterLocation: parameterLocation,
             ParameterStyle: parameterStyle,

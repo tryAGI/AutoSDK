@@ -12,11 +12,12 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<ListFilesResponse> ListFilesAsync(
+            string purpose,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: "/files");
+                requestUri: $"/files?purpose={purpose}");
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
