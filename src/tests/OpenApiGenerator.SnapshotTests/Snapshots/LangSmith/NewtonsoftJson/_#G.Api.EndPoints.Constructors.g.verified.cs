@@ -4,6 +4,10 @@
 
 namespace G
 {
+    /// <summary>
+    /// If no httpClient is provided, a new one will be created.
+    /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+    /// </summary>
     public sealed partial class Api : global::System.IDisposable
     {
         private readonly global::System.Net.Http.HttpClient _httpClient;
@@ -13,9 +17,8 @@ namespace G
         /// If no httpClient is provided, a new one will be created.
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
         /// </summary>
-        /// <param name="client"></param>
+        /// <param name="httpClient"></param>
         /// <param name="baseUri"></param>
-        /// <exception cref="global::System.ArgumentNullException"></exception>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null)

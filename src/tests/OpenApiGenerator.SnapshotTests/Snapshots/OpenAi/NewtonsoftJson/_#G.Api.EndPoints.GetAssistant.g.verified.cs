@@ -9,6 +9,8 @@ namespace G
         /// <summary>
         /// Retrieves an assistant.
         /// </summary>
+        /// <param name="assistantId"></param>
+        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<AssistantObject> GetAssistantAsync(

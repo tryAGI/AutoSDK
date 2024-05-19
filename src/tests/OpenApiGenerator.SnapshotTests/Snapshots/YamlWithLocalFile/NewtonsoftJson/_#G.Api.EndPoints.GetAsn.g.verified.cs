@@ -9,6 +9,8 @@ namespace G
         /// <summary>
         /// Returns information about an ASN, such as the assigned prefixes, related domain, and more.
         /// </summary>
+        /// <param name="asn"></param>
+        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<AsnResponse> GetAsnAsync(

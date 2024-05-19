@@ -9,6 +9,7 @@ namespace G
         /// <summary>
         /// Creates an embedding vector representing the input text.
         /// </summary>
+        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<CreateEmbeddingResponse> CreateEmbeddingAsync(

@@ -9,6 +9,7 @@ namespace G
         /// <summary>
         /// Creates a fine-tuning job which begins the process of creating a new model from a given dataset.Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.[Learn more about fine-tuning](/docs/guides/fine-tuning)
         /// </summary>
+        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<FineTuningJob> CreateFineTuningJobAsync(

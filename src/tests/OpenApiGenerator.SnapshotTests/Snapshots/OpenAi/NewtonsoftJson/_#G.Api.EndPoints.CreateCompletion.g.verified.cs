@@ -9,6 +9,7 @@ namespace G
         /// <summary>
         /// Creates a completion for the provided prompt and parameters.
         /// </summary>
+        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<CreateCompletionResponse> CreateCompletionAsync(

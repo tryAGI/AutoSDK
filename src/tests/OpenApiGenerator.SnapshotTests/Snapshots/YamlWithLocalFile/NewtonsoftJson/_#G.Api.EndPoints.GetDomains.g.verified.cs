@@ -9,6 +9,10 @@ namespace G
         /// <summary>
         /// Our Hosted Domains, or Reverse IP API returns a list of all of the domains hosted on the provided IP address.
         /// </summary>
+        /// <param name="ip"></param>
+        /// <param name="page"></param>
+        /// <param name="limit"></param>
+        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<DomainsResponse> GetDomainsAsync(

@@ -9,6 +9,7 @@ namespace G
         /// <summary>
         /// Classifies if text is potentially harmful.
         /// </summary>
+        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<CreateModerationResponse> CreateModerationAsync(

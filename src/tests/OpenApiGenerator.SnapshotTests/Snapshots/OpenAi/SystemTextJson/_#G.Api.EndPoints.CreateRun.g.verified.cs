@@ -9,6 +9,8 @@ namespace G
         /// <summary>
         /// Create a run.
         /// </summary>
+        /// <param name="threadId"></param>
+        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<RunObject> CreateRunAsync(

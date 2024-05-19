@@ -9,6 +9,7 @@ namespace G
         /// <summary>
         /// Creates an edited or extended image given an original image and a prompt.
         /// </summary>
+        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<ImagesResponse> CreateImageEditAsync(

@@ -9,6 +9,9 @@ namespace G
         /// <summary>
         /// Cancels a run that is `in_progress`.
         /// </summary>
+        /// <param name="threadId"></param>
+        /// <param name="runId"></param>
+        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<RunObject> CancelRunAsync(

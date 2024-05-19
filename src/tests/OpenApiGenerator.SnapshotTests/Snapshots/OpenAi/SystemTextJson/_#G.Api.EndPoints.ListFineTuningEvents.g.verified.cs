@@ -9,6 +9,10 @@ namespace G
         /// <summary>
         /// Get status updates for a fine-tuning job.
         /// </summary>
+        /// <param name="fineTuningJobId"></param>
+        /// <param name="after"></param>
+        /// <param name="limit"></param>
+        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<ListFineTuningJobEventsResponse> ListFineTuningEventsAsync(

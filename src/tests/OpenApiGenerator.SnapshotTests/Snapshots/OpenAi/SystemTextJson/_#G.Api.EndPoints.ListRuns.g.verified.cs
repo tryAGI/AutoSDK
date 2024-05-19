@@ -9,6 +9,12 @@ namespace G
         /// <summary>
         /// Returns a list of runs belonging to a thread.
         /// </summary>
+        /// <param name="threadId"></param>
+        /// <param name="limit"></param>
+        /// <param name="order"></param>
+        /// <param name="after"></param>
+        /// <param name="before"></param>
+        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<ListRunsResponse> ListRunsAsync(

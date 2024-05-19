@@ -9,6 +9,7 @@ namespace G
         /// <summary>
         /// Generate the next message in a chat with a provided model.
         /// </summary>
+        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Collections.Generic.IAsyncEnumerable<GenerateChatCompletionResponse> GenerateChatCompletionAsync(

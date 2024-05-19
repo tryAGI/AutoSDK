@@ -9,6 +9,11 @@ namespace G
         /// <summary>
         /// Returns a list of vector stores.
         /// </summary>
+        /// <param name="limit"></param>
+        /// <param name="order"></param>
+        /// <param name="after"></param>
+        /// <param name="before"></param>
+        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<ListVectorStoresResponse> ListVectorStoresAsync(
