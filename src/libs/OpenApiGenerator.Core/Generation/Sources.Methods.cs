@@ -38,7 +38,7 @@ namespace {endPoint.Namespace}
 
 namespace {endPoint.Namespace}
 {{
-    public partial class {endPoint.ClassName} : global::System.IDisposable
+    public sealed partial class {endPoint.ClassName} : global::System.IDisposable
     {{
         private readonly global::System.Net.Http.HttpClient _httpClient;
 

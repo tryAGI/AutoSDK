@@ -4,7 +4,7 @@
 
 namespace G
 {
-    public partial class Api : global::System.IDisposable
+    public sealed partial class Api : global::System.IDisposable
     {
         private readonly global::System.Net.Http.HttpClient _httpClient;
 
