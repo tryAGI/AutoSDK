@@ -20,7 +20,7 @@ namespace G
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: $"/fine_tuning/jobs?after={after}&limit={limit}");
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/fine_tuning/jobs?after={after}&limit={limit}", global::System.UriKind.RelativeOrAbsolute));
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

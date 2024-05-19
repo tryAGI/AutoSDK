@@ -22,7 +22,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: $"/vector_stores/{vectorStoreId}/file_batches");
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/vector_stores/{vectorStoreId}/file_batches", global::System.UriKind.RelativeOrAbsolute));
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: global::System.Text.Json.JsonSerializer.Serialize(request),
                 encoding: global::System.Text.Encoding.UTF8,

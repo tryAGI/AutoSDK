@@ -118,7 +118,7 @@ namespace {endPoint.Namespace}
             }};").Inject() : " ")}
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.{endPoint.HttpMethod:G},
-                requestUri: {endPoint.Path});
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + {endPoint.Path}, global::System.UriKind.RelativeOrAbsolute));
 {(string.IsNullOrWhiteSpace(endPoint.RequestType) ? " " : $@" 
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: {jsonSerializer.GenerateSerializeCall(endPoint.RequestType, endPoint.JsonSerializerContext)},

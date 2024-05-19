@@ -44,7 +44,7 @@ namespace G
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: $"/vector_stores/{vectorStoreId}/file_batches/{batchId}/files?limit={limit}&order={orderValue}&after={after}&before={before}&filter={filterValue}");
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/vector_stores/{vectorStoreId}/file_batches/{batchId}/files?limit={limit}&order={orderValue}&after={after}&before={before}&filter={filterValue}", global::System.UriKind.RelativeOrAbsolute));
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

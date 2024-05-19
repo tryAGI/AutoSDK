@@ -22,7 +22,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Patch,
-                requestUri: $"/runs/{runId}");
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/runs/{runId}", global::System.UriKind.RelativeOrAbsolute));
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: global::Newtonsoft.Json.JsonConvert.SerializeObject(request),
                 encoding: global::System.Text.Encoding.UTF8,

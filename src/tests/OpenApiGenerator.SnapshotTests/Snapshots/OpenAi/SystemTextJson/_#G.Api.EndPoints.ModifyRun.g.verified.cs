@@ -24,7 +24,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: $"/threads/{threadId}/runs/{runId}");
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/threads/{threadId}/runs/{runId}", global::System.UriKind.RelativeOrAbsolute));
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: global::System.Text.Json.JsonSerializer.Serialize(request),
                 encoding: global::System.Text.Encoding.UTF8,

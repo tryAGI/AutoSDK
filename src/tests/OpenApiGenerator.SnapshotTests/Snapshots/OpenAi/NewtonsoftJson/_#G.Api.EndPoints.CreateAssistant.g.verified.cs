@@ -20,7 +20,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: "/assistants");
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + "/assistants", global::System.UriKind.RelativeOrAbsolute));
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: global::Newtonsoft.Json.JsonConvert.SerializeObject(request),
                 encoding: global::System.Text.Encoding.UTF8,

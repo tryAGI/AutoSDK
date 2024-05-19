@@ -18,7 +18,7 @@ namespace G
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: $"/AS{asn}/json");
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/AS{asn}/json", global::System.UriKind.RelativeOrAbsolute));
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

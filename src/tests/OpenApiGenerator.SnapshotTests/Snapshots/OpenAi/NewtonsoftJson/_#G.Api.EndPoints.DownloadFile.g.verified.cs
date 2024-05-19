@@ -18,7 +18,7 @@ namespace G
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: $"/files/{fileId}/content");
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/files/{fileId}/content", global::System.UriKind.RelativeOrAbsolute));
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

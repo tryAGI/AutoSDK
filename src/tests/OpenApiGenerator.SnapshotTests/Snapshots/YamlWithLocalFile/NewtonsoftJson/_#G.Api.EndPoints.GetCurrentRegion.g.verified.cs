@@ -16,7 +16,7 @@ namespace G
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: "/region");
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + "/region", global::System.UriKind.RelativeOrAbsolute));
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

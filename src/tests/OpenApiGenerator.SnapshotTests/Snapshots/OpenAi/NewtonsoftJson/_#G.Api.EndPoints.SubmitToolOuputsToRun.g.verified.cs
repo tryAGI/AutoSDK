@@ -24,7 +24,7 @@ namespace G
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: $"/threads/{threadId}/runs/{runId}/submit_tool_outputs");
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/threads/{threadId}/runs/{runId}/submit_tool_outputs", global::System.UriKind.RelativeOrAbsolute));
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: global::Newtonsoft.Json.JsonConvert.SerializeObject(request),
                 encoding: global::System.Text.Encoding.UTF8,

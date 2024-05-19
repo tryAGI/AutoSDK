@@ -34,7 +34,7 @@ namespace G
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: $"/threads/{threadId}/messages?limit={limit}&order={orderValue}&after={after}&before={before}&run_id={runId}");
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/threads/{threadId}/messages?limit={limit}&order={orderValue}&after={after}&before={before}&run_id={runId}", global::System.UriKind.RelativeOrAbsolute));
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
