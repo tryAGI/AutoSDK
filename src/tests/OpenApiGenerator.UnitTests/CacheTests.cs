@@ -13,12 +13,17 @@ public class CacheTests
         NamingConvention: default,
         JsonSerializerType: default,
         UseRequiredKeyword: default,
-        GenerateConstructors: true,
-        GenerateMethods: true,
+        GenerateConstructors: false,
+        GenerateMethods: false,
+        GenerateMethodsAsHttpClientExtensions: false,
+        GenerateMethodsUsingSystemNetHttpJson: false,
         IncludeOperationIds: ImmutableArray.Create(["123", "456"]),
+        ExcludeOperationIds: [],
         GenerateModels: false,
         ModelStyle: default,
-        IncludeModels: ImmutableArray.Create(["123", "456"])
+        IncludeModels: ImmutableArray.Create(["123", "456"]),
+        ExcludeModels: [],
+        GenerateSdk: true
     );
     
     // [TestMethod]

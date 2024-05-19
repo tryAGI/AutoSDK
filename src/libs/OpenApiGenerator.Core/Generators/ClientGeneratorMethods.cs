@@ -13,19 +13,25 @@ public static class ClientGeneratorMethods
         CancellationToken cancellationToken = default)
     {
         var (text, settings) = tuple;
+        if (settings is { GenerateSdk: false, GenerateMethods: false })
+        {
+            return ImmutableArray<EndPoint>.Empty;
+        }
+        
         var openApiDocument = text.GetOpenApiDocument(cancellationToken);
         
         var includedOperationIds = new HashSet<string>(settings.IncludeOperationIds);
+        var excludedOperationIds = new HashSet<string>(settings.ExcludeOperationIds);
         
         return openApiDocument.Paths.SelectMany(path =>
             path.Value.Operations
                 .Where(x =>
-                    settings.GenerateMethods &&
                     (includedOperationIds.Count == 0 ||
-                    includedOperationIds.Contains(x.Value.GetOperationIdOrCompute(path: path.Key, operationType: x.Key))))
+                    includedOperationIds.Contains(x.Value.GetOperationIdOrCompute(path: path.Key, operationType: x.Key))) &&
+                    !excludedOperationIds.Contains(x.Value.GetOperationIdOrCompute(path: path.Key, operationType: x.Key)))
                 .Select(operation => EndPoint.FromSchema(operation, settings, path.Key)))
             // Constructor
-            .Concat(settings.GenerateConstructors ? [new EndPoint(
+            .Concat(settings.GenerateSdk || settings.GenerateConstructors ? [new EndPoint(
                 Id: "Constructors",
                 Namespace: settings.Namespace,
                 ClassName: settings.ClassName,

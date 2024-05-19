@@ -48,8 +48,8 @@ public partial class Tests
     {
         return CheckSourceAsync<ModelGenerator>(jsonSerializerType, [], new Dictionary<string, string>
         {
-            ["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
-            ["build_property.OpenApiGenerator_GenerateMethods"] = "true",
+            //["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
+            //["build_property.OpenApiGenerator_GenerateMethods"] = "true",
         }, additionalGenerators: [new ClientGenerator()]);
     }
     
@@ -64,8 +64,8 @@ public partial class Tests
                 text: H.Resources.langsmith_yaml.AsString())
         ], new Dictionary<string, string>
         {
-            ["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
-            ["build_property.OpenApiGenerator_GenerateMethods"] = "true",
+            //["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
+            //["build_property.OpenApiGenerator_GenerateMethods"] = "true",
         }, additionalGenerators: [new ClientGenerator()]);
     }
     
@@ -80,8 +80,8 @@ public partial class Tests
                 text: H.Resources.ollamacurated_yaml.AsString())
         ], new Dictionary<string, string>
         {
-            ["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
-            ["build_property.OpenApiGenerator_GenerateMethods"] = "true",
+            //["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
+            //["build_property.OpenApiGenerator_GenerateMethods"] = "true",
             //["build_property.OpenApiGenerator_IncludeOperationIds"] = "ListModels",
             //["build_property.OpenApiGenerator_IncludeModels"] = "CreateModerationResponse;Error;ErrorResponse;ListModelsResponse;Model;DeleteModelResponse;CreateCompletionRequest",
         }, additionalGenerators: [new ClientGenerator()]);
@@ -98,8 +98,8 @@ public partial class Tests
                 text: H.Resources.openai_yaml.AsString())
         ], new Dictionary<string, string>
         {
-            ["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
-            ["build_property.OpenApiGenerator_GenerateMethods"] = "true",
+            //["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
+            //["build_property.OpenApiGenerator_GenerateMethods"] = "true",
             //["build_property.OpenApiGenerator_IncludeOperationIds"] = "ListModels",
             //["build_property.OpenApiGenerator_IncludeModels"] = "CreateEmbeddingRequest;CreateModerationResponse;Error;ErrorResponse;ListModelsResponse;Model;DeleteModelResponse;CreateCompletionRequest",
         }, additionalGenerators: [new ClientGenerator()]);
@@ -116,8 +116,8 @@ public partial class Tests
                 text: H.Resources.ipinfo_yaml.AsString()),
         ], new Dictionary<string, string>
         {
-            ["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
-            ["build_property.OpenApiGenerator_GenerateMethods"] = "true",
+            //["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
+            //["build_property.OpenApiGenerator_GenerateMethods"] = "true",
         }, additionalGenerators: [new ClientGenerator()]);
     }
 
@@ -132,8 +132,8 @@ public partial class Tests
             new CustomAdditionalText("openapi.yaml", yaml),
         ], new Dictionary<string, string>
         {
-            ["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
-            ["build_property.OpenApiGenerator_GenerateMethods"] = "true",
+            //["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
+            //["build_property.OpenApiGenerator_GenerateMethods"] = "true",
         }, additionalGenerators: [new ClientGenerator()]);
     }
     
@@ -146,8 +146,8 @@ public partial class Tests
             new CustomAdditionalText("https://dedoose-rest-api.onrender.com/swagger/v1/swagger.json", string.Empty),
         ], new Dictionary<string, string>
         {
-            ["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
-            ["build_property.OpenApiGenerator_GenerateMethods"] = "true",
+            //["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
+            //["build_property.OpenApiGenerator_GenerateMethods"] = "true",
         }, additionalGenerators: [new ClientGenerator()]);
     }
 }

@@ -14,24 +14,31 @@ public static class ModelGeneratorMethods
         CancellationToken cancellationToken = default)
     {
         var (text, settings) = tuple;
+        if (settings is { GenerateSdk: false, GenerateModels: false })
+        {
+            return ImmutableArray<ModelData>.Empty;
+        }
         
         var openApiDocument = text.GetOpenApiDocument(cancellationToken);
         
         var includedModels = new HashSet<string>(settings.IncludeModels);
+        var excludedModels = new HashSet<string>(settings.ExcludeModels);
         var referencesOfIncludedModels = includedModels.Count == 0
             ? []
             : new HashSet<string>(openApiDocument.Components.Schemas
                 .Where(schema =>
-                    includedModels.Count == 0 ||
-                    includedModels.Contains(schema.Key))
+                    (includedModels.Count == 0 ||
+                    includedModels.Contains(schema.Key)) &&
+                    !excludedModels.Contains(schema.Key))
                 .SelectMany(schema => schema.GetReferences())
                 .Select(reference => reference.Id));
         
         var components = openApiDocument.Components.Schemas
             .Where(schema =>
-                includedModels.Count == 0 ||
+                (includedModels.Count == 0 ||
                 includedModels.Contains(schema.Key) ||
-                referencesOfIncludedModels.Contains(schema.Key))
+                referencesOfIncludedModels.Contains(schema.Key)) &&
+                !excludedModels.Contains(schema.Key))
             .Select(schema => ModelData.FromSchema(schema, settings))
             .SelectMany(model => model.WithAdditionalModels())
             .Select(model => model with

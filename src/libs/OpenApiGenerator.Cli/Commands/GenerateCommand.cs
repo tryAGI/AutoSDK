@@ -68,15 +68,20 @@ public class GenerateCommand : Command
             TargetFramework: "netstandard2.0",
             Namespace: @namespace,
             ClassName: clientClassName,
-            GenerateConstructors: false,
-            GenerateMethods: false,
             NamingConvention: default,
             JsonSerializerType: default,
             UseRequiredKeyword: default,
+            GenerateConstructors: false,
+            GenerateMethods: false,
+            GenerateMethodsAsHttpClientExtensions: false,
+            GenerateMethodsUsingSystemNetHttpJson: false,
             IncludeOperationIds: [],
-            GenerateModels: true,
+            ExcludeOperationIds: [],
+            GenerateModels: false,
             ModelStyle: default,
-            IncludeModels: []
+            IncludeModels: [],
+            ExcludeModels: [],
+            GenerateSdk: true
         );
 
         var models = ModelGeneratorMethods.PrepareData((yaml, settings));

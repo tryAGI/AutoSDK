@@ -25,6 +25,7 @@
     <!-- InSupportedTargetFrameworks/Never/Always. Default: InSupportedTargetFrameworks -->
     <CompilerVisibleProperty Include="OpenApiGenerator_UseRequiredKeyword"/>
 
+    <!-- Methods generation -->
     <!-- true/false. Default: false -->
     <CompilerVisibleProperty Include="OpenApiGenerator_GenerateConstructors"/>
     <!-- true/false. Default: false -->
@@ -35,15 +36,21 @@
     <CompilerVisibleProperty Include="OpenApiGenerator_GenerateMethodsUsingSystemNetHttpJson"/>
     <!-- List of ids separated by ;. Default: Empty(all models) -->
     <CompilerVisibleProperty Include="OpenApiGenerator_IncludeOperationIds"/>
-    
+    <!-- List of ids separated by ;. Default: Empty -->
+    <CompilerVisibleProperty Include="OpenApiGenerator_ExcludeOperationIds"/>
+
+    <!-- Models generation -->
     <!-- true/false. Default: false -->
     <CompilerVisibleProperty Include="OpenApiGenerator_GenerateModels"/>
     <!-- Class/Record/ReadonlyRecordStruct. Default: Class -->
     <CompilerVisibleProperty Include="OpenApiGenerator_ModelStyle"/>
     <!-- List of ids separated by ;. Default: Empty(all models) -->
     <CompilerVisibleProperty Include="OpenApiGenerator_IncludeModels"/>
+    <!-- List of ids separated by ;. Default: Empty -->
+    <CompilerVisibleProperty Include="OpenApiGenerator_ExcludeModels"/>
     
-    <!-- true/false. Default: false -->
+    <!-- Generates full sdk(all methods/models) -->
+    <!-- true/false. Default: true -->
     <CompilerVisibleProperty Include="OpenApiGenerator_GenerateSdk"/>
   </ItemGroup>
 

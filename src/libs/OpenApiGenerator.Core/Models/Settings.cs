@@ -13,8 +13,14 @@ public readonly record struct Settings(
 
     bool GenerateConstructors,
     bool GenerateMethods,
+    bool GenerateMethodsAsHttpClientExtensions,
+    bool GenerateMethodsUsingSystemNetHttpJson,
     ImmutableArray<string> IncludeOperationIds,
+    ImmutableArray<string> ExcludeOperationIds,
     
     bool GenerateModels,
     ModelStyle ModelStyle,
-    ImmutableArray<string> IncludeModels);
+    ImmutableArray<string> IncludeModels,
+    ImmutableArray<string> ExcludeModels,
+    
+    bool GenerateSdk);

@@ -18,10 +18,15 @@ public class ModelTests :
         UseRequiredKeyword: default,
         GenerateConstructors: false,
         GenerateMethods: false,
+        GenerateMethodsAsHttpClientExtensions: false,
+        GenerateMethodsUsingSystemNetHttpJson: false,
         IncludeOperationIds: [],
-        GenerateModels: true,
+        ExcludeOperationIds: [],
+        GenerateModels: false,
         ModelStyle: default,
-        IncludeModels: []
+        IncludeModels: [],
+        ExcludeModels: [],
+        GenerateSdk: true
     );
 
     private Task VerifyAsync(

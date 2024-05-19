@@ -16,12 +16,17 @@ public class ClientTests :
         NamingConvention: default,
         JsonSerializerType: default,
         UseRequiredKeyword: default,
-        GenerateConstructors: true,
-        GenerateMethods: true,
+        GenerateConstructors: false,
+        GenerateMethods: false,
+        GenerateMethodsAsHttpClientExtensions: false,
+        GenerateMethodsUsingSystemNetHttpJson: false,
         IncludeOperationIds: [],
+        ExcludeOperationIds: [],
         GenerateModels: false,
         ModelStyle: default,
-        IncludeModels: []
+        IncludeModels: [],
+        ExcludeModels: [],
+        GenerateSdk: true
     );
 
     private Task VerifyAsync(

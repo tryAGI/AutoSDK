@@ -32,28 +32,36 @@ public static class OptionsExtensions
             
             GenerateConstructors: options.GetBoolGlobalOption(nameof(Settings.GenerateConstructors), prefix),
             GenerateMethods: options.GetBoolGlobalOption(nameof(Settings.GenerateMethods), prefix),
+            GenerateMethodsAsHttpClientExtensions: options.GetBoolGlobalOption(nameof(Settings.GenerateMethodsAsHttpClientExtensions), prefix),
+            GenerateMethodsUsingSystemNetHttpJson: options.GetBoolGlobalOption(nameof(Settings.GenerateMethodsUsingSystemNetHttpJson), prefix),
             IncludeOperationIds: (options.GetGlobalOption(nameof(Settings.IncludeOperationIds), prefix)?.Split(';') ??
                                    []).ToImmutableArray(),
+            ExcludeOperationIds: (options.GetGlobalOption(nameof(Settings.ExcludeOperationIds), prefix)?.Split(';') ??
+                                  []).ToImmutableArray(),
             
             GenerateModels: options.GetBoolGlobalOption(nameof(Settings.GenerateModels), prefix),
             ModelStyle: options.GetEnumGlobalOption<ModelStyle>(nameof(Settings.ModelStyle), prefix),
             IncludeModels: (options.GetGlobalOption(nameof(Settings.IncludeModels), prefix)?.Split(';') ??
-                            []).ToImmutableArray()
-
+                            []).ToImmutableArray(),
+            ExcludeModels: (options.GetGlobalOption(nameof(Settings.ExcludeModels), prefix)?.Split(';') ??
+                            []).ToImmutableArray(),
+            
+            GenerateSdk: options.GetBoolGlobalOption(nameof(Settings.GenerateSdk), prefix, defaultValue: true)
             );
     }
     
     public static bool GetBoolGlobalOption(
         this AnalyzerConfigOptionsProvider provider,
         string name,
-        string? prefix = null)
+        string? prefix = null,
+        bool defaultValue = false)
     {
         provider = provider ?? throw new ArgumentNullException(nameof(provider));
         name = name ?? throw new ArgumentNullException(nameof(name));
 
         return bool.TryParse(
             provider.GetGlobalOption(name, prefix),
-            out var value) && value;
+            out var value) ? value : defaultValue;
     }
     
     public static T GetEnumGlobalOption<T>(
