@@ -33,6 +33,7 @@ namespace {modelData.Namespace}
 
 namespace {models[0].Namespace}
 {{
+    {string.Empty.ToXmlDocumentationSummary(level: 4)}
     public sealed partial class OpenApiGeneratorTrimmableSupport
     {{
 {models.Select(model => @$"
