@@ -55,7 +55,7 @@ public readonly record struct EndPoint(
         var endPoint = new EndPoint(
             Id: operation.Value.GetOperationIdOrCompute(path: path, operationType: operation.Key),
             Namespace: settings.Namespace,
-            ClassName: settings.ClassName,
+            ClassName: settings.ClassName.Replace(".", string.Empty),
             BaseUrl: string.Empty,
             Stream: response?.Content.Keys
                 .Any(x => x.Contains("application/x-ndjson")) ?? false,

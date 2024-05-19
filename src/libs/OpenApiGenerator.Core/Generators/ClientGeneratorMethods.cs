@@ -34,7 +34,7 @@ public static class ClientGeneratorMethods
             .Concat(settings.GenerateSdk || settings.GenerateConstructors ? [new EndPoint(
                 Id: "Constructors",
                 Namespace: settings.Namespace,
-                ClassName: settings.ClassName,
+                ClassName: settings.ClassName.Replace(".", string.Empty),
                 BaseUrl: openApiDocument.Servers.FirstOrDefault()?.Url ?? string.Empty,
                 Stream: false,
                 Path: string.Empty,
