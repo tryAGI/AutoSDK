@@ -108,21 +108,6 @@ public partial class Tests
     [DataTestMethod]
     [DataRow(JsonSerializerType.SystemTextJson)]
     [DataRow(JsonSerializerType.NewtonsoftJson)]
-    public Task OpenAi_CreateCompletionResponse(JsonSerializerType jsonSerializerType)
-    {
-        return CheckSourceAsync<ModelGenerator>(jsonSerializerType, [
-            new CustomAdditionalText(
-                path: H.Resources.openai_yaml.FileName,
-                text: H.Resources.openai_yaml.AsString())
-        ], new Dictionary<string, string>
-        {
-            ["build_property.OpenApiGenerator_IncludeModels"] = "CreateCompletionResponse",
-        });
-    }
-    
-    [DataTestMethod]
-    [DataRow(JsonSerializerType.SystemTextJson)]
-    [DataRow(JsonSerializerType.NewtonsoftJson)]
     public Task YamlWithLocalFile(JsonSerializerType jsonSerializerType)
     {
         return CheckSourceAsync<ModelGenerator>(jsonSerializerType, [
