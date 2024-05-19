@@ -10,7 +10,6 @@ namespace G
         /// Returns a ip for the selected IP. Yes, I know this is a pointless method.
         /// </summary>
         /// <param name="ip"></param>
-        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task GetIpByIpAsync(

@@ -92,7 +92,8 @@ namespace {endPoint.Namespace}
         /// </summary>
 {endPoint.Properties.Where(x => x.ParameterLocation != null).Select(x => $@"
         /// <param name=""{x.Name.ToParameterName()}""></param>").Inject()}
-        /// <param name=""request""></param>
+{(string.IsNullOrWhiteSpace(endPoint.RequestType) ? " " : @" 
+        /// <param name=""request""></param>")}
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::System.InvalidOperationException""></exception>
         public async {taskType} {endPoint.MethodName}(

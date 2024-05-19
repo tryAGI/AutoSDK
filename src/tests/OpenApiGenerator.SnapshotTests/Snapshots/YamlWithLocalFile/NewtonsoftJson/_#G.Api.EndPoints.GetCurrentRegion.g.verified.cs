@@ -9,7 +9,6 @@ namespace G
         /// <summary>
         /// Returns the current region.
         /// </summary>
-        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task GetCurrentRegionAsync(

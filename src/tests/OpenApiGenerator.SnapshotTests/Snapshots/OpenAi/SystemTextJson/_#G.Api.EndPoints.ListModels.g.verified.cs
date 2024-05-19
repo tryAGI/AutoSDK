@@ -9,7 +9,6 @@ namespace G
         /// <summary>
         /// Lists the currently available models, and provides basic information about each one such as the owner and availability.
         /// </summary>
-        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<ListModelsResponse> ListModelsAsync(
