@@ -9,7 +9,11 @@
       {
         Id: model,
         Name: Model,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 The model name. 
@@ -21,7 +25,11 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
       {
         Id: prompt,
         Name: Prompt,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 The prompt to generate a response.
@@ -30,42 +38,100 @@ The prompt to generate a response.
       {
         Id: images,
         Name: Images,
-        Type: global::System.Collections.Generic.IList<string?>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<string?>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         Summary: (optional) a list of Base64-encoded images to include in the message (for multimodal models such as llava)
       },
       {
         Id: system,
         Name: System,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: The system prompt to (overrides what is defined in the Modelfile).
       },
       {
         Id: template,
         Name: Template,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: The full prompt or prompt template (overrides what is defined in the Modelfile).
       },
       {
         Id: context,
         Name: Context,
-        Type: global::System.Collections.Generic.IList<int>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<int>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         Summary: The context parameter returned from a previous request to [generateCompletion], this can be used to keep a short conversational memory.
       },
       {
         Id: options,
         Name: Options,
-        Type: RequestOptions?,
+        Type: {
+          CSharpType: RequestOptions?,
+          IsArray: false,
+          Properties: [
+            num_keep,
+            seed,
+            num_predict,
+            top_k,
+            top_p,
+            tfs_z,
+            typical_p,
+            repeat_last_n,
+            temperature,
+            repeat_penalty,
+            presence_penalty,
+            frequency_penalty,
+            mirostat,
+            mirostat_tau,
+            mirostat_eta,
+            penalize_newline,
+            stop,
+            numa,
+            num_ctx,
+            num_batch,
+            num_gqa,
+            num_gpu,
+            main_gpu,
+            low_vram,
+            f16_kv,
+            logits_all,
+            vocab_only,
+            use_mmap,
+            use_mlock,
+            embedding_only,
+            rope_frequency_base,
+            rope_frequency_scale,
+            num_thread
+          ]
+        },
         IsRequired: false,
         Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.
       },
       {
         Id: format,
         Name: Format,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The format to return a response in. Currently the only accepted value is json.
@@ -78,7 +144,11 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
       {
         Id: raw,
         Name: Raw,
-        Type: bool,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 If `true` no formatting will be applied to the prompt and no context will be returned. 
@@ -89,7 +159,11 @@ You may choose to use the `raw` parameter if you are specifying a full templated
       {
         Id: stream,
         Name: Stream,
-        Type: bool,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: false,
         Summary:
@@ -100,7 +174,11 @@ If `false` the response will be returned as a single response object, otherwise 
       {
         Id: keep_alive,
         Name: KeepAlive,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 How long (in minutes) to keep the model loaded in memory.
@@ -131,7 +209,11 @@ How long (in minutes) to keep the model loaded in memory.
       {
         Id: json,
         Name: Json,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       }
@@ -160,7 +242,11 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
       {
         Id: num_keep,
         Name: NumKeep,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Number of tokens to keep from the prompt.
@@ -169,7 +255,11 @@ Number of tokens to keep from the prompt.
       {
         Id: seed,
         Name: Seed,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Sets the random number seed to use for generation. Setting this to a specific number will make the model generate the same text for the same prompt. (Default: 0)
@@ -178,7 +268,11 @@ Sets the random number seed to use for generation. Setting this to a specific nu
       {
         Id: num_predict,
         Name: NumPredict,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Maximum number of tokens to predict when generating text. (Default: 128, -1 = infinite generation, -2 = fill context)
@@ -187,7 +281,11 @@ Maximum number of tokens to predict when generating text. (Default: 128, -1 = in
       {
         Id: top_k,
         Name: TopK,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Reduces the probability of generating nonsense. A higher value (e.g. 100) will give more diverse answers, while a lower value (e.g. 10) will be more conservative. (Default: 40)
@@ -196,7 +294,11 @@ Reduces the probability of generating nonsense. A higher value (e.g. 100) will g
       {
         Id: top_p,
         Name: TopP,
-        Type: float,
+        Type: {
+          CSharpType: float,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Works together with top-k. A higher value (e.g., 0.95) will lead to more diverse text, while a lower value (e.g., 0.5) will generate more focused and conservative text. (Default: 0.9)
@@ -205,7 +307,11 @@ Works together with top-k. A higher value (e.g., 0.95) will lead to more diverse
       {
         Id: tfs_z,
         Name: TfsZ,
-        Type: float,
+        Type: {
+          CSharpType: float,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Tail free sampling is used to reduce the impact of less probable tokens from the output. A higher value (e.g., 2.0) will reduce the impact more, while a value of 1.0 disables this setting. (default: 1)
@@ -214,7 +320,11 @@ Tail free sampling is used to reduce the impact of less probable tokens from the
       {
         Id: typical_p,
         Name: TypicalP,
-        Type: float,
+        Type: {
+          CSharpType: float,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Typical p is used to reduce the impact of less probable tokens from the output.
@@ -223,7 +333,11 @@ Typical p is used to reduce the impact of less probable tokens from the output.
       {
         Id: repeat_last_n,
         Name: RepeatLastN,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Sets how far back for the model to look back to prevent repetition. (Default: 64, 0 = disabled, -1 = num_ctx)
@@ -232,7 +346,11 @@ Sets how far back for the model to look back to prevent repetition. (Default: 64
       {
         Id: temperature,
         Name: Temperature,
-        Type: float,
+        Type: {
+          CSharpType: float,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The temperature of the model. Increasing the temperature will make the model answer more creatively. (Default: 0.8)
@@ -241,7 +359,11 @@ The temperature of the model. Increasing the temperature will make the model ans
       {
         Id: repeat_penalty,
         Name: RepeatPenalty,
-        Type: float,
+        Type: {
+          CSharpType: float,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Sets how strongly to penalize repetitions. A higher value (e.g., 1.5) will penalize repetitions more strongly, while a lower value (e.g., 0.9) will be more lenient. (Default: 1.1)
@@ -250,7 +372,11 @@ Sets how strongly to penalize repetitions. A higher value (e.g., 1.5) will penal
       {
         Id: presence_penalty,
         Name: PresencePenalty,
-        Type: float,
+        Type: {
+          CSharpType: float,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.
@@ -259,7 +385,11 @@ Positive values penalize new tokens based on whether they appear in the text so 
       {
         Id: frequency_penalty,
         Name: FrequencyPenalty,
-        Type: float,
+        Type: {
+          CSharpType: float,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.
@@ -268,7 +398,11 @@ Positive values penalize new tokens based on their existing frequency in the tex
       {
         Id: mirostat,
         Name: Mirostat,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Enable Mirostat sampling for controlling perplexity. (default: 0, 0 = disabled, 1 = Mirostat, 2 = Mirostat 2.0)
@@ -277,7 +411,11 @@ Enable Mirostat sampling for controlling perplexity. (default: 0, 0 = disabled, 
       {
         Id: mirostat_tau,
         Name: MirostatTau,
-        Type: float,
+        Type: {
+          CSharpType: float,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Controls the balance between coherence and diversity of the output. A lower value will result in more focused and coherent text. (Default: 5.0)
@@ -286,7 +424,11 @@ Controls the balance between coherence and diversity of the output. A lower valu
       {
         Id: mirostat_eta,
         Name: MirostatEta,
-        Type: float,
+        Type: {
+          CSharpType: float,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Influences how quickly the algorithm responds to feedback from the generated text. A lower learning rate will result in slower adjustments, while a higher learning rate will make the algorithm more responsive. (Default: 0.1)
@@ -295,7 +437,11 @@ Influences how quickly the algorithm responds to feedback from the generated tex
       {
         Id: penalize_newline,
         Name: PenalizeNewline,
-        Type: bool,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Penalize newlines in the output. (Default: false)
@@ -304,14 +450,22 @@ Penalize newlines in the output. (Default: false)
       {
         Id: stop,
         Name: Stop,
-        Type: global::System.Collections.Generic.IList<string?>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<string?>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         Summary: Sequences where the API will stop generating further tokens. The returned text will not contain the stop sequence.
       },
       {
         Id: numa,
         Name: Numa,
-        Type: bool,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Enable NUMA support. (Default: false)
@@ -320,7 +474,11 @@ Enable NUMA support. (Default: false)
       {
         Id: num_ctx,
         Name: NumCtx,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Sets the size of the context window used to generate the next token.
@@ -329,7 +487,11 @@ Sets the size of the context window used to generate the next token.
       {
         Id: num_batch,
         Name: NumBatch,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Sets the number of batches to use for generation. (Default: 1)
@@ -338,7 +500,11 @@ Sets the number of batches to use for generation. (Default: 1)
       {
         Id: num_gqa,
         Name: NumGqa,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The number of GQA groups in the transformer layer. Required for some models, for example it is 8 for `llama2:70b`.
@@ -347,7 +513,11 @@ The number of GQA groups in the transformer layer. Required for some models, for
       {
         Id: num_gpu,
         Name: NumGpu,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The number of layers to send to the GPU(s). On macOS it defaults to 1 to enable metal support, 0 to disable.
@@ -356,7 +526,11 @@ The number of layers to send to the GPU(s). On macOS it defaults to 1 to enable 
       {
         Id: main_gpu,
         Name: MainGpu,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The GPU to use for the main model. Default is 0.
@@ -365,7 +539,11 @@ The GPU to use for the main model. Default is 0.
       {
         Id: low_vram,
         Name: LowVram,
-        Type: bool,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Enable low VRAM mode. (Default: false)
@@ -374,7 +552,11 @@ Enable low VRAM mode. (Default: false)
       {
         Id: f16_kv,
         Name: F16Kv,
-        Type: bool,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Enable f16 key/value. (Default: false)
@@ -383,7 +565,11 @@ Enable f16 key/value. (Default: false)
       {
         Id: logits_all,
         Name: LogitsAll,
-        Type: bool,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Enable logits all. (Default: false)
@@ -392,7 +578,11 @@ Enable logits all. (Default: false)
       {
         Id: vocab_only,
         Name: VocabOnly,
-        Type: bool,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Enable vocab only. (Default: false)
@@ -401,7 +591,11 @@ Enable vocab only. (Default: false)
       {
         Id: use_mmap,
         Name: UseMmap,
-        Type: bool,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Enable mmap. (Default: false)
@@ -410,7 +604,11 @@ Enable mmap. (Default: false)
       {
         Id: use_mlock,
         Name: UseMlock,
-        Type: bool,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Enable mlock. (Default: false)
@@ -419,7 +617,11 @@ Enable mlock. (Default: false)
       {
         Id: embedding_only,
         Name: EmbeddingOnly,
-        Type: bool,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Enable embedding only. (Default: false)
@@ -428,7 +630,11 @@ Enable embedding only. (Default: false)
       {
         Id: rope_frequency_base,
         Name: RopeFrequencyBase,
-        Type: float,
+        Type: {
+          CSharpType: float,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The base of the rope frequency scale. (Default: 1.0)
@@ -437,7 +643,11 @@ The base of the rope frequency scale. (Default: 1.0)
       {
         Id: rope_frequency_scale,
         Name: RopeFrequencyScale,
-        Type: float,
+        Type: {
+          CSharpType: float,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The scale of the rope frequency. (Default: 1.0)
@@ -446,7 +656,11 @@ The scale of the rope frequency. (Default: 1.0)
       {
         Id: num_thread,
         Name: NumThread,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Sets the number of threads to use during computation. By default, Ollama will detect this for optimal performance. It is recommended to set this value to the number of physical CPU cores your system has (as opposed to the logical number of cores).
@@ -492,7 +706,11 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
       {
         Id: model,
         Name: Model,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The model name. 
@@ -504,7 +722,11 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
       {
         Id: created_at,
         Name: CreatedAt,
-        Type: global::System.DateTime,
+        Type: {
+          CSharpType: global::System.DateTime,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Date on which a model was created.
@@ -513,7 +735,11 @@ Date on which a model was created.
       {
         Id: response,
         Name: Response,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The response for a given prompt with a provided model.
@@ -522,7 +748,11 @@ The response for a given prompt with a provided model.
       {
         Id: done,
         Name: Done,
-        Type: bool,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Whether the response has completed.
@@ -531,7 +761,11 @@ Whether the response has completed.
       {
         Id: context,
         Name: Context,
-        Type: global::System.Collections.Generic.IList<int>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<int>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 An encoding of the conversation used in this response, this can be sent in the next request to keep a conversational memory.
@@ -541,7 +775,11 @@ An encoding of the conversation used in this response, this can be sent in the n
       {
         Id: total_duration,
         Name: TotalDuration,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Time spent generating the response.
@@ -550,7 +788,11 @@ Time spent generating the response.
       {
         Id: load_duration,
         Name: LoadDuration,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Time spent in nanoseconds loading the model.
@@ -559,7 +801,11 @@ Time spent in nanoseconds loading the model.
       {
         Id: prompt_eval_count,
         Name: PromptEvalCount,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Number of tokens in the prompt.
@@ -568,7 +814,11 @@ Number of tokens in the prompt.
       {
         Id: prompt_eval_duration,
         Name: PromptEvalDuration,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Time spent in nanoseconds evaluating the prompt.
@@ -577,7 +827,11 @@ Time spent in nanoseconds evaluating the prompt.
       {
         Id: eval_count,
         Name: EvalCount,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Number of tokens the response.
@@ -586,7 +840,11 @@ Number of tokens the response.
       {
         Id: eval_duration,
         Name: EvalDuration,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Time in nanoseconds spent generating the response.
@@ -611,7 +869,11 @@ Time in nanoseconds spent generating the response.
       {
         Id: model,
         Name: Model,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 The model name. 
@@ -623,14 +885,22 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
       {
         Id: messages,
         Name: Messages,
-        Type: global::System.Collections.Generic.IList<Message>,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<Message>,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: true,
         Summary: The messages of the chat, this can be used to keep a chat memory
       },
       {
         Id: format,
         Name: Format,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The format to return a response in. Currently the only accepted value is json.
@@ -643,14 +913,56 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
       {
         Id: options,
         Name: Options,
-        Type: RequestOptions?,
+        Type: {
+          CSharpType: RequestOptions?,
+          IsArray: false,
+          Properties: [
+            num_keep,
+            seed,
+            num_predict,
+            top_k,
+            top_p,
+            tfs_z,
+            typical_p,
+            repeat_last_n,
+            temperature,
+            repeat_penalty,
+            presence_penalty,
+            frequency_penalty,
+            mirostat,
+            mirostat_tau,
+            mirostat_eta,
+            penalize_newline,
+            stop,
+            numa,
+            num_ctx,
+            num_batch,
+            num_gqa,
+            num_gpu,
+            main_gpu,
+            low_vram,
+            f16_kv,
+            logits_all,
+            vocab_only,
+            use_mmap,
+            use_mlock,
+            embedding_only,
+            rope_frequency_base,
+            rope_frequency_scale,
+            num_thread
+          ]
+        },
         IsRequired: false,
         Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.
       },
       {
         Id: stream,
         Name: Stream,
-        Type: bool,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: false,
         Summary:
@@ -661,7 +973,11 @@ If `false` the response will be returned as a single response object, otherwise 
       {
         Id: keep_alive,
         Name: KeepAlive,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 How long (in minutes) to keep the model loaded in memory.
@@ -692,7 +1008,11 @@ How long (in minutes) to keep the model loaded in memory.
       {
         Id: json,
         Name: Json,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       }
@@ -721,14 +1041,26 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
       {
         Id: message,
         Name: Message,
-        Type: Message?,
+        Type: {
+          CSharpType: Message?,
+          IsArray: false,
+          Properties: [
+            role,
+            content,
+            images
+          ]
+        },
         IsRequired: false,
         Summary: A message in the chat endpoint
       },
       {
         Id: model,
         Name: Model,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The model name. 
@@ -740,7 +1072,11 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
       {
         Id: created_at,
         Name: CreatedAt,
-        Type: global::System.DateTime,
+        Type: {
+          CSharpType: global::System.DateTime,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Date on which a model was created.
@@ -749,7 +1085,11 @@ Date on which a model was created.
       {
         Id: done,
         Name: Done,
-        Type: bool,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Whether the response has completed.
@@ -758,7 +1098,11 @@ Whether the response has completed.
       {
         Id: total_duration,
         Name: TotalDuration,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Time spent generating the response.
@@ -767,7 +1111,11 @@ Time spent generating the response.
       {
         Id: load_duration,
         Name: LoadDuration,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Time spent in nanoseconds loading the model.
@@ -776,7 +1124,11 @@ Time spent in nanoseconds loading the model.
       {
         Id: prompt_eval_count,
         Name: PromptEvalCount,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Number of tokens in the prompt.
@@ -785,7 +1137,11 @@ Number of tokens in the prompt.
       {
         Id: prompt_eval_duration,
         Name: PromptEvalDuration,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Time spent in nanoseconds evaluating the prompt.
@@ -794,7 +1150,11 @@ Time spent in nanoseconds evaluating the prompt.
       {
         Id: eval_count,
         Name: EvalCount,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Number of tokens the response.
@@ -803,7 +1163,11 @@ Number of tokens the response.
       {
         Id: eval_duration,
         Name: EvalDuration,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Time in nanoseconds spent generating the response.
@@ -828,14 +1192,22 @@ Time in nanoseconds spent generating the response.
       {
         Id: role,
         Name: Role,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary: The role of the message
       },
       {
         Id: content,
         Name: Content,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 The content of the message
@@ -844,7 +1216,11 @@ The content of the message
       {
         Id: images,
         Name: Images,
-        Type: global::System.Collections.Generic.IList<string?>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<string?>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         Summary: (optional) a list of Base64-encoded images to include in the message (for multimodal models such as llava)
       }
@@ -868,21 +1244,33 @@ The content of the message
       {
         Id: system,
         Name: System,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: user,
         Name: User,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: assistant,
         Name: Assistant,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       }
@@ -905,7 +1293,11 @@ The content of the message
       {
         Id: model,
         Name: Model,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 The model name. 
@@ -917,7 +1309,11 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
       {
         Id: prompt,
         Name: Prompt,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 Text to generate embeddings for.
@@ -926,7 +1322,45 @@ Text to generate embeddings for.
       {
         Id: options,
         Name: Options,
-        Type: RequestOptions?,
+        Type: {
+          CSharpType: RequestOptions?,
+          IsArray: false,
+          Properties: [
+            num_keep,
+            seed,
+            num_predict,
+            top_k,
+            top_p,
+            tfs_z,
+            typical_p,
+            repeat_last_n,
+            temperature,
+            repeat_penalty,
+            presence_penalty,
+            frequency_penalty,
+            mirostat,
+            mirostat_tau,
+            mirostat_eta,
+            penalize_newline,
+            stop,
+            numa,
+            num_ctx,
+            num_batch,
+            num_gqa,
+            num_gpu,
+            main_gpu,
+            low_vram,
+            f16_kv,
+            logits_all,
+            vocab_only,
+            use_mmap,
+            use_mlock,
+            embedding_only,
+            rope_frequency_base,
+            rope_frequency_scale,
+            num_thread
+          ]
+        },
         IsRequired: false,
         Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.
       }
@@ -949,7 +1383,11 @@ Text to generate embeddings for.
       {
         Id: embedding,
         Name: Embedding,
-        Type: global::System.Collections.Generic.IList<double>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<double>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The embedding for the prompt.
@@ -974,7 +1412,11 @@ The embedding for the prompt.
       {
         Id: name,
         Name: Name,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 The model name. 
@@ -986,7 +1428,11 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
       {
         Id: modelfile,
         Name: Modelfile,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 The contents of the Modelfile.
@@ -995,7 +1441,11 @@ The contents of the Modelfile.
       {
         Id: stream,
         Name: Stream,
-        Type: bool,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: false,
         Summary:
@@ -1022,7 +1472,11 @@ If `false` the response will be returned as a single response object, otherwise 
       {
         Id: status,
         Name: Status,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: Status creating the model
       }
@@ -1046,21 +1500,33 @@ If `false` the response will be returned as a single response object, otherwise 
       {
         Id: creating system layer,
         Name: CreatingSystemLayer,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: parsing modelfile,
         Name: ParsingModelfile,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: success,
         Name: Success,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       }
@@ -1098,7 +1564,11 @@ If `false` the response will be returned as a single response object, otherwise 
       {
         Id: models,
         Name: Models,
-        Type: global::System.Collections.Generic.IList<Model>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<Model>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         Summary: List of models available locally.
       }
@@ -1121,7 +1591,11 @@ If `false` the response will be returned as a single response object, otherwise 
       {
         Id: name,
         Name: Name,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The model name. 
@@ -1133,7 +1607,11 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
       {
         Id: modified_at,
         Name: ModifiedAt,
-        Type: global::System.DateTime,
+        Type: {
+          CSharpType: global::System.DateTime,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Model modification date.
@@ -1142,7 +1620,11 @@ Model modification date.
       {
         Id: size,
         Name: Size,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Size of the model on disk.
@@ -1167,7 +1649,11 @@ Size of the model on disk.
       {
         Id: name,
         Name: Name,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 The model name. 
@@ -1195,7 +1681,11 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
       {
         Id: license,
         Name: License,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The model's license.
@@ -1204,7 +1694,11 @@ The model's license.
       {
         Id: modelfile,
         Name: Modelfile,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The modelfile associated with the model.
@@ -1213,7 +1707,11 @@ The modelfile associated with the model.
       {
         Id: parameters,
         Name: Parameters,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The model parameters.
@@ -1222,7 +1720,11 @@ The model parameters.
       {
         Id: template,
         Name: Template,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The prompt template for the model.
@@ -1247,7 +1749,11 @@ The prompt template for the model.
       {
         Id: source,
         Name: Source,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 Name of the model to copy.
@@ -1256,7 +1762,11 @@ Name of the model to copy.
       {
         Id: destination,
         Name: Destination,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 Name of the new model.
@@ -1281,7 +1791,11 @@ Name of the new model.
       {
         Id: name,
         Name: Name,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 The model name. 
@@ -1309,7 +1823,11 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
       {
         Id: name,
         Name: Name,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 The model name. 
@@ -1321,7 +1839,11 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
       {
         Id: insecure,
         Name: Insecure,
-        Type: bool,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: false,
         Summary:
@@ -1334,7 +1856,11 @@ Only use this if you are pulling from your own library during development.
       {
         Id: stream,
         Name: Stream,
-        Type: bool,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: false,
         Summary:
@@ -1361,7 +1887,11 @@ If `false` the response will be returned as a single response object, otherwise 
       {
         Id: status,
         Name: Status,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Status pulling the model.
@@ -1370,7 +1900,11 @@ Status pulling the model.
       {
         Id: digest,
         Name: Digest,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The model's digest.
@@ -1379,7 +1913,11 @@ The model's digest.
       {
         Id: total,
         Name: Total,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Total size of the model.
@@ -1388,7 +1926,11 @@ Total size of the model.
       {
         Id: completed,
         Name: Completed,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Total bytes transferred.
@@ -1420,42 +1962,66 @@ The number of files to be downloaded depends on the number of layers specified i
       {
         Id: pulling manifest,
         Name: PullingManifest,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: downloading digestname,
         Name: DownloadingDigestname,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: verifying sha256 digest,
         Name: VerifyingSha256Digest,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: writing manifest,
         Name: WritingManifest,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: removing any unused layers,
         Name: RemovingAnyUnusedLayers,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: success,
         Name: Success,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       }
@@ -1497,7 +2063,11 @@ Status pulling the model.
       {
         Id: name,
         Name: Name,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt;tag&gt;.
@@ -1506,7 +2076,11 @@ The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt
       {
         Id: insecure,
         Name: Insecure,
-        Type: bool,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: false,
         Summary:
@@ -1519,7 +2093,11 @@ Only use this if you are pushing to your library during development.
       {
         Id: stream,
         Name: Stream,
-        Type: bool,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: false,
         Summary:
@@ -1546,14 +2124,22 @@ If `false` the response will be returned as a single response object, otherwise 
       {
         Id: status,
         Name: Status,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: Status pushing the model.
       },
       {
         Id: digest,
         Name: Digest,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 the model's digest
@@ -1562,7 +2148,11 @@ the model's digest
       {
         Id: total,
         Name: Total,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 total size of the model
@@ -1588,28 +2178,44 @@ total size of the model
       {
         Id: retrieving manifest,
         Name: RetrievingManifest,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: starting upload,
         Name: StartingUpload,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: pushing manifest,
         Name: PushingManifest,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: success,
         Name: Success,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       }

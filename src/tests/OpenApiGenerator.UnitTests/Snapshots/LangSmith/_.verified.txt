@@ -9,21 +9,33 @@
       {
         Id: end_time,
         Name: EndTime,
-        Type: global::System.DateTime,
+        Type: {
+          CSharpType: global::System.DateTime,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: error,
         Name: Error,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: inputs,
         Name: Inputs,
-        Type: object?,
+        Type: {
+          CSharpType: object?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary: 
@@ -31,7 +43,11 @@
       {
         Id: outputs,
         Name: Outputs,
-        Type: object?,
+        Type: {
+          CSharpType: object?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary: 
@@ -39,7 +55,11 @@
       {
         Id: events,
         Name: Events,
-        Type: global::System.Collections.Generic.IList<RunUpdateSchemaExtendedEvents?>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<RunUpdateSchemaExtendedEvents?>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       }
@@ -107,7 +127,11 @@
       {
         Id: model,
         Name: Model,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: "",
         Summary:
@@ -116,7 +140,11 @@
       {
         Id: messages,
         Name: Messages,
-        Type: global::System.Collections.Generic.IList<ChatCompletionRequestMessage>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<ChatCompletionRequestMessage>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary:
@@ -125,7 +153,11 @@
       {
         Id: functions,
         Name: Functions,
-        Type: global::System.Collections.Generic.IList<ChatCompletionFunctions>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<ChatCompletionFunctions>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary:
@@ -134,35 +166,55 @@
       {
         Id: temperature,
         Name: Temperature,
-        Type: double,
+        Type: {
+          CSharpType: double,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: top_p,
         Name: TopP,
-        Type: double,
+        Type: {
+          CSharpType: double,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: n,
         Name: N,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: stream,
         Name: Stream,
-        Type: bool,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: stop,
         Name: Stop,
-        Type: object?,
+        Type: {
+          CSharpType: object?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary: 
@@ -170,28 +222,44 @@
       {
         Id: max_tokens,
         Name: MaxTokens,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: presence_penalty,
         Name: PresencePenalty,
-        Type: double,
+        Type: {
+          CSharpType: double,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: frequency_penalty,
         Name: FrequencyPenalty,
-        Type: double,
+        Type: {
+          CSharpType: double,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: logit_bias,
         Name: LogitBias,
-        Type: CreateChatCompletionRequestLogitBias?,
+        Type: {
+          CSharpType: CreateChatCompletionRequestLogitBias?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       }
@@ -229,7 +297,11 @@
       {
         Id: role,
         Name: Role,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: "",
         Summary:
@@ -238,21 +310,36 @@
       {
         Id: content,
         Name: Content,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: name,
         Name: Name,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: function_call,
         Name: FunctionCall,
-        Type: ChatCompletionFunctionCall?,
+        Type: {
+          CSharpType: ChatCompletionFunctionCall?,
+          IsArray: false,
+          Properties: [
+            name,
+            arguments
+          ]
+        },
         IsRequired: false,
         Summary: 
       }
@@ -275,7 +362,11 @@
       {
         Id: name,
         Name: Name,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: "",
         Summary:
@@ -284,7 +375,11 @@
       {
         Id: arguments,
         Name: Arguments,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: "",
         Summary:
@@ -309,7 +404,11 @@
       {
         Id: name,
         Name: Name,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: "",
         Summary:
@@ -318,7 +417,11 @@
       {
         Id: description,
         Name: Description,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: "",
         Summary:
@@ -327,7 +430,14 @@
       {
         Id: parameters,
         Name: Parameters,
-        Type: ChatCompletionFunctionParameters?,
+        Type: {
+          CSharpType: ChatCompletionFunctionParameters?,
+          IsArray: false,
+          Properties: [
+            type,
+            properties
+          ]
+        },
         IsRequired: false,
         Summary: 
       }
@@ -350,7 +460,11 @@
       {
         Id: type,
         Name: Type,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: "",
         Summary:
@@ -359,7 +473,11 @@
       {
         Id: properties,
         Name: Properties,
-        Type: ChatCompletionFunctionParametersProperties?,
+        Type: {
+          CSharpType: ChatCompletionFunctionParametersProperties?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary:
@@ -400,77 +518,121 @@
       {
         Id: model,
         Name: Model,
-        Type: object,
+        Type: {
+          CSharpType: object,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary: 
       },
       {
         Id: prompt,
         Name: Prompt,
-        Type: object,
+        Type: {
+          CSharpType: object,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary: 
       },
       {
         Id: suffix,
         Name: Suffix,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: max_tokens,
         Name: MaxTokens,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: temperature,
         Name: Temperature,
-        Type: double,
+        Type: {
+          CSharpType: double,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: top_p,
         Name: TopP,
-        Type: double,
+        Type: {
+          CSharpType: double,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: n,
         Name: N,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: stream,
         Name: Stream,
-        Type: bool,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: logprobs,
         Name: Logprobs,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: echo,
         Name: Echo,
-        Type: bool,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: stop,
         Name: Stop,
-        Type: object?,
+        Type: {
+          CSharpType: object?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary: 
@@ -478,35 +640,55 @@
       {
         Id: presence_penalty,
         Name: PresencePenalty,
-        Type: double,
+        Type: {
+          CSharpType: double,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: frequency_penalty,
         Name: FrequencyPenalty,
-        Type: double,
+        Type: {
+          CSharpType: double,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: best_of,
         Name: BestOf,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: logit_bias,
         Name: LogitBias,
-        Type: CreateCompletionRequestLogitBias?,
+        Type: {
+          CSharpType: CreateCompletionRequestLogitBias?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: user,
         Name: User,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       }
@@ -559,7 +741,11 @@
       {
         Id: id,
         Name: Id,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: "",
         Summary:
@@ -568,7 +754,11 @@
       {
         Id: object,
         Name: Object,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: "",
         Summary:
@@ -577,7 +767,11 @@
       {
         Id: created,
         Name: Created,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 0,
         Summary:
@@ -586,7 +780,11 @@
       {
         Id: model,
         Name: Model,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: "",
         Summary:
@@ -595,7 +793,11 @@
       {
         Id: choices,
         Name: Choices,
-        Type: global::System.Collections.Generic.IList<ChatCompletionChoice>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<ChatCompletionChoice>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary:
@@ -604,7 +806,15 @@
       {
         Id: usage,
         Name: Usage,
-        Type: CompletionUsage?,
+        Type: {
+          CSharpType: CompletionUsage?,
+          IsArray: false,
+          Properties: [
+            prompt_tokens,
+            completion_tokens,
+            total_tokens
+          ]
+        },
         IsRequired: false,
         Summary: 
       }
@@ -627,7 +837,11 @@
       {
         Id: index,
         Name: Index,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 0,
         Summary:
@@ -636,14 +850,26 @@
       {
         Id: message,
         Name: Message,
-        Type: ChatCompletionResponseMessage?,
+        Type: {
+          CSharpType: ChatCompletionResponseMessage?,
+          IsArray: false,
+          Properties: [
+            role,
+            content,
+            function_call
+          ]
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: finish_reason,
         Name: FinishReason,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: "",
         Summary:
@@ -668,7 +894,11 @@
       {
         Id: role,
         Name: Role,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: "",
         Summary:
@@ -677,14 +907,25 @@
       {
         Id: content,
         Name: Content,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: function_call,
         Name: FunctionCall,
-        Type: ChatCompletionFunctionCall?,
+        Type: {
+          CSharpType: ChatCompletionFunctionCall?,
+          IsArray: false,
+          Properties: [
+            name,
+            arguments
+          ]
+        },
         IsRequired: false,
         Summary: 
       }
@@ -707,7 +948,11 @@
       {
         Id: prompt_tokens,
         Name: PromptTokens,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 0,
         Summary:
@@ -716,7 +961,11 @@
       {
         Id: completion_tokens,
         Name: CompletionTokens,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 0,
         Summary:
@@ -725,7 +974,11 @@
       {
         Id: total_tokens,
         Name: TotalTokens,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 0,
         Summary:
@@ -750,35 +1003,55 @@
       {
         Id: id,
         Name: Id,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: object,
         Name: Object,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: created,
         Name: Created,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: model,
         Name: Model,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: choices,
         Name: Choices,
-        Type: global::System.Collections.Generic.IList<Choice>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<Choice>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary:
@@ -787,7 +1060,15 @@
       {
         Id: usage,
         Name: Usage,
-        Type: CompletionUsage?,
+        Type: {
+          CSharpType: CompletionUsage?,
+          IsArray: false,
+          Properties: [
+            prompt_tokens,
+            completion_tokens,
+            total_tokens
+          ]
+        },
         IsRequired: false,
         Summary: 
       }
@@ -810,7 +1091,11 @@
       {
         Id: text,
         Name: Text,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: "",
         Summary:
@@ -819,7 +1104,11 @@
       {
         Id: index,
         Name: Index,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 0,
         Summary:
@@ -828,14 +1117,27 @@
       {
         Id: logprobs,
         Name: Logprobs,
-        Type: Logprobs?,
+        Type: {
+          CSharpType: Logprobs?,
+          IsArray: false,
+          Properties: [
+            tokens,
+            token_logprobs,
+            top_logprobs,
+            text_offset
+          ]
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: finish_reason,
         Name: FinishReason,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: "",
         Summary:
@@ -860,7 +1162,11 @@
       {
         Id: tokens,
         Name: Tokens,
-        Type: global::System.Collections.Generic.IList<string?>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<string?>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary:
@@ -869,7 +1175,11 @@
       {
         Id: token_logprobs,
         Name: TokenLogprobs,
-        Type: global::System.Collections.Generic.IList<double>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<double>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary:
@@ -878,7 +1188,11 @@
       {
         Id: top_logprobs,
         Name: TopLogprobs,
-        Type: global::System.Collections.Generic.IList<LogprobsTopLogprobs?>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<LogprobsTopLogprobs?>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary:
@@ -887,7 +1201,11 @@
       {
         Id: text_offset,
         Name: TextOffset,
-        Type: global::System.Collections.Generic.IList<int>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<int>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary:
@@ -927,7 +1245,11 @@
       {
         Id: detail,
         Name: Detail,
-        Type: global::System.Collections.Generic.IList<ValidationError>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<ValidationError>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       }
@@ -950,21 +1272,33 @@
       {
         Id: loc,
         Name: Loc,
-        Type: global::System.Collections.Generic.IList<object>,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<object>,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: true,
         Summary: 
       },
       {
         Id: msg,
         Name: Msg,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary: 
       },
       {
         Id: type,
         Name: Type,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary: 
       }
@@ -987,14 +1321,22 @@
       {
         Id: name,
         Name: Name,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary: 
       },
       {
         Id: inputs,
         Name: Inputs,
-        Type: object?,
+        Type: {
+          CSharpType: object?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary: 
@@ -1002,42 +1344,66 @@
       {
         Id: run_type,
         Name: RunType,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary: Enum for run types.
       },
       {
         Id: start_time,
         Name: StartTime,
-        Type: global::System.DateTime,
+        Type: {
+          CSharpType: global::System.DateTime,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: end_time,
         Name: EndTime,
-        Type: global::System.DateTime,
+        Type: {
+          CSharpType: global::System.DateTime,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: extra,
         Name: Extra,
-        Type: RunCreateSchemaExtendedExtra?,
+        Type: {
+          CSharpType: RunCreateSchemaExtendedExtra?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: error,
         Name: Error,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: execution_order,
         Name: ExecutionOrder,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 1,
         Summary:
@@ -1046,14 +1412,22 @@
       {
         Id: serialized,
         Name: Serialized,
-        Type: RunCreateSchemaExtendedSerialized?,
+        Type: {
+          CSharpType: RunCreateSchemaExtendedSerialized?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: outputs,
         Name: Outputs,
-        Type: object?,
+        Type: {
+          CSharpType: object?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary: 
@@ -1061,63 +1435,99 @@
       {
         Id: parent_run_id,
         Name: ParentRunId,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: manifest_id,
         Name: ManifestId,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: events,
         Name: Events,
-        Type: global::System.Collections.Generic.IList<RunCreateSchemaExtendedEvents?>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<RunCreateSchemaExtendedEvents?>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: tags,
         Name: Tags,
-        Type: global::System.Collections.Generic.IList<string?>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<string?>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: id,
         Name: Id,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: session_id,
         Name: SessionId,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: session_name,
         Name: SessionName,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: child_runs,
         Name: ChildRuns,
-        Type: global::System.Collections.Generic.IList<RunCreateSchema>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<RunCreateSchema>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: reference_example_id,
         Name: ReferenceExampleId,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       }
@@ -1216,49 +1626,77 @@
       {
         Id: tool,
         Name: Tool,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: chain,
         Name: Chain,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: llm,
         Name: Llm,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: retriever,
         Name: Retriever,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: embedding,
         Name: Embedding,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: prompt,
         Name: Prompt,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: parser,
         Name: Parser,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       }
@@ -1296,56 +1734,88 @@
       {
         Id: name,
         Name: Name,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary: 
       },
       {
         Id: inputs,
         Name: Inputs,
-        Type: RunCreateSchemaInputs?,
+        Type: {
+          CSharpType: RunCreateSchemaInputs?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: run_type,
         Name: RunType,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary: Enum for run types.
       },
       {
         Id: start_time,
         Name: StartTime,
-        Type: global::System.DateTime,
+        Type: {
+          CSharpType: global::System.DateTime,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: end_time,
         Name: EndTime,
-        Type: global::System.DateTime,
+        Type: {
+          CSharpType: global::System.DateTime,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: extra,
         Name: Extra,
-        Type: RunCreateSchemaExtra?,
+        Type: {
+          CSharpType: RunCreateSchemaExtra?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: error,
         Name: Error,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: execution_order,
         Name: ExecutionOrder,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 1,
         Summary:
@@ -1354,77 +1824,121 @@
       {
         Id: serialized,
         Name: Serialized,
-        Type: RunCreateSchemaSerialized?,
+        Type: {
+          CSharpType: RunCreateSchemaSerialized?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: outputs,
         Name: Outputs,
-        Type: RunCreateSchemaOutputs?,
+        Type: {
+          CSharpType: RunCreateSchemaOutputs?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: parent_run_id,
         Name: ParentRunId,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: manifest_id,
         Name: ManifestId,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: events,
         Name: Events,
-        Type: global::System.Collections.Generic.IList<RunCreateSchemaEvents?>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<RunCreateSchemaEvents?>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: tags,
         Name: Tags,
-        Type: global::System.Collections.Generic.IList<string?>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<string?>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: id,
         Name: Id,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: session_id,
         Name: SessionId,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: session_name,
         Name: SessionName,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: child_runs,
         Name: ChildRuns,
-        Type: global::System.Collections.Generic.IList<RunCreateSchema>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<RunCreateSchema>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: reference_example_id,
         Name: ReferenceExampleId,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       }
@@ -1523,49 +2037,77 @@
       {
         Id: tool,
         Name: Tool,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: chain,
         Name: Chain,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: llm,
         Name: Llm,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: retriever,
         Name: Retriever,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: embedding,
         Name: Embedding,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: prompt,
         Name: Prompt,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: parser,
         Name: Parser,
-        Type: ,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: 
       }

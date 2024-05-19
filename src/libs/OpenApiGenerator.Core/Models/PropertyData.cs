@@ -7,18 +7,22 @@ namespace OpenApiGenerator.Core.Models;
 public readonly record struct PropertyData(
     string Id,
     string Name,
-    string Type,
+    TypeData Type,
     bool IsRequired,
     ParameterLocation? ParameterLocation,
+    ParameterStyle? ParameterStyle,
+    bool? ParameterExplode,
     string? DefaultValue,
     string Summary)
 {
     public static PropertyData Default => new(
         Id: string.Empty,
         Name: string.Empty,
-        Type: string.Empty,
+        Type: TypeData.Default,
         IsRequired: false,
         ParameterLocation: null,
+        ParameterStyle: null,
+        ParameterExplode: null,
         DefaultValue: null,
         Summary: string.Empty);
 
@@ -26,6 +30,8 @@ public readonly record struct PropertyData(
         KeyValuePair<string, OpenApiSchema> schema,
         HashSet<string> requiredProperties,
         ParameterLocation? parameterLocation,
+        ParameterStyle? parameterStyle,
+        bool? parameterExplode,
         Settings settings,
         params ModelData[] parents)
     {
@@ -45,13 +51,15 @@ public readonly record struct PropertyData(
         return new PropertyData(
             Id: schema.Key,
             Name: name,
-            Type: schema.GetCSharpType(settings, parents),
+            Type: TypeData.FromSchema(schema, settings, parents),
             IsRequired: requiredProperties.Contains(schema.Key),
             ParameterLocation: parameterLocation,
-            DefaultValue: schema.Value.GetDefaultValue(type: schema.GetCSharpType(settings with
+            ParameterStyle: parameterStyle,
+            ParameterExplode: parameterExplode,
+            DefaultValue: schema.Value.GetDefaultValue(type: TypeData.FromSchema(schema, settings with
             {
                 JsonSerializerType = JsonSerializerType.NewtonsoftJson
-            }, parents)),
+            }, parents).CSharpType),
             Summary: schema.Value.GetSummary());
     }
 }

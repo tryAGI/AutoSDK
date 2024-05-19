@@ -39,6 +39,8 @@ public readonly record struct EndPoint(
                 schema: x.Schema.WithKey(x.Name),
                 requiredProperties: requiredParameters,
                 parameterLocation: x.In,
+                parameterStyle: x.Style,
+                parameterExplode: x.Explode,
                 settings: settings,
                 parents: []))
             .ToArray();

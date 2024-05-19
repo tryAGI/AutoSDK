@@ -92,6 +92,8 @@ public readonly record struct ModelData(
                     schema: x,
                     requiredProperties: requiredProperties,
                     parameterLocation: null,
+                    parameterStyle: null,
+                    parameterExplode: null,
                     settings: settings,
                     parents: innerParents))
                 .ToImmutableArray(),

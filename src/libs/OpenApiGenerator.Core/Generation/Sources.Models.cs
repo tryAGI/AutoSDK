@@ -112,7 +112,7 @@ public sealed partial class {modelData.Parents[level].ClassName}
         {property.Summary.ToXmlDocumentationSummary(level: 8)}
         {jsonSerializer.GeneratePropertyAttribute(property.Id, property.IsRequired)}
         {(property.IsRequired ? jsonSerializer.GenerateRequiredAttribute() : string.Empty)}
-        public{(property.IsRequired ? requiredKeyword : "")} {property.Type} {property.Name} {{ get; set; }}{GetDefaultValue(property, isRequiredKeywordSupported)}
+        public{(property.IsRequired ? requiredKeyword : "")} {property.Type.CSharpType} {property.Name} {{ get; set; }}{GetDefaultValue(property, isRequiredKeywordSupported)}
 ").Inject()}
 
         {"Additional properties that are not explicitly defined in the schema".ToXmlDocumentationSummary(level: 8)}

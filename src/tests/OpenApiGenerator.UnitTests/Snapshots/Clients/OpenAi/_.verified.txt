@@ -10,14 +10,22 @@
       {
         Id: messages,
         Name: Messages,
-        Type: global::System.Collections.Generic.IList<ChatCompletionRequestMessage>,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<ChatCompletionRequestMessage>,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: true,
         Summary: A list of messages comprising the conversation so far. [Example Python code](https://cookbook.openai.com/examples/how_to_format_inputs_to_chatgpt_models).
       },
       {
         Id: model,
         Name: Model,
-        Type: object,
+        Type: {
+          CSharpType: object,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 ID of the model to use. See the [model endpoint compatibility](/docs/models/model-endpoint-compatibility) table for details on which models work with the Chat API.
@@ -26,7 +34,11 @@ ID of the model to use. See the [model endpoint compatibility](/docs/models/mode
       {
         Id: frequency_penalty,
         Name: FrequencyPenalty,
-        Type: double?,
+        Type: {
+          CSharpType: double?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 0,
         Summary:
@@ -39,7 +51,11 @@ Number between -2.0 and 2.0. Positive values penalize new tokens based on their 
       {
         Id: logit_bias,
         Name: LogitBias,
-        Type: CreateChatCompletionRequestLogitBias?,
+        Type: {
+          CSharpType: CreateChatCompletionRequestLogitBias?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Modify the likelihood of specified tokens appearing in the completion.
@@ -51,7 +67,11 @@ Accepts a JSON object that maps tokens (specified by their token ID in the token
       {
         Id: logprobs,
         Name: Logprobs,
-        Type: bool?,
+        Type: {
+          CSharpType: bool?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: false,
         Summary:
@@ -61,14 +81,22 @@ Whether to return log probabilities of the output tokens or not. If true, return
       {
         Id: top_logprobs,
         Name: TopLogprobs,
-        Type: int?,
+        Type: {
+          CSharpType: int?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: An integer between 0 and 20 specifying the number of most likely tokens to return at each token position, each with an associated log probability. `logprobs` must be set to `true` if this parameter is used.
       },
       {
         Id: max_tokens,
         Name: MaxTokens,
-        Type: int?,
+        Type: {
+          CSharpType: int?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The maximum number of [tokens](/tokenizer) that can be generated in the chat completion.
@@ -79,7 +107,11 @@ The total length of input tokens and generated tokens is limited by the model's 
       {
         Id: n,
         Name: N,
-        Type: int?,
+        Type: {
+          CSharpType: int?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 1,
         Summary:
@@ -90,7 +122,11 @@ How many chat completion choices to generate for each input message. Note that y
       {
         Id: presence_penalty,
         Name: PresencePenalty,
-        Type: double?,
+        Type: {
+          CSharpType: double?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 0,
         Summary:
@@ -103,7 +139,11 @@ Number between -2.0 and 2.0. Positive values penalize new tokens based on whethe
       {
         Id: response_format,
         Name: ResponseFormat,
-        Type: CreateChatCompletionRequestResponseFormat?,
+        Type: {
+          CSharpType: CreateChatCompletionRequestResponseFormat?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 An object specifying the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models newer than `gpt-3.5-turbo-1106`.
@@ -116,7 +156,11 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       {
         Id: seed,
         Name: Seed,
-        Type: int?,
+        Type: {
+          CSharpType: int?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 This feature is in Beta.
@@ -127,7 +171,11 @@ Determinism is not guaranteed, and you should refer to the `system_fingerprint` 
       {
         Id: stop,
         Name: Stop,
-        Type: object?,
+        Type: {
+          CSharpType: object?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary:
@@ -138,7 +186,11 @@ Up to 4 sequences where the API will stop generating further tokens.
       {
         Id: stream,
         Name: Stream,
-        Type: bool?,
+        Type: {
+          CSharpType: bool?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: false,
         Summary:
@@ -149,7 +201,13 @@ If set, partial message deltas will be sent, like in ChatGPT. Tokens will be sen
       {
         Id: stream_options,
         Name: StreamOptions,
-        Type: ChatCompletionStreamOptions?,
+        Type: {
+          CSharpType: ChatCompletionStreamOptions?,
+          IsArray: false,
+          Properties: [
+            include_usage
+          ]
+        },
         IsRequired: false,
         Summary:
 Options for streaming response. Only set this when you set `stream: true`.
@@ -159,7 +217,11 @@ Options for streaming response. Only set this when you set `stream: true`.
       {
         Id: temperature,
         Name: Temperature,
-        Type: double?,
+        Type: {
+          CSharpType: double?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 1,
         Summary:
@@ -173,7 +235,11 @@ We generally recommend altering this or `top_p` but not both.
       {
         Id: top_p,
         Name: TopP,
-        Type: double?,
+        Type: {
+          CSharpType: double?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 1,
         Summary:
@@ -187,7 +253,11 @@ We generally recommend altering this or `temperature` but not both.
       {
         Id: tools,
         Name: Tools,
-        Type: global::System.Collections.Generic.IList<ChatCompletionTool>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<ChatCompletionTool>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 A list of tools the model may call. Currently, only functions are supported as a tool. Use this to provide a list of functions the model may generate JSON inputs for. A max of 128 functions are supported.
@@ -196,7 +266,11 @@ A list of tools the model may call. Currently, only functions are supported as a
       {
         Id: tool_choice,
         Name: ToolChoice,
-        Type: ChatCompletionToolChoiceOption?,
+        Type: {
+          CSharpType: ChatCompletionToolChoiceOption?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Controls which (if any) tool is called by the model.
@@ -211,7 +285,11 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
       {
         Id: user,
         Name: User,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).
@@ -221,7 +299,11 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
       {
         Id: function_call,
         Name: FunctionCall,
-        Type: object?,
+        Type: {
+          CSharpType: object?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary:
@@ -238,7 +320,11 @@ Specifying a particular function via `{"name": "my_function"}` forces the model 
       {
         Id: functions,
         Name: Functions,
-        Type: global::System.Collections.Generic.IList<ChatCompletionFunctions>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<ChatCompletionFunctions>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Deprecated in favor of `tools`.
@@ -265,7 +351,11 @@ A list of functions the model may generate JSON inputs for.
       {
         Id: model,
         Name: Model,
-        Type: object,
+        Type: {
+          CSharpType: object,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models/overview) for descriptions of them.
@@ -274,7 +364,11 @@ ID of the model to use. You can use the [List models](/docs/api-reference/models
       {
         Id: prompt,
         Name: Prompt,
-        Type: object?,
+        Type: {
+          CSharpType: object?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         DefaultValue: ,
         Summary:
@@ -287,7 +381,11 @@ Note that &lt;|endoftext|&gt; is the document separator that the model sees duri
       {
         Id: best_of,
         Name: BestOf,
-        Type: int?,
+        Type: {
+          CSharpType: int?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 1,
         Summary:
@@ -302,7 +400,11 @@ When used with `n`, `best_of` controls the number of candidate completions and `
       {
         Id: echo,
         Name: Echo,
-        Type: bool?,
+        Type: {
+          CSharpType: bool?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: false,
         Summary:
@@ -313,7 +415,11 @@ Echo back the prompt in addition to the completion
       {
         Id: frequency_penalty,
         Name: FrequencyPenalty,
-        Type: double?,
+        Type: {
+          CSharpType: double?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 0,
         Summary:
@@ -326,7 +432,11 @@ Number between -2.0 and 2.0. Positive values penalize new tokens based on their 
       {
         Id: logit_bias,
         Name: LogitBias,
-        Type: CreateCompletionRequestLogitBias?,
+        Type: {
+          CSharpType: CreateCompletionRequestLogitBias?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Modify the likelihood of specified tokens appearing in the completion.
@@ -340,7 +450,11 @@ As an example, you can pass `{"50256": -100}` to prevent the &lt;|endoftext|&gt;
       {
         Id: logprobs,
         Name: Logprobs,
-        Type: int?,
+        Type: {
+          CSharpType: int?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Include the log probabilities on the `logprobs` most likely output tokens, as well the chosen tokens. For example, if `logprobs` is 5, the API will return a list of the 5 most likely tokens. The API will always return the `logprob` of the sampled token, so there may be up to `logprobs+1` elements in the response.
@@ -352,7 +466,11 @@ The maximum value for `logprobs` is 5.
       {
         Id: max_tokens,
         Name: MaxTokens,
-        Type: int?,
+        Type: {
+          CSharpType: int?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 16,
         Summary:
@@ -366,7 +484,11 @@ The token count of your prompt plus `max_tokens` cannot exceed the model's conte
       {
         Id: n,
         Name: N,
-        Type: int?,
+        Type: {
+          CSharpType: int?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 1,
         Summary:
@@ -380,7 +502,11 @@ How many completions to generate for each prompt.
       {
         Id: presence_penalty,
         Name: PresencePenalty,
-        Type: double?,
+        Type: {
+          CSharpType: double?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 0,
         Summary:
@@ -393,7 +519,11 @@ Number between -2.0 and 2.0. Positive values penalize new tokens based on whethe
       {
         Id: seed,
         Name: Seed,
-        Type: int?,
+        Type: {
+          CSharpType: int?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same `seed` and parameters should return the same result.
@@ -404,7 +534,11 @@ Determinism is not guaranteed, and you should refer to the `system_fingerprint` 
       {
         Id: stop,
         Name: Stop,
-        Type: object?,
+        Type: {
+          CSharpType: object?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary:
@@ -415,7 +549,11 @@ Up to 4 sequences where the API will stop generating further tokens. The returne
       {
         Id: stream,
         Name: Stream,
-        Type: bool?,
+        Type: {
+          CSharpType: bool?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: false,
         Summary:
@@ -426,7 +564,13 @@ Whether to stream back partial progress. If set, tokens will be sent as data-onl
       {
         Id: stream_options,
         Name: StreamOptions,
-        Type: ChatCompletionStreamOptions?,
+        Type: {
+          CSharpType: ChatCompletionStreamOptions?,
+          IsArray: false,
+          Properties: [
+            include_usage
+          ]
+        },
         IsRequired: false,
         Summary:
 Options for streaming response. Only set this when you set `stream: true`.
@@ -436,7 +580,11 @@ Options for streaming response. Only set this when you set `stream: true`.
       {
         Id: suffix,
         Name: Suffix,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The suffix that comes after a completion of inserted text.
@@ -449,7 +597,11 @@ This parameter is only supported for `gpt-3.5-turbo-instruct`.
       {
         Id: temperature,
         Name: Temperature,
-        Type: double?,
+        Type: {
+          CSharpType: double?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 1,
         Summary:
@@ -463,7 +615,11 @@ We generally recommend altering this or `top_p` but not both.
       {
         Id: top_p,
         Name: TopP,
-        Type: double?,
+        Type: {
+          CSharpType: double?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 1,
         Summary:
@@ -477,7 +633,11 @@ We generally recommend altering this or `temperature` but not both.
       {
         Id: user,
         Name: User,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).
@@ -503,7 +663,11 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
       {
         Id: prompt,
         Name: Prompt,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 A text description of the desired image(s). The maximum length is 1000 characters for `dall-e-2` and 4000 characters for `dall-e-3`.
@@ -512,7 +676,11 @@ A text description of the desired image(s). The maximum length is 1000 character
       {
         Id: model,
         Name: Model,
-        Type: object?,
+        Type: {
+          CSharpType: object?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary:
@@ -523,7 +691,11 @@ The model to use for image generation.
       {
         Id: n,
         Name: N,
-        Type: int?,
+        Type: {
+          CSharpType: int?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 1,
         Summary:
@@ -534,7 +706,11 @@ The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only
       {
         Id: quality,
         Name: Quality,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: CreateImageRequestQuality.Standard,
         Summary:
@@ -545,7 +721,11 @@ The quality of the image that will be generated. `hd` creates images with finer 
       {
         Id: response_format,
         Name: ResponseFormat,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: CreateImageRequestResponseFormat.Url,
         Summary:
@@ -556,7 +736,11 @@ The format in which the generated images are returned. Must be one of `url` or `
       {
         Id: size,
         Name: Size,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: CreateImageRequestSize._1024x1024,
         Summary:
@@ -567,7 +751,11 @@ The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x
       {
         Id: style,
         Name: Style,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: CreateImageRequestStyle.Vivid,
         Summary:
@@ -578,7 +766,11 @@ The style of the generated images. Must be one of `vivid` or `natural`. Vivid ca
       {
         Id: user,
         Name: User,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).
@@ -604,14 +796,22 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
       {
         Id: image,
         Name: Image,
-        Type: byte[],
+        Type: {
+          CSharpType: byte[],
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary: The image to edit. Must be a valid PNG file, less than 4MB, and square. If mask is not provided, image must have transparency, which will be used as the mask.
       },
       {
         Id: prompt,
         Name: Prompt,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 A text description of the desired image(s). The maximum length is 1000 characters.
@@ -620,14 +820,22 @@ A text description of the desired image(s). The maximum length is 1000 character
       {
         Id: mask,
         Name: Mask,
-        Type: byte[]?,
+        Type: {
+          CSharpType: byte[]?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.
       },
       {
         Id: model,
         Name: Model,
-        Type: object?,
+        Type: {
+          CSharpType: object?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary:
@@ -638,7 +846,11 @@ The model to use for image generation. Only `dall-e-2` is supported at this time
       {
         Id: n,
         Name: N,
-        Type: int?,
+        Type: {
+          CSharpType: int?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 1,
         Summary:
@@ -649,7 +861,11 @@ The number of images to generate. Must be between 1 and 10.
       {
         Id: size,
         Name: Size,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: CreateImageEditRequestSize._1024x1024,
         Summary:
@@ -660,7 +876,11 @@ The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x
       {
         Id: response_format,
         Name: ResponseFormat,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: CreateImageEditRequestResponseFormat.Url,
         Summary:
@@ -671,7 +891,11 @@ The format in which the generated images are returned. Must be one of `url` or `
       {
         Id: user,
         Name: User,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).
@@ -697,14 +921,22 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
       {
         Id: image,
         Name: Image,
-        Type: byte[],
+        Type: {
+          CSharpType: byte[],
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary: The image to use as the basis for the variation(s). Must be a valid PNG file, less than 4MB, and square.
       },
       {
         Id: model,
         Name: Model,
-        Type: object?,
+        Type: {
+          CSharpType: object?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary:
@@ -715,7 +947,11 @@ The model to use for image generation. Only `dall-e-2` is supported at this time
       {
         Id: n,
         Name: N,
-        Type: int?,
+        Type: {
+          CSharpType: int?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 1,
         Summary:
@@ -726,7 +962,11 @@ The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only
       {
         Id: response_format,
         Name: ResponseFormat,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: CreateImageVariationRequestResponseFormat.Url,
         Summary:
@@ -737,7 +977,11 @@ The format in which the generated images are returned. Must be one of `url` or `
       {
         Id: size,
         Name: Size,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: CreateImageVariationRequestSize._1024x1024,
         Summary:
@@ -748,7 +992,11 @@ The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x
       {
         Id: user,
         Name: User,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).
@@ -774,7 +1022,11 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
       {
         Id: input,
         Name: Input,
-        Type: object,
+        Type: {
+          CSharpType: object,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 Input text to embed, encoded as a string or array of tokens. To embed multiple inputs in a single request, pass an array of strings or array of token arrays. The input must not exceed the max input tokens for the model (8192 tokens for `text-embedding-ada-002`), cannot be an empty string, and any array must be 2048 dimensions or less. [Example Python code](https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken) for counting tokens.
@@ -784,7 +1036,11 @@ Input text to embed, encoded as a string or array of tokens. To embed multiple i
       {
         Id: model,
         Name: Model,
-        Type: object,
+        Type: {
+          CSharpType: object,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models/overview) for descriptions of them.
@@ -794,7 +1050,11 @@ ID of the model to use. You can use the [List models](/docs/api-reference/models
       {
         Id: encoding_format,
         Name: EncodingFormat,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: CreateEmbeddingRequestEncodingFormat.Float,
         Summary:
@@ -805,7 +1065,11 @@ The format to return the embeddings in. Can be either `float` or [`base64`](http
       {
         Id: dimensions,
         Name: Dimensions,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The number of dimensions the resulting output embeddings should have. Only supported in `text-embedding-3` and later models.
@@ -814,7 +1078,11 @@ The number of dimensions the resulting output embeddings should have. Only suppo
       {
         Id: user,
         Name: User,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).
@@ -840,7 +1108,11 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
       {
         Id: model,
         Name: Model,
-        Type: object,
+        Type: {
+          CSharpType: object,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 One of the available [TTS models](/docs/models/tts): `tts-1` or `tts-1-hd`
@@ -849,21 +1121,33 @@ One of the available [TTS models](/docs/models/tts): `tts-1` or `tts-1-hd`
       {
         Id: input,
         Name: Input,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary: The text to generate audio for. The maximum length is 4096 characters.
       },
       {
         Id: voice,
         Name: Voice,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary: The voice to use when generating the audio. Supported voices are `alloy`, `echo`, `fable`, `onyx`, `nova`, and `shimmer`. Previews of the voices are available in the [Text to speech guide](/docs/guides/text-to-speech/voice-options).
       },
       {
         Id: response_format,
         Name: ResponseFormat,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: CreateSpeechRequestResponseFormat.Mp3,
         Summary:
@@ -873,7 +1157,11 @@ The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav
       {
         Id: speed,
         Name: Speed,
-        Type: double,
+        Type: {
+          CSharpType: double,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 1,
         Summary:
@@ -899,7 +1187,11 @@ The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is 
       {
         Id: file,
         Name: File,
-        Type: byte[],
+        Type: {
+          CSharpType: byte[],
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
@@ -908,7 +1200,11 @@ The audio file object (not file name) to transcribe, in one of these formats: fl
       {
         Id: model,
         Name: Model,
-        Type: object,
+        Type: {
+          CSharpType: object,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 ID of the model to use. Only `whisper-1` (which is powered by our open source Whisper V2 model) is currently available.
@@ -918,7 +1214,11 @@ ID of the model to use. Only `whisper-1` (which is powered by our open source Wh
       {
         Id: language,
         Name: Language,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The language of the input audio. Supplying the input language in [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) format will improve accuracy and latency.
@@ -927,7 +1227,11 @@ The language of the input audio. Supplying the input language in [ISO-639-1](htt
       {
         Id: prompt,
         Name: Prompt,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text/prompting) should match the audio language.
@@ -936,7 +1240,11 @@ An optional text to guide the model's style or continue a previous audio segment
       {
         Id: response_format,
         Name: ResponseFormat,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: CreateTranscriptionRequestResponseFormat.Json,
         Summary:
@@ -947,7 +1255,11 @@ The format of the transcript output, in one of these options: `json`, `text`, `s
       {
         Id: temperature,
         Name: Temperature,
-        Type: double,
+        Type: {
+          CSharpType: double,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 0,
         Summary:
@@ -974,7 +1286,11 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
       {
         Id: file,
         Name: File,
-        Type: byte[],
+        Type: {
+          CSharpType: byte[],
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 The audio file object (not file name) translate, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
@@ -983,7 +1299,11 @@ The audio file object (not file name) translate, in one of these formats: flac, 
       {
         Id: model,
         Name: Model,
-        Type: object,
+        Type: {
+          CSharpType: object,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 ID of the model to use. Only `whisper-1` (which is powered by our open source Whisper V2 model) is currently available.
@@ -993,7 +1313,11 @@ ID of the model to use. Only `whisper-1` (which is powered by our open source Wh
       {
         Id: prompt,
         Name: Prompt,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text/prompting) should be in English.
@@ -1002,7 +1326,11 @@ An optional text to guide the model's style or continue a previous audio segment
       {
         Id: response_format,
         Name: ResponseFormat,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: "json",
         Summary:
@@ -1013,7 +1341,11 @@ The format of the transcript output, in one of these options: `json`, `text`, `s
       {
         Id: temperature,
         Name: Temperature,
-        Type: double,
+        Type: {
+          CSharpType: double,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 0,
         Summary:
@@ -1035,14 +1367,20 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: "/files",
+    Path: $"/files?purpose={purpose}",
     Properties: [
       {
         Id: purpose,
         Name: Purpose,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         Summary: 
       }
     ],
@@ -1063,7 +1401,11 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
       {
         Id: file,
         Name: File,
-        Type: byte[],
+        Type: {
+          CSharpType: byte[],
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 The File object (not file name) to be uploaded.
@@ -1072,7 +1414,11 @@ The File object (not file name) to be uploaded.
       {
         Id: purpose,
         Name: Purpose,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 The intended purpose of the uploaded file.
@@ -1099,9 +1445,15 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
       {
         Id: file_id,
         Name: FileId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       }
     ],
@@ -1123,9 +1475,15 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
       {
         Id: file_id,
         Name: FileId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       }
     ],
@@ -1146,9 +1504,15 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
       {
         Id: file_id,
         Name: FileId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       }
     ],
@@ -1169,7 +1533,11 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
       {
         Id: model,
         Name: Model,
-        Type: object,
+        Type: {
+          CSharpType: object,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 The name of the model to fine-tune. You can select one of the
@@ -1180,7 +1548,11 @@ The name of the model to fine-tune. You can select one of the
       {
         Id: training_file,
         Name: TrainingFile,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 The ID of an uploaded file that contains training data.
@@ -1196,14 +1568,22 @@ See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
       {
         Id: hyperparameters,
         Name: Hyperparameters,
-        Type: CreateFineTuningJobRequestHyperparameters?,
+        Type: {
+          CSharpType: CreateFineTuningJobRequestHyperparameters?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: The hyperparameters used for the fine-tuning job.
       },
       {
         Id: suffix,
         Name: Suffix,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 A string of up to 18 characters that will be added to your fine-tuned model name.
@@ -1215,7 +1595,11 @@ For example, a `suffix` of "custom-model-name" would produce a model name like `
       {
         Id: validation_file,
         Name: ValidationFile,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The ID of an uploaded file that contains validation data.
@@ -1234,14 +1618,22 @@ See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
       {
         Id: integrations,
         Name: Integrations,
-        Type: global::System.Collections.Generic.IList<CreateFineTuningJobRequestIntegrations?>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<CreateFineTuningJobRequestIntegrations?>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         Summary: A list of integrations to enable for your fine-tuning job.
       },
       {
         Id: seed,
         Name: Seed,
-        Type: int?,
+        Type: {
+          CSharpType: int?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The seed controls the reproducibility of the job. Passing in the same seed and job parameters should produce the same results, but may differ in rare cases.
@@ -1263,22 +1655,34 @@ If a seed is not specified, one will be generated for you.
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: "/fine_tuning/jobs",
+    Path: $"/fine_tuning/jobs?after={after}&limit={limit}",
     Properties: [
       {
         Id: after,
         Name: After,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         Summary: 
       },
       {
         Id: limit,
         Name: Limit,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         DefaultValue: 20,
         Summary:
 <br/>Default Value: 20
@@ -1301,9 +1705,15 @@ If a seed is not specified, one will be generated for you.
       {
         Id: fine_tuning_job_id,
         Name: FineTuningJobId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary:
 <br/>Example: ft-AF1WoRqd3aJAHsqc9NY7iL8F
       }
@@ -1320,31 +1730,49 @@ If a seed is not specified, one will be generated for you.
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: $"/fine_tuning/jobs/{fineTuningJobId}/events",
+    Path: $"/fine_tuning/jobs/{fineTuningJobId}/events?after={after}&limit={limit}",
     Properties: [
       {
         Id: fine_tuning_job_id,
         Name: FineTuningJobId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary:
 <br/>Example: ft-AF1WoRqd3aJAHsqc9NY7iL8F
       },
       {
         Id: after,
         Name: After,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         Summary: 
       },
       {
         Id: limit,
         Name: Limit,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         DefaultValue: 20,
         Summary:
 <br/>Default Value: 20
@@ -1367,9 +1795,15 @@ If a seed is not specified, one will be generated for you.
       {
         Id: fine_tuning_job_id,
         Name: FineTuningJobId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary:
 <br/>Example: ft-AF1WoRqd3aJAHsqc9NY7iL8F
       }
@@ -1387,31 +1821,49 @@ If a seed is not specified, one will be generated for you.
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: $"/fine_tuning/jobs/{fineTuningJobId}/checkpoints",
+    Path: $"/fine_tuning/jobs/{fineTuningJobId}/checkpoints?after={after}&limit={limit}",
     Properties: [
       {
         Id: fine_tuning_job_id,
         Name: FineTuningJobId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary:
 <br/>Example: ft-AF1WoRqd3aJAHsqc9NY7iL8F
       },
       {
         Id: after,
         Name: After,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         Summary: 
       },
       {
         Id: limit,
         Name: Limit,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         DefaultValue: 10,
         Summary:
 <br/>Default Value: 10
@@ -1448,9 +1900,15 @@ If a seed is not specified, one will be generated for you.
       {
         Id: model,
         Name: Model,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary:
 <br/>Example: gpt-3.5-turbo
       }
@@ -1472,9 +1930,15 @@ If a seed is not specified, one will be generated for you.
       {
         Id: model,
         Name: Model,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary:
 <br/>Example: ft:gpt-3.5-turbo:acemeco:suffix:abc123
       }
@@ -1497,14 +1961,22 @@ If a seed is not specified, one will be generated for you.
       {
         Id: input,
         Name: Input,
-        Type: object,
+        Type: {
+          CSharpType: object,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary: The input text to classify
       },
       {
         Id: model,
         Name: Model,
-        Type: object?,
+        Type: {
+          CSharpType: object?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary:
@@ -1529,14 +2001,20 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: "/assistants",
+    Path: $"/assistants?limit={limit}&order={order}&after={after}&before={before}",
     Properties: [
       {
         Id: limit,
         Name: Limit,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         DefaultValue: 20,
         Summary:
 <br/>Default Value: 20
@@ -1544,9 +2022,15 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
       {
         Id: order,
         Name: Order,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         DefaultValue: Order.Desc,
         Summary:
 <br/>Default Value: desc
@@ -1554,17 +2038,29 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
       {
         Id: after,
         Name: After,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         Summary: 
       },
       {
         Id: before,
         Name: Before,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         Summary: 
       }
     ],
@@ -1585,7 +2081,11 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
       {
         Id: model,
         Name: Model,
-        Type: object,
+        Type: {
+          CSharpType: object,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models/overview) for descriptions of them.
@@ -1595,7 +2095,11 @@ ID of the model to use. You can use the [List models](/docs/api-reference/models
       {
         Id: name,
         Name: Name,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The name of the assistant. The maximum length is 256 characters.
@@ -1604,7 +2108,11 @@ The name of the assistant. The maximum length is 256 characters.
       {
         Id: description,
         Name: Description,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The description of the assistant. The maximum length is 512 characters.
@@ -1613,7 +2121,11 @@ The description of the assistant. The maximum length is 512 characters.
       {
         Id: instructions,
         Name: Instructions,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The system instructions that the assistant uses. The maximum length is 256,000 characters.
@@ -1622,7 +2134,11 @@ The system instructions that the assistant uses. The maximum length is 256,000 c
       {
         Id: tools,
         Name: Tools,
-        Type: global::System.Collections.Generic.IList<object?>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<object?>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary:
@@ -1633,7 +2149,11 @@ A list of tool enabled on the assistant. There can be a maximum of 128 tools per
       {
         Id: tool_resources,
         Name: ToolResources,
-        Type: CreateAssistantRequestToolResources?,
+        Type: {
+          CSharpType: CreateAssistantRequestToolResources?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
@@ -1642,7 +2162,11 @@ A set of resources that are used by the assistant's tools. The resources are spe
       {
         Id: metadata,
         Name: Metadata,
-        Type: CreateAssistantRequestMetadata?,
+        Type: {
+          CSharpType: CreateAssistantRequestMetadata?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -1651,7 +2175,11 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: temperature,
         Name: Temperature,
-        Type: double?,
+        Type: {
+          CSharpType: double?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 1,
         Summary:
@@ -1663,7 +2191,11 @@ What sampling temperature to use, between 0 and 2. Higher values like 0.8 will m
       {
         Id: top_p,
         Name: TopP,
-        Type: double?,
+        Type: {
+          CSharpType: double?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 1,
         Summary:
@@ -1677,7 +2209,11 @@ We generally recommend altering this or temperature but not both.
       {
         Id: response_format,
         Name: ResponseFormat,
-        Type: AssistantsApiResponseFormatOption?,
+        Type: {
+          CSharpType: AssistantsApiResponseFormatOption?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
@@ -1706,9 +2242,15 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       {
         Id: assistant_id,
         Name: AssistantId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       }
     ],
@@ -1729,15 +2271,25 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       {
         Id: assistant_id,
         Name: AssistantId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       },
       {
         Id: model,
         Name: Model,
-        Type: object?,
+        Type: {
+          CSharpType: object?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary:
@@ -1747,7 +2299,11 @@ ID of the model to use. You can use the [List models](/docs/api-reference/models
       {
         Id: name,
         Name: Name,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The name of the assistant. The maximum length is 256 characters.
@@ -1756,7 +2312,11 @@ The name of the assistant. The maximum length is 256 characters.
       {
         Id: description,
         Name: Description,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The description of the assistant. The maximum length is 512 characters.
@@ -1765,7 +2325,11 @@ The description of the assistant. The maximum length is 512 characters.
       {
         Id: instructions,
         Name: Instructions,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The system instructions that the assistant uses. The maximum length is 256,000 characters.
@@ -1774,7 +2338,11 @@ The system instructions that the assistant uses. The maximum length is 256,000 c
       {
         Id: tools,
         Name: Tools,
-        Type: global::System.Collections.Generic.IList<object?>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<object?>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary:
@@ -1785,7 +2353,11 @@ A list of tool enabled on the assistant. There can be a maximum of 128 tools per
       {
         Id: tool_resources,
         Name: ToolResources,
-        Type: ModifyAssistantRequestToolResources?,
+        Type: {
+          CSharpType: ModifyAssistantRequestToolResources?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
@@ -1794,7 +2366,11 @@ A set of resources that are used by the assistant's tools. The resources are spe
       {
         Id: metadata,
         Name: Metadata,
-        Type: ModifyAssistantRequestMetadata?,
+        Type: {
+          CSharpType: ModifyAssistantRequestMetadata?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -1803,7 +2379,11 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: temperature,
         Name: Temperature,
-        Type: double?,
+        Type: {
+          CSharpType: double?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 1,
         Summary:
@@ -1815,7 +2395,11 @@ What sampling temperature to use, between 0 and 2. Higher values like 0.8 will m
       {
         Id: top_p,
         Name: TopP,
-        Type: double?,
+        Type: {
+          CSharpType: double?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 1,
         Summary:
@@ -1829,7 +2413,11 @@ We generally recommend altering this or temperature but not both.
       {
         Id: response_format,
         Name: ResponseFormat,
-        Type: AssistantsApiResponseFormatOption?,
+        Type: {
+          CSharpType: AssistantsApiResponseFormatOption?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
@@ -1858,9 +2446,15 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       {
         Id: assistant_id,
         Name: AssistantId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       }
     ],
@@ -1882,14 +2476,22 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       {
         Id: messages,
         Name: Messages,
-        Type: global::System.Collections.Generic.IList<CreateMessageRequest>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<CreateMessageRequest>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         Summary: A list of [messages](/docs/api-reference/messages) to start the thread with.
       },
       {
         Id: tool_resources,
         Name: ToolResources,
-        Type: CreateThreadRequestToolResources?,
+        Type: {
+          CSharpType: CreateThreadRequestToolResources?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 A set of resources that are made available to the assistant's tools in this thread. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
@@ -1898,7 +2500,11 @@ A set of resources that are made available to the assistant's tools in this thre
       {
         Id: metadata,
         Name: Metadata,
-        Type: CreateThreadRequestMetadata?,
+        Type: {
+          CSharpType: CreateThreadRequestMetadata?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -1923,9 +2529,15 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: thread_id,
         Name: ThreadId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       }
     ],
@@ -1946,15 +2558,25 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: thread_id,
         Name: ThreadId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       },
       {
         Id: tool_resources,
         Name: ToolResources,
-        Type: ModifyThreadRequestToolResources?,
+        Type: {
+          CSharpType: ModifyThreadRequestToolResources?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 A set of resources that are made available to the assistant's tools in this thread. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
@@ -1963,7 +2585,11 @@ A set of resources that are made available to the assistant's tools in this thre
       {
         Id: metadata,
         Name: Metadata,
-        Type: ModifyThreadRequestMetadata?,
+        Type: {
+          CSharpType: ModifyThreadRequestMetadata?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -1988,9 +2614,15 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: thread_id,
         Name: ThreadId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       }
     ],
@@ -2007,22 +2639,34 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: $"/threads/{threadId}/messages",
+    Path: $"/threads/{threadId}/messages?limit={limit}&order={order}&after={after}&before={before}&run_id={runId}",
     Properties: [
       {
         Id: thread_id,
         Name: ThreadId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       },
       {
         Id: limit,
         Name: Limit,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         DefaultValue: 20,
         Summary:
 <br/>Default Value: 20
@@ -2030,9 +2674,15 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: order,
         Name: Order,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         DefaultValue: Order.Desc,
         Summary:
 <br/>Default Value: desc
@@ -2040,25 +2690,43 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: after,
         Name: After,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         Summary: 
       },
       {
         Id: before,
         Name: Before,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         Summary: 
       },
       {
         Id: run_id,
         Name: RunId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         Summary: 
       }
     ],
@@ -2079,15 +2747,25 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: thread_id,
         Name: ThreadId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       },
       {
         Id: role,
         Name: Role,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 The role of the entity that is creating the message. Allowed values include:
@@ -2098,21 +2776,33 @@ The role of the entity that is creating the message. Allowed values include:
       {
         Id: content,
         Name: Content,
-        Type: object,
+        Type: {
+          CSharpType: object,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary: 
       },
       {
         Id: attachments,
         Name: Attachments,
-        Type: global::System.Collections.Generic.IList<CreateMessageRequestAttachments?>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<CreateMessageRequestAttachments?>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         Summary: A list of files attached to the message, and the tools they should be added to.
       },
       {
         Id: metadata,
         Name: Metadata,
-        Type: CreateMessageRequestMetadata?,
+        Type: {
+          CSharpType: CreateMessageRequestMetadata?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -2137,17 +2827,29 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: thread_id,
         Name: ThreadId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       },
       {
         Id: message_id,
         Name: MessageId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       }
     ],
@@ -2168,23 +2870,39 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: thread_id,
         Name: ThreadId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       },
       {
         Id: message_id,
         Name: MessageId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       },
       {
         Id: metadata,
         Name: Metadata,
-        Type: ModifyMessageRequestMetadata?,
+        Type: {
+          CSharpType: ModifyMessageRequestMetadata?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -2209,17 +2927,29 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: thread_id,
         Name: ThreadId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       },
       {
         Id: message_id,
         Name: MessageId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       }
     ],
@@ -2241,21 +2971,37 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: assistant_id,
         Name: AssistantId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary: The ID of the [assistant](/docs/api-reference/assistants) to use to execute this run.
       },
       {
         Id: thread,
         Name: Thread,
-        Type: CreateThreadRequest?,
+        Type: {
+          CSharpType: CreateThreadRequest?,
+          IsArray: false,
+          Properties: [
+            messages,
+            tool_resources,
+            metadata
+          ]
+        },
         IsRequired: false,
         Summary: 
       },
       {
         Id: model,
         Name: Model,
-        Type: object?,
+        Type: {
+          CSharpType: object?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary:
@@ -2265,21 +3011,33 @@ The ID of the [Model](/docs/api-reference/models) to be used to execute this run
       {
         Id: instructions,
         Name: Instructions,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: Override the default system message of the assistant. This is useful for modifying the behavior on a per-run basis.
       },
       {
         Id: tools,
         Name: Tools,
-        Type: global::System.Collections.Generic.IList<object?>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<object?>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         Summary: Override the tools the assistant can use for this run. This is useful for modifying the behavior on a per-run basis.
       },
       {
         Id: tool_resources,
         Name: ToolResources,
-        Type: CreateThreadAndRunRequestToolResources?,
+        Type: {
+          CSharpType: CreateThreadAndRunRequestToolResources?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
@@ -2288,7 +3046,11 @@ A set of resources that are used by the assistant's tools. The resources are spe
       {
         Id: metadata,
         Name: Metadata,
-        Type: CreateThreadAndRunRequestMetadata?,
+        Type: {
+          CSharpType: CreateThreadAndRunRequestMetadata?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -2297,7 +3059,11 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: temperature,
         Name: Temperature,
-        Type: double?,
+        Type: {
+          CSharpType: double?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 1,
         Summary:
@@ -2309,7 +3075,11 @@ What sampling temperature to use, between 0 and 2. Higher values like 0.8 will m
       {
         Id: top_p,
         Name: TopP,
-        Type: double?,
+        Type: {
+          CSharpType: double?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 1,
         Summary:
@@ -2323,7 +3093,11 @@ We generally recommend altering this or temperature but not both.
       {
         Id: stream,
         Name: Stream,
-        Type: bool?,
+        Type: {
+          CSharpType: bool?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 If `true`, returns a stream of events that happen during the Run as server-sent events, terminating when the Run enters a terminal state with a `data: [DONE]` message.
@@ -2332,7 +3106,11 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       {
         Id: max_prompt_tokens,
         Name: MaxPromptTokens,
-        Type: int?,
+        Type: {
+          CSharpType: int?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The maximum number of prompt tokens that may be used over the course of the run. The run will make a best effort to use only the number of prompt tokens specified, across multiple turns of the run. If the run exceeds the number of prompt tokens specified, the run will end with status `incomplete`. See `incomplete_details` for more info.
@@ -2341,7 +3119,11 @@ The maximum number of prompt tokens that may be used over the course of the run.
       {
         Id: max_completion_tokens,
         Name: MaxCompletionTokens,
-        Type: int?,
+        Type: {
+          CSharpType: int?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The maximum number of completion tokens that may be used over the course of the run. The run will make a best effort to use only the number of completion tokens specified, across multiple turns of the run. If the run exceeds the number of completion tokens specified, the run will end with status `incomplete`. See `incomplete_details` for more info.
@@ -2350,14 +3132,25 @@ The maximum number of completion tokens that may be used over the course of the 
       {
         Id: truncation_strategy,
         Name: TruncationStrategy,
-        Type: TruncationObject?,
+        Type: {
+          CSharpType: TruncationObject?,
+          IsArray: false,
+          Properties: [
+            type,
+            last_messages
+          ]
+        },
         IsRequired: false,
         Summary: Controls for how a thread will be truncated prior to the run. Use this to control the intial context window of the run.
       },
       {
         Id: tool_choice,
         Name: ToolChoice,
-        Type: AssistantsApiToolChoiceOption?,
+        Type: {
+          CSharpType: AssistantsApiToolChoiceOption?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Controls which (if any) tool is called by the model.
@@ -2370,7 +3163,11 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
       {
         Id: response_format,
         Name: ResponseFormat,
-        Type: AssistantsApiResponseFormatOption?,
+        Type: {
+          CSharpType: AssistantsApiResponseFormatOption?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
@@ -2394,22 +3191,34 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: $"/threads/{threadId}/runs",
+    Path: $"/threads/{threadId}/runs?limit={limit}&order={order}&after={after}&before={before}",
     Properties: [
       {
         Id: thread_id,
         Name: ThreadId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       },
       {
         Id: limit,
         Name: Limit,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         DefaultValue: 20,
         Summary:
 <br/>Default Value: 20
@@ -2417,9 +3226,15 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       {
         Id: order,
         Name: Order,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         DefaultValue: Order.Desc,
         Summary:
 <br/>Default Value: desc
@@ -2427,17 +3242,29 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       {
         Id: after,
         Name: After,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         Summary: 
       },
       {
         Id: before,
         Name: Before,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         Summary: 
       }
     ],
@@ -2458,22 +3285,36 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       {
         Id: thread_id,
         Name: ThreadId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       },
       {
         Id: assistant_id,
         Name: AssistantId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary: The ID of the [assistant](/docs/api-reference/assistants) to use to execute this run.
       },
       {
         Id: model,
         Name: Model,
-        Type: object?,
+        Type: {
+          CSharpType: object?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: ,
         Summary:
@@ -2483,35 +3324,55 @@ The ID of the [Model](/docs/api-reference/models) to be used to execute this run
       {
         Id: instructions,
         Name: Instructions,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: Overrides the [instructions](/docs/api-reference/assistants/createAssistant) of the assistant. This is useful for modifying the behavior on a per-run basis.
       },
       {
         Id: additional_instructions,
         Name: AdditionalInstructions,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: Appends additional instructions at the end of the instructions for the run. This is useful for modifying the behavior on a per-run basis without overriding other instructions.
       },
       {
         Id: additional_messages,
         Name: AdditionalMessages,
-        Type: global::System.Collections.Generic.IList<CreateMessageRequest>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<CreateMessageRequest>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         Summary: Adds additional messages to the thread before creating the run.
       },
       {
         Id: tools,
         Name: Tools,
-        Type: global::System.Collections.Generic.IList<object?>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<object?>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         Summary: Override the tools the assistant can use for this run. This is useful for modifying the behavior on a per-run basis.
       },
       {
         Id: metadata,
         Name: Metadata,
-        Type: CreateRunRequestMetadata?,
+        Type: {
+          CSharpType: CreateRunRequestMetadata?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -2520,7 +3381,11 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: temperature,
         Name: Temperature,
-        Type: double?,
+        Type: {
+          CSharpType: double?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 1,
         Summary:
@@ -2532,7 +3397,11 @@ What sampling temperature to use, between 0 and 2. Higher values like 0.8 will m
       {
         Id: top_p,
         Name: TopP,
-        Type: double?,
+        Type: {
+          CSharpType: double?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         DefaultValue: 1,
         Summary:
@@ -2546,7 +3415,11 @@ We generally recommend altering this or temperature but not both.
       {
         Id: stream,
         Name: Stream,
-        Type: bool?,
+        Type: {
+          CSharpType: bool?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 If `true`, returns a stream of events that happen during the Run as server-sent events, terminating when the Run enters a terminal state with a `data: [DONE]` message.
@@ -2555,7 +3428,11 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       {
         Id: max_prompt_tokens,
         Name: MaxPromptTokens,
-        Type: int?,
+        Type: {
+          CSharpType: int?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The maximum number of prompt tokens that may be used over the course of the run. The run will make a best effort to use only the number of prompt tokens specified, across multiple turns of the run. If the run exceeds the number of prompt tokens specified, the run will end with status `incomplete`. See `incomplete_details` for more info.
@@ -2564,7 +3441,11 @@ The maximum number of prompt tokens that may be used over the course of the run.
       {
         Id: max_completion_tokens,
         Name: MaxCompletionTokens,
-        Type: int?,
+        Type: {
+          CSharpType: int?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 The maximum number of completion tokens that may be used over the course of the run. The run will make a best effort to use only the number of completion tokens specified, across multiple turns of the run. If the run exceeds the number of completion tokens specified, the run will end with status `incomplete`. See `incomplete_details` for more info.
@@ -2573,14 +3454,25 @@ The maximum number of completion tokens that may be used over the course of the 
       {
         Id: truncation_strategy,
         Name: TruncationStrategy,
-        Type: TruncationObject?,
+        Type: {
+          CSharpType: TruncationObject?,
+          IsArray: false,
+          Properties: [
+            type,
+            last_messages
+          ]
+        },
         IsRequired: false,
         Summary: Controls for how a thread will be truncated prior to the run. Use this to control the intial context window of the run.
       },
       {
         Id: tool_choice,
         Name: ToolChoice,
-        Type: AssistantsApiToolChoiceOption?,
+        Type: {
+          CSharpType: AssistantsApiToolChoiceOption?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Controls which (if any) tool is called by the model.
@@ -2593,7 +3485,11 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
       {
         Id: response_format,
         Name: ResponseFormat,
-        Type: AssistantsApiResponseFormatOption?,
+        Type: {
+          CSharpType: AssistantsApiResponseFormatOption?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
@@ -2622,17 +3518,29 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       {
         Id: thread_id,
         Name: ThreadId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       },
       {
         Id: run_id,
         Name: RunId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       }
     ],
@@ -2653,23 +3561,39 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       {
         Id: thread_id,
         Name: ThreadId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       },
       {
         Id: run_id,
         Name: RunId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       },
       {
         Id: metadata,
         Name: Metadata,
-        Type: ModifyRunRequestMetadata?,
+        Type: {
+          CSharpType: ModifyRunRequestMetadata?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -2694,30 +3618,50 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: thread_id,
         Name: ThreadId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       },
       {
         Id: run_id,
         Name: RunId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       },
       {
         Id: tool_outputs,
         Name: ToolOutputs,
-        Type: global::System.Collections.Generic.IList<SubmitToolOutputsRunRequestToolOutputs>,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<SubmitToolOutputsRunRequestToolOutputs>,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: true,
         Summary: A list of tools for which the outputs are being submitted.
       },
       {
         Id: stream,
         Name: Stream,
-        Type: bool?,
+        Type: {
+          CSharpType: bool?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 If `true`, returns a stream of events that happen during the Run as server-sent events, terminating when the Run enters a terminal state with a `data: [DONE]` message.
@@ -2742,17 +3686,29 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       {
         Id: thread_id,
         Name: ThreadId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       },
       {
         Id: run_id,
         Name: RunId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       }
     ],
@@ -2769,30 +3725,48 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: $"/threads/{threadId}/runs/{runId}/steps",
+    Path: $"/threads/{threadId}/runs/{runId}/steps?limit={limit}&order={order}&after={after}&before={before}",
     Properties: [
       {
         Id: thread_id,
         Name: ThreadId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       },
       {
         Id: run_id,
         Name: RunId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       },
       {
         Id: limit,
         Name: Limit,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         DefaultValue: 20,
         Summary:
 <br/>Default Value: 20
@@ -2800,9 +3774,15 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       {
         Id: order,
         Name: Order,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         DefaultValue: Order.Desc,
         Summary:
 <br/>Default Value: desc
@@ -2810,17 +3790,29 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       {
         Id: after,
         Name: After,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         Summary: 
       },
       {
         Id: before,
         Name: Before,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         Summary: 
       }
     ],
@@ -2841,25 +3833,43 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       {
         Id: thread_id,
         Name: ThreadId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       },
       {
         Id: run_id,
         Name: RunId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       },
       {
         Id: step_id,
         Name: StepId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       }
     ],
@@ -2875,14 +3885,20 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: "/vector_stores",
+    Path: $"/vector_stores?limit={limit}&order={order}&after={after}&before={before}",
     Properties: [
       {
         Id: limit,
         Name: Limit,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         DefaultValue: 20,
         Summary:
 <br/>Default Value: 20
@@ -2890,9 +3906,15 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       {
         Id: order,
         Name: Order,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         DefaultValue: Order.Desc,
         Summary:
 <br/>Default Value: desc
@@ -2900,17 +3922,29 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       {
         Id: after,
         Name: After,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         Summary: 
       },
       {
         Id: before,
         Name: Before,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         Summary: 
       }
     ],
@@ -2931,28 +3965,47 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       {
         Id: file_ids,
         Name: FileIds,
-        Type: global::System.Collections.Generic.IList<string?>?,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<string?>?,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: false,
         Summary: A list of [File](/docs/api-reference/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files.
       },
       {
         Id: name,
         Name: Name,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: The name of the vector store.
       },
       {
         Id: expires_after,
         Name: ExpiresAfter,
-        Type: VectorStoreExpirationAfter?,
+        Type: {
+          CSharpType: VectorStoreExpirationAfter?,
+          IsArray: false,
+          Properties: [
+            anchor,
+            days
+          ]
+        },
         IsRequired: false,
         Summary: The expiration policy for a vector store.
       },
       {
         Id: metadata,
         Name: Metadata,
-        Type: CreateVectorStoreRequestMetadata?,
+        Type: {
+          CSharpType: CreateVectorStoreRequestMetadata?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -2977,9 +4030,15 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: vector_store_id,
         Name: VectorStoreId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       }
     ],
@@ -3000,29 +4059,50 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: vector_store_id,
         Name: VectorStoreId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       },
       {
         Id: name,
         Name: Name,
-        Type: string?,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: The name of the vector store.
       },
       {
         Id: expires_after,
         Name: ExpiresAfter,
-        Type: VectorStoreExpirationAfter?,
+        Type: {
+          CSharpType: VectorStoreExpirationAfter?,
+          IsArray: false,
+          Properties: [
+            anchor,
+            days
+          ]
+        },
         IsRequired: false,
         Summary: The expiration policy for a vector store.
       },
       {
         Id: metadata,
         Name: Metadata,
-        Type: UpdateVectorStoreRequestMetadata?,
+        Type: {
+          CSharpType: UpdateVectorStoreRequestMetadata?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary:
 Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -3047,9 +4127,15 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: vector_store_id,
         Name: VectorStoreId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       }
     ],
@@ -3066,22 +4152,34 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: $"/vector_stores/{vectorStoreId}/files",
+    Path: $"/vector_stores/{vectorStoreId}/files?limit={limit}&order={order}&after={after}&before={before}&filter={filter}",
     Properties: [
       {
         Id: vector_store_id,
         Name: VectorStoreId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       },
       {
         Id: limit,
         Name: Limit,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         DefaultValue: 20,
         Summary:
 <br/>Default Value: 20
@@ -3089,9 +4187,15 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: order,
         Name: Order,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         DefaultValue: Order.Desc,
         Summary:
 <br/>Default Value: desc
@@ -3099,25 +4203,43 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: after,
         Name: After,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         Summary: 
       },
       {
         Id: before,
         Name: Before,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         Summary: 
       },
       {
         Id: filter,
         Name: Filter,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         Summary: 
       }
     ],
@@ -3138,16 +4260,26 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: vector_store_id,
         Name: VectorStoreId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary:
 <br/>Example: vs_abc123
       },
       {
         Id: file_id,
         Name: FileId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary: A [File](/docs/api-reference/files) ID that the vector store should use. Useful for tools like `file_search` that can access files.
       }
@@ -3170,18 +4302,30 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: vector_store_id,
         Name: VectorStoreId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary:
 <br/>Example: vs_abc123
       },
       {
         Id: file_id,
         Name: FileId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary:
 <br/>Example: file-abc123
       }
@@ -3203,17 +4347,29 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: vector_store_id,
         Name: VectorStoreId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       },
       {
         Id: file_id,
         Name: FileId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       }
     ],
@@ -3235,16 +4391,26 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: vector_store_id,
         Name: VectorStoreId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary:
 <br/>Example: vs_abc123
       },
       {
         Id: file_ids,
         Name: FileIds,
-        Type: global::System.Collections.Generic.IList<string>,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<string>,
+          IsArray: true,
+          Properties: null
+        },
         IsRequired: true,
         Summary: A list of [File](/docs/api-reference/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files.
       }
@@ -3267,18 +4433,30 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: vector_store_id,
         Name: VectorStoreId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary:
 <br/>Example: vs_abc123
       },
       {
         Id: batch_id,
         Name: BatchId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary:
 <br/>Example: vsfb_abc123
       }
@@ -3300,17 +4478,29 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: vector_store_id,
         Name: VectorStoreId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       },
       {
         Id: batch_id,
         Name: BatchId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       }
     ],
@@ -3327,30 +4517,48 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: $"/vector_stores/{vectorStoreId}/file_batches/{batchId}/files",
+    Path: $"/vector_stores/{vectorStoreId}/file_batches/{batchId}/files?limit={limit}&order={order}&after={after}&before={before}&filter={filter}",
     Properties: [
       {
         Id: vector_store_id,
         Name: VectorStoreId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       },
       {
         Id: batch_id,
         Name: BatchId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       },
       {
         Id: limit,
         Name: Limit,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         DefaultValue: 20,
         Summary:
 <br/>Default Value: 20
@@ -3358,9 +4566,15 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: order,
         Name: Order,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         DefaultValue: Order.Desc,
         Summary:
 <br/>Default Value: desc
@@ -3368,25 +4582,43 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: after,
         Name: After,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         Summary: 
       },
       {
         Id: before,
         Name: Before,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         Summary: 
       },
       {
         Id: filter,
         Name: Filter,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         Summary: 
       }
     ],
@@ -3407,7 +4639,11 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       {
         Id: input_file_id,
         Name: InputFileId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary:
 The ID of an uploaded file that contains requests for the new batch.
@@ -3420,21 +4656,33 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       {
         Id: endpoint,
         Name: Endpoint,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary: The endpoint to be used for all requests in the batch. Currently `/v1/chat/completions` and `/v1/embeddings` are supported.
       },
       {
         Id: completion_window,
         Name: CompletionWindow,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         Summary: The time frame within which the batch should be processed. Currently only `24h` is supported.
       },
       {
         Id: metadata,
         Name: Metadata,
-        Type: TestMetadata?,
+        Type: {
+          CSharpType: TestMetadata?,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         Summary: Optional custom metadata for the batch.
       }
@@ -3452,22 +4700,34 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     ClassName: Api,
     BaseUrl: ,
     Stream: false,
-    Path: "/batches",
+    Path: $"/batches?after={after}&limit={limit}",
     Properties: [
       {
         Id: after,
         Name: After,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         Summary: 
       },
       {
         Id: limit,
         Name: Limit,
-        Type: int,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: false,
         ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
         DefaultValue: 20,
         Summary:
 <br/>Default Value: 20
@@ -3490,9 +4750,15 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       {
         Id: batch_id,
         Name: BatchId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       }
     ],
@@ -3513,9 +4779,15 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       {
         Id: batch_id,
         Name: BatchId,
-        Type: string,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          Properties: null
+        },
         IsRequired: true,
         ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
         Summary: 
       }
     ],

@@ -93,7 +93,7 @@ namespace {endPoint.Namespace}
         /// <exception cref=""global::System.InvalidOperationException""></exception>
         public async {taskType} {endPoint.MethodName}(
 {endPoint.Properties.Where(x => x.ParameterLocation != null).Select(x => $@"
-            {x.Type} {x.Name.ToParameterName()},").Inject()}
+            {x.Type.CSharpType} {x.Name.ToParameterName()},").Inject()}
 {(string.IsNullOrWhiteSpace(endPoint.RequestType) ? " " : @$" 
             {endPoint.RequestType} request,")}
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default)
@@ -174,7 +174,7 @@ namespace {endPoint.Namespace}
         /// <exception cref=""global::System.InvalidOperationException""></exception>
         public async {taskType} {endPoint.MethodName}(
 {endPoint.Properties.Select(x => $@"
-            {x.Type} {x.Name.ToParameterName()},").Inject()}
+            {x.Type.CSharpType} {x.Name.ToParameterName()},").Inject()}
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default)
         {{
             var request = new {endPoint.RequestType}
