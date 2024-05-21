@@ -152,6 +152,84 @@ Use a data URL when:
     FileNameWithoutExtension: G.Models.Input
   },
   {
+    Id: webhook_events_filter,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: start,
+        Name: Start,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: ,
+        ParameterName: start,
+        ArgumentName: start
+      },
+      {
+        Id: output,
+        Name: Output,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: ,
+        ParameterName: output,
+        ArgumentName: output
+      },
+      {
+        Id: logs,
+        Name: Logs,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: ,
+        ParameterName: logs,
+        ArgumentName: logs
+      },
+      {
+        Id: completed,
+        Name: Completed,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: ,
+        ParameterName: completed,
+        ArgumentName: completed
+      }
+    ],
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: WebhookEventsFilter,
+    ClassName: WebhookEventsFilter,
+    ExternalClassName: WebhookEventsFilter,
+    FileNameWithoutExtension: G.Models.WebhookEventsFilter
+  },
+  {
     Id: training_request,
     AddTypeName: false,
     Parents: null,
@@ -271,6 +349,84 @@ An object containing inputs to the Cog model's `train()` function.
     ClassName: Input,
     ExternalClassName: Input,
     FileNameWithoutExtension: G.Models.Input
+  },
+  {
+    Id: webhook_events_filter,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: start,
+        Name: Start,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: ,
+        ParameterName: start,
+        ArgumentName: start
+      },
+      {
+        Id: output,
+        Name: Output,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: ,
+        ParameterName: output,
+        ArgumentName: output
+      },
+      {
+        Id: logs,
+        Name: Logs,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: ,
+        ParameterName: logs,
+        ArgumentName: logs
+      },
+      {
+        Id: completed,
+        Name: Completed,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: ,
+        ParameterName: completed,
+        ArgumentName: completed
+      }
+    ],
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: WebhookEventsFilter,
+    ClassName: WebhookEventsFilter,
+    ExternalClassName: WebhookEventsFilter,
+    FileNameWithoutExtension: G.Models.WebhookEventsFilter
   },
   {
     Id: version_prediction_request,
@@ -439,5 +595,83 @@ Use a data URL when:
     ClassName: Input,
     ExternalClassName: Input,
     FileNameWithoutExtension: G.Models.Input
+  },
+  {
+    Id: webhook_events_filter,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: start,
+        Name: Start,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: ,
+        ParameterName: start,
+        ArgumentName: start
+      },
+      {
+        Id: output,
+        Name: Output,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: ,
+        ParameterName: output,
+        ArgumentName: output
+      },
+      {
+        Id: logs,
+        Name: Logs,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: ,
+        ParameterName: logs,
+        ArgumentName: logs
+      },
+      {
+        Id: completed,
+        Name: Completed,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: ,
+        ParameterName: completed,
+        ArgumentName: completed
+      }
+    ],
+    Summary: ,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: WebhookEventsFilter,
+    ClassName: WebhookEventsFilter,
+    ExternalClassName: WebhookEventsFilter,
+    FileNameWithoutExtension: G.Models.WebhookEventsFilter
   }
 ]

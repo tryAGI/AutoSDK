@@ -554,7 +554,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a prediction using a deployment,
-    RequestType: prediction_request,
+    RequestType: PredictionRequest,
     ResponseType: ,
     MethodName: CreatePredictionsDeploymentsAsync,
     FileNameWithoutExtension: G.Api.EndPoints.CreatePredictionsDeployments
@@ -1003,7 +1003,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a prediction using an official model,
-    RequestType: prediction_request,
+    RequestType: PredictionRequest,
     ResponseType: ,
     MethodName: CreatePredictionsModelsAsync,
     FileNameWithoutExtension: G.Api.EndPoints.CreatePredictionsModels
@@ -1353,7 +1353,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a training,
-    RequestType: training_request,
+    RequestType: TrainingRequest,
     ResponseType: ,
     MethodName: CreateTrainingsAsync,
     FileNameWithoutExtension: G.Api.EndPoints.CreateTrainings
@@ -1504,7 +1504,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a prediction,
-    RequestType: version_prediction_request,
+    RequestType: VersionPredictionRequest,
     ResponseType: ,
     MethodName: CreatePredictionsAsync,
     FileNameWithoutExtension: G.Api.EndPoints.CreatePredictions

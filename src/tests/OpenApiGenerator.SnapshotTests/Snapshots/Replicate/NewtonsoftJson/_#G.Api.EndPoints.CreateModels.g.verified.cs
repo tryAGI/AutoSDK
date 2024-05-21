@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.EndPoints.ListModels.g.cs
+﻿//HintName: G.Api.EndPoints.CreateModels.g.cs
 
 #nullable enable
 
@@ -7,15 +7,15 @@ namespace G
     public partial class Api
     {
         /// <summary>
-        /// List public models
+        /// Create a model
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task ListModelsAsync(
+        public async global::System.Threading.Tasks.Task CreateModelsAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Get,
+                method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + "/models", global::System.UriKind.RelativeOrAbsolute));
 
             using var response = await _httpClient.SendAsync(

@@ -6088,7 +6088,7 @@ You can check which security and analysis features are currently enabled by usin
     JsonSerializerContext: ,
     HttpMethod: Put,
     Summary: Set the customization template for an OIDC subject claim for an organization,
-    RequestType: oidc-custom-sub,
+    RequestType: OidcCustomSub,
     ResponseType: empty-object,
     MethodName: Oidc/update-oidc-custom-sub-template-for-orgAsync,
     FileNameWithoutExtension: G.Api.EndPoints.Oidc/update-oidc-custom-sub-template-for-org
@@ -6550,7 +6550,7 @@ Specifies a list of string-matching patterns to allow specific action(s) and reu
     JsonSerializerContext: ,
     HttpMethod: Put,
     Summary: Set allowed actions and reusable workflows for an organization,
-    RequestType: selected-actions,
+    RequestType: SelectedActions,
     ResponseType: ,
     MethodName: Actions/set-allowed-actions-organizationAsync,
     FileNameWithoutExtension: G.Api.EndPoints.Actions/set-allowed-actions-organization
@@ -6655,7 +6655,7 @@ Specifies a list of string-matching patterns to allow specific action(s) and reu
     JsonSerializerContext: ,
     HttpMethod: Put,
     Summary: Set default workflow permissions for an organization,
-    RequestType: actions-set-default-workflow-permissions,
+    RequestType: ActionsSetDefaultWorkflowPermissions,
     ResponseType: ,
     MethodName: Actions/set-github-actions-default-workflow-permissions-organizationAsync,
     FileNameWithoutExtension: G.Api.EndPoints.Actions/set-github-actions-default-workflow-permissions-organization
@@ -12700,7 +12700,7 @@ The duration of the interaction restriction. Default: `one_day`.
     JsonSerializerContext: ,
     HttpMethod: Put,
     Summary: Set interaction restrictions for an organization,
-    RequestType: interaction-limit,
+    RequestType: InteractionLimit,
     ResponseType: interaction-limit-response,
     MethodName: Interactions/set-restrictions-for-orgAsync,
     FileNameWithoutExtension: G.Api.EndPoints.Interactions/set-restrictions-for-org
@@ -27489,7 +27489,7 @@ repository.
     JsonSerializerContext: ,
     HttpMethod: Put,
     Summary: Set the level of access for workflows outside of the repository,
-    RequestType: actions-workflow-access-to-repository,
+    RequestType: ActionsWorkflowAccessToRepository,
     ResponseType: ,
     MethodName: Actions/set-workflow-access-to-repositoryAsync,
     FileNameWithoutExtension: G.Api.EndPoints.Actions/set-workflow-access-to-repository
@@ -27642,7 +27642,7 @@ Specifies a list of string-matching patterns to allow specific action(s) and reu
     JsonSerializerContext: ,
     HttpMethod: Put,
     Summary: Set allowed actions and reusable workflows for a repository,
-    RequestType: selected-actions,
+    RequestType: SelectedActions,
     ResponseType: ,
     MethodName: Actions/set-allowed-actions-repositoryAsync,
     FileNameWithoutExtension: G.Api.EndPoints.Actions/set-allowed-actions-repository
@@ -27783,7 +27783,7 @@ Specifies a list of string-matching patterns to allow specific action(s) and reu
     JsonSerializerContext: ,
     HttpMethod: Put,
     Summary: Set default workflow permissions for a repository,
-    RequestType: actions-set-default-workflow-permissions,
+    RequestType: ActionsSetDefaultWorkflowPermissions,
     ResponseType: ,
     MethodName: Actions/set-github-actions-default-workflow-permissions-repositoryAsync,
     FileNameWithoutExtension: G.Api.EndPoints.Actions/set-github-actions-default-workflow-permissions-repository
@@ -38753,7 +38753,7 @@ An identifier for the upload.
     JsonSerializerContext: ,
     HttpMethod: Patch,
     Summary: Update a code scanning default setup configuration,
-    RequestType: code-scanning-default-setup-update,
+    RequestType: CodeScanningDefaultSetupUpdate,
     ResponseType: empty-object,
     MethodName: Code-scanning/update-default-setupAsync,
     FileNameWithoutExtension: G.Api.EndPoints.Code-scanning/update-default-setup
@@ -44458,7 +44458,7 @@ The time at which the snapshot was scanned.
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a snapshot of dependencies for a repository,
-    RequestType: snapshot,
+    RequestType: Snapshot,
     ResponseType: ,
     MethodName: Dependency-graph/create-repository-snapshotAsync,
     FileNameWithoutExtension: G.Api.EndPoints.Dependency-graph/create-repository-snapshot
@@ -46055,7 +46055,7 @@ Whether this rule targets a branch or tag
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a deployment branch policy,
-    RequestType: deployment-branch-policy-name-pattern-with-type,
+    RequestType: DeploymentBranchPolicyNamePatternWithType,
     ResponseType: deployment-branch-policy,
     MethodName: Repos/create-deployment-branch-policyAsync,
     FileNameWithoutExtension: G.Api.EndPoints.Repos/create-deployment-branch-policy
@@ -46252,7 +46252,7 @@ For more information about pattern matching syntax, see the [Ruby File.fnmatch d
     JsonSerializerContext: ,
     HttpMethod: Put,
     Summary: Update a deployment branch policy,
-    RequestType: deployment-branch-policy-name-pattern,
+    RequestType: DeploymentBranchPolicyNamePattern,
     ResponseType: deployment-branch-policy,
     MethodName: Repos/update-deployment-branch-policyAsync,
     FileNameWithoutExtension: G.Api.EndPoints.Repos/update-deployment-branch-policy
@@ -51265,7 +51265,7 @@ The duration of the interaction restriction. Default: `one_day`.
     JsonSerializerContext: ,
     HttpMethod: Put,
     Summary: Set interaction restrictions for a repository,
-    RequestType: interaction-limit,
+    RequestType: InteractionLimit,
     ResponseType: interaction-limit-response,
     MethodName: Interactions/set-restrictions-for-repoAsync,
     FileNameWithoutExtension: G.Api.EndPoints.Interactions/set-restrictions-for-repo
@@ -65747,7 +65747,7 @@ Whether to create a temporary private fork of the repository to collaborate on a
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a repository security advisory,
-    RequestType: repository-advisory-create,
+    RequestType: RepositoryAdvisoryCreate,
     ResponseType: repository-advisory,
     MethodName: Security-advisories/create-repository-advisoryAsync,
     FileNameWithoutExtension: G.Api.EndPoints.Security-advisories/create-repository-advisory
@@ -65918,7 +65918,7 @@ Whether to create a temporary private fork of the repository to collaborate on a
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Privately report a security vulnerability,
-    RequestType: private-vulnerability-report-create,
+    RequestType: PrivateVulnerabilityReportCreate,
     ResponseType: repository-advisory,
     MethodName: Security-advisories/create-private-vulnerability-reportAsync,
     FileNameWithoutExtension: G.Api.EndPoints.Security-advisories/create-private-vulnerability-report
@@ -66242,7 +66242,7 @@ Whether to create a temporary private fork of the repository to collaborate on a
     JsonSerializerContext: ,
     HttpMethod: Patch,
     Summary: Update a repository security advisory,
-    RequestType: repository-advisory-update,
+    RequestType: RepositoryAdvisoryUpdate,
     ResponseType: repository-advisory,
     MethodName: Security-advisories/update-repository-advisoryAsync,
     FileNameWithoutExtension: G.Api.EndPoints.Security-advisories/update-repository-advisory
@@ -74091,7 +74091,7 @@ The duration of the interaction restriction. Default: `one_day`.
     JsonSerializerContext: ,
     HttpMethod: Put,
     Summary: Set interaction restrictions for your public repositories,
-    RequestType: interaction-limit,
+    RequestType: InteractionLimit,
     ResponseType: interaction-limit-response,
     MethodName: Interactions/set-restrictions-for-authenticated-userAsync,
     FileNameWithoutExtension: G.Api.EndPoints.Interactions/set-restrictions-for-authenticated-user

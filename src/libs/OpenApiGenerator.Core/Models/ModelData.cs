@@ -119,6 +119,9 @@ public readonly record struct ModelData(
                 .ToImmutableArray(),
             Enumerations = schema.Value.Properties
                 .Select(x => FromSchema(x, settings, innerParents))
+                .Concat(schema.Value.Properties.SelectMany(x => x.Value.Items != null && x.Value.Items.IsEnum()
+                    ? [FromSchema(x.Value.Items.WithKey(x.Key), settings, innerParents)]
+                    : Array.Empty<ModelData>()))
                 .Where(static x => x.Schema.Value.IsEnum())
                 .Concat(schema.Value.Properties
                     .SelectMany(x => WithModelName(x.Value.AnyOf, x.Key, settings, addTypeName: false, innerParents))

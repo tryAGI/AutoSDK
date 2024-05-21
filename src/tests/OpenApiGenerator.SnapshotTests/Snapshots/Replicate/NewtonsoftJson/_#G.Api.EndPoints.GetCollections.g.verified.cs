@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.EndPoints.ListModels.g.cs
+﻿//HintName: G.Api.EndPoints.GetCollections.g.cs
 
 #nullable enable
 
@@ -7,16 +7,18 @@ namespace G
     public partial class Api
     {
         /// <summary>
-        /// List public models
+        /// Get a collection of models
         /// </summary>
+        /// <param name="collectionSlug"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task ListModelsAsync(
+        public async global::System.Threading.Tasks.Task GetCollectionsAsync(
+            string collectionSlug,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + "/models", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/collections/{collectionSlug}", global::System.UriKind.RelativeOrAbsolute));
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

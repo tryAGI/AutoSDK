@@ -24,7 +24,7 @@ namespace G
             global::System.Uri? baseUri = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
-            _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri("http://localhost:11434/api");
+            _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri("https://api.replicate.com/v1");
         }
 
         /// <inheritdoc/>
