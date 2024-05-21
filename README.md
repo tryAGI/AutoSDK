@@ -96,3 +96,6 @@ internal sealed partial class SourceGenerationContext : JsonSerializerContext;
 </PropertyGroup>
 ```
 - It's all! Now you can build your project and use the generated code with full trimming/nativeAOT support.
+
+## 📚Examples of use in real SDKs📚
+- https://github.com/tryAGI/Ollama
