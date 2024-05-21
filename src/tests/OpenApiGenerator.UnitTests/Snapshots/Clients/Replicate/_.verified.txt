@@ -52,6 +52,7 @@
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: collectionSlug,
         ArgumentName: collectionSlug
       }
     ],
@@ -97,6 +98,7 @@
         },
         IsRequired: true,
         Summary: The SKU for the hardware used to run the model. Possible values can be retrieved from the `hardware.list` endpoint.,
+        ParameterName: hardware,
         ArgumentName: hardware
       },
       {
@@ -111,6 +113,7 @@
         },
         IsRequired: true,
         Summary: The maximum number of instances for scaling.,
+        ParameterName: maxInstances,
         ArgumentName: maxInstances
       },
       {
@@ -125,6 +128,7 @@
         },
         IsRequired: true,
         Summary: The minimum number of instances for scaling.,
+        ParameterName: minInstances,
         ArgumentName: minInstances
       },
       {
@@ -139,6 +143,7 @@
         },
         IsRequired: true,
         Summary: The full name of the model that you want to deploy e.g. stability-ai/sdxl.,
+        ParameterName: model,
         ArgumentName: model
       },
       {
@@ -153,6 +158,7 @@
         },
         IsRequired: true,
         Summary: The name of the deployment.,
+        ParameterName: name,
         ArgumentName: name
       },
       {
@@ -167,6 +173,7 @@
         },
         IsRequired: true,
         Summary: The 64-character string ID of the model version that you want to deploy.,
+        ParameterName: version,
         ArgumentName: version
       }
     ],
@@ -201,6 +208,7 @@
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: deploymentOwner,
         ArgumentName: deploymentOwner
       },
       {
@@ -218,6 +226,7 @@
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: deploymentName,
         ArgumentName: deploymentName
       }
     ],
@@ -252,6 +261,7 @@
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: deploymentOwner,
         ArgumentName: deploymentOwner
       },
       {
@@ -269,6 +279,7 @@
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: deploymentName,
         ArgumentName: deploymentName
       }
     ],
@@ -302,6 +313,7 @@
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: deploymentOwner,
         ArgumentName: deploymentOwner
       },
       {
@@ -319,6 +331,7 @@
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: deploymentName,
         ArgumentName: deploymentName
       },
       {
@@ -333,6 +346,7 @@
         },
         IsRequired: false,
         Summary: The SKU for the hardware used to run the model. Possible values can be retrieved from the `hardware.list` endpoint.,
+        ParameterName: hardware,
         ArgumentName: hardware
       },
       {
@@ -347,6 +361,7 @@
         },
         IsRequired: false,
         Summary: The maximum number of instances for scaling.,
+        ParameterName: maxInstances,
         ArgumentName: maxInstances
       },
       {
@@ -361,6 +376,7 @@
         },
         IsRequired: false,
         Summary: The minimum number of instances for scaling.,
+        ParameterName: minInstances,
         ArgumentName: minInstances
       },
       {
@@ -375,6 +391,7 @@
         },
         IsRequired: false,
         Summary: The ID of the model version that you want to deploy,
+        ParameterName: version,
         ArgumentName: version
       }
     ],
@@ -409,6 +426,7 @@
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: deploymentOwner,
         ArgumentName: deploymentOwner
       },
       {
@@ -426,6 +444,7 @@
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: deploymentName,
         ArgumentName: deploymentName
       },
       {
@@ -456,6 +475,7 @@ Use a data URL when:
 - you don't want to upload and host the file somewhere
 - you don't need to use the file again (Replicate will not store it)
 ,
+        ParameterName: input,
         ArgumentName: input
       },
       {
@@ -474,6 +494,7 @@ Request a URL to receive streaming output using [server-sent events (SSE)](https
 
 If the requested model version supports streaming, the returned prediction will have a `stream` entry in its `urls` property with an HTTPS URL that you can use to construct an [`EventSource`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource).
 ,
+        ParameterName: stream,
         ArgumentName: stream
       },
       {
@@ -490,6 +511,7 @@ If the requested model version supports streaming, the returned prediction will 
         Summary:
 An HTTPS URL for receiving a webhook when the prediction has new output. The webhook will be a POST request where the request body is the same as the response body of the [get prediction](#predictions.get) operation. If there are network problems, we will retry the webhook a few times, so make sure it can be safely called more than once. Replicate will not follow redirects when sending webhook requests to your service, so be sure to specify a URL that will resolve without redirecting.
 ,
+        ParameterName: webhook,
         ArgumentName: webhook
       },
       {
@@ -525,6 +547,7 @@ For example, if you only wanted requests to be sent at the start and end of the 
 
 Requests for event types `output` and `logs` will be sent at most once every 500ms. If you request `start` and `completed` webhooks, then they'll always be sent regardless of throttling.
 ,
+        ParameterName: webhookEventsFilter,
         ArgumentName: webhookEventsFilter
       }
     ],
@@ -586,6 +609,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         },
         IsRequired: false,
         Summary: A URL for the model's cover image. This should be an image file.,
+        ParameterName: coverImageUrl,
         ArgumentName: coverImageUrl
       },
       {
@@ -600,6 +624,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         },
         IsRequired: false,
         Summary: A description of the model.,
+        ParameterName: description,
         ArgumentName: description
       },
       {
@@ -614,6 +639,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         },
         IsRequired: false,
         Summary: A URL for the model's source code on GitHub.,
+        ParameterName: githubUrl,
         ArgumentName: githubUrl
       },
       {
@@ -628,6 +654,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         },
         IsRequired: true,
         Summary: The SKU for the hardware used to run the model. Possible values can be retrieved from the `hardware.list` endpoint.,
+        ParameterName: hardware,
         ArgumentName: hardware
       },
       {
@@ -642,6 +669,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         },
         IsRequired: false,
         Summary: A URL for the model's license.,
+        ParameterName: licenseUrl,
         ArgumentName: licenseUrl
       },
       {
@@ -656,6 +684,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         },
         IsRequired: true,
         Summary: The name of the model. This must be unique among all models owned by the user or organization.,
+        ParameterName: name,
         ArgumentName: name
       },
       {
@@ -670,6 +699,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         },
         IsRequired: true,
         Summary: The name of the user or organization that will own the model. This must be the same as the user or organization that is making the API request. In other words, the API token used in the request must belong to this user or organization.,
+        ParameterName: owner,
         ArgumentName: owner
       },
       {
@@ -684,6 +714,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         },
         IsRequired: false,
         Summary: A URL for the model's paper.,
+        ParameterName: paperUrl,
         ArgumentName: paperUrl
       },
       {
@@ -704,6 +735,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         },
         IsRequired: true,
         Summary: Whether the model should be public or private. A public model can be viewed and run by anyone, whereas a private model can be viewed and run only by the user or organization members that own the model.,
+        ParameterName: visibility,
         ArgumentName: visibility
       }
     ],
@@ -738,6 +770,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: modelOwner,
         ArgumentName: modelOwner
       },
       {
@@ -755,6 +788,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: modelName,
         ArgumentName: modelName
       }
     ],
@@ -789,6 +823,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: modelOwner,
         ArgumentName: modelOwner
       },
       {
@@ -806,6 +841,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: modelName,
         ArgumentName: modelName
       }
     ],
@@ -839,6 +875,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: modelOwner,
         ArgumentName: modelOwner
       },
       {
@@ -856,6 +893,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: modelName,
         ArgumentName: modelName
       },
       {
@@ -886,6 +924,7 @@ Use a data URL when:
 - you don't want to upload and host the file somewhere
 - you don't need to use the file again (Replicate will not store it)
 ,
+        ParameterName: input,
         ArgumentName: input
       },
       {
@@ -904,6 +943,7 @@ Request a URL to receive streaming output using [server-sent events (SSE)](https
 
 If the requested model version supports streaming, the returned prediction will have a `stream` entry in its `urls` property with an HTTPS URL that you can use to construct an [`EventSource`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource).
 ,
+        ParameterName: stream,
         ArgumentName: stream
       },
       {
@@ -920,6 +960,7 @@ If the requested model version supports streaming, the returned prediction will 
         Summary:
 An HTTPS URL for receiving a webhook when the prediction has new output. The webhook will be a POST request where the request body is the same as the response body of the [get prediction](#predictions.get) operation. If there are network problems, we will retry the webhook a few times, so make sure it can be safely called more than once. Replicate will not follow redirects when sending webhook requests to your service, so be sure to specify a URL that will resolve without redirecting.
 ,
+        ParameterName: webhook,
         ArgumentName: webhook
       },
       {
@@ -955,6 +996,7 @@ For example, if you only wanted requests to be sent at the start and end of the 
 
 Requests for event types `output` and `logs` will be sent at most once every 500ms. If you request `start` and `completed` webhooks, then they'll always be sent regardless of throttling.
 ,
+        ParameterName: webhookEventsFilter,
         ArgumentName: webhookEventsFilter
       }
     ],
@@ -989,6 +1031,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: modelOwner,
         ArgumentName: modelOwner
       },
       {
@@ -1006,6 +1049,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: modelName,
         ArgumentName: modelName
       }
     ],
@@ -1039,6 +1083,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: modelOwner,
         ArgumentName: modelOwner
       },
       {
@@ -1056,6 +1101,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: modelName,
         ArgumentName: modelName
       },
       {
@@ -1073,6 +1119,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: versionId,
         ArgumentName: versionId
       }
     ],
@@ -1107,6 +1154,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: modelOwner,
         ArgumentName: modelOwner
       },
       {
@@ -1124,6 +1172,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: modelName,
         ArgumentName: modelName
       },
       {
@@ -1141,6 +1190,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: versionId,
         ArgumentName: versionId
       }
     ],
@@ -1174,6 +1224,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: modelOwner,
         ArgumentName: modelOwner
       },
       {
@@ -1191,6 +1242,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: modelName,
         ArgumentName: modelName
       },
       {
@@ -1208,6 +1260,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: versionId,
         ArgumentName: versionId
       },
       {
@@ -1224,6 +1277,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Summary:
 A string representing the desired model to push to in the format `{destination_model_owner}/{destination_model_name}`. This should be an existing model owned by the user or organization making the API request. If the destination is invalid, the server will return an appropriate 4XX response.
 ,
+        ParameterName: destination,
         ArgumentName: destination
       },
       {
@@ -1240,6 +1294,7 @@ A string representing the desired model to push to in the format `{destination_m
         Summary:
 An object containing inputs to the Cog model's `train()` function.
 ,
+        ParameterName: input,
         ArgumentName: input
       },
       {
@@ -1254,6 +1309,7 @@ An object containing inputs to the Cog model's `train()` function.
         },
         IsRequired: false,
         Summary: An HTTPS URL for receiving a webhook when the training completes. The webhook will be a POST request where the request body is the same as the response body of the [get training](#trainings.get) operation. If there are network problems, we will retry the webhook a few times, so make sure it can be safely called more than once. Replicate will not follow redirects when sending webhook requests to your service, so be sure to specify a URL that will resolve without redirecting.,
+        ParameterName: webhook,
         ArgumentName: webhook
       },
       {
@@ -1290,6 +1346,7 @@ For example, if you only wanted requests to be sent at the start and end of the 
 
 Requests for event types `output` and `logs` will be sent at most once every 500ms. If you request `start` and `completed` webhooks, then they'll always be sent regardless of throttling.
 ,
+        ParameterName: webhookEventsFilter,
         ArgumentName: webhookEventsFilter
       }
     ],
@@ -1352,6 +1409,7 @@ Use a data URL when:
 - you don't want to upload and host the file somewhere
 - you don't need to use the file again (Replicate will not store it)
 ,
+        ParameterName: input,
         ArgumentName: input
       },
       {
@@ -1370,6 +1428,7 @@ Request a URL to receive streaming output using [server-sent events (SSE)](https
 
 If the requested model version supports streaming, the returned prediction will have a `stream` entry in its `urls` property with an HTTPS URL that you can use to construct an [`EventSource`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource).
 ,
+        ParameterName: stream,
         ArgumentName: stream
       },
       {
@@ -1384,6 +1443,7 @@ If the requested model version supports streaming, the returned prediction will 
         },
         IsRequired: true,
         Summary: The ID of the model version that you want to run.,
+        ParameterName: version,
         ArgumentName: version
       },
       {
@@ -1400,6 +1460,7 @@ If the requested model version supports streaming, the returned prediction will 
         Summary:
 An HTTPS URL for receiving a webhook when the prediction has new output. The webhook will be a POST request where the request body is the same as the response body of the [get prediction](#predictions.get) operation. If there are network problems, we will retry the webhook a few times, so make sure it can be safely called more than once. Replicate will not follow redirects when sending webhook requests to your service, so be sure to specify a URL that will resolve without redirecting.
 ,
+        ParameterName: webhook,
         ArgumentName: webhook
       },
       {
@@ -1436,6 +1497,7 @@ For example, if you only wanted requests to be sent at the start and end of the 
 
 Requests for event types `output` and `logs` will be sent at most once every 500ms. If you request `start` and `completed` webhooks, then they'll always be sent regardless of throttling.
 ,
+        ParameterName: webhookEventsFilter,
         ArgumentName: webhookEventsFilter
       }
     ],
@@ -1470,6 +1532,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: predictionId,
         ArgumentName: predictionId
       }
     ],
@@ -1503,6 +1566,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: predictionId,
         ArgumentName: predictionId
       }
     ],
@@ -1552,6 +1616,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: trainingId,
         ArgumentName: trainingId
       }
     ],
@@ -1585,6 +1650,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
+        ParameterName: trainingId,
         ArgumentName: trainingId
       }
     ],

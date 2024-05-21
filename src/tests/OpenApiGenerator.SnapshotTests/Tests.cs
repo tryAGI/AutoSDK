@@ -2,7 +2,6 @@
 using Microsoft.OpenApi.Extensions;
 using Microsoft.OpenApi.Models;
 using OpenApiGenerator.Core.Json;
-using OpenApiGenerator.Generators;
 
 namespace OpenApiGenerator.SnapshotTests;
 
@@ -46,11 +45,11 @@ public partial class Tests
     [DataRow(JsonSerializerType.NewtonsoftJson)]
     public Task Empty(JsonSerializerType jsonSerializerType)
     {
-        return CheckSourceAsync<ModelGenerator>(jsonSerializerType, [], new Dictionary<string, string>
+        return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [], new Dictionary<string, string>
         {
             //["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
             //["build_property.OpenApiGenerator_GenerateMethods"] = "true",
-        }, additionalGenerators: [new ClientGenerator()]);
+        });
     }
     
     [DataTestMethod]
@@ -58,7 +57,7 @@ public partial class Tests
     [DataRow(JsonSerializerType.NewtonsoftJson)]
     public Task LangSmith(JsonSerializerType jsonSerializerType)
     {
-        return CheckSourceAsync<ModelGenerator>(jsonSerializerType, [
+        return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
             new CustomAdditionalText(
                 path: H.Resources.langsmith_yaml.FileName,
                 text: H.Resources.langsmith_yaml.AsString())
@@ -66,7 +65,7 @@ public partial class Tests
         {
             //["build_property.OpenApiGenerator_JsonSerializerContext"] = "SourceGenerationContext",
             //["build_property.OpenApiGenerator_GenerateMethods"] = "true",
-        }, additionalGenerators: [new ClientGenerator()]);
+        });
     }
     
     [DataTestMethod]
@@ -74,7 +73,7 @@ public partial class Tests
     [DataRow(JsonSerializerType.NewtonsoftJson)]
     public Task Ollama(JsonSerializerType jsonSerializerType)
     {
-        return CheckSourceAsync<ModelGenerator>(jsonSerializerType, [
+        return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
             new CustomAdditionalText(
                 path: H.Resources.ollamacurated_yaml.FileName,
                 text: H.Resources.ollamacurated_yaml.AsString())
@@ -106,7 +105,7 @@ public partial class Tests
     [DataRow(JsonSerializerType.NewtonsoftJson)]
     public Task OpenAi(JsonSerializerType jsonSerializerType)
     {
-        return CheckSourceAsync<ModelGenerator>(jsonSerializerType, [
+        return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
             new CustomAdditionalText(
                 path: H.Resources.openai_yaml.FileName,
                 text: H.Resources.openai_yaml.AsString())
@@ -116,7 +115,7 @@ public partial class Tests
             //["build_property.OpenApiGenerator_GenerateMethods"] = "true",
             //["build_property.OpenApiGenerator_IncludeOperationIds"] = "ListModels",
             //["build_property.OpenApiGenerator_IncludeModels"] = "CreateEmbeddingRequest;CreateModerationResponse;Error;ErrorResponse;ListModelsResponse;Model;DeleteModelResponse;CreateCompletionRequest",
-        }, additionalGenerators: [new ClientGenerator()]);
+        });
     }
     //
     // [DataTestMethod]
@@ -144,7 +143,7 @@ public partial class Tests
     [DataRow(JsonSerializerType.NewtonsoftJson)]
     public Task YamlWithLocalFile(JsonSerializerType jsonSerializerType)
     {
-        return CheckSourceAsync<ModelGenerator>(jsonSerializerType, [
+        return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
             new CustomAdditionalText(
                 path: "openapi.yaml",
                 text: H.Resources.ipinfo_yaml.AsString()),
@@ -152,7 +151,7 @@ public partial class Tests
         {
             //["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
             //["build_property.OpenApiGenerator_GenerateMethods"] = "true",
-        }, additionalGenerators: [new ClientGenerator()]);
+        });
     }
 
     [DataTestMethod]
@@ -162,26 +161,26 @@ public partial class Tests
     {
         var yaml = PetStore.Serialize(OpenApiSpecVersion.OpenApi3_0, OpenApiFormat.Yaml);
         
-        return CheckSourceAsync<ModelGenerator>(jsonSerializerType, [
+        return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
             new CustomAdditionalText("openapi.yaml", yaml),
         ], new Dictionary<string, string>
         {
             //["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
             //["build_property.OpenApiGenerator_GenerateMethods"] = "true",
-        }, additionalGenerators: [new ClientGenerator()]);
+        });
     }
     
-    [DataTestMethod]
-    [DataRow(JsonSerializerType.SystemTextJson)]
-    [DataRow(JsonSerializerType.NewtonsoftJson)]
-    public Task YamlWithUrl(JsonSerializerType jsonSerializerType)
-    {
-        return CheckSourceAsync<ModelGenerator>(jsonSerializerType, [
-            new CustomAdditionalText("https://dedoose-rest-api.onrender.com/swagger/v1/swagger.json", string.Empty),
-        ], new Dictionary<string, string>
-        {
-            //["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
-            //["build_property.OpenApiGenerator_GenerateMethods"] = "true",
-        }, additionalGenerators: [new ClientGenerator()]);
-    }
+    // [DataTestMethod]
+    // [DataRow(JsonSerializerType.SystemTextJson)]
+    // [DataRow(JsonSerializerType.NewtonsoftJson)]
+    // public Task YamlWithUrl(JsonSerializerType jsonSerializerType)
+    // {
+    //     return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
+    //         new CustomAdditionalText("https://dedoose-rest-api.onrender.com/swagger/v1/swagger.json", string.Empty),
+    //     ], new Dictionary<string, string>
+    //     {
+    //         //["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
+    //         //["build_property.OpenApiGenerator_GenerateMethods"] = "true",
+    //     });
+    // }
 }

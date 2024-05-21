@@ -24,6 +24,7 @@ The model name.
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
 <br/>Example: llama2:7b,
+        ParameterName: model,
         ArgumentName: model
       },
       {
@@ -40,6 +41,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         Summary:
 The prompt to generate a response.
 <br/>Example: Why is the sky blue?,
+        ParameterName: prompt,
         ArgumentName: prompt
       },
       {
@@ -54,6 +56,7 @@ The prompt to generate a response.
         },
         IsRequired: false,
         Summary: (optional) a list of Base64-encoded images to include in the message (for multimodal models such as llava),
+        ParameterName: images,
         ArgumentName: images
       },
       {
@@ -68,6 +71,7 @@ The prompt to generate a response.
         },
         IsRequired: false,
         Summary: The system prompt to (overrides what is defined in the Modelfile).,
+        ParameterName: system,
         ArgumentName: system
       },
       {
@@ -82,6 +86,7 @@ The prompt to generate a response.
         },
         IsRequired: false,
         Summary: The full prompt or prompt template (overrides what is defined in the Modelfile).,
+        ParameterName: template,
         ArgumentName: template
       },
       {
@@ -96,6 +101,7 @@ The prompt to generate a response.
         },
         IsRequired: false,
         Summary: The context parameter returned from a previous request to [generateCompletion], this can be used to keep a short conversational memory.,
+        ParameterName: context,
         ArgumentName: context
       },
       {
@@ -144,6 +150,7 @@ The prompt to generate a response.
         },
         IsRequired: false,
         Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.,
+        ParameterName: options,
         ArgumentName: options
       },
       {
@@ -168,6 +175,7 @@ Enable JSON mode by setting the format parameter to json. This will structure th
 
 Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
 ,
+        ParameterName: format,
         ArgumentName: format
       },
       {
@@ -186,6 +194,7 @@ If `true` no formatting will be applied to the prompt and no context will be ret
 
 You may choose to use the `raw` parameter if you are specifying a full templated prompt in your request to the API, and are managing history yourself.
 ,
+        ParameterName: raw,
         ArgumentName: raw
       },
       {
@@ -204,6 +213,7 @@ You may choose to use the `raw` parameter if you are specifying a full templated
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
 
 <br/>Default Value: false,
+        ParameterName: stream,
         ArgumentName: stream
       },
       {
@@ -225,6 +235,7 @@ How long (in minutes) to keep the model loaded in memory.
 - If set to 0, the model will be unloaded immediately once finished.
 - If not set, the model will stay loaded for 5 minutes by default
 ,
+        ParameterName: keepAlive,
         ArgumentName: keepAlive
       }
     ],
@@ -257,6 +268,7 @@ How long (in minutes) to keep the model loaded in memory.
         },
         IsRequired: false,
         Summary: ,
+        ParameterName: json,
         ArgumentName: json
       }
     ],
@@ -296,6 +308,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
         Summary:
 Number of tokens to keep from the prompt.
 ,
+        ParameterName: numKeep,
         ArgumentName: numKeep
       },
       {
@@ -312,6 +325,7 @@ Number of tokens to keep from the prompt.
         Summary:
 Sets the random number seed to use for generation. Setting this to a specific number will make the model generate the same text for the same prompt. (Default: 0)
 ,
+        ParameterName: seed,
         ArgumentName: seed
       },
       {
@@ -328,6 +342,7 @@ Sets the random number seed to use for generation. Setting this to a specific nu
         Summary:
 Maximum number of tokens to predict when generating text. (Default: 128, -1 = infinite generation, -2 = fill context)
 ,
+        ParameterName: numPredict,
         ArgumentName: numPredict
       },
       {
@@ -344,6 +359,7 @@ Maximum number of tokens to predict when generating text. (Default: 128, -1 = in
         Summary:
 Reduces the probability of generating nonsense. A higher value (e.g. 100) will give more diverse answers, while a lower value (e.g. 10) will be more conservative. (Default: 40)
 ,
+        ParameterName: topK,
         ArgumentName: topK
       },
       {
@@ -360,6 +376,7 @@ Reduces the probability of generating nonsense. A higher value (e.g. 100) will g
         Summary:
 Works together with top-k. A higher value (e.g., 0.95) will lead to more diverse text, while a lower value (e.g., 0.5) will generate more focused and conservative text. (Default: 0.9)
 ,
+        ParameterName: topP,
         ArgumentName: topP
       },
       {
@@ -376,6 +393,7 @@ Works together with top-k. A higher value (e.g., 0.95) will lead to more diverse
         Summary:
 Tail free sampling is used to reduce the impact of less probable tokens from the output. A higher value (e.g., 2.0) will reduce the impact more, while a value of 1.0 disables this setting. (default: 1)
 ,
+        ParameterName: tfsZ,
         ArgumentName: tfsZ
       },
       {
@@ -392,6 +410,7 @@ Tail free sampling is used to reduce the impact of less probable tokens from the
         Summary:
 Typical p is used to reduce the impact of less probable tokens from the output.
 ,
+        ParameterName: typicalP,
         ArgumentName: typicalP
       },
       {
@@ -408,6 +427,7 @@ Typical p is used to reduce the impact of less probable tokens from the output.
         Summary:
 Sets how far back for the model to look back to prevent repetition. (Default: 64, 0 = disabled, -1 = num_ctx)
 ,
+        ParameterName: repeatLastN,
         ArgumentName: repeatLastN
       },
       {
@@ -424,6 +444,7 @@ Sets how far back for the model to look back to prevent repetition. (Default: 64
         Summary:
 The temperature of the model. Increasing the temperature will make the model answer more creatively. (Default: 0.8)
 ,
+        ParameterName: temperature,
         ArgumentName: temperature
       },
       {
@@ -440,6 +461,7 @@ The temperature of the model. Increasing the temperature will make the model ans
         Summary:
 Sets how strongly to penalize repetitions. A higher value (e.g., 1.5) will penalize repetitions more strongly, while a lower value (e.g., 0.9) will be more lenient. (Default: 1.1)
 ,
+        ParameterName: repeatPenalty,
         ArgumentName: repeatPenalty
       },
       {
@@ -456,6 +478,7 @@ Sets how strongly to penalize repetitions. A higher value (e.g., 1.5) will penal
         Summary:
 Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.
 ,
+        ParameterName: presencePenalty,
         ArgumentName: presencePenalty
       },
       {
@@ -472,6 +495,7 @@ Positive values penalize new tokens based on whether they appear in the text so 
         Summary:
 Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.
 ,
+        ParameterName: frequencyPenalty,
         ArgumentName: frequencyPenalty
       },
       {
@@ -488,6 +512,7 @@ Positive values penalize new tokens based on their existing frequency in the tex
         Summary:
 Enable Mirostat sampling for controlling perplexity. (default: 0, 0 = disabled, 1 = Mirostat, 2 = Mirostat 2.0)
 ,
+        ParameterName: mirostat,
         ArgumentName: mirostat
       },
       {
@@ -504,6 +529,7 @@ Enable Mirostat sampling for controlling perplexity. (default: 0, 0 = disabled, 
         Summary:
 Controls the balance between coherence and diversity of the output. A lower value will result in more focused and coherent text. (Default: 5.0)
 ,
+        ParameterName: mirostatTau,
         ArgumentName: mirostatTau
       },
       {
@@ -520,6 +546,7 @@ Controls the balance between coherence and diversity of the output. A lower valu
         Summary:
 Influences how quickly the algorithm responds to feedback from the generated text. A lower learning rate will result in slower adjustments, while a higher learning rate will make the algorithm more responsive. (Default: 0.1)
 ,
+        ParameterName: mirostatEta,
         ArgumentName: mirostatEta
       },
       {
@@ -536,6 +563,7 @@ Influences how quickly the algorithm responds to feedback from the generated tex
         Summary:
 Penalize newlines in the output. (Default: false)
 ,
+        ParameterName: penalizeNewline,
         ArgumentName: penalizeNewline
       },
       {
@@ -550,6 +578,7 @@ Penalize newlines in the output. (Default: false)
         },
         IsRequired: false,
         Summary: Sequences where the API will stop generating further tokens. The returned text will not contain the stop sequence.,
+        ParameterName: stop,
         ArgumentName: stop
       },
       {
@@ -566,6 +595,7 @@ Penalize newlines in the output. (Default: false)
         Summary:
 Enable NUMA support. (Default: false)
 ,
+        ParameterName: numa,
         ArgumentName: numa
       },
       {
@@ -582,6 +612,7 @@ Enable NUMA support. (Default: false)
         Summary:
 Sets the size of the context window used to generate the next token.
 ,
+        ParameterName: numCtx,
         ArgumentName: numCtx
       },
       {
@@ -598,6 +629,7 @@ Sets the size of the context window used to generate the next token.
         Summary:
 Sets the number of batches to use for generation. (Default: 1)
 ,
+        ParameterName: numBatch,
         ArgumentName: numBatch
       },
       {
@@ -614,6 +646,7 @@ Sets the number of batches to use for generation. (Default: 1)
         Summary:
 The number of GQA groups in the transformer layer. Required for some models, for example it is 8 for `llama2:70b`.
 ,
+        ParameterName: numGqa,
         ArgumentName: numGqa
       },
       {
@@ -630,6 +663,7 @@ The number of GQA groups in the transformer layer. Required for some models, for
         Summary:
 The number of layers to send to the GPU(s). On macOS it defaults to 1 to enable metal support, 0 to disable.
 ,
+        ParameterName: numGpu,
         ArgumentName: numGpu
       },
       {
@@ -646,6 +680,7 @@ The number of layers to send to the GPU(s). On macOS it defaults to 1 to enable 
         Summary:
 The GPU to use for the main model. Default is 0.
 ,
+        ParameterName: mainGpu,
         ArgumentName: mainGpu
       },
       {
@@ -662,6 +697,7 @@ The GPU to use for the main model. Default is 0.
         Summary:
 Enable low VRAM mode. (Default: false)
 ,
+        ParameterName: lowVram,
         ArgumentName: lowVram
       },
       {
@@ -678,6 +714,7 @@ Enable low VRAM mode. (Default: false)
         Summary:
 Enable f16 key/value. (Default: false)
 ,
+        ParameterName: f16Kv,
         ArgumentName: f16Kv
       },
       {
@@ -694,6 +731,7 @@ Enable f16 key/value. (Default: false)
         Summary:
 Enable logits all. (Default: false)
 ,
+        ParameterName: logitsAll,
         ArgumentName: logitsAll
       },
       {
@@ -710,6 +748,7 @@ Enable logits all. (Default: false)
         Summary:
 Enable vocab only. (Default: false)
 ,
+        ParameterName: vocabOnly,
         ArgumentName: vocabOnly
       },
       {
@@ -726,6 +765,7 @@ Enable vocab only. (Default: false)
         Summary:
 Enable mmap. (Default: false)
 ,
+        ParameterName: useMmap,
         ArgumentName: useMmap
       },
       {
@@ -742,6 +782,7 @@ Enable mmap. (Default: false)
         Summary:
 Enable mlock. (Default: false)
 ,
+        ParameterName: useMlock,
         ArgumentName: useMlock
       },
       {
@@ -758,6 +799,7 @@ Enable mlock. (Default: false)
         Summary:
 Enable embedding only. (Default: false)
 ,
+        ParameterName: embeddingOnly,
         ArgumentName: embeddingOnly
       },
       {
@@ -774,6 +816,7 @@ Enable embedding only. (Default: false)
         Summary:
 The base of the rope frequency scale. (Default: 1.0)
 ,
+        ParameterName: ropeFrequencyBase,
         ArgumentName: ropeFrequencyBase
       },
       {
@@ -790,6 +833,7 @@ The base of the rope frequency scale. (Default: 1.0)
         Summary:
 The scale of the rope frequency. (Default: 1.0)
 ,
+        ParameterName: ropeFrequencyScale,
         ArgumentName: ropeFrequencyScale
       },
       {
@@ -806,6 +850,7 @@ The scale of the rope frequency. (Default: 1.0)
         Summary:
 Sets the number of threads to use during computation. By default, Ollama will detect this for optimal performance. It is recommended to set this value to the number of physical CPU cores your system has (as opposed to the logical number of cores).
 ,
+        ParameterName: numThread,
         ArgumentName: numThread
       }
     ],
@@ -864,6 +909,7 @@ The model name.
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
 <br/>Example: llama2:7b,
+        ParameterName: model,
         ArgumentName: model
       },
       {
@@ -880,6 +926,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         Summary:
 Date on which a model was created.
 <br/>Example: ,
+        ParameterName: createdAt,
         ArgumentName: createdAt
       },
       {
@@ -896,6 +943,7 @@ Date on which a model was created.
         Summary:
 The response for a given prompt with a provided model.
 <br/>Example: The sky appears blue because of a phenomenon called Rayleigh scattering.,
+        ParameterName: response,
         ArgumentName: response
       },
       {
@@ -912,6 +960,7 @@ The response for a given prompt with a provided model.
         Summary:
 Whether the response has completed.
 <br/>Example: true,
+        ParameterName: done,
         ArgumentName: done
       },
       {
@@ -929,6 +978,7 @@ Whether the response has completed.
 An encoding of the conversation used in this response, this can be sent in the next request to keep a conversational memory.
 
 <br/>Example: [1, 2, 3],
+        ParameterName: context,
         ArgumentName: context
       },
       {
@@ -945,6 +995,7 @@ An encoding of the conversation used in this response, this can be sent in the n
         Summary:
 Time spent generating the response.
 <br/>Example: 5589157167,
+        ParameterName: totalDuration,
         ArgumentName: totalDuration
       },
       {
@@ -961,6 +1012,7 @@ Time spent generating the response.
         Summary:
 Time spent in nanoseconds loading the model.
 <br/>Example: 3013701500,
+        ParameterName: loadDuration,
         ArgumentName: loadDuration
       },
       {
@@ -977,6 +1029,7 @@ Time spent in nanoseconds loading the model.
         Summary:
 Number of tokens in the prompt.
 <br/>Example: 46,
+        ParameterName: promptEvalCount,
         ArgumentName: promptEvalCount
       },
       {
@@ -993,6 +1046,7 @@ Number of tokens in the prompt.
         Summary:
 Time spent in nanoseconds evaluating the prompt.
 <br/>Example: 1160282000,
+        ParameterName: promptEvalDuration,
         ArgumentName: promptEvalDuration
       },
       {
@@ -1009,6 +1063,7 @@ Time spent in nanoseconds evaluating the prompt.
         Summary:
 Number of tokens the response.
 <br/>Example: 113,
+        ParameterName: evalCount,
         ArgumentName: evalCount
       },
       {
@@ -1025,6 +1080,7 @@ Number of tokens the response.
         Summary:
 Time in nanoseconds spent generating the response.
 <br/>Example: 1325948000,
+        ParameterName: evalDuration,
         ArgumentName: evalDuration
       }
     ],
@@ -1061,6 +1117,7 @@ The model name.
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
 <br/>Example: llama2:7b,
+        ParameterName: model,
         ArgumentName: model
       },
       {
@@ -1075,6 +1132,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         },
         IsRequired: true,
         Summary: The messages of the chat, this can be used to keep a chat memory,
+        ParameterName: messages,
         ArgumentName: messages
       },
       {
@@ -1099,6 +1157,7 @@ Enable JSON mode by setting the format parameter to json. This will structure th
 
 Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
 ,
+        ParameterName: format,
         ArgumentName: format
       },
       {
@@ -1147,6 +1206,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
         },
         IsRequired: false,
         Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.,
+        ParameterName: options,
         ArgumentName: options
       },
       {
@@ -1165,6 +1225,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
 
 <br/>Default Value: false,
+        ParameterName: stream,
         ArgumentName: stream
       },
       {
@@ -1186,6 +1247,7 @@ How long (in minutes) to keep the model loaded in memory.
 - If set to 0, the model will be unloaded immediately once finished.
 - If not set, the model will stay loaded for 5 minutes by default
 ,
+        ParameterName: keepAlive,
         ArgumentName: keepAlive
       }
     ],
@@ -1218,6 +1280,7 @@ How long (in minutes) to keep the model loaded in memory.
         },
         IsRequired: false,
         Summary: ,
+        ParameterName: json,
         ArgumentName: json
       }
     ],
@@ -1259,6 +1322,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
         },
         IsRequired: false,
         Summary: A message in the chat endpoint,
+        ParameterName: message,
         ArgumentName: message
       },
       {
@@ -1278,6 +1342,7 @@ The model name.
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
 <br/>Example: llama2:7b,
+        ParameterName: model,
         ArgumentName: model
       },
       {
@@ -1294,6 +1359,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         Summary:
 Date on which a model was created.
 <br/>Example: ,
+        ParameterName: createdAt,
         ArgumentName: createdAt
       },
       {
@@ -1310,6 +1376,7 @@ Date on which a model was created.
         Summary:
 Whether the response has completed.
 <br/>Example: true,
+        ParameterName: done,
         ArgumentName: done
       },
       {
@@ -1326,6 +1393,7 @@ Whether the response has completed.
         Summary:
 Time spent generating the response.
 <br/>Example: 5589157167,
+        ParameterName: totalDuration,
         ArgumentName: totalDuration
       },
       {
@@ -1342,6 +1410,7 @@ Time spent generating the response.
         Summary:
 Time spent in nanoseconds loading the model.
 <br/>Example: 3013701500,
+        ParameterName: loadDuration,
         ArgumentName: loadDuration
       },
       {
@@ -1358,6 +1427,7 @@ Time spent in nanoseconds loading the model.
         Summary:
 Number of tokens in the prompt.
 <br/>Example: 46,
+        ParameterName: promptEvalCount,
         ArgumentName: promptEvalCount
       },
       {
@@ -1374,6 +1444,7 @@ Number of tokens in the prompt.
         Summary:
 Time spent in nanoseconds evaluating the prompt.
 <br/>Example: 1160282000,
+        ParameterName: promptEvalDuration,
         ArgumentName: promptEvalDuration
       },
       {
@@ -1390,6 +1461,7 @@ Time spent in nanoseconds evaluating the prompt.
         Summary:
 Number of tokens the response.
 <br/>Example: 113,
+        ParameterName: evalCount,
         ArgumentName: evalCount
       },
       {
@@ -1406,6 +1478,7 @@ Number of tokens the response.
         Summary:
 Time in nanoseconds spent generating the response.
 <br/>Example: 1325948000,
+        ParameterName: evalDuration,
         ArgumentName: evalDuration
       }
     ],
@@ -1445,6 +1518,7 @@ Time in nanoseconds spent generating the response.
         },
         IsRequired: true,
         Summary: The role of the message,
+        ParameterName: role,
         ArgumentName: role
       },
       {
@@ -1461,6 +1535,7 @@ Time in nanoseconds spent generating the response.
         Summary:
 The content of the message
 <br/>Example: Why is the sky blue?,
+        ParameterName: content,
         ArgumentName: content
       },
       {
@@ -1475,6 +1550,7 @@ The content of the message
         },
         IsRequired: false,
         Summary: (optional) a list of Base64-encoded images to include in the message (for multimodal models such as llava),
+        ParameterName: images,
         ArgumentName: images
       }
     ],
@@ -1507,6 +1583,7 @@ The content of the message
         },
         IsRequired: false,
         Summary: ,
+        ParameterName: system,
         ArgumentName: system
       },
       {
@@ -1521,6 +1598,7 @@ The content of the message
         },
         IsRequired: false,
         Summary: ,
+        ParameterName: user,
         ArgumentName: user
       },
       {
@@ -1535,6 +1613,7 @@ The content of the message
         },
         IsRequired: false,
         Summary: ,
+        ParameterName: assistant,
         ArgumentName: assistant
       }
     ],
@@ -1571,6 +1650,7 @@ The model name.
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
 <br/>Example: llama2:7b,
+        ParameterName: model,
         ArgumentName: model
       },
       {
@@ -1587,6 +1667,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         Summary:
 Text to generate embeddings for.
 <br/>Example: Here is an article about llamas...,
+        ParameterName: prompt,
         ArgumentName: prompt
       },
       {
@@ -1635,6 +1716,7 @@ Text to generate embeddings for.
         },
         IsRequired: false,
         Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.,
+        ParameterName: options,
         ArgumentName: options
       }
     ],
@@ -1668,6 +1750,7 @@ Text to generate embeddings for.
         Summary:
 The embedding for the prompt.
 <br/>Example: [0.5670403838157654, 0.009260174818336964, ...],
+        ParameterName: embedding,
         ArgumentName: embedding
       }
     ],
@@ -1704,6 +1787,7 @@ The model name.
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
 <br/>Example: mario,
+        ParameterName: name,
         ArgumentName: name
       },
       {
@@ -1720,6 +1804,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         Summary:
 The contents of the Modelfile.
 <br/>Example: FROM llama2\nSYSTEM You are mario from Super Mario Bros.,
+        ParameterName: modelfile,
         ArgumentName: modelfile
       },
       {
@@ -1738,6 +1823,7 @@ The contents of the Modelfile.
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
 
 <br/>Default Value: false,
+        ParameterName: stream,
         ArgumentName: stream
       }
     ],
@@ -1777,6 +1863,7 @@ If `false` the response will be returned as a single response object, otherwise 
         },
         IsRequired: false,
         Summary: Status creating the model,
+        ParameterName: status,
         ArgumentName: status
       }
     ],
@@ -1809,6 +1896,7 @@ If `false` the response will be returned as a single response object, otherwise 
         },
         IsRequired: false,
         Summary: ,
+        ParameterName: creatingSystemLayer,
         ArgumentName: creatingSystemLayer
       },
       {
@@ -1823,6 +1911,7 @@ If `false` the response will be returned as a single response object, otherwise 
         },
         IsRequired: false,
         Summary: ,
+        ParameterName: parsingModelfile,
         ArgumentName: parsingModelfile
       },
       {
@@ -1837,6 +1926,7 @@ If `false` the response will be returned as a single response object, otherwise 
         },
         IsRequired: false,
         Summary: ,
+        ParameterName: success,
         ArgumentName: success
       }
     ],
@@ -1884,6 +1974,7 @@ If `false` the response will be returned as a single response object, otherwise 
         },
         IsRequired: false,
         Summary: List of models available locally.,
+        ParameterName: models,
         ArgumentName: models
       }
     ],
@@ -1920,6 +2011,7 @@ The model name.
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
 <br/>Example: llama2:7b,
+        ParameterName: name,
         ArgumentName: name
       },
       {
@@ -1936,6 +2028,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         Summary:
 Model modification date.
 <br/>Example: ,
+        ParameterName: modifiedAt,
         ArgumentName: modifiedAt
       },
       {
@@ -1952,6 +2045,7 @@ Model modification date.
         Summary:
 Size of the model on disk.
 <br/>Example: 7323310500,
+        ParameterName: size,
         ArgumentName: size
       }
     ],
@@ -1988,6 +2082,7 @@ The model name.
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
 <br/>Example: llama2:7b,
+        ParameterName: name,
         ArgumentName: name
       }
     ],
@@ -2021,6 +2116,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         Summary:
 The model's license.
 <br/>Example: &lt;contents of license block&gt;,
+        ParameterName: license,
         ArgumentName: license
       },
       {
@@ -2037,6 +2133,7 @@ The model's license.
         Summary:
 The modelfile associated with the model.
 <br/>Example: Modelfile generated by \"ollama show\"\n# To build a new Modelfile based on this one, replace the FROM line with:\n# FROM llama2:latest\n\nFROM /Users/username/.ollama/models/blobs/sha256:8daa9615cce30c259a9555b1cc250d461d1bc69980a274b44d7eda0be78076d8\nTEMPLATE \"\"\"[INST] {{ if and .First .System }}&lt;&lt;SYS&gt;&gt;{{ .System }}&lt;&lt;/SYS&gt;&gt;\n\n{{ end }}{{ .Prompt }} [/INST] \"\"\"\nSYSTEM \"\"\"\"\"\"\nPARAMETER stop [INST]\nPARAMETER stop [/INST]\nPARAMETER stop &lt;&lt;SYS&gt;&gt;\nPARAMETER stop &lt;&lt;/SYS&gt;&gt;\n",
+        ParameterName: modelfile,
         ArgumentName: modelfile
       },
       {
@@ -2053,6 +2150,7 @@ The modelfile associated with the model.
         Summary:
 The model parameters.
 <br/>Example: stop [INST]\nstop [/INST]\nstop &lt;&lt;SYS&gt;&gt;\nstop &lt;&lt;/SYS&gt;&gt;,
+        ParameterName: parameters,
         ArgumentName: parameters
       },
       {
@@ -2069,6 +2167,7 @@ The model parameters.
         Summary:
 The prompt template for the model.
 <br/>Example: [INST] {{ if and .First .System }}&lt;&lt;SYS&gt;&gt;{{ .System }}&lt;&lt;/SYS&gt;&gt;\n\n{{ end }}{{ .Prompt }} [/INST],
+        ParameterName: template,
         ArgumentName: template
       }
     ],
@@ -2102,6 +2201,7 @@ The prompt template for the model.
         Summary:
 Name of the model to copy.
 <br/>Example: llama2:7b,
+        ParameterName: source,
         ArgumentName: source
       },
       {
@@ -2118,6 +2218,7 @@ Name of the model to copy.
         Summary:
 Name of the new model.
 <br/>Example: llama2-backup,
+        ParameterName: destination,
         ArgumentName: destination
       }
     ],
@@ -2154,6 +2255,7 @@ The model name.
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
 <br/>Example: llama2:13b,
+        ParameterName: name,
         ArgumentName: name
       }
     ],
@@ -2190,6 +2292,7 @@ The model name.
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
 <br/>Example: llama2:7b,
+        ParameterName: name,
         ArgumentName: name
       },
       {
@@ -2210,6 +2313,7 @@ Allow insecure connections to the library.
 Only use this if you are pulling from your own library during development.
 
 <br/>Default Value: false,
+        ParameterName: insecure,
         ArgumentName: insecure
       },
       {
@@ -2228,6 +2332,7 @@ Only use this if you are pulling from your own library during development.
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
 
 <br/>Default Value: false,
+        ParameterName: stream,
         ArgumentName: stream
       }
     ],
@@ -2275,6 +2380,7 @@ If `false` the response will be returned as a single response object, otherwise 
         Summary:
 Status pulling the model.
 <br/>Example: pulling manifest,
+        ParameterName: status,
         ArgumentName: status
       },
       {
@@ -2291,6 +2397,7 @@ Status pulling the model.
         Summary:
 The model's digest.
 <br/>Example: sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a,
+        ParameterName: digest,
         ArgumentName: digest
       },
       {
@@ -2307,6 +2414,7 @@ The model's digest.
         Summary:
 Total size of the model.
 <br/>Example: 2142590208,
+        ParameterName: total,
         ArgumentName: total
       },
       {
@@ -2323,6 +2431,7 @@ Total size of the model.
         Summary:
 Total bytes transferred.
 <br/>Example: 2142590208,
+        ParameterName: completed,
         ArgumentName: completed
       }
     ],
@@ -2361,6 +2470,7 @@ The number of files to be downloaded depends on the number of layers specified i
         },
         IsRequired: false,
         Summary: ,
+        ParameterName: pullingManifest,
         ArgumentName: pullingManifest
       },
       {
@@ -2375,6 +2485,7 @@ The number of files to be downloaded depends on the number of layers specified i
         },
         IsRequired: false,
         Summary: ,
+        ParameterName: downloadingDigestname,
         ArgumentName: downloadingDigestname
       },
       {
@@ -2389,6 +2500,7 @@ The number of files to be downloaded depends on the number of layers specified i
         },
         IsRequired: false,
         Summary: ,
+        ParameterName: verifyingSha256Digest,
         ArgumentName: verifyingSha256Digest
       },
       {
@@ -2403,6 +2515,7 @@ The number of files to be downloaded depends on the number of layers specified i
         },
         IsRequired: false,
         Summary: ,
+        ParameterName: writingManifest,
         ArgumentName: writingManifest
       },
       {
@@ -2417,6 +2530,7 @@ The number of files to be downloaded depends on the number of layers specified i
         },
         IsRequired: false,
         Summary: ,
+        ParameterName: removingAnyUnusedLayers,
         ArgumentName: removingAnyUnusedLayers
       },
       {
@@ -2431,6 +2545,7 @@ The number of files to be downloaded depends on the number of layers specified i
         },
         IsRequired: false,
         Summary: ,
+        ParameterName: success,
         ArgumentName: success
       }
     ],
@@ -2484,6 +2599,7 @@ Status pulling the model.
         Summary:
 The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt;tag&gt;.
 <br/>Example: mattw/pygmalion:latest,
+        ParameterName: name,
         ArgumentName: name
       },
       {
@@ -2504,6 +2620,7 @@ Allow insecure connections to the library.
 Only use this if you are pushing to your library during development.
 
 <br/>Default Value: false,
+        ParameterName: insecure,
         ArgumentName: insecure
       },
       {
@@ -2522,6 +2639,7 @@ Only use this if you are pushing to your library during development.
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
 
 <br/>Default Value: false,
+        ParameterName: stream,
         ArgumentName: stream
       }
     ],
@@ -2563,6 +2681,7 @@ If `false` the response will be returned as a single response object, otherwise 
         },
         IsRequired: false,
         Summary: Status pushing the model.,
+        ParameterName: status,
         ArgumentName: status
       },
       {
@@ -2579,6 +2698,7 @@ If `false` the response will be returned as a single response object, otherwise 
         Summary:
 the model's digest
 <br/>Example: sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a,
+        ParameterName: digest,
         ArgumentName: digest
       },
       {
@@ -2595,6 +2715,7 @@ the model's digest
         Summary:
 total size of the model
 <br/>Example: 2142590208,
+        ParameterName: total,
         ArgumentName: total
       }
     ],
@@ -2627,6 +2748,7 @@ total size of the model
         },
         IsRequired: false,
         Summary: ,
+        ParameterName: retrievingManifest,
         ArgumentName: retrievingManifest
       },
       {
@@ -2641,6 +2763,7 @@ total size of the model
         },
         IsRequired: false,
         Summary: ,
+        ParameterName: startingUpload,
         ArgumentName: startingUpload
       },
       {
@@ -2655,6 +2778,7 @@ total size of the model
         },
         IsRequired: false,
         Summary: ,
+        ParameterName: pushingManifest,
         ArgumentName: pushingManifest
       },
       {
@@ -2669,6 +2793,7 @@ total size of the model
         },
         IsRequired: false,
         Summary: ,
+        ParameterName: success,
         ArgumentName: success
       }
     ],

@@ -91,14 +91,14 @@ namespace {endPoint.Namespace}
         /// {endPoint.Summary}
         /// </summary>
 {endPoint.Properties.Where(x => x.ParameterLocation != null).Select(x => $@"
-        /// <param name=""{x.Name.ToParameterName()}""></param>").Inject()}
+        /// <param name=""{x.ParameterName}""></param>").Inject()}
 {(string.IsNullOrWhiteSpace(endPoint.RequestType) ? " " : @" 
         /// <param name=""request""></param>")}
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::System.InvalidOperationException""></exception>
         public async {taskType} {endPoint.MethodName}(
 {endPoint.Properties.Where(x => x.ParameterLocation != null).Select(x => $@"
-            {x.Type.CSharpType} {x.Name.ToParameterName()},").Inject()}
+            {x.Type.CSharpType} {x.ParameterName},").Inject()}
 {(string.IsNullOrWhiteSpace(endPoint.RequestType) ? " " : @$" 
             {endPoint.RequestType} request,")}
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default)
@@ -109,7 +109,7 @@ namespace {endPoint.Namespace}
 {(endPoint.JsonSerializerType == JsonSerializerType.NewtonsoftJson ? endPoint.Properties
     .Where(x => x is { ParameterLocation: not null, Type.EnumValues.Length: > 0 })
     .Select(x => $@"
-            var {x.ArgumentName} = {x.Name.ToParameterName()} switch
+            var {x.ArgumentName} = {x.ParameterName} switch
             {{
 {x.Type.Properties.Zip(x.Type.EnumValues, (property, value) => (Property: property, Value: value))
     .Select(y => $@"
@@ -184,25 +184,25 @@ namespace {endPoint.Namespace}
         /// {endPoint.Summary}
         /// </summary>
 {endPoint.Properties.Select(x => $@"
-        /// <param name=""{x.Name.ToParameterName()}""></param>").Inject()}
+        /// <param name=""{x.ParameterName}""></param>").Inject()}
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::System.InvalidOperationException""></exception>
         public async {taskType} {endPoint.MethodName}(
 {endPoint.Properties.Where(static x => x.IsRequired).Select(x => $@"
-            {x.Type.CSharpType} {x.Name.ToParameterName()},").Inject()}
+            {x.Type.CSharpType} {x.ParameterName},").Inject()}
 {endPoint.Properties.Where(static x => !x.IsRequired).Select(x => $@"
-            {x.Type.CSharpType} {x.Name.ToParameterName()} = default,").Inject()}
+            {x.Type.CSharpType} {x.ParameterName} = default,").Inject()}
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default)
         {{
             var request = new {endPoint.RequestType}
             {{
 {endPoint.Properties.Where(x => x.ParameterLocation == null).Select(x => $@"
-                {x.Name} = {x.Name.ToParameterName()},").Inject()}
+                {x.Name} = {x.ParameterName},").Inject()}
             }};
 
             {response}{endPoint.MethodName}(
 {endPoint.Properties.Where(x => x.ParameterLocation != null).Select(x => $@"
-                {x.Name.ToParameterName()}: {x.Name.ToParameterName()},").Inject()}
+                {x.ParameterName}: {x.ParameterName},").Inject()}
                 request: request,
                 cancellationToken: cancellationToken){configureAwaitResponse};
 {(endPoint.Stream ? @"

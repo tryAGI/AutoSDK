@@ -10,7 +10,7 @@ public static class ModelGeneratorMethods
 {
     #region Methods
 
-    public static ImmutableArray<ModelData> PrepareData(
+    public static EquatableArray<ModelData> PrepareData(
         (string text, Settings settings) tuple,
         CancellationToken cancellationToken = default)
     {
@@ -75,11 +75,11 @@ public static class ModelGeneratorMethods
                 })
             .ToImmutableArray();
         
-        return [
+        return ImmutableArray.Create([
             ..components,
             ..objectParameters,
             ..enumParameters
-        ];
+        ]);
     }
     
     public static FileWithName GetSourceCode(

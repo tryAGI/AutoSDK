@@ -69,16 +69,18 @@ public readonly record struct PropertyData(
             Summary: schema.Value.GetSummary());
     }
     
+    public string ParameterName => Name.Replace(".", string.Empty).ToParameterName();
+
     public string ArgumentName
     {
         get
         {
             if (Type.EnumValues.Length != 0 && JsonSerializerType == JsonSerializerType.NewtonsoftJson)
             {
-                return Name.ToParameterName() + "Value";
+                return ParameterName + "Value";
             }
             
-            return Name.ToParameterName();
+            return ParameterName;
         }
     }
 }
