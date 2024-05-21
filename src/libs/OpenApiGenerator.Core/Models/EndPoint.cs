@@ -66,7 +66,7 @@ public readonly record struct EndPoint(
             JsonSerializerContext: settings.JsonSerializerContext,
             HttpMethod: operation.Key,
             Summary: operation.Value.Summary?.Replace("\n", string.Empty) ?? string.Empty,
-            RequestType: requestSchema?.Reference?.Id ?? string.Empty,
+            RequestType: ModelData.FromKey(requestSchema?.Reference?.Id ?? string.Empty, settings).Name,
             ResponseType: response?
                 .Content.Values.FirstOrDefault()?.Schema?.Reference?.Id ?? string.Empty);
         
