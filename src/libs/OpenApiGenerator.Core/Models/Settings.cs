@@ -1,5 +1,6 @@
 using System.Collections.Immutable;
 using OpenApiGenerator.Core.Json;
+using OpenApiGenerator.Core.Naming.Methods;
 
 namespace OpenApiGenerator.Core.Models;
 
@@ -13,6 +14,8 @@ public readonly record struct Settings(
 
     bool GenerateConstructors,
     bool GenerateMethods,
+    MethodNamingConvention MethodNamingConvention,
+    MethodNamingConvention MethodNamingConventionFallback,
     bool GenerateMethodsAsHttpClientExtensions,
     bool GenerateMethodsUsingSystemNetHttpJson,
     ImmutableArray<string> IncludeOperationIds,

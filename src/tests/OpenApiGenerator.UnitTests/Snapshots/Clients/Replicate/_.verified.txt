@@ -1,6 +1,6 @@
 ﻿[
   {
-    Id: Account.get,
+    Id: GetAccount,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -11,11 +11,11 @@
     Summary: Get the authenticated account,
     RequestType: ,
     ResponseType: ,
-    MethodName: Account.getAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Account.get
+    MethodName: GetAccountAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.GetAccount
   },
   {
-    Id: Collections.list,
+    Id: ListCollections,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -26,11 +26,11 @@
     Summary: List collections of models,
     RequestType: ,
     ResponseType: ,
-    MethodName: Collections.listAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Collections.list
+    MethodName: ListCollectionsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ListCollections
   },
   {
-    Id: Collections.get,
+    Id: GetCollections,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -60,11 +60,11 @@
     Summary: Get a collection of models,
     RequestType: ,
     ResponseType: ,
-    MethodName: Collections.getAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Collections.get
+    MethodName: GetCollectionsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.GetCollections
   },
   {
-    Id: Deployments.list,
+    Id: ListDeployments,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -75,11 +75,11 @@
     Summary: List deployments,
     RequestType: ,
     ResponseType: ,
-    MethodName: Deployments.listAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Deployments.list
+    MethodName: ListDeploymentsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ListDeployments
   },
   {
-    Id: Deployments.create,
+    Id: CreateDeployments,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -182,11 +182,11 @@
     Summary: Create a deployment,
     RequestType: ,
     ResponseType: ,
-    MethodName: Deployments.createAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Deployments.create
+    MethodName: CreateDeploymentsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateDeployments
   },
   {
-    Id: Deployments.delete,
+    Id: DeleteDeployments,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -235,11 +235,11 @@
     Summary: Delete a deployment,
     RequestType: ,
     ResponseType: ,
-    MethodName: Deployments.deleteAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Deployments.delete
+    MethodName: DeleteDeploymentsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.DeleteDeployments
   },
   {
-    Id: Deployments.get,
+    Id: GetDeployments,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -287,11 +287,11 @@
     Summary: Get a deployment,
     RequestType: ,
     ResponseType: ,
-    MethodName: Deployments.getAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Deployments.get
+    MethodName: GetDeploymentsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.GetDeployments
   },
   {
-    Id: Deployments.update,
+    Id: UpdateDeployments,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -400,11 +400,11 @@
     Summary: Update a deployment,
     RequestType: ,
     ResponseType: ,
-    MethodName: Deployments.updateAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Deployments.update
+    MethodName: UpdateDeploymentsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.UpdateDeployments
   },
   {
-    Id: Deployments.predictions.create,
+    Id: CreatePredictionsDeployments,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -556,11 +556,11 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Create a prediction using a deployment,
     RequestType: prediction_request,
     ResponseType: ,
-    MethodName: Deployments.predictions.createAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Deployments.predictions.create
+    MethodName: CreatePredictionsDeploymentsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreatePredictionsDeployments
   },
   {
-    Id: Hardware.list,
+    Id: ListHardware,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -571,11 +571,11 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: List available hardware for models,
     RequestType: ,
     ResponseType: ,
-    MethodName: Hardware.listAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Hardware.list
+    MethodName: ListHardwareAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ListHardware
   },
   {
-    Id: Models.list,
+    Id: ListModels,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -586,11 +586,11 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: List public models,
     RequestType: ,
     ResponseType: ,
-    MethodName: Models.listAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Models.list
+    MethodName: ListModelsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ListModels
   },
   {
-    Id: Models.create,
+    Id: CreateModels,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -744,11 +744,11 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Create a model,
     RequestType: ,
     ResponseType: ,
-    MethodName: Models.createAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Models.create
+    MethodName: CreateModelsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateModels
   },
   {
-    Id: Models.delete,
+    Id: DeleteModels,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -797,11 +797,11 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Delete a model,
     RequestType: ,
     ResponseType: ,
-    MethodName: Models.deleteAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Models.delete
+    MethodName: DeleteModelsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.DeleteModels
   },
   {
-    Id: Models.get,
+    Id: GetModels,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -849,11 +849,11 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Get a model,
     RequestType: ,
     ResponseType: ,
-    MethodName: Models.getAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Models.get
+    MethodName: GetModelsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.GetModels
   },
   {
-    Id: Models.predictions.create,
+    Id: CreatePredictionsModels,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1005,11 +1005,11 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Create a prediction using an official model,
     RequestType: prediction_request,
     ResponseType: ,
-    MethodName: Models.predictions.createAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Models.predictions.create
+    MethodName: CreatePredictionsModelsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreatePredictionsModels
   },
   {
-    Id: Models.versions.list,
+    Id: ListVersionsModels,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1057,11 +1057,11 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: List model versions,
     RequestType: ,
     ResponseType: ,
-    MethodName: Models.versions.listAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Models.versions.list
+    MethodName: ListVersionsModelsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ListVersionsModels
   },
   {
-    Id: Models.versions.delete,
+    Id: DeleteVersionsModels,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1128,11 +1128,11 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Delete a model version,
     RequestType: ,
     ResponseType: ,
-    MethodName: Models.versions.deleteAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Models.versions.delete
+    MethodName: DeleteVersionsModelsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.DeleteVersionsModels
   },
   {
-    Id: Models.versions.get,
+    Id: GetVersionsModels,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1198,11 +1198,11 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Get a model version,
     RequestType: ,
     ResponseType: ,
-    MethodName: Models.versions.getAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Models.versions.get
+    MethodName: GetVersionsModelsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.GetVersionsModels
   },
   {
-    Id: Trainings.create,
+    Id: CreateTrainings,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1355,11 +1355,11 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Create a training,
     RequestType: training_request,
     ResponseType: ,
-    MethodName: Trainings.createAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Trainings.create
+    MethodName: CreateTrainingsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreateTrainings
   },
   {
-    Id: Predictions.list,
+    Id: ListPredictions,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1370,11 +1370,11 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: List predictions,
     RequestType: ,
     ResponseType: ,
-    MethodName: Predictions.listAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Predictions.list
+    MethodName: ListPredictionsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ListPredictions
   },
   {
-    Id: Predictions.create,
+    Id: CreatePredictions,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1506,11 +1506,11 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Create a prediction,
     RequestType: version_prediction_request,
     ResponseType: ,
-    MethodName: Predictions.createAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Predictions.create
+    MethodName: CreatePredictionsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CreatePredictions
   },
   {
-    Id: Predictions.get,
+    Id: GetPredictions,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1540,11 +1540,11 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Get a prediction,
     RequestType: ,
     ResponseType: ,
-    MethodName: Predictions.getAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Predictions.get
+    MethodName: GetPredictionsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.GetPredictions
   },
   {
-    Id: Predictions.cancel,
+    Id: CancelPredictions,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1575,11 +1575,11 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Cancel a prediction,
     RequestType: ,
     ResponseType: ,
-    MethodName: Predictions.cancelAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Predictions.cancel
+    MethodName: CancelPredictionsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CancelPredictions
   },
   {
-    Id: Trainings.list,
+    Id: ListTrainings,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1590,11 +1590,11 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: List trainings,
     RequestType: ,
     ResponseType: ,
-    MethodName: Trainings.listAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Trainings.list
+    MethodName: ListTrainingsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.ListTrainings
   },
   {
-    Id: Trainings.get,
+    Id: GetTrainings,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1624,11 +1624,11 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Get a training,
     RequestType: ,
     ResponseType: ,
-    MethodName: Trainings.getAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Trainings.get
+    MethodName: GetTrainingsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.GetTrainings
   },
   {
-    Id: Trainings.cancel,
+    Id: CancelTrainings,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1659,11 +1659,11 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Cancel a training,
     RequestType: ,
     ResponseType: ,
-    MethodName: Trainings.cancelAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Trainings.cancel
+    MethodName: CancelTrainingsAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.CancelTrainings
   },
   {
-    Id: Webhooks.default.secret.get,
+    Id: GetSecretDefaultWebhooks,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -1674,8 +1674,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Get the signing secret for the default webhook,
     RequestType: ,
     ResponseType: ,
-    MethodName: Webhooks.default.secret.getAsync,
-    FileNameWithoutExtension: G.Api.EndPoints.Webhooks.default.secret.get
+    MethodName: GetSecretDefaultWebhooksAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.GetSecretDefaultWebhooks
   },
   {
     Id: Constructors,

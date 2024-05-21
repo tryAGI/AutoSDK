@@ -2,6 +2,7 @@ using System.CommandLine;
 using OpenApiGenerator.Core.Extensions;
 using OpenApiGenerator.Core.Generators;
 using OpenApiGenerator.Core.Models;
+using OpenApiGenerator.Core.Naming.Methods;
 
 namespace OpenApiGenerator.Cli.Commands;
 
@@ -73,6 +74,8 @@ public class GenerateCommand : Command
             UseRequiredKeyword: default,
             GenerateConstructors: false,
             GenerateMethods: false,
+            MethodNamingConvention: default,
+            MethodNamingConventionFallback: MethodNamingConvention.MethodAndPath,
             GenerateMethodsAsHttpClientExtensions: false,
             GenerateMethodsUsingSystemNetHttpJson: false,
             IncludeOperationIds: [],

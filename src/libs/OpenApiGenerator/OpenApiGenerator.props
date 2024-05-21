@@ -30,6 +30,10 @@
     <CompilerVisibleProperty Include="OpenApiGenerator_GenerateConstructors"/>
     <!-- true/false. Default: false -->
     <CompilerVisibleProperty Include="OpenApiGenerator_GenerateMethods"/>
+    <!-- SimpleOperationId/MethodAndPath/OperationIdWithDots. Default: SimpleOperationId -->
+    <CompilerVisibleProperty Include="OpenApiGenerator_MethodNamingConvention"/>
+    <!-- SimpleOperationId/MethodAndPath/OperationIdWithDots. Default: MethodAndPath -->
+    <CompilerVisibleProperty Include="OpenApiGenerator_MethodNamingConventionFallback"/>
     <!-- true/false. Default: false. Not Implemented. -->
     <CompilerVisibleProperty Include="OpenApiGenerator_GenerateMethodsAsHttpClientExtensions"/>
     <!-- true/false. Default: false. Not Implemented. -->

@@ -9,7 +9,7 @@ namespace OpenApiGenerator.Core.Generators;
 public static class ClientGeneratorMethods
 {
     public static ImmutableArray<EndPoint> PrepareData(
-        (string yaml, Settings settings) tuple,
+        (string text, Settings settings) tuple,
         CancellationToken cancellationToken = default)
     {
         var (text, settings) = tuple;
@@ -26,9 +26,19 @@ public static class ClientGeneratorMethods
         return openApiDocument.Paths.SelectMany(path =>
             path.Value.Operations
                 .Where(x =>
-                    (includedOperationIds.Count == 0 ||
-                    includedOperationIds.Contains(x.Value.GetOperationIdOrCompute(path: path.Key, operationType: x.Key))) &&
-                    !excludedOperationIds.Contains(x.Value.GetOperationIdOrCompute(path: path.Key, operationType: x.Key)))
+                {
+                    if (includedOperationIds.Count == 0 && excludedOperationIds.Count == 0)
+                    {
+                        return true;
+                    }
+                    
+                    var methodName = x.Value.GetMethodName(path: path.Key, operationType: x.Key,
+                        settings.MethodNamingConvention, settings.MethodNamingConventionFallback);
+                    
+                    return (includedOperationIds.Count == 0 ||
+                            includedOperationIds.Contains(methodName)) &&
+                           !excludedOperationIds.Contains(methodName);
+                })
                 .Select(operation => EndPoint.FromSchema(operation, settings, path.Key)))
             // Constructor
             .Concat(settings.GenerateSdk || settings.GenerateConstructors ? [new EndPoint(

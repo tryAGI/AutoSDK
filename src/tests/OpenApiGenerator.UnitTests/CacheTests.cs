@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using OpenApiGenerator.Core.Models;
+using OpenApiGenerator.Core.Naming.Methods;
 
 namespace OpenApiGenerator.UnitTests;
 
@@ -15,6 +16,8 @@ public class CacheTests
         UseRequiredKeyword: default,
         GenerateConstructors: false,
         GenerateMethods: false,
+        MethodNamingConvention: default,
+        MethodNamingConventionFallback: MethodNamingConvention.MethodAndPath,
         GenerateMethodsAsHttpClientExtensions: false,
         GenerateMethodsUsingSystemNetHttpJson: false,
         IncludeOperationIds: ImmutableArray.Create(["123", "456"]),

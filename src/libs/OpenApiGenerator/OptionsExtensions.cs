@@ -5,6 +5,7 @@ using Microsoft.CodeAnalysis.Diagnostics;
 using OpenApiGenerator.Core.Models;
 using OpenApiGenerator.Core.Extensions;
 using OpenApiGenerator.Core.Json;
+using OpenApiGenerator.Core.Naming.Methods;
 
 namespace OpenApiGenerator;
 
@@ -32,6 +33,8 @@ public static class OptionsExtensions
             
             GenerateConstructors: options.GetBoolGlobalOption(nameof(Settings.GenerateConstructors), prefix),
             GenerateMethods: options.GetBoolGlobalOption(nameof(Settings.GenerateMethods), prefix),
+            MethodNamingConvention: options.GetEnumGlobalOption<MethodNamingConvention>(nameof(Settings.MethodNamingConvention), prefix),
+            MethodNamingConventionFallback: options.GetEnumGlobalOption(nameof(Settings.MethodNamingConventionFallback), prefix, defaultValue: MethodNamingConvention.MethodAndPath),
             GenerateMethodsAsHttpClientExtensions: options.GetBoolGlobalOption(nameof(Settings.GenerateMethodsAsHttpClientExtensions), prefix),
             GenerateMethodsUsingSystemNetHttpJson: options.GetBoolGlobalOption(nameof(Settings.GenerateMethodsUsingSystemNetHttpJson), prefix),
             IncludeOperationIds: (options.GetGlobalOption(nameof(Settings.IncludeOperationIds), prefix)?.Split(';') ??
@@ -69,14 +72,15 @@ public static class OptionsExtensions
     public static T GetEnumGlobalOption<T>(
         this AnalyzerConfigOptionsProvider provider,
         string name,
-        string? prefix = null) where T : struct, Enum
+        string? prefix = null,
+        T defaultValue = default) where T : struct, Enum
     {
         provider = provider ?? throw new ArgumentNullException(nameof(provider));
         name = name ?? throw new ArgumentNullException(nameof(name));
 
         return Enum.TryParse<T>(
             provider.GetGlobalOption(name, prefix) ??
-            $"{default(T):G}",
+            $"{defaultValue:G}",
             ignoreCase: true,
             out var value) ? value : default;
     }

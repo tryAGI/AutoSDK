@@ -2,6 +2,7 @@
 using System.Runtime.CompilerServices;
 using OpenApiGenerator.Core.Generators;
 using OpenApiGenerator.Core.Models;
+using OpenApiGenerator.Core.Naming.Methods;
 
 namespace OpenApiGenerator.UnitTests;
 
@@ -18,6 +19,8 @@ public class ClientTests :
         UseRequiredKeyword: default,
         GenerateConstructors: false,
         GenerateMethods: false,
+        MethodNamingConvention: default,
+        MethodNamingConventionFallback: MethodNamingConvention.MethodAndPath,
         GenerateMethodsAsHttpClientExtensions: false,
         GenerateMethodsUsingSystemNetHttpJson: false,
         IncludeOperationIds: [],
@@ -70,12 +73,12 @@ public class ClientTests :
     [TestMethod]
     public Task Replicate()
     {
-        var yaml = H.Resources.replicate_json.AsString();
-        var settings = DefaultSettings;
+        var methods = ClientGeneratorMethods.PrepareData((H.Resources.replicate_json.AsString(), DefaultSettings with
+        {
+            MethodNamingConvention = MethodNamingConvention.OperationIdWithDots,
+        }));
 
-        var models = ClientGeneratorMethods.PrepareData((yaml, settings));
-
-        return VerifyAsync(models);
+        return VerifyAsync(methods);
     }
 
     [TestMethod]

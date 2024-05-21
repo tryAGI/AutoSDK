@@ -3,6 +3,7 @@ using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
 using OpenApiGenerator.Core.Models;
+using OpenApiGenerator.Core.Naming.Methods;
 using OpenApiGenerator.Core.Serialization;
 
 namespace OpenApiGenerator.Core.Extensions;
@@ -29,31 +30,16 @@ public static class OpenApiExtensions
         return openApiDocument;
     }
 
-
-    public static string GetOperationIdOrCompute(this OpenApiOperation operation, string path, OperationType operationType)
+    public static string GetMethodName(this OpenApiOperation operation, string path, OperationType operationType, MethodNamingConvention convention, MethodNamingConvention fallback)
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
         
-        if (operation.OperationId != null)
-        {
-            return operation.OperationId.ToPropertyName();
-        }
+        var mainGenerator = convention.GetGenerator();
+        var fallbackGenerator = fallback.GetGenerator();
         
-        path = path ?? throw new ArgumentNullException(nameof(path));
-        
-        var prefix = operationType switch
-        {
-            OperationType.Get => "get",
-            OperationType.Post => "create",
-            OperationType.Put => "put",
-            OperationType.Delete => "delete",
-            OperationType.Patch => "edit",
-            OperationType.Head => "head",
-            OperationType.Options => "options",
-            OperationType.Trace => "trace",
-            _ => throw new NotSupportedException($"OperationType {operationType} is not supported."),
-        };
-        return $"{prefix}{path.TrimStart('/').ToPropertyName().UseWordSeparator('/')}";
+        return mainGenerator.TryGenerate(operation, path, operationType) ??
+               fallbackGenerator.TryGenerate(operation, path, operationType) ??
+               throw new InvalidOperationException("Failed to generate method name");
     }
     
     /// <summary>
