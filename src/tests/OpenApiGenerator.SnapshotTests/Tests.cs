@@ -86,7 +86,19 @@ public partial class Tests
             //["build_property.OpenApiGenerator_GenerateMethods"] = "true",
             //["build_property.OpenApiGenerator_IncludeOperationIds"] = "ListModels",
             //["build_property.OpenApiGenerator_IncludeModels"] = "CreateModerationResponse;Error;ErrorResponse;ListModelsResponse;Model;DeleteModelResponse;CreateCompletionRequest",
-        }, additionalGenerators: [new ClientGenerator()]);
+        });
+    }
+    
+    [DataTestMethod]
+    [DataRow(JsonSerializerType.SystemTextJson)]
+    [DataRow(JsonSerializerType.NewtonsoftJson)]
+    public Task Replicate(JsonSerializerType jsonSerializerType)
+    {
+        return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
+            new CustomAdditionalText(
+                path: H.Resources.ollamacurated_yaml.FileName,
+                text: H.Resources.ollamacurated_yaml.AsString())
+        ]);
     }
     
     [DataTestMethod]

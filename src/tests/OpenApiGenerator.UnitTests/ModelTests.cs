@@ -68,6 +68,17 @@ public class ModelTests :
 
         return VerifyAsync(models);
     }
+
+    [TestMethod]
+    public Task Replicate()
+    {
+        var yaml = H.Resources.replicate_json.AsString();
+        var settings = DefaultSettings;
+
+        var models = ModelGeneratorMethods.PrepareData((yaml, settings));
+
+        return VerifyAsync(models);
+    }
     //
     // [TestMethod]
     // public Task GitHub()

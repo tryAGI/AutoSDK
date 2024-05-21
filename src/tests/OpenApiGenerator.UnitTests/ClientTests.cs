@@ -68,6 +68,17 @@ public class ClientTests :
     }
 
     [TestMethod]
+    public Task Replicate()
+    {
+        var yaml = H.Resources.replicate_json.AsString();
+        var settings = DefaultSettings;
+
+        var models = ClientGeneratorMethods.PrepareData((yaml, settings));
+
+        return VerifyAsync(models);
+    }
+
+    [TestMethod]
     public Task GitHub()
     {
         var yaml = H.Resources.api_github_com_yaml.AsString();
