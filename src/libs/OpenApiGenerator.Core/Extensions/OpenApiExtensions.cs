@@ -195,4 +195,40 @@ public static class OpenApiExtensions
             .Select(static x => x.Value.Reference)
             .Concat(schema.Value.Properties.SelectMany(GetReferences));
     }
+    
+    public static string[] FindAllOperationIdsForTag(
+        this OpenApiDocument openApiDocument,
+        string tag)
+    {
+        openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
+        
+        return openApiDocument.Paths
+            .SelectMany(path => path.Value.Operations)
+            .Where(x => x.Value.Tags?.Any(y => y.Name == tag) != false)
+            .Select(x => x.Value.OperationId)
+            .ToArray();
+    }
+    
+    public static string[] FindAllModelsForTag(
+        this OpenApiDocument openApiDocument,
+        string tag)
+    {
+        openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
+        
+        var operations = openApiDocument.Paths
+            .SelectMany(path => path.Value.Operations)
+            .Where(x => x.Value.Tags?.Any(y => y.Name == tag) != false)
+            .ToArray();
+        
+        return operations
+            .Select(x => x.Value.RequestBody?.Reference?.Id)
+            .Concat(operations
+                .SelectMany(x => x.Value.Parameters)
+                .Select(x => x.Reference?.Id))
+            .Concat(operations 
+                .SelectMany(x => x.Value.Responses.Values)
+                .Select(x => x.Reference?.Id))
+            .Where(x => x != null)
+            .ToArray()!;
+    }
 }

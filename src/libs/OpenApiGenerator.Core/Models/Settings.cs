@@ -20,6 +20,8 @@ public readonly record struct Settings(
     bool GenerateMethodsUsingSystemNetHttpJson,
     ImmutableArray<string> IncludeOperationIds,
     ImmutableArray<string> ExcludeOperationIds,
+    ImmutableArray<string> IncludeTags,
+    ImmutableArray<string> ExcludeTags,
     string JsonSerializerContext,
     bool GenerateSuperTypeForJsonSerializerContext,
     

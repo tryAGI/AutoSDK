@@ -7,6 +7,7 @@
     Stream: false,
     Path: "/account",
     Properties: null,
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Get the authenticated account,
     RequestType: ,
@@ -22,6 +23,7 @@
     Stream: false,
     Path: "/collections",
     Properties: null,
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: List collections of models,
     RequestType: ,
@@ -56,6 +58,7 @@
         ArgumentName: collectionSlug
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Get a collection of models,
     RequestType: ,
@@ -71,6 +74,7 @@
     Stream: false,
     Path: "/deployments",
     Properties: null,
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: List deployments,
     RequestType: ,
@@ -177,6 +181,7 @@
         ArgumentName: version
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a deployment,
@@ -230,6 +235,7 @@
         ArgumentName: deploymentName
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Delete,
     Summary: Delete a deployment,
@@ -283,6 +289,7 @@
         ArgumentName: deploymentName
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Get a deployment,
     RequestType: ,
@@ -395,6 +402,7 @@
         ArgumentName: version
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Patch,
     Summary: Update a deployment,
@@ -551,6 +559,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ArgumentName: webhookEventsFilter
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a prediction using a deployment,
@@ -567,6 +576,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Stream: false,
     Path: "/hardware",
     Properties: null,
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: List available hardware for models,
     RequestType: ,
@@ -582,6 +592,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Stream: false,
     Path: "/models",
     Properties: null,
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: List public models,
     RequestType: ,
@@ -739,6 +750,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ArgumentName: visibility
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a model,
@@ -792,6 +804,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ArgumentName: modelName
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Delete,
     Summary: Delete a model,
@@ -845,6 +858,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ArgumentName: modelName
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Get a model,
     RequestType: ,
@@ -1000,6 +1014,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ArgumentName: webhookEventsFilter
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a prediction using an official model,
@@ -1053,6 +1068,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ArgumentName: modelName
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: List model versions,
     RequestType: ,
@@ -1123,6 +1139,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ArgumentName: versionId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Delete,
     Summary: Delete a model version,
@@ -1194,6 +1211,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ArgumentName: versionId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Get a model version,
     RequestType: ,
@@ -1350,6 +1368,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ArgumentName: webhookEventsFilter
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a training,
@@ -1366,6 +1385,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Stream: false,
     Path: "/predictions",
     Properties: null,
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: List predictions,
     RequestType: ,
@@ -1501,6 +1521,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ArgumentName: webhookEventsFilter
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a prediction,
@@ -1536,6 +1557,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ArgumentName: predictionId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Get a prediction,
     RequestType: ,
@@ -1570,6 +1592,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ArgumentName: predictionId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Cancel a prediction,
@@ -1586,6 +1609,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Stream: false,
     Path: "/trainings",
     Properties: null,
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: List trainings,
     RequestType: ,
@@ -1620,6 +1644,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ArgumentName: trainingId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Get a training,
     RequestType: ,
@@ -1654,6 +1679,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ArgumentName: trainingId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Cancel a training,
@@ -1670,6 +1696,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Stream: false,
     Path: "/webhooks/default/secret",
     Properties: null,
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Get the signing secret for the default webhook,
     RequestType: ,
@@ -1685,6 +1712,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Stream: false,
     Path: ,
     Properties: null,
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: ,
     RequestType: ,

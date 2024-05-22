@@ -417,6 +417,7 @@ A list of functions the model may generate JSON inputs for.
         ArgumentName: functions
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Creates a model response for the given chat conversation.,
@@ -802,6 +803,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
         ArgumentName: user
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Creates a completion for the provided prompt and parameters.,
@@ -998,6 +1000,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
         ArgumentName: user
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Creates an image given a prompt.,
@@ -1170,6 +1173,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
         ArgumentName: user
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Creates an edited or extended image given an original image and a prompt.,
@@ -1310,6 +1314,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
         ArgumentName: user
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Creates a variation of a given image.,
@@ -1423,6 +1428,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
         ArgumentName: user
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Creates an embedding vector representing the input text.,
@@ -1551,6 +1557,7 @@ The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is 
         ArgumentName: speed
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Generates audio from the input text.,
@@ -1687,6 +1694,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
         ArgumentName: temperature
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Transcribes audio into the input language.,
@@ -1794,6 +1802,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
         ArgumentName: temperature
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Translates audio into English.,
@@ -1829,6 +1838,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
         ArgumentName: purpose
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Returns a list of files that belong to the user's organization.,
     RequestType: ,
@@ -1889,6 +1899,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
         ArgumentName: purpose
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Upload a file that can be used across various endpoints. The size of all the files uploaded by one organization can be up to 100 GB.The size of individual files can be a maximum of 512 MB or 2 million tokens for Assistants. See the [Assistants Tools guide](/docs/assistants/tools) to learn more about the types of files supported. The Fine-tuning API only supports `.jsonl` files.Please [contact us](https://help.openai.com/) if you need to increase these storage limits.,
@@ -1924,6 +1935,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
         ArgumentName: fileId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Delete,
     Summary: Delete a file.,
@@ -1959,6 +1971,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
         ArgumentName: fileId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Returns information about a specific file.,
     RequestType: ,
@@ -1993,6 +2006,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
         ArgumentName: fileId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Returns the contents of the specified file.,
     RequestType: ,
@@ -2148,6 +2162,7 @@ If a seed is not specified, one will be generated for you.
         ArgumentName: seed
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Creates a fine-tuning job which begins the process of creating a new model from a given dataset.Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.[Learn more about fine-tuning](/docs/guides/fine-tuning),
@@ -2203,6 +2218,7 @@ If a seed is not specified, one will be generated for you.
         ArgumentName: limit
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: List your organization's fine-tuning jobs,
     RequestType: ,
@@ -2238,6 +2254,7 @@ If a seed is not specified, one will be generated for you.
         ArgumentName: fineTuningJobId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Get info about a fine-tuning job.[Learn more about fine-tuning](/docs/guides/fine-tuning),
     RequestType: ,
@@ -2311,6 +2328,7 @@ If a seed is not specified, one will be generated for you.
         ArgumentName: limit
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Get status updates for a fine-tuning job.,
     RequestType: ,
@@ -2346,6 +2364,7 @@ If a seed is not specified, one will be generated for you.
         ArgumentName: fineTuningJobId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Immediately cancel a fine-tune job.,
@@ -2420,6 +2439,7 @@ If a seed is not specified, one will be generated for you.
         ArgumentName: limit
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: List checkpoints for a fine-tuning job.,
     RequestType: ,
@@ -2435,6 +2455,7 @@ If a seed is not specified, one will be generated for you.
     Stream: false,
     Path: "/models",
     Properties: null,
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Lists the currently available models, and provides basic information about each one such as the owner and availability.,
     RequestType: ,
@@ -2470,6 +2491,7 @@ If a seed is not specified, one will be generated for you.
         ArgumentName: model
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Retrieves a model instance, providing basic information about the model such as the owner and permissioning.,
     RequestType: ,
@@ -2505,6 +2527,7 @@ If a seed is not specified, one will be generated for you.
         ArgumentName: model
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Delete,
     Summary: Delete a fine-tuned model. You must have the Owner role in your organization to delete a model.,
@@ -2559,6 +2582,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
         ArgumentName: model
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Classifies if text is potentially harmful.,
@@ -2658,6 +2682,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
         ArgumentName: before
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Returns a list of assistants.,
     RequestType: ,
@@ -2859,6 +2884,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ArgumentName: responseFormat
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create an assistant with a model and instructions.,
@@ -2894,6 +2920,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ArgumentName: assistantId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Retrieves an assistant.,
     RequestType: ,
@@ -3113,6 +3140,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ArgumentName: responseFormat
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Modifies an assistant.,
@@ -3148,6 +3176,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ArgumentName: assistantId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Delete,
     Summary: Delete an assistant.,
@@ -3214,6 +3243,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: metadata
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a thread.,
@@ -3249,6 +3279,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: threadId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Retrieves a thread.,
     RequestType: ,
@@ -3317,6 +3348,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: metadata
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Modifies a thread.,
@@ -3352,6 +3384,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: threadId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Delete,
     Summary: Delete a thread.,
@@ -3487,6 +3520,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: runId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Returns a list of messages for a given thread.,
     RequestType: ,
@@ -3593,6 +3627,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: metadata
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a message.,
@@ -3646,6 +3681,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: messageId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Retrieve a message.,
     RequestType: ,
@@ -3715,6 +3751,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: metadata
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Modifies a message.,
@@ -3768,6 +3805,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: messageId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Delete,
     Summary: Deletes a message.,
@@ -4054,6 +4092,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ArgumentName: responseFormat
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a thread and run it in one request.,
@@ -4171,6 +4210,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ArgumentName: before
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Returns a list of runs belonging to a thread.,
     RequestType: ,
@@ -4468,6 +4508,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ArgumentName: responseFormat
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a run.,
@@ -4521,6 +4562,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ArgumentName: runId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Retrieves a run.,
     RequestType: ,
@@ -4590,6 +4632,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: metadata
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Modifies a run.,
@@ -4675,6 +4718,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
         ArgumentName: stream
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: When a run has the `status: "requires_action"` and `required_action.type` is `submit_tool_outputs`, this endpoint can be used to submit the outputs from the tool calls once they're all completed. All outputs must be submitted in a single request.,
@@ -4728,6 +4772,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
         ArgumentName: runId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Cancels a run that is `in_progress`.,
@@ -4863,6 +4908,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
         ArgumentName: before
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Returns a list of run steps belonging to a run.,
     RequestType: ,
@@ -4933,6 +4979,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
         ArgumentName: stepId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Retrieves a run step.,
     RequestType: ,
@@ -5031,6 +5078,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
         ArgumentName: before
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Returns a list of vector stores.,
     RequestType: ,
@@ -5112,6 +5160,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: metadata
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a vector store.,
@@ -5147,6 +5196,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: vectorStoreId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Retrieves a vector store.,
     RequestType: ,
@@ -5231,6 +5281,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: metadata
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Modifies a vector store.,
@@ -5266,6 +5317,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: vectorStoreId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Delete,
     Summary: Delete a vector store.,
@@ -5411,6 +5463,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: filter
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Returns a list of vector store files.,
     RequestType: ,
@@ -5461,6 +5514,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: fileId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a vector store file by attaching a [File](/docs/api-reference/files) to a [vector store](/docs/api-reference/vector-stores/object).,
@@ -5516,6 +5570,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: fileId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Retrieves a vector store file.,
     RequestType: ,
@@ -5568,6 +5623,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: fileId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Delete,
     Summary: Delete a vector store file. This will remove the file from the vector store but the file itself will not be deleted. To delete the file, use the [delete file](/docs/api-reference/files/delete) endpoint.,
@@ -5619,6 +5675,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: fileIds
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a vector store file batch.,
@@ -5674,6 +5731,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: batchId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Retrieves a vector store file batch.,
     RequestType: ,
@@ -5726,6 +5784,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: batchId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Cancel a vector store file batch. This attempts to cancel the processing of files in this batch as soon as possible.,
@@ -5889,6 +5948,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ArgumentName: filter
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Returns a list of vector store files in a batch.,
     RequestType: ,
@@ -5981,6 +6041,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
         ArgumentName: metadata
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Creates and executes a batch from an uploaded file of requests,
@@ -6036,6 +6097,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
         ArgumentName: limit
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: List your organization's batches.,
     RequestType: ,
@@ -6070,6 +6132,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
         ArgumentName: batchId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Retrieves a batch.,
     RequestType: ,
@@ -6104,6 +6167,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
         ArgumentName: batchId
       }
     ],
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Cancels an in-progress batch.,
@@ -6120,6 +6184,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Stream: false,
     Path: ,
     Properties: null,
+    TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: ,
     RequestType: ,

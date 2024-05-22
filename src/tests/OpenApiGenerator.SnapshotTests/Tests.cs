@@ -123,25 +123,23 @@ public partial class Tests
             //["build_property.OpenApiGenerator_IncludeModels"] = "CreateEmbeddingRequest;CreateModerationResponse;Error;ErrorResponse;ListModelsResponse;Model;DeleteModelResponse;CreateCompletionRequest",
         });
     }
-    //
+    
     // [DataTestMethod]
     // [DataRow(JsonSerializerType.SystemTextJson)]
     // [DataRow(JsonSerializerType.NewtonsoftJson)]
     // public Task GitHub(JsonSerializerType jsonSerializerType)
     // {
-    //     return CheckSourceAsync<ModelGenerator>(jsonSerializerType, [
+    //     return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
     //         new CustomAdditionalText(
     //             path: H.Resources.api_github_com_yaml.FileName,
     //             text: H.Resources.api_github_com_yaml.AsString())
     //     ], new Dictionary<string, string>
     //     {
-    //         //["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
-    //         //["build_property.OpenApiGenerator_GenerateMethods"] = "true",
     //         ["build_property.OpenApiGenerator_GenerateSdk"] = "false",
     //         ["build_property.OpenApiGenerator_GenerateModels"] = "true",
-    //         //["build_property.OpenApiGenerator_IncludeOperationIds"] = "ListModels",
+    //         ["build_property.OpenApiGenerator_IncludeTags"] = "actions",
     //         //["build_property.OpenApiGenerator_IncludeModels"] = "CreateEmbeddingRequest;CreateModerationResponse;Error;ErrorResponse;ListModelsResponse;Model;DeleteModelResponse;CreateCompletionRequest",
-    //     }, additionalGenerators: [new ClientGenerator()]);
+    //     });
     // }
     
     [DataTestMethod]

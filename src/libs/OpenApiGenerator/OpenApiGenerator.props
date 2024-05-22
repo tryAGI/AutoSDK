@@ -42,6 +42,10 @@
     <CompilerVisibleProperty Include="OpenApiGenerator_IncludeOperationIds"/>
     <!-- List of ids separated by ;. Default: Empty -->
     <CompilerVisibleProperty Include="OpenApiGenerator_ExcludeOperationIds"/>
+    <!-- List of ids separated by ;. Default: Empty(all models) -->
+    <CompilerVisibleProperty Include="OpenApiGenerator_IncludeTags"/>
+    <!-- List of ids separated by ;. Default: Empty -->
+    <CompilerVisibleProperty Include="OpenApiGenerator_ExcludeTags"/>
     <!-- Full name with namespace of JsonSerializerContext to enable trimming support for System.Text.Json. Default: Empty -->
     <CompilerVisibleProperty Include="OpenApiGenerator_JsonSerializerContext"/>
     <!-- Allow you to specify only one type for JsonSerializerContext to enable trimming support for System.Text.Json. true/false. Default: false -->

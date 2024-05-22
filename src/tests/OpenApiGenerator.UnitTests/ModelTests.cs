@@ -25,6 +25,8 @@ public class ModelTests :
         GenerateMethodsUsingSystemNetHttpJson: false,
         IncludeOperationIds: [],
         ExcludeOperationIds: [],
+        IncludeTags: [],
+        ExcludeTags: [],
         JsonSerializerContext: string.Empty,
         GenerateSuperTypeForJsonSerializerContext: false,
         GenerateModels: false,

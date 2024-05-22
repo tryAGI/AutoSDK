@@ -22,6 +22,8 @@ public class CacheTests
         GenerateMethodsUsingSystemNetHttpJson: false,
         IncludeOperationIds: ImmutableArray.Create(["123", "456"]),
         ExcludeOperationIds: [],
+        IncludeTags: [],
+        ExcludeTags: [],
         JsonSerializerContext: string.Empty,
         GenerateSuperTypeForJsonSerializerContext: false,
         GenerateModels: false,

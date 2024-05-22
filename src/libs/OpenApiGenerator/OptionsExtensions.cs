@@ -41,6 +41,10 @@ public static class OptionsExtensions
                                    []).ToImmutableArray(),
             ExcludeOperationIds: (options.GetGlobalOption(nameof(Settings.ExcludeOperationIds), prefix)?.Split(';') ??
                                   []).ToImmutableArray(),
+            IncludeTags: (options.GetGlobalOption(nameof(Settings.IncludeTags), prefix)?.Split(';') ??
+                                  []).ToImmutableArray(),
+            ExcludeTags: (options.GetGlobalOption(nameof(Settings.ExcludeTags), prefix)?.Split(';') ??
+                                  []).ToImmutableArray(),
             JsonSerializerContext: options.GetGlobalOption(nameof(Settings.JsonSerializerContext), prefix) ?? string.Empty,
             GenerateSuperTypeForJsonSerializerContext: options.GetBoolGlobalOption(nameof(Settings.GenerateSuperTypeForJsonSerializerContext), prefix),
             

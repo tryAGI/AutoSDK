@@ -24,6 +24,14 @@ public static class ModelGeneratorMethods
         
         var includedModels = new HashSet<string>(settings.IncludeModels);
         var excludedModels = new HashSet<string>(settings.ExcludeModels);
+        foreach (var tag in settings.IncludeTags)
+        {
+            includedModels.UnionWith(openApiDocument.FindAllModelsForTag(tag));
+        }
+        foreach (var tag in settings.ExcludeTags)
+        {
+            includedModels.UnionWith(openApiDocument.FindAllModelsForTag(tag));
+        }
         var referencesOfIncludedModels = includedModels.Count == 0
             ? []
             : new HashSet<string>(openApiDocument.Components.Schemas

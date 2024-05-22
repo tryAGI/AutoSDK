@@ -80,6 +80,8 @@ public class GenerateCommand : Command
             GenerateMethodsUsingSystemNetHttpJson: false,
             IncludeOperationIds: [],
             ExcludeOperationIds: [],
+            IncludeTags: [],
+            ExcludeTags: [],
             JsonSerializerContext: string.Empty,
             GenerateSuperTypeForJsonSerializerContext: false,
             GenerateModels: false,

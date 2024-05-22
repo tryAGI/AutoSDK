@@ -22,6 +22,14 @@ public static class ClientGeneratorMethods
         
         var includedOperationIds = new HashSet<string>(settings.IncludeOperationIds);
         var excludedOperationIds = new HashSet<string>(settings.ExcludeOperationIds);
+        foreach (var tag in settings.IncludeTags)
+        {
+            includedOperationIds.UnionWith(openApiDocument.FindAllOperationIdsForTag(tag));
+        }
+        foreach (var tag in settings.ExcludeTags)
+        {
+            excludedOperationIds.UnionWith(openApiDocument.FindAllOperationIdsForTag(tag));
+        }
         
         return openApiDocument.Paths.SelectMany(path =>
             path.Value.Operations
