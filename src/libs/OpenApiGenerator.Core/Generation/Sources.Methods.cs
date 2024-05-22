@@ -11,6 +11,10 @@ public static partial class Sources
         EndPoint endPoint,
         CancellationToken cancellationToken = default)
     {
+        if (!string.IsNullOrWhiteSpace(endPoint.AuthorizationScheme))
+        {
+            return GenerateAuthorizationMethod(endPoint);
+        }
         if (string.IsNullOrWhiteSpace(endPoint.Path))
         {
             return GenerateConstructors(endPoint);
@@ -64,6 +68,33 @@ namespace {endPoint.Namespace}
         public void Dispose()
         {{
             _httpClient.Dispose();
+        }}
+    }}
+}}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+    
+    public static string GenerateAuthorizationMethod(
+        EndPoint endPoint)
+    {
+        return $@"
+#nullable enable
+
+namespace {endPoint.Namespace}
+{{
+    public sealed partial class {endPoint.ClassName}
+    {{
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name=""apiKey""></param>
+        public void {endPoint.MethodName}(
+            string apiKey)
+        {{
+            apiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
+
+            _httpClient.DefaultRequestHeaders.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                scheme: ""{endPoint.AuthorizationScheme.ToPropertyName()}"",
+                parameter: apiKey);
         }}
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();

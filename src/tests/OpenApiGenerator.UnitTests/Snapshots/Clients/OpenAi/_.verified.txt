@@ -6,6 +6,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/chat/completions",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: messages,
@@ -433,6 +434,7 @@ A list of functions the model may generate JSON inputs for.
     BaseUrl: ,
     Stream: false,
     Path: "/completions",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: model,
@@ -819,6 +821,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     BaseUrl: ,
     Stream: false,
     Path: "/images/generations",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: prompt,
@@ -1016,6 +1019,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     BaseUrl: ,
     Stream: false,
     Path: "/images/edits",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: image,
@@ -1189,6 +1193,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     BaseUrl: ,
     Stream: false,
     Path: "/images/variations",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: image,
@@ -1330,6 +1335,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     BaseUrl: ,
     Stream: false,
     Path: "/embeddings",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: input,
@@ -1444,6 +1450,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     BaseUrl: ,
     Stream: false,
     Path: "/audio/speech",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: model,
@@ -1573,6 +1580,7 @@ The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is 
     BaseUrl: ,
     Stream: false,
     Path: "/audio/transcriptions",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: file,
@@ -1710,6 +1718,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     BaseUrl: ,
     Stream: false,
     Path: "/audio/translations",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: file,
@@ -1818,6 +1827,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     BaseUrl: ,
     Stream: false,
     Path: $"/files?purpose={purpose}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: purpose,
@@ -1853,6 +1863,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     BaseUrl: ,
     Stream: false,
     Path: "/files",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: file,
@@ -1915,6 +1926,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     BaseUrl: ,
     Stream: false,
     Path: $"/files/{fileId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: file_id,
@@ -1951,6 +1963,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     BaseUrl: ,
     Stream: false,
     Path: $"/files/{fileId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: file_id,
@@ -1986,6 +1999,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     BaseUrl: ,
     Stream: false,
     Path: $"/files/{fileId}/content",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: file_id,
@@ -2021,6 +2035,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     BaseUrl: ,
     Stream: false,
     Path: "/fine_tuning/jobs",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: model,
@@ -2178,6 +2193,7 @@ If a seed is not specified, one will be generated for you.
     BaseUrl: ,
     Stream: false,
     Path: $"/fine_tuning/jobs?after={after}&limit={limit}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: after,
@@ -2233,6 +2249,7 @@ If a seed is not specified, one will be generated for you.
     BaseUrl: ,
     Stream: false,
     Path: $"/fine_tuning/jobs/{fineTuningJobId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: fine_tuning_job_id,
@@ -2269,6 +2286,7 @@ If a seed is not specified, one will be generated for you.
     BaseUrl: ,
     Stream: false,
     Path: $"/fine_tuning/jobs/{fineTuningJobId}/events?after={after}&limit={limit}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: fine_tuning_job_id,
@@ -2343,6 +2361,7 @@ If a seed is not specified, one will be generated for you.
     BaseUrl: ,
     Stream: false,
     Path: $"/fine_tuning/jobs/{fineTuningJobId}/cancel",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: fine_tuning_job_id,
@@ -2380,6 +2399,7 @@ If a seed is not specified, one will be generated for you.
     BaseUrl: ,
     Stream: false,
     Path: $"/fine_tuning/jobs/{fineTuningJobId}/checkpoints?after={after}&limit={limit}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: fine_tuning_job_id,
@@ -2454,6 +2474,7 @@ If a seed is not specified, one will be generated for you.
     BaseUrl: ,
     Stream: false,
     Path: "/models",
+    AuthorizationScheme: ,
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
@@ -2470,6 +2491,7 @@ If a seed is not specified, one will be generated for you.
     BaseUrl: ,
     Stream: false,
     Path: $"/models/{model}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: model,
@@ -2506,6 +2528,7 @@ If a seed is not specified, one will be generated for you.
     BaseUrl: ,
     Stream: false,
     Path: $"/models/{model}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: model,
@@ -2543,6 +2566,7 @@ If a seed is not specified, one will be generated for you.
     BaseUrl: ,
     Stream: false,
     Path: "/moderations",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: input,
@@ -2598,6 +2622,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
     BaseUrl: ,
     Stream: false,
     Path: $"/assistants?limit={limit}&order={order}&after={after}&before={before}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: limit,
@@ -2697,6 +2722,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
     BaseUrl: ,
     Stream: false,
     Path: "/assistants",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: model,
@@ -2900,6 +2926,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     BaseUrl: ,
     Stream: false,
     Path: $"/assistants/{assistantId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: assistant_id,
@@ -2935,6 +2962,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     BaseUrl: ,
     Stream: false,
     Path: $"/assistants/{assistantId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: assistant_id,
@@ -3156,6 +3184,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     BaseUrl: ,
     Stream: false,
     Path: $"/assistants/{assistantId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: assistant_id,
@@ -3192,6 +3221,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     BaseUrl: ,
     Stream: false,
     Path: "/threads",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: messages,
@@ -3259,6 +3289,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -3294,6 +3325,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -3364,6 +3396,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -3400,6 +3433,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/messages?limit={limit}&order={order}&after={after}&before={before}&run_id={runId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -3535,6 +3569,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/messages",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -3643,6 +3678,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/messages/{messageId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -3696,6 +3732,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/messages/{messageId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -3767,6 +3804,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/messages/{messageId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -3821,6 +3859,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: "/threads/runs",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: assistant_id,
@@ -4108,6 +4147,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs?limit={limit}&order={order}&after={after}&before={before}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -4225,6 +4265,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -4524,6 +4565,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs/{runId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -4577,6 +4619,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs/{runId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -4648,6 +4691,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs/{runId}/submit_tool_outputs",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -4734,6 +4778,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs/{runId}/cancel",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -4788,6 +4833,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs/{runId}/steps?limit={limit}&order={order}&after={after}&before={before}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -4923,6 +4969,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs/{runId}/steps/{stepId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -4994,6 +5041,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores?limit={limit}&order={order}&after={after}&before={before}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: limit,
@@ -5093,6 +5141,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     BaseUrl: ,
     Stream: false,
     Path: "/vector_stores",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: file_ids,
@@ -5176,6 +5225,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: vector_store_id,
@@ -5211,6 +5261,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: vector_store_id,
@@ -5297,6 +5348,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: vector_store_id,
@@ -5333,6 +5385,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/files?limit={limit}&order={order}&after={after}&before={before}&filter={filter}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: vector_store_id,
@@ -5478,6 +5531,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/files",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: vector_store_id,
@@ -5530,6 +5584,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/files/{fileId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: vector_store_id,
@@ -5585,6 +5640,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/files/{fileId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: vector_store_id,
@@ -5639,6 +5695,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/file_batches",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: vector_store_id,
@@ -5691,6 +5748,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/file_batches/{batchId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: vector_store_id,
@@ -5746,6 +5804,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/file_batches/{batchId}/cancel",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: vector_store_id,
@@ -5800,6 +5859,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/file_batches/{batchId}/files?limit={limit}&order={order}&after={after}&before={before}&filter={filter}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: vector_store_id,
@@ -5963,6 +6023,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: "/batches",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: input_file_id,
@@ -6057,6 +6118,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: ,
     Stream: false,
     Path: $"/batches?after={after}&limit={limit}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: after,
@@ -6112,6 +6174,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: ,
     Stream: false,
     Path: $"/batches/{batchId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: batch_id,
@@ -6147,6 +6210,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: ,
     Stream: false,
     Path: $"/batches/{batchId}/cancel",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: batch_id,
@@ -6177,12 +6241,30 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     FileNameWithoutExtension: G.Api.EndPoints.CancelBatch
   },
   {
+    Id: AuthorizeUsingBearer,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Stream: false,
+    Path: ,
+    AuthorizationScheme: bearer,
+    Properties: null,
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    Summary: ,
+    RequestType: ,
+    ResponseType: ,
+    MethodName: AuthorizeUsingBearerAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.AuthorizeUsingBearer
+  },
+  {
     Id: Constructors,
     Namespace: G,
     ClassName: Api,
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
+    AuthorizationScheme: ,
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,

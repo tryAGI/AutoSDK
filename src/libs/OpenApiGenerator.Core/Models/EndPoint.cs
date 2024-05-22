@@ -12,6 +12,7 @@ public readonly record struct EndPoint(
     string BaseUrl,
     bool Stream,
     string Path,
+    string AuthorizationScheme,
     ImmutableArray<PropertyData> Properties,
     string TargetFramework,
     JsonSerializerType JsonSerializerType,
@@ -62,6 +63,7 @@ public readonly record struct EndPoint(
             Stream: response?.Content.Keys
                 .Any(x => x.Contains("application/x-ndjson")) ?? false,
             Path: preparedPath,
+            AuthorizationScheme: string.Empty,
             Properties: [..parameters.Concat(requestModel.Properties)],
             TargetFramework: settings.TargetFramework,
             JsonSerializerType: settings.JsonSerializerType,
@@ -71,6 +73,30 @@ public readonly record struct EndPoint(
             RequestType: ModelData.FromKey(requestSchema?.Reference?.Id ?? string.Empty, settings).Name,
             ResponseType: response?
                 .Content.Values.FirstOrDefault()?.Schema?.Reference?.Id ?? string.Empty);
+        
+        return endPoint;
+    }
+    
+    public static EndPoint FromAuthorization(
+        string scheme,
+        Settings settings)
+    {
+        var endPoint = new EndPoint(
+            Id: $"AuthorizeUsing{scheme.ToPropertyName()}",
+            Namespace: settings.Namespace,
+            ClassName: settings.ClassName.Replace(".", string.Empty),
+            BaseUrl: string.Empty,
+            Stream: false,
+            Path: string.Empty,
+            AuthorizationScheme: scheme,
+            Properties: [],
+            TargetFramework: settings.TargetFramework,
+            JsonSerializerType: settings.JsonSerializerType,
+            JsonSerializerContext: settings.JsonSerializerContext,
+            HttpMethod: default,
+            Summary: string.Empty,
+            RequestType: string.Empty,
+            ResponseType: string.Empty);
         
         return endPoint;
     }

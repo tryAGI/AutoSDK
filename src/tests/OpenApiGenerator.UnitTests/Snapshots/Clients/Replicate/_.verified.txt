@@ -6,6 +6,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/account",
+    AuthorizationScheme: ,
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
@@ -22,6 +23,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/collections",
+    AuthorizationScheme: ,
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
@@ -38,6 +40,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/collections/{collectionSlug}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: collection_slug,
@@ -73,6 +76,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/deployments",
+    AuthorizationScheme: ,
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
@@ -89,6 +93,7 @@
     BaseUrl: ,
     Stream: false,
     Path: "/deployments",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: hardware,
@@ -197,6 +202,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/deployments/{deploymentOwner}/{deploymentName}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: deployment_owner,
@@ -251,6 +257,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/deployments/{deploymentOwner}/{deploymentName}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: deployment_owner,
@@ -304,6 +311,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/deployments/{deploymentOwner}/{deploymentName}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: deployment_owner,
@@ -418,6 +426,7 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/deployments/{deploymentOwner}/{deploymentName}/predictions",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: deployment_owner,
@@ -575,6 +584,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     BaseUrl: ,
     Stream: false,
     Path: "/hardware",
+    AuthorizationScheme: ,
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
@@ -591,6 +601,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     BaseUrl: ,
     Stream: false,
     Path: "/models",
+    AuthorizationScheme: ,
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
@@ -607,6 +618,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     BaseUrl: ,
     Stream: false,
     Path: "/models",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: cover_image_url,
@@ -766,6 +778,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     BaseUrl: ,
     Stream: false,
     Path: $"/models/{modelOwner}/{modelName}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: model_owner,
@@ -820,6 +833,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     BaseUrl: ,
     Stream: false,
     Path: $"/models/{modelOwner}/{modelName}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: model_owner,
@@ -873,6 +887,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     BaseUrl: ,
     Stream: false,
     Path: $"/models/{modelOwner}/{modelName}/predictions",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: model_owner,
@@ -1030,6 +1045,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     BaseUrl: ,
     Stream: false,
     Path: $"/models/{modelOwner}/{modelName}/versions",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: model_owner,
@@ -1083,6 +1099,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     BaseUrl: ,
     Stream: false,
     Path: $"/models/{modelOwner}/{modelName}/versions/{versionId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: model_owner,
@@ -1155,6 +1172,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     BaseUrl: ,
     Stream: false,
     Path: $"/models/{modelOwner}/{modelName}/versions/{versionId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: model_owner,
@@ -1226,6 +1244,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     BaseUrl: ,
     Stream: false,
     Path: $"/models/{modelOwner}/{modelName}/versions/{versionId}/trainings",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: model_owner,
@@ -1384,6 +1403,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     BaseUrl: ,
     Stream: false,
     Path: "/predictions",
+    AuthorizationScheme: ,
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
@@ -1400,6 +1420,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     BaseUrl: ,
     Stream: false,
     Path: "/predictions",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: input,
@@ -1537,6 +1558,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     BaseUrl: ,
     Stream: false,
     Path: $"/predictions/{predictionId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: prediction_id,
@@ -1572,6 +1594,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     BaseUrl: ,
     Stream: false,
     Path: $"/predictions/{predictionId}/cancel",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: prediction_id,
@@ -1608,6 +1631,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     BaseUrl: ,
     Stream: false,
     Path: "/trainings",
+    AuthorizationScheme: ,
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
@@ -1624,6 +1648,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     BaseUrl: ,
     Stream: false,
     Path: $"/trainings/{trainingId}",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: training_id,
@@ -1659,6 +1684,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     BaseUrl: ,
     Stream: false,
     Path: $"/trainings/{trainingId}/cancel",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: training_id,
@@ -1695,6 +1721,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     BaseUrl: ,
     Stream: false,
     Path: "/webhooks/default/secret",
+    AuthorizationScheme: ,
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
@@ -1705,12 +1732,30 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     FileNameWithoutExtension: G.Api.EndPoints.GetSecretDefaultWebhooks
   },
   {
+    Id: AuthorizeUsingBearer,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Stream: false,
+    Path: ,
+    AuthorizationScheme: bearer,
+    Properties: null,
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    Summary: ,
+    RequestType: ,
+    ResponseType: ,
+    MethodName: AuthorizeUsingBearerAsync,
+    FileNameWithoutExtension: G.Api.EndPoints.AuthorizeUsingBearer
+  },
+  {
     Id: Constructors,
     Namespace: G,
     ClassName: Api,
     BaseUrl: https://api.replicate.com/v1,
     Stream: false,
     Path: ,
+    AuthorizationScheme: ,
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,

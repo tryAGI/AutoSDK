@@ -6,6 +6,7 @@
     BaseUrl: ,
     Stream: true,
     Path: "/generate",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: model,
@@ -255,6 +256,7 @@ How long (in minutes) to keep the model loaded in memory.
     BaseUrl: ,
     Stream: true,
     Path: "/chat",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: model,
@@ -423,6 +425,7 @@ How long (in minutes) to keep the model loaded in memory.
     BaseUrl: ,
     Stream: false,
     Path: "/embeddings",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: model,
@@ -527,6 +530,7 @@ Text to generate embeddings for.
     BaseUrl: ,
     Stream: true,
     Path: "/create",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: name,
@@ -601,6 +605,7 @@ If `false` the response will be returned as a single response object, otherwise 
     BaseUrl: ,
     Stream: false,
     Path: "/tags",
+    AuthorizationScheme: ,
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
@@ -617,6 +622,7 @@ If `false` the response will be returned as a single response object, otherwise 
     BaseUrl: ,
     Stream: false,
     Path: "/show",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: name,
@@ -655,6 +661,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     BaseUrl: ,
     Stream: false,
     Path: "/copy",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: source,
@@ -707,6 +714,7 @@ Name of the new model.
     BaseUrl: ,
     Stream: false,
     Path: "/delete",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: name,
@@ -745,6 +753,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     BaseUrl: ,
     Stream: false,
     Path: "/pull",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: name,
@@ -823,6 +832,7 @@ If `false` the response will be returned as a single response object, otherwise 
     BaseUrl: ,
     Stream: false,
     Path: "/push",
+    AuthorizationScheme: ,
     Properties: [
       {
         Id: name,
@@ -898,6 +908,7 @@ If `false` the response will be returned as a single response object, otherwise 
     BaseUrl: http://localhost:11434/api,
     Stream: false,
     Path: ,
+    AuthorizationScheme: ,
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,

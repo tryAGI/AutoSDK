@@ -31,7 +31,7 @@ public static class ClientGeneratorMethods
             excludedOperationIds.UnionWith(openApiDocument.FindAllOperationIdsForTag(tag));
         }
         
-        return openApiDocument.Paths.SelectMany(path =>
+        var operations = openApiDocument.Paths.SelectMany(path =>
             path.Value.Operations
                 .Where(x =>
                 {
@@ -48,14 +48,20 @@ public static class ClientGeneratorMethods
                            !excludedOperationIds.Contains(methodName);
                 })
                 .Select(operation => EndPoint.FromSchema(operation, settings, path.Key)))
-            // Constructor
-            .Concat(settings.GenerateSdk || settings.GenerateConstructors ? [new EndPoint(
+                .ToArray();
+        var authorizations = openApiDocument.SecurityRequirements
+            .SelectMany(requirement => requirement)
+            .Select(x => EndPoint.FromAuthorization(x.Key.Scheme, settings))
+            .ToArray();
+            
+        EndPoint[] constructors = settings.GenerateSdk || settings.GenerateConstructors ? [new EndPoint(
                 Id: "Constructors",
                 Namespace: settings.Namespace,
                 ClassName: settings.ClassName.Replace(".", string.Empty),
                 BaseUrl: openApiDocument.Servers.FirstOrDefault()?.Url ?? string.Empty,
                 Stream: false,
                 Path: string.Empty,
+                AuthorizationScheme: string.Empty,
                 Properties: ImmutableArray<PropertyData>.Empty,
                 TargetFramework: settings.TargetFramework,
                 JsonSerializerType: settings.JsonSerializerType,
@@ -63,8 +69,13 @@ public static class ClientGeneratorMethods
                 HttpMethod: OperationType.Get,
                 Summary: string.Empty,
                 RequestType: string.Empty,
-                ResponseType: string.Empty)] : [])
-            .ToImmutableArray();
+                ResponseType: string.Empty)] : [];
+            
+        return [
+            ..operations,
+            ..authorizations,
+            ..constructors,
+        ];
     }
     
     public static FileWithName GetSourceCode(
