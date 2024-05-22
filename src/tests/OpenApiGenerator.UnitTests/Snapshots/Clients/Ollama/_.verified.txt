@@ -258,6 +258,7 @@ How long (in minutes) to keep the model loaded in memory.
     RequestType: GenerateCompletionRequest,
     ResponseType: GenerateCompletionResponse,
     MethodName: GenerateCompletionAsync,
+    NotAsyncMethodName: GenerateCompletion,
     FileNameWithoutExtension: G.Api.EndPoints.GenerateCompletion
   },
   {
@@ -433,6 +434,7 @@ How long (in minutes) to keep the model loaded in memory.
     RequestType: GenerateChatCompletionRequest,
     ResponseType: GenerateChatCompletionResponse,
     MethodName: GenerateChatCompletionAsync,
+    NotAsyncMethodName: GenerateChatCompletion,
     FileNameWithoutExtension: G.Api.EndPoints.GenerateChatCompletion
   },
   {
@@ -541,6 +543,7 @@ Text to generate embeddings for.
     RequestType: GenerateEmbeddingRequest,
     ResponseType: GenerateEmbeddingResponse,
     MethodName: GenerateEmbeddingAsync,
+    NotAsyncMethodName: GenerateEmbedding,
     FileNameWithoutExtension: G.Api.EndPoints.GenerateEmbedding
   },
   {
@@ -619,6 +622,7 @@ If `false` the response will be returned as a single response object, otherwise 
     RequestType: CreateModelRequest,
     ResponseType: CreateModelResponse,
     MethodName: CreateModelAsync,
+    NotAsyncMethodName: CreateModel,
     FileNameWithoutExtension: G.Api.EndPoints.CreateModel
   },
   {
@@ -636,6 +640,7 @@ If `false` the response will be returned as a single response object, otherwise 
     RequestType: ,
     ResponseType: ModelsResponse,
     MethodName: ListModelsAsync,
+    NotAsyncMethodName: ListModels,
     FileNameWithoutExtension: G.Api.EndPoints.ListModels
   },
   {
@@ -676,6 +681,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     RequestType: ModelInfoRequest,
     ResponseType: ModelInfo,
     MethodName: ShowModelInfoAsync,
+    NotAsyncMethodName: ShowModelInfo,
     FileNameWithoutExtension: G.Api.EndPoints.ShowModelInfo
   },
   {
@@ -731,6 +737,7 @@ Name of the new model.
     RequestType: CopyModelRequest,
     ResponseType: ,
     MethodName: CopyModelAsync,
+    NotAsyncMethodName: CopyModel,
     FileNameWithoutExtension: G.Api.EndPoints.CopyModel
   },
   {
@@ -771,6 +778,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     RequestType: DeleteModelRequest,
     ResponseType: ,
     MethodName: DeleteModelAsync,
+    NotAsyncMethodName: DeleteModel,
     FileNameWithoutExtension: G.Api.EndPoints.DeleteModel
   },
   {
@@ -853,6 +861,7 @@ If `false` the response will be returned as a single response object, otherwise 
     RequestType: PullModelRequest,
     ResponseType: PullModelResponse,
     MethodName: PullModelAsync,
+    NotAsyncMethodName: PullModel,
     FileNameWithoutExtension: G.Api.EndPoints.PullModel
   },
   {
@@ -932,6 +941,7 @@ If `false` the response will be returned as a single response object, otherwise 
     RequestType: PushModelRequest,
     ResponseType: PushModelResponse,
     MethodName: PushModelAsync,
+    NotAsyncMethodName: PushModel,
     FileNameWithoutExtension: G.Api.EndPoints.PushModel
   },
   {
@@ -949,6 +959,7 @@ If `false` the response will be returned as a single response object, otherwise 
     RequestType: ,
     ResponseType: ,
     MethodName: ConstructorsAsync,
+    NotAsyncMethodName: Constructors,
     FileNameWithoutExtension: G.Api.EndPoints.Constructors
   }
 ]

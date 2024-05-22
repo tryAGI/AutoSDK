@@ -23,7 +23,8 @@ public readonly record struct EndPoint(
     string ResponseType
 )
 {
-    public string MethodName => $"{Id.ToPropertyName()}Async";
+    public string MethodName => $"{NotAsyncMethodName}Async";
+    public string NotAsyncMethodName => Id.ToPropertyName();
     
     public string FileNameWithoutExtension => $"{Namespace}.{ClassName}.EndPoints.{Id.ToPropertyName()}";
     

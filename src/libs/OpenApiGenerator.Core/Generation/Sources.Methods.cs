@@ -87,7 +87,7 @@ namespace {endPoint.Namespace}
         /// 
         /// </summary>
         /// <param name=""apiKey""></param>
-        public void {endPoint.MethodName}(
+        public void {endPoint.NotAsyncMethodName}(
             string apiKey)
         {{
             apiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));

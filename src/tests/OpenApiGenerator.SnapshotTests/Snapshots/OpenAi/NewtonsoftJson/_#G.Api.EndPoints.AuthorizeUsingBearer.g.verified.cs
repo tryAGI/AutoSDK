@@ -10,7 +10,7 @@ namespace G
         /// 
         /// </summary>
         /// <param name="apiKey"></param>
-        public void AuthorizeUsingBearerAsync(
+        public void AuthorizeUsingBearer(
             string apiKey)
         {
             apiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));

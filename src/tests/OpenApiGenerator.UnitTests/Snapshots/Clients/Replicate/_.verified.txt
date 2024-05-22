@@ -14,6 +14,7 @@
     RequestType: ,
     ResponseType: ,
     MethodName: GetAccountAsync,
+    NotAsyncMethodName: GetAccount,
     FileNameWithoutExtension: G.Api.EndPoints.GetAccount
   },
   {
@@ -31,6 +32,7 @@
     RequestType: ,
     ResponseType: ,
     MethodName: ListCollectionsAsync,
+    NotAsyncMethodName: ListCollections,
     FileNameWithoutExtension: G.Api.EndPoints.ListCollections
   },
   {
@@ -68,6 +70,7 @@
     RequestType: ,
     ResponseType: ,
     MethodName: GetCollectionsAsync,
+    NotAsyncMethodName: GetCollections,
     FileNameWithoutExtension: G.Api.EndPoints.GetCollections
   },
   {
@@ -85,6 +88,7 @@
     RequestType: ,
     ResponseType: ,
     MethodName: ListDeploymentsAsync,
+    NotAsyncMethodName: ListDeployments,
     FileNameWithoutExtension: G.Api.EndPoints.ListDeployments
   },
   {
@@ -200,6 +204,7 @@
     RequestType: ,
     ResponseType: ,
     MethodName: CreateDeploymentsAsync,
+    NotAsyncMethodName: CreateDeployments,
     FileNameWithoutExtension: G.Api.EndPoints.CreateDeployments
   },
   {
@@ -257,6 +262,7 @@
     RequestType: ,
     ResponseType: ,
     MethodName: DeleteDeploymentsAsync,
+    NotAsyncMethodName: DeleteDeployments,
     FileNameWithoutExtension: G.Api.EndPoints.DeleteDeployments
   },
   {
@@ -313,6 +319,7 @@
     RequestType: ,
     ResponseType: ,
     MethodName: GetDeploymentsAsync,
+    NotAsyncMethodName: GetDeployments,
     FileNameWithoutExtension: G.Api.EndPoints.GetDeployments
   },
   {
@@ -434,6 +441,7 @@
     RequestType: ,
     ResponseType: ,
     MethodName: UpdateDeploymentsAsync,
+    NotAsyncMethodName: UpdateDeployments,
     FileNameWithoutExtension: G.Api.EndPoints.UpdateDeployments
   },
   {
@@ -598,6 +606,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     RequestType: PredictionRequest,
     ResponseType: ,
     MethodName: CreatePredictionsDeploymentsAsync,
+    NotAsyncMethodName: CreatePredictionsDeployments,
     FileNameWithoutExtension: G.Api.EndPoints.CreatePredictionsDeployments
   },
   {
@@ -615,6 +624,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     RequestType: ,
     ResponseType: ,
     MethodName: ListHardwareAsync,
+    NotAsyncMethodName: ListHardware,
     FileNameWithoutExtension: G.Api.EndPoints.ListHardware
   },
   {
@@ -632,6 +642,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     RequestType: ,
     ResponseType: ,
     MethodName: ListModelsAsync,
+    NotAsyncMethodName: ListModels,
     FileNameWithoutExtension: G.Api.EndPoints.ListModels
   },
   {
@@ -801,6 +812,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     RequestType: ,
     ResponseType: ,
     MethodName: CreateModelsAsync,
+    NotAsyncMethodName: CreateModels,
     FileNameWithoutExtension: G.Api.EndPoints.CreateModels
   },
   {
@@ -858,6 +870,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     RequestType: ,
     ResponseType: ,
     MethodName: DeleteModelsAsync,
+    NotAsyncMethodName: DeleteModels,
     FileNameWithoutExtension: G.Api.EndPoints.DeleteModels
   },
   {
@@ -914,6 +927,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     RequestType: ,
     ResponseType: ,
     MethodName: GetModelsAsync,
+    NotAsyncMethodName: GetModels,
     FileNameWithoutExtension: G.Api.EndPoints.GetModels
   },
   {
@@ -1078,6 +1092,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     RequestType: PredictionRequest,
     ResponseType: ,
     MethodName: CreatePredictionsModelsAsync,
+    NotAsyncMethodName: CreatePredictionsModels,
     FileNameWithoutExtension: G.Api.EndPoints.CreatePredictionsModels
   },
   {
@@ -1134,6 +1149,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     RequestType: ,
     ResponseType: ,
     MethodName: ListVersionsModelsAsync,
+    NotAsyncMethodName: ListVersionsModels,
     FileNameWithoutExtension: G.Api.EndPoints.ListVersionsModels
   },
   {
@@ -1210,6 +1226,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     RequestType: ,
     ResponseType: ,
     MethodName: DeleteVersionsModelsAsync,
+    NotAsyncMethodName: DeleteVersionsModels,
     FileNameWithoutExtension: G.Api.EndPoints.DeleteVersionsModels
   },
   {
@@ -1285,6 +1302,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     RequestType: ,
     ResponseType: ,
     MethodName: GetVersionsModelsAsync,
+    NotAsyncMethodName: GetVersionsModels,
     FileNameWithoutExtension: G.Api.EndPoints.GetVersionsModels
   },
   {
@@ -1451,6 +1469,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     RequestType: TrainingRequest,
     ResponseType: ,
     MethodName: CreateTrainingsAsync,
+    NotAsyncMethodName: CreateTrainings,
     FileNameWithoutExtension: G.Api.EndPoints.CreateTrainings
   },
   {
@@ -1468,6 +1487,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     RequestType: ,
     ResponseType: ,
     MethodName: ListPredictionsAsync,
+    NotAsyncMethodName: ListPredictions,
     FileNameWithoutExtension: G.Api.EndPoints.ListPredictions
   },
   {
@@ -1611,6 +1631,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     RequestType: VersionPredictionRequest,
     ResponseType: ,
     MethodName: CreatePredictionsAsync,
+    NotAsyncMethodName: CreatePredictions,
     FileNameWithoutExtension: G.Api.EndPoints.CreatePredictions
   },
   {
@@ -1648,6 +1669,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     RequestType: ,
     ResponseType: ,
     MethodName: GetPredictionsAsync,
+    NotAsyncMethodName: GetPredictions,
     FileNameWithoutExtension: G.Api.EndPoints.GetPredictions
   },
   {
@@ -1686,6 +1708,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     RequestType: ,
     ResponseType: ,
     MethodName: CancelPredictionsAsync,
+    NotAsyncMethodName: CancelPredictions,
     FileNameWithoutExtension: G.Api.EndPoints.CancelPredictions
   },
   {
@@ -1703,6 +1726,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     RequestType: ,
     ResponseType: ,
     MethodName: ListTrainingsAsync,
+    NotAsyncMethodName: ListTrainings,
     FileNameWithoutExtension: G.Api.EndPoints.ListTrainings
   },
   {
@@ -1740,6 +1764,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     RequestType: ,
     ResponseType: ,
     MethodName: GetTrainingsAsync,
+    NotAsyncMethodName: GetTrainings,
     FileNameWithoutExtension: G.Api.EndPoints.GetTrainings
   },
   {
@@ -1778,6 +1803,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     RequestType: ,
     ResponseType: ,
     MethodName: CancelTrainingsAsync,
+    NotAsyncMethodName: CancelTrainings,
     FileNameWithoutExtension: G.Api.EndPoints.CancelTrainings
   },
   {
@@ -1795,6 +1821,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     RequestType: ,
     ResponseType: ,
     MethodName: GetSecretDefaultWebhooksAsync,
+    NotAsyncMethodName: GetSecretDefaultWebhooks,
     FileNameWithoutExtension: G.Api.EndPoints.GetSecretDefaultWebhooks
   },
   {
@@ -1812,6 +1839,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     RequestType: ,
     ResponseType: ,
     MethodName: AuthorizeUsingBearerAsync,
+    NotAsyncMethodName: AuthorizeUsingBearer,
     FileNameWithoutExtension: G.Api.EndPoints.AuthorizeUsingBearer
   },
   {
@@ -1829,6 +1857,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     RequestType: ,
     ResponseType: ,
     MethodName: ConstructorsAsync,
+    NotAsyncMethodName: Constructors,
     FileNameWithoutExtension: G.Api.EndPoints.Constructors
   }
 ]
