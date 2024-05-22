@@ -43,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extra")]
-        public RunCreateSchemaExtendedExtra? Extra { get; set; }
+        public object? Extra { get; set; }
 
         /// <summary>
         /// 
@@ -61,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("serialized")]
-        public RunCreateSchemaExtendedSerialized? Serialized { get; set; }
+        public object? Serialized { get; set; }
 
         /// <summary>
         /// 
@@ -85,7 +85,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("events")]
-        public global::System.Collections.Generic.IList<RunCreateSchemaExtendedEvents?>? Events { get; set; }
+        public global::System.Collections.Generic.IList<object?>? Events { get; set; }
 
         /// <summary>
         /// 

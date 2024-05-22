@@ -99,7 +99,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logit_bias")]
-        public CreateCompletionRequestLogitBias? LogitBias { get; set; }
+        public object? LogitBias { get; set; }
 
         /// <summary>
         /// 

@@ -19,7 +19,7 @@ namespace G
         /// An object containing inputs to the Cog model's `train()` function.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input", Required = global::Newtonsoft.Json.Required.Always)]
-        public TrainingRequestInput Input { get; set; } = default!;
+        public object Input { get; set; } = default!;
 
         /// <summary>
         /// An HTTPS URL for receiving a webhook when the training completes. The webhook will be a POST request where the request body is the same as the response body of the [get training](#trainings.get) operation. If there are network problems, we will retry the webhook a few times, so make sure it can be safely called more than once. Replicate will not follow redirects when sending webhook requests to your service, so be sure to specify a URL that will resolve without redirecting.

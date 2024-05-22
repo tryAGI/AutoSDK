@@ -19,7 +19,7 @@ namespace G
         /// <br/>Default Value: 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("properties")]
-        public ChatCompletionFunctionParametersProperties? Properties { get; set; }
+        public object? Properties { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

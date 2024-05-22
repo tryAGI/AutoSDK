@@ -52,7 +52,7 @@ namespace G
             global::System.Collections.Generic.IList<string?>? fileIds = default,
             string? name = default,
             VectorStoreExpirationAfter? expiresAfter = default,
-            CreateVectorStoreRequestMetadata? metadata = default,
+            object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateVectorStoreRequest

@@ -51,7 +51,7 @@ namespace G
         public async global::System.Threading.Tasks.Task CreatePredictionsDeploymentsAsync(
             string deploymentOwner,
             string deploymentName,
-            PredictionRequestInput input,
+            object input,
             bool stream = default,
             string? webhook = default,
             global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>? webhookEventsFilter = default,

@@ -13,7 +13,7 @@ namespace G
         /// The details of the run step.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("step_details")]
-        public RunStepDeltaObjectDeltaStepDetails? StepDetails { get; set; }
+        public object? StepDetails { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

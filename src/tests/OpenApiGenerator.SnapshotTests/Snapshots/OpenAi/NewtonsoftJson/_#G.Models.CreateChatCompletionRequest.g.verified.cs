@@ -36,7 +36,7 @@ namespace G
         /// <br/>Default Value: 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("logit_bias")]
-        public CreateChatCompletionRequestLogitBias? LogitBias { get; set; }
+        public object? LogitBias { get; set; }
 
         /// <summary>
         /// Whether to return log probabilities of the output tokens or not. If true, returns the log probabilities of each output token returned in the `content` of `message`.

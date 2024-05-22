@@ -54,7 +54,7 @@ namespace G
             string vectorStoreId,
             string? name = default,
             VectorStoreExpirationAfter? expiresAfter = default,
-            UpdateVectorStoreRequestMetadata? metadata = default,
+            object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new UpdateVectorStoreRequest

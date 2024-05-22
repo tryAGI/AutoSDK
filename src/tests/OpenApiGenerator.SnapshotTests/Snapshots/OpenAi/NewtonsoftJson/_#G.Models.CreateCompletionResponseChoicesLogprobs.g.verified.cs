@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("top_logprobs")]
-        public global::System.Collections.Generic.IList<CreateCompletionResponseChoicesLogprobsTopLogprobs?>? TopLogprobs { get; set; }
+        public global::System.Collections.Generic.IList<object?>? TopLogprobs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

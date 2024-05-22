@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("events")]
-        public global::System.Collections.Generic.IList<RunUpdateSchemaExtendedEvents?>? Events { get; set; }
+        public global::System.Collections.Generic.IList<object?>? Events { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -2774,7 +2774,7 @@ Description of the gist
         Id: files,
         Name: Files,
         Type: {
-          CSharpType: TestFiles,
+          CSharpType: object,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -3049,13 +3049,14 @@ The description of the gist.
         Id: files,
         Name: Files,
         Type: {
-          CSharpType: TestFiles?,
+          CSharpType: object?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
           EnumValues: null
         },
         IsRequired: false,
+        DefaultValue: ,
         Summary:
 The gist files to be updated, renamed, or deleted. Each `key` must match the current filename
 (including extension) of the targeted gist file. For example: `hello.py`.
@@ -19666,13 +19667,14 @@ The default value for a merge commit message.
         Id: custom_properties,
         Name: CustomProperties,
         Type: {
-          CSharpType: TestCustomProperties?,
+          CSharpType: object?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
           EnumValues: null
         },
         IsRequired: false,
+        DefaultValue: ,
         Summary: The custom properties for the new repository. The keys are the custom property names, and the values are the corresponding custom property values.,
         ParameterName: customProperties,
         ArgumentName: customProperties
@@ -32583,13 +32585,14 @@ Whether to enable debug logging for the re-run.
         Id: inputs,
         Name: Inputs,
         Type: {
-          CSharpType: TestInputs?,
+          CSharpType: object?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
           EnumValues: null
         },
         IsRequired: false,
+        DefaultValue: ,
         Summary: Input keys and values configured in the workflow file. The maximum number of properties is 10. Any default properties configured in the workflow file will be used when `inputs` are omitted.,
         ParameterName: inputs,
         ArgumentName: inputs
@@ -45471,13 +45474,14 @@ The repository branch that triggered this snapshot.
         Id: manifests,
         Name: Manifests,
         Type: {
-          CSharpType: SnapshotManifests?,
+          CSharpType: object?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
           EnumValues: null
         },
         IsRequired: false,
+        DefaultValue: ,
         Summary: A collection of package manifests, which are a collection of related dependencies declared in a file or representing a logical group of dependencies.,
         ParameterName: manifests,
         ArgumentName: manifests
@@ -46506,13 +46510,14 @@ Sets the URL for accessing your environment. Default: `""`
         Id: client_payload,
         Name: ClientPayload,
         Type: {
-          CSharpType: TestClientPayload?,
+          CSharpType: object?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
           EnumValues: null
         },
         IsRequired: false,
+        DefaultValue: ,
         Summary: JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10.,
         ParameterName: clientPayload,
         ArgumentName: clientPayload

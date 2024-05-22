@@ -50,7 +50,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<ThreadObject> CreateThreadAsync(
             global::System.Collections.Generic.IList<CreateMessageRequest>? messages = default,
             CreateThreadRequestToolResources? toolResources = default,
-            CreateThreadRequestMetadata? metadata = default,
+            object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateThreadRequest

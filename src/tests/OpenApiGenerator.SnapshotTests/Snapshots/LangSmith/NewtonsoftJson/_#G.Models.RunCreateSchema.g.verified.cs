@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs")]
-        public RunCreateSchemaInputs? Inputs { get; set; }
+        public object? Inputs { get; set; }
 
         /// <summary>
         /// Enum for run types.
@@ -43,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extra")]
-        public RunCreateSchemaExtra? Extra { get; set; }
+        public object? Extra { get; set; }
 
         /// <summary>
         /// 
@@ -61,13 +61,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("serialized")]
-        public RunCreateSchemaSerialized? Serialized { get; set; }
+        public object? Serialized { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs")]
-        public RunCreateSchemaOutputs? Outputs { get; set; }
+        public object? Outputs { get; set; }
 
         /// <summary>
         /// 
@@ -85,7 +85,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("events")]
-        public global::System.Collections.Generic.IList<RunCreateSchemaEvents?>? Events { get; set; }
+        public global::System.Collections.Generic.IList<object?>? Events { get; set; }
 
         /// <summary>
         /// 

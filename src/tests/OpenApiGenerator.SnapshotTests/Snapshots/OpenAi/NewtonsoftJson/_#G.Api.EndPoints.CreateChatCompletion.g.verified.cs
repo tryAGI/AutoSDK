@@ -69,7 +69,7 @@ namespace G
             global::System.Collections.Generic.IList<ChatCompletionRequestMessage> messages,
             object model,
             double? frequencyPenalty = default,
-            CreateChatCompletionRequestLogitBias? logitBias = default,
+            object? logitBias = default,
             bool? logprobs = default,
             int? topLogprobs = default,
             int? maxTokens = default,

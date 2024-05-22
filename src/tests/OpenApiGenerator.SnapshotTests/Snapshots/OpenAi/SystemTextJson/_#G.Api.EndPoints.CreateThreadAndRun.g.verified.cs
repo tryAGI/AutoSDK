@@ -66,7 +66,7 @@ namespace G
             string? instructions = default,
             global::System.Collections.Generic.IList<object?>? tools = default,
             CreateThreadAndRunRequestToolResources? toolResources = default,
-            CreateThreadAndRunRequestMetadata? metadata = default,
+            object? metadata = default,
             double? temperature = default,
             double? topP = default,
             bool? stream = default,

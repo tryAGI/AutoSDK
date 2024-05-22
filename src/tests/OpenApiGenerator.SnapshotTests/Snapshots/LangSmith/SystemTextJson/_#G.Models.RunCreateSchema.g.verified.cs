@@ -20,7 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
-        public RunCreateSchemaInputs? Inputs { get; set; }
+        public object? Inputs { get; set; }
 
         /// <summary>
         /// Enum for run types.
@@ -45,7 +45,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extra")]
-        public RunCreateSchemaExtra? Extra { get; set; }
+        public object? Extra { get; set; }
 
         /// <summary>
         /// 
@@ -63,13 +63,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("serialized")]
-        public RunCreateSchemaSerialized? Serialized { get; set; }
+        public object? Serialized { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
-        public RunCreateSchemaOutputs? Outputs { get; set; }
+        public object? Outputs { get; set; }
 
         /// <summary>
         /// 
@@ -87,7 +87,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("events")]
-        public global::System.Collections.Generic.IList<RunCreateSchemaEvents?>? Events { get; set; }
+        public global::System.Collections.Generic.IList<object?>? Events { get; set; }
 
         /// <summary>
         /// 

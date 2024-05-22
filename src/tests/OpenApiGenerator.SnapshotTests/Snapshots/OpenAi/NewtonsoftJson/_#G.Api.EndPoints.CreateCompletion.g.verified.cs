@@ -68,7 +68,7 @@ namespace G
             int? bestOf = default,
             bool? echo = default,
             double? frequencyPenalty = default,
-            CreateCompletionRequestLogitBias? logitBias = default,
+            object? logitBias = default,
             int? logprobs = default,
             int? maxTokens = default,
             int? n = default,

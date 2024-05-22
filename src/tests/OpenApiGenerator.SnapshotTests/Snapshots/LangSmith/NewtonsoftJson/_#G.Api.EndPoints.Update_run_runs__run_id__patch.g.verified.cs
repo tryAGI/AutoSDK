@@ -52,7 +52,7 @@ namespace G
             string? error = default,
             object? inputs = default,
             object? outputs = default,
-            global::System.Collections.Generic.IList<RunUpdateSchemaExtendedEvents?>? events = default,
+            global::System.Collections.Generic.IList<object?>? events = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new RunUpdateSchemaExtended

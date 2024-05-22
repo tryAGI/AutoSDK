@@ -11,7 +11,7 @@
         Id: input,
         Name: Input,
         Type: {
-          CSharpType: PredictionRequestInput,
+          CSharpType: object,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -120,38 +120,6 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     FileNameWithoutExtension: G.Models.PredictionRequest
   },
   {
-    Id: input,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    GenerateSuperTypeForJsonSerializerContext: false,
-    Properties: null,
-    Summary:
-The model's input as a JSON object. The input schema depends on what model you are running. To see the available inputs, click the "API" tab on the model you are running or [get the model version](#models.versions.get) and look at its `openapi_schema` property. For example, [stability-ai/sdxl](https://replicate.com/stability-ai/sdxl) takes `prompt` as an input.
-
-Files should be passed as HTTP URLs or data URLs.
-
-Use an HTTP URL when:
-
-- you have a large file &gt; 256kb
-- you want to be able to use the file multiple times
-- you want your prediction metadata to be associable with your input files
-
-Use a data URL when:
-
-- you have a small file &lt;= 256kb
-- you don't want to upload and host the file somewhere
-- you don't need to use the file again (Replicate will not store it)
-,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: Input,
-    ClassName: Input,
-    ExternalClassName: Input,
-    FileNameWithoutExtension: G.Models.Input
-  },
-  {
     Id: webhook_events_filter,
     AddTypeName: false,
     Parents: null,
@@ -258,7 +226,7 @@ A string representing the desired model to push to in the format `{destination_m
         Id: input,
         Name: Input,
         Type: {
-          CSharpType: TrainingRequestInput,
+          CSharpType: object,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -331,24 +299,6 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     ClassName: TrainingRequest,
     ExternalClassName: TrainingRequest,
     FileNameWithoutExtension: G.Models.TrainingRequest
-  },
-  {
-    Id: input,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    GenerateSuperTypeForJsonSerializerContext: false,
-    Properties: null,
-    Summary:
-An object containing inputs to the Cog model's `train()` function.
-,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: Input,
-    ClassName: Input,
-    ExternalClassName: Input,
-    FileNameWithoutExtension: G.Models.Input
   },
   {
     Id: webhook_events_filter,
@@ -440,7 +390,7 @@ An object containing inputs to the Cog model's `train()` function.
         Id: input,
         Name: Input,
         Type: {
-          CSharpType: VersionPredictionRequestInput,
+          CSharpType: object,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -563,38 +513,6 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     ClassName: VersionPredictionRequest,
     ExternalClassName: VersionPredictionRequest,
     FileNameWithoutExtension: G.Models.VersionPredictionRequest
-  },
-  {
-    Id: input,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    GenerateSuperTypeForJsonSerializerContext: false,
-    Properties: null,
-    Summary:
-The model's input as a JSON object. The input schema depends on what model you are running. To see the available inputs, click the "API" tab on the model you are running or [get the model version](#models.versions.get) and look at its `openapi_schema` property. For example, [stability-ai/sdxl](https://replicate.com/stability-ai/sdxl) takes `prompt` as an input.
-
-Files should be passed as HTTP URLs or data URLs.
-
-Use an HTTP URL when:
-
-- you have a large file &gt; 256kb
-- you want to be able to use the file multiple times
-- you want your prediction metadata to be associable with your input files
-
-Use a data URL when:
-
-- you have a small file &lt;= 256kb
-- you don't want to upload and host the file somewhere
-- you don't need to use the file again (Replicate will not store it)
-,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: Input,
-    ClassName: Input,
-    ExternalClassName: Input,
-    FileNameWithoutExtension: G.Models.Input
   },
   {
     Id: webhook_events_filter,

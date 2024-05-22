@@ -56,7 +56,7 @@ namespace G
             string role,
             object content,
             global::System.Collections.Generic.IList<CreateMessageRequestAttachments?>? attachments = default,
-            CreateMessageRequestMetadata? metadata = default,
+            object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateMessageRequest

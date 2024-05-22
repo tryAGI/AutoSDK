@@ -51,7 +51,7 @@ namespace G
         public async global::System.Threading.Tasks.Task CreatePredictionsModelsAsync(
             string modelOwner,
             string modelName,
-            PredictionRequestInput input,
+            object input,
             bool stream = default,
             string? webhook = default,
             global::System.Collections.Generic.IList<string?>? webhookEventsFilter = default,

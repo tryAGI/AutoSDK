@@ -67,6 +67,9 @@ public readonly record struct TypeData(
         {
             ("object", _) or (null, _) when schema.Value.Reference != null =>
                 ($"{ModelData.FromKey(schema.Value.Reference.Id, settings).ClassName}", true),
+            ("object", _) when schema.Value.Reference == null &&
+                               model.Properties.IsEmpty =>
+                ("object", true),
             ("object", _) when schema.Value.Reference == null =>
                 ($"{model.ExternalClassName}", true),
 

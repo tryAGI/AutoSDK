@@ -52,7 +52,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<ThreadObject> ModifyThreadAsync(
             string threadId,
             ModifyThreadRequestToolResources? toolResources = default,
-            ModifyThreadRequestMetadata? metadata = default,
+            object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new ModifyThreadRequest

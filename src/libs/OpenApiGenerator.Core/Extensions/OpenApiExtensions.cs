@@ -138,7 +138,13 @@ public static class OpenApiExtensions
     public static bool IsObjectWithoutReference(
         this OpenApiSchema schema)
     {
-        return schema is { Type: "object", Reference: null };
+        return schema is { Type: "object", Reference: null } &&
+            (schema.Properties.Any() ||
+             schema.AllOf.Any() ||
+             schema.AnyOf.Any() ||
+             schema.OneOf.Any() ||
+             schema.Items != null ||
+             schema.Enum.Any());
     }
 
     public static bool IsEnum(

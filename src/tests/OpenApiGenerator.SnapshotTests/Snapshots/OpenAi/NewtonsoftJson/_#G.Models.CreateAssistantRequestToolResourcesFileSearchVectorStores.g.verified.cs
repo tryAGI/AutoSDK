@@ -19,7 +19,7 @@ namespace G
         /// Set of 16 key-value pairs that can be attached to a vector store. This can be useful for storing additional information about the vector store in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public CreateAssistantRequestToolResourcesFileSearchVectorStoresMetadata? Metadata { get; set; }
+        public object? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

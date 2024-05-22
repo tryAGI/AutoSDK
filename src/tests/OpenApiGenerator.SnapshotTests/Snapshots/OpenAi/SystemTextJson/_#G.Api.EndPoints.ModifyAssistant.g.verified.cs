@@ -65,7 +65,7 @@ namespace G
             string? instructions = default,
             global::System.Collections.Generic.IList<object?>? tools = default,
             ModifyAssistantRequestToolResources? toolResources = default,
-            ModifyAssistantRequestMetadata? metadata = default,
+            object? metadata = default,
             double? temperature = default,
             double? topP = default,
             AssistantsApiResponseFormatOption? responseFormat = default,

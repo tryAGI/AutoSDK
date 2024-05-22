@@ -54,7 +54,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<MessageObject> ModifyMessageAsync(
             string threadId,
             string messageId,
-            ModifyMessageRequestMetadata? metadata = default,
+            object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new ModifyMessageRequest

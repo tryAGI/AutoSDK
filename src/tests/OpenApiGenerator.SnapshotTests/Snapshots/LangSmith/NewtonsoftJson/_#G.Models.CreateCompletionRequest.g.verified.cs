@@ -97,7 +97,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("logit_bias")]
-        public CreateCompletionRequestLogitBias? LogitBias { get; set; }
+        public object? LogitBias { get; set; }
 
         /// <summary>
         /// 

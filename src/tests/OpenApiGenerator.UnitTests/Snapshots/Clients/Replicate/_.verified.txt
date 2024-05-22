@@ -468,7 +468,7 @@
         Id: input,
         Name: Input,
         Type: {
-          CSharpType: PredictionRequestInput,
+          CSharpType: object,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -929,7 +929,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Id: input,
         Name: Input,
         Type: {
-          CSharpType: PredictionRequestInput,
+          CSharpType: object,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -1321,7 +1321,7 @@ A string representing the desired model to push to in the format `{destination_m
         Id: input,
         Name: Input,
         Type: {
-          CSharpType: TrainingRequestInput,
+          CSharpType: object,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -1426,7 +1426,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Id: input,
         Name: Input,
         Type: {
-          CSharpType: VersionPredictionRequestInput,
+          CSharpType: object,
           IsArray: false,
           IsEnum: false,
           Properties: null,

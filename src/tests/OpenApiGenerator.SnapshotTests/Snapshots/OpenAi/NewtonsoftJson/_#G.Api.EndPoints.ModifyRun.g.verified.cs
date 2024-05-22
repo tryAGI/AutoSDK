@@ -54,7 +54,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<RunObject> ModifyRunAsync(
             string threadId,
             string runId,
-            ModifyRunRequestMetadata? metadata = default,
+            object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new ModifyRunRequest

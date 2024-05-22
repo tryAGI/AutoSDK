@@ -25,7 +25,7 @@ namespace G
         /// <br/>Default Value: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("top_logprobs")]
-        public global::System.Collections.Generic.IList<LogprobsTopLogprobs?>? TopLogprobs { get; set; }
+        public global::System.Collections.Generic.IList<object?>? TopLogprobs { get; set; }
 
         /// <summary>
         /// <br/>Default Value: []

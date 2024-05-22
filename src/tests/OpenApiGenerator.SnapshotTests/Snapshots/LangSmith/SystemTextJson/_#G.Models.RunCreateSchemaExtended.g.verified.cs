@@ -45,7 +45,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extra")]
-        public RunCreateSchemaExtendedExtra? Extra { get; set; }
+        public object? Extra { get; set; }
 
         /// <summary>
         /// 
@@ -63,7 +63,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("serialized")]
-        public RunCreateSchemaExtendedSerialized? Serialized { get; set; }
+        public object? Serialized { get; set; }
 
         /// <summary>
         /// 
@@ -87,7 +87,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("events")]
-        public global::System.Collections.Generic.IList<RunCreateSchemaExtendedEvents?>? Events { get; set; }
+        public global::System.Collections.Generic.IList<object?>? Events { get; set; }
 
         /// <summary>
         /// 
