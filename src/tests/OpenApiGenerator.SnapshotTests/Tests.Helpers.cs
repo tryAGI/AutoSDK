@@ -21,9 +21,9 @@ public partial class Tests : VerifyBase
         where T : IIncrementalGenerator, new()
     {
         globalOptions ??= new Dictionary<string, string>();
-        globalOptions.Add("build_property.OpenApiGenerator_Namespace", "G");
-        globalOptions.Add("build_property.OpenApiGenerator_JsonSerializerType", $"{jsonSerializerType:G}");
-        globalOptions.Add("build_property.TargetFramework", jsonSerializerType switch
+        globalOptions.TryAdd("build_property.OpenApiGenerator_Namespace", "G");
+        globalOptions.TryAdd("build_property.OpenApiGenerator_JsonSerializerType", $"{jsonSerializerType:G}");
+        globalOptions.TryAdd("build_property.TargetFramework", jsonSerializerType switch
         {
             JsonSerializerType.SystemTextJson => "net8.0",
             JsonSerializerType.NewtonsoftJson => "net6.0",

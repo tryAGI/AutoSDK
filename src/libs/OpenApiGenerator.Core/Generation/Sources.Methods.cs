@@ -1,3 +1,4 @@
+using Microsoft.OpenApi.Models;
 using OpenApiGenerator.Core.Extensions;
 using OpenApiGenerator.Core.Json;
 using OpenApiGenerator.Core.Models;
@@ -68,6 +69,20 @@ namespace {endPoint.Namespace}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
 
+    public static string GetHttpMethod(string targetFramework, OperationType operationType)
+    {
+        targetFramework = targetFramework ?? throw new ArgumentNullException(nameof(targetFramework));
+        
+        if (operationType == OperationType.Patch &&
+            (targetFramework.StartsWith("net4", StringComparison.OrdinalIgnoreCase) ||
+            targetFramework.StartsWith("netstandard", StringComparison.OrdinalIgnoreCase)))
+        {
+            return "new global::System.Net.Http.HttpMethod(\"PATCH\")";
+        }
+        
+        return $"global::System.Net.Http.HttpMethod.{operationType:G}";
+    }
+    
     public static string GenerateMethod(
         EndPoint endPoint)
     {
@@ -117,7 +132,7 @@ namespace {endPoint.Namespace}
                 _ => throw new global::System.NotImplementedException(""Enum value not implemented.""),
             }};").Inject() : " ")}
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.{endPoint.HttpMethod:G},
+                method: {GetHttpMethod(endPoint.TargetFramework, endPoint.HttpMethod)},
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + {endPoint.Path}, global::System.UriKind.RelativeOrAbsolute));
 {(string.IsNullOrWhiteSpace(endPoint.RequestType) ? " " : $@" 
             httpRequest.Content = new global::System.Net.Http.StringContent(
