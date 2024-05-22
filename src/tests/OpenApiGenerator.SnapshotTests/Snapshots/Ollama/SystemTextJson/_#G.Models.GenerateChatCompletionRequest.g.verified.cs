@@ -41,10 +41,10 @@ namespace G
 
         /// <summary>
         /// If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
-        /// <br/>Default Value: false
+        /// <br/>Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream")]
-        public bool Stream { get; set; } = false;
+        public bool Stream { get; set; } = true;
 
         /// <summary>
         /// How long (in minutes) to keep the model loaded in memory.

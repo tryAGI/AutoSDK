@@ -83,4 +83,8 @@ public readonly record struct PropertyData(
             return ParameterName;
         }
     }
+    
+    public string ParameterDefaultValue => DefaultValue == null || string.IsNullOrWhiteSpace(DefaultValue)
+        ? "default"
+        : DefaultValue;
 }

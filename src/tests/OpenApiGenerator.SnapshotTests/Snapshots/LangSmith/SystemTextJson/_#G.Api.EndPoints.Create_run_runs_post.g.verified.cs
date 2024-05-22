@@ -65,7 +65,7 @@ namespace G
             global::System.DateTime endTime = default,
             object? extra = default,
             string? error = default,
-            int executionOrder = default,
+            int executionOrder = 1,
             object? serialized = default,
             object? outputs = default,
             string? parentRunId = default,

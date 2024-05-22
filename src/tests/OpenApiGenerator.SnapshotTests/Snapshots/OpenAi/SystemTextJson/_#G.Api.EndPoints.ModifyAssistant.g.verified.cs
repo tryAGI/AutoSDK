@@ -66,8 +66,8 @@ namespace G
             global::System.Collections.Generic.IList<object?>? tools = default,
             ModifyAssistantRequestToolResources? toolResources = default,
             object? metadata = default,
-            double? temperature = default,
-            double? topP = default,
+            double? temperature = 1,
+            double? topP = 1,
             AssistantsApiResponseFormatOption? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -36,7 +36,8 @@ Use a data URL when:
 - you don't need to use the file again (Replicate will not store it)
 ,
         ParameterName: input,
-        ArgumentName: input
+        ArgumentName: input,
+        ParameterDefaultValue: default
       },
       {
         Id: stream,
@@ -55,7 +56,8 @@ Request a URL to receive streaming output using [server-sent events (SSE)](https
 If the requested model version supports streaming, the returned prediction will have a `stream` entry in its `urls` property with an HTTPS URL that you can use to construct an [`EventSource`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource).
 ,
         ParameterName: stream,
-        ArgumentName: stream
+        ArgumentName: stream,
+        ParameterDefaultValue: default
       },
       {
         Id: webhook,
@@ -72,7 +74,8 @@ If the requested model version supports streaming, the returned prediction will 
 An HTTPS URL for receiving a webhook when the prediction has new output. The webhook will be a POST request where the request body is the same as the response body of the [get prediction](#predictions.get) operation. If there are network problems, we will retry the webhook a few times, so make sure it can be safely called more than once. Replicate will not follow redirects when sending webhook requests to your service, so be sure to specify a URL that will resolve without redirecting.
 ,
         ParameterName: webhook,
-        ArgumentName: webhook
+        ArgumentName: webhook,
+        ParameterDefaultValue: default
       },
       {
         Id: webhook_events_filter,
@@ -108,7 +111,8 @@ For example, if you only wanted requests to be sent at the start and end of the 
 Requests for event types `output` and `logs` will be sent at most once every 500ms. If you request `start` and `completed` webhooks, then they'll always be sent regardless of throttling.
 ,
         ParameterName: webhookEventsFilter,
-        ArgumentName: webhookEventsFilter
+        ArgumentName: webhookEventsFilter,
+        ParameterDefaultValue: default
       }
     ],
     Summary: ,
@@ -141,7 +145,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         IsRequired: false,
         Summary: ,
         ParameterName: start,
-        ArgumentName: start
+        ArgumentName: start,
+        ParameterDefaultValue: default
       },
       {
         Id: output,
@@ -156,7 +161,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         IsRequired: false,
         Summary: ,
         ParameterName: output,
-        ArgumentName: output
+        ArgumentName: output,
+        ParameterDefaultValue: default
       },
       {
         Id: logs,
@@ -171,7 +177,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         IsRequired: false,
         Summary: ,
         ParameterName: logs,
-        ArgumentName: logs
+        ArgumentName: logs,
+        ParameterDefaultValue: default
       },
       {
         Id: completed,
@@ -186,7 +193,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         IsRequired: false,
         Summary: ,
         ParameterName: completed,
-        ArgumentName: completed
+        ArgumentName: completed,
+        ParameterDefaultValue: default
       }
     ],
     Summary: ,
@@ -220,7 +228,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
 A string representing the desired model to push to in the format `{destination_model_owner}/{destination_model_name}`. This should be an existing model owned by the user or organization making the API request. If the destination is invalid, the server will return an appropriate 4XX response.
 ,
         ParameterName: destination,
-        ArgumentName: destination
+        ArgumentName: destination,
+        ParameterDefaultValue: default
       },
       {
         Id: input,
@@ -237,7 +246,8 @@ A string representing the desired model to push to in the format `{destination_m
 An object containing inputs to the Cog model's `train()` function.
 ,
         ParameterName: input,
-        ArgumentName: input
+        ArgumentName: input,
+        ParameterDefaultValue: default
       },
       {
         Id: webhook,
@@ -252,7 +262,8 @@ An object containing inputs to the Cog model's `train()` function.
         IsRequired: false,
         Summary: An HTTPS URL for receiving a webhook when the training completes. The webhook will be a POST request where the request body is the same as the response body of the [get training](#trainings.get) operation. If there are network problems, we will retry the webhook a few times, so make sure it can be safely called more than once. Replicate will not follow redirects when sending webhook requests to your service, so be sure to specify a URL that will resolve without redirecting.,
         ParameterName: webhook,
-        ArgumentName: webhook
+        ArgumentName: webhook,
+        ParameterDefaultValue: default
       },
       {
         Id: webhook_events_filter,
@@ -289,7 +300,8 @@ For example, if you only wanted requests to be sent at the start and end of the 
 Requests for event types `output` and `logs` will be sent at most once every 500ms. If you request `start` and `completed` webhooks, then they'll always be sent regardless of throttling.
 ,
         ParameterName: webhookEventsFilter,
-        ArgumentName: webhookEventsFilter
+        ArgumentName: webhookEventsFilter,
+        ParameterDefaultValue: default
       }
     ],
     Summary: ,
@@ -322,7 +334,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         IsRequired: false,
         Summary: ,
         ParameterName: start,
-        ArgumentName: start
+        ArgumentName: start,
+        ParameterDefaultValue: default
       },
       {
         Id: output,
@@ -337,7 +350,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         IsRequired: false,
         Summary: ,
         ParameterName: output,
-        ArgumentName: output
+        ArgumentName: output,
+        ParameterDefaultValue: default
       },
       {
         Id: logs,
@@ -352,7 +366,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         IsRequired: false,
         Summary: ,
         ParameterName: logs,
-        ArgumentName: logs
+        ArgumentName: logs,
+        ParameterDefaultValue: default
       },
       {
         Id: completed,
@@ -367,7 +382,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         IsRequired: false,
         Summary: ,
         ParameterName: completed,
-        ArgumentName: completed
+        ArgumentName: completed,
+        ParameterDefaultValue: default
       }
     ],
     Summary: ,
@@ -415,7 +431,8 @@ Use a data URL when:
 - you don't need to use the file again (Replicate will not store it)
 ,
         ParameterName: input,
-        ArgumentName: input
+        ArgumentName: input,
+        ParameterDefaultValue: default
       },
       {
         Id: stream,
@@ -434,7 +451,8 @@ Request a URL to receive streaming output using [server-sent events (SSE)](https
 If the requested model version supports streaming, the returned prediction will have a `stream` entry in its `urls` property with an HTTPS URL that you can use to construct an [`EventSource`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource).
 ,
         ParameterName: stream,
-        ArgumentName: stream
+        ArgumentName: stream,
+        ParameterDefaultValue: default
       },
       {
         Id: version,
@@ -449,7 +467,8 @@ If the requested model version supports streaming, the returned prediction will 
         IsRequired: true,
         Summary: The ID of the model version that you want to run.,
         ParameterName: version,
-        ArgumentName: version
+        ArgumentName: version,
+        ParameterDefaultValue: default
       },
       {
         Id: webhook,
@@ -466,7 +485,8 @@ If the requested model version supports streaming, the returned prediction will 
 An HTTPS URL for receiving a webhook when the prediction has new output. The webhook will be a POST request where the request body is the same as the response body of the [get prediction](#predictions.get) operation. If there are network problems, we will retry the webhook a few times, so make sure it can be safely called more than once. Replicate will not follow redirects when sending webhook requests to your service, so be sure to specify a URL that will resolve without redirecting.
 ,
         ParameterName: webhook,
-        ArgumentName: webhook
+        ArgumentName: webhook,
+        ParameterDefaultValue: default
       },
       {
         Id: webhook_events_filter,
@@ -503,7 +523,8 @@ For example, if you only wanted requests to be sent at the start and end of the 
 Requests for event types `output` and `logs` will be sent at most once every 500ms. If you request `start` and `completed` webhooks, then they'll always be sent regardless of throttling.
 ,
         ParameterName: webhookEventsFilter,
-        ArgumentName: webhookEventsFilter
+        ArgumentName: webhookEventsFilter,
+        ParameterDefaultValue: default
       }
     ],
     Summary: ,
@@ -536,7 +557,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         IsRequired: false,
         Summary: ,
         ParameterName: start,
-        ArgumentName: start
+        ArgumentName: start,
+        ParameterDefaultValue: default
       },
       {
         Id: output,
@@ -551,7 +573,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         IsRequired: false,
         Summary: ,
         ParameterName: output,
-        ArgumentName: output
+        ArgumentName: output,
+        ParameterDefaultValue: default
       },
       {
         Id: logs,
@@ -566,7 +589,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         IsRequired: false,
         Summary: ,
         ParameterName: logs,
-        ArgumentName: logs
+        ArgumentName: logs,
+        ParameterDefaultValue: default
       },
       {
         Id: completed,
@@ -581,7 +605,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         IsRequired: false,
         Summary: ,
         ParameterName: completed,
-        ArgumentName: completed
+        ArgumentName: completed,
+        ParameterDefaultValue: default
       }
     ],
     Summary: ,

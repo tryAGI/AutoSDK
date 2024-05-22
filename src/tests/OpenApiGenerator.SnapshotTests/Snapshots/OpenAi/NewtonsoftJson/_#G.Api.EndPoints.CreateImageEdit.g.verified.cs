@@ -57,9 +57,9 @@ namespace G
             string prompt,
             byte[]? mask = default,
             object? model = default,
-            int? n = default,
-            CreateImageEditRequestSize? size = default,
-            CreateImageEditRequestResponseFormat? responseFormat = default,
+            int? n = 1,
+            CreateImageEditRequestSize? size = CreateImageEditRequestSize._1024x1024,
+            CreateImageEditRequestResponseFormat? responseFormat = CreateImageEditRequestResponseFormat.Url,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

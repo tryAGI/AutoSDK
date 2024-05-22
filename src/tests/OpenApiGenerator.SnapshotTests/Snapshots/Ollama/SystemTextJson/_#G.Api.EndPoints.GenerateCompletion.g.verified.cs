@@ -71,7 +71,7 @@ namespace G
             RequestOptions? options = default,
             string? format = default,
             bool raw = default,
-            bool stream = default,
+            bool stream = true,
             int keepAlive = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {

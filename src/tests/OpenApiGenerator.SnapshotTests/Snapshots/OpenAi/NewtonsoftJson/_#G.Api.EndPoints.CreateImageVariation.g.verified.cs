@@ -53,9 +53,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<ImagesResponse> CreateImageVariationAsync(
             byte[] image,
             object? model = default,
-            int? n = default,
-            CreateImageVariationRequestResponseFormat? responseFormat = default,
-            CreateImageVariationRequestSize? size = default,
+            int? n = 1,
+            CreateImageVariationRequestResponseFormat? responseFormat = CreateImageVariationRequestResponseFormat.Url,
+            CreateImageVariationRequestSize? size = CreateImageVariationRequestSize._1024x1024,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -243,7 +243,7 @@ components:
           type: boolean
           description: &stream |
             If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
-          default: false
+          default: true
         keep_alive:
           type: integer
           description: &keep_alive |
@@ -486,7 +486,7 @@ components:
         stream:
           type: boolean
           description: *stream
-          default: false
+          default: true
         keep_alive:
           type: integer
           description: *keep_alive
@@ -601,7 +601,7 @@ components:
         stream:
           type: boolean
           description: *stream
-          default: false
+          default: true
       required:
         - name
         - modelfile
@@ -717,7 +717,7 @@ components:
         stream:
           type: boolean
           description: *stream
-          default: false
+          default: true
       required:
         - name
     PullModelResponse:
@@ -772,7 +772,7 @@ components:
         stream:
           type: boolean
           description: *stream
-          default: false
+          default: true
       required:
         - name
     PushModelResponse:

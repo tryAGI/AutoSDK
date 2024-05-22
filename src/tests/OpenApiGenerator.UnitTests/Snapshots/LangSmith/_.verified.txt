@@ -20,7 +20,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: endTime,
-        ArgumentName: endTime
+        ArgumentName: endTime,
+        ParameterDefaultValue: default
       },
       {
         Id: error,
@@ -35,7 +36,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: error,
-        ArgumentName: error
+        ArgumentName: error,
+        ParameterDefaultValue: default
       },
       {
         Id: inputs,
@@ -51,7 +53,8 @@
         DefaultValue: ,
         Summary: ,
         ParameterName: inputs,
-        ArgumentName: inputs
+        ArgumentName: inputs,
+        ParameterDefaultValue: default
       },
       {
         Id: outputs,
@@ -67,7 +70,8 @@
         DefaultValue: ,
         Summary: ,
         ParameterName: outputs,
-        ArgumentName: outputs
+        ArgumentName: outputs,
+        ParameterDefaultValue: default
       },
       {
         Id: events,
@@ -82,7 +86,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: events,
-        ArgumentName: events
+        ArgumentName: events,
+        ParameterDefaultValue: default
       }
     ],
     Summary: ,
@@ -116,7 +121,8 @@
         Summary:
 <br/>Default Value: ,
         ParameterName: model,
-        ArgumentName: model
+        ArgumentName: model,
+        ParameterDefaultValue: ""
       },
       {
         Id: messages,
@@ -133,7 +139,8 @@
         Summary:
 <br/>Default Value: [],
         ParameterName: messages,
-        ArgumentName: messages
+        ArgumentName: messages,
+        ParameterDefaultValue: default
       },
       {
         Id: functions,
@@ -150,7 +157,8 @@
         Summary:
 <br/>Default Value: [],
         ParameterName: functions,
-        ArgumentName: functions
+        ArgumentName: functions,
+        ParameterDefaultValue: default
       },
       {
         Id: temperature,
@@ -165,7 +173,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: temperature,
-        ArgumentName: temperature
+        ArgumentName: temperature,
+        ParameterDefaultValue: default
       },
       {
         Id: top_p,
@@ -180,7 +189,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: topP,
-        ArgumentName: topP
+        ArgumentName: topP,
+        ParameterDefaultValue: default
       },
       {
         Id: n,
@@ -195,7 +205,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: n,
-        ArgumentName: n
+        ArgumentName: n,
+        ParameterDefaultValue: default
       },
       {
         Id: stream,
@@ -210,7 +221,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: stream,
-        ArgumentName: stream
+        ArgumentName: stream,
+        ParameterDefaultValue: default
       },
       {
         Id: stop,
@@ -226,7 +238,8 @@
         DefaultValue: ,
         Summary: ,
         ParameterName: stop,
-        ArgumentName: stop
+        ArgumentName: stop,
+        ParameterDefaultValue: default
       },
       {
         Id: max_tokens,
@@ -241,7 +254,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: maxTokens,
-        ArgumentName: maxTokens
+        ArgumentName: maxTokens,
+        ParameterDefaultValue: default
       },
       {
         Id: presence_penalty,
@@ -256,7 +270,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: presencePenalty,
-        ArgumentName: presencePenalty
+        ArgumentName: presencePenalty,
+        ParameterDefaultValue: default
       },
       {
         Id: frequency_penalty,
@@ -271,7 +286,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: frequencyPenalty,
-        ArgumentName: frequencyPenalty
+        ArgumentName: frequencyPenalty,
+        ParameterDefaultValue: default
       },
       {
         Id: logit_bias,
@@ -287,7 +303,8 @@
         DefaultValue: ,
         Summary: ,
         ParameterName: logitBias,
-        ArgumentName: logitBias
+        ArgumentName: logitBias,
+        ParameterDefaultValue: default
       }
     ],
     Summary: ,
@@ -321,7 +338,8 @@
         Summary:
 <br/>Default Value: ,
         ParameterName: role,
-        ArgumentName: role
+        ArgumentName: role,
+        ParameterDefaultValue: ""
       },
       {
         Id: content,
@@ -336,7 +354,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: content,
-        ArgumentName: content
+        ArgumentName: content,
+        ParameterDefaultValue: default
       },
       {
         Id: name,
@@ -351,7 +370,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: name,
-        ArgumentName: name
+        ArgumentName: name,
+        ParameterDefaultValue: default
       },
       {
         Id: function_call,
@@ -369,7 +389,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: functionCall,
-        ArgumentName: functionCall
+        ArgumentName: functionCall,
+        ParameterDefaultValue: default
       }
     ],
     Summary: ,
@@ -403,7 +424,8 @@
         Summary:
 <br/>Default Value: ,
         ParameterName: name,
-        ArgumentName: name
+        ArgumentName: name,
+        ParameterDefaultValue: ""
       },
       {
         Id: arguments,
@@ -420,7 +442,8 @@
         Summary:
 <br/>Default Value: ,
         ParameterName: arguments,
-        ArgumentName: arguments
+        ArgumentName: arguments,
+        ParameterDefaultValue: ""
       }
     ],
     Summary: ,
@@ -454,7 +477,8 @@
         Summary:
 <br/>Default Value: ,
         ParameterName: name,
-        ArgumentName: name
+        ArgumentName: name,
+        ParameterDefaultValue: ""
       },
       {
         Id: description,
@@ -471,7 +495,8 @@
         Summary:
 <br/>Default Value: ,
         ParameterName: description,
-        ArgumentName: description
+        ArgumentName: description,
+        ParameterDefaultValue: ""
       },
       {
         Id: parameters,
@@ -489,7 +514,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: parameters,
-        ArgumentName: parameters
+        ArgumentName: parameters,
+        ParameterDefaultValue: default
       }
     ],
     Summary: ,
@@ -523,7 +549,8 @@
         Summary:
 <br/>Default Value: ,
         ParameterName: type,
-        ArgumentName: type
+        ArgumentName: type,
+        ParameterDefaultValue: ""
       },
       {
         Id: properties,
@@ -540,7 +567,8 @@
         Summary:
 <br/>Default Value: ,
         ParameterName: properties,
-        ArgumentName: properties
+        ArgumentName: properties,
+        ParameterDefaultValue: default
       }
     ],
     Summary: ,
@@ -572,7 +600,8 @@
         IsRequired: true,
         Summary: ,
         ParameterName: model,
-        ArgumentName: model
+        ArgumentName: model,
+        ParameterDefaultValue: default
       },
       {
         Id: prompt,
@@ -587,7 +616,8 @@
         IsRequired: true,
         Summary: ,
         ParameterName: prompt,
-        ArgumentName: prompt
+        ArgumentName: prompt,
+        ParameterDefaultValue: default
       },
       {
         Id: suffix,
@@ -602,7 +632,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: suffix,
-        ArgumentName: suffix
+        ArgumentName: suffix,
+        ParameterDefaultValue: default
       },
       {
         Id: max_tokens,
@@ -617,7 +648,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: maxTokens,
-        ArgumentName: maxTokens
+        ArgumentName: maxTokens,
+        ParameterDefaultValue: default
       },
       {
         Id: temperature,
@@ -632,7 +664,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: temperature,
-        ArgumentName: temperature
+        ArgumentName: temperature,
+        ParameterDefaultValue: default
       },
       {
         Id: top_p,
@@ -647,7 +680,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: topP,
-        ArgumentName: topP
+        ArgumentName: topP,
+        ParameterDefaultValue: default
       },
       {
         Id: n,
@@ -662,7 +696,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: n,
-        ArgumentName: n
+        ArgumentName: n,
+        ParameterDefaultValue: default
       },
       {
         Id: stream,
@@ -677,7 +712,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: stream,
-        ArgumentName: stream
+        ArgumentName: stream,
+        ParameterDefaultValue: default
       },
       {
         Id: logprobs,
@@ -692,7 +728,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: logprobs,
-        ArgumentName: logprobs
+        ArgumentName: logprobs,
+        ParameterDefaultValue: default
       },
       {
         Id: echo,
@@ -707,7 +744,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: echo,
-        ArgumentName: echo
+        ArgumentName: echo,
+        ParameterDefaultValue: default
       },
       {
         Id: stop,
@@ -723,7 +761,8 @@
         DefaultValue: ,
         Summary: ,
         ParameterName: stop,
-        ArgumentName: stop
+        ArgumentName: stop,
+        ParameterDefaultValue: default
       },
       {
         Id: presence_penalty,
@@ -738,7 +777,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: presencePenalty,
-        ArgumentName: presencePenalty
+        ArgumentName: presencePenalty,
+        ParameterDefaultValue: default
       },
       {
         Id: frequency_penalty,
@@ -753,7 +793,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: frequencyPenalty,
-        ArgumentName: frequencyPenalty
+        ArgumentName: frequencyPenalty,
+        ParameterDefaultValue: default
       },
       {
         Id: best_of,
@@ -768,7 +809,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: bestOf,
-        ArgumentName: bestOf
+        ArgumentName: bestOf,
+        ParameterDefaultValue: default
       },
       {
         Id: logit_bias,
@@ -784,7 +826,8 @@
         DefaultValue: ,
         Summary: ,
         ParameterName: logitBias,
-        ArgumentName: logitBias
+        ArgumentName: logitBias,
+        ParameterDefaultValue: default
       },
       {
         Id: user,
@@ -799,7 +842,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: user,
-        ArgumentName: user
+        ArgumentName: user,
+        ParameterDefaultValue: default
       }
     ],
     Summary: ,
@@ -833,7 +877,8 @@
         Summary:
 <br/>Default Value: ,
         ParameterName: id,
-        ArgumentName: id
+        ArgumentName: id,
+        ParameterDefaultValue: ""
       },
       {
         Id: object,
@@ -850,7 +895,8 @@
         Summary:
 <br/>Default Value: ,
         ParameterName: object,
-        ArgumentName: object
+        ArgumentName: object,
+        ParameterDefaultValue: ""
       },
       {
         Id: created,
@@ -867,7 +913,8 @@
         Summary:
 <br/>Default Value: 0,
         ParameterName: created,
-        ArgumentName: created
+        ArgumentName: created,
+        ParameterDefaultValue: 0
       },
       {
         Id: model,
@@ -884,7 +931,8 @@
         Summary:
 <br/>Default Value: ,
         ParameterName: model,
-        ArgumentName: model
+        ArgumentName: model,
+        ParameterDefaultValue: ""
       },
       {
         Id: choices,
@@ -901,7 +949,8 @@
         Summary:
 <br/>Default Value: [],
         ParameterName: choices,
-        ArgumentName: choices
+        ArgumentName: choices,
+        ParameterDefaultValue: default
       },
       {
         Id: usage,
@@ -920,7 +969,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: usage,
-        ArgumentName: usage
+        ArgumentName: usage,
+        ParameterDefaultValue: default
       }
     ],
     Summary: ,
@@ -954,7 +1004,8 @@
         Summary:
 <br/>Default Value: 0,
         ParameterName: index,
-        ArgumentName: index
+        ArgumentName: index,
+        ParameterDefaultValue: 0
       },
       {
         Id: message,
@@ -973,7 +1024,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: message,
-        ArgumentName: message
+        ArgumentName: message,
+        ParameterDefaultValue: default
       },
       {
         Id: finish_reason,
@@ -990,7 +1042,8 @@
         Summary:
 <br/>Default Value: ,
         ParameterName: finishReason,
-        ArgumentName: finishReason
+        ArgumentName: finishReason,
+        ParameterDefaultValue: ""
       }
     ],
     Summary: ,
@@ -1024,7 +1077,8 @@
         Summary:
 <br/>Default Value: ,
         ParameterName: role,
-        ArgumentName: role
+        ArgumentName: role,
+        ParameterDefaultValue: ""
       },
       {
         Id: content,
@@ -1039,7 +1093,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: content,
-        ArgumentName: content
+        ArgumentName: content,
+        ParameterDefaultValue: default
       },
       {
         Id: function_call,
@@ -1057,7 +1112,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: functionCall,
-        ArgumentName: functionCall
+        ArgumentName: functionCall,
+        ParameterDefaultValue: default
       }
     ],
     Summary: ,
@@ -1091,7 +1147,8 @@
         Summary:
 <br/>Default Value: 0,
         ParameterName: promptTokens,
-        ArgumentName: promptTokens
+        ArgumentName: promptTokens,
+        ParameterDefaultValue: 0
       },
       {
         Id: completion_tokens,
@@ -1108,7 +1165,8 @@
         Summary:
 <br/>Default Value: 0,
         ParameterName: completionTokens,
-        ArgumentName: completionTokens
+        ArgumentName: completionTokens,
+        ParameterDefaultValue: 0
       },
       {
         Id: total_tokens,
@@ -1125,7 +1183,8 @@
         Summary:
 <br/>Default Value: 0,
         ParameterName: totalTokens,
-        ArgumentName: totalTokens
+        ArgumentName: totalTokens,
+        ParameterDefaultValue: 0
       }
     ],
     Summary: ,
@@ -1157,7 +1216,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: id,
-        ArgumentName: id
+        ArgumentName: id,
+        ParameterDefaultValue: default
       },
       {
         Id: object,
@@ -1172,7 +1232,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: object,
-        ArgumentName: object
+        ArgumentName: object,
+        ParameterDefaultValue: default
       },
       {
         Id: created,
@@ -1187,7 +1248,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: created,
-        ArgumentName: created
+        ArgumentName: created,
+        ParameterDefaultValue: default
       },
       {
         Id: model,
@@ -1202,7 +1264,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: model,
-        ArgumentName: model
+        ArgumentName: model,
+        ParameterDefaultValue: default
       },
       {
         Id: choices,
@@ -1219,7 +1282,8 @@
         Summary:
 <br/>Default Value: [],
         ParameterName: choices,
-        ArgumentName: choices
+        ArgumentName: choices,
+        ParameterDefaultValue: default
       },
       {
         Id: usage,
@@ -1238,7 +1302,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: usage,
-        ArgumentName: usage
+        ArgumentName: usage,
+        ParameterDefaultValue: default
       }
     ],
     Summary: ,
@@ -1272,7 +1337,8 @@
         Summary:
 <br/>Default Value: ,
         ParameterName: text,
-        ArgumentName: text
+        ArgumentName: text,
+        ParameterDefaultValue: ""
       },
       {
         Id: index,
@@ -1289,7 +1355,8 @@
         Summary:
 <br/>Default Value: 0,
         ParameterName: index,
-        ArgumentName: index
+        ArgumentName: index,
+        ParameterDefaultValue: 0
       },
       {
         Id: logprobs,
@@ -1309,7 +1376,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: logprobs,
-        ArgumentName: logprobs
+        ArgumentName: logprobs,
+        ParameterDefaultValue: default
       },
       {
         Id: finish_reason,
@@ -1326,7 +1394,8 @@
         Summary:
 <br/>Default Value: ,
         ParameterName: finishReason,
-        ArgumentName: finishReason
+        ArgumentName: finishReason,
+        ParameterDefaultValue: ""
       }
     ],
     Summary: ,
@@ -1360,7 +1429,8 @@
         Summary:
 <br/>Default Value: [],
         ParameterName: tokens,
-        ArgumentName: tokens
+        ArgumentName: tokens,
+        ParameterDefaultValue: default
       },
       {
         Id: token_logprobs,
@@ -1377,7 +1447,8 @@
         Summary:
 <br/>Default Value: [],
         ParameterName: tokenLogprobs,
-        ArgumentName: tokenLogprobs
+        ArgumentName: tokenLogprobs,
+        ParameterDefaultValue: default
       },
       {
         Id: top_logprobs,
@@ -1394,7 +1465,8 @@
         Summary:
 <br/>Default Value: [],
         ParameterName: topLogprobs,
-        ArgumentName: topLogprobs
+        ArgumentName: topLogprobs,
+        ParameterDefaultValue: default
       },
       {
         Id: text_offset,
@@ -1411,7 +1483,8 @@
         Summary:
 <br/>Default Value: [],
         ParameterName: textOffset,
-        ArgumentName: textOffset
+        ArgumentName: textOffset,
+        ParameterDefaultValue: default
       }
     ],
     Summary: ,
@@ -1443,7 +1516,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: detail,
-        ArgumentName: detail
+        ArgumentName: detail,
+        ParameterDefaultValue: default
       }
     ],
     Summary: ,
@@ -1475,7 +1549,8 @@
         IsRequired: true,
         Summary: ,
         ParameterName: loc,
-        ArgumentName: loc
+        ArgumentName: loc,
+        ParameterDefaultValue: default
       },
       {
         Id: msg,
@@ -1490,7 +1565,8 @@
         IsRequired: true,
         Summary: ,
         ParameterName: msg,
-        ArgumentName: msg
+        ArgumentName: msg,
+        ParameterDefaultValue: default
       },
       {
         Id: type,
@@ -1505,7 +1581,8 @@
         IsRequired: true,
         Summary: ,
         ParameterName: type,
-        ArgumentName: type
+        ArgumentName: type,
+        ParameterDefaultValue: default
       }
     ],
     Summary: ,
@@ -1537,7 +1614,8 @@
         IsRequired: true,
         Summary: ,
         ParameterName: name,
-        ArgumentName: name
+        ArgumentName: name,
+        ParameterDefaultValue: default
       },
       {
         Id: inputs,
@@ -1553,7 +1631,8 @@
         DefaultValue: ,
         Summary: ,
         ParameterName: inputs,
-        ArgumentName: inputs
+        ArgumentName: inputs,
+        ParameterDefaultValue: default
       },
       {
         Id: run_type,
@@ -1584,7 +1663,8 @@
         IsRequired: true,
         Summary: Enum for run types.,
         ParameterName: runType,
-        ArgumentName: runType
+        ArgumentName: runType,
+        ParameterDefaultValue: default
       },
       {
         Id: start_time,
@@ -1599,7 +1679,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: startTime,
-        ArgumentName: startTime
+        ArgumentName: startTime,
+        ParameterDefaultValue: default
       },
       {
         Id: end_time,
@@ -1614,7 +1695,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: endTime,
-        ArgumentName: endTime
+        ArgumentName: endTime,
+        ParameterDefaultValue: default
       },
       {
         Id: extra,
@@ -1630,7 +1712,8 @@
         DefaultValue: ,
         Summary: ,
         ParameterName: extra,
-        ArgumentName: extra
+        ArgumentName: extra,
+        ParameterDefaultValue: default
       },
       {
         Id: error,
@@ -1645,7 +1728,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: error,
-        ArgumentName: error
+        ArgumentName: error,
+        ParameterDefaultValue: default
       },
       {
         Id: execution_order,
@@ -1662,7 +1746,8 @@
         Summary:
 <br/>Default Value: 1,
         ParameterName: executionOrder,
-        ArgumentName: executionOrder
+        ArgumentName: executionOrder,
+        ParameterDefaultValue: 1
       },
       {
         Id: serialized,
@@ -1678,7 +1763,8 @@
         DefaultValue: ,
         Summary: ,
         ParameterName: serialized,
-        ArgumentName: serialized
+        ArgumentName: serialized,
+        ParameterDefaultValue: default
       },
       {
         Id: outputs,
@@ -1694,7 +1780,8 @@
         DefaultValue: ,
         Summary: ,
         ParameterName: outputs,
-        ArgumentName: outputs
+        ArgumentName: outputs,
+        ParameterDefaultValue: default
       },
       {
         Id: parent_run_id,
@@ -1709,7 +1796,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: parentRunId,
-        ArgumentName: parentRunId
+        ArgumentName: parentRunId,
+        ParameterDefaultValue: default
       },
       {
         Id: manifest_id,
@@ -1724,7 +1812,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: manifestId,
-        ArgumentName: manifestId
+        ArgumentName: manifestId,
+        ParameterDefaultValue: default
       },
       {
         Id: events,
@@ -1739,7 +1828,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: events,
-        ArgumentName: events
+        ArgumentName: events,
+        ParameterDefaultValue: default
       },
       {
         Id: tags,
@@ -1754,7 +1844,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: tags,
-        ArgumentName: tags
+        ArgumentName: tags,
+        ParameterDefaultValue: default
       },
       {
         Id: id,
@@ -1769,7 +1860,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: id,
-        ArgumentName: id
+        ArgumentName: id,
+        ParameterDefaultValue: default
       },
       {
         Id: session_id,
@@ -1784,7 +1876,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: sessionId,
-        ArgumentName: sessionId
+        ArgumentName: sessionId,
+        ParameterDefaultValue: default
       },
       {
         Id: session_name,
@@ -1799,7 +1892,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: sessionName,
-        ArgumentName: sessionName
+        ArgumentName: sessionName,
+        ParameterDefaultValue: default
       },
       {
         Id: child_runs,
@@ -1814,7 +1908,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: childRuns,
-        ArgumentName: childRuns
+        ArgumentName: childRuns,
+        ParameterDefaultValue: default
       },
       {
         Id: reference_example_id,
@@ -1829,7 +1924,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: referenceExampleId,
-        ArgumentName: referenceExampleId
+        ArgumentName: referenceExampleId,
+        ParameterDefaultValue: default
       }
     ],
     Summary: Create class for a run object, with additional typehints.,
@@ -1862,7 +1958,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: tool,
-        ArgumentName: tool
+        ArgumentName: tool,
+        ParameterDefaultValue: default
       },
       {
         Id: chain,
@@ -1877,7 +1974,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: chain,
-        ArgumentName: chain
+        ArgumentName: chain,
+        ParameterDefaultValue: default
       },
       {
         Id: llm,
@@ -1892,7 +1990,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: llm,
-        ArgumentName: llm
+        ArgumentName: llm,
+        ParameterDefaultValue: default
       },
       {
         Id: retriever,
@@ -1907,7 +2006,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: retriever,
-        ArgumentName: retriever
+        ArgumentName: retriever,
+        ParameterDefaultValue: default
       },
       {
         Id: embedding,
@@ -1922,7 +2022,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: embedding,
-        ArgumentName: embedding
+        ArgumentName: embedding,
+        ParameterDefaultValue: default
       },
       {
         Id: prompt,
@@ -1937,7 +2038,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: prompt,
-        ArgumentName: prompt
+        ArgumentName: prompt,
+        ParameterDefaultValue: default
       },
       {
         Id: parser,
@@ -1952,7 +2054,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: parser,
-        ArgumentName: parser
+        ArgumentName: parser,
+        ParameterDefaultValue: default
       }
     ],
     Summary: Enum for run types.,
@@ -2000,7 +2103,8 @@
         IsRequired: true,
         Summary: ,
         ParameterName: name,
-        ArgumentName: name
+        ArgumentName: name,
+        ParameterDefaultValue: default
       },
       {
         Id: inputs,
@@ -2016,7 +2120,8 @@
         DefaultValue: ,
         Summary: ,
         ParameterName: inputs,
-        ArgumentName: inputs
+        ArgumentName: inputs,
+        ParameterDefaultValue: default
       },
       {
         Id: run_type,
@@ -2047,7 +2152,8 @@
         IsRequired: true,
         Summary: Enum for run types.,
         ParameterName: runType,
-        ArgumentName: runType
+        ArgumentName: runType,
+        ParameterDefaultValue: default
       },
       {
         Id: start_time,
@@ -2062,7 +2168,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: startTime,
-        ArgumentName: startTime
+        ArgumentName: startTime,
+        ParameterDefaultValue: default
       },
       {
         Id: end_time,
@@ -2077,7 +2184,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: endTime,
-        ArgumentName: endTime
+        ArgumentName: endTime,
+        ParameterDefaultValue: default
       },
       {
         Id: extra,
@@ -2093,7 +2201,8 @@
         DefaultValue: ,
         Summary: ,
         ParameterName: extra,
-        ArgumentName: extra
+        ArgumentName: extra,
+        ParameterDefaultValue: default
       },
       {
         Id: error,
@@ -2108,7 +2217,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: error,
-        ArgumentName: error
+        ArgumentName: error,
+        ParameterDefaultValue: default
       },
       {
         Id: execution_order,
@@ -2125,7 +2235,8 @@
         Summary:
 <br/>Default Value: 1,
         ParameterName: executionOrder,
-        ArgumentName: executionOrder
+        ArgumentName: executionOrder,
+        ParameterDefaultValue: 1
       },
       {
         Id: serialized,
@@ -2141,7 +2252,8 @@
         DefaultValue: ,
         Summary: ,
         ParameterName: serialized,
-        ArgumentName: serialized
+        ArgumentName: serialized,
+        ParameterDefaultValue: default
       },
       {
         Id: outputs,
@@ -2157,7 +2269,8 @@
         DefaultValue: ,
         Summary: ,
         ParameterName: outputs,
-        ArgumentName: outputs
+        ArgumentName: outputs,
+        ParameterDefaultValue: default
       },
       {
         Id: parent_run_id,
@@ -2172,7 +2285,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: parentRunId,
-        ArgumentName: parentRunId
+        ArgumentName: parentRunId,
+        ParameterDefaultValue: default
       },
       {
         Id: manifest_id,
@@ -2187,7 +2301,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: manifestId,
-        ArgumentName: manifestId
+        ArgumentName: manifestId,
+        ParameterDefaultValue: default
       },
       {
         Id: events,
@@ -2202,7 +2317,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: events,
-        ArgumentName: events
+        ArgumentName: events,
+        ParameterDefaultValue: default
       },
       {
         Id: tags,
@@ -2217,7 +2333,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: tags,
-        ArgumentName: tags
+        ArgumentName: tags,
+        ParameterDefaultValue: default
       },
       {
         Id: id,
@@ -2232,7 +2349,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: id,
-        ArgumentName: id
+        ArgumentName: id,
+        ParameterDefaultValue: default
       },
       {
         Id: session_id,
@@ -2247,7 +2365,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: sessionId,
-        ArgumentName: sessionId
+        ArgumentName: sessionId,
+        ParameterDefaultValue: default
       },
       {
         Id: session_name,
@@ -2262,7 +2381,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: sessionName,
-        ArgumentName: sessionName
+        ArgumentName: sessionName,
+        ParameterDefaultValue: default
       },
       {
         Id: child_runs,
@@ -2277,7 +2397,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: childRuns,
-        ArgumentName: childRuns
+        ArgumentName: childRuns,
+        ParameterDefaultValue: default
       },
       {
         Id: reference_example_id,
@@ -2292,7 +2413,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: referenceExampleId,
-        ArgumentName: referenceExampleId
+        ArgumentName: referenceExampleId,
+        ParameterDefaultValue: default
       }
     ],
     Summary: Create class for a Run object.,
@@ -2325,7 +2447,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: tool,
-        ArgumentName: tool
+        ArgumentName: tool,
+        ParameterDefaultValue: default
       },
       {
         Id: chain,
@@ -2340,7 +2463,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: chain,
-        ArgumentName: chain
+        ArgumentName: chain,
+        ParameterDefaultValue: default
       },
       {
         Id: llm,
@@ -2355,7 +2479,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: llm,
-        ArgumentName: llm
+        ArgumentName: llm,
+        ParameterDefaultValue: default
       },
       {
         Id: retriever,
@@ -2370,7 +2495,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: retriever,
-        ArgumentName: retriever
+        ArgumentName: retriever,
+        ParameterDefaultValue: default
       },
       {
         Id: embedding,
@@ -2385,7 +2511,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: embedding,
-        ArgumentName: embedding
+        ArgumentName: embedding,
+        ParameterDefaultValue: default
       },
       {
         Id: prompt,
@@ -2400,7 +2527,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: prompt,
-        ArgumentName: prompt
+        ArgumentName: prompt,
+        ParameterDefaultValue: default
       },
       {
         Id: parser,
@@ -2415,7 +2543,8 @@
         IsRequired: false,
         Summary: ,
         ParameterName: parser,
-        ArgumentName: parser
+        ArgumentName: parser,
+        ParameterDefaultValue: default
       }
     ],
     Summary: Enum for run types.,

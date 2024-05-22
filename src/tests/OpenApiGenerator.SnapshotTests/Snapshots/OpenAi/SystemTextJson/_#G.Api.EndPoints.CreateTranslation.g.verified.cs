@@ -47,8 +47,8 @@ namespace G
             byte[] file,
             object model,
             string? prompt = default,
-            string? responseFormat = default,
-            double temperature = default,
+            string? responseFormat = "json",
+            double temperature = 0,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateTranslationRequest

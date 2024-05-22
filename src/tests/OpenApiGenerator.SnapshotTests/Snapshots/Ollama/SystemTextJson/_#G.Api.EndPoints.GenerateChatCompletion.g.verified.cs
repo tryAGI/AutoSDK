@@ -61,7 +61,7 @@ namespace G
             global::System.Collections.Generic.IList<Message> messages,
             string? format = default,
             RequestOptions? options = default,
-            bool stream = default,
+            bool stream = true,
             int keepAlive = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {

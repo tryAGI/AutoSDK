@@ -25,7 +25,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 
 <br/>Example: llama2:7b,
         ParameterName: model,
-        ArgumentName: model
+        ArgumentName: model,
+        ParameterDefaultValue: default
       },
       {
         Id: prompt,
@@ -42,7 +43,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 The prompt to generate a response.
 <br/>Example: Why is the sky blue?,
         ParameterName: prompt,
-        ArgumentName: prompt
+        ArgumentName: prompt,
+        ParameterDefaultValue: default
       },
       {
         Id: images,
@@ -57,7 +59,8 @@ The prompt to generate a response.
         IsRequired: false,
         Summary: (optional) a list of Base64-encoded images to include in the message (for multimodal models such as llava),
         ParameterName: images,
-        ArgumentName: images
+        ArgumentName: images,
+        ParameterDefaultValue: default
       },
       {
         Id: system,
@@ -72,7 +75,8 @@ The prompt to generate a response.
         IsRequired: false,
         Summary: The system prompt to (overrides what is defined in the Modelfile).,
         ParameterName: system,
-        ArgumentName: system
+        ArgumentName: system,
+        ParameterDefaultValue: default
       },
       {
         Id: template,
@@ -87,7 +91,8 @@ The prompt to generate a response.
         IsRequired: false,
         Summary: The full prompt or prompt template (overrides what is defined in the Modelfile).,
         ParameterName: template,
-        ArgumentName: template
+        ArgumentName: template,
+        ParameterDefaultValue: default
       },
       {
         Id: context,
@@ -102,7 +107,8 @@ The prompt to generate a response.
         IsRequired: false,
         Summary: The context parameter returned from a previous request to [generateCompletion], this can be used to keep a short conversational memory.,
         ParameterName: context,
-        ArgumentName: context
+        ArgumentName: context,
+        ParameterDefaultValue: default
       },
       {
         Id: options,
@@ -151,7 +157,8 @@ The prompt to generate a response.
         IsRequired: false,
         Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.,
         ParameterName: options,
-        ArgumentName: options
+        ArgumentName: options,
+        ParameterDefaultValue: default
       },
       {
         Id: format,
@@ -176,7 +183,8 @@ Enable JSON mode by setting the format parameter to json. This will structure th
 Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
 ,
         ParameterName: format,
-        ArgumentName: format
+        ArgumentName: format,
+        ParameterDefaultValue: default
       },
       {
         Id: raw,
@@ -195,7 +203,8 @@ If `true` no formatting will be applied to the prompt and no context will be ret
 You may choose to use the `raw` parameter if you are specifying a full templated prompt in your request to the API, and are managing history yourself.
 ,
         ParameterName: raw,
-        ArgumentName: raw
+        ArgumentName: raw,
+        ParameterDefaultValue: default
       },
       {
         Id: stream,
@@ -214,7 +223,8 @@ If `false` the response will be returned as a single response object, otherwise 
 
 <br/>Default Value: false,
         ParameterName: stream,
-        ArgumentName: stream
+        ArgumentName: stream,
+        ParameterDefaultValue: false
       },
       {
         Id: keep_alive,
@@ -236,7 +246,8 @@ How long (in minutes) to keep the model loaded in memory.
 - If not set, the model will stay loaded for 5 minutes by default
 ,
         ParameterName: keepAlive,
-        ArgumentName: keepAlive
+        ArgumentName: keepAlive,
+        ParameterDefaultValue: default
       }
     ],
     Summary: Request class for the generate endpoint.,
@@ -269,7 +280,8 @@ How long (in minutes) to keep the model loaded in memory.
         IsRequired: false,
         Summary: ,
         ParameterName: json,
-        ArgumentName: json
+        ArgumentName: json,
+        ParameterDefaultValue: default
       }
     ],
     Summary:
@@ -309,7 +321,8 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
 Number of tokens to keep from the prompt.
 ,
         ParameterName: numKeep,
-        ArgumentName: numKeep
+        ArgumentName: numKeep,
+        ParameterDefaultValue: default
       },
       {
         Id: seed,
@@ -326,7 +339,8 @@ Number of tokens to keep from the prompt.
 Sets the random number seed to use for generation. Setting this to a specific number will make the model generate the same text for the same prompt. (Default: 0)
 ,
         ParameterName: seed,
-        ArgumentName: seed
+        ArgumentName: seed,
+        ParameterDefaultValue: default
       },
       {
         Id: num_predict,
@@ -343,7 +357,8 @@ Sets the random number seed to use for generation. Setting this to a specific nu
 Maximum number of tokens to predict when generating text. (Default: 128, -1 = infinite generation, -2 = fill context)
 ,
         ParameterName: numPredict,
-        ArgumentName: numPredict
+        ArgumentName: numPredict,
+        ParameterDefaultValue: default
       },
       {
         Id: top_k,
@@ -360,7 +375,8 @@ Maximum number of tokens to predict when generating text. (Default: 128, -1 = in
 Reduces the probability of generating nonsense. A higher value (e.g. 100) will give more diverse answers, while a lower value (e.g. 10) will be more conservative. (Default: 40)
 ,
         ParameterName: topK,
-        ArgumentName: topK
+        ArgumentName: topK,
+        ParameterDefaultValue: default
       },
       {
         Id: top_p,
@@ -377,7 +393,8 @@ Reduces the probability of generating nonsense. A higher value (e.g. 100) will g
 Works together with top-k. A higher value (e.g., 0.95) will lead to more diverse text, while a lower value (e.g., 0.5) will generate more focused and conservative text. (Default: 0.9)
 ,
         ParameterName: topP,
-        ArgumentName: topP
+        ArgumentName: topP,
+        ParameterDefaultValue: default
       },
       {
         Id: tfs_z,
@@ -394,7 +411,8 @@ Works together with top-k. A higher value (e.g., 0.95) will lead to more diverse
 Tail free sampling is used to reduce the impact of less probable tokens from the output. A higher value (e.g., 2.0) will reduce the impact more, while a value of 1.0 disables this setting. (default: 1)
 ,
         ParameterName: tfsZ,
-        ArgumentName: tfsZ
+        ArgumentName: tfsZ,
+        ParameterDefaultValue: default
       },
       {
         Id: typical_p,
@@ -411,7 +429,8 @@ Tail free sampling is used to reduce the impact of less probable tokens from the
 Typical p is used to reduce the impact of less probable tokens from the output.
 ,
         ParameterName: typicalP,
-        ArgumentName: typicalP
+        ArgumentName: typicalP,
+        ParameterDefaultValue: default
       },
       {
         Id: repeat_last_n,
@@ -428,7 +447,8 @@ Typical p is used to reduce the impact of less probable tokens from the output.
 Sets how far back for the model to look back to prevent repetition. (Default: 64, 0 = disabled, -1 = num_ctx)
 ,
         ParameterName: repeatLastN,
-        ArgumentName: repeatLastN
+        ArgumentName: repeatLastN,
+        ParameterDefaultValue: default
       },
       {
         Id: temperature,
@@ -445,7 +465,8 @@ Sets how far back for the model to look back to prevent repetition. (Default: 64
 The temperature of the model. Increasing the temperature will make the model answer more creatively. (Default: 0.8)
 ,
         ParameterName: temperature,
-        ArgumentName: temperature
+        ArgumentName: temperature,
+        ParameterDefaultValue: default
       },
       {
         Id: repeat_penalty,
@@ -462,7 +483,8 @@ The temperature of the model. Increasing the temperature will make the model ans
 Sets how strongly to penalize repetitions. A higher value (e.g., 1.5) will penalize repetitions more strongly, while a lower value (e.g., 0.9) will be more lenient. (Default: 1.1)
 ,
         ParameterName: repeatPenalty,
-        ArgumentName: repeatPenalty
+        ArgumentName: repeatPenalty,
+        ParameterDefaultValue: default
       },
       {
         Id: presence_penalty,
@@ -479,7 +501,8 @@ Sets how strongly to penalize repetitions. A higher value (e.g., 1.5) will penal
 Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.
 ,
         ParameterName: presencePenalty,
-        ArgumentName: presencePenalty
+        ArgumentName: presencePenalty,
+        ParameterDefaultValue: default
       },
       {
         Id: frequency_penalty,
@@ -496,7 +519,8 @@ Positive values penalize new tokens based on whether they appear in the text so 
 Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.
 ,
         ParameterName: frequencyPenalty,
-        ArgumentName: frequencyPenalty
+        ArgumentName: frequencyPenalty,
+        ParameterDefaultValue: default
       },
       {
         Id: mirostat,
@@ -513,7 +537,8 @@ Positive values penalize new tokens based on their existing frequency in the tex
 Enable Mirostat sampling for controlling perplexity. (default: 0, 0 = disabled, 1 = Mirostat, 2 = Mirostat 2.0)
 ,
         ParameterName: mirostat,
-        ArgumentName: mirostat
+        ArgumentName: mirostat,
+        ParameterDefaultValue: default
       },
       {
         Id: mirostat_tau,
@@ -530,7 +555,8 @@ Enable Mirostat sampling for controlling perplexity. (default: 0, 0 = disabled, 
 Controls the balance between coherence and diversity of the output. A lower value will result in more focused and coherent text. (Default: 5.0)
 ,
         ParameterName: mirostatTau,
-        ArgumentName: mirostatTau
+        ArgumentName: mirostatTau,
+        ParameterDefaultValue: default
       },
       {
         Id: mirostat_eta,
@@ -547,7 +573,8 @@ Controls the balance between coherence and diversity of the output. A lower valu
 Influences how quickly the algorithm responds to feedback from the generated text. A lower learning rate will result in slower adjustments, while a higher learning rate will make the algorithm more responsive. (Default: 0.1)
 ,
         ParameterName: mirostatEta,
-        ArgumentName: mirostatEta
+        ArgumentName: mirostatEta,
+        ParameterDefaultValue: default
       },
       {
         Id: penalize_newline,
@@ -564,7 +591,8 @@ Influences how quickly the algorithm responds to feedback from the generated tex
 Penalize newlines in the output. (Default: false)
 ,
         ParameterName: penalizeNewline,
-        ArgumentName: penalizeNewline
+        ArgumentName: penalizeNewline,
+        ParameterDefaultValue: default
       },
       {
         Id: stop,
@@ -579,7 +607,8 @@ Penalize newlines in the output. (Default: false)
         IsRequired: false,
         Summary: Sequences where the API will stop generating further tokens. The returned text will not contain the stop sequence.,
         ParameterName: stop,
-        ArgumentName: stop
+        ArgumentName: stop,
+        ParameterDefaultValue: default
       },
       {
         Id: numa,
@@ -596,7 +625,8 @@ Penalize newlines in the output. (Default: false)
 Enable NUMA support. (Default: false)
 ,
         ParameterName: numa,
-        ArgumentName: numa
+        ArgumentName: numa,
+        ParameterDefaultValue: default
       },
       {
         Id: num_ctx,
@@ -613,7 +643,8 @@ Enable NUMA support. (Default: false)
 Sets the size of the context window used to generate the next token.
 ,
         ParameterName: numCtx,
-        ArgumentName: numCtx
+        ArgumentName: numCtx,
+        ParameterDefaultValue: default
       },
       {
         Id: num_batch,
@@ -630,7 +661,8 @@ Sets the size of the context window used to generate the next token.
 Sets the number of batches to use for generation. (Default: 1)
 ,
         ParameterName: numBatch,
-        ArgumentName: numBatch
+        ArgumentName: numBatch,
+        ParameterDefaultValue: default
       },
       {
         Id: num_gqa,
@@ -647,7 +679,8 @@ Sets the number of batches to use for generation. (Default: 1)
 The number of GQA groups in the transformer layer. Required for some models, for example it is 8 for `llama2:70b`.
 ,
         ParameterName: numGqa,
-        ArgumentName: numGqa
+        ArgumentName: numGqa,
+        ParameterDefaultValue: default
       },
       {
         Id: num_gpu,
@@ -664,7 +697,8 @@ The number of GQA groups in the transformer layer. Required for some models, for
 The number of layers to send to the GPU(s). On macOS it defaults to 1 to enable metal support, 0 to disable.
 ,
         ParameterName: numGpu,
-        ArgumentName: numGpu
+        ArgumentName: numGpu,
+        ParameterDefaultValue: default
       },
       {
         Id: main_gpu,
@@ -681,7 +715,8 @@ The number of layers to send to the GPU(s). On macOS it defaults to 1 to enable 
 The GPU to use for the main model. Default is 0.
 ,
         ParameterName: mainGpu,
-        ArgumentName: mainGpu
+        ArgumentName: mainGpu,
+        ParameterDefaultValue: default
       },
       {
         Id: low_vram,
@@ -698,7 +733,8 @@ The GPU to use for the main model. Default is 0.
 Enable low VRAM mode. (Default: false)
 ,
         ParameterName: lowVram,
-        ArgumentName: lowVram
+        ArgumentName: lowVram,
+        ParameterDefaultValue: default
       },
       {
         Id: f16_kv,
@@ -715,7 +751,8 @@ Enable low VRAM mode. (Default: false)
 Enable f16 key/value. (Default: false)
 ,
         ParameterName: f16Kv,
-        ArgumentName: f16Kv
+        ArgumentName: f16Kv,
+        ParameterDefaultValue: default
       },
       {
         Id: logits_all,
@@ -732,7 +769,8 @@ Enable f16 key/value. (Default: false)
 Enable logits all. (Default: false)
 ,
         ParameterName: logitsAll,
-        ArgumentName: logitsAll
+        ArgumentName: logitsAll,
+        ParameterDefaultValue: default
       },
       {
         Id: vocab_only,
@@ -749,7 +787,8 @@ Enable logits all. (Default: false)
 Enable vocab only. (Default: false)
 ,
         ParameterName: vocabOnly,
-        ArgumentName: vocabOnly
+        ArgumentName: vocabOnly,
+        ParameterDefaultValue: default
       },
       {
         Id: use_mmap,
@@ -766,7 +805,8 @@ Enable vocab only. (Default: false)
 Enable mmap. (Default: false)
 ,
         ParameterName: useMmap,
-        ArgumentName: useMmap
+        ArgumentName: useMmap,
+        ParameterDefaultValue: default
       },
       {
         Id: use_mlock,
@@ -783,7 +823,8 @@ Enable mmap. (Default: false)
 Enable mlock. (Default: false)
 ,
         ParameterName: useMlock,
-        ArgumentName: useMlock
+        ArgumentName: useMlock,
+        ParameterDefaultValue: default
       },
       {
         Id: embedding_only,
@@ -800,7 +841,8 @@ Enable mlock. (Default: false)
 Enable embedding only. (Default: false)
 ,
         ParameterName: embeddingOnly,
-        ArgumentName: embeddingOnly
+        ArgumentName: embeddingOnly,
+        ParameterDefaultValue: default
       },
       {
         Id: rope_frequency_base,
@@ -817,7 +859,8 @@ Enable embedding only. (Default: false)
 The base of the rope frequency scale. (Default: 1.0)
 ,
         ParameterName: ropeFrequencyBase,
-        ArgumentName: ropeFrequencyBase
+        ArgumentName: ropeFrequencyBase,
+        ParameterDefaultValue: default
       },
       {
         Id: rope_frequency_scale,
@@ -834,7 +877,8 @@ The base of the rope frequency scale. (Default: 1.0)
 The scale of the rope frequency. (Default: 1.0)
 ,
         ParameterName: ropeFrequencyScale,
-        ArgumentName: ropeFrequencyScale
+        ArgumentName: ropeFrequencyScale,
+        ParameterDefaultValue: default
       },
       {
         Id: num_thread,
@@ -851,7 +895,8 @@ The scale of the rope frequency. (Default: 1.0)
 Sets the number of threads to use during computation. By default, Ollama will detect this for optimal performance. It is recommended to set this value to the number of physical CPU cores your system has (as opposed to the logical number of cores).
 ,
         ParameterName: numThread,
-        ArgumentName: numThread
+        ArgumentName: numThread,
+        ParameterDefaultValue: default
       }
     ],
     Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.,
@@ -910,7 +955,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 
 <br/>Example: llama2:7b,
         ParameterName: model,
-        ArgumentName: model
+        ArgumentName: model,
+        ParameterDefaultValue: default
       },
       {
         Id: created_at,
@@ -927,7 +973,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 Date on which a model was created.
 <br/>Example: ,
         ParameterName: createdAt,
-        ArgumentName: createdAt
+        ArgumentName: createdAt,
+        ParameterDefaultValue: default
       },
       {
         Id: response,
@@ -944,7 +991,8 @@ Date on which a model was created.
 The response for a given prompt with a provided model.
 <br/>Example: The sky appears blue because of a phenomenon called Rayleigh scattering.,
         ParameterName: response,
-        ArgumentName: response
+        ArgumentName: response,
+        ParameterDefaultValue: default
       },
       {
         Id: done,
@@ -961,7 +1009,8 @@ The response for a given prompt with a provided model.
 Whether the response has completed.
 <br/>Example: true,
         ParameterName: done,
-        ArgumentName: done
+        ArgumentName: done,
+        ParameterDefaultValue: default
       },
       {
         Id: context,
@@ -979,7 +1028,8 @@ An encoding of the conversation used in this response, this can be sent in the n
 
 <br/>Example: [1, 2, 3],
         ParameterName: context,
-        ArgumentName: context
+        ArgumentName: context,
+        ParameterDefaultValue: default
       },
       {
         Id: total_duration,
@@ -996,7 +1046,8 @@ An encoding of the conversation used in this response, this can be sent in the n
 Time spent generating the response.
 <br/>Example: 5589157167,
         ParameterName: totalDuration,
-        ArgumentName: totalDuration
+        ArgumentName: totalDuration,
+        ParameterDefaultValue: default
       },
       {
         Id: load_duration,
@@ -1013,7 +1064,8 @@ Time spent generating the response.
 Time spent in nanoseconds loading the model.
 <br/>Example: 3013701500,
         ParameterName: loadDuration,
-        ArgumentName: loadDuration
+        ArgumentName: loadDuration,
+        ParameterDefaultValue: default
       },
       {
         Id: prompt_eval_count,
@@ -1030,7 +1082,8 @@ Time spent in nanoseconds loading the model.
 Number of tokens in the prompt.
 <br/>Example: 46,
         ParameterName: promptEvalCount,
-        ArgumentName: promptEvalCount
+        ArgumentName: promptEvalCount,
+        ParameterDefaultValue: default
       },
       {
         Id: prompt_eval_duration,
@@ -1047,7 +1100,8 @@ Number of tokens in the prompt.
 Time spent in nanoseconds evaluating the prompt.
 <br/>Example: 1160282000,
         ParameterName: promptEvalDuration,
-        ArgumentName: promptEvalDuration
+        ArgumentName: promptEvalDuration,
+        ParameterDefaultValue: default
       },
       {
         Id: eval_count,
@@ -1064,7 +1118,8 @@ Time spent in nanoseconds evaluating the prompt.
 Number of tokens the response.
 <br/>Example: 113,
         ParameterName: evalCount,
-        ArgumentName: evalCount
+        ArgumentName: evalCount,
+        ParameterDefaultValue: default
       },
       {
         Id: eval_duration,
@@ -1081,7 +1136,8 @@ Number of tokens the response.
 Time in nanoseconds spent generating the response.
 <br/>Example: 1325948000,
         ParameterName: evalDuration,
-        ArgumentName: evalDuration
+        ArgumentName: evalDuration,
+        ParameterDefaultValue: default
       }
     ],
     Summary: The response class for the generate endpoint.,
@@ -1118,7 +1174,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 
 <br/>Example: llama2:7b,
         ParameterName: model,
-        ArgumentName: model
+        ArgumentName: model,
+        ParameterDefaultValue: default
       },
       {
         Id: messages,
@@ -1133,7 +1190,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         IsRequired: true,
         Summary: The messages of the chat, this can be used to keep a chat memory,
         ParameterName: messages,
-        ArgumentName: messages
+        ArgumentName: messages,
+        ParameterDefaultValue: default
       },
       {
         Id: format,
@@ -1158,7 +1216,8 @@ Enable JSON mode by setting the format parameter to json. This will structure th
 Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
 ,
         ParameterName: format,
-        ArgumentName: format
+        ArgumentName: format,
+        ParameterDefaultValue: default
       },
       {
         Id: options,
@@ -1207,7 +1266,8 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
         IsRequired: false,
         Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.,
         ParameterName: options,
-        ArgumentName: options
+        ArgumentName: options,
+        ParameterDefaultValue: default
       },
       {
         Id: stream,
@@ -1226,7 +1286,8 @@ If `false` the response will be returned as a single response object, otherwise 
 
 <br/>Default Value: false,
         ParameterName: stream,
-        ArgumentName: stream
+        ArgumentName: stream,
+        ParameterDefaultValue: false
       },
       {
         Id: keep_alive,
@@ -1248,7 +1309,8 @@ How long (in minutes) to keep the model loaded in memory.
 - If not set, the model will stay loaded for 5 minutes by default
 ,
         ParameterName: keepAlive,
-        ArgumentName: keepAlive
+        ArgumentName: keepAlive,
+        ParameterDefaultValue: default
       }
     ],
     Summary: Request class for the chat endpoint.,
@@ -1281,7 +1343,8 @@ How long (in minutes) to keep the model loaded in memory.
         IsRequired: false,
         Summary: ,
         ParameterName: json,
-        ArgumentName: json
+        ArgumentName: json,
+        ParameterDefaultValue: default
       }
     ],
     Summary:
@@ -1323,7 +1386,8 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
         IsRequired: false,
         Summary: A message in the chat endpoint,
         ParameterName: message,
-        ArgumentName: message
+        ArgumentName: message,
+        ParameterDefaultValue: default
       },
       {
         Id: model,
@@ -1343,7 +1407,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 
 <br/>Example: llama2:7b,
         ParameterName: model,
-        ArgumentName: model
+        ArgumentName: model,
+        ParameterDefaultValue: default
       },
       {
         Id: created_at,
@@ -1360,7 +1425,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 Date on which a model was created.
 <br/>Example: ,
         ParameterName: createdAt,
-        ArgumentName: createdAt
+        ArgumentName: createdAt,
+        ParameterDefaultValue: default
       },
       {
         Id: done,
@@ -1377,7 +1443,8 @@ Date on which a model was created.
 Whether the response has completed.
 <br/>Example: true,
         ParameterName: done,
-        ArgumentName: done
+        ArgumentName: done,
+        ParameterDefaultValue: default
       },
       {
         Id: total_duration,
@@ -1394,7 +1461,8 @@ Whether the response has completed.
 Time spent generating the response.
 <br/>Example: 5589157167,
         ParameterName: totalDuration,
-        ArgumentName: totalDuration
+        ArgumentName: totalDuration,
+        ParameterDefaultValue: default
       },
       {
         Id: load_duration,
@@ -1411,7 +1479,8 @@ Time spent generating the response.
 Time spent in nanoseconds loading the model.
 <br/>Example: 3013701500,
         ParameterName: loadDuration,
-        ArgumentName: loadDuration
+        ArgumentName: loadDuration,
+        ParameterDefaultValue: default
       },
       {
         Id: prompt_eval_count,
@@ -1428,7 +1497,8 @@ Time spent in nanoseconds loading the model.
 Number of tokens in the prompt.
 <br/>Example: 46,
         ParameterName: promptEvalCount,
-        ArgumentName: promptEvalCount
+        ArgumentName: promptEvalCount,
+        ParameterDefaultValue: default
       },
       {
         Id: prompt_eval_duration,
@@ -1445,7 +1515,8 @@ Number of tokens in the prompt.
 Time spent in nanoseconds evaluating the prompt.
 <br/>Example: 1160282000,
         ParameterName: promptEvalDuration,
-        ArgumentName: promptEvalDuration
+        ArgumentName: promptEvalDuration,
+        ParameterDefaultValue: default
       },
       {
         Id: eval_count,
@@ -1462,7 +1533,8 @@ Time spent in nanoseconds evaluating the prompt.
 Number of tokens the response.
 <br/>Example: 113,
         ParameterName: evalCount,
-        ArgumentName: evalCount
+        ArgumentName: evalCount,
+        ParameterDefaultValue: default
       },
       {
         Id: eval_duration,
@@ -1479,7 +1551,8 @@ Number of tokens the response.
 Time in nanoseconds spent generating the response.
 <br/>Example: 1325948000,
         ParameterName: evalDuration,
-        ArgumentName: evalDuration
+        ArgumentName: evalDuration,
+        ParameterDefaultValue: default
       }
     ],
     Summary: The response class for the chat endpoint.,
@@ -1519,7 +1592,8 @@ Time in nanoseconds spent generating the response.
         IsRequired: true,
         Summary: The role of the message,
         ParameterName: role,
-        ArgumentName: role
+        ArgumentName: role,
+        ParameterDefaultValue: default
       },
       {
         Id: content,
@@ -1536,7 +1610,8 @@ Time in nanoseconds spent generating the response.
 The content of the message
 <br/>Example: Why is the sky blue?,
         ParameterName: content,
-        ArgumentName: content
+        ArgumentName: content,
+        ParameterDefaultValue: default
       },
       {
         Id: images,
@@ -1551,7 +1626,8 @@ The content of the message
         IsRequired: false,
         Summary: (optional) a list of Base64-encoded images to include in the message (for multimodal models such as llava),
         ParameterName: images,
-        ArgumentName: images
+        ArgumentName: images,
+        ParameterDefaultValue: default
       }
     ],
     Summary: A message in the chat endpoint,
@@ -1584,7 +1660,8 @@ The content of the message
         IsRequired: false,
         Summary: ,
         ParameterName: system,
-        ArgumentName: system
+        ArgumentName: system,
+        ParameterDefaultValue: default
       },
       {
         Id: user,
@@ -1599,7 +1676,8 @@ The content of the message
         IsRequired: false,
         Summary: ,
         ParameterName: user,
-        ArgumentName: user
+        ArgumentName: user,
+        ParameterDefaultValue: default
       },
       {
         Id: assistant,
@@ -1614,7 +1692,8 @@ The content of the message
         IsRequired: false,
         Summary: ,
         ParameterName: assistant,
-        ArgumentName: assistant
+        ArgumentName: assistant,
+        ParameterDefaultValue: default
       }
     ],
     Summary: The role of the message,
@@ -1651,7 +1730,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 
 <br/>Example: llama2:7b,
         ParameterName: model,
-        ArgumentName: model
+        ArgumentName: model,
+        ParameterDefaultValue: default
       },
       {
         Id: prompt,
@@ -1668,7 +1748,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 Text to generate embeddings for.
 <br/>Example: Here is an article about llamas...,
         ParameterName: prompt,
-        ArgumentName: prompt
+        ArgumentName: prompt,
+        ParameterDefaultValue: default
       },
       {
         Id: options,
@@ -1717,7 +1798,8 @@ Text to generate embeddings for.
         IsRequired: false,
         Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.,
         ParameterName: options,
-        ArgumentName: options
+        ArgumentName: options,
+        ParameterDefaultValue: default
       }
     ],
     Summary: Generate embeddings from a model.,
@@ -1751,7 +1833,8 @@ Text to generate embeddings for.
 The embedding for the prompt.
 <br/>Example: [0.5670403838157654, 0.009260174818336964, ...],
         ParameterName: embedding,
-        ArgumentName: embedding
+        ArgumentName: embedding,
+        ParameterDefaultValue: default
       }
     ],
     Summary: Returns the embedding information.,
@@ -1788,7 +1871,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 
 <br/>Example: mario,
         ParameterName: name,
-        ArgumentName: name
+        ArgumentName: name,
+        ParameterDefaultValue: default
       },
       {
         Id: modelfile,
@@ -1805,7 +1889,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 The contents of the Modelfile.
 <br/>Example: FROM llama2\nSYSTEM You are mario from Super Mario Bros.,
         ParameterName: modelfile,
-        ArgumentName: modelfile
+        ArgumentName: modelfile,
+        ParameterDefaultValue: default
       },
       {
         Id: stream,
@@ -1824,7 +1909,8 @@ If `false` the response will be returned as a single response object, otherwise 
 
 <br/>Default Value: false,
         ParameterName: stream,
-        ArgumentName: stream
+        ArgumentName: stream,
+        ParameterDefaultValue: false
       }
     ],
     Summary: Create model request object.,
@@ -1864,7 +1950,8 @@ If `false` the response will be returned as a single response object, otherwise 
         IsRequired: false,
         Summary: Status creating the model,
         ParameterName: status,
-        ArgumentName: status
+        ArgumentName: status,
+        ParameterDefaultValue: default
       }
     ],
     Summary: Response object for creating a model. When finished, `status` is `success`.,
@@ -1897,7 +1984,8 @@ If `false` the response will be returned as a single response object, otherwise 
         IsRequired: false,
         Summary: ,
         ParameterName: creatingSystemLayer,
-        ArgumentName: creatingSystemLayer
+        ArgumentName: creatingSystemLayer,
+        ParameterDefaultValue: default
       },
       {
         Id: parsing modelfile,
@@ -1912,7 +2000,8 @@ If `false` the response will be returned as a single response object, otherwise 
         IsRequired: false,
         Summary: ,
         ParameterName: parsingModelfile,
-        ArgumentName: parsingModelfile
+        ArgumentName: parsingModelfile,
+        ParameterDefaultValue: default
       },
       {
         Id: success,
@@ -1927,7 +2016,8 @@ If `false` the response will be returned as a single response object, otherwise 
         IsRequired: false,
         Summary: ,
         ParameterName: success,
-        ArgumentName: success
+        ArgumentName: success,
+        ParameterDefaultValue: default
       }
     ],
     Summary: Status creating the model,
@@ -1975,7 +2065,8 @@ If `false` the response will be returned as a single response object, otherwise 
         IsRequired: false,
         Summary: List of models available locally.,
         ParameterName: models,
-        ArgumentName: models
+        ArgumentName: models,
+        ParameterDefaultValue: default
       }
     ],
     Summary: Response class for the list models endpoint.,
@@ -2012,7 +2103,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 
 <br/>Example: llama2:7b,
         ParameterName: name,
-        ArgumentName: name
+        ArgumentName: name,
+        ParameterDefaultValue: default
       },
       {
         Id: modified_at,
@@ -2029,7 +2121,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 Model modification date.
 <br/>Example: ,
         ParameterName: modifiedAt,
-        ArgumentName: modifiedAt
+        ArgumentName: modifiedAt,
+        ParameterDefaultValue: default
       },
       {
         Id: size,
@@ -2046,7 +2139,8 @@ Model modification date.
 Size of the model on disk.
 <br/>Example: 7323310500,
         ParameterName: size,
-        ArgumentName: size
+        ArgumentName: size,
+        ParameterDefaultValue: default
       }
     ],
     Summary: A model available locally.,
@@ -2083,7 +2177,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 
 <br/>Example: llama2:7b,
         ParameterName: name,
-        ArgumentName: name
+        ArgumentName: name,
+        ParameterDefaultValue: default
       }
     ],
     Summary: Request class for the show model info endpoint.,
@@ -2117,7 +2212,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 The model's license.
 <br/>Example: &lt;contents of license block&gt;,
         ParameterName: license,
-        ArgumentName: license
+        ArgumentName: license,
+        ParameterDefaultValue: default
       },
       {
         Id: modelfile,
@@ -2134,7 +2230,8 @@ The model's license.
 The modelfile associated with the model.
 <br/>Example: Modelfile generated by \"ollama show\"\n# To build a new Modelfile based on this one, replace the FROM line with:\n# FROM llama2:latest\n\nFROM /Users/username/.ollama/models/blobs/sha256:8daa9615cce30c259a9555b1cc250d461d1bc69980a274b44d7eda0be78076d8\nTEMPLATE \"\"\"[INST] {{ if and .First .System }}&lt;&lt;SYS&gt;&gt;{{ .System }}&lt;&lt;/SYS&gt;&gt;\n\n{{ end }}{{ .Prompt }} [/INST] \"\"\"\nSYSTEM \"\"\"\"\"\"\nPARAMETER stop [INST]\nPARAMETER stop [/INST]\nPARAMETER stop &lt;&lt;SYS&gt;&gt;\nPARAMETER stop &lt;&lt;/SYS&gt;&gt;\n",
         ParameterName: modelfile,
-        ArgumentName: modelfile
+        ArgumentName: modelfile,
+        ParameterDefaultValue: default
       },
       {
         Id: parameters,
@@ -2151,7 +2248,8 @@ The modelfile associated with the model.
 The model parameters.
 <br/>Example: stop [INST]\nstop [/INST]\nstop &lt;&lt;SYS&gt;&gt;\nstop &lt;&lt;/SYS&gt;&gt;,
         ParameterName: parameters,
-        ArgumentName: parameters
+        ArgumentName: parameters,
+        ParameterDefaultValue: default
       },
       {
         Id: template,
@@ -2168,7 +2266,8 @@ The model parameters.
 The prompt template for the model.
 <br/>Example: [INST] {{ if and .First .System }}&lt;&lt;SYS&gt;&gt;{{ .System }}&lt;&lt;/SYS&gt;&gt;\n\n{{ end }}{{ .Prompt }} [/INST],
         ParameterName: template,
-        ArgumentName: template
+        ArgumentName: template,
+        ParameterDefaultValue: default
       }
     ],
     Summary: Details about a model including modelfile, template, parameters, license, and system prompt.,
@@ -2202,7 +2301,8 @@ The prompt template for the model.
 Name of the model to copy.
 <br/>Example: llama2:7b,
         ParameterName: source,
-        ArgumentName: source
+        ArgumentName: source,
+        ParameterDefaultValue: default
       },
       {
         Id: destination,
@@ -2219,7 +2319,8 @@ Name of the model to copy.
 Name of the new model.
 <br/>Example: llama2-backup,
         ParameterName: destination,
-        ArgumentName: destination
+        ArgumentName: destination,
+        ParameterDefaultValue: default
       }
     ],
     Summary: Request class for copying a model.,
@@ -2256,7 +2357,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 
 <br/>Example: llama2:13b,
         ParameterName: name,
-        ArgumentName: name
+        ArgumentName: name,
+        ParameterDefaultValue: default
       }
     ],
     Summary: Request class for deleting a model.,
@@ -2293,7 +2395,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 
 <br/>Example: llama2:7b,
         ParameterName: name,
-        ArgumentName: name
+        ArgumentName: name,
+        ParameterDefaultValue: default
       },
       {
         Id: insecure,
@@ -2314,7 +2417,8 @@ Only use this if you are pulling from your own library during development.
 
 <br/>Default Value: false,
         ParameterName: insecure,
-        ArgumentName: insecure
+        ArgumentName: insecure,
+        ParameterDefaultValue: false
       },
       {
         Id: stream,
@@ -2333,7 +2437,8 @@ If `false` the response will be returned as a single response object, otherwise 
 
 <br/>Default Value: false,
         ParameterName: stream,
-        ArgumentName: stream
+        ArgumentName: stream,
+        ParameterDefaultValue: false
       }
     ],
     Summary: Request class for pulling a model.,
@@ -2381,7 +2486,8 @@ If `false` the response will be returned as a single response object, otherwise 
 Status pulling the model.
 <br/>Example: pulling manifest,
         ParameterName: status,
-        ArgumentName: status
+        ArgumentName: status,
+        ParameterDefaultValue: default
       },
       {
         Id: digest,
@@ -2398,7 +2504,8 @@ Status pulling the model.
 The model's digest.
 <br/>Example: sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a,
         ParameterName: digest,
-        ArgumentName: digest
+        ArgumentName: digest,
+        ParameterDefaultValue: default
       },
       {
         Id: total,
@@ -2415,7 +2522,8 @@ The model's digest.
 Total size of the model.
 <br/>Example: 2142590208,
         ParameterName: total,
-        ArgumentName: total
+        ArgumentName: total,
+        ParameterDefaultValue: default
       },
       {
         Id: completed,
@@ -2432,7 +2540,8 @@ Total size of the model.
 Total bytes transferred.
 <br/>Example: 2142590208,
         ParameterName: completed,
-        ArgumentName: completed
+        ArgumentName: completed,
+        ParameterDefaultValue: default
       }
     ],
     Summary:
@@ -2471,7 +2580,8 @@ The number of files to be downloaded depends on the number of layers specified i
         IsRequired: false,
         Summary: ,
         ParameterName: pullingManifest,
-        ArgumentName: pullingManifest
+        ArgumentName: pullingManifest,
+        ParameterDefaultValue: default
       },
       {
         Id: downloading digestname,
@@ -2486,7 +2596,8 @@ The number of files to be downloaded depends on the number of layers specified i
         IsRequired: false,
         Summary: ,
         ParameterName: downloadingDigestname,
-        ArgumentName: downloadingDigestname
+        ArgumentName: downloadingDigestname,
+        ParameterDefaultValue: default
       },
       {
         Id: verifying sha256 digest,
@@ -2501,7 +2612,8 @@ The number of files to be downloaded depends on the number of layers specified i
         IsRequired: false,
         Summary: ,
         ParameterName: verifyingSha256Digest,
-        ArgumentName: verifyingSha256Digest
+        ArgumentName: verifyingSha256Digest,
+        ParameterDefaultValue: default
       },
       {
         Id: writing manifest,
@@ -2516,7 +2628,8 @@ The number of files to be downloaded depends on the number of layers specified i
         IsRequired: false,
         Summary: ,
         ParameterName: writingManifest,
-        ArgumentName: writingManifest
+        ArgumentName: writingManifest,
+        ParameterDefaultValue: default
       },
       {
         Id: removing any unused layers,
@@ -2531,7 +2644,8 @@ The number of files to be downloaded depends on the number of layers specified i
         IsRequired: false,
         Summary: ,
         ParameterName: removingAnyUnusedLayers,
-        ArgumentName: removingAnyUnusedLayers
+        ArgumentName: removingAnyUnusedLayers,
+        ParameterDefaultValue: default
       },
       {
         Id: success,
@@ -2546,7 +2660,8 @@ The number of files to be downloaded depends on the number of layers specified i
         IsRequired: false,
         Summary: ,
         ParameterName: success,
-        ArgumentName: success
+        ArgumentName: success,
+        ParameterDefaultValue: default
       }
     ],
     Summary:
@@ -2600,7 +2715,8 @@ Status pulling the model.
 The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt;tag&gt;.
 <br/>Example: mattw/pygmalion:latest,
         ParameterName: name,
-        ArgumentName: name
+        ArgumentName: name,
+        ParameterDefaultValue: default
       },
       {
         Id: insecure,
@@ -2621,7 +2737,8 @@ Only use this if you are pushing to your library during development.
 
 <br/>Default Value: false,
         ParameterName: insecure,
-        ArgumentName: insecure
+        ArgumentName: insecure,
+        ParameterDefaultValue: false
       },
       {
         Id: stream,
@@ -2640,7 +2757,8 @@ If `false` the response will be returned as a single response object, otherwise 
 
 <br/>Default Value: false,
         ParameterName: stream,
-        ArgumentName: stream
+        ArgumentName: stream,
+        ParameterDefaultValue: false
       }
     ],
     Summary: Request class for pushing a model.,
@@ -2682,7 +2800,8 @@ If `false` the response will be returned as a single response object, otherwise 
         IsRequired: false,
         Summary: Status pushing the model.,
         ParameterName: status,
-        ArgumentName: status
+        ArgumentName: status,
+        ParameterDefaultValue: default
       },
       {
         Id: digest,
@@ -2699,7 +2818,8 @@ If `false` the response will be returned as a single response object, otherwise 
 the model's digest
 <br/>Example: sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a,
         ParameterName: digest,
-        ArgumentName: digest
+        ArgumentName: digest,
+        ParameterDefaultValue: default
       },
       {
         Id: total,
@@ -2716,7 +2836,8 @@ the model's digest
 total size of the model
 <br/>Example: 2142590208,
         ParameterName: total,
-        ArgumentName: total
+        ArgumentName: total,
+        ParameterDefaultValue: default
       }
     ],
     Summary: Response class for pushing a model.,
@@ -2749,7 +2870,8 @@ total size of the model
         IsRequired: false,
         Summary: ,
         ParameterName: retrievingManifest,
-        ArgumentName: retrievingManifest
+        ArgumentName: retrievingManifest,
+        ParameterDefaultValue: default
       },
       {
         Id: starting upload,
@@ -2764,7 +2886,8 @@ total size of the model
         IsRequired: false,
         Summary: ,
         ParameterName: startingUpload,
-        ArgumentName: startingUpload
+        ArgumentName: startingUpload,
+        ParameterDefaultValue: default
       },
       {
         Id: pushing manifest,
@@ -2779,7 +2902,8 @@ total size of the model
         IsRequired: false,
         Summary: ,
         ParameterName: pushingManifest,
-        ArgumentName: pushingManifest
+        ArgumentName: pushingManifest,
+        ParameterDefaultValue: default
       },
       {
         Id: success,
@@ -2794,7 +2918,8 @@ total size of the model
         IsRequired: false,
         Summary: ,
         ParameterName: success,
-        ArgumentName: success
+        ArgumentName: success,
+        ParameterDefaultValue: default
       }
     ],
     Summary: Status pushing the model.,

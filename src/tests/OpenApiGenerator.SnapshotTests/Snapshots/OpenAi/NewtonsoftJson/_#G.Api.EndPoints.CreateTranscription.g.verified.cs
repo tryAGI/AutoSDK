@@ -49,8 +49,8 @@ namespace G
             object model,
             string? language = default,
             string? prompt = default,
-            CreateTranscriptionRequestResponseFormat? responseFormat = default,
-            double temperature = default,
+            CreateTranscriptionRequestResponseFormat? responseFormat = CreateTranscriptionRequestResponseFormat.Json,
+            double temperature = 0,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateTranscriptionRequest

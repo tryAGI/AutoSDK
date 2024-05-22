@@ -237,7 +237,7 @@ namespace {endPoint.Namespace}
 {endPoint.Properties.Where(static x => x.IsRequired).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName},").Inject()}
 {endPoint.Properties.Where(static x => !x.IsRequired).Select(x => $@"
-            {x.Type.CSharpType} {x.ParameterName} = default,").Inject()}
+            {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default)
         {{
             var request = new {endPoint.RequestType}
