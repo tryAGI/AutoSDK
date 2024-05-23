@@ -9,6 +9,8 @@ public class SimpleOperationIdGenerator : IMethodNameGenerator
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
 
-        return operation.OperationId?.ToPropertyName();
+        return operation.OperationId?
+            .ToPropertyName()
+            .UseWordSeparator('\\', '-', '.', '_', '/');
     }
 }

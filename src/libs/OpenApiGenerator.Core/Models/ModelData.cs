@@ -145,7 +145,7 @@ public readonly record struct ModelData(
     
     public string Name => Id
         .ToPropertyName()
-        .UseWordSeparator('_', '-') + 
+        .UseWordSeparator('_', '-', '\\', '/') + 
         (!AddTypeName || Schema.Value == null || string.IsNullOrWhiteSpace(Schema.Value.Type)
             ? string.Empty
             : Schema.Value.Type.ToPropertyName())

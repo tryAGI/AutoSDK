@@ -169,14 +169,30 @@ public static class OpenApiExtensions
         return new KeyValuePair<string, OpenApiSchema>(key, schema);
     }
 
+    public static string ReplacePlusAndMinusOnStart(
+        this string text)
+    {
+        text = text ?? throw new ArgumentNullException(nameof(text));
+        
+        text = text.StartsWith("-", StringComparison.Ordinal)
+            ? "Minus" + text.TrimStart('-')
+            : text;
+        text = text.StartsWith("+", StringComparison.Ordinal)
+            ? "Plus" + text.TrimStart('+')
+            : text;
 
+        return text;
+    }
+    
     public static PropertyData ToEnumValue(
         this IOpenApiAny any)
     {
         var id = any.GetString() ?? string.Empty;
         var name = id
+            .ReplacePlusAndMinusOnStart()
             .ToPropertyName()
             .UseWordSeparator('_', '-', ' ')
+            .Replace("+", "Plus")
             .Replace(".", string.Empty)
             .Replace("[", string.Empty)
             .Replace("]", string.Empty);
