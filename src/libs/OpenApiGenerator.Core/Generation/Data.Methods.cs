@@ -69,6 +69,25 @@ public static class ClientGeneratorMethods
                 Summary: string.Empty,
                 RequestType: string.Empty,
                 ResponseType: string.Empty)] : [];
+        if (settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors))
+        {
+            constructors = constructors.Concat(openApiDocument.Tags.Select(x => new EndPoint(
+                Id: "Constructors",
+                Namespace: settings.Namespace,
+                ClassName: x.Name.ToPropertyName(),
+                BaseUrl: openApiDocument.Servers.FirstOrDefault()?.Url ?? string.Empty,
+                Stream: false,
+                Path: string.Empty,
+                AuthorizationScheme: string.Empty,
+                Properties: ImmutableArray<PropertyData>.Empty,
+                TargetFramework: settings.TargetFramework,
+                JsonSerializerType: settings.JsonSerializerType,
+                JsonSerializerContext: settings.JsonSerializerContext,
+                HttpMethod: OperationType.Get,
+                Summary: string.Empty,
+                RequestType: string.Empty,
+                ResponseType: string.Empty))).ToArray();
+        }
             
         return [
             ..operations,

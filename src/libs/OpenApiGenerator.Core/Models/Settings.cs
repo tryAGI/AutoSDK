@@ -13,6 +13,7 @@ public readonly record struct Settings(
     SdkFeatureUsage UseRequiredKeyword,
 
     bool GenerateConstructors,
+    bool GroupByTags,
     bool GenerateMethods,
     MethodNamingConvention MethodNamingConvention,
     MethodNamingConvention MethodNamingConventionFallback,

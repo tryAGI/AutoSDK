@@ -73,6 +73,7 @@ public class GenerateCommand : Command
             JsonSerializerType: default,
             UseRequiredKeyword: default,
             GenerateConstructors: false,
+            GroupByTags: false,
             GenerateMethods: false,
             MethodNamingConvention: default,
             MethodNamingConventionFallback: MethodNamingConvention.MethodAndPath,
