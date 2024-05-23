@@ -1,6 +1,6 @@
 ﻿using H.Generators.Extensions;
 using Microsoft.CodeAnalysis;
-using OpenApiGenerator.Core.Generators;
+using OpenApiGenerator.Core.Generation;
 using OpenApiGenerator.Core.Models;
 using FileWithName = H.Generators.Extensions.FileWithName;
 
@@ -50,7 +50,7 @@ public class SdkGenerator : IIncrementalGenerator
     {
         return additionalText.Path.StartsWith("http", StringComparison.OrdinalIgnoreCase)
             ? Task.Run(() => new HttpClient().GetStringAsync(new Uri(additionalText.Path)), cancellationToken).Result
-            : additionalText.GetText(cancellationToken)?.ToString() ?? string.Empty;;
+            : additionalText.GetText(cancellationToken)?.ToString() ?? string.Empty;
     }
     
     private static FileWithName GetMethodSourceCode(

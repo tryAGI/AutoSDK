@@ -1,10 +1,9 @@
 ﻿using System.Collections.Immutable;
 using OpenApiGenerator.Core.Extensions;
-using OpenApiGenerator.Core.Generation;
 using OpenApiGenerator.Core.Json;
 using OpenApiGenerator.Core.Models;
 
-namespace OpenApiGenerator.Core.Generators;
+namespace OpenApiGenerator.Core.Generation;
 
 public static class ModelGeneratorMethods
 {

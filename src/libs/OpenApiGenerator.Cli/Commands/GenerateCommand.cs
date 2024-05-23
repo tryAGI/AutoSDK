@@ -1,6 +1,6 @@
 using System.CommandLine;
 using OpenApiGenerator.Core.Extensions;
-using OpenApiGenerator.Core.Generators;
+using OpenApiGenerator.Core.Generation;
 using OpenApiGenerator.Core.Models;
 using OpenApiGenerator.Core.Naming.Methods;
 
