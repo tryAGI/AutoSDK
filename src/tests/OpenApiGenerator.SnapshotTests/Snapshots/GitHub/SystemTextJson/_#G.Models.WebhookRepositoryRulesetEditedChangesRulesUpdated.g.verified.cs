@@ -1,0 +1,30 @@
+﻿//HintName: G.Models.WebhookRepositoryRulesetEditedChangesRulesUpdated.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class WebhookRepositoryRulesetEditedChangesRulesUpdated
+    {
+        /// <summary>
+        /// A repository rule.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("rule")]
+        public RepositoryRule? Rule { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("changes")]
+        public WebhookRepositoryRulesetEditedChangesRulesUpdatedChanges? Changes { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

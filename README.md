@@ -13,6 +13,7 @@ Inspired by [NSwag](https://github.com/RicoSuter/NSwag) ❤️.
 - Available under MIT license for general users and most organizations
 - Uses https://github.com/microsoft/OpenAPI.NET for parsing OpenAPI specification
 - Supports trimming/native AOT compilation
+- Tested on GitHub 220k lines OpenAPI specification
 
 ## 🚀Quick start🚀
 - Install the package

@@ -1,0 +1,51 @@
+﻿//HintName: G.OrgsClient.OrgsEnableOrDisableSecurityProductOnAllOrgRepos.g.cs
+
+#nullable enable
+
+namespace G
+{
+    public partial class OrgsClient
+    {
+        /// <summary>
+        /// Enable or disable a security feature for an organization
+        /// </summary>
+        /// <param name="org"></param>
+        /// <param name="securityProduct"></param>
+        /// <param name="enablement"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task OrgsEnableOrDisableSecurityProductOnAllOrgReposAsync(
+            string org,
+            OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct securityProduct,
+            OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement enablement,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var securityProductValue = securityProduct switch
+            {
+                OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.DependencyGraph => "dependency_graph",
+                OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.DependabotAlerts => "dependabot_alerts",
+                OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.DependabotSecurityUpdates => "dependabot_security_updates",
+                OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.AdvancedSecurity => "advanced_security",
+                OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.CodeScanningDefaultSetup => "code_scanning_default_setup",
+                OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.SecretScanning => "secret_scanning",
+                OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.SecretScanningPushProtection => "secret_scanning_push_protection",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
+            var enablementValue = enablement switch
+            {
+                OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement.EnableAll => "enable_all",
+                OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement.DisableAll => "disable_all",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
+            using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                method: global::System.Net.Http.HttpMethod.Post,
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/orgs/{org}/{securityProductValue}/{enablementValue}", global::System.UriKind.RelativeOrAbsolute));
+
+            using var response = await _httpClient.SendAsync(
+                request: httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+            response.EnsureSuccessStatusCode();
+        }
+    }
+}

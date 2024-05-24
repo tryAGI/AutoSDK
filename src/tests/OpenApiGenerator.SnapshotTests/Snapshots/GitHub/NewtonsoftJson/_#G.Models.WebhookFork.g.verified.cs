@@ -1,0 +1,60 @@
+﻿//HintName: G.Models.WebhookFork.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// A user forks a repository.
+    /// </summary>
+    public sealed partial class WebhookFork
+    {
+        /// <summary>
+        /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured
+        /// on an enterprise account or an organization that's part of an enterprise account. For more information,
+        /// see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("enterprise")]
+        public EnterpriseWebhooks? Enterprise { get; set; }
+
+        /// <summary>
+        /// The created [`repository`](https://docs.github.com/rest/repos/repos#get-a-repository) resource.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("forkee", Required = global::Newtonsoft.Json.Required.Always)]
+        public object Forkee { get; set; } = default!;
+
+        /// <summary>
+        /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured
+        /// for and sent to a GitHub App. For more information,
+        /// see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("installation")]
+        public SimpleInstallation? Installation { get; set; }
+
+        /// <summary>
+        /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an
+        /// organization, or when the event occurs from activity in a repository owned by an organization.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("organization")]
+        public OrganizationSimpleWebhooks? Organization { get; set; }
+
+        /// <summary>
+        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
+        /// when the event occurs from activity in a repository.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("repository", Required = global::Newtonsoft.Json.Required.Always)]
+        public RepositoryWebhooks Repository { get; set; } = default!;
+
+        /// <summary>
+        /// The GitHub user that triggered the event. This property is included in every webhook payload.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("sender", Required = global::Newtonsoft.Json.Required.Always)]
+        public SimpleUserWebhooks Sender { get; set; } = default!;
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

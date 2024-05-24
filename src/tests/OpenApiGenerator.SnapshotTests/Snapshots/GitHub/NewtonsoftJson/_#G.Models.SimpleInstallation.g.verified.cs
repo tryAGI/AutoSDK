@@ -1,0 +1,34 @@
+﻿//HintName: G.Models.SimpleInstallation.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured
+    /// for and sent to a GitHub App. For more information,
+    /// see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
+    /// </summary>
+    public sealed partial class SimpleInstallation
+    {
+        /// <summary>
+        /// The ID of the installation.
+        /// <br/>Example: 1
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
+        public int Id { get; set; } = default!;
+
+        /// <summary>
+        /// The global node ID of the installation.
+        /// <br/>Example: MDQ6VXNlcjU4MzIzMQ==
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string NodeId { get; set; } = default!;
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

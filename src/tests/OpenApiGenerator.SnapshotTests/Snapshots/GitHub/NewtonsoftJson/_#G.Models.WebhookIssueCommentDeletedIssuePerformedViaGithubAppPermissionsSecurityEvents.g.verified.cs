@@ -1,0 +1,24 @@
+﻿//HintName: G.Models.WebhookIssueCommentDeletedIssuePerformedViaGithubAppPermissionsSecurityEvents.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    [global::System.Runtime.Serialization.DataContract]
+    public enum WebhookIssueCommentDeletedIssuePerformedViaGithubAppPermissionsSecurityEvents
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="read")]
+        Read,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="write")]
+        Write,
+    }
+}

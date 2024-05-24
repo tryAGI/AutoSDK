@@ -1,0 +1,67 @@
+﻿//HintName: G.Models.InstallationToken.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Authentication token for a GitHub App installed on a user or org.
+    /// </summary>
+    public sealed partial class InstallationToken
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("token", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Token { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("expires_at", Required = global::Newtonsoft.Json.Required.Always)]
+        public string ExpiresAt { get; set; } = default!;
+
+        /// <summary>
+        /// The permissions granted to the user access token.
+        /// <br/>Example: 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("permissions")]
+        public AppPermissions? Permissions { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("repository_selection")]
+        public InstallationTokenRepositorySelection? RepositorySelection { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("repositories")]
+        public global::System.Collections.Generic.IList<Repository>? Repositories { get; set; }
+
+        /// <summary>
+        /// <br/>Example: README.md
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("single_file")]
+        public string? SingleFile { get; set; }
+
+        /// <summary>
+        /// <br/>Example: true
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("has_multiple_single_files")]
+        public bool HasMultipleSingleFiles { get; set; }
+
+        /// <summary>
+        /// <br/>Example: [config.yml, .github/issue_TEMPLATE.md]
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("single_file_paths")]
+        public global::System.Collections.Generic.IList<string?>? SingleFilePaths { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

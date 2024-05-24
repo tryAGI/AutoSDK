@@ -1,0 +1,21 @@
+﻿//HintName: G.Models.WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsPages.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public abstract class WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsPages
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public const string Read = "read";
+        /// <summary>
+        /// 
+        /// </summary>
+        public const string Write = "write";
+    }
+}
