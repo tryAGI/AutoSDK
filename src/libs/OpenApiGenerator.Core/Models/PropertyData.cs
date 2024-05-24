@@ -42,15 +42,15 @@ public readonly record struct PropertyData(
         parents = parents ?? throw new ArgumentNullException(nameof(parents));
 
         var name = schema.Key.ToPropertyName();
-        if (parents.Length != 0)
-        {
-            name = name.FixPropertyName(parents.Last().ClassName);
-        }
         name = name
             .ReplacePlusAndMinusOnStart()
             .UseWordSeparator('_', '+', '-', '/')
             .Replace("[", string.Empty)
             .Replace("]", string.Empty);
+        if (parents.Length != 0)
+        {
+            name = name.FixPropertyName(parents.Last().ClassName);
+        }
         
         return new PropertyData(
             Id: schema.Key,
