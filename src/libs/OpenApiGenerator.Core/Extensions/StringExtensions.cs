@@ -207,4 +207,14 @@ public static class StringExtensions
             .ToPropertyName()
             .UseWordSeparator('_', '-', ' ', '\\', '/');
     }
+    
+    public static string ReplaceIfEquals(
+        this string text,
+        string oldValue,
+        string newValue)
+    {
+        return text == oldValue
+            ? newValue
+            : text;
+    }
 }

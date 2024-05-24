@@ -70,7 +70,12 @@ public readonly record struct PropertyData(
             Summary: schema.Value.GetSummary());
     }
     
-    public string ParameterName => Name.Replace(".", string.Empty).ToParameterName();
+    public string ParameterName => Name
+        .Replace(".", string.Empty)
+        .ToParameterName()
+        .ReplaceIfEquals("ref", "@ref")
+        .ReplaceIfEquals("base", "@base")
+        .ReplaceIfEquals("protected", "@protected");
 
     public string ArgumentName
     {
