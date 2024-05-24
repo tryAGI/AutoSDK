@@ -77,6 +77,7 @@ public static class ModelGeneratorMethods
                     Style = ModelStyle.Enumeration,
                     Properties = x.Parameter.Schema.Enum
                         .Select(value => value.ToEnumValue())
+                        .Where(value => !string.IsNullOrWhiteSpace(value.Name))
                         .ToImmutableArray(),
                     Schema = default,
                 })

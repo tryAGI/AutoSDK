@@ -137,6 +137,7 @@ public readonly record struct ModelData(
                     Style = ModelStyle.Enumeration,
                     Properties = x.Schema.Value.Enum
                         .Select(value => value.ToEnumValue())
+                        .Where(value => !string.IsNullOrWhiteSpace(value.Name))
                         .ToImmutableArray(),
                 })
                 .ToImmutableArray()
