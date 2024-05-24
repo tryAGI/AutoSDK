@@ -83,11 +83,15 @@ public static class ModelGeneratorMethods
                 })
             .ToImmutableArray();
         
-        return ImmutableArray.Create([
-            ..components,
-            ..objectParameters,
-            ..enumParameters
-        ]);
+        return ImmutableArray
+            .Create([
+                ..components,
+                ..objectParameters,
+                ..enumParameters
+            ])
+            .GroupBy(x => x.FileNameWithoutExtension)
+            .Select(x => x.First())
+            .ToImmutableArray();
     }
     
     public static FileWithName GetSourceCode(
