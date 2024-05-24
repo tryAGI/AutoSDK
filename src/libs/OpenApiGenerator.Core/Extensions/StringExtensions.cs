@@ -199,4 +199,12 @@ public static class StringExtensions
             ? $"{propertyName}1"
             : propertyName;
     }
+    
+    public static string ToClassName(
+        this string text)
+    {
+        return text
+            .ToPropertyName()
+            .UseWordSeparator('_', '-', ' ', '\\', '/');
+    }
 }

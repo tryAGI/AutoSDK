@@ -26,7 +26,11 @@ public readonly record struct EndPoint(
     public string MethodName => $"{NotAsyncMethodName}Async";
     public string NotAsyncMethodName => Id.ToPropertyName();
     
-    public string FileNameWithoutExtension => $"{Namespace}.{ClassName}.EndPoints.{Id.ToPropertyName()}";
+    public string FileNameWithoutExtension => !string.IsNullOrWhiteSpace(AuthorizationScheme)
+        ? $"{Namespace}.{ClassName}.Authorization"
+        : string.IsNullOrWhiteSpace(Path)
+            ? $"{Namespace}.{ClassName}"
+            : $"{Namespace}.{ClassName}.{Id.ToPropertyName()}";
     
     public static EndPoint FromSchema(
         KeyValuePair<OperationType, OpenApiOperation> operation,
@@ -59,7 +63,9 @@ public readonly record struct EndPoint(
         var endPoint = new EndPoint(
             Id: operation.Value.GetMethodName(path: path, operationType: operation.Key, settings.MethodNamingConvention, settings.MethodNamingConventionFallback),
             Namespace: settings.Namespace,
-            ClassName: settings.ClassName.Replace(".", string.Empty),
+            ClassName: settings.GroupByTags
+                ? operation.Value.Tags.FirstOrDefault()?.Name.ToClassName() + "Client" ?? settings.ClassName.Replace(".", string.Empty)
+                : settings.ClassName.Replace(".", string.Empty),
             BaseUrl: string.Empty,
             Stream: response?.Content.Keys
                 .Any(x => x.Contains("application/x-ndjson")) ?? false,

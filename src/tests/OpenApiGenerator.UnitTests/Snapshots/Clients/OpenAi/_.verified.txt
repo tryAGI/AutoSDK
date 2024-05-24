@@ -448,7 +448,7 @@ A list of functions the model may generate JSON inputs for.
     ResponseType: CreateChatCompletionResponse,
     MethodName: CreateChatCompletionAsync,
     NotAsyncMethodName: CreateChatCompletion,
-    FileNameWithoutExtension: G.Api.EndPoints.CreateChatCompletion
+    FileNameWithoutExtension: G.Api.CreateChatCompletion
   },
   {
     Id: CreateCompletion,
@@ -855,7 +855,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     ResponseType: CreateCompletionResponse,
     MethodName: CreateCompletionAsync,
     NotAsyncMethodName: CreateCompletion,
-    FileNameWithoutExtension: G.Api.EndPoints.CreateCompletion
+    FileNameWithoutExtension: G.Api.CreateCompletion
   },
   {
     Id: CreateImage,
@@ -1062,7 +1062,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     ResponseType: ImagesResponse,
     MethodName: CreateImageAsync,
     NotAsyncMethodName: CreateImage,
-    FileNameWithoutExtension: G.Api.EndPoints.CreateImage
+    FileNameWithoutExtension: G.Api.CreateImage
   },
   {
     Id: CreateImageEdit,
@@ -1245,7 +1245,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     ResponseType: ImagesResponse,
     MethodName: CreateImageEditAsync,
     NotAsyncMethodName: CreateImageEdit,
-    FileNameWithoutExtension: G.Api.EndPoints.CreateImageEdit
+    FileNameWithoutExtension: G.Api.CreateImageEdit
   },
   {
     Id: CreateImageVariation,
@@ -1394,7 +1394,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     ResponseType: ImagesResponse,
     MethodName: CreateImageVariationAsync,
     NotAsyncMethodName: CreateImageVariation,
-    FileNameWithoutExtension: G.Api.EndPoints.CreateImageVariation
+    FileNameWithoutExtension: G.Api.CreateImageVariation
   },
   {
     Id: CreateEmbedding,
@@ -1515,7 +1515,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     ResponseType: CreateEmbeddingResponse,
     MethodName: CreateEmbeddingAsync,
     NotAsyncMethodName: CreateEmbedding,
-    FileNameWithoutExtension: G.Api.EndPoints.CreateEmbedding
+    FileNameWithoutExtension: G.Api.CreateEmbedding
   },
   {
     Id: CreateSpeech,
@@ -1651,7 +1651,7 @@ The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is 
     ResponseType: ,
     MethodName: CreateSpeechAsync,
     NotAsyncMethodName: CreateSpeech,
-    FileNameWithoutExtension: G.Api.EndPoints.CreateSpeech
+    FileNameWithoutExtension: G.Api.CreateSpeech
   },
   {
     Id: CreateTranscription,
@@ -1796,7 +1796,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     ResponseType: ,
     MethodName: CreateTranscriptionAsync,
     NotAsyncMethodName: CreateTranscription,
-    FileNameWithoutExtension: G.Api.EndPoints.CreateTranscription
+    FileNameWithoutExtension: G.Api.CreateTranscription
   },
   {
     Id: CreateTranslation,
@@ -1911,7 +1911,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     ResponseType: ,
     MethodName: CreateTranslationAsync,
     NotAsyncMethodName: CreateTranslation,
-    FileNameWithoutExtension: G.Api.EndPoints.CreateTranslation
+    FileNameWithoutExtension: G.Api.CreateTranslation
   },
   {
     Id: ListFiles,
@@ -1949,7 +1949,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     ResponseType: ListFilesResponse,
     MethodName: ListFilesAsync,
     NotAsyncMethodName: ListFiles,
-    FileNameWithoutExtension: G.Api.EndPoints.ListFiles
+    FileNameWithoutExtension: G.Api.ListFiles
   },
   {
     Id: CreateFile,
@@ -2015,7 +2015,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     ResponseType: OpenAIFile,
     MethodName: CreateFileAsync,
     NotAsyncMethodName: CreateFile,
-    FileNameWithoutExtension: G.Api.EndPoints.CreateFile
+    FileNameWithoutExtension: G.Api.CreateFile
   },
   {
     Id: DeleteFile,
@@ -2054,7 +2054,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     ResponseType: DeleteFileResponse,
     MethodName: DeleteFileAsync,
     NotAsyncMethodName: DeleteFile,
-    FileNameWithoutExtension: G.Api.EndPoints.DeleteFile
+    FileNameWithoutExtension: G.Api.DeleteFile
   },
   {
     Id: RetrieveFile,
@@ -2092,7 +2092,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     ResponseType: OpenAIFile,
     MethodName: RetrieveFileAsync,
     NotAsyncMethodName: RetrieveFile,
-    FileNameWithoutExtension: G.Api.EndPoints.RetrieveFile
+    FileNameWithoutExtension: G.Api.RetrieveFile
   },
   {
     Id: DownloadFile,
@@ -2130,7 +2130,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     ResponseType: ,
     MethodName: DownloadFileAsync,
     NotAsyncMethodName: DownloadFile,
-    FileNameWithoutExtension: G.Api.EndPoints.DownloadFile
+    FileNameWithoutExtension: G.Api.DownloadFile
   },
   {
     Id: CreateFineTuningJob,
@@ -2296,7 +2296,7 @@ If a seed is not specified, one will be generated for you.
     ResponseType: FineTuningJob,
     MethodName: CreateFineTuningJobAsync,
     NotAsyncMethodName: CreateFineTuningJob,
-    FileNameWithoutExtension: G.Api.EndPoints.CreateFineTuningJob
+    FileNameWithoutExtension: G.Api.CreateFineTuningJob
   },
   {
     Id: ListPaginatedFineTuningJobs,
@@ -2355,7 +2355,7 @@ If a seed is not specified, one will be generated for you.
     ResponseType: ListPaginatedFineTuningJobsResponse,
     MethodName: ListPaginatedFineTuningJobsAsync,
     NotAsyncMethodName: ListPaginatedFineTuningJobs,
-    FileNameWithoutExtension: G.Api.EndPoints.ListPaginatedFineTuningJobs
+    FileNameWithoutExtension: G.Api.ListPaginatedFineTuningJobs
   },
   {
     Id: RetrieveFineTuningJob,
@@ -2394,7 +2394,7 @@ If a seed is not specified, one will be generated for you.
     ResponseType: FineTuningJob,
     MethodName: RetrieveFineTuningJobAsync,
     NotAsyncMethodName: RetrieveFineTuningJob,
-    FileNameWithoutExtension: G.Api.EndPoints.RetrieveFineTuningJob
+    FileNameWithoutExtension: G.Api.RetrieveFineTuningJob
   },
   {
     Id: ListFineTuningEvents,
@@ -2473,7 +2473,7 @@ If a seed is not specified, one will be generated for you.
     ResponseType: ListFineTuningJobEventsResponse,
     MethodName: ListFineTuningEventsAsync,
     NotAsyncMethodName: ListFineTuningEvents,
-    FileNameWithoutExtension: G.Api.EndPoints.ListFineTuningEvents
+    FileNameWithoutExtension: G.Api.ListFineTuningEvents
   },
   {
     Id: CancelFineTuningJob,
@@ -2513,7 +2513,7 @@ If a seed is not specified, one will be generated for you.
     ResponseType: FineTuningJob,
     MethodName: CancelFineTuningJobAsync,
     NotAsyncMethodName: CancelFineTuningJob,
-    FileNameWithoutExtension: G.Api.EndPoints.CancelFineTuningJob
+    FileNameWithoutExtension: G.Api.CancelFineTuningJob
   },
   {
     Id: ListFineTuningJobCheckpoints,
@@ -2592,7 +2592,7 @@ If a seed is not specified, one will be generated for you.
     ResponseType: ListFineTuningJobCheckpointsResponse,
     MethodName: ListFineTuningJobCheckpointsAsync,
     NotAsyncMethodName: ListFineTuningJobCheckpoints,
-    FileNameWithoutExtension: G.Api.EndPoints.ListFineTuningJobCheckpoints
+    FileNameWithoutExtension: G.Api.ListFineTuningJobCheckpoints
   },
   {
     Id: ListModels,
@@ -2610,7 +2610,7 @@ If a seed is not specified, one will be generated for you.
     ResponseType: ListModelsResponse,
     MethodName: ListModelsAsync,
     NotAsyncMethodName: ListModels,
-    FileNameWithoutExtension: G.Api.EndPoints.ListModels
+    FileNameWithoutExtension: G.Api.ListModels
   },
   {
     Id: RetrieveModel,
@@ -2649,7 +2649,7 @@ If a seed is not specified, one will be generated for you.
     ResponseType: Model,
     MethodName: RetrieveModelAsync,
     NotAsyncMethodName: RetrieveModel,
-    FileNameWithoutExtension: G.Api.EndPoints.RetrieveModel
+    FileNameWithoutExtension: G.Api.RetrieveModel
   },
   {
     Id: DeleteModel,
@@ -2689,7 +2689,7 @@ If a seed is not specified, one will be generated for you.
     ResponseType: DeleteModelResponse,
     MethodName: DeleteModelAsync,
     NotAsyncMethodName: DeleteModel,
-    FileNameWithoutExtension: G.Api.EndPoints.DeleteModel
+    FileNameWithoutExtension: G.Api.DeleteModel
   },
   {
     Id: CreateModeration,
@@ -2748,7 +2748,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
     ResponseType: CreateModerationResponse,
     MethodName: CreateModerationAsync,
     NotAsyncMethodName: CreateModeration,
-    FileNameWithoutExtension: G.Api.EndPoints.CreateModeration
+    FileNameWithoutExtension: G.Api.CreateModeration
   },
   {
     Id: ListAssistants,
@@ -2853,7 +2853,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
     ResponseType: ListAssistantsResponse,
     MethodName: ListAssistantsAsync,
     NotAsyncMethodName: ListAssistants,
-    FileNameWithoutExtension: G.Api.EndPoints.ListAssistants
+    FileNameWithoutExtension: G.Api.ListAssistants
   },
   {
     Id: CreateAssistant,
@@ -3069,7 +3069,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ResponseType: AssistantObject,
     MethodName: CreateAssistantAsync,
     NotAsyncMethodName: CreateAssistant,
-    FileNameWithoutExtension: G.Api.EndPoints.CreateAssistant
+    FileNameWithoutExtension: G.Api.CreateAssistant
   },
   {
     Id: GetAssistant,
@@ -3107,7 +3107,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ResponseType: AssistantObject,
     MethodName: GetAssistantAsync,
     NotAsyncMethodName: GetAssistant,
-    FileNameWithoutExtension: G.Api.EndPoints.GetAssistant
+    FileNameWithoutExtension: G.Api.GetAssistant
   },
   {
     Id: ModifyAssistant,
@@ -3342,7 +3342,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ResponseType: AssistantObject,
     MethodName: ModifyAssistantAsync,
     NotAsyncMethodName: ModifyAssistant,
-    FileNameWithoutExtension: G.Api.EndPoints.ModifyAssistant
+    FileNameWithoutExtension: G.Api.ModifyAssistant
   },
   {
     Id: DeleteAssistant,
@@ -3381,7 +3381,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ResponseType: DeleteAssistantResponse,
     MethodName: DeleteAssistantAsync,
     NotAsyncMethodName: DeleteAssistant,
-    FileNameWithoutExtension: G.Api.EndPoints.DeleteAssistant
+    FileNameWithoutExtension: G.Api.DeleteAssistant
   },
   {
     Id: CreateThread,
@@ -3454,7 +3454,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: ThreadObject,
     MethodName: CreateThreadAsync,
     NotAsyncMethodName: CreateThread,
-    FileNameWithoutExtension: G.Api.EndPoints.CreateThread
+    FileNameWithoutExtension: G.Api.CreateThread
   },
   {
     Id: GetThread,
@@ -3492,7 +3492,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: ThreadObject,
     MethodName: GetThreadAsync,
     NotAsyncMethodName: GetThread,
-    FileNameWithoutExtension: G.Api.EndPoints.GetThread
+    FileNameWithoutExtension: G.Api.GetThread
   },
   {
     Id: ModifyThread,
@@ -3568,7 +3568,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: ThreadObject,
     MethodName: ModifyThreadAsync,
     NotAsyncMethodName: ModifyThread,
-    FileNameWithoutExtension: G.Api.EndPoints.ModifyThread
+    FileNameWithoutExtension: G.Api.ModifyThread
   },
   {
     Id: DeleteThread,
@@ -3607,7 +3607,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: DeleteThreadResponse,
     MethodName: DeleteThreadAsync,
     NotAsyncMethodName: DeleteThread,
-    FileNameWithoutExtension: G.Api.EndPoints.DeleteThread
+    FileNameWithoutExtension: G.Api.DeleteThread
   },
   {
     Id: ListMessages,
@@ -3750,7 +3750,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: ListMessagesResponse,
     MethodName: ListMessagesAsync,
     NotAsyncMethodName: ListMessages,
-    FileNameWithoutExtension: G.Api.EndPoints.ListMessages
+    FileNameWithoutExtension: G.Api.ListMessages
   },
   {
     Id: CreateMessage,
@@ -3866,7 +3866,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: MessageObject,
     MethodName: CreateMessageAsync,
     NotAsyncMethodName: CreateMessage,
-    FileNameWithoutExtension: G.Api.EndPoints.CreateMessage
+    FileNameWithoutExtension: G.Api.CreateMessage
   },
   {
     Id: GetMessage,
@@ -3923,7 +3923,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: MessageObject,
     MethodName: GetMessageAsync,
     NotAsyncMethodName: GetMessage,
-    FileNameWithoutExtension: G.Api.EndPoints.GetMessage
+    FileNameWithoutExtension: G.Api.GetMessage
   },
   {
     Id: ModifyMessage,
@@ -4000,7 +4000,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: MessageObject,
     MethodName: ModifyMessageAsync,
     NotAsyncMethodName: ModifyMessage,
-    FileNameWithoutExtension: G.Api.EndPoints.ModifyMessage
+    FileNameWithoutExtension: G.Api.ModifyMessage
   },
   {
     Id: DeleteMessage,
@@ -4058,7 +4058,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: DeleteMessageResponse,
     MethodName: DeleteMessageAsync,
     NotAsyncMethodName: DeleteMessage,
-    FileNameWithoutExtension: G.Api.EndPoints.DeleteMessage
+    FileNameWithoutExtension: G.Api.DeleteMessage
   },
   {
     Id: CreateThreadAndRun,
@@ -4363,7 +4363,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ResponseType: RunObject,
     MethodName: CreateThreadAndRunAsync,
     NotAsyncMethodName: CreateThreadAndRun,
-    FileNameWithoutExtension: G.Api.EndPoints.CreateThreadAndRun
+    FileNameWithoutExtension: G.Api.CreateThreadAndRun
   },
   {
     Id: ListRuns,
@@ -4487,7 +4487,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ResponseType: ListRunsResponse,
     MethodName: ListRunsAsync,
     NotAsyncMethodName: ListRuns,
-    FileNameWithoutExtension: G.Api.EndPoints.ListRuns
+    FileNameWithoutExtension: G.Api.ListRuns
   },
   {
     Id: CreateRun,
@@ -4805,7 +4805,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ResponseType: RunObject,
     MethodName: CreateRunAsync,
     NotAsyncMethodName: CreateRun,
-    FileNameWithoutExtension: G.Api.EndPoints.CreateRun
+    FileNameWithoutExtension: G.Api.CreateRun
   },
   {
     Id: GetRun,
@@ -4862,7 +4862,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ResponseType: RunObject,
     MethodName: GetRunAsync,
     NotAsyncMethodName: GetRun,
-    FileNameWithoutExtension: G.Api.EndPoints.GetRun
+    FileNameWithoutExtension: G.Api.GetRun
   },
   {
     Id: ModifyRun,
@@ -4939,7 +4939,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: RunObject,
     MethodName: ModifyRunAsync,
     NotAsyncMethodName: ModifyRun,
-    FileNameWithoutExtension: G.Api.EndPoints.ModifyRun
+    FileNameWithoutExtension: G.Api.ModifyRun
   },
   {
     Id: SubmitToolOuputsToRun,
@@ -5031,7 +5031,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     ResponseType: RunObject,
     MethodName: SubmitToolOuputsToRunAsync,
     NotAsyncMethodName: SubmitToolOuputsToRun,
-    FileNameWithoutExtension: G.Api.EndPoints.SubmitToolOuputsToRun
+    FileNameWithoutExtension: G.Api.SubmitToolOuputsToRun
   },
   {
     Id: CancelRun,
@@ -5089,7 +5089,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     ResponseType: RunObject,
     MethodName: CancelRunAsync,
     NotAsyncMethodName: CancelRun,
-    FileNameWithoutExtension: G.Api.EndPoints.CancelRun
+    FileNameWithoutExtension: G.Api.CancelRun
   },
   {
     Id: ListRunSteps,
@@ -5232,7 +5232,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     ResponseType: ListRunStepsResponse,
     MethodName: ListRunStepsAsync,
     NotAsyncMethodName: ListRunSteps,
-    FileNameWithoutExtension: G.Api.EndPoints.ListRunSteps
+    FileNameWithoutExtension: G.Api.ListRunSteps
   },
   {
     Id: GetRunStep,
@@ -5308,7 +5308,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     ResponseType: RunStepObject,
     MethodName: GetRunStepAsync,
     NotAsyncMethodName: GetRunStep,
-    FileNameWithoutExtension: G.Api.EndPoints.GetRunStep
+    FileNameWithoutExtension: G.Api.GetRunStep
   },
   {
     Id: ListVectorStores,
@@ -5413,7 +5413,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     ResponseType: ListVectorStoresResponse,
     MethodName: ListVectorStoresAsync,
     NotAsyncMethodName: ListVectorStores,
-    FileNameWithoutExtension: G.Api.EndPoints.ListVectorStores
+    FileNameWithoutExtension: G.Api.ListVectorStores
   },
   {
     Id: CreateVectorStore,
@@ -5503,7 +5503,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: VectorStoreObject,
     MethodName: CreateVectorStoreAsync,
     NotAsyncMethodName: CreateVectorStore,
-    FileNameWithoutExtension: G.Api.EndPoints.CreateVectorStore
+    FileNameWithoutExtension: G.Api.CreateVectorStore
   },
   {
     Id: GetVectorStore,
@@ -5541,7 +5541,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: VectorStoreObject,
     MethodName: GetVectorStoreAsync,
     NotAsyncMethodName: GetVectorStore,
-    FileNameWithoutExtension: G.Api.EndPoints.GetVectorStore
+    FileNameWithoutExtension: G.Api.GetVectorStore
   },
   {
     Id: ModifyVectorStore,
@@ -5634,7 +5634,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: VectorStoreObject,
     MethodName: ModifyVectorStoreAsync,
     NotAsyncMethodName: ModifyVectorStore,
-    FileNameWithoutExtension: G.Api.EndPoints.ModifyVectorStore
+    FileNameWithoutExtension: G.Api.ModifyVectorStore
   },
   {
     Id: DeleteVectorStore,
@@ -5673,7 +5673,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: DeleteVectorStoreResponse,
     MethodName: DeleteVectorStoreAsync,
     NotAsyncMethodName: DeleteVectorStore,
-    FileNameWithoutExtension: G.Api.EndPoints.DeleteVectorStore
+    FileNameWithoutExtension: G.Api.DeleteVectorStore
   },
   {
     Id: ListVectorStoreFiles,
@@ -5826,7 +5826,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: ListVectorStoreFilesResponse,
     MethodName: ListVectorStoreFilesAsync,
     NotAsyncMethodName: ListVectorStoreFiles,
-    FileNameWithoutExtension: G.Api.EndPoints.ListVectorStoreFiles
+    FileNameWithoutExtension: G.Api.ListVectorStoreFiles
   },
   {
     Id: CreateVectorStoreFile,
@@ -5882,7 +5882,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: VectorStoreFileObject,
     MethodName: CreateVectorStoreFileAsync,
     NotAsyncMethodName: CreateVectorStoreFile,
-    FileNameWithoutExtension: G.Api.EndPoints.CreateVectorStoreFile
+    FileNameWithoutExtension: G.Api.CreateVectorStoreFile
   },
   {
     Id: GetVectorStoreFile,
@@ -5941,7 +5941,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: VectorStoreFileObject,
     MethodName: GetVectorStoreFileAsync,
     NotAsyncMethodName: GetVectorStoreFile,
-    FileNameWithoutExtension: G.Api.EndPoints.GetVectorStoreFile
+    FileNameWithoutExtension: G.Api.GetVectorStoreFile
   },
   {
     Id: DeleteVectorStoreFile,
@@ -5999,7 +5999,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: DeleteVectorStoreFileResponse,
     MethodName: DeleteVectorStoreFileAsync,
     NotAsyncMethodName: DeleteVectorStoreFile,
-    FileNameWithoutExtension: G.Api.EndPoints.DeleteVectorStoreFile
+    FileNameWithoutExtension: G.Api.DeleteVectorStoreFile
   },
   {
     Id: CreateVectorStoreFileBatch,
@@ -6055,7 +6055,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: VectorStoreFileBatchObject,
     MethodName: CreateVectorStoreFileBatchAsync,
     NotAsyncMethodName: CreateVectorStoreFileBatch,
-    FileNameWithoutExtension: G.Api.EndPoints.CreateVectorStoreFileBatch
+    FileNameWithoutExtension: G.Api.CreateVectorStoreFileBatch
   },
   {
     Id: GetVectorStoreFileBatch,
@@ -6114,7 +6114,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: VectorStoreFileBatchObject,
     MethodName: GetVectorStoreFileBatchAsync,
     NotAsyncMethodName: GetVectorStoreFileBatch,
-    FileNameWithoutExtension: G.Api.EndPoints.GetVectorStoreFileBatch
+    FileNameWithoutExtension: G.Api.GetVectorStoreFileBatch
   },
   {
     Id: CancelVectorStoreFileBatch,
@@ -6172,7 +6172,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: VectorStoreFileBatchObject,
     MethodName: CancelVectorStoreFileBatchAsync,
     NotAsyncMethodName: CancelVectorStoreFileBatch,
-    FileNameWithoutExtension: G.Api.EndPoints.CancelVectorStoreFileBatch
+    FileNameWithoutExtension: G.Api.CancelVectorStoreFileBatch
   },
   {
     Id: ListFilesInVectorStoreBatch,
@@ -6344,7 +6344,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: ListVectorStoreFilesResponse,
     MethodName: ListFilesInVectorStoreBatchAsync,
     NotAsyncMethodName: ListFilesInVectorStoreBatch,
-    FileNameWithoutExtension: G.Api.EndPoints.ListFilesInVectorStoreBatch
+    FileNameWithoutExtension: G.Api.ListFilesInVectorStoreBatch
   },
   {
     Id: CreateBatch,
@@ -6445,7 +6445,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     ResponseType: Batch,
     MethodName: CreateBatchAsync,
     NotAsyncMethodName: CreateBatch,
-    FileNameWithoutExtension: G.Api.EndPoints.CreateBatch
+    FileNameWithoutExtension: G.Api.CreateBatch
   },
   {
     Id: ListBatches,
@@ -6504,7 +6504,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     ResponseType: ListBatchesResponse,
     MethodName: ListBatchesAsync,
     NotAsyncMethodName: ListBatches,
-    FileNameWithoutExtension: G.Api.EndPoints.ListBatches
+    FileNameWithoutExtension: G.Api.ListBatches
   },
   {
     Id: RetrieveBatch,
@@ -6542,7 +6542,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     ResponseType: Batch,
     MethodName: RetrieveBatchAsync,
     NotAsyncMethodName: RetrieveBatch,
-    FileNameWithoutExtension: G.Api.EndPoints.RetrieveBatch
+    FileNameWithoutExtension: G.Api.RetrieveBatch
   },
   {
     Id: CancelBatch,
@@ -6581,7 +6581,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     ResponseType: Batch,
     MethodName: CancelBatchAsync,
     NotAsyncMethodName: CancelBatch,
-    FileNameWithoutExtension: G.Api.EndPoints.CancelBatch
+    FileNameWithoutExtension: G.Api.CancelBatch
   },
   {
     Id: AuthorizeUsingBearer,
@@ -6599,7 +6599,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     ResponseType: ,
     MethodName: AuthorizeUsingBearerAsync,
     NotAsyncMethodName: AuthorizeUsingBearer,
-    FileNameWithoutExtension: G.Api.EndPoints.AuthorizeUsingBearer
+    FileNameWithoutExtension: G.Api.Authorization
   },
   {
     Id: Constructors,
@@ -6617,6 +6617,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     ResponseType: ,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
-    FileNameWithoutExtension: G.Api.EndPoints.Constructors
+    FileNameWithoutExtension: G.Api
   }
 ]

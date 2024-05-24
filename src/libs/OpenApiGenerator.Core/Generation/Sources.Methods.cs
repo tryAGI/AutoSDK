@@ -48,6 +48,8 @@ namespace {endPoint.Namespace}
     public sealed partial class {endPoint.ClassName} : global::System.IDisposable
     {{
         private readonly global::System.Net.Http.HttpClient _httpClient;
+{(endPoint.Properties.Length != 0 ? "\n" + endPoint.Properties.Select(x => $@"
+        public {x.Type.CSharpType} {x.Name} => new {x.Type.CSharpType}(_httpClient);").Inject() : " ")}
 
         /// <summary>
         /// Creates a new instance of the {endPoint.ClassName}.

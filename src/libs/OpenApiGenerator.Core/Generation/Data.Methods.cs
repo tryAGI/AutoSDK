@@ -52,7 +52,13 @@ public static class ClientGeneratorMethods
             .SelectMany(requirement => requirement)
             .Select(x => EndPoint.FromAuthorization(x.Key.Scheme, settings))
             .ToArray();
-            
+
+        var includedTags = openApiDocument.Tags
+            .Where(x =>
+                (settings.IncludeTags.Length == 0 ||
+                 settings.IncludeTags.Contains(x.Name)) &&
+                !settings.ExcludeTags.Contains(x.Name))
+            .ToArray();
         EndPoint[] constructors = settings.GenerateSdk || settings.GenerateConstructors ? [new EndPoint(
                 Id: "Constructors",
                 Namespace: settings.Namespace,
@@ -61,7 +67,19 @@ public static class ClientGeneratorMethods
                 Stream: false,
                 Path: string.Empty,
                 AuthorizationScheme: string.Empty,
-                Properties: ImmutableArray<PropertyData>.Empty,
+                Properties: settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors)
+                    ? [
+                        .. includedTags.Select(x => PropertyData.Default with
+                        {
+                            Name = x.Name.ToClassName(),
+                            Type = TypeData.Default with
+                            {
+                                CSharpType = $"{x.Name.ToClassName()}Client",
+                            },
+                            Summary = x.Description,
+                        })
+                    ]
+                    : [],
                 TargetFramework: settings.TargetFramework,
                 JsonSerializerType: settings.JsonSerializerType,
                 JsonSerializerContext: settings.JsonSerializerContext,
@@ -71,22 +89,25 @@ public static class ClientGeneratorMethods
                 ResponseType: string.Empty)] : [];
         if (settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors))
         {
-            constructors = constructors.Concat(openApiDocument.Tags.Select(x => new EndPoint(
-                Id: "Constructors",
-                Namespace: settings.Namespace,
-                ClassName: x.Name.ToPropertyName(),
-                BaseUrl: openApiDocument.Servers.FirstOrDefault()?.Url ?? string.Empty,
-                Stream: false,
-                Path: string.Empty,
-                AuthorizationScheme: string.Empty,
-                Properties: ImmutableArray<PropertyData>.Empty,
-                TargetFramework: settings.TargetFramework,
-                JsonSerializerType: settings.JsonSerializerType,
-                JsonSerializerContext: settings.JsonSerializerContext,
-                HttpMethod: OperationType.Get,
-                Summary: string.Empty,
-                RequestType: string.Empty,
-                ResponseType: string.Empty))).ToArray();
+            constructors = constructors.Concat(
+                includedTags
+                    .Select(x => new EndPoint(
+                        Id: "Constructors",
+                        Namespace: settings.Namespace,
+                        ClassName: $"{x.Name.ToClassName()}Client",
+                        BaseUrl: openApiDocument.Servers.FirstOrDefault()?.Url ?? string.Empty,
+                        Stream: false,
+                        Path: string.Empty,
+                        AuthorizationScheme: string.Empty,
+                        Properties: ImmutableArray<PropertyData>.Empty,
+                        TargetFramework: settings.TargetFramework,
+                        JsonSerializerType: settings.JsonSerializerType,
+                        JsonSerializerContext: settings.JsonSerializerContext,
+                        HttpMethod: OperationType.Get,
+                        Summary: string.Empty,
+                        RequestType: string.Empty,
+                        ResponseType: string.Empty)))
+                .ToArray();
         }
             
         return [

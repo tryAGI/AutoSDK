@@ -117,7 +117,8 @@ public partial class Tests
                 text: H.Resources.openai_yaml.AsString())
         ], new Dictionary<string, string>
         {
-            //["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
+            ["build_property.OpenApiGenerator_ClassName"] = "OpenAiClient",
+            ["build_property.OpenApiGenerator_GroupByTags"] = "true",
             //["build_property.OpenApiGenerator_GenerateMethods"] = "true",
             //["build_property.OpenApiGenerator_IncludeOperationIds"] = "ListModels",
             //["build_property.OpenApiGenerator_IncludeModels"] = "CreateEmbeddingRequest;CreateModerationResponse;Error;ErrorResponse;ListModelsResponse;Model;DeleteModelResponse;CreateCompletionRequest",
