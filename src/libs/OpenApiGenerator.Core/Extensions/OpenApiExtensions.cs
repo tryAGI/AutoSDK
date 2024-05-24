@@ -193,6 +193,8 @@ public static class OpenApiExtensions
             .ToPropertyName()
             .UseWordSeparator('_', '-', ' ')
             .Replace("+", "Plus")
+            .Replace("*", "Any")
+            .Replace("'", string.Empty)
             .Replace(".", string.Empty)
             .Replace("[", string.Empty)
             .Replace("]", string.Empty);
