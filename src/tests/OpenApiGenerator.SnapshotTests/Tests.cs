@@ -173,7 +173,7 @@ public partial class Tests
             //["build_property.OpenApiGenerator_GenerateMethods"] = "true",
         });
     }
-    
+    //
     // [DataTestMethod]
     // [DataRow(JsonSerializerType.SystemTextJson)]
     // [DataRow(JsonSerializerType.NewtonsoftJson)]
@@ -181,10 +181,6 @@ public partial class Tests
     // {
     //     return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
     //         new CustomAdditionalText("https://dedoose-rest-api.onrender.com/swagger/v1/swagger.json", string.Empty),
-    //     ], new Dictionary<string, string>
-    //     {
-    //         //["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
-    //         //["build_property.OpenApiGenerator_GenerateMethods"] = "true",
-    //     });
+    //     ]);
     // }
 }
