@@ -67,8 +67,10 @@ public static class ClientGeneratorMethods
                         settings.MethodNamingConvention, settings.MethodNamingConventionFallback);
                     
                     return (includedOperationIds.Count == 0 ||
-                            includedOperationIds.Contains(methodName)) &&
-                           !excludedOperationIds.Contains(methodName);
+                            includedOperationIds.Contains(methodName) ||
+                            includedOperationIds.Contains(x.Value.OperationId)) &&
+                           !excludedOperationIds.Contains(methodName) &&
+                           !excludedOperationIds.Contains(x.Value.OperationId);
                 })
                 .Select(operation => EndPoint.FromSchema(operation, settings, path.Key)))
                 .ToArray();
