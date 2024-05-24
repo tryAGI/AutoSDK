@@ -101,7 +101,7 @@ public readonly record struct EndPoint(
             Summary: operation.Value.Summary?.Replace("\n", string.Empty) ?? string.Empty,
             RequestType: ModelData.FromKey(requestSchema?.Reference?.Id ?? string.Empty, settings).Name,
             ResponseType: response?
-                .Content.Values.FirstOrDefault()?.Schema?.Reference?.Id ?? string.Empty);
+                .Content.Values.FirstOrDefault()?.Schema?.Reference?.Id?.ToClassName() ?? string.Empty);
         
         return endPoint;
     }
