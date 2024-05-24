@@ -118,7 +118,6 @@ public partial class Tests
         ], new Dictionary<string, string>
         {
             ["build_property.OpenApiGenerator_ClassName"] = "OpenAiClient",
-            ["build_property.OpenApiGenerator_GroupByTags"] = "true",
             //["build_property.OpenApiGenerator_GenerateMethods"] = "true",
             //["build_property.OpenApiGenerator_IncludeOperationIds"] = "ListModels",
             //["build_property.OpenApiGenerator_IncludeModels"] = "CreateEmbeddingRequest;CreateModerationResponse;Error;ErrorResponse;ListModelsResponse;Model;DeleteModelResponse;CreateCompletionRequest",

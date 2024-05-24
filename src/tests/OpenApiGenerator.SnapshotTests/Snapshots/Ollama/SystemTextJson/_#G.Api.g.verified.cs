@@ -12,6 +12,11 @@ namespace G
     {
         private readonly global::System.Net.Http.HttpClient _httpClient;
 
+        public CompletionsClient Completions => new CompletionsClient(_httpClient);
+        public ChatClient Chat => new ChatClient(_httpClient);
+        public EmbeddingsClient Embeddings => new EmbeddingsClient(_httpClient);
+        public ModelsClient Models => new ModelsClient(_httpClient);
+
         /// <summary>
         /// Creates a new instance of the Api.
         /// If no httpClient is provided, a new one will be created.

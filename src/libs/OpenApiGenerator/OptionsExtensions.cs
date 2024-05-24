@@ -32,7 +32,7 @@ public static class OptionsExtensions
             UseRequiredKeyword: options.GetEnumGlobalOption<SdkFeatureUsage>(nameof(Settings.UseRequiredKeyword), prefix),
             
             GenerateConstructors: options.GetBoolGlobalOption(nameof(Settings.GenerateConstructors), prefix),
-            GroupByTags: options.GetBoolGlobalOption(nameof(Settings.GroupByTags), prefix),
+            GroupByTags: options.GetBoolGlobalOption(nameof(Settings.GroupByTags), prefix, defaultValue: true),
             GenerateMethods: options.GetBoolGlobalOption(nameof(Settings.GenerateMethods), prefix),
             MethodNamingConvention: options.GetEnumGlobalOption<MethodNamingConvention>(nameof(Settings.MethodNamingConvention), prefix),
             MethodNamingConventionFallback: options.GetEnumGlobalOption(nameof(Settings.MethodNamingConventionFallback), prefix, defaultValue: MethodNamingConvention.MethodAndPath),

@@ -2,7 +2,7 @@
   {
     Id: GenerateCompletion,
     Namespace: G,
-    ClassName: Api,
+    ClassName: CompletionsClient,
     BaseUrl: ,
     Stream: true,
     Path: "/generate",
@@ -259,12 +259,12 @@ How long (in minutes) to keep the model loaded in memory.
     ResponseType: GenerateCompletionResponse,
     MethodName: GenerateCompletionAsync,
     NotAsyncMethodName: GenerateCompletion,
-    FileNameWithoutExtension: G.Api.GenerateCompletion
+    FileNameWithoutExtension: G.CompletionsClient.GenerateCompletion
   },
   {
     Id: GenerateChatCompletion,
     Namespace: G,
-    ClassName: Api,
+    ClassName: ChatClient,
     BaseUrl: ,
     Stream: true,
     Path: "/chat",
@@ -435,12 +435,12 @@ How long (in minutes) to keep the model loaded in memory.
     ResponseType: GenerateChatCompletionResponse,
     MethodName: GenerateChatCompletionAsync,
     NotAsyncMethodName: GenerateChatCompletion,
-    FileNameWithoutExtension: G.Api.GenerateChatCompletion
+    FileNameWithoutExtension: G.ChatClient.GenerateChatCompletion
   },
   {
     Id: GenerateEmbedding,
     Namespace: G,
-    ClassName: Api,
+    ClassName: EmbeddingsClient,
     BaseUrl: ,
     Stream: false,
     Path: "/embeddings",
@@ -544,12 +544,12 @@ Text to generate embeddings for.
     ResponseType: GenerateEmbeddingResponse,
     MethodName: GenerateEmbeddingAsync,
     NotAsyncMethodName: GenerateEmbedding,
-    FileNameWithoutExtension: G.Api.GenerateEmbedding
+    FileNameWithoutExtension: G.EmbeddingsClient.GenerateEmbedding
   },
   {
     Id: CreateModel,
     Namespace: G,
-    ClassName: Api,
+    ClassName: ModelsClient,
     BaseUrl: ,
     Stream: true,
     Path: "/create",
@@ -623,12 +623,12 @@ If `false` the response will be returned as a single response object, otherwise 
     ResponseType: CreateModelResponse,
     MethodName: CreateModelAsync,
     NotAsyncMethodName: CreateModel,
-    FileNameWithoutExtension: G.Api.CreateModel
+    FileNameWithoutExtension: G.ModelsClient.CreateModel
   },
   {
     Id: ListModels,
     Namespace: G,
-    ClassName: Api,
+    ClassName: ModelsClient,
     BaseUrl: ,
     Stream: false,
     Path: "/tags",
@@ -641,12 +641,12 @@ If `false` the response will be returned as a single response object, otherwise 
     ResponseType: ModelsResponse,
     MethodName: ListModelsAsync,
     NotAsyncMethodName: ListModels,
-    FileNameWithoutExtension: G.Api.ListModels
+    FileNameWithoutExtension: G.ModelsClient.ListModels
   },
   {
     Id: ShowModelInfo,
     Namespace: G,
-    ClassName: Api,
+    ClassName: ModelsClient,
     BaseUrl: ,
     Stream: false,
     Path: "/show",
@@ -682,12 +682,12 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     ResponseType: ModelInfo,
     MethodName: ShowModelInfoAsync,
     NotAsyncMethodName: ShowModelInfo,
-    FileNameWithoutExtension: G.Api.ShowModelInfo
+    FileNameWithoutExtension: G.ModelsClient.ShowModelInfo
   },
   {
     Id: CopyModel,
     Namespace: G,
-    ClassName: Api,
+    ClassName: ModelsClient,
     BaseUrl: ,
     Stream: false,
     Path: "/copy",
@@ -738,12 +738,12 @@ Name of the new model.
     ResponseType: ,
     MethodName: CopyModelAsync,
     NotAsyncMethodName: CopyModel,
-    FileNameWithoutExtension: G.Api.CopyModel
+    FileNameWithoutExtension: G.ModelsClient.CopyModel
   },
   {
     Id: DeleteModel,
     Namespace: G,
-    ClassName: Api,
+    ClassName: ModelsClient,
     BaseUrl: ,
     Stream: false,
     Path: "/delete",
@@ -779,12 +779,12 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     ResponseType: ,
     MethodName: DeleteModelAsync,
     NotAsyncMethodName: DeleteModel,
-    FileNameWithoutExtension: G.Api.DeleteModel
+    FileNameWithoutExtension: G.ModelsClient.DeleteModel
   },
   {
     Id: PullModel,
     Namespace: G,
-    ClassName: Api,
+    ClassName: ModelsClient,
     BaseUrl: ,
     Stream: false,
     Path: "/pull",
@@ -862,12 +862,12 @@ If `false` the response will be returned as a single response object, otherwise 
     ResponseType: PullModelResponse,
     MethodName: PullModelAsync,
     NotAsyncMethodName: PullModel,
-    FileNameWithoutExtension: G.Api.PullModel
+    FileNameWithoutExtension: G.ModelsClient.PullModel
   },
   {
     Id: PushModel,
     Namespace: G,
-    ClassName: Api,
+    ClassName: ModelsClient,
     BaseUrl: ,
     Stream: false,
     Path: "/push",
@@ -942,12 +942,95 @@ If `false` the response will be returned as a single response object, otherwise 
     ResponseType: PushModelResponse,
     MethodName: PushModelAsync,
     NotAsyncMethodName: PushModel,
-    FileNameWithoutExtension: G.Api.PushModel
+    FileNameWithoutExtension: G.ModelsClient.PushModel
   },
   {
     Id: Constructors,
     Namespace: G,
     ClassName: Api,
+    BaseUrl: http://localhost:11434/api,
+    Stream: false,
+    Path: ,
+    AuthorizationScheme: ,
+    Properties: [
+      {
+        Id: ,
+        Name: Completions,
+        Type: {
+          CSharpType: CompletionsClient,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: Given a prompt, the model will generate a completion.,
+        ParameterName: completions,
+        ArgumentName: completions,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: ,
+        Name: Chat,
+        Type: {
+          CSharpType: ChatClient,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: Given a list of messages comprising a conversation, the model will return a response.,
+        ParameterName: chat,
+        ArgumentName: chat,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: ,
+        Name: Embeddings,
+        Type: {
+          CSharpType: EmbeddingsClient,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: Get a vector representation of a given input.,
+        ParameterName: embeddings,
+        ArgumentName: embeddings,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: ,
+        Name: Models,
+        Type: {
+          CSharpType: ModelsClient,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: List and describe the various models available.,
+        ParameterName: models,
+        ArgumentName: models,
+        ParameterDefaultValue: default
+      }
+    ],
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    Summary: ,
+    RequestType: ,
+    ResponseType: ,
+    MethodName: ConstructorsAsync,
+    NotAsyncMethodName: Constructors,
+    FileNameWithoutExtension: G.Api
+  },
+  {
+    Id: Constructors,
+    Namespace: G,
+    ClassName: CompletionsClient,
     BaseUrl: http://localhost:11434/api,
     Stream: false,
     Path: ,
@@ -960,6 +1043,60 @@ If `false` the response will be returned as a single response object, otherwise 
     ResponseType: ,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
-    FileNameWithoutExtension: G.Api
+    FileNameWithoutExtension: G.CompletionsClient
+  },
+  {
+    Id: Constructors,
+    Namespace: G,
+    ClassName: ChatClient,
+    BaseUrl: http://localhost:11434/api,
+    Stream: false,
+    Path: ,
+    AuthorizationScheme: ,
+    Properties: null,
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    Summary: ,
+    RequestType: ,
+    ResponseType: ,
+    MethodName: ConstructorsAsync,
+    NotAsyncMethodName: Constructors,
+    FileNameWithoutExtension: G.ChatClient
+  },
+  {
+    Id: Constructors,
+    Namespace: G,
+    ClassName: EmbeddingsClient,
+    BaseUrl: http://localhost:11434/api,
+    Stream: false,
+    Path: ,
+    AuthorizationScheme: ,
+    Properties: null,
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    Summary: ,
+    RequestType: ,
+    ResponseType: ,
+    MethodName: ConstructorsAsync,
+    NotAsyncMethodName: Constructors,
+    FileNameWithoutExtension: G.EmbeddingsClient
+  },
+  {
+    Id: Constructors,
+    Namespace: G,
+    ClassName: ModelsClient,
+    BaseUrl: http://localhost:11434/api,
+    Stream: false,
+    Path: ,
+    AuthorizationScheme: ,
+    Properties: null,
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    Summary: ,
+    RequestType: ,
+    ResponseType: ,
+    MethodName: ConstructorsAsync,
+    NotAsyncMethodName: Constructors,
+    FileNameWithoutExtension: G.ModelsClient
   }
 ]

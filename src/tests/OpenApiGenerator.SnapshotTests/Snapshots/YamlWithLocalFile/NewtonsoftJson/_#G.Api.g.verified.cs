@@ -12,6 +12,14 @@ namespace G
     {
         private readonly global::System.Net.Http.HttpClient _httpClient;
 
+        public GeneralClient General => new GeneralClient(_httpClient);
+        public SingleClient Single => new SingleClient(_httpClient);
+        public PrivacyDetectionClient PrivacyDetection => new PrivacyDetectionClient(_httpClient);
+        public AsnClient Asn => new AsnClient(_httpClient);
+        public RangesClient Ranges => new RangesClient(_httpClient);
+        public DomainsClient Domains => new DomainsClient(_httpClient);
+        public AbuseClient Abuse => new AbuseClient(_httpClient);
+
         /// <summary>
         /// Creates a new instance of the Api.
         /// If no httpClient is provided, a new one will be created.

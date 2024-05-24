@@ -30,6 +30,30 @@ public static class ClientGeneratorMethods
             excludedOperationIds.UnionWith(openApiDocument.FindAllOperationIdsForTag(tag));
         }
         
+        // Find all tags used in operations besides the ones defined in the document
+        var allTags = openApiDocument.Tags;
+        foreach (var operation in openApiDocument.Paths
+                     .SelectMany(x => x.Value.Operations)
+                     .Select(x => x.Value))
+        {
+            foreach (var tag in operation.Tags)
+            {
+                var existingTag = allTags.FirstOrDefault(x => x.Name == tag.Name);
+                if (existingTag is null)
+                {
+                    allTags.Add(tag);
+                }
+            }
+        }
+
+        if (settings.GroupByTags && allTags.Count < 2)
+        {
+            settings = settings with
+            {
+                GroupByTags = false,
+            };
+        }
+        
         var operations = openApiDocument.Paths.SelectMany(path =>
             path.Value.Operations
                 .Where(x =>
@@ -52,22 +76,6 @@ public static class ClientGeneratorMethods
             .SelectMany(requirement => requirement)
             .Select(x => EndPoint.FromAuthorization(x.Key.Scheme, settings))
             .ToArray();
-
-        // Find all tags used in operations besides the ones defined in the document
-        var allTags = openApiDocument.Tags;
-        foreach (var operation in openApiDocument.Paths
-            .SelectMany(x => x.Value.Operations)
-            .Select(x => x.Value))
-        {
-            foreach (var tag in operation.Tags)
-            {
-                var existingTag = allTags.FirstOrDefault(x => x.Name == tag.Name);
-                if (existingTag is null)
-                {
-                    allTags.Add(tag);
-                }
-            }
-        }
         
         var includedTags = allTags
             .Where(x =>

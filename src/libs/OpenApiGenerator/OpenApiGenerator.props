@@ -30,7 +30,7 @@
     <CompilerVisibleProperty Include="OpenApiGenerator_GenerateConstructors"/>
     <!-- true/false. Default: false -->
     <CompilerVisibleProperty Include="OpenApiGenerator_GroupByTags"/>
-    <!-- true/false. Default: false -->
+    <!-- true/false. Default: true -->
     <CompilerVisibleProperty Include="OpenApiGenerator_GenerateMethods"/>
     <!-- SimpleOperationId/MethodAndPath/OperationIdWithDots. Default: SimpleOperationId -->
     <CompilerVisibleProperty Include="OpenApiGenerator_MethodNamingConvention"/>

@@ -18,7 +18,7 @@ public class ClientTests :
         JsonSerializerType: default,
         UseRequiredKeyword: default,
         GenerateConstructors: false,
-        GroupByTags: false,
+        GroupByTags: true,
         GenerateMethods: false,
         MethodNamingConvention: default,
         MethodNamingConventionFallback: MethodNamingConvention.MethodAndPath,

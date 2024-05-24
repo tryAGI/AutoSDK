@@ -2,7 +2,7 @@
   {
     Id: CreateChatCompletion,
     Namespace: G,
-    ClassName: Api,
+    ClassName: ChatClient,
     BaseUrl: ,
     Stream: false,
     Path: "/chat/completions",
@@ -448,12 +448,12 @@ A list of functions the model may generate JSON inputs for.
     ResponseType: CreateChatCompletionResponse,
     MethodName: CreateChatCompletionAsync,
     NotAsyncMethodName: CreateChatCompletion,
-    FileNameWithoutExtension: G.Api.CreateChatCompletion
+    FileNameWithoutExtension: G.ChatClient.CreateChatCompletion
   },
   {
     Id: CreateCompletion,
     Namespace: G,
-    ClassName: Api,
+    ClassName: CompletionsClient,
     BaseUrl: ,
     Stream: false,
     Path: "/completions",
@@ -855,12 +855,12 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     ResponseType: CreateCompletionResponse,
     MethodName: CreateCompletionAsync,
     NotAsyncMethodName: CreateCompletion,
-    FileNameWithoutExtension: G.Api.CreateCompletion
+    FileNameWithoutExtension: G.CompletionsClient.CreateCompletion
   },
   {
     Id: CreateImage,
     Namespace: G,
-    ClassName: Api,
+    ClassName: ImagesClient,
     BaseUrl: ,
     Stream: false,
     Path: "/images/generations",
@@ -1062,12 +1062,12 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     ResponseType: ImagesResponse,
     MethodName: CreateImageAsync,
     NotAsyncMethodName: CreateImage,
-    FileNameWithoutExtension: G.Api.CreateImage
+    FileNameWithoutExtension: G.ImagesClient.CreateImage
   },
   {
     Id: CreateImageEdit,
     Namespace: G,
-    ClassName: Api,
+    ClassName: ImagesClient,
     BaseUrl: ,
     Stream: false,
     Path: "/images/edits",
@@ -1245,12 +1245,12 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     ResponseType: ImagesResponse,
     MethodName: CreateImageEditAsync,
     NotAsyncMethodName: CreateImageEdit,
-    FileNameWithoutExtension: G.Api.CreateImageEdit
+    FileNameWithoutExtension: G.ImagesClient.CreateImageEdit
   },
   {
     Id: CreateImageVariation,
     Namespace: G,
-    ClassName: Api,
+    ClassName: ImagesClient,
     BaseUrl: ,
     Stream: false,
     Path: "/images/variations",
@@ -1394,12 +1394,12 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     ResponseType: ImagesResponse,
     MethodName: CreateImageVariationAsync,
     NotAsyncMethodName: CreateImageVariation,
-    FileNameWithoutExtension: G.Api.CreateImageVariation
+    FileNameWithoutExtension: G.ImagesClient.CreateImageVariation
   },
   {
     Id: CreateEmbedding,
     Namespace: G,
-    ClassName: Api,
+    ClassName: EmbeddingsClient,
     BaseUrl: ,
     Stream: false,
     Path: "/embeddings",
@@ -1515,12 +1515,12 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     ResponseType: CreateEmbeddingResponse,
     MethodName: CreateEmbeddingAsync,
     NotAsyncMethodName: CreateEmbedding,
-    FileNameWithoutExtension: G.Api.CreateEmbedding
+    FileNameWithoutExtension: G.EmbeddingsClient.CreateEmbedding
   },
   {
     Id: CreateSpeech,
     Namespace: G,
-    ClassName: Api,
+    ClassName: AudioClient,
     BaseUrl: ,
     Stream: false,
     Path: "/audio/speech",
@@ -1651,12 +1651,12 @@ The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is 
     ResponseType: ,
     MethodName: CreateSpeechAsync,
     NotAsyncMethodName: CreateSpeech,
-    FileNameWithoutExtension: G.Api.CreateSpeech
+    FileNameWithoutExtension: G.AudioClient.CreateSpeech
   },
   {
     Id: CreateTranscription,
     Namespace: G,
-    ClassName: Api,
+    ClassName: AudioClient,
     BaseUrl: ,
     Stream: false,
     Path: "/audio/transcriptions",
@@ -1796,12 +1796,12 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     ResponseType: ,
     MethodName: CreateTranscriptionAsync,
     NotAsyncMethodName: CreateTranscription,
-    FileNameWithoutExtension: G.Api.CreateTranscription
+    FileNameWithoutExtension: G.AudioClient.CreateTranscription
   },
   {
     Id: CreateTranslation,
     Namespace: G,
-    ClassName: Api,
+    ClassName: AudioClient,
     BaseUrl: ,
     Stream: false,
     Path: "/audio/translations",
@@ -1911,12 +1911,12 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     ResponseType: ,
     MethodName: CreateTranslationAsync,
     NotAsyncMethodName: CreateTranslation,
-    FileNameWithoutExtension: G.Api.CreateTranslation
+    FileNameWithoutExtension: G.AudioClient.CreateTranslation
   },
   {
     Id: ListFiles,
     Namespace: G,
-    ClassName: Api,
+    ClassName: FilesClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/files?purpose={purpose}",
@@ -1949,12 +1949,12 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     ResponseType: ListFilesResponse,
     MethodName: ListFilesAsync,
     NotAsyncMethodName: ListFiles,
-    FileNameWithoutExtension: G.Api.ListFiles
+    FileNameWithoutExtension: G.FilesClient.ListFiles
   },
   {
     Id: CreateFile,
     Namespace: G,
-    ClassName: Api,
+    ClassName: FilesClient,
     BaseUrl: ,
     Stream: false,
     Path: "/files",
@@ -2015,12 +2015,12 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     ResponseType: OpenAIFile,
     MethodName: CreateFileAsync,
     NotAsyncMethodName: CreateFile,
-    FileNameWithoutExtension: G.Api.CreateFile
+    FileNameWithoutExtension: G.FilesClient.CreateFile
   },
   {
     Id: DeleteFile,
     Namespace: G,
-    ClassName: Api,
+    ClassName: FilesClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/files/{fileId}",
@@ -2054,12 +2054,12 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     ResponseType: DeleteFileResponse,
     MethodName: DeleteFileAsync,
     NotAsyncMethodName: DeleteFile,
-    FileNameWithoutExtension: G.Api.DeleteFile
+    FileNameWithoutExtension: G.FilesClient.DeleteFile
   },
   {
     Id: RetrieveFile,
     Namespace: G,
-    ClassName: Api,
+    ClassName: FilesClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/files/{fileId}",
@@ -2092,12 +2092,12 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     ResponseType: OpenAIFile,
     MethodName: RetrieveFileAsync,
     NotAsyncMethodName: RetrieveFile,
-    FileNameWithoutExtension: G.Api.RetrieveFile
+    FileNameWithoutExtension: G.FilesClient.RetrieveFile
   },
   {
     Id: DownloadFile,
     Namespace: G,
-    ClassName: Api,
+    ClassName: FilesClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/files/{fileId}/content",
@@ -2130,12 +2130,12 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     ResponseType: ,
     MethodName: DownloadFileAsync,
     NotAsyncMethodName: DownloadFile,
-    FileNameWithoutExtension: G.Api.DownloadFile
+    FileNameWithoutExtension: G.FilesClient.DownloadFile
   },
   {
     Id: CreateFineTuningJob,
     Namespace: G,
-    ClassName: Api,
+    ClassName: FineTuningClient,
     BaseUrl: ,
     Stream: false,
     Path: "/fine_tuning/jobs",
@@ -2296,12 +2296,12 @@ If a seed is not specified, one will be generated for you.
     ResponseType: FineTuningJob,
     MethodName: CreateFineTuningJobAsync,
     NotAsyncMethodName: CreateFineTuningJob,
-    FileNameWithoutExtension: G.Api.CreateFineTuningJob
+    FileNameWithoutExtension: G.FineTuningClient.CreateFineTuningJob
   },
   {
     Id: ListPaginatedFineTuningJobs,
     Namespace: G,
-    ClassName: Api,
+    ClassName: FineTuningClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/fine_tuning/jobs?after={after}&limit={limit}",
@@ -2355,12 +2355,12 @@ If a seed is not specified, one will be generated for you.
     ResponseType: ListPaginatedFineTuningJobsResponse,
     MethodName: ListPaginatedFineTuningJobsAsync,
     NotAsyncMethodName: ListPaginatedFineTuningJobs,
-    FileNameWithoutExtension: G.Api.ListPaginatedFineTuningJobs
+    FileNameWithoutExtension: G.FineTuningClient.ListPaginatedFineTuningJobs
   },
   {
     Id: RetrieveFineTuningJob,
     Namespace: G,
-    ClassName: Api,
+    ClassName: FineTuningClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/fine_tuning/jobs/{fineTuningJobId}",
@@ -2394,12 +2394,12 @@ If a seed is not specified, one will be generated for you.
     ResponseType: FineTuningJob,
     MethodName: RetrieveFineTuningJobAsync,
     NotAsyncMethodName: RetrieveFineTuningJob,
-    FileNameWithoutExtension: G.Api.RetrieveFineTuningJob
+    FileNameWithoutExtension: G.FineTuningClient.RetrieveFineTuningJob
   },
   {
     Id: ListFineTuningEvents,
     Namespace: G,
-    ClassName: Api,
+    ClassName: FineTuningClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/fine_tuning/jobs/{fineTuningJobId}/events?after={after}&limit={limit}",
@@ -2473,12 +2473,12 @@ If a seed is not specified, one will be generated for you.
     ResponseType: ListFineTuningJobEventsResponse,
     MethodName: ListFineTuningEventsAsync,
     NotAsyncMethodName: ListFineTuningEvents,
-    FileNameWithoutExtension: G.Api.ListFineTuningEvents
+    FileNameWithoutExtension: G.FineTuningClient.ListFineTuningEvents
   },
   {
     Id: CancelFineTuningJob,
     Namespace: G,
-    ClassName: Api,
+    ClassName: FineTuningClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/fine_tuning/jobs/{fineTuningJobId}/cancel",
@@ -2513,12 +2513,12 @@ If a seed is not specified, one will be generated for you.
     ResponseType: FineTuningJob,
     MethodName: CancelFineTuningJobAsync,
     NotAsyncMethodName: CancelFineTuningJob,
-    FileNameWithoutExtension: G.Api.CancelFineTuningJob
+    FileNameWithoutExtension: G.FineTuningClient.CancelFineTuningJob
   },
   {
     Id: ListFineTuningJobCheckpoints,
     Namespace: G,
-    ClassName: Api,
+    ClassName: FineTuningClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/fine_tuning/jobs/{fineTuningJobId}/checkpoints?after={after}&limit={limit}",
@@ -2592,12 +2592,12 @@ If a seed is not specified, one will be generated for you.
     ResponseType: ListFineTuningJobCheckpointsResponse,
     MethodName: ListFineTuningJobCheckpointsAsync,
     NotAsyncMethodName: ListFineTuningJobCheckpoints,
-    FileNameWithoutExtension: G.Api.ListFineTuningJobCheckpoints
+    FileNameWithoutExtension: G.FineTuningClient.ListFineTuningJobCheckpoints
   },
   {
     Id: ListModels,
     Namespace: G,
-    ClassName: Api,
+    ClassName: ModelsClient,
     BaseUrl: ,
     Stream: false,
     Path: "/models",
@@ -2610,12 +2610,12 @@ If a seed is not specified, one will be generated for you.
     ResponseType: ListModelsResponse,
     MethodName: ListModelsAsync,
     NotAsyncMethodName: ListModels,
-    FileNameWithoutExtension: G.Api.ListModels
+    FileNameWithoutExtension: G.ModelsClient.ListModels
   },
   {
     Id: RetrieveModel,
     Namespace: G,
-    ClassName: Api,
+    ClassName: ModelsClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/models/{model}",
@@ -2649,12 +2649,12 @@ If a seed is not specified, one will be generated for you.
     ResponseType: Model,
     MethodName: RetrieveModelAsync,
     NotAsyncMethodName: RetrieveModel,
-    FileNameWithoutExtension: G.Api.RetrieveModel
+    FileNameWithoutExtension: G.ModelsClient.RetrieveModel
   },
   {
     Id: DeleteModel,
     Namespace: G,
-    ClassName: Api,
+    ClassName: ModelsClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/models/{model}",
@@ -2689,12 +2689,12 @@ If a seed is not specified, one will be generated for you.
     ResponseType: DeleteModelResponse,
     MethodName: DeleteModelAsync,
     NotAsyncMethodName: DeleteModel,
-    FileNameWithoutExtension: G.Api.DeleteModel
+    FileNameWithoutExtension: G.ModelsClient.DeleteModel
   },
   {
     Id: CreateModeration,
     Namespace: G,
-    ClassName: Api,
+    ClassName: ModerationsClient,
     BaseUrl: ,
     Stream: false,
     Path: "/moderations",
@@ -2748,12 +2748,12 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
     ResponseType: CreateModerationResponse,
     MethodName: CreateModerationAsync,
     NotAsyncMethodName: CreateModeration,
-    FileNameWithoutExtension: G.Api.CreateModeration
+    FileNameWithoutExtension: G.ModerationsClient.CreateModeration
   },
   {
     Id: ListAssistants,
     Namespace: G,
-    ClassName: Api,
+    ClassName: AssistantsClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/assistants?limit={limit}&order={order}&after={after}&before={before}",
@@ -2853,12 +2853,12 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
     ResponseType: ListAssistantsResponse,
     MethodName: ListAssistantsAsync,
     NotAsyncMethodName: ListAssistants,
-    FileNameWithoutExtension: G.Api.ListAssistants
+    FileNameWithoutExtension: G.AssistantsClient.ListAssistants
   },
   {
     Id: CreateAssistant,
     Namespace: G,
-    ClassName: Api,
+    ClassName: AssistantsClient,
     BaseUrl: ,
     Stream: false,
     Path: "/assistants",
@@ -3069,12 +3069,12 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ResponseType: AssistantObject,
     MethodName: CreateAssistantAsync,
     NotAsyncMethodName: CreateAssistant,
-    FileNameWithoutExtension: G.Api.CreateAssistant
+    FileNameWithoutExtension: G.AssistantsClient.CreateAssistant
   },
   {
     Id: GetAssistant,
     Namespace: G,
-    ClassName: Api,
+    ClassName: AssistantsClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/assistants/{assistantId}",
@@ -3107,12 +3107,12 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ResponseType: AssistantObject,
     MethodName: GetAssistantAsync,
     NotAsyncMethodName: GetAssistant,
-    FileNameWithoutExtension: G.Api.GetAssistant
+    FileNameWithoutExtension: G.AssistantsClient.GetAssistant
   },
   {
     Id: ModifyAssistant,
     Namespace: G,
-    ClassName: Api,
+    ClassName: AssistantsClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/assistants/{assistantId}",
@@ -3342,12 +3342,12 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ResponseType: AssistantObject,
     MethodName: ModifyAssistantAsync,
     NotAsyncMethodName: ModifyAssistant,
-    FileNameWithoutExtension: G.Api.ModifyAssistant
+    FileNameWithoutExtension: G.AssistantsClient.ModifyAssistant
   },
   {
     Id: DeleteAssistant,
     Namespace: G,
-    ClassName: Api,
+    ClassName: AssistantsClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/assistants/{assistantId}",
@@ -3381,12 +3381,12 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ResponseType: DeleteAssistantResponse,
     MethodName: DeleteAssistantAsync,
     NotAsyncMethodName: DeleteAssistant,
-    FileNameWithoutExtension: G.Api.DeleteAssistant
+    FileNameWithoutExtension: G.AssistantsClient.DeleteAssistant
   },
   {
     Id: CreateThread,
     Namespace: G,
-    ClassName: Api,
+    ClassName: AssistantsClient,
     BaseUrl: ,
     Stream: false,
     Path: "/threads",
@@ -3454,12 +3454,12 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: ThreadObject,
     MethodName: CreateThreadAsync,
     NotAsyncMethodName: CreateThread,
-    FileNameWithoutExtension: G.Api.CreateThread
+    FileNameWithoutExtension: G.AssistantsClient.CreateThread
   },
   {
     Id: GetThread,
     Namespace: G,
-    ClassName: Api,
+    ClassName: AssistantsClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}",
@@ -3492,12 +3492,12 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: ThreadObject,
     MethodName: GetThreadAsync,
     NotAsyncMethodName: GetThread,
-    FileNameWithoutExtension: G.Api.GetThread
+    FileNameWithoutExtension: G.AssistantsClient.GetThread
   },
   {
     Id: ModifyThread,
     Namespace: G,
-    ClassName: Api,
+    ClassName: AssistantsClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}",
@@ -3568,12 +3568,12 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: ThreadObject,
     MethodName: ModifyThreadAsync,
     NotAsyncMethodName: ModifyThread,
-    FileNameWithoutExtension: G.Api.ModifyThread
+    FileNameWithoutExtension: G.AssistantsClient.ModifyThread
   },
   {
     Id: DeleteThread,
     Namespace: G,
-    ClassName: Api,
+    ClassName: AssistantsClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}",
@@ -3607,12 +3607,12 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: DeleteThreadResponse,
     MethodName: DeleteThreadAsync,
     NotAsyncMethodName: DeleteThread,
-    FileNameWithoutExtension: G.Api.DeleteThread
+    FileNameWithoutExtension: G.AssistantsClient.DeleteThread
   },
   {
     Id: ListMessages,
     Namespace: G,
-    ClassName: Api,
+    ClassName: AssistantsClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/messages?limit={limit}&order={order}&after={after}&before={before}&run_id={runId}",
@@ -3750,12 +3750,12 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: ListMessagesResponse,
     MethodName: ListMessagesAsync,
     NotAsyncMethodName: ListMessages,
-    FileNameWithoutExtension: G.Api.ListMessages
+    FileNameWithoutExtension: G.AssistantsClient.ListMessages
   },
   {
     Id: CreateMessage,
     Namespace: G,
-    ClassName: Api,
+    ClassName: AssistantsClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/messages",
@@ -3866,12 +3866,12 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: MessageObject,
     MethodName: CreateMessageAsync,
     NotAsyncMethodName: CreateMessage,
-    FileNameWithoutExtension: G.Api.CreateMessage
+    FileNameWithoutExtension: G.AssistantsClient.CreateMessage
   },
   {
     Id: GetMessage,
     Namespace: G,
-    ClassName: Api,
+    ClassName: AssistantsClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/messages/{messageId}",
@@ -3923,12 +3923,12 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: MessageObject,
     MethodName: GetMessageAsync,
     NotAsyncMethodName: GetMessage,
-    FileNameWithoutExtension: G.Api.GetMessage
+    FileNameWithoutExtension: G.AssistantsClient.GetMessage
   },
   {
     Id: ModifyMessage,
     Namespace: G,
-    ClassName: Api,
+    ClassName: AssistantsClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/messages/{messageId}",
@@ -4000,12 +4000,12 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: MessageObject,
     MethodName: ModifyMessageAsync,
     NotAsyncMethodName: ModifyMessage,
-    FileNameWithoutExtension: G.Api.ModifyMessage
+    FileNameWithoutExtension: G.AssistantsClient.ModifyMessage
   },
   {
     Id: DeleteMessage,
     Namespace: G,
-    ClassName: Api,
+    ClassName: AssistantsClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/messages/{messageId}",
@@ -4058,12 +4058,12 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: DeleteMessageResponse,
     MethodName: DeleteMessageAsync,
     NotAsyncMethodName: DeleteMessage,
-    FileNameWithoutExtension: G.Api.DeleteMessage
+    FileNameWithoutExtension: G.AssistantsClient.DeleteMessage
   },
   {
     Id: CreateThreadAndRun,
     Namespace: G,
-    ClassName: Api,
+    ClassName: AssistantsClient,
     BaseUrl: ,
     Stream: false,
     Path: "/threads/runs",
@@ -4363,12 +4363,12 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ResponseType: RunObject,
     MethodName: CreateThreadAndRunAsync,
     NotAsyncMethodName: CreateThreadAndRun,
-    FileNameWithoutExtension: G.Api.CreateThreadAndRun
+    FileNameWithoutExtension: G.AssistantsClient.CreateThreadAndRun
   },
   {
     Id: ListRuns,
     Namespace: G,
-    ClassName: Api,
+    ClassName: AssistantsClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs?limit={limit}&order={order}&after={after}&before={before}",
@@ -4487,12 +4487,12 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ResponseType: ListRunsResponse,
     MethodName: ListRunsAsync,
     NotAsyncMethodName: ListRuns,
-    FileNameWithoutExtension: G.Api.ListRuns
+    FileNameWithoutExtension: G.AssistantsClient.ListRuns
   },
   {
     Id: CreateRun,
     Namespace: G,
-    ClassName: Api,
+    ClassName: AssistantsClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs",
@@ -4805,12 +4805,12 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ResponseType: RunObject,
     MethodName: CreateRunAsync,
     NotAsyncMethodName: CreateRun,
-    FileNameWithoutExtension: G.Api.CreateRun
+    FileNameWithoutExtension: G.AssistantsClient.CreateRun
   },
   {
     Id: GetRun,
     Namespace: G,
-    ClassName: Api,
+    ClassName: AssistantsClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs/{runId}",
@@ -4862,12 +4862,12 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ResponseType: RunObject,
     MethodName: GetRunAsync,
     NotAsyncMethodName: GetRun,
-    FileNameWithoutExtension: G.Api.GetRun
+    FileNameWithoutExtension: G.AssistantsClient.GetRun
   },
   {
     Id: ModifyRun,
     Namespace: G,
-    ClassName: Api,
+    ClassName: AssistantsClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs/{runId}",
@@ -4939,12 +4939,12 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: RunObject,
     MethodName: ModifyRunAsync,
     NotAsyncMethodName: ModifyRun,
-    FileNameWithoutExtension: G.Api.ModifyRun
+    FileNameWithoutExtension: G.AssistantsClient.ModifyRun
   },
   {
     Id: SubmitToolOuputsToRun,
     Namespace: G,
-    ClassName: Api,
+    ClassName: AssistantsClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs/{runId}/submit_tool_outputs",
@@ -5031,12 +5031,12 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     ResponseType: RunObject,
     MethodName: SubmitToolOuputsToRunAsync,
     NotAsyncMethodName: SubmitToolOuputsToRun,
-    FileNameWithoutExtension: G.Api.SubmitToolOuputsToRun
+    FileNameWithoutExtension: G.AssistantsClient.SubmitToolOuputsToRun
   },
   {
     Id: CancelRun,
     Namespace: G,
-    ClassName: Api,
+    ClassName: AssistantsClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs/{runId}/cancel",
@@ -5089,12 +5089,12 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     ResponseType: RunObject,
     MethodName: CancelRunAsync,
     NotAsyncMethodName: CancelRun,
-    FileNameWithoutExtension: G.Api.CancelRun
+    FileNameWithoutExtension: G.AssistantsClient.CancelRun
   },
   {
     Id: ListRunSteps,
     Namespace: G,
-    ClassName: Api,
+    ClassName: AssistantsClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs/{runId}/steps?limit={limit}&order={order}&after={after}&before={before}",
@@ -5232,12 +5232,12 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     ResponseType: ListRunStepsResponse,
     MethodName: ListRunStepsAsync,
     NotAsyncMethodName: ListRunSteps,
-    FileNameWithoutExtension: G.Api.ListRunSteps
+    FileNameWithoutExtension: G.AssistantsClient.ListRunSteps
   },
   {
     Id: GetRunStep,
     Namespace: G,
-    ClassName: Api,
+    ClassName: AssistantsClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs/{runId}/steps/{stepId}",
@@ -5308,12 +5308,12 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     ResponseType: RunStepObject,
     MethodName: GetRunStepAsync,
     NotAsyncMethodName: GetRunStep,
-    FileNameWithoutExtension: G.Api.GetRunStep
+    FileNameWithoutExtension: G.AssistantsClient.GetRunStep
   },
   {
     Id: ListVectorStores,
     Namespace: G,
-    ClassName: Api,
+    ClassName: VectorStoresClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores?limit={limit}&order={order}&after={after}&before={before}",
@@ -5413,12 +5413,12 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     ResponseType: ListVectorStoresResponse,
     MethodName: ListVectorStoresAsync,
     NotAsyncMethodName: ListVectorStores,
-    FileNameWithoutExtension: G.Api.ListVectorStores
+    FileNameWithoutExtension: G.VectorStoresClient.ListVectorStores
   },
   {
     Id: CreateVectorStore,
     Namespace: G,
-    ClassName: Api,
+    ClassName: VectorStoresClient,
     BaseUrl: ,
     Stream: false,
     Path: "/vector_stores",
@@ -5503,12 +5503,12 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: VectorStoreObject,
     MethodName: CreateVectorStoreAsync,
     NotAsyncMethodName: CreateVectorStore,
-    FileNameWithoutExtension: G.Api.CreateVectorStore
+    FileNameWithoutExtension: G.VectorStoresClient.CreateVectorStore
   },
   {
     Id: GetVectorStore,
     Namespace: G,
-    ClassName: Api,
+    ClassName: VectorStoresClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}",
@@ -5541,12 +5541,12 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: VectorStoreObject,
     MethodName: GetVectorStoreAsync,
     NotAsyncMethodName: GetVectorStore,
-    FileNameWithoutExtension: G.Api.GetVectorStore
+    FileNameWithoutExtension: G.VectorStoresClient.GetVectorStore
   },
   {
     Id: ModifyVectorStore,
     Namespace: G,
-    ClassName: Api,
+    ClassName: VectorStoresClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}",
@@ -5634,12 +5634,12 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: VectorStoreObject,
     MethodName: ModifyVectorStoreAsync,
     NotAsyncMethodName: ModifyVectorStore,
-    FileNameWithoutExtension: G.Api.ModifyVectorStore
+    FileNameWithoutExtension: G.VectorStoresClient.ModifyVectorStore
   },
   {
     Id: DeleteVectorStore,
     Namespace: G,
-    ClassName: Api,
+    ClassName: VectorStoresClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}",
@@ -5673,12 +5673,12 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: DeleteVectorStoreResponse,
     MethodName: DeleteVectorStoreAsync,
     NotAsyncMethodName: DeleteVectorStore,
-    FileNameWithoutExtension: G.Api.DeleteVectorStore
+    FileNameWithoutExtension: G.VectorStoresClient.DeleteVectorStore
   },
   {
     Id: ListVectorStoreFiles,
     Namespace: G,
-    ClassName: Api,
+    ClassName: VectorStoresClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/files?limit={limit}&order={order}&after={after}&before={before}&filter={filter}",
@@ -5826,12 +5826,12 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: ListVectorStoreFilesResponse,
     MethodName: ListVectorStoreFilesAsync,
     NotAsyncMethodName: ListVectorStoreFiles,
-    FileNameWithoutExtension: G.Api.ListVectorStoreFiles
+    FileNameWithoutExtension: G.VectorStoresClient.ListVectorStoreFiles
   },
   {
     Id: CreateVectorStoreFile,
     Namespace: G,
-    ClassName: Api,
+    ClassName: VectorStoresClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/files",
@@ -5882,12 +5882,12 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: VectorStoreFileObject,
     MethodName: CreateVectorStoreFileAsync,
     NotAsyncMethodName: CreateVectorStoreFile,
-    FileNameWithoutExtension: G.Api.CreateVectorStoreFile
+    FileNameWithoutExtension: G.VectorStoresClient.CreateVectorStoreFile
   },
   {
     Id: GetVectorStoreFile,
     Namespace: G,
-    ClassName: Api,
+    ClassName: VectorStoresClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/files/{fileId}",
@@ -5941,12 +5941,12 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: VectorStoreFileObject,
     MethodName: GetVectorStoreFileAsync,
     NotAsyncMethodName: GetVectorStoreFile,
-    FileNameWithoutExtension: G.Api.GetVectorStoreFile
+    FileNameWithoutExtension: G.VectorStoresClient.GetVectorStoreFile
   },
   {
     Id: DeleteVectorStoreFile,
     Namespace: G,
-    ClassName: Api,
+    ClassName: VectorStoresClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/files/{fileId}",
@@ -5999,12 +5999,12 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: DeleteVectorStoreFileResponse,
     MethodName: DeleteVectorStoreFileAsync,
     NotAsyncMethodName: DeleteVectorStoreFile,
-    FileNameWithoutExtension: G.Api.DeleteVectorStoreFile
+    FileNameWithoutExtension: G.VectorStoresClient.DeleteVectorStoreFile
   },
   {
     Id: CreateVectorStoreFileBatch,
     Namespace: G,
-    ClassName: Api,
+    ClassName: VectorStoresClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/file_batches",
@@ -6055,12 +6055,12 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: VectorStoreFileBatchObject,
     MethodName: CreateVectorStoreFileBatchAsync,
     NotAsyncMethodName: CreateVectorStoreFileBatch,
-    FileNameWithoutExtension: G.Api.CreateVectorStoreFileBatch
+    FileNameWithoutExtension: G.VectorStoresClient.CreateVectorStoreFileBatch
   },
   {
     Id: GetVectorStoreFileBatch,
     Namespace: G,
-    ClassName: Api,
+    ClassName: VectorStoresClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/file_batches/{batchId}",
@@ -6114,12 +6114,12 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: VectorStoreFileBatchObject,
     MethodName: GetVectorStoreFileBatchAsync,
     NotAsyncMethodName: GetVectorStoreFileBatch,
-    FileNameWithoutExtension: G.Api.GetVectorStoreFileBatch
+    FileNameWithoutExtension: G.VectorStoresClient.GetVectorStoreFileBatch
   },
   {
     Id: CancelVectorStoreFileBatch,
     Namespace: G,
-    ClassName: Api,
+    ClassName: VectorStoresClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/file_batches/{batchId}/cancel",
@@ -6172,12 +6172,12 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: VectorStoreFileBatchObject,
     MethodName: CancelVectorStoreFileBatchAsync,
     NotAsyncMethodName: CancelVectorStoreFileBatch,
-    FileNameWithoutExtension: G.Api.CancelVectorStoreFileBatch
+    FileNameWithoutExtension: G.VectorStoresClient.CancelVectorStoreFileBatch
   },
   {
     Id: ListFilesInVectorStoreBatch,
     Namespace: G,
-    ClassName: Api,
+    ClassName: VectorStoresClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/file_batches/{batchId}/files?limit={limit}&order={order}&after={after}&before={before}&filter={filter}",
@@ -6344,12 +6344,12 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ResponseType: ListVectorStoreFilesResponse,
     MethodName: ListFilesInVectorStoreBatchAsync,
     NotAsyncMethodName: ListFilesInVectorStoreBatch,
-    FileNameWithoutExtension: G.Api.ListFilesInVectorStoreBatch
+    FileNameWithoutExtension: G.VectorStoresClient.ListFilesInVectorStoreBatch
   },
   {
     Id: CreateBatch,
     Namespace: G,
-    ClassName: Api,
+    ClassName: BatchClient,
     BaseUrl: ,
     Stream: false,
     Path: "/batches",
@@ -6445,12 +6445,12 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     ResponseType: Batch,
     MethodName: CreateBatchAsync,
     NotAsyncMethodName: CreateBatch,
-    FileNameWithoutExtension: G.Api.CreateBatch
+    FileNameWithoutExtension: G.BatchClient.CreateBatch
   },
   {
     Id: ListBatches,
     Namespace: G,
-    ClassName: Api,
+    ClassName: BatchClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/batches?after={after}&limit={limit}",
@@ -6504,12 +6504,12 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     ResponseType: ListBatchesResponse,
     MethodName: ListBatchesAsync,
     NotAsyncMethodName: ListBatches,
-    FileNameWithoutExtension: G.Api.ListBatches
+    FileNameWithoutExtension: G.BatchClient.ListBatches
   },
   {
     Id: RetrieveBatch,
     Namespace: G,
-    ClassName: Api,
+    ClassName: BatchClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/batches/{batchId}",
@@ -6542,12 +6542,12 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     ResponseType: Batch,
     MethodName: RetrieveBatchAsync,
     NotAsyncMethodName: RetrieveBatch,
-    FileNameWithoutExtension: G.Api.RetrieveBatch
+    FileNameWithoutExtension: G.BatchClient.RetrieveBatch
   },
   {
     Id: CancelBatch,
     Namespace: G,
-    ClassName: Api,
+    ClassName: BatchClient,
     BaseUrl: ,
     Stream: false,
     Path: $"/batches/{batchId}/cancel",
@@ -6581,7 +6581,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     ResponseType: Batch,
     MethodName: CancelBatchAsync,
     NotAsyncMethodName: CancelBatch,
-    FileNameWithoutExtension: G.Api.CancelBatch
+    FileNameWithoutExtension: G.BatchClient.CancelBatch
   },
   {
     Id: AuthorizeUsingBearer,
@@ -6609,7 +6609,199 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Stream: false,
     Path: ,
     AuthorizationScheme: ,
-    Properties: null,
+    Properties: [
+      {
+        Id: ,
+        Name: Assistants,
+        Type: {
+          CSharpType: AssistantsClient,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: Build Assistants that can call models and use tools.,
+        ParameterName: assistants,
+        ArgumentName: assistants,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: ,
+        Name: Audio,
+        Type: {
+          CSharpType: AudioClient,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: Learn how to turn audio into text or text into audio.,
+        ParameterName: audio,
+        ArgumentName: audio,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: ,
+        Name: Chat,
+        Type: {
+          CSharpType: ChatClient,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: Given a list of messages comprising a conversation, the model will return a response.,
+        ParameterName: chat,
+        ArgumentName: chat,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: ,
+        Name: Completions,
+        Type: {
+          CSharpType: CompletionsClient,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: Given a prompt, the model will return one or more predicted completions, and can also return the probabilities of alternative tokens at each position.,
+        ParameterName: completions,
+        ArgumentName: completions,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: ,
+        Name: Embeddings,
+        Type: {
+          CSharpType: EmbeddingsClient,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: Get a vector representation of a given input that can be easily consumed by machine learning models and algorithms.,
+        ParameterName: embeddings,
+        ArgumentName: embeddings,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: ,
+        Name: FineTuning,
+        Type: {
+          CSharpType: FineTuningClient,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: Manage fine-tuning jobs to tailor a model to your specific training data.,
+        ParameterName: fineTuning,
+        ArgumentName: fineTuning,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: ,
+        Name: Batch,
+        Type: {
+          CSharpType: BatchClient,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: Create large batches of API requests to run asynchronously.,
+        ParameterName: batch,
+        ArgumentName: batch,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: ,
+        Name: Files,
+        Type: {
+          CSharpType: FilesClient,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: Files are used to upload documents that can be used with features like Assistants and Fine-tuning.,
+        ParameterName: files,
+        ArgumentName: files,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: ,
+        Name: Images,
+        Type: {
+          CSharpType: ImagesClient,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: Given a prompt and/or an input image, the model will generate a new image.,
+        ParameterName: images,
+        ArgumentName: images,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: ,
+        Name: Models,
+        Type: {
+          CSharpType: ModelsClient,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: List and describe the various models available in the API.,
+        ParameterName: models,
+        ArgumentName: models,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: ,
+        Name: Moderations,
+        Type: {
+          CSharpType: ModerationsClient,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        Summary: Given a input text, outputs if the model classifies it as potentially harmful.,
+        ParameterName: moderations,
+        ArgumentName: moderations,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: ,
+        Name: VectorStores,
+        Type: {
+          CSharpType: VectorStoresClient,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        ParameterName: vectorStores,
+        ArgumentName: vectorStores,
+        ParameterDefaultValue: default
+      }
+    ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: ,
@@ -6618,5 +6810,221 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
     FileNameWithoutExtension: G.Api
+  },
+  {
+    Id: Constructors,
+    Namespace: G,
+    ClassName: AssistantsClient,
+    BaseUrl: https://api.openai.com/v1,
+    Stream: false,
+    Path: ,
+    AuthorizationScheme: ,
+    Properties: null,
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    Summary: ,
+    RequestType: ,
+    ResponseType: ,
+    MethodName: ConstructorsAsync,
+    NotAsyncMethodName: Constructors,
+    FileNameWithoutExtension: G.AssistantsClient
+  },
+  {
+    Id: Constructors,
+    Namespace: G,
+    ClassName: AudioClient,
+    BaseUrl: https://api.openai.com/v1,
+    Stream: false,
+    Path: ,
+    AuthorizationScheme: ,
+    Properties: null,
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    Summary: ,
+    RequestType: ,
+    ResponseType: ,
+    MethodName: ConstructorsAsync,
+    NotAsyncMethodName: Constructors,
+    FileNameWithoutExtension: G.AudioClient
+  },
+  {
+    Id: Constructors,
+    Namespace: G,
+    ClassName: ChatClient,
+    BaseUrl: https://api.openai.com/v1,
+    Stream: false,
+    Path: ,
+    AuthorizationScheme: ,
+    Properties: null,
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    Summary: ,
+    RequestType: ,
+    ResponseType: ,
+    MethodName: ConstructorsAsync,
+    NotAsyncMethodName: Constructors,
+    FileNameWithoutExtension: G.ChatClient
+  },
+  {
+    Id: Constructors,
+    Namespace: G,
+    ClassName: CompletionsClient,
+    BaseUrl: https://api.openai.com/v1,
+    Stream: false,
+    Path: ,
+    AuthorizationScheme: ,
+    Properties: null,
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    Summary: ,
+    RequestType: ,
+    ResponseType: ,
+    MethodName: ConstructorsAsync,
+    NotAsyncMethodName: Constructors,
+    FileNameWithoutExtension: G.CompletionsClient
+  },
+  {
+    Id: Constructors,
+    Namespace: G,
+    ClassName: EmbeddingsClient,
+    BaseUrl: https://api.openai.com/v1,
+    Stream: false,
+    Path: ,
+    AuthorizationScheme: ,
+    Properties: null,
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    Summary: ,
+    RequestType: ,
+    ResponseType: ,
+    MethodName: ConstructorsAsync,
+    NotAsyncMethodName: Constructors,
+    FileNameWithoutExtension: G.EmbeddingsClient
+  },
+  {
+    Id: Constructors,
+    Namespace: G,
+    ClassName: FineTuningClient,
+    BaseUrl: https://api.openai.com/v1,
+    Stream: false,
+    Path: ,
+    AuthorizationScheme: ,
+    Properties: null,
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    Summary: ,
+    RequestType: ,
+    ResponseType: ,
+    MethodName: ConstructorsAsync,
+    NotAsyncMethodName: Constructors,
+    FileNameWithoutExtension: G.FineTuningClient
+  },
+  {
+    Id: Constructors,
+    Namespace: G,
+    ClassName: BatchClient,
+    BaseUrl: https://api.openai.com/v1,
+    Stream: false,
+    Path: ,
+    AuthorizationScheme: ,
+    Properties: null,
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    Summary: ,
+    RequestType: ,
+    ResponseType: ,
+    MethodName: ConstructorsAsync,
+    NotAsyncMethodName: Constructors,
+    FileNameWithoutExtension: G.BatchClient
+  },
+  {
+    Id: Constructors,
+    Namespace: G,
+    ClassName: FilesClient,
+    BaseUrl: https://api.openai.com/v1,
+    Stream: false,
+    Path: ,
+    AuthorizationScheme: ,
+    Properties: null,
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    Summary: ,
+    RequestType: ,
+    ResponseType: ,
+    MethodName: ConstructorsAsync,
+    NotAsyncMethodName: Constructors,
+    FileNameWithoutExtension: G.FilesClient
+  },
+  {
+    Id: Constructors,
+    Namespace: G,
+    ClassName: ImagesClient,
+    BaseUrl: https://api.openai.com/v1,
+    Stream: false,
+    Path: ,
+    AuthorizationScheme: ,
+    Properties: null,
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    Summary: ,
+    RequestType: ,
+    ResponseType: ,
+    MethodName: ConstructorsAsync,
+    NotAsyncMethodName: Constructors,
+    FileNameWithoutExtension: G.ImagesClient
+  },
+  {
+    Id: Constructors,
+    Namespace: G,
+    ClassName: ModelsClient,
+    BaseUrl: https://api.openai.com/v1,
+    Stream: false,
+    Path: ,
+    AuthorizationScheme: ,
+    Properties: null,
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    Summary: ,
+    RequestType: ,
+    ResponseType: ,
+    MethodName: ConstructorsAsync,
+    NotAsyncMethodName: Constructors,
+    FileNameWithoutExtension: G.ModelsClient
+  },
+  {
+    Id: Constructors,
+    Namespace: G,
+    ClassName: ModerationsClient,
+    BaseUrl: https://api.openai.com/v1,
+    Stream: false,
+    Path: ,
+    AuthorizationScheme: ,
+    Properties: null,
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    Summary: ,
+    RequestType: ,
+    ResponseType: ,
+    MethodName: ConstructorsAsync,
+    NotAsyncMethodName: Constructors,
+    FileNameWithoutExtension: G.ModerationsClient
+  },
+  {
+    Id: Constructors,
+    Namespace: G,
+    ClassName: VectorStoresClient,
+    BaseUrl: https://api.openai.com/v1,
+    Stream: false,
+    Path: ,
+    AuthorizationScheme: ,
+    Properties: null,
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    Summary: ,
+    RequestType: ,
+    ResponseType: ,
+    MethodName: ConstructorsAsync,
+    NotAsyncMethodName: Constructors,
+    FileNameWithoutExtension: G.VectorStoresClient
   }
 ]
