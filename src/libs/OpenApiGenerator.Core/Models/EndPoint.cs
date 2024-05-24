@@ -53,6 +53,28 @@ public readonly record struct EndPoint(
                 settings: settings,
                 parents: []))
             .ToArray();
+        
+        // Ensure that parameters with the same name are unique
+        var duplicateParameters = parameters
+            .GroupBy(x => x.Name)
+            .Where(x => x.Count() > 1)
+            .Select(x => x.Key)
+            .ToArray();
+        foreach (var duplicateParameter in duplicateParameters)
+        {
+            var index = 1;
+            for (var i = 0; i < parameters.Length; i++)
+            {
+                if (parameters[i].Name == duplicateParameter)
+                {
+                    parameters[i] = parameters[i] with
+                    {
+                        Name = $"{parameters[i].Name}{index++}",
+                    };
+                }
+            }
+        }
+        
         var preparedPath = path.PreparePath(parameters);
         
         var requestSchema = operation.Value.RequestBody?.Content.Values.FirstOrDefault()?.Schema;
