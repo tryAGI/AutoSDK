@@ -19,8 +19,12 @@ public static partial class Sources
         {
             return GenerateConstructors(endPoint);
         }
+
+        var usings = endPoint.Properties.Any(x => x.Type.IsArray && x.ParameterExplode == true)
+            ? "using System.Linq;\n"
+            : "";
         
-        return $@"
+        return $@"{usings}
 #nullable enable
 
 namespace {endPoint.Namespace}
