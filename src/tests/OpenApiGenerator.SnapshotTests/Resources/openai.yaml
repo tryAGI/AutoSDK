@@ -35,8 +35,6 @@ tags:
     description: List and describe the various models available in the API.
   - name: Moderations
     description: Given a input text, outputs if the model classifies it as potentially harmful.
-  - name: Vector Stores
-    description: Store and retrieve vectors for use in similarity search.
 paths:
   # Note: When adding an endpoint, make sure you also add it in the `groups` section, in the end of this file,
   # under the appropriate group

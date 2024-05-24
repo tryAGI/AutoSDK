@@ -53,7 +53,23 @@ public static class ClientGeneratorMethods
             .Select(x => EndPoint.FromAuthorization(x.Key.Scheme, settings))
             .ToArray();
 
-        var includedTags = openApiDocument.Tags
+        // Find all tags used in operations besides the ones defined in the document
+        var allTags = openApiDocument.Tags;
+        foreach (var operation in openApiDocument.Paths
+            .SelectMany(x => x.Value.Operations)
+            .Select(x => x.Value))
+        {
+            foreach (var tag in operation.Tags)
+            {
+                var existingTag = allTags.FirstOrDefault(x => x.Name == tag.Name);
+                if (existingTag is null)
+                {
+                    allTags.Add(tag);
+                }
+            }
+        }
+        
+        var includedTags = allTags
             .Where(x =>
                 (settings.IncludeTags.Length == 0 ||
                  settings.IncludeTags.Contains(x.Name)) &&
