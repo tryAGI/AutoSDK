@@ -12,7 +12,7 @@
     JsonSerializerContext: ,
     Summary: GitHub API Root,
     RequestType: ,
-    ResponseType: root,
+    ResponseType: Root,
     MethodName: MetaRootAsync,
     NotAsyncMethodName: MetaRoot,
     FileNameWithoutExtension: G.MetaClient.MetaRoot
@@ -441,7 +441,7 @@
     JsonSerializerContext: ,
     Summary: Get a global security advisory,
     RequestType: ,
-    ResponseType: global-advisory,
+    ResponseType: GlobalAdvisory,
     MethodName: SecurityAdvisoriesGetGlobalAdvisoryAsync,
     NotAsyncMethodName: SecurityAdvisoriesGetGlobalAdvisory,
     FileNameWithoutExtension: G.SecurityAdvisoriesClient.SecurityAdvisoriesGetGlobalAdvisory
@@ -459,7 +459,7 @@
     JsonSerializerContext: ,
     Summary: Get the authenticated app,
     RequestType: ,
-    ResponseType: integration,
+    ResponseType: Integration,
     MethodName: AppsGetAuthenticatedAsync,
     NotAsyncMethodName: AppsGetAuthenticated,
     FileNameWithoutExtension: G.AppsClient.AppsGetAuthenticated
@@ -516,7 +516,7 @@
     JsonSerializerContext: ,
     Summary: Get a webhook configuration for an app,
     RequestType: ,
-    ResponseType: webhook-config,
+    ResponseType: WebhookConfig,
     MethodName: AppsGetWebhookConfigForAppAsync,
     NotAsyncMethodName: AppsGetWebhookConfigForApp,
     FileNameWithoutExtension: G.AppsClient.AppsGetWebhookConfigForApp
@@ -606,7 +606,7 @@ If provided, the `secret` will be used as the `key` to generate the HMAC hex dig
     HttpMethod: Patch,
     Summary: Update a webhook configuration for an app,
     RequestType: ,
-    ResponseType: webhook-config,
+    ResponseType: WebhookConfig,
     MethodName: AppsUpdateWebhookConfigForAppAsync,
     NotAsyncMethodName: AppsUpdateWebhookConfigForApp,
     FileNameWithoutExtension: G.AppsClient.AppsUpdateWebhookConfigForApp
@@ -722,7 +722,7 @@ If provided, the `secret` will be used as the `key` to generate the HMAC hex dig
     JsonSerializerContext: ,
     Summary: Get a delivery for an app webhook,
     RequestType: ,
-    ResponseType: hook-delivery,
+    ResponseType: HookDelivery,
     MethodName: AppsGetWebhookDeliveryAsync,
     NotAsyncMethodName: AppsGetWebhookDelivery,
     FileNameWithoutExtension: G.AppsClient.AppsGetWebhookDelivery
@@ -959,7 +959,7 @@ If provided, the `secret` will be used as the `key` to generate the HMAC hex dig
     JsonSerializerContext: ,
     Summary: Get an installation for the authenticated app,
     RequestType: ,
-    ResponseType: installation,
+    ResponseType: Installation,
     MethodName: AppsGetInstallationAsync,
     NotAsyncMethodName: AppsGetInstallation,
     FileNameWithoutExtension: G.AppsClient.AppsGetInstallation
@@ -1138,7 +1138,7 @@ The permissions granted to the user access token.
     HttpMethod: Post,
     Summary: Create an installation access token for an app,
     RequestType: ,
-    ResponseType: installation-token,
+    ResponseType: InstallationToken,
     MethodName: AppsCreateInstallationAccessTokenAsync,
     NotAsyncMethodName: AppsCreateInstallationAccessToken,
     FileNameWithoutExtension: G.AppsClient.AppsCreateInstallationAccessToken
@@ -1326,7 +1326,7 @@ The permissions granted to the user access token.
     HttpMethod: Post,
     Summary: Check a token,
     RequestType: ,
-    ResponseType: authorization,
+    ResponseType: Authorization,
     MethodName: AppsCheckTokenAsync,
     NotAsyncMethodName: AppsCheckToken,
     FileNameWithoutExtension: G.AppsClient.AppsCheckToken
@@ -1381,7 +1381,7 @@ The permissions granted to the user access token.
     HttpMethod: Patch,
     Summary: Reset a token,
     RequestType: ,
-    ResponseType: authorization,
+    ResponseType: Authorization,
     MethodName: AppsResetTokenAsync,
     NotAsyncMethodName: AppsResetToken,
     FileNameWithoutExtension: G.AppsClient.AppsResetToken
@@ -1630,7 +1630,7 @@ The permissions granted to the user access token.
     HttpMethod: Post,
     Summary: Create a scoped access token,
     RequestType: ,
-    ResponseType: authorization,
+    ResponseType: Authorization,
     MethodName: AppsScopeTokenAsync,
     NotAsyncMethodName: AppsScopeToken,
     FileNameWithoutExtension: G.AppsClient.AppsScopeToken
@@ -1668,7 +1668,7 @@ The permissions granted to the user access token.
     JsonSerializerContext: ,
     Summary: Get an app,
     RequestType: ,
-    ResponseType: integration,
+    ResponseType: Integration,
     MethodName: AppsGetBySlugAsync,
     NotAsyncMethodName: AppsGetBySlug,
     FileNameWithoutExtension: G.AppsClient.AppsGetBySlug
@@ -1706,7 +1706,7 @@ The permissions granted to the user access token.
     JsonSerializerContext: ,
     Summary: Get an assignment,
     RequestType: ,
-    ResponseType: classroom-assignment,
+    ResponseType: ClassroomAssignment,
     MethodName: ClassroomGetAnAssignmentAsync,
     NotAsyncMethodName: ClassroomGetAnAssignment,
     FileNameWithoutExtension: G.ClassroomClient.ClassroomGetAnAssignment
@@ -1923,7 +1923,7 @@ The permissions granted to the user access token.
     JsonSerializerContext: ,
     Summary: Get a classroom,
     RequestType: ,
-    ResponseType: classroom,
+    ResponseType: Classroom,
     MethodName: ClassroomGetAClassroomAsync,
     NotAsyncMethodName: ClassroomGetAClassroom,
     FileNameWithoutExtension: G.ClassroomClient.ClassroomGetAClassroom
@@ -2059,7 +2059,7 @@ The permissions granted to the user access token.
     JsonSerializerContext: ,
     Summary: Get a code of conduct,
     RequestType: ,
-    ResponseType: code-of-conduct,
+    ResponseType: CodeOfConduct,
     MethodName: CodesOfConductGetConductCodeAsync,
     NotAsyncMethodName: CodesOfConductGetConductCode,
     FileNameWithoutExtension: G.CodesOfConductClient.CodesOfConductGetConductCode
@@ -2799,7 +2799,7 @@ The permissions granted to the user access token.
     JsonSerializerContext: ,
     Summary: Get feeds,
     RequestType: ,
-    ResponseType: feed,
+    ResponseType: Feed,
     MethodName: ActivityGetFeedsAsync,
     NotAsyncMethodName: ActivityGetFeeds,
     FileNameWithoutExtension: G.ActivityClient.ActivityGetFeeds
@@ -2952,7 +2952,7 @@ Names and content for the files that make up the gist
     HttpMethod: Post,
     Summary: Create a gist,
     RequestType: ,
-    ResponseType: gist-simple,
+    ResponseType: GistSimple,
     MethodName: GistsCreateAsync,
     NotAsyncMethodName: GistsCreate,
     FileNameWithoutExtension: G.GistsClient.GistsCreate
@@ -3150,7 +3150,7 @@ Names and content for the files that make up the gist
     JsonSerializerContext: ,
     Summary: Get a gist,
     RequestType: ,
-    ResponseType: gist-simple,
+    ResponseType: GistSimple,
     MethodName: GistsGetAsync,
     NotAsyncMethodName: GistsGet,
     FileNameWithoutExtension: G.GistsClient.GistsGet
@@ -3230,7 +3230,7 @@ deleted if the specified object does not contain at least one of `content` or `f
     HttpMethod: Patch,
     Summary: Update a gist,
     RequestType: ,
-    ResponseType: gist-simple,
+    ResponseType: GistSimple,
     MethodName: GistsUpdateAsync,
     NotAsyncMethodName: GistsUpdate,
     FileNameWithoutExtension: G.GistsClient.GistsUpdate
@@ -3406,7 +3406,7 @@ The comment text.
     HttpMethod: Post,
     Summary: Create a gist comment,
     RequestType: ,
-    ResponseType: gist-comment,
+    ResponseType: GistComment,
     MethodName: GistsCreateCommentAsync,
     NotAsyncMethodName: GistsCreateComment,
     FileNameWithoutExtension: G.GistsClient.GistsCreateComment
@@ -3463,7 +3463,7 @@ The comment text.
     JsonSerializerContext: ,
     Summary: Get a gist comment,
     RequestType: ,
-    ResponseType: gist-comment,
+    ResponseType: GistComment,
     MethodName: GistsGetCommentAsync,
     NotAsyncMethodName: GistsGetComment,
     FileNameWithoutExtension: G.GistsClient.GistsGetComment
@@ -3539,7 +3539,7 @@ The comment text.
     HttpMethod: Patch,
     Summary: Update a gist comment,
     RequestType: ,
-    ResponseType: gist-comment,
+    ResponseType: GistComment,
     MethodName: GistsUpdateCommentAsync,
     NotAsyncMethodName: GistsUpdateComment,
     FileNameWithoutExtension: G.GistsClient.GistsUpdateComment
@@ -3796,7 +3796,7 @@ The comment text.
     HttpMethod: Post,
     Summary: Fork a gist,
     RequestType: ,
-    ResponseType: base-gist,
+    ResponseType: BaseGist,
     MethodName: GistsForkAsync,
     NotAsyncMethodName: GistsFork,
     FileNameWithoutExtension: G.GistsClient.GistsFork
@@ -3969,7 +3969,7 @@ The comment text.
     JsonSerializerContext: ,
     Summary: Get a gist revision,
     RequestType: ,
-    ResponseType: gist-simple,
+    ResponseType: GistSimple,
     MethodName: GistsGetRevisionAsync,
     NotAsyncMethodName: GistsGetRevision,
     FileNameWithoutExtension: G.GistsClient.GistsGetRevision
@@ -4025,7 +4025,7 @@ The comment text.
     JsonSerializerContext: ,
     Summary: Get a gitignore template,
     RequestType: ,
-    ResponseType: gitignore-template,
+    ResponseType: GitignoreTemplate,
     MethodName: GitignoreGetTemplateAsync,
     NotAsyncMethodName: GitignoreGetTemplate,
     FileNameWithoutExtension: G.GitignoreClient.GitignoreGetTemplate
@@ -4518,7 +4518,7 @@ The comment text.
     JsonSerializerContext: ,
     Summary: Get a license,
     RequestType: ,
-    ResponseType: license,
+    ResponseType: License,
     MethodName: LicensesGetAsync,
     NotAsyncMethodName: LicensesGet,
     FileNameWithoutExtension: G.LicensesClient.LicensesGet
@@ -4653,7 +4653,7 @@ The rendering mode.
     JsonSerializerContext: ,
     Summary: Get a subscription plan for an account,
     RequestType: ,
-    ResponseType: marketplace-purchase,
+    ResponseType: MarketplacePurchase,
     MethodName: AppsGetSubscriptionPlanForAccountAsync,
     NotAsyncMethodName: AppsGetSubscriptionPlanForAccount,
     FileNameWithoutExtension: G.AppsClient.AppsGetSubscriptionPlanForAccount
@@ -4884,7 +4884,7 @@ The rendering mode.
     JsonSerializerContext: ,
     Summary: Get a subscription plan for an account (stubbed),
     RequestType: ,
-    ResponseType: marketplace-purchase,
+    ResponseType: MarketplacePurchase,
     MethodName: AppsGetSubscriptionPlanForAccountStubbedAsync,
     NotAsyncMethodName: AppsGetSubscriptionPlanForAccountStubbed,
     FileNameWithoutExtension: G.AppsClient.AppsGetSubscriptionPlanForAccountStubbed
@@ -5095,7 +5095,7 @@ The rendering mode.
     JsonSerializerContext: ,
     Summary: Get GitHub meta information,
     RequestType: ,
-    ResponseType: api-overview,
+    ResponseType: ApiOverview,
     MethodName: MetaGetAsync,
     NotAsyncMethodName: MetaGet,
     FileNameWithoutExtension: G.MetaClient.MetaGet
@@ -5425,7 +5425,7 @@ The rendering mode.
     JsonSerializerContext: ,
     Summary: Get a thread,
     RequestType: ,
-    ResponseType: thread,
+    ResponseType: Thread,
     MethodName: ActivityGetThreadAsync,
     NotAsyncMethodName: ActivityGetThread,
     FileNameWithoutExtension: G.ActivityClient.ActivityGetThread
@@ -5541,7 +5541,7 @@ The rendering mode.
     JsonSerializerContext: ,
     Summary: Get a thread subscription for the authenticated user,
     RequestType: ,
-    ResponseType: thread-subscription,
+    ResponseType: ThreadSubscription,
     MethodName: ActivityGetThreadSubscriptionForAuthenticatedUserAsync,
     NotAsyncMethodName: ActivityGetThreadSubscriptionForAuthenticatedUser,
     FileNameWithoutExtension: G.ActivityClient.ActivityGetThreadSubscriptionForAuthenticatedUser
@@ -5599,7 +5599,7 @@ Whether to block all notifications from a thread.
     HttpMethod: Put,
     Summary: Set a thread subscription,
     RequestType: ,
-    ResponseType: thread-subscription,
+    ResponseType: ThreadSubscription,
     MethodName: ActivitySetThreadSubscriptionAsync,
     NotAsyncMethodName: ActivitySetThreadSubscription,
     FileNameWithoutExtension: G.ActivityClient.ActivitySetThreadSubscription
@@ -5773,7 +5773,7 @@ Whether to block all notifications from a thread.
     JsonSerializerContext: ,
     Summary: Get an organization,
     RequestType: ,
-    ResponseType: organization-full,
+    ResponseType: OrganizationFull,
     MethodName: OrgsGetAsync,
     NotAsyncMethodName: OrgsGet,
     FileNameWithoutExtension: G.OrgsClient.OrgsGet
@@ -6348,7 +6348,7 @@ You can check which security and analysis features are currently enabled by usin
     HttpMethod: Patch,
     Summary: Update an organization,
     RequestType: ,
-    ResponseType: organization-full,
+    ResponseType: OrganizationFull,
     MethodName: OrgsUpdateAsync,
     NotAsyncMethodName: OrgsUpdate,
     FileNameWithoutExtension: G.OrgsClient.OrgsUpdate
@@ -6425,7 +6425,7 @@ You can check which security and analysis features are currently enabled by usin
     JsonSerializerContext: ,
     Summary: Get GitHub Actions cache usage for an organization,
     RequestType: ,
-    ResponseType: actions-cache-usage-org-enterprise,
+    ResponseType: ActionsCacheUsageOrgEnterprise,
     MethodName: ActionsGetActionsCacheUsageForOrgAsync,
     NotAsyncMethodName: ActionsGetActionsCacheUsageForOrg,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetActionsCacheUsageForOrg
@@ -6543,7 +6543,7 @@ You can check which security and analysis features are currently enabled by usin
     JsonSerializerContext: ,
     Summary: Get the customization template for an OIDC subject claim for an organization,
     RequestType: ,
-    ResponseType: oidc-custom-sub,
+    ResponseType: OidcCustomSub,
     MethodName: OidcGetOidcCustomSubTemplateForOrgAsync,
     NotAsyncMethodName: OidcGetOidcCustomSubTemplateForOrg,
     FileNameWithoutExtension: G.OidcClient.OidcGetOidcCustomSubTemplateForOrg
@@ -6598,7 +6598,7 @@ You can check which security and analysis features are currently enabled by usin
     HttpMethod: Put,
     Summary: Set the customization template for an OIDC subject claim for an organization,
     RequestType: OidcCustomSub,
-    ResponseType: empty-object,
+    ResponseType: EmptyObject,
     MethodName: OidcUpdateOidcCustomSubTemplateForOrgAsync,
     NotAsyncMethodName: OidcUpdateOidcCustomSubTemplateForOrg,
     FileNameWithoutExtension: G.OidcClient.OidcUpdateOidcCustomSubTemplateForOrg
@@ -6636,7 +6636,7 @@ You can check which security and analysis features are currently enabled by usin
     JsonSerializerContext: ,
     Summary: Get GitHub Actions permissions for an organization,
     RequestType: ,
-    ResponseType: actions-organization-permissions,
+    ResponseType: ActionsOrganizationPermissions,
     MethodName: ActionsGetGithubActionsPermissionsOrganizationAsync,
     NotAsyncMethodName: ActionsGetGithubActionsPermissionsOrganization,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetGithubActionsPermissionsOrganization
@@ -7012,7 +7012,7 @@ You can check which security and analysis features are currently enabled by usin
     JsonSerializerContext: ,
     Summary: Get allowed actions and reusable workflows for an organization,
     RequestType: ,
-    ResponseType: selected-actions,
+    ResponseType: SelectedActions,
     MethodName: ActionsGetAllowedActionsOrganizationAsync,
     NotAsyncMethodName: ActionsGetAllowedActionsOrganization,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetAllowedActionsOrganization
@@ -7140,7 +7140,7 @@ Specifies a list of string-matching patterns to allow specific action(s) and reu
     JsonSerializerContext: ,
     Summary: Get default workflow permissions for an organization,
     RequestType: ,
-    ResponseType: actions-get-default-workflow-permissions,
+    ResponseType: ActionsGetDefaultWorkflowPermissions,
     MethodName: ActionsGetGithubActionsDefaultWorkflowPermissionsOrganizationAsync,
     NotAsyncMethodName: ActionsGetGithubActionsDefaultWorkflowPermissionsOrganization,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetGithubActionsDefaultWorkflowPermissionsOrganization
@@ -7499,7 +7499,7 @@ The working directory to be used for job execution, relative to the runner insta
     HttpMethod: Post,
     Summary: Create a registration token for an organization,
     RequestType: ,
-    ResponseType: authentication-token,
+    ResponseType: AuthenticationToken,
     MethodName: ActionsCreateRegistrationTokenForOrgAsync,
     NotAsyncMethodName: ActionsCreateRegistrationTokenForOrg,
     FileNameWithoutExtension: G.ActionsClient.ActionsCreateRegistrationTokenForOrg
@@ -7538,7 +7538,7 @@ The working directory to be used for job execution, relative to the runner insta
     HttpMethod: Post,
     Summary: Create a remove token for an organization,
     RequestType: ,
-    ResponseType: authentication-token,
+    ResponseType: AuthenticationToken,
     MethodName: ActionsCreateRemoveTokenForOrgAsync,
     NotAsyncMethodName: ActionsCreateRemoveTokenForOrg,
     FileNameWithoutExtension: G.ActionsClient.ActionsCreateRemoveTokenForOrg
@@ -7595,7 +7595,7 @@ The working directory to be used for job execution, relative to the runner insta
     JsonSerializerContext: ,
     Summary: Get a self-hosted runner for an organization,
     RequestType: ,
-    ResponseType: runner,
+    ResponseType: Runner,
     MethodName: ActionsGetSelfHostedRunnerForOrgAsync,
     NotAsyncMethodName: ActionsGetSelfHostedRunnerForOrg,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetSelfHostedRunnerForOrg
@@ -8111,7 +8111,7 @@ The working directory to be used for job execution, relative to the runner insta
     JsonSerializerContext: ,
     Summary: Get an organization public key,
     RequestType: ,
-    ResponseType: actions-public-key,
+    ResponseType: ActionsPublicKey,
     MethodName: ActionsGetOrgPublicKeyAsync,
     NotAsyncMethodName: ActionsGetOrgPublicKey,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetOrgPublicKey
@@ -8168,7 +8168,7 @@ The working directory to be used for job execution, relative to the runner insta
     JsonSerializerContext: ,
     Summary: Get an organization secret,
     RequestType: ,
-    ResponseType: organization-actions-secret,
+    ResponseType: OrganizationActionsSecret,
     MethodName: ActionsGetOrgSecretAsync,
     NotAsyncMethodName: ActionsGetOrgSecret,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetOrgSecret
@@ -8298,7 +8298,7 @@ The working directory to be used for job execution, relative to the runner insta
     HttpMethod: Put,
     Summary: Create or update an organization secret,
     RequestType: ,
-    ResponseType: empty-object,
+    ResponseType: EmptyObject,
     MethodName: ActionsCreateOrUpdateOrgSecretAsync,
     NotAsyncMethodName: ActionsCreateOrUpdateOrgSecret,
     FileNameWithoutExtension: G.ActionsClient.ActionsCreateOrUpdateOrgSecret
@@ -8874,7 +8874,7 @@ The working directory to be used for job execution, relative to the runner insta
     HttpMethod: Post,
     Summary: Create an organization variable,
     RequestType: ,
-    ResponseType: empty-object,
+    ResponseType: EmptyObject,
     MethodName: ActionsCreateOrgVariableAsync,
     NotAsyncMethodName: ActionsCreateOrgVariable,
     FileNameWithoutExtension: G.ActionsClient.ActionsCreateOrgVariable
@@ -8931,7 +8931,7 @@ The working directory to be used for job execution, relative to the runner insta
     JsonSerializerContext: ,
     Summary: Get an organization variable,
     RequestType: ,
-    ResponseType: organization-actions-variable,
+    ResponseType: OrganizationActionsVariable,
     MethodName: ActionsGetOrgVariableAsync,
     NotAsyncMethodName: ActionsGetOrgVariable,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetOrgVariable
@@ -10362,7 +10362,7 @@ The working directory to be used for job execution, relative to the runner insta
     JsonSerializerContext: ,
     Summary: Get an organization public key,
     RequestType: ,
-    ResponseType: codespaces-public-key,
+    ResponseType: CodespacesPublicKey,
     MethodName: CodespacesGetOrgPublicKeyAsync,
     NotAsyncMethodName: CodespacesGetOrgPublicKey,
     FileNameWithoutExtension: G.CodespacesClient.CodespacesGetOrgPublicKey
@@ -10419,7 +10419,7 @@ The working directory to be used for job execution, relative to the runner insta
     JsonSerializerContext: ,
     Summary: Get an organization secret,
     RequestType: ,
-    ResponseType: codespaces-org-secret,
+    ResponseType: CodespacesOrgSecret,
     MethodName: CodespacesGetOrgSecretAsync,
     NotAsyncMethodName: CodespacesGetOrgSecret,
     FileNameWithoutExtension: G.CodespacesClient.CodespacesGetOrgSecret
@@ -10549,7 +10549,7 @@ The working directory to be used for job execution, relative to the runner insta
     HttpMethod: Put,
     Summary: Create or update an organization secret,
     RequestType: ,
-    ResponseType: empty-object,
+    ResponseType: EmptyObject,
     MethodName: CodespacesCreateOrUpdateOrgSecretAsync,
     NotAsyncMethodName: CodespacesCreateOrUpdateOrgSecret,
     FileNameWithoutExtension: G.CodespacesClient.CodespacesCreateOrUpdateOrgSecret
@@ -10972,7 +10972,7 @@ The working directory to be used for job execution, relative to the runner insta
     JsonSerializerContext: ,
     Summary: Get Copilot seat information and settings for an organization,
     RequestType: ,
-    ResponseType: copilot-organization-details,
+    ResponseType: CopilotOrganizationDetails,
     MethodName: CopilotGetCopilotOrganizationDetailsAsync,
     NotAsyncMethodName: CopilotGetCopilotOrganizationDetails,
     FileNameWithoutExtension: G.CopilotClient.CopilotGetCopilotOrganizationDetails
@@ -11800,7 +11800,7 @@ The working directory to be used for job execution, relative to the runner insta
     JsonSerializerContext: ,
     Summary: Get an organization public key,
     RequestType: ,
-    ResponseType: dependabot-public-key,
+    ResponseType: DependabotPublicKey,
     MethodName: DependabotGetOrgPublicKeyAsync,
     NotAsyncMethodName: DependabotGetOrgPublicKey,
     FileNameWithoutExtension: G.DependabotClient.DependabotGetOrgPublicKey
@@ -11857,7 +11857,7 @@ The working directory to be used for job execution, relative to the runner insta
     JsonSerializerContext: ,
     Summary: Get an organization secret,
     RequestType: ,
-    ResponseType: organization-dependabot-secret,
+    ResponseType: OrganizationDependabotSecret,
     MethodName: DependabotGetOrgSecretAsync,
     NotAsyncMethodName: DependabotGetOrgSecret,
     FileNameWithoutExtension: G.DependabotClient.DependabotGetOrgSecret
@@ -11987,7 +11987,7 @@ The working directory to be used for job execution, relative to the runner insta
     HttpMethod: Put,
     Summary: Create or update an organization secret,
     RequestType: ,
-    ResponseType: empty-object,
+    ResponseType: EmptyObject,
     MethodName: DependabotCreateOrUpdateOrgSecretAsync,
     NotAsyncMethodName: DependabotCreateOrUpdateOrgSecret,
     FileNameWithoutExtension: G.DependabotClient.DependabotCreateOrUpdateOrgSecret
@@ -12759,7 +12759,7 @@ Determines if notifications are sent when the webhook is triggered. Set to `true
     HttpMethod: Post,
     Summary: Create an organization webhook,
     RequestType: ,
-    ResponseType: org-hook,
+    ResponseType: OrgHook,
     MethodName: OrgsCreateWebhookAsync,
     NotAsyncMethodName: OrgsCreateWebhook,
     FileNameWithoutExtension: G.OrgsClient.OrgsCreateWebhook
@@ -12816,7 +12816,7 @@ Determines if notifications are sent when the webhook is triggered. Set to `true
     JsonSerializerContext: ,
     Summary: Get an organization webhook,
     RequestType: ,
-    ResponseType: org-hook,
+    ResponseType: OrgHook,
     MethodName: OrgsGetWebhookAsync,
     NotAsyncMethodName: OrgsGetWebhook,
     FileNameWithoutExtension: G.OrgsClient.OrgsGetWebhook
@@ -12945,7 +12945,7 @@ Determines if notifications are sent when the webhook is triggered. Set to `true
     HttpMethod: Patch,
     Summary: Update an organization webhook,
     RequestType: ,
-    ResponseType: org-hook,
+    ResponseType: OrgHook,
     MethodName: OrgsUpdateWebhookAsync,
     NotAsyncMethodName: OrgsUpdateWebhook,
     FileNameWithoutExtension: G.OrgsClient.OrgsUpdateWebhook
@@ -13060,7 +13060,7 @@ Determines if notifications are sent when the webhook is triggered. Set to `true
     JsonSerializerContext: ,
     Summary: Get a webhook configuration for an organization,
     RequestType: ,
-    ResponseType: webhook-config,
+    ResponseType: WebhookConfig,
     MethodName: OrgsGetWebhookConfigForOrgAsync,
     NotAsyncMethodName: OrgsGetWebhookConfigForOrg,
     FileNameWithoutExtension: G.OrgsClient.OrgsGetWebhookConfigForOrg
@@ -13188,7 +13188,7 @@ If provided, the `secret` will be used as the `key` to generate the HMAC hex dig
     HttpMethod: Patch,
     Summary: Update a webhook configuration for an organization,
     RequestType: ,
-    ResponseType: webhook-config,
+    ResponseType: WebhookConfig,
     MethodName: OrgsUpdateWebhookConfigForOrgAsync,
     NotAsyncMethodName: OrgsUpdateWebhookConfigForOrg,
     FileNameWithoutExtension: G.OrgsClient.OrgsUpdateWebhookConfigForOrg
@@ -13380,7 +13380,7 @@ If provided, the `secret` will be used as the `key` to generate the HMAC hex dig
     JsonSerializerContext: ,
     Summary: Get a webhook delivery for an organization webhook,
     RequestType: ,
-    ResponseType: hook-delivery,
+    ResponseType: HookDelivery,
     MethodName: OrgsGetWebhookDeliveryAsync,
     NotAsyncMethodName: OrgsGetWebhookDelivery,
     FileNameWithoutExtension: G.OrgsClient.OrgsGetWebhookDelivery
@@ -13553,7 +13553,7 @@ If provided, the `secret` will be used as the `key` to generate the HMAC hex dig
     JsonSerializerContext: ,
     Summary: Get an organization installation for the authenticated app,
     RequestType: ,
-    ResponseType: installation,
+    ResponseType: Installation,
     MethodName: AppsGetOrgInstallationAsync,
     NotAsyncMethodName: AppsGetOrgInstallation,
     FileNameWithoutExtension: G.AppsClient.AppsGetOrgInstallation
@@ -13766,7 +13766,7 @@ The duration of the interaction restriction. Default: `one_day`.
     HttpMethod: Put,
     Summary: Set interaction restrictions for an organization,
     RequestType: InteractionLimit,
-    ResponseType: interaction-limit-response,
+    ResponseType: InteractionLimitResponse,
     MethodName: InteractionsSetRestrictionsForOrgAsync,
     NotAsyncMethodName: InteractionsSetRestrictionsForOrg,
     FileNameWithoutExtension: G.InteractionsClient.InteractionsSetRestrictionsForOrg
@@ -14067,7 +14067,7 @@ The role for the new member.
     HttpMethod: Post,
     Summary: Create an organization invitation,
     RequestType: ,
-    ResponseType: organization-invitation,
+    ResponseType: OrganizationInvitation,
     MethodName: OrgsCreateInvitationAsync,
     NotAsyncMethodName: OrgsCreateInvitation,
     FileNameWithoutExtension: G.OrgsClient.OrgsCreateInvitation
@@ -14966,7 +14966,7 @@ The role for the new member.
     HttpMethod: Post,
     Summary: Stop a codespace for an organization user,
     RequestType: ,
-    ResponseType: codespace,
+    ResponseType: Codespace,
     MethodName: CodespacesStopInOrganizationAsync,
     NotAsyncMethodName: CodespacesStopInOrganization,
     FileNameWithoutExtension: G.CodespacesClient.CodespacesStopInOrganization
@@ -15023,7 +15023,7 @@ The role for the new member.
     JsonSerializerContext: ,
     Summary: Get Copilot seat assignment details for a user,
     RequestType: ,
-    ResponseType: copilot-seat-details,
+    ResponseType: CopilotSeatDetails,
     MethodName: CopilotGetCopilotSeatDetailsForUserAsync,
     NotAsyncMethodName: CopilotGetCopilotSeatDetailsForUser,
     FileNameWithoutExtension: G.CopilotClient.CopilotGetCopilotSeatDetailsForUser
@@ -15080,7 +15080,7 @@ The role for the new member.
     JsonSerializerContext: ,
     Summary: Get organization membership for a user,
     RequestType: ,
-    ResponseType: org-membership,
+    ResponseType: OrgMembership,
     MethodName: OrgsGetMembershipForUserAsync,
     NotAsyncMethodName: OrgsGetMembershipForUser,
     FileNameWithoutExtension: G.OrgsClient.OrgsGetMembershipForUser
@@ -15165,7 +15165,7 @@ The role to give the user in the organization. Can be one of:
     HttpMethod: Put,
     Summary: Set organization membership for a user,
     RequestType: ,
-    ResponseType: org-membership,
+    ResponseType: OrgMembership,
     MethodName: OrgsSetMembershipForUserAsync,
     NotAsyncMethodName: OrgsSetMembershipForUser,
     FileNameWithoutExtension: G.OrgsClient.OrgsSetMembershipForUser
@@ -15531,7 +15531,7 @@ Indicates whether this should only include organization metadata (repositories a
     HttpMethod: Post,
     Summary: Start an organization migration,
     RequestType: ,
-    ResponseType: migration,
+    ResponseType: Migration,
     MethodName: MigrationsStartForOrgAsync,
     NotAsyncMethodName: MigrationsStartForOrg,
     FileNameWithoutExtension: G.MigrationsClient.MigrationsStartForOrg
@@ -15607,7 +15607,7 @@ Indicates whether this should only include organization metadata (repositories a
     JsonSerializerContext: ,
     Summary: Get an organization migration status,
     RequestType: ,
-    ResponseType: migration,
+    ResponseType: Migration,
     MethodName: MigrationsGetStatusForOrgAsync,
     NotAsyncMethodName: MigrationsGetStatusForOrg,
     FileNameWithoutExtension: G.MigrationsClient.MigrationsGetStatusForOrg
@@ -16061,7 +16061,7 @@ Indicates whether this should only include organization metadata (repositories a
     HttpMethod: Post,
     Summary: Create a custom organization role,
     RequestType: ,
-    ResponseType: organization-role,
+    ResponseType: OrganizationRole,
     MethodName: OrgsCreateCustomOrganizationRoleAsync,
     NotAsyncMethodName: OrgsCreateCustomOrganizationRole,
     FileNameWithoutExtension: G.OrgsClient.OrgsCreateCustomOrganizationRole
@@ -16542,7 +16542,7 @@ Indicates whether this should only include organization metadata (repositories a
     JsonSerializerContext: ,
     Summary: Get an organization role,
     RequestType: ,
-    ResponseType: organization-role,
+    ResponseType: OrganizationRole,
     MethodName: OrgsGetOrgRoleAsync,
     NotAsyncMethodName: OrgsGetOrgRole,
     FileNameWithoutExtension: G.OrgsClient.OrgsGetOrgRole
@@ -16648,7 +16648,7 @@ Indicates whether this should only include organization metadata (repositories a
     HttpMethod: Patch,
     Summary: Update a custom organization role,
     RequestType: ,
-    ResponseType: organization-role,
+    ResponseType: OrganizationRole,
     MethodName: OrgsPatchCustomOrganizationRoleAsync,
     NotAsyncMethodName: OrgsPatchCustomOrganizationRole,
     FileNameWithoutExtension: G.OrgsClient.OrgsPatchCustomOrganizationRole
@@ -17376,7 +17376,7 @@ When set to `true`, the request will be performed asynchronously. Returns a 202 
     JsonSerializerContext: ,
     Summary: Get a package for an organization,
     RequestType: ,
-    ResponseType: package,
+    ResponseType: Package,
     MethodName: PackagesGetPackageForOrganizationAsync,
     NotAsyncMethodName: PackagesGetPackageForOrganization,
     FileNameWithoutExtension: G.PackagesClient.PackagesGetPackageForOrganization
@@ -17845,7 +17845,7 @@ When set to `true`, the request will be performed asynchronously. Returns a 202 
     JsonSerializerContext: ,
     Summary: Get a package version for an organization,
     RequestType: ,
-    ResponseType: package-version,
+    ResponseType: PackageVersion,
     MethodName: PackagesGetPackageVersionForOrganizationAsync,
     NotAsyncMethodName: PackagesGetPackageVersionForOrganization,
     FileNameWithoutExtension: G.PackagesClient.PackagesGetPackageVersionForOrganization
@@ -18295,7 +18295,7 @@ When set to `true`, the request will be performed asynchronously. Returns a 202 
     JsonSerializerContext: ,
     Summary: List requests to access organization resources with fine-grained personal access tokens,
     RequestType: ,
-    ResponseType: basic-error,
+    ResponseType: BasicError,
     MethodName: OrgsListPatGrantRequestsAsync,
     NotAsyncMethodName: OrgsListPatGrantRequests,
     FileNameWithoutExtension: G.OrgsClient.OrgsListPatGrantRequests
@@ -18388,7 +18388,7 @@ When set to `true`, the request will be performed asynchronously. Returns a 202 
     HttpMethod: Post,
     Summary: Review requests to access organization resources with fine-grained personal access tokens,
     RequestType: ,
-    ResponseType: basic-error,
+    ResponseType: BasicError,
     MethodName: OrgsReviewPatGrantRequestsInBulkAsync,
     NotAsyncMethodName: OrgsReviewPatGrantRequestsInBulk,
     FileNameWithoutExtension: G.OrgsClient.OrgsReviewPatGrantRequestsInBulk
@@ -18484,7 +18484,7 @@ When set to `true`, the request will be performed asynchronously. Returns a 202 
     HttpMethod: Post,
     Summary: Review a request to access organization resources with a fine-grained personal access token,
     RequestType: ,
-    ResponseType: basic-error,
+    ResponseType: BasicError,
     MethodName: OrgsReviewPatGrantRequestAsync,
     NotAsyncMethodName: OrgsReviewPatGrantRequest,
     FileNameWithoutExtension: G.OrgsClient.OrgsReviewPatGrantRequest
@@ -18583,7 +18583,7 @@ When set to `true`, the request will be performed asynchronously. Returns a 202 
     JsonSerializerContext: ,
     Summary: List repositories requested to be accessed by a fine-grained personal access token,
     RequestType: ,
-    ResponseType: basic-error,
+    ResponseType: BasicError,
     MethodName: OrgsListPatGrantRequestRepositoriesAsync,
     NotAsyncMethodName: OrgsListPatGrantRequestRepositories,
     FileNameWithoutExtension: G.OrgsClient.OrgsListPatGrantRequestRepositories
@@ -18813,7 +18813,7 @@ When set to `true`, the request will be performed asynchronously. Returns a 202 
     JsonSerializerContext: ,
     Summary: List fine-grained personal access tokens with access to organization resources,
     RequestType: ,
-    ResponseType: basic-error,
+    ResponseType: BasicError,
     MethodName: OrgsListPatGrantsAsync,
     NotAsyncMethodName: OrgsListPatGrants,
     FileNameWithoutExtension: G.OrgsClient.OrgsListPatGrants
@@ -18888,7 +18888,7 @@ When set to `true`, the request will be performed asynchronously. Returns a 202 
     HttpMethod: Post,
     Summary: Update the access to organization resources via fine-grained personal access tokens,
     RequestType: ,
-    ResponseType: basic-error,
+    ResponseType: BasicError,
     MethodName: OrgsUpdatePatAccessesAsync,
     NotAsyncMethodName: OrgsUpdatePatAccesses,
     FileNameWithoutExtension: G.OrgsClient.OrgsUpdatePatAccesses
@@ -18966,7 +18966,7 @@ When set to `true`, the request will be performed asynchronously. Returns a 202 
     HttpMethod: Post,
     Summary: Update the access a fine-grained personal access token has to organization resources,
     RequestType: ,
-    ResponseType: basic-error,
+    ResponseType: BasicError,
     MethodName: OrgsUpdatePatAccessAsync,
     NotAsyncMethodName: OrgsUpdatePatAccess,
     FileNameWithoutExtension: G.OrgsClient.OrgsUpdatePatAccess
@@ -19065,7 +19065,7 @@ When set to `true`, the request will be performed asynchronously. Returns a 202 
     JsonSerializerContext: ,
     Summary: List repositories a fine-grained personal access token has access to,
     RequestType: ,
-    ResponseType: basic-error,
+    ResponseType: BasicError,
     MethodName: OrgsListPatGrantRepositoriesAsync,
     NotAsyncMethodName: OrgsListPatGrantRepositories,
     FileNameWithoutExtension: G.OrgsClient.OrgsListPatGrantRepositories
@@ -19245,7 +19245,7 @@ When set to `true`, the request will be performed asynchronously. Returns a 202 
     HttpMethod: Post,
     Summary: Create an organization project,
     RequestType: ,
-    ResponseType: project,
+    ResponseType: Project,
     MethodName: ProjectsCreateForOrgAsync,
     NotAsyncMethodName: ProjectsCreateForOrg,
     FileNameWithoutExtension: G.ProjectsClient.ProjectsCreateForOrg
@@ -19395,7 +19395,7 @@ When set to `true`, the request will be performed asynchronously. Returns a 202 
     JsonSerializerContext: ,
     Summary: Get a custom property for an organization,
     RequestType: ,
-    ResponseType: org-custom-property,
+    ResponseType: OrgCustomProperty,
     MethodName: OrgsGetCustomPropertyAsync,
     NotAsyncMethodName: OrgsGetCustomProperty,
     FileNameWithoutExtension: G.OrgsClient.OrgsGetCustomProperty
@@ -19544,7 +19544,7 @@ The property can have up to 200 allowed values.,
     HttpMethod: Put,
     Summary: Create or update a custom property for an organization,
     RequestType: ,
-    ResponseType: org-custom-property,
+    ResponseType: OrgCustomProperty,
     MethodName: OrgsCreateOrUpdateCustomPropertyAsync,
     NotAsyncMethodName: OrgsCreateOrUpdateCustomProperty,
     FileNameWithoutExtension: G.OrgsClient.OrgsCreateOrUpdateCustomProperty
@@ -20728,7 +20728,7 @@ The default value for a merge commit message.
     HttpMethod: Post,
     Summary: Create an organization repository,
     RequestType: ,
-    ResponseType: full-repository,
+    ResponseType: FullRepository,
     MethodName: ReposCreateInOrgAsync,
     NotAsyncMethodName: ReposCreateInOrg,
     FileNameWithoutExtension: G.ReposClient.ReposCreateInOrg
@@ -20964,7 +20964,7 @@ Conditions for an organization ruleset. The conditions object should contain bot
     HttpMethod: Post,
     Summary: Create an organization repository ruleset,
     RequestType: ,
-    ResponseType: repository-ruleset,
+    ResponseType: RepositoryRuleset,
     MethodName: ReposCreateOrgRulesetAsync,
     NotAsyncMethodName: ReposCreateOrgRuleset,
     FileNameWithoutExtension: G.ReposClient.ReposCreateOrgRuleset
@@ -21144,7 +21144,7 @@ Conditions for an organization ruleset. The conditions object should contain bot
     JsonSerializerContext: ,
     Summary: List organization rule suites,
     RequestType: ,
-    ResponseType: rule-suites,
+    ResponseType: RuleSuites,
     MethodName: ReposGetOrgRuleSuitesAsync,
     NotAsyncMethodName: ReposGetOrgRuleSuites,
     FileNameWithoutExtension: G.ReposClient.ReposGetOrgRuleSuites
@@ -21201,7 +21201,7 @@ Conditions for an organization ruleset. The conditions object should contain bot
     JsonSerializerContext: ,
     Summary: Get an organization rule suite,
     RequestType: ,
-    ResponseType: rule-suite,
+    ResponseType: RuleSuite,
     MethodName: ReposGetOrgRuleSuiteAsync,
     NotAsyncMethodName: ReposGetOrgRuleSuite,
     FileNameWithoutExtension: G.ReposClient.ReposGetOrgRuleSuite
@@ -21258,7 +21258,7 @@ Conditions for an organization ruleset. The conditions object should contain bot
     JsonSerializerContext: ,
     Summary: Get an organization repository ruleset,
     RequestType: ,
-    ResponseType: repository-ruleset,
+    ResponseType: RepositoryRuleset,
     MethodName: ReposGetOrgRulesetAsync,
     NotAsyncMethodName: ReposGetOrgRuleset,
     FileNameWithoutExtension: G.ReposClient.ReposGetOrgRuleset
@@ -21433,7 +21433,7 @@ Conditions for an organization ruleset. The conditions object should contain bot
     HttpMethod: Put,
     Summary: Update an organization repository ruleset,
     RequestType: ,
-    ResponseType: repository-ruleset,
+    ResponseType: RepositoryRuleset,
     MethodName: ReposUpdateOrgRulesetAsync,
     NotAsyncMethodName: ReposUpdateOrgRuleset,
     FileNameWithoutExtension: G.ReposClient.ReposUpdateOrgRuleset
@@ -22119,7 +22119,7 @@ Conditions for an organization ruleset. The conditions object should contain bot
     JsonSerializerContext: ,
     Summary: Get GitHub Actions billing for an organization,
     RequestType: ,
-    ResponseType: actions-billing-usage,
+    ResponseType: ActionsBillingUsage,
     MethodName: BillingGetGithubActionsBillingOrgAsync,
     NotAsyncMethodName: BillingGetGithubActionsBillingOrg,
     FileNameWithoutExtension: G.BillingClient.BillingGetGithubActionsBillingOrg
@@ -22157,7 +22157,7 @@ Conditions for an organization ruleset. The conditions object should contain bot
     JsonSerializerContext: ,
     Summary: Get GitHub Packages billing for an organization,
     RequestType: ,
-    ResponseType: packages-billing-usage,
+    ResponseType: PackagesBillingUsage,
     MethodName: BillingGetGithubPackagesBillingOrgAsync,
     NotAsyncMethodName: BillingGetGithubPackagesBillingOrg,
     FileNameWithoutExtension: G.BillingClient.BillingGetGithubPackagesBillingOrg
@@ -22195,7 +22195,7 @@ Conditions for an organization ruleset. The conditions object should contain bot
     JsonSerializerContext: ,
     Summary: Get shared storage billing for an organization,
     RequestType: ,
-    ResponseType: combined-billing-usage,
+    ResponseType: CombinedBillingUsage,
     MethodName: BillingGetSharedStorageBillingOrgAsync,
     NotAsyncMethodName: BillingGetSharedStorageBillingOrg,
     FileNameWithoutExtension: G.BillingClient.BillingGetSharedStorageBillingOrg
@@ -22475,7 +22475,7 @@ Default: `notifications_enabled`,
     HttpMethod: Post,
     Summary: Create a team,
     RequestType: ,
-    ResponseType: team-full,
+    ResponseType: TeamFull,
     MethodName: TeamsCreateAsync,
     NotAsyncMethodName: TeamsCreate,
     FileNameWithoutExtension: G.TeamsClient.TeamsCreate
@@ -22532,7 +22532,7 @@ Default: `notifications_enabled`,
     JsonSerializerContext: ,
     Summary: Get a team by name,
     RequestType: ,
-    ResponseType: team-full,
+    ResponseType: TeamFull,
     MethodName: TeamsGetByNameAsync,
     NotAsyncMethodName: TeamsGetByName,
     FileNameWithoutExtension: G.TeamsClient.TeamsGetByName
@@ -22718,7 +22718,7 @@ The notification setting the team has chosen. Editing teams without specifying t
     HttpMethod: Patch,
     Summary: Update a team,
     RequestType: ,
-    ResponseType: team-full,
+    ResponseType: TeamFull,
     MethodName: TeamsUpdateInOrgAsync,
     NotAsyncMethodName: TeamsUpdateInOrg,
     FileNameWithoutExtension: G.TeamsClient.TeamsUpdateInOrg
@@ -23030,7 +23030,7 @@ Private posts are only visible to team members, organization owners, and team ma
     HttpMethod: Post,
     Summary: Create a discussion,
     RequestType: ,
-    ResponseType: team-discussion,
+    ResponseType: TeamDiscussion,
     MethodName: TeamsCreateDiscussionInOrgAsync,
     NotAsyncMethodName: TeamsCreateDiscussionInOrg,
     FileNameWithoutExtension: G.TeamsClient.TeamsCreateDiscussionInOrg
@@ -23106,7 +23106,7 @@ Private posts are only visible to team members, organization owners, and team ma
     JsonSerializerContext: ,
     Summary: Get a discussion,
     RequestType: ,
-    ResponseType: team-discussion,
+    ResponseType: TeamDiscussion,
     MethodName: TeamsGetDiscussionInOrgAsync,
     NotAsyncMethodName: TeamsGetDiscussionInOrg,
     FileNameWithoutExtension: G.TeamsClient.TeamsGetDiscussionInOrg
@@ -23215,7 +23215,7 @@ Private posts are only visible to team members, organization owners, and team ma
     HttpMethod: Patch,
     Summary: Update a discussion,
     RequestType: ,
-    ResponseType: team-discussion,
+    ResponseType: TeamDiscussion,
     MethodName: TeamsUpdateDiscussionInOrgAsync,
     NotAsyncMethodName: TeamsUpdateDiscussionInOrg,
     FileNameWithoutExtension: G.TeamsClient.TeamsUpdateDiscussionInOrg
@@ -23530,7 +23530,7 @@ Private posts are only visible to team members, organization owners, and team ma
     HttpMethod: Post,
     Summary: Create a discussion comment,
     RequestType: ,
-    ResponseType: team-discussion-comment,
+    ResponseType: TeamDiscussionComment,
     MethodName: TeamsCreateDiscussionCommentInOrgAsync,
     NotAsyncMethodName: TeamsCreateDiscussionCommentInOrg,
     FileNameWithoutExtension: G.TeamsClient.TeamsCreateDiscussionCommentInOrg
@@ -23625,7 +23625,7 @@ Private posts are only visible to team members, organization owners, and team ma
     JsonSerializerContext: ,
     Summary: Get a discussion comment,
     RequestType: ,
-    ResponseType: team-discussion-comment,
+    ResponseType: TeamDiscussionComment,
     MethodName: TeamsGetDiscussionCommentInOrgAsync,
     NotAsyncMethodName: TeamsGetDiscussionCommentInOrg,
     FileNameWithoutExtension: G.TeamsClient.TeamsGetDiscussionCommentInOrg
@@ -23737,7 +23737,7 @@ Private posts are only visible to team members, organization owners, and team ma
     HttpMethod: Patch,
     Summary: Update a discussion comment,
     RequestType: ,
-    ResponseType: team-discussion-comment,
+    ResponseType: TeamDiscussionComment,
     MethodName: TeamsUpdateDiscussionCommentInOrgAsync,
     NotAsyncMethodName: TeamsUpdateDiscussionCommentInOrg,
     FileNameWithoutExtension: G.TeamsClient.TeamsUpdateDiscussionCommentInOrg
@@ -24137,7 +24137,7 @@ Private posts are only visible to team members, organization owners, and team ma
     HttpMethod: Post,
     Summary: Create reaction for a team discussion comment,
     RequestType: ,
-    ResponseType: reaction,
+    ResponseType: Reaction,
     MethodName: ReactionsCreateForTeamDiscussionCommentInOrgAsync,
     NotAsyncMethodName: ReactionsCreateForTeamDiscussionCommentInOrg,
     FileNameWithoutExtension: G.ReactionsClient.ReactionsCreateForTeamDiscussionCommentInOrg
@@ -24518,7 +24518,7 @@ Private posts are only visible to team members, organization owners, and team ma
     HttpMethod: Post,
     Summary: Create reaction for a team discussion,
     RequestType: ,
-    ResponseType: reaction,
+    ResponseType: Reaction,
     MethodName: ReactionsCreateForTeamDiscussionInOrgAsync,
     NotAsyncMethodName: ReactionsCreateForTeamDiscussionInOrg,
     FileNameWithoutExtension: G.ReactionsClient.ReactionsCreateForTeamDiscussionInOrg
@@ -24917,7 +24917,7 @@ Private posts are only visible to team members, organization owners, and team ma
     JsonSerializerContext: ,
     Summary: Get team membership for a user,
     RequestType: ,
-    ResponseType: team-membership,
+    ResponseType: TeamMembership,
     MethodName: TeamsGetMembershipForUserInOrgAsync,
     NotAsyncMethodName: TeamsGetMembershipForUserInOrg,
     FileNameWithoutExtension: G.TeamsClient.TeamsGetMembershipForUserInOrg
@@ -25019,7 +25019,7 @@ The role that this user should have in the team.
     HttpMethod: Put,
     Summary: Add or update team membership for a user,
     RequestType: ,
-    ResponseType: team-membership,
+    ResponseType: TeamMembership,
     MethodName: TeamsAddOrUpdateMembershipForUserInOrgAsync,
     NotAsyncMethodName: TeamsAddOrUpdateMembershipForUserInOrg,
     FileNameWithoutExtension: G.TeamsClient.TeamsAddOrUpdateMembershipForUserInOrg
@@ -25271,7 +25271,7 @@ The role that this user should have in the team.
     JsonSerializerContext: ,
     Summary: Check team permissions for a project,
     RequestType: ,
-    ResponseType: team-project,
+    ResponseType: TeamProject,
     MethodName: TeamsCheckPermissionsForProjectInOrgAsync,
     NotAsyncMethodName: TeamsCheckPermissionsForProjectInOrg,
     FileNameWithoutExtension: G.TeamsClient.TeamsCheckPermissionsForProjectInOrg
@@ -25643,7 +25643,7 @@ The role that this user should have in the team.
     JsonSerializerContext: ,
     Summary: Check team permissions for a repository,
     RequestType: ,
-    ResponseType: team-repository,
+    ResponseType: TeamRepository,
     MethodName: TeamsCheckPermissionsForRepoInOrgAsync,
     NotAsyncMethodName: TeamsCheckPermissionsForRepoInOrg,
     FileNameWithoutExtension: G.TeamsClient.TeamsCheckPermissionsForRepoInOrg
@@ -26114,7 +26114,7 @@ If you don't specify any `query_suite` in your request, the preferred query suit
     JsonSerializerContext: ,
     Summary: Get a project card,
     RequestType: ,
-    ResponseType: project-card,
+    ResponseType: ProjectCard,
     MethodName: ProjectsGetCardAsync,
     NotAsyncMethodName: ProjectsGetCard,
     FileNameWithoutExtension: G.ProjectsClient.ProjectsGetCard
@@ -26189,7 +26189,7 @@ Whether or not the card is archived
     HttpMethod: Patch,
     Summary: Update an existing project card,
     RequestType: ,
-    ResponseType: project-card,
+    ResponseType: ProjectCard,
     MethodName: ProjectsUpdateCardAsync,
     NotAsyncMethodName: ProjectsUpdateCard,
     FileNameWithoutExtension: G.ProjectsClient.ProjectsUpdateCard
@@ -26341,7 +26341,7 @@ The unique identifier of the column the card should be moved to
     JsonSerializerContext: ,
     Summary: Get a project column,
     RequestType: ,
-    ResponseType: project-column,
+    ResponseType: ProjectColumn,
     MethodName: ProjectsGetColumnAsync,
     NotAsyncMethodName: ProjectsGetColumn,
     FileNameWithoutExtension: G.ProjectsClient.ProjectsGetColumn
@@ -26398,7 +26398,7 @@ Name of the project column
     HttpMethod: Patch,
     Summary: Update an existing project column,
     RequestType: ,
-    ResponseType: project-column,
+    ResponseType: ProjectColumn,
     MethodName: ProjectsUpdateColumnAsync,
     NotAsyncMethodName: ProjectsUpdateColumn,
     FileNameWithoutExtension: G.ProjectsClient.ProjectsUpdateColumn
@@ -26585,7 +26585,7 @@ Name of the project column
     HttpMethod: Post,
     Summary: Create a project card,
     RequestType: ,
-    ResponseType: project-card,
+    ResponseType: ProjectCard,
     MethodName: ProjectsCreateCardAsync,
     NotAsyncMethodName: ProjectsCreateCard,
     FileNameWithoutExtension: G.ProjectsClient.ProjectsCreateCard
@@ -26680,7 +26680,7 @@ The position of the column in a project. Can be one of: `first`, `last`, or `aft
     JsonSerializerContext: ,
     Summary: Get a project,
     RequestType: ,
-    ResponseType: project,
+    ResponseType: Project,
     MethodName: ProjectsGetAsync,
     NotAsyncMethodName: ProjectsGet,
     FileNameWithoutExtension: G.ProjectsClient.ProjectsGet
@@ -26815,7 +26815,7 @@ State of the project; either 'open' or 'closed'
     HttpMethod: Patch,
     Summary: Update a project,
     RequestType: ,
-    ResponseType: project,
+    ResponseType: Project,
     MethodName: ProjectsUpdateAsync,
     NotAsyncMethodName: ProjectsUpdate,
     FileNameWithoutExtension: G.ProjectsClient.ProjectsUpdate
@@ -27164,7 +27164,7 @@ The permission to grant the collaborator.
     JsonSerializerContext: ,
     Summary: Get project permission for a user,
     RequestType: ,
-    ResponseType: project-collaborator-permission,
+    ResponseType: ProjectCollaboratorPermission,
     MethodName: ProjectsGetPermissionForUserAsync,
     NotAsyncMethodName: ProjectsGetPermissionForUser,
     FileNameWithoutExtension: G.ProjectsClient.ProjectsGetPermissionForUser
@@ -27301,7 +27301,7 @@ Name of the project column
     HttpMethod: Post,
     Summary: Create a project column,
     RequestType: ,
-    ResponseType: project-column,
+    ResponseType: ProjectColumn,
     MethodName: ProjectsCreateColumnAsync,
     NotAsyncMethodName: ProjectsCreateColumn,
     FileNameWithoutExtension: G.ProjectsClient.ProjectsCreateColumn
@@ -27319,7 +27319,7 @@ Name of the project column
     JsonSerializerContext: ,
     Summary: Get rate limit status for the authenticated user,
     RequestType: ,
-    ResponseType: rate-limit-overview,
+    ResponseType: RateLimitOverview,
     MethodName: RateLimitGetAsync,
     NotAsyncMethodName: RateLimitGet,
     FileNameWithoutExtension: G.RateLimitClient.RateLimitGet
@@ -27376,7 +27376,7 @@ Name of the project column
     JsonSerializerContext: ,
     Summary: Get a repository,
     RequestType: ,
-    ResponseType: full-repository,
+    ResponseType: FullRepository,
     MethodName: ReposGetAsync,
     NotAsyncMethodName: ReposGet,
     FileNameWithoutExtension: G.ReposClient.ReposGet
@@ -27940,7 +27940,7 @@ Either `true` to require contributors to sign off on web-based commits, or `fals
     HttpMethod: Patch,
     Summary: Update a repository,
     RequestType: ,
-    ResponseType: full-repository,
+    ResponseType: FullRepository,
     MethodName: ReposUpdateAsync,
     NotAsyncMethodName: ReposUpdate,
     FileNameWithoutExtension: G.ReposClient.ReposUpdate
@@ -28192,7 +28192,7 @@ Either `true` to require contributors to sign off on web-based commits, or `fals
     JsonSerializerContext: ,
     Summary: Get an artifact,
     RequestType: ,
-    ResponseType: artifact,
+    ResponseType: Artifact,
     MethodName: ActionsGetArtifactAsync,
     NotAsyncMethodName: ActionsGetArtifact,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetArtifact
@@ -28421,7 +28421,7 @@ Either `true` to require contributors to sign off on web-based commits, or `fals
     JsonSerializerContext: ,
     Summary: Get GitHub Actions cache usage for a repository,
     RequestType: ,
-    ResponseType: actions-cache-usage-by-repository,
+    ResponseType: ActionsCacheUsageByRepository,
     MethodName: ActionsGetActionsCacheUsageAsync,
     NotAsyncMethodName: ActionsGetActionsCacheUsage,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetActionsCacheUsage
@@ -28432,7 +28432,7 @@ Either `true` to require contributors to sign off on web-based commits, or `fals
     ClassName: ActionsClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/actions/caches?per_page={perPage}&page={page}&ref={ref}&key={key}&sort={sort}&direction={direction}",
+    Path: $"/repos/{owner}/{repo}/actions/caches?per_page={perPage}&page={page}&ref={@ref}&key={key}&sort={sort}&direction={direction}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -28530,8 +28530,8 @@ Either `true` to require contributors to sign off on web-based commits, or `fals
         ParameterStyle: Form,
         ParameterExplode: true,
         Summary: ,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       },
       {
@@ -28614,7 +28614,7 @@ Either `true` to require contributors to sign off on web-based commits, or `fals
     JsonSerializerContext: ,
     Summary: List GitHub Actions caches for a repository,
     RequestType: ,
-    ResponseType: actions-cache-list,
+    ResponseType: ActionsCacheList,
     MethodName: ActionsGetActionsCacheListAsync,
     NotAsyncMethodName: ActionsGetActionsCacheList,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetActionsCacheList
@@ -28625,7 +28625,7 @@ Either `true` to require contributors to sign off on web-based commits, or `fals
     ClassName: ActionsClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/actions/caches?key={key}&ref={ref}",
+    Path: $"/repos/{owner}/{repo}/actions/caches?key={key}&ref={@ref}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -28700,8 +28700,8 @@ Either `true` to require contributors to sign off on web-based commits, or `fals
         ParameterStyle: Form,
         ParameterExplode: true,
         Summary: ,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       }
     ],
@@ -28710,7 +28710,7 @@ Either `true` to require contributors to sign off on web-based commits, or `fals
     HttpMethod: Delete,
     Summary: Delete GitHub Actions caches for a repository (using a cache key),
     RequestType: ,
-    ResponseType: actions-cache-list,
+    ResponseType: ActionsCacheList,
     MethodName: ActionsDeleteActionsCacheByKeyAsync,
     NotAsyncMethodName: ActionsDeleteActionsCacheByKey,
     FileNameWithoutExtension: G.ActionsClient.ActionsDeleteActionsCacheByKey
@@ -28863,7 +28863,7 @@ Either `true` to require contributors to sign off on web-based commits, or `fals
     JsonSerializerContext: ,
     Summary: Get a job for a workflow run,
     RequestType: ,
-    ResponseType: job,
+    ResponseType: Job,
     MethodName: ActionsGetJobForWorkflowRunAsync,
     NotAsyncMethodName: ActionsGetJobForWorkflowRun,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetJobForWorkflowRun
@@ -29035,7 +29035,7 @@ Whether to enable debug logging for the re-run.
     HttpMethod: Post,
     Summary: Re-run a job from a workflow run,
     RequestType: ,
-    ResponseType: empty-object,
+    ResponseType: EmptyObject,
     MethodName: ActionsReRunJobForWorkflowRunAsync,
     NotAsyncMethodName: ActionsReRunJobForWorkflowRun,
     FileNameWithoutExtension: G.ActionsClient.ActionsReRunJobForWorkflowRun
@@ -29092,7 +29092,7 @@ Whether to enable debug logging for the re-run.
     JsonSerializerContext: ,
     Summary: Get the customization template for an OIDC subject claim for a repository,
     RequestType: ,
-    ResponseType: oidc-custom-sub-repo,
+    ResponseType: OidcCustomSubRepo,
     MethodName: ActionsGetCustomOidcSubClaimForRepoAsync,
     NotAsyncMethodName: ActionsGetCustomOidcSubClaimForRepo,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetCustomOidcSubClaimForRepo
@@ -29182,7 +29182,7 @@ Whether to enable debug logging for the re-run.
     HttpMethod: Put,
     Summary: Set the customization template for an OIDC subject claim for a repository,
     RequestType: ,
-    ResponseType: empty-object,
+    ResponseType: EmptyObject,
     MethodName: ActionsSetCustomOidcSubClaimForRepoAsync,
     NotAsyncMethodName: ActionsSetCustomOidcSubClaimForRepo,
     FileNameWithoutExtension: G.ActionsClient.ActionsSetCustomOidcSubClaimForRepo
@@ -29437,7 +29437,7 @@ Whether to enable debug logging for the re-run.
     JsonSerializerContext: ,
     Summary: Get GitHub Actions permissions for a repository,
     RequestType: ,
-    ResponseType: actions-repository-permissions,
+    ResponseType: ActionsRepositoryPermissions,
     MethodName: ActionsGetGithubActionsPermissionsRepositoryAsync,
     NotAsyncMethodName: ActionsGetGithubActionsPermissionsRepository,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetGithubActionsPermissionsRepository
@@ -29592,7 +29592,7 @@ Whether to enable debug logging for the re-run.
     JsonSerializerContext: ,
     Summary: Get the level of access for workflows outside of the repository,
     RequestType: ,
-    ResponseType: actions-workflow-access-to-repository,
+    ResponseType: ActionsWorkflowAccessToRepository,
     MethodName: ActionsGetWorkflowAccessToRepositoryAsync,
     NotAsyncMethodName: ActionsGetWorkflowAccessToRepository,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetWorkflowAccessToRepository
@@ -29735,7 +29735,7 @@ repository.
     JsonSerializerContext: ,
     Summary: Get allowed actions and reusable workflows for a repository,
     RequestType: ,
-    ResponseType: selected-actions,
+    ResponseType: SelectedActions,
     MethodName: ActionsGetAllowedActionsRepositoryAsync,
     NotAsyncMethodName: ActionsGetAllowedActionsRepository,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetAllowedActionsRepository
@@ -29901,7 +29901,7 @@ Specifies a list of string-matching patterns to allow specific action(s) and reu
     JsonSerializerContext: ,
     Summary: Get default workflow permissions for a repository,
     RequestType: ,
-    ResponseType: actions-get-default-workflow-permissions,
+    ResponseType: ActionsGetDefaultWorkflowPermissions,
     MethodName: ActionsGetGithubActionsDefaultWorkflowPermissionsRepositoryAsync,
     NotAsyncMethodName: ActionsGetGithubActionsDefaultWorkflowPermissionsRepository,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetGithubActionsDefaultWorkflowPermissionsRepository
@@ -30355,7 +30355,7 @@ The working directory to be used for job execution, relative to the runner insta
     HttpMethod: Post,
     Summary: Create a registration token for a repository,
     RequestType: ,
-    ResponseType: authentication-token,
+    ResponseType: AuthenticationToken,
     MethodName: ActionsCreateRegistrationTokenForRepoAsync,
     NotAsyncMethodName: ActionsCreateRegistrationTokenForRepo,
     FileNameWithoutExtension: G.ActionsClient.ActionsCreateRegistrationTokenForRepo
@@ -30413,7 +30413,7 @@ The working directory to be used for job execution, relative to the runner insta
     HttpMethod: Post,
     Summary: Create a remove token for a repository,
     RequestType: ,
-    ResponseType: authentication-token,
+    ResponseType: AuthenticationToken,
     MethodName: ActionsCreateRemoveTokenForRepoAsync,
     NotAsyncMethodName: ActionsCreateRemoveTokenForRepo,
     FileNameWithoutExtension: G.ActionsClient.ActionsCreateRemoveTokenForRepo
@@ -30489,7 +30489,7 @@ The working directory to be used for job execution, relative to the runner insta
     JsonSerializerContext: ,
     Summary: Get a self-hosted runner for a repository,
     RequestType: ,
-    ResponseType: runner,
+    ResponseType: Runner,
     MethodName: ActionsGetSelfHostedRunnerForRepoAsync,
     NotAsyncMethodName: ActionsGetSelfHostedRunnerForRepo,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetSelfHostedRunnerForRepo
@@ -31381,7 +31381,7 @@ The working directory to be used for job execution, relative to the runner insta
     JsonSerializerContext: ,
     Summary: Get a workflow run,
     RequestType: ,
-    ResponseType: workflow-run,
+    ResponseType: WorkflowRun,
     MethodName: ActionsGetWorkflowRunAsync,
     NotAsyncMethodName: ActionsGetWorkflowRun,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetWorkflowRun
@@ -31611,7 +31611,7 @@ The working directory to be used for job execution, relative to the runner insta
     HttpMethod: Post,
     Summary: Approve a workflow run for a fork pull request,
     RequestType: ,
-    ResponseType: empty-object,
+    ResponseType: EmptyObject,
     MethodName: ActionsApproveWorkflowRunAsync,
     NotAsyncMethodName: ActionsApproveWorkflowRun,
     FileNameWithoutExtension: G.ActionsClient.ActionsApproveWorkflowRun
@@ -31864,7 +31864,7 @@ The working directory to be used for job execution, relative to the runner insta
     JsonSerializerContext: ,
     Summary: Get a workflow run attempt,
     RequestType: ,
-    ResponseType: workflow-run,
+    ResponseType: WorkflowRun,
     MethodName: ActionsGetWorkflowRunAttemptAsync,
     NotAsyncMethodName: ActionsGetWorkflowRunAttempt,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetWorkflowRunAttempt
@@ -32173,7 +32173,7 @@ The working directory to be used for job execution, relative to the runner insta
     HttpMethod: Post,
     Summary: Cancel a workflow run,
     RequestType: ,
-    ResponseType: empty-object,
+    ResponseType: EmptyObject,
     MethodName: ActionsCancelWorkflowRunAsync,
     NotAsyncMethodName: ActionsCancelWorkflowRun,
     FileNameWithoutExtension: G.ActionsClient.ActionsCancelWorkflowRun
@@ -32327,7 +32327,7 @@ The working directory to be used for job execution, relative to the runner insta
     HttpMethod: Post,
     Summary: Force cancel a workflow run,
     RequestType: ,
-    ResponseType: empty-object,
+    ResponseType: EmptyObject,
     MethodName: ActionsForceCancelWorkflowRunAsync,
     NotAsyncMethodName: ActionsForceCancelWorkflowRun,
     FileNameWithoutExtension: G.ActionsClient.ActionsForceCancelWorkflowRun
@@ -32934,7 +32934,7 @@ Whether to enable debug logging for the re-run.
     HttpMethod: Post,
     Summary: Re-run a workflow,
     RequestType: ,
-    ResponseType: empty-object,
+    ResponseType: EmptyObject,
     MethodName: ActionsReRunWorkflowAsync,
     NotAsyncMethodName: ActionsReRunWorkflow,
     FileNameWithoutExtension: G.ActionsClient.ActionsReRunWorkflow
@@ -33030,7 +33030,7 @@ Whether to enable debug logging for the re-run.
     HttpMethod: Post,
     Summary: Re-run failed jobs from a workflow run,
     RequestType: ,
-    ResponseType: empty-object,
+    ResponseType: EmptyObject,
     MethodName: ActionsReRunWorkflowFailedJobsAsync,
     NotAsyncMethodName: ActionsReRunWorkflowFailedJobs,
     FileNameWithoutExtension: G.ActionsClient.ActionsReRunWorkflowFailedJobs
@@ -33106,7 +33106,7 @@ Whether to enable debug logging for the re-run.
     JsonSerializerContext: ,
     Summary: Get workflow run usage,
     RequestType: ,
-    ResponseType: workflow-run-usage,
+    ResponseType: WorkflowRunUsage,
     MethodName: ActionsGetWorkflowRunUsageAsync,
     NotAsyncMethodName: ActionsGetWorkflowRunUsage,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetWorkflowRunUsage
@@ -33262,7 +33262,7 @@ Whether to enable debug logging for the re-run.
     JsonSerializerContext: ,
     Summary: Get a repository public key,
     RequestType: ,
-    ResponseType: actions-public-key,
+    ResponseType: ActionsPublicKey,
     MethodName: ActionsGetRepoPublicKeyAsync,
     NotAsyncMethodName: ActionsGetRepoPublicKey,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetRepoPublicKey
@@ -33338,7 +33338,7 @@ Whether to enable debug logging for the re-run.
     JsonSerializerContext: ,
     Summary: Get a repository secret,
     RequestType: ,
-    ResponseType: actions-secret,
+    ResponseType: ActionsSecret,
     MethodName: ActionsGetRepoSecretAsync,
     NotAsyncMethodName: ActionsGetRepoSecret,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetRepoSecret
@@ -33447,7 +33447,7 @@ Whether to enable debug logging for the re-run.
     HttpMethod: Put,
     Summary: Create or update a repository secret,
     RequestType: ,
-    ResponseType: empty-object,
+    ResponseType: EmptyObject,
     MethodName: ActionsCreateOrUpdateRepoSecretAsync,
     NotAsyncMethodName: ActionsCreateOrUpdateRepoSecret,
     FileNameWithoutExtension: G.ActionsClient.ActionsCreateOrUpdateRepoSecret
@@ -33713,7 +33713,7 @@ Whether to enable debug logging for the re-run.
     HttpMethod: Post,
     Summary: Create a repository variable,
     RequestType: ,
-    ResponseType: empty-object,
+    ResponseType: EmptyObject,
     MethodName: ActionsCreateRepoVariableAsync,
     NotAsyncMethodName: ActionsCreateRepoVariable,
     FileNameWithoutExtension: G.ActionsClient.ActionsCreateRepoVariable
@@ -33789,7 +33789,7 @@ Whether to enable debug logging for the re-run.
     JsonSerializerContext: ,
     Summary: Get a repository variable,
     RequestType: ,
-    ResponseType: actions-variable,
+    ResponseType: ActionsVariable,
     MethodName: ActionsGetRepoVariableAsync,
     NotAsyncMethodName: ActionsGetRepoVariable,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetRepoVariable
@@ -34150,7 +34150,7 @@ Whether to enable debug logging for the re-run.
     JsonSerializerContext: ,
     Summary: Get a workflow,
     RequestType: ,
-    ResponseType: workflow,
+    ResponseType: Workflow,
     MethodName: ActionsGetWorkflowAsync,
     NotAsyncMethodName: ActionsGetWorkflow,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetWorkflow
@@ -34310,8 +34310,8 @@ Whether to enable debug logging for the re-run.
         },
         IsRequired: true,
         Summary: The git reference for the workflow. The reference can be a branch or tag name.,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       },
       {
@@ -34792,7 +34792,7 @@ Whether to enable debug logging for the re-run.
     JsonSerializerContext: ,
     Summary: Get workflow usage,
     RequestType: ,
-    ResponseType: workflow-usage,
+    ResponseType: WorkflowUsage,
     MethodName: ActionsGetWorkflowUsageAsync,
     NotAsyncMethodName: ActionsGetWorkflowUsage,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetWorkflowUsage
@@ -34803,7 +34803,7 @@ Whether to enable debug logging for the re-run.
     ClassName: ReposClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/activity?direction={direction}&per_page={perPage}&before={before}&after={after}&ref={ref}&actor={actor}&time_period={timePeriod}&activity_type={activityType}",
+    Path: $"/repos/{owner}/{repo}/activity?direction={direction}&per_page={perPage}&before={before}&after={after}&ref={@ref}&actor={actor}&time_period={timePeriod}&activity_type={activityType}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -34945,8 +34945,8 @@ Whether to enable debug logging for the re-run.
         ParameterStyle: Form,
         ParameterExplode: true,
         Summary: ,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       },
       {
@@ -35378,7 +35378,7 @@ Whether this autolink reference matches alphanumeric characters. If true, the `&
     HttpMethod: Post,
     Summary: Create an autolink reference for a repository,
     RequestType: ,
-    ResponseType: autolink,
+    ResponseType: Autolink,
     MethodName: ReposCreateAutolinkAsync,
     NotAsyncMethodName: ReposCreateAutolink,
     FileNameWithoutExtension: G.ReposClient.ReposCreateAutolink
@@ -35454,7 +35454,7 @@ Whether this autolink reference matches alphanumeric characters. If true, the `&
     JsonSerializerContext: ,
     Summary: Get an autolink reference of a repository,
     RequestType: ,
-    ResponseType: autolink,
+    ResponseType: Autolink,
     MethodName: ReposGetAutolinkAsync,
     NotAsyncMethodName: ReposGetAutolink,
     FileNameWithoutExtension: G.ReposClient.ReposGetAutolink
@@ -35588,7 +35588,7 @@ Whether this autolink reference matches alphanumeric characters. If true, the `&
     JsonSerializerContext: ,
     Summary: Check if automated security fixes are enabled for a repository,
     RequestType: ,
-    ResponseType: check-automated-security-fixes,
+    ResponseType: CheckAutomatedSecurityFixes,
     MethodName: ReposCheckAutomatedSecurityFixesAsync,
     NotAsyncMethodName: ReposCheckAutomatedSecurityFixes,
     FileNameWithoutExtension: G.ReposClient.ReposCheckAutomatedSecurityFixes
@@ -35715,7 +35715,7 @@ Whether this autolink reference matches alphanumeric characters. If true, the `&
     ClassName: ReposClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/branches?protected={protected}&per_page={perPage}&page={page}",
+    Path: $"/repos/{owner}/{repo}/branches?protected={@protected}&per_page={perPage}&page={page}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -35771,8 +35771,8 @@ Whether this autolink reference matches alphanumeric characters. If true, the `&
         ParameterStyle: Form,
         ParameterExplode: true,
         Summary: ,
-        ParameterName: protected,
-        ArgumentName: protected,
+        ParameterName: @protected,
+        ArgumentName: @protected,
         ParameterDefaultValue: default
       },
       {
@@ -35898,7 +35898,7 @@ Whether this autolink reference matches alphanumeric characters. If true, the `&
     JsonSerializerContext: ,
     Summary: Get a branch,
     RequestType: ,
-    ResponseType: branch-with-protection,
+    ResponseType: BranchWithProtection,
     MethodName: ReposGetBranchAsync,
     NotAsyncMethodName: ReposGetBranch,
     FileNameWithoutExtension: G.ReposClient.ReposGetBranch
@@ -35974,7 +35974,7 @@ Whether this autolink reference matches alphanumeric characters. If true, the `&
     JsonSerializerContext: ,
     Summary: Get branch protection,
     RequestType: ,
-    ResponseType: branch-protection,
+    ResponseType: BranchProtection,
     MethodName: ReposGetBranchProtectionAsync,
     NotAsyncMethodName: ReposGetBranchProtection,
     FileNameWithoutExtension: G.ReposClient.ReposGetBranchProtection
@@ -36233,7 +36233,7 @@ Whether users can pull changes from upstream when the branch is locked. Set to `
     HttpMethod: Put,
     Summary: Update branch protection,
     RequestType: ,
-    ResponseType: protected-branch,
+    ResponseType: ProtectedBranch,
     MethodName: ReposUpdateBranchProtectionAsync,
     NotAsyncMethodName: ReposUpdateBranchProtection,
     FileNameWithoutExtension: G.ReposClient.ReposUpdateBranchProtection
@@ -36386,7 +36386,7 @@ Whether users can pull changes from upstream when the branch is locked. Set to `
     JsonSerializerContext: ,
     Summary: Get admin branch protection,
     RequestType: ,
-    ResponseType: protected-branch-admin-enforced,
+    ResponseType: ProtectedBranchAdminEnforced,
     MethodName: ReposGetAdminBranchProtectionAsync,
     NotAsyncMethodName: ReposGetAdminBranchProtection,
     FileNameWithoutExtension: G.ReposClient.ReposGetAdminBranchProtection
@@ -36463,7 +36463,7 @@ Whether users can pull changes from upstream when the branch is locked. Set to `
     HttpMethod: Post,
     Summary: Set admin branch protection,
     RequestType: ,
-    ResponseType: protected-branch-admin-enforced,
+    ResponseType: ProtectedBranchAdminEnforced,
     MethodName: ReposSetAdminBranchProtectionAsync,
     NotAsyncMethodName: ReposSetAdminBranchProtection,
     FileNameWithoutExtension: G.ReposClient.ReposSetAdminBranchProtection
@@ -36616,7 +36616,7 @@ Whether users can pull changes from upstream when the branch is locked. Set to `
     JsonSerializerContext: ,
     Summary: Get pull request review protection,
     RequestType: ,
-    ResponseType: protected-branch-pull-request-review,
+    ResponseType: ProtectedBranchPullRequestReview,
     MethodName: ReposGetPullRequestReviewProtectionAsync,
     NotAsyncMethodName: ReposGetPullRequestReviewProtection,
     FileNameWithoutExtension: G.ReposClient.ReposGetPullRequestReviewProtection
@@ -36792,7 +36792,7 @@ Whether the most recent push must be approved by someone other than the person w
     HttpMethod: Patch,
     Summary: Update pull request review protection,
     RequestType: ,
-    ResponseType: protected-branch-pull-request-review,
+    ResponseType: ProtectedBranchPullRequestReview,
     MethodName: ReposUpdatePullRequestReviewProtectionAsync,
     NotAsyncMethodName: ReposUpdatePullRequestReviewProtection,
     FileNameWithoutExtension: G.ReposClient.ReposUpdatePullRequestReviewProtection
@@ -36945,7 +36945,7 @@ Whether the most recent push must be approved by someone other than the person w
     JsonSerializerContext: ,
     Summary: Get commit signature protection,
     RequestType: ,
-    ResponseType: protected-branch-admin-enforced,
+    ResponseType: ProtectedBranchAdminEnforced,
     MethodName: ReposGetCommitSignatureProtectionAsync,
     NotAsyncMethodName: ReposGetCommitSignatureProtection,
     FileNameWithoutExtension: G.ReposClient.ReposGetCommitSignatureProtection
@@ -37022,7 +37022,7 @@ Whether the most recent push must be approved by someone other than the person w
     HttpMethod: Post,
     Summary: Create commit signature protection,
     RequestType: ,
-    ResponseType: protected-branch-admin-enforced,
+    ResponseType: ProtectedBranchAdminEnforced,
     MethodName: ReposCreateCommitSignatureProtectionAsync,
     NotAsyncMethodName: ReposCreateCommitSignatureProtection,
     FileNameWithoutExtension: G.ReposClient.ReposCreateCommitSignatureProtection
@@ -37175,7 +37175,7 @@ Whether the most recent push must be approved by someone other than the person w
     JsonSerializerContext: ,
     Summary: Get status checks protection,
     RequestType: ,
-    ResponseType: status-check-policy,
+    ResponseType: StatusCheckPolicy,
     MethodName: ReposGetStatusChecksProtectionAsync,
     NotAsyncMethodName: ReposGetStatusChecksProtection,
     FileNameWithoutExtension: G.ReposClient.ReposGetStatusChecksProtection
@@ -37302,7 +37302,7 @@ Whether the most recent push must be approved by someone other than the person w
     HttpMethod: Patch,
     Summary: Update status check protection,
     RequestType: ,
-    ResponseType: status-check-policy,
+    ResponseType: StatusCheckPolicy,
     MethodName: ReposUpdateStatusCheckProtectionAsync,
     NotAsyncMethodName: ReposUpdateStatusCheckProtection,
     FileNameWithoutExtension: G.ReposClient.ReposUpdateStatusCheckProtection
@@ -37762,7 +37762,7 @@ Whether the most recent push must be approved by someone other than the person w
     JsonSerializerContext: ,
     Summary: Get access restrictions,
     RequestType: ,
-    ResponseType: branch-restriction-policy,
+    ResponseType: BranchRestrictionPolicy,
     MethodName: ReposGetAccessRestrictionsAsync,
     NotAsyncMethodName: ReposGetAccessRestrictions,
     FileNameWithoutExtension: G.ReposClient.ReposGetAccessRestrictions
@@ -38853,7 +38853,7 @@ Whether the most recent push must be approved by someone other than the person w
     HttpMethod: Post,
     Summary: Rename a branch,
     RequestType: ,
-    ResponseType: branch-with-protection,
+    ResponseType: BranchWithProtection,
     MethodName: ReposRenameBranchAsync,
     NotAsyncMethodName: ReposRenameBranch,
     FileNameWithoutExtension: G.ReposClient.ReposRenameBranch
@@ -39108,7 +39108,7 @@ The current status of the check run. Only GitHub Actions can set a status of `wa
     HttpMethod: Post,
     Summary: Create a check run,
     RequestType: ,
-    ResponseType: check-run,
+    ResponseType: CheckRun,
     MethodName: ChecksCreateAsync,
     NotAsyncMethodName: ChecksCreate,
     FileNameWithoutExtension: G.ChecksClient.ChecksCreate
@@ -39184,7 +39184,7 @@ The current status of the check run. Only GitHub Actions can set a status of `wa
     JsonSerializerContext: ,
     Summary: Get a check run,
     RequestType: ,
-    ResponseType: check-run,
+    ResponseType: CheckRun,
     MethodName: ChecksGetAsync,
     NotAsyncMethodName: ChecksGet,
     FileNameWithoutExtension: G.ChecksClient.ChecksGet
@@ -39439,7 +39439,7 @@ The current status of the check run. Only GitHub Actions can set a status of `wa
     HttpMethod: Patch,
     Summary: Update a check run,
     RequestType: ,
-    ResponseType: check-run,
+    ResponseType: CheckRun,
     MethodName: ChecksUpdateAsync,
     NotAsyncMethodName: ChecksUpdate,
     FileNameWithoutExtension: G.ChecksClient.ChecksUpdate
@@ -39634,7 +39634,7 @@ The current status of the check run. Only GitHub Actions can set a status of `wa
     HttpMethod: Post,
     Summary: Rerequest a check run,
     RequestType: ,
-    ResponseType: empty-object,
+    ResponseType: EmptyObject,
     MethodName: ChecksRerequestRunAsync,
     NotAsyncMethodName: ChecksRerequestRun,
     FileNameWithoutExtension: G.ChecksClient.ChecksRerequestRun
@@ -39708,7 +39708,7 @@ The current status of the check run. Only GitHub Actions can set a status of `wa
     HttpMethod: Post,
     Summary: Create a check suite,
     RequestType: ,
-    ResponseType: check-suite,
+    ResponseType: CheckSuite,
     MethodName: ChecksCreateSuiteAsync,
     NotAsyncMethodName: ChecksCreateSuite,
     FileNameWithoutExtension: G.ChecksClient.ChecksCreateSuite
@@ -39782,7 +39782,7 @@ The current status of the check run. Only GitHub Actions can set a status of `wa
     HttpMethod: Patch,
     Summary: Update repository preferences for check suites,
     RequestType: ,
-    ResponseType: check-suite-preference,
+    ResponseType: CheckSuitePreference,
     MethodName: ChecksSetSuitesPreferencesAsync,
     NotAsyncMethodName: ChecksSetSuitesPreferences,
     FileNameWithoutExtension: G.ChecksClient.ChecksSetSuitesPreferences
@@ -39858,7 +39858,7 @@ The current status of the check run. Only GitHub Actions can set a status of `wa
     JsonSerializerContext: ,
     Summary: Get a check suite,
     RequestType: ,
-    ResponseType: check-suite,
+    ResponseType: CheckSuite,
     MethodName: ChecksGetSuiteAsync,
     NotAsyncMethodName: ChecksGetSuite,
     FileNameWithoutExtension: G.ChecksClient.ChecksGetSuite
@@ -40126,7 +40126,7 @@ The current status of the check run. Only GitHub Actions can set a status of `wa
     HttpMethod: Post,
     Summary: Rerequest a check suite,
     RequestType: ,
-    ResponseType: empty-object,
+    ResponseType: EmptyObject,
     MethodName: ChecksRerequestSuiteAsync,
     NotAsyncMethodName: ChecksRerequestSuite,
     FileNameWithoutExtension: G.ChecksClient.ChecksRerequestSuite
@@ -40137,7 +40137,7 @@ The current status of the check run. Only GitHub Actions can set a status of `wa
     ClassName: CodeScanningClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/code-scanning/alerts?tool_name={toolName}&tool_guid={toolGuid}&page={page}&per_page={perPage}&ref={ref}&direction={direction}&sort={sort}&state={state}&severity={severity}",
+    Path: $"/repos/{owner}/{repo}/code-scanning/alerts?tool_name={toolName}&tool_guid={toolGuid}&page={page}&per_page={perPage}&ref={@ref}&direction={direction}&sort={sort}&state={state}&severity={severity}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -40275,8 +40275,8 @@ The current status of the check run. Only GitHub Actions can set a status of `wa
         Summary:
 The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt;number&gt;/head`,
 `refs/heads/&lt;branch name&gt;` or simply `&lt;branch name&gt;`.,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       },
       {
@@ -40478,7 +40478,7 @@ The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt
     JsonSerializerContext: ,
     Summary: Get a code scanning alert,
     RequestType: ,
-    ResponseType: code-scanning-alert,
+    ResponseType: CodeScanningAlert,
     MethodName: CodeScanningGetAlertAsync,
     NotAsyncMethodName: CodeScanningGetAlert,
     FileNameWithoutExtension: G.CodeScanningClient.CodeScanningGetAlert
@@ -40581,7 +40581,7 @@ The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt
           Properties: [
             ,
             FalsePositive,
-            Won'tFix,
+            WontFix,
             UsedInTests
           ],
           EnumValues: [
@@ -40619,7 +40619,7 @@ The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt
     HttpMethod: Patch,
     Summary: Update a code scanning alert,
     RequestType: ,
-    ResponseType: code-scanning-alert,
+    ResponseType: CodeScanningAlert,
     MethodName: CodeScanningUpdateAlertAsync,
     NotAsyncMethodName: CodeScanningUpdateAlert,
     FileNameWithoutExtension: G.CodeScanningClient.CodeScanningUpdateAlert
@@ -40630,7 +40630,7 @@ The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt
     ClassName: CodeScanningClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/code-scanning/alerts/{alertNumber}/instances?page={page}&per_page={perPage}&ref={ref}",
+    Path: $"/repos/{owner}/{repo}/code-scanning/alerts/{alertNumber}/instances?page={page}&per_page={perPage}&ref={@ref}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -40749,8 +40749,8 @@ The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt
         Summary:
 The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt;number&gt;/head`,
 `refs/heads/&lt;branch name&gt;` or simply `&lt;branch name&gt;`.,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       }
     ],
@@ -40769,7 +40769,7 @@ The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt
     ClassName: CodeScanningClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/code-scanning/analyses?tool_name={toolName}&tool_guid={toolGuid}&page={page}&per_page={perPage}&ref={ref}&sarif_id={sarifId}&direction={direction}&sort={sort}",
+    Path: $"/repos/{owner}/{repo}/code-scanning/analyses?tool_name={toolName}&tool_guid={toolGuid}&page={page}&per_page={perPage}&ref={@ref}&sarif_id={sarifId}&direction={direction}&sort={sort}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -40907,8 +40907,8 @@ The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt
         Summary:
 The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt;number&gt;/head`,
 `refs/heads/&lt;branch name&gt;` or simply `&lt;branch name&gt;`.,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       },
       {
@@ -41065,7 +41065,7 @@ An identifier for the upload.
     JsonSerializerContext: ,
     Summary: Get a code scanning analysis for a repository,
     RequestType: ,
-    ResponseType: code-scanning-analysis,
+    ResponseType: CodeScanningAnalysis,
     MethodName: CodeScanningGetAnalysisAsync,
     NotAsyncMethodName: CodeScanningGetAnalysis,
     FileNameWithoutExtension: G.CodeScanningClient.CodeScanningGetAnalysis
@@ -41161,7 +41161,7 @@ An identifier for the upload.
     HttpMethod: Delete,
     Summary: Delete a code scanning analysis from a repository,
     RequestType: ,
-    ResponseType: code-scanning-analysis-deletion,
+    ResponseType: CodeScanningAnalysisDeletion,
     MethodName: CodeScanningDeleteAnalysisAsync,
     NotAsyncMethodName: CodeScanningDeleteAnalysis,
     FileNameWithoutExtension: G.CodeScanningClient.CodeScanningDeleteAnalysis
@@ -41294,7 +41294,7 @@ An identifier for the upload.
     JsonSerializerContext: ,
     Summary: Get a CodeQL database for a repository,
     RequestType: ,
-    ResponseType: code-scanning-codeql-database,
+    ResponseType: CodeScanningCodeqlDatabase,
     MethodName: CodeScanningGetCodeqlDatabaseAsync,
     NotAsyncMethodName: CodeScanningGetCodeqlDatabase,
     FileNameWithoutExtension: G.CodeScanningClient.CodeScanningGetCodeqlDatabase
@@ -41450,7 +41450,7 @@ An identifier for the upload.
     HttpMethod: Post,
     Summary: Create a CodeQL variant analysis,
     RequestType: ,
-    ResponseType: code-scanning-variant-analysis,
+    ResponseType: CodeScanningVariantAnalysis,
     MethodName: CodeScanningCreateVariantAnalysisAsync,
     NotAsyncMethodName: CodeScanningCreateVariantAnalysis,
     FileNameWithoutExtension: G.CodeScanningClient.CodeScanningCreateVariantAnalysis
@@ -41526,7 +41526,7 @@ An identifier for the upload.
     JsonSerializerContext: ,
     Summary: Get the summary of a CodeQL variant analysis,
     RequestType: ,
-    ResponseType: code-scanning-variant-analysis,
+    ResponseType: CodeScanningVariantAnalysis,
     MethodName: CodeScanningGetVariantAnalysisAsync,
     NotAsyncMethodName: CodeScanningGetVariantAnalysis,
     FileNameWithoutExtension: G.CodeScanningClient.CodeScanningGetVariantAnalysis
@@ -41640,7 +41640,7 @@ An identifier for the upload.
     JsonSerializerContext: ,
     Summary: Get the analysis status of a repository in a CodeQL variant analysis,
     RequestType: ,
-    ResponseType: code-scanning-variant-analysis-repo-task,
+    ResponseType: CodeScanningVariantAnalysisRepoTask,
     MethodName: CodeScanningGetVariantAnalysisRepoTaskAsync,
     NotAsyncMethodName: CodeScanningGetVariantAnalysisRepoTask,
     FileNameWithoutExtension: G.CodeScanningClient.CodeScanningGetVariantAnalysisRepoTask
@@ -41697,7 +41697,7 @@ An identifier for the upload.
     JsonSerializerContext: ,
     Summary: Get a code scanning default setup configuration,
     RequestType: ,
-    ResponseType: code-scanning-default-setup,
+    ResponseType: CodeScanningDefaultSetup,
     MethodName: CodeScanningGetDefaultSetupAsync,
     NotAsyncMethodName: CodeScanningGetDefaultSetup,
     FileNameWithoutExtension: G.CodeScanningClient.CodeScanningGetDefaultSetup
@@ -41815,7 +41815,7 @@ An identifier for the upload.
     HttpMethod: Patch,
     Summary: Update a code scanning default setup configuration,
     RequestType: CodeScanningDefaultSetupUpdate,
-    ResponseType: empty-object,
+    ResponseType: EmptyObject,
     MethodName: CodeScanningUpdateDefaultSetupAsync,
     NotAsyncMethodName: CodeScanningUpdateDefaultSetup,
     FileNameWithoutExtension: G.CodeScanningClient.CodeScanningUpdateDefaultSetup
@@ -41898,8 +41898,8 @@ An identifier for the upload.
 The full Git reference, formatted as `refs/heads/&lt;branch name&gt;`,
 `refs/tags/&lt;tag&gt;`, `refs/pull/&lt;number&gt;/merge`, or `refs/pull/&lt;number&gt;/head`.
 <br/>Example: refs/heads/main,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       },
       {
@@ -41993,7 +41993,7 @@ This parameter is intended to help integrators ensure that the uploaded SARIF fi
     HttpMethod: Post,
     Summary: Upload an analysis as SARIF data,
     RequestType: ,
-    ResponseType: code-scanning-sarifs-receipt,
+    ResponseType: CodeScanningSarifsReceipt,
     MethodName: CodeScanningUploadSarifAsync,
     NotAsyncMethodName: CodeScanningUploadSarif,
     FileNameWithoutExtension: G.CodeScanningClient.CodeScanningUploadSarif
@@ -42069,7 +42069,7 @@ This parameter is intended to help integrators ensure that the uploaded SARIF fi
     JsonSerializerContext: ,
     Summary: Get information about a SARIF upload,
     RequestType: ,
-    ResponseType: code-scanning-sarifs-status,
+    ResponseType: CodeScanningSarifsStatus,
     MethodName: CodeScanningGetSarifAsync,
     NotAsyncMethodName: CodeScanningGetSarif,
     FileNameWithoutExtension: G.CodeScanningClient.CodeScanningGetSarif
@@ -42080,7 +42080,7 @@ This parameter is intended to help integrators ensure that the uploaded SARIF fi
     ClassName: ReposClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/codeowners/errors?ref={ref}",
+    Path: $"/repos/{owner}/{repo}/codeowners/errors?ref={@ref}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -42136,8 +42136,8 @@ This parameter is intended to help integrators ensure that the uploaded SARIF fi
         ParameterStyle: Form,
         ParameterExplode: true,
         Summary: ,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       }
     ],
@@ -42145,7 +42145,7 @@ This parameter is intended to help integrators ensure that the uploaded SARIF fi
     JsonSerializerContext: ,
     Summary: List CODEOWNERS errors,
     RequestType: ,
-    ResponseType: codeowners-errors,
+    ResponseType: CodeownersErrors,
     MethodName: ReposCodeownersErrorsAsync,
     NotAsyncMethodName: ReposCodeownersErrors,
     FileNameWithoutExtension: G.ReposClient.ReposCodeownersErrors
@@ -42308,8 +42308,8 @@ This parameter is intended to help integrators ensure that the uploaded SARIF fi
         },
         IsRequired: false,
         Summary: Git ref (typically a branch name) for this codespace,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       },
       {
@@ -42488,7 +42488,7 @@ This parameter is intended to help integrators ensure that the uploaded SARIF fi
     HttpMethod: Post,
     Summary: Create a codespace in a repository,
     RequestType: ,
-    ResponseType: codespace,
+    ResponseType: Codespace,
     MethodName: CodespacesCreateWithRepoForAuthenticatedUserAsync,
     NotAsyncMethodName: CodespacesCreateWithRepoForAuthenticatedUser,
     FileNameWithoutExtension: G.CodespacesClient.CodespacesCreateWithRepoForAuthenticatedUser
@@ -42598,7 +42598,7 @@ This parameter is intended to help integrators ensure that the uploaded SARIF fi
     ClassName: CodespacesClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/codespaces/machines?location={location}&client_ip={clientIp}&ref={ref}",
+    Path: $"/repos/{owner}/{repo}/codespaces/machines?location={location}&client_ip={clientIp}&ref={@ref}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -42694,8 +42694,8 @@ This parameter is intended to help integrators ensure that the uploaded SARIF fi
         ParameterExplode: true,
         Summary:
 <br/>Example: main,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       }
     ],
@@ -42714,7 +42714,7 @@ This parameter is intended to help integrators ensure that the uploaded SARIF fi
     ClassName: CodespacesClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/codespaces/new?ref={ref}&client_ip={clientIp}",
+    Path: $"/repos/{owner}/{repo}/codespaces/new?ref={@ref}&client_ip={clientIp}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -42771,8 +42771,8 @@ This parameter is intended to help integrators ensure that the uploaded SARIF fi
         ParameterExplode: true,
         Summary:
 <br/>Example: main,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       },
       {
@@ -42811,7 +42811,7 @@ This parameter is intended to help integrators ensure that the uploaded SARIF fi
     ClassName: CodespacesClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/codespaces/permissions_check?ref={ref}&devcontainer_path={devcontainerPath}",
+    Path: $"/repos/{owner}/{repo}/codespaces/permissions_check?ref={@ref}&devcontainer_path={devcontainerPath}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -42868,8 +42868,8 @@ This parameter is intended to help integrators ensure that the uploaded SARIF fi
         ParameterExplode: true,
         Summary:
 <br/>Example: master,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       },
       {
@@ -42897,7 +42897,7 @@ This parameter is intended to help integrators ensure that the uploaded SARIF fi
     JsonSerializerContext: ,
     Summary: Check if permissions defined by a devcontainer have been accepted by the authenticated user,
     RequestType: ,
-    ResponseType: codespaces-permissions-check-for-devcontainer,
+    ResponseType: CodespacesPermissionsCheckForDevcontainer,
     MethodName: CodespacesCheckPermissionsForDevcontainerAsync,
     NotAsyncMethodName: CodespacesCheckPermissionsForDevcontainer,
     FileNameWithoutExtension: G.CodespacesClient.CodespacesCheckPermissionsForDevcontainer
@@ -43053,7 +43053,7 @@ This parameter is intended to help integrators ensure that the uploaded SARIF fi
     JsonSerializerContext: ,
     Summary: Get a repository public key,
     RequestType: ,
-    ResponseType: codespaces-public-key,
+    ResponseType: CodespacesPublicKey,
     MethodName: CodespacesGetRepoPublicKeyAsync,
     NotAsyncMethodName: CodespacesGetRepoPublicKey,
     FileNameWithoutExtension: G.CodespacesClient.CodespacesGetRepoPublicKey
@@ -43129,7 +43129,7 @@ This parameter is intended to help integrators ensure that the uploaded SARIF fi
     JsonSerializerContext: ,
     Summary: Get a repository secret,
     RequestType: ,
-    ResponseType: repo-codespaces-secret,
+    ResponseType: RepoCodespacesSecret,
     MethodName: CodespacesGetRepoSecretAsync,
     NotAsyncMethodName: CodespacesGetRepoSecret,
     FileNameWithoutExtension: G.CodespacesClient.CodespacesGetRepoSecret
@@ -43238,7 +43238,7 @@ This parameter is intended to help integrators ensure that the uploaded SARIF fi
     HttpMethod: Put,
     Summary: Create or update a repository secret,
     RequestType: ,
-    ResponseType: empty-object,
+    ResponseType: EmptyObject,
     MethodName: CodespacesCreateOrUpdateRepoSecretAsync,
     NotAsyncMethodName: CodespacesCreateOrUpdateRepoSecret,
     FileNameWithoutExtension: G.CodespacesClient.CodespacesCreateOrUpdateRepoSecret
@@ -43646,7 +43646,7 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
     HttpMethod: Put,
     Summary: Add a repository collaborator,
     RequestType: ,
-    ResponseType: repository-invitation,
+    ResponseType: RepositoryInvitation,
     MethodName: ReposAddCollaboratorAsync,
     NotAsyncMethodName: ReposAddCollaborator,
     FileNameWithoutExtension: G.ReposClient.ReposAddCollaborator
@@ -43799,7 +43799,7 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
     JsonSerializerContext: ,
     Summary: Get repository permissions for a user,
     RequestType: ,
-    ResponseType: repository-collaborator-permission,
+    ResponseType: RepositoryCollaboratorPermission,
     MethodName: ReposGetCollaboratorPermissionLevelAsync,
     NotAsyncMethodName: ReposGetCollaboratorPermissionLevel,
     FileNameWithoutExtension: G.ReposClient.ReposGetCollaboratorPermissionLevel
@@ -43974,7 +43974,7 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
     JsonSerializerContext: ,
     Summary: Get a commit comment,
     RequestType: ,
-    ResponseType: commit-comment,
+    ResponseType: CommitComment,
     MethodName: ReposGetCommitCommentAsync,
     NotAsyncMethodName: ReposGetCommitComment,
     FileNameWithoutExtension: G.ReposClient.ReposGetCommitComment
@@ -44067,7 +44067,7 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
     HttpMethod: Patch,
     Summary: Update a commit comment,
     RequestType: ,
-    ResponseType: commit-comment,
+    ResponseType: CommitComment,
     MethodName: ReposUpdateCommitCommentAsync,
     NotAsyncMethodName: ReposUpdateCommitComment,
     FileNameWithoutExtension: G.ReposClient.ReposUpdateCommitComment
@@ -44410,7 +44410,7 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
     HttpMethod: Post,
     Summary: Create reaction for a commit comment,
     RequestType: ,
-    ResponseType: reaction,
+    ResponseType: Reaction,
     MethodName: ReactionsCreateForCommitCommentAsync,
     NotAsyncMethodName: ReactionsCreateForCommitComment,
     FileNameWithoutExtension: G.ReactionsClient.ReactionsCreateForCommitComment
@@ -45054,7 +45054,7 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
     HttpMethod: Post,
     Summary: Create a commit comment,
     RequestType: ,
-    ResponseType: commit-comment,
+    ResponseType: CommitComment,
     MethodName: ReposCreateCommitCommentAsync,
     NotAsyncMethodName: ReposCreateCommitComment,
     FileNameWithoutExtension: G.ReposClient.ReposCreateCommitComment
@@ -45183,7 +45183,7 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
     ClassName: ReposClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/commits/{ref}?page={page}&per_page={perPage}",
+    Path: $"/repos/{owner}/{repo}/commits/{@ref}?page={page}&per_page={perPage}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -45281,8 +45281,8 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       }
     ],
@@ -45290,7 +45290,7 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
     JsonSerializerContext: ,
     Summary: Get a commit,
     RequestType: ,
-    ResponseType: commit,
+    ResponseType: Commit,
     MethodName: ReposGetCommitAsync,
     NotAsyncMethodName: ReposGetCommit,
     FileNameWithoutExtension: G.ReposClient.ReposGetCommit
@@ -45301,7 +45301,7 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
     ClassName: ChecksClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/commits/{ref}/check-runs?check_name={checkName}&status={status}&filter={filter}&per_page={perPage}&page={page}&app_id={appId}",
+    Path: $"/repos/{owner}/{repo}/commits/{@ref}/check-runs?check_name={checkName}&status={status}&filter={filter}&per_page={perPage}&page={page}&app_id={appId}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -45357,8 +45357,8 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       },
       {
@@ -45511,7 +45511,7 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
     ClassName: ChecksClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/commits/{ref}/check-suites?app_id={appId}&check_name={checkName}&per_page={perPage}&page={page}",
+    Path: $"/repos/{owner}/{repo}/commits/{@ref}/check-suites?app_id={appId}&check_name={checkName}&per_page={perPage}&page={page}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -45567,8 +45567,8 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       },
       {
@@ -45667,7 +45667,7 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
     ClassName: ReposClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/commits/{ref}/status?per_page={perPage}&page={page}",
+    Path: $"/repos/{owner}/{repo}/commits/{@ref}/status?per_page={perPage}&page={page}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -45723,8 +45723,8 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       },
       {
@@ -45774,7 +45774,7 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
     JsonSerializerContext: ,
     Summary: Get the combined status for a specific reference,
     RequestType: ,
-    ResponseType: combined-commit-status,
+    ResponseType: CombinedCommitStatus,
     MethodName: ReposGetCombinedStatusForRefAsync,
     NotAsyncMethodName: ReposGetCombinedStatusForRef,
     FileNameWithoutExtension: G.ReposClient.ReposGetCombinedStatusForRef
@@ -45785,7 +45785,7 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
     ClassName: ReposClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/commits/{ref}/statuses?per_page={perPage}&page={page}",
+    Path: $"/repos/{owner}/{repo}/commits/{@ref}/statuses?per_page={perPage}&page={page}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -45841,8 +45841,8 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       },
       {
@@ -45949,7 +45949,7 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
     JsonSerializerContext: ,
     Summary: Get community profile metrics,
     RequestType: ,
-    ResponseType: community-profile,
+    ResponseType: CommunityProfile,
     MethodName: ReposGetCommunityProfileMetricsAsync,
     NotAsyncMethodName: ReposGetCommunityProfileMetrics,
     FileNameWithoutExtension: G.ReposClient.ReposGetCommunityProfileMetrics
@@ -46067,7 +46067,7 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
     JsonSerializerContext: ,
     Summary: Compare two commits,
     RequestType: ,
-    ResponseType: commit-comparison,
+    ResponseType: CommitComparison,
     MethodName: ReposCompareCommitsAsync,
     NotAsyncMethodName: ReposCompareCommits,
     FileNameWithoutExtension: G.ReposClient.ReposCompareCommits
@@ -46078,7 +46078,7 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
     ClassName: ReposClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/contents/{path}?ref={ref}",
+    Path: $"/repos/{owner}/{repo}/contents/{path}?ref={@ref}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -46153,8 +46153,8 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
         ParameterStyle: Form,
         ParameterExplode: true,
         Summary: ,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       }
     ],
@@ -46162,7 +46162,7 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
     JsonSerializerContext: ,
     Summary: Get repository content,
     RequestType: ,
-    ResponseType: content-tree,
+    ResponseType: ContentTree,
     MethodName: ReposGetContentAsync,
     NotAsyncMethodName: ReposGetContent,
     FileNameWithoutExtension: G.ReposClient.ReposGetContent
@@ -46335,7 +46335,7 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
     HttpMethod: Put,
     Summary: Create or update file contents,
     RequestType: ,
-    ResponseType: file-commit,
+    ResponseType: FileCommit,
     MethodName: ReposCreateOrUpdateFileContentsAsync,
     NotAsyncMethodName: ReposCreateOrUpdateFileContents,
     FileNameWithoutExtension: G.ReposClient.ReposCreateOrUpdateFileContents
@@ -46492,7 +46492,7 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
     HttpMethod: Delete,
     Summary: Delete a file,
     RequestType: ,
-    ResponseType: file-commit,
+    ResponseType: FileCommit,
     MethodName: ReposDeleteFileAsync,
     NotAsyncMethodName: ReposDeleteFile,
     FileNameWithoutExtension: G.ReposClient.ReposDeleteFile
@@ -47037,7 +47037,7 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
     JsonSerializerContext: ,
     Summary: Get a Dependabot alert,
     RequestType: ,
-    ResponseType: dependabot-alert,
+    ResponseType: DependabotAlert,
     MethodName: DependabotGetAlertAsync,
     NotAsyncMethodName: DependabotGetAlert,
     FileNameWithoutExtension: G.DependabotClient.DependabotGetAlert
@@ -47182,7 +47182,7 @@ A `dismissed_reason` must be provided when setting the state to `dismissed`.,
     HttpMethod: Patch,
     Summary: Update a Dependabot alert,
     RequestType: ,
-    ResponseType: dependabot-alert,
+    ResponseType: DependabotAlert,
     MethodName: DependabotUpdateAlertAsync,
     NotAsyncMethodName: DependabotUpdateAlert,
     FileNameWithoutExtension: G.DependabotClient.DependabotUpdateAlert
@@ -47338,7 +47338,7 @@ A `dismissed_reason` must be provided when setting the state to `dismissed`.,
     JsonSerializerContext: ,
     Summary: Get a repository public key,
     RequestType: ,
-    ResponseType: dependabot-public-key,
+    ResponseType: DependabotPublicKey,
     MethodName: DependabotGetRepoPublicKeyAsync,
     NotAsyncMethodName: DependabotGetRepoPublicKey,
     FileNameWithoutExtension: G.DependabotClient.DependabotGetRepoPublicKey
@@ -47414,7 +47414,7 @@ A `dismissed_reason` must be provided when setting the state to `dismissed`.,
     JsonSerializerContext: ,
     Summary: Get a repository secret,
     RequestType: ,
-    ResponseType: dependabot-secret,
+    ResponseType: DependabotSecret,
     MethodName: DependabotGetRepoSecretAsync,
     NotAsyncMethodName: DependabotGetRepoSecret,
     FileNameWithoutExtension: G.DependabotClient.DependabotGetRepoSecret
@@ -47523,7 +47523,7 @@ A `dismissed_reason` must be provided when setting the state to `dismissed`.,
     HttpMethod: Put,
     Summary: Create or update a repository secret,
     RequestType: ,
-    ResponseType: empty-object,
+    ResponseType: EmptyObject,
     MethodName: DependabotCreateOrUpdateRepoSecretAsync,
     NotAsyncMethodName: DependabotCreateOrUpdateRepoSecret,
     FileNameWithoutExtension: G.DependabotClient.DependabotCreateOrUpdateRepoSecret
@@ -47695,7 +47695,7 @@ A `dismissed_reason` must be provided when setting the state to `dismissed`.,
     JsonSerializerContext: ,
     Summary: Get a diff of the dependencies between commits,
     RequestType: ,
-    ResponseType: dependency-graph-diff,
+    ResponseType: DependencyGraphDiff,
     MethodName: DependencyGraphDiffRangeAsync,
     NotAsyncMethodName: DependencyGraphDiffRange,
     FileNameWithoutExtension: G.DependencyGraphClient.DependencyGraphDiffRange
@@ -47752,7 +47752,7 @@ A `dismissed_reason` must be provided when setting the state to `dismissed`.,
     JsonSerializerContext: ,
     Summary: Export a software bill of materials (SBOM) for a repository.,
     RequestType: ,
-    ResponseType: dependency-graph-spdx-sbom,
+    ResponseType: DependencyGraphSpdxSbom,
     MethodName: DependencyGraphExportSbomAsync,
     NotAsyncMethodName: DependencyGraphExportSbom,
     FileNameWithoutExtension: G.DependencyGraphClient.DependencyGraphExportSbom
@@ -47868,8 +47868,8 @@ The commit SHA associated with this dependency snapshot. Maximum length: 40 char
         Summary:
 The repository branch that triggered this snapshot.
 <br/>Example: refs/heads/main,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       },
       {
@@ -47956,7 +47956,7 @@ The time at which the snapshot was scanned.
     ClassName: ReposClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/deployments?sha={sha}&ref={ref}&task={task}&environment={environment}&per_page={perPage}&page={page}",
+    Path: $"/repos/{owner}/{repo}/deployments?sha={sha}&ref={@ref}&task={task}&environment={environment}&per_page={perPage}&page={page}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -48035,8 +48035,8 @@ The time at which the snapshot was scanned.
         DefaultValue: "none",
         Summary:
 <br/>Default Value: none,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: "none"
       },
       {
@@ -48192,8 +48192,8 @@ The time at which the snapshot was scanned.
         },
         IsRequired: true,
         Summary: The ref to deploy. This can be a branch, tag, or SHA.,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       },
       {
@@ -48346,7 +48346,7 @@ Specifies if the given environment is specific to the deployment and will no lon
     HttpMethod: Post,
     Summary: Create a deployment,
     RequestType: ,
-    ResponseType: deployment,
+    ResponseType: Deployment,
     MethodName: ReposCreateDeploymentAsync,
     NotAsyncMethodName: ReposCreateDeployment,
     FileNameWithoutExtension: G.ReposClient.ReposCreateDeployment
@@ -48422,7 +48422,7 @@ Specifies if the given environment is specific to the deployment and will no lon
     JsonSerializerContext: ,
     Summary: Get a deployment,
     RequestType: ,
-    ResponseType: deployment,
+    ResponseType: Deployment,
     MethodName: ReposGetDeploymentAsync,
     NotAsyncMethodName: ReposGetDeployment,
     FileNameWithoutExtension: G.ReposClient.ReposGetDeployment
@@ -48834,7 +48834,7 @@ Sets the URL for accessing your environment. Default: `""`
     HttpMethod: Post,
     Summary: Create a deployment status,
     RequestType: ,
-    ResponseType: deployment-status,
+    ResponseType: DeploymentStatus,
     MethodName: ReposCreateDeploymentStatusAsync,
     NotAsyncMethodName: ReposCreateDeploymentStatus,
     FileNameWithoutExtension: G.ReposClient.ReposCreateDeploymentStatus
@@ -48929,7 +48929,7 @@ Sets the URL for accessing your environment. Default: `""`
     JsonSerializerContext: ,
     Summary: Get a deployment status,
     RequestType: ,
-    ResponseType: deployment-status,
+    ResponseType: DeploymentStatus,
     MethodName: ReposGetDeploymentStatusAsync,
     NotAsyncMethodName: ReposGetDeploymentStatus,
     FileNameWithoutExtension: G.ReposClient.ReposGetDeploymentStatus
@@ -49195,7 +49195,7 @@ Sets the URL for accessing your environment. Default: `""`
     JsonSerializerContext: ,
     Summary: Get an environment,
     RequestType: ,
-    ResponseType: environment,
+    ResponseType: Environment,
     MethodName: ReposGetEnvironmentAsync,
     NotAsyncMethodName: ReposGetEnvironment,
     FileNameWithoutExtension: G.ReposClient.ReposGetEnvironment
@@ -49343,7 +49343,7 @@ Whether or not a user who created the job is prevented from approving their own 
     HttpMethod: Put,
     Summary: Create or update an environment,
     RequestType: ,
-    ResponseType: environment,
+    ResponseType: Environment,
     MethodName: ReposCreateOrUpdateEnvironmentAsync,
     NotAsyncMethodName: ReposCreateOrUpdateEnvironment,
     FileNameWithoutExtension: G.ReposClient.ReposCreateOrUpdateEnvironment
@@ -49660,7 +49660,7 @@ Whether this rule targets a branch or tag
     HttpMethod: Post,
     Summary: Create a deployment branch policy,
     RequestType: DeploymentBranchPolicyNamePatternWithType,
-    ResponseType: deployment-branch-policy,
+    ResponseType: DeploymentBranchPolicy,
     MethodName: ReposCreateDeploymentBranchPolicyAsync,
     NotAsyncMethodName: ReposCreateDeploymentBranchPolicy,
     FileNameWithoutExtension: G.ReposClient.ReposCreateDeploymentBranchPolicy
@@ -49755,7 +49755,7 @@ Whether this rule targets a branch or tag
     JsonSerializerContext: ,
     Summary: Get a deployment branch policy,
     RequestType: ,
-    ResponseType: deployment-branch-policy,
+    ResponseType: DeploymentBranchPolicy,
     MethodName: ReposGetDeploymentBranchPolicyAsync,
     NotAsyncMethodName: ReposGetDeploymentBranchPolicy,
     FileNameWithoutExtension: G.ReposClient.ReposGetDeploymentBranchPolicy
@@ -49872,7 +49872,7 @@ For more information about pattern matching syntax, see the [Ruby File.fnmatch d
     HttpMethod: Put,
     Summary: Update a deployment branch policy,
     RequestType: DeploymentBranchPolicyNamePattern,
-    ResponseType: deployment-branch-policy,
+    ResponseType: DeploymentBranchPolicy,
     MethodName: ReposUpdateDeploymentBranchPolicyAsync,
     NotAsyncMethodName: ReposUpdateDeploymentBranchPolicy,
     FileNameWithoutExtension: G.ReposClient.ReposUpdateDeploymentBranchPolicy
@@ -50137,7 +50137,7 @@ For more information about pattern matching syntax, see the [Ruby File.fnmatch d
     HttpMethod: Post,
     Summary: Create a custom deployment protection rule on an environment,
     RequestType: ,
-    ResponseType: deployment-protection-rule,
+    ResponseType: DeploymentProtectionRule,
     MethodName: ReposCreateDeploymentProtectionRuleAsync,
     NotAsyncMethodName: ReposCreateDeploymentProtectionRule,
     FileNameWithoutExtension: G.ReposClient.ReposCreateDeploymentProtectionRule
@@ -50350,7 +50350,7 @@ For more information about pattern matching syntax, see the [Ruby File.fnmatch d
     JsonSerializerContext: ,
     Summary: Get a custom deployment protection rule,
     RequestType: ,
-    ResponseType: deployment-protection-rule,
+    ResponseType: DeploymentProtectionRule,
     MethodName: ReposGetCustomDeploymentProtectionRuleAsync,
     NotAsyncMethodName: ReposGetCustomDeploymentProtectionRule,
     FileNameWithoutExtension: G.ReposClient.ReposGetCustomDeploymentProtectionRule
@@ -50640,7 +50640,7 @@ For more information about pattern matching syntax, see the [Ruby File.fnmatch d
     JsonSerializerContext: ,
     Summary: Get an environment public key,
     RequestType: ,
-    ResponseType: actions-public-key,
+    ResponseType: ActionsPublicKey,
     MethodName: ActionsGetEnvironmentPublicKeyAsync,
     NotAsyncMethodName: ActionsGetEnvironmentPublicKey,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetEnvironmentPublicKey
@@ -50735,7 +50735,7 @@ For more information about pattern matching syntax, see the [Ruby File.fnmatch d
     JsonSerializerContext: ,
     Summary: Get an environment secret,
     RequestType: ,
-    ResponseType: actions-secret,
+    ResponseType: ActionsSecret,
     MethodName: ActionsGetEnvironmentSecretAsync,
     NotAsyncMethodName: ActionsGetEnvironmentSecret,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetEnvironmentSecret
@@ -50863,7 +50863,7 @@ For more information about pattern matching syntax, see the [Ruby File.fnmatch d
     HttpMethod: Put,
     Summary: Create or update an environment secret,
     RequestType: ,
-    ResponseType: empty-object,
+    ResponseType: EmptyObject,
     MethodName: ActionsCreateOrUpdateEnvironmentSecretAsync,
     NotAsyncMethodName: ActionsCreateOrUpdateEnvironmentSecret,
     FileNameWithoutExtension: G.ActionsClient.ActionsCreateOrUpdateEnvironmentSecret
@@ -51186,7 +51186,7 @@ For more information about pattern matching syntax, see the [Ruby File.fnmatch d
     HttpMethod: Post,
     Summary: Create an environment variable,
     RequestType: ,
-    ResponseType: empty-object,
+    ResponseType: EmptyObject,
     MethodName: ActionsCreateEnvironmentVariableAsync,
     NotAsyncMethodName: ActionsCreateEnvironmentVariable,
     FileNameWithoutExtension: G.ActionsClient.ActionsCreateEnvironmentVariable
@@ -51281,7 +51281,7 @@ For more information about pattern matching syntax, see the [Ruby File.fnmatch d
     JsonSerializerContext: ,
     Summary: Get an environment variable,
     RequestType: ,
-    ResponseType: actions-variable,
+    ResponseType: ActionsVariable,
     MethodName: ActionsGetEnvironmentVariableAsync,
     NotAsyncMethodName: ActionsGetEnvironmentVariable,
     FileNameWithoutExtension: G.ActionsClient.ActionsGetEnvironmentVariable
@@ -51840,7 +51840,7 @@ For more information about pattern matching syntax, see the [Ruby File.fnmatch d
     HttpMethod: Post,
     Summary: Create a fork,
     RequestType: ,
-    ResponseType: full-repository,
+    ResponseType: FullRepository,
     MethodName: ReposCreateForkAsync,
     NotAsyncMethodName: ReposCreateFork,
     FileNameWithoutExtension: G.ReposClient.ReposCreateFork
@@ -51933,7 +51933,7 @@ The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are support
     HttpMethod: Post,
     Summary: Create a blob,
     RequestType: ,
-    ResponseType: short-blob,
+    ResponseType: ShortBlob,
     MethodName: GitCreateBlobAsync,
     NotAsyncMethodName: GitCreateBlob,
     FileNameWithoutExtension: G.GitClient.GitCreateBlob
@@ -52009,7 +52009,7 @@ The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are support
     JsonSerializerContext: ,
     Summary: Get a blob,
     RequestType: ,
-    ResponseType: blob,
+    ResponseType: Blob,
     MethodName: GitGetBlobAsync,
     NotAsyncMethodName: GitGetBlob,
     FileNameWithoutExtension: G.GitClient.GitGetBlob
@@ -52163,7 +52163,7 @@ The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are support
     HttpMethod: Post,
     Summary: Create a commit,
     RequestType: ,
-    ResponseType: git-commit,
+    ResponseType: GitCommit,
     MethodName: GitCreateCommitAsync,
     NotAsyncMethodName: GitCreateCommit,
     FileNameWithoutExtension: G.GitClient.GitCreateCommit
@@ -52239,7 +52239,7 @@ The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are support
     JsonSerializerContext: ,
     Summary: Get a commit object,
     RequestType: ,
-    ResponseType: git-commit,
+    ResponseType: GitCommit,
     MethodName: GitGetCommitAsync,
     NotAsyncMethodName: GitGetCommit,
     FileNameWithoutExtension: G.GitClient.GitGetCommit
@@ -52250,7 +52250,7 @@ The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are support
     ClassName: GitClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/git/matching-refs/{ref}",
+    Path: $"/repos/{owner}/{repo}/git/matching-refs/{@ref}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -52306,8 +52306,8 @@ The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are support
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       }
     ],
@@ -52326,7 +52326,7 @@ The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are support
     ClassName: GitClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/git/ref/{ref}",
+    Path: $"/repos/{owner}/{repo}/git/ref/{@ref}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -52382,8 +52382,8 @@ The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are support
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       }
     ],
@@ -52391,7 +52391,7 @@ The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are support
     JsonSerializerContext: ,
     Summary: Get a reference,
     RequestType: ,
-    ResponseType: git-ref,
+    ResponseType: GitRef,
     MethodName: GitGetRefAsync,
     NotAsyncMethodName: GitGetRef,
     FileNameWithoutExtension: G.GitClient.GitGetRef
@@ -52455,8 +52455,8 @@ The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are support
         },
         IsRequired: true,
         Summary: The name of the fully qualified reference (ie: `refs/heads/master`). If it doesn't start with 'refs' and have at least two slashes, it will be rejected.,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       },
       {
@@ -52481,7 +52481,7 @@ The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are support
     HttpMethod: Post,
     Summary: Create a reference,
     RequestType: ,
-    ResponseType: git-ref,
+    ResponseType: GitRef,
     MethodName: GitCreateRefAsync,
     NotAsyncMethodName: GitCreateRef,
     FileNameWithoutExtension: G.GitClient.GitCreateRef
@@ -52492,7 +52492,7 @@ The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are support
     ClassName: GitClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/git/refs/{ref}",
+    Path: $"/repos/{owner}/{repo}/git/refs/{@ref}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -52548,8 +52548,8 @@ The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are support
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       },
       {
@@ -52593,7 +52593,7 @@ Indicates whether to force the update or to make sure the update is a fast-forwa
     HttpMethod: Patch,
     Summary: Update a reference,
     RequestType: ,
-    ResponseType: git-ref,
+    ResponseType: GitRef,
     MethodName: GitUpdateRefAsync,
     NotAsyncMethodName: GitUpdateRef,
     FileNameWithoutExtension: G.GitClient.GitUpdateRef
@@ -52604,7 +52604,7 @@ Indicates whether to force the update or to make sure the update is a fast-forwa
     ClassName: GitClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/git/refs/{ref}",
+    Path: $"/repos/{owner}/{repo}/git/refs/{@ref}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -52660,8 +52660,8 @@ Indicates whether to force the update or to make sure the update is a fast-forwa
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       }
     ],
@@ -52816,7 +52816,7 @@ Indicates whether to force the update or to make sure the update is a fast-forwa
     HttpMethod: Post,
     Summary: Create a tag object,
     RequestType: ,
-    ResponseType: git-tag,
+    ResponseType: GitTag,
     MethodName: GitCreateTagAsync,
     NotAsyncMethodName: GitCreateTag,
     FileNameWithoutExtension: G.GitClient.GitCreateTag
@@ -52892,7 +52892,7 @@ Indicates whether to force the update or to make sure the update is a fast-forwa
     JsonSerializerContext: ,
     Summary: Get a tag,
     RequestType: ,
-    ResponseType: git-tag,
+    ResponseType: GitTag,
     MethodName: GitGetTagAsync,
     NotAsyncMethodName: GitGetTag,
     FileNameWithoutExtension: G.GitClient.GitGetTag
@@ -52985,7 +52985,7 @@ If not provided, GitHub will create a new Git tree object from only the entries 
     HttpMethod: Post,
     Summary: Create a tree,
     RequestType: ,
-    ResponseType: git-tree,
+    ResponseType: GitTree,
     MethodName: GitCreateTreeAsync,
     NotAsyncMethodName: GitCreateTree,
     FileNameWithoutExtension: G.GitClient.GitCreateTree
@@ -53080,7 +53080,7 @@ If not provided, GitHub will create a new Git tree object from only the entries 
     JsonSerializerContext: ,
     Summary: Get a tree,
     RequestType: ,
-    ResponseType: git-tree,
+    ResponseType: GitTree,
     MethodName: GitGetTreeAsync,
     NotAsyncMethodName: GitGetTree,
     FileNameWithoutExtension: G.GitClient.GitGetTree
@@ -53307,7 +53307,7 @@ Determines if notifications are sent when the webhook is triggered. Set to `true
     HttpMethod: Post,
     Summary: Create a repository webhook,
     RequestType: ,
-    ResponseType: hook,
+    ResponseType: Hook,
     MethodName: ReposCreateWebhookAsync,
     NotAsyncMethodName: ReposCreateWebhook,
     FileNameWithoutExtension: G.ReposClient.ReposCreateWebhook
@@ -53383,7 +53383,7 @@ Determines if notifications are sent when the webhook is triggered. Set to `true
     JsonSerializerContext: ,
     Summary: Get a repository webhook,
     RequestType: ,
-    ResponseType: hook,
+    ResponseType: Hook,
     MethodName: ReposGetWebhookAsync,
     NotAsyncMethodName: ReposGetWebhook,
     FileNameWithoutExtension: G.ReposClient.ReposGetWebhook
@@ -53551,7 +53551,7 @@ Determines if notifications are sent when the webhook is triggered. Set to `true
     HttpMethod: Patch,
     Summary: Update a repository webhook,
     RequestType: ,
-    ResponseType: hook,
+    ResponseType: Hook,
     MethodName: ReposUpdateWebhookAsync,
     NotAsyncMethodName: ReposUpdateWebhook,
     FileNameWithoutExtension: G.ReposClient.ReposUpdateWebhook
@@ -53704,7 +53704,7 @@ Determines if notifications are sent when the webhook is triggered. Set to `true
     JsonSerializerContext: ,
     Summary: Get a webhook configuration for a repository,
     RequestType: ,
-    ResponseType: webhook-config,
+    ResponseType: WebhookConfig,
     MethodName: ReposGetWebhookConfigForRepoAsync,
     NotAsyncMethodName: ReposGetWebhookConfigForRepo,
     FileNameWithoutExtension: G.ReposClient.ReposGetWebhookConfigForRepo
@@ -53851,7 +53851,7 @@ If provided, the `secret` will be used as the `key` to generate the HMAC hex dig
     HttpMethod: Patch,
     Summary: Update a webhook configuration for a repository,
     RequestType: ,
-    ResponseType: webhook-config,
+    ResponseType: WebhookConfig,
     MethodName: ReposUpdateWebhookConfigForRepoAsync,
     NotAsyncMethodName: ReposUpdateWebhookConfigForRepo,
     FileNameWithoutExtension: G.ReposClient.ReposUpdateWebhookConfigForRepo
@@ -54081,7 +54081,7 @@ If provided, the `secret` will be used as the `key` to generate the HMAC hex dig
     JsonSerializerContext: ,
     Summary: Get a delivery for a repository webhook,
     RequestType: ,
-    ResponseType: hook-delivery,
+    ResponseType: HookDelivery,
     MethodName: ReposGetWebhookDeliveryAsync,
     NotAsyncMethodName: ReposGetWebhookDelivery,
     FileNameWithoutExtension: G.ReposClient.ReposGetWebhookDelivery
@@ -54388,7 +54388,7 @@ If provided, the `secret` will be used as the `key` to generate the HMAC hex dig
     JsonSerializerContext: ,
     Summary: Get an import status,
     RequestType: ,
-    ResponseType: import,
+    ResponseType: Import,
     MethodName: MigrationsGetImportStatusAsync,
     NotAsyncMethodName: MigrationsGetImportStatus,
     FileNameWithoutExtension: G.MigrationsClient.MigrationsGetImportStatus
@@ -54536,7 +54536,7 @@ If provided, the `secret` will be used as the `key` to generate the HMAC hex dig
     HttpMethod: Put,
     Summary: Start an import,
     RequestType: ,
-    ResponseType: import,
+    ResponseType: Import,
     MethodName: MigrationsStartImportAsync,
     NotAsyncMethodName: MigrationsStartImport,
     FileNameWithoutExtension: G.MigrationsClient.MigrationsStartImport
@@ -54672,7 +54672,7 @@ For a tfvc import, the name of the project that is being imported.
     HttpMethod: Patch,
     Summary: Update an import,
     RequestType: ,
-    ResponseType: import,
+    ResponseType: Import,
     MethodName: MigrationsUpdateImportAsync,
     NotAsyncMethodName: MigrationsUpdateImport,
     FileNameWithoutExtension: G.MigrationsClient.MigrationsUpdateImport
@@ -54915,7 +54915,7 @@ For a tfvc import, the name of the project that is being imported.
     HttpMethod: Patch,
     Summary: Map a commit author,
     RequestType: ,
-    ResponseType: porter-author,
+    ResponseType: PorterAuthor,
     MethodName: MigrationsMapCommitAuthorAsync,
     NotAsyncMethodName: MigrationsMapCommitAuthor,
     FileNameWithoutExtension: G.MigrationsClient.MigrationsMapCommitAuthor
@@ -55052,7 +55052,7 @@ For a tfvc import, the name of the project that is being imported.
     HttpMethod: Patch,
     Summary: Update Git LFS preference,
     RequestType: ,
-    ResponseType: import,
+    ResponseType: Import,
     MethodName: MigrationsSetLfsPreferenceAsync,
     NotAsyncMethodName: MigrationsSetLfsPreference,
     FileNameWithoutExtension: G.MigrationsClient.MigrationsSetLfsPreference
@@ -55109,7 +55109,7 @@ For a tfvc import, the name of the project that is being imported.
     JsonSerializerContext: ,
     Summary: Get a repository installation for the authenticated app,
     RequestType: ,
-    ResponseType: installation,
+    ResponseType: Installation,
     MethodName: AppsGetRepoInstallationAsync,
     NotAsyncMethodName: AppsGetRepoInstallation,
     FileNameWithoutExtension: G.AppsClient.AppsGetRepoInstallation
@@ -55280,7 +55280,7 @@ The duration of the interaction restriction. Default: `one_day`.
     HttpMethod: Put,
     Summary: Set interaction restrictions for a repository,
     RequestType: InteractionLimit,
-    ResponseType: interaction-limit-response,
+    ResponseType: InteractionLimitResponse,
     MethodName: InteractionsSetRestrictionsForRepoAsync,
     NotAsyncMethodName: InteractionsSetRestrictionsForRepo,
     FileNameWithoutExtension: G.InteractionsClient.InteractionsSetRestrictionsForRepo
@@ -55542,7 +55542,7 @@ The duration of the interaction restriction. Default: `one_day`.
     HttpMethod: Patch,
     Summary: Update a repository invitation,
     RequestType: ,
-    ResponseType: repository-invitation,
+    ResponseType: RepositoryInvitation,
     MethodName: ReposUpdateInvitationAsync,
     NotAsyncMethodName: ReposUpdateInvitation,
     FileNameWithoutExtension: G.ReposClient.ReposUpdateInvitation
@@ -56072,7 +56072,7 @@ The duration of the interaction restriction. Default: `one_day`.
     HttpMethod: Post,
     Summary: Create an issue,
     RequestType: ,
-    ResponseType: issue,
+    ResponseType: Issue,
     MethodName: IssuesCreateAsync,
     NotAsyncMethodName: IssuesCreate,
     FileNameWithoutExtension: G.IssuesClient.IssuesCreate
@@ -56318,7 +56318,7 @@ The duration of the interaction restriction. Default: `one_day`.
     JsonSerializerContext: ,
     Summary: Get an issue comment,
     RequestType: ,
-    ResponseType: issue-comment,
+    ResponseType: IssueComment,
     MethodName: IssuesGetCommentAsync,
     NotAsyncMethodName: IssuesGetComment,
     FileNameWithoutExtension: G.IssuesClient.IssuesGetComment
@@ -56411,7 +56411,7 @@ The duration of the interaction restriction. Default: `one_day`.
     HttpMethod: Patch,
     Summary: Update an issue comment,
     RequestType: ,
-    ResponseType: issue-comment,
+    ResponseType: IssueComment,
     MethodName: IssuesUpdateCommentAsync,
     NotAsyncMethodName: IssuesUpdateComment,
     FileNameWithoutExtension: G.IssuesClient.IssuesUpdateComment
@@ -56754,7 +56754,7 @@ The duration of the interaction restriction. Default: `one_day`.
     HttpMethod: Post,
     Summary: Create reaction for an issue comment,
     RequestType: ,
-    ResponseType: reaction,
+    ResponseType: Reaction,
     MethodName: ReactionsCreateForIssueCommentAsync,
     NotAsyncMethodName: ReactionsCreateForIssueComment,
     FileNameWithoutExtension: G.ReactionsClient.ReactionsCreateForIssueComment
@@ -57025,7 +57025,7 @@ The duration of the interaction restriction. Default: `one_day`.
     JsonSerializerContext: ,
     Summary: Get an issue event,
     RequestType: ,
-    ResponseType: issue-event,
+    ResponseType: IssueEvent,
     MethodName: IssuesGetEventAsync,
     NotAsyncMethodName: IssuesGetEvent,
     FileNameWithoutExtension: G.IssuesClient.IssuesGetEvent
@@ -57101,7 +57101,7 @@ The duration of the interaction restriction. Default: `one_day`.
     JsonSerializerContext: ,
     Summary: Get an issue,
     RequestType: ,
-    ResponseType: issue,
+    ResponseType: Issue,
     MethodName: IssuesGetAsync,
     NotAsyncMethodName: IssuesGet,
     FileNameWithoutExtension: G.IssuesClient.IssuesGet
@@ -57324,7 +57324,7 @@ The reason for the state change. Ignored unless `state` is changed.
     HttpMethod: Patch,
     Summary: Update an issue,
     RequestType: ,
-    ResponseType: issue,
+    ResponseType: Issue,
     MethodName: IssuesUpdateAsync,
     NotAsyncMethodName: IssuesUpdate,
     FileNameWithoutExtension: G.IssuesClient.IssuesUpdate
@@ -57417,7 +57417,7 @@ The reason for the state change. Ignored unless `state` is changed.
     HttpMethod: Post,
     Summary: Add assignees to an issue,
     RequestType: ,
-    ResponseType: issue,
+    ResponseType: Issue,
     MethodName: IssuesAddAssigneesAsync,
     NotAsyncMethodName: IssuesAddAssignees,
     FileNameWithoutExtension: G.IssuesClient.IssuesAddAssignees
@@ -57510,7 +57510,7 @@ The reason for the state change. Ignored unless `state` is changed.
     HttpMethod: Delete,
     Summary: Remove assignees from an issue,
     RequestType: ,
-    ResponseType: issue,
+    ResponseType: Issue,
     MethodName: IssuesRemoveAssigneesAsync,
     NotAsyncMethodName: IssuesRemoveAssignees,
     FileNameWithoutExtension: G.IssuesClient.IssuesRemoveAssignees
@@ -57835,7 +57835,7 @@ The reason for the state change. Ignored unless `state` is changed.
     HttpMethod: Post,
     Summary: Create an issue comment,
     RequestType: ,
-    ResponseType: issue-comment,
+    ResponseType: IssueComment,
     MethodName: IssuesCreateCommentAsync,
     NotAsyncMethodName: IssuesCreateComment,
     FileNameWithoutExtension: G.IssuesClient.IssuesCreateComment
@@ -58849,7 +58849,7 @@ The reason for locking the issue or pull request conversation. Lock will fail if
     HttpMethod: Post,
     Summary: Create reaction for an issue,
     RequestType: ,
-    ResponseType: reaction,
+    ResponseType: Reaction,
     MethodName: ReactionsCreateForIssueAsync,
     NotAsyncMethodName: ReactionsCreateForIssue,
     FileNameWithoutExtension: G.ReactionsClient.ReactionsCreateForIssue
@@ -59271,7 +59271,7 @@ Deploy keys with write access can perform the same actions as an organization me
     HttpMethod: Post,
     Summary: Create a deploy key,
     RequestType: ,
-    ResponseType: deploy-key,
+    ResponseType: DeployKey,
     MethodName: ReposCreateDeployKeyAsync,
     NotAsyncMethodName: ReposCreateDeployKey,
     FileNameWithoutExtension: G.ReposClient.ReposCreateDeployKey
@@ -59347,7 +59347,7 @@ Deploy keys with write access can perform the same actions as an organization me
     JsonSerializerContext: ,
     Summary: Get a deploy key,
     RequestType: ,
-    ResponseType: deploy-key,
+    ResponseType: DeployKey,
     MethodName: ReposGetDeployKeyAsync,
     NotAsyncMethodName: ReposGetDeployKey,
     FileNameWithoutExtension: G.ReposClient.ReposGetDeployKey
@@ -59629,7 +59629,7 @@ Deploy keys with write access can perform the same actions as an organization me
     HttpMethod: Post,
     Summary: Create a label,
     RequestType: ,
-    ResponseType: label,
+    ResponseType: Label,
     MethodName: IssuesCreateLabelAsync,
     NotAsyncMethodName: IssuesCreateLabel,
     FileNameWithoutExtension: G.IssuesClient.IssuesCreateLabel
@@ -59705,7 +59705,7 @@ Deploy keys with write access can perform the same actions as an organization me
     JsonSerializerContext: ,
     Summary: Get a label,
     RequestType: ,
-    ResponseType: label,
+    ResponseType: Label,
     MethodName: IssuesGetLabelAsync,
     NotAsyncMethodName: IssuesGetLabel,
     FileNameWithoutExtension: G.IssuesClient.IssuesGetLabel
@@ -59830,7 +59830,7 @@ Deploy keys with write access can perform the same actions as an organization me
     HttpMethod: Patch,
     Summary: Update a label,
     RequestType: ,
-    ResponseType: label,
+    ResponseType: Label,
     MethodName: IssuesUpdateLabelAsync,
     NotAsyncMethodName: IssuesUpdateLabel,
     FileNameWithoutExtension: G.IssuesClient.IssuesUpdateLabel
@@ -59964,7 +59964,7 @@ Deploy keys with write access can perform the same actions as an organization me
     JsonSerializerContext: ,
     Summary: List repository languages,
     RequestType: ,
-    ResponseType: language,
+    ResponseType: Language,
     MethodName: ReposListLanguagesAsync,
     NotAsyncMethodName: ReposListLanguages,
     FileNameWithoutExtension: G.ReposClient.ReposListLanguages
@@ -59975,7 +59975,7 @@ Deploy keys with write access can perform the same actions as an organization me
     ClassName: LicensesClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/license?ref={ref}",
+    Path: $"/repos/{owner}/{repo}/license?ref={@ref}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -60033,8 +60033,8 @@ Deploy keys with write access can perform the same actions as an organization me
         Summary:
 The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt;number&gt;/head`,
 `refs/heads/&lt;branch name&gt;` or simply `&lt;branch name&gt;`.,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       }
     ],
@@ -60042,7 +60042,7 @@ The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt
     JsonSerializerContext: ,
     Summary: Get the license for a repository,
     RequestType: ,
-    ResponseType: license-content,
+    ResponseType: LicenseContent,
     MethodName: LicensesGetForRepoAsync,
     NotAsyncMethodName: LicensesGetForRepo,
     FileNameWithoutExtension: G.LicensesClient.LicensesGetForRepo
@@ -60116,7 +60116,7 @@ The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt
     HttpMethod: Post,
     Summary: Sync a fork branch with the upstream repository,
     RequestType: ,
-    ResponseType: merged-upstream,
+    ResponseType: MergedUpstream,
     MethodName: ReposMergeUpstreamAsync,
     NotAsyncMethodName: ReposMergeUpstream,
     FileNameWithoutExtension: G.ReposClient.ReposMergeUpstream
@@ -60180,8 +60180,8 @@ The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt
         },
         IsRequired: true,
         Summary: The name of the base branch that the head will be merged into.,
-        ParameterName: base,
-        ArgumentName: base,
+        ParameterName: @base,
+        ArgumentName: @base,
         ParameterDefaultValue: default
       },
       {
@@ -60222,7 +60222,7 @@ The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt
     HttpMethod: Post,
     Summary: Merge a branch,
     RequestType: ,
-    ResponseType: commit,
+    ResponseType: Commit,
     MethodName: ReposMergeAsync,
     NotAsyncMethodName: ReposMerge,
     FileNameWithoutExtension: G.ReposClient.ReposMerge
@@ -60535,7 +60535,7 @@ The state of the milestone. Either `open` or `closed`.
     HttpMethod: Post,
     Summary: Create a milestone,
     RequestType: ,
-    ResponseType: milestone,
+    ResponseType: Milestone,
     MethodName: IssuesCreateMilestoneAsync,
     NotAsyncMethodName: IssuesCreateMilestone,
     FileNameWithoutExtension: G.IssuesClient.IssuesCreateMilestone
@@ -60611,7 +60611,7 @@ The state of the milestone. Either `open` or `closed`.
     JsonSerializerContext: ,
     Summary: Get a milestone,
     RequestType: ,
-    ResponseType: milestone,
+    ResponseType: Milestone,
     MethodName: IssuesGetMilestoneAsync,
     NotAsyncMethodName: IssuesGetMilestone,
     FileNameWithoutExtension: G.IssuesClient.IssuesGetMilestone
@@ -60761,7 +60761,7 @@ The state of the milestone. Either `open` or `closed`.
     HttpMethod: Patch,
     Summary: Update a milestone,
     RequestType: ,
-    ResponseType: milestone,
+    ResponseType: Milestone,
     MethodName: IssuesUpdateMilestoneAsync,
     NotAsyncMethodName: IssuesUpdateMilestone,
     FileNameWithoutExtension: G.IssuesClient.IssuesUpdateMilestone
@@ -61266,7 +61266,7 @@ The state of the milestone. Either `open` or `closed`.
     JsonSerializerContext: ,
     Summary: Get a GitHub Pages site,
     RequestType: ,
-    ResponseType: page,
+    ResponseType: Page,
     MethodName: ReposGetPagesAsync,
     NotAsyncMethodName: ReposGetPages,
     FileNameWithoutExtension: G.ReposClient.ReposGetPages
@@ -61362,7 +61362,7 @@ The state of the milestone. Either `open` or `closed`.
     HttpMethod: Post,
     Summary: Create a GitHub Pages site,
     RequestType: ,
-    ResponseType: page,
+    ResponseType: Page,
     MethodName: ReposCreatePagesSiteAsync,
     NotAsyncMethodName: ReposCreatePagesSite,
     FileNameWithoutExtension: G.ReposClient.ReposCreatePagesSite
@@ -61706,7 +61706,7 @@ The state of the milestone. Either `open` or `closed`.
     HttpMethod: Post,
     Summary: Request a GitHub Pages build,
     RequestType: ,
-    ResponseType: page-build-status,
+    ResponseType: PageBuildStatus,
     MethodName: ReposRequestPagesBuildAsync,
     NotAsyncMethodName: ReposRequestPagesBuild,
     FileNameWithoutExtension: G.ReposClient.ReposRequestPagesBuild
@@ -61763,7 +61763,7 @@ The state of the milestone. Either `open` or `closed`.
     JsonSerializerContext: ,
     Summary: Get latest Pages build,
     RequestType: ,
-    ResponseType: page-build,
+    ResponseType: PageBuild,
     MethodName: ReposGetLatestPagesBuildAsync,
     NotAsyncMethodName: ReposGetLatestPagesBuild,
     FileNameWithoutExtension: G.ReposClient.ReposGetLatestPagesBuild
@@ -61839,7 +61839,7 @@ The state of the milestone. Either `open` or `closed`.
     JsonSerializerContext: ,
     Summary: Get GitHub Pages build,
     RequestType: ,
-    ResponseType: page-build,
+    ResponseType: PageBuild,
     MethodName: ReposGetPagesBuildAsync,
     NotAsyncMethodName: ReposGetPagesBuild,
     FileNameWithoutExtension: G.ReposClient.ReposGetPagesBuild
@@ -61983,7 +61983,7 @@ A unique string that represents the version of the build for this deployment.
     HttpMethod: Post,
     Summary: Create a GitHub Pages deployment,
     RequestType: ,
-    ResponseType: page-deployment,
+    ResponseType: PageDeployment,
     MethodName: ReposCreatePagesDeploymentAsync,
     NotAsyncMethodName: ReposCreatePagesDeployment,
     FileNameWithoutExtension: G.ReposClient.ReposCreatePagesDeployment
@@ -62059,7 +62059,7 @@ A unique string that represents the version of the build for this deployment.
     JsonSerializerContext: ,
     Summary: Get the status of a GitHub Pages deployment,
     RequestType: ,
-    ResponseType: pages-deployment-status,
+    ResponseType: PagesDeploymentStatus,
     MethodName: ReposGetPagesDeploymentAsync,
     NotAsyncMethodName: ReposGetPagesDeployment,
     FileNameWithoutExtension: G.ReposClient.ReposGetPagesDeployment
@@ -62193,7 +62193,7 @@ A unique string that represents the version of the build for this deployment.
     JsonSerializerContext: ,
     Summary: Get a DNS health check for GitHub Pages,
     RequestType: ,
-    ResponseType: pages-health-check,
+    ResponseType: PagesHealthCheck,
     MethodName: ReposGetPagesHealthCheckAsync,
     NotAsyncMethodName: ReposGetPagesHealthCheck,
     FileNameWithoutExtension: G.ReposClient.ReposGetPagesHealthCheck
@@ -62584,7 +62584,7 @@ A unique string that represents the version of the build for this deployment.
     HttpMethod: Post,
     Summary: Create a repository project,
     RequestType: ,
-    ResponseType: project,
+    ResponseType: Project,
     MethodName: ProjectsCreateForRepoAsync,
     NotAsyncMethodName: ProjectsCreateForRepo,
     FileNameWithoutExtension: G.ProjectsClient.ProjectsCreateForRepo
@@ -62726,7 +62726,7 @@ A unique string that represents the version of the build for this deployment.
     ClassName: PullsClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/pulls?state={state}&head={head}&base={base}&sort={sort}&direction={direction}&per_page={perPage}&page={page}",
+    Path: $"/repos/{owner}/{repo}/pulls?state={state}&head={head}&base={@base}&sort={sort}&direction={direction}&per_page={perPage}&page={page}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -62830,8 +62830,8 @@ A unique string that represents the version of the build for this deployment.
         ParameterStyle: Form,
         ParameterExplode: true,
         Summary: ,
-        ParameterName: base,
-        ArgumentName: base,
+        ParameterName: @base,
+        ArgumentName: @base,
         ParameterDefaultValue: default
       },
       {
@@ -63051,8 +63051,8 @@ The name of the repository where the changes in the pull request were made. This
         },
         IsRequired: true,
         Summary: The name of the branch you want the changes pulled into. This should be an existing branch on the current repository. You cannot submit a pull request to one repository that requests a merge to a base of another repository.,
-        ParameterName: base,
-        ArgumentName: base,
+        ParameterName: @base,
+        ArgumentName: @base,
         ParameterDefaultValue: default
       },
       {
@@ -63127,7 +63127,7 @@ An issue in the repository to convert to a pull request. The issue title, body, 
     HttpMethod: Post,
     Summary: Create a pull request,
     RequestType: ,
-    ResponseType: pull-request,
+    ResponseType: PullRequest,
     MethodName: PullsCreateAsync,
     NotAsyncMethodName: PullsCreate,
     FileNameWithoutExtension: G.PullsClient.PullsCreate
@@ -63373,7 +63373,7 @@ An issue in the repository to convert to a pull request. The issue title, body, 
     JsonSerializerContext: ,
     Summary: Get a review comment for a pull request,
     RequestType: ,
-    ResponseType: pull-request-review-comment,
+    ResponseType: PullRequestReviewComment,
     MethodName: PullsGetReviewCommentAsync,
     NotAsyncMethodName: PullsGetReviewComment,
     FileNameWithoutExtension: G.PullsClient.PullsGetReviewComment
@@ -63466,7 +63466,7 @@ An issue in the repository to convert to a pull request. The issue title, body, 
     HttpMethod: Patch,
     Summary: Update a review comment for a pull request,
     RequestType: ,
-    ResponseType: pull-request-review-comment,
+    ResponseType: PullRequestReviewComment,
     MethodName: PullsUpdateReviewCommentAsync,
     NotAsyncMethodName: PullsUpdateReviewComment,
     FileNameWithoutExtension: G.PullsClient.PullsUpdateReviewComment
@@ -63809,7 +63809,7 @@ An issue in the repository to convert to a pull request. The issue title, body, 
     HttpMethod: Post,
     Summary: Create reaction for a pull request review comment,
     RequestType: ,
-    ResponseType: reaction,
+    ResponseType: Reaction,
     MethodName: ReactionsCreateForPullRequestReviewCommentAsync,
     NotAsyncMethodName: ReactionsCreateForPullRequestReviewComment,
     FileNameWithoutExtension: G.ReactionsClient.ReactionsCreateForPullRequestReviewComment
@@ -63981,7 +63981,7 @@ An issue in the repository to convert to a pull request. The issue title, body, 
     JsonSerializerContext: ,
     Summary: Get a pull request,
     RequestType: ,
-    ResponseType: pull-request,
+    ResponseType: PullRequest,
     MethodName: PullsGetAsync,
     NotAsyncMethodName: PullsGet,
     FileNameWithoutExtension: G.PullsClient.PullsGet
@@ -64118,8 +64118,8 @@ An issue in the repository to convert to a pull request. The issue title, body, 
         },
         IsRequired: false,
         Summary: The name of the branch you want your changes pulled into. This should be an existing branch on the current repository. You cannot update the base branch on a pull request to point to another repository.,
-        ParameterName: base,
-        ArgumentName: base,
+        ParameterName: @base,
+        ArgumentName: @base,
         ParameterDefaultValue: default
       },
       {
@@ -64144,7 +64144,7 @@ An issue in the repository to convert to a pull request. The issue title, body, 
     HttpMethod: Patch,
     Summary: Update a pull request,
     RequestType: ,
-    ResponseType: pull-request,
+    ResponseType: PullRequest,
     MethodName: PullsUpdateAsync,
     NotAsyncMethodName: PullsUpdate,
     FileNameWithoutExtension: G.PullsClient.PullsUpdate
@@ -64391,7 +64391,7 @@ An issue in the repository to convert to a pull request. The issue title, body, 
     HttpMethod: Post,
     Summary: Create a codespace from a pull request,
     RequestType: ,
-    ResponseType: codespace,
+    ResponseType: Codespace,
     MethodName: CodespacesCreateWithPrForAuthenticatedUserAsync,
     NotAsyncMethodName: CodespacesCreateWithPrForAuthenticatedUser,
     FileNameWithoutExtension: G.CodespacesClient.CodespacesCreateWithPrForAuthenticatedUser
@@ -64839,7 +64839,7 @@ The ID of the review comment to reply to. To find the ID of a review comment wit
     HttpMethod: Post,
     Summary: Create a review comment for a pull request,
     RequestType: ,
-    ResponseType: pull-request-review-comment,
+    ResponseType: PullRequestReviewComment,
     MethodName: PullsCreateReviewCommentAsync,
     NotAsyncMethodName: PullsCreateReviewComment,
     FileNameWithoutExtension: G.PullsClient.PullsCreateReviewComment
@@ -64951,7 +64951,7 @@ The ID of the review comment to reply to. To find the ID of a review comment wit
     HttpMethod: Post,
     Summary: Create a reply for a review comment,
     RequestType: ,
-    ResponseType: pull-request-review-comment,
+    ResponseType: PullRequestReviewComment,
     MethodName: PullsCreateReplyForReviewCommentAsync,
     NotAsyncMethodName: PullsCreateReplyForReviewComment,
     FileNameWithoutExtension: G.PullsClient.PullsCreateReplyForReviewComment
@@ -65412,7 +65412,7 @@ The ID of the review comment to reply to. To find the ID of a review comment wit
     HttpMethod: Put,
     Summary: Merge a pull request,
     RequestType: ,
-    ResponseType: pull-request-merge-result,
+    ResponseType: PullRequestMergeResult,
     MethodName: PullsMergeAsync,
     NotAsyncMethodName: PullsMerge,
     FileNameWithoutExtension: G.PullsClient.PullsMerge
@@ -65488,7 +65488,7 @@ The ID of the review comment to reply to. To find the ID of a review comment wit
     JsonSerializerContext: ,
     Summary: Get all requested reviewers for a pull request,
     RequestType: ,
-    ResponseType: pull-request-review-request,
+    ResponseType: PullRequestReviewRequest,
     MethodName: PullsListRequestedReviewersAsync,
     NotAsyncMethodName: PullsListRequestedReviewers,
     FileNameWithoutExtension: G.PullsClient.PullsListRequestedReviewers
@@ -65597,7 +65597,7 @@ The ID of the review comment to reply to. To find the ID of a review comment wit
     HttpMethod: Post,
     Summary: Request reviewers for a pull request,
     RequestType: ,
-    ResponseType: pull-request-simple,
+    ResponseType: PullRequestSimple,
     MethodName: PullsRequestReviewersAsync,
     NotAsyncMethodName: PullsRequestReviewers,
     FileNameWithoutExtension: G.PullsClient.PullsRequestReviewers
@@ -65706,7 +65706,7 @@ The ID of the review comment to reply to. To find the ID of a review comment wit
     HttpMethod: Delete,
     Summary: Remove requested reviewers from a pull request,
     RequestType: ,
-    ResponseType: pull-request-simple,
+    ResponseType: PullRequestSimple,
     MethodName: PullsRemoveRequestedReviewersAsync,
     NotAsyncMethodName: PullsRemoveRequestedReviewers,
     FileNameWithoutExtension: G.PullsClient.PullsRemoveRequestedReviewers
@@ -65973,7 +65973,7 @@ The ID of the review comment to reply to. To find the ID of a review comment wit
     HttpMethod: Post,
     Summary: Create a review for a pull request,
     RequestType: ,
-    ResponseType: pull-request-review,
+    ResponseType: PullRequestReview,
     MethodName: PullsCreateReviewAsync,
     NotAsyncMethodName: PullsCreateReview,
     FileNameWithoutExtension: G.PullsClient.PullsCreateReview
@@ -66068,7 +66068,7 @@ The ID of the review comment to reply to. To find the ID of a review comment wit
     JsonSerializerContext: ,
     Summary: Get a review for a pull request,
     RequestType: ,
-    ResponseType: pull-request-review,
+    ResponseType: PullRequestReview,
     MethodName: PullsGetReviewAsync,
     NotAsyncMethodName: PullsGetReview,
     FileNameWithoutExtension: G.PullsClient.PullsGetReview
@@ -66180,7 +66180,7 @@ The ID of the review comment to reply to. To find the ID of a review comment wit
     HttpMethod: Put,
     Summary: Update a review for a pull request,
     RequestType: ,
-    ResponseType: pull-request-review,
+    ResponseType: PullRequestReview,
     MethodName: PullsUpdateReviewAsync,
     NotAsyncMethodName: PullsUpdateReview,
     FileNameWithoutExtension: G.PullsClient.PullsUpdateReview
@@ -66276,7 +66276,7 @@ The ID of the review comment to reply to. To find the ID of a review comment wit
     HttpMethod: Delete,
     Summary: Delete a pending review for a pull request,
     RequestType: ,
-    ResponseType: pull-request-review,
+    ResponseType: PullRequestReview,
     MethodName: PullsDeletePendingReviewAsync,
     NotAsyncMethodName: PullsDeletePendingReview,
     FileNameWithoutExtension: G.PullsClient.PullsDeletePendingReview
@@ -66546,7 +66546,7 @@ The ID of the review comment to reply to. To find the ID of a review comment wit
     HttpMethod: Put,
     Summary: Dismiss a review for a pull request,
     RequestType: ,
-    ResponseType: pull-request-review,
+    ResponseType: PullRequestReview,
     MethodName: PullsDismissReviewAsync,
     NotAsyncMethodName: PullsDismissReview,
     FileNameWithoutExtension: G.PullsClient.PullsDismissReview
@@ -66682,7 +66682,7 @@ The ID of the review comment to reply to. To find the ID of a review comment wit
     HttpMethod: Post,
     Summary: Submit a review for a pull request,
     RequestType: ,
-    ResponseType: pull-request-review,
+    ResponseType: PullRequestReview,
     MethodName: PullsSubmitReviewAsync,
     NotAsyncMethodName: PullsSubmitReview,
     FileNameWithoutExtension: G.PullsClient.PullsSubmitReview
@@ -66786,7 +66786,7 @@ The ID of the review comment to reply to. To find the ID of a review comment wit
     ClassName: ReposClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/readme?ref={ref}",
+    Path: $"/repos/{owner}/{repo}/readme?ref={@ref}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -66842,8 +66842,8 @@ The ID of the review comment to reply to. To find the ID of a review comment wit
         ParameterStyle: Form,
         ParameterExplode: true,
         Summary: ,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       }
     ],
@@ -66851,7 +66851,7 @@ The ID of the review comment to reply to. To find the ID of a review comment wit
     JsonSerializerContext: ,
     Summary: Get a repository README,
     RequestType: ,
-    ResponseType: content-file,
+    ResponseType: ContentFile,
     MethodName: ReposGetReadmeAsync,
     NotAsyncMethodName: ReposGetReadme,
     FileNameWithoutExtension: G.ReposClient.ReposGetReadme
@@ -66862,7 +66862,7 @@ The ID of the review comment to reply to. To find the ID of a review comment wit
     ClassName: ReposClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/readme/{dir}?ref={ref}",
+    Path: $"/repos/{owner}/{repo}/readme/{dir}?ref={@ref}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -66937,8 +66937,8 @@ The ID of the review comment to reply to. To find the ID of a review comment wit
         ParameterStyle: Form,
         ParameterExplode: true,
         Summary: ,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       }
     ],
@@ -66946,7 +66946,7 @@ The ID of the review comment to reply to. To find the ID of a review comment wit
     JsonSerializerContext: ,
     Summary: Get a repository README for a directory,
     RequestType: ,
-    ResponseType: content-file,
+    ResponseType: ContentFile,
     MethodName: ReposGetReadmeInDirectoryAsync,
     NotAsyncMethodName: ReposGetReadmeInDirectory,
     FileNameWithoutExtension: G.ReposClient.ReposGetReadmeInDirectory
@@ -67267,7 +67267,7 @@ Specifies whether this release should be set as the latest release for the repos
     HttpMethod: Post,
     Summary: Create a release,
     RequestType: ,
-    ResponseType: release,
+    ResponseType: Release,
     MethodName: ReposCreateReleaseAsync,
     NotAsyncMethodName: ReposCreateRelease,
     FileNameWithoutExtension: G.ReposClient.ReposCreateRelease
@@ -67343,7 +67343,7 @@ Specifies whether this release should be set as the latest release for the repos
     JsonSerializerContext: ,
     Summary: Get a release asset,
     RequestType: ,
-    ResponseType: release-asset,
+    ResponseType: ReleaseAsset,
     MethodName: ReposGetReleaseAssetAsync,
     NotAsyncMethodName: ReposGetReleaseAsset,
     FileNameWithoutExtension: G.ReposClient.ReposGetReleaseAsset
@@ -67469,7 +67469,7 @@ Specifies whether this release should be set as the latest release for the repos
     HttpMethod: Patch,
     Summary: Update a release asset,
     RequestType: ,
-    ResponseType: release-asset,
+    ResponseType: ReleaseAsset,
     MethodName: ReposUpdateReleaseAssetAsync,
     NotAsyncMethodName: ReposUpdateReleaseAsset,
     FileNameWithoutExtension: G.ReposClient.ReposUpdateReleaseAsset
@@ -67668,7 +67668,7 @@ Specifies whether this release should be set as the latest release for the repos
     HttpMethod: Post,
     Summary: Generate release notes content for a release,
     RequestType: ,
-    ResponseType: release-notes-content,
+    ResponseType: ReleaseNotesContent,
     MethodName: ReposGenerateReleaseNotesAsync,
     NotAsyncMethodName: ReposGenerateReleaseNotes,
     FileNameWithoutExtension: G.ReposClient.ReposGenerateReleaseNotes
@@ -67725,7 +67725,7 @@ Specifies whether this release should be set as the latest release for the repos
     JsonSerializerContext: ,
     Summary: Get the latest release,
     RequestType: ,
-    ResponseType: release,
+    ResponseType: Release,
     MethodName: ReposGetLatestReleaseAsync,
     NotAsyncMethodName: ReposGetLatestRelease,
     FileNameWithoutExtension: G.ReposClient.ReposGetLatestRelease
@@ -67801,7 +67801,7 @@ Specifies whether this release should be set as the latest release for the repos
     JsonSerializerContext: ,
     Summary: Get a release by tag name,
     RequestType: ,
-    ResponseType: release,
+    ResponseType: Release,
     MethodName: ReposGetReleaseByTagAsync,
     NotAsyncMethodName: ReposGetReleaseByTag,
     FileNameWithoutExtension: G.ReposClient.ReposGetReleaseByTag
@@ -67877,7 +67877,7 @@ Specifies whether this release should be set as the latest release for the repos
     JsonSerializerContext: ,
     Summary: Get a release,
     RequestType: ,
-    ResponseType: release,
+    ResponseType: Release,
     MethodName: ReposGetReleaseAsync,
     NotAsyncMethodName: ReposGetRelease,
     FileNameWithoutExtension: G.ReposClient.ReposGetRelease
@@ -68093,7 +68093,7 @@ Specifies whether this release should be set as the latest release for the repos
     HttpMethod: Patch,
     Summary: Update a release,
     RequestType: ,
-    ResponseType: release,
+    ResponseType: Release,
     MethodName: ReposUpdateReleaseAsync,
     NotAsyncMethodName: ReposUpdateRelease,
     FileNameWithoutExtension: G.ReposClient.ReposUpdateRelease
@@ -68403,7 +68403,7 @@ Specifies whether this release should be set as the latest release for the repos
     HttpMethod: Post,
     Summary: Upload a release asset,
     RequestType: ,
-    ResponseType: release-asset,
+    ResponseType: ReleaseAsset,
     MethodName: ReposUploadReleaseAssetAsync,
     NotAsyncMethodName: ReposUploadReleaseAsset,
     FileNameWithoutExtension: G.ReposClient.ReposUploadReleaseAsset
@@ -68661,7 +68661,7 @@ Specifies whether this release should be set as the latest release for the repos
     HttpMethod: Post,
     Summary: Create reaction for a release,
     RequestType: ,
-    ResponseType: reaction,
+    ResponseType: Reaction,
     MethodName: ReactionsCreateForReleaseAsync,
     NotAsyncMethodName: ReactionsCreateForRelease,
     FileNameWithoutExtension: G.ReactionsClient.ReactionsCreateForRelease
@@ -69170,7 +69170,7 @@ The target of the ruleset
     HttpMethod: Post,
     Summary: Create a repository ruleset,
     RequestType: ,
-    ResponseType: repository-ruleset,
+    ResponseType: RepositoryRuleset,
     MethodName: ReposCreateRepoRulesetAsync,
     NotAsyncMethodName: ReposCreateRepoRuleset,
     FileNameWithoutExtension: G.ReposClient.ReposCreateRepoRuleset
@@ -69181,7 +69181,7 @@ The target of the ruleset
     ClassName: ReposClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/rulesets/rule-suites?ref={ref}&time_period={timePeriod}&actor_name={actorName}&rule_suite_result={ruleSuiteResult}&per_page={perPage}&page={page}",
+    Path: $"/repos/{owner}/{repo}/rulesets/rule-suites?ref={@ref}&time_period={timePeriod}&actor_name={actorName}&rule_suite_result={ruleSuiteResult}&per_page={perPage}&page={page}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -69237,8 +69237,8 @@ The target of the ruleset
         ParameterStyle: Form,
         ParameterExplode: true,
         Summary: ,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       },
       {
@@ -69369,7 +69369,7 @@ The target of the ruleset
     JsonSerializerContext: ,
     Summary: List repository rule suites,
     RequestType: ,
-    ResponseType: rule-suites,
+    ResponseType: RuleSuites,
     MethodName: ReposGetRepoRuleSuitesAsync,
     NotAsyncMethodName: ReposGetRepoRuleSuites,
     FileNameWithoutExtension: G.ReposClient.ReposGetRepoRuleSuites
@@ -69445,7 +69445,7 @@ The target of the ruleset
     JsonSerializerContext: ,
     Summary: Get a repository rule suite,
     RequestType: ,
-    ResponseType: rule-suite,
+    ResponseType: RuleSuite,
     MethodName: ReposGetRepoRuleSuiteAsync,
     NotAsyncMethodName: ReposGetRepoRuleSuite,
     FileNameWithoutExtension: G.ReposClient.ReposGetRepoRuleSuite
@@ -69542,7 +69542,7 @@ The target of the ruleset
     JsonSerializerContext: ,
     Summary: Get a repository ruleset,
     RequestType: ,
-    ResponseType: repository-ruleset,
+    ResponseType: RepositoryRuleset,
     MethodName: ReposGetRepoRulesetAsync,
     NotAsyncMethodName: ReposGetRepoRuleset,
     FileNameWithoutExtension: G.ReposClient.ReposGetRepoRuleset
@@ -69736,7 +69736,7 @@ The target of the ruleset
     HttpMethod: Put,
     Summary: Update a repository ruleset,
     RequestType: ,
-    ResponseType: repository-ruleset,
+    ResponseType: RepositoryRuleset,
     MethodName: ReposUpdateRepoRulesetAsync,
     NotAsyncMethodName: ReposUpdateRepoRuleset,
     FileNameWithoutExtension: G.ReposClient.ReposUpdateRepoRuleset
@@ -70162,7 +70162,7 @@ The target of the ruleset
     JsonSerializerContext: ,
     Summary: Get a secret scanning alert,
     RequestType: ,
-    ResponseType: secret-scanning-alert,
+    ResponseType: SecretScanningAlert,
     MethodName: SecretScanningGetAlertAsync,
     NotAsyncMethodName: SecretScanningGetAlert,
     FileNameWithoutExtension: G.SecretScanningClient.SecretScanningGetAlert
@@ -70303,7 +70303,7 @@ The target of the ruleset
     HttpMethod: Patch,
     Summary: Update a secret scanning alert,
     RequestType: ,
-    ResponseType: secret-scanning-alert,
+    ResponseType: SecretScanningAlert,
     MethodName: SecretScanningUpdateAlertAsync,
     NotAsyncMethodName: SecretScanningUpdateAlert,
     FileNameWithoutExtension: G.SecretScanningClient.SecretScanningUpdateAlert
@@ -70837,7 +70837,7 @@ Whether to create a temporary private fork of the repository to collaborate on a
     HttpMethod: Post,
     Summary: Create a repository security advisory,
     RequestType: RepositoryAdvisoryCreate,
-    ResponseType: repository-advisory,
+    ResponseType: RepositoryAdvisory,
     MethodName: SecurityAdvisoriesCreateRepositoryAdvisoryAsync,
     NotAsyncMethodName: SecurityAdvisoriesCreateRepositoryAdvisory,
     FileNameWithoutExtension: G.SecurityAdvisoriesClient.SecurityAdvisoriesCreateRepositoryAdvisory
@@ -71020,7 +71020,7 @@ Whether to create a temporary private fork of the repository to collaborate on a
     HttpMethod: Post,
     Summary: Privately report a security vulnerability,
     RequestType: PrivateVulnerabilityReportCreate,
-    ResponseType: repository-advisory,
+    ResponseType: RepositoryAdvisory,
     MethodName: SecurityAdvisoriesCreatePrivateVulnerabilityReportAsync,
     NotAsyncMethodName: SecurityAdvisoriesCreatePrivateVulnerabilityReport,
     FileNameWithoutExtension: G.SecurityAdvisoriesClient.SecurityAdvisoriesCreatePrivateVulnerabilityReport
@@ -71096,7 +71096,7 @@ Whether to create a temporary private fork of the repository to collaborate on a
     JsonSerializerContext: ,
     Summary: Get a repository security advisory,
     RequestType: ,
-    ResponseType: repository-advisory,
+    ResponseType: RepositoryAdvisory,
     MethodName: SecurityAdvisoriesGetRepositoryAdvisoryAsync,
     NotAsyncMethodName: SecurityAdvisoriesGetRepositoryAdvisory,
     FileNameWithoutExtension: G.SecurityAdvisoriesClient.SecurityAdvisoriesGetRepositoryAdvisory
@@ -71367,7 +71367,7 @@ Whether to create a temporary private fork of the repository to collaborate on a
     HttpMethod: Patch,
     Summary: Update a repository security advisory,
     RequestType: RepositoryAdvisoryUpdate,
-    ResponseType: repository-advisory,
+    ResponseType: RepositoryAdvisory,
     MethodName: SecurityAdvisoriesUpdateRepositoryAdvisoryAsync,
     NotAsyncMethodName: SecurityAdvisoriesUpdateRepositoryAdvisory,
     FileNameWithoutExtension: G.SecurityAdvisoriesClient.SecurityAdvisoriesUpdateRepositoryAdvisory
@@ -71521,7 +71521,7 @@ Whether to create a temporary private fork of the repository to collaborate on a
     HttpMethod: Post,
     Summary: Create a temporary private fork,
     RequestType: ,
-    ResponseType: full-repository,
+    ResponseType: FullRepository,
     MethodName: SecurityAdvisoriesCreateForkAsync,
     NotAsyncMethodName: SecurityAdvisoriesCreateFork,
     FileNameWithoutExtension: G.SecurityAdvisoriesClient.SecurityAdvisoriesCreateFork
@@ -71848,7 +71848,7 @@ Whether to create a temporary private fork of the repository to collaborate on a
     JsonSerializerContext: ,
     Summary: Get the weekly commit count,
     RequestType: ,
-    ResponseType: participation-stats,
+    ResponseType: ParticipationStats,
     MethodName: ReposGetParticipationStatsAsync,
     NotAsyncMethodName: ReposGetParticipationStats,
     FileNameWithoutExtension: G.ReposClient.ReposGetParticipationStats
@@ -72062,7 +72062,7 @@ A string label to differentiate this status from the status of other systems. Th
     HttpMethod: Post,
     Summary: Create a commit status,
     RequestType: ,
-    ResponseType: status,
+    ResponseType: Status,
     MethodName: ReposCreateCommitStatusAsync,
     NotAsyncMethodName: ReposCreateCommitStatus,
     FileNameWithoutExtension: G.ReposClient.ReposCreateCommitStatus
@@ -72218,7 +72218,7 @@ A string label to differentiate this status from the status of other systems. Th
     JsonSerializerContext: ,
     Summary: Get a repository subscription,
     RequestType: ,
-    ResponseType: repository-subscription,
+    ResponseType: RepositorySubscription,
     MethodName: ActivityGetRepoSubscriptionAsync,
     NotAsyncMethodName: ActivityGetRepoSubscription,
     FileNameWithoutExtension: G.ActivityClient.ActivityGetRepoSubscription
@@ -72308,7 +72308,7 @@ A string label to differentiate this status from the status of other systems. Th
     HttpMethod: Put,
     Summary: Set a repository subscription,
     RequestType: ,
-    ResponseType: repository-subscription,
+    ResponseType: RepositorySubscription,
     MethodName: ActivitySetRepoSubscriptionAsync,
     NotAsyncMethodName: ActivitySetRepoSubscription,
     FileNameWithoutExtension: G.ActivityClient.ActivitySetRepoSubscription
@@ -72596,7 +72596,7 @@ A string label to differentiate this status from the status of other systems. Th
     HttpMethod: Post,
     Summary: Create a tag protection state for a repository,
     RequestType: ,
-    ResponseType: tag-protection,
+    ResponseType: TagProtection,
     MethodName: ReposCreateTagProtectionAsync,
     NotAsyncMethodName: ReposCreateTagProtection,
     FileNameWithoutExtension: G.ReposClient.ReposCreateTagProtection
@@ -72684,7 +72684,7 @@ A string label to differentiate this status from the status of other systems. Th
     ClassName: ReposClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/tarball/{ref}",
+    Path: $"/repos/{owner}/{repo}/tarball/{@ref}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -72740,8 +72740,8 @@ A string label to differentiate this status from the status of other systems. Th
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       }
     ],
@@ -72947,7 +72947,7 @@ A string label to differentiate this status from the status of other systems. Th
     JsonSerializerContext: ,
     Summary: Get all repository topics,
     RequestType: ,
-    ResponseType: topic,
+    ResponseType: Topic,
     MethodName: ReposGetAllTopicsAsync,
     NotAsyncMethodName: ReposGetAllTopics,
     FileNameWithoutExtension: G.ReposClient.ReposGetAllTopics
@@ -73021,7 +73021,7 @@ A string label to differentiate this status from the status of other systems. Th
     HttpMethod: Put,
     Summary: Replace all repository topics,
     RequestType: ,
-    ResponseType: topic,
+    ResponseType: Topic,
     MethodName: ReposReplaceAllTopicsAsync,
     NotAsyncMethodName: ReposReplaceAllTopics,
     FileNameWithoutExtension: G.ReposClient.ReposReplaceAllTopics
@@ -73105,7 +73105,7 @@ A string label to differentiate this status from the status of other systems. Th
     JsonSerializerContext: ,
     Summary: Get repository clones,
     RequestType: ,
-    ResponseType: clone-traffic,
+    ResponseType: CloneTraffic,
     MethodName: ReposGetClonesAsync,
     NotAsyncMethodName: ReposGetClones,
     FileNameWithoutExtension: G.ReposClient.ReposGetClones
@@ -73303,7 +73303,7 @@ A string label to differentiate this status from the status of other systems. Th
     JsonSerializerContext: ,
     Summary: Get page views,
     RequestType: ,
-    ResponseType: view-traffic,
+    ResponseType: ViewTraffic,
     MethodName: ReposGetViewsAsync,
     NotAsyncMethodName: ReposGetViews,
     FileNameWithoutExtension: G.ReposClient.ReposGetViews
@@ -73409,7 +73409,7 @@ A string label to differentiate this status from the status of other systems. Th
     HttpMethod: Post,
     Summary: Transfer a repository,
     RequestType: ,
-    ResponseType: minimal-repository,
+    ResponseType: MinimalRepository,
     MethodName: ReposTransferAsync,
     NotAsyncMethodName: ReposTransfer,
     FileNameWithoutExtension: G.ReposClient.ReposTransfer
@@ -73593,7 +73593,7 @@ A string label to differentiate this status from the status of other systems. Th
     ClassName: ReposClient,
     BaseUrl: ,
     Stream: false,
-    Path: $"/repos/{owner}/{repo}/zipball/{ref}",
+    Path: $"/repos/{owner}/{repo}/zipball/{@ref}",
     AuthorizationScheme: ,
     Properties: [
       {
@@ -73649,8 +73649,8 @@ A string label to differentiate this status from the status of other systems. Th
         ParameterStyle: Simple,
         ParameterExplode: false,
         Summary: ,
-        ParameterName: ref,
-        ArgumentName: ref,
+        ParameterName: @ref,
+        ArgumentName: @ref,
         ParameterDefaultValue: default
       }
     ],
@@ -73802,7 +73802,7 @@ Either `true` to create a new private repository or `false` to create a new publ
     HttpMethod: Post,
     Summary: Create a repository using a template,
     RequestType: ,
-    ResponseType: full-repository,
+    ResponseType: FullRepository,
     MethodName: ReposCreateUsingTemplateAsync,
     NotAsyncMethodName: ReposCreateUsingTemplate,
     FileNameWithoutExtension: G.ReposClient.ReposCreateUsingTemplate
@@ -74791,7 +74791,7 @@ Either `true` to create a new private repository or `false` to create a new publ
     JsonSerializerContext: ,
     Summary: Get a team (Legacy),
     RequestType: ,
-    ResponseType: team-full,
+    ResponseType: TeamFull,
     MethodName: TeamsGetLegacyAsync,
     NotAsyncMethodName: TeamsGetLegacy,
     FileNameWithoutExtension: G.TeamsClient.TeamsGetLegacy
@@ -74958,7 +74958,7 @@ The notification setting the team has chosen. Editing teams without specifying t
     HttpMethod: Patch,
     Summary: Update a team (Legacy),
     RequestType: ,
-    ResponseType: team-full,
+    ResponseType: TeamFull,
     MethodName: TeamsUpdateLegacyAsync,
     NotAsyncMethodName: TeamsUpdateLegacy,
     FileNameWithoutExtension: G.TeamsClient.TeamsUpdateLegacy
@@ -75194,7 +75194,7 @@ Private posts are only visible to team members, organization owners, and team ma
     HttpMethod: Post,
     Summary: Create a discussion (Legacy),
     RequestType: ,
-    ResponseType: team-discussion,
+    ResponseType: TeamDiscussion,
     MethodName: TeamsCreateDiscussionLegacyAsync,
     NotAsyncMethodName: TeamsCreateDiscussionLegacy,
     FileNameWithoutExtension: G.TeamsClient.TeamsCreateDiscussionLegacy
@@ -75251,7 +75251,7 @@ Private posts are only visible to team members, organization owners, and team ma
     JsonSerializerContext: ,
     Summary: Get a discussion (Legacy),
     RequestType: ,
-    ResponseType: team-discussion,
+    ResponseType: TeamDiscussion,
     MethodName: TeamsGetDiscussionLegacyAsync,
     NotAsyncMethodName: TeamsGetDiscussionLegacy,
     FileNameWithoutExtension: G.TeamsClient.TeamsGetDiscussionLegacy
@@ -75341,7 +75341,7 @@ Private posts are only visible to team members, organization owners, and team ma
     HttpMethod: Patch,
     Summary: Update a discussion (Legacy),
     RequestType: ,
-    ResponseType: team-discussion,
+    ResponseType: TeamDiscussion,
     MethodName: TeamsUpdateDiscussionLegacyAsync,
     NotAsyncMethodName: TeamsUpdateDiscussionLegacy,
     FileNameWithoutExtension: G.TeamsClient.TeamsUpdateDiscussionLegacy
@@ -75599,7 +75599,7 @@ Private posts are only visible to team members, organization owners, and team ma
     HttpMethod: Post,
     Summary: Create a discussion comment (Legacy),
     RequestType: ,
-    ResponseType: team-discussion-comment,
+    ResponseType: TeamDiscussionComment,
     MethodName: TeamsCreateDiscussionCommentLegacyAsync,
     NotAsyncMethodName: TeamsCreateDiscussionCommentLegacy,
     FileNameWithoutExtension: G.TeamsClient.TeamsCreateDiscussionCommentLegacy
@@ -75675,7 +75675,7 @@ Private posts are only visible to team members, organization owners, and team ma
     JsonSerializerContext: ,
     Summary: Get a discussion comment (Legacy),
     RequestType: ,
-    ResponseType: team-discussion-comment,
+    ResponseType: TeamDiscussionComment,
     MethodName: TeamsGetDiscussionCommentLegacyAsync,
     NotAsyncMethodName: TeamsGetDiscussionCommentLegacy,
     FileNameWithoutExtension: G.TeamsClient.TeamsGetDiscussionCommentLegacy
@@ -75768,7 +75768,7 @@ Private posts are only visible to team members, organization owners, and team ma
     HttpMethod: Patch,
     Summary: Update a discussion comment (Legacy),
     RequestType: ,
-    ResponseType: team-discussion-comment,
+    ResponseType: TeamDiscussionComment,
     MethodName: TeamsUpdateDiscussionCommentLegacyAsync,
     NotAsyncMethodName: TeamsUpdateDiscussionCommentLegacy,
     FileNameWithoutExtension: G.TeamsClient.TeamsUpdateDiscussionCommentLegacy
@@ -76111,7 +76111,7 @@ Private posts are only visible to team members, organization owners, and team ma
     HttpMethod: Post,
     Summary: Create reaction for a team discussion comment (Legacy),
     RequestType: ,
-    ResponseType: reaction,
+    ResponseType: Reaction,
     MethodName: ReactionsCreateForTeamDiscussionCommentLegacyAsync,
     NotAsyncMethodName: ReactionsCreateForTeamDiscussionCommentLegacy,
     FileNameWithoutExtension: G.ReactionsClient.ReactionsCreateForTeamDiscussionCommentLegacy
@@ -76339,7 +76339,7 @@ Private posts are only visible to team members, organization owners, and team ma
     HttpMethod: Post,
     Summary: Create reaction for a team discussion (Legacy),
     RequestType: ,
-    ResponseType: reaction,
+    ResponseType: Reaction,
     MethodName: ReactionsCreateForTeamDiscussionLegacyAsync,
     NotAsyncMethodName: ReactionsCreateForTeamDiscussionLegacy,
     FileNameWithoutExtension: G.ReactionsClient.ReactionsCreateForTeamDiscussionLegacy
@@ -76758,7 +76758,7 @@ Private posts are only visible to team members, organization owners, and team ma
     JsonSerializerContext: ,
     Summary: Get team membership for a user (Legacy),
     RequestType: ,
-    ResponseType: team-membership,
+    ResponseType: TeamMembership,
     MethodName: TeamsGetMembershipForUserLegacyAsync,
     NotAsyncMethodName: TeamsGetMembershipForUserLegacy,
     FileNameWithoutExtension: G.TeamsClient.TeamsGetMembershipForUserLegacy
@@ -76841,7 +76841,7 @@ The role that this user should have in the team.
     HttpMethod: Put,
     Summary: Add or update team membership for a user (Legacy),
     RequestType: ,
-    ResponseType: team-membership,
+    ResponseType: TeamMembership,
     MethodName: TeamsAddOrUpdateMembershipForUserLegacyAsync,
     NotAsyncMethodName: TeamsAddOrUpdateMembershipForUserLegacy,
     FileNameWithoutExtension: G.TeamsClient.TeamsAddOrUpdateMembershipForUserLegacy
@@ -77036,7 +77036,7 @@ The role that this user should have in the team.
     JsonSerializerContext: ,
     Summary: Check team permissions for a project (Legacy),
     RequestType: ,
-    ResponseType: team-project,
+    ResponseType: TeamProject,
     MethodName: TeamsCheckPermissionsForProjectLegacyAsync,
     NotAsyncMethodName: TeamsCheckPermissionsForProjectLegacy,
     FileNameWithoutExtension: G.TeamsClient.TeamsCheckPermissionsForProjectLegacy
@@ -77332,7 +77332,7 @@ The role that this user should have in the team.
     JsonSerializerContext: ,
     Summary: Check team permissions for a repository (Legacy),
     RequestType: ,
-    ResponseType: team-repository,
+    ResponseType: TeamRepository,
     MethodName: TeamsCheckPermissionsForRepoLegacyAsync,
     NotAsyncMethodName: TeamsCheckPermissionsForRepoLegacy,
     FileNameWithoutExtension: G.TeamsClient.TeamsCheckPermissionsForRepoLegacy
@@ -77768,7 +77768,7 @@ The new location of the user.
     HttpMethod: Patch,
     Summary: Update the authenticated user,
     RequestType: ,
-    ResponseType: private-user,
+    ResponseType: PrivateUser,
     MethodName: UsersUpdateAuthenticatedAsync,
     NotAsyncMethodName: UsersUpdateAuthenticated,
     FileNameWithoutExtension: G.UsersClient.UsersUpdateAuthenticated
@@ -78044,7 +78044,7 @@ The new location of the user.
     HttpMethod: Post,
     Summary: Create a codespace for the authenticated user,
     RequestType: ,
-    ResponseType: codespace,
+    ResponseType: Codespace,
     MethodName: CodespacesCreateForAuthenticatedUserAsync,
     NotAsyncMethodName: CodespacesCreateForAuthenticatedUser,
     FileNameWithoutExtension: G.CodespacesClient.CodespacesCreateForAuthenticatedUser
@@ -78123,7 +78123,7 @@ The new location of the user.
     JsonSerializerContext: ,
     Summary: Get public key for the authenticated user,
     RequestType: ,
-    ResponseType: codespaces-user-public-key,
+    ResponseType: CodespacesUserPublicKey,
     MethodName: CodespacesGetPublicKeyForAuthenticatedUserAsync,
     NotAsyncMethodName: CodespacesGetPublicKeyForAuthenticatedUser,
     FileNameWithoutExtension: G.CodespacesClient.CodespacesGetPublicKeyForAuthenticatedUser
@@ -78161,7 +78161,7 @@ The new location of the user.
     JsonSerializerContext: ,
     Summary: Get a secret for the authenticated user,
     RequestType: ,
-    ResponseType: codespaces-secret,
+    ResponseType: CodespacesSecret,
     MethodName: CodespacesGetSecretForAuthenticatedUserAsync,
     NotAsyncMethodName: CodespacesGetSecretForAuthenticatedUser,
     FileNameWithoutExtension: G.CodespacesClient.CodespacesGetSecretForAuthenticatedUser
@@ -78248,7 +78248,7 @@ The new location of the user.
     HttpMethod: Put,
     Summary: Create or update a secret for the authenticated user,
     RequestType: ,
-    ResponseType: empty-object,
+    ResponseType: EmptyObject,
     MethodName: CodespacesCreateOrUpdateSecretForAuthenticatedUserAsync,
     NotAsyncMethodName: CodespacesCreateOrUpdateSecretForAuthenticatedUser,
     FileNameWithoutExtension: G.CodespacesClient.CodespacesCreateOrUpdateSecretForAuthenticatedUser
@@ -78534,7 +78534,7 @@ The new location of the user.
     JsonSerializerContext: ,
     Summary: Get a codespace for the authenticated user,
     RequestType: ,
-    ResponseType: codespace,
+    ResponseType: Codespace,
     MethodName: CodespacesGetForAuthenticatedUserAsync,
     NotAsyncMethodName: CodespacesGetForAuthenticatedUser,
     FileNameWithoutExtension: G.CodespacesClient.CodespacesGetForAuthenticatedUser
@@ -78621,7 +78621,7 @@ The new location of the user.
     HttpMethod: Patch,
     Summary: Update a codespace for the authenticated user,
     RequestType: ,
-    ResponseType: codespace,
+    ResponseType: Codespace,
     MethodName: CodespacesUpdateForAuthenticatedUserAsync,
     NotAsyncMethodName: CodespacesUpdateForAuthenticatedUser,
     FileNameWithoutExtension: G.CodespacesClient.CodespacesUpdateForAuthenticatedUser
@@ -78699,7 +78699,7 @@ The new location of the user.
     HttpMethod: Post,
     Summary: Export a codespace for the authenticated user,
     RequestType: ,
-    ResponseType: codespace-export-details,
+    ResponseType: CodespaceExportDetails,
     MethodName: CodespacesExportForAuthenticatedUserAsync,
     NotAsyncMethodName: CodespacesExportForAuthenticatedUser,
     FileNameWithoutExtension: G.CodespacesClient.CodespacesExportForAuthenticatedUser
@@ -78756,7 +78756,7 @@ The new location of the user.
     JsonSerializerContext: ,
     Summary: Get details about a codespace export,
     RequestType: ,
-    ResponseType: codespace-export-details,
+    ResponseType: CodespaceExportDetails,
     MethodName: CodespacesGetExportDetailsForAuthenticatedUserAsync,
     NotAsyncMethodName: CodespacesGetExportDetailsForAuthenticatedUser,
     FileNameWithoutExtension: G.CodespacesClient.CodespacesGetExportDetailsForAuthenticatedUser
@@ -78868,7 +78868,7 @@ Whether the new repository should be private.
     HttpMethod: Post,
     Summary: Create a repository from an unpublished codespace,
     RequestType: ,
-    ResponseType: codespace-with-full-repository,
+    ResponseType: CodespaceWithFullRepository,
     MethodName: CodespacesPublishForAuthenticatedUserAsync,
     NotAsyncMethodName: CodespacesPublishForAuthenticatedUser,
     FileNameWithoutExtension: G.CodespacesClient.CodespacesPublishForAuthenticatedUser
@@ -78907,7 +78907,7 @@ Whether the new repository should be private.
     HttpMethod: Post,
     Summary: Start a codespace for the authenticated user,
     RequestType: ,
-    ResponseType: codespace,
+    ResponseType: Codespace,
     MethodName: CodespacesStartForAuthenticatedUserAsync,
     NotAsyncMethodName: CodespacesStartForAuthenticatedUser,
     FileNameWithoutExtension: G.CodespacesClient.CodespacesStartForAuthenticatedUser
@@ -78946,7 +78946,7 @@ Whether the new repository should be private.
     HttpMethod: Post,
     Summary: Stop a codespace for the authenticated user,
     RequestType: ,
-    ResponseType: codespace,
+    ResponseType: Codespace,
     MethodName: CodespacesStopForAuthenticatedUserAsync,
     NotAsyncMethodName: CodespacesStopForAuthenticatedUser,
     FileNameWithoutExtension: G.CodespacesClient.CodespacesStopForAuthenticatedUser
@@ -79456,7 +79456,7 @@ Whether the new repository should be private.
     HttpMethod: Post,
     Summary: Create a GPG key for the authenticated user,
     RequestType: ,
-    ResponseType: gpg-key,
+    ResponseType: GpgKey,
     MethodName: UsersCreateGpgKeyForAuthenticatedUserAsync,
     NotAsyncMethodName: UsersCreateGpgKeyForAuthenticatedUser,
     FileNameWithoutExtension: G.UsersClient.UsersCreateGpgKeyForAuthenticatedUser
@@ -79494,7 +79494,7 @@ Whether the new repository should be private.
     JsonSerializerContext: ,
     Summary: Get a GPG key for the authenticated user,
     RequestType: ,
-    ResponseType: gpg-key,
+    ResponseType: GpgKey,
     MethodName: UsersGetGpgKeyForAuthenticatedUserAsync,
     NotAsyncMethodName: UsersGetGpgKeyForAuthenticatedUser,
     FileNameWithoutExtension: G.UsersClient.UsersGetGpgKeyForAuthenticatedUser
@@ -79884,7 +79884,7 @@ The duration of the interaction restriction. Default: `one_day`.
     HttpMethod: Put,
     Summary: Set interaction restrictions for your public repositories,
     RequestType: InteractionLimit,
-    ResponseType: interaction-limit-response,
+    ResponseType: InteractionLimitResponse,
     MethodName: InteractionsSetRestrictionsForAuthenticatedUserAsync,
     NotAsyncMethodName: InteractionsSetRestrictionsForAuthenticatedUser,
     FileNameWithoutExtension: G.InteractionsClient.InteractionsSetRestrictionsForAuthenticatedUser
@@ -80237,7 +80237,7 @@ A descriptive name for the new key.
     HttpMethod: Post,
     Summary: Create a public SSH key for the authenticated user,
     RequestType: ,
-    ResponseType: key,
+    ResponseType: Key,
     MethodName: UsersCreatePublicSshKeyForAuthenticatedUserAsync,
     NotAsyncMethodName: UsersCreatePublicSshKeyForAuthenticatedUser,
     FileNameWithoutExtension: G.UsersClient.UsersCreatePublicSshKeyForAuthenticatedUser
@@ -80275,7 +80275,7 @@ A descriptive name for the new key.
     JsonSerializerContext: ,
     Summary: Get a public SSH key for the authenticated user,
     RequestType: ,
-    ResponseType: key,
+    ResponseType: Key,
     MethodName: UsersGetPublicSshKeyForAuthenticatedUserAsync,
     NotAsyncMethodName: UsersGetPublicSshKeyForAuthenticatedUser,
     FileNameWithoutExtension: G.UsersClient.UsersGetPublicSshKeyForAuthenticatedUser
@@ -80560,7 +80560,7 @@ A descriptive name for the new key.
     JsonSerializerContext: ,
     Summary: Get an organization membership for the authenticated user,
     RequestType: ,
-    ResponseType: org-membership,
+    ResponseType: OrgMembership,
     MethodName: OrgsGetMembershipForAuthenticatedUserAsync,
     NotAsyncMethodName: OrgsGetMembershipForAuthenticatedUser,
     FileNameWithoutExtension: G.OrgsClient.OrgsGetMembershipForAuthenticatedUser
@@ -80619,7 +80619,7 @@ A descriptive name for the new key.
     HttpMethod: Patch,
     Summary: Update an organization membership for the authenticated user,
     RequestType: ,
-    ResponseType: org-membership,
+    ResponseType: OrgMembership,
     MethodName: OrgsUpdateMembershipForAuthenticatedUserAsync,
     NotAsyncMethodName: OrgsUpdateMembershipForAuthenticatedUser,
     FileNameWithoutExtension: G.OrgsClient.OrgsUpdateMembershipForAuthenticatedUser
@@ -80862,7 +80862,7 @@ Exclude attributes from the API response to improve performance
     HttpMethod: Post,
     Summary: Start a user migration,
     RequestType: ,
-    ResponseType: migration,
+    ResponseType: Migration,
     MethodName: MigrationsStartForAuthenticatedUserAsync,
     NotAsyncMethodName: MigrationsStartForAuthenticatedUser,
     FileNameWithoutExtension: G.MigrationsClient.MigrationsStartForAuthenticatedUser
@@ -80919,7 +80919,7 @@ Exclude attributes from the API response to improve performance
     JsonSerializerContext: ,
     Summary: Get a user migration status,
     RequestType: ,
-    ResponseType: migration,
+    ResponseType: Migration,
     MethodName: MigrationsGetStatusForAuthenticatedUserAsync,
     NotAsyncMethodName: MigrationsGetStatusForAuthenticatedUser,
     FileNameWithoutExtension: G.MigrationsClient.MigrationsGetStatusForAuthenticatedUser
@@ -81387,7 +81387,7 @@ Exclude attributes from the API response to improve performance
     JsonSerializerContext: ,
     Summary: Get a package for the authenticated user,
     RequestType: ,
-    ResponseType: package,
+    ResponseType: Package,
     MethodName: PackagesGetPackageForAuthenticatedUserAsync,
     NotAsyncMethodName: PackagesGetPackageForAuthenticatedUser,
     FileNameWithoutExtension: G.PackagesClient.PackagesGetPackageForAuthenticatedUser
@@ -81780,7 +81780,7 @@ Exclude attributes from the API response to improve performance
     JsonSerializerContext: ,
     Summary: Get a package version for the authenticated user,
     RequestType: ,
-    ResponseType: package-version,
+    ResponseType: PackageVersion,
     MethodName: PackagesGetPackageVersionForAuthenticatedUserAsync,
     NotAsyncMethodName: PackagesGetPackageVersionForAuthenticatedUser,
     FileNameWithoutExtension: G.PackagesClient.PackagesGetPackageVersionForAuthenticatedUser
@@ -82018,7 +82018,7 @@ Body of the project
     HttpMethod: Post,
     Summary: Create a user project,
     RequestType: ,
-    ResponseType: project,
+    ResponseType: Project,
     MethodName: ProjectsCreateForAuthenticatedUserAsync,
     NotAsyncMethodName: ProjectsCreateForAuthenticatedUser,
     FileNameWithoutExtension: G.ProjectsClient.ProjectsCreateForAuthenticatedUser
@@ -82807,7 +82807,7 @@ Whether this repository acts as a template that can be used to generate new repo
     HttpMethod: Post,
     Summary: Create a repository for the authenticated user,
     RequestType: ,
-    ResponseType: full-repository,
+    ResponseType: FullRepository,
     MethodName: ReposCreateForAuthenticatedUserAsync,
     NotAsyncMethodName: ReposCreateForAuthenticatedUser,
     FileNameWithoutExtension: G.ReposClient.ReposCreateForAuthenticatedUser
@@ -83198,7 +83198,7 @@ A descriptive name for the new key.
     HttpMethod: Post,
     Summary: Create a SSH signing key for the authenticated user,
     RequestType: ,
-    ResponseType: ssh-signing-key,
+    ResponseType: SshSigningKey,
     MethodName: UsersCreateSshSigningKeyForAuthenticatedUserAsync,
     NotAsyncMethodName: UsersCreateSshSigningKeyForAuthenticatedUser,
     FileNameWithoutExtension: G.UsersClient.UsersCreateSshSigningKeyForAuthenticatedUser
@@ -83236,7 +83236,7 @@ A descriptive name for the new key.
     JsonSerializerContext: ,
     Summary: Get an SSH signing key for the authenticated user,
     RequestType: ,
-    ResponseType: ssh-signing-key,
+    ResponseType: SshSigningKey,
     MethodName: UsersGetSshSigningKeyForAuthenticatedUserAsync,
     NotAsyncMethodName: UsersGetSshSigningKeyForAuthenticatedUser,
     FileNameWithoutExtension: G.UsersClient.UsersGetSshSigningKeyForAuthenticatedUser
@@ -84561,7 +84561,7 @@ A descriptive name for the new key.
     JsonSerializerContext: ,
     Summary: Get contextual information for a user,
     RequestType: ,
-    ResponseType: hovercard,
+    ResponseType: Hovercard,
     MethodName: UsersGetContextForUserAsync,
     NotAsyncMethodName: UsersGetContextForUser,
     FileNameWithoutExtension: G.UsersClient.UsersGetContextForUser
@@ -84599,7 +84599,7 @@ A descriptive name for the new key.
     JsonSerializerContext: ,
     Summary: Get a user installation for the authenticated app,
     RequestType: ,
-    ResponseType: installation,
+    ResponseType: Installation,
     MethodName: AppsGetUserInstallationAsync,
     NotAsyncMethodName: AppsGetUserInstallation,
     FileNameWithoutExtension: G.AppsClient.AppsGetUserInstallation
@@ -84989,7 +84989,7 @@ A descriptive name for the new key.
     JsonSerializerContext: ,
     Summary: Get a package for a user,
     RequestType: ,
-    ResponseType: package,
+    ResponseType: Package,
     MethodName: PackagesGetPackageForUserAsync,
     NotAsyncMethodName: PackagesGetPackageForUser,
     FileNameWithoutExtension: G.PackagesClient.PackagesGetPackageForUser
@@ -85389,7 +85389,7 @@ A descriptive name for the new key.
     JsonSerializerContext: ,
     Summary: Get a package version for a user,
     RequestType: ,
-    ResponseType: package-version,
+    ResponseType: PackageVersion,
     MethodName: PackagesGetPackageVersionForUserAsync,
     NotAsyncMethodName: PackagesGetPackageVersionForUser,
     FileNameWithoutExtension: G.PackagesClient.PackagesGetPackageVersionForUser
@@ -86081,7 +86081,7 @@ A descriptive name for the new key.
     JsonSerializerContext: ,
     Summary: Get GitHub Actions billing for a user,
     RequestType: ,
-    ResponseType: actions-billing-usage,
+    ResponseType: ActionsBillingUsage,
     MethodName: BillingGetGithubActionsBillingUserAsync,
     NotAsyncMethodName: BillingGetGithubActionsBillingUser,
     FileNameWithoutExtension: G.BillingClient.BillingGetGithubActionsBillingUser
@@ -86119,7 +86119,7 @@ A descriptive name for the new key.
     JsonSerializerContext: ,
     Summary: Get GitHub Packages billing for a user,
     RequestType: ,
-    ResponseType: packages-billing-usage,
+    ResponseType: PackagesBillingUsage,
     MethodName: BillingGetGithubPackagesBillingUserAsync,
     NotAsyncMethodName: BillingGetGithubPackagesBillingUser,
     FileNameWithoutExtension: G.BillingClient.BillingGetGithubPackagesBillingUser
@@ -86157,7 +86157,7 @@ A descriptive name for the new key.
     JsonSerializerContext: ,
     Summary: Get shared storage billing for a user,
     RequestType: ,
-    ResponseType: combined-billing-usage,
+    ResponseType: CombinedBillingUsage,
     MethodName: BillingGetSharedStorageBillingUserAsync,
     NotAsyncMethodName: BillingGetSharedStorageBillingUser,
     FileNameWithoutExtension: G.BillingClient.BillingGetSharedStorageBillingUser

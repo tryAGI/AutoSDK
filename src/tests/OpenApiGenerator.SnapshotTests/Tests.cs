@@ -133,8 +133,22 @@ public partial class Tests
             new CustomAdditionalText(
                 path: H.Resources.api_github_com_yaml.FileName,
                 text: H.Resources.api_github_com_yaml.AsString())
+        ]);
+    }
+    
+    [DataTestMethod]
+    [DataRow(JsonSerializerType.SystemTextJson)]
+    [DataRow(JsonSerializerType.NewtonsoftJson)]
+    public Task Filtering(JsonSerializerType jsonSerializerType)
+    {
+        return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
+            new CustomAdditionalText(
+                path: H.Resources.api_github_com_yaml.FileName,
+                text: H.Resources.api_github_com_yaml.AsString())
         ], new Dictionary<string, string>
         {
+            // migrations/list-for-org
+            ["build_property.OpenApiGenerator_IncludeTags"] = "migrations",
             //["build_property.OpenApiGenerator_IncludeTags"] = "actions;activity;apps;billing;checks;code-scanning;codes-of-conduct;emojis;dependabot;dependency-graph;gists;git;gitignore;issues;licenses;markdown;merge-queue;meta;migrations;oidc;orgs;packages;projects;pulls;rate-limit;reactions;repos;search;secret-scanning;teams;users;codespaces;copilot;security-advisories;interactions;classroom;desktop;enterprise-teams",
             //["build_property.OpenApiGenerator_IncludeModels"] = "CreateEmbeddingRequest;CreateModerationResponse;Error;ErrorResponse;ListModelsResponse;Model;DeleteModelResponse;CreateCompletionRequest",
         });

@@ -217,6 +217,9 @@ public static class OpenApiExtensions
         return schema.Value.Properties
             .Where(static x => x.Value.Reference != null)
             .Select(static x => x.Value.Reference)
+            .Concat(schema.Value.Items?.Reference != null
+                ? schema.Value.Items.WithKey("empty").GetReferences().Concat(new[] { schema.Value.Items.Reference })
+                : [])
             .Concat(schema.Value.Properties.SelectMany(GetReferences));
     }
     
@@ -252,6 +255,10 @@ public static class OpenApiExtensions
             .Concat(operations 
                 .SelectMany(x => x.Value.Responses.Values)
                 .Select(x => x.Reference?.Id))
+            .Concat(operations 
+                .SelectMany(x => x.Value.Responses.Values)
+                .SelectMany(x => x.Content.Values)
+                .Select(x => x.Schema.Reference?.Id))
             .Where(x => x != null)
             .ToArray()!;
     }
