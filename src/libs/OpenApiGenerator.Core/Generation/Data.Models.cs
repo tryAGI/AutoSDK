@@ -29,7 +29,7 @@ public static class ModelGeneratorMethods
         }
         foreach (var tag in settings.ExcludeTags)
         {
-            includedModels.UnionWith(openApiDocument.FindAllModelsForTag(tag));
+            excludedModels.UnionWith(openApiDocument.FindAllModelsForTag(tag));
         }
         var referencesOfIncludedModels = includedModels.Count == 0
             ? []
@@ -69,13 +69,15 @@ public static class ModelGeneratorMethods
         var enumParameters = openApiDocument.Paths
             .SelectMany(path => path.Value.Operations.Select(operation => (operation.Value.OperationId, Operation: operation)))
             .SelectMany(x => x.Operation.Value.Parameters.Select(y => (x.OperationId, Parameter: y)))
-            .Where(x => x.Parameter.Schema.Enum?.Any() == true)
+            .Where(x => x.Parameter.Schema.Enum?.Any() == true || x.Parameter.Schema.Items?.Enum?.Any() == true)
             .Select(x => ModelData.FromSchema(
                     x.Parameter.Schema.WithKey(x.OperationId + x.Parameter.Name.ToPropertyName()),
                     settings) with
                 {
                     Style = ModelStyle.Enumeration,
-                    Properties = x.Parameter.Schema.Enum
+                    Properties = (x.Parameter.Schema.Enum?.Any() == true
+                        ? x.Parameter.Schema.Enum
+                        : x.Parameter.Schema.Items.Enum)
                         .Select(value => value.ToEnumValue())
                         .Where(value => !string.IsNullOrWhiteSpace(value.Name))
                         .ToImmutableArray(),
