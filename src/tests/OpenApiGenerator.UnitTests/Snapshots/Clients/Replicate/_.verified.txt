@@ -1853,7 +1853,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
-    Summary: ,
+    Summary: A web service for running Replicate models,
     RequestType: ,
     ResponseType: ,
     MethodName: ConstructorsAsync,

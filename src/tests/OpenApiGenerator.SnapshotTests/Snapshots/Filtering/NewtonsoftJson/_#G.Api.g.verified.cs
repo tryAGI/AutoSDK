@@ -5,6 +5,7 @@
 namespace G
 {
     /// <summary>
+    /// GitHub's v3 REST API.
     /// If no httpClient is provided, a new one will be created.
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -12,6 +13,9 @@ namespace G
     {
         private readonly global::System.Net.Http.HttpClient _httpClient;
 
+        /// <summary>
+        /// Move projects to or from GitHub.
+        /// </summary>
         public MigrationsClient Migrations => new MigrationsClient(_httpClient);
 
         /// <summary>

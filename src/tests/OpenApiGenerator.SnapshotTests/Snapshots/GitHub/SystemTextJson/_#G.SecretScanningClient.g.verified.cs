@@ -5,6 +5,7 @@
 namespace G
 {
     /// <summary>
+    /// Retrieve secret scanning alerts from a repository.
     /// If no httpClient is provided, a new one will be created.
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

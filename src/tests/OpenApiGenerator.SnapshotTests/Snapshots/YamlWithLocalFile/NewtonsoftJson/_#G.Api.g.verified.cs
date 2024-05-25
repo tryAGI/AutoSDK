@@ -5,6 +5,8 @@
 namespace G
 {
     /// <summary>
+    /// [https://ipinfo.io](https://ipinfo.io).
+
     /// If no httpClient is provided, a new one will be created.
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -12,12 +14,39 @@ namespace G
     {
         private readonly global::System.Net.Http.HttpClient _httpClient;
 
+        /// <summary>
+        /// General API.
+        /// </summary>
         public GeneralClient General => new GeneralClient(_httpClient);
+
+        /// <summary>
+        /// Single info API.
+        /// </summary>
         public SingleClient Single => new SingleClient(_httpClient);
+
+        /// <summary>
+        /// Privacy Detection API.
+        /// </summary>
         public PrivacyDetectionClient PrivacyDetection => new PrivacyDetectionClient(_httpClient);
+
+        /// <summary>
+        /// ASN API.
+        /// </summary>
         public AsnClient Asn => new AsnClient(_httpClient);
+
+        /// <summary>
+        /// IP Ranges API.
+        /// </summary>
         public RangesClient Ranges => new RangesClient(_httpClient);
+
+        /// <summary>
+        /// Hosted Domains API.
+        /// </summary>
         public DomainsClient Domains => new DomainsClient(_httpClient);
+
+        /// <summary>
+        /// Abuse Contact API.
+        /// </summary>
         public AbuseClient Abuse => new AbuseClient(_httpClient);
 
         /// <summary>

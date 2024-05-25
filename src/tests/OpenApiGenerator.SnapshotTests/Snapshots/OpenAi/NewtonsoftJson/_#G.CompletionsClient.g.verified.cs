@@ -5,6 +5,7 @@
 namespace G
 {
     /// <summary>
+    /// Given a prompt, the model will return one or more predicted completions, and can also return the probabilities of alternative tokens at each position.
     /// If no httpClient is provided, a new one will be created.
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

@@ -5,6 +5,7 @@
 namespace G
 {
     /// <summary>
+    /// Learn how to turn audio into text or text into audio.
     /// If no httpClient is provided, a new one will be created.
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

@@ -102,7 +102,7 @@ public static class ClientGeneratorMethods
                             {
                                 CSharpType = $"{x.Name.ToClassName()}Client",
                             },
-                            Summary = x.Description,
+                            Summary = x.Description ?? string.Empty,
                         })
                     ]
                     : [],
@@ -110,7 +110,7 @@ public static class ClientGeneratorMethods
                 JsonSerializerType: settings.JsonSerializerType,
                 JsonSerializerContext: settings.JsonSerializerContext,
                 HttpMethod: OperationType.Get,
-                Summary: string.Empty,
+                Summary: openApiDocument.Info?.Description?.ClearForXml() ?? string.Empty,
                 RequestType: string.Empty,
                 ResponseType: string.Empty)] : [];
         if (settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors))
@@ -130,7 +130,7 @@ public static class ClientGeneratorMethods
                         JsonSerializerType: settings.JsonSerializerType,
                         JsonSerializerContext: settings.JsonSerializerContext,
                         HttpMethod: OperationType.Get,
-                        Summary: string.Empty,
+                        Summary: x.Description?.ClearForXml() ?? string.Empty,
                         RequestType: string.Empty,
                         ResponseType: string.Empty)))
                 .ToArray();

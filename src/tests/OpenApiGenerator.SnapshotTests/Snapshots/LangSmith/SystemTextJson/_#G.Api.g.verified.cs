@@ -5,6 +5,7 @@
 namespace G
 {
     /// <summary>
+    /// From https://github.com/langchain-ai/langsmith-sdk/blob/main/openapi/openapi.yaml
     /// If no httpClient is provided, a new one will be created.
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

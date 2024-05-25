@@ -5,6 +5,7 @@
 namespace G
 {
     /// <summary>
+    /// Insight into codes of conduct for your communities.
     /// If no httpClient is provided, a new one will be created.
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

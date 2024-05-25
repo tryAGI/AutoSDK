@@ -136,22 +136,25 @@ public static class StringExtensions
     
     public static string ToXmlDocumentationSummary(
         this string text,
-        int level = 4)
+        int level = 4,
+        bool addSummary = true)
     {
         text = text ?? throw new ArgumentNullException(nameof(text));
         
         var lines = text.Split(NewLine, StringSplitOptions.RemoveEmptyEntries);
         if (lines.Length == 0)
         {
-            lines = new[] { string.Empty };
+            lines = [string.Empty];
         }
         
         var spaces = new string(' ', level);
+        var value = string.Join("\n", lines
+            .Select(line => $"{spaces}/// {line}"));
         
-        return $@"/// <summary>
-{string.Join("\n", lines
-            .Select(line => $"{spaces}/// {line}"))}
-{spaces}/// </summary>";
+        return addSummary
+            ? $@"/// <summary>
+{value}
+{spaces}/// </summary>" : value;
     }
     
     public static string UseWordSeparator(

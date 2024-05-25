@@ -5,6 +5,7 @@
 namespace G
 {
     /// <summary>
+    /// Get a vector representation of a given input that can be easily consumed by machine learning models and algorithms.
     /// If no httpClient is provided, a new one will be created.
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

@@ -5,6 +5,7 @@
 namespace G
 {
     /// <summary>
+    /// Interact with and view information about users and also current user.
     /// If no httpClient is provided, a new one will be created.
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

@@ -5,6 +5,7 @@
 namespace G
 {
     /// <summary>
+    /// Manage fine-tuning jobs to tailor a model to your specific training data.
     /// If no httpClient is provided, a new one will be created.
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
