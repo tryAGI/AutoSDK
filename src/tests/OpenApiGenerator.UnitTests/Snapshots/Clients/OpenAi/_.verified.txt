@@ -6797,6 +6797,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           EnumValues: null
         },
         IsRequired: false,
+        Summary: ,
         ParameterName: vectorStores,
         ArgumentName: vectorStores,
         ParameterDefaultValue: default
