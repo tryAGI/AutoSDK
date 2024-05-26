@@ -3,7 +3,7 @@
 namespace OpenApiGenerator.UnitTests;
 
 [TestClass]
-public class JsonTests
+public partial class JsonTests
 {
     [TestMethod]
     public void Enum_SystemTextJson()

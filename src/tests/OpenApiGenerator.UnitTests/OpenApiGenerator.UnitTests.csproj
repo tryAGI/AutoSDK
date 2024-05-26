@@ -30,12 +30,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\libs\OpenApiGenerator.Core\OpenApiGenerator.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Snapshots\Models\" />
-    <Folder Include="Snapshots\Ollama\" />
-    <Folder Include="Snapshots\OpenAi\" />
+    <ProjectReference Include="..\..\libs\OpenApiGenerator.Helpers\OpenApiGenerator.Helpers.csproj" />
   </ItemGroup>
 
 </Project>
