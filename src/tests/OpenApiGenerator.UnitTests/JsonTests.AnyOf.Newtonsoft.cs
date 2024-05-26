@@ -1,12 +1,13 @@
 ﻿using Newtonsoft.Json;
 using AnyOfTypes;
+using OpenApiGenerator.JsonConverters;
 
 namespace OpenApiGenerator.UnitTests;
 
 public partial class JsonTests
 {
     [TestMethod]
-    public void AnyOf2_First_NewtonsoftJson()
+    public void AnyOf_First_NewtonsoftJson()
     {
         var value = new AnyOf<PullModelResponse2, PullModelResponse>(new PullModelResponse2
         {
@@ -28,7 +29,7 @@ public partial class JsonTests
     }
     
     [TestMethod]
-    public void AnyOf2_Second_NewtonsoftJson()
+    public void AnyOf_Second_NewtonsoftJson()
     {
         var value = new AnyOf<PullModelResponse2, PullModelResponse>(new PullModelResponse
         {
@@ -50,61 +51,91 @@ public partial class JsonTests
     }
     
     [TestMethod]
-    public void AnyOf2_Undefined_NewtonsoftJson()
+    public void AnyOf_Undefined_NewtonsoftJson()
     {
         var value = new AnyOf<PullModelResponse2, PullModelResponse>();
 
-        var json = JsonConvert.SerializeObject(value, new JsonSerializerSettings
+        var serialization = () => JsonConvert.SerializeObject(value, new JsonSerializerSettings
         {
             Converters = { new AnyOfConverterNewtonsoftJson<PullModelResponse2, PullModelResponse>() }
         });
-        json.Should().Be("\"null\"");
-        var response = JsonConvert.DeserializeObject<AnyOf<PullModelResponse2, PullModelResponse>>(json, new JsonSerializerSettings
+        serialization.Should().Throw<JsonException>();
+
+        var deserialization = () => JsonConvert.DeserializeObject<AnyOf<PullModelResponse2, PullModelResponse>>("\"null\"", new JsonSerializerSettings
         {
             Converters = { new AnyOfConverterNewtonsoftJson<PullModelResponse2, PullModelResponse>() }
+        });
+        deserialization.Should().Throw<JsonException>();
+    }
+    
+    [TestMethod]
+    public void AnyOf_OfficialExample_Valid1_NewtonsoftJson()
+    {
+        const string json = "{\n  \"age\": 1\n}";
+        var response = JsonConvert.DeserializeObject<AnyOf<PetByAge, PetByType>>(json, new JsonSerializerSettings
+        {
+            Converters = {
+                new AnyOfConverterNewtonsoftJson<PetByAge, PetByType>(),
+            }
         });
         response.Should().NotBeNull();
-        response.IsUndefined.Should().BeTrue();
+        response.IsFirst.Should().BeTrue();
+        response.First.Should().NotBeNull();
+        response.First!.age.Should().Be(1);
+        response.IsSecond.Should().BeFalse();
+        response.Second.Should().BeNull();
     }
-}
-
-public class AnyOfConverterNewtonsoftJson<T1, T2> : JsonConverter<AnyOf<T1, T2>>
-{
-    public override void WriteJson(JsonWriter writer, AnyOf<T1, T2> value, JsonSerializer serializer)
+    
+    [TestMethod]
+    public void AnyOf_OfficialExample_Valid2_NewtonsoftJson()
     {
-        if (value.IsFirst)
+        const string json = "{\n  \"pet_type\": \"Cat\",\n  \"hunts\": true\n}";
+        var response = JsonConvert.DeserializeObject<AnyOf<PetByAge, PetByType>>(json, new JsonSerializerSettings
         {
-            serializer.Serialize(writer, value.First, value.First!.GetType());
-        }
-        else if (value.IsSecond)
-        {
-            serializer.Serialize(writer, value.Second, value.Second!.GetType());
-        }
-        else
-        {
-            writer.WriteValue("null");
-        }
+            Converters = {
+                new AnyOfConverterNewtonsoftJson<PetByAge, PetByType>(),
+            }
+        });
+        response.Should().NotBeNull();
+        response.IsFirst.Should().BeFalse();
+        response.First.Should().BeNull();
+        response.IsSecond.Should().BeTrue();
+        response.Second.Should().NotBeNull();
+        response.Second!.hunts.Should().BeTrue();
+        response.Second!.pet_type.Should().Be("Cat");
     }
-
-    public override AnyOf<T1, T2> ReadJson(JsonReader reader, Type objectType, AnyOf<T1, T2> existingValue, bool hasExistingValue,
-        JsonSerializer serializer)
+    
+    [TestMethod]
+    public void AnyOf_OfficialExample_Valid3_NewtonsoftJson()
     {
-        try
+        const string json = "{\n  \"nickname\": \"Fido\",\n  \"pet_type\": \"Dog\",\n  \"age\": 4\n}";
+        var response = JsonConvert.DeserializeObject<AnyOf<PetByAge, PetByType>>(json, new JsonSerializerSettings
         {
-            return serializer.Deserialize<T1>(reader)!;
-        }
-        catch (JsonException)
+            Converters = {
+                new AnyOfConverterNewtonsoftJson<PetByAge, PetByType>(),
+            }
+        });
+        response.Should().NotBeNull();
+        response.IsFirst.Should().BeTrue();
+        response.First.Should().NotBeNull();
+        response.First!.nickname.Should().Be("Fido");
+        response.First!.age.Should().Be(4);
+        response.IsSecond.Should().BeTrue();
+        response.Second.Should().NotBeNull();
+        response.Second!.hunts.Should().BeNull();
+        response.Second!.pet_type.Should().Be("Dog");
+    }
+    
+    [TestMethod]
+    public void AnyOf_OfficialExample_NotValid1_NewtonsoftJson()
+    {
+        const string json = "{\n  \"nickname\": \"Mr. Paws\",\n  \"hunts\": false\n}";
+        var deserialization = () => JsonConvert.DeserializeObject<AnyOf<PetByAge, PetByType>>(json, new JsonSerializerSettings
         {
-        }
-        
-        try
-        {
-            return serializer.Deserialize<T2>(reader)!;
-        }
-        catch (JsonException)
-        {
-        }
-        
-        return new AnyOf<T1, T2>();
+            Converters = {
+                new AnyOfConverterNewtonsoftJson<PetByAge, PetByType>(),
+            }
+        });
+        deserialization.Should().Throw<JsonException>();
     }
 }

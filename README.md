@@ -14,6 +14,7 @@ Inspired by [NSwag](https://github.com/RicoSuter/NSwag) ❤️.
 - Uses https://github.com/microsoft/OpenAPI.NET for parsing OpenAPI specification
 - Supports trimming/native AOT compilation
 - Tested on GitHub 220k lines OpenAPI specification
+- Supports OneOf/AnyOf/AllOf/Not schemas
 
 ## 🚀Quick start🚀
 - Install the package
