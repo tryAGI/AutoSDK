@@ -19,6 +19,7 @@ public readonly record struct ModelData(
     SdkFeatureUsage UseRequiredKeyword,
     ImmutableArray<PropertyData> Properties,
     string Summary,
+    bool IsDeprecated,
     ImmutableArray<ModelData> AdditionalModels,
     ImmutableArray<ModelData> Enumerations
 )
@@ -57,6 +58,7 @@ public readonly record struct ModelData(
             Style: settings.ModelStyle,
             Properties: ImmutableArray<PropertyData>.Empty,
             Summary: string.Empty,
+            IsDeprecated: false,
             AdditionalModels: ImmutableArray<ModelData>.Empty,
             Enumerations: ImmutableArray<ModelData>.Empty
         );
@@ -81,6 +83,7 @@ public readonly record struct ModelData(
             Style: settings.ModelStyle,
             Properties: ImmutableArray<PropertyData>.Empty,
             Summary: schema.Value.GetSummary(),
+            IsDeprecated: schema.Value.Deprecated,
             AdditionalModels: ImmutableArray<ModelData>.Empty,
             Enumerations: ImmutableArray<ModelData>.Empty
             );

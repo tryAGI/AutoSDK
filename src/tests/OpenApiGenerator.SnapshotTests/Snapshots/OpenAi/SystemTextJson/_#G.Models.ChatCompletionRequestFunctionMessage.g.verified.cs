@@ -7,6 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class ChatCompletionRequestFunctionMessage
     {
         /// <summary>
@@ -14,6 +15,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonRequired]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public required string Role { get; set; }
 
         /// <summary>
@@ -21,6 +23,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public required string? Content { get; set; }
 
         /// <summary>
@@ -28,6 +31,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public required string Name { get; set; }
 
         /// <summary>

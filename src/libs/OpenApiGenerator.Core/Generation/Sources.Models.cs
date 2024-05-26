@@ -130,12 +130,14 @@ public sealed partial class {modelData.Parents[level].ClassName}
         
         return $@" 
     {modelData.Summary.ToXmlDocumentationSummary(level: 4)}
+    {(modelData.IsDeprecated ? "[global::System.Obsolete(\"This model marked as deprecated.\")]" : " ")}
     public sealed partial class {modelData.ClassName}
     {{
 {modelData.Properties.Select(property => @$"
         {property.Summary.ToXmlDocumentationSummary(level: 8)}
         {jsonSerializer.GeneratePropertyAttribute(property.Id, property.IsRequired)}
         {(property.IsRequired ? jsonSerializer.GenerateRequiredAttribute() : string.Empty)}
+        {(modelData.IsDeprecated ? "[global::System.Obsolete(\"This property marked as deprecated.\")]" : " ")}
         public{(property.IsRequired ? requiredKeyword : "")} {property.Type.CSharpType} {property.Name} {{ get; set; }}{GetDefaultValue(property, isRequiredKeywordSupported)}
 ").Inject()}
 

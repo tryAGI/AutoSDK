@@ -73,6 +73,7 @@
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Error,
@@ -111,6 +112,7 @@
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ErrorResponse,
@@ -164,6 +166,7 @@
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ListModelsResponse,
@@ -198,6 +201,7 @@
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -263,6 +267,7 @@
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: DeleteModelResponse,
@@ -667,6 +672,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateCompletionRequest,
@@ -733,6 +739,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Model,
@@ -876,6 +883,7 @@ Can be used in conjunction with the `seed` request parameter to understand when 
     Summary:
 Represents a completion response from the API. Note: both the streamed and non-streamed response objects share the same shape (unlike the chat endpoint).
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateCompletionResponse,
@@ -969,6 +977,7 @@ or `content_filter` if content was omitted due to a flag from our content filter
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Choices,
@@ -1050,6 +1059,7 @@ or `content_filter` if content was omitted due to a flag from our content filter
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Logprobs,
@@ -1120,6 +1130,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
 `length` if the maximum number of tokens specified in the request was reached,
 or `content_filter` if content was omitted due to a flag from our content filters.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: FinishReason,
@@ -1154,6 +1165,7 @@ or `content_filter` if content was omitted due to a flag from our content filter
       }
     ],
     Summary: The object type, which is always "text_completion",
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -1170,6 +1182,7 @@ or `content_filter` if content was omitted due to a flag from our content filter
     GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionRequestMessageContentPart,
@@ -1223,6 +1236,7 @@ or `content_filter` if content was omitted due to a flag from our content filter
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionRequestMessageContentPartImage,
@@ -1283,6 +1297,7 @@ Specifies the detail level of the image. Learn more in the [Vision guide](/docs/
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ImageUrl,
@@ -1351,6 +1366,7 @@ Specifies the detail level of the image. Learn more in the [Vision guide](/docs/
     Summary:
 Specifies the detail level of the image. Learn more in the [Vision guide](/docs/guides/vision/low-or-high-fidelity-image-understanding).
 <br/>Default Value: auto,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Detail,
@@ -1385,6 +1401,7 @@ Specifies the detail level of the image. Learn more in the [Vision guide](/docs/
       }
     ],
     Summary: The type of the content part.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -1438,6 +1455,7 @@ Specifies the detail level of the image. Learn more in the [Vision guide](/docs/
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionRequestMessageContentPartText,
@@ -1472,6 +1490,7 @@ Specifies the detail level of the image. Learn more in the [Vision guide](/docs/
       }
     ],
     Summary: The type of the content part.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -1488,6 +1507,7 @@ Specifies the detail level of the image. Learn more in the [Vision guide](/docs/
     GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionRequestMessage,
@@ -1557,6 +1577,7 @@ Specifies the detail level of the image. Learn more in the [Vision guide](/docs/
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionRequestSystemMessage,
@@ -1591,6 +1612,7 @@ Specifies the detail level of the image. Learn more in the [Vision guide](/docs/
       }
     ],
     Summary: The role of the messages author, in this case `system`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Role,
@@ -1662,6 +1684,7 @@ The contents of the user message.
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionRequestUserMessage,
@@ -1696,6 +1719,7 @@ The contents of the user message.
       }
     ],
     Summary: The role of the messages author, in this case `user`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Role,
@@ -1799,6 +1823,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionRequestAssistantMessage,
@@ -1848,6 +1873,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
       }
     ],
     Summary: Deprecated and replaced by `tool_calls`. The name and arguments of a function that should be called, as generated by the model.,
+    IsDeprecated: true,
     AdditionalModels: null,
     Enumerations: null,
     Name: FunctionCall,
@@ -1882,6 +1908,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
       }
     ],
     Summary: The role of the messages author, in this case `assistant`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Role,
@@ -1951,6 +1978,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionRequestToolMessage,
@@ -1985,6 +2013,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
       }
     ],
     Summary: The role of the messages author, in this case `tool`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Role,
@@ -2054,6 +2083,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
       }
     ],
     Summary: ,
+    IsDeprecated: true,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionRequestFunctionMessage,
@@ -2088,6 +2118,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
       }
     ],
     Summary: The role of the messages author, in this case `function`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Role,
@@ -2107,6 +2138,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
 The parameters the functions accepts, described as a JSON Schema object. See the [guide](/docs/guides/text-generation/function-calling) for examples, and the [JSON Schema reference](https://json-schema.org/understanding-json-schema/) for documentation about the format. 
 
 Omitting `parameters` defines a function with an empty parameter list.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: FunctionParameters,
@@ -2175,6 +2207,7 @@ Omitting `parameters` defines a function with an empty parameter list.,
       }
     ],
     Summary: ,
+    IsDeprecated: true,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionFunctions,
@@ -2210,6 +2243,7 @@ Omitting `parameters` defines a function with an empty parameter list.,
     Summary:
 Specifying a particular function via `{"name": "my_function"}` forces the model to call that function.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionFunctionCallOption,
@@ -2267,6 +2301,7 @@ Specifying a particular function via `{"name": "my_function"}` forces the model 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionTool,
@@ -2301,6 +2336,7 @@ Specifying a particular function via `{"name": "my_function"}` forces the model 
       }
     ],
     Summary: The type of the tool. Currently, only `function` is supported.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -2369,6 +2405,7 @@ Omitting `parameters` defines a function with an empty parameter list.,
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: FunctionObject,
@@ -2393,6 +2430,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
 
 `none` is the default when no tools are present. `auto` is the default if tools are present.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionToolChoiceOption,
@@ -2446,6 +2484,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
       }
     ],
     Summary: Specifies a tool the model should use. Use to force the model to call a specific function.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionNamedToolChoice,
@@ -2479,6 +2518,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Function,
@@ -2513,6 +2553,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
       }
     ],
     Summary: The type of the tool. Currently, only `function` is supported.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -2529,6 +2570,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
     GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: The tool calls generated by the model, such as function calls.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionMessageToolCalls,
@@ -2598,6 +2640,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionMessageToolCall,
@@ -2647,6 +2690,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
       }
     ],
     Summary: The function that the model called.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Function,
@@ -2681,6 +2725,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
       }
     ],
     Summary: The type of the tool. Currently, only `function` is supported.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -2766,6 +2811,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionMessageToolCallChunk,
@@ -2815,6 +2861,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Function,
@@ -2849,6 +2896,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
       }
     ],
     Summary: The type of the tool. Currently, only `function` is supported.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -2865,6 +2913,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
     GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: The role of the author of a message,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionRole,
@@ -2903,6 +2952,7 @@ If set, an additional chunk will be streamed before the `data: [DONE]` message. 
 Options for streaming response. Only set this when you set `stream: true`.
 
 <br/>Default Value: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionStreamOptions,
@@ -2988,6 +3038,7 @@ Options for streaming response. Only set this when you set `stream: true`.
       }
     ],
     Summary: A chat completion message generated by the model.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionResponseMessage,
@@ -3037,6 +3088,7 @@ Options for streaming response. Only set this when you set `stream: true`.
       }
     ],
     Summary: Deprecated and replaced by `tool_calls`. The name and arguments of a function that should be called, as generated by the model.,
+    IsDeprecated: true,
     AdditionalModels: null,
     Enumerations: null,
     Name: FunctionCall,
@@ -3071,6 +3123,7 @@ Options for streaming response. Only set this when you set `stream: true`.
       }
     ],
     Summary: The role of the author of this message.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Role,
@@ -3162,6 +3215,7 @@ Options for streaming response. Only set this when you set `stream: true`.
       }
     ],
     Summary: A chat completion delta generated by streamed model responses.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionStreamResponseDelta,
@@ -3211,6 +3265,7 @@ Options for streaming response. Only set this when you set `stream: true`.
       }
     ],
     Summary: Deprecated and replaced by `tool_calls`. The name and arguments of a function that should be called, as generated by the model.,
+    IsDeprecated: true,
     AdditionalModels: null,
     Enumerations: null,
     Name: FunctionCall,
@@ -3293,6 +3348,7 @@ Options for streaming response. Only set this when you set `stream: true`.
       }
     ],
     Summary: The role of the author of this message.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Role,
@@ -3741,6 +3797,7 @@ A list of functions the model may generate JSON inputs for.
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateChatCompletionRequest,
@@ -3790,6 +3847,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
 
 **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ResponseFormat,
@@ -3843,6 +3901,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
 Must be one of `text` or `json_object`.
 <br/>Default Value: text
 <br/>Example: json_object,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -4165,6 +4224,7 @@ Must be one of `text` or `json_object`.
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Model,
@@ -4233,6 +4293,7 @@ Must be one of `text` or `json_object`.
     Summary:
 `none` means the model will not call any tool and instead generates a message. `auto` means the model can pick between generating a message or calling one or more tools. `required` means the model must call one or more tools.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ToolChoice,
@@ -4285,6 +4346,7 @@ Must be one of `text` or `json_object`.
     Summary:
 `none` means the model will not call a function and instead generates a message. `auto` means the model can pick between generating a message or calling a function.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: FunctionCall,
@@ -4426,6 +4488,7 @@ Can be used in conjunction with the `seed` request parameter to understand when 
       }
     ],
     Summary: Represents a chat completion response returned by model, based on the provided input.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateChatCompletionResponse,
@@ -4529,6 +4592,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Choices,
@@ -4562,6 +4626,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       }
     ],
     Summary: Log probability information for the choice.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Logprobs,
@@ -4665,6 +4730,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
 `content_filter` if content was omitted due to a flag from our content filters,
 `tool_calls` if the model called a tool, or `function_call` (deprecated) if the model called a function.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: FinishReason,
@@ -4699,6 +4765,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       }
     ],
     Summary: The object type, which is always `chat.completion`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -4840,6 +4907,7 @@ Can be used in conjunction with the `seed` request parameter to understand when 
       }
     ],
     Summary: Represents a chat completion response returned by model, based on the provided input.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateChatCompletionFunctionResponse,
@@ -4922,6 +4990,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Choices,
@@ -5006,6 +5075,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
     Summary:
 The reason the model stopped generating tokens. This will be `stop` if the model hit a natural stop point or a provided stop sequence, `length` if the maximum number of tokens specified in the request was reached, `content_filter` if content was omitted due to a flag from our content filters, or `function_call` if the model called a function.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: FinishReason,
@@ -5040,6 +5110,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       }
     ],
     Summary: The object type, which is always `chat.completion`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -5121,6 +5192,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionTokenLogprob,
@@ -5186,6 +5258,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: TopLogprobs,
@@ -5255,6 +5328,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ListPaginatedFineTuningJobsResponse,
@@ -5289,6 +5363,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -5431,6 +5506,7 @@ When present, it contains a null value except for the last chunk which contains 
       }
     ],
     Summary: Represents a streamed chunk of a chat completion response returned by model, based on the provided input.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateChatCompletionStreamResponse,
@@ -5499,6 +5575,7 @@ When present, it contains a null value except for the last chunk which contains 
 An optional field that will only be present when you set `stream_options: {"include_usage": true}` in your request.
 When present, it contains a null value except for the last chunk which contains the token usage statistics for the entire request.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Usage,
@@ -5602,6 +5679,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Choices,
@@ -5635,6 +5713,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       }
     ],
     Summary: Log probability information for the choice.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Logprobs,
@@ -5738,6 +5817,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
 `content_filter` if content was omitted due to a flag from our content filters,
 `tool_calls` if the model called a tool, or `function_call` (deprecated) if the model called a function.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: FinishReason,
@@ -5772,6 +5852,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       }
     ],
     Summary: The object type, which is always `chat.completion.chunk`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -5788,6 +5869,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
     GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: Represents a streamed chunk of a chat completion response returned by model, based on the provided input.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateChatCompletionImageResponse,
@@ -5992,6 +6074,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateImageRequest,
@@ -6045,6 +6128,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
 The quality of the image that will be generated. `hd` creates images with finer details and greater consistency across the image. This param is only supported for `dall-e-3`.
 <br/>Default Value: standard
 <br/>Example: standard,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Quality,
@@ -6098,6 +6182,7 @@ The quality of the image that will be generated. `hd` creates images with finer 
 The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.
 <br/>Default Value: url
 <br/>Example: url,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ResponseFormat,
@@ -6199,6 +6284,7 @@ The format in which the generated images are returned. Must be one of `url` or `
 The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024` for `dall-e-2`. Must be one of `1024x1024`, `1792x1024`, or `1024x1792` for `dall-e-3` models.
 <br/>Default Value: 1024x1024
 <br/>Example: 1024x1024,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Size,
@@ -6252,6 +6338,7 @@ The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x
 The style of the generated images. Must be one of `vivid` or `natural`. Vivid causes the model to lean towards generating hyper-real and dramatic images. Natural causes the model to produce more natural, less hyper-real looking images. This param is only supported for `dall-e-3`.
 <br/>Default Value: vivid
 <br/>Example: vivid,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Style,
@@ -6302,6 +6389,7 @@ The style of the generated images. Must be one of `vivid` or `natural`. Vivid ca
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Model,
@@ -6351,6 +6439,7 @@ The style of the generated images. Must be one of `vivid` or `natural`. Vivid ca
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ImagesResponse,
@@ -6416,6 +6505,7 @@ The style of the generated images. Must be one of `vivid` or `natural`. Vivid ca
       }
     ],
     Summary: Represents the url or the content of an image generated by the OpenAI API.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Image,
@@ -6596,6 +6686,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateImageEditRequest,
@@ -6665,6 +6756,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
 The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.
 <br/>Default Value: 1024x1024
 <br/>Example: 1024x1024,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Size,
@@ -6718,6 +6810,7 @@ The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x
 The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.
 <br/>Default Value: url
 <br/>Example: url,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ResponseFormat,
@@ -6752,6 +6845,7 @@ The format in which the generated images are returned. Must be one of `url` or `
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Model,
@@ -6898,6 +6992,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateImageVariationRequest,
@@ -6951,6 +7046,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
 The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.
 <br/>Default Value: url
 <br/>Example: url,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ResponseFormat,
@@ -7020,6 +7116,7 @@ The format in which the generated images are returned. Must be one of `url` or `
 The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.
 <br/>Default Value: 1024x1024
 <br/>Example: 1024x1024,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Size,
@@ -7054,6 +7151,7 @@ The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Model,
@@ -7110,6 +7208,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateModerationRequest,
@@ -7160,6 +7259,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Model,
@@ -7225,6 +7325,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
       }
     ],
     Summary: Represents if a given text input is potentially harmful.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateModerationResponse,
@@ -7290,6 +7391,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Results,
@@ -7483,6 +7585,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
       }
     ],
     Summary: A list of the categories, and whether they are flagged or not.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Categories,
@@ -7676,6 +7779,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
       }
     ],
     Summary: A list of the categories along with their scores as predicted by model.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CategoryScores,
@@ -7729,6 +7833,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ListFilesResponse,
@@ -7763,6 +7868,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -7826,6 +7932,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateFileRequest,
@@ -7896,6 +8003,7 @@ The intended purpose of the uploaded file.
 
 Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](/docs/api-reference/messages) files, "vision" for Assistants image file inputs, "batch" for [Batch API](/docs/guides/batch), and "fine-tune" for [Fine-tuning](/docs/api-reference/fine-tuning).
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Purpose,
@@ -7965,6 +8073,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: DeleteFileResponse,
@@ -7999,6 +8108,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -8162,6 +8272,7 @@ If a seed is not specified, one will be generated for you.
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateFineTuningJobRequest,
@@ -8242,6 +8353,7 @@ through the training dataset.
       }
     ],
     Summary: The hyperparameters used for the fine-tuning job.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Hyperparameters,
@@ -8276,6 +8388,7 @@ through the training dataset.
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: BatchSize,
@@ -8310,6 +8423,7 @@ through the training dataset.
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: LearningRateMultiplier,
@@ -8344,6 +8458,7 @@ through the training dataset.
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: NEpochs,
@@ -8399,6 +8514,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Integrations,
@@ -8495,6 +8611,7 @@ The settings for your integration with Weights and Biases. This payload specifie
 metrics will be sent to. Optionally, you can set an explicit display name for your run, add tags
 to your run, and set a default entity (team, username, etc) to be associated with your run.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Wandb,
@@ -8529,6 +8646,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -8595,6 +8713,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Model,
@@ -8648,6 +8767,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ListFineTuningJobEventsResponse,
@@ -8682,6 +8802,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -8783,6 +8904,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ListFineTuningJobCheckpointsResponse,
@@ -8817,6 +8939,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -8935,6 +9058,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateEmbeddingRequest,
@@ -8988,6 +9112,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
 The format to return the embeddings in. Can be either `float` or [`base64`](https://pypi.org/project/pybase64/).
 <br/>Default Value: float
 <br/>Example: float,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: EncodingFormat,
@@ -9054,6 +9179,7 @@ The format to return the embeddings in. Can be either `float` or [`base64`](http
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Model,
@@ -9139,6 +9265,7 @@ The format to return the embeddings in. Can be either `float` or [`base64`](http
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateEmbeddingResponse,
@@ -9188,6 +9315,7 @@ The format to return the embeddings in. Can be either `float` or [`base64`](http
       }
     ],
     Summary: The usage information for the request.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Usage,
@@ -9222,6 +9350,7 @@ The format to return the embeddings in. Can be either `float` or [`base64`](http
       }
     ],
     Summary: The object type, which is always "list".,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -9364,6 +9493,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateTranscriptionRequest,
@@ -9465,6 +9595,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
 The format of the transcript output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.
 
 <br/>Default Value: json,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ResponseFormat,
@@ -9499,6 +9630,7 @@ The format of the transcript output, in one of these options: `json`, `text`, `s
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Model,
@@ -9532,6 +9664,7 @@ The format of the transcript output, in one of these options: `json`, `text`, `s
       }
     ],
     Summary: Represents a transcription response returned by model, based on the provided input.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateTranscriptionResponseJson,
@@ -9709,6 +9842,7 @@ The format of the transcript output, in one of these options: `json`, `text`, `s
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: TranscriptionSegment,
@@ -9774,6 +9908,7 @@ The format of the transcript output, in one of these options: `json`, `text`, `s
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: TranscriptionWord,
@@ -9871,6 +10006,7 @@ The format of the transcript output, in one of these options: `json`, `text`, `s
       }
     ],
     Summary: Represents a verbose json transcription response returned by model, based on the provided input.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateTranscriptionResponseVerboseJson,
@@ -9983,6 +10119,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateTranslationRequest,
@@ -10017,6 +10154,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Model,
@@ -10050,6 +10188,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateTranslationResponseJson,
@@ -10131,6 +10270,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateTranslationResponseVerboseJson,
@@ -10264,6 +10404,7 @@ The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateSpeechRequest,
@@ -10378,6 +10519,7 @@ The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is 
       }
     ],
     Summary: The voice to use when generating the audio. Supported voices are `alloy`, `echo`, `fable`, `onyx`, `nova`, and `shimmer`. Previews of the voices are available in the [Text to speech guide](/docs/guides/text-to-speech/voice-options).,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Voice,
@@ -10494,6 +10636,7 @@ The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is 
     Summary:
 The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.
 <br/>Default Value: mp3,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ResponseFormat,
@@ -10544,6 +10687,7 @@ The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Model,
@@ -10629,6 +10773,7 @@ The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav
       }
     ],
     Summary: Describes an OpenAI model offering that can be used with the API.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Model,
@@ -10663,6 +10808,7 @@ The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav
       }
     ],
     Summary: The object type, which is always "model".,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -10836,6 +10982,7 @@ The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav
       }
     ],
     Summary: The `File` object represents a document that has been uploaded to OpenAI.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: OpenAIFile,
@@ -10870,6 +11017,7 @@ The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav
       }
     ],
     Summary: The object type, which is always `file`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -11000,6 +11148,7 @@ The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav
       }
     ],
     Summary: The intended purpose of the file. Supported values are `assistants`, `assistants_output`, `batch`, `batch_output`, `fine-tune`, `fine-tune-results` and `vision`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Purpose,
@@ -11066,6 +11215,7 @@ The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav
       }
     ],
     Summary: Deprecated. The current status of the file, which can be either `uploaded`, `processed`, or `error`.,
+    IsDeprecated: true,
     AdditionalModels: null,
     Enumerations: null,
     Name: Status,
@@ -11139,6 +11289,7 @@ The embedding vector, which is a list of floats. The length of vector depends on
     Summary:
 Represents an embedding vector returned by embedding endpoint.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Embedding,
@@ -11173,6 +11324,7 @@ Represents an embedding vector returned by embedding endpoint.
       }
     ],
     Summary: The object type, which is always "embedding".,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -11482,6 +11634,7 @@ Represents an embedding vector returned by embedding endpoint.
     Summary:
 The `fine_tuning.job` object represents a fine-tuning job that has been created through the API.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: FineTuningJob,
@@ -11547,6 +11700,7 @@ The `fine_tuning.job` object represents a fine-tuning job that has been created 
       }
     ],
     Summary: For fine-tuning jobs that have `failed`, this will contain more information on the cause of the failure.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Error,
@@ -11584,6 +11738,7 @@ The number of epochs to train the model for. An epoch refers to one full cycle t
       }
     ],
     Summary: The hyperparameters used for the fine-tuning job. See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Hyperparameters,
@@ -11618,6 +11773,7 @@ The number of epochs to train the model for. An epoch refers to one full cycle t
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: NEpochs,
@@ -11652,6 +11808,7 @@ The number of epochs to train the model for. An epoch refers to one full cycle t
       }
     ],
     Summary: The object type, which is always "fine_tuning.job".,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -11766,6 +11923,7 @@ The number of epochs to train the model for. An epoch refers to one full cycle t
       }
     ],
     Summary: The current status of the fine-tuning job, which can be either `validating_files`, `queued`, `running`, `succeeded`, `failed`, or `cancelled`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Status,
@@ -11823,6 +11981,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: FineTuningIntegration,
@@ -11919,6 +12078,7 @@ The settings for your integration with Weights and Biases. This payload specifie
 metrics will be sent to. Optionally, you can set an explicit display name for your run, add tags
 to your run, and set a default entity (team, username, etc) to be associated with your run.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Wandb,
@@ -11953,6 +12113,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
       }
     ],
     Summary: The type of the integration being enabled for the fine-tuning job,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -12062,6 +12223,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
       }
     ],
     Summary: Fine-tuning job event object,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: FineTuningJobEvent,
@@ -12128,6 +12290,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Level,
@@ -12162,6 +12325,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -12297,6 +12461,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
     Summary:
 The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine-tuning job that is ready to use.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: FineTuningJobCheckpoint,
@@ -12426,6 +12591,7 @@ The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine
       }
     ],
     Summary: Metrics at the step number during the fine-tuning job.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Metrics,
@@ -12460,6 +12626,7 @@ The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine
       }
     ],
     Summary: The object type, which is always "fine_tuning.job.checkpoint".,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -12525,6 +12692,7 @@ The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine
       }
     ],
     Summary: Usage statistics for the completion request.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CompletionUsage,
@@ -12590,6 +12758,7 @@ The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine
       }
     ],
     Summary: Usage statistics related to the run. This value will be `null` if the run is not in a terminal state (i.e. `in_progress`, `queued`, etc.).,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunCompletionUsage,
@@ -12655,6 +12824,7 @@ The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine
       }
     ],
     Summary: Usage statistics related to the run step. This value will be `null` while the run step's status is `in_progress`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunStepCompletionUsage,
@@ -12677,6 +12847,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
 
 **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: AssistantsApiResponseFormatOption,
@@ -12722,6 +12893,7 @@ Must be one of `text` or `json_object`.
     Summary:
 An object describing the expected output of the model. If `json_object` only `function` type `tools` are allowed to be passed to the Run. If `text` the model can return text or any value needed.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: AssistantsApiResponseFormat,
@@ -12775,6 +12947,7 @@ An object describing the expected output of the model. If `json_object` only `fu
 Must be one of `text` or `json_object`.
 <br/>Default Value: text
 <br/>Example: json_object,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -13039,6 +13212,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       }
     ],
     Summary: Represents an `assistant` that can call the model and use tools.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: AssistantObject,
@@ -13090,6 +13264,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Summary:
 A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ToolResources,
@@ -13127,6 +13302,7 @@ A list of [file](/docs/api-reference/files) IDs made available to the `code_inte
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CodeInterpreter,
@@ -13162,6 +13338,7 @@ The ID of the [vector store](/docs/api-reference/vector-stores/object) attached 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: FileSearch,
@@ -13196,6 +13373,7 @@ The ID of the [vector store](/docs/api-reference/vector-stores/object) attached 
       }
     ],
     Summary: The object type, which is always `assistant`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -13248,6 +13426,7 @@ The ID of the [vector store](/docs/api-reference/vector-stores/object) attached 
     Summary:
 `auto` is the default value
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ResponseFormat,
@@ -13461,6 +13640,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateAssistantRequest,
@@ -13512,6 +13692,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Summary:
 A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ToolResources,
@@ -13549,6 +13730,7 @@ A list of [file](/docs/api-reference/files) IDs made available to the `code_inte
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CodeInterpreter,
@@ -13602,6 +13784,7 @@ A helper to create a [vector store](/docs/api-reference/vector-stores/object) wi
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: FileSearch,
@@ -13656,6 +13839,7 @@ Set of 16 key-value pairs that can be attached to a vector store. This can be us
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: VectorStores,
@@ -13962,6 +14146,7 @@ Set of 16 key-value pairs that can be attached to a vector store. This can be us
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Model,
@@ -14014,6 +14199,7 @@ Set of 16 key-value pairs that can be attached to a vector store. This can be us
     Summary:
 `auto` is the default value
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ResponseFormat,
@@ -14227,6 +14413,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ModifyAssistantRequest,
@@ -14278,6 +14465,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Summary:
 A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ToolResources,
@@ -14315,6 +14503,7 @@ Overrides the list of [file](/docs/api-reference/files) IDs made available to th
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CodeInterpreter,
@@ -14350,6 +14539,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: FileSearch,
@@ -14402,6 +14592,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
     Summary:
 `auto` is the default value
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ResponseFormat,
@@ -14471,6 +14662,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: DeleteAssistantResponse,
@@ -14505,6 +14697,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -14606,6 +14799,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ListAssistantsResponse,
@@ -14643,6 +14837,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: AssistantToolsCode,
@@ -14677,6 +14872,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
       }
     ],
     Summary: The type of tool being defined: `code_interpreter`,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -14714,6 +14910,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: AssistantToolsFileSearch,
@@ -14748,6 +14945,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
       }
     ],
     Summary: The type of tool being defined: `file_search`,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -14805,6 +15003,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: AssistantToolsFunction,
@@ -14839,6 +15038,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
       }
     ],
     Summary: The type of tool being defined: `function`,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -14894,6 +15094,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
       }
     ],
     Summary: Controls for how a thread will be truncated prior to the run. Use this to control the intial context window of the run.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: TruncationObject,
@@ -14944,6 +15145,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
       }
     ],
     Summary: The truncation strategy to use for the thread. The default is `auto`. If set to `last_messages`, the thread will be truncated to the n most recent messages in the thread. When set to `auto`, messages in the middle of the thread will be dropped to fit the context length of the model, `max_prompt_tokens`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -14966,6 +15168,7 @@ Controls which (if any) tool is called by the model.
 `required` means the model must call one or more tools before responding to the user.
 Specifying a particular tool like `{"type": "file_search"}` or `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: AssistantsApiToolChoiceOption,
@@ -15023,6 +15226,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
       }
     ],
     Summary: Specifies a tool the model should use. Use to force the model to call a specific tool.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: AssistantsNamedToolChoice,
@@ -15056,6 +15260,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Function,
@@ -15122,6 +15327,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
       }
     ],
     Summary: The type of the tool. If type is `function`, the function name must be set,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -15606,6 +15812,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       }
     ],
     Summary: Represents an execution run on a [thread](/docs/api-reference/threads).,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunObject,
@@ -15659,6 +15866,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       }
     ],
     Summary: Details on the action required to continue the run. Will be `null` if no action is required.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RequiredAction,
@@ -15692,6 +15900,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       }
     ],
     Summary: Details on the tool outputs needed for this run to continue.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: SubmitToolOutputs,
@@ -15726,6 +15935,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       }
     ],
     Summary: For now, this is always `submit_tool_outputs`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -15783,6 +15993,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       }
     ],
     Summary: The last error associated with this run. Will be `null` if there are no errors.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: LastError,
@@ -15849,6 +16060,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       }
     ],
     Summary: One of `server_error`, `rate_limit_exceeded`, or `invalid_prompt`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Code,
@@ -15888,6 +16100,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       }
     ],
     Summary: Details on why the run is incomplete. Will be `null` if the run is not incomplete.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: IncompleteDetails,
@@ -15938,6 +16151,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       }
     ],
     Summary: The reason why the run is incomplete. This will point to which specific token limit was reached over the course of the run.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Reason,
@@ -15972,6 +16186,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       }
     ],
     Summary: The object type, which is always `thread.run`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -16118,6 +16333,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       }
     ],
     Summary: The status of the run, which can be either `queued`, `in_progress`, `requires_action`, `cancelling`, `cancelled`, `failed`, `completed`, or `expired`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Status,
@@ -16186,6 +16402,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Summary:
 `none` means the model will not call any tools and instead generates a message. `auto` means the model can pick between generating a message or calling one or more tools. `required` means the model must call one or more tools before responding to the user.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ToolChoice,
@@ -16238,6 +16455,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Summary:
 `auto` is the default value
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ResponseFormat,
@@ -16534,6 +16752,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateRunRequest,
@@ -16840,6 +17059,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Model,
@@ -16908,6 +17128,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Summary:
 `none` means the model will not call any tools and instead generates a message. `auto` means the model can pick between generating a message or calling one or more tools. `required` means the model must call one or more tools before responding to the user.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ToolChoice,
@@ -16960,6 +17181,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Summary:
 `auto` is the default value
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ResponseFormat,
@@ -17061,6 +17283,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ListRunsResponse,
@@ -17097,6 +17320,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ModifyRunRequest,
@@ -17148,6 +17372,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: SubmitToolOutputsRunRequest,
@@ -17197,6 +17422,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ToolOutputs,
@@ -17266,6 +17492,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       }
     ],
     Summary: Tool call objects,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunToolCallObject,
@@ -17315,6 +17542,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       }
     ],
     Summary: The function definition.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Function,
@@ -17349,6 +17577,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       }
     ],
     Summary: The type of tool call the output is required for. For now, this is always `function`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -17651,6 +17880,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateThreadAndRunRequest,
@@ -17702,6 +17932,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Summary:
 A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ToolResources,
@@ -17739,6 +17970,7 @@ A list of [file](/docs/api-reference/files) IDs made available to the `code_inte
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CodeInterpreter,
@@ -17774,6 +18006,7 @@ The ID of the [vector store](/docs/api-reference/vector-stores/object) attached 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: FileSearch,
@@ -18080,6 +18313,7 @@ The ID of the [vector store](/docs/api-reference/vector-stores/object) attached 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Model,
@@ -18148,6 +18382,7 @@ The ID of the [vector store](/docs/api-reference/vector-stores/object) attached 
     Summary:
 `none` means the model will not call any tools and instead generates a message. `auto` means the model can pick between generating a message or calling one or more tools. `required` means the model must call one or more tools before responding to the user.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ToolChoice,
@@ -18200,6 +18435,7 @@ The ID of the [vector store](/docs/api-reference/vector-stores/object) attached 
     Summary:
 `auto` is the default value
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ResponseFormat,
@@ -18306,6 +18542,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: Represents a thread that contains [messages](/docs/api-reference/messages).,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ThreadObject,
@@ -18357,6 +18594,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Summary:
 A set of resources that are made available to the assistant's tools in this thread. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ToolResources,
@@ -18394,6 +18632,7 @@ A list of [file](/docs/api-reference/files) IDs made available to the `code_inte
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CodeInterpreter,
@@ -18429,6 +18668,7 @@ The [vector store](/docs/api-reference/vector-stores/object) attached to this th
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: FileSearch,
@@ -18463,6 +18703,7 @@ The [vector store](/docs/api-reference/vector-stores/object) attached to this th
       }
     ],
     Summary: The object type, which is always `thread`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -18533,6 +18774,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateThreadRequest,
@@ -18584,6 +18826,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Summary:
 A set of resources that are made available to the assistant's tools in this thread. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ToolResources,
@@ -18621,6 +18864,7 @@ A list of [file](/docs/api-reference/files) IDs made available to the `code_inte
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CodeInterpreter,
@@ -18674,6 +18918,7 @@ A helper to create a [vector store](/docs/api-reference/vector-stores/object) wi
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: FileSearch,
@@ -18728,6 +18973,7 @@ Set of 16 key-value pairs that can be attached to a vector store. This can be us
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: VectorStores,
@@ -18782,6 +19028,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ModifyThreadRequest,
@@ -18833,6 +19080,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Summary:
 A set of resources that are made available to the assistant's tools in this thread. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ToolResources,
@@ -18870,6 +19118,7 @@ A list of [file](/docs/api-reference/files) IDs made available to the `code_inte
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CodeInterpreter,
@@ -18905,6 +19154,7 @@ The [vector store](/docs/api-reference/vector-stores/object) attached to this th
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: FileSearch,
@@ -18974,6 +19224,7 @@ The [vector store](/docs/api-reference/vector-stores/object) attached to this th
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: DeleteThreadResponse,
@@ -19008,6 +19259,7 @@ The [vector store](/docs/api-reference/vector-stores/object) attached to this th
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -19109,6 +19361,7 @@ The [vector store](/docs/api-reference/vector-stores/object) attached to this th
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ListThreadsResponse,
@@ -19371,6 +19624,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: Represents a message within a [thread](/docs/api-reference/threads).,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: MessageObject,
@@ -19416,6 +19670,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: On an incomplete message, details about why the message is incomplete.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: IncompleteDetails,
@@ -19514,6 +19769,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: The reason the message is incomplete.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Reason,
@@ -19563,6 +19819,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Attachments,
@@ -19597,6 +19854,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: The object type, which is always `thread.message`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -19663,6 +19921,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: The status of the message, which can be either `in_progress`, `incomplete`, or `completed`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Status,
@@ -19713,6 +19972,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: The entity that produced the message. One of `user` or `assistant`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Role,
@@ -19784,6 +20044,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Summary:
 Represents a message delta i.e. any changed fields on a message during streaming.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: MessageDeltaObject,
@@ -19839,6 +20100,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
       }
     ],
     Summary: The delta containing the fields that have changed on the Message.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Delta,
@@ -19889,6 +20151,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
       }
     ],
     Summary: The entity that produced the message. One of `user` or `assistant`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Role,
@@ -19923,6 +20186,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
       }
     ],
     Summary: The object type, which is always `thread.message.delta`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -20017,6 +20281,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateMessageRequest,
@@ -20066,6 +20331,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Attachments,
@@ -20120,6 +20386,7 @@ The role of the entity that is creating the message. Allowed values include:
 - `user`: Indicates the message is sent by an actual user and should be used in most cases to represent user-generated messages.
 - `assistant`: Indicates the message is generated by the assistant. Use this value to insert messages from the assistant into the conversation.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Role,
@@ -20156,6 +20423,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ModifyMessageRequest,
@@ -20225,6 +20493,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: DeleteMessageResponse,
@@ -20259,6 +20528,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -20360,6 +20630,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ListMessagesResponse,
@@ -20413,6 +20684,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: References an image [File](/docs/api-reference/files) in the content of a message.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: MessageContentImageFileObject,
@@ -20473,6 +20745,7 @@ Specifies the detail level of the image if specified by the user. `low` uses few
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ImageFile,
@@ -20541,6 +20814,7 @@ Specifies the detail level of the image if specified by the user. `low` uses few
     Summary:
 Specifies the detail level of the image if specified by the user. `low` uses fewer tokens, you can opt in to high resolution using `high`.
 <br/>Default Value: auto,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Detail,
@@ -20575,6 +20849,7 @@ Specifies the detail level of the image if specified by the user. `low` uses few
       }
     ],
     Summary: Always `image_file`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -20644,6 +20919,7 @@ Specifies the detail level of the image if specified by the user. `low` uses few
       }
     ],
     Summary: References an image [File](/docs/api-reference/files) in the content of a message.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: MessageDeltaContentImageFileObject,
@@ -20704,6 +20980,7 @@ Specifies the detail level of the image if specified by the user. `low` uses few
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ImageFile,
@@ -20772,6 +21049,7 @@ Specifies the detail level of the image if specified by the user. `low` uses few
     Summary:
 Specifies the detail level of the image if specified by the user. `low` uses fewer tokens, you can opt in to high resolution using `high`.
 <br/>Default Value: auto,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Detail,
@@ -20806,6 +21084,7 @@ Specifies the detail level of the image if specified by the user. `low` uses few
       }
     ],
     Summary: Always `image_file`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -20859,6 +21138,7 @@ Specifies the detail level of the image if specified by the user. `low` uses few
       }
     ],
     Summary: References an image URL in the content of a message.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: MessageContentImageUrlObject,
@@ -20919,6 +21199,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ImageUrl,
@@ -20987,6 +21268,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     Summary:
 Specifies the detail level of the image. `low` uses fewer tokens, you can opt in to high resolution using `high`. Default value is `auto`
 <br/>Default Value: auto,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Detail,
@@ -21021,6 +21303,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
       }
     ],
     Summary: The type of the content part.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -21090,6 +21373,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
       }
     ],
     Summary: References an image URL in the content of a message.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: MessageDeltaContentImageUrlObject,
@@ -21150,6 +21434,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ImageUrl,
@@ -21218,6 +21503,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
     Summary:
 Specifies the detail level of the image. `low` uses fewer tokens, you can opt in to high resolution using `high`.
 <br/>Default Value: auto,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Detail,
@@ -21252,6 +21538,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
       }
     ],
     Summary: Always `image_url`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -21305,6 +21592,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
       }
     ],
     Summary: The text content that is part of a message.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: MessageContentTextObject,
@@ -21354,6 +21642,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Text,
@@ -21388,6 +21677,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
       }
     ],
     Summary: Always `text`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -21441,6 +21731,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
       }
     ],
     Summary: The text content that is part of a message.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: MessageRequestContentTextObject,
@@ -21475,6 +21766,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
       }
     ],
     Summary: Always `text`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -21576,6 +21868,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
       }
     ],
     Summary: A citation within the message that points to a specific quote from a specific File associated with the assistant or the message. Generated when the assistant uses the "file_search" tool to search files.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: MessageContentTextAnnotationsFileCitationObject,
@@ -21625,6 +21918,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: FileCitation,
@@ -21659,6 +21953,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
       }
     ],
     Summary: Always `file_citation`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -21760,6 +22055,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
       }
     ],
     Summary: A URL for the file that's generated when the assistant used the `code_interpreter` tool to generate a file.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: MessageContentTextAnnotationsFilePathObject,
@@ -21793,6 +22089,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: FilePath,
@@ -21827,6 +22124,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
       }
     ],
     Summary: Always `file_path`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -21896,6 +22194,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
       }
     ],
     Summary: The text content that is part of a message.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: MessageDeltaContentTextObject,
@@ -21945,6 +22244,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Text,
@@ -21979,6 +22279,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
       }
     ],
     Summary: Always `text`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -22096,6 +22397,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
       }
     ],
     Summary: A citation within the message that points to a specific quote from a specific File associated with the assistant or the message. Generated when the assistant uses the "file_search" tool to search files.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: MessageDeltaContentTextAnnotationsFileCitationObject,
@@ -22145,6 +22447,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: FileCitation,
@@ -22179,6 +22482,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
       }
     ],
     Summary: Always `file_citation`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -22296,6 +22600,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
       }
     ],
     Summary: A URL for the file that's generated when the assistant used the `code_interpreter` tool to generate a file.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: MessageDeltaContentTextAnnotationsFilePathObject,
@@ -22329,6 +22634,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: FilePath,
@@ -22363,6 +22669,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
       }
     ],
     Summary: Always `file_path`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -22667,6 +22974,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Summary:
 Represents a step in execution of a run.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunStepObject,
@@ -22683,6 +22991,7 @@ Represents a step in execution of a run.
     GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: The details of the run step.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: StepDetails,
@@ -22738,6 +23047,7 @@ Represents a step in execution of a run.
       }
     ],
     Summary: The last error associated with this run step. Will be `null` if there are no errors.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: LastError,
@@ -22788,6 +23098,7 @@ Represents a step in execution of a run.
       }
     ],
     Summary: One of `server_error` or `rate_limit_exceeded`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Code,
@@ -22822,6 +23133,7 @@ Represents a step in execution of a run.
       }
     ],
     Summary: The object type, which is always `thread.run.step`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -22872,6 +23184,7 @@ Represents a step in execution of a run.
       }
     ],
     Summary: The type of run step, which can be either `message_creation` or `tool_calls`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -22970,6 +23283,7 @@ Represents a step in execution of a run.
       }
     ],
     Summary: The status of the run step, which can be either `in_progress`, `cancelled`, `failed`, `completed`, or `expired`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Status,
@@ -23041,6 +23355,7 @@ Represents a step in execution of a run.
     Summary:
 Represents a run step delta i.e. any changed fields on a run step during streaming.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunStepDeltaObject,
@@ -23075,6 +23390,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
       }
     ],
     Summary: The delta containing the fields that have changed on the run step.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Delta,
@@ -23091,6 +23407,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
     GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: The details of the run step.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: StepDetails,
@@ -23125,6 +23442,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
       }
     ],
     Summary: The object type, which is always `thread.run.step.delta`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -23226,6 +23544,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ListRunStepsResponse,
@@ -23279,6 +23598,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
       }
     ],
     Summary: Details of the message creation by the run step.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunStepDetailsMessageCreationObject,
@@ -23312,6 +23632,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: MessageCreation,
@@ -23346,6 +23667,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
       }
     ],
     Summary: Always `message_creation`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -23399,6 +23721,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
       }
     ],
     Summary: Details of the message creation by the run step.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunStepDeltaStepDetailsMessageCreationObject,
@@ -23432,6 +23755,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: MessageCreation,
@@ -23466,6 +23790,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
       }
     ],
     Summary: Always `message_creation`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -23521,6 +23846,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: Details of the tool call.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunStepDetailsToolCallsObject,
@@ -23555,6 +23881,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: Always `tool_calls`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -23610,6 +23937,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: Details of the tool call.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunStepDeltaStepDetailsToolCallsObject,
@@ -23644,6 +23972,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: Always `tool_calls`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -23713,6 +24042,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: Details of the Code Interpreter tool call the run step was involved in.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunStepDetailsToolCallsCodeObject,
@@ -23762,6 +24092,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: The Code Interpreter tool call definition.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CodeInterpreter,
@@ -23778,6 +24109,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Outputs,
@@ -23812,6 +24144,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: The type of tool call. This is always going to be `code_interpreter` for this type of tool call.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -23897,6 +24230,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: Details of the Code Interpreter tool call the run step was involved in.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunStepDeltaStepDetailsToolCallsCodeObject,
@@ -23946,6 +24280,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: The Code Interpreter tool call definition.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CodeInterpreter,
@@ -23962,6 +24297,7 @@ An array of tool calls the run step was involved in. These can be associated wit
     GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Outputs,
@@ -23996,6 +24332,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: The type of tool call. This is always going to be `code_interpreter` for this type of tool call.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -24049,6 +24386,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: Text output from the Code Interpreter tool call as part of a run step.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunStepDetailsToolCallsCodeOutputLogsObject,
@@ -24083,6 +24421,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: Always `logs`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -24152,6 +24491,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: Text output from the Code Interpreter tool call as part of a run step.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject,
@@ -24186,6 +24526,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: Always `logs`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -24239,6 +24580,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunStepDetailsToolCallsCodeOutputImageObject,
@@ -24272,6 +24614,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Image,
@@ -24306,6 +24649,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: Always `image`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -24375,6 +24719,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunStepDeltaStepDetailsToolCallsCodeOutputImageObject,
@@ -24408,6 +24753,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Image,
@@ -24442,6 +24788,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: Always `image`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -24511,6 +24858,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunStepDetailsToolCallsFileSearchObject,
@@ -24545,6 +24893,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: The type of tool call. This is always going to be `file_search` for this type of tool call.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -24630,6 +24979,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunStepDeltaStepDetailsToolCallsFileSearchObject,
@@ -24664,6 +25014,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: The type of tool call. This is always going to be `file_search` for this type of tool call.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -24733,6 +25084,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunStepDetailsToolCallsFunctionObject,
@@ -24798,6 +25150,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: The definition of the function that was called.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Function,
@@ -24832,6 +25185,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: The type of tool call. This is always going to be `function` for this type of tool call.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -24917,6 +25271,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunStepDeltaStepDetailsToolCallsFunctionObject,
@@ -24982,6 +25337,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: The definition of the function that was called.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Function,
@@ -25016,6 +25372,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: The type of tool call. This is always going to be `function` for this type of tool call.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Type,
@@ -25069,6 +25426,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: The expiration policy for a vector store.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: VectorStoreExpirationAfter,
@@ -25103,6 +25461,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       }
     ],
     Summary: Anchor timestamp after which the expiration policy applies. Supported anchors: `last_active_at`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Anchor,
@@ -25314,6 +25673,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: A vector store is a collection of processed files can be used by the `file_search` tool.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: VectorStoreObject,
@@ -25411,6 +25771,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: FileCounts,
@@ -25445,6 +25806,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: The object type, which is always `vector_store`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -25511,6 +25873,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: The status of the vector store, which can be either `expired`, `in_progress`, or `completed`. A status of `completed` indicates that the vector store is ready for use.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Status,
@@ -25598,6 +25961,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateVectorStoreRequest,
@@ -25669,6 +26033,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: UpdateVectorStoreRequest,
@@ -25770,6 +26135,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ListVectorStoresResponse,
@@ -25839,6 +26205,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: DeleteVectorStoreResponse,
@@ -25873,6 +26240,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -26016,6 +26384,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: A list of files attached to a vector store.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: VectorStoreFileObject,
@@ -26075,6 +26444,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: The last error associated with this vector store file. Will be `null` if there are no errors.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: LastError,
@@ -26157,6 +26527,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: One of `server_error` or `rate_limit_exceeded`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Code,
@@ -26191,6 +26562,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: The object type, which is always `vector_store.file`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -26273,6 +26645,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: The status of the vector store file, which can be either `in_progress`, `completed`, `cancelled`, or `failed`. The status `completed` indicates that the vector store file is ready for use.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Status,
@@ -26306,6 +26679,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateVectorStoreFileRequest,
@@ -26407,6 +26781,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ListVectorStoreFilesResponse,
@@ -26476,6 +26851,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: DeleteVectorStoreFileResponse,
@@ -26510,6 +26886,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -26637,6 +27014,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: A batch of files attached to a vector store.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: VectorStoreFileBatchObject,
@@ -26734,6 +27112,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: FileCounts,
@@ -26768,6 +27147,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: The object type, which is always `vector_store.file_batch`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -26850,6 +27230,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: The status of the vector store files batch, which can be either `in_progress`, `completed`, `cancelled` or `failed`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Status,
@@ -26883,6 +27264,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateVectorStoreFileBatchRequest,
@@ -26919,6 +27301,7 @@ We may add additional events over time, so we recommend handling unknown events 
 in your code. See the [Assistants API quickstart](/docs/assistants/overview) to learn how to
 integrate the Assistants API with streaming.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: AssistantStreamEvent,
@@ -26935,6 +27318,7 @@ integrate the Assistants API with streaming.
     GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ThreadStreamEvent,
@@ -26951,6 +27335,7 @@ integrate the Assistants API with streaming.
     GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunStreamEvent,
@@ -26967,6 +27352,7 @@ integrate the Assistants API with streaming.
     GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunStepStreamEvent,
@@ -26983,6 +27369,7 @@ integrate the Assistants API with streaming.
     GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: MessageStreamEvent,
@@ -27041,6 +27428,7 @@ integrate the Assistants API with streaming.
       }
     ],
     Summary: Occurs when an [error](/docs/guides/error-codes/api-errors) occurs. This can happen due to an internal server error or a timeout.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ErrorEvent,
@@ -27075,6 +27463,7 @@ integrate the Assistants API with streaming.
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Event,
@@ -27132,6 +27521,7 @@ integrate the Assistants API with streaming.
       }
     ],
     Summary: Occurs when a stream ends.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: DoneEvent,
@@ -27166,6 +27556,7 @@ integrate the Assistants API with streaming.
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Event,
@@ -27200,6 +27591,7 @@ integrate the Assistants API with streaming.
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Data,
@@ -27562,6 +27954,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Batch,
@@ -27611,6 +28004,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Errors,
@@ -27692,6 +28086,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Data,
@@ -27757,6 +28152,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: The request counts for different statuses within the batch.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RequestCounts,
@@ -27791,6 +28187,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: The object type, which is always `batch`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -27937,6 +28334,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: The current status of the batch.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Status,
@@ -28006,6 +28404,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: The per-line object of the batch input file,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: BatchRequestInput,
@@ -28040,6 +28439,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: The HTTP method to be used for the request. Currently only `POST` is supported.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Method,
@@ -28121,6 +28521,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: The per-line object of the batch output and error files,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: BatchRequestOutput,
@@ -28187,6 +28588,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Response,
@@ -28236,6 +28638,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: For requests that failed with a non-HTTP error, this will contain more information on the cause of the failure.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Error,
@@ -28339,6 +28742,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ListBatchesResponse,
@@ -28373,6 +28777,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Object,
@@ -28424,6 +28829,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     Summary:
 <br/>Default Value: desc,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ListAssistantsOrder,
@@ -28475,6 +28881,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     Summary:
 <br/>Default Value: desc,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ListMessagesOrder,
@@ -28526,6 +28933,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     Summary:
 <br/>Default Value: desc,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ListRunsOrder,
@@ -28577,6 +28985,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     Summary:
 <br/>Default Value: desc,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ListRunStepsOrder,
@@ -28628,6 +29037,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     Summary:
 <br/>Default Value: desc,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ListVectorStoresOrder,
@@ -28679,6 +29089,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     Summary:
 <br/>Default Value: desc,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ListVectorStoreFilesOrder,
@@ -28761,6 +29172,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ListVectorStoreFilesFilter,
@@ -28812,6 +29224,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     Summary:
 <br/>Default Value: desc,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ListFilesInVectorStoreBatchOrder,
@@ -28894,6 +29307,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ListFilesInVectorStoreBatchFilter,

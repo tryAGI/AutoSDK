@@ -7,12 +7,14 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class ChatCompletionFunctions
     {
         /// <summary>
         /// A description of what the function does, used by the model to choose when and how to call the function.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? Description { get; set; }
 
         /// <summary>
@@ -20,6 +22,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public required string Name { get; set; }
 
         /// <summary>
@@ -27,6 +30,7 @@ namespace G
         /// Omitting `parameters` defines a function with an empty parameter list.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public FunctionParameters? Parameters { get; set; }
 
         /// <summary>

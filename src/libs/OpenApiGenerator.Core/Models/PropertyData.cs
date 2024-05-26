@@ -14,6 +14,7 @@ public readonly record struct PropertyData(
     bool? ParameterExplode,
     JsonSerializerType JsonSerializerType,
     string? DefaultValue,
+    bool IsDeprecated,
     string Summary)
 {
     public static PropertyData Default => new(
@@ -25,6 +26,7 @@ public readonly record struct PropertyData(
         ParameterStyle: null,
         ParameterExplode: null,
         DefaultValue: null,
+        IsDeprecated: false,
         JsonSerializerType: JsonSerializerType.SystemTextJson,
         Summary: string.Empty);
 
@@ -63,6 +65,7 @@ public readonly record struct PropertyData(
             ParameterStyle: parameterStyle,
             ParameterExplode: parameterExplode,
             JsonSerializerType: settings.JsonSerializerType,
+            IsDeprecated: schema.Value.Deprecated,
             DefaultValue: schema.Value.GetDefaultValue(type: TypeData.FromSchema(schema, settings with
             {
                 JsonSerializerType = JsonSerializerType.NewtonsoftJson

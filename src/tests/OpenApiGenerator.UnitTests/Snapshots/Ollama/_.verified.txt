@@ -251,6 +251,7 @@ How long (in minutes) to keep the model loaded in memory.
       }
     ],
     Summary: Request class for the generate endpoint.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: GenerateCompletionRequest,
@@ -291,6 +292,7 @@ Enable JSON mode by setting the format parameter to json. This will structure th
 
 Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Format,
@@ -900,6 +902,7 @@ Sets the number of threads to use during computation. By default, Ollama will de
       }
     ],
     Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RequestOptions,
@@ -922,6 +925,7 @@ Enable JSON mode by setting the format parameter to json. This will structure th
 
 Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ResponseFormat,
@@ -1141,6 +1145,7 @@ Time in nanoseconds spent generating the response.
       }
     ],
     Summary: The response class for the generate endpoint.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: GenerateCompletionResponse,
@@ -1314,6 +1319,7 @@ How long (in minutes) to keep the model loaded in memory.
       }
     ],
     Summary: Request class for the chat endpoint.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: GenerateChatCompletionRequest,
@@ -1354,6 +1360,7 @@ Enable JSON mode by setting the format parameter to json. This will structure th
 
 Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Format,
@@ -1556,6 +1563,7 @@ Time in nanoseconds spent generating the response.
       }
     ],
     Summary: The response class for the chat endpoint.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: GenerateChatCompletionResponse,
@@ -1631,6 +1639,7 @@ The content of the message
       }
     ],
     Summary: A message in the chat endpoint,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Message,
@@ -1697,6 +1706,7 @@ The content of the message
       }
     ],
     Summary: The role of the message,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Role,
@@ -1803,6 +1813,7 @@ Text to generate embeddings for.
       }
     ],
     Summary: Generate embeddings from a model.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: GenerateEmbeddingRequest,
@@ -1838,6 +1849,7 @@ The embedding for the prompt.
       }
     ],
     Summary: Returns the embedding information.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: GenerateEmbeddingResponse,
@@ -1914,6 +1926,7 @@ If `false` the response will be returned as a single response object, otherwise 
       }
     ],
     Summary: Create model request object.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateModelRequest,
@@ -1955,6 +1968,7 @@ If `false` the response will be returned as a single response object, otherwise 
       }
     ],
     Summary: Response object for creating a model. When finished, `status` is `success`.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateModelResponse,
@@ -2021,6 +2035,7 @@ If `false` the response will be returned as a single response object, otherwise 
       }
     ],
     Summary: Status creating the model,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Status,
@@ -2037,6 +2052,7 @@ If `false` the response will be returned as a single response object, otherwise 
     GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: Status creating the model,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateModelStatus,
@@ -2070,6 +2086,7 @@ If `false` the response will be returned as a single response object, otherwise 
       }
     ],
     Summary: Response class for the list models endpoint.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ModelsResponse,
@@ -2144,6 +2161,7 @@ Size of the model on disk.
       }
     ],
     Summary: A model available locally.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Model,
@@ -2182,6 +2200,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
       }
     ],
     Summary: Request class for the show model info endpoint.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ModelInfoRequest,
@@ -2271,6 +2290,7 @@ The prompt template for the model.
       }
     ],
     Summary: Details about a model including modelfile, template, parameters, license, and system prompt.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ModelInfo,
@@ -2324,6 +2344,7 @@ Name of the new model.
       }
     ],
     Summary: Request class for copying a model.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CopyModelRequest,
@@ -2362,6 +2383,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
       }
     ],
     Summary: Request class for deleting a model.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: DeleteModelRequest,
@@ -2442,6 +2464,7 @@ If `false` the response will be returned as a single response object, otherwise 
       }
     ],
     Summary: Request class for pulling a model.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: PullModelRequest,
@@ -2551,6 +2574,7 @@ The first object is the manifest. Then there is a series of downloading response
 
 The number of files to be downloaded depends on the number of layers specified in the manifest.
 ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: PullModelResponse,
@@ -2667,6 +2691,7 @@ The number of files to be downloaded depends on the number of layers specified i
     Summary:
 Status pulling the model.
 <br/>Example: pulling manifest,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Status,
@@ -2685,6 +2710,7 @@ Status pulling the model.
     Summary:
 Status pulling the model.
 <br/>Example: pulling manifest,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: PullModelStatus,
@@ -2762,6 +2788,7 @@ If `false` the response will be returned as a single response object, otherwise 
       }
     ],
     Summary: Request class for pushing a model.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: PushModelRequest,
@@ -2841,6 +2868,7 @@ total size of the model
       }
     ],
     Summary: Response class for pushing a model.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: PushModelResponse,
@@ -2923,6 +2951,7 @@ total size of the model
       }
     ],
     Summary: Status pushing the model.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Status,
@@ -2939,6 +2968,7 @@ total size of the model
     GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: Status pushing the model.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: PushModelStatus,

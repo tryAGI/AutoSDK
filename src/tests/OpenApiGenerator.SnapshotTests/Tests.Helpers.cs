@@ -52,7 +52,9 @@ public partial class Tests : VerifyBase
             .AddAdditionalTexts(ImmutableArray.Create(additionalTexts))
             .WithUpdatedAnalyzerConfigOptions(new DictionaryAnalyzerConfigOptionsProvider(globalOptions))
             .RunGeneratorsAndUpdateCompilation(compilation, out compilation, out _, cancellationToken);
-        var diagnostics = compilation.GetDiagnostics(cancellationToken);
+        var diagnostics = compilation.GetDiagnostics(cancellationToken)
+            .Where(x => x.Id != "CS0618")
+            .ToImmutableArray();
 
         await Task.WhenAll(
             Verify(diagnostics.NormalizeLocations())

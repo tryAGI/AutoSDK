@@ -91,6 +91,7 @@
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunUpdateSchemaExtended,
@@ -308,6 +309,7 @@
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateChatCompletionRequest,
@@ -394,6 +396,7 @@
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionRequestMessage,
@@ -447,6 +450,7 @@
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionFunctionCall,
@@ -519,6 +523,7 @@
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionFunctions,
@@ -572,6 +577,7 @@
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionFunctionParameters,
@@ -847,6 +853,7 @@
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateCompletionRequest,
@@ -974,6 +981,7 @@
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateChatCompletionResponse,
@@ -1047,6 +1055,7 @@
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionChoice,
@@ -1117,6 +1126,7 @@
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ChatCompletionResponseMessage,
@@ -1188,6 +1198,7 @@
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CompletionUsage,
@@ -1307,6 +1318,7 @@
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: CreateCompletionResponse,
@@ -1399,6 +1411,7 @@
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Choice,
@@ -1488,6 +1501,7 @@
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: Logprobs,
@@ -1521,6 +1535,7 @@
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: HTTPValidationError,
@@ -1586,6 +1601,7 @@
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: ValidationError,
@@ -1929,6 +1945,7 @@
       }
     ],
     Summary: Create class for a run object, with additional typehints.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunCreateSchemaExtended,
@@ -2059,6 +2076,7 @@
       }
     ],
     Summary: Enum for run types.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunType,
@@ -2075,6 +2093,7 @@
     GenerateSuperTypeForJsonSerializerContext: false,
     Properties: null,
     Summary: Enum for run types.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunTypeEnum,
@@ -2418,6 +2437,7 @@
       }
     ],
     Summary: Create class for a Run object.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunCreateSchema,
@@ -2548,6 +2568,7 @@
       }
     ],
     Summary: Enum for run types.,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: RunType,

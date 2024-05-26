@@ -116,6 +116,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: PredictionRequest,
@@ -198,6 +199,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: WebhookEventsFilter,
@@ -305,6 +307,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: TrainingRequest,
@@ -387,6 +390,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: WebhookEventsFilter,
@@ -528,6 +532,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: VersionPredictionRequest,
@@ -610,6 +615,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       }
     ],
     Summary: ,
+    IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
     Name: WebhookEventsFilter,

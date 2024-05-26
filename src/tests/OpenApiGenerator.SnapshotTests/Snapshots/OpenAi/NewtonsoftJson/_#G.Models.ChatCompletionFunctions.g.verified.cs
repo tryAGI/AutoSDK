@@ -7,18 +7,21 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class ChatCompletionFunctions
     {
         /// <summary>
         /// A description of what the function does, used by the model to choose when and how to call the function.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? Description { get; set; }
 
         /// <summary>
         /// The name of the function to be called. Must be a-z, A-Z, 0-9, or contain underscores and dashes, with a maximum length of 64.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string Name { get; set; } = default!;
 
         /// <summary>
@@ -26,6 +29,7 @@ namespace G
         /// Omitting `parameters` defines a function with an empty parameter list.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parameters")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public FunctionParameters? Parameters { get; set; }
 
         /// <summary>
