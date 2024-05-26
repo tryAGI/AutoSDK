@@ -18,12 +18,12 @@ public partial class JsonTests
 
         var json = JsonSerializer.Serialize(value, new JsonSerializerOptions
         {
-            Converters = { new AnyOfConverterSystemTextJson<PullModelResponse2, PullModelResponse>() }
+            Converters = { new AnyOfConverterFactorySystemTextJson() }
         });
         json.Should().Be("{\"status\":\"pulling manifest\"}");
         var response = JsonSerializer.Deserialize<AnyOf<PullModelResponse2, PullModelResponse>>(json, new JsonSerializerOptions
         {
-            Converters = { new AnyOfConverterSystemTextJson<PullModelResponse2, PullModelResponse>() }
+            Converters = { new AnyOfConverterFactorySystemTextJson() }
         });
         response.Should().NotBeNull();
         response.First.Should().NotBeNull();
@@ -40,12 +40,12 @@ public partial class JsonTests
 
         var json = JsonSerializer.Serialize(value, new JsonSerializerOptions
         {
-            Converters = { new AnyOfConverterSystemTextJson<PullModelResponse2, PullModelResponse>() }
+            Converters = { new AnyOfConverterFactorySystemTextJson() }
         });
         json.Should().Be("{\"status\":0}");
         var response = JsonSerializer.Deserialize<AnyOf<PullModelResponse2, PullModelResponse>>(json, new JsonSerializerOptions
         {
-            Converters = { new AnyOfConverterSystemTextJson<PullModelResponse2, PullModelResponse>() }
+            Converters = { new AnyOfConverterFactorySystemTextJson() }
         });
         response.Should().NotBeNull();
         response.Second.Should().NotBeNull();
@@ -59,15 +59,13 @@ public partial class JsonTests
 
         var serialization = () => JsonSerializer.Serialize(value, new JsonSerializerOptions
         {
-            Converters = { new AnyOfConverterSystemTextJson<PullModelResponse2, PullModelResponse>() }
+            Converters = { new AnyOfConverterFactorySystemTextJson() }
         });
         serialization.Should().Throw<JsonException>();
         
         var deserialization = () => JsonSerializer.Deserialize<AnyOf<PetByAge, PetByType>>("\"null\"", new JsonSerializerOptions
         {
-            Converters = {
-                new AnyOfConverterSystemTextJson<PetByAge, PetByType>(),
-            }
+            Converters = { new AnyOfConverterFactorySystemTextJson() }
         });
         deserialization.Should().Throw<JsonException>();
     }
@@ -78,9 +76,7 @@ public partial class JsonTests
         const string json = "{\n  \"age\": 1\n}";
         var response = JsonSerializer.Deserialize<AnyOf<PetByAge, PetByType>>(json, new JsonSerializerOptions
         {
-            Converters = {
-                new AnyOfConverterSystemTextJson<PetByAge, PetByType>(),
-            }
+            Converters = { new AnyOfConverterFactorySystemTextJson() }
         });
         response.Should().NotBeNull();
         response.IsFirst.Should().BeTrue();
@@ -96,9 +92,7 @@ public partial class JsonTests
         const string json = "{\n  \"pet_type\": \"Cat\",\n  \"hunts\": true\n}";
         var response = JsonSerializer.Deserialize<AnyOf<PetByAge, PetByType>>(json, new JsonSerializerOptions
         {
-            Converters = {
-                new AnyOfConverterSystemTextJson<PetByAge, PetByType>(),
-            }
+            Converters = { new AnyOfConverterFactorySystemTextJson() }
         });
         response.Should().NotBeNull();
         response.IsFirst.Should().BeFalse();
@@ -115,9 +109,7 @@ public partial class JsonTests
         const string json = "{\n  \"nickname\": \"Fido\",\n  \"pet_type\": \"Dog\",\n  \"age\": 4\n}";
         var response = JsonSerializer.Deserialize<AnyOf<PetByAge, PetByType>>(json, new JsonSerializerOptions
         {
-            Converters = {
-                new AnyOfConverterSystemTextJson<PetByAge, PetByType>(),
-            }
+            Converters = { new AnyOfConverterFactorySystemTextJson() }
         });
         response.Should().NotBeNull();
         response.IsFirst.Should().BeTrue();
@@ -136,9 +128,7 @@ public partial class JsonTests
         const string json = "{\n  \"nickname\": \"Mr. Paws\",\n  \"hunts\": false\n}";
         var deserialization = () => JsonSerializer.Deserialize<AnyOf<PetByAge, PetByType>>(json, new JsonSerializerOptions
         {
-            Converters = {
-                new AnyOfConverterSystemTextJson<PetByAge, PetByType>(),
-            }
+            Converters = { new AnyOfConverterFactorySystemTextJson() }
         });
         deserialization.Should().Throw<JsonException>();
     }

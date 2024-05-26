@@ -28,6 +28,21 @@ namespace AnyOfTypes
         public bool IsFirst => First != null;
         public bool IsSecond => Second != null;
 
+        public bool Validate()
+        {
+            return IsAnyOf;
+        }
+        
+        public bool IsAnyOf =>
+            IsFirst || IsSecond;
+        
+        public bool IsOneOf =>
+            IsFirst && !IsSecond ||
+            !IsFirst && IsSecond;
+        
+        public bool IsAllOf =>
+            IsFirst && IsSecond;
+
         public static implicit operator AnyOf<TFirst, TSecond>(TFirst value) => new AnyOf<TFirst, TSecond>(value);
 
         public static implicit operator TFirst?(AnyOf<TFirst, TSecond> @this) => @this.First;

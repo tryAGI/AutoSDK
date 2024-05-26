@@ -23,20 +23,25 @@ namespace AnyOfTypes
     [DebuggerDisplay("{_thisType}, AnyOfType = {_currentType}; Type = {_currentValueType?.Name}; Value = '{ToString()}'")]
     public readonly struct OneOf<TFirst, TSecond> : IEquatable<OneOf<TFirst, TSecond>>
     {
-        private readonly string _thisType => $"AnyOf<{typeof(TFirst).Name}, {typeof(TSecond).Name}>";
-        private readonly int _numberOfTypes;
-        private readonly object? _currentValue;
-        private readonly Type _currentValueType;
-        private readonly AnyOfType _currentType;
+        private readonly string _thisType => $"OneOf<{typeof(TFirst).Name}, {typeof(TSecond).Name}>";
 
-        private readonly TFirst? _first;
-        private readonly TSecond? _second;
+        public bool IsFirst => First != null;
+        public bool IsSecond => Second != null;
 
-        public readonly AnyOfType[] AnyOfTypes => new[] { AnyOfType.First, AnyOfType.Second };
-        public readonly Type[] Types => new[] { typeof(TFirst), typeof(TSecond) };
-        public bool IsUndefined => _currentType == AnyOfType.Undefined;
-        public bool IsFirst => _currentType == AnyOfType.First;
-        public bool IsSecond => _currentType == AnyOfType.Second;
+        public bool Validate()
+        {
+            return IsOneOf;
+        }
+        
+        public bool IsAnyOf =>
+            IsFirst || IsSecond;
+        
+        public bool IsOneOf =>
+            IsFirst && !IsSecond ||
+            !IsFirst && IsSecond;
+        
+        public bool IsAllOf =>
+            IsFirst && IsSecond;
 
         public static implicit operator OneOf<TFirst, TSecond>(TFirst value) => new OneOf<TFirst, TSecond>(value);
 
@@ -44,22 +49,10 @@ namespace AnyOfTypes
 
         public OneOf(TFirst value)
         {
-            _numberOfTypes = 2;
-            _currentType = AnyOfType.First;
-            _currentValue = value;
-            _currentValueType = typeof(TFirst);
-            _first = value;
-            _second = default;
+            First = value;
         }
 
-        public TFirst? First
-        {
-            get
-            {
-               Validate(AnyOfType.First);
-               return _first;
-            }
-        }
+        public TFirst? First { get; init; }
 
         public static implicit operator OneOf<TFirst, TSecond>(TSecond value) => new OneOf<TFirst, TSecond>(value);
 
@@ -67,64 +60,17 @@ namespace AnyOfTypes
 
         public OneOf(TSecond value)
         {
-            _numberOfTypes = 2;
-            _currentType = AnyOfType.Second;
-            _currentValue = value;
-            _currentValueType = typeof(TSecond);
-            _second = value;
-            _first = default;
+            Second = value;
         }
 
-        public TSecond? Second
-        {
-            get
-            {
-               Validate(AnyOfType.Second);
-               return _second;
-            }
-        }
-
-        private void Validate(AnyOfType desiredType)
-        {
-            if (desiredType != _currentType)
-            {
-                throw new InvalidOperationException($"Attempting to get {desiredType} when {_currentType} is set");
-            }
-        }
-
-        public AnyOfType CurrentType
-        {
-            get
-            {
-               return _currentType;
-            }
-        }
-
-        public object? CurrentValue
-        {
-            get
-            {
-               return _currentValue;
-            }
-        }
-
-        public Type CurrentValueType
-        {
-            get
-            {
-               return _currentValueType;
-            }
-        }
+        public TSecond? Second { get; init; }
 
         public override int GetHashCode()
         {
             var fields = new object?[]
             {
-                _numberOfTypes,
-                _currentValue,
-                _currentType,
-                _first,
-                _second,
+                First,
+                Second,
                 typeof(TFirst),
                 typeof(TSecond),
             };
@@ -133,11 +79,8 @@ namespace AnyOfTypes
 
         public bool Equals(OneOf<TFirst, TSecond> other)
         {
-            return _currentType == other._currentType &&
-                   _numberOfTypes == other._numberOfTypes &&
-                   EqualityComparer<object?>.Default.Equals(_currentValue, other._currentValue) &&
-                    EqualityComparer<TFirst?>.Default.Equals(_first, other._first) &&
-                    EqualityComparer<TSecond?>.Default.Equals(_second, other._second);
+            return EqualityComparer<TFirst?>.Default.Equals(First, other.First) &&
+                   EqualityComparer<TSecond?>.Default.Equals(Second, other.Second);
         }
 
         public static bool operator ==(OneOf<TFirst, TSecond> obj1, OneOf<TFirst, TSecond> obj2)
@@ -155,9 +98,9 @@ namespace AnyOfTypes
             return obj is OneOf<TFirst, TSecond> o && Equals(o);
         }
 
-        public override string? ToString()
+        public override string ToString()
         {
-            return IsUndefined ? null : $"{_currentValue}";
+            return $"{First}{Second}";
         }
     }
 }

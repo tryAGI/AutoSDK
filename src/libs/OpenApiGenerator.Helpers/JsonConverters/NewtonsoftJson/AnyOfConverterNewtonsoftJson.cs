@@ -5,6 +5,7 @@ using Newtonsoft.Json.Linq;
 
 #nullable enable
 
+// ReSharper disable once CheckNamespace
 namespace OpenApiGenerator.JsonConverters;
 
 public class AnyOfConverterNewtonsoftJson<T1, T2> : JsonConverter<AnyOf<T1, T2>>
@@ -41,8 +42,12 @@ public class AnyOfConverterNewtonsoftJson<T1, T2> : JsonConverter<AnyOf<T1, T2>>
         {
         }
         
-        if (value1 == null &&
-            value2 == null)
+        var result = new AnyOf<T1, T2>
+        {
+            First = value1,
+            Second = value2,
+        };
+        if (!result.Validate())
         {
             throw new JsonException($"Invalid JSON format for AnyOf<{typeof(T1).Name}, {typeof(T2).Name}>");
         }
@@ -56,16 +61,17 @@ public class AnyOfConverterNewtonsoftJson<T1, T2> : JsonConverter<AnyOf<T1, T2>>
         //     value2 = serializer.Deserialize<T2>(reader)!;
         // }
         
-        return new AnyOf<T1, T2>
-        {
-            First = value1,
-            Second = value2,
-        };
+        return result;
     }
     
     public override void WriteJson(JsonWriter writer, AnyOf<T1, T2> value, JsonSerializer serializer)
     {
         serializer = serializer ?? throw new ArgumentNullException(nameof(serializer));
+        
+        if (!value.Validate())
+        {
+            throw new JsonException($"Invalid AnyOf<{typeof(T1).Name}, {typeof(T2).Name}> object");
+        }
         
         if (value.IsFirst)
         {
@@ -74,10 +80,6 @@ public class AnyOfConverterNewtonsoftJson<T1, T2> : JsonConverter<AnyOf<T1, T2>>
         else if (value.IsSecond)
         {
             serializer.Serialize(writer, value.Second, value.Second!.GetType());
-        }
-        else
-        {
-            throw new JsonException($"Invalid AnyOf<{typeof(T1).Name}, {typeof(T2).Name}> object, all values are null");
         }
     }
 }

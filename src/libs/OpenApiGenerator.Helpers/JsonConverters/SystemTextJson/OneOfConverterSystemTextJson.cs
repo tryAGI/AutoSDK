@@ -4,11 +4,12 @@ using AnyOfTypes;
 
 #nullable enable
 
+// ReSharper disable once CheckNamespace
 namespace OpenApiGenerator.JsonConverters;
 
-public class AnyOfConverterSystemTextJson<T1, T2> : System.Text.Json.Serialization.JsonConverter<AnyOf<T1, T2>>
+public class OneOfConverterSystemTextJson<T1, T2> : System.Text.Json.Serialization.JsonConverter<OneOf<T1, T2>>
 {
-    public override AnyOf<T1, T2> Read(
+    public override OneOf<T1, T2> Read(
         ref Utf8JsonReader reader,
         Type typeToConvert,
         JsonSerializerOptions options)
@@ -33,33 +34,38 @@ public class AnyOfConverterSystemTextJson<T1, T2> : System.Text.Json.Serializati
         {
         }
         
-        if (value1 == null &&
-            value2 == null)
-        {
-            throw new JsonException($"Invalid JSON format for AnyOf<{typeof(T1).Name}, {typeof(T2).Name}>");
-        }
-
-        if (value1 != null)
-        {
-            value1 = JsonSerializer.Deserialize<T1>(ref reader)!;
-        }
-        else if (value2 != null)
-        {
-            value2 = JsonSerializer.Deserialize<T2>(ref reader)!;
-        }
-        
-        return new AnyOf<T1, T2>
+        var result = new OneOf<T1, T2>
         {
             First = value1,
             Second = value2,
         };
+        if (!result.Validate())
+        {
+            throw new JsonException($"Invalid JSON format for OneOf<{typeof(T1).Name}, {typeof(T2).Name}>");
+        }
+
+        if (value1 != null)
+        {
+            _ = JsonSerializer.Deserialize<T1>(ref reader)!;
+        }
+        else if (value2 != null)
+        {
+            _ = JsonSerializer.Deserialize<T2>(ref reader)!;
+        }
+        
+        return result;
     }
 
     public override void Write(
         Utf8JsonWriter writer,
-        AnyOf<T1, T2> value,
+        OneOf<T1, T2> value,
         JsonSerializerOptions options)
     {
+        if (!value.Validate())
+        {
+            throw new JsonException($"Invalid OneOf<{typeof(T1).Name}, {typeof(T2).Name}> object.");
+        }
+
         if (value.IsFirst)
         {
             JsonSerializer.Serialize(writer, value.First, value.First!.GetType(), options);
@@ -67,10 +73,6 @@ public class AnyOfConverterSystemTextJson<T1, T2> : System.Text.Json.Serializati
         else if (value.IsSecond)
         {
             JsonSerializer.Serialize(writer, value.Second, value.Second!.GetType(), options);
-        }
-        else
-        {
-            throw new JsonException($"Invalid AnyOf<{typeof(T1).Name}, {typeof(T2).Name}> object, all values are null");
         }
     }
 }
