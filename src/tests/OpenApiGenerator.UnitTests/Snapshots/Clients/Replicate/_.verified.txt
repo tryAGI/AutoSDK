@@ -58,6 +58,7 @@
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: collectionSlug,
         ArgumentName: collectionSlug,
@@ -111,6 +112,7 @@
           EnumValues: null
         },
         IsRequired: true,
+        IsDeprecated: false,
         Summary: The SKU for the hardware used to run the model. Possible values can be retrieved from the `hardware.list` endpoint.,
         ParameterName: hardware,
         ArgumentName: hardware,
@@ -127,6 +129,7 @@
           EnumValues: null
         },
         IsRequired: true,
+        IsDeprecated: false,
         Summary: The maximum number of instances for scaling.,
         ParameterName: maxInstances,
         ArgumentName: maxInstances,
@@ -143,6 +146,7 @@
           EnumValues: null
         },
         IsRequired: true,
+        IsDeprecated: false,
         Summary: The minimum number of instances for scaling.,
         ParameterName: minInstances,
         ArgumentName: minInstances,
@@ -159,6 +163,7 @@
           EnumValues: null
         },
         IsRequired: true,
+        IsDeprecated: false,
         Summary: The full name of the model that you want to deploy e.g. stability-ai/sdxl.,
         ParameterName: model,
         ArgumentName: model,
@@ -175,6 +180,7 @@
           EnumValues: null
         },
         IsRequired: true,
+        IsDeprecated: false,
         Summary: The name of the deployment.,
         ParameterName: name,
         ArgumentName: name,
@@ -191,6 +197,7 @@
           EnumValues: null
         },
         IsRequired: true,
+        IsDeprecated: false,
         Summary: The 64-character string ID of the model version that you want to deploy.,
         ParameterName: version,
         ArgumentName: version,
@@ -230,6 +237,7 @@
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: deploymentOwner,
         ArgumentName: deploymentOwner,
@@ -249,6 +257,7 @@
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: deploymentName,
         ArgumentName: deploymentName,
@@ -288,6 +297,7 @@
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: deploymentOwner,
         ArgumentName: deploymentOwner,
@@ -307,6 +317,7 @@
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: deploymentName,
         ArgumentName: deploymentName,
@@ -345,6 +356,7 @@
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: deploymentOwner,
         ArgumentName: deploymentOwner,
@@ -364,6 +376,7 @@
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: deploymentName,
         ArgumentName: deploymentName,
@@ -380,6 +393,7 @@
           EnumValues: null
         },
         IsRequired: false,
+        IsDeprecated: false,
         Summary: The SKU for the hardware used to run the model. Possible values can be retrieved from the `hardware.list` endpoint.,
         ParameterName: hardware,
         ArgumentName: hardware,
@@ -396,6 +410,7 @@
           EnumValues: null
         },
         IsRequired: false,
+        IsDeprecated: false,
         Summary: The maximum number of instances for scaling.,
         ParameterName: maxInstances,
         ArgumentName: maxInstances,
@@ -412,6 +427,7 @@
           EnumValues: null
         },
         IsRequired: false,
+        IsDeprecated: false,
         Summary: The minimum number of instances for scaling.,
         ParameterName: minInstances,
         ArgumentName: minInstances,
@@ -428,6 +444,7 @@
           EnumValues: null
         },
         IsRequired: false,
+        IsDeprecated: false,
         Summary: The ID of the model version that you want to deploy,
         ParameterName: version,
         ArgumentName: version,
@@ -467,6 +484,7 @@
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: deploymentOwner,
         ArgumentName: deploymentOwner,
@@ -486,6 +504,7 @@
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: deploymentName,
         ArgumentName: deploymentName,
@@ -502,6 +521,7 @@
           EnumValues: null
         },
         IsRequired: true,
+        IsDeprecated: false,
         Summary:
 The model's input as a JSON object. The input schema depends on what model you are running. To see the available inputs, click the "API" tab on the model you are running or [get the model version](#models.versions.get) and look at its `openapi_schema` property. For example, [stability-ai/sdxl](https://replicate.com/stability-ai/sdxl) takes `prompt` as an input.
 
@@ -534,6 +554,7 @@ Use a data URL when:
           EnumValues: null
         },
         IsRequired: false,
+        IsDeprecated: false,
         Summary:
 Request a URL to receive streaming output using [server-sent events (SSE)](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events).
 
@@ -554,6 +575,7 @@ If the requested model version supports streaming, the returned prediction will 
           EnumValues: null
         },
         IsRequired: false,
+        IsDeprecated: false,
         Summary:
 An HTTPS URL for receiving a webhook when the prediction has new output. The webhook will be a POST request where the request body is the same as the response body of the [get prediction](#predictions.get) operation. If there are network problems, we will retry the webhook a few times, so make sure it can be safely called more than once. Replicate will not follow redirects when sending webhook requests to your service, so be sure to specify a URL that will resolve without redirecting.
 ,
@@ -572,6 +594,7 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           EnumValues: null
         },
         IsRequired: false,
+        IsDeprecated: false,
         Summary:
 By default, we will send requests to your webhook URL whenever there are new outputs or the prediction has finished. You can change which events trigger webhook requests by specifying `webhook_events_filter` in the prediction request:
 
@@ -665,6 +688,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           EnumValues: null
         },
         IsRequired: false,
+        IsDeprecated: false,
         Summary: A URL for the model's cover image. This should be an image file.,
         ParameterName: coverImageUrl,
         ArgumentName: coverImageUrl,
@@ -681,6 +705,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           EnumValues: null
         },
         IsRequired: false,
+        IsDeprecated: false,
         Summary: A description of the model.,
         ParameterName: description,
         ArgumentName: description,
@@ -697,6 +722,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           EnumValues: null
         },
         IsRequired: false,
+        IsDeprecated: false,
         Summary: A URL for the model's source code on GitHub.,
         ParameterName: githubUrl,
         ArgumentName: githubUrl,
@@ -713,6 +739,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           EnumValues: null
         },
         IsRequired: true,
+        IsDeprecated: false,
         Summary: The SKU for the hardware used to run the model. Possible values can be retrieved from the `hardware.list` endpoint.,
         ParameterName: hardware,
         ArgumentName: hardware,
@@ -729,6 +756,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           EnumValues: null
         },
         IsRequired: false,
+        IsDeprecated: false,
         Summary: A URL for the model's license.,
         ParameterName: licenseUrl,
         ArgumentName: licenseUrl,
@@ -745,6 +773,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           EnumValues: null
         },
         IsRequired: true,
+        IsDeprecated: false,
         Summary: The name of the model. This must be unique among all models owned by the user or organization.,
         ParameterName: name,
         ArgumentName: name,
@@ -761,6 +790,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           EnumValues: null
         },
         IsRequired: true,
+        IsDeprecated: false,
         Summary: The name of the user or organization that will own the model. This must be the same as the user or organization that is making the API request. In other words, the API token used in the request must belong to this user or organization.,
         ParameterName: owner,
         ArgumentName: owner,
@@ -777,6 +807,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           EnumValues: null
         },
         IsRequired: false,
+        IsDeprecated: false,
         Summary: A URL for the model's paper.,
         ParameterName: paperUrl,
         ArgumentName: paperUrl,
@@ -799,6 +830,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ]
         },
         IsRequired: true,
+        IsDeprecated: false,
         Summary: Whether the model should be public or private. A public model can be viewed and run by anyone, whereas a private model can be viewed and run only by the user or organization members that own the model.,
         ParameterName: visibility,
         ArgumentName: visibility,
@@ -838,6 +870,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: modelOwner,
         ArgumentName: modelOwner,
@@ -857,6 +890,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: modelName,
         ArgumentName: modelName,
@@ -896,6 +930,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: modelOwner,
         ArgumentName: modelOwner,
@@ -915,6 +950,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: modelName,
         ArgumentName: modelName,
@@ -953,6 +989,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: modelOwner,
         ArgumentName: modelOwner,
@@ -972,6 +1009,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: modelName,
         ArgumentName: modelName,
@@ -988,6 +1026,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           EnumValues: null
         },
         IsRequired: true,
+        IsDeprecated: false,
         Summary:
 The model's input as a JSON object. The input schema depends on what model you are running. To see the available inputs, click the "API" tab on the model you are running or [get the model version](#models.versions.get) and look at its `openapi_schema` property. For example, [stability-ai/sdxl](https://replicate.com/stability-ai/sdxl) takes `prompt` as an input.
 
@@ -1020,6 +1059,7 @@ Use a data URL when:
           EnumValues: null
         },
         IsRequired: false,
+        IsDeprecated: false,
         Summary:
 Request a URL to receive streaming output using [server-sent events (SSE)](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events).
 
@@ -1040,6 +1080,7 @@ If the requested model version supports streaming, the returned prediction will 
           EnumValues: null
         },
         IsRequired: false,
+        IsDeprecated: false,
         Summary:
 An HTTPS URL for receiving a webhook when the prediction has new output. The webhook will be a POST request where the request body is the same as the response body of the [get prediction](#predictions.get) operation. If there are network problems, we will retry the webhook a few times, so make sure it can be safely called more than once. Replicate will not follow redirects when sending webhook requests to your service, so be sure to specify a URL that will resolve without redirecting.
 ,
@@ -1058,6 +1099,7 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           EnumValues: null
         },
         IsRequired: false,
+        IsDeprecated: false,
         Summary:
 By default, we will send requests to your webhook URL whenever there are new outputs or the prediction has finished. You can change which events trigger webhook requests by specifying `webhook_events_filter` in the prediction request:
 
@@ -1118,6 +1160,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: modelOwner,
         ArgumentName: modelOwner,
@@ -1137,6 +1180,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: modelName,
         ArgumentName: modelName,
@@ -1175,6 +1219,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: modelOwner,
         ArgumentName: modelOwner,
@@ -1194,6 +1239,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: modelName,
         ArgumentName: modelName,
@@ -1213,6 +1259,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: versionId,
         ArgumentName: versionId,
@@ -1252,6 +1299,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: modelOwner,
         ArgumentName: modelOwner,
@@ -1271,6 +1319,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: modelName,
         ArgumentName: modelName,
@@ -1290,6 +1339,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: versionId,
         ArgumentName: versionId,
@@ -1328,6 +1378,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: modelOwner,
         ArgumentName: modelOwner,
@@ -1347,6 +1398,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: modelName,
         ArgumentName: modelName,
@@ -1366,6 +1418,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: versionId,
         ArgumentName: versionId,
@@ -1382,6 +1435,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           EnumValues: null
         },
         IsRequired: true,
+        IsDeprecated: false,
         Summary:
 A string representing the desired model to push to in the format `{destination_model_owner}/{destination_model_name}`. This should be an existing model owned by the user or organization making the API request. If the destination is invalid, the server will return an appropriate 4XX response.
 ,
@@ -1400,6 +1454,7 @@ A string representing the desired model to push to in the format `{destination_m
           EnumValues: null
         },
         IsRequired: true,
+        IsDeprecated: false,
         Summary:
 An object containing inputs to the Cog model's `train()` function.
 ,
@@ -1418,6 +1473,7 @@ An object containing inputs to the Cog model's `train()` function.
           EnumValues: null
         },
         IsRequired: false,
+        IsDeprecated: false,
         Summary: An HTTPS URL for receiving a webhook when the training completes. The webhook will be a POST request where the request body is the same as the response body of the [get training](#trainings.get) operation. If there are network problems, we will retry the webhook a few times, so make sure it can be safely called more than once. Replicate will not follow redirects when sending webhook requests to your service, so be sure to specify a URL that will resolve without redirecting.,
         ParameterName: webhook,
         ArgumentName: webhook,
@@ -1434,6 +1490,7 @@ An object containing inputs to the Cog model's `train()` function.
           EnumValues: null
         },
         IsRequired: false,
+        IsDeprecated: false,
         Summary:
 By default, we will send requests to your webhook URL whenever there are new outputs or the training has finished. You can change which events trigger webhook requests by specifying `webhook_events_filter` in the training request:
 
@@ -1510,6 +1567,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           EnumValues: null
         },
         IsRequired: true,
+        IsDeprecated: false,
         Summary:
 The model's input as a JSON object. The input schema depends on what model you are running. To see the available inputs, click the "API" tab on the model you are running or [get the model version](#models.versions.get) and look at its `openapi_schema` property. For example, [stability-ai/sdxl](https://replicate.com/stability-ai/sdxl) takes `prompt` as an input.
 
@@ -1542,6 +1600,7 @@ Use a data URL when:
           EnumValues: null
         },
         IsRequired: false,
+        IsDeprecated: false,
         Summary:
 Request a URL to receive streaming output using [server-sent events (SSE)](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events).
 
@@ -1562,6 +1621,7 @@ If the requested model version supports streaming, the returned prediction will 
           EnumValues: null
         },
         IsRequired: true,
+        IsDeprecated: false,
         Summary: The ID of the model version that you want to run.,
         ParameterName: version,
         ArgumentName: version,
@@ -1578,6 +1638,7 @@ If the requested model version supports streaming, the returned prediction will 
           EnumValues: null
         },
         IsRequired: false,
+        IsDeprecated: false,
         Summary:
 An HTTPS URL for receiving a webhook when the prediction has new output. The webhook will be a POST request where the request body is the same as the response body of the [get prediction](#predictions.get) operation. If there are network problems, we will retry the webhook a few times, so make sure it can be safely called more than once. Replicate will not follow redirects when sending webhook requests to your service, so be sure to specify a URL that will resolve without redirecting.
 ,
@@ -1596,6 +1657,7 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           EnumValues: null
         },
         IsRequired: false,
+        IsDeprecated: false,
         Summary:
 By default, we will send requests to your webhook URL whenever there are new outputs or the prediction has finished. You can change which events trigger webhook requests by specifying `webhook_events_filter` in the prediction request:
 
@@ -1657,6 +1719,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: predictionId,
         ArgumentName: predictionId,
@@ -1695,6 +1758,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: predictionId,
         ArgumentName: predictionId,
@@ -1752,6 +1816,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: trainingId,
         ArgumentName: trainingId,
@@ -1790,6 +1855,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterLocation: Path,
         ParameterStyle: Simple,
         ParameterExplode: false,
+        IsDeprecated: false,
         Summary: ,
         ParameterName: trainingId,
         ArgumentName: trainingId,
