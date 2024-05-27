@@ -48,10 +48,7 @@ public readonly record struct PropertyData(
         name = name
             .ReplacePlusAndMinusOnStart()
             .UseWordSeparator('_', '+', '-', '/')
-            .Replace(".", "_")
-            .Replace(":", "_")
-            .Replace("[", string.Empty)
-            .Replace("]", string.Empty);
+            .UseWordSeparator('(', '[', ']', ')');
 
         if (parents.Length != 0)
         {
