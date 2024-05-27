@@ -53,6 +53,11 @@ public readonly record struct PropertyData(
         {
             name = name.FixPropertyName(parents.Last().ClassName);
         }
+        if (name.Length > 0 &&
+            char.IsDigit(name[0]))
+        {
+            name = "_" + name;
+        }
         
         return new PropertyData(
             Id: schema.Key,
