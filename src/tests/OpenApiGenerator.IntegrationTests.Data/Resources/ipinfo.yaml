@@ -643,10 +643,6 @@ components:
           type: string
           example: '01105'
           
-        4:
-          type: string
-          example: '1234'
-          
         timezone:
           type: string
           example: 'America/New_York'
@@ -1105,7 +1101,6 @@ components:
                 loc: 37.4056,-122.0775
                 org: AS15169 Google LLC
                 postal: 94043
-                4: 1234
                 timezone: America/Los_Angeles
                 
       
@@ -1165,13 +1160,6 @@ components:
             type: string
             example: '01105'
             
-    4:
-      description: A plus 4 extension to postals.
-      content:
-          text/plain:
-            schema:
-                type: string
-                example: '1234'
     Timezone:
       description: A timezone.
       content:

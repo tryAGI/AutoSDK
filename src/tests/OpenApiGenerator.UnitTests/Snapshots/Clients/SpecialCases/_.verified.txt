@@ -1,0 +1,117 @@
+﻿[
+  {
+    Id: ListPets,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Stream: false,
+    Path: $"/pets?limit={limit}",
+    AuthorizationScheme: ,
+    Properties: [
+      {
+        Id: limit,
+        Name: Limit,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
+        IsDeprecated: false,
+        Summary: ,
+        ParameterName: limit,
+        ArgumentName: limit,
+        ParameterDefaultValue: default
+      }
+    ],
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    Summary: List all pets,
+    RequestType: ,
+    ResponseType: Pets,
+    MethodName: ListPetsAsync,
+    NotAsyncMethodName: ListPets,
+    FileNameWithoutExtension: G.Api.ListPets
+  },
+  {
+    Id: CreatePets,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Stream: false,
+    Path: "/pets",
+    AuthorizationScheme: ,
+    Properties: null,
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    HttpMethod: Post,
+    Summary: Create a pet,
+    RequestType: ,
+    ResponseType: ,
+    MethodName: CreatePetsAsync,
+    NotAsyncMethodName: CreatePets,
+    FileNameWithoutExtension: G.Api.CreatePets
+  },
+  {
+    Id: ShowPetById,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Stream: false,
+    Path: $"/pets/{petId}",
+    AuthorizationScheme: ,
+    Properties: [
+      {
+        Id: petId,
+        Name: PetId,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: true,
+        ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
+        IsDeprecated: false,
+        Summary: ,
+        ParameterName: petId,
+        ArgumentName: petId,
+        ParameterDefaultValue: default
+      }
+    ],
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    Summary: Info for a specific pet,
+    RequestType: ,
+    ResponseType: Pet,
+    MethodName: ShowPetByIdAsync,
+    NotAsyncMethodName: ShowPetById,
+    FileNameWithoutExtension: G.Api.ShowPetById
+  },
+  {
+    Id: Constructors,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: http://petstore.swagger.io/v1,
+    Stream: false,
+    Path: ,
+    AuthorizationScheme: ,
+    Properties: null,
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    Summary: ,
+    RequestType: ,
+    ResponseType: ,
+    MethodName: ConstructorsAsync,
+    NotAsyncMethodName: Constructors,
+    FileNameWithoutExtension: G.Api
+  }
+]

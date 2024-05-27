@@ -139,6 +139,18 @@ public partial class Tests
     [DataTestMethod]
     [DataRow(JsonSerializerType.SystemTextJson)]
     [DataRow(JsonSerializerType.NewtonsoftJson)]
+    public Task SpecialCases(JsonSerializerType jsonSerializerType)
+    {
+        return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
+            new CustomAdditionalText(
+                path: H.Resources.specialcases_yaml.FileName,
+                text: H.Resources.specialcases_yaml.AsString())
+        ]);
+    }
+    
+    [DataTestMethod]
+    [DataRow(JsonSerializerType.SystemTextJson)]
+    [DataRow(JsonSerializerType.NewtonsoftJson)]
     public Task Filtering(JsonSerializerType jsonSerializerType)
     {
         return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [

@@ -94,4 +94,15 @@ public class ClientTests :
 
         return VerifyAsync(models);
     }
+
+    [TestMethod]
+    public Task SpecialCases()
+    {
+        var yaml = H.Resources.specialcases_yaml.AsString();
+        var settings = DefaultSettings;
+
+        var models = ClientGeneratorMethods.PrepareData((yaml, settings));
+
+        return VerifyAsync(models);
+    }
 }

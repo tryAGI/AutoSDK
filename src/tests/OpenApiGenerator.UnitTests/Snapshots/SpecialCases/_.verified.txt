@@ -1,0 +1,194 @@
+﻿[
+  {
+    Id: Pet,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: 4,
+        Name: _4,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary:
+<br/>Example: 1234,
+        ParameterName: _4,
+        ArgumentName: _4,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: 1.5,
+        Name: _1_5,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary:
+<br/>Example: true,
+        ParameterName: _1_5,
+        ArgumentName: _1_5,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: 16:9,
+        Name: _16_9,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary:
+<br/>Example: true,
+        ParameterName: _16_9,
+        ArgumentName: _16_9,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: id,
+        Name: Id,
+        Type: {
+          CSharpType: long,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ParameterName: id,
+        ArgumentName: id,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: name,
+        Name: Name,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ParameterName: name,
+        ArgumentName: name,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: tag,
+        Name: Tag,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ParameterName: tag,
+        ArgumentName: tag,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Pet,
+    ClassName: Pet,
+    ExternalClassName: Pet,
+    FileNameWithoutExtension: G.Models.Pet
+  },
+  {
+    Id: Pets,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: null,
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Pets,
+    ClassName: Pets,
+    ExternalClassName: Pets,
+    FileNameWithoutExtension: G.Models.Pets
+  },
+  {
+    Id: Error,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: code,
+        Name: Code,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ParameterName: code,
+        ArgumentName: code,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: message,
+        Name: Message,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ParameterName: message,
+        ArgumentName: message,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Error,
+    ClassName: Error,
+    ExternalClassName: Error,
+    FileNameWithoutExtension: G.Models.Error
+  }
+]

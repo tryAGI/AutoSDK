@@ -107,4 +107,13 @@ public class ModelTests :
 
         return VerifyAsync(models);
     }
+
+    [TestMethod]
+    public Task SpecialCases()
+    {
+        var yaml = H.Resources.specialcases_yaml.AsString();
+        var models = ModelGeneratorMethods.PrepareData((yaml, DefaultSettings));
+
+        return VerifyAsync(models);
+    }
 }

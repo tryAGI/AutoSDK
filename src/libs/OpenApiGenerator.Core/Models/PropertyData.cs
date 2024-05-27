@@ -47,22 +47,19 @@ public readonly record struct PropertyData(
         name = name
             .ReplacePlusAndMinusOnStart()
             .UseWordSeparator('_', '+', '-', '/')
+            .Replace(".", "_")
+            .Replace(":", "_")
             .Replace("[", string.Empty)
             .Replace("]", string.Empty);
 
-        if (name[0] is not ('_' or >= 'A' and <= 'Z' or >= 'a' and <= 'z'))
+        if (name.Length > 0 &&
+            name[0] is not ('_' or >= 'A' and <= 'Z' or >= 'a' and <= 'z'))
         {
             name = $"_{name}";
         }
-
         if (parents.Length != 0)
         {
             name = name.FixPropertyName(parents.Last().ClassName);
-        }
-        if (name.Length > 0 &&
-            char.IsDigit(name[0]))
-        {
-            name = "_" + name;
         }
         
         return new PropertyData(
