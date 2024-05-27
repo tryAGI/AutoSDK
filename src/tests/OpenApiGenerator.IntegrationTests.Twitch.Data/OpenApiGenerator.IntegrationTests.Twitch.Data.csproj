@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+  
+  <Import Project="../../libs/OpenApiGenerator/OpenApiGenerator.props" />
+  
+  <PropertyGroup>
+    <OpenApiGenerator_Namespace>OpenApiGenerator.IntegrationTests.Twitch</OpenApiGenerator_Namespace>
+    <OpenApiGenerator_GenerateSdk>false</OpenApiGenerator_GenerateSdk>
+    <OpenApiGenerator_GenerateModels>true</OpenApiGenerator_GenerateModels>
+    <OpenApiGenerator_GenerateSuperTypeForJsonSerializerContext>true</OpenApiGenerator_GenerateSuperTypeForJsonSerializerContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="Resources\openapi.json" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+    <CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <Compile Remove="Generated\**\*" />
+    <None Include="Generated\**\*" />
+  </ItemGroup>
+  
+
+  <Target Name="FetchTwitchOpenApiJson" BeforeTargets="Build;BeforeCompile;CompileDesignTime">
+    <!-- Download the OpenAPI JSON file (if expired) -->
+    <DownloadFile
+            SourceUrl="https://twitch-api-swagger.surge.sh/openapi.json"
+            DestinationFolder="$(ProjectDir)Resources"
+            DestinationFileName="openapi.json"
+            SkipUnchangedFiles="true"
+            Retries="2" />
+  </Target>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0" />
+    <PackageReference Include="Microsoft.OpenApi" Version="1.6.14" />
+    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.14" />
+    <PackageReference Include="SharpYaml" Version="2.1.1" />
+    <PackageReference Include="System.Collections.Immutable" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\libs\OpenApiGenerator.Core\OpenApiGenerator.Core.csproj" OutputItemType="Analyzer" />
+    <ProjectReference Include="..\..\libs\OpenApiGenerator\OpenApiGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+
+</Project>

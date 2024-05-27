@@ -1,3 +1,4 @@
+using System.Text;
 using Microsoft.OpenApi.Models;
 using OpenApiGenerator.Core.Extensions;
 using OpenApiGenerator.Core.Json;
@@ -52,15 +53,12 @@ public readonly record struct PropertyData(
             .Replace("[", string.Empty)
             .Replace("]", string.Empty);
 
-        if (name.Length > 0 &&
-            name[0] is not ('_' or >= 'A' and <= 'Z' or >= 'a' and <= 'z'))
-        {
-            name = $"_{name}";
-        }
         if (parents.Length != 0)
         {
             name = name.FixPropertyName(parents.Last().ClassName);
         }
+
+        name = SanitizeName(name);
         
         return new PropertyData(
             Id: schema.Key,
@@ -80,7 +78,45 @@ public readonly record struct PropertyData(
             }, parents).CSharpType),
             Summary: schema.Value.GetSummary());
     }
-    
+
+    private static string SanitizeName(string name)
+    {
+        static bool InvalidFirstChar(char ch)
+            => ch is not ('_' or >= 'A' and <= 'Z' or >= 'a' and <= 'z');
+
+        static bool InvalidSubsequentChar(char ch)
+            => ch is not (
+                    '_'
+                    or >= 'A' and <= 'Z'
+                    or >= 'a' and <= 'z'
+                    or >= '0' and <= '9'
+                );
+
+        if (InvalidFirstChar(name[0]))
+        {
+            name = $"_{name}";
+        }
+
+        if (!name.Skip(1).Any(InvalidSubsequentChar))
+        {
+            return name;
+        }
+
+        Span<char> buf = stackalloc char[name.Length];
+        name.AsSpan().CopyTo(buf);
+        
+        for (var i = 1; i < buf.Length; i++)
+        {
+            if (InvalidSubsequentChar(buf[i]))
+            {
+                buf[i] = '_';
+            }
+        }
+
+        // Span<char>.ToString implementation checks for char type, new string(&buf[0], buf.length)
+        return buf.ToString();
+    }
+
     public string ParameterName => Name
         .Replace(".", string.Empty)
         .ToParameterName()
