@@ -56,7 +56,7 @@ public readonly record struct PropertyData(
             name = name.FixPropertyName(parents.Last().ClassName);
         }
 
-        name = SanitizeName(name);
+        name = SanitizeName(name, true);
         
         return new PropertyData(
             Id: schema.Key,
@@ -77,7 +77,7 @@ public readonly record struct PropertyData(
             Summary: schema.Value.GetSummary());
     }
 
-    private static string SanitizeName(string? name)
+    private static string SanitizeName(string? name, bool skipHandlingWordSeparators = false)
     {
         static bool InvalidFirstChar(char ch)
             => ch is not ('_' or >= 'A' and <= 'Z' or >= 'a' and <= 'z');
@@ -93,6 +93,14 @@ public readonly record struct PropertyData(
         if (name is null || name.Length == 0)
         {
             return "";
+        }
+
+        if (!skipHandlingWordSeparators)
+        {
+            name = name
+                .ReplacePlusAndMinusOnStart()
+                .UseWordSeparator('_', '+', '-', '/')
+                .UseWordSeparator('(', '[', ']', ')');
         }
 
         if (InvalidFirstChar(name[0]))
