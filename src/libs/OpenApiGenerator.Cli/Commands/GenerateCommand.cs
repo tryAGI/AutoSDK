@@ -92,9 +92,10 @@ public class GenerateCommand : Command
             GenerateSdk: true
         );
 
-        var models = ModelGeneratorMethods.PrepareData((yaml, settings));
+        var (models, methods) = Data.Prepare((yaml, settings));
         var files = models
-            .Select(x => ModelGeneratorMethods.GetSourceCode(x))
+            .Select(x => Data.GetSourceCode(x)).Concat(methods
+                .Select(x => Data.GetSourceCode(x)))
             .ToArray();
         
         if (generateAsSingleFile)

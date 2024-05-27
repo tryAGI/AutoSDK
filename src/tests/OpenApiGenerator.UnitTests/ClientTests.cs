@@ -57,9 +57,9 @@ public class ClientTests :
             //IncludeModels = ["CreateCompletionResponse"],
         };
 
-        var models = ClientGeneratorMethods.PrepareData((yaml, settings));
+        var (_, methods) = Data.Prepare((yaml, settings));
 
-        return VerifyAsync(models);
+        return VerifyAsync(methods);
     }
 
     [TestMethod]
@@ -68,15 +68,15 @@ public class ClientTests :
         var yaml = H.Resources.ollamacurated_yaml.AsString();
         var settings = DefaultSettings;
 
-        var models = ClientGeneratorMethods.PrepareData((yaml, settings));
+        var (_, methods) = Data.Prepare((yaml, settings));
 
-        return VerifyAsync(models);
+        return VerifyAsync(methods);
     }
 
     [TestMethod]
     public Task Replicate()
     {
-        var methods = ClientGeneratorMethods.PrepareData((H.Resources.replicate_json.AsString(), DefaultSettings with
+        var (_, methods) = Data.Prepare((H.Resources.replicate_json.AsString(), DefaultSettings with
         {
             MethodNamingConvention = MethodNamingConvention.OperationIdWithDots,
         }));
@@ -101,8 +101,8 @@ public class ClientTests :
         var yaml = H.Resources.specialcases_yaml.AsString();
         var settings = DefaultSettings;
 
-        var models = ClientGeneratorMethods.PrepareData((yaml, settings));
+        var (_, methods) = Data.Prepare((yaml, settings));
 
-        return VerifyAsync(models);
+        return VerifyAsync(methods);
     }
 }

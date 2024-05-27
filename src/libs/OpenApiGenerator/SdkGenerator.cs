@@ -21,27 +21,24 @@ public class SdkGenerator : IIncrementalGenerator
     {
         var settings = context.DetectSettings();
         
-        var filesAndSettings = context.AdditionalTextsProvider
+        var data = context.AdditionalTextsProvider
             .Where(static text => text.Path.EndsWith(".yaml", StringComparison.InvariantCultureIgnoreCase) ||
                                   text.Path.EndsWith(".json", StringComparison.InvariantCultureIgnoreCase))
             .Select(static (text, cancellationToken) => GetContent(text, cancellationToken))
-            .Combine(settings);
+            .Combine(settings)
+            .SelectAndReportExceptions(Data.Prepare, context, Id);
         
-        filesAndSettings
-            .SelectAndReportExceptions(ClientGeneratorMethods.PrepareData, context, Id)
-            .SelectMany(static (x, _) => x)
+        data
+            .SelectMany(static (x, _) => x.Methods)
             .SelectAndReportExceptions(GetMethodSourceCode, context, Id)
             .AddSource(context);
         
-        var models = filesAndSettings
-            .SelectAndReportExceptions(ModelGeneratorMethods.PrepareData, context, Id);
-        
-        models
-            .SelectMany(static (x, _) => x)
+        data
+            .SelectMany(static (x, _) => x.Models)
             .SelectAndReportExceptions(GetModelSourceCode, context, Id)
             .AddSource(context);
-        models
-            .Select(static (x, _) => x)
+        data
+            .Select(static (x, _) => x.Models)
             .SelectAndReportExceptions(GetSuperTypeSourceCode, context, Id)
             .AddSource(context);
     }
@@ -57,7 +54,7 @@ public class SdkGenerator : IIncrementalGenerator
         EndPoint endPoint,
         CancellationToken cancellationToken = default)
     {
-        var fileWithName = ClientGeneratorMethods.GetSourceCode(endPoint, cancellationToken);
+        var fileWithName = Data.GetSourceCode(endPoint, cancellationToken);
         
         return new FileWithName(
             Name: fileWithName.Name,
@@ -68,7 +65,7 @@ public class SdkGenerator : IIncrementalGenerator
         ModelData model,
         CancellationToken cancellationToken = default)
     {
-        var fileWithName = ModelGeneratorMethods.GetSourceCode(model, cancellationToken);
+        var fileWithName = Data.GetSourceCode(model, cancellationToken);
         
         return new FileWithName(
             Name: fileWithName.Name,
@@ -84,7 +81,7 @@ public class SdkGenerator : IIncrementalGenerator
             return FileWithName.Empty;
         }
         
-        var fileWithName = ModelGeneratorMethods.GetSourceCodeForSuperClass(models, cancellationToken);
+        var fileWithName = Data.GetSourceCodeForSuperClass(models, cancellationToken);
         
         return new FileWithName(
             Name: fileWithName.Name,

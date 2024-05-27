@@ -5198,6 +5198,7 @@
                     OperationId: update_run_runs__run_id__patch,
                     Parameters: [
                       {
+                        _style: Simple,
                         UnresolvedReference: false,
                         Name: run_id,
                         In: Path,

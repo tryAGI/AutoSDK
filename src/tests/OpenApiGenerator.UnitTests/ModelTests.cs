@@ -59,7 +59,7 @@ public class ModelTests :
             //IncludeModels = ["CreateCompletionResponse"],
         };
 
-        var models = ModelGeneratorMethods.PrepareData((yaml, settings));
+        var (models, _) = Data.Prepare((yaml, settings));
 
         return VerifyAsync(models);
     }
@@ -70,7 +70,7 @@ public class ModelTests :
         var yaml = H.Resources.ollamacurated_yaml.AsString();
         var settings = DefaultSettings;
 
-        var models = ModelGeneratorMethods.PrepareData((yaml, settings));
+        var (models, _) = Data.Prepare((yaml, settings));
 
         return VerifyAsync(models);
     }
@@ -78,7 +78,7 @@ public class ModelTests :
     [TestMethod]
     public Task Replicate()
     {
-        var models = ModelGeneratorMethods.PrepareData((H.Resources.replicate_json.AsString(), DefaultSettings));
+        var (models, _) = Data.Prepare((H.Resources.replicate_json.AsString(), DefaultSettings));
 
         return VerifyAsync(models);
     }
@@ -103,7 +103,7 @@ public class ModelTests :
             //IncludeModels = ["ChatCompletionFunctionParameters"],
         };
 
-        var models = ModelGeneratorMethods.PrepareData((yaml, settings));
+        var (models, _) = Data.Prepare((yaml, settings));
 
         return VerifyAsync(models);
     }
@@ -112,7 +112,7 @@ public class ModelTests :
     public Task SpecialCases()
     {
         var yaml = H.Resources.specialcases_yaml.AsString();
-        var models = ModelGeneratorMethods.PrepareData((yaml, DefaultSettings));
+        var (models, _) = Data.Prepare((yaml, DefaultSettings));
 
         return VerifyAsync(models);
     }
