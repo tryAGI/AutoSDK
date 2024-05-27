@@ -47,6 +47,12 @@ public readonly record struct PropertyData(
             .UseWordSeparator('_', '+', '-', '/')
             .Replace("[", string.Empty)
             .Replace("]", string.Empty);
+
+        if (name[0] is not ('_' or >= 'A' and <= 'Z' or >= 'a' and <= 'z'))
+        {
+            name = $"_{name}";
+        }
+
         if (parents.Length != 0)
         {
             name = name.FixPropertyName(parents.Last().ClassName);
