@@ -66,6 +66,18 @@ public static class ModelGeneratorMethods
                     Schema = default,
                 })
             .ToImmutableArray();
+        // var bodies = openApiDocument.Paths
+        //     .SelectMany(path => path.Value.Operations.Select(operation => (operation.Value.OperationId, Operation: operation)))
+        //     .SelectMany(x => x.Operation.Value?.RequestBody?.Content?.Values.Select(y => (x.OperationId, Parameter: y)) ?? [])
+        //     .Where(x => x.Parameter.Schema.Type == "object")
+        //     .Select(x => ModelData.FromSchema(
+        //             x.Parameter.Schema.WithKey(x.OperationId + "Request"),
+        //             settings) with
+        //         {
+        //             Schema = default,
+        //         })
+        //     .SelectMany(model => model.WithAdditionalModels())
+        //     .ToImmutableArray();
         var enumParameters = openApiDocument.Paths
             .SelectMany(path => path.Value.Operations.Select(operation => (operation.Value.OperationId, Operation: operation)))
             .SelectMany(x => x.Operation.Value.Parameters.Select(y => (x.OperationId, Parameter: y)))
@@ -89,7 +101,8 @@ public static class ModelGeneratorMethods
             .Create([
                 ..components,
                 ..objectParameters,
-                ..enumParameters
+                ..enumParameters,
+                //..bodies,
             ])
             .GroupBy(x => x.FileNameWithoutExtension)
             .Select(x => x.First())

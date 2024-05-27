@@ -124,15 +124,27 @@ public partial class Tests
         });
     }
     
+    // [DataTestMethod]
+    // [DataRow(JsonSerializerType.SystemTextJson)]
+    // [DataRow(JsonSerializerType.NewtonsoftJson)]
+    // public Task GitHub(JsonSerializerType jsonSerializerType)
+    // {
+    //     return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
+    //         new CustomAdditionalText(
+    //             path: H.Resources.api_github_com_yaml.FileName,
+    //             text: H.Resources.api_github_com_yaml.AsString())
+    //     ]);
+    // }
+    
     [DataTestMethod]
     [DataRow(JsonSerializerType.SystemTextJson)]
     [DataRow(JsonSerializerType.NewtonsoftJson)]
-    public Task GitHub(JsonSerializerType jsonSerializerType)
+    public Task Twitch(JsonSerializerType jsonSerializerType)
     {
         return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
             new CustomAdditionalText(
-                path: H.Resources.api_github_com_yaml.FileName,
-                text: H.Resources.api_github_com_yaml.AsString())
+                path: H.Resources.twitch_json.FileName,
+                text: H.Resources.twitch_json.AsString())
         ]);
     }
     

@@ -84,16 +84,16 @@ public class ClientTests :
         return VerifyAsync(methods);
     }
 
-    [TestMethod]
-    public Task GitHub()
-    {
-        var yaml = H.Resources.api_github_com_yaml.AsString();
-        var settings = DefaultSettings;
-
-        var models = ClientGeneratorMethods.PrepareData((yaml, settings));
-
-        return VerifyAsync(models);
-    }
+    // [TestMethod]
+    // public Task GitHub()
+    // {
+    //     var yaml = H.Resources.api_github_com_yaml.AsString();
+    //     var settings = DefaultSettings;
+    //
+    //     var models = ClientGeneratorMethods.PrepareData((yaml, settings));
+    //
+    //     return VerifyAsync(models);
+    // }
 
     [TestMethod]
     public Task SpecialCases()

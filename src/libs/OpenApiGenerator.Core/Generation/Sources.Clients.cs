@@ -13,11 +13,7 @@ public static partial class Sources
 
 namespace {endPoint.Namespace}
 {{
-    /// <summary>
-    /// {endPoint.Summary}
-    /// If no httpClient is provided, a new one will be created.
-    /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
-    /// </summary>
+    {(endPoint.Summary + "\nIf no httpClient is provided, a new one will be created.\nIf no baseUri is provided, the default baseUri from OpenAPI spec will be used.").ToXmlDocumentationSummary()}
     public sealed partial class {endPoint.ClassName} : global::System.IDisposable
     {{
         private readonly global::System.Net.Http.HttpClient _httpClient;
