@@ -125,12 +125,9 @@ public readonly record struct EndPoint(
             .SelectMany(model => model.WithAdditionalModels())
             .ToArray();
         
-        var requestSchema = operation.Value.RequestBody?.Content.Values.FirstOrDefault()?.Schema;
-        var requestModel =  requestSchema != null
-            ? ModelData.FromSchema(new KeyValuePair<string, OpenApiSchema>(
-                requestSchema.Reference?.Id ??
-                id + "Request", requestSchema), settings)
-            : ModelData.FromKey("test", settings) with{ Schema = default };
+        ModelData? requestModel = bodies.Length == 0
+            ? null
+            : bodies.First();
         var response = operation.Value.Responses.Values.FirstOrDefault();
         var endPoint = new EndPoint(
             Id: id,
@@ -143,15 +140,13 @@ public readonly record struct EndPoint(
                 .Any(x => x.Contains("application/x-ndjson")) ?? false,
             Path: preparedPath,
             AuthorizationScheme: string.Empty,
-            Properties: [..parameters.Concat(requestModel.Properties)],
+            Properties: [..parameters.Concat(requestModel?.Properties ?? [])],
             TargetFramework: settings.TargetFramework,
             JsonSerializerType: settings.JsonSerializerType,
             JsonSerializerContext: settings.JsonSerializerContext,
             HttpMethod: operation.Key,
             Summary: operation.Value.Summary?.Replace("\n", string.Empty) ?? string.Empty,
-            RequestType: requestSchema != null ? ModelData.FromKey(
-                requestSchema.Reference?.Id ??
-                id + "Request", settings).Name : string.Empty,
+            RequestType: requestModel?.Name ?? string.Empty,
             ResponseType: response?
                 .Content.Values.FirstOrDefault()?.Schema?.Reference?.Id?.ToClassName() ?? string.Empty,
             AdditionalModels: [
