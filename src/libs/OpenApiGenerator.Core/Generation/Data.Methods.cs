@@ -97,7 +97,7 @@ public static class ClientGeneratorMethods
                     ? [
                         .. includedTags.Select(x => PropertyData.Default with
                         {
-                            Name = x.Name.ToClassName(),
+                            UnsanitaryName = x.Name.ToClassName(),
                             Type = TypeData.Default with
                             {
                                 CSharpType = $"{x.Name.ToClassName()}Client",

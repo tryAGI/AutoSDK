@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Text;
 using Microsoft.OpenApi.Models;
 using OpenApiGenerator.Core.Extensions;
@@ -76,7 +77,7 @@ public readonly record struct PropertyData(
             Summary: schema.Value.GetSummary());
     }
 
-    private static string SanitizeName(string name)
+    private static string SanitizeName(string? name)
     {
         static bool InvalidFirstChar(char ch)
             => ch is not ('_' or >= 'A' and <= 'Z' or >= 'a' and <= 'z');
@@ -88,6 +89,11 @@ public readonly record struct PropertyData(
                     or >= 'a' and <= 'z'
                     or >= '0' and <= '9'
                 );
+        
+        if (name is null || name.Length == 0)
+        {
+            return "";
+        }
 
         if (InvalidFirstChar(name[0]))
         {
@@ -120,6 +126,11 @@ public readonly record struct PropertyData(
         .ReplaceIfEquals("ref", "@ref")
         .ReplaceIfEquals("base", "@base")
         .ReplaceIfEquals("protected", "@protected");
+
+    public string UnsanitaryName
+    {
+        init => Name = SanitizeName(value);
+    }
 
     public string ArgumentName
     {
