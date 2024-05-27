@@ -3100,5 +3100,45 @@ total size of the model
     ClassName: PushModelStatus,
     ExternalClassName: PushModelStatus,
     FileNameWithoutExtension: G.Models.PushModelStatus
+  },
+  {
+    Id: ShowModelInfoRequest,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: name,
+        Name: Name,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary:
+The model name. 
+
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+
+<br/>Example: llama2:7b,
+        ParameterName: name,
+        ArgumentName: name,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Request class for the show model info endpoint.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ShowModelInfoRequest,
+    ClassName: ShowModelInfoRequest,
+    ExternalClassName: ShowModelInfoRequest,
+    FileNameWithoutExtension: G.Models.ShowModelInfoRequest
   }
 ]

@@ -1,0 +1,42 @@
+﻿//HintName: G.Models.ManageHeldAutomodMessagesRequest.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class ManageHeldAutomodMessagesRequest
+    {
+        /// <summary>
+        /// The moderator who is approving or denying the held message. This ID must match the user ID in the access token.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string UserId { get; set; }
+
+        /// <summary>
+        /// The ID of the message to allow or deny.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("msg_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string MsgId { get; set; }
+
+        /// <summary>
+        /// The action to take for the message. Possible values are:  
+        ///   
+        /// * ALLOW
+        /// * DENY
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("action")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Action { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

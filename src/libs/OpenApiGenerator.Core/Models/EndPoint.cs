@@ -79,7 +79,9 @@ public readonly record struct EndPoint(
         
         var requestSchema = operation.Value.RequestBody?.Content.Values.FirstOrDefault()?.Schema;
         var requestModel =  requestSchema != null
-            ? ModelData.FromSchema(new KeyValuePair<string, OpenApiSchema>(requestSchema.Reference?.Id ?? "Test", requestSchema), settings)
+            ? ModelData.FromSchema(new KeyValuePair<string, OpenApiSchema>(
+                requestSchema.Reference?.Id ??
+                operation.Value.GetMethodName(path: path, operationType: operation.Key, settings.MethodNamingConvention, settings.MethodNamingConventionFallback) + "Request", requestSchema), settings)
             : ModelData.FromKey("test", settings) with{ Schema = default };
         var response = operation.Value.Responses.Values.FirstOrDefault();
         var endPoint = new EndPoint(
@@ -99,7 +101,9 @@ public readonly record struct EndPoint(
             JsonSerializerContext: settings.JsonSerializerContext,
             HttpMethod: operation.Key,
             Summary: operation.Value.Summary?.Replace("\n", string.Empty) ?? string.Empty,
-            RequestType: ModelData.FromKey(requestSchema?.Reference?.Id ?? string.Empty, settings).Name,
+            RequestType: requestSchema != null ? ModelData.FromKey(
+                requestSchema.Reference?.Id ??
+                operation.Value.GetMethodName(path: path, operationType: operation.Key, settings.MethodNamingConvention, settings.MethodNamingConventionFallback) + "Request", settings).Name : string.Empty,
             ResponseType: response?
                 .Content.Values.FirstOrDefault()?.Schema?.Reference?.Id?.ToClassName() ?? string.Empty);
         

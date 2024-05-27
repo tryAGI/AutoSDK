@@ -6702,7 +6702,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Creates and executes a batch from an uploaded file of requests,
-    RequestType: ,
+    RequestType: CreateBatchRequest,
     ResponseType: Batch,
     MethodName: CreateBatchAsync,
     NotAsyncMethodName: CreateBatch,

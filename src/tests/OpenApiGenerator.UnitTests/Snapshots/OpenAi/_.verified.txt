@@ -30555,5 +30555,451 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ClassName: ListFilesInVectorStoreBatchFilter,
     ExternalClassName: ListFilesInVectorStoreBatchFilter,
     FileNameWithoutExtension: G.Models.ListFilesInVectorStoreBatchFilter
+  },
+  {
+    Id: SubmitToolOuputsToRunRequest,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: tool_outputs,
+        Name: ToolOutputs,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<SubmitToolOuputsToRunRequestToolOutputs>,
+          IsArray: true,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: A list of tools for which the outputs are being submitted.,
+        ParameterName: toolOutputs,
+        ArgumentName: toolOutputs,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: stream,
+        Name: Stream,
+        Type: {
+          CSharpType: bool?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary:
+If `true`, returns a stream of events that happen during the Run as server-sent events, terminating when the Run enters a terminal state with a `data: [DONE]` message.
+,
+        ParameterName: stream,
+        ArgumentName: stream,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: SubmitToolOuputsToRunRequest,
+    ClassName: SubmitToolOuputsToRunRequest,
+    ExternalClassName: SubmitToolOuputsToRunRequest,
+    FileNameWithoutExtension: G.Models.SubmitToolOuputsToRunRequest
+  },
+  {
+    Schema: {
+      tool_outputs: {
+        Type: object,
+        ReadOnly: false,
+        WriteOnly: false,
+        Properties: {
+          output: {
+            Type: string,
+            Description: The output of the tool call to be submitted to continue the run.,
+            ReadOnly: false,
+            WriteOnly: false,
+            AdditionalPropertiesAllowed: true,
+            Nullable: false,
+            Deprecated: false,
+            UnresolvedReference: false
+          },
+          tool_call_id: {
+            Type: string,
+            Description: The ID of the tool call in the `required_action` object within the run object the output is being submitted for.,
+            ReadOnly: false,
+            WriteOnly: false,
+            AdditionalPropertiesAllowed: true,
+            Nullable: false,
+            Deprecated: false,
+            UnresolvedReference: false
+          }
+        },
+        AdditionalPropertiesAllowed: true,
+        Nullable: false,
+        Deprecated: false,
+        UnresolvedReference: false
+      }
+    },
+    Id: tool_outputs,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: tool_call_id,
+        Name: ToolCallId,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The ID of the tool call in the `required_action` object within the run object the output is being submitted for.,
+        ParameterName: toolCallId,
+        ArgumentName: toolCallId,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: output,
+        Name: Output,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The output of the tool call to be submitted to continue the run.,
+        ParameterName: output,
+        ArgumentName: output,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ToolOutputs,
+    ClassName: ToolOutputs,
+    ExternalClassName: ToolOutputs,
+    FileNameWithoutExtension: G.Models.ToolOutputs
+  },
+  {
+    Id: ModifyVectorStoreRequest,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: name,
+        Name: Name,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The name of the vector store.,
+        ParameterName: name,
+        ArgumentName: name,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: expires_after,
+        Name: ExpiresAfter,
+        Type: {
+          CSharpType: VectorStoreExpirationAfter?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            anchor,
+            days
+          ],
+          EnumValues: null
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The expiration policy for a vector store.,
+        ParameterName: expiresAfter,
+        ArgumentName: expiresAfter,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: metadata,
+        Name: Metadata,
+        Type: {
+          CSharpType: object?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        DefaultValue: ,
+        IsDeprecated: false,
+        Summary:
+Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
+,
+        ParameterName: metadata,
+        ArgumentName: metadata,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ModifyVectorStoreRequest,
+    ClassName: ModifyVectorStoreRequest,
+    ExternalClassName: ModifyVectorStoreRequest,
+    FileNameWithoutExtension: G.Models.ModifyVectorStoreRequest
+  },
+  {
+    Id: CreateBatchRequest,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: input_file_id,
+        Name: InputFileId,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary:
+The ID of an uploaded file that contains requests for the new batch.
+
+See [upload file](/docs/api-reference/files/create) for how to upload a file.
+
+Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/requestInput), and must be uploaded with the purpose `batch`.
+,
+        ParameterName: inputFileId,
+        ArgumentName: inputFileId,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: endpoint,
+        Name: Endpoint,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            V1ChatCompletions,
+            V1Embeddings
+          ],
+          EnumValues: [
+            /v1/chat/completions,
+            /v1/embeddings
+          ]
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: The endpoint to be used for all requests in the batch. Currently `/v1/chat/completions` and `/v1/embeddings` are supported.,
+        ParameterName: endpoint,
+        ArgumentName: endpoint,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: completion_window,
+        Name: CompletionWindow,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            _24h
+          ],
+          EnumValues: [
+            24h
+          ]
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: The time frame within which the batch should be processed. Currently only `24h` is supported.,
+        ParameterName: completionWindow,
+        ArgumentName: completionWindow,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: metadata,
+        Name: Metadata,
+        Type: {
+          CSharpType: object?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        DefaultValue: ,
+        IsDeprecated: false,
+        Summary: Optional custom metadata for the batch.,
+        ParameterName: metadata,
+        ArgumentName: metadata,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: CreateBatchRequest,
+    ClassName: CreateBatchRequest,
+    ExternalClassName: CreateBatchRequest,
+    FileNameWithoutExtension: G.Models.CreateBatchRequest
+  },
+  {
+    Schema: {
+      endpoint: {
+        Type: string,
+        Description: The endpoint to be used for all requests in the batch. Currently `/v1/chat/completions` and `/v1/embeddings` are supported.,
+        ReadOnly: false,
+        WriteOnly: false,
+        AdditionalPropertiesAllowed: true,
+        Enum: [
+          {
+            PrimitiveType: String,
+            Value: /v1/chat/completions
+          },
+          {
+            PrimitiveType: String,
+            Value: /v1/embeddings
+          }
+        ],
+        Nullable: false,
+        Deprecated: false,
+        UnresolvedReference: false
+      }
+    },
+    Id: endpoint,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: /v1/chat/completions,
+        Name: V1ChatCompletions,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ParameterName: v1ChatCompletions,
+        ArgumentName: v1ChatCompletions,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: /v1/embeddings,
+        Name: V1Embeddings,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ParameterName: v1Embeddings,
+        ArgumentName: v1Embeddings,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: The endpoint to be used for all requests in the batch. Currently `/v1/chat/completions` and `/v1/embeddings` are supported.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Endpoint,
+    ClassName: Endpoint,
+    ExternalClassName: Endpoint,
+    FileNameWithoutExtension: G.Models.Endpoint
+  },
+  {
+    Schema: {
+      completion_window: {
+        Type: string,
+        Description: The time frame within which the batch should be processed. Currently only `24h` is supported.,
+        ReadOnly: false,
+        WriteOnly: false,
+        AdditionalPropertiesAllowed: true,
+        Enum: [
+          {
+            PrimitiveType: String,
+            Value: 24h
+          }
+        ],
+        Nullable: false,
+        Deprecated: false,
+        UnresolvedReference: false
+      }
+    },
+    Id: completion_window,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: 24h,
+        Name: _24h,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ParameterName: _24h,
+        ArgumentName: _24h,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: The time frame within which the batch should be processed. Currently only `24h` is supported.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: CompletionWindow,
+    ClassName: CompletionWindow,
+    ExternalClassName: CompletionWindow,
+    FileNameWithoutExtension: G.Models.CompletionWindow
   }
 ]
