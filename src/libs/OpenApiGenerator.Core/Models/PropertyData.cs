@@ -46,10 +46,8 @@ public readonly record struct PropertyData(
         parents = parents ?? throw new ArgumentNullException(nameof(parents));
 
         var name = schema.Key.ToPropertyName();
-        name = name
-            .ReplacePlusAndMinusOnStart()
-            .UseWordSeparator('_', '+', '-', '/')
-            .UseWordSeparator('(', '[', ']', ')');
+        
+        name = HandleWordSeparators(name);
 
         if (parents.Length != 0)
         {
@@ -97,10 +95,7 @@ public readonly record struct PropertyData(
 
         if (!skipHandlingWordSeparators)
         {
-            name = name
-                .ReplacePlusAndMinusOnStart()
-                .UseWordSeparator('_', '+', '-', '/')
-                .UseWordSeparator('(', '[', ']', ')');
+            name = HandleWordSeparators(name);
         }
 
         if (InvalidFirstChar(name[0]))
@@ -126,6 +121,15 @@ public readonly record struct PropertyData(
 
         // Span<char>.ToString implementation checks for char type, new string(&buf[0], buf.length)
         return buf.ToString();
+    }
+
+    private static string HandleWordSeparators(string name)
+    {
+        name = name
+            .ReplacePlusAndMinusOnStart()
+            .UseWordSeparator('_', '+', '-', '/')
+            .UseWordSeparator('(', '[', ']', ')');
+        return name;
     }
 
     public string ParameterName => Name
