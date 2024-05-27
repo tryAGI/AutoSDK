@@ -17,15 +17,15 @@
     <AdditionalFiles Include="Resources\openapi.json" />
   </ItemGroup>
 
-  <PropertyGroup>
+  <!-- for inspection -->
+  <!--<PropertyGroup>
     <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
     <CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
   </PropertyGroup>
-  
   <ItemGroup>
     <Compile Remove="Generated\**\*" />
     <None Include="Generated\**\*" />
-  </ItemGroup>
+  </ItemGroup>-->
   
 
   <Target Name="FetchTwitchOpenApiJson" BeforeTargets="Build;BeforeCompile;CompileDesignTime">

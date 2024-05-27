@@ -98,6 +98,11 @@ public readonly record struct PropertyData(
             name = HandleWordSeparators(name);
         }
 
+        if (name is null || name.Length == 0)
+        {
+            return "_";
+        }
+        
         if (InvalidFirstChar(name[0]))
         {
             name = $"_{name}";

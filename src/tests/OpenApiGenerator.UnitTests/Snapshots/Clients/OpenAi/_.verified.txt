@@ -6643,8 +6643,8 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           IsArray: false,
           IsEnum: true,
           Properties: [
-            /v1/chat/completions,
-            /v1/embeddings
+            V1ChatCompletions,
+            V1Embeddings
           ],
           EnumValues: [
             /v1/chat/completions,
