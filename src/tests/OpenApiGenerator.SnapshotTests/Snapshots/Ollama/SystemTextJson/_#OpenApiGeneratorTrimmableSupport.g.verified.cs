@@ -129,9 +129,5 @@ namespace G
         /// 
         /// </summary>
         public PushModelStatus? PushModelStatus { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public ShowModelInfoRequest? ShowModelInfoRequest { get; set; }
     }
 }

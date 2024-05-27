@@ -113,7 +113,9 @@ public readonly record struct EndPoint(
                 ?.Values ?? [])
             .Where(x => x.Schema.Type == "object" || x.Schema.Type == "array") //&& x.Parameter.Schema.Items?.Type == "object"
             .Select(x => ModelData.FromSchema(
-                    x.Schema.Type == "object"
+                x.Schema.Reference?.Id != null
+                    ? x.Schema.WithKey(x.Schema.Reference.Id)
+                    : x.Schema.Type == "object"
                         ? x.Schema.WithKey(id + "Request")
                         : x.Schema.Items.WithKey(id + "Request"),
                     settings) with
