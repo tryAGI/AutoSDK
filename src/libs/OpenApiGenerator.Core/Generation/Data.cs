@@ -17,9 +17,6 @@ public static class Data
         var (text, settings) = tuple;
 
         Dictionary<string, ModelData> schemas = [];
-        Dictionary<string, ModelData> objectParameters = [];
-        Dictionary<string, ModelData> enumParameters = [];
-        Dictionary<string, ModelData> bodies = [];
         EndPoint[] methods = [];
         var openApiDocument = text.GetOpenApiDocument(cancellationToken);
         
@@ -118,50 +115,6 @@ public static class Data
                         .Select(x => (Path: path, Operation: x)))
                 .ToArray();
             
-            objectParameters = operations
-                .SelectMany(x => x.Operation.Value.Parameters.Select(y => (x.Path, x.Operation, Parameter: y)))
-                .Where(x => x.Parameter.Schema.Type == "object")
-                .Select(x => ModelData.FromSchema(
-                    x.Parameter.Schema.WithKey(x.Operation.Value.GetMethodName(path: x.Path.Key, operationType: x.Operation.Key, settings.MethodNamingConvention, settings.MethodNamingConventionFallback) + x.Parameter.Name.ToPropertyName()),
-                    settings) with
-                    {
-                        Schema = default,
-                    })
-                .ToDictionary(x => x.ClassName, x => x);
-            bodies = operations
-                .SelectMany(x =>
-                    ((x.Operation.Value?.RequestBody?.Reference?.HostDocument?.ResolveReference(x.Operation.Value?.RequestBody?.Reference) as OpenApiRequestBody)?.Content ??
-                     x.Operation.Value?.RequestBody?.Content)
-                    ?.Values.Select(y => (x.Path, x.Operation, Parameter: y)) ?? [])
-                .Where(x => x.Parameter.Schema.Type == "object" || x.Parameter.Schema.Type == "array") //&& x.Parameter.Schema.Items?.Type == "object"
-                .Select(x => ModelData.FromSchema(
-                        x.Parameter.Schema.Type == "object"
-                            ? x.Parameter.Schema.WithKey(x.Operation.Value.GetMethodName(path: x.Path.Key, operationType: x.Operation.Key, settings.MethodNamingConvention, settings.MethodNamingConventionFallback) + "Request")
-                            : x.Parameter.Schema.Items.WithKey(x.Operation.Value.GetMethodName(path: x.Path.Key, operationType: x.Operation.Key, settings.MethodNamingConvention, settings.MethodNamingConventionFallback) + "Request"),
-                        settings) with
-                    {
-                        Schema = default,
-                    })
-                .SelectMany(model => model.WithAdditionalModels())
-                .ToDictionary(x => x.ClassName, x => x);
-            enumParameters = operations
-                .SelectMany(x => x.Operation.Value.Parameters.Select(y => (x.Operation.Value.OperationId, Parameter: y)))
-                .Where(x => x.Parameter.Schema.Enum?.Any() == true || x.Parameter.Schema.Items?.Enum?.Any() == true)
-                .Select(x => ModelData.FromSchema(
-                        x.Parameter.Schema.WithKey(x.OperationId + x.Parameter.Name.ToPropertyName()),
-                        settings) with
-                    {
-                        Style = ModelStyle.Enumeration,
-                        Properties = (x.Parameter.Schema.Enum?.Any() == true
-                            ? x.Parameter.Schema.Enum
-                            : x.Parameter.Schema.Items.Enum)
-                            .Select(value => value.ToEnumValue())
-                            .Where(value => !string.IsNullOrWhiteSpace(value.Name))
-                            .ToImmutableArray(),
-                        Schema = default,
-                    })
-                .ToDictionary(x => x.ClassName, x => x);
-            
             var operationsAsMethods = operations
                 .Select(x => EndPoint.FromSchema(x.Operation, settings, x.Path.Key))
                 .ToArray();
@@ -203,7 +156,8 @@ public static class Data
                     HttpMethod: OperationType.Get,
                     Summary: openApiDocument.Info?.Description?.ClearForXml() ?? string.Empty,
                     RequestType: string.Empty,
-                    ResponseType: string.Empty)] : [];
+                    ResponseType: string.Empty,
+                    AdditionalModels: [])] : [];
             if (settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors))
             {
                 constructors = constructors.Concat(
@@ -223,7 +177,8 @@ public static class Data
                             HttpMethod: OperationType.Get,
                             Summary: x.Description?.ClearForXml() ?? string.Empty,
                             RequestType: string.Empty,
-                            ResponseType: string.Empty)))
+                            ResponseType: string.Empty,
+                            AdditionalModels: [])))
                     .ToArray();
             }
                 
@@ -235,13 +190,11 @@ public static class Data
         }
 
         return (schemas.Values.Concat(
-                objectParameters.Values).Concat(
-                enumParameters.Values).Concat(
-                bodies.Values)
+                methods.SelectMany(x => x.AdditionalModels))
                     .GroupBy(x => x.FileNameWithoutExtension)
                     .Select(x => x.First())
                     .ToImmutableArray(),
-                methods.ToImmutableArray());
+                methods.Select(x => x with{ AdditionalModels = []}).ToImmutableArray());
     }
     
     public static FileWithName GetSourceCode(

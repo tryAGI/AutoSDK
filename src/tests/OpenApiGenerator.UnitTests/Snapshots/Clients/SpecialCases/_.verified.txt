@@ -34,6 +34,7 @@
     Summary: List all pets,
     RequestType: ,
     ResponseType: Pets,
+    AdditionalModels: null,
     MethodName: ListPetsAsync,
     NotAsyncMethodName: ListPets,
     FileNameWithoutExtension: G.Api.ListPets
@@ -53,6 +54,7 @@
     Summary: Create a pet,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: CreatePetsAsync,
     NotAsyncMethodName: CreatePets,
     FileNameWithoutExtension: G.Api.CreatePets
@@ -92,6 +94,7 @@
     Summary: Info for a specific pet,
     RequestType: ,
     ResponseType: Pet,
+    AdditionalModels: null,
     MethodName: ShowPetByIdAsync,
     NotAsyncMethodName: ShowPetById,
     FileNameWithoutExtension: G.Api.ShowPetById
@@ -110,6 +113,7 @@
     Summary: ,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
     FileNameWithoutExtension: G.Api

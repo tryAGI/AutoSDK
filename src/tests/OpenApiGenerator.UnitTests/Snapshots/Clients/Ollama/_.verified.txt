@@ -268,6 +268,7 @@ How long (in minutes) to keep the model loaded in memory.
     Summary: Generate a response for a given prompt with a provided model.,
     RequestType: GenerateCompletionRequest,
     ResponseType: GenerateCompletionResponse,
+    AdditionalModels: null,
     MethodName: GenerateCompletionAsync,
     NotAsyncMethodName: GenerateCompletion,
     FileNameWithoutExtension: G.CompletionsClient.GenerateCompletion
@@ -450,6 +451,7 @@ How long (in minutes) to keep the model loaded in memory.
     Summary: Generate the next message in a chat with a provided model.,
     RequestType: GenerateChatCompletionRequest,
     ResponseType: GenerateChatCompletionResponse,
+    AdditionalModels: null,
     MethodName: GenerateChatCompletionAsync,
     NotAsyncMethodName: GenerateChatCompletion,
     FileNameWithoutExtension: G.ChatClient.GenerateChatCompletion
@@ -562,6 +564,7 @@ Text to generate embeddings for.
     Summary: Generate embeddings from a model.,
     RequestType: GenerateEmbeddingRequest,
     ResponseType: GenerateEmbeddingResponse,
+    AdditionalModels: null,
     MethodName: GenerateEmbeddingAsync,
     NotAsyncMethodName: GenerateEmbedding,
     FileNameWithoutExtension: G.EmbeddingsClient.GenerateEmbedding
@@ -644,6 +647,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Summary: Create a model from a Modelfile.,
     RequestType: CreateModelRequest,
     ResponseType: CreateModelResponse,
+    AdditionalModels: null,
     MethodName: CreateModelAsync,
     NotAsyncMethodName: CreateModel,
     FileNameWithoutExtension: G.ModelsClient.CreateModel
@@ -662,6 +666,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Summary: List models that are available locally.,
     RequestType: ,
     ResponseType: ModelsResponse,
+    AdditionalModels: null,
     MethodName: ListModelsAsync,
     NotAsyncMethodName: ListModels,
     FileNameWithoutExtension: G.ModelsClient.ListModels
@@ -704,6 +709,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     Summary: Show details about a model including modelfile, template, parameters, license, and system prompt.,
     RequestType: ModelInfoRequest,
     ResponseType: ModelInfo,
+    AdditionalModels: null,
     MethodName: ShowModelInfoAsync,
     NotAsyncMethodName: ShowModelInfo,
     FileNameWithoutExtension: G.ModelsClient.ShowModelInfo
@@ -762,6 +768,7 @@ Name of the new model.
     Summary: Creates a model with another name from an existing model.,
     RequestType: CopyModelRequest,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: CopyModelAsync,
     NotAsyncMethodName: CopyModel,
     FileNameWithoutExtension: G.ModelsClient.CopyModel
@@ -804,6 +811,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     Summary: Delete a model and its data.,
     RequestType: DeleteModelRequest,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: DeleteModelAsync,
     NotAsyncMethodName: DeleteModel,
     FileNameWithoutExtension: G.ModelsClient.DeleteModel
@@ -890,6 +898,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Summary: Download a model from the ollama library.,
     RequestType: PullModelRequest,
     ResponseType: PullModelResponse,
+    AdditionalModels: null,
     MethodName: PullModelAsync,
     NotAsyncMethodName: PullModel,
     FileNameWithoutExtension: G.ModelsClient.PullModel
@@ -973,6 +982,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Summary: Upload a model to a model library.,
     RequestType: PushModelRequest,
     ResponseType: PushModelResponse,
+    AdditionalModels: null,
     MethodName: PushModelAsync,
     NotAsyncMethodName: PushModel,
     FileNameWithoutExtension: G.ModelsClient.PushModel
@@ -1060,6 +1070,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Summary: API Spec for Ollama API. Please see https://github.com/jmorganca/ollama/blob/main/docs/api.md for more details.,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
     FileNameWithoutExtension: G.Api
@@ -1078,6 +1089,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Summary: Given a prompt, the model will generate a completion.,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
     FileNameWithoutExtension: G.CompletionsClient
@@ -1096,6 +1108,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Summary: Given a list of messages comprising a conversation, the model will return a response.,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
     FileNameWithoutExtension: G.ChatClient
@@ -1114,6 +1127,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Summary: Get a vector representation of a given input.,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
     FileNameWithoutExtension: G.EmbeddingsClient
@@ -1132,6 +1146,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Summary: List and describe the various models available.,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
     FileNameWithoutExtension: G.ModelsClient

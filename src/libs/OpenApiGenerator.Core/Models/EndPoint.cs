@@ -20,7 +20,8 @@ public readonly record struct EndPoint(
     OperationType HttpMethod,
     string Summary,
     string RequestType,
-    string ResponseType
+    string ResponseType,
+    ImmutableArray<ModelData> AdditionalModels
 )
 {
     public string MethodName => $"{NotAsyncMethodName}Async";
@@ -76,16 +77,61 @@ public readonly record struct EndPoint(
         }
         
         var preparedPath = path.PreparePath(parameters);
+
+        var id = operation.Value.GetMethodName(
+            path: path,
+            operationType: operation.Key,
+            settings.MethodNamingConvention,
+            settings.MethodNamingConventionFallback);
+        var objectParameters = operation.Value.Parameters
+            .Where(x => x.Schema.Type == "object")
+            .Select(x => ModelData.FromSchema(
+                    x.Schema.WithKey(id + x.Name.ToPropertyName()),
+                    settings) with
+                {
+                    Schema = default,
+                })
+            .ToArray();
+        var enumParameters = operation.Value.Parameters
+            .Where(x => x.Schema.Enum?.Any() == true || x.Schema.Items?.Enum?.Any() == true)
+            .Select(x => ModelData.FromSchema(
+                    x.Schema.WithKey(operation.Value.OperationId + x.Name.ToPropertyName()),
+                    settings) with
+                {
+                    Style = ModelStyle.Enumeration,
+                    Properties = (x.Schema.Enum?.Any() == true
+                        ? x.Schema.Enum
+                        : x.Schema.Items.Enum)
+                    .Select(value => value.ToEnumValue())
+                    .Where(value => !string.IsNullOrWhiteSpace(value.Name))
+                    .ToImmutableArray(),
+                    Schema = default,
+                })
+            .ToArray();
+        var bodies = (((operation.Value.RequestBody?.Reference?.HostDocument?.ResolveReference(operation.Value.RequestBody?.Reference) as OpenApiRequestBody)?.Content ??
+                      operation.Value.RequestBody?.Content)
+                ?.Values ?? [])
+            .Where(x => x.Schema.Type == "object" || x.Schema.Type == "array") //&& x.Parameter.Schema.Items?.Type == "object"
+            .Select(x => ModelData.FromSchema(
+                    x.Schema.Type == "object"
+                        ? x.Schema.WithKey(id + "Request")
+                        : x.Schema.Items.WithKey(id + "Request"),
+                    settings) with
+                {
+                    Schema = default,
+                })
+            .SelectMany(model => model.WithAdditionalModels())
+            .ToArray();
         
         var requestSchema = operation.Value.RequestBody?.Content.Values.FirstOrDefault()?.Schema;
         var requestModel =  requestSchema != null
             ? ModelData.FromSchema(new KeyValuePair<string, OpenApiSchema>(
                 requestSchema.Reference?.Id ??
-                operation.Value.GetMethodName(path: path, operationType: operation.Key, settings.MethodNamingConvention, settings.MethodNamingConventionFallback) + "Request", requestSchema), settings)
+                id + "Request", requestSchema), settings)
             : ModelData.FromKey("test", settings) with{ Schema = default };
         var response = operation.Value.Responses.Values.FirstOrDefault();
         var endPoint = new EndPoint(
-            Id: operation.Value.GetMethodName(path: path, operationType: operation.Key, settings.MethodNamingConvention, settings.MethodNamingConventionFallback),
+            Id: id,
             Namespace: settings.Namespace,
             ClassName: settings.GroupByTags
                 ? operation.Value.Tags.FirstOrDefault()?.Name.ToClassName() + "Client" ?? settings.ClassName.Replace(".", string.Empty)
@@ -103,9 +149,14 @@ public readonly record struct EndPoint(
             Summary: operation.Value.Summary?.Replace("\n", string.Empty) ?? string.Empty,
             RequestType: requestSchema != null ? ModelData.FromKey(
                 requestSchema.Reference?.Id ??
-                operation.Value.GetMethodName(path: path, operationType: operation.Key, settings.MethodNamingConvention, settings.MethodNamingConventionFallback) + "Request", settings).Name : string.Empty,
+                id + "Request", settings).Name : string.Empty,
             ResponseType: response?
-                .Content.Values.FirstOrDefault()?.Schema?.Reference?.Id?.ToClassName() ?? string.Empty);
+                .Content.Values.FirstOrDefault()?.Schema?.Reference?.Id?.ToClassName() ?? string.Empty,
+            AdditionalModels: [
+                ..objectParameters,
+                ..enumParameters,
+                ..bodies,
+            ]);
         
         return endPoint;
     }
@@ -129,7 +180,8 @@ public readonly record struct EndPoint(
             HttpMethod: default,
             Summary: string.Empty,
             RequestType: string.Empty,
-            ResponseType: string.Empty);
+            ResponseType: string.Empty,
+            AdditionalModels: []);
         
         return endPoint;
     }

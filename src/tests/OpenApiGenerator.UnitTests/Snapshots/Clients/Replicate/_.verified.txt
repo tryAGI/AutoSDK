@@ -13,6 +13,7 @@
     Summary: Get the authenticated account,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: GetAccountAsync,
     NotAsyncMethodName: GetAccount,
     FileNameWithoutExtension: G.Api.GetAccount
@@ -31,6 +32,7 @@
     Summary: List collections of models,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: ListCollectionsAsync,
     NotAsyncMethodName: ListCollections,
     FileNameWithoutExtension: G.Api.ListCollections
@@ -70,6 +72,7 @@
     Summary: Get a collection of models,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: GetCollectionsAsync,
     NotAsyncMethodName: GetCollections,
     FileNameWithoutExtension: G.Api.GetCollections
@@ -88,6 +91,7 @@
     Summary: List deployments,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: ListDeploymentsAsync,
     NotAsyncMethodName: ListDeployments,
     FileNameWithoutExtension: G.Api.ListDeployments
@@ -210,6 +214,7 @@
     Summary: Create a deployment,
     RequestType: CreateDeploymentsRequest,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: CreateDeploymentsAsync,
     NotAsyncMethodName: CreateDeployments,
     FileNameWithoutExtension: G.Api.CreateDeployments
@@ -270,6 +275,7 @@
     Summary: Delete a deployment,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: DeleteDeploymentsAsync,
     NotAsyncMethodName: DeleteDeployments,
     FileNameWithoutExtension: G.Api.DeleteDeployments
@@ -329,6 +335,7 @@
     Summary: Get a deployment,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: GetDeploymentsAsync,
     NotAsyncMethodName: GetDeployments,
     FileNameWithoutExtension: G.Api.GetDeployments
@@ -457,6 +464,7 @@
     Summary: Update a deployment,
     RequestType: UpdateDeploymentsRequest,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: UpdateDeploymentsAsync,
     NotAsyncMethodName: UpdateDeployments,
     FileNameWithoutExtension: G.Api.UpdateDeployments
@@ -628,6 +636,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Create a prediction using a deployment,
     RequestType: PredictionRequest,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: CreatePredictionsDeploymentsAsync,
     NotAsyncMethodName: CreatePredictionsDeployments,
     FileNameWithoutExtension: G.Api.CreatePredictionsDeployments
@@ -646,6 +655,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: List available hardware for models,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: ListHardwareAsync,
     NotAsyncMethodName: ListHardware,
     FileNameWithoutExtension: G.Api.ListHardware
@@ -664,6 +674,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: List public models,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: ListModelsAsync,
     NotAsyncMethodName: ListModels,
     FileNameWithoutExtension: G.Api.ListModels
@@ -843,6 +854,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Create a model,
     RequestType: CreateModelsRequest,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: CreateModelsAsync,
     NotAsyncMethodName: CreateModels,
     FileNameWithoutExtension: G.Api.CreateModels
@@ -903,6 +915,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Delete a model,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: DeleteModelsAsync,
     NotAsyncMethodName: DeleteModels,
     FileNameWithoutExtension: G.Api.DeleteModels
@@ -962,6 +975,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Get a model,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: GetModelsAsync,
     NotAsyncMethodName: GetModels,
     FileNameWithoutExtension: G.Api.GetModels
@@ -1133,6 +1147,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Create a prediction using an official model,
     RequestType: PredictionRequest,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: CreatePredictionsModelsAsync,
     NotAsyncMethodName: CreatePredictionsModels,
     FileNameWithoutExtension: G.Api.CreatePredictionsModels
@@ -1192,6 +1207,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: List model versions,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: ListVersionsModelsAsync,
     NotAsyncMethodName: ListVersionsModels,
     FileNameWithoutExtension: G.Api.ListVersionsModels
@@ -1272,6 +1288,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Delete a model version,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: DeleteVersionsModelsAsync,
     NotAsyncMethodName: DeleteVersionsModels,
     FileNameWithoutExtension: G.Api.DeleteVersionsModels
@@ -1351,6 +1368,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Get a model version,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: GetVersionsModelsAsync,
     NotAsyncMethodName: GetVersionsModels,
     FileNameWithoutExtension: G.Api.GetVersionsModels
@@ -1525,6 +1543,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Create a training,
     RequestType: TrainingRequest,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: CreateTrainingsAsync,
     NotAsyncMethodName: CreateTrainings,
     FileNameWithoutExtension: G.Api.CreateTrainings
@@ -1543,6 +1562,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: List predictions,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: ListPredictionsAsync,
     NotAsyncMethodName: ListPredictions,
     FileNameWithoutExtension: G.Api.ListPredictions
@@ -1692,6 +1712,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Create a prediction,
     RequestType: VersionPredictionRequest,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: CreatePredictionsAsync,
     NotAsyncMethodName: CreatePredictions,
     FileNameWithoutExtension: G.Api.CreatePredictions
@@ -1731,6 +1752,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Get a prediction,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: GetPredictionsAsync,
     NotAsyncMethodName: GetPredictions,
     FileNameWithoutExtension: G.Api.GetPredictions
@@ -1771,6 +1793,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Cancel a prediction,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: CancelPredictionsAsync,
     NotAsyncMethodName: CancelPredictions,
     FileNameWithoutExtension: G.Api.CancelPredictions
@@ -1789,6 +1812,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: List trainings,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: ListTrainingsAsync,
     NotAsyncMethodName: ListTrainings,
     FileNameWithoutExtension: G.Api.ListTrainings
@@ -1828,6 +1852,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Get a training,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: GetTrainingsAsync,
     NotAsyncMethodName: GetTrainings,
     FileNameWithoutExtension: G.Api.GetTrainings
@@ -1868,6 +1893,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Cancel a training,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: CancelTrainingsAsync,
     NotAsyncMethodName: CancelTrainings,
     FileNameWithoutExtension: G.Api.CancelTrainings
@@ -1886,6 +1912,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: Get the signing secret for the default webhook,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: GetSecretDefaultWebhooksAsync,
     NotAsyncMethodName: GetSecretDefaultWebhooks,
     FileNameWithoutExtension: G.Api.GetSecretDefaultWebhooks
@@ -1904,6 +1931,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: ,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: AuthorizeUsingBearerAsync,
     NotAsyncMethodName: AuthorizeUsingBearer,
     FileNameWithoutExtension: G.Api.Authorization
@@ -1922,6 +1950,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Summary: A web service for running Replicate models,
     RequestType: ,
     ResponseType: ,
+    AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
     FileNameWithoutExtension: G.Api
