@@ -16,7 +16,10 @@ public static class Data
     {
         var (text, settings) = tuple;
 
-        ModelData[] models = [];
+        Dictionary<string, ModelData> schemas = [];
+        Dictionary<string, ModelData> objectParameters = [];
+        Dictionary<string, ModelData> enumParameters = [];
+        Dictionary<string, ModelData> bodies = [];
         EndPoint[] methods = [];
         var openApiDocument = text.GetOpenApiDocument(cancellationToken);
         
@@ -77,7 +80,7 @@ public static class Data
                     .SelectMany(schema => schema.GetReferences())
                     .Select(reference => reference.Id));
             
-            var components = openApiDocument.Components.Schemas
+            schemas = openApiDocument.Components.Schemas
                 .Where(schema =>
                     (includedModels.Count == 0 ||
                     includedModels.Contains(schema.Key) ||
@@ -89,38 +92,43 @@ public static class Data
                 {
                     Schema = default,
                 })
-                .ToImmutableArray();
+                .ToDictionary(x => x.ClassName, x => x);
+        }
 
-            var objectParameters = openApiDocument.Paths
-                .SelectMany(path => path.Value.Operations.Select(operation => (Path: path.Key, Operation: operation)))
+        if (settings.GenerateSdk || settings.GenerateMethods)
+        {
+            var operations = openApiDocument.Paths.SelectMany(path =>
+                    path.Value.Operations
+                        .Where(x =>
+                        {
+                            if (includedOperationIds.Count == 0 && excludedOperationIds.Count == 0)
+                            {
+                                return true;
+                            }
+                        
+                            var methodName = x.Value.GetMethodName(path: path.Key, operationType: x.Key,
+                                settings.MethodNamingConvention, settings.MethodNamingConventionFallback);
+                        
+                            return (includedOperationIds.Count == 0 ||
+                                    includedOperationIds.Contains(methodName) ||
+                                    includedOperationIds.Contains(x.Value.OperationId)) &&
+                                   !excludedOperationIds.Contains(methodName) &&
+                                   !excludedOperationIds.Contains(x.Value.OperationId);
+                        })
+                        .Select(x => (Path: path, Operation: x)))
+                .ToArray();
+            
+            objectParameters = operations
                 .SelectMany(x => x.Operation.Value.Parameters.Select(y => (x.Path, x.Operation, Parameter: y)))
                 .Where(x => x.Parameter.Schema.Type == "object")
                 .Select(x => ModelData.FromSchema(
-                    x.Parameter.Schema.WithKey(x.Operation.Value.GetMethodName(path: x.Path, operationType: x.Operation.Key, settings.MethodNamingConvention, settings.MethodNamingConventionFallback) + x.Parameter.Name.ToPropertyName()),
+                    x.Parameter.Schema.WithKey(x.Operation.Value.GetMethodName(path: x.Path.Key, operationType: x.Operation.Key, settings.MethodNamingConvention, settings.MethodNamingConventionFallback) + x.Parameter.Name.ToPropertyName()),
                     settings) with
                     {
                         Schema = default,
                     })
-                .ToImmutableArray();
-            var bodies = openApiDocument.Paths
-                .SelectMany(path => path.Value.Operations
-                    .Where(x =>
-                    {
-                        if (includedOperationIds.Count == 0 && excludedOperationIds.Count == 0)
-                        {
-                            return true;
-                        }
-                        
-                        var methodName = x.Value.GetMethodName(path: path.Key, operationType: x.Key,
-                            settings.MethodNamingConvention, settings.MethodNamingConventionFallback);
-                        
-                        return (includedOperationIds.Count == 0 ||
-                                includedOperationIds.Contains(methodName) ||
-                                includedOperationIds.Contains(x.Value.OperationId)) &&
-                               !excludedOperationIds.Contains(methodName) &&
-                               !excludedOperationIds.Contains(x.Value.OperationId);
-                    })
-                    .Select(operation => (Path: path.Key, Operation: operation)))
+                .ToDictionary(x => x.ClassName, x => x);
+            bodies = operations
                 .SelectMany(x =>
                     ((x.Operation.Value?.RequestBody?.Reference?.HostDocument?.ResolveReference(x.Operation.Value?.RequestBody?.Reference) as OpenApiRequestBody)?.Content ??
                      x.Operation.Value?.RequestBody?.Content)
@@ -128,17 +136,16 @@ public static class Data
                 .Where(x => x.Parameter.Schema.Type == "object" || x.Parameter.Schema.Type == "array") //&& x.Parameter.Schema.Items?.Type == "object"
                 .Select(x => ModelData.FromSchema(
                         x.Parameter.Schema.Type == "object"
-                            ? x.Parameter.Schema.WithKey(x.Operation.Value.GetMethodName(path: x.Path, operationType: x.Operation.Key, settings.MethodNamingConvention, settings.MethodNamingConventionFallback) + "Request")
-                            : x.Parameter.Schema.Items.WithKey(x.Operation.Value.GetMethodName(path: x.Path, operationType: x.Operation.Key, settings.MethodNamingConvention, settings.MethodNamingConventionFallback) + "Request"),
+                            ? x.Parameter.Schema.WithKey(x.Operation.Value.GetMethodName(path: x.Path.Key, operationType: x.Operation.Key, settings.MethodNamingConvention, settings.MethodNamingConventionFallback) + "Request")
+                            : x.Parameter.Schema.Items.WithKey(x.Operation.Value.GetMethodName(path: x.Path.Key, operationType: x.Operation.Key, settings.MethodNamingConvention, settings.MethodNamingConventionFallback) + "Request"),
                         settings) with
                     {
                         Schema = default,
                     })
                 .SelectMany(model => model.WithAdditionalModels())
-                .ToImmutableArray();
-            var enumParameters = openApiDocument.Paths
-                .SelectMany(path => path.Value.Operations.Select(operation => (operation.Value.OperationId, Operation: operation)))
-                .SelectMany(x => x.Operation.Value.Parameters.Select(y => (x.OperationId, Parameter: y)))
+                .ToDictionary(x => x.ClassName, x => x);
+            enumParameters = operations
+                .SelectMany(x => x.Operation.Value.Parameters.Select(y => (x.Operation.Value.OperationId, Parameter: y)))
                 .Where(x => x.Parameter.Schema.Enum?.Any() == true || x.Parameter.Schema.Items?.Enum?.Any() == true)
                 .Select(x => ModelData.FromSchema(
                         x.Parameter.Schema.WithKey(x.OperationId + x.Parameter.Name.ToPropertyName()),
@@ -153,42 +160,11 @@ public static class Data
                             .ToImmutableArray(),
                         Schema = default,
                     })
-                .ToImmutableArray();
+                .ToDictionary(x => x.ClassName, x => x);
             
-            models = ImmutableArray
-                .Create([
-                    ..components,
-                    ..objectParameters,
-                    ..enumParameters,
-                    ..bodies,
-                ])
-                .GroupBy(x => x.FileNameWithoutExtension)
-                .Select(x => x.First())
+            var operationsAsMethods = operations
+                .Select(x => EndPoint.FromSchema(x.Operation, settings, x.Path.Key))
                 .ToArray();
-        }
-
-        if (settings.GenerateSdk || settings.GenerateMethods)
-        {
-            var operations = openApiDocument.Paths.SelectMany(path =>
-                path.Value.Operations
-                    .Where(x =>
-                    {
-                        if (includedOperationIds.Count == 0 && excludedOperationIds.Count == 0)
-                        {
-                            return true;
-                        }
-                        
-                        var methodName = x.Value.GetMethodName(path: path.Key, operationType: x.Key,
-                            settings.MethodNamingConvention, settings.MethodNamingConventionFallback);
-                        
-                        return (includedOperationIds.Count == 0 ||
-                                includedOperationIds.Contains(methodName) ||
-                                includedOperationIds.Contains(x.Value.OperationId)) &&
-                               !excludedOperationIds.Contains(methodName) &&
-                               !excludedOperationIds.Contains(x.Value.OperationId);
-                    })
-                    .Select(operation => EndPoint.FromSchema(operation, settings, path.Key)))
-                    .ToArray();
             var authorizations = openApiDocument.SecurityRequirements
                 .SelectMany(requirement => requirement)
                 .Select(x => EndPoint.FromAuthorization(x.Key.Scheme, settings))
@@ -252,13 +228,20 @@ public static class Data
             }
                 
             methods = [
-                ..operations,
+                ..operationsAsMethods,
                 ..authorizations,
                 ..constructors,
             ];
         }
-        
-        return (models.ToImmutableArray(), methods.ToImmutableArray());
+
+        return (schemas.Values.Concat(
+                objectParameters.Values).Concat(
+                enumParameters.Values).Concat(
+                bodies.Values)
+                    .GroupBy(x => x.FileNameWithoutExtension)
+                    .Select(x => x.First())
+                    .ToImmutableArray(),
+                methods.ToImmutableArray());
     }
     
     public static FileWithName GetSourceCode(
