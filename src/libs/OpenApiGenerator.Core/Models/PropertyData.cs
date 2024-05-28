@@ -1,5 +1,3 @@
-using System.Diagnostics;
-using System.Text;
 using Microsoft.OpenApi.Models;
 using OpenApiGenerator.Core.Extensions;
 using OpenApiGenerator.Core.Json;
@@ -75,7 +73,7 @@ public readonly record struct PropertyData(
             Summary: schema.Value.GetSummary());
     }
 
-    private static string SanitizeName(string? name, bool skipHandlingWordSeparators = false)
+    internal static string SanitizeName(string? name, bool skipHandlingWordSeparators = false)
     {
         static bool InvalidFirstChar(char ch)
             => ch is not ('_' or >= 'A' and <= 'Z' or >= 'a' and <= 'z');
@@ -98,7 +96,7 @@ public readonly record struct PropertyData(
             name = HandleWordSeparators(name);
         }
 
-        if (name is null || name.Length == 0)
+        if (name.Length == 0)
         {
             return "_";
         }
@@ -130,11 +128,9 @@ public readonly record struct PropertyData(
 
     private static string HandleWordSeparators(string name)
     {
-        name = name
+        return name
             .ReplacePlusAndMinusOnStart()
-            .UseWordSeparator('_', '+', '-', '/')
-            .UseWordSeparator('(', '[', ']', ')');
-        return name;
+            .UseWordSeparator('_', '+', '-', '/', '(', '[', ']', ')');
     }
 
     public string ParameterName => Name
@@ -143,11 +139,6 @@ public readonly record struct PropertyData(
         .ReplaceIfEquals("ref", "@ref")
         .ReplaceIfEquals("base", "@base")
         .ReplaceIfEquals("protected", "@protected");
-
-    public string UnsanitaryName
-    {
-        init => Name = SanitizeName(value);
-    }
 
     public string ArgumentName
     {

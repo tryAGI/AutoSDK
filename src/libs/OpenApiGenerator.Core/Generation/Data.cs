@@ -141,7 +141,7 @@ public static class Data
                         ? [
                             .. includedTags.Select(x => PropertyData.Default with
                             {
-                                UnsanitaryName = x.Name.ToClassName(),
+                                Name = PropertyData.SanitizeName(x.Name.ToClassName()),
                                 Type = TypeData.Default with
                                 {
                                     CSharpType = $"{x.Name.ToClassName()}Client",

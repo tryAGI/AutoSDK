@@ -207,7 +207,7 @@ public static class OpenApiExtensions
         return PropertyData.Default with
         {
             Id = id,
-            UnsanitaryName = name,
+            Name = PropertyData.SanitizeName(name),
         };
     }
 
