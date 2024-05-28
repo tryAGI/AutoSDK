@@ -181,7 +181,7 @@ public partial class Tests
     [DataTestMethod]
     [DataRow(JsonSerializerType.SystemTextJson)]
     [DataRow(JsonSerializerType.NewtonsoftJson)]
-    public Task YamlWithLocalFile(JsonSerializerType jsonSerializerType)
+    public Task IpInfo(JsonSerializerType jsonSerializerType)
     {
         return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
             new CustomAdditionalText(
