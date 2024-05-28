@@ -19,17 +19,28 @@ public class SystemTextJsonSerializer : IJsonSerializer
         return "[global::System.Text.Json.Serialization.JsonRequired]";
     }
     
+    private static string GetContextType(string type)
+    {
+        type = type.Replace("global::", string.Empty);
+        
+        return type switch
+        {
+            "System.Collections.Generic.IList<string>" => "IListString",
+            _ => type,
+        };
+    }
+    
     public string GenerateSerializeCall(string type, string jsonSerializerContext)
     {
         return string.IsNullOrWhiteSpace(jsonSerializerContext)
             ? "global::System.Text.Json.JsonSerializer.Serialize(request)"
-            : $"global::System.Text.Json.JsonSerializer.Serialize(request, global::{jsonSerializerContext}.Default.{type})";
+            : $"global::System.Text.Json.JsonSerializer.Serialize(request, global::{jsonSerializerContext}.Default.{GetContextType(type)})";
     }
     
     public string GenerateDeserializeCall(string type, string jsonSerializerContext)
     {
         return string.IsNullOrWhiteSpace(jsonSerializerContext)
             ? $"global::System.Text.Json.JsonSerializer.Deserialize<{type}>(content)"
-            : $"global::System.Text.Json.JsonSerializer.Deserialize(content, global::{jsonSerializerContext}.Default.{type})";
+            : $"global::System.Text.Json.JsonSerializer.Deserialize(content, global::{jsonSerializerContext}.Default.{GetContextType(type)})";
     }
 }
