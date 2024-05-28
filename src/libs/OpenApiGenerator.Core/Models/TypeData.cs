@@ -18,6 +18,8 @@ public readonly record struct TypeData(
         IsEnum: false,
         Properties: [],
         EnumValues: []);
+    
+    public string CSharpTypeWithoutNullability => CSharpType.TrimEnd('?');
 
     public static TypeData FromSchema(
         KeyValuePair<string, OpenApiSchema> schema,

@@ -15,7 +15,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -37,7 +38,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -56,7 +58,8 @@ The prompt to generate a response.
           IsArray: true,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -73,7 +76,8 @@ The prompt to generate a response.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -90,7 +94,8 @@ The prompt to generate a response.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -107,7 +112,8 @@ The prompt to generate a response.
           IsArray: true,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<int>
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -158,7 +164,8 @@ The prompt to generate a response.
             rope_frequency_scale,
             num_thread
           ],
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: RequestOptions
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -179,7 +186,8 @@ The prompt to generate a response.
           ],
           EnumValues: [
             json
-          ]
+          ],
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -202,7 +210,8 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -223,7 +232,8 @@ You may choose to use the `raw` parameter if you are specifying a full templated
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         DefaultValue: false,
@@ -244,7 +254,8 @@ If `false` the response will be returned as a single response object, otherwise 
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -287,7 +298,8 @@ How long (in minutes) to keep the model loaded in memory.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -328,7 +340,8 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -347,7 +360,8 @@ Number of tokens to keep from the prompt.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -366,7 +380,8 @@ Sets the random number seed to use for generation. Setting this to a specific nu
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -385,7 +400,8 @@ Maximum number of tokens to predict when generating text. (Default: 128, -1 = in
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -404,7 +420,8 @@ Reduces the probability of generating nonsense. A higher value (e.g. 100) will g
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: float
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -423,7 +440,8 @@ Works together with top-k. A higher value (e.g., 0.95) will lead to more diverse
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: float
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -442,7 +460,8 @@ Tail free sampling is used to reduce the impact of less probable tokens from the
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: float
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -461,7 +480,8 @@ Typical p is used to reduce the impact of less probable tokens from the output.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -480,7 +500,8 @@ Sets how far back for the model to look back to prevent repetition. (Default: 64
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: float
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -499,7 +520,8 @@ The temperature of the model. Increasing the temperature will make the model ans
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: float
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -518,7 +540,8 @@ Sets how strongly to penalize repetitions. A higher value (e.g., 1.5) will penal
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: float
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -537,7 +560,8 @@ Positive values penalize new tokens based on whether they appear in the text so 
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: float
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -556,7 +580,8 @@ Positive values penalize new tokens based on their existing frequency in the tex
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -575,7 +600,8 @@ Enable Mirostat sampling for controlling perplexity. (default: 0, 0 = disabled, 
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: float
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -594,7 +620,8 @@ Controls the balance between coherence and diversity of the output. A lower valu
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: float
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -613,7 +640,8 @@ Influences how quickly the algorithm responds to feedback from the generated tex
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -632,7 +660,8 @@ Penalize newlines in the output. (Default: false)
           IsArray: true,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -649,7 +678,8 @@ Penalize newlines in the output. (Default: false)
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -668,7 +698,8 @@ Enable NUMA support. (Default: false)
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -687,7 +718,8 @@ Sets the size of the context window used to generate the next token.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -706,7 +738,8 @@ Sets the number of batches to use for generation. (Default: 1)
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -725,7 +758,8 @@ The number of GQA groups in the transformer layer. Required for some models, for
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -744,7 +778,8 @@ The number of layers to send to the GPU(s). On macOS it defaults to 1 to enable 
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -763,7 +798,8 @@ The GPU to use for the main model. Default is 0.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -782,7 +818,8 @@ Enable low VRAM mode. (Default: false)
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -801,7 +838,8 @@ Enable f16 key/value. (Default: false)
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -820,7 +858,8 @@ Enable logits all. (Default: false)
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -839,7 +878,8 @@ Enable vocab only. (Default: false)
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -858,7 +898,8 @@ Enable mmap. (Default: false)
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -877,7 +918,8 @@ Enable mlock. (Default: false)
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -896,7 +938,8 @@ Enable embedding only. (Default: false)
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: float
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -915,7 +958,8 @@ The base of the rope frequency scale. (Default: 1.0)
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: float
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -934,7 +978,8 @@ The scale of the rope frequency. (Default: 1.0)
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -994,7 +1039,8 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1016,7 +1062,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: global::System.DateTime
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1035,7 +1082,8 @@ Date on which a model was created.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1054,7 +1102,8 @@ The response for a given prompt with a provided model.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1073,7 +1122,8 @@ Whether the response has completed.
           IsArray: true,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<int>
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1093,7 +1143,8 @@ An encoding of the conversation used in this response, this can be sent in the n
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1112,7 +1163,8 @@ Time spent generating the response.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1131,7 +1183,8 @@ Time spent in nanoseconds loading the model.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1150,7 +1203,8 @@ Number of tokens in the prompt.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1169,7 +1223,8 @@ Time spent in nanoseconds evaluating the prompt.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1188,7 +1243,8 @@ Number of tokens the response.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1225,7 +1281,8 @@ Time in nanoseconds spent generating the response.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -1247,7 +1304,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           IsArray: true,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Message>
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -1268,7 +1326,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           ],
           EnumValues: [
             json
-          ]
+          ],
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1325,7 +1384,8 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
             rope_frequency_scale,
             num_thread
           ],
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: RequestOptions
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1342,7 +1402,8 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         DefaultValue: false,
@@ -1363,7 +1424,8 @@ If `false` the response will be returned as a single response object, otherwise 
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1406,7 +1468,8 @@ How long (in minutes) to keep the model loaded in memory.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1451,7 +1514,8 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
             content,
             images
           ],
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: Message
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1468,7 +1532,8 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1490,7 +1555,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: global::System.DateTime
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1509,7 +1575,8 @@ Date on which a model was created.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1528,7 +1595,8 @@ Whether the response has completed.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1547,7 +1615,8 @@ Time spent generating the response.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1566,7 +1635,8 @@ Time spent in nanoseconds loading the model.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1585,7 +1655,8 @@ Number of tokens in the prompt.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1604,7 +1675,8 @@ Time spent in nanoseconds evaluating the prompt.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1623,7 +1695,8 @@ Number of tokens the response.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1668,7 +1741,8 @@ Time in nanoseconds spent generating the response.
             system,
             user,
             assistant
-          ]
+          ],
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -1685,7 +1759,8 @@ Time in nanoseconds spent generating the response.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -1704,7 +1779,8 @@ The content of the message
           IsArray: true,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1740,7 +1816,8 @@ The content of the message
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1757,7 +1834,8 @@ The content of the message
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1774,7 +1852,8 @@ The content of the message
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1809,7 +1888,8 @@ The content of the message
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -1831,7 +1911,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -1884,7 +1965,8 @@ Text to generate embeddings for.
             rope_frequency_scale,
             num_thread
           ],
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: RequestOptions
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1919,7 +2001,8 @@ Text to generate embeddings for.
           IsArray: true,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<double>
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1956,7 +2039,8 @@ The embedding for the prompt.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -1978,7 +2062,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -1997,7 +2082,8 @@ The contents of the Modelfile.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         DefaultValue: false,
@@ -2044,7 +2130,8 @@ If `false` the response will be returned as a single response object, otherwise 
             creating system layer,
             parsing modelfile,
             success
-          ]
+          ],
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -2080,7 +2167,8 @@ If `false` the response will be returned as a single response object, otherwise 
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -2097,7 +2185,8 @@ If `false` the response will be returned as a single response object, otherwise 
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -2114,7 +2203,8 @@ If `false` the response will be returned as a single response object, otherwise 
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -2166,7 +2256,8 @@ If `false` the response will be returned as a single response object, otherwise 
           IsArray: true,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Model>
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -2201,7 +2292,8 @@ If `false` the response will be returned as a single response object, otherwise 
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -2223,7 +2315,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: global::System.DateTime
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -2242,7 +2335,8 @@ Model modification date.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -2279,7 +2373,8 @@ Size of the model on disk.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -2319,7 +2414,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -2338,7 +2434,8 @@ The model's license.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -2357,7 +2454,8 @@ The modelfile associated with the model.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -2376,7 +2474,8 @@ The model parameters.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -2413,7 +2512,8 @@ The prompt template for the model.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -2432,7 +2532,8 @@ Name of the model to copy.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -2469,7 +2570,8 @@ Name of the new model.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -2509,7 +2611,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -2531,7 +2634,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         DefaultValue: false,
@@ -2554,7 +2658,8 @@ Only use this if you are pulling from your own library during development.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         DefaultValue: false,
@@ -2607,7 +2712,8 @@ If `false` the response will be returned as a single response object, otherwise 
             writing manifest,
             removing any unused layers,
             success
-          ]
+          ],
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -2626,7 +2732,8 @@ Status pulling the model.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -2645,7 +2752,8 @@ The model's digest.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -2664,7 +2772,8 @@ Total size of the model.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -2708,7 +2817,8 @@ The number of files to be downloaded depends on the number of layers specified i
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -2725,7 +2835,8 @@ The number of files to be downloaded depends on the number of layers specified i
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -2742,7 +2853,8 @@ The number of files to be downloaded depends on the number of layers specified i
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -2759,7 +2871,8 @@ The number of files to be downloaded depends on the number of layers specified i
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -2776,7 +2889,8 @@ The number of files to be downloaded depends on the number of layers specified i
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -2793,7 +2907,8 @@ The number of files to be downloaded depends on the number of layers specified i
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -2849,7 +2964,8 @@ Status pulling the model.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -2868,7 +2984,8 @@ The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         DefaultValue: false,
@@ -2891,7 +3008,8 @@ Only use this if you are pushing to your library during development.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         DefaultValue: false,
@@ -2940,7 +3058,8 @@ If `false` the response will be returned as a single response object, otherwise 
             starting upload,
             pushing manifest,
             success
-          ]
+          ],
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -2957,7 +3076,8 @@ If `false` the response will be returned as a single response object, otherwise 
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -2976,7 +3096,8 @@ the model's digest
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -3014,7 +3135,8 @@ total size of the model
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -3031,7 +3153,8 @@ total size of the model
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -3048,7 +3171,8 @@ total size of the model
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -3065,7 +3189,8 @@ total size of the model
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,

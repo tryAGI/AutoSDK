@@ -155,7 +155,7 @@ public static class Data
                     JsonSerializerContext: settings.JsonSerializerContext,
                     HttpMethod: OperationType.Get,
                     Summary: openApiDocument.Info?.Description?.ClearForXml() ?? string.Empty,
-                    RequestType: string.Empty,
+                    RequestType: TypeData.Default,
                     ResponseType: string.Empty,
                     AdditionalModels: [])] : [];
             if (settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors))
@@ -176,7 +176,7 @@ public static class Data
                             JsonSerializerContext: settings.JsonSerializerContext,
                             HttpMethod: OperationType.Get,
                             Summary: x.Description?.ClearForXml() ?? string.Empty,
-                            RequestType: string.Empty,
+                            RequestType: TypeData.Default,
                             ResponseType: string.Empty,
                             AdditionalModels: [])))
                     .ToArray();

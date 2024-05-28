@@ -75,18 +75,18 @@ namespace {endPoint.Namespace}
         /// </summary>
 {endPoint.Properties.Where(x => x.ParameterLocation != null).Select(x => $@"
         /// <param name=""{x.ParameterName}""></param>").Inject()}
-{(string.IsNullOrWhiteSpace(endPoint.RequestType) ? " " : @" 
+{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : @" 
         /// <param name=""request""></param>")}
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::System.InvalidOperationException""></exception>
         public async {taskType} {endPoint.MethodName}(
 {endPoint.Properties.Where(x => x.ParameterLocation != null).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName},").Inject()}
-{(string.IsNullOrWhiteSpace(endPoint.RequestType) ? " " : @$" 
-            {endPoint.RequestType} request,")}
+{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : @$" 
+            {endPoint.RequestType.CSharpTypeWithoutNullability} request,")}
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default)
         {{
-{(string.IsNullOrWhiteSpace(endPoint.RequestType) ? " " : @" 
+{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : @" 
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 ")}
 {(endPoint.JsonSerializerType == JsonSerializerType.NewtonsoftJson ? endPoint.Properties
@@ -102,9 +102,9 @@ namespace {endPoint.Namespace}
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: {GetHttpMethod(endPoint.TargetFramework, endPoint.HttpMethod)},
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + {endPoint.Path}, global::System.UriKind.RelativeOrAbsolute));
-{(string.IsNullOrWhiteSpace(endPoint.RequestType) ? " " : $@" 
+{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : $@" 
             httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: {jsonSerializer.GenerateSerializeCall(endPoint.RequestType, endPoint.JsonSerializerContext)},
+                content: {jsonSerializer.GenerateSerializeCall(endPoint.RequestType.CSharpTypeWithoutNullability, endPoint.JsonSerializerContext)},
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: ""application/json"");")}
 
@@ -138,7 +138,9 @@ namespace {endPoint.Namespace}
     public static string GenerateExtensionMethod(
         EndPoint endPoint)
     {
-        if (string.IsNullOrWhiteSpace(endPoint.RequestType))
+        if (string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ||
+            endPoint.RequestType.IsArray ||
+            endPoint.RequestType.IsEnum)
         {
             return " ";
         }
@@ -177,7 +179,7 @@ namespace {endPoint.Namespace}
             {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default)
         {{
-            var request = new {endPoint.RequestType}
+            var request = new {endPoint.RequestType.CSharpTypeWithoutNullability}
             {{
 {endPoint.Properties.Where(x => x.ParameterLocation == null).Select(x => $@"
                 {x.Name} = {x.ParameterName},").Inject()}

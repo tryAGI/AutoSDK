@@ -19,7 +19,7 @@ public readonly record struct EndPoint(
     string JsonSerializerContext,
     OperationType HttpMethod,
     string Summary,
-    string RequestType,
+    TypeData RequestType,
     string ResponseType,
     ImmutableArray<ModelData> AdditionalModels
 )
@@ -108,9 +108,12 @@ public readonly record struct EndPoint(
                     Schema = default,
                 })
             .ToArray();
-        var bodies = (((operation.Value.RequestBody?.Reference?.HostDocument?.ResolveReference(operation.Value.RequestBody?.Reference) as OpenApiRequestBody)?.Content ??
-                      operation.Value.RequestBody?.Content)
-                ?.Values ?? [])
+        var requestMediaTypes =
+            ((operation.Value.RequestBody?.Reference?.HostDocument?.ResolveReference(operation.Value.RequestBody
+                  ?.Reference) as OpenApiRequestBody)?.Content ??
+              operation.Value.RequestBody?.Content)
+                ?.Values ?? [];
+        var requestBodyModels = requestMediaTypes
             .Where(x => x.Schema.Type == "object" || x.Schema.Type == "array") //&& x.Parameter.Schema.Items?.Type == "object"
             .Select(x => ModelData.FromSchema(
                 x.Schema.Reference?.Id != null
@@ -124,10 +127,20 @@ public readonly record struct EndPoint(
                 })
             .SelectMany(model => model.WithAdditionalModels())
             .ToArray();
+        var requestBodyTypes = requestMediaTypes
+            .Select(x => TypeData.FromSchema(
+                    x.Schema.Reference?.Id != null
+                        ? x.Schema.WithKey(x.Schema.Reference.Id)
+                        : x.Schema.WithKey(id + "Request"),
+                    settings))
+            .ToArray();
         
-        ModelData? requestModel = bodies.Length == 0
+        ModelData? requestModel = requestBodyModels.Length == 0
             ? null
-            : bodies.First();
+            : requestBodyModels.First();
+        TypeData? requestType = requestBodyTypes.Length == 0
+            ? null
+            : requestBodyTypes.First();
         var response = operation.Value.Responses.Values.FirstOrDefault();
         var endPoint = new EndPoint(
             Id: id,
@@ -146,13 +159,13 @@ public readonly record struct EndPoint(
             JsonSerializerContext: settings.JsonSerializerContext,
             HttpMethod: operation.Key,
             Summary: operation.Value.Summary?.Replace("\n", string.Empty) ?? string.Empty,
-            RequestType: requestModel?.Name ?? string.Empty,
+            RequestType: requestType ?? TypeData.Default,
             ResponseType: response?
                 .Content.Values.FirstOrDefault()?.Schema?.Reference?.Id?.ToClassName() ?? string.Empty,
             AdditionalModels: [
                 ..objectParameters,
                 ..enumParameters,
-                ..bodies,
+                ..requestBodyModels,
             ]);
         
         return endPoint;
@@ -176,7 +189,7 @@ public readonly record struct EndPoint(
             JsonSerializerContext: settings.JsonSerializerContext,
             HttpMethod: default,
             Summary: string.Empty,
-            RequestType: string.Empty,
+            RequestType: TypeData.Default,
             ResponseType: string.Empty,
             AdditionalModels: []);
         

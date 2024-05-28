@@ -16,7 +16,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -38,7 +39,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -57,7 +59,8 @@ The prompt to generate a response.
           IsArray: true,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -74,7 +77,8 @@ The prompt to generate a response.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -91,7 +95,8 @@ The prompt to generate a response.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -108,7 +113,8 @@ The prompt to generate a response.
           IsArray: true,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<int>
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -159,7 +165,8 @@ The prompt to generate a response.
             rope_frequency_scale,
             num_thread
           ],
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: RequestOptions
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -180,7 +187,8 @@ The prompt to generate a response.
           ],
           EnumValues: [
             json
-          ]
+          ],
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -203,7 +211,8 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -224,7 +233,8 @@ You may choose to use the `raw` parameter if you are specifying a full templated
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         DefaultValue: false,
@@ -245,7 +255,8 @@ If `false` the response will be returned as a single response object, otherwise 
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -266,7 +277,26 @@ How long (in minutes) to keep the model loaded in memory.
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Generate a response for a given prompt with a provided model.,
-    RequestType: GenerateCompletionRequest,
+    RequestType: {
+      CSharpType: GenerateCompletionRequest,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        model,
+        prompt,
+        images,
+        system,
+        template,
+        context,
+        options,
+        format,
+        raw,
+        stream,
+        keep_alive
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: GenerateCompletionRequest
+    },
     ResponseType: GenerateCompletionResponse,
     AdditionalModels: null,
     MethodName: GenerateCompletionAsync,
@@ -290,7 +320,8 @@ How long (in minutes) to keep the model loaded in memory.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -312,7 +343,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           IsArray: true,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Message>
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -333,7 +365,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           ],
           EnumValues: [
             json
-          ]
+          ],
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -390,7 +423,8 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
             rope_frequency_scale,
             num_thread
           ],
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: RequestOptions
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -407,7 +441,8 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         DefaultValue: false,
@@ -428,7 +463,8 @@ If `false` the response will be returned as a single response object, otherwise 
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -449,7 +485,21 @@ How long (in minutes) to keep the model loaded in memory.
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Generate the next message in a chat with a provided model.,
-    RequestType: GenerateChatCompletionRequest,
+    RequestType: {
+      CSharpType: GenerateChatCompletionRequest,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        model,
+        messages,
+        format,
+        options,
+        stream,
+        keep_alive
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: GenerateChatCompletionRequest
+    },
     ResponseType: GenerateChatCompletionResponse,
     AdditionalModels: null,
     MethodName: GenerateChatCompletionAsync,
@@ -473,7 +523,8 @@ How long (in minutes) to keep the model loaded in memory.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -495,7 +546,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -548,7 +600,8 @@ Text to generate embeddings for.
             rope_frequency_scale,
             num_thread
           ],
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: RequestOptions
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -562,7 +615,18 @@ Text to generate embeddings for.
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Generate embeddings from a model.,
-    RequestType: GenerateEmbeddingRequest,
+    RequestType: {
+      CSharpType: GenerateEmbeddingRequest,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        model,
+        prompt,
+        options
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: GenerateEmbeddingRequest
+    },
     ResponseType: GenerateEmbeddingResponse,
     AdditionalModels: null,
     MethodName: GenerateEmbeddingAsync,
@@ -586,7 +650,8 @@ Text to generate embeddings for.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -608,7 +673,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -627,7 +693,8 @@ The contents of the Modelfile.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         DefaultValue: false,
@@ -645,7 +712,18 @@ If `false` the response will be returned as a single response object, otherwise 
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a model from a Modelfile.,
-    RequestType: CreateModelRequest,
+    RequestType: {
+      CSharpType: CreateModelRequest,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        name,
+        modelfile,
+        stream
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: CreateModelRequest
+    },
     ResponseType: CreateModelResponse,
     AdditionalModels: null,
     MethodName: CreateModelAsync,
@@ -664,7 +742,14 @@ If `false` the response will be returned as a single response object, otherwise 
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: List models that are available locally.,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ModelsResponse,
     AdditionalModels: null,
     MethodName: ListModelsAsync,
@@ -688,7 +773,8 @@ If `false` the response will be returned as a single response object, otherwise 
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -707,7 +793,16 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Show details about a model including modelfile, template, parameters, license, and system prompt.,
-    RequestType: ModelInfoRequest,
+    RequestType: {
+      CSharpType: ModelInfoRequest,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        name
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ModelInfoRequest
+    },
     ResponseType: ModelInfo,
     AdditionalModels: null,
     MethodName: ShowModelInfoAsync,
@@ -731,7 +826,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -750,7 +846,8 @@ Name of the model to copy.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -766,7 +863,17 @@ Name of the new model.
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Creates a model with another name from an existing model.,
-    RequestType: CopyModelRequest,
+    RequestType: {
+      CSharpType: CopyModelRequest,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        source,
+        destination
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: CopyModelRequest
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: CopyModelAsync,
@@ -790,7 +897,8 @@ Name of the new model.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -809,7 +917,16 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     JsonSerializerContext: ,
     HttpMethod: Delete,
     Summary: Delete a model and its data.,
-    RequestType: DeleteModelRequest,
+    RequestType: {
+      CSharpType: DeleteModelRequest,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        name
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: DeleteModelRequest
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: DeleteModelAsync,
@@ -833,7 +950,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -855,7 +973,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         DefaultValue: false,
@@ -878,7 +997,8 @@ Only use this if you are pulling from your own library during development.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         DefaultValue: false,
@@ -896,7 +1016,18 @@ If `false` the response will be returned as a single response object, otherwise 
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Download a model from the ollama library.,
-    RequestType: PullModelRequest,
+    RequestType: {
+      CSharpType: PullModelRequest,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        name,
+        insecure,
+        stream
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: PullModelRequest
+    },
     ResponseType: PullModelResponse,
     AdditionalModels: null,
     MethodName: PullModelAsync,
@@ -920,7 +1051,8 @@ If `false` the response will be returned as a single response object, otherwise 
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -939,7 +1071,8 @@ The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         DefaultValue: false,
@@ -962,7 +1095,8 @@ Only use this if you are pushing to your library during development.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         DefaultValue: false,
@@ -980,7 +1114,18 @@ If `false` the response will be returned as a single response object, otherwise 
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Upload a model to a model library.,
-    RequestType: PushModelRequest,
+    RequestType: {
+      CSharpType: PushModelRequest,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        name,
+        insecure,
+        stream
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: PushModelRequest
+    },
     ResponseType: PushModelResponse,
     AdditionalModels: null,
     MethodName: PushModelAsync,
@@ -1004,7 +1149,8 @@ If `false` the response will be returned as a single response object, otherwise 
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: CompletionsClient
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1021,7 +1167,8 @@ If `false` the response will be returned as a single response object, otherwise 
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: ChatClient
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1038,7 +1185,8 @@ If `false` the response will be returned as a single response object, otherwise 
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: EmbeddingsClient
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1055,7 +1203,8 @@ If `false` the response will be returned as a single response object, otherwise 
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: ModelsClient
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1068,7 +1217,14 @@ If `false` the response will be returned as a single response object, otherwise 
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: API Spec for Ollama API. Please see https://github.com/jmorganca/ollama/blob/main/docs/api.md for more details.,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: ConstructorsAsync,
@@ -1087,7 +1243,14 @@ If `false` the response will be returned as a single response object, otherwise 
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Given a prompt, the model will generate a completion.,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: ConstructorsAsync,
@@ -1106,7 +1269,14 @@ If `false` the response will be returned as a single response object, otherwise 
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Given a list of messages comprising a conversation, the model will return a response.,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: ConstructorsAsync,
@@ -1125,7 +1295,14 @@ If `false` the response will be returned as a single response object, otherwise 
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Get a vector representation of a given input.,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: ConstructorsAsync,
@@ -1144,7 +1321,14 @@ If `false` the response will be returned as a single response object, otherwise 
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: List and describe the various models available.,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: ConstructorsAsync,

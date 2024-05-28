@@ -15,7 +15,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -33,7 +34,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -51,7 +53,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -69,7 +72,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: long
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -86,7 +90,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -103,7 +108,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -155,7 +161,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -172,7 +179,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,

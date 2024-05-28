@@ -11,7 +11,14 @@
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Get the authenticated account,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: GetAccountAsync,
@@ -30,7 +37,14 @@
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: List collections of models,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: ListCollectionsAsync,
@@ -54,7 +68,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -70,7 +85,14 @@
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Get a collection of models,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: GetCollectionsAsync,
@@ -89,7 +111,14 @@
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: List deployments,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: ListDeploymentsAsync,
@@ -113,7 +142,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -130,7 +160,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -147,7 +178,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -164,7 +196,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -181,7 +214,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -198,7 +232,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -212,7 +247,14 @@
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a deployment,
-    RequestType: CreateDeploymentsRequest,
+    RequestType: {
+      CSharpType: CreateDeploymentsRequest,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: CreateDeploymentsRequest
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: CreateDeploymentsAsync,
@@ -236,7 +278,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -256,7 +299,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -273,7 +317,14 @@
     JsonSerializerContext: ,
     HttpMethod: Delete,
     Summary: Delete a deployment,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: DeleteDeploymentsAsync,
@@ -297,7 +348,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -317,7 +369,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -333,7 +386,14 @@
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Get a deployment,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: GetDeploymentsAsync,
@@ -357,7 +417,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -377,7 +438,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -397,7 +459,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -414,7 +477,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -431,7 +495,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -448,7 +513,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -462,7 +528,14 @@
     JsonSerializerContext: ,
     HttpMethod: Patch,
     Summary: Update a deployment,
-    RequestType: UpdateDeploymentsRequest,
+    RequestType: {
+      CSharpType: UpdateDeploymentsRequest,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: UpdateDeploymentsRequest
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: UpdateDeploymentsAsync,
@@ -486,7 +559,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -506,7 +580,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -526,7 +601,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: object
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -559,7 +635,8 @@ Use a data URL when:
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -580,7 +657,8 @@ If the requested model version supports streaming, the returned prediction will 
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -599,7 +677,8 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           IsArray: true,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -634,7 +713,19 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a prediction using a deployment,
-    RequestType: PredictionRequest,
+    RequestType: {
+      CSharpType: PredictionRequest,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        input,
+        stream,
+        webhook,
+        webhook_events_filter
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: PredictionRequest
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: CreatePredictionsDeploymentsAsync,
@@ -653,7 +744,14 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: List available hardware for models,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: ListHardwareAsync,
@@ -672,7 +770,14 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: List public models,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: ListModelsAsync,
@@ -696,7 +801,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -713,7 +819,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -730,7 +837,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -747,7 +855,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -764,7 +873,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -781,7 +891,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -798,7 +909,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -815,7 +927,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -838,7 +951,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           EnumValues: [
             public,
             private
-          ]
+          ],
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -852,7 +966,14 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a model,
-    RequestType: CreateModelsRequest,
+    RequestType: {
+      CSharpType: CreateModelsRequest,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: CreateModelsRequest
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: CreateModelsAsync,
@@ -876,7 +997,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -896,7 +1018,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -913,7 +1036,14 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     HttpMethod: Delete,
     Summary: Delete a model,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: DeleteModelsAsync,
@@ -937,7 +1067,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -957,7 +1088,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -973,7 +1105,14 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Get a model,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: GetModelsAsync,
@@ -997,7 +1136,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -1017,7 +1157,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -1037,7 +1178,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: object
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -1070,7 +1212,8 @@ Use a data URL when:
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1091,7 +1234,8 @@ If the requested model version supports streaming, the returned prediction will 
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1110,7 +1254,8 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           IsArray: true,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1145,7 +1290,19 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a prediction using an official model,
-    RequestType: PredictionRequest,
+    RequestType: {
+      CSharpType: PredictionRequest,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        input,
+        stream,
+        webhook,
+        webhook_events_filter
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: PredictionRequest
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: CreatePredictionsModelsAsync,
@@ -1169,7 +1326,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -1189,7 +1347,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -1205,7 +1364,14 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: List model versions,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: ListVersionsModelsAsync,
@@ -1229,7 +1395,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -1249,7 +1416,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -1269,7 +1437,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -1286,7 +1455,14 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     HttpMethod: Delete,
     Summary: Delete a model version,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: DeleteVersionsModelsAsync,
@@ -1310,7 +1486,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -1330,7 +1507,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -1350,7 +1528,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -1366,7 +1545,14 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Get a model version,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: GetVersionsModelsAsync,
@@ -1390,7 +1576,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -1410,7 +1597,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -1430,7 +1618,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -1450,7 +1639,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -1469,7 +1659,8 @@ A string representing the desired model to push to in the format `{destination_m
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: object
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -1488,7 +1679,8 @@ An object containing inputs to the Cog model's `train()` function.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1505,7 +1697,8 @@ An object containing inputs to the Cog model's `train()` function.
           IsArray: true,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1541,7 +1734,19 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a training,
-    RequestType: TrainingRequest,
+    RequestType: {
+      CSharpType: TrainingRequest,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        destination,
+        input,
+        webhook,
+        webhook_events_filter
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: TrainingRequest
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: CreateTrainingsAsync,
@@ -1560,7 +1765,14 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: List predictions,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: ListPredictionsAsync,
@@ -1584,7 +1796,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: object
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -1617,7 +1830,8 @@ Use a data URL when:
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1638,7 +1852,8 @@ If the requested model version supports streaming, the returned prediction will 
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -1655,7 +1870,8 @@ If the requested model version supports streaming, the returned prediction will 
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1674,7 +1890,8 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           IsArray: true,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1710,7 +1927,20 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a prediction,
-    RequestType: VersionPredictionRequest,
+    RequestType: {
+      CSharpType: VersionPredictionRequest,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        input,
+        stream,
+        version,
+        webhook,
+        webhook_events_filter
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: VersionPredictionRequest
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: CreatePredictionsAsync,
@@ -1734,7 +1964,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -1750,7 +1981,14 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Get a prediction,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: GetPredictionsAsync,
@@ -1774,7 +2012,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -1791,7 +2030,14 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Cancel a prediction,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: CancelPredictionsAsync,
@@ -1810,7 +2056,14 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: List trainings,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: ListTrainingsAsync,
@@ -1834,7 +2087,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -1850,7 +2104,14 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Get a training,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: GetTrainingsAsync,
@@ -1874,7 +2135,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -1891,7 +2153,14 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Cancel a training,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: CancelTrainingsAsync,
@@ -1910,7 +2179,14 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Get the signing secret for the default webhook,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: GetSecretDefaultWebhooksAsync,
@@ -1929,7 +2205,14 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: ,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: AuthorizeUsingBearerAsync,
@@ -1948,7 +2231,14 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: A web service for running Replicate models,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: ConstructorsAsync,

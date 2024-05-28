@@ -13,7 +13,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task BatchAsync(
-            BatchRequest request,
+            global::System.Collections.Generic.IList<string> request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -31,23 +31,6 @@ namespace G
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
-        }
-
-        /// <summary>
-        /// Returns information about the selected values.
-        /// </summary>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task BatchAsync(
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var request = new BatchRequest
-            {
-            };
-
-            await BatchAsync(
-                request: request,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

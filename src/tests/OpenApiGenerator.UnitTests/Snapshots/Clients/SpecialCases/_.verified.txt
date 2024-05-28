@@ -16,7 +16,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         ParameterLocation: Query,
@@ -32,7 +33,14 @@
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: List all pets,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: Pets,
     AdditionalModels: null,
     MethodName: ListPetsAsync,
@@ -52,7 +60,14 @@
     JsonSerializerContext: ,
     HttpMethod: Post,
     Summary: Create a pet,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: CreatePetsAsync,
@@ -76,7 +91,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -92,7 +108,14 @@
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: Info for a specific pet,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: Pet,
     AdditionalModels: null,
     MethodName: ShowPetByIdAsync,
@@ -111,7 +134,14 @@
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     Summary: ,
-    RequestType: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: 
+    },
     ResponseType: ,
     AdditionalModels: null,
     MethodName: ConstructorsAsync,

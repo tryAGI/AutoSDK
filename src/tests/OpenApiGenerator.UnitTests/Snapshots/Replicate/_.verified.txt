@@ -15,7 +15,8 @@
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: object
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -48,7 +49,8 @@ Use a data URL when:
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -69,7 +71,8 @@ If the requested model version supports streaming, the returned prediction will 
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -88,7 +91,8 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           IsArray: true,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -145,7 +149,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -162,7 +167,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -179,7 +185,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -196,7 +203,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -231,7 +239,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -250,7 +259,8 @@ A string representing the desired model to push to in the format `{destination_m
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: object
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -269,7 +279,8 @@ An object containing inputs to the Cog model's `train()` function.
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -286,7 +297,8 @@ An object containing inputs to the Cog model's `train()` function.
           IsArray: true,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -344,7 +356,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -361,7 +374,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -378,7 +392,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -395,7 +410,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -430,7 +446,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: object
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -463,7 +480,8 @@ Use a data URL when:
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: bool
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -484,7 +502,8 @@ If the requested model version supports streaming, the returned prediction will 
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -501,7 +520,8 @@ If the requested model version supports streaming, the returned prediction will 
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -520,7 +540,8 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           IsArray: true,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -578,7 +599,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -595,7 +617,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -612,7 +635,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -629,7 +653,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -664,7 +689,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -681,7 +707,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -698,7 +725,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -715,7 +743,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -732,7 +761,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -749,7 +779,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -784,7 +815,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -801,7 +833,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -818,7 +851,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -835,7 +869,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -870,7 +905,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -887,7 +923,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -904,7 +941,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -921,7 +959,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -938,7 +977,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -955,7 +995,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -972,7 +1013,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -989,7 +1031,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1012,7 +1055,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           EnumValues: [
             public,
             private
-          ]
+          ],
+          CSharpTypeWithoutNullability: string
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -1070,7 +1114,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1087,7 +1132,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           IsArray: false,
           IsEnum: false,
           Properties: null,
-          EnumValues: null
+          EnumValues: null,
+          CSharpTypeWithoutNullability: 
         },
         IsRequired: false,
         IsDeprecated: false,
