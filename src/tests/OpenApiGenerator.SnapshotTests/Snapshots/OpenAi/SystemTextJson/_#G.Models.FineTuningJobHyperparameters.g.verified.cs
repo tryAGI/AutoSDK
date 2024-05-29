@@ -16,7 +16,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("n_epochs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object NEpochs { get; set; }
+        public required global::System.OneOf<string, int> NEpochs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

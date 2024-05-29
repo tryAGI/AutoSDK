@@ -15,7 +15,7 @@ namespace G
         /// <br/>Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("batch_size")]
-        public object? BatchSize { get; set; }
+        public global::System.OneOf<string?, int> BatchSize { get; set; } = CreateFineTuningJobRequestHyperparametersBatchSize.Auto;
 
         /// <summary>
         /// Scaling factor for the learning rate. A smaller learning rate may be useful to avoid
@@ -23,7 +23,7 @@ namespace G
         /// <br/>Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("learning_rate_multiplier")]
-        public object? LearningRateMultiplier { get; set; }
+        public global::System.OneOf<string?, double> LearningRateMultiplier { get; set; } = CreateFineTuningJobRequestHyperparametersLearningRateMultiplier.Auto;
 
         /// <summary>
         /// The number of epochs to train the model for. An epoch refers to one full cycle
@@ -31,7 +31,7 @@ namespace G
         /// <br/>Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("n_epochs")]
-        public object? NEpochs { get; set; }
+        public global::System.OneOf<string?, int> NEpochs { get; set; } = CreateFineTuningJobRequestHyperparametersNEpochs.Auto;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

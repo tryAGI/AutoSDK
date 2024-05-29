@@ -56,7 +56,7 @@ namespace G
         /// <br/>Default Value: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tools", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<object> Tools { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode, AssistantToolsFileSearch, AssistantToolsFunction>> Tools { get; set; } = default!;
 
         /// <summary>
         /// A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.

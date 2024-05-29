@@ -22,7 +22,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Model { get; set; }
+        public required global::System.AnyOf<string, string> Model { get; set; }
 
         /// <summary>
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.
@@ -97,7 +97,7 @@ namespace G
         /// <br/>Default Value: 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop")]
-        public object? Stop { get; set; }
+        public global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?> Stop { get; set; }
 
         /// <summary>
         /// If set, partial message deltas will be sent, like in ChatGPT. Tokens will be sent as data-only [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format) as they become available, with the stream terminated by a `data: [DONE]` message. [Example Python code](https://cookbook.openai.com/examples/how_to_stream_completions).
@@ -164,7 +164,7 @@ namespace G
         /// `none` is the default when no functions are present. `auto` is the default if functions are present.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function_call")]
-        public object? FunctionCall { get; set; }
+        public global::System.OneOf<string?, ChatCompletionFunctionCallOption?> FunctionCall { get; set; }
 
         /// <summary>
         /// Deprecated in favor of `tools`.

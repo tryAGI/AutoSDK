@@ -15,7 +15,7 @@ namespace G
         /// <br/>Example: gpt-3.5-turbo
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Model { get; set; } = default!;
+        public global::System.AnyOf<string, CreateFineTuningJobRequestModel> Model { get; set; } = default!;
 
         /// <summary>
         /// The ID of an uploaded file that contains training data.

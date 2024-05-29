@@ -15,6 +15,7 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -37,6 +38,7 @@
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -64,6 +66,7 @@
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -90,6 +93,7 @@
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -112,6 +116,7 @@
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -138,6 +143,7 @@
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 

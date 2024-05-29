@@ -55,11 +55,11 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<AssistantObject> CreateAssistantAsync(
-            object model,
+            global::System.AnyOf<string, CreateAssistantRequestModel> model,
             string? name = default,
             string? description = default,
             string? instructions = default,
-            global::System.Collections.Generic.IList<object?>? tools = default,
+            global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>? tools = default,
             CreateAssistantRequestToolResources? toolResources = default,
             object? metadata = default,
             double? temperature = 1,

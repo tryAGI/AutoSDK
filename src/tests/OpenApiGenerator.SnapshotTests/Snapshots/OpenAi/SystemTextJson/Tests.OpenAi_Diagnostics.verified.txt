@@ -1,1 +1,66 @@
-﻿[]
+﻿[
+  {
+    Id: CS0457,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.Models.CreateImageRequest.g.cs: (24,77)-(24,107),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0457),
+    MessageFormat: Ambiguous user defined conversions '{0}' and '{1}' when converting from '{2}' to '{3}',
+    Message: Ambiguous user defined conversions 'AnyOf<string?, string?>.implicit operator AnyOf<string?, string?>(string?)' and 'AnyOf<string?, string?>.implicit operator AnyOf<string?, string?>(string?)' when converting from 'string' to 'AnyOf<string?, string?>?',
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0457,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.Models.CreateImageVariationRequest.g.cs: (23,77)-(23,116),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0457),
+    MessageFormat: Ambiguous user defined conversions '{0}' and '{1}' when converting from '{2}' to '{3}',
+    Message: Ambiguous user defined conversions 'AnyOf<string?, string?>.implicit operator AnyOf<string?, string?>(string?)' and 'AnyOf<string?, string?>.implicit operator AnyOf<string?, string?>(string?)' when converting from 'string' to 'AnyOf<string?, string?>?',
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0457,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.Models.CreateImageEditRequest.g.cs: (37,77)-(37,111),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0457),
+    MessageFormat: Ambiguous user defined conversions '{0}' and '{1}' when converting from '{2}' to '{3}',
+    Message: Ambiguous user defined conversions 'AnyOf<string?, string?>.implicit operator AnyOf<string?, string?>(string?)' and 'AnyOf<string?, string?>.implicit operator AnyOf<string?, string?>(string?)' when converting from 'string' to 'AnyOf<string?, string?>?',
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  },
+  {
+    Id: CS0457,
+    Title: ,
+    Severity: Error,
+    WarningLevel: 0,
+    Location: OpenApiGenerator/OpenApiGenerator.SdkGenerator/G.Models.CreateModerationRequest.g.cs: (24,76)-(24,125),
+    HelpLink: https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0457),
+    MessageFormat: Ambiguous user defined conversions '{0}' and '{1}' when converting from '{2}' to '{3}',
+    Message: Ambiguous user defined conversions 'AnyOf<string?, string?>.implicit operator AnyOf<string?, string?>(string?)' and 'AnyOf<string?, string?>.implicit operator AnyOf<string?, string?>(string?)' when converting from 'string' to 'AnyOf<string?, string?>',
+    Category: Compiler,
+    CustomTags: [
+      Compiler,
+      Telemetry,
+      NotConfigurable
+    ]
+  }
+]

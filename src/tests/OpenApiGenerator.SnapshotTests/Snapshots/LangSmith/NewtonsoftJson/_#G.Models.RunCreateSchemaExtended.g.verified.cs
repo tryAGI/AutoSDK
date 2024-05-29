@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs")]
-        public object? Inputs { get; set; }
+        public global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?> Inputs { get; set; }
 
         /// <summary>
         /// Enum for run types.
@@ -67,7 +67,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs")]
-        public object? Outputs { get; set; }
+        public global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?> Outputs { get; set; }
 
         /// <summary>
         /// 

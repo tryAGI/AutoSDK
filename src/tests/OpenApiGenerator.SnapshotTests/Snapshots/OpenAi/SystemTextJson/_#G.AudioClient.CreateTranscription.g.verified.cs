@@ -46,7 +46,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task CreateTranscriptionAsync(
             byte[] file,
-            object model,
+            global::System.AnyOf<string, string> model,
             string? language = default,
             string? prompt = default,
             string? responseFormat = CreateTranscriptionRequestResponseFormat.Json,

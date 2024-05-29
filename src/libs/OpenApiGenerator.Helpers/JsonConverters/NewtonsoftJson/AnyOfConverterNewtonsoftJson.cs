@@ -1,5 +1,4 @@
 using System;
-using AnyOfTypes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -42,11 +41,7 @@ public class AnyOfConverterNewtonsoftJson<T1, T2> : JsonConverter<AnyOf<T1, T2>>
         {
         }
         
-        var result = new AnyOf<T1, T2>
-        {
-            First = value1,
-            Second = value2,
-        };
+        var result = new AnyOf<T1, T2>(value1, value2);
         if (!result.Validate())
         {
             throw new JsonException($"Invalid JSON format for AnyOf<{typeof(T1).Name}, {typeof(T2).Name}>");
@@ -73,13 +68,13 @@ public class AnyOfConverterNewtonsoftJson<T1, T2> : JsonConverter<AnyOf<T1, T2>>
             throw new JsonException($"Invalid AnyOf<{typeof(T1).Name}, {typeof(T2).Name}> object");
         }
         
-        if (value.IsFirst)
+        if (value.IsValue1)
         {
-            serializer.Serialize(writer, value.First, value.First!.GetType());
+            serializer.Serialize(writer, value.Value1, value.Value1!.GetType());
         }
-        else if (value.IsSecond)
+        else if (value.IsValue2)
         {
-            serializer.Serialize(writer, value.Second, value.Second!.GetType());
+            serializer.Serialize(writer, value.Value2, value.Value2!.GetType());
         }
     }
 }

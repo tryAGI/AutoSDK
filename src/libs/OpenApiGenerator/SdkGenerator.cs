@@ -41,6 +41,15 @@ public class SdkGenerator : IIncrementalGenerator
             .Select(static (x, _) => x.Models)
             .SelectAndReportExceptions(GetSuperTypeSourceCode, context, Id)
             .AddSource(context);
+        
+        data
+            .SelectMany(static (x, _) => x.AnyOfs)
+            .SelectAndReportExceptions(GetAnyOfSourceCode, context, Id)
+            .AddSource(context);
+        data
+            .SelectMany(static (x, _) => x.AnyOfs)
+            .SelectAndReportExceptions(GetAnyOfConverterSourceCode, context, Id)
+            .AddSource(context);
     }
 
     private static string GetContent(AdditionalText additionalText, CancellationToken cancellationToken = default)
@@ -66,6 +75,28 @@ public class SdkGenerator : IIncrementalGenerator
         CancellationToken cancellationToken = default)
     {
         var fileWithName = Data.GetSourceCode(model, cancellationToken);
+        
+        return new FileWithName(
+            Name: fileWithName.Name,
+            Text: fileWithName.Text);
+    }
+    
+    private static FileWithName GetAnyOfSourceCode(
+        AnyOfData model,
+        CancellationToken cancellationToken = default)
+    {
+        var fileWithName = Data.GetSourceCodeForType(model, cancellationToken);
+        
+        return new FileWithName(
+            Name: fileWithName.Name,
+            Text: fileWithName.Text);
+    }
+    
+    private static FileWithName GetAnyOfConverterSourceCode(
+        AnyOfData model,
+        CancellationToken cancellationToken = default)
+    {
+        var fileWithName = Data.GetSourceCodeForConverter(model, cancellationToken);
         
         return new FileWithName(
             Name: fileWithName.Name,

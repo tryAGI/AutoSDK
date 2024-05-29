@@ -56,7 +56,7 @@ namespace G
             byte[] image,
             string prompt,
             byte[]? mask = default,
-            object? model = default,
+            global::System.AnyOf<string?, CreateImageEditRequestModel?>? model = default,
             int? n = 1,
             CreateImageEditRequestSize? size = CreateImageEditRequestSize._1024x1024,
             CreateImageEditRequestResponseFormat? responseFormat = CreateImageEditRequestResponseFormat.Url,

@@ -15,17 +15,22 @@
 using System;
 using System.Diagnostics;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using AnyOfTypes;
 
 #nullable enable
 
-namespace AnyOfTypes
+namespace OpenApiGenerator.JsonConverters
 {
     [DebuggerDisplay("{_thisType}, AnyOfType = {_currentType}; Type = {_currentValueType?.Name}; Value = '{ToString()}'")]
     public readonly struct OneOf<TFirst, TSecond> : IEquatable<OneOf<TFirst, TSecond>>
     {
         private readonly string _thisType => $"OneOf<{typeof(TFirst).Name}, {typeof(TSecond).Name}>";
 
+        [MemberNotNullWhen(true, nameof(First))]
         public bool IsFirst => First != null;
+        
+        [MemberNotNullWhen(true, nameof(Second))]
         public bool IsSecond => Second != null;
 
         public bool Validate()

@@ -87,10 +87,7 @@ public readonly record struct EndPoint(
             .Where(x => x.Schema.Type == "object")
             .Select(x => ModelData.FromSchema(
                     x.Schema.WithKey(id + x.Name.ToPropertyName()),
-                    settings) with
-                {
-                    Schema = default,
-                })
+                    settings))
             .ToArray();
         var enumParameters = operation.Value.Parameters
             .Where(x => x.Schema.Enum?.Any() == true || x.Schema.Items?.Enum?.Any() == true)
@@ -105,7 +102,6 @@ public readonly record struct EndPoint(
                     .Select(value => value.ToEnumValue())
                     .Where(value => !string.IsNullOrWhiteSpace(value.Name))
                     .ToImmutableArray(),
-                    Schema = default,
                 })
             .ToArray();
         var requestMediaTypes =
@@ -121,10 +117,7 @@ public readonly record struct EndPoint(
                     : x.Schema.Type == "object"
                         ? x.Schema.WithKey(id + "Request")
                         : x.Schema.Items.WithKey(id + "Request"),
-                    settings) with
-                {
-                    Schema = default,
-                })
+                    settings))
             .SelectMany(model => model.WithAdditionalModels())
             .ToArray();
         var requestBodyTypes = requestMediaTypes

@@ -63,8 +63,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<CreateCompletionResponse> CreateCompletionAsync(
-            object model,
-            object? prompt,
+            global::System.AnyOf<string, string> model,
+            global::System.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>? prompt,
             int? bestOf = 1,
             bool? echo = false,
             double? frequencyPenalty = 0,
@@ -74,7 +74,7 @@ namespace G
             int? n = 1,
             double? presencePenalty = 0,
             int? seed = default,
-            object? stop = default,
+            global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>? stop = default,
             bool? stream = false,
             ChatCompletionStreamOptions? streamOptions = default,
             string? suffix = default,

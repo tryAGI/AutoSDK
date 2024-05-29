@@ -45,7 +45,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task CreateTranslationAsync(
             byte[] file,
-            object model,
+            global::System.AnyOf<string, CreateTranslationRequestModel> model,
             string? prompt = default,
             string? responseFormat = "json",
             double temperature = 0,

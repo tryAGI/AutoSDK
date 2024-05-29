@@ -6,6 +6,7 @@
 using System;
 using System.ComponentModel;
 using System.Globalization;
+using OpenApiGenerator.JsonConverters;
 
 #nullable enable
 

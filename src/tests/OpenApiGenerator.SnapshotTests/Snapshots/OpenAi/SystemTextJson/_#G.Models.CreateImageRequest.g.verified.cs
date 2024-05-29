@@ -23,7 +23,7 @@ namespace G
         /// <br/>Example: dall-e-3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        public object? Model { get; set; }
+        public global::System.AnyOf<string?, string?>? Model { get; set; } = CreateImageRequestModel.DallE2;
 
         /// <summary>
         /// The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only `n=1` is supported.

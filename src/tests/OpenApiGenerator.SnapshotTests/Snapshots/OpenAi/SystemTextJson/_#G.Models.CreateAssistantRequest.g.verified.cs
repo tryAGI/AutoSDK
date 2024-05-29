@@ -15,7 +15,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Model { get; set; }
+        public required global::System.AnyOf<string, string> Model { get; set; }
 
         /// <summary>
         /// The name of the assistant. The maximum length is 256 characters.
@@ -40,7 +40,7 @@ namespace G
         /// <br/>Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        public global::System.Collections.Generic.IList<object?>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>? Tools { get; set; }
 
         /// <summary>
         /// A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.

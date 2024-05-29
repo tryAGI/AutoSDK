@@ -50,8 +50,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<CreateEmbeddingResponse> CreateEmbeddingAsync(
-            object input,
-            object model,
+            global::System.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>> input,
+            global::System.AnyOf<string, CreateEmbeddingRequestModel> model,
             CreateEmbeddingRequestEncodingFormat? encodingFormat = CreateEmbeddingRequestEncodingFormat.Float,
             int dimensions = default,
             string? user = default,

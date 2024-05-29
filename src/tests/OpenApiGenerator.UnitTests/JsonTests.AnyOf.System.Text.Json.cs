@@ -26,8 +26,8 @@ public partial class JsonTests
             Converters = { new AnyOfConverterFactorySystemTextJson() }
         });
         response.Should().NotBeNull();
-        response.First.Should().NotBeNull();
-        response.First!.Status.Should().Be(PullModelResponseStatus2.PullingManifest);
+        response.Value1.Should().NotBeNull();
+        response.Value1!.Status.Should().Be(PullModelResponseStatus2.PullingManifest);
     }
     
     [TestMethod]
@@ -48,8 +48,8 @@ public partial class JsonTests
             Converters = { new AnyOfConverterFactorySystemTextJson() }
         });
         response.Should().NotBeNull();
-        response.Second.Should().NotBeNull();
-        response.Second!.Status.Should().Be(PullModelResponseStatus.PullingManifest);
+        response.Value2.Should().NotBeNull();
+        response.Value2!.Status.Should().Be(PullModelResponseStatus.PullingManifest);
     }
     
     [TestMethod]
@@ -79,11 +79,11 @@ public partial class JsonTests
             Converters = { new AnyOfConverterFactorySystemTextJson() }
         });
         response.Should().NotBeNull();
-        response.IsFirst.Should().BeTrue();
-        response.First.Should().NotBeNull();
-        response.First!.age.Should().Be(1);
-        response.IsSecond.Should().BeFalse();
-        response.Second.Should().BeNull();
+        response.IsValue1.Should().BeTrue();
+        response.Value1.Should().NotBeNull();
+        response.Value1!.age.Should().Be(1);
+        response.IsValue2.Should().BeFalse();
+        response.Value2.Should().BeNull();
     }
     
     [TestMethod]
@@ -95,12 +95,12 @@ public partial class JsonTests
             Converters = { new AnyOfConverterFactorySystemTextJson() }
         });
         response.Should().NotBeNull();
-        response.IsFirst.Should().BeFalse();
-        response.First.Should().BeNull();
-        response.IsSecond.Should().BeTrue();
-        response.Second.Should().NotBeNull();
-        response.Second!.hunts.Should().BeTrue();
-        response.Second!.pet_type.Should().Be("Cat");
+        response.IsValue1.Should().BeFalse();
+        response.Value1.Should().BeNull();
+        response.IsValue2.Should().BeTrue();
+        response.Value2.Should().NotBeNull();
+        response.Value2!.hunts.Should().BeTrue();
+        response.Value2!.pet_type.Should().Be("Cat");
     }
     
     [TestMethod]
@@ -112,14 +112,14 @@ public partial class JsonTests
             Converters = { new AnyOfConverterFactorySystemTextJson() }
         });
         response.Should().NotBeNull();
-        response.IsFirst.Should().BeTrue();
-        response.First.Should().NotBeNull();
-        response.First!.nickname.Should().Be("Fido");
-        response.First!.age.Should().Be(4);
-        response.IsSecond.Should().BeTrue();
-        response.Second.Should().NotBeNull();
-        response.Second!.hunts.Should().BeNull();
-        response.Second!.pet_type.Should().Be("Dog");
+        response.IsValue1.Should().BeTrue();
+        response.Value1.Should().NotBeNull();
+        response.Value1!.nickname.Should().Be("Fido");
+        response.Value1!.age.Should().Be(4);
+        response.IsValue2.Should().BeTrue();
+        response.Value2.Should().NotBeNull();
+        response.Value2!.hunts.Should().BeNull();
+        response.Value2!.pet_type.Should().Be("Dog");
     }
     
     [TestMethod]

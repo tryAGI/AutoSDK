@@ -111,7 +111,7 @@ namespace G
         /// A list of integrations to enable for this fine-tuning job.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("integrations")]
-        public global::System.Collections.Generic.IList<object?>? Integrations { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<FineTuningIntegration?>>? Integrations { get; set; }
 
         /// <summary>
         /// The seed used for the fine-tuning job.

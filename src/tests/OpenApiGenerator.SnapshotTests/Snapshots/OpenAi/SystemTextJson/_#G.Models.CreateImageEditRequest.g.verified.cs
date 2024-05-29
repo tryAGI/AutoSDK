@@ -36,7 +36,7 @@ namespace G
         /// <br/>Example: dall-e-2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        public object? Model { get; set; }
+        public global::System.AnyOf<string?, string?>? Model { get; set; } = CreateImageEditRequestModel.DallE2;
 
         /// <summary>
         /// The number of images to generate. Must be between 1 and 10.

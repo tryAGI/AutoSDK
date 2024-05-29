@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Content { get; set; }
+        public required global::System.OneOf<string, global::System.Collections.Generic.IList<ChatCompletionRequestMessageContentPart>> Content { get; set; }
 
         /// <summary>
         /// The role of the messages author, in this case `user`.

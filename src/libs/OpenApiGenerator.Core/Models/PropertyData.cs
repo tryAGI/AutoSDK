@@ -66,10 +66,7 @@ public readonly record struct PropertyData(
             ParameterExplode: parameterExplode,
             JsonSerializerType: settings.JsonSerializerType,
             IsDeprecated: schema.Value.Deprecated,
-            DefaultValue: schema.Value.GetDefaultValue(type: TypeData.FromSchema(schema, settings with
-            {
-                JsonSerializerType = JsonSerializerType.NewtonsoftJson
-            }, parents).CSharpType),
+            DefaultValue: schema.GetDefaultValue(settings, parents),
             Summary: schema.Value.GetSummary());
     }
 
@@ -153,7 +150,7 @@ public readonly record struct PropertyData(
         }
     }
     
-    public string ParameterDefaultValue => DefaultValue == null || string.IsNullOrWhiteSpace(DefaultValue)
+    public string ParameterDefaultValue => DefaultValue == null || string.IsNullOrWhiteSpace(DefaultValue) || Type.IsAnyOf
         ? "default"
         : DefaultValue;
 }

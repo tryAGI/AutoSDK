@@ -47,8 +47,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<CreateModerationResponse> CreateModerationAsync(
-            object input,
-            object? model = default,
+            global::System.OneOf<string, global::System.Collections.Generic.IList<string>> input,
+            global::System.AnyOf<string?, string?> model = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateModerationRequest

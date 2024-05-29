@@ -27,7 +27,7 @@ namespace G
         /// <br/>Example: gpt-4-turbo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        public object? Model { get; set; }
+        public global::System.AnyOf<string?, string?>? Model { get; set; }
 
         /// <summary>
         /// Override the default system message of the assistant. This is useful for modifying the behavior on a per-run basis.
@@ -39,7 +39,7 @@ namespace G
         /// Override the tools the assistant can use for this run. This is useful for modifying the behavior on a per-run basis.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        public global::System.Collections.Generic.IList<object?>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>? Tools { get; set; }
 
         /// <summary>
         /// A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.

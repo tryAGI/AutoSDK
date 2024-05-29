@@ -2,6 +2,7 @@ using System.Globalization;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
+using OpenApiGenerator.Core.Json;
 using OpenApiGenerator.Core.Models;
 using OpenApiGenerator.Core.Naming.Methods;
 using OpenApiGenerator.Core.Serialization;
@@ -69,25 +70,42 @@ public static class OpenApiExtensions
         return path;
     }
 
-    public static string? GetDefaultValue(this OpenApiSchema schema, string type)
+    public static string? GetDefaultValue(this KeyValuePair<string, OpenApiSchema> schema, Settings settings, ModelData[] parents)
     {
-        schema = schema ?? throw new ArgumentNullException(nameof(schema));
-        type = type ?? throw new ArgumentNullException(nameof(type));
-
-        if (type == "object?" || schema.Default is OpenApiArray)
+        var type = TypeData.FromSchema(schema, settings with
+        {
+            JsonSerializerType = JsonSerializerType.NewtonsoftJson
+        }, parents);
+        if (type.CSharpType == "object?" || schema.Value.Default is OpenApiArray)
         {
             return string.Empty;
         }
-        if (schema.Enum.Any() && schema.Default != null)
+        if (schema.Value.Enum.Any() && schema.Value.Default != null)
         {
-            return type.TrimEnd('?') + "." + schema.Default.ToEnumValue().Name;
+            return type.CSharpType.TrimEnd('?') + "." + schema.Value.Default.ToEnumValue().Name;
         }
-        if (schema.Default is OpenApiString @string)
+        if (schema.Value.AnyOf.Any(x => x.Enum.Any()) && schema.Value.Default != null)
+        {
+            var typeData = TypeData.FromSchema(schema.Value.AnyOf.First(x => x.Enum.Any()).WithKey(schema.Key), settings with
+            {
+                JsonSerializerType = JsonSerializerType.NewtonsoftJson
+            }, parents);
+            return typeData.CSharpType.TrimEnd('?') + "." + schema.Value.Default.ToEnumValue().Name;
+        }
+        if (schema.Value.OneOf.Any(x => x.Enum.Any()) && schema.Value.Default != null)
+        {
+            var typeData = TypeData.FromSchema(schema.Value.OneOf.First(x => x.Enum.Any()).WithKey(schema.Key), settings with
+            {
+                JsonSerializerType = JsonSerializerType.NewtonsoftJson
+            }, parents);
+            return typeData.CSharpType.TrimEnd('?') + "." + schema.Value.Default.ToEnumValue().Name;
+        }
+        if (schema.Value.Default is OpenApiString @string)
         {
             return $"\"{@string.Value}\"";
         }
         
-        return schema.Default?.GetString();
+        return schema.Value.Default?.GetString();
     }
 
     public static string GetSummary(this OpenApiSchema schema)

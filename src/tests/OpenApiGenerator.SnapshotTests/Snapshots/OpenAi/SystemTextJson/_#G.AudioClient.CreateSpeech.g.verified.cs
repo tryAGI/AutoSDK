@@ -44,7 +44,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task CreateSpeechAsync(
-            object model,
+            global::System.AnyOf<string, string> model,
             string input,
             string voice,
             string? responseFormat = CreateSpeechRequestResponseFormat.Mp3,

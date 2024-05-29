@@ -15,7 +15,7 @@ namespace G
         /// <br/>Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("n_epochs", Required = global::Newtonsoft.Json.Required.Always)]
-        public object NEpochs { get; set; } = default!;
+        public global::System.OneOf<FineTuningJobHyperparametersNEpochs, int> NEpochs { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

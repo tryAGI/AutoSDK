@@ -13,7 +13,7 @@ namespace G
         /// The contents of the user message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Content { get; set; } = default!;
+        public global::System.OneOf<string, global::System.Collections.Generic.IList<ChatCompletionRequestMessageContentPart>> Content { get; set; } = default!;
 
         /// <summary>
         /// The role of the messages author, in this case `user`.

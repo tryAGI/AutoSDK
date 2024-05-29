@@ -59,11 +59,11 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<AssistantObject> ModifyAssistantAsync(
             string assistantId,
-            object? model = default,
+            global::System.AnyOf<string?> model = default,
             string? name = default,
             string? description = default,
             string? instructions = default,
-            global::System.Collections.Generic.IList<object?>? tools = default,
+            global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>? tools = default,
             ModifyAssistantRequestToolResources? toolResources = default,
             object? metadata = default,
             double? temperature = 1,

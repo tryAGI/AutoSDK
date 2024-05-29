@@ -14,6 +14,7 @@
           CSharpType: global::System.DateTime,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.DateTime
@@ -32,6 +33,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -47,15 +49,15 @@
         Id: inputs,
         Name: Inputs,
         Type: {
-          CSharpType: object?,
+          CSharpType: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>
         },
         IsRequired: false,
-        DefaultValue: ,
         IsDeprecated: false,
         Summary: ,
         ParameterName: inputs,
@@ -66,15 +68,15 @@
         Id: outputs,
         Name: Outputs,
         Type: {
-          CSharpType: object?,
+          CSharpType: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>
         },
         IsRequired: false,
-        DefaultValue: ,
         IsDeprecated: false,
         Summary: ,
         ParameterName: outputs,
@@ -88,6 +90,7 @@
           CSharpType: global::System.Collections.Generic.IList<object?>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object?>
@@ -124,6 +127,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -144,6 +148,7 @@
           CSharpType: global::System.Collections.Generic.IList<ChatCompletionRequestMessage>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionRequestMessage>
@@ -164,6 +169,7 @@
           CSharpType: global::System.Collections.Generic.IList<ChatCompletionFunctions>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionFunctions>
@@ -184,6 +190,7 @@
           CSharpType: double,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -202,6 +209,7 @@
           CSharpType: double,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -220,6 +228,7 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -238,6 +247,7 @@
           CSharpType: bool,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool
@@ -253,15 +263,15 @@
         Id: stop,
         Name: Stop,
         Type: {
-          CSharpType: object?,
+          CSharpType: global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?>,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?>
         },
         IsRequired: false,
-        DefaultValue: ,
         IsDeprecated: false,
         Summary: ,
         ParameterName: stop,
@@ -275,6 +285,7 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -293,6 +304,7 @@
           CSharpType: double,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -311,6 +323,7 @@
           CSharpType: double,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -329,6 +342,7 @@
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object
@@ -366,6 +380,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -386,6 +401,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -404,6 +420,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -422,6 +439,7 @@
           CSharpType: ChatCompletionFunctionCall?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: [
             name,
             arguments
@@ -461,6 +479,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -481,6 +500,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -519,6 +539,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -539,6 +560,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -559,6 +581,7 @@
           CSharpType: ChatCompletionFunctionParameters?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: [
             type,
             properties
@@ -598,6 +621,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -618,6 +642,7 @@
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object
@@ -653,12 +678,13 @@
         Id: model,
         Name: Model,
         Type: {
-          CSharpType: object,
+          CSharpType: global::System.AnyOf<string, object>,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.AnyOf<string, object>
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -671,12 +697,13 @@
         Id: prompt,
         Name: Prompt,
         Type: {
-          CSharpType: object,
+          CSharpType: global::System.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -692,6 +719,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -710,6 +738,7 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -728,6 +757,7 @@
           CSharpType: double,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -746,6 +776,7 @@
           CSharpType: double,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -764,6 +795,7 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -782,6 +814,7 @@
           CSharpType: bool,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool
@@ -800,6 +833,7 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -818,6 +852,7 @@
           CSharpType: bool,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool
@@ -833,15 +868,15 @@
         Id: stop,
         Name: Stop,
         Type: {
-          CSharpType: object?,
+          CSharpType: global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?>,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?>
         },
         IsRequired: false,
-        DefaultValue: ,
         IsDeprecated: false,
         Summary: ,
         ParameterName: stop,
@@ -855,6 +890,7 @@
           CSharpType: double,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -873,6 +909,7 @@
           CSharpType: double,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -891,6 +928,7 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -909,6 +947,7 @@
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object
@@ -928,6 +967,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -964,6 +1004,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -984,6 +1025,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -1004,6 +1046,7 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -1024,6 +1067,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -1044,6 +1088,7 @@
           CSharpType: global::System.Collections.Generic.IList<ChatCompletionChoice>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionChoice>
@@ -1064,6 +1109,7 @@
           CSharpType: CompletionUsage?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: [
             prompt_tokens,
             completion_tokens,
@@ -1104,6 +1150,7 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -1124,6 +1171,7 @@
           CSharpType: ChatCompletionResponseMessage?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: [
             role,
             content,
@@ -1146,6 +1194,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -1184,6 +1233,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -1204,6 +1254,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -1222,6 +1273,7 @@
           CSharpType: ChatCompletionFunctionCall?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: [
             name,
             arguments
@@ -1261,6 +1313,7 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -1281,6 +1334,7 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -1301,6 +1355,7 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -1339,6 +1394,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -1357,6 +1413,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -1375,6 +1432,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -1393,6 +1451,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -1411,6 +1470,7 @@
           CSharpType: global::System.Collections.Generic.IList<Choice>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Choice>
@@ -1431,6 +1491,7 @@
           CSharpType: CompletionUsage?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: [
             prompt_tokens,
             completion_tokens,
@@ -1471,6 +1532,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -1491,6 +1553,7 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -1511,6 +1574,7 @@
           CSharpType: Logprobs?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: [
             tokens,
             token_logprobs,
@@ -1534,6 +1598,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -1572,6 +1637,7 @@
           CSharpType: global::System.Collections.Generic.IList<string?>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>
@@ -1592,6 +1658,7 @@
           CSharpType: global::System.Collections.Generic.IList<double>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<double>
@@ -1612,6 +1679,7 @@
           CSharpType: global::System.Collections.Generic.IList<object?>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object?>
@@ -1632,6 +1700,7 @@
           CSharpType: global::System.Collections.Generic.IList<int>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<int>
@@ -1670,6 +1739,7 @@
           CSharpType: global::System.Collections.Generic.IList<ValidationError>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ValidationError>
@@ -1703,12 +1773,13 @@
         Id: loc,
         Name: Loc,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<object>,
+          CSharpType: global::System.Collections.Generic.IList<global::System.AnyOf<string, int>>,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.AnyOf<string, int>>
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -1724,6 +1795,7 @@
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -1742,6 +1814,7 @@
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -1778,6 +1851,7 @@
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -1793,15 +1867,15 @@
         Id: inputs,
         Name: Inputs,
         Type: {
-          CSharpType: object?,
+          CSharpType: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>
         },
         IsRequired: false,
-        DefaultValue: ,
         IsDeprecated: false,
         Summary: ,
         ParameterName: inputs,
@@ -1815,6 +1889,7 @@
           CSharpType: string,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             Tool,
             Chain,
@@ -1849,6 +1924,7 @@
           CSharpType: global::System.DateTime,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.DateTime
@@ -1867,6 +1943,7 @@
           CSharpType: global::System.DateTime,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.DateTime
@@ -1885,6 +1962,7 @@
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object
@@ -1904,6 +1982,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -1922,6 +2001,7 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -1942,6 +2022,7 @@
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object
@@ -1958,15 +2039,15 @@
         Id: outputs,
         Name: Outputs,
         Type: {
-          CSharpType: object?,
+          CSharpType: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>
         },
         IsRequired: false,
-        DefaultValue: ,
         IsDeprecated: false,
         Summary: ,
         ParameterName: outputs,
@@ -1980,6 +2061,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -1998,6 +2080,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2016,6 +2099,7 @@
           CSharpType: global::System.Collections.Generic.IList<object?>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object?>
@@ -2034,6 +2118,7 @@
           CSharpType: global::System.Collections.Generic.IList<string?>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>
@@ -2052,6 +2137,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2070,6 +2156,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2088,6 +2175,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2106,6 +2194,7 @@
           CSharpType: global::System.Collections.Generic.IList<RunCreateSchema>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<RunCreateSchema>
@@ -2124,6 +2213,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2161,6 +2251,7 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: 
@@ -2179,6 +2270,7 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: 
@@ -2197,6 +2289,7 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: 
@@ -2215,6 +2308,7 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: 
@@ -2233,6 +2327,7 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: 
@@ -2251,6 +2346,7 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: 
@@ -2269,6 +2365,7 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: 
@@ -2322,6 +2419,7 @@
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2340,6 +2438,7 @@
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object
@@ -2359,6 +2458,7 @@
           CSharpType: string,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             Tool,
             Chain,
@@ -2393,6 +2493,7 @@
           CSharpType: global::System.DateTime,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.DateTime
@@ -2411,6 +2512,7 @@
           CSharpType: global::System.DateTime,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.DateTime
@@ -2429,6 +2531,7 @@
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object
@@ -2448,6 +2551,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2466,6 +2570,7 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -2486,6 +2591,7 @@
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object
@@ -2505,6 +2611,7 @@
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object
@@ -2524,6 +2631,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2542,6 +2650,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2560,6 +2669,7 @@
           CSharpType: global::System.Collections.Generic.IList<object?>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object?>
@@ -2578,6 +2688,7 @@
           CSharpType: global::System.Collections.Generic.IList<string?>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>
@@ -2596,6 +2707,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2614,6 +2726,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2632,6 +2745,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2650,6 +2764,7 @@
           CSharpType: global::System.Collections.Generic.IList<RunCreateSchema>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<RunCreateSchema>
@@ -2668,6 +2783,7 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2705,6 +2821,7 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: 
@@ -2723,6 +2840,7 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: 
@@ -2741,6 +2859,7 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: 
@@ -2759,6 +2878,7 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: 
@@ -2777,6 +2897,7 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: 
@@ -2795,6 +2916,7 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: 
@@ -2813,6 +2935,7 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: 

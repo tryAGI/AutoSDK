@@ -52,7 +52,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<FineTuningJob> CreateFineTuningJobAsync(
-            object model,
+            global::System.AnyOf<string, CreateFineTuningJobRequestModel> model,
             string trainingFile,
             CreateFineTuningJobRequestHyperparameters? hyperparameters = default,
             string? suffix = default,

@@ -15,6 +15,7 @@
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -38,6 +39,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -58,6 +60,7 @@ The prompt to generate a response.
           CSharpType: global::System.Collections.Generic.IList<string?>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>
@@ -76,6 +79,7 @@ The prompt to generate a response.
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -94,6 +98,7 @@ The prompt to generate a response.
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -112,6 +117,7 @@ The prompt to generate a response.
           CSharpType: global::System.Collections.Generic.IList<int>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<int>
@@ -130,6 +136,7 @@ The prompt to generate a response.
           CSharpType: RequestOptions?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: [
             num_keep,
             seed,
@@ -182,6 +189,7 @@ The prompt to generate a response.
           CSharpType: string?,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             Json
           ],
@@ -210,6 +218,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           CSharpType: bool,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool
@@ -232,6 +241,7 @@ You may choose to use the `raw` parameter if you are specifying a full templated
           CSharpType: bool,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool
@@ -254,6 +264,7 @@ If `false` the response will be returned as a single response object, otherwise 
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -281,6 +292,7 @@ How long (in minutes) to keep the model loaded in memory.
       CSharpType: GenerateCompletionRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         model,
         prompt,
@@ -319,6 +331,7 @@ How long (in minutes) to keep the model loaded in memory.
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -342,6 +355,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           CSharpType: global::System.Collections.Generic.IList<Message>,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Message>
@@ -360,6 +374,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           CSharpType: string?,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             Json
           ],
@@ -388,6 +403,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           CSharpType: RequestOptions?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: [
             num_keep,
             seed,
@@ -440,6 +456,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           CSharpType: bool,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool
@@ -462,6 +479,7 @@ If `false` the response will be returned as a single response object, otherwise 
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -489,6 +507,7 @@ How long (in minutes) to keep the model loaded in memory.
       CSharpType: GenerateChatCompletionRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         model,
         messages,
@@ -522,6 +541,7 @@ How long (in minutes) to keep the model loaded in memory.
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -545,6 +565,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -565,6 +586,7 @@ Text to generate embeddings for.
           CSharpType: RequestOptions?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: [
             num_keep,
             seed,
@@ -619,6 +641,7 @@ Text to generate embeddings for.
       CSharpType: GenerateEmbeddingRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         model,
         prompt,
@@ -649,6 +672,7 @@ Text to generate embeddings for.
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -672,6 +696,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -692,6 +717,7 @@ The contents of the Modelfile.
           CSharpType: bool,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool
@@ -716,6 +742,7 @@ If `false` the response will be returned as a single response object, otherwise 
       CSharpType: CreateModelRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         name,
         modelfile,
@@ -746,6 +773,7 @@ If `false` the response will be returned as a single response object, otherwise 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -772,6 +800,7 @@ If `false` the response will be returned as a single response object, otherwise 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -797,6 +826,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
       CSharpType: ModelInfoRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         name
       ],
@@ -825,6 +855,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -845,6 +876,7 @@ Name of the model to copy.
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -867,6 +899,7 @@ Name of the new model.
       CSharpType: CopyModelRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         source,
         destination
@@ -896,6 +929,7 @@ Name of the new model.
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -921,6 +955,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
       CSharpType: DeleteModelRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         name
       ],
@@ -949,6 +984,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -972,6 +1008,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           CSharpType: bool,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool
@@ -996,6 +1033,7 @@ Only use this if you are pulling from your own library during development.
           CSharpType: bool,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool
@@ -1020,6 +1058,7 @@ If `false` the response will be returned as a single response object, otherwise 
       CSharpType: PullModelRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         name,
         insecure,
@@ -1050,6 +1089,7 @@ If `false` the response will be returned as a single response object, otherwise 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -1070,6 +1110,7 @@ The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt
           CSharpType: bool,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool
@@ -1094,6 +1135,7 @@ Only use this if you are pushing to your library during development.
           CSharpType: bool,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool
@@ -1118,6 +1160,7 @@ If `false` the response will be returned as a single response object, otherwise 
       CSharpType: PushModelRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         name,
         insecure,
@@ -1148,6 +1191,7 @@ If `false` the response will be returned as a single response object, otherwise 
           CSharpType: CompletionsClient,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: CompletionsClient
@@ -1166,6 +1210,7 @@ If `false` the response will be returned as a single response object, otherwise 
           CSharpType: ChatClient,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ChatClient
@@ -1184,6 +1229,7 @@ If `false` the response will be returned as a single response object, otherwise 
           CSharpType: EmbeddingsClient,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: EmbeddingsClient
@@ -1202,6 +1248,7 @@ If `false` the response will be returned as a single response object, otherwise 
           CSharpType: ModelsClient,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ModelsClient
@@ -1221,6 +1268,7 @@ If `false` the response will be returned as a single response object, otherwise 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -1247,6 +1295,7 @@ If `false` the response will be returned as a single response object, otherwise 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -1273,6 +1322,7 @@ If `false` the response will be returned as a single response object, otherwise 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -1299,6 +1349,7 @@ If `false` the response will be returned as a single response object, otherwise 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -1325,6 +1376,7 @@ If `false` the response will be returned as a single response object, otherwise 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 

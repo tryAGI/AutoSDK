@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Model { get; set; } = default!;
+        public global::System.AnyOf<string, object> Model { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Prompt { get; set; } = default!;
+        public global::System.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>> Prompt { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -73,7 +73,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stop")]
-        public object? Stop { get; set; }
+        public global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?> Stop { get; set; }
 
         /// <summary>
         /// 

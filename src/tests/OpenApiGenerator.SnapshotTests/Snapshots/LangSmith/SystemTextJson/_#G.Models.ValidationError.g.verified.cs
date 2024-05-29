@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("loc")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<object> Loc { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.AnyOf<string, int>> Loc { get; set; }
 
         /// <summary>
         /// 

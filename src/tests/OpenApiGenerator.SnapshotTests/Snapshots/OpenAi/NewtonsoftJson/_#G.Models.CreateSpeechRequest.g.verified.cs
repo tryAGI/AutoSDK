@@ -13,7 +13,7 @@ namespace G
         /// One of the available [TTS models](/docs/models/tts): `tts-1` or `tts-1-hd`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Model { get; set; } = default!;
+        public global::System.AnyOf<string, CreateSpeechRequestModel> Model { get; set; } = default!;
 
         /// <summary>
         /// The text to generate audio for. The maximum length is 4096 characters.

@@ -10,7 +10,7 @@ public static class Data
 {
     #region Methods
 
-    public static (EquatableArray<ModelData> Models, EquatableArray<EndPoint> Methods) Prepare(
+    public static (EquatableArray<ModelData> Models, EquatableArray<EndPoint> Methods, EquatableArray<AnyOfData> AnyOfs) Prepare(
         (string text, Settings settings) tuple,
         CancellationToken cancellationToken = default)
     {
@@ -85,10 +85,6 @@ public static class Data
                     !excludedModels.Contains(schema.Key))
                 .Select(schema => ModelData.FromSchema(schema, settings))
                 .SelectMany(model => model.WithAdditionalModels())
-                .Select(model => model with
-                {
-                    Schema = default,
-                })
                 .ToDictionary(x => x.ClassName, x => x);
         }
 
@@ -189,12 +185,58 @@ public static class Data
             ];
         }
 
-        return (schemas.Values.Concat(
-                methods.SelectMany(x => x.AdditionalModels))
-                    .GroupBy(x => x.FileNameWithoutExtension)
-                    .Select(x => x.First())
-                    .ToImmutableArray(),
-                methods.Select(x => x with{ AdditionalModels = []}).ToImmutableArray());
+        var allSchemas = schemas.Values.Concat(methods
+            .SelectMany(x => x.AdditionalModels))
+            .SelectMany(x => x.Schema.Value.Properties.Concat([x.Schema]).ToArray())
+            .Select(x => x.Value)
+            .ToArray();
+        var anyOfs = allSchemas
+            .Where(x => x.AnyOf is { Count: > 0 })
+            .Select(x => new AnyOfData("AnyOf", x.AnyOf.Count))
+            .Concat(allSchemas
+                .Where(x => x.Items?.AnyOf is { Count: > 0 })
+                .Select(x => new AnyOfData("AnyOf", x.Items.AnyOf.Count)))
+            .Distinct()
+            .ToImmutableArray();
+        var oneOfs = allSchemas
+            .Where(x => x.OneOf is { Count: > 0 })
+            .Select(x => new AnyOfData("OneOf", x.OneOf.Count))
+            .Concat(allSchemas
+                .Where(x => x.Items?.OneOf is { Count: > 0 })
+                .Select(x => new AnyOfData("OneOf", x.Items.OneOf.Count)))
+            .Distinct()
+            .ToImmutableArray();
+        var allOfs = allSchemas
+            .Where(x => x.AllOf is { Count: > 0 })
+            .Select(x => new AnyOfData("AllOf", x.AllOf.Count))
+            .Concat(allSchemas
+                .Where(x => x.Items?.AllOf is { Count: > 0 })
+                .Select(x => new AnyOfData("AllOf", x.Items.AllOf.Count)))
+            .Distinct()
+            .ToImmutableArray();
+        
+        var models = schemas.Values
+                .Select(model => model with
+                {
+                    Schema = default,
+                }).Concat(
+                methods
+                    .SelectMany(x => x.AdditionalModels)
+                    .Select(model => model with
+                    {
+                        Schema = default,
+                    }))
+            .GroupBy(x => x.FileNameWithoutExtension)
+            .Select(x => x.First())
+            .ToImmutableArray();
+        
+        return (Models: models,
+                Methods: methods.Select(x => x with{ AdditionalModels = []}).ToImmutableArray(),
+                AnyOfs: ImmutableArray.Create([
+                    ..anyOfs,
+                    ..oneOfs,
+                    ..allOfs,
+                ]));
     }
     
     public static FileWithName GetSourceCode(
@@ -204,6 +246,24 @@ public static class Data
         return new FileWithName(
             Name: $"{modelData.FileNameWithoutExtension}.g.cs",
             Text: Sources.GenerateModel(modelData, cancellationToken: cancellationToken));
+    }
+    
+    public static FileWithName GetSourceCodeForType(
+        AnyOfData data,
+        CancellationToken cancellationToken = default)
+    {
+        return new FileWithName(
+            Name: $"{data.SubType}.{data.Count}.g.cs",
+            Text: Sources.GenerateAnyOf(data, cancellationToken: cancellationToken));
+    }
+    
+    public static FileWithName GetSourceCodeForConverter(
+        AnyOfData data,
+        CancellationToken cancellationToken = default)
+    {
+        return new FileWithName(
+            Name: $"{data.SubType}{data.Count}JsonConverter.g.cs",
+            Text: Sources.GenerateAnyOfJsonConverter(data, cancellationToken: cancellationToken));
     }
     
     public static FileWithName GetSourceCodeForSuperClass(

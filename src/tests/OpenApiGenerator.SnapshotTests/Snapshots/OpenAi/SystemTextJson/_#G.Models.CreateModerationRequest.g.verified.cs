@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Input { get; set; }
+        public required global::System.OneOf<string, global::System.Collections.Generic.IList<string>> Input { get; set; }
 
         /// <summary>
         /// Two content moderations models are available: `text-moderation-stable` and `text-moderation-latest`.
@@ -23,7 +23,7 @@ namespace G
         /// <br/>Example: text-moderation-stable
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        public object? Model { get; set; }
+        public global::System.AnyOf<string?, string?> Model { get; set; } = CreateModerationRequestModel.TextModerationLatest;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

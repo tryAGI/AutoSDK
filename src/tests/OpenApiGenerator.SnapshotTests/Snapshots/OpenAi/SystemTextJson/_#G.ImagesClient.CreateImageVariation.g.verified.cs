@@ -52,7 +52,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<ImagesResponse> CreateImageVariationAsync(
             byte[] image,
-            object? model = default,
+            global::System.AnyOf<string?, string?>? model = default,
             int? n = 1,
             string? responseFormat = CreateImageVariationRequestResponseFormat.Url,
             string? size = CreateImageVariationRequestSize._1024x1024,

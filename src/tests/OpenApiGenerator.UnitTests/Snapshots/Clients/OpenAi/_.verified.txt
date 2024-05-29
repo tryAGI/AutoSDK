@@ -15,6 +15,7 @@
           CSharpType: global::System.Collections.Generic.IList<ChatCompletionRequestMessage>,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionRequestMessage>
@@ -30,12 +31,13 @@
         Id: model,
         Name: Model,
         Type: {
-          CSharpType: object,
+          CSharpType: global::System.AnyOf<string, string>,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.AnyOf<string, string>
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -53,6 +55,7 @@ ID of the model to use. See the [model endpoint compatibility](/docs/models/mode
           CSharpType: double?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -77,6 +80,7 @@ Number between -2.0 and 2.0. Positive values penalize new tokens based on their 
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object
@@ -101,6 +105,7 @@ Accepts a JSON object that maps tokens (specified by their token ID in the token
           CSharpType: bool?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool
@@ -122,6 +127,7 @@ Whether to return log probabilities of the output tokens or not. If true, return
           CSharpType: int?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -140,6 +146,7 @@ Whether to return log probabilities of the output tokens or not. If true, return
           CSharpType: int?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -162,6 +169,7 @@ The total length of input tokens and generated tokens is limited by the model's 
           CSharpType: int?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -184,6 +192,7 @@ How many chat completion choices to generate for each input message. Note that y
           CSharpType: double?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -208,6 +217,7 @@ Number between -2.0 and 2.0. Positive values penalize new tokens based on whethe
           CSharpType: CreateChatCompletionRequestResponseFormat?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: CreateChatCompletionRequestResponseFormat
@@ -232,6 +242,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           CSharpType: int?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -251,15 +262,15 @@ Determinism is not guaranteed, and you should refer to the `system_fingerprint` 
         Id: stop,
         Name: Stop,
         Type: {
-          CSharpType: object?,
+          CSharpType: global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>
         },
         IsRequired: false,
-        DefaultValue: ,
         IsDeprecated: false,
         Summary:
 Up to 4 sequences where the API will stop generating further tokens.
@@ -276,6 +287,7 @@ Up to 4 sequences where the API will stop generating further tokens.
           CSharpType: bool?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool
@@ -298,6 +310,7 @@ If set, partial message deltas will be sent, like in ChatGPT. Tokens will be sen
           CSharpType: ChatCompletionStreamOptions?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: [
             include_usage
           ],
@@ -321,6 +334,7 @@ Options for streaming response. Only set this when you set `stream: true`.
           CSharpType: double?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -346,6 +360,7 @@ We generally recommend altering this or `top_p` but not both.
           CSharpType: double?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -371,6 +386,7 @@ We generally recommend altering this or `temperature` but not both.
           CSharpType: global::System.Collections.Generic.IList<ChatCompletionTool>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionTool>
@@ -391,6 +407,7 @@ A list of tools the model may call. Currently, only functions are supported as a
           CSharpType: ChatCompletionToolChoiceOption?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ChatCompletionToolChoiceOption
@@ -417,6 +434,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -435,15 +453,15 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
         Id: function_call,
         Name: FunctionCall,
         Type: {
-          CSharpType: object?,
+          CSharpType: global::System.OneOf<string?, ChatCompletionFunctionCallOption?>,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.OneOf<string?, ChatCompletionFunctionCallOption?>
         },
         IsRequired: false,
-        DefaultValue: ,
         IsDeprecated: true,
         Summary:
 Deprecated in favor of `tool_choice`.
@@ -466,6 +484,7 @@ Specifying a particular function via `{"name": "my_function"}` forces the model 
           CSharpType: global::System.Collections.Generic.IList<ChatCompletionFunctions>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionFunctions>
@@ -490,6 +509,7 @@ A list of functions the model may generate JSON inputs for.
       CSharpType: CreateChatCompletionRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         messages,
         model,
@@ -535,12 +555,13 @@ A list of functions the model may generate JSON inputs for.
         Id: model,
         Name: Model,
         Type: {
-          CSharpType: object,
+          CSharpType: global::System.AnyOf<string, string>,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.AnyOf<string, string>
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -555,15 +576,16 @@ ID of the model to use. You can use the [List models](/docs/api-reference/models
         Id: prompt,
         Name: Prompt,
         Type: {
-          CSharpType: object?,
+          CSharpType: global::System.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>
         },
         IsRequired: true,
-        DefaultValue: ,
+        DefaultValue: "<|endoftext|>",
         IsDeprecated: false,
         Summary:
 The prompt(s) to generate completions for, encoded as a string, array of strings, array of tokens, or array of token arrays.
@@ -582,6 +604,7 @@ Note that &lt;|endoftext|&gt; is the document separator that the model sees duri
           CSharpType: int?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -608,6 +631,7 @@ When used with `n`, `best_of` controls the number of candidate completions and `
           CSharpType: bool?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool
@@ -630,6 +654,7 @@ Echo back the prompt in addition to the completion
           CSharpType: double?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -654,6 +679,7 @@ Number between -2.0 and 2.0. Positive values penalize new tokens based on their 
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object
@@ -680,6 +706,7 @@ As an example, you can pass `{"50256": -100}` to prevent the &lt;|endoftext|&gt;
           CSharpType: int?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -703,6 +730,7 @@ The maximum value for `logprobs` is 5.
           CSharpType: int?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -728,6 +756,7 @@ The token count of your prompt plus `max_tokens` cannot exceed the model's conte
           CSharpType: int?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -753,6 +782,7 @@ How many completions to generate for each prompt.
           CSharpType: double?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -777,6 +807,7 @@ Number between -2.0 and 2.0. Positive values penalize new tokens based on whethe
           CSharpType: int?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -796,15 +827,15 @@ Determinism is not guaranteed, and you should refer to the `system_fingerprint` 
         Id: stop,
         Name: Stop,
         Type: {
-          CSharpType: object?,
+          CSharpType: global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>
         },
         IsRequired: false,
-        DefaultValue: ,
         IsDeprecated: false,
         Summary:
 Up to 4 sequences where the API will stop generating further tokens. The returned text will not contain the stop sequence.
@@ -821,6 +852,7 @@ Up to 4 sequences where the API will stop generating further tokens. The returne
           CSharpType: bool?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool
@@ -843,6 +875,7 @@ Whether to stream back partial progress. If set, tokens will be sent as data-onl
           CSharpType: ChatCompletionStreamOptions?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: [
             include_usage
           ],
@@ -866,6 +899,7 @@ Options for streaming response. Only set this when you set `stream: true`.
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -890,6 +924,7 @@ This parameter is only supported for `gpt-3.5-turbo-instruct`.
           CSharpType: double?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -915,6 +950,7 @@ We generally recommend altering this or `top_p` but not both.
           CSharpType: double?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -940,6 +976,7 @@ We generally recommend altering this or `temperature` but not both.
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -963,6 +1000,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
       CSharpType: CreateCompletionRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         model,
         prompt,
@@ -1008,6 +1046,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -1025,15 +1064,16 @@ A text description of the desired image(s). The maximum length is 1000 character
         Id: model,
         Name: Model,
         Type: {
-          CSharpType: object?,
+          CSharpType: global::System.AnyOf<string?, string?>?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.AnyOf<string?, string?>
         },
         IsRequired: false,
-        DefaultValue: ,
+        DefaultValue: CreateImageRequestModel.DallE2,
         IsDeprecated: false,
         Summary:
 The model to use for image generation.
@@ -1050,6 +1090,7 @@ The model to use for image generation.
           CSharpType: int?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -1072,6 +1113,7 @@ The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only
           CSharpType: string?,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             Standard,
             Hd
@@ -1100,6 +1142,7 @@ The quality of the image that will be generated. `hd` creates images with finer 
           CSharpType: string?,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             Url,
             B64Json
@@ -1128,6 +1171,7 @@ The format in which the generated images are returned. Must be one of `url` or `
           CSharpType: string?,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             _256x256,
             _512x512,
@@ -1162,6 +1206,7 @@ The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x
           CSharpType: string?,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             Vivid,
             Natural
@@ -1190,6 +1235,7 @@ The style of the generated images. Must be one of `vivid` or `natural`. Vivid ca
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -1213,6 +1259,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
       CSharpType: CreateImageRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         prompt,
         model,
@@ -1248,6 +1295,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
           CSharpType: byte[],
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: byte[]
@@ -1266,6 +1314,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -1286,6 +1335,7 @@ A text description of the desired image(s). The maximum length is 1000 character
           CSharpType: byte[]?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: byte[]
@@ -1301,15 +1351,16 @@ A text description of the desired image(s). The maximum length is 1000 character
         Id: model,
         Name: Model,
         Type: {
-          CSharpType: object?,
+          CSharpType: global::System.AnyOf<string?, string?>?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.AnyOf<string?, string?>
         },
         IsRequired: false,
-        DefaultValue: ,
+        DefaultValue: CreateImageEditRequestModel.DallE2,
         IsDeprecated: false,
         Summary:
 The model to use for image generation. Only `dall-e-2` is supported at this time.
@@ -1326,6 +1377,7 @@ The model to use for image generation. Only `dall-e-2` is supported at this time
           CSharpType: int?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -1348,6 +1400,7 @@ The number of images to generate. Must be between 1 and 10.
           CSharpType: string?,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             _256x256,
             _512x512,
@@ -1378,6 +1431,7 @@ The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x
           CSharpType: string?,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             Url,
             B64Json
@@ -1406,6 +1460,7 @@ The format in which the generated images are returned. Must be one of `url` or `
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -1429,6 +1484,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
       CSharpType: CreateImageEditRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         image,
         prompt,
@@ -1464,6 +1520,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
           CSharpType: byte[],
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: byte[]
@@ -1479,15 +1536,16 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
         Id: model,
         Name: Model,
         Type: {
-          CSharpType: object?,
+          CSharpType: global::System.AnyOf<string?, string?>?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.AnyOf<string?, string?>
         },
         IsRequired: false,
-        DefaultValue: ,
+        DefaultValue: CreateImageVariationRequestModel.DallE2,
         IsDeprecated: false,
         Summary:
 The model to use for image generation. Only `dall-e-2` is supported at this time.
@@ -1504,6 +1562,7 @@ The model to use for image generation. Only `dall-e-2` is supported at this time
           CSharpType: int?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -1526,6 +1585,7 @@ The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only
           CSharpType: string?,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             Url,
             B64Json
@@ -1554,6 +1614,7 @@ The format in which the generated images are returned. Must be one of `url` or `
           CSharpType: string?,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             _256x256,
             _512x512,
@@ -1584,6 +1645,7 @@ The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -1607,6 +1669,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
       CSharpType: CreateImageVariationRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         image,
         model,
@@ -1637,12 +1700,13 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
         Id: input,
         Name: Input,
         Type: {
-          CSharpType: object,
+          CSharpType: global::System.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -1658,12 +1722,13 @@ Input text to embed, encoded as a string or array of tokens. To embed multiple i
         Id: model,
         Name: Model,
         Type: {
-          CSharpType: object,
+          CSharpType: global::System.AnyOf<string, string>,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.AnyOf<string, string>
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -1682,6 +1747,7 @@ ID of the model to use. You can use the [List models](/docs/api-reference/models
           CSharpType: string?,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             Float,
             Base64
@@ -1710,6 +1776,7 @@ The format to return the embeddings in. Can be either `float` or [`base64`](http
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -1730,6 +1797,7 @@ The number of dimensions the resulting output embeddings should have. Only suppo
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -1753,6 +1821,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
       CSharpType: CreateEmbeddingRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         input,
         model,
@@ -1782,12 +1851,13 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
         Id: model,
         Name: Model,
         Type: {
-          CSharpType: object,
+          CSharpType: global::System.AnyOf<string, string>,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.AnyOf<string, string>
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -1805,6 +1875,7 @@ One of the available [TTS models](/docs/models/tts): `tts-1` or `tts-1-hd`
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -1823,6 +1894,7 @@ One of the available [TTS models](/docs/models/tts): `tts-1` or `tts-1-hd`
           CSharpType: string,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             Alloy,
             Echo,
@@ -1855,6 +1927,7 @@ One of the available [TTS models](/docs/models/tts): `tts-1` or `tts-1-hd`
           CSharpType: string?,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             Mp3,
             Opus,
@@ -1890,6 +1963,7 @@ The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav
           CSharpType: double,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -1913,6 +1987,7 @@ The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is 
       CSharpType: CreateSpeechRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         model,
         input,
@@ -1945,6 +2020,7 @@ The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is 
           CSharpType: byte[],
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: byte[]
@@ -1962,12 +2038,13 @@ The audio file object (not file name) to transcribe, in one of these formats: fl
         Id: model,
         Name: Model,
         Type: {
-          CSharpType: object,
+          CSharpType: global::System.AnyOf<string, string>,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.AnyOf<string, string>
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -1986,6 +2063,7 @@ ID of the model to use. Only `whisper-1` (which is powered by our open source Wh
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2006,6 +2084,7 @@ The language of the input audio. Supplying the input language in [ISO-639-1](htt
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2026,6 +2105,7 @@ An optional text to guide the model's style or continue a previous audio segment
           CSharpType: string?,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             Json,
             Text,
@@ -2060,6 +2140,7 @@ The format of the transcript output, in one of these options: `json`, `text`, `s
           CSharpType: double,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -2084,6 +2165,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
       CSharpType: CreateTranscriptionRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         file,
         model,
@@ -2117,6 +2199,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
           CSharpType: byte[],
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: byte[]
@@ -2134,12 +2217,13 @@ The audio file object (not file name) translate, in one of these formats: flac, 
         Id: model,
         Name: Model,
         Type: {
-          CSharpType: object,
+          CSharpType: global::System.AnyOf<string, string>,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.AnyOf<string, string>
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -2158,6 +2242,7 @@ ID of the model to use. Only `whisper-1` (which is powered by our open source Wh
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2178,6 +2263,7 @@ An optional text to guide the model's style or continue a previous audio segment
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2200,6 +2286,7 @@ The format of the transcript output, in one of these options: `json`, `text`, `s
           CSharpType: double,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -2224,6 +2311,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
       CSharpType: CreateTranslationRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         file,
         model,
@@ -2256,6 +2344,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2278,6 +2367,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -2304,6 +2394,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
           CSharpType: byte[],
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: byte[]
@@ -2324,6 +2415,7 @@ The File object (not file name) to be uploaded.
           CSharpType: string,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             Assistants,
             Batch,
@@ -2356,6 +2448,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
       CSharpType: CreateFileRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         file,
         purpose
@@ -2385,6 +2478,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2408,6 +2502,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -2434,6 +2529,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2456,6 +2552,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -2482,6 +2579,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2504,6 +2602,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -2527,12 +2626,13 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
         Id: model,
         Name: Model,
         Type: {
-          CSharpType: object,
+          CSharpType: global::System.AnyOf<string, string>,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.AnyOf<string, string>
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -2552,6 +2652,7 @@ The name of the model to fine-tune. You can select one of the
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2579,6 +2680,7 @@ See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
           CSharpType: CreateFineTuningJobRequestHyperparameters?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: CreateFineTuningJobRequestHyperparameters
@@ -2597,6 +2699,7 @@ See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2620,6 +2723,7 @@ For example, a `suffix` of "custom-model-name" would produce a model name like `
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2650,6 +2754,7 @@ See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
           CSharpType: global::System.Collections.Generic.IList<CreateFineTuningJobRequestIntegrations?>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<CreateFineTuningJobRequestIntegrations?>
@@ -2668,6 +2773,7 @@ See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
           CSharpType: int?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -2692,6 +2798,7 @@ If a seed is not specified, one will be generated for you.
       CSharpType: CreateFineTuningJobRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         model,
         training_file,
@@ -2726,6 +2833,7 @@ If a seed is not specified, one will be generated for you.
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2747,6 +2855,7 @@ If a seed is not specified, one will be generated for you.
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -2771,6 +2880,7 @@ If a seed is not specified, one will be generated for you.
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -2797,6 +2907,7 @@ If a seed is not specified, one will be generated for you.
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2820,6 +2931,7 @@ If a seed is not specified, one will be generated for you.
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -2846,6 +2958,7 @@ If a seed is not specified, one will be generated for you.
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2868,6 +2981,7 @@ If a seed is not specified, one will be generated for you.
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2889,6 +3003,7 @@ If a seed is not specified, one will be generated for you.
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -2913,6 +3028,7 @@ If a seed is not specified, one will be generated for you.
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -2939,6 +3055,7 @@ If a seed is not specified, one will be generated for you.
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -2963,6 +3080,7 @@ If a seed is not specified, one will be generated for you.
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -2989,6 +3107,7 @@ If a seed is not specified, one will be generated for you.
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -3011,6 +3130,7 @@ If a seed is not specified, one will be generated for you.
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -3032,6 +3152,7 @@ If a seed is not specified, one will be generated for you.
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -3056,6 +3177,7 @@ If a seed is not specified, one will be generated for you.
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -3082,6 +3204,7 @@ If a seed is not specified, one will be generated for you.
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -3108,6 +3231,7 @@ If a seed is not specified, one will be generated for you.
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -3131,6 +3255,7 @@ If a seed is not specified, one will be generated for you.
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -3157,6 +3282,7 @@ If a seed is not specified, one will be generated for you.
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -3181,6 +3307,7 @@ If a seed is not specified, one will be generated for you.
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -3204,12 +3331,13 @@ If a seed is not specified, one will be generated for you.
         Id: input,
         Name: Input,
         Type: {
-          CSharpType: object,
+          CSharpType: global::System.OneOf<string, global::System.Collections.Generic.IList<string>>,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<string>>
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -3222,15 +3350,16 @@ If a seed is not specified, one will be generated for you.
         Id: model,
         Name: Model,
         Type: {
-          CSharpType: object?,
+          CSharpType: global::System.AnyOf<string?, string?>,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.AnyOf<string?, string?>
         },
         IsRequired: false,
-        DefaultValue: ,
+        DefaultValue: CreateModerationRequestModel.TextModerationLatest,
         IsDeprecated: false,
         Summary:
 Two content moderations models are available: `text-moderation-stable` and `text-moderation-latest`.
@@ -3252,6 +3381,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
       CSharpType: CreateModerationRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         input,
         model
@@ -3281,6 +3411,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -3304,6 +3435,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
           CSharpType: string,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             Asc,
             Desc
@@ -3333,6 +3465,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -3354,6 +3487,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -3376,6 +3510,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -3399,12 +3534,13 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
         Id: model,
         Name: Model,
         Type: {
-          CSharpType: object,
+          CSharpType: global::System.AnyOf<string, string>,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.AnyOf<string, string>
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -3423,6 +3559,7 @@ ID of the model to use. You can use the [List models](/docs/api-reference/models
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -3443,6 +3580,7 @@ The name of the assistant. The maximum length is 256 characters.
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -3463,6 +3601,7 @@ The description of the assistant. The maximum length is 512 characters.
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -3480,12 +3619,13 @@ The system instructions that the assistant uses. The maximum length is 256,000 c
         Id: tools,
         Name: Tools,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<object?>?,
+          CSharpType: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object?>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>
         },
         IsRequired: false,
         DefaultValue: ,
@@ -3505,6 +3645,7 @@ A list of tool enabled on the assistant. There can be a maximum of 128 tools per
           CSharpType: CreateAssistantRequestToolResources?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: CreateAssistantRequestToolResources
@@ -3525,6 +3666,7 @@ A set of resources that are used by the assistant's tools. The resources are spe
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object
@@ -3546,6 +3688,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: double?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -3569,6 +3712,7 @@ What sampling temperature to use, between 0 and 2. Higher values like 0.8 will m
           CSharpType: double?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -3594,6 +3738,7 @@ We generally recommend altering this or temperature but not both.
           CSharpType: AssistantsApiResponseFormatOption?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: AssistantsApiResponseFormatOption
@@ -3620,6 +3765,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       CSharpType: CreateAssistantRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         model,
         name,
@@ -3657,6 +3803,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -3679,6 +3826,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -3705,6 +3853,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -3723,15 +3872,15 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         Id: model,
         Name: Model,
         Type: {
-          CSharpType: object?,
+          CSharpType: global::System.AnyOf<string?>,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.AnyOf<string?>
         },
         IsRequired: false,
-        DefaultValue: ,
         IsDeprecated: false,
         Summary:
 ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models/overview) for descriptions of them.
@@ -3747,6 +3896,7 @@ ID of the model to use. You can use the [List models](/docs/api-reference/models
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -3767,6 +3917,7 @@ The name of the assistant. The maximum length is 256 characters.
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -3787,6 +3938,7 @@ The description of the assistant. The maximum length is 512 characters.
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -3804,12 +3956,13 @@ The system instructions that the assistant uses. The maximum length is 256,000 c
         Id: tools,
         Name: Tools,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<object?>?,
+          CSharpType: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object?>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>
         },
         IsRequired: false,
         DefaultValue: ,
@@ -3829,6 +3982,7 @@ A list of tool enabled on the assistant. There can be a maximum of 128 tools per
           CSharpType: ModifyAssistantRequestToolResources?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ModifyAssistantRequestToolResources
@@ -3849,6 +4003,7 @@ A set of resources that are used by the assistant's tools. The resources are spe
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object
@@ -3870,6 +4025,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: double?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -3893,6 +4049,7 @@ What sampling temperature to use, between 0 and 2. Higher values like 0.8 will m
           CSharpType: double?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -3918,6 +4075,7 @@ We generally recommend altering this or temperature but not both.
           CSharpType: AssistantsApiResponseFormatOption?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: AssistantsApiResponseFormatOption
@@ -3944,6 +4102,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       CSharpType: ModifyAssistantRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         model,
         name,
@@ -3981,6 +4140,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -4004,6 +4164,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -4030,6 +4191,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           CSharpType: global::System.Collections.Generic.IList<CreateMessageRequest>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<CreateMessageRequest>
@@ -4048,6 +4210,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           CSharpType: CreateThreadRequestToolResources?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: CreateThreadRequestToolResources
@@ -4068,6 +4231,7 @@ A set of resources that are made available to the assistant's tools in this thre
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object
@@ -4091,6 +4255,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       CSharpType: CreateThreadRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         messages,
         tool_resources,
@@ -4121,6 +4286,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -4143,6 +4309,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -4169,6 +4336,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -4190,6 +4358,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: ModifyThreadRequestToolResources?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ModifyThreadRequestToolResources
@@ -4210,6 +4379,7 @@ A set of resources that are made available to the assistant's tools in this thre
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object
@@ -4233,6 +4403,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       CSharpType: ModifyThreadRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         tool_resources,
         metadata
@@ -4262,6 +4433,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -4285,6 +4457,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -4311,6 +4484,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -4332,6 +4506,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -4355,6 +4530,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             Asc,
             Desc
@@ -4384,6 +4560,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -4405,6 +4582,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -4426,6 +4604,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -4448,6 +4627,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -4474,6 +4654,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -4495,6 +4676,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             User,
             Assistant
@@ -4520,12 +4702,13 @@ The role of the entity that is creating the message. Allowed values include:
         Id: content,
         Name: Content,
         Type: {
-          CSharpType: object,
+          CSharpType: global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<MessageContentImageFileObject, MessageContentImageUrlObject, MessageRequestContentTextObject>>>,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<MessageContentImageFileObject, MessageContentImageUrlObject, MessageRequestContentTextObject>>>
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -4541,6 +4724,7 @@ The role of the entity that is creating the message. Allowed values include:
           CSharpType: global::System.Collections.Generic.IList<CreateMessageRequestAttachments?>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<CreateMessageRequestAttachments?>
@@ -4559,6 +4743,7 @@ The role of the entity that is creating the message. Allowed values include:
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object
@@ -4582,6 +4767,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       CSharpType: CreateMessageRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         role,
         content,
@@ -4613,6 +4799,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -4634,6 +4821,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -4656,6 +4844,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -4682,6 +4871,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -4703,6 +4893,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -4724,6 +4915,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object
@@ -4747,6 +4939,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       CSharpType: ModifyMessageRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         metadata
       ],
@@ -4775,6 +4968,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -4796,6 +4990,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -4819,6 +5014,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -4845,6 +5041,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -4863,6 +5060,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: CreateThreadRequest?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: [
             messages,
             tool_resources,
@@ -4882,15 +5080,15 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Id: model,
         Name: Model,
         Type: {
-          CSharpType: object?,
+          CSharpType: global::System.AnyOf<string?, string?>?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.AnyOf<string?, string?>
         },
         IsRequired: false,
-        DefaultValue: ,
         IsDeprecated: false,
         Summary:
 The ID of the [Model](/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.
@@ -4906,6 +5104,7 @@ The ID of the [Model](/docs/api-reference/models) to be used to execute this run
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -4921,12 +5120,13 @@ The ID of the [Model](/docs/api-reference/models) to be used to execute this run
         Id: tools,
         Name: Tools,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<object?>?,
+          CSharpType: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object?>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -4942,6 +5142,7 @@ The ID of the [Model](/docs/api-reference/models) to be used to execute this run
           CSharpType: CreateThreadAndRunRequestToolResources?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: CreateThreadAndRunRequestToolResources
@@ -4962,6 +5163,7 @@ A set of resources that are used by the assistant's tools. The resources are spe
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object
@@ -4983,6 +5185,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: double?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -5006,6 +5209,7 @@ What sampling temperature to use, between 0 and 2. Higher values like 0.8 will m
           CSharpType: double?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -5031,6 +5235,7 @@ We generally recommend altering this or temperature but not both.
           CSharpType: bool?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool
@@ -5051,6 +5256,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           CSharpType: int?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -5071,6 +5277,7 @@ The maximum number of prompt tokens that may be used over the course of the run.
           CSharpType: int?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -5091,6 +5298,7 @@ The maximum number of completion tokens that may be used over the course of the 
           CSharpType: TruncationObject?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: [
             type,
             last_messages
@@ -5112,6 +5320,7 @@ The maximum number of completion tokens that may be used over the course of the 
           CSharpType: AssistantsApiToolChoiceOption?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: AssistantsApiToolChoiceOption
@@ -5136,6 +5345,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           CSharpType: AssistantsApiResponseFormatOption?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: AssistantsApiResponseFormatOption
@@ -5162,6 +5372,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       CSharpType: CreateThreadAndRunRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         assistant_id,
         thread,
@@ -5204,6 +5415,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -5225,6 +5437,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -5248,6 +5461,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           CSharpType: string,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             Asc,
             Desc
@@ -5277,6 +5491,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -5298,6 +5513,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -5320,6 +5536,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -5346,6 +5563,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -5367,6 +5585,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -5382,15 +5601,15 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         Id: model,
         Name: Model,
         Type: {
-          CSharpType: object?,
+          CSharpType: global::System.AnyOf<string?, string?>?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: global::System.AnyOf<string?, string?>
         },
         IsRequired: false,
-        DefaultValue: ,
         IsDeprecated: false,
         Summary:
 The ID of the [Model](/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.
@@ -5406,6 +5625,7 @@ The ID of the [Model](/docs/api-reference/models) to be used to execute this run
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -5424,6 +5644,7 @@ The ID of the [Model](/docs/api-reference/models) to be used to execute this run
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -5442,6 +5663,7 @@ The ID of the [Model](/docs/api-reference/models) to be used to execute this run
           CSharpType: global::System.Collections.Generic.IList<CreateMessageRequest>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<CreateMessageRequest>
@@ -5457,12 +5679,13 @@ The ID of the [Model](/docs/api-reference/models) to be used to execute this run
         Id: tools,
         Name: Tools,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<object?>?,
+          CSharpType: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object?>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -5478,6 +5701,7 @@ The ID of the [Model](/docs/api-reference/models) to be used to execute this run
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object
@@ -5499,6 +5723,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: double?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -5522,6 +5747,7 @@ What sampling temperature to use, between 0 and 2. Higher values like 0.8 will m
           CSharpType: double?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double
@@ -5547,6 +5773,7 @@ We generally recommend altering this or temperature but not both.
           CSharpType: bool?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool
@@ -5567,6 +5794,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           CSharpType: int?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -5587,6 +5815,7 @@ The maximum number of prompt tokens that may be used over the course of the run.
           CSharpType: int?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -5607,6 +5836,7 @@ The maximum number of completion tokens that may be used over the course of the 
           CSharpType: TruncationObject?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: [
             type,
             last_messages
@@ -5628,6 +5858,7 @@ The maximum number of completion tokens that may be used over the course of the 
           CSharpType: AssistantsApiToolChoiceOption?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: AssistantsApiToolChoiceOption
@@ -5652,6 +5883,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           CSharpType: AssistantsApiResponseFormatOption?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: true,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: AssistantsApiResponseFormatOption
@@ -5678,6 +5910,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       CSharpType: CreateRunRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         assistant_id,
         model,
@@ -5720,6 +5953,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -5741,6 +5975,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -5763,6 +5998,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -5789,6 +6025,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -5810,6 +6047,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -5831,6 +6069,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object
@@ -5854,6 +6093,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       CSharpType: ModifyRunRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         metadata
       ],
@@ -5882,6 +6122,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -5903,6 +6144,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -5924,6 +6166,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: global::System.Collections.Generic.IList<SubmitToolOutputsRunRequestToolOutputs>,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<SubmitToolOutputsRunRequestToolOutputs>
@@ -5942,6 +6185,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: bool?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool
@@ -5964,6 +6208,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       CSharpType: SubmitToolOutputsRunRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         tool_outputs,
         stream
@@ -5993,6 +6238,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -6014,6 +6260,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -6037,6 +6284,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -6063,6 +6311,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -6084,6 +6333,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -6105,6 +6355,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -6128,6 +6379,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           CSharpType: string,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             Asc,
             Desc
@@ -6157,6 +6409,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -6178,6 +6431,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -6200,6 +6454,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -6226,6 +6481,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -6247,6 +6503,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -6268,6 +6525,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -6290,6 +6548,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -6316,6 +6575,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -6339,6 +6599,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           CSharpType: string,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             Asc,
             Desc
@@ -6368,6 +6629,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -6389,6 +6651,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -6411,6 +6674,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -6437,6 +6701,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           CSharpType: global::System.Collections.Generic.IList<string?>?,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>
@@ -6455,6 +6720,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -6473,6 +6739,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           CSharpType: VectorStoreExpirationAfter?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: [
             anchor,
             days
@@ -6494,6 +6761,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object
@@ -6517,6 +6785,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       CSharpType: CreateVectorStoreRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         file_ids,
         name,
@@ -6548,6 +6817,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -6570,6 +6840,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -6596,6 +6867,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -6617,6 +6889,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -6635,6 +6908,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: VectorStoreExpirationAfter?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: [
             anchor,
             days
@@ -6656,6 +6930,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object
@@ -6679,6 +6954,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       CSharpType: UpdateVectorStoreRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         name,
         expires_after,
@@ -6709,6 +6985,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -6732,6 +7009,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -6758,6 +7036,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -6779,6 +7058,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -6802,6 +7082,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             Asc,
             Desc
@@ -6831,6 +7112,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -6852,6 +7134,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -6873,6 +7156,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             InProgress,
             Completed,
@@ -6905,6 +7189,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -6931,6 +7216,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -6953,6 +7239,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -6973,6 +7260,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       CSharpType: CreateVectorStoreFileRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         file_id
       ],
@@ -7001,6 +7289,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -7023,6 +7312,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -7046,6 +7336,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -7072,6 +7363,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -7093,6 +7385,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -7116,6 +7409,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -7142,6 +7436,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -7164,6 +7459,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: global::System.Collections.Generic.IList<string>,
           IsArray: true,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string>
@@ -7184,6 +7480,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       CSharpType: CreateVectorStoreFileBatchRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: [
         file_ids
       ],
@@ -7212,6 +7509,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -7234,6 +7532,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -7257,6 +7556,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -7283,6 +7583,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -7304,6 +7605,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -7327,6 +7629,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -7353,6 +7656,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -7374,6 +7678,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -7395,6 +7700,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -7418,6 +7724,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             Asc,
             Desc
@@ -7447,6 +7754,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -7468,6 +7776,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -7489,6 +7798,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             InProgress,
             Completed,
@@ -7521,6 +7831,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -7547,6 +7858,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -7571,6 +7883,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           CSharpType: string,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             V1ChatCompletions,
             V1Embeddings
@@ -7595,6 +7908,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           CSharpType: string,
           IsArray: false,
           IsEnum: true,
+          IsAnyOf: false,
           Properties: [
             _24h
           ],
@@ -7617,6 +7931,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object
@@ -7638,6 +7953,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       CSharpType: CreateBatchRequest,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: CreateBatchRequest
@@ -7664,6 +7980,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -7685,6 +8002,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int
@@ -7709,6 +8027,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -7735,6 +8054,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -7757,6 +8077,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -7783,6 +8104,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string
@@ -7806,6 +8128,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -7832,6 +8155,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -7858,6 +8182,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           CSharpType: AssistantsClient,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: AssistantsClient
@@ -7876,6 +8201,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           CSharpType: AudioClient,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: AudioClient
@@ -7894,6 +8220,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           CSharpType: ChatClient,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ChatClient
@@ -7912,6 +8239,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           CSharpType: CompletionsClient,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: CompletionsClient
@@ -7930,6 +8258,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           CSharpType: EmbeddingsClient,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: EmbeddingsClient
@@ -7948,6 +8277,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           CSharpType: FineTuningClient,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: FineTuningClient
@@ -7966,6 +8296,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           CSharpType: BatchClient,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: BatchClient
@@ -7984,6 +8315,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           CSharpType: FilesClient,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: FilesClient
@@ -8002,6 +8334,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           CSharpType: ImagesClient,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ImagesClient
@@ -8020,6 +8353,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           CSharpType: ModelsClient,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ModelsClient
@@ -8038,6 +8372,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           CSharpType: ModerationsClient,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ModerationsClient
@@ -8056,6 +8391,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           CSharpType: VectorStoresClient,
           IsArray: false,
           IsEnum: false,
+          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: VectorStoresClient
@@ -8075,6 +8411,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -8101,6 +8438,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -8127,6 +8465,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -8153,6 +8492,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -8179,6 +8519,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -8205,6 +8546,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -8231,6 +8573,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -8257,6 +8600,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -8283,6 +8627,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -8309,6 +8654,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -8335,6 +8681,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -8361,6 +8708,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 
@@ -8387,6 +8735,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
+      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: 

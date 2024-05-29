@@ -1,25 +1,25 @@
-﻿using System;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using AnyOfTypes;
+﻿#nullable enable
 
-#nullable enable
+// ReSharper disable RedundantNameQualifier
 
 // ReSharper disable once CheckNamespace
-namespace OpenApiGenerator.JsonConverters;
-
-public sealed class OneOfConverterFactorySystemTextJson : JsonConverterFactory
+namespace OpenApiGenerator.JsonConverters
 {
-    public override bool CanConvert(Type? typeToConvert)
+    public sealed class OneOfConverterFactorySystemTextJson :global::System.Text.Json.Serialization.JsonConverterFactory
     {
-        return typeToConvert is { IsGenericType: true } && typeToConvert.GetGenericTypeDefinition() == typeof(OneOf<,>);
-    }
+        public override bool CanConvert(global::System.Type? typeToConvert)
+        {
+            return typeToConvert is { IsGenericType: true } && typeToConvert.GetGenericTypeDefinition() == typeof(OneOf<,>);
+        }
 
-    public override JsonConverter CreateConverter(Type typeToConvert, JsonSerializerOptions options)
-    {
-        typeToConvert = typeToConvert ?? throw new ArgumentNullException(nameof(typeToConvert));
+        public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            typeToConvert = typeToConvert ?? throw new global::System.ArgumentNullException(nameof(typeToConvert));
         
-        return (JsonConverter)Activator.CreateInstance(
-            typeof(OneOfConverterSystemTextJson<,>).MakeGenericType(typeToConvert.GenericTypeArguments))!;
+            return (global::System.Text.Json.Serialization.JsonConverter)global::System.Activator.CreateInstance(
+                typeof(OneOfConverterSystemTextJson<,>).MakeGenericType(typeToConvert.GenericTypeArguments))!;
+        }
     }
 }

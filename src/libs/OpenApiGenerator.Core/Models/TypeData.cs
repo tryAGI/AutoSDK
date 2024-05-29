@@ -9,6 +9,7 @@ public readonly record struct TypeData(
     string CSharpType,
     bool IsArray,
     bool IsEnum,
+    bool IsAnyOf,
     ImmutableArray<string> Properties,
     ImmutableArray<string> EnumValues)
 {
@@ -16,6 +17,7 @@ public readonly record struct TypeData(
         CSharpType: string.Empty,
         IsArray: false,
         IsEnum: false,
+        IsAnyOf: false,
         Properties: [],
         EnumValues: []);
     
@@ -53,6 +55,7 @@ public readonly record struct TypeData(
             CSharpType: GetCSharpType(schema, settings, parents),
             IsArray: schema.Value.Type == "array",
             IsEnum: schema.Value.IsEnum(),
+            IsAnyOf: schema.Value.AnyOf?.Count > 0 || schema.Value.OneOf?.Count > 0 || schema.Value.AllOf?.Count > 0,
             Properties: properties,
             EnumValues: enumValues);
     }
@@ -75,9 +78,9 @@ public readonly record struct TypeData(
             ("object", _) when schema.Value.Reference == null =>
                 ($"{model.ExternalClassName}", true),
 
-            (null, _) when schema.Value.AnyOf.Any() => ("object", true),
-            (null, _) when schema.Value.OneOf.Any() => ("object", true),
-            (null, _) when schema.Value.AllOf.Any() => ("object", true),
+            (null, _) when schema.Value.AnyOf.Any() => ($"global::System.AnyOf<{string.Join(", ", schema.Value.AnyOf.Select(x => GetCSharpType(x.WithKey(schema.Key), settings, parents)))}>", false),
+            (null, _) when schema.Value.OneOf.Any() => ($"global::System.OneOf<{string.Join(", ", schema.Value.OneOf.Select(x => GetCSharpType(x.WithKey(schema.Key), settings, parents)))}>", false),
+            (null, _) when schema.Value.AllOf.Any() => ($"global::System.AllOf<{string.Join(", ", schema.Value.AllOf.Select(x => GetCSharpType(x.WithKey(schema.Key), settings, parents)))}>", false),
 
             // Only Newtonsoft.Json supports EnumMemberAttribute
             ("string", _) when schema.Value.Enum.Any() && settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson =>

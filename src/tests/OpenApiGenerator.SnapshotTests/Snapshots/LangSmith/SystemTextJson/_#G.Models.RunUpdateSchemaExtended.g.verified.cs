@@ -25,13 +25,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
-        public object? Inputs { get; set; }
+        public global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?> Inputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
-        public object? Outputs { get; set; }
+        public global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?> Outputs { get; set; }
 
         /// <summary>
         /// 

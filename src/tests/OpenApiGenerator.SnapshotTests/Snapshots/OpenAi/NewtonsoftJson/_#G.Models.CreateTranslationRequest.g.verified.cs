@@ -20,7 +20,7 @@ namespace G
         /// <br/>Example: whisper-1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Model { get; set; } = default!;
+        public global::System.AnyOf<string, CreateTranslationRequestModel> Model { get; set; } = default!;
 
         /// <summary>
         /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text/prompting) should be in English.

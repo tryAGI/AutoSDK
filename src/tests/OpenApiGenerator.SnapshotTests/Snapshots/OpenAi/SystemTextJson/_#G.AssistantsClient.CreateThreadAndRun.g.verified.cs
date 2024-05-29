@@ -62,9 +62,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<RunObject> CreateThreadAndRunAsync(
             string assistantId,
             CreateThreadRequest? thread = default,
-            object? model = default,
+            global::System.AnyOf<string?, string?>? model = default,
             string? instructions = default,
-            global::System.Collections.Generic.IList<object?>? tools = default,
+            global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>? tools = default,
             CreateThreadAndRunRequestToolResources? toolResources = default,
             object? metadata = default,
             double? temperature = 1,
