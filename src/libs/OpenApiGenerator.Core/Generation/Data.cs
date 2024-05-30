@@ -16,9 +16,6 @@ public static class Data
     {
         var (text, settings) = tuple;
 
-        Dictionary<string, ModelData> schemas = [];
-        EndPoint[] methods = [];
-        AnyOfData[] anyOfDatas = [];
         var openApiDocument = text.GetOpenApiDocument(cancellationToken);
         
         var includedOperationIds = new HashSet<string>(settings.IncludeOperationIds);
@@ -56,175 +53,168 @@ public static class Data
             };
         }
 
-        if (settings.GenerateSdk || settings.GenerateModels)
+        var includedModels = new HashSet<string>(settings.IncludeModels);
+        var excludedModels = new HashSet<string>(settings.ExcludeModels);
+        foreach (var tag in settings.IncludeTags)
         {
-            var includedModels = new HashSet<string>(settings.IncludeModels);
-            var excludedModels = new HashSet<string>(settings.ExcludeModels);
-            foreach (var tag in settings.IncludeTags)
-            {
-                includedModels.UnionWith(openApiDocument.FindAllModelsForTag(tag));
-            }
-            foreach (var tag in settings.ExcludeTags)
-            {
-                excludedModels.UnionWith(openApiDocument.FindAllModelsForTag(tag));
-            }
-            var referencesOfIncludedModels = includedModels.Count == 0
-                ? []
-                : new HashSet<string>(openApiDocument.Components.Schemas
-                    .Where(schema =>
-                        (includedModels.Count == 0 ||
-                        includedModels.Contains(schema.Key)) &&
-                        !excludedModels.Contains(schema.Key))
-                    .SelectMany(schema => schema.GetReferences())
-                    .Select(reference => reference.Id));
-            
-            schemas = openApiDocument.Components.Schemas
+            includedModels.UnionWith(openApiDocument.FindAllModelsForTag(tag));
+        }
+        foreach (var tag in settings.ExcludeTags)
+        {
+            excludedModels.UnionWith(openApiDocument.FindAllModelsForTag(tag));
+        }
+        var referencesOfIncludedModels = includedModels.Count == 0
+            ? []
+            : new HashSet<string>(openApiDocument.Components.Schemas
                 .Where(schema =>
                     (includedModels.Count == 0 ||
-                    includedModels.Contains(schema.Key) ||
-                    referencesOfIncludedModels.Contains(schema.Key)) &&
+                    includedModels.Contains(schema.Key)) &&
                     !excludedModels.Contains(schema.Key))
-                .Select(schema => ModelData.FromSchema(schema, settings))
-                .SelectMany(model => model.WithAdditionalModels())
-                .ToDictionary(x => x.ClassName, x => x);
-            
-            var allSchemas = schemas.Values.Concat(methods
-                    .SelectMany(x => x.AdditionalModels))
-                .SelectMany(x => x.Schema.Value.Properties.Concat([x.Schema]).ToArray())
-                .Select(x => x.Value)
-                .ToArray();
-            var anyOfs = allSchemas
-                .Where(x => x.AnyOf is { Count: > 0 })
-                .Select(x => new AnyOfData("AnyOf", x.AnyOf.Count, settings.JsonSerializerType))
-                .Concat(allSchemas
-                    .Where(x => x.Items?.AnyOf is { Count: > 0 })
-                    .Select(x => new AnyOfData("AnyOf", x.Items.AnyOf.Count, settings.JsonSerializerType)))
-                .Distinct()
-                .ToImmutableArray();
-            var oneOfs = allSchemas
-                .Where(x => x.OneOf is { Count: > 0 })
-                .Select(x => new AnyOfData("OneOf", x.OneOf.Count, settings.JsonSerializerType))
-                .Concat(allSchemas
-                    .Where(x => x.Items?.OneOf is { Count: > 0 })
-                    .Select(x => new AnyOfData("OneOf", x.Items.OneOf.Count, settings.JsonSerializerType)))
-                .Distinct()
-                .ToImmutableArray();
-            var allOfs = allSchemas
-                .Where(x => x.AllOf is { Count: > 0 })
-                .Select(x => new AnyOfData("AllOf", x.AllOf.Count, settings.JsonSerializerType))
-                .Concat(allSchemas
-                    .Where(x => x.Items?.AllOf is { Count: > 0 })
-                    .Select(x => new AnyOfData("AllOf", x.Items.AllOf.Count, settings.JsonSerializerType)))
-                .Distinct()
-                .ToImmutableArray();
-
-            anyOfDatas =
-            [
-                ..anyOfs,
-                ..oneOfs,
-                ..allOfs,
-            ];
-        }
-
-        if (settings.GenerateSdk || settings.GenerateMethods)
-        {
-            var operations = openApiDocument.Paths.SelectMany(path =>
-                    path.Value.Operations
-                        .Where(x =>
-                        {
-                            if (includedOperationIds.Count == 0 && excludedOperationIds.Count == 0)
-                            {
-                                return true;
-                            }
-                        
-                            var methodName = x.Value.GetMethodName(path: path.Key, operationType: x.Key,
-                                settings.MethodNamingConvention, settings.MethodNamingConventionFallback);
-                        
-                            return (includedOperationIds.Count == 0 ||
-                                    includedOperationIds.Contains(methodName) ||
-                                    includedOperationIds.Contains(x.Value.OperationId)) &&
-                                   !excludedOperationIds.Contains(methodName) &&
-                                   !excludedOperationIds.Contains(x.Value.OperationId);
-                        })
-                        .Select(x => (Path: path, Operation: x)))
-                .ToArray();
-            
-            var operationsAsMethods = operations
-                .Select(x => EndPoint.FromSchema(x.Operation, settings, x.Path.Key))
-                .ToArray();
-            var authorizations = openApiDocument.SecurityRequirements
-                .SelectMany(requirement => requirement)
-                .Select(x => EndPoint.FromAuthorization(x.Key.Scheme, settings))
-                .ToArray();
-            
-            var includedTags = allTags
-                .Where(x =>
-                    (settings.IncludeTags.Length == 0 ||
-                     settings.IncludeTags.Contains(x.Name)) &&
-                    !settings.ExcludeTags.Contains(x.Name))
-                .ToArray();
-            EndPoint[] constructors = settings.GenerateSdk || settings.GenerateConstructors ? [new EndPoint(
-                    Id: "Constructors",
-                    Namespace: settings.Namespace,
-                    ClassName: settings.ClassName.Replace(".", string.Empty),
-                    BaseUrl: openApiDocument.Servers.FirstOrDefault()?.Url ?? string.Empty,
-                    Stream: false,
-                    Path: string.Empty,
-                    AuthorizationScheme: string.Empty,
-                    Properties: settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors)
-                        ? [
-                            .. includedTags.Select(x => PropertyData.Default with
-                            {
-                                Name = PropertyData.SanitizeName(x.Name.ToClassName()),
-                                Type = TypeData.Default with
-                                {
-                                    CSharpType = $"{x.Name.ToClassName()}Client",
-                                },
-                                Summary = x.Description ?? string.Empty,
-                            })
-                        ]
-                        : [],
-                    TargetFramework: settings.TargetFramework,
-                    JsonSerializerType: settings.JsonSerializerType,
-                    JsonSerializerContext: settings.JsonSerializerContext,
-                    HttpMethod: OperationType.Get,
-                    Summary: openApiDocument.Info?.Description?.ClearForXml() ?? string.Empty,
-                    RequestType: TypeData.Default,
-                    ResponseType: TypeData.Default,
-                    AdditionalModels: [])] : [];
-            if (settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors))
-            {
-                constructors = constructors.Concat(
-                    includedTags
-                        .Select(x => new EndPoint(
-                            Id: "Constructors",
-                            Namespace: settings.Namespace,
-                            ClassName: $"{x.Name.ToClassName()}Client",
-                            BaseUrl: openApiDocument.Servers.FirstOrDefault()?.Url ?? string.Empty,
-                            Stream: false,
-                            Path: string.Empty,
-                            AuthorizationScheme: string.Empty,
-                            Properties: ImmutableArray<PropertyData>.Empty,
-                            TargetFramework: settings.TargetFramework,
-                            JsonSerializerType: settings.JsonSerializerType,
-                            JsonSerializerContext: settings.JsonSerializerContext,
-                            HttpMethod: OperationType.Get,
-                            Summary: x.Description?.ClearForXml() ?? string.Empty,
-                            RequestType: TypeData.Default,
-                            ResponseType: TypeData.Default,
-                            AdditionalModels: [])))
-                    .ToArray();
-            }
-                
-            methods = [
-                ..operationsAsMethods,
-                ..authorizations,
-                ..constructors,
-            ];
-        }
-
+                .SelectMany(schema => schema.GetReferences())
+                .Select(reference => reference.Id));
         
-        var models = schemas.Values
+        Dictionary<string, ModelData> schemas = openApiDocument.Components.Schemas
+            .Where(schema =>
+                (includedModels.Count == 0 ||
+                includedModels.Contains(schema.Key) ||
+                referencesOfIncludedModels.Contains(schema.Key)) &&
+                !excludedModels.Contains(schema.Key))
+            .Select(schema => ModelData.FromSchema(schema, settings))
+            .SelectMany(model => model.WithAdditionalModels())
+            .ToDictionary(x => x.ClassName, x => x);
+
+        var operations = openApiDocument.Paths.SelectMany(path =>
+                path.Value.Operations
+                    .Where(x =>
+                    {
+                        if (includedOperationIds.Count == 0 && excludedOperationIds.Count == 0)
+                        {
+                            return true;
+                        }
+                    
+                        var methodName = x.Value.GetMethodName(path: path.Key, operationType: x.Key,
+                            settings.MethodNamingConvention, settings.MethodNamingConventionFallback);
+                    
+                        return (includedOperationIds.Count == 0 ||
+                                includedOperationIds.Contains(methodName) ||
+                                includedOperationIds.Contains(x.Value.OperationId)) &&
+                               !excludedOperationIds.Contains(methodName) &&
+                               !excludedOperationIds.Contains(x.Value.OperationId);
+                    })
+                    .Select(x => (Path: path, Operation: x)))
+            .ToArray();
+        
+        var operationsAsMethods = operations
+            .Select(x => EndPoint.FromSchema(x.Operation, settings, x.Path.Key))
+            .ToArray();
+        var authorizations = openApiDocument.SecurityRequirements
+            .SelectMany(requirement => requirement)
+            .Select(x => EndPoint.FromAuthorization(x.Key.Scheme, settings))
+            .ToArray();
+        
+        var includedTags = allTags
+            .Where(x =>
+                (settings.IncludeTags.Length == 0 ||
+                 settings.IncludeTags.Contains(x.Name)) &&
+                !settings.ExcludeTags.Contains(x.Name))
+            .ToArray();
+        EndPoint[] constructors = settings.GenerateSdk || settings.GenerateConstructors ? [new EndPoint(
+                Id: "Constructors",
+                Namespace: settings.Namespace,
+                ClassName: settings.ClassName.Replace(".", string.Empty),
+                BaseUrl: openApiDocument.Servers.FirstOrDefault()?.Url ?? string.Empty,
+                Stream: false,
+                Path: string.Empty,
+                AuthorizationScheme: string.Empty,
+                Properties: settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors)
+                    ? [
+                        .. includedTags.Select(x => PropertyData.Default with
+                        {
+                            Name = PropertyData.SanitizeName(x.Name.ToClassName()),
+                            Type = TypeData.Default with
+                            {
+                                CSharpType = $"{x.Name.ToClassName()}Client",
+                            },
+                            Summary = x.Description ?? string.Empty,
+                        })
+                    ]
+                    : [],
+                TargetFramework: settings.TargetFramework,
+                JsonSerializerType: settings.JsonSerializerType,
+                JsonSerializerContext: settings.JsonSerializerContext,
+                HttpMethod: OperationType.Get,
+                Summary: openApiDocument.Info?.Description?.ClearForXml() ?? string.Empty,
+                RequestType: TypeData.Default,
+                ResponseType: TypeData.Default,
+                AdditionalModels: [])] : [];
+        if (settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors))
+        {
+            constructors = constructors.Concat(
+                includedTags
+                    .Select(x => new EndPoint(
+                        Id: "Constructors",
+                        Namespace: settings.Namespace,
+                        ClassName: $"{x.Name.ToClassName()}Client",
+                        BaseUrl: openApiDocument.Servers.FirstOrDefault()?.Url ?? string.Empty,
+                        Stream: false,
+                        Path: string.Empty,
+                        AuthorizationScheme: string.Empty,
+                        Properties: ImmutableArray<PropertyData>.Empty,
+                        TargetFramework: settings.TargetFramework,
+                        JsonSerializerType: settings.JsonSerializerType,
+                        JsonSerializerContext: settings.JsonSerializerContext,
+                        HttpMethod: OperationType.Get,
+                        Summary: x.Description?.ClearForXml() ?? string.Empty,
+                        RequestType: TypeData.Default,
+                        ResponseType: TypeData.Default,
+                        AdditionalModels: [])))
+                .ToArray();
+        }
+            
+        EndPoint[] methods = [
+            ..operationsAsMethods,
+            ..authorizations,
+            ..constructors,
+        ];
+        
+        var allSchemas = settings.GenerateSdk || settings.GenerateModels ? schemas.Values.Concat(methods
+                .SelectMany(x => x.AdditionalModels))
+            .SelectMany(x => x.Schema.Value.Properties.Concat([x.Schema]).ToArray())
+            .Select(x => x.Value)
+            .ToArray() : [];
+        var anyOfs = allSchemas
+            .Where(x => x.AnyOf is { Count: > 0 })
+            .Select(x => new AnyOfData("AnyOf", x.AnyOf.Count, settings.JsonSerializerType))
+            .Concat(allSchemas
+                .Where(x => x.Items?.AnyOf is { Count: > 0 })
+                .Select(x => new AnyOfData("AnyOf", x.Items.AnyOf.Count, settings.JsonSerializerType)))
+            .Distinct()
+            .ToImmutableArray();
+        var oneOfs = allSchemas
+            .Where(x => x.OneOf is { Count: > 0 })
+            .Select(x => new AnyOfData("OneOf", x.OneOf.Count, settings.JsonSerializerType))
+            .Concat(allSchemas
+                .Where(x => x.Items?.OneOf is { Count: > 0 })
+                .Select(x => new AnyOfData("OneOf", x.Items.OneOf.Count, settings.JsonSerializerType)))
+            .Distinct()
+            .ToImmutableArray();
+        var allOfs = allSchemas
+            .Where(x => x.AllOf is { Count: > 0 })
+            .Select(x => new AnyOfData("AllOf", x.AllOf.Count, settings.JsonSerializerType))
+            .Concat(allSchemas
+                .Where(x => x.Items?.AllOf is { Count: > 0 })
+                .Select(x => new AnyOfData("AllOf", x.Items.AllOf.Count, settings.JsonSerializerType)))
+            .Distinct()
+            .ToImmutableArray();
+
+        AnyOfData[] anyOfDatas =
+        [
+            ..anyOfs,
+            ..oneOfs,
+            ..allOfs,
+        ];
+
+        var models = settings.GenerateSdk || settings.GenerateModels ? schemas.Values
                 .Select(model => model with
                 {
                     Schema = default,
@@ -237,10 +227,12 @@ public static class Data
                     }))
             .GroupBy(x => x.FileNameWithoutExtension)
             .Select(x => x.First())
-            .ToImmutableArray();
+            .ToImmutableArray() : [];
         
         return (Models: models,
-                Methods: methods.Select(x => x with{ AdditionalModels = []}).ToImmutableArray(),
+                Methods: settings.GenerateSdk || settings.GenerateMethods
+                    ? methods.Select(x => x with{ AdditionalModels = []}).ToImmutableArray()
+                    : [],
                 AnyOfs: anyOfDatas.ToImmutableArray());
     }
     

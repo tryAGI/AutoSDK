@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
+    <NoWarn>$(NoWarn);CS0618</NoWarn>
   </PropertyGroup>
   
   <Import Project="../../libs/OpenApiGenerator/OpenApiGenerator.props" />

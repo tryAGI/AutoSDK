@@ -31,11 +31,13 @@ public class SystemTextJsonSerializer : IJsonSerializer
     
     private static string GetContextType(string type)
     {
-        type = type.Replace("global::", string.Empty);
+        type = type.Replace("global::", string.Empty).TrimEnd('?');
         
         return type switch
         {
             "System.Collections.Generic.IList<string>" => "IListString",
+            "string" => "String",
+            "object" => "Object",
             _ => type,
         };
     }
