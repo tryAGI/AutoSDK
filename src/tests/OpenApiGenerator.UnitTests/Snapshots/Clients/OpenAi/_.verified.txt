@@ -18,6 +18,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionRequestMessage>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<ChatCompletionRequestMessage>?,
           ConverterType: 
         },
         IsRequired: true,
@@ -39,6 +40,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.AnyOf<string, CreateChatCompletionRequestModel>,
+          CSharpTypeWithNullability: global::System.AnyOf<string, CreateChatCompletionRequestModel>?,
           ConverterType: AnyOfJsonConverterFactory2
         },
         IsRequired: true,
@@ -61,6 +63,7 @@ ID of the model to use. See the [model endpoint compatibility](/docs/models/mode
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -87,6 +90,7 @@ Number between -2.0 and 2.0. Positive values penalize new tokens based on their 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: false,
@@ -113,6 +117,7 @@ Accepts a JSON object that maps tokens (specified by their token ID in the token
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
           ConverterType: 
         },
         IsRequired: false,
@@ -136,6 +141,7 @@ Whether to return log probabilities of the output tokens or not. If true, return
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -156,6 +162,7 @@ Whether to return log probabilities of the output tokens or not. If true, return
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -180,6 +187,7 @@ The total length of input tokens and generated tokens is limited by the model's 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -204,6 +212,7 @@ How many chat completion choices to generate for each input message. Note that y
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -230,6 +239,7 @@ Number between -2.0 and 2.0. Positive values penalize new tokens based on whethe
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: CreateChatCompletionRequestResponseFormat,
+          CSharpTypeWithNullability: CreateChatCompletionRequestResponseFormat?,
           ConverterType: 
         },
         IsRequired: false,
@@ -256,6 +266,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -281,6 +292,7 @@ Determinism is not guaranteed, and you should refer to the `system_fingerprint` 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>,
+          CSharpTypeWithNullability: global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>?,
           ConverterType: OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -304,6 +316,7 @@ Up to 4 sequences where the API will stop generating further tokens.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
           ConverterType: 
         },
         IsRequired: false,
@@ -330,6 +343,7 @@ If set, partial message deltas will be sent, like in ChatGPT. Tokens will be sen
           ],
           EnumValues: null,
           CSharpTypeWithoutNullability: ChatCompletionStreamOptions,
+          CSharpTypeWithNullability: ChatCompletionStreamOptions?,
           ConverterType: 
         },
         IsRequired: false,
@@ -353,6 +367,7 @@ Options for streaming response. Only set this when you set `stream: true`.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -380,6 +395,7 @@ We generally recommend altering this or `top_p` but not both.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -407,6 +423,7 @@ We generally recommend altering this or `temperature` but not both.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionTool>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<ChatCompletionTool>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -430,6 +447,7 @@ A list of tools the model may call. Currently, only functions are supported as a
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ChatCompletionToolChoiceOption,
+          CSharpTypeWithNullability: ChatCompletionToolChoiceOption?,
           ConverterType: OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -458,6 +476,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -482,6 +501,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.OneOf<CreateChatCompletionRequestFunctionCall?, ChatCompletionFunctionCallOption?>,
+          CSharpTypeWithNullability: global::System.OneOf<CreateChatCompletionRequestFunctionCall?, ChatCompletionFunctionCallOption?>?,
           ConverterType: OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -511,6 +531,7 @@ Specifying a particular function via `{"name": "my_function"}` forces the model 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionFunctions>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<ChatCompletionFunctions>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -559,9 +580,27 @@ A list of functions the model may generate JSON inputs for.
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: CreateChatCompletionRequest,
+      CSharpTypeWithNullability: CreateChatCompletionRequest?,
       ConverterType: 
     },
-    ResponseType: CreateChatCompletionResponse,
+    ResponseType: {
+      CSharpType: CreateChatCompletionResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        choices,
+        created,
+        model,
+        system_fingerprint,
+        object,
+        usage
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: CreateChatCompletionResponse,
+      CSharpTypeWithNullability: CreateChatCompletionResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreateChatCompletionAsync,
     NotAsyncMethodName: CreateChatCompletion,
@@ -587,6 +626,7 @@ A list of functions the model may generate JSON inputs for.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.AnyOf<string, CreateCompletionRequestModel>,
+          CSharpTypeWithNullability: global::System.AnyOf<string, CreateCompletionRequestModel>?,
           ConverterType: AnyOfJsonConverterFactory2
         },
         IsRequired: true,
@@ -610,6 +650,7 @@ ID of the model to use. You can use the [List models](/docs/api-reference/models
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>,
+          CSharpTypeWithNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>?,
           ConverterType: OneOfJsonConverterFactory4
         },
         IsRequired: true,
@@ -636,6 +677,7 @@ Note that &lt;|endoftext|&gt; is the document separator that the model sees duri
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -664,6 +706,7 @@ When used with `n`, `best_of` controls the number of candidate completions and `
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
           ConverterType: 
         },
         IsRequired: false,
@@ -688,6 +731,7 @@ Echo back the prompt in addition to the completion
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -714,6 +758,7 @@ Number between -2.0 and 2.0. Positive values penalize new tokens based on their 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: false,
@@ -742,6 +787,7 @@ As an example, you can pass `{"50256": -100}` to prevent the &lt;|endoftext|&gt;
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -767,6 +813,7 @@ The maximum value for `logprobs` is 5.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -794,6 +841,7 @@ The token count of your prompt plus `max_tokens` cannot exceed the model's conte
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -821,6 +869,7 @@ How many completions to generate for each prompt.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -847,6 +896,7 @@ Number between -2.0 and 2.0. Positive values penalize new tokens based on whethe
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -872,6 +922,7 @@ Determinism is not guaranteed, and you should refer to the `system_fingerprint` 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>,
+          CSharpTypeWithNullability: global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>?,
           ConverterType: OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -895,6 +946,7 @@ Up to 4 sequences where the API will stop generating further tokens. The returne
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
           ConverterType: 
         },
         IsRequired: false,
@@ -921,6 +973,7 @@ Whether to stream back partial progress. If set, tokens will be sent as data-onl
           ],
           EnumValues: null,
           CSharpTypeWithoutNullability: ChatCompletionStreamOptions,
+          CSharpTypeWithNullability: ChatCompletionStreamOptions?,
           ConverterType: 
         },
         IsRequired: false,
@@ -944,6 +997,7 @@ Options for streaming response. Only set this when you set `stream: true`.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -970,6 +1024,7 @@ This parameter is only supported for `gpt-3.5-turbo-instruct`.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -997,6 +1052,7 @@ We generally recommend altering this or `top_p` but not both.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1024,6 +1080,7 @@ We generally recommend altering this or `temperature` but not both.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1068,9 +1125,27 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: CreateCompletionRequest,
+      CSharpTypeWithNullability: CreateCompletionRequest?,
       ConverterType: 
     },
-    ResponseType: CreateCompletionResponse,
+    ResponseType: {
+      CSharpType: CreateCompletionResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        choices,
+        created,
+        model,
+        system_fingerprint,
+        object,
+        usage
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: CreateCompletionResponse,
+      CSharpTypeWithNullability: CreateCompletionResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreateCompletionAsync,
     NotAsyncMethodName: CreateCompletion,
@@ -1095,6 +1170,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1118,6 +1194,7 @@ A text description of the desired image(s). The maximum length is 1000 character
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.AnyOf<string?, CreateImageRequestModel?>,
+          CSharpTypeWithNullability: global::System.AnyOf<string?, CreateImageRequestModel?>?,
           ConverterType: AnyOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -1142,6 +1219,7 @@ The model to use for image generation.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1172,6 +1250,7 @@ The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only
             hd
           ],
           CSharpTypeWithoutNullability: CreateImageRequestQuality,
+          CSharpTypeWithNullability: CreateImageRequestQuality?,
           ConverterType: CreateImageRequestQualityJsonConverter
         },
         IsRequired: false,
@@ -1202,6 +1281,7 @@ The quality of the image that will be generated. `hd` creates images with finer 
             b64_json
           ],
           CSharpTypeWithoutNullability: CreateImageRequestResponseFormat,
+          CSharpTypeWithNullability: CreateImageRequestResponseFormat?,
           ConverterType: CreateImageRequestResponseFormatJsonConverter
         },
         IsRequired: false,
@@ -1238,6 +1318,7 @@ The format in which the generated images are returned. Must be one of `url` or `
             1024x1792
           ],
           CSharpTypeWithoutNullability: CreateImageRequestSize,
+          CSharpTypeWithNullability: CreateImageRequestSize?,
           ConverterType: CreateImageRequestSizeJsonConverter
         },
         IsRequired: false,
@@ -1268,6 +1349,7 @@ The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x
             natural
           ],
           CSharpTypeWithoutNullability: CreateImageRequestStyle,
+          CSharpTypeWithNullability: CreateImageRequestStyle?,
           ConverterType: CreateImageRequestStyleJsonConverter
         },
         IsRequired: false,
@@ -1292,6 +1374,7 @@ The style of the generated images. Must be one of `vivid` or `natural`. Vivid ca
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1326,9 +1409,22 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: CreateImageRequest,
+      CSharpTypeWithNullability: CreateImageRequest?,
       ConverterType: 
     },
-    ResponseType: ImagesResponse,
+    ResponseType: {
+      CSharpType: ImagesResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        created,
+        data
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ImagesResponse,
+      CSharpTypeWithNullability: ImagesResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreateImageAsync,
     NotAsyncMethodName: CreateImage,
@@ -1353,6 +1449,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: byte[],
+          CSharpTypeWithNullability: byte[]?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1373,6 +1470,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1395,6 +1493,7 @@ A text description of the desired image(s). The maximum length is 1000 character
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: byte[],
+          CSharpTypeWithNullability: byte[]?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1416,6 +1515,7 @@ A text description of the desired image(s). The maximum length is 1000 character
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.AnyOf<string?, CreateImageEditRequestModel?>,
+          CSharpTypeWithNullability: global::System.AnyOf<string?, CreateImageEditRequestModel?>?,
           ConverterType: AnyOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -1440,6 +1540,7 @@ The model to use for image generation. Only `dall-e-2` is supported at this time
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1472,6 +1573,7 @@ The number of images to generate. Must be between 1 and 10.
             1024x1024
           ],
           CSharpTypeWithoutNullability: CreateImageEditRequestSize,
+          CSharpTypeWithNullability: CreateImageEditRequestSize?,
           ConverterType: CreateImageEditRequestSizeJsonConverter
         },
         IsRequired: false,
@@ -1502,6 +1604,7 @@ The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x
             b64_json
           ],
           CSharpTypeWithoutNullability: CreateImageEditRequestResponseFormat,
+          CSharpTypeWithNullability: CreateImageEditRequestResponseFormat?,
           ConverterType: CreateImageEditRequestResponseFormatJsonConverter
         },
         IsRequired: false,
@@ -1526,6 +1629,7 @@ The format in which the generated images are returned. Must be one of `url` or `
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1560,9 +1664,22 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: CreateImageEditRequest,
+      CSharpTypeWithNullability: CreateImageEditRequest?,
       ConverterType: 
     },
-    ResponseType: ImagesResponse,
+    ResponseType: {
+      CSharpType: ImagesResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        created,
+        data
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ImagesResponse,
+      CSharpTypeWithNullability: ImagesResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreateImageEditAsync,
     NotAsyncMethodName: CreateImageEdit,
@@ -1587,6 +1704,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: byte[],
+          CSharpTypeWithNullability: byte[]?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1608,6 +1726,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.AnyOf<string?, CreateImageVariationRequestModel?>,
+          CSharpTypeWithNullability: global::System.AnyOf<string?, CreateImageVariationRequestModel?>?,
           ConverterType: AnyOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -1632,6 +1751,7 @@ The model to use for image generation. Only `dall-e-2` is supported at this time
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1662,6 +1782,7 @@ The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only
             b64_json
           ],
           CSharpTypeWithoutNullability: CreateImageVariationRequestResponseFormat,
+          CSharpTypeWithNullability: CreateImageVariationRequestResponseFormat?,
           ConverterType: CreateImageVariationRequestResponseFormatJsonConverter
         },
         IsRequired: false,
@@ -1694,6 +1815,7 @@ The format in which the generated images are returned. Must be one of `url` or `
             1024x1024
           ],
           CSharpTypeWithoutNullability: CreateImageVariationRequestSize,
+          CSharpTypeWithNullability: CreateImageVariationRequestSize?,
           ConverterType: CreateImageVariationRequestSizeJsonConverter
         },
         IsRequired: false,
@@ -1718,6 +1840,7 @@ The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1750,9 +1873,22 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: CreateImageVariationRequest,
+      CSharpTypeWithNullability: CreateImageVariationRequest?,
       ConverterType: 
     },
-    ResponseType: ImagesResponse,
+    ResponseType: {
+      CSharpType: ImagesResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        created,
+        data
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ImagesResponse,
+      CSharpTypeWithNullability: ImagesResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreateImageVariationAsync,
     NotAsyncMethodName: CreateImageVariation,
@@ -1778,6 +1914,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>,
+          CSharpTypeWithNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>?,
           ConverterType: OneOfJsonConverterFactory4
         },
         IsRequired: true,
@@ -1802,6 +1939,7 @@ Input text to embed, encoded as a string or array of tokens. To embed multiple i
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.AnyOf<string, CreateEmbeddingRequestModel>,
+          CSharpTypeWithNullability: global::System.AnyOf<string, CreateEmbeddingRequestModel>?,
           ConverterType: AnyOfJsonConverterFactory2
         },
         IsRequired: true,
@@ -1831,6 +1969,7 @@ ID of the model to use. You can use the [List models](/docs/api-reference/models
             base64
           ],
           CSharpTypeWithoutNullability: CreateEmbeddingRequestEncodingFormat,
+          CSharpTypeWithNullability: CreateEmbeddingRequestEncodingFormat?,
           ConverterType: CreateEmbeddingRequestEncodingFormatJsonConverter
         },
         IsRequired: false,
@@ -1855,6 +1994,7 @@ The format to return the embeddings in. Can be either `float` or [`base64`](http
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1877,6 +2017,7 @@ The number of dimensions the resulting output embeddings should have. Only suppo
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1908,9 +2049,24 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: CreateEmbeddingRequest,
+      CSharpTypeWithNullability: CreateEmbeddingRequest?,
       ConverterType: 
     },
-    ResponseType: CreateEmbeddingResponse,
+    ResponseType: {
+      CSharpType: CreateEmbeddingResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        data,
+        model,
+        object,
+        usage
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: CreateEmbeddingResponse,
+      CSharpTypeWithNullability: CreateEmbeddingResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreateEmbeddingAsync,
     NotAsyncMethodName: CreateEmbedding,
@@ -1936,6 +2092,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.AnyOf<string, CreateSpeechRequestModel>,
+          CSharpTypeWithNullability: global::System.AnyOf<string, CreateSpeechRequestModel>?,
           ConverterType: AnyOfJsonConverterFactory2
         },
         IsRequired: true,
@@ -1958,6 +2115,7 @@ One of the available [TTS models](/docs/models/tts): `tts-1` or `tts-1-hd`
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1992,6 +2150,7 @@ One of the available [TTS models](/docs/models/tts): `tts-1` or `tts-1-hd`
             shimmer
           ],
           CSharpTypeWithoutNullability: CreateSpeechRequestVoice,
+          CSharpTypeWithNullability: CreateSpeechRequestVoice?,
           ConverterType: CreateSpeechRequestVoiceJsonConverter
         },
         IsRequired: true,
@@ -2026,6 +2185,7 @@ One of the available [TTS models](/docs/models/tts): `tts-1` or `tts-1-hd`
             pcm
           ],
           CSharpTypeWithoutNullability: CreateSpeechRequestResponseFormat,
+          CSharpTypeWithNullability: CreateSpeechRequestResponseFormat?,
           ConverterType: CreateSpeechRequestResponseFormatJsonConverter
         },
         IsRequired: false,
@@ -2049,6 +2209,7 @@ The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2080,9 +2241,19 @@ The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is 
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: CreateSpeechRequest,
+      CSharpTypeWithNullability: CreateSpeechRequest?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: byte[],
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: byte[],
+      CSharpTypeWithNullability: byte[]?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreateSpeechAsync,
     NotAsyncMethodName: CreateSpeech,
@@ -2107,6 +2278,7 @@ The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: byte[],
+          CSharpTypeWithNullability: byte[]?,
           ConverterType: 
         },
         IsRequired: true,
@@ -2130,6 +2302,7 @@ The audio file object (not file name) to transcribe, in one of these formats: fl
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.AnyOf<string, CreateTranscriptionRequestModel>,
+          CSharpTypeWithNullability: global::System.AnyOf<string, CreateTranscriptionRequestModel>?,
           ConverterType: AnyOfJsonConverterFactory2
         },
         IsRequired: true,
@@ -2153,6 +2326,7 @@ ID of the model to use. Only `whisper-1` (which is powered by our open source Wh
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2175,6 +2349,7 @@ The language of the input audio. Supplying the input language in [ISO-639-1](htt
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2209,6 +2384,7 @@ An optional text to guide the model's style or continue a previous audio segment
             vtt
           ],
           CSharpTypeWithoutNullability: CreateTranscriptionRequestResponseFormat,
+          CSharpTypeWithNullability: CreateTranscriptionRequestResponseFormat?,
           ConverterType: CreateTranscriptionRequestResponseFormatJsonConverter
         },
         IsRequired: false,
@@ -2233,6 +2409,7 @@ The format of the transcript output, in one of these options: `json`, `text`, `s
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2266,9 +2443,20 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: CreateTranscriptionRequest,
+      CSharpTypeWithNullability: CreateTranscriptionRequest?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: global::System.OneOf<CreateTranscriptionResponseJson, CreateTranscriptionResponseVerboseJson>,
+      IsArray: false,
+      IsEnum: false,
+      OneOfCount: 2,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: global::System.OneOf<CreateTranscriptionResponseJson, CreateTranscriptionResponseVerboseJson>,
+      CSharpTypeWithNullability: global::System.OneOf<CreateTranscriptionResponseJson, CreateTranscriptionResponseVerboseJson>?,
+      ConverterType: OneOfJsonConverterFactory2
+    },
     AdditionalModels: null,
     MethodName: CreateTranscriptionAsync,
     NotAsyncMethodName: CreateTranscription,
@@ -2293,6 +2481,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: byte[],
+          CSharpTypeWithNullability: byte[]?,
           ConverterType: 
         },
         IsRequired: true,
@@ -2316,6 +2505,7 @@ The audio file object (not file name) translate, in one of these formats: flac, 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.AnyOf<string, CreateTranslationRequestModel>,
+          CSharpTypeWithNullability: global::System.AnyOf<string, CreateTranslationRequestModel>?,
           ConverterType: AnyOfJsonConverterFactory2
         },
         IsRequired: true,
@@ -2339,6 +2529,7 @@ ID of the model to use. Only `whisper-1` (which is powered by our open source Wh
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2361,6 +2552,7 @@ An optional text to guide the model's style or continue a previous audio segment
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2385,6 +2577,7 @@ The format of the transcript output, in one of these options: `json`, `text`, `s
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2417,9 +2610,20 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: CreateTranslationRequest,
+      CSharpTypeWithNullability: CreateTranslationRequest?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: global::System.OneOf<CreateTranslationResponseJson, CreateTranslationResponseVerboseJson>,
+      IsArray: false,
+      IsEnum: false,
+      OneOfCount: 2,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: global::System.OneOf<CreateTranslationResponseJson, CreateTranslationResponseVerboseJson>,
+      CSharpTypeWithNullability: global::System.OneOf<CreateTranslationResponseJson, CreateTranslationResponseVerboseJson>?,
+      ConverterType: OneOfJsonConverterFactory2
+    },
     AdditionalModels: null,
     MethodName: CreateTranslationAsync,
     NotAsyncMethodName: CreateTranslation,
@@ -2444,6 +2648,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2468,9 +2673,22 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ListFilesResponse,
+    ResponseType: {
+      CSharpType: ListFilesResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        data,
+        object
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ListFilesResponse,
+      CSharpTypeWithNullability: ListFilesResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ListFilesAsync,
     NotAsyncMethodName: ListFiles,
@@ -2495,6 +2713,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: byte[],
+          CSharpTypeWithNullability: byte[]?,
           ConverterType: 
         },
         IsRequired: true,
@@ -2525,6 +2744,7 @@ The File object (not file name) to be uploaded.
             fine-tune
           ],
           CSharpTypeWithoutNullability: CreateFileRequestPurpose,
+          CSharpTypeWithNullability: CreateFileRequestPurpose?,
           ConverterType: CreateFileRequestPurposeJsonConverter
         },
         IsRequired: true,
@@ -2554,9 +2774,28 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: CreateFileRequest,
+      CSharpTypeWithNullability: CreateFileRequest?,
       ConverterType: 
     },
-    ResponseType: OpenAIFile,
+    ResponseType: {
+      CSharpType: OpenAIFile,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        bytes,
+        created_at,
+        filename,
+        object,
+        purpose,
+        status,
+        status_details
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: OpenAIFile,
+      CSharpTypeWithNullability: OpenAIFile?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreateFileAsync,
     NotAsyncMethodName: CreateFile,
@@ -2581,6 +2820,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -2606,9 +2846,23 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: DeleteFileResponse,
+    ResponseType: {
+      CSharpType: DeleteFileResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        deleted
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: DeleteFileResponse,
+      CSharpTypeWithNullability: DeleteFileResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: DeleteFileAsync,
     NotAsyncMethodName: DeleteFile,
@@ -2633,6 +2887,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -2657,9 +2912,28 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: OpenAIFile,
+    ResponseType: {
+      CSharpType: OpenAIFile,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        bytes,
+        created_at,
+        filename,
+        object,
+        purpose,
+        status,
+        status_details
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: OpenAIFile,
+      CSharpTypeWithNullability: OpenAIFile?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: RetrieveFileAsync,
     NotAsyncMethodName: RetrieveFile,
@@ -2684,6 +2958,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -2708,9 +2983,19 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: string,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: string,
+      CSharpTypeWithNullability: string?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: DownloadFileAsync,
     NotAsyncMethodName: DownloadFile,
@@ -2736,6 +3021,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.AnyOf<string, CreateFineTuningJobRequestModel>,
+          CSharpTypeWithNullability: global::System.AnyOf<string, CreateFineTuningJobRequestModel>?,
           ConverterType: AnyOfJsonConverterFactory2
         },
         IsRequired: true,
@@ -2760,6 +3046,7 @@ The name of the model to fine-tune. You can select one of the
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -2789,6 +3076,7 @@ See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: CreateFineTuningJobRequestHyperparameters,
+          CSharpTypeWithNullability: CreateFineTuningJobRequestHyperparameters?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2809,6 +3097,7 @@ See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2834,6 +3123,7 @@ For example, a `suffix` of "custom-model-name" would produce a model name like `
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2866,6 +3156,7 @@ See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<CreateFineTuningJobRequestIntegrations?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<CreateFineTuningJobRequestIntegrations?>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2886,6 +3177,7 @@ See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2920,9 +3212,37 @@ If a seed is not specified, one will be generated for you.
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: CreateFineTuningJobRequest,
+      CSharpTypeWithNullability: CreateFineTuningJobRequest?,
       ConverterType: 
     },
-    ResponseType: FineTuningJob,
+    ResponseType: {
+      CSharpType: FineTuningJob,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        created_at,
+        error,
+        fine_tuned_model,
+        finished_at,
+        hyperparameters,
+        model,
+        object,
+        organization_id,
+        result_files,
+        status,
+        trained_tokens,
+        training_file,
+        validation_file,
+        integrations,
+        seed,
+        estimated_finish
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: FineTuningJob,
+      CSharpTypeWithNullability: FineTuningJob?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreateFineTuningJobAsync,
     NotAsyncMethodName: CreateFineTuningJob,
@@ -2947,6 +3267,7 @@ If a seed is not specified, one will be generated for you.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2970,6 +3291,7 @@ If a seed is not specified, one will be generated for you.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2996,9 +3318,23 @@ If a seed is not specified, one will be generated for you.
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ListPaginatedFineTuningJobsResponse,
+    ResponseType: {
+      CSharpType: ListPaginatedFineTuningJobsResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        data,
+        has_more,
+        object
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ListPaginatedFineTuningJobsResponse,
+      CSharpTypeWithNullability: ListPaginatedFineTuningJobsResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ListPaginatedFineTuningJobsAsync,
     NotAsyncMethodName: ListPaginatedFineTuningJobs,
@@ -3023,6 +3359,7 @@ If a seed is not specified, one will be generated for you.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -3048,9 +3385,37 @@ If a seed is not specified, one will be generated for you.
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: FineTuningJob,
+    ResponseType: {
+      CSharpType: FineTuningJob,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        created_at,
+        error,
+        fine_tuned_model,
+        finished_at,
+        hyperparameters,
+        model,
+        object,
+        organization_id,
+        result_files,
+        status,
+        trained_tokens,
+        training_file,
+        validation_file,
+        integrations,
+        seed,
+        estimated_finish
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: FineTuningJob,
+      CSharpTypeWithNullability: FineTuningJob?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: RetrieveFineTuningJobAsync,
     NotAsyncMethodName: RetrieveFineTuningJob,
@@ -3075,6 +3440,7 @@ If a seed is not specified, one will be generated for you.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -3099,6 +3465,7 @@ If a seed is not specified, one will be generated for you.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -3122,6 +3489,7 @@ If a seed is not specified, one will be generated for you.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -3148,9 +3516,22 @@ If a seed is not specified, one will be generated for you.
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ListFineTuningJobEventsResponse,
+    ResponseType: {
+      CSharpType: ListFineTuningJobEventsResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        data,
+        object
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ListFineTuningJobEventsResponse,
+      CSharpTypeWithNullability: ListFineTuningJobEventsResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ListFineTuningEventsAsync,
     NotAsyncMethodName: ListFineTuningEvents,
@@ -3175,6 +3556,7 @@ If a seed is not specified, one will be generated for you.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -3201,9 +3583,37 @@ If a seed is not specified, one will be generated for you.
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: FineTuningJob,
+    ResponseType: {
+      CSharpType: FineTuningJob,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        created_at,
+        error,
+        fine_tuned_model,
+        finished_at,
+        hyperparameters,
+        model,
+        object,
+        organization_id,
+        result_files,
+        status,
+        trained_tokens,
+        training_file,
+        validation_file,
+        integrations,
+        seed,
+        estimated_finish
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: FineTuningJob,
+      CSharpTypeWithNullability: FineTuningJob?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CancelFineTuningJobAsync,
     NotAsyncMethodName: CancelFineTuningJob,
@@ -3228,6 +3638,7 @@ If a seed is not specified, one will be generated for you.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -3252,6 +3663,7 @@ If a seed is not specified, one will be generated for you.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -3275,6 +3687,7 @@ If a seed is not specified, one will be generated for you.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -3301,9 +3714,25 @@ If a seed is not specified, one will be generated for you.
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ListFineTuningJobCheckpointsResponse,
+    ResponseType: {
+      CSharpType: ListFineTuningJobCheckpointsResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        data,
+        object,
+        first_id,
+        last_id,
+        has_more
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ListFineTuningJobCheckpointsResponse,
+      CSharpTypeWithNullability: ListFineTuningJobCheckpointsResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ListFineTuningJobCheckpointsAsync,
     NotAsyncMethodName: ListFineTuningJobCheckpoints,
@@ -3328,9 +3757,22 @@ If a seed is not specified, one will be generated for you.
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ListModelsResponse,
+    ResponseType: {
+      CSharpType: ListModelsResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        object,
+        data
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ListModelsResponse,
+      CSharpTypeWithNullability: ListModelsResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ListModelsAsync,
     NotAsyncMethodName: ListModels,
@@ -3355,6 +3797,7 @@ If a seed is not specified, one will be generated for you.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -3380,9 +3823,24 @@ If a seed is not specified, one will be generated for you.
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: Model,
+    ResponseType: {
+      CSharpType: Model,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        created,
+        object,
+        owned_by
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: Model,
+      CSharpTypeWithNullability: Model?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: RetrieveModelAsync,
     NotAsyncMethodName: RetrieveModel,
@@ -3407,6 +3865,7 @@ If a seed is not specified, one will be generated for you.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -3433,9 +3892,23 @@ If a seed is not specified, one will be generated for you.
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: DeleteModelResponse,
+    ResponseType: {
+      CSharpType: DeleteModelResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        deleted,
+        object
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: DeleteModelResponse,
+      CSharpTypeWithNullability: DeleteModelResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: DeleteModelAsync,
     NotAsyncMethodName: DeleteModel,
@@ -3461,6 +3934,7 @@ If a seed is not specified, one will be generated for you.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<string>>,
+          CSharpTypeWithNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<string>>?,
           ConverterType: OneOfJsonConverterFactory2
         },
         IsRequired: true,
@@ -3482,6 +3956,7 @@ If a seed is not specified, one will be generated for you.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.AnyOf<string?, CreateModerationRequestModel?>,
+          CSharpTypeWithNullability: global::System.AnyOf<string?, CreateModerationRequestModel?>?,
           ConverterType: AnyOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -3514,9 +3989,23 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: CreateModerationRequest,
+      CSharpTypeWithNullability: CreateModerationRequest?,
       ConverterType: 
     },
-    ResponseType: CreateModerationResponse,
+    ResponseType: {
+      CSharpType: CreateModerationResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        model,
+        results
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: CreateModerationResponse,
+      CSharpTypeWithNullability: CreateModerationResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreateModerationAsync,
     NotAsyncMethodName: CreateModeration,
@@ -3541,6 +4030,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -3572,6 +4062,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
             desc
           ],
           CSharpTypeWithoutNullability: ListAssistantsOrder,
+          CSharpTypeWithNullability: ListAssistantsOrder?,
           ConverterType: ListAssistantsOrderJsonConverter
         },
         IsRequired: false,
@@ -3597,6 +4088,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -3620,6 +4112,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -3644,9 +4137,25 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ListAssistantsResponse,
+    ResponseType: {
+      CSharpType: ListAssistantsResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        object,
+        data,
+        first_id,
+        last_id,
+        has_more
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ListAssistantsResponse,
+      CSharpTypeWithNullability: ListAssistantsResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ListAssistantsAsync,
     NotAsyncMethodName: ListAssistants,
@@ -3672,6 +4181,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.AnyOf<string, CreateAssistantRequestModel>,
+          CSharpTypeWithNullability: global::System.AnyOf<string, CreateAssistantRequestModel>?,
           ConverterType: AnyOfJsonConverterFactory2
         },
         IsRequired: true,
@@ -3695,6 +4205,7 @@ ID of the model to use. You can use the [List models](/docs/api-reference/models
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -3717,6 +4228,7 @@ The name of the assistant. The maximum length is 256 characters.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -3739,6 +4251,7 @@ The description of the assistant. The maximum length is 512 characters.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -3761,6 +4274,7 @@ The system instructions that the assistant uses. The maximum length is 256,000 c
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -3785,6 +4299,7 @@ A list of tool enabled on the assistant. There can be a maximum of 128 tools per
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: CreateAssistantRequestToolResources,
+          CSharpTypeWithNullability: CreateAssistantRequestToolResources?,
           ConverterType: 
         },
         IsRequired: false,
@@ -3807,6 +4322,7 @@ A set of resources that are used by the assistant's tools. The resources are spe
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: false,
@@ -3830,6 +4346,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -3855,6 +4372,7 @@ What sampling temperature to use, between 0 and 2. Higher values like 0.8 will m
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -3883,6 +4401,7 @@ We generally recommend altering this or temperature but not both.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: AssistantsApiResponseFormatOption,
+          CSharpTypeWithNullability: AssistantsApiResponseFormatOption?,
           ConverterType: OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -3922,9 +4441,33 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: CreateAssistantRequest,
+      CSharpTypeWithNullability: CreateAssistantRequest?,
       ConverterType: 
     },
-    ResponseType: AssistantObject,
+    ResponseType: {
+      CSharpType: AssistantObject,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        created_at,
+        name,
+        description,
+        model,
+        instructions,
+        tools,
+        tool_resources,
+        metadata,
+        temperature,
+        top_p,
+        response_format
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: AssistantObject,
+      CSharpTypeWithNullability: AssistantObject?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreateAssistantAsync,
     NotAsyncMethodName: CreateAssistant,
@@ -3949,6 +4492,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -3973,9 +4517,33 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: AssistantObject,
+    ResponseType: {
+      CSharpType: AssistantObject,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        created_at,
+        name,
+        description,
+        model,
+        instructions,
+        tools,
+        tool_resources,
+        metadata,
+        temperature,
+        top_p,
+        response_format
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: AssistantObject,
+      CSharpTypeWithNullability: AssistantObject?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: GetAssistantAsync,
     NotAsyncMethodName: GetAssistant,
@@ -4000,6 +4568,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -4024,6 +4593,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.AnyOf<string?>,
+          CSharpTypeWithNullability: global::System.AnyOf<string?>?,
           ConverterType: AnyOfJsonConverterFactory1
         },
         IsRequired: false,
@@ -4046,6 +4616,7 @@ ID of the model to use. You can use the [List models](/docs/api-reference/models
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -4068,6 +4639,7 @@ The name of the assistant. The maximum length is 256 characters.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -4090,6 +4662,7 @@ The description of the assistant. The maximum length is 512 characters.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -4112,6 +4685,7 @@ The system instructions that the assistant uses. The maximum length is 256,000 c
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -4136,6 +4710,7 @@ A list of tool enabled on the assistant. There can be a maximum of 128 tools per
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ModifyAssistantRequestToolResources,
+          CSharpTypeWithNullability: ModifyAssistantRequestToolResources?,
           ConverterType: 
         },
         IsRequired: false,
@@ -4158,6 +4733,7 @@ A set of resources that are used by the assistant's tools. The resources are spe
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: false,
@@ -4181,6 +4757,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -4206,6 +4783,7 @@ What sampling temperature to use, between 0 and 2. Higher values like 0.8 will m
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -4234,6 +4812,7 @@ We generally recommend altering this or temperature but not both.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: AssistantsApiResponseFormatOption,
+          CSharpTypeWithNullability: AssistantsApiResponseFormatOption?,
           ConverterType: OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -4273,9 +4852,33 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: ModifyAssistantRequest,
+      CSharpTypeWithNullability: ModifyAssistantRequest?,
       ConverterType: 
     },
-    ResponseType: AssistantObject,
+    ResponseType: {
+      CSharpType: AssistantObject,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        created_at,
+        name,
+        description,
+        model,
+        instructions,
+        tools,
+        tool_resources,
+        metadata,
+        temperature,
+        top_p,
+        response_format
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: AssistantObject,
+      CSharpTypeWithNullability: AssistantObject?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ModifyAssistantAsync,
     NotAsyncMethodName: ModifyAssistant,
@@ -4300,6 +4903,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -4325,9 +4929,23 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: DeleteAssistantResponse,
+    ResponseType: {
+      CSharpType: DeleteAssistantResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        deleted,
+        object
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: DeleteAssistantResponse,
+      CSharpTypeWithNullability: DeleteAssistantResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: DeleteAssistantAsync,
     NotAsyncMethodName: DeleteAssistant,
@@ -4352,6 +4970,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<CreateMessageRequest>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<CreateMessageRequest>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -4372,6 +4991,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: CreateThreadRequestToolResources,
+          CSharpTypeWithNullability: CreateThreadRequestToolResources?,
           ConverterType: 
         },
         IsRequired: false,
@@ -4394,6 +5014,7 @@ A set of resources that are made available to the assistant's tools in this thre
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: false,
@@ -4423,9 +5044,25 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: CreateThreadRequest,
+      CSharpTypeWithNullability: CreateThreadRequest?,
       ConverterType: 
     },
-    ResponseType: ThreadObject,
+    ResponseType: {
+      CSharpType: ThreadObject,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        created_at,
+        tool_resources,
+        metadata
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ThreadObject,
+      CSharpTypeWithNullability: ThreadObject?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreateThreadAsync,
     NotAsyncMethodName: CreateThread,
@@ -4450,6 +5087,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -4474,9 +5112,25 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ThreadObject,
+    ResponseType: {
+      CSharpType: ThreadObject,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        created_at,
+        tool_resources,
+        metadata
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ThreadObject,
+      CSharpTypeWithNullability: ThreadObject?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: GetThreadAsync,
     NotAsyncMethodName: GetThread,
@@ -4501,6 +5155,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -4524,6 +5179,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ModifyThreadRequestToolResources,
+          CSharpTypeWithNullability: ModifyThreadRequestToolResources?,
           ConverterType: 
         },
         IsRequired: false,
@@ -4546,6 +5202,7 @@ A set of resources that are made available to the assistant's tools in this thre
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: false,
@@ -4574,9 +5231,25 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: ModifyThreadRequest,
+      CSharpTypeWithNullability: ModifyThreadRequest?,
       ConverterType: 
     },
-    ResponseType: ThreadObject,
+    ResponseType: {
+      CSharpType: ThreadObject,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        created_at,
+        tool_resources,
+        metadata
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ThreadObject,
+      CSharpTypeWithNullability: ThreadObject?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ModifyThreadAsync,
     NotAsyncMethodName: ModifyThread,
@@ -4601,6 +5274,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -4626,9 +5300,23 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: DeleteThreadResponse,
+    ResponseType: {
+      CSharpType: DeleteThreadResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        deleted,
+        object
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: DeleteThreadResponse,
+      CSharpTypeWithNullability: DeleteThreadResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: DeleteThreadAsync,
     NotAsyncMethodName: DeleteThread,
@@ -4653,6 +5341,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -4676,6 +5365,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -4707,6 +5397,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
             desc
           ],
           CSharpTypeWithoutNullability: ListMessagesOrder,
+          CSharpTypeWithNullability: ListMessagesOrder?,
           ConverterType: ListMessagesOrderJsonConverter
         },
         IsRequired: false,
@@ -4732,6 +5423,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -4755,6 +5447,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -4778,6 +5471,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -4802,9 +5496,25 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ListMessagesResponse,
+    ResponseType: {
+      CSharpType: ListMessagesResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        object,
+        data,
+        first_id,
+        last_id,
+        has_more
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ListMessagesResponse,
+      CSharpTypeWithNullability: ListMessagesResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ListMessagesAsync,
     NotAsyncMethodName: ListMessages,
@@ -4829,6 +5539,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -4858,6 +5569,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
             assistant
           ],
           CSharpTypeWithoutNullability: CreateMessageRequestRole,
+          CSharpTypeWithNullability: CreateMessageRequestRole?,
           ConverterType: CreateMessageRequestRoleJsonConverter
         },
         IsRequired: true,
@@ -4883,6 +5595,7 @@ The role of the entity that is creating the message. Allowed values include:
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<MessageContentImageFileObject, MessageContentImageUrlObject, MessageRequestContentTextObject>>>,
+          CSharpTypeWithNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<MessageContentImageFileObject, MessageContentImageUrlObject, MessageRequestContentTextObject>>>?,
           ConverterType: OneOfJsonConverterFactory2
         },
         IsRequired: true,
@@ -4903,6 +5616,7 @@ The role of the entity that is creating the message. Allowed values include:
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<CreateMessageRequestAttachments?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<CreateMessageRequestAttachments?>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -4923,6 +5637,7 @@ The role of the entity that is creating the message. Allowed values include:
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: false,
@@ -4953,9 +5668,34 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: CreateMessageRequest,
+      CSharpTypeWithNullability: CreateMessageRequest?,
       ConverterType: 
     },
-    ResponseType: MessageObject,
+    ResponseType: {
+      CSharpType: MessageObject,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        created_at,
+        thread_id,
+        status,
+        incomplete_details,
+        completed_at,
+        incomplete_at,
+        role,
+        content,
+        assistant_id,
+        run_id,
+        attachments,
+        metadata
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: MessageObject,
+      CSharpTypeWithNullability: MessageObject?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreateMessageAsync,
     NotAsyncMethodName: CreateMessage,
@@ -4980,6 +5720,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -5003,6 +5744,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -5027,9 +5769,34 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: MessageObject,
+    ResponseType: {
+      CSharpType: MessageObject,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        created_at,
+        thread_id,
+        status,
+        incomplete_details,
+        completed_at,
+        incomplete_at,
+        role,
+        content,
+        assistant_id,
+        run_id,
+        attachments,
+        metadata
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: MessageObject,
+      CSharpTypeWithNullability: MessageObject?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: GetMessageAsync,
     NotAsyncMethodName: GetMessage,
@@ -5054,6 +5821,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -5077,6 +5845,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -5100,6 +5869,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: false,
@@ -5127,9 +5897,34 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: ModifyMessageRequest,
+      CSharpTypeWithNullability: ModifyMessageRequest?,
       ConverterType: 
     },
-    ResponseType: MessageObject,
+    ResponseType: {
+      CSharpType: MessageObject,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        created_at,
+        thread_id,
+        status,
+        incomplete_details,
+        completed_at,
+        incomplete_at,
+        role,
+        content,
+        assistant_id,
+        run_id,
+        attachments,
+        metadata
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: MessageObject,
+      CSharpTypeWithNullability: MessageObject?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ModifyMessageAsync,
     NotAsyncMethodName: ModifyMessage,
@@ -5154,6 +5949,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -5177,6 +5973,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -5202,9 +5999,23 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: DeleteMessageResponse,
+    ResponseType: {
+      CSharpType: DeleteMessageResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        deleted,
+        object
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: DeleteMessageResponse,
+      CSharpTypeWithNullability: DeleteMessageResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: DeleteMessageAsync,
     NotAsyncMethodName: DeleteMessage,
@@ -5229,6 +6040,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -5253,6 +6065,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ],
           EnumValues: null,
           CSharpTypeWithoutNullability: CreateThreadRequest,
+          CSharpTypeWithNullability: CreateThreadRequest?,
           ConverterType: 
         },
         IsRequired: false,
@@ -5274,6 +6087,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.AnyOf<string?, CreateThreadAndRunRequestModel?>,
+          CSharpTypeWithNullability: global::System.AnyOf<string?, CreateThreadAndRunRequestModel?>?,
           ConverterType: AnyOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -5296,6 +6110,7 @@ The ID of the [Model](/docs/api-reference/models) to be used to execute this run
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -5316,6 +6131,7 @@ The ID of the [Model](/docs/api-reference/models) to be used to execute this run
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -5336,6 +6152,7 @@ The ID of the [Model](/docs/api-reference/models) to be used to execute this run
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: CreateThreadAndRunRequestToolResources,
+          CSharpTypeWithNullability: CreateThreadAndRunRequestToolResources?,
           ConverterType: 
         },
         IsRequired: false,
@@ -5358,6 +6175,7 @@ A set of resources that are used by the assistant's tools. The resources are spe
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: false,
@@ -5381,6 +6199,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -5406,6 +6225,7 @@ What sampling temperature to use, between 0 and 2. Higher values like 0.8 will m
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -5433,6 +6253,7 @@ We generally recommend altering this or temperature but not both.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
           ConverterType: 
         },
         IsRequired: false,
@@ -5455,6 +6276,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -5477,6 +6299,7 @@ The maximum number of prompt tokens that may be used over the course of the run.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -5502,6 +6325,7 @@ The maximum number of completion tokens that may be used over the course of the 
           ],
           EnumValues: null,
           CSharpTypeWithoutNullability: TruncationObject,
+          CSharpTypeWithNullability: TruncationObject?,
           ConverterType: 
         },
         IsRequired: false,
@@ -5523,6 +6347,7 @@ The maximum number of completion tokens that may be used over the course of the 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: AssistantsApiToolChoiceOption,
+          CSharpTypeWithNullability: AssistantsApiToolChoiceOption?,
           ConverterType: OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -5550,6 +6375,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: AssistantsApiResponseFormatOption,
+          CSharpTypeWithNullability: AssistantsApiResponseFormatOption?,
           ConverterType: OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -5594,9 +6420,46 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: CreateThreadAndRunRequest,
+      CSharpTypeWithNullability: CreateThreadAndRunRequest?,
       ConverterType: 
     },
-    ResponseType: RunObject,
+    ResponseType: {
+      CSharpType: RunObject,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        created_at,
+        thread_id,
+        assistant_id,
+        status,
+        required_action,
+        last_error,
+        expires_at,
+        started_at,
+        cancelled_at,
+        failed_at,
+        completed_at,
+        incomplete_details,
+        model,
+        instructions,
+        tools,
+        metadata,
+        usage,
+        temperature,
+        top_p,
+        max_prompt_tokens,
+        max_completion_tokens,
+        truncation_strategy,
+        tool_choice,
+        response_format
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: RunObject,
+      CSharpTypeWithNullability: RunObject?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreateThreadAndRunAsync,
     NotAsyncMethodName: CreateThreadAndRun,
@@ -5621,6 +6484,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -5644,6 +6508,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -5675,6 +6540,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
             desc
           ],
           CSharpTypeWithoutNullability: ListRunsOrder,
+          CSharpTypeWithNullability: ListRunsOrder?,
           ConverterType: ListRunsOrderJsonConverter
         },
         IsRequired: false,
@@ -5700,6 +6566,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -5723,6 +6590,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -5747,9 +6615,25 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ListRunsResponse,
+    ResponseType: {
+      CSharpType: ListRunsResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        object,
+        data,
+        first_id,
+        last_id,
+        has_more
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ListRunsResponse,
+      CSharpTypeWithNullability: ListRunsResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ListRunsAsync,
     NotAsyncMethodName: ListRuns,
@@ -5774,6 +6658,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -5797,6 +6682,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -5818,6 +6704,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.AnyOf<string?, CreateRunRequestModel?>,
+          CSharpTypeWithNullability: global::System.AnyOf<string?, CreateRunRequestModel?>?,
           ConverterType: AnyOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -5840,6 +6727,7 @@ The ID of the [Model](/docs/api-reference/models) to be used to execute this run
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -5860,6 +6748,7 @@ The ID of the [Model](/docs/api-reference/models) to be used to execute this run
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -5880,6 +6769,7 @@ The ID of the [Model](/docs/api-reference/models) to be used to execute this run
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<CreateMessageRequest>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<CreateMessageRequest>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -5900,6 +6790,7 @@ The ID of the [Model](/docs/api-reference/models) to be used to execute this run
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -5920,6 +6811,7 @@ The ID of the [Model](/docs/api-reference/models) to be used to execute this run
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: false,
@@ -5943,6 +6835,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -5968,6 +6861,7 @@ What sampling temperature to use, between 0 and 2. Higher values like 0.8 will m
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -5995,6 +6889,7 @@ We generally recommend altering this or temperature but not both.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
           ConverterType: 
         },
         IsRequired: false,
@@ -6017,6 +6912,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -6039,6 +6935,7 @@ The maximum number of prompt tokens that may be used over the course of the run.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -6064,6 +6961,7 @@ The maximum number of completion tokens that may be used over the course of the 
           ],
           EnumValues: null,
           CSharpTypeWithoutNullability: TruncationObject,
+          CSharpTypeWithNullability: TruncationObject?,
           ConverterType: 
         },
         IsRequired: false,
@@ -6085,6 +6983,7 @@ The maximum number of completion tokens that may be used over the course of the 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: AssistantsApiToolChoiceOption,
+          CSharpTypeWithNullability: AssistantsApiToolChoiceOption?,
           ConverterType: OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -6112,6 +7011,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: AssistantsApiResponseFormatOption,
+          CSharpTypeWithNullability: AssistantsApiResponseFormatOption?,
           ConverterType: OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -6156,9 +7056,46 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: CreateRunRequest,
+      CSharpTypeWithNullability: CreateRunRequest?,
       ConverterType: 
     },
-    ResponseType: RunObject,
+    ResponseType: {
+      CSharpType: RunObject,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        created_at,
+        thread_id,
+        assistant_id,
+        status,
+        required_action,
+        last_error,
+        expires_at,
+        started_at,
+        cancelled_at,
+        failed_at,
+        completed_at,
+        incomplete_details,
+        model,
+        instructions,
+        tools,
+        metadata,
+        usage,
+        temperature,
+        top_p,
+        max_prompt_tokens,
+        max_completion_tokens,
+        truncation_strategy,
+        tool_choice,
+        response_format
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: RunObject,
+      CSharpTypeWithNullability: RunObject?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreateRunAsync,
     NotAsyncMethodName: CreateRun,
@@ -6183,6 +7120,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -6206,6 +7144,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -6230,9 +7169,46 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: RunObject,
+    ResponseType: {
+      CSharpType: RunObject,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        created_at,
+        thread_id,
+        assistant_id,
+        status,
+        required_action,
+        last_error,
+        expires_at,
+        started_at,
+        cancelled_at,
+        failed_at,
+        completed_at,
+        incomplete_details,
+        model,
+        instructions,
+        tools,
+        metadata,
+        usage,
+        temperature,
+        top_p,
+        max_prompt_tokens,
+        max_completion_tokens,
+        truncation_strategy,
+        tool_choice,
+        response_format
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: RunObject,
+      CSharpTypeWithNullability: RunObject?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: GetRunAsync,
     NotAsyncMethodName: GetRun,
@@ -6257,6 +7233,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -6280,6 +7257,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -6303,6 +7281,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: false,
@@ -6330,9 +7309,46 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: ModifyRunRequest,
+      CSharpTypeWithNullability: ModifyRunRequest?,
       ConverterType: 
     },
-    ResponseType: RunObject,
+    ResponseType: {
+      CSharpType: RunObject,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        created_at,
+        thread_id,
+        assistant_id,
+        status,
+        required_action,
+        last_error,
+        expires_at,
+        started_at,
+        cancelled_at,
+        failed_at,
+        completed_at,
+        incomplete_details,
+        model,
+        instructions,
+        tools,
+        metadata,
+        usage,
+        temperature,
+        top_p,
+        max_prompt_tokens,
+        max_completion_tokens,
+        truncation_strategy,
+        tool_choice,
+        response_format
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: RunObject,
+      CSharpTypeWithNullability: RunObject?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ModifyRunAsync,
     NotAsyncMethodName: ModifyRun,
@@ -6357,6 +7373,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -6380,6 +7397,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -6403,6 +7421,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<SubmitToolOutputsRunRequestToolOutputs>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<SubmitToolOutputsRunRequestToolOutputs>?,
           ConverterType: 
         },
         IsRequired: true,
@@ -6423,6 +7442,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
           ConverterType: 
         },
         IsRequired: false,
@@ -6450,9 +7470,46 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: SubmitToolOutputsRunRequest,
+      CSharpTypeWithNullability: SubmitToolOutputsRunRequest?,
       ConverterType: 
     },
-    ResponseType: RunObject,
+    ResponseType: {
+      CSharpType: RunObject,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        created_at,
+        thread_id,
+        assistant_id,
+        status,
+        required_action,
+        last_error,
+        expires_at,
+        started_at,
+        cancelled_at,
+        failed_at,
+        completed_at,
+        incomplete_details,
+        model,
+        instructions,
+        tools,
+        metadata,
+        usage,
+        temperature,
+        top_p,
+        max_prompt_tokens,
+        max_completion_tokens,
+        truncation_strategy,
+        tool_choice,
+        response_format
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: RunObject,
+      CSharpTypeWithNullability: RunObject?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: SubmitToolOuputsToRunAsync,
     NotAsyncMethodName: SubmitToolOuputsToRun,
@@ -6477,6 +7534,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -6500,6 +7558,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -6525,9 +7584,46 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: RunObject,
+    ResponseType: {
+      CSharpType: RunObject,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        created_at,
+        thread_id,
+        assistant_id,
+        status,
+        required_action,
+        last_error,
+        expires_at,
+        started_at,
+        cancelled_at,
+        failed_at,
+        completed_at,
+        incomplete_details,
+        model,
+        instructions,
+        tools,
+        metadata,
+        usage,
+        temperature,
+        top_p,
+        max_prompt_tokens,
+        max_completion_tokens,
+        truncation_strategy,
+        tool_choice,
+        response_format
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: RunObject,
+      CSharpTypeWithNullability: RunObject?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CancelRunAsync,
     NotAsyncMethodName: CancelRun,
@@ -6552,6 +7648,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -6575,6 +7672,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -6598,6 +7696,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -6629,6 +7728,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
             desc
           ],
           CSharpTypeWithoutNullability: ListRunStepsOrder,
+          CSharpTypeWithNullability: ListRunStepsOrder?,
           ConverterType: ListRunStepsOrderJsonConverter
         },
         IsRequired: false,
@@ -6654,6 +7754,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -6677,6 +7778,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -6701,9 +7803,25 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ListRunStepsResponse,
+    ResponseType: {
+      CSharpType: ListRunStepsResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        object,
+        data,
+        first_id,
+        last_id,
+        has_more
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ListRunStepsResponse,
+      CSharpTypeWithNullability: ListRunStepsResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ListRunStepsAsync,
     NotAsyncMethodName: ListRunSteps,
@@ -6728,6 +7846,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -6751,6 +7870,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -6774,6 +7894,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -6798,9 +7919,36 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: RunStepObject,
+    ResponseType: {
+      CSharpType: RunStepObject,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        created_at,
+        assistant_id,
+        thread_id,
+        run_id,
+        type,
+        status,
+        step_details,
+        last_error,
+        expired_at,
+        cancelled_at,
+        failed_at,
+        completed_at,
+        metadata,
+        usage
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: RunStepObject,
+      CSharpTypeWithNullability: RunStepObject?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: GetRunStepAsync,
     NotAsyncMethodName: GetRunStep,
@@ -6825,6 +7973,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -6856,6 +8005,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
             desc
           ],
           CSharpTypeWithoutNullability: ListVectorStoresOrder,
+          CSharpTypeWithNullability: ListVectorStoresOrder?,
           ConverterType: ListVectorStoresOrderJsonConverter
         },
         IsRequired: false,
@@ -6881,6 +8031,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -6904,6 +8055,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -6928,9 +8080,25 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ListVectorStoresResponse,
+    ResponseType: {
+      CSharpType: ListVectorStoresResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        object,
+        data,
+        first_id,
+        last_id,
+        has_more
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ListVectorStoresResponse,
+      CSharpTypeWithNullability: ListVectorStoresResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ListVectorStoresAsync,
     NotAsyncMethodName: ListVectorStores,
@@ -6955,6 +8123,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -6975,6 +8144,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -6998,6 +8168,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           ],
           EnumValues: null,
           CSharpTypeWithoutNullability: VectorStoreExpirationAfter,
+          CSharpTypeWithNullability: VectorStoreExpirationAfter?,
           ConverterType: 
         },
         IsRequired: false,
@@ -7018,6 +8189,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: false,
@@ -7048,9 +8220,31 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: CreateVectorStoreRequest,
+      CSharpTypeWithNullability: CreateVectorStoreRequest?,
       ConverterType: 
     },
-    ResponseType: VectorStoreObject,
+    ResponseType: {
+      CSharpType: VectorStoreObject,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        created_at,
+        name,
+        usage_bytes,
+        file_counts,
+        status,
+        expires_after,
+        expires_at,
+        last_active_at,
+        metadata
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: VectorStoreObject,
+      CSharpTypeWithNullability: VectorStoreObject?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreateVectorStoreAsync,
     NotAsyncMethodName: CreateVectorStore,
@@ -7075,6 +8269,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -7099,9 +8294,31 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: VectorStoreObject,
+    ResponseType: {
+      CSharpType: VectorStoreObject,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        created_at,
+        name,
+        usage_bytes,
+        file_counts,
+        status,
+        expires_after,
+        expires_at,
+        last_active_at,
+        metadata
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: VectorStoreObject,
+      CSharpTypeWithNullability: VectorStoreObject?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: GetVectorStoreAsync,
     NotAsyncMethodName: GetVectorStore,
@@ -7126,6 +8343,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -7149,6 +8367,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -7172,6 +8391,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ],
           EnumValues: null,
           CSharpTypeWithoutNullability: VectorStoreExpirationAfter,
+          CSharpTypeWithNullability: VectorStoreExpirationAfter?,
           ConverterType: 
         },
         IsRequired: false,
@@ -7192,6 +8412,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: false,
@@ -7221,9 +8442,31 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: UpdateVectorStoreRequest,
+      CSharpTypeWithNullability: UpdateVectorStoreRequest?,
       ConverterType: 
     },
-    ResponseType: VectorStoreObject,
+    ResponseType: {
+      CSharpType: VectorStoreObject,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        created_at,
+        name,
+        usage_bytes,
+        file_counts,
+        status,
+        expires_after,
+        expires_at,
+        last_active_at,
+        metadata
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: VectorStoreObject,
+      CSharpTypeWithNullability: VectorStoreObject?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ModifyVectorStoreAsync,
     NotAsyncMethodName: ModifyVectorStore,
@@ -7248,6 +8491,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -7273,9 +8517,23 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: DeleteVectorStoreResponse,
+    ResponseType: {
+      CSharpType: DeleteVectorStoreResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        deleted,
+        object
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: DeleteVectorStoreResponse,
+      CSharpTypeWithNullability: DeleteVectorStoreResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: DeleteVectorStoreAsync,
     NotAsyncMethodName: DeleteVectorStore,
@@ -7300,6 +8558,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -7323,6 +8582,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -7354,6 +8614,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
             desc
           ],
           CSharpTypeWithoutNullability: ListVectorStoreFilesOrder,
+          CSharpTypeWithNullability: ListVectorStoreFilesOrder?,
           ConverterType: ListVectorStoreFilesOrderJsonConverter
         },
         IsRequired: false,
@@ -7379,6 +8640,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -7402,6 +8664,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -7435,6 +8698,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
             cancelled
           ],
           CSharpTypeWithoutNullability: ListVectorStoreFilesFilter,
+          CSharpTypeWithNullability: ListVectorStoreFilesFilter?,
           ConverterType: ListVectorStoreFilesFilterJsonConverter
         },
         IsRequired: false,
@@ -7459,9 +8723,25 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ListVectorStoreFilesResponse,
+    ResponseType: {
+      CSharpType: ListVectorStoreFilesResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        object,
+        data,
+        first_id,
+        last_id,
+        has_more
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ListVectorStoreFilesResponse,
+      CSharpTypeWithNullability: ListVectorStoreFilesResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ListVectorStoreFilesAsync,
     NotAsyncMethodName: ListVectorStoreFiles,
@@ -7486,6 +8766,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -7510,6 +8791,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -7534,9 +8816,27 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: CreateVectorStoreFileRequest,
+      CSharpTypeWithNullability: CreateVectorStoreFileRequest?,
       ConverterType: 
     },
-    ResponseType: VectorStoreFileObject,
+    ResponseType: {
+      CSharpType: VectorStoreFileObject,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        usage_bytes,
+        created_at,
+        vector_store_id,
+        status,
+        last_error
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: VectorStoreFileObject,
+      CSharpTypeWithNullability: VectorStoreFileObject?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreateVectorStoreFileAsync,
     NotAsyncMethodName: CreateVectorStoreFile,
@@ -7561,6 +8861,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -7585,6 +8886,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -7610,9 +8912,27 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: VectorStoreFileObject,
+    ResponseType: {
+      CSharpType: VectorStoreFileObject,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        usage_bytes,
+        created_at,
+        vector_store_id,
+        status,
+        last_error
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: VectorStoreFileObject,
+      CSharpTypeWithNullability: VectorStoreFileObject?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: GetVectorStoreFileAsync,
     NotAsyncMethodName: GetVectorStoreFile,
@@ -7637,6 +8957,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -7660,6 +8981,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -7685,9 +9007,23 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: DeleteVectorStoreFileResponse,
+    ResponseType: {
+      CSharpType: DeleteVectorStoreFileResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        deleted,
+        object
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: DeleteVectorStoreFileResponse,
+      CSharpTypeWithNullability: DeleteVectorStoreFileResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: DeleteVectorStoreFileAsync,
     NotAsyncMethodName: DeleteVectorStoreFile,
@@ -7712,6 +9048,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -7736,6 +9073,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<string>?,
           ConverterType: 
         },
         IsRequired: true,
@@ -7760,9 +9098,26 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: CreateVectorStoreFileBatchRequest,
+      CSharpTypeWithNullability: CreateVectorStoreFileBatchRequest?,
       ConverterType: 
     },
-    ResponseType: VectorStoreFileBatchObject,
+    ResponseType: {
+      CSharpType: VectorStoreFileBatchObject,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        created_at,
+        vector_store_id,
+        status,
+        file_counts
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: VectorStoreFileBatchObject,
+      CSharpTypeWithNullability: VectorStoreFileBatchObject?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreateVectorStoreFileBatchAsync,
     NotAsyncMethodName: CreateVectorStoreFileBatch,
@@ -7787,6 +9142,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -7811,6 +9167,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -7836,9 +9193,26 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: VectorStoreFileBatchObject,
+    ResponseType: {
+      CSharpType: VectorStoreFileBatchObject,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        created_at,
+        vector_store_id,
+        status,
+        file_counts
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: VectorStoreFileBatchObject,
+      CSharpTypeWithNullability: VectorStoreFileBatchObject?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: GetVectorStoreFileBatchAsync,
     NotAsyncMethodName: GetVectorStoreFileBatch,
@@ -7863,6 +9237,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -7886,6 +9261,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -7911,9 +9287,26 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: VectorStoreFileBatchObject,
+    ResponseType: {
+      CSharpType: VectorStoreFileBatchObject,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        created_at,
+        vector_store_id,
+        status,
+        file_counts
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: VectorStoreFileBatchObject,
+      CSharpTypeWithNullability: VectorStoreFileBatchObject?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CancelVectorStoreFileBatchAsync,
     NotAsyncMethodName: CancelVectorStoreFileBatch,
@@ -7938,6 +9331,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -7961,6 +9355,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -7984,6 +9379,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -8015,6 +9411,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
             desc
           ],
           CSharpTypeWithoutNullability: ListFilesInVectorStoreBatchOrder,
+          CSharpTypeWithNullability: ListFilesInVectorStoreBatchOrder?,
           ConverterType: ListFilesInVectorStoreBatchOrderJsonConverter
         },
         IsRequired: false,
@@ -8040,6 +9437,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -8063,6 +9461,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -8096,6 +9495,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
             cancelled
           ],
           CSharpTypeWithoutNullability: ListFilesInVectorStoreBatchFilter,
+          CSharpTypeWithNullability: ListFilesInVectorStoreBatchFilter?,
           ConverterType: ListFilesInVectorStoreBatchFilterJsonConverter
         },
         IsRequired: false,
@@ -8120,9 +9520,25 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ListVectorStoreFilesResponse,
+    ResponseType: {
+      CSharpType: ListVectorStoreFilesResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        object,
+        data,
+        first_id,
+        last_id,
+        has_more
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ListVectorStoreFilesResponse,
+      CSharpTypeWithNullability: ListVectorStoreFilesResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ListFilesInVectorStoreBatchAsync,
     NotAsyncMethodName: ListFilesInVectorStoreBatch,
@@ -8147,6 +9563,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -8179,6 +9596,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
             /v1/embeddings
           ],
           CSharpTypeWithoutNullability: CreateBatchRequestEndpoint,
+          CSharpTypeWithNullability: CreateBatchRequestEndpoint?,
           ConverterType: CreateBatchRequestEndpointJsonConverter
         },
         IsRequired: true,
@@ -8203,6 +9621,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
             24h
           ],
           CSharpTypeWithoutNullability: CreateBatchRequestCompletionWindow,
+          CSharpTypeWithNullability: CreateBatchRequestCompletionWindow?,
           ConverterType: CreateBatchRequestCompletionWindowJsonConverter
         },
         IsRequired: true,
@@ -8223,6 +9642,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: false,
@@ -8246,9 +9666,40 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: CreateBatchRequest,
+      CSharpTypeWithNullability: CreateBatchRequest?,
       ConverterType: 
     },
-    ResponseType: Batch,
+    ResponseType: {
+      CSharpType: Batch,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        endpoint,
+        errors,
+        input_file_id,
+        completion_window,
+        status,
+        output_file_id,
+        error_file_id,
+        created_at,
+        in_progress_at,
+        expires_at,
+        finalizing_at,
+        completed_at,
+        failed_at,
+        expired_at,
+        cancelling_at,
+        cancelled_at,
+        request_counts,
+        metadata
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: Batch,
+      CSharpTypeWithNullability: Batch?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreateBatchAsync,
     NotAsyncMethodName: CreateBatch,
@@ -8273,6 +9724,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -8296,6 +9748,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -8322,9 +9775,25 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ListBatchesResponse,
+    ResponseType: {
+      CSharpType: ListBatchesResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        data,
+        first_id,
+        last_id,
+        has_more,
+        object
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ListBatchesResponse,
+      CSharpTypeWithNullability: ListBatchesResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ListBatchesAsync,
     NotAsyncMethodName: ListBatches,
@@ -8349,6 +9818,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -8373,9 +9843,40 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: Batch,
+    ResponseType: {
+      CSharpType: Batch,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        endpoint,
+        errors,
+        input_file_id,
+        completion_window,
+        status,
+        output_file_id,
+        error_file_id,
+        created_at,
+        in_progress_at,
+        expires_at,
+        finalizing_at,
+        completed_at,
+        failed_at,
+        expired_at,
+        cancelling_at,
+        cancelled_at,
+        request_counts,
+        metadata
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: Batch,
+      CSharpTypeWithNullability: Batch?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: RetrieveBatchAsync,
     NotAsyncMethodName: RetrieveBatch,
@@ -8400,6 +9901,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -8425,9 +9927,40 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: Batch,
+    ResponseType: {
+      CSharpType: Batch,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        id,
+        object,
+        endpoint,
+        errors,
+        input_file_id,
+        completion_window,
+        status,
+        output_file_id,
+        error_file_id,
+        created_at,
+        in_progress_at,
+        expires_at,
+        finalizing_at,
+        completed_at,
+        failed_at,
+        expired_at,
+        cancelling_at,
+        cancelled_at,
+        request_counts,
+        metadata
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: Batch,
+      CSharpTypeWithNullability: Batch?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CancelBatchAsync,
     NotAsyncMethodName: CancelBatch,
@@ -8452,9 +9985,19 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: AuthorizeUsingBearerAsync,
     NotAsyncMethodName: AuthorizeUsingBearer,
@@ -8479,6 +10022,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: AssistantsClient,
+          CSharpTypeWithNullability: AssistantsClient?,
           ConverterType: 
         },
         IsRequired: false,
@@ -8499,6 +10043,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: AudioClient,
+          CSharpTypeWithNullability: AudioClient?,
           ConverterType: 
         },
         IsRequired: false,
@@ -8519,6 +10064,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ChatClient,
+          CSharpTypeWithNullability: ChatClient?,
           ConverterType: 
         },
         IsRequired: false,
@@ -8539,6 +10085,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: CompletionsClient,
+          CSharpTypeWithNullability: CompletionsClient?,
           ConverterType: 
         },
         IsRequired: false,
@@ -8559,6 +10106,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: EmbeddingsClient,
+          CSharpTypeWithNullability: EmbeddingsClient?,
           ConverterType: 
         },
         IsRequired: false,
@@ -8579,6 +10127,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: FineTuningClient,
+          CSharpTypeWithNullability: FineTuningClient?,
           ConverterType: 
         },
         IsRequired: false,
@@ -8599,6 +10148,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: BatchClient,
+          CSharpTypeWithNullability: BatchClient?,
           ConverterType: 
         },
         IsRequired: false,
@@ -8619,6 +10169,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: FilesClient,
+          CSharpTypeWithNullability: FilesClient?,
           ConverterType: 
         },
         IsRequired: false,
@@ -8639,6 +10190,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ImagesClient,
+          CSharpTypeWithNullability: ImagesClient?,
           ConverterType: 
         },
         IsRequired: false,
@@ -8659,6 +10211,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ModelsClient,
+          CSharpTypeWithNullability: ModelsClient?,
           ConverterType: 
         },
         IsRequired: false,
@@ -8679,6 +10232,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ModerationsClient,
+          CSharpTypeWithNullability: ModerationsClient?,
           ConverterType: 
         },
         IsRequired: false,
@@ -8699,6 +10253,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: VectorStoresClient,
+          CSharpTypeWithNullability: VectorStoresClient?,
           ConverterType: 
         },
         IsRequired: false,
@@ -8720,9 +10275,19 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
@@ -8747,9 +10312,19 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
@@ -8774,9 +10349,19 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
@@ -8801,9 +10386,19 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
@@ -8828,9 +10423,19 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
@@ -8855,9 +10460,19 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
@@ -8882,9 +10497,19 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
@@ -8909,9 +10534,19 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
@@ -8936,9 +10571,19 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
@@ -8963,9 +10608,19 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
@@ -8990,9 +10645,19 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
@@ -9017,9 +10682,19 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
@@ -9044,9 +10719,19 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,

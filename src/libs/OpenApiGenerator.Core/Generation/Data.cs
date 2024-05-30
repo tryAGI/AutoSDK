@@ -190,7 +190,7 @@ public static class Data
                     HttpMethod: OperationType.Get,
                     Summary: openApiDocument.Info?.Description?.ClearForXml() ?? string.Empty,
                     RequestType: TypeData.Default,
-                    ResponseType: string.Empty,
+                    ResponseType: TypeData.Default,
                     AdditionalModels: [])] : [];
             if (settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors))
             {
@@ -211,7 +211,7 @@ public static class Data
                             HttpMethod: OperationType.Get,
                             Summary: x.Description?.ClearForXml() ?? string.Empty,
                             RequestType: TypeData.Default,
-                            ResponseType: string.Empty,
+                            ResponseType: TypeData.Default,
                             AdditionalModels: [])))
                     .ToArray();
             }

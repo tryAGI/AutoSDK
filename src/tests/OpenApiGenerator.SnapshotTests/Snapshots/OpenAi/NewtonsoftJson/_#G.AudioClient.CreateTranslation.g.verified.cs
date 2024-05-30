@@ -12,7 +12,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task CreateTranslationAsync(
+        public async global::System.Threading.Tasks.Task<global::System.OneOf<CreateTranslationResponseJson, CreateTranslationResponseVerboseJson>> CreateTranslationAsync(
             CreateTranslationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -31,6 +31,12 @@ namespace G
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
+
+            var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.OneOf<CreateTranslationResponseJson, CreateTranslationResponseVerboseJson>?>(content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{content}\" ");
         }
 
         /// <summary>
@@ -43,7 +49,7 @@ namespace G
         /// <param name="temperature"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task CreateTranslationAsync(
+        public async global::System.Threading.Tasks.Task<global::System.OneOf<CreateTranslationResponseJson, CreateTranslationResponseVerboseJson>> CreateTranslationAsync(
             byte[] file,
             global::System.AnyOf<string, CreateTranslationRequestModel> model,
             string? prompt = default,
@@ -60,7 +66,7 @@ namespace G
                 Temperature = temperature,
             };
 
-            await CreateTranslationAsync(
+            return await CreateTranslationAsync(
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

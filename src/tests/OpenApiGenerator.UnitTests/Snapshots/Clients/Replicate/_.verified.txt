@@ -18,9 +18,19 @@
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: GetAccountResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: GetAccountResponse,
+      CSharpTypeWithNullability: GetAccountResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: GetAccountAsync,
     NotAsyncMethodName: GetAccount,
@@ -45,9 +55,19 @@
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ListCollectionsAsync,
     NotAsyncMethodName: ListCollections,
@@ -72,6 +92,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -96,9 +117,19 @@
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: GetCollectionsAsync,
     NotAsyncMethodName: GetCollections,
@@ -123,9 +154,19 @@
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ListDeploymentsResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ListDeploymentsResponse,
+      CSharpTypeWithNullability: ListDeploymentsResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ListDeploymentsAsync,
     NotAsyncMethodName: ListDeployments,
@@ -150,6 +191,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -170,6 +212,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: true,
@@ -190,6 +233,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: true,
@@ -210,6 +254,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -230,6 +275,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -250,6 +296,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -272,9 +319,19 @@
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: CreateDeploymentsRequest,
+      CSharpTypeWithNullability: CreateDeploymentsRequest?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: CreateDeploymentsResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: CreateDeploymentsResponse,
+      CSharpTypeWithNullability: CreateDeploymentsResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreateDeploymentsAsync,
     NotAsyncMethodName: CreateDeployments,
@@ -299,6 +356,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -322,6 +380,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -347,9 +406,19 @@
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: DeleteDeploymentsAsync,
     NotAsyncMethodName: DeleteDeployments,
@@ -374,6 +443,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -397,6 +467,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -421,9 +492,19 @@
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: GetDeploymentsResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: GetDeploymentsResponse,
+      CSharpTypeWithNullability: GetDeploymentsResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: GetDeploymentsAsync,
     NotAsyncMethodName: GetDeployments,
@@ -448,6 +529,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -471,6 +553,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -494,6 +577,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -514,6 +598,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -534,6 +619,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -554,6 +640,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -576,9 +663,19 @@
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: UpdateDeploymentsRequest,
+      CSharpTypeWithNullability: UpdateDeploymentsRequest?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: UpdateDeploymentsResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: UpdateDeploymentsResponse,
+      CSharpTypeWithNullability: UpdateDeploymentsResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: UpdateDeploymentsAsync,
     NotAsyncMethodName: UpdateDeployments,
@@ -603,6 +700,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -626,6 +724,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -649,6 +748,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: true,
@@ -685,6 +785,7 @@ Use a data URL when:
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
           ConverterType: 
         },
         IsRequired: false,
@@ -709,6 +810,7 @@ If the requested model version supports streaming, the returned prediction will 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -731,6 +833,7 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -779,9 +882,19 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: PredictionRequest,
+      CSharpTypeWithNullability: PredictionRequest?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreatePredictionsDeploymentsAsync,
     NotAsyncMethodName: CreatePredictionsDeployments,
@@ -806,9 +919,19 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: global::System.Collections.Generic.IList<ListHardwareResponse>,
+      IsArray: true,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ListHardwareResponse>,
+      CSharpTypeWithNullability: global::System.Collections.Generic.IList<ListHardwareResponse>?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ListHardwareAsync,
     NotAsyncMethodName: ListHardware,
@@ -833,9 +956,19 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ListModelsAsync,
     NotAsyncMethodName: ListModels,
@@ -860,6 +993,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -880,6 +1014,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -900,6 +1035,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -920,6 +1056,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -940,6 +1077,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -960,6 +1098,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -980,6 +1119,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1000,6 +1140,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1026,6 +1167,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
             private
           ],
           CSharpTypeWithoutNullability: CreateModelsRequestVisibility,
+          CSharpTypeWithNullability: CreateModelsRequestVisibility?,
           ConverterType: CreateModelsRequestVisibilityJsonConverter
         },
         IsRequired: true,
@@ -1048,9 +1190,19 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: CreateModelsRequest,
+      CSharpTypeWithNullability: CreateModelsRequest?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreateModelsAsync,
     NotAsyncMethodName: CreateModels,
@@ -1075,6 +1227,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1098,6 +1251,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1123,9 +1277,19 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: DeleteModelsAsync,
     NotAsyncMethodName: DeleteModels,
@@ -1150,6 +1314,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1173,6 +1338,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1197,9 +1363,19 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: GetModelsAsync,
     NotAsyncMethodName: GetModels,
@@ -1224,6 +1400,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1247,6 +1424,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1270,6 +1448,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1306,6 +1485,7 @@ Use a data URL when:
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1330,6 +1510,7 @@ If the requested model version supports streaming, the returned prediction will 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1352,6 +1533,7 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1400,9 +1582,19 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: PredictionRequest,
+      CSharpTypeWithNullability: PredictionRequest?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreatePredictionsModelsAsync,
     NotAsyncMethodName: CreatePredictionsModels,
@@ -1427,6 +1619,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1450,6 +1643,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1474,9 +1668,19 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ListVersionsModelsAsync,
     NotAsyncMethodName: ListVersionsModels,
@@ -1501,6 +1705,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1524,6 +1729,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1547,6 +1753,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1572,9 +1779,19 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: DeleteVersionsModelsAsync,
     NotAsyncMethodName: DeleteVersionsModels,
@@ -1599,6 +1816,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1622,6 +1840,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1645,6 +1864,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1669,9 +1889,19 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: GetVersionsModelsAsync,
     NotAsyncMethodName: GetVersionsModels,
@@ -1696,6 +1926,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1719,6 +1950,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1742,6 +1974,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1765,6 +1998,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1787,6 +2021,7 @@ A string representing the desired model to push to in the format `{destination_m
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1809,6 +2044,7 @@ An object containing inputs to the Cog model's `train()` function.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1829,6 +2065,7 @@ An object containing inputs to the Cog model's `train()` function.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<TrainingRequestWebhookEventsFilter?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<TrainingRequestWebhookEventsFilter?>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1878,9 +2115,19 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: TrainingRequest,
+      CSharpTypeWithNullability: TrainingRequest?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreateTrainingsAsync,
     NotAsyncMethodName: CreateTrainings,
@@ -1905,9 +2152,19 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ListPredictionsAsync,
     NotAsyncMethodName: ListPredictions,
@@ -1932,6 +2189,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1968,6 +2226,7 @@ Use a data URL when:
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1992,6 +2251,7 @@ If the requested model version supports streaming, the returned prediction will 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -2012,6 +2272,7 @@ If the requested model version supports streaming, the returned prediction will 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2034,6 +2295,7 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<VersionPredictionRequestWebhookEventsFilter?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<VersionPredictionRequestWebhookEventsFilter?>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2084,9 +2346,19 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: VersionPredictionRequest,
+      CSharpTypeWithNullability: VersionPredictionRequest?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreatePredictionsAsync,
     NotAsyncMethodName: CreatePredictions,
@@ -2111,6 +2383,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -2135,9 +2408,19 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: GetPredictionsAsync,
     NotAsyncMethodName: GetPredictions,
@@ -2162,6 +2445,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -2187,9 +2471,19 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CancelPredictionsAsync,
     NotAsyncMethodName: CancelPredictions,
@@ -2214,9 +2508,19 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ListTrainingsAsync,
     NotAsyncMethodName: ListTrainings,
@@ -2241,6 +2545,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -2265,9 +2570,19 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: GetTrainingsAsync,
     NotAsyncMethodName: GetTrainings,
@@ -2292,6 +2607,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -2317,9 +2633,19 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CancelTrainingsAsync,
     NotAsyncMethodName: CancelTrainings,
@@ -2344,9 +2670,19 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: GetSecretDefaultWebhooksResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: GetSecretDefaultWebhooksResponse,
+      CSharpTypeWithNullability: GetSecretDefaultWebhooksResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: GetSecretDefaultWebhooksAsync,
     NotAsyncMethodName: GetSecretDefaultWebhooks,
@@ -2371,9 +2707,19 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: AuthorizeUsingBearerAsync,
     NotAsyncMethodName: AuthorizeUsingBearer,
@@ -2398,9 +2744,19 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,

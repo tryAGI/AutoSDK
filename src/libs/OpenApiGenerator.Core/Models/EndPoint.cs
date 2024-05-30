@@ -20,7 +20,7 @@ public readonly record struct EndPoint(
     OperationType HttpMethod,
     string Summary,
     TypeData RequestType,
-    string ResponseType,
+    TypeData ResponseType,
     ImmutableArray<ModelData> AdditionalModels
 )
 {
@@ -112,20 +112,16 @@ public readonly record struct EndPoint(
         var requestBodyModels = requestMediaTypes
             .Where(x => x.Schema.Type == "object" || x.Schema.Type == "array") //&& x.Parameter.Schema.Items?.Type == "object"
             .Select(x => ModelData.FromSchema(
-                x.Schema.Reference?.Id != null
-                    ? x.Schema.WithKey(x.Schema.Reference.Id)
-                    : x.Schema.Type == "object"
-                        ? x.Schema.WithKey(id + "Request")
-                        : x.Schema.Items.WithKey(id + "Request"),
+                x.Schema.Type == "object"
+                    ? x.Schema.UseReferenceIdOrKey(id + "Request")
+                    : x.Schema.Items.UseReferenceIdOrKey(id + "Request"),
                     settings))
             .SelectMany(model => model.WithAdditionalModels())
             .ToArray();
         var requestBodyTypes = requestMediaTypes
             .Select(x => TypeData.FromSchema(
-                    x.Schema.Reference?.Id != null
-                        ? x.Schema.WithKey(x.Schema.Reference.Id)
-                        : x.Schema.WithKey(id + "Request"),
-                    settings))
+                x.Schema.UseReferenceIdOrKey(id + "Request"),
+                settings))
             .ToArray();
         
         ModelData? requestModel = requestBodyModels.Length == 0
@@ -134,7 +130,33 @@ public readonly record struct EndPoint(
         TypeData? requestType = requestBodyTypes.Length == 0
             ? null
             : requestBodyTypes.First();
-        var response = operation.Value.Responses.Values.FirstOrDefault();
+        
+        var responses = operation.Value.Responses
+            .SelectMany(x => x.Value.Content?.Select(y => (Response: x, MediaType: y)) ?? [])
+            .ToArray();
+        var responseModels = responses
+            .Where(x =>
+                x.MediaType.Value.Schema != null &&
+                (x.MediaType.Value.Schema.Type == "object" || x.MediaType.Value.Schema.Type == "array")) //&& x.Parameter.Schema.Items?.Type == "object"
+            .Select(x => ModelData.FromSchema(
+                x.MediaType.Value.Schema.Type == "object"
+                    ? x.MediaType.Value.Schema.UseReferenceIdOrKey(key: id + "Response")
+                    : x.MediaType.Value.Schema.Items.UseReferenceIdOrKey(key: id + "Response"),
+                settings))
+            .Where(x => x.Properties.Any())
+            .SelectMany(model => model.WithAdditionalModels())
+            .ToArray();
+        var responseTypes = responses
+            .Select(x => x.MediaType.Value.Schema != null ? TypeData.FromSchema(
+                x.MediaType.Value.Schema.Reference?.Id != null
+                    ? x.MediaType.Value.Schema.WithKey(x.MediaType.Value.Schema.Reference.Id)
+                    : x.MediaType.Value.Schema.WithKey(id + "Response"),
+                settings) : TypeData.Default)
+            .ToArray();
+        TypeData? responseType = responseTypes.Length == 0
+            ? null
+            : responseTypes.First();
+        
         var endPoint = new EndPoint(
             Id: id,
             Namespace: settings.Namespace,
@@ -142,8 +164,8 @@ public readonly record struct EndPoint(
                 ? operation.Value.Tags.FirstOrDefault()?.Name.ToClassName() + "Client" ?? settings.ClassName.Replace(".", string.Empty)
                 : settings.ClassName.Replace(".", string.Empty),
             BaseUrl: string.Empty,
-            Stream: response?.Content.Keys
-                .Any(x => x.Contains("application/x-ndjson")) ?? false,
+            Stream: responses
+                .Any(x => x.MediaType.Key.Contains("application/x-ndjson")),
             Path: preparedPath,
             AuthorizationScheme: string.Empty,
             Properties: [..parameters.Concat(requestModel?.Properties ?? [])],
@@ -153,12 +175,12 @@ public readonly record struct EndPoint(
             HttpMethod: operation.Key,
             Summary: operation.Value.Summary?.Replace("\n", string.Empty) ?? string.Empty,
             RequestType: requestType ?? TypeData.Default,
-            ResponseType: response?
-                .Content.Values.FirstOrDefault()?.Schema?.Reference?.Id?.ToClassName() ?? string.Empty,
+            ResponseType: responseType ?? TypeData.Default,
             AdditionalModels: [
                 ..objectParameters,
                 ..enumParameters,
                 ..requestBodyModels,
+                ..responseModels,
             ]);
         
         return endPoint;
@@ -183,7 +205,7 @@ public readonly record struct EndPoint(
             HttpMethod: default,
             Summary: string.Empty,
             RequestType: TypeData.Default,
-            ResponseType: string.Empty,
+            ResponseType: TypeData.Default,
             AdditionalModels: []);
         
         return endPoint;

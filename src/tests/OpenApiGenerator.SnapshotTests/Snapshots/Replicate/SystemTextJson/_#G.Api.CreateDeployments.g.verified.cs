@@ -12,7 +12,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task CreateDeploymentsAsync(
+        public async global::System.Threading.Tasks.Task<CreateDeploymentsResponse> CreateDeploymentsAsync(
             CreateDeploymentsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -31,6 +31,12 @@ namespace G
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
+
+            var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return
+                global::System.Text.Json.JsonSerializer.Deserialize<CreateDeploymentsResponse?>(content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{content}\" ");
         }
 
         /// <summary>
@@ -44,7 +50,7 @@ namespace G
         /// <param name="version"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task CreateDeploymentsAsync(
+        public async global::System.Threading.Tasks.Task<CreateDeploymentsResponse> CreateDeploymentsAsync(
             string hardware,
             int maxInstances,
             int minInstances,
@@ -63,7 +69,7 @@ namespace G
                 Version = version,
             };
 
-            await CreateDeploymentsAsync(
+            return await CreateDeploymentsAsync(
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

@@ -25,6 +25,8 @@ public readonly record struct TypeData(
         EnumValues: []);
     
     public string CSharpTypeWithoutNullability => CSharpType.TrimEnd('?');
+    public string CSharpTypeWithNullability => CSharpTypeWithoutNullability + "?";
+    
     public string ConverterType => IsEnum
         ? $"{CSharpTypeWithoutNullability}JsonConverter"
         : AnyOfCount > 0

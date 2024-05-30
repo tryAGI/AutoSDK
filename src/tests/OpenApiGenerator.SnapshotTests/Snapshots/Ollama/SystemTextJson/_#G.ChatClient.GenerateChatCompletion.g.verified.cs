@@ -39,7 +39,7 @@ namespace G
             {
                 var content = await reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
                 var streamedResponse = global::System.Text.Json.JsonSerializer.Deserialize<GenerateChatCompletionResponse>(content) ??
-                                       throw new global::System.InvalidOperationException("Response deserialization failed for \"{content}\" ");
+                                       throw new global::System.InvalidOperationException($"Response deserialization failed for \"{content}\" ");
 
                 yield return streamedResponse;
             }

@@ -12,7 +12,7 @@ namespace G
         /// <param name="limit"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<Pets> ListPetsAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<Pet>> ListPetsAsync(
             int limit,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -29,8 +29,8 @@ namespace G
             var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<Pets>(content) ??
-                throw new global::System.InvalidOperationException("Response deserialization failed for \"{content}\" ");
+                global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<Pet>?>(content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{content}\" ");
         }
     }
 }

@@ -17,6 +17,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.DateTime,
+          CSharpTypeWithNullability: global::System.DateTime?,
           ConverterType: 
         },
         IsRequired: false,
@@ -37,6 +38,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -58,6 +60,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>,
+          CSharpTypeWithNullability: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>?,
           ConverterType: AnyOfJsonConverterFactory3
         },
         IsRequired: false,
@@ -79,6 +82,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>,
+          CSharpTypeWithNullability: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>?,
           ConverterType: AnyOfJsonConverterFactory3
         },
         IsRequired: false,
@@ -99,6 +103,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<object?>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -138,6 +143,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -160,6 +166,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionRequestMessage>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<ChatCompletionRequestMessage>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -182,6 +189,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionFunctions>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<ChatCompletionFunctions>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -204,6 +212,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -224,6 +233,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -244,6 +254,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -264,6 +275,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
           ConverterType: 
         },
         IsRequired: false,
@@ -285,6 +297,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?>,
+          CSharpTypeWithNullability: global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?>?,
           ConverterType: AnyOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -305,6 +318,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -325,6 +339,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -345,6 +360,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -365,6 +381,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: false,
@@ -405,6 +422,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -427,6 +445,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -447,6 +466,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -470,6 +490,7 @@
           ],
           EnumValues: null,
           CSharpTypeWithoutNullability: ChatCompletionFunctionCall,
+          CSharpTypeWithNullability: ChatCompletionFunctionCall?,
           ConverterType: 
         },
         IsRequired: false,
@@ -509,6 +530,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -531,6 +553,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -572,6 +595,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -594,6 +618,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -619,6 +644,7 @@
           ],
           EnumValues: null,
           CSharpTypeWithoutNullability: ChatCompletionFunctionParameters,
+          CSharpTypeWithNullability: ChatCompletionFunctionParameters?,
           ConverterType: 
         },
         IsRequired: false,
@@ -658,6 +684,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -680,6 +707,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: false,
@@ -722,6 +750,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.AnyOf<string, object>,
+          CSharpTypeWithNullability: global::System.AnyOf<string, object>?,
           ConverterType: AnyOfJsonConverterFactory2
         },
         IsRequired: true,
@@ -743,6 +772,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>,
+          CSharpTypeWithNullability: global::System.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>?,
           ConverterType: AnyOfJsonConverterFactory4
         },
         IsRequired: true,
@@ -763,6 +793,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -783,6 +814,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -803,6 +835,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -823,6 +856,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -843,6 +877,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -863,6 +898,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
           ConverterType: 
         },
         IsRequired: false,
@@ -883,6 +919,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -903,6 +940,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
           ConverterType: 
         },
         IsRequired: false,
@@ -924,6 +962,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?>,
+          CSharpTypeWithNullability: global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?>?,
           ConverterType: AnyOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -944,6 +983,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -964,6 +1004,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: double,
+          CSharpTypeWithNullability: double?,
           ConverterType: 
         },
         IsRequired: false,
@@ -984,6 +1025,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1004,6 +1046,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1025,6 +1068,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1064,6 +1108,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1086,6 +1131,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1108,6 +1154,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1130,6 +1177,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1152,6 +1200,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionChoice>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<ChatCompletionChoice>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1178,6 +1227,7 @@
           ],
           EnumValues: null,
           CSharpTypeWithoutNullability: CompletionUsage,
+          CSharpTypeWithNullability: CompletionUsage?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1217,6 +1267,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1243,6 +1294,7 @@
           ],
           EnumValues: null,
           CSharpTypeWithoutNullability: ChatCompletionResponseMessage,
+          CSharpTypeWithNullability: ChatCompletionResponseMessage?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1263,6 +1315,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1304,6 +1357,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1326,6 +1380,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1349,6 +1404,7 @@
           ],
           EnumValues: null,
           CSharpTypeWithoutNullability: ChatCompletionFunctionCall,
+          CSharpTypeWithNullability: ChatCompletionFunctionCall?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1388,6 +1444,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1410,6 +1467,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1432,6 +1490,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1473,6 +1532,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1493,6 +1553,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1513,6 +1574,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1533,6 +1595,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1553,6 +1616,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Choice>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<Choice>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1579,6 +1643,7 @@
           ],
           EnumValues: null,
           CSharpTypeWithoutNullability: CompletionUsage,
+          CSharpTypeWithNullability: CompletionUsage?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1618,6 +1683,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1640,6 +1706,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1667,6 +1734,7 @@
           ],
           EnumValues: null,
           CSharpTypeWithoutNullability: Logprobs,
+          CSharpTypeWithNullability: Logprobs?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1687,6 +1755,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1728,6 +1797,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1750,6 +1820,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<double>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<double>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1772,6 +1843,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<object?>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1794,6 +1866,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<int>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<int>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1835,6 +1908,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ValidationError>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<ValidationError>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1874,6 +1948,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.AnyOf<string, int>>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.AnyOf<string, int>>?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1894,6 +1969,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1914,6 +1990,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1953,6 +2030,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1974,6 +2052,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>,
+          CSharpTypeWithNullability: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>?,
           ConverterType: AnyOfJsonConverterFactory3
         },
         IsRequired: false,
@@ -2010,6 +2089,7 @@
             parser
           ],
           CSharpTypeWithoutNullability: RunCreateSchemaExtendedRunType,
+          CSharpTypeWithNullability: RunCreateSchemaExtendedRunType?,
           ConverterType: RunCreateSchemaExtendedRunTypeJsonConverter
         },
         IsRequired: true,
@@ -2030,6 +2110,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.DateTime,
+          CSharpTypeWithNullability: global::System.DateTime?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2050,6 +2131,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.DateTime,
+          CSharpTypeWithNullability: global::System.DateTime?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2070,6 +2152,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2091,6 +2174,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2111,6 +2195,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2133,6 +2218,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2155,6 +2241,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>,
+          CSharpTypeWithNullability: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>?,
           ConverterType: AnyOfJsonConverterFactory3
         },
         IsRequired: false,
@@ -2175,6 +2262,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2195,6 +2283,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2215,6 +2304,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<object?>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2235,6 +2325,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2255,6 +2346,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2275,6 +2367,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2295,6 +2388,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2315,6 +2409,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<RunCreateSchema>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<RunCreateSchema>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2335,6 +2430,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2375,6 +2471,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2395,6 +2492,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2415,6 +2513,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2435,6 +2534,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2455,6 +2555,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2475,6 +2576,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2495,6 +2597,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2552,6 +2655,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -2572,6 +2676,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2609,6 +2714,7 @@
             parser
           ],
           CSharpTypeWithoutNullability: RunCreateSchemaRunType,
+          CSharpTypeWithNullability: RunCreateSchemaRunType?,
           ConverterType: RunCreateSchemaRunTypeJsonConverter
         },
         IsRequired: true,
@@ -2629,6 +2735,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.DateTime,
+          CSharpTypeWithNullability: global::System.DateTime?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2649,6 +2756,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.DateTime,
+          CSharpTypeWithNullability: global::System.DateTime?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2669,6 +2777,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2690,6 +2799,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2710,6 +2820,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2732,6 +2843,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2753,6 +2865,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2774,6 +2887,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2794,6 +2908,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2814,6 +2929,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<object?>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2834,6 +2950,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2854,6 +2971,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2874,6 +2992,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2894,6 +3013,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2914,6 +3034,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<RunCreateSchema>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<RunCreateSchema>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2934,6 +3055,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2974,6 +3096,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2994,6 +3117,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -3014,6 +3138,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -3034,6 +3159,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -3054,6 +3180,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -3074,6 +3201,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -3094,6 +3222,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,

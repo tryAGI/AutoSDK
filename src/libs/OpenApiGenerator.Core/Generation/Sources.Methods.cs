@@ -56,12 +56,12 @@ namespace {endPoint.Namespace}
     {
         var jsonSerializer = endPoint.JsonSerializerType.GetSerializer();
         var taskType = endPoint.Stream
-            ? string.IsNullOrWhiteSpace(endPoint.ResponseType)
+            ? string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType)
                 ? throw new InvalidOperationException($"Streamed responses must have a response type. OperationId: {endPoint.Id}.")
-                : $"global::System.Collections.Generic.IAsyncEnumerable<{endPoint.ResponseType}>"
-            : string.IsNullOrWhiteSpace(endPoint.ResponseType)
+                : $"global::System.Collections.Generic.IAsyncEnumerable<{endPoint.ResponseType.CSharpType}>"
+            : string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType)
                 ? "global::System.Threading.Tasks.Task"
-                : $"global::System.Threading.Tasks.Task<{endPoint.ResponseType}>";
+                : $"global::System.Threading.Tasks.Task<{endPoint.ResponseType.CSharpType}>";
         var httpCompletionOption = endPoint.Stream
             ? nameof(HttpCompletionOption.ResponseHeadersRead)
             : nameof(HttpCompletionOption.ResponseContentRead);
@@ -113,12 +113,12 @@ namespace {endPoint.Namespace}
                 completionOption: global::System.Net.Http.HttpCompletionOption.{httpCompletionOption},
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
-{(string.IsNullOrWhiteSpace(endPoint.ResponseType) || endPoint.Stream ? " " : $@"
+{(string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType) || endPoint.Stream ? " " : $@"
             var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType, endPoint.JsonSerializerContext)} ??
-                throw new global::System.InvalidOperationException(""Response deserialization failed for \""{{content}}\"" "");")}
+                {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType.CSharpTypeWithNullability, endPoint.JsonSerializerContext)} ??
+                throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{content}}\"" "");")}
 {(endPoint.Stream ? $@"
             using var stream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
             using var reader = new global::System.IO.StreamReader(stream);
@@ -126,8 +126,8 @@ namespace {endPoint.Namespace}
             while (!reader.EndOfStream && !cancellationToken.IsCancellationRequested)
             {{
                 var content = await reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
-                var streamedResponse = {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType, endPoint.JsonSerializerContext)} ??
-                                       throw new global::System.InvalidOperationException(""Response deserialization failed for \""{{content}}\"" "");
+                var streamedResponse = {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType.CSharpType, endPoint.JsonSerializerContext)} ??
+                                       throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{content}}\"" "");
 
                 yield return streamedResponse;
             }}" : " ")}
@@ -146,18 +146,18 @@ namespace {endPoint.Namespace}
         }
         
         var taskType = endPoint.Stream
-            ? string.IsNullOrWhiteSpace(endPoint.ResponseType)
+            ? string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType)
                 ? throw new InvalidOperationException($"Streamed responses must have a response type. OperationId: {endPoint.Id}.")
-                : $"global::System.Collections.Generic.IAsyncEnumerable<{endPoint.ResponseType}>"
-            : string.IsNullOrWhiteSpace(endPoint.ResponseType)
+                : $"global::System.Collections.Generic.IAsyncEnumerable<{endPoint.ResponseType.CSharpType}>"
+            : string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType)
                 ? "global::System.Threading.Tasks.Task"
-                : $"global::System.Threading.Tasks.Task<{endPoint.ResponseType}>";
+                : $"global::System.Threading.Tasks.Task<{endPoint.ResponseType.CSharpType}>";
         var cancellationTokenAttribute = endPoint.Stream
             ? "[global::System.Runtime.CompilerServices.EnumeratorCancellation] "
             : string.Empty;
         var response = endPoint.Stream
             ? "var enumerable = "
-            : string.IsNullOrWhiteSpace(endPoint.ResponseType)
+            : string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType)
                 ? "await "
                 : "return await ";
         var configureAwaitResponse = !endPoint.Stream

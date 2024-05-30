@@ -11,7 +11,7 @@ namespace G
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task GetAccountAsync(
+        public async global::System.Threading.Tasks.Task<GetAccountResponse> GetAccountAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -23,6 +23,12 @@ namespace G
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
+
+            var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return
+                global::System.Text.Json.JsonSerializer.Deserialize<GetAccountResponse?>(content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{content}\" ");
         }
     }
 }

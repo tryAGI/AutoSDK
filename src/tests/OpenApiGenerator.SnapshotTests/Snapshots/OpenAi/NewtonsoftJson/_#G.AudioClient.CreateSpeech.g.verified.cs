@@ -12,7 +12,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task CreateSpeechAsync(
+        public async global::System.Threading.Tasks.Task<byte[]> CreateSpeechAsync(
             CreateSpeechRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -31,6 +31,12 @@ namespace G
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
+
+            var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<byte[]?>(content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{content}\" ");
         }
 
         /// <summary>
@@ -43,7 +49,7 @@ namespace G
         /// <param name="speed"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task CreateSpeechAsync(
+        public async global::System.Threading.Tasks.Task<byte[]> CreateSpeechAsync(
             global::System.AnyOf<string, CreateSpeechRequestModel> model,
             string input,
             CreateSpeechRequestVoice voice,
@@ -60,7 +66,7 @@ namespace G
                 Speed = speed,
             };
 
-            await CreateSpeechAsync(
+            return await CreateSpeechAsync(
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

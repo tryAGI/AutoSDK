@@ -18,6 +18,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -42,9 +43,19 @@
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: Pets,
+    ResponseType: {
+      CSharpType: global::System.Collections.Generic.IList<Pet>,
+      IsArray: true,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Pet>,
+      CSharpTypeWithNullability: global::System.Collections.Generic.IList<Pet>?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ListPetsAsync,
     NotAsyncMethodName: ListPets,
@@ -70,9 +81,22 @@
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: Error,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        code,
+        message
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: Error,
+      CSharpTypeWithNullability: Error?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreatePetsAsync,
     NotAsyncMethodName: CreatePets,
@@ -97,6 +121,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -121,9 +146,26 @@
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: Pet,
+    ResponseType: {
+      CSharpType: Pet,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        4,
+        1.5,
+        16:9,
+        id,
+        name,
+        tag
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: Pet,
+      CSharpTypeWithNullability: Pet?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ShowPetByIdAsync,
     NotAsyncMethodName: ShowPetById,
@@ -148,9 +190,19 @@
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,

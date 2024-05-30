@@ -187,6 +187,17 @@ public static class OpenApiExtensions
         return new KeyValuePair<string, OpenApiSchema>(key, schema);
     }
 
+    public static KeyValuePair<string, OpenApiSchema> UseReferenceIdOrKey(
+        this OpenApiSchema schema,
+        string key)
+    {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+        
+        return new KeyValuePair<string, OpenApiSchema>(
+            schema.Reference?.Id ?? key,
+            schema);
+    }
+
     public static string ReplacePlusAndMinusOnStart(
         this string text)
     {
@@ -277,6 +288,10 @@ public static class OpenApiExtensions
                 .SelectMany(x => x.Value.Responses.Values)
                 .SelectMany(x => x.Content.Values)
                 .Select(x => x.Schema.Reference?.Id))
+            .Concat(operations 
+                .SelectMany(x => x.Value.Responses.Values)
+                .SelectMany(x => x.Content.Values)
+                .Select(x => x.Schema.Items?.Reference?.Id))
             .Where(x => x != null)
             .ToArray()!;
     }

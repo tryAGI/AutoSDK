@@ -18,6 +18,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -43,6 +44,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -65,6 +67,7 @@ The prompt to generate a response.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -85,6 +88,7 @@ The prompt to generate a response.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -105,6 +109,7 @@ The prompt to generate a response.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -125,6 +130,7 @@ The prompt to generate a response.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<int>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<int>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -179,6 +185,7 @@ The prompt to generate a response.
           ],
           EnumValues: null,
           CSharpTypeWithoutNullability: RequestOptions,
+          CSharpTypeWithNullability: RequestOptions?,
           ConverterType: 
         },
         IsRequired: false,
@@ -203,6 +210,7 @@ The prompt to generate a response.
             json
           ],
           CSharpTypeWithoutNullability: GenerateCompletionRequestFormat,
+          CSharpTypeWithNullability: GenerateCompletionRequestFormat?,
           ConverterType: GenerateCompletionRequestFormatJsonConverter
         },
         IsRequired: false,
@@ -229,6 +237,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
           ConverterType: 
         },
         IsRequired: false,
@@ -253,6 +262,7 @@ You may choose to use the `raw` parameter if you are specifying a full templated
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
           ConverterType: 
         },
         IsRequired: false,
@@ -277,6 +287,7 @@ If `false` the response will be returned as a single response object, otherwise 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -318,9 +329,31 @@ How long (in minutes) to keep the model loaded in memory.
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: GenerateCompletionRequest,
+      CSharpTypeWithNullability: GenerateCompletionRequest?,
       ConverterType: 
     },
-    ResponseType: GenerateCompletionResponse,
+    ResponseType: {
+      CSharpType: GenerateCompletionResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        model,
+        created_at,
+        response,
+        done,
+        context,
+        total_duration,
+        load_duration,
+        prompt_eval_count,
+        prompt_eval_duration,
+        eval_count,
+        eval_duration
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: GenerateCompletionResponse,
+      CSharpTypeWithNullability: GenerateCompletionResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: GenerateCompletionAsync,
     NotAsyncMethodName: GenerateCompletion,
@@ -345,6 +378,7 @@ How long (in minutes) to keep the model loaded in memory.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -370,6 +404,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Message>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<Message>?,
           ConverterType: 
         },
         IsRequired: true,
@@ -394,6 +429,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
             json
           ],
           CSharpTypeWithoutNullability: GenerateChatCompletionRequestFormat,
+          CSharpTypeWithNullability: GenerateChatCompletionRequestFormat?,
           ConverterType: GenerateChatCompletionRequestFormatJsonConverter
         },
         IsRequired: false,
@@ -454,6 +490,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           ],
           EnumValues: null,
           CSharpTypeWithoutNullability: RequestOptions,
+          CSharpTypeWithNullability: RequestOptions?,
           ConverterType: 
         },
         IsRequired: false,
@@ -474,6 +511,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
           ConverterType: 
         },
         IsRequired: false,
@@ -498,6 +536,7 @@ If `false` the response will be returned as a single response object, otherwise 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -534,9 +573,30 @@ How long (in minutes) to keep the model loaded in memory.
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: GenerateChatCompletionRequest,
+      CSharpTypeWithNullability: GenerateChatCompletionRequest?,
       ConverterType: 
     },
-    ResponseType: GenerateChatCompletionResponse,
+    ResponseType: {
+      CSharpType: GenerateChatCompletionResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        message,
+        model,
+        created_at,
+        done,
+        total_duration,
+        load_duration,
+        prompt_eval_count,
+        prompt_eval_duration,
+        eval_count,
+        eval_duration
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: GenerateChatCompletionResponse,
+      CSharpTypeWithNullability: GenerateChatCompletionResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: GenerateChatCompletionAsync,
     NotAsyncMethodName: GenerateChatCompletion,
@@ -561,6 +621,7 @@ How long (in minutes) to keep the model loaded in memory.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -586,6 +647,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -642,6 +704,7 @@ Text to generate embeddings for.
           ],
           EnumValues: null,
           CSharpTypeWithoutNullability: RequestOptions,
+          CSharpTypeWithNullability: RequestOptions?,
           ConverterType: 
         },
         IsRequired: false,
@@ -668,9 +731,21 @@ Text to generate embeddings for.
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: GenerateEmbeddingRequest,
+      CSharpTypeWithNullability: GenerateEmbeddingRequest?,
       ConverterType: 
     },
-    ResponseType: GenerateEmbeddingResponse,
+    ResponseType: {
+      CSharpType: GenerateEmbeddingResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        embedding
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: GenerateEmbeddingResponse,
+      CSharpTypeWithNullability: GenerateEmbeddingResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: GenerateEmbeddingAsync,
     NotAsyncMethodName: GenerateEmbedding,
@@ -695,6 +770,7 @@ Text to generate embeddings for.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -720,6 +796,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -742,6 +819,7 @@ The contents of the Modelfile.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
           ConverterType: 
         },
         IsRequired: false,
@@ -772,9 +850,21 @@ If `false` the response will be returned as a single response object, otherwise 
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: CreateModelRequest,
+      CSharpTypeWithNullability: CreateModelRequest?,
       ConverterType: 
     },
-    ResponseType: CreateModelResponse,
+    ResponseType: {
+      CSharpType: CreateModelResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        status
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: CreateModelResponse,
+      CSharpTypeWithNullability: CreateModelResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CreateModelAsync,
     NotAsyncMethodName: CreateModel,
@@ -799,9 +889,21 @@ If `false` the response will be returned as a single response object, otherwise 
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ModelsResponse,
+    ResponseType: {
+      CSharpType: ModelsResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        models
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ModelsResponse,
+      CSharpTypeWithNullability: ModelsResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ListModelsAsync,
     NotAsyncMethodName: ListModels,
@@ -826,6 +928,7 @@ If `false` the response will be returned as a single response object, otherwise 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -855,9 +958,24 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: ModelInfoRequest,
+      CSharpTypeWithNullability: ModelInfoRequest?,
       ConverterType: 
     },
-    ResponseType: ModelInfo,
+    ResponseType: {
+      CSharpType: ModelInfo,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        license,
+        modelfile,
+        parameters,
+        template
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ModelInfo,
+      CSharpTypeWithNullability: ModelInfo?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ShowModelInfoAsync,
     NotAsyncMethodName: ShowModelInfo,
@@ -882,6 +1000,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -904,6 +1023,7 @@ Name of the model to copy.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -931,9 +1051,19 @@ Name of the new model.
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: CopyModelRequest,
+      CSharpTypeWithNullability: CopyModelRequest?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: CopyModelAsync,
     NotAsyncMethodName: CopyModel,
@@ -958,6 +1088,7 @@ Name of the new model.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -987,9 +1118,19 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: DeleteModelRequest,
+      CSharpTypeWithNullability: DeleteModelRequest?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: DeleteModelAsync,
     NotAsyncMethodName: DeleteModel,
@@ -1014,6 +1155,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1039,6 +1181,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1065,6 +1208,7 @@ Only use this if you are pulling from your own library during development.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1095,9 +1239,24 @@ If `false` the response will be returned as a single response object, otherwise 
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: PullModelRequest,
+      CSharpTypeWithNullability: PullModelRequest?,
       ConverterType: 
     },
-    ResponseType: PullModelResponse,
+    ResponseType: {
+      CSharpType: PullModelResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        status,
+        digest,
+        total,
+        completed
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: PullModelResponse,
+      CSharpTypeWithNullability: PullModelResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: PullModelAsync,
     NotAsyncMethodName: PullModel,
@@ -1122,6 +1281,7 @@ If `false` the response will be returned as a single response object, otherwise 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1144,6 +1304,7 @@ The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1170,6 +1331,7 @@ Only use this if you are pushing to your library during development.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1200,9 +1362,23 @@ If `false` the response will be returned as a single response object, otherwise 
       ],
       EnumValues: null,
       CSharpTypeWithoutNullability: PushModelRequest,
+      CSharpTypeWithNullability: PushModelRequest?,
       ConverterType: 
     },
-    ResponseType: PushModelResponse,
+    ResponseType: {
+      CSharpType: PushModelResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        status,
+        digest,
+        total
+      ],
+      EnumValues: null,
+      CSharpTypeWithoutNullability: PushModelResponse,
+      CSharpTypeWithNullability: PushModelResponse?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: PushModelAsync,
     NotAsyncMethodName: PushModel,
@@ -1227,6 +1403,7 @@ If `false` the response will be returned as a single response object, otherwise 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: CompletionsClient,
+          CSharpTypeWithNullability: CompletionsClient?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1247,6 +1424,7 @@ If `false` the response will be returned as a single response object, otherwise 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ChatClient,
+          CSharpTypeWithNullability: ChatClient?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1267,6 +1445,7 @@ If `false` the response will be returned as a single response object, otherwise 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: EmbeddingsClient,
+          CSharpTypeWithNullability: EmbeddingsClient?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1287,6 +1466,7 @@ If `false` the response will be returned as a single response object, otherwise 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ModelsClient,
+          CSharpTypeWithNullability: ModelsClient?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1308,9 +1488,19 @@ If `false` the response will be returned as a single response object, otherwise 
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
@@ -1335,9 +1525,19 @@ If `false` the response will be returned as a single response object, otherwise 
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
@@ -1362,9 +1562,19 @@ If `false` the response will be returned as a single response object, otherwise 
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
@@ -1389,9 +1599,19 @@ If `false` the response will be returned as a single response object, otherwise 
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
@@ -1416,9 +1636,19 @@ If `false` the response will be returned as a single response object, otherwise 
       Properties: null,
       EnumValues: null,
       CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
       ConverterType: 
     },
-    ResponseType: ,
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
     AdditionalModels: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,

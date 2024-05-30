@@ -35,8 +35,8 @@ namespace G
             var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<EndPredictionResponse>(content) ??
-                throw new global::System.InvalidOperationException("Response deserialization failed for \"{content}\" ");
+                global::System.Text.Json.JsonSerializer.Deserialize<EndPredictionResponse?>(content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{content}\" ");
         }
 
         /// <summary>

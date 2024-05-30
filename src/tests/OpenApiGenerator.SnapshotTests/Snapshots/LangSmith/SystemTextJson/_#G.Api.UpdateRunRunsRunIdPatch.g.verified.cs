@@ -13,7 +13,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task UpdateRunRunsRunIdPatchAsync(
+        public async global::System.Threading.Tasks.Task<object> UpdateRunRunsRunIdPatchAsync(
             string runId,
             RunUpdateSchemaExtended request,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -33,6 +33,12 @@ namespace G
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
+
+            var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return
+                global::System.Text.Json.JsonSerializer.Deserialize<object?>(content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{content}\" ");
         }
 
         /// <summary>
@@ -46,7 +52,7 @@ namespace G
         /// <param name="events"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task UpdateRunRunsRunIdPatchAsync(
+        public async global::System.Threading.Tasks.Task<object> UpdateRunRunsRunIdPatchAsync(
             string runId,
             global::System.DateTime endTime = default,
             string? error = default,
@@ -64,7 +70,7 @@ namespace G
                 Events = events,
             };
 
-            await UpdateRunRunsRunIdPatchAsync(
+            return await UpdateRunRunsRunIdPatchAsync(
                 runId: runId,
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

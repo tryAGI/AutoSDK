@@ -14,7 +14,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task UpdateDeploymentsAsync(
+        public async global::System.Threading.Tasks.Task<UpdateDeploymentsResponse> UpdateDeploymentsAsync(
             string deploymentOwner,
             string deploymentName,
             UpdateDeploymentsRequest request,
@@ -35,6 +35,12 @@ namespace G
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
+
+            var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<UpdateDeploymentsResponse?>(content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{content}\" ");
         }
 
         /// <summary>
@@ -48,7 +54,7 @@ namespace G
         /// <param name="version"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task UpdateDeploymentsAsync(
+        public async global::System.Threading.Tasks.Task<UpdateDeploymentsResponse> UpdateDeploymentsAsync(
             string deploymentOwner,
             string deploymentName,
             string? hardware = default,
@@ -65,7 +71,7 @@ namespace G
                 Version = version,
             };
 
-            await UpdateDeploymentsAsync(
+            return await UpdateDeploymentsAsync(
                 deploymentOwner: deploymentOwner,
                 deploymentName: deploymentName,
                 request: request,

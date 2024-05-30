@@ -17,6 +17,7 @@
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: true,
@@ -53,6 +54,7 @@ Use a data URL when:
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
           ConverterType: 
         },
         IsRequired: false,
@@ -77,6 +79,7 @@ If the requested model version supports streaming, the returned prediction will 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -99,6 +102,7 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -160,6 +164,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -180,6 +185,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -200,6 +206,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -220,6 +227,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -259,6 +267,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -281,6 +290,7 @@ A string representing the desired model to push to in the format `{destination_m
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: true,
@@ -303,6 +313,7 @@ An object containing inputs to the Cog model's `train()` function.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -323,6 +334,7 @@ An object containing inputs to the Cog model's `train()` function.
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<TrainingRequestWebhookEventsFilter?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<TrainingRequestWebhookEventsFilter?>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -385,6 +397,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -405,6 +418,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -425,6 +439,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -445,6 +460,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -484,6 +500,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
           ConverterType: 
         },
         IsRequired: true,
@@ -520,6 +537,7 @@ Use a data URL when:
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
           ConverterType: 
         },
         IsRequired: false,
@@ -544,6 +562,7 @@ If the requested model version supports streaming, the returned prediction will 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -564,6 +583,7 @@ If the requested model version supports streaming, the returned prediction will 
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -586,6 +606,7 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<VersionPredictionRequestWebhookEventsFilter?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<VersionPredictionRequestWebhookEventsFilter?>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -648,6 +669,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -668,6 +690,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -688,6 +711,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -708,6 +732,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -730,6 +755,739 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     FileNameWithoutExtension: G.Models.WebhookEventsFilter
   },
   {
+    Id: AccountGetResponse,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: github_url,
+        Name: GithubUrl,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The GitHub URL of the account.,
+        ConverterType: ,
+        ParameterName: githubUrl,
+        ArgumentName: githubUrl,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: name,
+        Name: Name,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The name of the account.,
+        ConverterType: ,
+        ParameterName: name,
+        ArgumentName: name,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: type,
+        Name: Type,
+        Type: {
+          CSharpType: AccountGetResponseType?,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            Organization,
+            User
+          ],
+          EnumValues: [
+            organization,
+            user
+          ],
+          CSharpTypeWithoutNullability: AccountGetResponseType,
+          CSharpTypeWithNullability: AccountGetResponseType?,
+          ConverterType: AccountGetResponseTypeJsonConverter
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The account type. Can be a user or an organization.,
+        ConverterType: AccountGetResponseTypeJsonConverter,
+        ParameterName: type,
+        ArgumentName: type,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: username,
+        Name: Username,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The username of the account.,
+        ConverterType: ,
+        ParameterName: username,
+        ArgumentName: username,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: AccountGetResponse,
+    ClassName: AccountGetResponse,
+    GlobalClassName: global::G.AccountGetResponse,
+    ExternalClassName: AccountGetResponse,
+    FileNameWithoutExtension: G.Models.AccountGetResponse
+  },
+  {
+    Id: type,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: organization,
+        Name: Organization,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: organization,
+        ArgumentName: organization,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: user,
+        Name: User,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: user,
+        ArgumentName: user,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: The account type. Can be a user or an organization.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Type,
+    ClassName: Type,
+    GlobalClassName: global::G.Type,
+    ExternalClassName: Type,
+    FileNameWithoutExtension: G.Models.Type
+  },
+  {
+    Id: DeploymentsListResponse,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: next,
+        Name: Next,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: A URL pointing to the next page of deployment objects if any,
+        ConverterType: ,
+        ParameterName: next,
+        ArgumentName: next,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: previous,
+        Name: Previous,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: A URL pointing to the previous page of deployment objects if any,
+        ConverterType: ,
+        ParameterName: previous,
+        ArgumentName: previous,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: results,
+        Name: Results,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<DeploymentsListResponseResults?>?,
+          IsArray: true,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<DeploymentsListResponseResults?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<DeploymentsListResponseResults?>?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: An array containing a page of deployment objects,
+        ConverterType: ,
+        ParameterName: results,
+        ArgumentName: results,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: DeploymentsListResponse,
+    ClassName: DeploymentsListResponse,
+    GlobalClassName: global::G.DeploymentsListResponse,
+    ExternalClassName: DeploymentsListResponse,
+    FileNameWithoutExtension: G.Models.DeploymentsListResponse
+  },
+  {
+    Id: results,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: current_release,
+        Name: CurrentRelease,
+        Type: {
+          CSharpType: DeploymentsListResponseResultsCurrentRelease?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: DeploymentsListResponseResultsCurrentRelease,
+          CSharpTypeWithNullability: DeploymentsListResponseResultsCurrentRelease?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: currentRelease,
+        ArgumentName: currentRelease,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: name,
+        Name: Name,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The name of the deployment.,
+        ConverterType: ,
+        ParameterName: name,
+        ArgumentName: name,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: owner,
+        Name: Owner,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The owner of the deployment.,
+        ConverterType: ,
+        ParameterName: owner,
+        ArgumentName: owner,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Results,
+    ClassName: Results,
+    GlobalClassName: global::G.Results,
+    ExternalClassName: Results,
+    FileNameWithoutExtension: G.Models.Results
+  },
+  {
+    Id: current_release,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: configuration,
+        Name: Configuration,
+        Type: {
+          CSharpType: DeploymentsListResponseResultsCurrentReleaseConfiguration?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: DeploymentsListResponseResultsCurrentReleaseConfiguration,
+          CSharpTypeWithNullability: DeploymentsListResponseResultsCurrentReleaseConfiguration?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: configuration,
+        ArgumentName: configuration,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: created_at,
+        Name: CreatedAt,
+        Type: {
+          CSharpType: global::System.DateTime,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: global::System.DateTime,
+          CSharpTypeWithNullability: global::System.DateTime?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The time the release was created.,
+        ConverterType: ,
+        ParameterName: createdAt,
+        ArgumentName: createdAt,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: created_by,
+        Name: CreatedBy,
+        Type: {
+          CSharpType: DeploymentsListResponseResultsCurrentReleaseCreatedBy?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: DeploymentsListResponseResultsCurrentReleaseCreatedBy,
+          CSharpTypeWithNullability: DeploymentsListResponseResultsCurrentReleaseCreatedBy?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: createdBy,
+        ArgumentName: createdBy,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: model,
+        Name: Model,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The model identifier string in the format of `{model_owner}/{model_name}`.,
+        ConverterType: ,
+        ParameterName: model,
+        ArgumentName: model,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: number,
+        Name: Number,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The release number. This is an auto-incrementing integer that starts at 1, and is set automatically when a deployment is created.,
+        ConverterType: ,
+        ParameterName: number,
+        ArgumentName: number,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: version,
+        Name: Version,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The ID of the model version used in the release.,
+        ConverterType: ,
+        ParameterName: version,
+        ArgumentName: version,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: CurrentRelease,
+    ClassName: CurrentRelease,
+    GlobalClassName: global::G.CurrentRelease,
+    ExternalClassName: CurrentRelease,
+    FileNameWithoutExtension: G.Models.CurrentRelease
+  },
+  {
+    Id: configuration,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: hardware,
+        Name: Hardware,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The SKU for the hardware used to run the model.,
+        ConverterType: ,
+        ParameterName: hardware,
+        ArgumentName: hardware,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: max_instances,
+        Name: MaxInstances,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The maximum number of instances for scaling.,
+        ConverterType: ,
+        ParameterName: maxInstances,
+        ArgumentName: maxInstances,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: min_instances,
+        Name: MinInstances,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The minimum number of instances for scaling.,
+        ConverterType: ,
+        ParameterName: minInstances,
+        ArgumentName: minInstances,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Configuration,
+    ClassName: Configuration,
+    GlobalClassName: global::G.Configuration,
+    ExternalClassName: Configuration,
+    FileNameWithoutExtension: G.Models.Configuration
+  },
+  {
+    Id: created_by,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: github_url,
+        Name: GithubUrl,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The GitHub URL of the account that created the release.,
+        ConverterType: ,
+        ParameterName: githubUrl,
+        ArgumentName: githubUrl,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: name,
+        Name: Name,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The name of the account that created the release.,
+        ConverterType: ,
+        ParameterName: name,
+        ArgumentName: name,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: type,
+        Name: Type,
+        Type: {
+          CSharpType: DeploymentsListResponseResultsCurrentReleaseCreatedByType?,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            Organization,
+            User
+          ],
+          EnumValues: [
+            organization,
+            user
+          ],
+          CSharpTypeWithoutNullability: DeploymentsListResponseResultsCurrentReleaseCreatedByType,
+          CSharpTypeWithNullability: DeploymentsListResponseResultsCurrentReleaseCreatedByType?,
+          ConverterType: DeploymentsListResponseResultsCurrentReleaseCreatedByTypeJsonConverter
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The account type of the creator. Can be a user or an organization.,
+        ConverterType: DeploymentsListResponseResultsCurrentReleaseCreatedByTypeJsonConverter,
+        ParameterName: type,
+        ArgumentName: type,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: username,
+        Name: Username,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The username of the account that created the release.,
+        ConverterType: ,
+        ParameterName: username,
+        ArgumentName: username,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: CreatedBy,
+    ClassName: CreatedBy,
+    GlobalClassName: global::G.CreatedBy,
+    ExternalClassName: CreatedBy,
+    FileNameWithoutExtension: G.Models.CreatedBy
+  },
+  {
+    Id: type,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: organization,
+        Name: Organization,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: organization,
+        ArgumentName: organization,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: user,
+        Name: User,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: user,
+        ArgumentName: user,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: The account type of the creator. Can be a user or an organization.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Type,
+    ClassName: Type,
+    GlobalClassName: global::G.Type,
+    ExternalClassName: Type,
+    FileNameWithoutExtension: G.Models.Type
+  },
+  {
     Id: DeploymentsCreateRequest,
     AddTypeName: false,
     Parents: null,
@@ -747,6 +1505,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -767,6 +1526,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: true,
@@ -787,6 +1547,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: true,
@@ -807,6 +1568,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -827,6 +1589,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -847,6 +1610,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -869,7 +1633,234 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     FileNameWithoutExtension: G.Models.DeploymentsCreateRequest
   },
   {
-    Id: DeploymentsUpdateRequest,
+    Id: DeploymentsCreateResponse,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: current_release,
+        Name: CurrentRelease,
+        Type: {
+          CSharpType: DeploymentsCreateResponseCurrentRelease?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: DeploymentsCreateResponseCurrentRelease,
+          CSharpTypeWithNullability: DeploymentsCreateResponseCurrentRelease?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: currentRelease,
+        ArgumentName: currentRelease,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: name,
+        Name: Name,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The name of the deployment.,
+        ConverterType: ,
+        ParameterName: name,
+        ArgumentName: name,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: owner,
+        Name: Owner,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The owner of the deployment.,
+        ConverterType: ,
+        ParameterName: owner,
+        ArgumentName: owner,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: DeploymentsCreateResponse,
+    ClassName: DeploymentsCreateResponse,
+    GlobalClassName: global::G.DeploymentsCreateResponse,
+    ExternalClassName: DeploymentsCreateResponse,
+    FileNameWithoutExtension: G.Models.DeploymentsCreateResponse
+  },
+  {
+    Id: current_release,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: configuration,
+        Name: Configuration,
+        Type: {
+          CSharpType: DeploymentsCreateResponseCurrentReleaseConfiguration?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: DeploymentsCreateResponseCurrentReleaseConfiguration,
+          CSharpTypeWithNullability: DeploymentsCreateResponseCurrentReleaseConfiguration?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: configuration,
+        ArgumentName: configuration,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: created_at,
+        Name: CreatedAt,
+        Type: {
+          CSharpType: global::System.DateTime,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: global::System.DateTime,
+          CSharpTypeWithNullability: global::System.DateTime?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The time the release was created.,
+        ConverterType: ,
+        ParameterName: createdAt,
+        ArgumentName: createdAt,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: created_by,
+        Name: CreatedBy,
+        Type: {
+          CSharpType: DeploymentsCreateResponseCurrentReleaseCreatedBy?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: DeploymentsCreateResponseCurrentReleaseCreatedBy,
+          CSharpTypeWithNullability: DeploymentsCreateResponseCurrentReleaseCreatedBy?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: createdBy,
+        ArgumentName: createdBy,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: model,
+        Name: Model,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The model identifier string in the format of `{model_owner}/{model_name}`.,
+        ConverterType: ,
+        ParameterName: model,
+        ArgumentName: model,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: number,
+        Name: Number,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The release number.,
+        ConverterType: ,
+        ParameterName: number,
+        ArgumentName: number,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: version,
+        Name: Version,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The ID of the model version used in the release.,
+        ConverterType: ,
+        ParameterName: version,
+        ArgumentName: version,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: CurrentRelease,
+    ClassName: CurrentRelease,
+    GlobalClassName: global::G.CurrentRelease,
+    ExternalClassName: CurrentRelease,
+    FileNameWithoutExtension: G.Models.CurrentRelease
+  },
+  {
+    Id: configuration,
     AddTypeName: false,
     Parents: null,
     TargetFramework: netstandard2.0,
@@ -886,11 +1877,12 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
-        Summary: The SKU for the hardware used to run the model. Possible values can be retrieved from the `hardware.list` endpoint.,
+        Summary: The SKU for the hardware used to run the model.,
         ConverterType: ,
         ParameterName: hardware,
         ArgumentName: hardware,
@@ -906,6 +1898,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -926,6 +1919,740 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The minimum number of instances for scaling.,
+        ConverterType: ,
+        ParameterName: minInstances,
+        ArgumentName: minInstances,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Configuration,
+    ClassName: Configuration,
+    GlobalClassName: global::G.Configuration,
+    ExternalClassName: Configuration,
+    FileNameWithoutExtension: G.Models.Configuration
+  },
+  {
+    Id: created_by,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: github_url,
+        Name: GithubUrl,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The GitHub URL of the account that created the release.,
+        ConverterType: ,
+        ParameterName: githubUrl,
+        ArgumentName: githubUrl,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: name,
+        Name: Name,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The name of the account that created the release.,
+        ConverterType: ,
+        ParameterName: name,
+        ArgumentName: name,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: type,
+        Name: Type,
+        Type: {
+          CSharpType: DeploymentsCreateResponseCurrentReleaseCreatedByType?,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            Organization,
+            User
+          ],
+          EnumValues: [
+            organization,
+            user
+          ],
+          CSharpTypeWithoutNullability: DeploymentsCreateResponseCurrentReleaseCreatedByType,
+          CSharpTypeWithNullability: DeploymentsCreateResponseCurrentReleaseCreatedByType?,
+          ConverterType: DeploymentsCreateResponseCurrentReleaseCreatedByTypeJsonConverter
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The account type of the creator. Can be a user or an organization.,
+        ConverterType: DeploymentsCreateResponseCurrentReleaseCreatedByTypeJsonConverter,
+        ParameterName: type,
+        ArgumentName: type,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: username,
+        Name: Username,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The username of the account that created the release.,
+        ConverterType: ,
+        ParameterName: username,
+        ArgumentName: username,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: CreatedBy,
+    ClassName: CreatedBy,
+    GlobalClassName: global::G.CreatedBy,
+    ExternalClassName: CreatedBy,
+    FileNameWithoutExtension: G.Models.CreatedBy
+  },
+  {
+    Id: type,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: organization,
+        Name: Organization,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: organization,
+        ArgumentName: organization,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: user,
+        Name: User,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: user,
+        ArgumentName: user,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: The account type of the creator. Can be a user or an organization.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Type,
+    ClassName: Type,
+    GlobalClassName: global::G.Type,
+    ExternalClassName: Type,
+    FileNameWithoutExtension: G.Models.Type
+  },
+  {
+    Id: DeploymentsGetResponse,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: current_release,
+        Name: CurrentRelease,
+        Type: {
+          CSharpType: DeploymentsGetResponseCurrentRelease?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: DeploymentsGetResponseCurrentRelease,
+          CSharpTypeWithNullability: DeploymentsGetResponseCurrentRelease?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: currentRelease,
+        ArgumentName: currentRelease,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: name,
+        Name: Name,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The name of the deployment.,
+        ConverterType: ,
+        ParameterName: name,
+        ArgumentName: name,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: owner,
+        Name: Owner,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The owner of the deployment.,
+        ConverterType: ,
+        ParameterName: owner,
+        ArgumentName: owner,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: DeploymentsGetResponse,
+    ClassName: DeploymentsGetResponse,
+    GlobalClassName: global::G.DeploymentsGetResponse,
+    ExternalClassName: DeploymentsGetResponse,
+    FileNameWithoutExtension: G.Models.DeploymentsGetResponse
+  },
+  {
+    Id: current_release,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: configuration,
+        Name: Configuration,
+        Type: {
+          CSharpType: DeploymentsGetResponseCurrentReleaseConfiguration?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: DeploymentsGetResponseCurrentReleaseConfiguration,
+          CSharpTypeWithNullability: DeploymentsGetResponseCurrentReleaseConfiguration?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: configuration,
+        ArgumentName: configuration,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: created_at,
+        Name: CreatedAt,
+        Type: {
+          CSharpType: global::System.DateTime,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: global::System.DateTime,
+          CSharpTypeWithNullability: global::System.DateTime?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The time the release was created.,
+        ConverterType: ,
+        ParameterName: createdAt,
+        ArgumentName: createdAt,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: created_by,
+        Name: CreatedBy,
+        Type: {
+          CSharpType: DeploymentsGetResponseCurrentReleaseCreatedBy?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: DeploymentsGetResponseCurrentReleaseCreatedBy,
+          CSharpTypeWithNullability: DeploymentsGetResponseCurrentReleaseCreatedBy?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: createdBy,
+        ArgumentName: createdBy,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: model,
+        Name: Model,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The model identifier string in the format of `{model_owner}/{model_name}`.,
+        ConverterType: ,
+        ParameterName: model,
+        ArgumentName: model,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: number,
+        Name: Number,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The release number.,
+        ConverterType: ,
+        ParameterName: number,
+        ArgumentName: number,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: version,
+        Name: Version,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The ID of the model version used in the release.,
+        ConverterType: ,
+        ParameterName: version,
+        ArgumentName: version,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: CurrentRelease,
+    ClassName: CurrentRelease,
+    GlobalClassName: global::G.CurrentRelease,
+    ExternalClassName: CurrentRelease,
+    FileNameWithoutExtension: G.Models.CurrentRelease
+  },
+  {
+    Id: configuration,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: hardware,
+        Name: Hardware,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The SKU for the hardware used to run the model.,
+        ConverterType: ,
+        ParameterName: hardware,
+        ArgumentName: hardware,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: max_instances,
+        Name: MaxInstances,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The maximum number of instances for scaling.,
+        ConverterType: ,
+        ParameterName: maxInstances,
+        ArgumentName: maxInstances,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: min_instances,
+        Name: MinInstances,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The minimum number of instances for scaling.,
+        ConverterType: ,
+        ParameterName: minInstances,
+        ArgumentName: minInstances,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Configuration,
+    ClassName: Configuration,
+    GlobalClassName: global::G.Configuration,
+    ExternalClassName: Configuration,
+    FileNameWithoutExtension: G.Models.Configuration
+  },
+  {
+    Id: created_by,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: github_url,
+        Name: GithubUrl,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The GitHub URL of the account that created the release.,
+        ConverterType: ,
+        ParameterName: githubUrl,
+        ArgumentName: githubUrl,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: name,
+        Name: Name,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The name of the account that created the release.,
+        ConverterType: ,
+        ParameterName: name,
+        ArgumentName: name,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: type,
+        Name: Type,
+        Type: {
+          CSharpType: DeploymentsGetResponseCurrentReleaseCreatedByType?,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            Organization,
+            User
+          ],
+          EnumValues: [
+            organization,
+            user
+          ],
+          CSharpTypeWithoutNullability: DeploymentsGetResponseCurrentReleaseCreatedByType,
+          CSharpTypeWithNullability: DeploymentsGetResponseCurrentReleaseCreatedByType?,
+          ConverterType: DeploymentsGetResponseCurrentReleaseCreatedByTypeJsonConverter
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The account type of the creator. Can be a user or an organization.,
+        ConverterType: DeploymentsGetResponseCurrentReleaseCreatedByTypeJsonConverter,
+        ParameterName: type,
+        ArgumentName: type,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: username,
+        Name: Username,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The username of the account that created the release.,
+        ConverterType: ,
+        ParameterName: username,
+        ArgumentName: username,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: CreatedBy,
+    ClassName: CreatedBy,
+    GlobalClassName: global::G.CreatedBy,
+    ExternalClassName: CreatedBy,
+    FileNameWithoutExtension: G.Models.CreatedBy
+  },
+  {
+    Id: type,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: organization,
+        Name: Organization,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: organization,
+        ArgumentName: organization,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: user,
+        Name: User,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: user,
+        ArgumentName: user,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: The account type of the creator. Can be a user or an organization.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Type,
+    ClassName: Type,
+    GlobalClassName: global::G.Type,
+    ExternalClassName: Type,
+    FileNameWithoutExtension: G.Models.Type
+  },
+  {
+    Id: DeploymentsUpdateRequest,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: hardware,
+        Name: Hardware,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The SKU for the hardware used to run the model. Possible values can be retrieved from the `hardware.list` endpoint.,
+        ConverterType: ,
+        ParameterName: hardware,
+        ArgumentName: hardware,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: max_instances,
+        Name: MaxInstances,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The maximum number of instances for scaling.,
+        ConverterType: ,
+        ParameterName: maxInstances,
+        ArgumentName: maxInstances,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: min_instances,
+        Name: MinInstances,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
           ConverterType: 
         },
         IsRequired: false,
@@ -946,6 +2673,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -968,6 +2696,547 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     FileNameWithoutExtension: G.Models.DeploymentsUpdateRequest
   },
   {
+    Id: DeploymentsUpdateResponse,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: current_release,
+        Name: CurrentRelease,
+        Type: {
+          CSharpType: DeploymentsUpdateResponseCurrentRelease?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: DeploymentsUpdateResponseCurrentRelease,
+          CSharpTypeWithNullability: DeploymentsUpdateResponseCurrentRelease?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: currentRelease,
+        ArgumentName: currentRelease,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: name,
+        Name: Name,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The name of the deployment.,
+        ConverterType: ,
+        ParameterName: name,
+        ArgumentName: name,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: owner,
+        Name: Owner,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The owner of the deployment.,
+        ConverterType: ,
+        ParameterName: owner,
+        ArgumentName: owner,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: DeploymentsUpdateResponse,
+    ClassName: DeploymentsUpdateResponse,
+    GlobalClassName: global::G.DeploymentsUpdateResponse,
+    ExternalClassName: DeploymentsUpdateResponse,
+    FileNameWithoutExtension: G.Models.DeploymentsUpdateResponse
+  },
+  {
+    Id: current_release,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: configuration,
+        Name: Configuration,
+        Type: {
+          CSharpType: DeploymentsUpdateResponseCurrentReleaseConfiguration?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: DeploymentsUpdateResponseCurrentReleaseConfiguration,
+          CSharpTypeWithNullability: DeploymentsUpdateResponseCurrentReleaseConfiguration?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: configuration,
+        ArgumentName: configuration,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: created_at,
+        Name: CreatedAt,
+        Type: {
+          CSharpType: global::System.DateTime,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: global::System.DateTime,
+          CSharpTypeWithNullability: global::System.DateTime?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The time the release was created.,
+        ConverterType: ,
+        ParameterName: createdAt,
+        ArgumentName: createdAt,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: created_by,
+        Name: CreatedBy,
+        Type: {
+          CSharpType: DeploymentsUpdateResponseCurrentReleaseCreatedBy?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: DeploymentsUpdateResponseCurrentReleaseCreatedBy,
+          CSharpTypeWithNullability: DeploymentsUpdateResponseCurrentReleaseCreatedBy?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: createdBy,
+        ArgumentName: createdBy,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: model,
+        Name: Model,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The model identifier string in the format of `{model_owner}/{model_name}`.,
+        ConverterType: ,
+        ParameterName: model,
+        ArgumentName: model,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: number,
+        Name: Number,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The release number.,
+        ConverterType: ,
+        ParameterName: number,
+        ArgumentName: number,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: version,
+        Name: Version,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The ID of the model version used in the release.,
+        ConverterType: ,
+        ParameterName: version,
+        ArgumentName: version,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: CurrentRelease,
+    ClassName: CurrentRelease,
+    GlobalClassName: global::G.CurrentRelease,
+    ExternalClassName: CurrentRelease,
+    FileNameWithoutExtension: G.Models.CurrentRelease
+  },
+  {
+    Id: configuration,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: hardware,
+        Name: Hardware,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The SKU for the hardware used to run the model.,
+        ConverterType: ,
+        ParameterName: hardware,
+        ArgumentName: hardware,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: max_instances,
+        Name: MaxInstances,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The maximum number of instances for scaling.,
+        ConverterType: ,
+        ParameterName: maxInstances,
+        ArgumentName: maxInstances,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: min_instances,
+        Name: MinInstances,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The minimum number of instances for scaling.,
+        ConverterType: ,
+        ParameterName: minInstances,
+        ArgumentName: minInstances,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Configuration,
+    ClassName: Configuration,
+    GlobalClassName: global::G.Configuration,
+    ExternalClassName: Configuration,
+    FileNameWithoutExtension: G.Models.Configuration
+  },
+  {
+    Id: created_by,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: github_url,
+        Name: GithubUrl,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The GitHub URL of the account that created the release.,
+        ConverterType: ,
+        ParameterName: githubUrl,
+        ArgumentName: githubUrl,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: name,
+        Name: Name,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The name of the account that created the release.,
+        ConverterType: ,
+        ParameterName: name,
+        ArgumentName: name,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: type,
+        Name: Type,
+        Type: {
+          CSharpType: DeploymentsUpdateResponseCurrentReleaseCreatedByType?,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            Organization,
+            User
+          ],
+          EnumValues: [
+            organization,
+            user
+          ],
+          CSharpTypeWithoutNullability: DeploymentsUpdateResponseCurrentReleaseCreatedByType,
+          CSharpTypeWithNullability: DeploymentsUpdateResponseCurrentReleaseCreatedByType?,
+          ConverterType: DeploymentsUpdateResponseCurrentReleaseCreatedByTypeJsonConverter
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The account type of the creator. Can be a user or an organization.,
+        ConverterType: DeploymentsUpdateResponseCurrentReleaseCreatedByTypeJsonConverter,
+        ParameterName: type,
+        ArgumentName: type,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: username,
+        Name: Username,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The username of the account that created the release.,
+        ConverterType: ,
+        ParameterName: username,
+        ArgumentName: username,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: CreatedBy,
+    ClassName: CreatedBy,
+    GlobalClassName: global::G.CreatedBy,
+    ExternalClassName: CreatedBy,
+    FileNameWithoutExtension: G.Models.CreatedBy
+  },
+  {
+    Id: type,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: organization,
+        Name: Organization,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: organization,
+        ArgumentName: organization,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: user,
+        Name: User,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: user,
+        ArgumentName: user,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: The account type of the creator. Can be a user or an organization.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Type,
+    ClassName: Type,
+    GlobalClassName: global::G.Type,
+    ExternalClassName: Type,
+    FileNameWithoutExtension: G.Models.Type
+  },
+  {
+    Id: HardwareListResponse,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: name,
+        Name: Name,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The name of the hardware.,
+        ConverterType: ,
+        ParameterName: name,
+        ArgumentName: name,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: sku,
+        Name: Sku,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The SKU of the hardware.,
+        ConverterType: ,
+        ParameterName: sku,
+        ArgumentName: sku,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: HardwareListResponse,
+    ClassName: HardwareListResponse,
+    GlobalClassName: global::G.HardwareListResponse,
+    ExternalClassName: HardwareListResponse,
+    FileNameWithoutExtension: G.Models.HardwareListResponse
+  },
+  {
     Id: ModelsCreateRequest,
     AddTypeName: false,
     Parents: null,
@@ -985,6 +3254,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1005,6 +3275,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1025,6 +3296,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1045,6 +3317,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1065,6 +3338,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1085,6 +3359,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1105,6 +3380,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: true,
@@ -1125,6 +3401,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1151,6 +3428,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
             private
           ],
           CSharpTypeWithoutNullability: ModelsCreateRequestVisibility,
+          CSharpTypeWithNullability: ModelsCreateRequestVisibility?,
           ConverterType: ModelsCreateRequestVisibilityJsonConverter
         },
         IsRequired: true,
@@ -1191,6 +3469,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1211,6 +3490,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Properties: null,
           EnumValues: null,
           CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1231,5 +3511,45 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     GlobalClassName: global::G.Visibility,
     ExternalClassName: Visibility,
     FileNameWithoutExtension: G.Models.Visibility
+  },
+  {
+    Id: WebhooksDefaultSecretGetResponse,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    GenerateSuperTypeForJsonSerializerContext: false,
+    Properties: [
+      {
+        Id: key,
+        Name: Key,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The signing secret.,
+        ConverterType: ,
+        ParameterName: key,
+        ArgumentName: key,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: WebhooksDefaultSecretGetResponse,
+    ClassName: WebhooksDefaultSecretGetResponse,
+    GlobalClassName: global::G.WebhooksDefaultSecretGetResponse,
+    ExternalClassName: WebhooksDefaultSecretGetResponse,
+    FileNameWithoutExtension: G.Models.WebhooksDefaultSecretGetResponse
   }
 ]

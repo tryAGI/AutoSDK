@@ -14,7 +14,7 @@ namespace G
         /// <param name="page"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task MigrationsListReposForAuthenticatedUserAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<MinimalRepository>> MigrationsListReposForAuthenticatedUserAsync(
             int migrationId,
             int perPage,
             int page,
@@ -29,6 +29,12 @@ namespace G
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
+
+            var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<MinimalRepository>?>(content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{content}\" ");
         }
     }
 }
