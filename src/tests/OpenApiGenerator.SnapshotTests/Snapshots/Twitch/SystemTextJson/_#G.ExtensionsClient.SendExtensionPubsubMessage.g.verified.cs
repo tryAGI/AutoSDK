@@ -43,7 +43,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task SendExtensionPubsubMessageAsync(
-            global::System.Collections.Generic.IList<string> target,
+            global::System.Collections.Generic.IList<SendExtensionPubSubMessageBodyTarget> target,
             string broadcasterId,
             string message,
             bool isGlobalBroadcast = default,

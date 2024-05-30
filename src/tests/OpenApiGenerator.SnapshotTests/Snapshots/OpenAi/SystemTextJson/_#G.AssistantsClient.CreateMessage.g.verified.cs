@@ -53,7 +53,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<MessageObject> CreateMessageAsync(
             string threadId,
-            string role,
+            CreateMessageRequestRole role,
             global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<MessageContentImageFileObject, MessageContentImageUrlObject, MessageRequestContentTextObject>>> content,
             global::System.Collections.Generic.IList<CreateMessageRequestAttachments?>? attachments = default,
             object? metadata = default,

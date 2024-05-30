@@ -20,7 +20,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> Target { get; set; }
+        public required global::System.Collections.Generic.IList<SendExtensionPubSubMessageBodyTarget> Target { get; set; }
 
         /// <summary>
         /// The ID of the broadcaster to send the message to. Don’t include this field if `is_global_broadcast` is set to **true**.

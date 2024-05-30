@@ -17,7 +17,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<ListVectorStoresResponse> ListVectorStoresAsync(
             int limit,
-            string order,
+            ListVectorStoresOrder order,
             string after,
             string before,
             global::System.Threading.CancellationToken cancellationToken = default)

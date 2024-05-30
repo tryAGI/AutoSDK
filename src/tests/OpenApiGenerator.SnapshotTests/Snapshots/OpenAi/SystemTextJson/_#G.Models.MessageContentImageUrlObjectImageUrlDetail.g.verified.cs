@@ -8,19 +8,53 @@ namespace G
     /// Specifies the detail level of the image. `low` uses fewer tokens, you can opt in to high resolution using `high`. Default value is `auto`
     /// <br/>Default Value: auto
     /// </summary>
-    public abstract class MessageContentImageUrlObjectImageUrlDetail
+    public enum MessageContentImageUrlObjectImageUrlDetail
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Auto = "auto";
+        Auto,
         /// <summary>
         /// 
         /// </summary>
-        public const string Low = "low";
+        Low,
         /// <summary>
         /// 
         /// </summary>
-        public const string High = "high";
+        High,
+    }
+
+    public static class MessageContentImageUrlObjectImageUrlDetailExtensions
+    {
+        public static string ToValueString(this MessageContentImageUrlObjectImageUrlDetail value)
+        {
+            return value switch
+            {
+                MessageContentImageUrlObjectImageUrlDetail.Auto => "auto",
+                MessageContentImageUrlObjectImageUrlDetail.Low => "low",
+                MessageContentImageUrlObjectImageUrlDetail.High => "high",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static MessageContentImageUrlObjectImageUrlDetail ToEnum(string value)
+        {
+            return value switch
+            {
+                "auto" => MessageContentImageUrlObjectImageUrlDetail.Auto,
+                "low" => MessageContentImageUrlObjectImageUrlDetail.Low,
+                "high" => MessageContentImageUrlObjectImageUrlDetail.High,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static MessageContentImageUrlObjectImageUrlDetail ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => MessageContentImageUrlObjectImageUrlDetail.Auto,
+                1 => MessageContentImageUrlObjectImageUrlDetail.Low,
+                2 => MessageContentImageUrlObjectImageUrlDetail.High,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

@@ -74,8 +74,9 @@ namespace G
         /// * RESOLVED — The winning outcome was determined and the Channel Points were distributed to the viewers who predicted the correct outcome.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PredictionStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
+        public required PredictionStatus Status { get; set; }
 
         /// <summary>
         /// The UTC date and time of when the Prediction began.

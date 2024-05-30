@@ -24,8 +24,9 @@ namespace G
         /// * OTHER — Covers other contribution methods not listed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.HypeTrainEventEventDataLastContributionTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required HypeTrainEventEventDataLastContributionType Type { get; set; }
 
         /// <summary>
         /// The ID of the user that made the contribution.

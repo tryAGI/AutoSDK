@@ -9,15 +9,46 @@ namespace G
     /// <br/>Default Value: text
     /// <br/>Example: json_object
     /// </summary>
-    public abstract class CreateChatCompletionRequestResponseFormatType
+    public enum CreateChatCompletionRequestResponseFormatType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Text = "text";
+        Text,
         /// <summary>
         /// 
         /// </summary>
-        public const string JsonObject = "json_object";
+        JsonObject,
+    }
+
+    public static class CreateChatCompletionRequestResponseFormatTypeExtensions
+    {
+        public static string ToValueString(this CreateChatCompletionRequestResponseFormatType value)
+        {
+            return value switch
+            {
+                CreateChatCompletionRequestResponseFormatType.Text => "text",
+                CreateChatCompletionRequestResponseFormatType.JsonObject => "json_object",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateChatCompletionRequestResponseFormatType ToEnum(string value)
+        {
+            return value switch
+            {
+                "text" => CreateChatCompletionRequestResponseFormatType.Text,
+                "json_object" => CreateChatCompletionRequestResponseFormatType.JsonObject,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateChatCompletionRequestResponseFormatType ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => CreateChatCompletionRequestResponseFormatType.Text,
+                1 => CreateChatCompletionRequestResponseFormatType.JsonObject,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

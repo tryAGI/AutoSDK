@@ -36,4 +36,41 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="RESOLVED")]
         RESOLVED,
     }
+
+    public static class PredictionStatusExtensions
+    {
+        public static string ToValueString(this PredictionStatus value)
+        {
+            return value switch
+            {
+                PredictionStatus.ACTIVE => "ACTIVE",
+                PredictionStatus.CANCELED => "CANCELED",
+                PredictionStatus.LOCKED => "LOCKED",
+                PredictionStatus.RESOLVED => "RESOLVED",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static PredictionStatus ToEnum(string value)
+        {
+            return value switch
+            {
+                "ACTIVE" => PredictionStatus.ACTIVE,
+                "CANCELED" => PredictionStatus.CANCELED,
+                "LOCKED" => PredictionStatus.LOCKED,
+                "RESOLVED" => PredictionStatus.RESOLVED,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static PredictionStatus ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => PredictionStatus.ACTIVE,
+                1 => PredictionStatus.CANCELED,
+                2 => PredictionStatus.LOCKED,
+                3 => PredictionStatus.RESOLVED,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

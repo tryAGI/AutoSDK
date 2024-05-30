@@ -7,11 +7,39 @@ namespace G
     /// <summary>
     /// The type of tool call. This is always going to be `function` for this type of tool call.
     /// </summary>
-    public abstract class RunStepDeltaStepDetailsToolCallsFunctionObjectType
+    public enum RunStepDeltaStepDetailsToolCallsFunctionObjectType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Function = "function";
+        Function,
+    }
+
+    public static class RunStepDeltaStepDetailsToolCallsFunctionObjectTypeExtensions
+    {
+        public static string ToValueString(this RunStepDeltaStepDetailsToolCallsFunctionObjectType value)
+        {
+            return value switch
+            {
+                RunStepDeltaStepDetailsToolCallsFunctionObjectType.Function => "function",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RunStepDeltaStepDetailsToolCallsFunctionObjectType ToEnum(string value)
+        {
+            return value switch
+            {
+                "function" => RunStepDeltaStepDetailsToolCallsFunctionObjectType.Function,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RunStepDeltaStepDetailsToolCallsFunctionObjectType ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => RunStepDeltaStepDetailsToolCallsFunctionObjectType.Function,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

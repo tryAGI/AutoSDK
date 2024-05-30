@@ -21,4 +21,35 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="private")]
         Private,
     }
+
+    public static class CreateModelsRequestVisibilityExtensions
+    {
+        public static string ToValueString(this CreateModelsRequestVisibility value)
+        {
+            return value switch
+            {
+                CreateModelsRequestVisibility.Public => "public",
+                CreateModelsRequestVisibility.Private => "private",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateModelsRequestVisibility ToEnum(string value)
+        {
+            return value switch
+            {
+                "public" => CreateModelsRequestVisibility.Public,
+                "private" => CreateModelsRequestVisibility.Private,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateModelsRequestVisibility ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => CreateModelsRequestVisibility.Public,
+                1 => CreateModelsRequestVisibility.Private,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

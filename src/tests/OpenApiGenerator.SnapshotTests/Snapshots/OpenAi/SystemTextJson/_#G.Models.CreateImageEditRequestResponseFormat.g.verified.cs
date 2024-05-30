@@ -9,15 +9,46 @@ namespace G
     /// <br/>Default Value: url
     /// <br/>Example: url
     /// </summary>
-    public abstract class CreateImageEditRequestResponseFormat
+    public enum CreateImageEditRequestResponseFormat
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Url = "url";
+        Url,
         /// <summary>
         /// 
         /// </summary>
-        public const string B64Json = "b64_json";
+        B64Json,
+    }
+
+    public static class CreateImageEditRequestResponseFormatExtensions
+    {
+        public static string ToValueString(this CreateImageEditRequestResponseFormat value)
+        {
+            return value switch
+            {
+                CreateImageEditRequestResponseFormat.Url => "url",
+                CreateImageEditRequestResponseFormat.B64Json => "b64_json",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateImageEditRequestResponseFormat ToEnum(string value)
+        {
+            return value switch
+            {
+                "url" => CreateImageEditRequestResponseFormat.Url,
+                "b64_json" => CreateImageEditRequestResponseFormat.B64Json,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateImageEditRequestResponseFormat ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => CreateImageEditRequestResponseFormat.Url,
+                1 => CreateImageEditRequestResponseFormat.B64Json,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

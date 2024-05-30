@@ -20,8 +20,9 @@ namespace G
         /// The object type, which is always `batch`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.BatchObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Object { get; set; }
+        public required BatchObject Object { get; set; }
 
         /// <summary>
         /// The OpenAI API endpoint used by the batch.
@@ -54,8 +55,9 @@ namespace G
         /// The current status of the batch.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.BatchStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
+        public required BatchStatus Status { get; set; }
 
         /// <summary>
         /// The ID of the file containing the outputs of successfully executed requests.

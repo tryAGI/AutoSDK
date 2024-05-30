@@ -17,4 +17,32 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="repositories")]
         Repositories,
     }
+
+    public static class MigrationsStartForAuthenticatedUserRequestExcludeExtensions
+    {
+        public static string ToValueString(this MigrationsStartForAuthenticatedUserRequestExclude value)
+        {
+            return value switch
+            {
+                MigrationsStartForAuthenticatedUserRequestExclude.Repositories => "repositories",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static MigrationsStartForAuthenticatedUserRequestExclude ToEnum(string value)
+        {
+            return value switch
+            {
+                "repositories" => MigrationsStartForAuthenticatedUserRequestExclude.Repositories,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static MigrationsStartForAuthenticatedUserRequestExclude ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => MigrationsStartForAuthenticatedUserRequestExclude.Repositories,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

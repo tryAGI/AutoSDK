@@ -21,7 +21,8 @@ namespace G
         /// <br/>Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
-        public string? Detail { get; set; } = MessageContentImageFileObjectImageFileDetail.Auto;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageContentImageFileObjectImageFileDetailJsonConverter))]
+        public MessageContentImageFileObjectImageFileDetail? Detail { get; set; } = MessageContentImageFileObjectImageFileDetail.Auto;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

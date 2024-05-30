@@ -10,27 +10,67 @@ namespace G
     /// `content_filter` if content was omitted due to a flag from our content filters,
     /// `tool_calls` if the model called a tool, or `function_call` (deprecated) if the model called a function.
     /// </summary>
-    public abstract class CreateChatCompletionResponseChoicesFinishReason
+    public enum CreateChatCompletionResponseChoicesFinishReason
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Stop = "stop";
+        Stop,
         /// <summary>
         /// 
         /// </summary>
-        public const string Length = "length";
+        Length,
         /// <summary>
         /// 
         /// </summary>
-        public const string ToolCalls = "tool_calls";
+        ToolCalls,
         /// <summary>
         /// 
         /// </summary>
-        public const string ContentFilter = "content_filter";
+        ContentFilter,
         /// <summary>
         /// 
         /// </summary>
-        public const string FunctionCall = "function_call";
+        FunctionCall,
+    }
+
+    public static class CreateChatCompletionResponseChoicesFinishReasonExtensions
+    {
+        public static string ToValueString(this CreateChatCompletionResponseChoicesFinishReason value)
+        {
+            return value switch
+            {
+                CreateChatCompletionResponseChoicesFinishReason.Stop => "stop",
+                CreateChatCompletionResponseChoicesFinishReason.Length => "length",
+                CreateChatCompletionResponseChoicesFinishReason.ToolCalls => "tool_calls",
+                CreateChatCompletionResponseChoicesFinishReason.ContentFilter => "content_filter",
+                CreateChatCompletionResponseChoicesFinishReason.FunctionCall => "function_call",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateChatCompletionResponseChoicesFinishReason ToEnum(string value)
+        {
+            return value switch
+            {
+                "stop" => CreateChatCompletionResponseChoicesFinishReason.Stop,
+                "length" => CreateChatCompletionResponseChoicesFinishReason.Length,
+                "tool_calls" => CreateChatCompletionResponseChoicesFinishReason.ToolCalls,
+                "content_filter" => CreateChatCompletionResponseChoicesFinishReason.ContentFilter,
+                "function_call" => CreateChatCompletionResponseChoicesFinishReason.FunctionCall,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateChatCompletionResponseChoicesFinishReason ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => CreateChatCompletionResponseChoicesFinishReason.Stop,
+                1 => CreateChatCompletionResponseChoicesFinishReason.Length,
+                2 => CreateChatCompletionResponseChoicesFinishReason.ToolCalls,
+                3 => CreateChatCompletionResponseChoicesFinishReason.ContentFilter,
+                4 => CreateChatCompletionResponseChoicesFinishReason.FunctionCall,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

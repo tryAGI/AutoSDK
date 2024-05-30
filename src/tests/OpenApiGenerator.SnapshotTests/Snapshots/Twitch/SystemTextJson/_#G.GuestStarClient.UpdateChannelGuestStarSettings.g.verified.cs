@@ -51,7 +51,7 @@ namespace G
             bool isModeratorSendLiveEnabled = default,
             int slotCount = default,
             bool isBrowserSourceAudioEnabled = default,
-            string? groupLayout = default,
+            UpdateChannelGuestStarSettingsBodyGroupLayout? groupLayout = default,
             bool regenerateBrowserSources = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

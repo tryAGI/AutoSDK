@@ -20,8 +20,9 @@ namespace G
         /// The object type, which is always `vector_store`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.VectorStoreObjectObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Object { get; set; }
+        public required VectorStoreObjectObject Object { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the vector store was created.
@@ -55,8 +56,9 @@ namespace G
         /// The status of the vector store, which can be either `expired`, `in_progress`, or `completed`. A status of `completed` indicates that the vector store is ready for use.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.VectorStoreObjectStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
+        public required VectorStoreObjectStatus Status { get; set; }
 
         /// <summary>
         /// The expiration policy for a vector store.

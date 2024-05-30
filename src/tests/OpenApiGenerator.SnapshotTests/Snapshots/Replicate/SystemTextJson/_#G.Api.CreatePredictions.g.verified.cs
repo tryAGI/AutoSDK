@@ -48,7 +48,7 @@ namespace G
             string version,
             bool stream = default,
             string? webhook = default,
-            global::System.Collections.Generic.IList<string?>? webhookEventsFilter = default,
+            global::System.Collections.Generic.IList<VersionPredictionRequestWebhookEventsFilter?>? webhookEventsFilter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new VersionPredictionRequest

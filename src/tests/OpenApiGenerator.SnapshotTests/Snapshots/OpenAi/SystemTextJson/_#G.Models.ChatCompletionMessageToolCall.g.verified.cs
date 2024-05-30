@@ -20,8 +20,9 @@ namespace G
         /// The type of the tool. Currently, only `function` is supported.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatCompletionMessageToolCallTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required ChatCompletionMessageToolCallType Type { get; set; }
 
         /// <summary>
         /// The function that the model called.

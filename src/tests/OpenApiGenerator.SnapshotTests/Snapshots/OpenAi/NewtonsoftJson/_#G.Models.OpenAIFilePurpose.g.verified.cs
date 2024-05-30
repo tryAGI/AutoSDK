@@ -46,4 +46,50 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="vision")]
         Vision,
     }
+
+    public static class OpenAIFilePurposeExtensions
+    {
+        public static string ToValueString(this OpenAIFilePurpose value)
+        {
+            return value switch
+            {
+                OpenAIFilePurpose.Assistants => "assistants",
+                OpenAIFilePurpose.AssistantsOutput => "assistants_output",
+                OpenAIFilePurpose.Batch => "batch",
+                OpenAIFilePurpose.BatchOutput => "batch_output",
+                OpenAIFilePurpose.FineTune => "fine-tune",
+                OpenAIFilePurpose.FineTuneResults => "fine-tune-results",
+                OpenAIFilePurpose.Vision => "vision",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static OpenAIFilePurpose ToEnum(string value)
+        {
+            return value switch
+            {
+                "assistants" => OpenAIFilePurpose.Assistants,
+                "assistants_output" => OpenAIFilePurpose.AssistantsOutput,
+                "batch" => OpenAIFilePurpose.Batch,
+                "batch_output" => OpenAIFilePurpose.BatchOutput,
+                "fine-tune" => OpenAIFilePurpose.FineTune,
+                "fine-tune-results" => OpenAIFilePurpose.FineTuneResults,
+                "vision" => OpenAIFilePurpose.Vision,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static OpenAIFilePurpose ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => OpenAIFilePurpose.Assistants,
+                1 => OpenAIFilePurpose.AssistantsOutput,
+                2 => OpenAIFilePurpose.Batch,
+                3 => OpenAIFilePurpose.BatchOutput,
+                4 => OpenAIFilePurpose.FineTune,
+                5 => OpenAIFilePurpose.FineTuneResults,
+                6 => OpenAIFilePurpose.Vision,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

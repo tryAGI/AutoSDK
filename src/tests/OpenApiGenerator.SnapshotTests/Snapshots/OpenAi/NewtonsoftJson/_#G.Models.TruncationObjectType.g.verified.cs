@@ -21,4 +21,35 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="last_messages")]
         LastMessages,
     }
+
+    public static class TruncationObjectTypeExtensions
+    {
+        public static string ToValueString(this TruncationObjectType value)
+        {
+            return value switch
+            {
+                TruncationObjectType.Auto => "auto",
+                TruncationObjectType.LastMessages => "last_messages",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static TruncationObjectType ToEnum(string value)
+        {
+            return value switch
+            {
+                "auto" => TruncationObjectType.Auto,
+                "last_messages" => TruncationObjectType.LastMessages,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static TruncationObjectType ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => TruncationObjectType.Auto,
+                1 => TruncationObjectType.LastMessages,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

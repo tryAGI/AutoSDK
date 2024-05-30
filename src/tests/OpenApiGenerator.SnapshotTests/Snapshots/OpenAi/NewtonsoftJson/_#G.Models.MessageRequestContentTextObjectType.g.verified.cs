@@ -16,4 +16,32 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="text")]
         Text,
     }
+
+    public static class MessageRequestContentTextObjectTypeExtensions
+    {
+        public static string ToValueString(this MessageRequestContentTextObjectType value)
+        {
+            return value switch
+            {
+                MessageRequestContentTextObjectType.Text => "text",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static MessageRequestContentTextObjectType ToEnum(string value)
+        {
+            return value switch
+            {
+                "text" => MessageRequestContentTextObjectType.Text,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static MessageRequestContentTextObjectType ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => MessageRequestContentTextObjectType.Text,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

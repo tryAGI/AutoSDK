@@ -27,4 +27,38 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="fine-tune")]
         FineTune,
     }
+
+    public static class CreateFileRequestPurposeExtensions
+    {
+        public static string ToValueString(this CreateFileRequestPurpose value)
+        {
+            return value switch
+            {
+                CreateFileRequestPurpose.Assistants => "assistants",
+                CreateFileRequestPurpose.Batch => "batch",
+                CreateFileRequestPurpose.FineTune => "fine-tune",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateFileRequestPurpose ToEnum(string value)
+        {
+            return value switch
+            {
+                "assistants" => CreateFileRequestPurpose.Assistants,
+                "batch" => CreateFileRequestPurpose.Batch,
+                "fine-tune" => CreateFileRequestPurpose.FineTune,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateFileRequestPurpose ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => CreateFileRequestPurpose.Assistants,
+                1 => CreateFileRequestPurpose.Batch,
+                2 => CreateFileRequestPurpose.FineTune,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

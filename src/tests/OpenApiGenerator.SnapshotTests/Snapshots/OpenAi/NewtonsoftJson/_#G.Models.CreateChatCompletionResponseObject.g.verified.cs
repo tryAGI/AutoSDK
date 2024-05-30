@@ -16,4 +16,32 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="chat.completion")]
         Chatcompletion,
     }
+
+    public static class CreateChatCompletionResponseObjectExtensions
+    {
+        public static string ToValueString(this CreateChatCompletionResponseObject value)
+        {
+            return value switch
+            {
+                CreateChatCompletionResponseObject.Chatcompletion => "chat.completion",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateChatCompletionResponseObject ToEnum(string value)
+        {
+            return value switch
+            {
+                "chat.completion" => CreateChatCompletionResponseObject.Chatcompletion,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateChatCompletionResponseObject ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => CreateChatCompletionResponseObject.Chatcompletion,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

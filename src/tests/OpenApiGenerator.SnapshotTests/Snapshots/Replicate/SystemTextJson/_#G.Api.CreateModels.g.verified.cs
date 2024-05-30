@@ -51,7 +51,7 @@ namespace G
             string hardware,
             string name,
             string owner,
-            string visibility,
+            CreateModelsRequestVisibility visibility,
             string? coverImageUrl = default,
             string? description = default,
             string? githubUrl = default,

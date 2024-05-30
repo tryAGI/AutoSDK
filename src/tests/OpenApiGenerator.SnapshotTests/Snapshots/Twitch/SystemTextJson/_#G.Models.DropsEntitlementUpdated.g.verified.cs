@@ -19,8 +19,9 @@ namespace G
         /// * UPDATE\_FAILED — The update failed. These are considered transient errors and the request should be retried later.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DropsEntitlementUpdatedStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
+        public required DropsEntitlementUpdatedStatus Status { get; set; }
 
         /// <summary>
         /// The list of entitlements that the status in the `status` field applies to.

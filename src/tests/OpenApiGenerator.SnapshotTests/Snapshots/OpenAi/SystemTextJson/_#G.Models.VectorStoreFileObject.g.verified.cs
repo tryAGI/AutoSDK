@@ -20,8 +20,9 @@ namespace G
         /// The object type, which is always `vector_store.file`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.VectorStoreFileObjectObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Object { get; set; }
+        public required VectorStoreFileObjectObject Object { get; set; }
 
         /// <summary>
         /// The total vector store usage in bytes. Note that this may be different from the original file size.
@@ -48,8 +49,9 @@ namespace G
         /// The status of the vector store file, which can be either `in_progress`, `completed`, `cancelled`, or `failed`. The status `completed` indicates that the vector store file is ready for use.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.VectorStoreFileObjectStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
+        public required VectorStoreFileObjectStatus Status { get; set; }
 
         /// <summary>
         /// The last error associated with this vector store file. Will be `null` if there are no errors.

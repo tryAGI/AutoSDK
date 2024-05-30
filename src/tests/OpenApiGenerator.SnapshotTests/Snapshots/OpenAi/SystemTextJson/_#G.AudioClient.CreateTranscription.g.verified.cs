@@ -46,10 +46,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task CreateTranscriptionAsync(
             byte[] file,
-            global::System.AnyOf<string, string> model,
+            global::System.AnyOf<string, CreateTranscriptionRequestModel> model,
             string? language = default,
             string? prompt = default,
-            string? responseFormat = CreateTranscriptionRequestResponseFormat.Json,
+            CreateTranscriptionRequestResponseFormat? responseFormat = CreateTranscriptionRequestResponseFormat.Json,
             double temperature = 0,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

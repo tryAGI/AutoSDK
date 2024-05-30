@@ -15,10 +15,10 @@
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -28,6 +28,7 @@ The model name.
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
 <br/>Example: llama2:7b,
+        ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
         ParameterDefaultValue: default
@@ -39,16 +40,17 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary:
 The prompt to generate a response.
 <br/>Example: Why is the sky blue?,
+        ConverterType: ,
         ParameterName: prompt,
         ArgumentName: prompt,
         ParameterDefaultValue: default
@@ -60,14 +62,15 @@ The prompt to generate a response.
           CSharpType: global::System.Collections.Generic.IList<string?>?,
           IsArray: true,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: (optional) a list of Base64-encoded images to include in the message (for multimodal models such as llava),
+        ConverterType: ,
         ParameterName: images,
         ArgumentName: images,
         ParameterDefaultValue: default
@@ -79,14 +82,15 @@ The prompt to generate a response.
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: The system prompt to (overrides what is defined in the Modelfile).,
+        ConverterType: ,
         ParameterName: system,
         ArgumentName: system,
         ParameterDefaultValue: default
@@ -98,14 +102,15 @@ The prompt to generate a response.
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: The full prompt or prompt template (overrides what is defined in the Modelfile).,
+        ConverterType: ,
         ParameterName: template,
         ArgumentName: template,
         ParameterDefaultValue: default
@@ -117,14 +122,15 @@ The prompt to generate a response.
           CSharpType: global::System.Collections.Generic.IList<int>?,
           IsArray: true,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<int>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<int>,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: The context parameter returned from a previous request to [generateCompletion], this can be used to keep a short conversational memory.,
+        ConverterType: ,
         ParameterName: context,
         ArgumentName: context,
         ParameterDefaultValue: default
@@ -136,7 +142,6 @@ The prompt to generate a response.
           CSharpType: RequestOptions?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: [
             num_keep,
             seed,
@@ -173,11 +178,13 @@ The prompt to generate a response.
             num_thread
           ],
           EnumValues: null,
-          CSharpTypeWithoutNullability: RequestOptions
+          CSharpTypeWithoutNullability: RequestOptions,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.,
+        ConverterType: ,
         ParameterName: options,
         ArgumentName: options,
         ParameterDefaultValue: default
@@ -186,17 +193,17 @@ The prompt to generate a response.
         Id: format,
         Name: Format,
         Type: {
-          CSharpType: string?,
+          CSharpType: GenerateCompletionRequestFormat?,
           IsArray: false,
           IsEnum: true,
-          IsAnyOf: false,
           Properties: [
             Json
           ],
           EnumValues: [
             json
           ],
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: GenerateCompletionRequestFormat,
+          ConverterType: GenerateCompletionRequestFormatJsonConverter
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -207,6 +214,7 @@ Enable JSON mode by setting the format parameter to json. This will structure th
 
 Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
 ,
+        ConverterType: GenerateCompletionRequestFormatJsonConverter,
         ParameterName: format,
         ArgumentName: format,
         ParameterDefaultValue: default
@@ -218,10 +226,10 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           CSharpType: bool,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: bool
+          CSharpTypeWithoutNullability: bool,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -230,6 +238,7 @@ If `true` no formatting will be applied to the prompt and no context will be ret
 
 You may choose to use the `raw` parameter if you are specifying a full templated prompt in your request to the API, and are managing history yourself.
 ,
+        ConverterType: ,
         ParameterName: raw,
         ArgumentName: raw,
         ParameterDefaultValue: default
@@ -241,10 +250,10 @@ You may choose to use the `raw` parameter if you are specifying a full templated
           CSharpType: bool,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: bool
+          CSharpTypeWithoutNullability: bool,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: false,
@@ -253,6 +262,7 @@ You may choose to use the `raw` parameter if you are specifying a full templated
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
 
 <br/>Default Value: false,
+        ConverterType: ,
         ParameterName: stream,
         ArgumentName: stream,
         ParameterDefaultValue: false
@@ -264,10 +274,10 @@ If `false` the response will be returned as a single response object, otherwise 
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: int
+          CSharpTypeWithoutNullability: int,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -279,6 +289,7 @@ How long (in minutes) to keep the model loaded in memory.
 - If set to 0, the model will be unloaded immediately once finished.
 - If not set, the model will stay loaded for 5 minutes by default
 ,
+        ConverterType: ,
         ParameterName: keepAlive,
         ArgumentName: keepAlive,
         ParameterDefaultValue: default
@@ -292,7 +303,6 @@ How long (in minutes) to keep the model loaded in memory.
       CSharpType: GenerateCompletionRequest,
       IsArray: false,
       IsEnum: false,
-      IsAnyOf: false,
       Properties: [
         model,
         prompt,
@@ -307,7 +317,8 @@ How long (in minutes) to keep the model loaded in memory.
         keep_alive
       ],
       EnumValues: null,
-      CSharpTypeWithoutNullability: GenerateCompletionRequest
+      CSharpTypeWithoutNullability: GenerateCompletionRequest,
+      ConverterType: 
     },
     ResponseType: GenerateCompletionResponse,
     AdditionalModels: null,
@@ -331,10 +342,10 @@ How long (in minutes) to keep the model loaded in memory.
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -344,6 +355,7 @@ The model name.
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
 <br/>Example: llama2:7b,
+        ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
         ParameterDefaultValue: default
@@ -355,14 +367,15 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           CSharpType: global::System.Collections.Generic.IList<Message>,
           IsArray: true,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Message>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Message>,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: The messages of the chat, this can be used to keep a chat memory,
+        ConverterType: ,
         ParameterName: messages,
         ArgumentName: messages,
         ParameterDefaultValue: default
@@ -371,17 +384,17 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         Id: format,
         Name: Format,
         Type: {
-          CSharpType: string?,
+          CSharpType: GenerateChatCompletionRequestFormat?,
           IsArray: false,
           IsEnum: true,
-          IsAnyOf: false,
           Properties: [
             Json
           ],
           EnumValues: [
             json
           ],
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: GenerateChatCompletionRequestFormat,
+          ConverterType: GenerateChatCompletionRequestFormatJsonConverter
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -392,6 +405,7 @@ Enable JSON mode by setting the format parameter to json. This will structure th
 
 Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
 ,
+        ConverterType: GenerateChatCompletionRequestFormatJsonConverter,
         ParameterName: format,
         ArgumentName: format,
         ParameterDefaultValue: default
@@ -403,7 +417,6 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           CSharpType: RequestOptions?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: [
             num_keep,
             seed,
@@ -440,11 +453,13 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
             num_thread
           ],
           EnumValues: null,
-          CSharpTypeWithoutNullability: RequestOptions
+          CSharpTypeWithoutNullability: RequestOptions,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.,
+        ConverterType: ,
         ParameterName: options,
         ArgumentName: options,
         ParameterDefaultValue: default
@@ -456,10 +471,10 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           CSharpType: bool,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: bool
+          CSharpTypeWithoutNullability: bool,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: false,
@@ -468,6 +483,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
 
 <br/>Default Value: false,
+        ConverterType: ,
         ParameterName: stream,
         ArgumentName: stream,
         ParameterDefaultValue: false
@@ -479,10 +495,10 @@ If `false` the response will be returned as a single response object, otherwise 
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: int
+          CSharpTypeWithoutNullability: int,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -494,6 +510,7 @@ How long (in minutes) to keep the model loaded in memory.
 - If set to 0, the model will be unloaded immediately once finished.
 - If not set, the model will stay loaded for 5 minutes by default
 ,
+        ConverterType: ,
         ParameterName: keepAlive,
         ArgumentName: keepAlive,
         ParameterDefaultValue: default
@@ -507,7 +524,6 @@ How long (in minutes) to keep the model loaded in memory.
       CSharpType: GenerateChatCompletionRequest,
       IsArray: false,
       IsEnum: false,
-      IsAnyOf: false,
       Properties: [
         model,
         messages,
@@ -517,7 +533,8 @@ How long (in minutes) to keep the model loaded in memory.
         keep_alive
       ],
       EnumValues: null,
-      CSharpTypeWithoutNullability: GenerateChatCompletionRequest
+      CSharpTypeWithoutNullability: GenerateChatCompletionRequest,
+      ConverterType: 
     },
     ResponseType: GenerateChatCompletionResponse,
     AdditionalModels: null,
@@ -541,10 +558,10 @@ How long (in minutes) to keep the model loaded in memory.
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -554,6 +571,7 @@ The model name.
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
 <br/>Example: llama2:7b,
+        ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
         ParameterDefaultValue: default
@@ -565,16 +583,17 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary:
 Text to generate embeddings for.
 <br/>Example: Here is an article about llamas...,
+        ConverterType: ,
         ParameterName: prompt,
         ArgumentName: prompt,
         ParameterDefaultValue: default
@@ -586,7 +605,6 @@ Text to generate embeddings for.
           CSharpType: RequestOptions?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: [
             num_keep,
             seed,
@@ -623,11 +641,13 @@ Text to generate embeddings for.
             num_thread
           ],
           EnumValues: null,
-          CSharpTypeWithoutNullability: RequestOptions
+          CSharpTypeWithoutNullability: RequestOptions,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: Additional model parameters listed in the documentation for the Modelfile such as `temperature`.,
+        ConverterType: ,
         ParameterName: options,
         ArgumentName: options,
         ParameterDefaultValue: default
@@ -641,14 +661,14 @@ Text to generate embeddings for.
       CSharpType: GenerateEmbeddingRequest,
       IsArray: false,
       IsEnum: false,
-      IsAnyOf: false,
       Properties: [
         model,
         prompt,
         options
       ],
       EnumValues: null,
-      CSharpTypeWithoutNullability: GenerateEmbeddingRequest
+      CSharpTypeWithoutNullability: GenerateEmbeddingRequest,
+      ConverterType: 
     },
     ResponseType: GenerateEmbeddingResponse,
     AdditionalModels: null,
@@ -672,10 +692,10 @@ Text to generate embeddings for.
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -685,6 +705,7 @@ The model name.
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
 <br/>Example: mario,
+        ConverterType: ,
         ParameterName: name,
         ArgumentName: name,
         ParameterDefaultValue: default
@@ -696,16 +717,17 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary:
 The contents of the Modelfile.
 <br/>Example: FROM llama2\nSYSTEM You are mario from Super Mario Bros.,
+        ConverterType: ,
         ParameterName: modelfile,
         ArgumentName: modelfile,
         ParameterDefaultValue: default
@@ -717,10 +739,10 @@ The contents of the Modelfile.
           CSharpType: bool,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: bool
+          CSharpTypeWithoutNullability: bool,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: false,
@@ -729,6 +751,7 @@ The contents of the Modelfile.
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
 
 <br/>Default Value: false,
+        ConverterType: ,
         ParameterName: stream,
         ArgumentName: stream,
         ParameterDefaultValue: false
@@ -742,14 +765,14 @@ If `false` the response will be returned as a single response object, otherwise 
       CSharpType: CreateModelRequest,
       IsArray: false,
       IsEnum: false,
-      IsAnyOf: false,
       Properties: [
         name,
         modelfile,
         stream
       ],
       EnumValues: null,
-      CSharpTypeWithoutNullability: CreateModelRequest
+      CSharpTypeWithoutNullability: CreateModelRequest,
+      ConverterType: 
     },
     ResponseType: CreateModelResponse,
     AdditionalModels: null,
@@ -773,10 +796,10 @@ If `false` the response will be returned as a single response object, otherwise 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
-      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
-      CSharpTypeWithoutNullability: 
+      CSharpTypeWithoutNullability: ,
+      ConverterType: 
     },
     ResponseType: ModelsResponse,
     AdditionalModels: null,
@@ -800,10 +823,10 @@ If `false` the response will be returned as a single response object, otherwise 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -813,6 +836,7 @@ The model name.
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
 <br/>Example: llama2:7b,
+        ConverterType: ,
         ParameterName: name,
         ArgumentName: name,
         ParameterDefaultValue: default
@@ -826,12 +850,12 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
       CSharpType: ModelInfoRequest,
       IsArray: false,
       IsEnum: false,
-      IsAnyOf: false,
       Properties: [
         name
       ],
       EnumValues: null,
-      CSharpTypeWithoutNullability: ModelInfoRequest
+      CSharpTypeWithoutNullability: ModelInfoRequest,
+      ConverterType: 
     },
     ResponseType: ModelInfo,
     AdditionalModels: null,
@@ -855,16 +879,17 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary:
 Name of the model to copy.
 <br/>Example: llama2:7b,
+        ConverterType: ,
         ParameterName: source,
         ArgumentName: source,
         ParameterDefaultValue: default
@@ -876,16 +901,17 @@ Name of the model to copy.
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary:
 Name of the new model.
 <br/>Example: llama2-backup,
+        ConverterType: ,
         ParameterName: destination,
         ArgumentName: destination,
         ParameterDefaultValue: default
@@ -899,13 +925,13 @@ Name of the new model.
       CSharpType: CopyModelRequest,
       IsArray: false,
       IsEnum: false,
-      IsAnyOf: false,
       Properties: [
         source,
         destination
       ],
       EnumValues: null,
-      CSharpTypeWithoutNullability: CopyModelRequest
+      CSharpTypeWithoutNullability: CopyModelRequest,
+      ConverterType: 
     },
     ResponseType: ,
     AdditionalModels: null,
@@ -929,10 +955,10 @@ Name of the new model.
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -942,6 +968,7 @@ The model name.
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
 <br/>Example: llama2:13b,
+        ConverterType: ,
         ParameterName: name,
         ArgumentName: name,
         ParameterDefaultValue: default
@@ -955,12 +982,12 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
       CSharpType: DeleteModelRequest,
       IsArray: false,
       IsEnum: false,
-      IsAnyOf: false,
       Properties: [
         name
       ],
       EnumValues: null,
-      CSharpTypeWithoutNullability: DeleteModelRequest
+      CSharpTypeWithoutNullability: DeleteModelRequest,
+      ConverterType: 
     },
     ResponseType: ,
     AdditionalModels: null,
@@ -984,10 +1011,10 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -997,6 +1024,7 @@ The model name.
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
 <br/>Example: llama2:7b,
+        ConverterType: ,
         ParameterName: name,
         ArgumentName: name,
         ParameterDefaultValue: default
@@ -1008,10 +1036,10 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           CSharpType: bool,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: bool
+          CSharpTypeWithoutNullability: bool,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: false,
@@ -1022,6 +1050,7 @@ Allow insecure connections to the library.
 Only use this if you are pulling from your own library during development.
 
 <br/>Default Value: false,
+        ConverterType: ,
         ParameterName: insecure,
         ArgumentName: insecure,
         ParameterDefaultValue: false
@@ -1033,10 +1062,10 @@ Only use this if you are pulling from your own library during development.
           CSharpType: bool,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: bool
+          CSharpTypeWithoutNullability: bool,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: false,
@@ -1045,6 +1074,7 @@ Only use this if you are pulling from your own library during development.
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
 
 <br/>Default Value: false,
+        ConverterType: ,
         ParameterName: stream,
         ArgumentName: stream,
         ParameterDefaultValue: false
@@ -1058,14 +1088,14 @@ If `false` the response will be returned as a single response object, otherwise 
       CSharpType: PullModelRequest,
       IsArray: false,
       IsEnum: false,
-      IsAnyOf: false,
       Properties: [
         name,
         insecure,
         stream
       ],
       EnumValues: null,
-      CSharpTypeWithoutNullability: PullModelRequest
+      CSharpTypeWithoutNullability: PullModelRequest,
+      ConverterType: 
     },
     ResponseType: PullModelResponse,
     AdditionalModels: null,
@@ -1089,16 +1119,17 @@ If `false` the response will be returned as a single response object, otherwise 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary:
 The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt;tag&gt;.
 <br/>Example: mattw/pygmalion:latest,
+        ConverterType: ,
         ParameterName: name,
         ArgumentName: name,
         ParameterDefaultValue: default
@@ -1110,10 +1141,10 @@ The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt
           CSharpType: bool,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: bool
+          CSharpTypeWithoutNullability: bool,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: false,
@@ -1124,6 +1155,7 @@ Allow insecure connections to the library.
 Only use this if you are pushing to your library during development.
 
 <br/>Default Value: false,
+        ConverterType: ,
         ParameterName: insecure,
         ArgumentName: insecure,
         ParameterDefaultValue: false
@@ -1135,10 +1167,10 @@ Only use this if you are pushing to your library during development.
           CSharpType: bool,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: bool
+          CSharpTypeWithoutNullability: bool,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: false,
@@ -1147,6 +1179,7 @@ Only use this if you are pushing to your library during development.
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
 
 <br/>Default Value: false,
+        ConverterType: ,
         ParameterName: stream,
         ArgumentName: stream,
         ParameterDefaultValue: false
@@ -1160,14 +1193,14 @@ If `false` the response will be returned as a single response object, otherwise 
       CSharpType: PushModelRequest,
       IsArray: false,
       IsEnum: false,
-      IsAnyOf: false,
       Properties: [
         name,
         insecure,
         stream
       ],
       EnumValues: null,
-      CSharpTypeWithoutNullability: PushModelRequest
+      CSharpTypeWithoutNullability: PushModelRequest,
+      ConverterType: 
     },
     ResponseType: PushModelResponse,
     AdditionalModels: null,
@@ -1191,14 +1224,15 @@ If `false` the response will be returned as a single response object, otherwise 
           CSharpType: CompletionsClient,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: CompletionsClient
+          CSharpTypeWithoutNullability: CompletionsClient,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: Given a prompt, the model will generate a completion.,
+        ConverterType: ,
         ParameterName: completions,
         ArgumentName: completions,
         ParameterDefaultValue: default
@@ -1210,14 +1244,15 @@ If `false` the response will be returned as a single response object, otherwise 
           CSharpType: ChatClient,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: ChatClient
+          CSharpTypeWithoutNullability: ChatClient,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: Given a list of messages comprising a conversation, the model will return a response.,
+        ConverterType: ,
         ParameterName: chat,
         ArgumentName: chat,
         ParameterDefaultValue: default
@@ -1229,14 +1264,15 @@ If `false` the response will be returned as a single response object, otherwise 
           CSharpType: EmbeddingsClient,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: EmbeddingsClient
+          CSharpTypeWithoutNullability: EmbeddingsClient,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: Get a vector representation of a given input.,
+        ConverterType: ,
         ParameterName: embeddings,
         ArgumentName: embeddings,
         ParameterDefaultValue: default
@@ -1248,14 +1284,15 @@ If `false` the response will be returned as a single response object, otherwise 
           CSharpType: ModelsClient,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: ModelsClient
+          CSharpTypeWithoutNullability: ModelsClient,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: List and describe the various models available.,
+        ConverterType: ,
         ParameterName: models,
         ArgumentName: models,
         ParameterDefaultValue: default
@@ -1268,10 +1305,10 @@ If `false` the response will be returned as a single response object, otherwise 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
-      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
-      CSharpTypeWithoutNullability: 
+      CSharpTypeWithoutNullability: ,
+      ConverterType: 
     },
     ResponseType: ,
     AdditionalModels: null,
@@ -1295,10 +1332,10 @@ If `false` the response will be returned as a single response object, otherwise 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
-      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
-      CSharpTypeWithoutNullability: 
+      CSharpTypeWithoutNullability: ,
+      ConverterType: 
     },
     ResponseType: ,
     AdditionalModels: null,
@@ -1322,10 +1359,10 @@ If `false` the response will be returned as a single response object, otherwise 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
-      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
-      CSharpTypeWithoutNullability: 
+      CSharpTypeWithoutNullability: ,
+      ConverterType: 
     },
     ResponseType: ,
     AdditionalModels: null,
@@ -1349,10 +1386,10 @@ If `false` the response will be returned as a single response object, otherwise 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
-      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
-      CSharpTypeWithoutNullability: 
+      CSharpTypeWithoutNullability: ,
+      ConverterType: 
     },
     ResponseType: ,
     AdditionalModels: null,
@@ -1376,10 +1413,10 @@ If `false` the response will be returned as a single response object, otherwise 
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
-      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
-      CSharpTypeWithoutNullability: 
+      CSharpTypeWithoutNullability: ,
+      ConverterType: 
     },
     ResponseType: ,
     AdditionalModels: null,

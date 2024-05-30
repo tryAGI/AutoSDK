@@ -1,7 +1,6 @@
 using System.Collections.Immutable;
 using Microsoft.OpenApi.Models;
 using OpenApiGenerator.Core.Extensions;
-using OpenApiGenerator.Core.Json;
 
 namespace OpenApiGenerator.Core.Models;
 
@@ -9,7 +8,9 @@ public readonly record struct TypeData(
     string CSharpType,
     bool IsArray,
     bool IsEnum,
-    bool IsAnyOf,
+    int AnyOfCount,
+    int OneOfCount,
+    int AllOfCount,
     ImmutableArray<string> Properties,
     ImmutableArray<string> EnumValues)
 {
@@ -17,11 +18,22 @@ public readonly record struct TypeData(
         CSharpType: string.Empty,
         IsArray: false,
         IsEnum: false,
-        IsAnyOf: false,
+        AnyOfCount: 0,
+        OneOfCount: 0,
+        AllOfCount: 0,
         Properties: [],
         EnumValues: []);
     
     public string CSharpTypeWithoutNullability => CSharpType.TrimEnd('?');
+    public string ConverterType => IsEnum
+        ? $"{CSharpTypeWithoutNullability}JsonConverter"
+        : AnyOfCount > 0
+            ? $"AnyOfJsonConverterFactory{AnyOfCount}"
+            : OneOfCount > 0
+                ? $"OneOfJsonConverterFactory{OneOfCount}"
+                : AllOfCount > 0
+                    ? $"AllOfJsonConverterFactory{AllOfCount}"
+                    : string.Empty;
 
     public static TypeData FromSchema(
         KeyValuePair<string, OpenApiSchema> schema,
@@ -55,7 +67,9 @@ public readonly record struct TypeData(
             CSharpType: GetCSharpType(schema, settings, parents),
             IsArray: schema.Value.Type == "array",
             IsEnum: schema.Value.IsEnum(),
-            IsAnyOf: schema.Value.AnyOf?.Count > 0 || schema.Value.OneOf?.Count > 0 || schema.Value.AllOf?.Count > 0,
+            AnyOfCount: schema.Value.AnyOf?.Count ?? 0,
+            OneOfCount: schema.Value.OneOf?.Count ?? 0,
+            AllOfCount: schema.Value.AllOf?.Count ?? 0,
             Properties: properties,
             EnumValues: enumValues);
     }
@@ -82,11 +96,10 @@ public readonly record struct TypeData(
             (null, _) when schema.Value.OneOf.Any() => ($"global::System.OneOf<{string.Join(", ", schema.Value.OneOf.Select(x => GetCSharpType(x.WithKey(schema.Key), settings, parents)))}>", false),
             (null, _) when schema.Value.AllOf.Any() => ($"global::System.AllOf<{string.Join(", ", schema.Value.AllOf.Select(x => GetCSharpType(x.WithKey(schema.Key), settings, parents)))}>", false),
 
-            // Only Newtonsoft.Json supports EnumMemberAttribute
-            ("string", _) when schema.Value.Enum.Any() && settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson =>
+            ("string", _) when schema.Value.Enum.Any() =>
                 ($"{(model with { Style = ModelStyle.Enumeration }).ExternalClassName}", true),
-            ("string", _) when schema.Value.Enum.Any() && settings.JsonSerializerType != JsonSerializerType.NewtonsoftJson =>
-                ("string", true),
+            // ("string", _) when schema.Value.Enum.Any() && settings.JsonSerializerType != JsonSerializerType.NewtonsoftJson =>
+            //     ("string", true),
 
             ("boolean", _) => ("bool", false),
             ("integer", "int32") => ("int", false),

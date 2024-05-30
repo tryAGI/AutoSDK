@@ -27,8 +27,9 @@ namespace G
         /// The object type, which is always "list".
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateEmbeddingResponseObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Object { get; set; }
+        public required CreateEmbeddingResponseObject Object { get; set; }
 
         /// <summary>
         /// The usage information for the request.

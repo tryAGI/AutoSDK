@@ -40,8 +40,9 @@ namespace G
         /// * none — The extension doesn't require configuration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("configuration_location")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ExtensionConfigurationLocationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ConfigurationLocation { get; set; }
+        public required ExtensionConfigurationLocation ConfigurationLocation { get; set; }
 
         /// <summary>
         /// A longer description of the extension. It appears on the details page.
@@ -127,8 +128,9 @@ namespace G
         /// * Released
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ExtensionStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string State { get; set; }
+        public required ExtensionState State { get; set; }
 
         /// <summary>
         /// Indicates whether the extension can view the user’s subscription level on the channel that the extension is installed on. Possible values are:  
@@ -137,8 +139,9 @@ namespace G
         /// * optional — The extension can view the user’s subscription level.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("subscriptions_support_level")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ExtensionSubscriptionsSupportLevelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string SubscriptionsSupportLevel { get; set; }
+        public required ExtensionSubscriptionsSupportLevel SubscriptionsSupportLevel { get; set; }
 
         /// <summary>
         /// A short description of the extension that streamers see when hovering over the discovery splash screen in the Extensions manager.

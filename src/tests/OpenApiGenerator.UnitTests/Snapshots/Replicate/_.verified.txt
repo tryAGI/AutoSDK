@@ -14,10 +14,10 @@
           CSharpType: object,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: object,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -38,6 +38,7 @@ Use a data URL when:
 - you don't want to upload and host the file somewhere
 - you don't need to use the file again (Replicate will not store it)
 ,
+        ConverterType: ,
         ParameterName: input,
         ArgumentName: input,
         ParameterDefaultValue: default
@@ -49,10 +50,10 @@ Use a data URL when:
           CSharpType: bool,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: bool
+          CSharpTypeWithoutNullability: bool,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -61,6 +62,7 @@ Request a URL to receive streaming output using [server-sent events (SSE)](https
 
 If the requested model version supports streaming, the returned prediction will have a `stream` entry in its `urls` property with an HTTPS URL that you can use to construct an [`EventSource`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource).
 ,
+        ConverterType: ,
         ParameterName: stream,
         ArgumentName: stream,
         ParameterDefaultValue: default
@@ -72,16 +74,17 @@ If the requested model version supports streaming, the returned prediction will 
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary:
 An HTTPS URL for receiving a webhook when the prediction has new output. The webhook will be a POST request where the request body is the same as the response body of the [get prediction](#predictions.get) operation. If there are network problems, we will retry the webhook a few times, so make sure it can be safely called more than once. Replicate will not follow redirects when sending webhook requests to your service, so be sure to specify a URL that will resolve without redirecting.
 ,
+        ConverterType: ,
         ParameterName: webhook,
         ArgumentName: webhook,
         ParameterDefaultValue: default
@@ -90,13 +93,13 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
         Id: webhook_events_filter,
         Name: WebhookEventsFilter,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<string?>?,
+          CSharpType: global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>?,
           IsArray: true,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -122,6 +125,7 @@ For example, if you only wanted requests to be sent at the start and end of the 
 
 Requests for event types `output` and `logs` will be sent at most once every 500ms. If you request `start` and `completed` webhooks, then they'll always be sent regardless of throttling.
 ,
+        ConverterType: ,
         ParameterName: webhookEventsFilter,
         ArgumentName: webhookEventsFilter,
         ParameterDefaultValue: default
@@ -133,6 +137,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Enumerations: null,
     Name: PredictionRequest,
     ClassName: PredictionRequest,
+    GlobalClassName: global::G.PredictionRequest,
     ExternalClassName: PredictionRequest,
     FileNameWithoutExtension: G.Models.PredictionRequest
   },
@@ -152,14 +157,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: start,
         ArgumentName: start,
         ParameterDefaultValue: default
@@ -171,14 +177,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: output,
         ArgumentName: output,
         ParameterDefaultValue: default
@@ -190,14 +197,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: logs,
         ArgumentName: logs,
         ParameterDefaultValue: default
@@ -209,14 +217,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: completed,
         ArgumentName: completed,
         ParameterDefaultValue: default
@@ -228,6 +237,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Enumerations: null,
     Name: WebhookEventsFilter,
     ClassName: WebhookEventsFilter,
+    GlobalClassName: global::G.WebhookEventsFilter,
     ExternalClassName: WebhookEventsFilter,
     FileNameWithoutExtension: G.Models.WebhookEventsFilter
   },
@@ -246,16 +256,17 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary:
 A string representing the desired model to push to in the format `{destination_model_owner}/{destination_model_name}`. This should be an existing model owned by the user or organization making the API request. If the destination is invalid, the server will return an appropriate 4XX response.
 ,
+        ConverterType: ,
         ParameterName: destination,
         ArgumentName: destination,
         ParameterDefaultValue: default
@@ -267,16 +278,17 @@ A string representing the desired model to push to in the format `{destination_m
           CSharpType: object,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: object,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary:
 An object containing inputs to the Cog model's `train()` function.
 ,
+        ConverterType: ,
         ParameterName: input,
         ArgumentName: input,
         ParameterDefaultValue: default
@@ -288,14 +300,15 @@ An object containing inputs to the Cog model's `train()` function.
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: An HTTPS URL for receiving a webhook when the training completes. The webhook will be a POST request where the request body is the same as the response body of the [get training](#trainings.get) operation. If there are network problems, we will retry the webhook a few times, so make sure it can be safely called more than once. Replicate will not follow redirects when sending webhook requests to your service, so be sure to specify a URL that will resolve without redirecting.,
+        ConverterType: ,
         ParameterName: webhook,
         ArgumentName: webhook,
         ParameterDefaultValue: default
@@ -304,13 +317,13 @@ An object containing inputs to the Cog model's `train()` function.
         Id: webhook_events_filter,
         Name: WebhookEventsFilter,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<string?>?,
+          CSharpType: global::System.Collections.Generic.IList<TrainingRequestWebhookEventsFilter?>?,
           IsArray: true,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<TrainingRequestWebhookEventsFilter?>,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -337,6 +350,7 @@ For example, if you only wanted requests to be sent at the start and end of the 
 
 Requests for event types `output` and `logs` will be sent at most once every 500ms. If you request `start` and `completed` webhooks, then they'll always be sent regardless of throttling.
 ,
+        ConverterType: ,
         ParameterName: webhookEventsFilter,
         ArgumentName: webhookEventsFilter,
         ParameterDefaultValue: default
@@ -348,6 +362,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Enumerations: null,
     Name: TrainingRequest,
     ClassName: TrainingRequest,
+    GlobalClassName: global::G.TrainingRequest,
     ExternalClassName: TrainingRequest,
     FileNameWithoutExtension: G.Models.TrainingRequest
   },
@@ -367,14 +382,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: start,
         ArgumentName: start,
         ParameterDefaultValue: default
@@ -386,14 +402,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: output,
         ArgumentName: output,
         ParameterDefaultValue: default
@@ -405,14 +422,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: logs,
         ArgumentName: logs,
         ParameterDefaultValue: default
@@ -424,14 +442,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: completed,
         ArgumentName: completed,
         ParameterDefaultValue: default
@@ -443,6 +462,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Enumerations: null,
     Name: WebhookEventsFilter,
     ClassName: WebhookEventsFilter,
+    GlobalClassName: global::G.WebhookEventsFilter,
     ExternalClassName: WebhookEventsFilter,
     FileNameWithoutExtension: G.Models.WebhookEventsFilter
   },
@@ -461,10 +481,10 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: object,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: object,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
@@ -485,6 +505,7 @@ Use a data URL when:
 - you don't want to upload and host the file somewhere
 - you don't need to use the file again (Replicate will not store it)
 ,
+        ConverterType: ,
         ParameterName: input,
         ArgumentName: input,
         ParameterDefaultValue: default
@@ -496,10 +517,10 @@ Use a data URL when:
           CSharpType: bool,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: bool
+          CSharpTypeWithoutNullability: bool,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -508,6 +529,7 @@ Request a URL to receive streaming output using [server-sent events (SSE)](https
 
 If the requested model version supports streaming, the returned prediction will have a `stream` entry in its `urls` property with an HTTPS URL that you can use to construct an [`EventSource`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource).
 ,
+        ConverterType: ,
         ParameterName: stream,
         ArgumentName: stream,
         ParameterDefaultValue: default
@@ -519,14 +541,15 @@ If the requested model version supports streaming, the returned prediction will 
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: The ID of the model version that you want to run.,
+        ConverterType: ,
         ParameterName: version,
         ArgumentName: version,
         ParameterDefaultValue: default
@@ -538,16 +561,17 @@ If the requested model version supports streaming, the returned prediction will 
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary:
 An HTTPS URL for receiving a webhook when the prediction has new output. The webhook will be a POST request where the request body is the same as the response body of the [get prediction](#predictions.get) operation. If there are network problems, we will retry the webhook a few times, so make sure it can be safely called more than once. Replicate will not follow redirects when sending webhook requests to your service, so be sure to specify a URL that will resolve without redirecting.
 ,
+        ConverterType: ,
         ParameterName: webhook,
         ArgumentName: webhook,
         ParameterDefaultValue: default
@@ -556,13 +580,13 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
         Id: webhook_events_filter,
         Name: WebhookEventsFilter,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<string?>?,
+          CSharpType: global::System.Collections.Generic.IList<VersionPredictionRequestWebhookEventsFilter?>?,
           IsArray: true,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<VersionPredictionRequestWebhookEventsFilter?>,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -589,6 +613,7 @@ For example, if you only wanted requests to be sent at the start and end of the 
 
 Requests for event types `output` and `logs` will be sent at most once every 500ms. If you request `start` and `completed` webhooks, then they'll always be sent regardless of throttling.
 ,
+        ConverterType: ,
         ParameterName: webhookEventsFilter,
         ArgumentName: webhookEventsFilter,
         ParameterDefaultValue: default
@@ -600,6 +625,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Enumerations: null,
     Name: VersionPredictionRequest,
     ClassName: VersionPredictionRequest,
+    GlobalClassName: global::G.VersionPredictionRequest,
     ExternalClassName: VersionPredictionRequest,
     FileNameWithoutExtension: G.Models.VersionPredictionRequest
   },
@@ -619,14 +645,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: start,
         ArgumentName: start,
         ParameterDefaultValue: default
@@ -638,14 +665,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: output,
         ArgumentName: output,
         ParameterDefaultValue: default
@@ -657,14 +685,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: logs,
         ArgumentName: logs,
         ParameterDefaultValue: default
@@ -676,14 +705,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: completed,
         ArgumentName: completed,
         ParameterDefaultValue: default
@@ -695,6 +725,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Enumerations: null,
     Name: WebhookEventsFilter,
     ClassName: WebhookEventsFilter,
+    GlobalClassName: global::G.WebhookEventsFilter,
     ExternalClassName: WebhookEventsFilter,
     FileNameWithoutExtension: G.Models.WebhookEventsFilter
   },
@@ -713,14 +744,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: The SKU for the hardware used to run the model. Possible values can be retrieved from the `hardware.list` endpoint.,
+        ConverterType: ,
         ParameterName: hardware,
         ArgumentName: hardware,
         ParameterDefaultValue: default
@@ -732,14 +764,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: int
+          CSharpTypeWithoutNullability: int,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: The maximum number of instances for scaling.,
+        ConverterType: ,
         ParameterName: maxInstances,
         ArgumentName: maxInstances,
         ParameterDefaultValue: default
@@ -751,14 +784,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: int
+          CSharpTypeWithoutNullability: int,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: The minimum number of instances for scaling.,
+        ConverterType: ,
         ParameterName: minInstances,
         ArgumentName: minInstances,
         ParameterDefaultValue: default
@@ -770,14 +804,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: The full name of the model that you want to deploy e.g. stability-ai/sdxl.,
+        ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
         ParameterDefaultValue: default
@@ -789,14 +824,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: The name of the deployment.,
+        ConverterType: ,
         ParameterName: name,
         ArgumentName: name,
         ParameterDefaultValue: default
@@ -808,14 +844,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: The 64-character string ID of the model version that you want to deploy.,
+        ConverterType: ,
         ParameterName: version,
         ArgumentName: version,
         ParameterDefaultValue: default
@@ -827,6 +864,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Enumerations: null,
     Name: DeploymentsCreateRequest,
     ClassName: DeploymentsCreateRequest,
+    GlobalClassName: global::G.DeploymentsCreateRequest,
     ExternalClassName: DeploymentsCreateRequest,
     FileNameWithoutExtension: G.Models.DeploymentsCreateRequest
   },
@@ -845,14 +883,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: The SKU for the hardware used to run the model. Possible values can be retrieved from the `hardware.list` endpoint.,
+        ConverterType: ,
         ParameterName: hardware,
         ArgumentName: hardware,
         ParameterDefaultValue: default
@@ -864,14 +903,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: int
+          CSharpTypeWithoutNullability: int,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: The maximum number of instances for scaling.,
+        ConverterType: ,
         ParameterName: maxInstances,
         ArgumentName: maxInstances,
         ParameterDefaultValue: default
@@ -883,14 +923,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: int
+          CSharpTypeWithoutNullability: int,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: The minimum number of instances for scaling.,
+        ConverterType: ,
         ParameterName: minInstances,
         ArgumentName: minInstances,
         ParameterDefaultValue: default
@@ -902,14 +943,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: The ID of the model version that you want to deploy,
+        ConverterType: ,
         ParameterName: version,
         ArgumentName: version,
         ParameterDefaultValue: default
@@ -921,6 +963,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Enumerations: null,
     Name: DeploymentsUpdateRequest,
     ClassName: DeploymentsUpdateRequest,
+    GlobalClassName: global::G.DeploymentsUpdateRequest,
     ExternalClassName: DeploymentsUpdateRequest,
     FileNameWithoutExtension: G.Models.DeploymentsUpdateRequest
   },
@@ -939,14 +982,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: A URL for the model's cover image. This should be an image file.,
+        ConverterType: ,
         ParameterName: coverImageUrl,
         ArgumentName: coverImageUrl,
         ParameterDefaultValue: default
@@ -958,14 +1002,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: A description of the model.,
+        ConverterType: ,
         ParameterName: description,
         ArgumentName: description,
         ParameterDefaultValue: default
@@ -977,14 +1022,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: A URL for the model's source code on GitHub.,
+        ConverterType: ,
         ParameterName: githubUrl,
         ArgumentName: githubUrl,
         ParameterDefaultValue: default
@@ -996,14 +1042,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: The SKU for the hardware used to run the model. Possible values can be retrieved from the `hardware.list` endpoint.,
+        ConverterType: ,
         ParameterName: hardware,
         ArgumentName: hardware,
         ParameterDefaultValue: default
@@ -1015,14 +1062,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: A URL for the model's license.,
+        ConverterType: ,
         ParameterName: licenseUrl,
         ArgumentName: licenseUrl,
         ParameterDefaultValue: default
@@ -1034,14 +1082,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: The name of the model. This must be unique among all models owned by the user or organization.,
+        ConverterType: ,
         ParameterName: name,
         ArgumentName: name,
         ParameterDefaultValue: default
@@ -1053,14 +1102,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: The name of the user or organization that will own the model. This must be the same as the user or organization that is making the API request. In other words, the API token used in the request must belong to this user or organization.,
+        ConverterType: ,
         ParameterName: owner,
         ArgumentName: owner,
         ParameterDefaultValue: default
@@ -1072,14 +1122,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: A URL for the model's paper.,
+        ConverterType: ,
         ParameterName: paperUrl,
         ArgumentName: paperUrl,
         ParameterDefaultValue: default
@@ -1088,10 +1139,9 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Id: visibility,
         Name: Visibility,
         Type: {
-          CSharpType: string,
+          CSharpType: ModelsCreateRequestVisibility,
           IsArray: false,
           IsEnum: true,
-          IsAnyOf: false,
           Properties: [
             Public,
             Private
@@ -1100,11 +1150,13 @@ Requests for event types `output` and `logs` will be sent at most once every 500
             public,
             private
           ],
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: ModelsCreateRequestVisibility,
+          ConverterType: ModelsCreateRequestVisibilityJsonConverter
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: Whether the model should be public or private. A public model can be viewed and run by anyone, whereas a private model can be viewed and run only by the user or organization members that own the model.,
+        ConverterType: ModelsCreateRequestVisibilityJsonConverter,
         ParameterName: visibility,
         ArgumentName: visibility,
         ParameterDefaultValue: default
@@ -1116,6 +1168,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Enumerations: null,
     Name: ModelsCreateRequest,
     ClassName: ModelsCreateRequest,
+    GlobalClassName: global::G.ModelsCreateRequest,
     ExternalClassName: ModelsCreateRequest,
     FileNameWithoutExtension: G.Models.ModelsCreateRequest
   },
@@ -1135,14 +1188,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: public,
         ArgumentName: public,
         ParameterDefaultValue: default
@@ -1154,14 +1208,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: private,
         ArgumentName: private,
         ParameterDefaultValue: default
@@ -1173,6 +1228,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     Enumerations: null,
     Name: Visibility,
     ClassName: Visibility,
+    GlobalClassName: global::G.Visibility,
     ExternalClassName: Visibility,
     FileNameWithoutExtension: G.Models.Visibility
   }

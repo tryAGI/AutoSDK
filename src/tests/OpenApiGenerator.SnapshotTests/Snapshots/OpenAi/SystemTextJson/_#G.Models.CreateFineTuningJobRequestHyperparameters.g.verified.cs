@@ -15,7 +15,8 @@ namespace G
         /// <br/>Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("batch_size")]
-        public global::System.OneOf<string?, int> BatchSize { get; set; } = CreateFineTuningJobRequestHyperparametersBatchSize.Auto;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
+        public global::System.OneOf<CreateFineTuningJobRequestHyperparametersBatchSize?, int> BatchSize { get; set; } = CreateFineTuningJobRequestHyperparametersBatchSize.Auto;
 
         /// <summary>
         /// Scaling factor for the learning rate. A smaller learning rate may be useful to avoid
@@ -23,7 +24,8 @@ namespace G
         /// <br/>Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("learning_rate_multiplier")]
-        public global::System.OneOf<string?, double> LearningRateMultiplier { get; set; } = CreateFineTuningJobRequestHyperparametersLearningRateMultiplier.Auto;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
+        public global::System.OneOf<CreateFineTuningJobRequestHyperparametersLearningRateMultiplier?, double> LearningRateMultiplier { get; set; } = CreateFineTuningJobRequestHyperparametersLearningRateMultiplier.Auto;
 
         /// <summary>
         /// The number of epochs to train the model for. An epoch refers to one full cycle
@@ -31,7 +33,8 @@ namespace G
         /// <br/>Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("n_epochs")]
-        public global::System.OneOf<string?, int> NEpochs { get; set; } = CreateFineTuningJobRequestHyperparametersNEpochs.Auto;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
+        public global::System.OneOf<CreateFineTuningJobRequestHyperparametersNEpochs?, int> NEpochs { get; set; } = CreateFineTuningJobRequestHyperparametersNEpochs.Auto;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

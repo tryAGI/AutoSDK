@@ -15,10 +15,10 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: int
+          CSharpTypeWithoutNullability: int,
+          ConverterType: 
         },
         IsRequired: false,
         ParameterLocation: Query,
@@ -26,6 +26,7 @@
         ParameterExplode: true,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: limit,
         ArgumentName: limit,
         ParameterDefaultValue: default
@@ -38,10 +39,10 @@
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
-      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
-      CSharpTypeWithoutNullability: 
+      CSharpTypeWithoutNullability: ,
+      ConverterType: 
     },
     ResponseType: Pets,
     AdditionalModels: null,
@@ -66,10 +67,10 @@
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
-      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
-      CSharpTypeWithoutNullability: 
+      CSharpTypeWithoutNullability: ,
+      ConverterType: 
     },
     ResponseType: ,
     AdditionalModels: null,
@@ -93,10 +94,10 @@
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         ParameterLocation: Path,
@@ -104,6 +105,7 @@
         ParameterExplode: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: petId,
         ArgumentName: petId,
         ParameterDefaultValue: default
@@ -116,10 +118,10 @@
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
-      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
-      CSharpTypeWithoutNullability: 
+      CSharpTypeWithoutNullability: ,
+      ConverterType: 
     },
     ResponseType: Pet,
     AdditionalModels: null,
@@ -143,10 +145,10 @@
       CSharpType: ,
       IsArray: false,
       IsEnum: false,
-      IsAnyOf: false,
       Properties: null,
       EnumValues: null,
-      CSharpTypeWithoutNullability: 
+      CSharpTypeWithoutNullability: ,
+      ConverterType: 
     },
     ResponseType: ,
     AdditionalModels: null,

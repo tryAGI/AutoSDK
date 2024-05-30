@@ -17,7 +17,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<GetBitsLeaderboardResponse> GetBitsLeaderboardAsync(
             int count,
-            string period,
+            GetBitsLeaderboardPeriod period,
             global::System.DateTime startedAt,
             string userId,
             global::System.Threading.CancellationToken cancellationToken = default)

@@ -48,7 +48,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<UpdateDropsEntitlementsResponse> UpdateDropsEntitlementsAsync(
             global::System.Collections.Generic.IList<string?>? entitlementIds = default,
-            string? fulfillmentStatus = default,
+            UpdateDropsEntitlementsBodyFulfillmentStatus? fulfillmentStatus = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new UpdateDropsEntitlementsBody

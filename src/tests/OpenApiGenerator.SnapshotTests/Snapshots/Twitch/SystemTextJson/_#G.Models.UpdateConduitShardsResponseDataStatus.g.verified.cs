@@ -18,47 +18,102 @@ namespace G
     /// * websocket\_network\_timeout — The Twitch WebSocket server timed out writing the message to the client.
     /// * websocket\_network\_error — The Twitch WebSocket server experienced a network error writing the message to the client.
     /// </summary>
-    public abstract class UpdateConduitShardsResponseDataStatus
+    public enum UpdateConduitShardsResponseDataStatus
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Enabled = "enabled";
+        Enabled,
         /// <summary>
         /// 
         /// </summary>
-        public const string WebhookCallbackVerificationPending = "webhook_callback_verification_pending";
+        WebhookCallbackVerificationPending,
         /// <summary>
         /// 
         /// </summary>
-        public const string WebhookCallbackVerificationFailed = "webhook_callback_verification_failed";
+        WebhookCallbackVerificationFailed,
         /// <summary>
         /// 
         /// </summary>
-        public const string NotificationFailuresExceeded = "notification_failures_exceeded";
+        NotificationFailuresExceeded,
         /// <summary>
         /// 
         /// </summary>
-        public const string WebsocketDisconnected = "websocket_disconnected";
+        WebsocketDisconnected,
         /// <summary>
         /// 
         /// </summary>
-        public const string WebsocketFailedPingPong = "websocket_failed_ping_pong";
+        WebsocketFailedPingPong,
         /// <summary>
         /// 
         /// </summary>
-        public const string WebsocketReceivedInboundTraffic = "websocket_received_inbound_traffic";
+        WebsocketReceivedInboundTraffic,
         /// <summary>
         /// 
         /// </summary>
-        public const string WebsocketInternalError = "websocket_internal_error";
+        WebsocketInternalError,
         /// <summary>
         /// 
         /// </summary>
-        public const string WebsocketNetworkTimeout = "websocket_network_timeout";
+        WebsocketNetworkTimeout,
         /// <summary>
         /// 
         /// </summary>
-        public const string WebsocketNetworkError = "websocket_network_error";
+        WebsocketNetworkError,
+    }
+
+    public static class UpdateConduitShardsResponseDataStatusExtensions
+    {
+        public static string ToValueString(this UpdateConduitShardsResponseDataStatus value)
+        {
+            return value switch
+            {
+                UpdateConduitShardsResponseDataStatus.Enabled => "enabled",
+                UpdateConduitShardsResponseDataStatus.WebhookCallbackVerificationPending => "webhook_callback_verification_pending",
+                UpdateConduitShardsResponseDataStatus.WebhookCallbackVerificationFailed => "webhook_callback_verification_failed",
+                UpdateConduitShardsResponseDataStatus.NotificationFailuresExceeded => "notification_failures_exceeded",
+                UpdateConduitShardsResponseDataStatus.WebsocketDisconnected => "websocket_disconnected",
+                UpdateConduitShardsResponseDataStatus.WebsocketFailedPingPong => "websocket_failed_ping_pong",
+                UpdateConduitShardsResponseDataStatus.WebsocketReceivedInboundTraffic => "websocket_received_inbound_traffic",
+                UpdateConduitShardsResponseDataStatus.WebsocketInternalError => "websocket_internal_error",
+                UpdateConduitShardsResponseDataStatus.WebsocketNetworkTimeout => "websocket_network_timeout",
+                UpdateConduitShardsResponseDataStatus.WebsocketNetworkError => "websocket_network_error",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static UpdateConduitShardsResponseDataStatus ToEnum(string value)
+        {
+            return value switch
+            {
+                "enabled" => UpdateConduitShardsResponseDataStatus.Enabled,
+                "webhook_callback_verification_pending" => UpdateConduitShardsResponseDataStatus.WebhookCallbackVerificationPending,
+                "webhook_callback_verification_failed" => UpdateConduitShardsResponseDataStatus.WebhookCallbackVerificationFailed,
+                "notification_failures_exceeded" => UpdateConduitShardsResponseDataStatus.NotificationFailuresExceeded,
+                "websocket_disconnected" => UpdateConduitShardsResponseDataStatus.WebsocketDisconnected,
+                "websocket_failed_ping_pong" => UpdateConduitShardsResponseDataStatus.WebsocketFailedPingPong,
+                "websocket_received_inbound_traffic" => UpdateConduitShardsResponseDataStatus.WebsocketReceivedInboundTraffic,
+                "websocket_internal_error" => UpdateConduitShardsResponseDataStatus.WebsocketInternalError,
+                "websocket_network_timeout" => UpdateConduitShardsResponseDataStatus.WebsocketNetworkTimeout,
+                "websocket_network_error" => UpdateConduitShardsResponseDataStatus.WebsocketNetworkError,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static UpdateConduitShardsResponseDataStatus ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => UpdateConduitShardsResponseDataStatus.Enabled,
+                1 => UpdateConduitShardsResponseDataStatus.WebhookCallbackVerificationPending,
+                2 => UpdateConduitShardsResponseDataStatus.WebhookCallbackVerificationFailed,
+                3 => UpdateConduitShardsResponseDataStatus.NotificationFailuresExceeded,
+                4 => UpdateConduitShardsResponseDataStatus.WebsocketDisconnected,
+                5 => UpdateConduitShardsResponseDataStatus.WebsocketFailedPingPong,
+                6 => UpdateConduitShardsResponseDataStatus.WebsocketReceivedInboundTraffic,
+                7 => UpdateConduitShardsResponseDataStatus.WebsocketInternalError,
+                8 => UpdateConduitShardsResponseDataStatus.WebsocketNetworkTimeout,
+                9 => UpdateConduitShardsResponseDataStatus.WebsocketNetworkError,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

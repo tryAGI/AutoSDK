@@ -27,8 +27,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DeleteMessageResponseObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Object { get; set; }
+        public required DeleteMessageResponseObject Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

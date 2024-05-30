@@ -11,15 +11,46 @@ namespace G
     /// * partner — A [partner broadcaster](https://help.twitch.tv/s/article/partner-program-overview)
     /// * "" — A normal broadcaster
     /// </summary>
-    public abstract class UserBroadcasterType
+    public enum UserBroadcasterType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Affiliate = "affiliate";
+        Affiliate,
         /// <summary>
         /// 
         /// </summary>
-        public const string Partner = "partner";
+        Partner,
+    }
+
+    public static class UserBroadcasterTypeExtensions
+    {
+        public static string ToValueString(this UserBroadcasterType value)
+        {
+            return value switch
+            {
+                UserBroadcasterType.Affiliate => "affiliate",
+                UserBroadcasterType.Partner => "partner",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static UserBroadcasterType ToEnum(string value)
+        {
+            return value switch
+            {
+                "affiliate" => UserBroadcasterType.Affiliate,
+                "partner" => UserBroadcasterType.Partner,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static UserBroadcasterType ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => UserBroadcasterType.Affiliate,
+                1 => UserBroadcasterType.Partner,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

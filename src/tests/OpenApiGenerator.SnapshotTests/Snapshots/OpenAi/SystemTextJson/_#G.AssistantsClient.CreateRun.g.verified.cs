@@ -65,7 +65,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<RunObject> CreateRunAsync(
             string threadId,
             string assistantId,
-            global::System.AnyOf<string?, string?>? model = default,
+            global::System.AnyOf<string?, CreateRunRequestModel?>? model = default,
             string? instructions = default,
             string? additionalInstructions = default,
             global::System.Collections.Generic.IList<CreateMessageRequest>? additionalMessages = default,

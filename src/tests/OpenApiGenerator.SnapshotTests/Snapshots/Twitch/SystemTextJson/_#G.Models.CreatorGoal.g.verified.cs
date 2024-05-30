@@ -47,8 +47,9 @@ namespace G
         /// * new\_subscription\_count — The goal is to increase subscriptions. This type shows only the net increase in the number of subscriptions (it does not account for users that unsubscribed since the goal started).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreatorGoalTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required CreatorGoalType Type { get; set; }
 
         /// <summary>
         /// A description of the goal. Is an empty string if not specified.

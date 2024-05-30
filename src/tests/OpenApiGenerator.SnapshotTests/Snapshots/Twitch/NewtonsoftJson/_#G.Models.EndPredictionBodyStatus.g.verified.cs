@@ -34,4 +34,38 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="LOCKED")]
         LOCKED,
     }
+
+    public static class EndPredictionBodyStatusExtensions
+    {
+        public static string ToValueString(this EndPredictionBodyStatus value)
+        {
+            return value switch
+            {
+                EndPredictionBodyStatus.RESOLVED => "RESOLVED",
+                EndPredictionBodyStatus.CANCELED => "CANCELED",
+                EndPredictionBodyStatus.LOCKED => "LOCKED",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static EndPredictionBodyStatus ToEnum(string value)
+        {
+            return value switch
+            {
+                "RESOLVED" => EndPredictionBodyStatus.RESOLVED,
+                "CANCELED" => EndPredictionBodyStatus.CANCELED,
+                "LOCKED" => EndPredictionBodyStatus.LOCKED,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static EndPredictionBodyStatus ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => EndPredictionBodyStatus.RESOLVED,
+                1 => EndPredictionBodyStatus.CANCELED,
+                2 => EndPredictionBodyStatus.LOCKED,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

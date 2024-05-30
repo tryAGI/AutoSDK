@@ -9,15 +9,46 @@ namespace G
     /// <br/>Default Value: vivid
     /// <br/>Example: vivid
     /// </summary>
-    public abstract class CreateImageRequestStyle
+    public enum CreateImageRequestStyle
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Vivid = "vivid";
+        Vivid,
         /// <summary>
         /// 
         /// </summary>
-        public const string Natural = "natural";
+        Natural,
+    }
+
+    public static class CreateImageRequestStyleExtensions
+    {
+        public static string ToValueString(this CreateImageRequestStyle value)
+        {
+            return value switch
+            {
+                CreateImageRequestStyle.Vivid => "vivid",
+                CreateImageRequestStyle.Natural => "natural",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateImageRequestStyle ToEnum(string value)
+        {
+            return value switch
+            {
+                "vivid" => CreateImageRequestStyle.Vivid,
+                "natural" => CreateImageRequestStyle.Natural,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateImageRequestStyle ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => CreateImageRequestStyle.Vivid,
+                1 => CreateImageRequestStyle.Natural,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

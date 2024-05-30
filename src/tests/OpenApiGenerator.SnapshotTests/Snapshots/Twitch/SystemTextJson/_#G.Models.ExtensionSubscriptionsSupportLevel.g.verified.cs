@@ -10,15 +10,46 @@ namespace G
     /// * none — The extension can't view the user’s subscription level.
     /// * optional — The extension can view the user’s subscription level.
     /// </summary>
-    public abstract class ExtensionSubscriptionsSupportLevel
+    public enum ExtensionSubscriptionsSupportLevel
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string None = "none";
+        None,
         /// <summary>
         /// 
         /// </summary>
-        public const string Optional = "optional";
+        Optional,
+    }
+
+    public static class ExtensionSubscriptionsSupportLevelExtensions
+    {
+        public static string ToValueString(this ExtensionSubscriptionsSupportLevel value)
+        {
+            return value switch
+            {
+                ExtensionSubscriptionsSupportLevel.None => "none",
+                ExtensionSubscriptionsSupportLevel.Optional => "optional",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static ExtensionSubscriptionsSupportLevel ToEnum(string value)
+        {
+            return value switch
+            {
+                "none" => ExtensionSubscriptionsSupportLevel.None,
+                "optional" => ExtensionSubscriptionsSupportLevel.Optional,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static ExtensionSubscriptionsSupportLevel ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => ExtensionSubscriptionsSupportLevel.None,
+                1 => ExtensionSubscriptionsSupportLevel.Optional,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

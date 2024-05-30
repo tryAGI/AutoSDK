@@ -14,15 +14,16 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary:
 <br/>Example: 1234,
+        ConverterType: ,
         ParameterName: _4,
         ArgumentName: _4,
         ParameterDefaultValue: default
@@ -34,15 +35,16 @@
           CSharpType: bool,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: bool
+          CSharpTypeWithoutNullability: bool,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary:
 <br/>Example: true,
+        ConverterType: ,
         ParameterName: _1_5,
         ArgumentName: _1_5,
         ParameterDefaultValue: default
@@ -54,15 +56,16 @@
           CSharpType: bool,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: bool
+          CSharpTypeWithoutNullability: bool,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary:
 <br/>Example: true,
+        ConverterType: ,
         ParameterName: _16_9,
         ArgumentName: _16_9,
         ParameterDefaultValue: default
@@ -74,14 +77,15 @@
           CSharpType: long,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: long
+          CSharpTypeWithoutNullability: long,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: id,
         ArgumentName: id,
         ParameterDefaultValue: default
@@ -93,14 +97,15 @@
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: name,
         ArgumentName: name,
         ParameterDefaultValue: default
@@ -112,14 +117,15 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: tag,
         ArgumentName: tag,
         ParameterDefaultValue: default
@@ -131,6 +137,7 @@
     Enumerations: null,
     Name: Pet,
     ClassName: Pet,
+    GlobalClassName: global::G.Pet,
     ExternalClassName: Pet,
     FileNameWithoutExtension: G.Models.Pet
   },
@@ -148,6 +155,7 @@
     Enumerations: null,
     Name: Pets,
     ClassName: Pets,
+    GlobalClassName: global::G.Pets,
     ExternalClassName: Pets,
     FileNameWithoutExtension: G.Models.Pets
   },
@@ -166,14 +174,15 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: int
+          CSharpTypeWithoutNullability: int,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: code,
         ArgumentName: code,
         ParameterDefaultValue: default
@@ -185,14 +194,15 @@
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: message,
         ArgumentName: message,
         ParameterDefaultValue: default
@@ -204,6 +214,7 @@
     Enumerations: null,
     Name: Error,
     ClassName: Error,
+    GlobalClassName: global::G.Error,
     ExternalClassName: Error,
     FileNameWithoutExtension: G.Models.Error
   }

@@ -23,4 +23,35 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="natural")]
         Natural,
     }
+
+    public static class CreateImageRequestStyleExtensions
+    {
+        public static string ToValueString(this CreateImageRequestStyle value)
+        {
+            return value switch
+            {
+                CreateImageRequestStyle.Vivid => "vivid",
+                CreateImageRequestStyle.Natural => "natural",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateImageRequestStyle ToEnum(string value)
+        {
+            return value switch
+            {
+                "vivid" => CreateImageRequestStyle.Vivid,
+                "natural" => CreateImageRequestStyle.Natural,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateImageRequestStyle ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => CreateImageRequestStyle.Vivid,
+                1 => CreateImageRequestStyle.Natural,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

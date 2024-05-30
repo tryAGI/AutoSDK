@@ -7,15 +7,46 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class BlockUserSourceContext
+    public enum BlockUserSourceContext
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Chat = "chat";
+        Chat,
         /// <summary>
         /// 
         /// </summary>
-        public const string Whisper = "whisper";
+        Whisper,
+    }
+
+    public static class BlockUserSourceContextExtensions
+    {
+        public static string ToValueString(this BlockUserSourceContext value)
+        {
+            return value switch
+            {
+                BlockUserSourceContext.Chat => "chat",
+                BlockUserSourceContext.Whisper => "whisper",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static BlockUserSourceContext ToEnum(string value)
+        {
+            return value switch
+            {
+                "chat" => BlockUserSourceContext.Chat,
+                "whisper" => BlockUserSourceContext.Whisper,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static BlockUserSourceContext ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => BlockUserSourceContext.Chat,
+                1 => BlockUserSourceContext.Whisper,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

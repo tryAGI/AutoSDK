@@ -7,19 +7,53 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class GetExtensionConfigurationSegmentSegment
+    public enum GetExtensionConfigurationSegmentSegment
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Broadcaster = "broadcaster";
+        Broadcaster,
         /// <summary>
         /// 
         /// </summary>
-        public const string Developer = "developer";
+        Developer,
         /// <summary>
         /// 
         /// </summary>
-        public const string Global = "global";
+        Global,
+    }
+
+    public static class GetExtensionConfigurationSegmentSegmentExtensions
+    {
+        public static string ToValueString(this GetExtensionConfigurationSegmentSegment value)
+        {
+            return value switch
+            {
+                GetExtensionConfigurationSegmentSegment.Broadcaster => "broadcaster",
+                GetExtensionConfigurationSegmentSegment.Developer => "developer",
+                GetExtensionConfigurationSegmentSegment.Global => "global",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static GetExtensionConfigurationSegmentSegment ToEnum(string value)
+        {
+            return value switch
+            {
+                "broadcaster" => GetExtensionConfigurationSegmentSegment.Broadcaster,
+                "developer" => GetExtensionConfigurationSegmentSegment.Developer,
+                "global" => GetExtensionConfigurationSegmentSegment.Global,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static GetExtensionConfigurationSegmentSegment ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => GetExtensionConfigurationSegmentSegment.Broadcaster,
+                1 => GetExtensionConfigurationSegmentSegment.Developer,
+                2 => GetExtensionConfigurationSegmentSegment.Global,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

@@ -13,8 +13,9 @@ namespace G
         /// The type of subscription to create. For a list of subscriptions that you can create, see [Subscription Types](https://dev.twitch.tv/docs/eventsub/eventsub-subscription-types#subscription-types). Set this field to the value in the **Name** column of the Subscription Types table.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateEventSubSubscriptionBodyTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required CreateEventSubSubscriptionBodyType Type { get; set; }
 
         /// <summary>
         /// The version number that identifies the definition of the subscription type that you want the response to use.

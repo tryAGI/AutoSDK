@@ -59,7 +59,7 @@ namespace G
             string repo,
             string? vcsUsername = default,
             string? vcsPassword = default,
-            string? vcs = default,
+            MigrationsUpdateImportRequestVcs? vcs = default,
             string? tfvcProject = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

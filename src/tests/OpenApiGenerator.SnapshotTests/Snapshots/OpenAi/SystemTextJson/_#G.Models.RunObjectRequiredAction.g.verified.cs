@@ -13,8 +13,9 @@ namespace G
         /// For now, this is always `submit_tool_outputs`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunObjectRequiredActionTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required RunObjectRequiredActionType Type { get; set; }
 
         /// <summary>
         /// Details on the tool outputs needed for this run to continue.

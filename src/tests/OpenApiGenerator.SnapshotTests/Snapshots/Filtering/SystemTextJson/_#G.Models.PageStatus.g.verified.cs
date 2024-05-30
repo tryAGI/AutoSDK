@@ -8,19 +8,53 @@ namespace G
     /// The status of the most recent build of the Page.
     /// <br/>Example: built
     /// </summary>
-    public abstract class PageStatus
+    public enum PageStatus
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Built = "built";
+        Built,
         /// <summary>
         /// 
         /// </summary>
-        public const string Building = "building";
+        Building,
         /// <summary>
         /// 
         /// </summary>
-        public const string Errored = "errored";
+        Errored,
+    }
+
+    public static class PageStatusExtensions
+    {
+        public static string ToValueString(this PageStatus value)
+        {
+            return value switch
+            {
+                PageStatus.Built => "built",
+                PageStatus.Building => "building",
+                PageStatus.Errored => "errored",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static PageStatus ToEnum(string value)
+        {
+            return value switch
+            {
+                "built" => PageStatus.Built,
+                "building" => PageStatus.Building,
+                "errored" => PageStatus.Errored,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static PageStatus ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => PageStatus.Built,
+                1 => PageStatus.Building,
+                2 => PageStatus.Errored,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

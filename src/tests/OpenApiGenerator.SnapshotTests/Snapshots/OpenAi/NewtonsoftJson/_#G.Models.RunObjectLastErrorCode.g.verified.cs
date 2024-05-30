@@ -26,4 +26,38 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="invalid_prompt")]
         InvalidPrompt,
     }
+
+    public static class RunObjectLastErrorCodeExtensions
+    {
+        public static string ToValueString(this RunObjectLastErrorCode value)
+        {
+            return value switch
+            {
+                RunObjectLastErrorCode.ServerError => "server_error",
+                RunObjectLastErrorCode.RateLimitExceeded => "rate_limit_exceeded",
+                RunObjectLastErrorCode.InvalidPrompt => "invalid_prompt",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RunObjectLastErrorCode ToEnum(string value)
+        {
+            return value switch
+            {
+                "server_error" => RunObjectLastErrorCode.ServerError,
+                "rate_limit_exceeded" => RunObjectLastErrorCode.RateLimitExceeded,
+                "invalid_prompt" => RunObjectLastErrorCode.InvalidPrompt,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RunObjectLastErrorCode ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => RunObjectLastErrorCode.ServerError,
+                1 => RunObjectLastErrorCode.RateLimitExceeded,
+                2 => RunObjectLastErrorCode.InvalidPrompt,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

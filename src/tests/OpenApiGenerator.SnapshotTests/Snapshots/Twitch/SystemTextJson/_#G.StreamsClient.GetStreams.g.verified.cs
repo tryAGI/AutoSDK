@@ -24,7 +24,7 @@ namespace G
             global::System.Collections.Generic.IList<string> userId,
             global::System.Collections.Generic.IList<string> userLogin,
             global::System.Collections.Generic.IList<string> gameId,
-            string type,
+            GetStreamsType type,
             global::System.Collections.Generic.IList<string> language,
             int first,
             string before,

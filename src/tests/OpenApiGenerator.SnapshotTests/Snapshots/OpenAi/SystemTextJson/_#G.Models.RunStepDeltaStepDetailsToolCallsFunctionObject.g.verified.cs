@@ -26,8 +26,9 @@ namespace G
         /// The type of tool call. This is always going to be `function` for this type of tool call.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsToolCallsFunctionObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required RunStepDeltaStepDetailsToolCallsFunctionObjectType Type { get; set; }
 
         /// <summary>
         /// The definition of the function that was called.

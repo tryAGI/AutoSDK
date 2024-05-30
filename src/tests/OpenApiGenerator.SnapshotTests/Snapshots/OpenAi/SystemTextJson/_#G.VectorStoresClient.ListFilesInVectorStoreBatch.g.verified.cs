@@ -22,10 +22,10 @@ namespace G
             string vectorStoreId,
             string batchId,
             int limit,
-            string order,
+            ListFilesInVectorStoreBatchOrder order,
             string after,
             string before,
-            string filter,
+            ListFilesInVectorStoreBatchFilter filter,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

@@ -15,8 +15,9 @@ namespace G
         /// <br/>Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("n_epochs")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<string, int> NEpochs { get; set; }
+        public required global::System.OneOf<FineTuningJobHyperparametersNEpochs, int> NEpochs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

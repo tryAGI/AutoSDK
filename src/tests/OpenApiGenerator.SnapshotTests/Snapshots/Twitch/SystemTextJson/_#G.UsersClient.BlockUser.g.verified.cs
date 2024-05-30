@@ -16,8 +16,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task BlockUserAsync(
             string targetUserId,
-            string sourceContext,
-            string reason,
+            BlockUserSourceContext sourceContext,
+            BlockUserReason reason,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

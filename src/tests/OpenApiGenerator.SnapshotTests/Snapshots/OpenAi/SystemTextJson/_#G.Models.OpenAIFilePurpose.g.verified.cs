@@ -7,35 +7,81 @@ namespace G
     /// <summary>
     /// The intended purpose of the file. Supported values are `assistants`, `assistants_output`, `batch`, `batch_output`, `fine-tune`, `fine-tune-results` and `vision`.
     /// </summary>
-    public abstract class OpenAIFilePurpose
+    public enum OpenAIFilePurpose
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Assistants = "assistants";
+        Assistants,
         /// <summary>
         /// 
         /// </summary>
-        public const string AssistantsOutput = "assistants_output";
+        AssistantsOutput,
         /// <summary>
         /// 
         /// </summary>
-        public const string Batch = "batch";
+        Batch,
         /// <summary>
         /// 
         /// </summary>
-        public const string BatchOutput = "batch_output";
+        BatchOutput,
         /// <summary>
         /// 
         /// </summary>
-        public const string FineTune = "fine-tune";
+        FineTune,
         /// <summary>
         /// 
         /// </summary>
-        public const string FineTuneResults = "fine-tune-results";
+        FineTuneResults,
         /// <summary>
         /// 
         /// </summary>
-        public const string Vision = "vision";
+        Vision,
+    }
+
+    public static class OpenAIFilePurposeExtensions
+    {
+        public static string ToValueString(this OpenAIFilePurpose value)
+        {
+            return value switch
+            {
+                OpenAIFilePurpose.Assistants => "assistants",
+                OpenAIFilePurpose.AssistantsOutput => "assistants_output",
+                OpenAIFilePurpose.Batch => "batch",
+                OpenAIFilePurpose.BatchOutput => "batch_output",
+                OpenAIFilePurpose.FineTune => "fine-tune",
+                OpenAIFilePurpose.FineTuneResults => "fine-tune-results",
+                OpenAIFilePurpose.Vision => "vision",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static OpenAIFilePurpose ToEnum(string value)
+        {
+            return value switch
+            {
+                "assistants" => OpenAIFilePurpose.Assistants,
+                "assistants_output" => OpenAIFilePurpose.AssistantsOutput,
+                "batch" => OpenAIFilePurpose.Batch,
+                "batch_output" => OpenAIFilePurpose.BatchOutput,
+                "fine-tune" => OpenAIFilePurpose.FineTune,
+                "fine-tune-results" => OpenAIFilePurpose.FineTuneResults,
+                "vision" => OpenAIFilePurpose.Vision,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static OpenAIFilePurpose ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => OpenAIFilePurpose.Assistants,
+                1 => OpenAIFilePurpose.AssistantsOutput,
+                2 => OpenAIFilePurpose.Batch,
+                3 => OpenAIFilePurpose.BatchOutput,
+                4 => OpenAIFilePurpose.FineTune,
+                5 => OpenAIFilePurpose.FineTuneResults,
+                6 => OpenAIFilePurpose.Vision,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

@@ -39,8 +39,9 @@ namespace G
         /// * "" — Normal user
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UserTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required UserType Type { get; set; }
 
         /// <summary>
         /// The type of broadcaster. Possible values are:  
@@ -50,8 +51,9 @@ namespace G
         /// * "" — A normal broadcaster
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("broadcaster_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UserBroadcasterTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string BroadcasterType { get; set; }
+        public required UserBroadcasterType BroadcasterType { get; set; }
 
         /// <summary>
         /// The user's description of their channel.

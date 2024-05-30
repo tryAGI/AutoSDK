@@ -35,8 +35,9 @@ namespace G
         /// The broadcaster has up to 24 hours after the prediction window closes to resolve the prediction. If not, Twitch sets the status to CANCELED and returns the points.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.EndPredictionBodyStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
+        public required EndPredictionBodyStatus Status { get; set; }
 
         /// <summary>
         /// The ID of the winning outcome. You must set this parameter if you set `status` to RESOLVED.

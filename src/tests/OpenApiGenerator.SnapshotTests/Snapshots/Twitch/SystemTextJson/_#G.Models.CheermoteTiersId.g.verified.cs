@@ -15,35 +15,81 @@ namespace G
     /// * 10000
     /// * 100000
     /// </summary>
-    public abstract class CheermoteTiersId
+    public enum CheermoteTiersId
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string _1 = "1";
+        _1,
         /// <summary>
         /// 
         /// </summary>
-        public const string _100 = "100";
+        _100,
         /// <summary>
         /// 
         /// </summary>
-        public const string _500 = "500";
+        _500,
         /// <summary>
         /// 
         /// </summary>
-        public const string _1000 = "1000";
+        _1000,
         /// <summary>
         /// 
         /// </summary>
-        public const string _5000 = "5000";
+        _5000,
         /// <summary>
         /// 
         /// </summary>
-        public const string _10000 = "10000";
+        _10000,
         /// <summary>
         /// 
         /// </summary>
-        public const string _100000 = "100000";
+        _100000,
+    }
+
+    public static class CheermoteTiersIdExtensions
+    {
+        public static string ToValueString(this CheermoteTiersId value)
+        {
+            return value switch
+            {
+                CheermoteTiersId._1 => "1",
+                CheermoteTiersId._100 => "100",
+                CheermoteTiersId._500 => "500",
+                CheermoteTiersId._1000 => "1000",
+                CheermoteTiersId._5000 => "5000",
+                CheermoteTiersId._10000 => "10000",
+                CheermoteTiersId._100000 => "100000",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CheermoteTiersId ToEnum(string value)
+        {
+            return value switch
+            {
+                "1" => CheermoteTiersId._1,
+                "100" => CheermoteTiersId._100,
+                "500" => CheermoteTiersId._500,
+                "1000" => CheermoteTiersId._1000,
+                "5000" => CheermoteTiersId._5000,
+                "10000" => CheermoteTiersId._10000,
+                "100000" => CheermoteTiersId._100000,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CheermoteTiersId ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => CheermoteTiersId._1,
+                1 => CheermoteTiersId._100,
+                2 => CheermoteTiersId._500,
+                3 => CheermoteTiersId._1000,
+                4 => CheermoteTiersId._5000,
+                5 => CheermoteTiersId._10000,
+                6 => CheermoteTiersId._100000,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

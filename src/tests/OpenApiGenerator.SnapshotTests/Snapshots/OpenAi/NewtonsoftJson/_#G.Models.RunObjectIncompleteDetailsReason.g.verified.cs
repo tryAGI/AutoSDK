@@ -21,4 +21,35 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="max_prompt_tokens")]
         MaxPromptTokens,
     }
+
+    public static class RunObjectIncompleteDetailsReasonExtensions
+    {
+        public static string ToValueString(this RunObjectIncompleteDetailsReason value)
+        {
+            return value switch
+            {
+                RunObjectIncompleteDetailsReason.MaxCompletionTokens => "max_completion_tokens",
+                RunObjectIncompleteDetailsReason.MaxPromptTokens => "max_prompt_tokens",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RunObjectIncompleteDetailsReason ToEnum(string value)
+        {
+            return value switch
+            {
+                "max_completion_tokens" => RunObjectIncompleteDetailsReason.MaxCompletionTokens,
+                "max_prompt_tokens" => RunObjectIncompleteDetailsReason.MaxPromptTokens,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RunObjectIncompleteDetailsReason ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => RunObjectIncompleteDetailsReason.MaxCompletionTokens,
+                1 => RunObjectIncompleteDetailsReason.MaxPromptTokens,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

@@ -26,7 +26,8 @@ namespace G
         /// <br/>Example: "git"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vcs")]
-        public string? Vcs { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MigrationsUpdateImportRequestVcsJsonConverter))]
+        public MigrationsUpdateImportRequestVcs? Vcs { get; set; }
 
         /// <summary>
         /// For a tfvc import, the name of the project that is being imported.

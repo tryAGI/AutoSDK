@@ -7,19 +7,53 @@ namespace G
     /// <summary>
     /// The type of the tool. If type is `function`, the function name must be set
     /// </summary>
-    public abstract class AssistantsNamedToolChoiceType
+    public enum AssistantsNamedToolChoiceType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Function = "function";
+        Function,
         /// <summary>
         /// 
         /// </summary>
-        public const string CodeInterpreter = "code_interpreter";
+        CodeInterpreter,
         /// <summary>
         /// 
         /// </summary>
-        public const string FileSearch = "file_search";
+        FileSearch,
+    }
+
+    public static class AssistantsNamedToolChoiceTypeExtensions
+    {
+        public static string ToValueString(this AssistantsNamedToolChoiceType value)
+        {
+            return value switch
+            {
+                AssistantsNamedToolChoiceType.Function => "function",
+                AssistantsNamedToolChoiceType.CodeInterpreter => "code_interpreter",
+                AssistantsNamedToolChoiceType.FileSearch => "file_search",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static AssistantsNamedToolChoiceType ToEnum(string value)
+        {
+            return value switch
+            {
+                "function" => AssistantsNamedToolChoiceType.Function,
+                "code_interpreter" => AssistantsNamedToolChoiceType.CodeInterpreter,
+                "file_search" => AssistantsNamedToolChoiceType.FileSearch,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static AssistantsNamedToolChoiceType ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => AssistantsNamedToolChoiceType.Function,
+                1 => AssistantsNamedToolChoiceType.CodeInterpreter,
+                2 => AssistantsNamedToolChoiceType.FileSearch,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

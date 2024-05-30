@@ -54,7 +54,9 @@ namespace {models[0].Namespace}
             return modelData.Style switch
             {
                 ModelStyle.Class => GenerateClassModel(modelData, cancellationToken),
-                ModelStyle.Enumeration => GenerateEnumerationModel(modelData, cancellationToken),
+                ModelStyle.Enumeration =>
+                    GenerateEnumerationModel(modelData, cancellationToken) + "\n\n" +
+                    GenerateEnumExtensions(modelData, cancellationToken),
                 _ => throw new NotSupportedException($"Model style {modelData.Style} is not supported."),
             };
         }
@@ -66,37 +68,6 @@ public sealed partial class {modelData.Parents[level].ClassName}
 }}".RemoveBlankLinesWhereOnlyWhitespaces().AddIndent(level: 1);
     }
     
-    public static string GenerateEnumerationModel(
-        ModelData modelData,
-        CancellationToken cancellationToken = default)
-    {
-        // Only Newtonsoft.Json supports EnumMemberAttribute
-        if (modelData.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
-        {
-            return $@" 
-    {modelData.Summary.ToXmlDocumentationSummary(level: 4)}
-    [global::System.Runtime.Serialization.DataContract]
-    public enum {modelData.ClassName}
-    {{
-{modelData.Properties.Select(property => @$"
-        {property.Summary.ToXmlDocumentationSummary(level: 8)}
-        [global::System.Runtime.Serialization.EnumMember(Value=""{property.Id}"")]
-        {property.Name},
-    ").Inject()}
-    }}".RemoveBlankLinesWhereOnlyWhitespaces();
-        }
-        
-        return $@" 
-    {modelData.Summary.ToXmlDocumentationSummary(level: 4)}
-    public abstract class {modelData.ClassName}
-    {{
-{modelData.Properties.Select(property => @$"
-        {property.Summary.ToXmlDocumentationSummary(level: 8)}
-        public const string {property.Name} = ""{property.Id}"";
-    ").Inject()}
-    }}".RemoveBlankLinesWhereOnlyWhitespaces();
-    }
-
     private static bool IsSupported(SdkFeatureUsage usage, string targetFramework)
     {
         return usage switch
@@ -136,6 +107,7 @@ public sealed partial class {modelData.Parents[level].ClassName}
 {modelData.Properties.Select(property => @$"
         {property.Summary.ToXmlDocumentationSummary(level: 8)}
         {jsonSerializer.GeneratePropertyAttribute(property.Id, property.IsRequired)}
+        {jsonSerializer.GenerateConverterAttribute(property.ConverterType)}
         {(property.IsRequired ? jsonSerializer.GenerateRequiredAttribute() : string.Empty)}
         {(modelData.IsDeprecated ? "[global::System.Obsolete(\"This property marked as deprecated.\")]" : " ")}
         public{(property.IsRequired ? requiredKeyword : "")} {property.Type.CSharpType} {property.Name} {{ get; set; }}{GetDefaultValue(property, isRequiredKeywordSupported)}

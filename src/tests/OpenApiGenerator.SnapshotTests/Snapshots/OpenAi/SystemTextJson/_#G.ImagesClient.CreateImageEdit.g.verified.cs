@@ -56,10 +56,10 @@ namespace G
             byte[] image,
             string prompt,
             byte[]? mask = default,
-            global::System.AnyOf<string?, string?>? model = default,
+            global::System.AnyOf<string?, CreateImageEditRequestModel?>? model = default,
             int? n = 1,
-            string? size = CreateImageEditRequestSize._1024x1024,
-            string? responseFormat = CreateImageEditRequestResponseFormat.Url,
+            CreateImageEditRequestSize? size = CreateImageEditRequestSize._1024x1024,
+            CreateImageEditRequestResponseFormat? responseFormat = CreateImageEditRequestResponseFormat.Url,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

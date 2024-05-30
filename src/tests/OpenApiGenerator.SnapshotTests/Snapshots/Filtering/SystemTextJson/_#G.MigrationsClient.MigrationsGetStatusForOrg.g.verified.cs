@@ -18,7 +18,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<Migration> MigrationsGetStatusForOrgAsync(
             string org,
             int migrationId,
-            global::System.Collections.Generic.IList<string> exclude,
+            global::System.Collections.Generic.IList<MigrationsGetStatusForOrgExclude> exclude,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

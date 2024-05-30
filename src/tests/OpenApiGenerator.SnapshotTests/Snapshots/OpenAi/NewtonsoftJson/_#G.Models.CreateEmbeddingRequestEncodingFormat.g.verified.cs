@@ -23,4 +23,35 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="base64")]
         Base64,
     }
+
+    public static class CreateEmbeddingRequestEncodingFormatExtensions
+    {
+        public static string ToValueString(this CreateEmbeddingRequestEncodingFormat value)
+        {
+            return value switch
+            {
+                CreateEmbeddingRequestEncodingFormat.Float => "float",
+                CreateEmbeddingRequestEncodingFormat.Base64 => "base64",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateEmbeddingRequestEncodingFormat ToEnum(string value)
+        {
+            return value switch
+            {
+                "float" => CreateEmbeddingRequestEncodingFormat.Float,
+                "base64" => CreateEmbeddingRequestEncodingFormat.Base64,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateEmbeddingRequestEncodingFormat ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => CreateEmbeddingRequestEncodingFormat.Float,
+                1 => CreateEmbeddingRequestEncodingFormat.Base64,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

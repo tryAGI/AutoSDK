@@ -7,4 +7,5 @@ public interface IJsonSerializer
     string GenerateRequiredAttribute();
     string GenerateDeserializeCall(string type, string jsonSerializerContext);
     string GenerateSerializeCall(string type, string jsonSerializerContext);
+    string GenerateConverterAttribute(string type);
 }

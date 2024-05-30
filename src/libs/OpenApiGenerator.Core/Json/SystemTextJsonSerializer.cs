@@ -18,6 +18,16 @@ public class SystemTextJsonSerializer : IJsonSerializer
     {
         return "[global::System.Text.Json.Serialization.JsonRequired]";
     }
+
+    public string GenerateConverterAttribute(string type)
+    {
+        if (string.IsNullOrWhiteSpace(type))
+        {
+            return string.Empty;
+        }
+        
+        return $"[global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.{type}))]";
+    }
     
     private static string GetContextType(string type)
     {

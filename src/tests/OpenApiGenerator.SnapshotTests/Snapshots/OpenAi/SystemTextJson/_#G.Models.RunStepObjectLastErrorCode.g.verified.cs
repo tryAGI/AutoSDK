@@ -7,15 +7,46 @@ namespace G
     /// <summary>
     /// One of `server_error` or `rate_limit_exceeded`.
     /// </summary>
-    public abstract class RunStepObjectLastErrorCode
+    public enum RunStepObjectLastErrorCode
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string ServerError = "server_error";
+        ServerError,
         /// <summary>
         /// 
         /// </summary>
-        public const string RateLimitExceeded = "rate_limit_exceeded";
+        RateLimitExceeded,
+    }
+
+    public static class RunStepObjectLastErrorCodeExtensions
+    {
+        public static string ToValueString(this RunStepObjectLastErrorCode value)
+        {
+            return value switch
+            {
+                RunStepObjectLastErrorCode.ServerError => "server_error",
+                RunStepObjectLastErrorCode.RateLimitExceeded => "rate_limit_exceeded",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RunStepObjectLastErrorCode ToEnum(string value)
+        {
+            return value switch
+            {
+                "server_error" => RunStepObjectLastErrorCode.ServerError,
+                "rate_limit_exceeded" => RunStepObjectLastErrorCode.RateLimitExceeded,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RunStepObjectLastErrorCode ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => RunStepObjectLastErrorCode.ServerError,
+                1 => RunStepObjectLastErrorCode.RateLimitExceeded,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

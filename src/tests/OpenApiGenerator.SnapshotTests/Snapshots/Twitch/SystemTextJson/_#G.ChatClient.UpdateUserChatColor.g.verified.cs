@@ -15,7 +15,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task UpdateUserChatColorAsync(
             string userId,
-            string color,
+            UpdateUserChatColorColor color,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

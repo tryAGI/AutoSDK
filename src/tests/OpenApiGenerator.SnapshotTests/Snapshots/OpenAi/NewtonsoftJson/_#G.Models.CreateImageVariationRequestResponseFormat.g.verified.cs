@@ -23,4 +23,35 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="b64_json")]
         B64Json,
     }
+
+    public static class CreateImageVariationRequestResponseFormatExtensions
+    {
+        public static string ToValueString(this CreateImageVariationRequestResponseFormat value)
+        {
+            return value switch
+            {
+                CreateImageVariationRequestResponseFormat.Url => "url",
+                CreateImageVariationRequestResponseFormat.B64Json => "b64_json",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateImageVariationRequestResponseFormat ToEnum(string value)
+        {
+            return value switch
+            {
+                "url" => CreateImageVariationRequestResponseFormat.Url,
+                "b64_json" => CreateImageVariationRequestResponseFormat.B64Json,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateImageVariationRequestResponseFormat ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => CreateImageVariationRequestResponseFormat.Url,
+                1 => CreateImageVariationRequestResponseFormat.B64Json,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

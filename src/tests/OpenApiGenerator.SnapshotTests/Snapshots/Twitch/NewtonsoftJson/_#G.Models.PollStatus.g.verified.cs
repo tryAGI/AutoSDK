@@ -48,4 +48,47 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="INVALID")]
         INVALID,
     }
+
+    public static class PollStatusExtensions
+    {
+        public static string ToValueString(this PollStatus value)
+        {
+            return value switch
+            {
+                PollStatus.ACTIVE => "ACTIVE",
+                PollStatus.COMPLETED => "COMPLETED",
+                PollStatus.TERMINATED => "TERMINATED",
+                PollStatus.ARCHIVED => "ARCHIVED",
+                PollStatus.MODERATED => "MODERATED",
+                PollStatus.INVALID => "INVALID",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static PollStatus ToEnum(string value)
+        {
+            return value switch
+            {
+                "ACTIVE" => PollStatus.ACTIVE,
+                "COMPLETED" => PollStatus.COMPLETED,
+                "TERMINATED" => PollStatus.TERMINATED,
+                "ARCHIVED" => PollStatus.ARCHIVED,
+                "MODERATED" => PollStatus.MODERATED,
+                "INVALID" => PollStatus.INVALID,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static PollStatus ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => PollStatus.ACTIVE,
+                1 => PollStatus.COMPLETED,
+                2 => PollStatus.TERMINATED,
+                3 => PollStatus.ARCHIVED,
+                4 => PollStatus.MODERATED,
+                5 => PollStatus.INVALID,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

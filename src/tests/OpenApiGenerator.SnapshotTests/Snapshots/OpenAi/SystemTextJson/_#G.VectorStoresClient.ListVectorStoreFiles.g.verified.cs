@@ -20,10 +20,10 @@ namespace G
         public async global::System.Threading.Tasks.Task<ListVectorStoreFilesResponse> ListVectorStoreFilesAsync(
             string vectorStoreId,
             int limit,
-            string order,
+            ListVectorStoreFilesOrder order,
             string after,
             string before,
-            string filter,
+            ListVectorStoreFilesFilter filter,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

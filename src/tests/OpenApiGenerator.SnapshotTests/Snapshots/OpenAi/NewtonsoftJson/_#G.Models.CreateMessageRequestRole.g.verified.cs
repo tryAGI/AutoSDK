@@ -23,4 +23,35 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="assistant")]
         Assistant,
     }
+
+    public static class CreateMessageRequestRoleExtensions
+    {
+        public static string ToValueString(this CreateMessageRequestRole value)
+        {
+            return value switch
+            {
+                CreateMessageRequestRole.User => "user",
+                CreateMessageRequestRole.Assistant => "assistant",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateMessageRequestRole ToEnum(string value)
+        {
+            return value switch
+            {
+                "user" => CreateMessageRequestRole.User,
+                "assistant" => CreateMessageRequestRole.Assistant,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateMessageRequestRole ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => CreateMessageRequestRole.User,
+                1 => CreateMessageRequestRole.Assistant,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

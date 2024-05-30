@@ -21,7 +21,7 @@ namespace G
             string threadId,
             string runId,
             int limit,
-            string order,
+            ListRunStepsOrder order,
             string after,
             string before,
             global::System.Threading.CancellationToken cancellationToken = default)

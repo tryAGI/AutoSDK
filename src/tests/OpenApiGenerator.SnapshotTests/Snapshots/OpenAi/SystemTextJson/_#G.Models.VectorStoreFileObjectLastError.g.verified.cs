@@ -13,8 +13,9 @@ namespace G
         /// One of `server_error` or `rate_limit_exceeded`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.VectorStoreFileObjectLastErrorCodeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Code { get; set; }
+        public required VectorStoreFileObjectLastErrorCode Code { get; set; }
 
         /// <summary>
         /// A human-readable description of the error.

@@ -7,23 +7,60 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class GetVideosPeriod
+    public enum GetVideosPeriod
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string All = "all";
+        All,
         /// <summary>
         /// 
         /// </summary>
-        public const string Day = "day";
+        Day,
         /// <summary>
         /// 
         /// </summary>
-        public const string Month = "month";
+        Month,
         /// <summary>
         /// 
         /// </summary>
-        public const string Week = "week";
+        Week,
+    }
+
+    public static class GetVideosPeriodExtensions
+    {
+        public static string ToValueString(this GetVideosPeriod value)
+        {
+            return value switch
+            {
+                GetVideosPeriod.All => "all",
+                GetVideosPeriod.Day => "day",
+                GetVideosPeriod.Month => "month",
+                GetVideosPeriod.Week => "week",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static GetVideosPeriod ToEnum(string value)
+        {
+            return value switch
+            {
+                "all" => GetVideosPeriod.All,
+                "day" => GetVideosPeriod.Day,
+                "month" => GetVideosPeriod.Month,
+                "week" => GetVideosPeriod.Week,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static GetVideosPeriod ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => GetVideosPeriod.All,
+                1 => GetVideosPeriod.Day,
+                2 => GetVideosPeriod.Month,
+                3 => GetVideosPeriod.Week,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

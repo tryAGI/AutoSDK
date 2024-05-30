@@ -14,9 +14,10 @@ namespace G
         /// The role of the messages author, in this case `function`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatCompletionRequestFunctionMessageRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public required string Role { get; set; }
+        public required ChatCompletionRequestFunctionMessageRole Role { get; set; }
 
         /// <summary>
         /// The contents of the function message.

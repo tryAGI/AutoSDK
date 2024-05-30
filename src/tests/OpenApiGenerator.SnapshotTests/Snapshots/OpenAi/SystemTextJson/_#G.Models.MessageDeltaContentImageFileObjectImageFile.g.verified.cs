@@ -20,7 +20,8 @@ namespace G
         /// <br/>Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
-        public string? Detail { get; set; } = MessageDeltaContentImageFileObjectImageFileDetail.Auto;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageDeltaContentImageFileObjectImageFileDetailJsonConverter))]
+        public MessageDeltaContentImageFileObjectImageFileDetail? Detail { get; set; } = MessageDeltaContentImageFileObjectImageFileDetail.Auto;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

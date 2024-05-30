@@ -19,6 +19,11 @@ public class NewtonsoftJsonSerializer : IJsonSerializer
     {
         return string.Empty;
     }
+
+    public string GenerateConverterAttribute(string type)
+    {
+        return string.Empty;
+    }
     
     public string GenerateSerializeCall(string type, string jsonSerializerContext)
     {

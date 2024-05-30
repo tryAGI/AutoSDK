@@ -15,27 +15,67 @@ namespace G
     ///   
     /// If `color` is set to _primary_ or is not set, the channel’s accent color is used to highlight the announcement (see **Profile Accent Color** under [profile settings](https://www.twitch.tv/settings/profile), **Channel and Videos**, and **Brand**).
     /// </summary>
-    public abstract class SendChatAnnouncementBodyColor
+    public enum SendChatAnnouncementBodyColor
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Blue = "blue";
+        Blue,
         /// <summary>
         /// 
         /// </summary>
-        public const string Green = "green";
+        Green,
         /// <summary>
         /// 
         /// </summary>
-        public const string Orange = "orange";
+        Orange,
         /// <summary>
         /// 
         /// </summary>
-        public const string Purple = "purple";
+        Purple,
         /// <summary>
         /// 
         /// </summary>
-        public const string PrimaryDefault = "primary (default)";
+        PrimaryDefault,
+    }
+
+    public static class SendChatAnnouncementBodyColorExtensions
+    {
+        public static string ToValueString(this SendChatAnnouncementBodyColor value)
+        {
+            return value switch
+            {
+                SendChatAnnouncementBodyColor.Blue => "blue",
+                SendChatAnnouncementBodyColor.Green => "green",
+                SendChatAnnouncementBodyColor.Orange => "orange",
+                SendChatAnnouncementBodyColor.Purple => "purple",
+                SendChatAnnouncementBodyColor.PrimaryDefault => "primary (default)",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static SendChatAnnouncementBodyColor ToEnum(string value)
+        {
+            return value switch
+            {
+                "blue" => SendChatAnnouncementBodyColor.Blue,
+                "green" => SendChatAnnouncementBodyColor.Green,
+                "orange" => SendChatAnnouncementBodyColor.Orange,
+                "purple" => SendChatAnnouncementBodyColor.Purple,
+                "primary (default)" => SendChatAnnouncementBodyColor.PrimaryDefault,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static SendChatAnnouncementBodyColor ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => SendChatAnnouncementBodyColor.Blue,
+                1 => SendChatAnnouncementBodyColor.Green,
+                2 => SendChatAnnouncementBodyColor.Orange,
+                3 => SendChatAnnouncementBodyColor.Purple,
+                4 => SendChatAnnouncementBodyColor.PrimaryDefault,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

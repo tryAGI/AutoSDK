@@ -63,7 +63,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<CreateCompletionResponse> CreateCompletionAsync(
-            global::System.AnyOf<string, string> model,
+            global::System.AnyOf<string, CreateCompletionRequestModel> model,
             global::System.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>? prompt,
             int? bestOf = 1,
             bool? echo = false,

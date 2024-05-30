@@ -20,14 +20,16 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3))]
         public global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?> Inputs { get; set; }
 
         /// <summary>
         /// Enum for run types.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunCreateSchemaExtendedRunTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string RunType { get; set; }
+        public required RunCreateSchemaExtendedRunType RunType { get; set; }
 
         /// <summary>
         /// 
@@ -69,6 +71,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3))]
         public global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?> Outputs { get; set; }
 
         /// <summary>

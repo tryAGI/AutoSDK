@@ -44,4 +44,44 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="primary (default)")]
         PrimaryDefault,
     }
+
+    public static class SendChatAnnouncementBodyColorExtensions
+    {
+        public static string ToValueString(this SendChatAnnouncementBodyColor value)
+        {
+            return value switch
+            {
+                SendChatAnnouncementBodyColor.Blue => "blue",
+                SendChatAnnouncementBodyColor.Green => "green",
+                SendChatAnnouncementBodyColor.Orange => "orange",
+                SendChatAnnouncementBodyColor.Purple => "purple",
+                SendChatAnnouncementBodyColor.PrimaryDefault => "primary (default)",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static SendChatAnnouncementBodyColor ToEnum(string value)
+        {
+            return value switch
+            {
+                "blue" => SendChatAnnouncementBodyColor.Blue,
+                "green" => SendChatAnnouncementBodyColor.Green,
+                "orange" => SendChatAnnouncementBodyColor.Orange,
+                "purple" => SendChatAnnouncementBodyColor.Purple,
+                "primary (default)" => SendChatAnnouncementBodyColor.PrimaryDefault,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static SendChatAnnouncementBodyColor ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => SendChatAnnouncementBodyColor.Blue,
+                1 => SendChatAnnouncementBodyColor.Green,
+                2 => SendChatAnnouncementBodyColor.Orange,
+                3 => SendChatAnnouncementBodyColor.Purple,
+                4 => SendChatAnnouncementBodyColor.PrimaryDefault,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

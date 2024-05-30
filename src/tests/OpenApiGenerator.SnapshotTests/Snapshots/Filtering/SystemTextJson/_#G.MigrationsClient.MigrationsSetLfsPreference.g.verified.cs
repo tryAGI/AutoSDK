@@ -54,7 +54,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<Import> MigrationsSetLfsPreferenceAsync(
             string owner,
             string repo,
-            string useLfs,
+            MigrationsSetLfsPreferenceRequestUseLfs useLfs,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new MigrationsSetLfsPreferenceRequest

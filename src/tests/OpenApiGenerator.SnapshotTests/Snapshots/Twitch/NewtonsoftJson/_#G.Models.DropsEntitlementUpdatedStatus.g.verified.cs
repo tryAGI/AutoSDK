@@ -42,4 +42,44 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="UPDATE_FAILED")]
         UPDATEFAILED,
     }
+
+    public static class DropsEntitlementUpdatedStatusExtensions
+    {
+        public static string ToValueString(this DropsEntitlementUpdatedStatus value)
+        {
+            return value switch
+            {
+                DropsEntitlementUpdatedStatus.INVALIDID => "INVALID_ID",
+                DropsEntitlementUpdatedStatus.NOTFOUND => "NOT_FOUND",
+                DropsEntitlementUpdatedStatus.SUCCESS => "SUCCESS",
+                DropsEntitlementUpdatedStatus.UNAUTHORIZED => "UNAUTHORIZED",
+                DropsEntitlementUpdatedStatus.UPDATEFAILED => "UPDATE_FAILED",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static DropsEntitlementUpdatedStatus ToEnum(string value)
+        {
+            return value switch
+            {
+                "INVALID_ID" => DropsEntitlementUpdatedStatus.INVALIDID,
+                "NOT_FOUND" => DropsEntitlementUpdatedStatus.NOTFOUND,
+                "SUCCESS" => DropsEntitlementUpdatedStatus.SUCCESS,
+                "UNAUTHORIZED" => DropsEntitlementUpdatedStatus.UNAUTHORIZED,
+                "UPDATE_FAILED" => DropsEntitlementUpdatedStatus.UPDATEFAILED,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static DropsEntitlementUpdatedStatus ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => DropsEntitlementUpdatedStatus.INVALIDID,
+                1 => DropsEntitlementUpdatedStatus.NOTFOUND,
+                2 => DropsEntitlementUpdatedStatus.SUCCESS,
+                3 => DropsEntitlementUpdatedStatus.UNAUTHORIZED,
+                4 => DropsEntitlementUpdatedStatus.UPDATEFAILED,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

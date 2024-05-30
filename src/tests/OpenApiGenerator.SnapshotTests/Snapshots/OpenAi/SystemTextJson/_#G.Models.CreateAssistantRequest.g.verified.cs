@@ -14,8 +14,9 @@ namespace G
         /// <br/>Example: gpt-4-turbo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AnyOf<string, string> Model { get; set; }
+        public required global::System.AnyOf<string, CreateAssistantRequestModel> Model { get; set; }
 
         /// <summary>
         /// The name of the assistant. The maximum length is 256 characters.
@@ -77,6 +78,7 @@ namespace G
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         public AssistantsApiResponseFormatOption? ResponseFormat { get; set; }
 
         /// <summary>

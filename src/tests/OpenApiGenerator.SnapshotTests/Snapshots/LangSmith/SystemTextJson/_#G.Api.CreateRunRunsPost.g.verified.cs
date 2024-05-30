@@ -59,7 +59,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task CreateRunRunsPostAsync(
             string name,
-            string runType,
+            RunCreateSchemaExtendedRunType runType,
             global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?> inputs = default,
             global::System.DateTime startTime = default,
             global::System.DateTime endTime = default,

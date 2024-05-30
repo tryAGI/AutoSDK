@@ -30,4 +30,38 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="3000")]
         _3000,
     }
+
+    public static class BroadcasterSubscriptionTierExtensions
+    {
+        public static string ToValueString(this BroadcasterSubscriptionTier value)
+        {
+            return value switch
+            {
+                BroadcasterSubscriptionTier._1000 => "1000",
+                BroadcasterSubscriptionTier._2000 => "2000",
+                BroadcasterSubscriptionTier._3000 => "3000",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static BroadcasterSubscriptionTier ToEnum(string value)
+        {
+            return value switch
+            {
+                "1000" => BroadcasterSubscriptionTier._1000,
+                "2000" => BroadcasterSubscriptionTier._2000,
+                "3000" => BroadcasterSubscriptionTier._3000,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static BroadcasterSubscriptionTier ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => BroadcasterSubscriptionTier._1000,
+                1 => BroadcasterSubscriptionTier._2000,
+                2 => BroadcasterSubscriptionTier._3000,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

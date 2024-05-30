@@ -28,8 +28,9 @@ namespace G
         /// * 100000
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CheermoteTiersIdJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public required CheermoteTiersId Id { get; set; }
 
         /// <summary>
         /// The hex code of the color associated with this tier level (for example, #979797).

@@ -13,8 +13,9 @@ namespace G
         /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models/overview) for descriptions of them.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AnyOf<string, string> Model { get; set; }
+        public required global::System.AnyOf<string, CreateCompletionRequestModel> Model { get; set; }
 
         /// <summary>
         /// The prompt(s) to generate completions for, encoded as a string, array of strings, array of tokens, or array of token arrays.
@@ -22,6 +23,7 @@ namespace G
         /// <br/>Default Value: &lt;|endoftext|&gt;
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory4))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>? Prompt { get; set; }
 
@@ -104,6 +106,7 @@ namespace G
         /// <br/>Default Value: 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         public global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>? Stop { get; set; }
 
         /// <summary>

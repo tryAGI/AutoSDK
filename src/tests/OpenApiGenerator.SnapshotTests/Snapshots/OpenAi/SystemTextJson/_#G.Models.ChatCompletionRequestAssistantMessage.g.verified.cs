@@ -19,8 +19,9 @@ namespace G
         /// The role of the messages author, in this case `assistant`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatCompletionRequestAssistantMessageRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Role { get; set; }
+        public required ChatCompletionRequestAssistantMessageRole Role { get; set; }
 
         /// <summary>
         /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.

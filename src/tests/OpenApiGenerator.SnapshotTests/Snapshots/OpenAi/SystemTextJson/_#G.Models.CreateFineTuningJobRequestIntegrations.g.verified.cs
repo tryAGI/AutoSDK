@@ -13,8 +13,9 @@ namespace G
         /// The type of integration to enable. Currently, only "wandb" (Weights and Biases) is supported.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory1))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<string> Type { get; set; }
+        public required global::System.OneOf<CreateFineTuningJobRequestIntegrationsType> Type { get; set; }
 
         /// <summary>
         /// The settings for your integration with Weights and Biases. This payload specifies the project that

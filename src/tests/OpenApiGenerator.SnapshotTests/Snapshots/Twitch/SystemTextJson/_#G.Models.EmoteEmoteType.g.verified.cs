@@ -11,19 +11,53 @@ namespace G
     /// * follower — A follower emote.
     /// * subscriptions — A subscriber emote.
     /// </summary>
-    public abstract class EmoteEmoteType
+    public enum EmoteEmoteType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Bitstier = "bitstier";
+        Bitstier,
         /// <summary>
         /// 
         /// </summary>
-        public const string Follower = "follower";
+        Follower,
         /// <summary>
         /// 
         /// </summary>
-        public const string Subscriptions = "subscriptions";
+        Subscriptions,
+    }
+
+    public static class EmoteEmoteTypeExtensions
+    {
+        public static string ToValueString(this EmoteEmoteType value)
+        {
+            return value switch
+            {
+                EmoteEmoteType.Bitstier => "bitstier",
+                EmoteEmoteType.Follower => "follower",
+                EmoteEmoteType.Subscriptions => "subscriptions",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static EmoteEmoteType ToEnum(string value)
+        {
+            return value switch
+            {
+                "bitstier" => EmoteEmoteType.Bitstier,
+                "follower" => EmoteEmoteType.Follower,
+                "subscriptions" => EmoteEmoteType.Subscriptions,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static EmoteEmoteType ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => EmoteEmoteType.Bitstier,
+                1 => EmoteEmoteType.Follower,
+                2 => EmoteEmoteType.Subscriptions,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

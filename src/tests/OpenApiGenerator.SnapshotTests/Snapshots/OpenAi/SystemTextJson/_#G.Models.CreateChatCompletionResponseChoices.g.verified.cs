@@ -16,8 +16,9 @@ namespace G
         /// `tool_calls` if the model called a tool, or `function_call` (deprecated) if the model called a function.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateChatCompletionResponseChoicesFinishReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string FinishReason { get; set; }
+        public required CreateChatCompletionResponseChoicesFinishReason FinishReason { get; set; }
 
         /// <summary>
         /// The index of the choice in the list of choices.

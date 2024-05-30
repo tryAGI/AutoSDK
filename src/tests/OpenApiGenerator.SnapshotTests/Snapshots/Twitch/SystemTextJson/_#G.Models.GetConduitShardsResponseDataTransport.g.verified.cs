@@ -16,8 +16,9 @@ namespace G
         /// * websocket
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("method")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.GetConduitShardsResponseDataTransportMethodJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Method { get; set; }
+        public required GetConduitShardsResponseDataTransportMethod Method { get; set; }
 
         /// <summary>
         /// The callback URL where the notifications are sent. Included only if method is set to webhook.

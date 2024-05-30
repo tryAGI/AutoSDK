@@ -45,7 +45,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task SetExtensionConfigurationSegmentAsync(
             string extensionId,
-            string segment,
+            SetExtensionConfigurationSegmentBodySegment segment,
             string? broadcasterId = default,
             string? content = default,
             string? version = default,

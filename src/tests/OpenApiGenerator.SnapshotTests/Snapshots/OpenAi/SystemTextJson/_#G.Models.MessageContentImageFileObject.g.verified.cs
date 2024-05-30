@@ -13,8 +13,9 @@ namespace G
         /// Always `image_file`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageContentImageFileObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required MessageContentImageFileObjectType Type { get; set; }
 
         /// <summary>
         /// 

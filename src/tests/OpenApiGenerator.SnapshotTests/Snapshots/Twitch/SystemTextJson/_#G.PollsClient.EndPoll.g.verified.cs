@@ -50,7 +50,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<EndPollResponse> EndPollAsync(
             string broadcasterId,
             string id,
-            string status,
+            EndPollBodyStatus status,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new EndPollBody

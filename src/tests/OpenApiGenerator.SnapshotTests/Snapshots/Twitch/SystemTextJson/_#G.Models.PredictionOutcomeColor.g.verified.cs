@@ -12,15 +12,46 @@ namespace G
     ///   
     /// If the number of outcomes is two, the color is BLUE for the first outcome and PINK for the second outcome. If there are more than two outcomes, the color is BLUE for all outcomes.
     /// </summary>
-    public abstract class PredictionOutcomeColor
+    public enum PredictionOutcomeColor
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string BLUE = "BLUE";
+        BLUE,
         /// <summary>
         /// 
         /// </summary>
-        public const string PINK = "PINK";
+        PINK,
+    }
+
+    public static class PredictionOutcomeColorExtensions
+    {
+        public static string ToValueString(this PredictionOutcomeColor value)
+        {
+            return value switch
+            {
+                PredictionOutcomeColor.BLUE => "BLUE",
+                PredictionOutcomeColor.PINK => "PINK",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static PredictionOutcomeColor ToEnum(string value)
+        {
+            return value switch
+            {
+                "BLUE" => PredictionOutcomeColor.BLUE,
+                "PINK" => PredictionOutcomeColor.PINK,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static PredictionOutcomeColor ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => PredictionOutcomeColor.BLUE,
+                1 => PredictionOutcomeColor.PINK,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

@@ -24,4 +24,35 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="FULFILLED")]
         FULFILLED,
     }
+
+    public static class DropsEntitlementFulfillmentStatusExtensions
+    {
+        public static string ToValueString(this DropsEntitlementFulfillmentStatus value)
+        {
+            return value switch
+            {
+                DropsEntitlementFulfillmentStatus.CLAIMED => "CLAIMED",
+                DropsEntitlementFulfillmentStatus.FULFILLED => "FULFILLED",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static DropsEntitlementFulfillmentStatus ToEnum(string value)
+        {
+            return value switch
+            {
+                "CLAIMED" => DropsEntitlementFulfillmentStatus.CLAIMED,
+                "FULFILLED" => DropsEntitlementFulfillmentStatus.FULFILLED,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static DropsEntitlementFulfillmentStatus ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => DropsEntitlementFulfillmentStatus.CLAIMED,
+                1 => DropsEntitlementFulfillmentStatus.FULFILLED,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

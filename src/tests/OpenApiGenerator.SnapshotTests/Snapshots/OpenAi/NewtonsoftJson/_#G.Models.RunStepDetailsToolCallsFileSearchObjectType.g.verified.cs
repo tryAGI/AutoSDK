@@ -16,4 +16,32 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="file_search")]
         FileSearch,
     }
+
+    public static class RunStepDetailsToolCallsFileSearchObjectTypeExtensions
+    {
+        public static string ToValueString(this RunStepDetailsToolCallsFileSearchObjectType value)
+        {
+            return value switch
+            {
+                RunStepDetailsToolCallsFileSearchObjectType.FileSearch => "file_search",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RunStepDetailsToolCallsFileSearchObjectType ToEnum(string value)
+        {
+            return value switch
+            {
+                "file_search" => RunStepDetailsToolCallsFileSearchObjectType.FileSearch,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RunStepDetailsToolCallsFileSearchObjectType ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => RunStepDetailsToolCallsFileSearchObjectType.FileSearch,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

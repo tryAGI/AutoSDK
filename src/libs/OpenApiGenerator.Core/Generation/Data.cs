@@ -18,6 +18,7 @@ public static class Data
 
         Dictionary<string, ModelData> schemas = [];
         EndPoint[] methods = [];
+        AnyOfData[] anyOfDatas = [];
         var openApiDocument = text.GetOpenApiDocument(cancellationToken);
         
         var includedOperationIds = new HashSet<string>(settings.IncludeOperationIds);
@@ -86,6 +87,43 @@ public static class Data
                 .Select(schema => ModelData.FromSchema(schema, settings))
                 .SelectMany(model => model.WithAdditionalModels())
                 .ToDictionary(x => x.ClassName, x => x);
+            
+            var allSchemas = schemas.Values.Concat(methods
+                    .SelectMany(x => x.AdditionalModels))
+                .SelectMany(x => x.Schema.Value.Properties.Concat([x.Schema]).ToArray())
+                .Select(x => x.Value)
+                .ToArray();
+            var anyOfs = allSchemas
+                .Where(x => x.AnyOf is { Count: > 0 })
+                .Select(x => new AnyOfData("AnyOf", x.AnyOf.Count, settings.JsonSerializerType))
+                .Concat(allSchemas
+                    .Where(x => x.Items?.AnyOf is { Count: > 0 })
+                    .Select(x => new AnyOfData("AnyOf", x.Items.AnyOf.Count, settings.JsonSerializerType)))
+                .Distinct()
+                .ToImmutableArray();
+            var oneOfs = allSchemas
+                .Where(x => x.OneOf is { Count: > 0 })
+                .Select(x => new AnyOfData("OneOf", x.OneOf.Count, settings.JsonSerializerType))
+                .Concat(allSchemas
+                    .Where(x => x.Items?.OneOf is { Count: > 0 })
+                    .Select(x => new AnyOfData("OneOf", x.Items.OneOf.Count, settings.JsonSerializerType)))
+                .Distinct()
+                .ToImmutableArray();
+            var allOfs = allSchemas
+                .Where(x => x.AllOf is { Count: > 0 })
+                .Select(x => new AnyOfData("AllOf", x.AllOf.Count, settings.JsonSerializerType))
+                .Concat(allSchemas
+                    .Where(x => x.Items?.AllOf is { Count: > 0 })
+                    .Select(x => new AnyOfData("AllOf", x.Items.AllOf.Count, settings.JsonSerializerType)))
+                .Distinct()
+                .ToImmutableArray();
+
+            anyOfDatas =
+            [
+                ..anyOfs,
+                ..oneOfs,
+                ..allOfs,
+            ];
         }
 
         if (settings.GenerateSdk || settings.GenerateMethods)
@@ -185,35 +223,6 @@ public static class Data
             ];
         }
 
-        var allSchemas = schemas.Values.Concat(methods
-            .SelectMany(x => x.AdditionalModels))
-            .SelectMany(x => x.Schema.Value.Properties.Concat([x.Schema]).ToArray())
-            .Select(x => x.Value)
-            .ToArray();
-        var anyOfs = allSchemas
-            .Where(x => x.AnyOf is { Count: > 0 })
-            .Select(x => new AnyOfData("AnyOf", x.AnyOf.Count))
-            .Concat(allSchemas
-                .Where(x => x.Items?.AnyOf is { Count: > 0 })
-                .Select(x => new AnyOfData("AnyOf", x.Items.AnyOf.Count)))
-            .Distinct()
-            .ToImmutableArray();
-        var oneOfs = allSchemas
-            .Where(x => x.OneOf is { Count: > 0 })
-            .Select(x => new AnyOfData("OneOf", x.OneOf.Count))
-            .Concat(allSchemas
-                .Where(x => x.Items?.OneOf is { Count: > 0 })
-                .Select(x => new AnyOfData("OneOf", x.Items.OneOf.Count)))
-            .Distinct()
-            .ToImmutableArray();
-        var allOfs = allSchemas
-            .Where(x => x.AllOf is { Count: > 0 })
-            .Select(x => new AnyOfData("AllOf", x.AllOf.Count))
-            .Concat(allSchemas
-                .Where(x => x.Items?.AllOf is { Count: > 0 })
-                .Select(x => new AnyOfData("AllOf", x.Items.AllOf.Count)))
-            .Distinct()
-            .ToImmutableArray();
         
         var models = schemas.Values
                 .Select(model => model with
@@ -232,11 +241,7 @@ public static class Data
         
         return (Models: models,
                 Methods: methods.Select(x => x with{ AdditionalModels = []}).ToImmutableArray(),
-                AnyOfs: ImmutableArray.Create([
-                    ..anyOfs,
-                    ..oneOfs,
-                    ..allOfs,
-                ]));
+                AnyOfs: anyOfDatas.ToImmutableArray());
     }
     
     public static FileWithName GetSourceCode(
@@ -257,13 +262,47 @@ public static class Data
             Text: Sources.GenerateAnyOf(data, cancellationToken: cancellationToken));
     }
     
-    public static FileWithName GetSourceCodeForConverter(
+    public static FileWithName GetSourceCodeForAnyOfJsonConverter(
         AnyOfData data,
         CancellationToken cancellationToken = default)
     {
+        if (data.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+        {
+            return FileWithName.Empty;
+        }
+        
         return new FileWithName(
-            Name: $"{data.SubType}{data.Count}JsonConverter.g.cs",
+            Name: $"JsonConverters.{data.SubType}{data.Count}.g.cs",
             Text: Sources.GenerateAnyOfJsonConverter(data, cancellationToken: cancellationToken));
+    }
+    
+    public static FileWithName GetSourceCodeForEnumJsonConverter(
+        ModelData data,
+        CancellationToken cancellationToken = default)
+    {
+        if (data.Style != ModelStyle.Enumeration ||
+            data.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+        {
+            return FileWithName.Empty;
+        }
+        
+        return new FileWithName(
+            Name: $"JsonConverters.{data.ClassName}.g.cs",
+            Text: Sources.GenerateEnumJsonConverter(data, cancellationToken: cancellationToken));
+    }
+
+    public static FileWithName GetSourceCodeForAnyOfJsonConverterFactory(
+        AnyOfData anyOf,
+        CancellationToken cancellationToken = default)
+    {
+        if (anyOf.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+        {
+            return FileWithName.Empty;
+        }
+        
+        return new FileWithName(
+            Name: $"JsonConverters.{anyOf.SubType}Factory{anyOf.Count}.g.cs",
+            Text: Sources.GenerateAnyOfJsonConverterFactory(anyOf, cancellationToken: cancellationToken));
     }
     
     public static FileWithName GetSourceCodeForSuperClass(

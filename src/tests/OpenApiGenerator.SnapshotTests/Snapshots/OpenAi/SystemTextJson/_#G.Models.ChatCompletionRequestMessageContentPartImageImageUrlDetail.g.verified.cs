@@ -8,19 +8,53 @@ namespace G
     /// Specifies the detail level of the image. Learn more in the [Vision guide](/docs/guides/vision/low-or-high-fidelity-image-understanding).
     /// <br/>Default Value: auto
     /// </summary>
-    public abstract class ChatCompletionRequestMessageContentPartImageImageUrlDetail
+    public enum ChatCompletionRequestMessageContentPartImageImageUrlDetail
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Auto = "auto";
+        Auto,
         /// <summary>
         /// 
         /// </summary>
-        public const string Low = "low";
+        Low,
         /// <summary>
         /// 
         /// </summary>
-        public const string High = "high";
+        High,
+    }
+
+    public static class ChatCompletionRequestMessageContentPartImageImageUrlDetailExtensions
+    {
+        public static string ToValueString(this ChatCompletionRequestMessageContentPartImageImageUrlDetail value)
+        {
+            return value switch
+            {
+                ChatCompletionRequestMessageContentPartImageImageUrlDetail.Auto => "auto",
+                ChatCompletionRequestMessageContentPartImageImageUrlDetail.Low => "low",
+                ChatCompletionRequestMessageContentPartImageImageUrlDetail.High => "high",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static ChatCompletionRequestMessageContentPartImageImageUrlDetail ToEnum(string value)
+        {
+            return value switch
+            {
+                "auto" => ChatCompletionRequestMessageContentPartImageImageUrlDetail.Auto,
+                "low" => ChatCompletionRequestMessageContentPartImageImageUrlDetail.Low,
+                "high" => ChatCompletionRequestMessageContentPartImageImageUrlDetail.High,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static ChatCompletionRequestMessageContentPartImageImageUrlDetail ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => ChatCompletionRequestMessageContentPartImageImageUrlDetail.Auto,
+                1 => ChatCompletionRequestMessageContentPartImageImageUrlDetail.Low,
+                2 => ChatCompletionRequestMessageContentPartImageImageUrlDetail.High,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

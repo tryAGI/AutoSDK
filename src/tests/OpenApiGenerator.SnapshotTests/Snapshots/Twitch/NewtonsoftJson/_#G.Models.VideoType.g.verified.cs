@@ -30,4 +30,38 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="upload")]
         Upload,
     }
+
+    public static class VideoTypeExtensions
+    {
+        public static string ToValueString(this VideoType value)
+        {
+            return value switch
+            {
+                VideoType.Archive => "archive",
+                VideoType.Highlight => "highlight",
+                VideoType.Upload => "upload",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static VideoType ToEnum(string value)
+        {
+            return value switch
+            {
+                "archive" => VideoType.Archive,
+                "highlight" => VideoType.Highlight,
+                "upload" => VideoType.Upload,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static VideoType ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => VideoType.Archive,
+                1 => VideoType.Highlight,
+                2 => VideoType.Upload,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

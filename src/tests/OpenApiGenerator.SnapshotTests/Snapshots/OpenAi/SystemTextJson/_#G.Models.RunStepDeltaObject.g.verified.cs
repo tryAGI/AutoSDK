@@ -20,8 +20,9 @@ namespace G
         /// The object type, which is always `thread.run.step.delta`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDeltaObjectObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Object { get; set; }
+        public required RunStepDeltaObjectObject Object { get; set; }
 
         /// <summary>
         /// The delta containing the fields that have changed on the run step.

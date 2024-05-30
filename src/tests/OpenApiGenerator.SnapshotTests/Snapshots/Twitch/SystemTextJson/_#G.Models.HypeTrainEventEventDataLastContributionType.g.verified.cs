@@ -11,19 +11,53 @@ namespace G
     /// * SUBS — Subscription activity like subscribing or gifting subscriptions.
     /// * OTHER — Covers other contribution methods not listed.
     /// </summary>
-    public abstract class HypeTrainEventEventDataLastContributionType
+    public enum HypeTrainEventEventDataLastContributionType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string BITS = "BITS";
+        BITS,
         /// <summary>
         /// 
         /// </summary>
-        public const string SUBS = "SUBS";
+        SUBS,
         /// <summary>
         /// 
         /// </summary>
-        public const string OTHER = "OTHER";
+        OTHER,
+    }
+
+    public static class HypeTrainEventEventDataLastContributionTypeExtensions
+    {
+        public static string ToValueString(this HypeTrainEventEventDataLastContributionType value)
+        {
+            return value switch
+            {
+                HypeTrainEventEventDataLastContributionType.BITS => "BITS",
+                HypeTrainEventEventDataLastContributionType.SUBS => "SUBS",
+                HypeTrainEventEventDataLastContributionType.OTHER => "OTHER",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static HypeTrainEventEventDataLastContributionType ToEnum(string value)
+        {
+            return value switch
+            {
+                "BITS" => HypeTrainEventEventDataLastContributionType.BITS,
+                "SUBS" => HypeTrainEventEventDataLastContributionType.SUBS,
+                "OTHER" => HypeTrainEventEventDataLastContributionType.OTHER,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static HypeTrainEventEventDataLastContributionType ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => HypeTrainEventEventDataLastContributionType.BITS,
+                1 => HypeTrainEventEventDataLastContributionType.SUBS,
+                2 => HypeTrainEventEventDataLastContributionType.OTHER,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

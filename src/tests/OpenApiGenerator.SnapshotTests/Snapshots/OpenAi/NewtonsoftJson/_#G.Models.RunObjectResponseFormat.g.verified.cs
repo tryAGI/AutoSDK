@@ -21,4 +21,35 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="auto")]
         Auto,
     }
+
+    public static class RunObjectResponseFormatExtensions
+    {
+        public static string ToValueString(this RunObjectResponseFormat value)
+        {
+            return value switch
+            {
+                RunObjectResponseFormat.None => "none",
+                RunObjectResponseFormat.Auto => "auto",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RunObjectResponseFormat ToEnum(string value)
+        {
+            return value switch
+            {
+                "none" => RunObjectResponseFormat.None,
+                "auto" => RunObjectResponseFormat.Auto,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RunObjectResponseFormat ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => RunObjectResponseFormat.None,
+                1 => RunObjectResponseFormat.Auto,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

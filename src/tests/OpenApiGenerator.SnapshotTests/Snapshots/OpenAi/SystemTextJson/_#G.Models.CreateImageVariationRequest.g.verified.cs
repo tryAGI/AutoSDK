@@ -22,7 +22,8 @@ namespace G
         /// <br/>Example: dall-e-2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        public global::System.AnyOf<string?, string?>? Model { get; set; } = CreateImageVariationRequestModel.DallE2;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::System.AnyOf<string?, CreateImageVariationRequestModel?>? Model { get; set; } = CreateImageVariationRequestModel.DallE2;
 
         /// <summary>
         /// The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only `n=1` is supported.
@@ -38,7 +39,8 @@ namespace G
         /// <br/>Example: url
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        public string? ResponseFormat { get; set; } = CreateImageVariationRequestResponseFormat.Url;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateImageVariationRequestResponseFormatJsonConverter))]
+        public CreateImageVariationRequestResponseFormat? ResponseFormat { get; set; } = CreateImageVariationRequestResponseFormat.Url;
 
         /// <summary>
         /// The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.
@@ -46,7 +48,8 @@ namespace G
         /// <br/>Example: 1024x1024
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
-        public string? Size { get; set; } = CreateImageVariationRequestSize._1024x1024;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateImageVariationRequestSizeJsonConverter))]
+        public CreateImageVariationRequestSize? Size { get; set; } = CreateImageVariationRequestSize._1024x1024;
 
         /// <summary>
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).

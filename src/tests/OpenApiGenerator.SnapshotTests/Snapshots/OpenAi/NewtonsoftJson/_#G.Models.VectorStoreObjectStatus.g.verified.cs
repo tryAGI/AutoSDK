@@ -26,4 +26,38 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="completed")]
         Completed,
     }
+
+    public static class VectorStoreObjectStatusExtensions
+    {
+        public static string ToValueString(this VectorStoreObjectStatus value)
+        {
+            return value switch
+            {
+                VectorStoreObjectStatus.Expired => "expired",
+                VectorStoreObjectStatus.InProgress => "in_progress",
+                VectorStoreObjectStatus.Completed => "completed",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static VectorStoreObjectStatus ToEnum(string value)
+        {
+            return value switch
+            {
+                "expired" => VectorStoreObjectStatus.Expired,
+                "in_progress" => VectorStoreObjectStatus.InProgress,
+                "completed" => VectorStoreObjectStatus.Completed,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static VectorStoreObjectStatus ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => VectorStoreObjectStatus.Expired,
+                1 => VectorStoreObjectStatus.InProgress,
+                2 => VectorStoreObjectStatus.Completed,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

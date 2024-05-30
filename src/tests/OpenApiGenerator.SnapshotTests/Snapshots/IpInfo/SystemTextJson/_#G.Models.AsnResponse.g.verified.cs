@@ -64,8 +64,9 @@ namespace G
         /// <br/>Example: isp
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AsnResponseTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required AsnResponseType Type { get; set; }
 
         /// <summary>
         /// 

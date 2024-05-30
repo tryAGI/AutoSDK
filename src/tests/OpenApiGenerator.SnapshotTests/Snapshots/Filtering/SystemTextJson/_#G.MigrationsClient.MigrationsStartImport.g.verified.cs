@@ -59,7 +59,7 @@ namespace G
             string owner,
             string repo,
             string vcsUrl,
-            string? vcs = default,
+            MigrationsStartImportRequestVcs? vcs = default,
             string? vcsUsername = default,
             string? vcsPassword = default,
             string? tfvcProject = default,

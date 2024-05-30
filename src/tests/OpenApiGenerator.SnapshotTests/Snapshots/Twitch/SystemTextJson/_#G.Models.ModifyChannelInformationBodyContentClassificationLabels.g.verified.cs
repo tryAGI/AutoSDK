@@ -19,8 +19,9 @@ namespace G
         /// * ProfanityVulgarity
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ModifyChannelInformationBodyContentClassificationLabelsIdJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public required ModifyChannelInformationBodyContentClassificationLabelsId Id { get; set; }
 
         /// <summary>
         /// Boolean flag indicating whether the label should be enabled (true) or disabled for the channel.

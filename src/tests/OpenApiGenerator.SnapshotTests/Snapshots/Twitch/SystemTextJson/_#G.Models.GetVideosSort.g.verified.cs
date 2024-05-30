@@ -7,19 +7,53 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class GetVideosSort
+    public enum GetVideosSort
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Time = "time";
+        Time,
         /// <summary>
         /// 
         /// </summary>
-        public const string Trending = "trending";
+        Trending,
         /// <summary>
         /// 
         /// </summary>
-        public const string Views = "views";
+        Views,
+    }
+
+    public static class GetVideosSortExtensions
+    {
+        public static string ToValueString(this GetVideosSort value)
+        {
+            return value switch
+            {
+                GetVideosSort.Time => "time",
+                GetVideosSort.Trending => "trending",
+                GetVideosSort.Views => "views",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static GetVideosSort ToEnum(string value)
+        {
+            return value switch
+            {
+                "time" => GetVideosSort.Time,
+                "trending" => GetVideosSort.Trending,
+                "views" => GetVideosSort.Views,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static GetVideosSort ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => GetVideosSort.Time,
+                1 => GetVideosSort.Trending,
+                2 => GetVideosSort.Views,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

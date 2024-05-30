@@ -16,4 +16,32 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="POST")]
         POST,
     }
+
+    public static class BatchRequestInputMethodExtensions
+    {
+        public static string ToValueString(this BatchRequestInputMethod value)
+        {
+            return value switch
+            {
+                BatchRequestInputMethod.POST => "POST",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static BatchRequestInputMethod ToEnum(string value)
+        {
+            return value switch
+            {
+                "POST" => BatchRequestInputMethod.POST,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static BatchRequestInputMethod ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => BatchRequestInputMethod.POST,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

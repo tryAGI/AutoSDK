@@ -23,7 +23,8 @@ namespace G
         /// <br/>Example: dall-e-3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        public global::System.AnyOf<string?, string?>? Model { get; set; } = CreateImageRequestModel.DallE2;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::System.AnyOf<string?, CreateImageRequestModel?>? Model { get; set; } = CreateImageRequestModel.DallE2;
 
         /// <summary>
         /// The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only `n=1` is supported.
@@ -39,7 +40,8 @@ namespace G
         /// <br/>Example: standard
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("quality")]
-        public string? Quality { get; set; } = CreateImageRequestQuality.Standard;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateImageRequestQualityJsonConverter))]
+        public CreateImageRequestQuality? Quality { get; set; } = CreateImageRequestQuality.Standard;
 
         /// <summary>
         /// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.
@@ -47,7 +49,8 @@ namespace G
         /// <br/>Example: url
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        public string? ResponseFormat { get; set; } = CreateImageRequestResponseFormat.Url;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateImageRequestResponseFormatJsonConverter))]
+        public CreateImageRequestResponseFormat? ResponseFormat { get; set; } = CreateImageRequestResponseFormat.Url;
 
         /// <summary>
         /// The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024` for `dall-e-2`. Must be one of `1024x1024`, `1792x1024`, or `1024x1792` for `dall-e-3` models.
@@ -55,7 +58,8 @@ namespace G
         /// <br/>Example: 1024x1024
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
-        public string? Size { get; set; } = CreateImageRequestSize._1024x1024;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateImageRequestSizeJsonConverter))]
+        public CreateImageRequestSize? Size { get; set; } = CreateImageRequestSize._1024x1024;
 
         /// <summary>
         /// The style of the generated images. Must be one of `vivid` or `natural`. Vivid causes the model to lean towards generating hyper-real and dramatic images. Natural causes the model to produce more natural, less hyper-real looking images. This param is only supported for `dall-e-3`.
@@ -63,7 +67,8 @@ namespace G
         /// <br/>Example: vivid
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("style")]
-        public string? Style { get; set; } = CreateImageRequestStyle.Vivid;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateImageRequestStyleJsonConverter))]
+        public CreateImageRequestStyle? Style { get; set; } = CreateImageRequestStyle.Vivid;
 
         /// <summary>
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).

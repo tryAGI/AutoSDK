@@ -7,15 +7,46 @@ namespace G
     /// <summary>
     /// <br/>Default Value: desc
     /// </summary>
-    public abstract class ListVectorStoreFilesOrder
+    public enum ListVectorStoreFilesOrder
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Asc = "asc";
+        Asc,
         /// <summary>
         /// 
         /// </summary>
-        public const string Desc = "desc";
+        Desc,
+    }
+
+    public static class ListVectorStoreFilesOrderExtensions
+    {
+        public static string ToValueString(this ListVectorStoreFilesOrder value)
+        {
+            return value switch
+            {
+                ListVectorStoreFilesOrder.Asc => "asc",
+                ListVectorStoreFilesOrder.Desc => "desc",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static ListVectorStoreFilesOrder ToEnum(string value)
+        {
+            return value switch
+            {
+                "asc" => ListVectorStoreFilesOrder.Asc,
+                "desc" => ListVectorStoreFilesOrder.Desc,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static ListVectorStoreFilesOrder ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => ListVectorStoreFilesOrder.Asc,
+                1 => ListVectorStoreFilesOrder.Desc,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

@@ -22,9 +22,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<GetCustomRewardRedemptionResponse> GetCustomRewardRedemptionAsync(
             string broadcasterId,
             string rewardId,
-            string status,
+            GetCustomRewardRedemptionStatus status,
             global::System.Collections.Generic.IList<string> id,
-            string sort,
+            GetCustomRewardRedemptionSort sort,
             string after,
             int first,
             global::System.Threading.CancellationToken cancellationToken = default)

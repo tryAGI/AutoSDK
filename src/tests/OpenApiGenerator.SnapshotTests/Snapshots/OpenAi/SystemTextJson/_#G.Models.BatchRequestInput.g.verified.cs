@@ -19,7 +19,8 @@ namespace G
         /// The HTTP method to be used for the request. Currently only `POST` is supported.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("method")]
-        public string? Method { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.BatchRequestInputMethodJsonConverter))]
+        public BatchRequestInputMethod? Method { get; set; }
 
         /// <summary>
         /// The OpenAI API relative URL to be used for the request. Currently `/v1/chat/completions` and `/v1/embeddings` are supported.

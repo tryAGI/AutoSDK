@@ -20,8 +20,9 @@ namespace G
         /// The object type, which is always `thread.run.step`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepObjectObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Object { get; set; }
+        public required RunStepObjectObject Object { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run step was created.
@@ -55,20 +56,23 @@ namespace G
         /// The type of run step, which can be either `message_creation` or `tool_calls`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required RunStepObjectType Type { get; set; }
 
         /// <summary>
         /// The status of the run step, which can be either `in_progress`, `cancelled`, `failed`, `completed`, or `expired`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepObjectStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
+        public required RunStepObjectStatus Status { get; set; }
 
         /// <summary>
         /// The details of the run step.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("step_details")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required object StepDetails { get; set; }
 

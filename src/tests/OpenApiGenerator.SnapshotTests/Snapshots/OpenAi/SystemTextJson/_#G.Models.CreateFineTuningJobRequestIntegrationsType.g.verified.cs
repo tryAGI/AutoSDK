@@ -7,11 +7,39 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class CreateFineTuningJobRequestIntegrationsType
+    public enum CreateFineTuningJobRequestIntegrationsType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Wandb = "wandb";
+        Wandb,
+    }
+
+    public static class CreateFineTuningJobRequestIntegrationsTypeExtensions
+    {
+        public static string ToValueString(this CreateFineTuningJobRequestIntegrationsType value)
+        {
+            return value switch
+            {
+                CreateFineTuningJobRequestIntegrationsType.Wandb => "wandb",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateFineTuningJobRequestIntegrationsType ToEnum(string value)
+        {
+            return value switch
+            {
+                "wandb" => CreateFineTuningJobRequestIntegrationsType.Wandb,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateFineTuningJobRequestIntegrationsType ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => CreateFineTuningJobRequestIntegrationsType.Wandb,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

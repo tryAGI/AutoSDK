@@ -30,8 +30,9 @@ namespace G
         /// * DENY
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ManageHeldAutoModMessagesBodyActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Action { get; set; }
+        public required ManageHeldAutoModMessagesBodyAction Action { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

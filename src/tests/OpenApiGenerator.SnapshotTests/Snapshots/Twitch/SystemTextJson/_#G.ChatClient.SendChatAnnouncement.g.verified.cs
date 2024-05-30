@@ -50,7 +50,7 @@ namespace G
             string broadcasterId,
             string moderatorId,
             string message,
-            string? color = default,
+            SendChatAnnouncementBodyColor? color = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new SendChatAnnouncementBody

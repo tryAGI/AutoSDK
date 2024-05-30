@@ -13,8 +13,9 @@ namespace G
         /// One of `server_error`, `rate_limit_exceeded`, or `invalid_prompt`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunObjectLastErrorCodeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Code { get; set; }
+        public required RunObjectLastErrorCode Code { get; set; }
 
         /// <summary>
         /// A human-readable description of the error.

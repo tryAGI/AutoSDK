@@ -12,23 +12,60 @@ namespace G
     /// * `HORIZONTAL_LAYOUT`: All live guests are arranged in a horizontal bar within the browser source
     /// * `VERTICAL_LAYOUT`: All live guests are arranged in a vertical bar within the browser source
     /// </summary>
-    public abstract class UpdateChannelGuestStarSettingsBodyGroupLayout
+    public enum UpdateChannelGuestStarSettingsBodyGroupLayout
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string TILEDLAYOUT = "TILED_LAYOUT";
+        TILEDLAYOUT,
         /// <summary>
         /// 
         /// </summary>
-        public const string SCREENSHARELAYOUT = "SCREENSHARE_LAYOUT";
+        SCREENSHARELAYOUT,
         /// <summary>
         /// 
         /// </summary>
-        public const string HORIZONTALLAYOUT = "HORIZONTAL_LAYOUT";
+        HORIZONTALLAYOUT,
         /// <summary>
         /// 
         /// </summary>
-        public const string VERTICALLAYOUT = "VERTICAL_LAYOUT";
+        VERTICALLAYOUT,
+    }
+
+    public static class UpdateChannelGuestStarSettingsBodyGroupLayoutExtensions
+    {
+        public static string ToValueString(this UpdateChannelGuestStarSettingsBodyGroupLayout value)
+        {
+            return value switch
+            {
+                UpdateChannelGuestStarSettingsBodyGroupLayout.TILEDLAYOUT => "TILED_LAYOUT",
+                UpdateChannelGuestStarSettingsBodyGroupLayout.SCREENSHARELAYOUT => "SCREENSHARE_LAYOUT",
+                UpdateChannelGuestStarSettingsBodyGroupLayout.HORIZONTALLAYOUT => "HORIZONTAL_LAYOUT",
+                UpdateChannelGuestStarSettingsBodyGroupLayout.VERTICALLAYOUT => "VERTICAL_LAYOUT",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static UpdateChannelGuestStarSettingsBodyGroupLayout ToEnum(string value)
+        {
+            return value switch
+            {
+                "TILED_LAYOUT" => UpdateChannelGuestStarSettingsBodyGroupLayout.TILEDLAYOUT,
+                "SCREENSHARE_LAYOUT" => UpdateChannelGuestStarSettingsBodyGroupLayout.SCREENSHARELAYOUT,
+                "HORIZONTAL_LAYOUT" => UpdateChannelGuestStarSettingsBodyGroupLayout.HORIZONTALLAYOUT,
+                "VERTICAL_LAYOUT" => UpdateChannelGuestStarSettingsBodyGroupLayout.VERTICALLAYOUT,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static UpdateChannelGuestStarSettingsBodyGroupLayout ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => UpdateChannelGuestStarSettingsBodyGroupLayout.TILEDLAYOUT,
+                1 => UpdateChannelGuestStarSettingsBodyGroupLayout.SCREENSHARELAYOUT,
+                2 => UpdateChannelGuestStarSettingsBodyGroupLayout.HORIZONTALLAYOUT,
+                3 => UpdateChannelGuestStarSettingsBodyGroupLayout.VERTICALLAYOUT,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

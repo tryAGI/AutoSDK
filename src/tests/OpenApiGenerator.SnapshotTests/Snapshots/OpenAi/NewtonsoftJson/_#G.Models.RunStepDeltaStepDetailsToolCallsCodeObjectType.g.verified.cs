@@ -16,4 +16,32 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="code_interpreter")]
         CodeInterpreter,
     }
+
+    public static class RunStepDeltaStepDetailsToolCallsCodeObjectTypeExtensions
+    {
+        public static string ToValueString(this RunStepDeltaStepDetailsToolCallsCodeObjectType value)
+        {
+            return value switch
+            {
+                RunStepDeltaStepDetailsToolCallsCodeObjectType.CodeInterpreter => "code_interpreter",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RunStepDeltaStepDetailsToolCallsCodeObjectType ToEnum(string value)
+        {
+            return value switch
+            {
+                "code_interpreter" => RunStepDeltaStepDetailsToolCallsCodeObjectType.CodeInterpreter,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RunStepDeltaStepDetailsToolCallsCodeObjectType ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => RunStepDeltaStepDetailsToolCallsCodeObjectType.CodeInterpreter,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

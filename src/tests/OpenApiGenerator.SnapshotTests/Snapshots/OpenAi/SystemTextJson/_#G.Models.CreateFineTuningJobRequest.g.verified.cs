@@ -15,8 +15,9 @@ namespace G
         /// <br/>Example: gpt-3.5-turbo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AnyOf<string, string> Model { get; set; }
+        public required global::System.AnyOf<string, CreateFineTuningJobRequestModel> Model { get; set; }
 
         /// <summary>
         /// The ID of an uploaded file that contains training data.

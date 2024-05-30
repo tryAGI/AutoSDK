@@ -30,4 +30,38 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="OTHER")]
         OTHER,
     }
+
+    public static class HypeTrainEventEventDataLastContributionTypeExtensions
+    {
+        public static string ToValueString(this HypeTrainEventEventDataLastContributionType value)
+        {
+            return value switch
+            {
+                HypeTrainEventEventDataLastContributionType.BITS => "BITS",
+                HypeTrainEventEventDataLastContributionType.SUBS => "SUBS",
+                HypeTrainEventEventDataLastContributionType.OTHER => "OTHER",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static HypeTrainEventEventDataLastContributionType ToEnum(string value)
+        {
+            return value switch
+            {
+                "BITS" => HypeTrainEventEventDataLastContributionType.BITS,
+                "SUBS" => HypeTrainEventEventDataLastContributionType.SUBS,
+                "OTHER" => HypeTrainEventEventDataLastContributionType.OTHER,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static HypeTrainEventEventDataLastContributionType ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => HypeTrainEventEventDataLastContributionType.BITS,
+                1 => HypeTrainEventEventDataLastContributionType.SUBS,
+                2 => HypeTrainEventEventDataLastContributionType.OTHER,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

@@ -59,7 +59,7 @@ namespace G
             global::System.Collections.Generic.IList<string> id,
             string broadcasterId,
             string rewardId,
-            string status,
+            UpdateRedemptionStatusBodyStatus status,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new UpdateRedemptionStatusBody

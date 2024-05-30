@@ -13,8 +13,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ErrorEventEventJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Event { get; set; }
+        public required ErrorEventEvent Event { get; set; }
 
         /// <summary>
         /// 

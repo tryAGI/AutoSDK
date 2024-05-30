@@ -18,4 +18,32 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="json")]
         Json,
     }
+
+    public static class GenerateCompletionRequestFormatExtensions
+    {
+        public static string ToValueString(this GenerateCompletionRequestFormat value)
+        {
+            return value switch
+            {
+                GenerateCompletionRequestFormat.Json => "json",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static GenerateCompletionRequestFormat ToEnum(string value)
+        {
+            return value switch
+            {
+                "json" => GenerateCompletionRequestFormat.Json,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static GenerateCompletionRequestFormat ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => GenerateCompletionRequestFormat.Json,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

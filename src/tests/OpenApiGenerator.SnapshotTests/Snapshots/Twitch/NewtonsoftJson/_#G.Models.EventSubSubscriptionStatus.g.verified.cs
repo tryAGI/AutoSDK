@@ -108,4 +108,77 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="websocket_network_error")]
         WebsocketNetworkError,
     }
+
+    public static class EventSubSubscriptionStatusExtensions
+    {
+        public static string ToValueString(this EventSubSubscriptionStatus value)
+        {
+            return value switch
+            {
+                EventSubSubscriptionStatus.Enabled => "enabled",
+                EventSubSubscriptionStatus.WebhookCallbackVerificationPending => "webhook_callback_verification_pending",
+                EventSubSubscriptionStatus.WebhookCallbackVerificationFailed => "webhook_callback_verification_failed",
+                EventSubSubscriptionStatus.NotificationFailuresExceeded => "notification_failures_exceeded",
+                EventSubSubscriptionStatus.AuthorizationRevoked => "authorization_revoked",
+                EventSubSubscriptionStatus.ModeratorRemoved => "moderator_removed",
+                EventSubSubscriptionStatus.UserRemoved => "user_removed",
+                EventSubSubscriptionStatus.VersionRemoved => "version_removed",
+                EventSubSubscriptionStatus.BetaMaintenance => "beta_maintenance",
+                EventSubSubscriptionStatus.WebsocketDisconnected => "websocket_disconnected",
+                EventSubSubscriptionStatus.WebsocketFailedPingPong => "websocket_failed_ping_pong",
+                EventSubSubscriptionStatus.WebsocketReceivedInboundTraffic => "websocket_received_inbound_traffic",
+                EventSubSubscriptionStatus.WebsocketConnectionUnused => "websocket_connection_unused",
+                EventSubSubscriptionStatus.WebsocketInternalError => "websocket_internal_error",
+                EventSubSubscriptionStatus.WebsocketNetworkTimeout => "websocket_network_timeout",
+                EventSubSubscriptionStatus.WebsocketNetworkError => "websocket_network_error",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static EventSubSubscriptionStatus ToEnum(string value)
+        {
+            return value switch
+            {
+                "enabled" => EventSubSubscriptionStatus.Enabled,
+                "webhook_callback_verification_pending" => EventSubSubscriptionStatus.WebhookCallbackVerificationPending,
+                "webhook_callback_verification_failed" => EventSubSubscriptionStatus.WebhookCallbackVerificationFailed,
+                "notification_failures_exceeded" => EventSubSubscriptionStatus.NotificationFailuresExceeded,
+                "authorization_revoked" => EventSubSubscriptionStatus.AuthorizationRevoked,
+                "moderator_removed" => EventSubSubscriptionStatus.ModeratorRemoved,
+                "user_removed" => EventSubSubscriptionStatus.UserRemoved,
+                "version_removed" => EventSubSubscriptionStatus.VersionRemoved,
+                "beta_maintenance" => EventSubSubscriptionStatus.BetaMaintenance,
+                "websocket_disconnected" => EventSubSubscriptionStatus.WebsocketDisconnected,
+                "websocket_failed_ping_pong" => EventSubSubscriptionStatus.WebsocketFailedPingPong,
+                "websocket_received_inbound_traffic" => EventSubSubscriptionStatus.WebsocketReceivedInboundTraffic,
+                "websocket_connection_unused" => EventSubSubscriptionStatus.WebsocketConnectionUnused,
+                "websocket_internal_error" => EventSubSubscriptionStatus.WebsocketInternalError,
+                "websocket_network_timeout" => EventSubSubscriptionStatus.WebsocketNetworkTimeout,
+                "websocket_network_error" => EventSubSubscriptionStatus.WebsocketNetworkError,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static EventSubSubscriptionStatus ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => EventSubSubscriptionStatus.Enabled,
+                1 => EventSubSubscriptionStatus.WebhookCallbackVerificationPending,
+                2 => EventSubSubscriptionStatus.WebhookCallbackVerificationFailed,
+                3 => EventSubSubscriptionStatus.NotificationFailuresExceeded,
+                4 => EventSubSubscriptionStatus.AuthorizationRevoked,
+                5 => EventSubSubscriptionStatus.ModeratorRemoved,
+                6 => EventSubSubscriptionStatus.UserRemoved,
+                7 => EventSubSubscriptionStatus.VersionRemoved,
+                8 => EventSubSubscriptionStatus.BetaMaintenance,
+                9 => EventSubSubscriptionStatus.WebsocketDisconnected,
+                10 => EventSubSubscriptionStatus.WebsocketFailedPingPong,
+                11 => EventSubSubscriptionStatus.WebsocketReceivedInboundTraffic,
+                12 => EventSubSubscriptionStatus.WebsocketConnectionUnused,
+                13 => EventSubSubscriptionStatus.WebsocketInternalError,
+                14 => EventSubSubscriptionStatus.WebsocketNetworkTimeout,
+                15 => EventSubSubscriptionStatus.WebsocketNetworkError,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

@@ -59,7 +59,7 @@ namespace G
         public async global::System.Collections.Generic.IAsyncEnumerable<GenerateChatCompletionResponse> GenerateChatCompletionAsync(
             string model,
             global::System.Collections.Generic.IList<Message> messages,
-            string? format = default,
+            GenerateChatCompletionRequestFormat? format = default,
             RequestOptions? options = default,
             bool stream = true,
             int keepAlive = default,

@@ -13,27 +13,67 @@ namespace G
     /// * Gambling
     /// * ProfanityVulgarity
     /// </summary>
-    public abstract class ModifyChannelInformationBodyContentClassificationLabelsId
+    public enum ModifyChannelInformationBodyContentClassificationLabelsId
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string DrugsIntoxication = "DrugsIntoxication";
+        DrugsIntoxication,
         /// <summary>
         /// 
         /// </summary>
-        public const string SexualThemes = "SexualThemes";
+        SexualThemes,
         /// <summary>
         /// 
         /// </summary>
-        public const string ViolentGraphic = "ViolentGraphic";
+        ViolentGraphic,
         /// <summary>
         /// 
         /// </summary>
-        public const string Gambling = "Gambling";
+        Gambling,
         /// <summary>
         /// 
         /// </summary>
-        public const string ProfanityVulgarity = "ProfanityVulgarity";
+        ProfanityVulgarity,
+    }
+
+    public static class ModifyChannelInformationBodyContentClassificationLabelsIdExtensions
+    {
+        public static string ToValueString(this ModifyChannelInformationBodyContentClassificationLabelsId value)
+        {
+            return value switch
+            {
+                ModifyChannelInformationBodyContentClassificationLabelsId.DrugsIntoxication => "DrugsIntoxication",
+                ModifyChannelInformationBodyContentClassificationLabelsId.SexualThemes => "SexualThemes",
+                ModifyChannelInformationBodyContentClassificationLabelsId.ViolentGraphic => "ViolentGraphic",
+                ModifyChannelInformationBodyContentClassificationLabelsId.Gambling => "Gambling",
+                ModifyChannelInformationBodyContentClassificationLabelsId.ProfanityVulgarity => "ProfanityVulgarity",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static ModifyChannelInformationBodyContentClassificationLabelsId ToEnum(string value)
+        {
+            return value switch
+            {
+                "DrugsIntoxication" => ModifyChannelInformationBodyContentClassificationLabelsId.DrugsIntoxication,
+                "SexualThemes" => ModifyChannelInformationBodyContentClassificationLabelsId.SexualThemes,
+                "ViolentGraphic" => ModifyChannelInformationBodyContentClassificationLabelsId.ViolentGraphic,
+                "Gambling" => ModifyChannelInformationBodyContentClassificationLabelsId.Gambling,
+                "ProfanityVulgarity" => ModifyChannelInformationBodyContentClassificationLabelsId.ProfanityVulgarity,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static ModifyChannelInformationBodyContentClassificationLabelsId ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => ModifyChannelInformationBodyContentClassificationLabelsId.DrugsIntoxication,
+                1 => ModifyChannelInformationBodyContentClassificationLabelsId.SexualThemes,
+                2 => ModifyChannelInformationBodyContentClassificationLabelsId.ViolentGraphic,
+                3 => ModifyChannelInformationBodyContentClassificationLabelsId.Gambling,
+                4 => ModifyChannelInformationBodyContentClassificationLabelsId.ProfanityVulgarity,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

@@ -26,4 +26,35 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="PINK")]
         PINK,
     }
+
+    public static class PredictionOutcomeColorExtensions
+    {
+        public static string ToValueString(this PredictionOutcomeColor value)
+        {
+            return value switch
+            {
+                PredictionOutcomeColor.BLUE => "BLUE",
+                PredictionOutcomeColor.PINK => "PINK",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static PredictionOutcomeColor ToEnum(string value)
+        {
+            return value switch
+            {
+                "BLUE" => PredictionOutcomeColor.BLUE,
+                "PINK" => PredictionOutcomeColor.PINK,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static PredictionOutcomeColor ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => PredictionOutcomeColor.BLUE,
+                1 => PredictionOutcomeColor.PINK,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

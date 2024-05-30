@@ -13,7 +13,8 @@ namespace G
         /// The reason why the run is incomplete. This will point to which specific token limit was reached over the course of the run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reason")]
-        public string? Reason { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunObjectIncompleteDetailsReasonJsonConverter))]
+        public RunObjectIncompleteDetailsReason? Reason { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

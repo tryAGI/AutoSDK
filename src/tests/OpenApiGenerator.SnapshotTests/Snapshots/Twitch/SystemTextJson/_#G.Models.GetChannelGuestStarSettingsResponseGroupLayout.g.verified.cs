@@ -10,15 +10,46 @@ namespace G
     /// * `TILED_LAYOUT`: All live guests are tiled within the browser source with the same size.
     /// * `SCREENSHARE_LAYOUT`: All live guests are tiled within the browser source with the same size. If there is an active screen share, it is sized larger than the other guests.
     /// </summary>
-    public abstract class GetChannelGuestStarSettingsResponseGroupLayout
+    public enum GetChannelGuestStarSettingsResponseGroupLayout
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string TILEDLAYOUT = "TILED_LAYOUT";
+        TILEDLAYOUT,
         /// <summary>
         /// 
         /// </summary>
-        public const string SCREENSHARELAYOUT = "SCREENSHARE_LAYOUT";
+        SCREENSHARELAYOUT,
+    }
+
+    public static class GetChannelGuestStarSettingsResponseGroupLayoutExtensions
+    {
+        public static string ToValueString(this GetChannelGuestStarSettingsResponseGroupLayout value)
+        {
+            return value switch
+            {
+                GetChannelGuestStarSettingsResponseGroupLayout.TILEDLAYOUT => "TILED_LAYOUT",
+                GetChannelGuestStarSettingsResponseGroupLayout.SCREENSHARELAYOUT => "SCREENSHARE_LAYOUT",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static GetChannelGuestStarSettingsResponseGroupLayout ToEnum(string value)
+        {
+            return value switch
+            {
+                "TILED_LAYOUT" => GetChannelGuestStarSettingsResponseGroupLayout.TILEDLAYOUT,
+                "SCREENSHARE_LAYOUT" => GetChannelGuestStarSettingsResponseGroupLayout.SCREENSHARELAYOUT,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static GetChannelGuestStarSettingsResponseGroupLayout ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => GetChannelGuestStarSettingsResponseGroupLayout.TILEDLAYOUT,
+                1 => GetChannelGuestStarSettingsResponseGroupLayout.SCREENSHARELAYOUT,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

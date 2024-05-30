@@ -16,4 +16,32 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="thread.run")]
         Threadrun,
     }
+
+    public static class RunObjectObjectExtensions
+    {
+        public static string ToValueString(this RunObjectObject value)
+        {
+            return value switch
+            {
+                RunObjectObject.Threadrun => "thread.run",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RunObjectObject ToEnum(string value)
+        {
+            return value switch
+            {
+                "thread.run" => RunObjectObject.Threadrun,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RunObjectObject ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => RunObjectObject.Threadrun,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

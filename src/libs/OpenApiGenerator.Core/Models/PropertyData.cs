@@ -15,7 +15,8 @@ public readonly record struct PropertyData(
     JsonSerializerType JsonSerializerType,
     string? DefaultValue,
     bool IsDeprecated,
-    string Summary)
+    string Summary,
+    string ConverterType)
 {
     public static PropertyData Default => new(
         Id: string.Empty,
@@ -28,7 +29,8 @@ public readonly record struct PropertyData(
         DefaultValue: null,
         IsDeprecated: false,
         JsonSerializerType: JsonSerializerType.SystemTextJson,
-        Summary: string.Empty);
+        Summary: string.Empty,
+        ConverterType: string.Empty);
 
     public static PropertyData FromSchema(
         KeyValuePair<string, OpenApiSchema> schema,
@@ -54,12 +56,14 @@ public readonly record struct PropertyData(
 
         name = SanitizeName(name, true);
         
+        var type = TypeData.FromSchema(schema, settings, string.IsNullOrWhiteSpace(operationId)
+            ? parents
+            : parents.Concat([ModelData.FromKey(operationId, settings) with { Schema = default }]).ToArray());
+        
         return new PropertyData(
             Id: schema.Key,
             Name: name,
-            Type: TypeData.FromSchema(schema, settings, string.IsNullOrWhiteSpace(operationId)
-                ? parents
-                : parents.Concat([ModelData.FromKey(operationId, settings) with{ Schema = default }]).ToArray()),
+            Type: type,
             IsRequired: requiredProperties.Contains(schema.Key),
             ParameterLocation: parameterLocation,
             ParameterStyle: parameterStyle,
@@ -67,7 +71,8 @@ public readonly record struct PropertyData(
             JsonSerializerType: settings.JsonSerializerType,
             IsDeprecated: schema.Value.Deprecated,
             DefaultValue: schema.GetDefaultValue(settings, parents),
-            Summary: schema.Value.GetSummary());
+            Summary: schema.Value.GetSummary(),
+            ConverterType: type.ConverterType);
     }
 
     internal static string SanitizeName(string? name, bool skipHandlingWordSeparators = false)
@@ -150,7 +155,7 @@ public readonly record struct PropertyData(
         }
     }
     
-    public string ParameterDefaultValue => DefaultValue == null || string.IsNullOrWhiteSpace(DefaultValue) || Type.IsAnyOf
+    public string ParameterDefaultValue => DefaultValue == null || string.IsNullOrWhiteSpace(DefaultValue) || Type.AnyOfCount > 0 || Type.OneOfCount > 0 || Type.AllOfCount > 0
         ? "default"
         : DefaultValue;
 }

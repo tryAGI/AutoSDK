@@ -9,19 +9,53 @@ namespace G
     /// <br/>Default Value: 1024x1024
     /// <br/>Example: 1024x1024
     /// </summary>
-    public abstract class CreateImageVariationRequestSize
+    public enum CreateImageVariationRequestSize
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string _256x256 = "256x256";
+        _256x256,
         /// <summary>
         /// 
         /// </summary>
-        public const string _512x512 = "512x512";
+        _512x512,
         /// <summary>
         /// 
         /// </summary>
-        public const string _1024x1024 = "1024x1024";
+        _1024x1024,
+    }
+
+    public static class CreateImageVariationRequestSizeExtensions
+    {
+        public static string ToValueString(this CreateImageVariationRequestSize value)
+        {
+            return value switch
+            {
+                CreateImageVariationRequestSize._256x256 => "256x256",
+                CreateImageVariationRequestSize._512x512 => "512x512",
+                CreateImageVariationRequestSize._1024x1024 => "1024x1024",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateImageVariationRequestSize ToEnum(string value)
+        {
+            return value switch
+            {
+                "256x256" => CreateImageVariationRequestSize._256x256,
+                "512x512" => CreateImageVariationRequestSize._512x512,
+                "1024x1024" => CreateImageVariationRequestSize._1024x1024,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateImageVariationRequestSize ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => CreateImageVariationRequestSize._256x256,
+                1 => CreateImageVariationRequestSize._512x512,
+                2 => CreateImageVariationRequestSize._1024x1024,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

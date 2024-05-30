@@ -20,4 +20,32 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="live")]
         Live,
     }
+
+    public static class StreamTypeExtensions
+    {
+        public static string ToValueString(this StreamType value)
+        {
+            return value switch
+            {
+                StreamType.Live => "live",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static StreamType ToEnum(string value)
+        {
+            return value switch
+            {
+                "live" => StreamType.Live,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static StreamType ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => StreamType.Live,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

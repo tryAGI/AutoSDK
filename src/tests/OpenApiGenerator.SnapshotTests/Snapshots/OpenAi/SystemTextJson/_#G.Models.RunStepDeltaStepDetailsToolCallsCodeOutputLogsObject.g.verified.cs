@@ -20,8 +20,9 @@ namespace G
         /// Always `logs`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType Type { get; set; }
 
         /// <summary>
         /// The text output from the Code Interpreter tool call.

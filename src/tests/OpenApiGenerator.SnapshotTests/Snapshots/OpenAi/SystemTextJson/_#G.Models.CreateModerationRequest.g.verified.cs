@@ -13,6 +13,7 @@ namespace G
         /// The input text to classify
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.OneOf<string, global::System.Collections.Generic.IList<string>> Input { get; set; }
 
@@ -23,7 +24,8 @@ namespace G
         /// <br/>Example: text-moderation-stable
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        public global::System.AnyOf<string?, string?> Model { get; set; } = CreateModerationRequestModel.TextModerationLatest;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::System.AnyOf<string?, CreateModerationRequestModel?> Model { get; set; } = CreateModerationRequestModel.TextModerationLatest;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -44,7 +44,7 @@ namespace G
         public async global::System.Threading.Tasks.Task ManageHeldAutomodMessagesAsync(
             string userId,
             string msgId,
-            string action,
+            ManageHeldAutoModMessagesBodyAction action,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new ManageHeldAutoModMessagesBody

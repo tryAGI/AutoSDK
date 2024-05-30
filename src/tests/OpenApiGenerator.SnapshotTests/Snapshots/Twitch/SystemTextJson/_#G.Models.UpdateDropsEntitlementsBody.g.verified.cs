@@ -22,7 +22,8 @@ namespace G
         /// * FULFILLED — The developer granted the benefit that the user claimed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fulfillment_status")]
-        public string? FulfillmentStatus { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UpdateDropsEntitlementsBodyFulfillmentStatusJsonConverter))]
+        public UpdateDropsEntitlementsBodyFulfillmentStatus? FulfillmentStatus { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

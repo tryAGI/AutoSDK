@@ -54,7 +54,7 @@ namespace G
             object input,
             bool stream = default,
             string? webhook = default,
-            global::System.Collections.Generic.IList<string?>? webhookEventsFilter = default,
+            global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>? webhookEventsFilter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new PredictionRequest

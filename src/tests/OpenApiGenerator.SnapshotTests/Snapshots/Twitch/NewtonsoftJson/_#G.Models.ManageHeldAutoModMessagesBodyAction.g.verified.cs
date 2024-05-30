@@ -24,4 +24,35 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="DENY")]
         DENY,
     }
+
+    public static class ManageHeldAutoModMessagesBodyActionExtensions
+    {
+        public static string ToValueString(this ManageHeldAutoModMessagesBodyAction value)
+        {
+            return value switch
+            {
+                ManageHeldAutoModMessagesBodyAction.ALLOW => "ALLOW",
+                ManageHeldAutoModMessagesBodyAction.DENY => "DENY",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static ManageHeldAutoModMessagesBodyAction ToEnum(string value)
+        {
+            return value switch
+            {
+                "ALLOW" => ManageHeldAutoModMessagesBodyAction.ALLOW,
+                "DENY" => ManageHeldAutoModMessagesBodyAction.DENY,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static ManageHeldAutoModMessagesBodyAction ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => ManageHeldAutoModMessagesBodyAction.ALLOW,
+                1 => ManageHeldAutoModMessagesBodyAction.DENY,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

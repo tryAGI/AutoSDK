@@ -51,8 +51,9 @@ namespace G
         /// * FULFILLED
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fulfillment_status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DropsEntitlementFulfillmentStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string FulfillmentStatus { get; set; }
+        public required DropsEntitlementFulfillmentStatus FulfillmentStatus { get; set; }
 
         /// <summary>
         /// The UTC date and time (in RFC3339 format) of when the entitlement was last updated.

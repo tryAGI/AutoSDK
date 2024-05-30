@@ -42,4 +42,44 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="sponsored")]
         Sponsored,
     }
+
+    public static class CheermoteTypeExtensions
+    {
+        public static string ToValueString(this CheermoteType value)
+        {
+            return value switch
+            {
+                CheermoteType.GlobalFirstParty => "global_first_party",
+                CheermoteType.GlobalThirdParty => "global_third_party",
+                CheermoteType.ChannelCustom => "channel_custom",
+                CheermoteType.DisplayOnly => "display_only",
+                CheermoteType.Sponsored => "sponsored",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CheermoteType ToEnum(string value)
+        {
+            return value switch
+            {
+                "global_first_party" => CheermoteType.GlobalFirstParty,
+                "global_third_party" => CheermoteType.GlobalThirdParty,
+                "channel_custom" => CheermoteType.ChannelCustom,
+                "display_only" => CheermoteType.DisplayOnly,
+                "sponsored" => CheermoteType.Sponsored,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CheermoteType ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => CheermoteType.GlobalFirstParty,
+                1 => CheermoteType.GlobalThirdParty,
+                2 => CheermoteType.ChannelCustom,
+                3 => CheermoteType.DisplayOnly,
+                4 => CheermoteType.Sponsored,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

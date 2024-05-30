@@ -7,11 +7,39 @@ namespace G
     /// <summary>
     /// Always `file_path`.
     /// </summary>
-    public abstract class MessageDeltaContentTextAnnotationsFilePathObjectType
+    public enum MessageDeltaContentTextAnnotationsFilePathObjectType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string FilePath = "file_path";
+        FilePath,
+    }
+
+    public static class MessageDeltaContentTextAnnotationsFilePathObjectTypeExtensions
+    {
+        public static string ToValueString(this MessageDeltaContentTextAnnotationsFilePathObjectType value)
+        {
+            return value switch
+            {
+                MessageDeltaContentTextAnnotationsFilePathObjectType.FilePath => "file_path",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static MessageDeltaContentTextAnnotationsFilePathObjectType ToEnum(string value)
+        {
+            return value switch
+            {
+                "file_path" => MessageDeltaContentTextAnnotationsFilePathObjectType.FilePath,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static MessageDeltaContentTextAnnotationsFilePathObjectType ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => MessageDeltaContentTextAnnotationsFilePathObjectType.FilePath,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

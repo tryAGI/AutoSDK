@@ -19,7 +19,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<GetExtensionAnalyticsResponse> GetExtensionAnalyticsAsync(
             string extensionId,
-            string type,
+            GetExtensionAnalyticsType type,
             global::System.DateTime startedAt,
             global::System.DateTime endedAt,
             int first,

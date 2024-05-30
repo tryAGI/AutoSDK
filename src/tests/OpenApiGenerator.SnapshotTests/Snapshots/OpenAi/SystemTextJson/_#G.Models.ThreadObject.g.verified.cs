@@ -20,8 +20,9 @@ namespace G
         /// The object type, which is always `thread`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ThreadObjectObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Object { get; set; }
+        public required ThreadObjectObject Object { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the thread was created.

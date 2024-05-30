@@ -36,4 +36,41 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="VERTICAL_LAYOUT")]
         VERTICALLAYOUT,
     }
+
+    public static class UpdateChannelGuestStarSettingsBodyGroupLayoutExtensions
+    {
+        public static string ToValueString(this UpdateChannelGuestStarSettingsBodyGroupLayout value)
+        {
+            return value switch
+            {
+                UpdateChannelGuestStarSettingsBodyGroupLayout.TILEDLAYOUT => "TILED_LAYOUT",
+                UpdateChannelGuestStarSettingsBodyGroupLayout.SCREENSHARELAYOUT => "SCREENSHARE_LAYOUT",
+                UpdateChannelGuestStarSettingsBodyGroupLayout.HORIZONTALLAYOUT => "HORIZONTAL_LAYOUT",
+                UpdateChannelGuestStarSettingsBodyGroupLayout.VERTICALLAYOUT => "VERTICAL_LAYOUT",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static UpdateChannelGuestStarSettingsBodyGroupLayout ToEnum(string value)
+        {
+            return value switch
+            {
+                "TILED_LAYOUT" => UpdateChannelGuestStarSettingsBodyGroupLayout.TILEDLAYOUT,
+                "SCREENSHARE_LAYOUT" => UpdateChannelGuestStarSettingsBodyGroupLayout.SCREENSHARELAYOUT,
+                "HORIZONTAL_LAYOUT" => UpdateChannelGuestStarSettingsBodyGroupLayout.HORIZONTALLAYOUT,
+                "VERTICAL_LAYOUT" => UpdateChannelGuestStarSettingsBodyGroupLayout.VERTICALLAYOUT,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static UpdateChannelGuestStarSettingsBodyGroupLayout ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => UpdateChannelGuestStarSettingsBodyGroupLayout.TILEDLAYOUT,
+                1 => UpdateChannelGuestStarSettingsBodyGroupLayout.SCREENSHARELAYOUT,
+                2 => UpdateChannelGuestStarSettingsBodyGroupLayout.HORIZONTALLAYOUT,
+                3 => UpdateChannelGuestStarSettingsBodyGroupLayout.VERTICALLAYOUT,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

@@ -15,19 +15,53 @@ namespace G
     ///   
     /// The broadcaster has up to 24 hours after the prediction window closes to resolve the prediction. If not, Twitch sets the status to CANCELED and returns the points.
     /// </summary>
-    public abstract class EndPredictionBodyStatus
+    public enum EndPredictionBodyStatus
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string RESOLVED = "RESOLVED";
+        RESOLVED,
         /// <summary>
         /// 
         /// </summary>
-        public const string CANCELED = "CANCELED";
+        CANCELED,
         /// <summary>
         /// 
         /// </summary>
-        public const string LOCKED = "LOCKED";
+        LOCKED,
+    }
+
+    public static class EndPredictionBodyStatusExtensions
+    {
+        public static string ToValueString(this EndPredictionBodyStatus value)
+        {
+            return value switch
+            {
+                EndPredictionBodyStatus.RESOLVED => "RESOLVED",
+                EndPredictionBodyStatus.CANCELED => "CANCELED",
+                EndPredictionBodyStatus.LOCKED => "LOCKED",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static EndPredictionBodyStatus ToEnum(string value)
+        {
+            return value switch
+            {
+                "RESOLVED" => EndPredictionBodyStatus.RESOLVED,
+                "CANCELED" => EndPredictionBodyStatus.CANCELED,
+                "LOCKED" => EndPredictionBodyStatus.LOCKED,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static EndPredictionBodyStatus ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => EndPredictionBodyStatus.RESOLVED,
+                1 => EndPredictionBodyStatus.CANCELED,
+                2 => EndPredictionBodyStatus.LOCKED,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

@@ -20,7 +20,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<ListMessagesResponse> ListMessagesAsync(
             string threadId,
             int limit,
-            string order,
+            ListMessagesOrder order,
             string after,
             string before,
             string runId,

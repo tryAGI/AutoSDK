@@ -7,11 +7,39 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class ListFilesResponseObject
+    public enum ListFilesResponseObject
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string List = "list";
+        List,
+    }
+
+    public static class ListFilesResponseObjectExtensions
+    {
+        public static string ToValueString(this ListFilesResponseObject value)
+        {
+            return value switch
+            {
+                ListFilesResponseObject.List => "list",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static ListFilesResponseObject ToEnum(string value)
+        {
+            return value switch
+            {
+                "list" => ListFilesResponseObject.List,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static ListFilesResponseObject ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => ListFilesResponseObject.List,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

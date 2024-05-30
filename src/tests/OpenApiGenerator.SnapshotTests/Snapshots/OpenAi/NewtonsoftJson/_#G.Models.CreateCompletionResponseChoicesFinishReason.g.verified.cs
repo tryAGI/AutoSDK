@@ -28,4 +28,38 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="content_filter")]
         ContentFilter,
     }
+
+    public static class CreateCompletionResponseChoicesFinishReasonExtensions
+    {
+        public static string ToValueString(this CreateCompletionResponseChoicesFinishReason value)
+        {
+            return value switch
+            {
+                CreateCompletionResponseChoicesFinishReason.Stop => "stop",
+                CreateCompletionResponseChoicesFinishReason.Length => "length",
+                CreateCompletionResponseChoicesFinishReason.ContentFilter => "content_filter",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateCompletionResponseChoicesFinishReason ToEnum(string value)
+        {
+            return value switch
+            {
+                "stop" => CreateCompletionResponseChoicesFinishReason.Stop,
+                "length" => CreateCompletionResponseChoicesFinishReason.Length,
+                "content_filter" => CreateCompletionResponseChoicesFinishReason.ContentFilter,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateCompletionResponseChoicesFinishReason ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => CreateCompletionResponseChoicesFinishReason.Stop,
+                1 => CreateCompletionResponseChoicesFinishReason.Length,
+                2 => CreateCompletionResponseChoicesFinishReason.ContentFilter,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

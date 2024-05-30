@@ -26,4 +26,38 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="required")]
         Required,
     }
+
+    public static class RunObjectToolChoiceExtensions
+    {
+        public static string ToValueString(this RunObjectToolChoice value)
+        {
+            return value switch
+            {
+                RunObjectToolChoice.None => "none",
+                RunObjectToolChoice.Auto => "auto",
+                RunObjectToolChoice.Required => "required",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RunObjectToolChoice ToEnum(string value)
+        {
+            return value switch
+            {
+                "none" => RunObjectToolChoice.None,
+                "auto" => RunObjectToolChoice.Auto,
+                "required" => RunObjectToolChoice.Required,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RunObjectToolChoice ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => RunObjectToolChoice.None,
+                1 => RunObjectToolChoice.Auto,
+                2 => RunObjectToolChoice.Required,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

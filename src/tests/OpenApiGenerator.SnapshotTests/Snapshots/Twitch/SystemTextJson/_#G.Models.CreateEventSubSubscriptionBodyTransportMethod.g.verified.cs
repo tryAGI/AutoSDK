@@ -11,19 +11,53 @@ namespace G
     /// * websocket
     /// * conduit
     /// </summary>
-    public abstract class CreateEventSubSubscriptionBodyTransportMethod
+    public enum CreateEventSubSubscriptionBodyTransportMethod
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Webhook = "webhook";
+        Webhook,
         /// <summary>
         /// 
         /// </summary>
-        public const string Websocket = "websocket";
+        Websocket,
         /// <summary>
         /// 
         /// </summary>
-        public const string Conduit = "conduit";
+        Conduit,
+    }
+
+    public static class CreateEventSubSubscriptionBodyTransportMethodExtensions
+    {
+        public static string ToValueString(this CreateEventSubSubscriptionBodyTransportMethod value)
+        {
+            return value switch
+            {
+                CreateEventSubSubscriptionBodyTransportMethod.Webhook => "webhook",
+                CreateEventSubSubscriptionBodyTransportMethod.Websocket => "websocket",
+                CreateEventSubSubscriptionBodyTransportMethod.Conduit => "conduit",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateEventSubSubscriptionBodyTransportMethod ToEnum(string value)
+        {
+            return value switch
+            {
+                "webhook" => CreateEventSubSubscriptionBodyTransportMethod.Webhook,
+                "websocket" => CreateEventSubSubscriptionBodyTransportMethod.Websocket,
+                "conduit" => CreateEventSubSubscriptionBodyTransportMethod.Conduit,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateEventSubSubscriptionBodyTransportMethod ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => CreateEventSubSubscriptionBodyTransportMethod.Webhook,
+                1 => CreateEventSubSubscriptionBodyTransportMethod.Websocket,
+                2 => CreateEventSubSubscriptionBodyTransportMethod.Conduit,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

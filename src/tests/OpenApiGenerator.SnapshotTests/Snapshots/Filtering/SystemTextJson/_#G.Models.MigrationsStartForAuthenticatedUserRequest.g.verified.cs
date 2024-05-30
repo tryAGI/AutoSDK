@@ -64,7 +64,7 @@ namespace G
         /// <br/>Example: [repositories]
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("exclude")]
-        public global::System.Collections.Generic.IList<string?>? Exclude { get; set; }
+        public global::System.Collections.Generic.IList<MigrationsStartForAuthenticatedUserRequestExclude?>? Exclude { get; set; }
 
         /// <summary>
         /// 

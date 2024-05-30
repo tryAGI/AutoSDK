@@ -26,8 +26,9 @@ namespace G
         /// The type of tool call. This is always going to be `code_interpreter` for this type of tool call.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsToolCallsCodeObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required RunStepDeltaStepDetailsToolCallsCodeObjectType Type { get; set; }
 
         /// <summary>
         /// The Code Interpreter tool call definition.

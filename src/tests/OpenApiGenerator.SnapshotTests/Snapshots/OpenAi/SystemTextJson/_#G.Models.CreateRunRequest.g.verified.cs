@@ -21,7 +21,8 @@ namespace G
         /// <br/>Example: gpt-4-turbo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        public global::System.AnyOf<string?, string?>? Model { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::System.AnyOf<string?, CreateRunRequestModel?>? Model { get; set; }
 
         /// <summary>
         /// Overrides the [instructions](/docs/api-reference/assistants/createAssistant) of the assistant. This is useful for modifying the behavior on a per-run basis.
@@ -102,6 +103,7 @@ namespace G
         /// Specifying a particular tool like `{"type": "file_search"}` or `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         public AssistantsApiToolChoiceOption? ToolChoice { get; set; }
 
         /// <summary>
@@ -110,6 +112,7 @@ namespace G
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         public AssistantsApiResponseFormatOption? ResponseFormat { get; set; }
 
         /// <summary>

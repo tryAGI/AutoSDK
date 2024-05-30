@@ -50,8 +50,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<Batch> CreateBatchAsync(
             string inputFileId,
-            string endpoint,
-            string completionWindow,
+            CreateBatchRequestEndpoint endpoint,
+            CreateBatchRequestCompletionWindow completionWindow,
             object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

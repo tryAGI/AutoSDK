@@ -14,6 +14,7 @@ namespace G
         /// <br/>Example: The quick brown fox jumped over the lazy dog
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory4))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>> Input { get; set; }
 
@@ -22,8 +23,9 @@ namespace G
         /// <br/>Example: text-embedding-3-small
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AnyOf<string, string> Model { get; set; }
+        public required global::System.AnyOf<string, CreateEmbeddingRequestModel> Model { get; set; }
 
         /// <summary>
         /// The format to return the embeddings in. Can be either `float` or [`base64`](https://pypi.org/project/pybase64/).
@@ -31,7 +33,8 @@ namespace G
         /// <br/>Example: float
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("encoding_format")]
-        public string? EncodingFormat { get; set; } = CreateEmbeddingRequestEncodingFormat.Float;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateEmbeddingRequestEncodingFormatJsonConverter))]
+        public CreateEmbeddingRequestEncodingFormat? EncodingFormat { get; set; } = CreateEmbeddingRequestEncodingFormat.Float;
 
         /// <summary>
         /// The number of dimensions the resulting output embeddings should have. Only supported in `text-embedding-3` and later models.

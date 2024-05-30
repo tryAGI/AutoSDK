@@ -39,4 +39,44 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="function_call")]
         FunctionCall,
     }
+
+    public static class CreateChatCompletionResponseChoicesFinishReasonExtensions
+    {
+        public static string ToValueString(this CreateChatCompletionResponseChoicesFinishReason value)
+        {
+            return value switch
+            {
+                CreateChatCompletionResponseChoicesFinishReason.Stop => "stop",
+                CreateChatCompletionResponseChoicesFinishReason.Length => "length",
+                CreateChatCompletionResponseChoicesFinishReason.ToolCalls => "tool_calls",
+                CreateChatCompletionResponseChoicesFinishReason.ContentFilter => "content_filter",
+                CreateChatCompletionResponseChoicesFinishReason.FunctionCall => "function_call",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateChatCompletionResponseChoicesFinishReason ToEnum(string value)
+        {
+            return value switch
+            {
+                "stop" => CreateChatCompletionResponseChoicesFinishReason.Stop,
+                "length" => CreateChatCompletionResponseChoicesFinishReason.Length,
+                "tool_calls" => CreateChatCompletionResponseChoicesFinishReason.ToolCalls,
+                "content_filter" => CreateChatCompletionResponseChoicesFinishReason.ContentFilter,
+                "function_call" => CreateChatCompletionResponseChoicesFinishReason.FunctionCall,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateChatCompletionResponseChoicesFinishReason ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => CreateChatCompletionResponseChoicesFinishReason.Stop,
+                1 => CreateChatCompletionResponseChoicesFinishReason.Length,
+                2 => CreateChatCompletionResponseChoicesFinishReason.ToolCalls,
+                3 => CreateChatCompletionResponseChoicesFinishReason.ContentFilter,
+                4 => CreateChatCompletionResponseChoicesFinishReason.FunctionCall,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

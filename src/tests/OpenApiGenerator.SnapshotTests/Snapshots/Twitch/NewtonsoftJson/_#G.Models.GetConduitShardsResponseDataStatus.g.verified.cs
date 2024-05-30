@@ -72,4 +72,59 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="websocket_network_error")]
         WebsocketNetworkError,
     }
+
+    public static class GetConduitShardsResponseDataStatusExtensions
+    {
+        public static string ToValueString(this GetConduitShardsResponseDataStatus value)
+        {
+            return value switch
+            {
+                GetConduitShardsResponseDataStatus.Enabled => "enabled",
+                GetConduitShardsResponseDataStatus.WebhookCallbackVerificationPending => "webhook_callback_verification_pending",
+                GetConduitShardsResponseDataStatus.WebhookCallbackVerificationFailed => "webhook_callback_verification_failed",
+                GetConduitShardsResponseDataStatus.NotificationFailuresExceeded => "notification_failures_exceeded",
+                GetConduitShardsResponseDataStatus.WebsocketDisconnected => "websocket_disconnected",
+                GetConduitShardsResponseDataStatus.WebsocketFailedPingPong => "websocket_failed_ping_pong",
+                GetConduitShardsResponseDataStatus.WebsocketReceivedInboundTraffic => "websocket_received_inbound_traffic",
+                GetConduitShardsResponseDataStatus.WebsocketInternalError => "websocket_internal_error",
+                GetConduitShardsResponseDataStatus.WebsocketNetworkTimeout => "websocket_network_timeout",
+                GetConduitShardsResponseDataStatus.WebsocketNetworkError => "websocket_network_error",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static GetConduitShardsResponseDataStatus ToEnum(string value)
+        {
+            return value switch
+            {
+                "enabled" => GetConduitShardsResponseDataStatus.Enabled,
+                "webhook_callback_verification_pending" => GetConduitShardsResponseDataStatus.WebhookCallbackVerificationPending,
+                "webhook_callback_verification_failed" => GetConduitShardsResponseDataStatus.WebhookCallbackVerificationFailed,
+                "notification_failures_exceeded" => GetConduitShardsResponseDataStatus.NotificationFailuresExceeded,
+                "websocket_disconnected" => GetConduitShardsResponseDataStatus.WebsocketDisconnected,
+                "websocket_failed_ping_pong" => GetConduitShardsResponseDataStatus.WebsocketFailedPingPong,
+                "websocket_received_inbound_traffic" => GetConduitShardsResponseDataStatus.WebsocketReceivedInboundTraffic,
+                "websocket_internal_error" => GetConduitShardsResponseDataStatus.WebsocketInternalError,
+                "websocket_network_timeout" => GetConduitShardsResponseDataStatus.WebsocketNetworkTimeout,
+                "websocket_network_error" => GetConduitShardsResponseDataStatus.WebsocketNetworkError,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static GetConduitShardsResponseDataStatus ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => GetConduitShardsResponseDataStatus.Enabled,
+                1 => GetConduitShardsResponseDataStatus.WebhookCallbackVerificationPending,
+                2 => GetConduitShardsResponseDataStatus.WebhookCallbackVerificationFailed,
+                3 => GetConduitShardsResponseDataStatus.NotificationFailuresExceeded,
+                4 => GetConduitShardsResponseDataStatus.WebsocketDisconnected,
+                5 => GetConduitShardsResponseDataStatus.WebsocketFailedPingPong,
+                6 => GetConduitShardsResponseDataStatus.WebsocketReceivedInboundTraffic,
+                7 => GetConduitShardsResponseDataStatus.WebsocketInternalError,
+                8 => GetConduitShardsResponseDataStatus.WebsocketNetworkTimeout,
+                9 => GetConduitShardsResponseDataStatus.WebsocketNetworkError,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

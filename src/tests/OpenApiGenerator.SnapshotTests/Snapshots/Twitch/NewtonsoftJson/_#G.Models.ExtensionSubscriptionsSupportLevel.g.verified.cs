@@ -24,4 +24,35 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="optional")]
         Optional,
     }
+
+    public static class ExtensionSubscriptionsSupportLevelExtensions
+    {
+        public static string ToValueString(this ExtensionSubscriptionsSupportLevel value)
+        {
+            return value switch
+            {
+                ExtensionSubscriptionsSupportLevel.None => "none",
+                ExtensionSubscriptionsSupportLevel.Optional => "optional",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static ExtensionSubscriptionsSupportLevel ToEnum(string value)
+        {
+            return value switch
+            {
+                "none" => ExtensionSubscriptionsSupportLevel.None,
+                "optional" => ExtensionSubscriptionsSupportLevel.Optional,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static ExtensionSubscriptionsSupportLevel ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => ExtensionSubscriptionsSupportLevel.None,
+                1 => ExtensionSubscriptionsSupportLevel.Optional,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

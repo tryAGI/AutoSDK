@@ -49,7 +49,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<CreateEventSubSubscriptionResponse> CreateEventsubSubscriptionAsync(
-            string type,
+            CreateEventSubSubscriptionBodyType type,
             string version,
             object condition,
             CreateEventSubSubscriptionBodyTransport transport,

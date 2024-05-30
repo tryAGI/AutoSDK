@@ -7,11 +7,39 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class FineTuningJobHyperparametersNEpochs
+    public enum FineTuningJobHyperparametersNEpochs
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Auto = "auto";
+        Auto,
+    }
+
+    public static class FineTuningJobHyperparametersNEpochsExtensions
+    {
+        public static string ToValueString(this FineTuningJobHyperparametersNEpochs value)
+        {
+            return value switch
+            {
+                FineTuningJobHyperparametersNEpochs.Auto => "auto",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static FineTuningJobHyperparametersNEpochs ToEnum(string value)
+        {
+            return value switch
+            {
+                "auto" => FineTuningJobHyperparametersNEpochs.Auto,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static FineTuningJobHyperparametersNEpochs ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => FineTuningJobHyperparametersNEpochs.Auto,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

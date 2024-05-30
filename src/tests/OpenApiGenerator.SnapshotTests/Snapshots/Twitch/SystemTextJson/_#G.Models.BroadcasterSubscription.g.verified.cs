@@ -73,8 +73,9 @@ namespace G
         /// * 3000 — Tier 3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.BroadcasterSubscriptionTierJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Tier { get; set; }
+        public required BroadcasterSubscriptionTier Tier { get; set; }
 
         /// <summary>
         /// An ID that identifies the subscribing user.

@@ -20,8 +20,9 @@ namespace G
         /// The object type, which is always `thread.message`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageObjectObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Object { get; set; }
+        public required MessageObjectObject Object { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the message was created.
@@ -41,8 +42,9 @@ namespace G
         /// The status of the message, which can be either `in_progress`, `incomplete`, or `completed`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageObjectStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
+        public required MessageObjectStatus Status { get; set; }
 
         /// <summary>
         /// On an incomplete message, details about why the message is incomplete.
@@ -69,8 +71,9 @@ namespace G
         /// The entity that produced the message. One of `user` or `assistant`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageObjectRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Role { get; set; }
+        public required MessageObjectRole Role { get; set; }
 
         /// <summary>
         /// The content of the message in array of text and/or images.

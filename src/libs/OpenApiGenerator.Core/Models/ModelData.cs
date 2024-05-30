@@ -160,6 +160,8 @@ public readonly record struct ModelData(
         NamingConvention.ConcatNames => Parents.IsEmpty ? Name : $"{Parents.Last().ClassName}{Name}",
         _ => string.Empty,
     };
+
+    public string GlobalClassName => $"global::{Namespace}.{ClassName}";
     
     public string ExternalClassName => NamingConvention switch
     {

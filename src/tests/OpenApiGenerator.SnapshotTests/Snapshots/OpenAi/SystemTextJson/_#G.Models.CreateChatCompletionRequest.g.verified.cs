@@ -21,8 +21,9 @@ namespace G
         /// <br/>Example: gpt-4-turbo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AnyOf<string, string> Model { get; set; }
+        public required global::System.AnyOf<string, CreateChatCompletionRequestModel> Model { get; set; }
 
         /// <summary>
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.
@@ -97,6 +98,7 @@ namespace G
         /// <br/>Default Value: 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         public global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?> Stop { get; set; }
 
         /// <summary>
@@ -146,6 +148,7 @@ namespace G
         /// `none` is the default when no tools are present. `auto` is the default if tools are present.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         public ChatCompletionToolChoiceOption? ToolChoice { get; set; }
 
         /// <summary>
@@ -164,7 +167,8 @@ namespace G
         /// `none` is the default when no functions are present. `auto` is the default if functions are present.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function_call")]
-        public global::System.OneOf<string?, ChatCompletionFunctionCallOption?> FunctionCall { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
+        public global::System.OneOf<CreateChatCompletionRequestFunctionCall?, ChatCompletionFunctionCallOption?> FunctionCall { get; set; }
 
         /// <summary>
         /// Deprecated in favor of `tools`.

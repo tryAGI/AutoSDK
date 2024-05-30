@@ -23,4 +23,35 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="hd")]
         Hd,
     }
+
+    public static class CreateImageRequestQualityExtensions
+    {
+        public static string ToValueString(this CreateImageRequestQuality value)
+        {
+            return value switch
+            {
+                CreateImageRequestQuality.Standard => "standard",
+                CreateImageRequestQuality.Hd => "hd",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateImageRequestQuality ToEnum(string value)
+        {
+            return value switch
+            {
+                "standard" => CreateImageRequestQuality.Standard,
+                "hd" => CreateImageRequestQuality.Hd,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateImageRequestQuality ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => CreateImageRequestQuality.Standard,
+                1 => CreateImageRequestQuality.Hd,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

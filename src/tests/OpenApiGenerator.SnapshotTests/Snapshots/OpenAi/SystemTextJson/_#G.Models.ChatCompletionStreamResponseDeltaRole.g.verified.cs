@@ -7,23 +7,60 @@ namespace G
     /// <summary>
     /// The role of the author of this message.
     /// </summary>
-    public abstract class ChatCompletionStreamResponseDeltaRole
+    public enum ChatCompletionStreamResponseDeltaRole
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string System = "system";
+        System,
         /// <summary>
         /// 
         /// </summary>
-        public const string User = "user";
+        User,
         /// <summary>
         /// 
         /// </summary>
-        public const string Assistant = "assistant";
+        Assistant,
         /// <summary>
         /// 
         /// </summary>
-        public const string Tool = "tool";
+        Tool,
+    }
+
+    public static class ChatCompletionStreamResponseDeltaRoleExtensions
+    {
+        public static string ToValueString(this ChatCompletionStreamResponseDeltaRole value)
+        {
+            return value switch
+            {
+                ChatCompletionStreamResponseDeltaRole.System => "system",
+                ChatCompletionStreamResponseDeltaRole.User => "user",
+                ChatCompletionStreamResponseDeltaRole.Assistant => "assistant",
+                ChatCompletionStreamResponseDeltaRole.Tool => "tool",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static ChatCompletionStreamResponseDeltaRole ToEnum(string value)
+        {
+            return value switch
+            {
+                "system" => ChatCompletionStreamResponseDeltaRole.System,
+                "user" => ChatCompletionStreamResponseDeltaRole.User,
+                "assistant" => ChatCompletionStreamResponseDeltaRole.Assistant,
+                "tool" => ChatCompletionStreamResponseDeltaRole.Tool,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static ChatCompletionStreamResponseDeltaRole ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => ChatCompletionStreamResponseDeltaRole.System,
+                1 => ChatCompletionStreamResponseDeltaRole.User,
+                2 => ChatCompletionStreamResponseDeltaRole.Assistant,
+                3 => ChatCompletionStreamResponseDeltaRole.Tool,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

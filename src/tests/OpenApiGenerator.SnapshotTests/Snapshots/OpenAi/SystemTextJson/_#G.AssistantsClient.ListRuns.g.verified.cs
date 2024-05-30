@@ -19,7 +19,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<ListRunsResponse> ListRunsAsync(
             string threadId,
             int limit,
-            string order,
+            ListRunsOrder order,
             string after,
             string before,
             global::System.Threading.CancellationToken cancellationToken = default)

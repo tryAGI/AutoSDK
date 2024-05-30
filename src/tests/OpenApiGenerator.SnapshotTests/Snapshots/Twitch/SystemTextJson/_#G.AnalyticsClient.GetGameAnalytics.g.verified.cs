@@ -19,7 +19,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<GetGameAnalyticsResponse> GetGameAnalyticsAsync(
             string gameId,
-            string type,
+            GetGameAnalyticsType type,
             global::System.DateTime startedAt,
             global::System.DateTime endedAt,
             int first,

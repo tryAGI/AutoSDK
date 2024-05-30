@@ -51,8 +51,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<CreateEmbeddingResponse> CreateEmbeddingAsync(
             global::System.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>> input,
-            global::System.AnyOf<string, string> model,
-            string? encodingFormat = CreateEmbeddingRequestEncodingFormat.Float,
+            global::System.AnyOf<string, CreateEmbeddingRequestModel> model,
+            CreateEmbeddingRequestEncodingFormat? encodingFormat = CreateEmbeddingRequestEncodingFormat.Float,
             int dimensions = default,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)

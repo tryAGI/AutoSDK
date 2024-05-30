@@ -20,8 +20,9 @@ namespace G
         /// Always `image_file`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageDeltaContentImageFileObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required MessageDeltaContentImageFileObjectType Type { get; set; }
 
         /// <summary>
         /// 

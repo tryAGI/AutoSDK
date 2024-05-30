@@ -58,7 +58,7 @@ namespace G
             string destination,
             object input,
             string? webhook = default,
-            global::System.Collections.Generic.IList<string?>? webhookEventsFilter = default,
+            global::System.Collections.Generic.IList<TrainingRequestWebhookEventsFilter?>? webhookEventsFilter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new TrainingRequest

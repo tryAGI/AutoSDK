@@ -7,11 +7,39 @@ namespace G
     /// <summary>
     /// Always `text`.
     /// </summary>
-    public abstract class MessageDeltaContentTextObjectType
+    public enum MessageDeltaContentTextObjectType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Text = "text";
+        Text,
+    }
+
+    public static class MessageDeltaContentTextObjectTypeExtensions
+    {
+        public static string ToValueString(this MessageDeltaContentTextObjectType value)
+        {
+            return value switch
+            {
+                MessageDeltaContentTextObjectType.Text => "text",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static MessageDeltaContentTextObjectType ToEnum(string value)
+        {
+            return value switch
+            {
+                "text" => MessageDeltaContentTextObjectType.Text,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static MessageDeltaContentTextObjectType ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => MessageDeltaContentTextObjectType.Text,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

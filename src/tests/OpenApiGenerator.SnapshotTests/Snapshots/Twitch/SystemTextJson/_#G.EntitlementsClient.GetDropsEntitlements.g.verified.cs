@@ -22,7 +22,7 @@ namespace G
             global::System.Collections.Generic.IList<string> id,
             string userId,
             string gameId,
-            string fulfillmentStatus,
+            GetDropsEntitlementsFulfillmentStatus fulfillmentStatus,
             string after,
             int first,
             global::System.Threading.CancellationToken cancellationToken = default)

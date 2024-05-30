@@ -7,11 +7,39 @@ namespace G
     /// <summary>
     /// Always `message_creation`.
     /// </summary>
-    public abstract class RunStepDeltaStepDetailsMessageCreationObjectType
+    public enum RunStepDeltaStepDetailsMessageCreationObjectType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string MessageCreation = "message_creation";
+        MessageCreation,
+    }
+
+    public static class RunStepDeltaStepDetailsMessageCreationObjectTypeExtensions
+    {
+        public static string ToValueString(this RunStepDeltaStepDetailsMessageCreationObjectType value)
+        {
+            return value switch
+            {
+                RunStepDeltaStepDetailsMessageCreationObjectType.MessageCreation => "message_creation",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RunStepDeltaStepDetailsMessageCreationObjectType ToEnum(string value)
+        {
+            return value switch
+            {
+                "message_creation" => RunStepDeltaStepDetailsMessageCreationObjectType.MessageCreation,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RunStepDeltaStepDetailsMessageCreationObjectType ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => RunStepDeltaStepDetailsMessageCreationObjectType.MessageCreation,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

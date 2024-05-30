@@ -13,27 +13,67 @@ namespace G
     /// * display\_only — Do not use; for internal use only.
     /// * sponsored — A sponsor-defined Cheermote. When used, the sponsor adds additional Bits to the amount that the user cheered. For example, if the user cheered Terminator100, the broadcaster might receive 110 Bits, which includes the sponsor's 10 Bits contribution.
     /// </summary>
-    public abstract class CheermoteType
+    public enum CheermoteType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string GlobalFirstParty = "global_first_party";
+        GlobalFirstParty,
         /// <summary>
         /// 
         /// </summary>
-        public const string GlobalThirdParty = "global_third_party";
+        GlobalThirdParty,
         /// <summary>
         /// 
         /// </summary>
-        public const string ChannelCustom = "channel_custom";
+        ChannelCustom,
         /// <summary>
         /// 
         /// </summary>
-        public const string DisplayOnly = "display_only";
+        DisplayOnly,
         /// <summary>
         /// 
         /// </summary>
-        public const string Sponsored = "sponsored";
+        Sponsored,
+    }
+
+    public static class CheermoteTypeExtensions
+    {
+        public static string ToValueString(this CheermoteType value)
+        {
+            return value switch
+            {
+                CheermoteType.GlobalFirstParty => "global_first_party",
+                CheermoteType.GlobalThirdParty => "global_third_party",
+                CheermoteType.ChannelCustom => "channel_custom",
+                CheermoteType.DisplayOnly => "display_only",
+                CheermoteType.Sponsored => "sponsored",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CheermoteType ToEnum(string value)
+        {
+            return value switch
+            {
+                "global_first_party" => CheermoteType.GlobalFirstParty,
+                "global_third_party" => CheermoteType.GlobalThirdParty,
+                "channel_custom" => CheermoteType.ChannelCustom,
+                "display_only" => CheermoteType.DisplayOnly,
+                "sponsored" => CheermoteType.Sponsored,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CheermoteType ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => CheermoteType.GlobalFirstParty,
+                1 => CheermoteType.GlobalThirdParty,
+                2 => CheermoteType.ChannelCustom,
+                3 => CheermoteType.DisplayOnly,
+                4 => CheermoteType.Sponsored,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

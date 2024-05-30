@@ -26,4 +26,38 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="required")]
         Required,
     }
+
+    public static class CreateChatCompletionRequestToolChoiceExtensions
+    {
+        public static string ToValueString(this CreateChatCompletionRequestToolChoice value)
+        {
+            return value switch
+            {
+                CreateChatCompletionRequestToolChoice.None => "none",
+                CreateChatCompletionRequestToolChoice.Auto => "auto",
+                CreateChatCompletionRequestToolChoice.Required => "required",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateChatCompletionRequestToolChoice ToEnum(string value)
+        {
+            return value switch
+            {
+                "none" => CreateChatCompletionRequestToolChoice.None,
+                "auto" => CreateChatCompletionRequestToolChoice.Auto,
+                "required" => CreateChatCompletionRequestToolChoice.Required,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateChatCompletionRequestToolChoice ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => CreateChatCompletionRequestToolChoice.None,
+                1 => CreateChatCompletionRequestToolChoice.Auto,
+                2 => CreateChatCompletionRequestToolChoice.Required,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

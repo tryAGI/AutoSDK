@@ -13,27 +13,67 @@ namespace G
     /// * UNAUTHORIZED — The user or organization identified by the user access token is not authorized to update the entitlements.
     /// * UPDATE\_FAILED — The update failed. These are considered transient errors and the request should be retried later.
     /// </summary>
-    public abstract class DropsEntitlementUpdatedStatus
+    public enum DropsEntitlementUpdatedStatus
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string INVALIDID = "INVALID_ID";
+        INVALIDID,
         /// <summary>
         /// 
         /// </summary>
-        public const string NOTFOUND = "NOT_FOUND";
+        NOTFOUND,
         /// <summary>
         /// 
         /// </summary>
-        public const string SUCCESS = "SUCCESS";
+        SUCCESS,
         /// <summary>
         /// 
         /// </summary>
-        public const string UNAUTHORIZED = "UNAUTHORIZED";
+        UNAUTHORIZED,
         /// <summary>
         /// 
         /// </summary>
-        public const string UPDATEFAILED = "UPDATE_FAILED";
+        UPDATEFAILED,
+    }
+
+    public static class DropsEntitlementUpdatedStatusExtensions
+    {
+        public static string ToValueString(this DropsEntitlementUpdatedStatus value)
+        {
+            return value switch
+            {
+                DropsEntitlementUpdatedStatus.INVALIDID => "INVALID_ID",
+                DropsEntitlementUpdatedStatus.NOTFOUND => "NOT_FOUND",
+                DropsEntitlementUpdatedStatus.SUCCESS => "SUCCESS",
+                DropsEntitlementUpdatedStatus.UNAUTHORIZED => "UNAUTHORIZED",
+                DropsEntitlementUpdatedStatus.UPDATEFAILED => "UPDATE_FAILED",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static DropsEntitlementUpdatedStatus ToEnum(string value)
+        {
+            return value switch
+            {
+                "INVALID_ID" => DropsEntitlementUpdatedStatus.INVALIDID,
+                "NOT_FOUND" => DropsEntitlementUpdatedStatus.NOTFOUND,
+                "SUCCESS" => DropsEntitlementUpdatedStatus.SUCCESS,
+                "UNAUTHORIZED" => DropsEntitlementUpdatedStatus.UNAUTHORIZED,
+                "UPDATE_FAILED" => DropsEntitlementUpdatedStatus.UPDATEFAILED,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static DropsEntitlementUpdatedStatus ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => DropsEntitlementUpdatedStatus.INVALIDID,
+                1 => DropsEntitlementUpdatedStatus.NOTFOUND,
+                2 => DropsEntitlementUpdatedStatus.SUCCESS,
+                3 => DropsEntitlementUpdatedStatus.UNAUTHORIZED,
+                4 => DropsEntitlementUpdatedStatus.UPDATEFAILED,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

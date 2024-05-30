@@ -22,8 +22,9 @@ namespace G
         /// * bits — The minimum price is 1 and the maximum is 10000.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UpdateExtensionBitsProductBodyCostTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required UpdateExtensionBitsProductBodyCostType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

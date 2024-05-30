@@ -7,11 +7,39 @@ namespace G
     /// <summary>
     /// Always `tool_calls`.
     /// </summary>
-    public abstract class RunStepDeltaStepDetailsToolCallsObjectType
+    public enum RunStepDeltaStepDetailsToolCallsObjectType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string ToolCalls = "tool_calls";
+        ToolCalls,
+    }
+
+    public static class RunStepDeltaStepDetailsToolCallsObjectTypeExtensions
+    {
+        public static string ToValueString(this RunStepDeltaStepDetailsToolCallsObjectType value)
+        {
+            return value switch
+            {
+                RunStepDeltaStepDetailsToolCallsObjectType.ToolCalls => "tool_calls",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RunStepDeltaStepDetailsToolCallsObjectType ToEnum(string value)
+        {
+            return value switch
+            {
+                "tool_calls" => RunStepDeltaStepDetailsToolCallsObjectType.ToolCalls,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RunStepDeltaStepDetailsToolCallsObjectType ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => RunStepDeltaStepDetailsToolCallsObjectType.ToolCalls,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

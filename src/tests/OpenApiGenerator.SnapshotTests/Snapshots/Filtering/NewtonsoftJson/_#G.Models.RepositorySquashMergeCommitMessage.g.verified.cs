@@ -29,4 +29,38 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
         BLANK,
     }
+
+    public static class RepositorySquashMergeCommitMessageExtensions
+    {
+        public static string ToValueString(this RepositorySquashMergeCommitMessage value)
+        {
+            return value switch
+            {
+                RepositorySquashMergeCommitMessage.PRBODY => "PR_BODY",
+                RepositorySquashMergeCommitMessage.COMMITMESSAGES => "COMMIT_MESSAGES",
+                RepositorySquashMergeCommitMessage.BLANK => "BLANK",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RepositorySquashMergeCommitMessage ToEnum(string value)
+        {
+            return value switch
+            {
+                "PR_BODY" => RepositorySquashMergeCommitMessage.PRBODY,
+                "COMMIT_MESSAGES" => RepositorySquashMergeCommitMessage.COMMITMESSAGES,
+                "BLANK" => RepositorySquashMergeCommitMessage.BLANK,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RepositorySquashMergeCommitMessage ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => RepositorySquashMergeCommitMessage.PRBODY,
+                1 => RepositorySquashMergeCommitMessage.COMMITMESSAGES,
+                2 => RepositorySquashMergeCommitMessage.BLANK,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

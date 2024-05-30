@@ -48,7 +48,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<OpenAIFile> CreateFileAsync(
             byte[] file,
-            string purpose,
+            CreateFileRequestPurpose purpose,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateFileRequest

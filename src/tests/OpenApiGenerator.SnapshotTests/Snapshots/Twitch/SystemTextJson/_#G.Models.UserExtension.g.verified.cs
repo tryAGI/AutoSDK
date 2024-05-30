@@ -47,7 +47,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> Type { get; set; }
+        public required global::System.Collections.Generic.IList<UserExtensionType> Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

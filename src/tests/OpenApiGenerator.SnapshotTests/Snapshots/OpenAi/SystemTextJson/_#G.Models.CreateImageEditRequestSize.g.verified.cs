@@ -9,19 +9,53 @@ namespace G
     /// <br/>Default Value: 1024x1024
     /// <br/>Example: 1024x1024
     /// </summary>
-    public abstract class CreateImageEditRequestSize
+    public enum CreateImageEditRequestSize
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string _256x256 = "256x256";
+        _256x256,
         /// <summary>
         /// 
         /// </summary>
-        public const string _512x512 = "512x512";
+        _512x512,
         /// <summary>
         /// 
         /// </summary>
-        public const string _1024x1024 = "1024x1024";
+        _1024x1024,
+    }
+
+    public static class CreateImageEditRequestSizeExtensions
+    {
+        public static string ToValueString(this CreateImageEditRequestSize value)
+        {
+            return value switch
+            {
+                CreateImageEditRequestSize._256x256 => "256x256",
+                CreateImageEditRequestSize._512x512 => "512x512",
+                CreateImageEditRequestSize._1024x1024 => "1024x1024",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateImageEditRequestSize ToEnum(string value)
+        {
+            return value switch
+            {
+                "256x256" => CreateImageEditRequestSize._256x256,
+                "512x512" => CreateImageEditRequestSize._512x512,
+                "1024x1024" => CreateImageEditRequestSize._1024x1024,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateImageEditRequestSize ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => CreateImageEditRequestSize._256x256,
+                1 => CreateImageEditRequestSize._512x512,
+                2 => CreateImageEditRequestSize._1024x1024,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

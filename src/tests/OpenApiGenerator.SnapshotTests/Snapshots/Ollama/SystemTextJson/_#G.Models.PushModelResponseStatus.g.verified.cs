@@ -7,23 +7,60 @@ namespace G
     /// <summary>
     /// Status pushing the model.
     /// </summary>
-    public abstract class PushModelResponseStatus
+    public enum PushModelResponseStatus
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string RetrievingManifest = "retrieving manifest";
+        RetrievingManifest,
         /// <summary>
         /// 
         /// </summary>
-        public const string StartingUpload = "starting upload";
+        StartingUpload,
         /// <summary>
         /// 
         /// </summary>
-        public const string PushingManifest = "pushing manifest";
+        PushingManifest,
         /// <summary>
         /// 
         /// </summary>
-        public const string Success = "success";
+        Success,
+    }
+
+    public static class PushModelResponseStatusExtensions
+    {
+        public static string ToValueString(this PushModelResponseStatus value)
+        {
+            return value switch
+            {
+                PushModelResponseStatus.RetrievingManifest => "retrieving manifest",
+                PushModelResponseStatus.StartingUpload => "starting upload",
+                PushModelResponseStatus.PushingManifest => "pushing manifest",
+                PushModelResponseStatus.Success => "success",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static PushModelResponseStatus ToEnum(string value)
+        {
+            return value switch
+            {
+                "retrieving manifest" => PushModelResponseStatus.RetrievingManifest,
+                "starting upload" => PushModelResponseStatus.StartingUpload,
+                "pushing manifest" => PushModelResponseStatus.PushingManifest,
+                "success" => PushModelResponseStatus.Success,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static PushModelResponseStatus ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => PushModelResponseStatus.RetrievingManifest,
+                1 => PushModelResponseStatus.StartingUpload,
+                2 => PushModelResponseStatus.PushingManifest,
+                3 => PushModelResponseStatus.Success,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

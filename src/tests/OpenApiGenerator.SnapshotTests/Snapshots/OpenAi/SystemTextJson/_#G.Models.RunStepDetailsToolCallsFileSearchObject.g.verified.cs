@@ -20,8 +20,9 @@ namespace G
         /// The type of tool call. This is always going to be `file_search` for this type of tool call.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDetailsToolCallsFileSearchObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required RunStepDetailsToolCallsFileSearchObjectType Type { get; set; }
 
         /// <summary>
         /// For now, this is always going to be an empty object.

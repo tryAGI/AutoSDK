@@ -17,7 +17,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<ListAssistantsResponse> ListAssistantsAsync(
             int limit,
-            string order,
+            ListAssistantsOrder order,
             string after,
             string before,
             global::System.Threading.CancellationToken cancellationToken = default)

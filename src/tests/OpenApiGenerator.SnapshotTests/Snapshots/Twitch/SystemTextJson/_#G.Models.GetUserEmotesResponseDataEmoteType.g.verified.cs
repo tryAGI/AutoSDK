@@ -11,19 +11,53 @@ namespace G
     /// * **follower** — A follower emote.
     /// * **subscriptions** — A subscriber emote.
     /// </summary>
-    public abstract class GetUserEmotesResponseDataEmoteType
+    public enum GetUserEmotesResponseDataEmoteType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Bitstier = "bitstier";
+        Bitstier,
         /// <summary>
         /// 
         /// </summary>
-        public const string Follower = "follower";
+        Follower,
         /// <summary>
         /// 
         /// </summary>
-        public const string Subscriptions = "subscriptions";
+        Subscriptions,
+    }
+
+    public static class GetUserEmotesResponseDataEmoteTypeExtensions
+    {
+        public static string ToValueString(this GetUserEmotesResponseDataEmoteType value)
+        {
+            return value switch
+            {
+                GetUserEmotesResponseDataEmoteType.Bitstier => "bitstier",
+                GetUserEmotesResponseDataEmoteType.Follower => "follower",
+                GetUserEmotesResponseDataEmoteType.Subscriptions => "subscriptions",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static GetUserEmotesResponseDataEmoteType ToEnum(string value)
+        {
+            return value switch
+            {
+                "bitstier" => GetUserEmotesResponseDataEmoteType.Bitstier,
+                "follower" => GetUserEmotesResponseDataEmoteType.Follower,
+                "subscriptions" => GetUserEmotesResponseDataEmoteType.Subscriptions,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static GetUserEmotesResponseDataEmoteType ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => GetUserEmotesResponseDataEmoteType.Bitstier,
+                1 => GetUserEmotesResponseDataEmoteType.Follower,
+                2 => GetUserEmotesResponseDataEmoteType.Subscriptions,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

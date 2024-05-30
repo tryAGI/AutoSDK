@@ -27,8 +27,9 @@ namespace G
         /// The object type, which is always "embedding".
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.EmbeddingObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Object { get; set; }
+        public required EmbeddingObject Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

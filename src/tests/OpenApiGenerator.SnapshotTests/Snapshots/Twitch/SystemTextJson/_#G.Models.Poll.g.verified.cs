@@ -90,8 +90,9 @@ namespace G
         /// * INVALID — Something went wrong while determining the state.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PollStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
+        public required PollStatus Status { get; set; }
 
         /// <summary>
         /// The length of time (in seconds) that the poll will run for.

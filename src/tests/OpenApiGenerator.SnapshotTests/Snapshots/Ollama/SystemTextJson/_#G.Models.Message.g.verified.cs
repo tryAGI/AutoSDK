@@ -13,8 +13,9 @@ namespace G
         /// The role of the message
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Role { get; set; }
+        public required MessageRole Role { get; set; }
 
         /// <summary>
         /// The content of the message

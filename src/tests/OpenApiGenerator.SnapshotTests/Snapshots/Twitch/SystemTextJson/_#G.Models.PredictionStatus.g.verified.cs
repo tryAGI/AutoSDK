@@ -12,23 +12,60 @@ namespace G
     /// * LOCKED — The broadcaster locked the Prediction, which means viewers can no longer make predictions.
     /// * RESOLVED — The winning outcome was determined and the Channel Points were distributed to the viewers who predicted the correct outcome.
     /// </summary>
-    public abstract class PredictionStatus
+    public enum PredictionStatus
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string ACTIVE = "ACTIVE";
+        ACTIVE,
         /// <summary>
         /// 
         /// </summary>
-        public const string CANCELED = "CANCELED";
+        CANCELED,
         /// <summary>
         /// 
         /// </summary>
-        public const string LOCKED = "LOCKED";
+        LOCKED,
         /// <summary>
         /// 
         /// </summary>
-        public const string RESOLVED = "RESOLVED";
+        RESOLVED,
+    }
+
+    public static class PredictionStatusExtensions
+    {
+        public static string ToValueString(this PredictionStatus value)
+        {
+            return value switch
+            {
+                PredictionStatus.ACTIVE => "ACTIVE",
+                PredictionStatus.CANCELED => "CANCELED",
+                PredictionStatus.LOCKED => "LOCKED",
+                PredictionStatus.RESOLVED => "RESOLVED",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static PredictionStatus ToEnum(string value)
+        {
+            return value switch
+            {
+                "ACTIVE" => PredictionStatus.ACTIVE,
+                "CANCELED" => PredictionStatus.CANCELED,
+                "LOCKED" => PredictionStatus.LOCKED,
+                "RESOLVED" => PredictionStatus.RESOLVED,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static PredictionStatus ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => PredictionStatus.ACTIVE,
+                1 => PredictionStatus.CANCELED,
+                2 => PredictionStatus.LOCKED,
+                3 => PredictionStatus.RESOLVED,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

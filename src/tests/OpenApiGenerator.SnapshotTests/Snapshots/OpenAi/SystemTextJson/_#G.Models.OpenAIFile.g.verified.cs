@@ -41,22 +41,25 @@ namespace G
         /// The object type, which is always `file`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OpenAIFileObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Object { get; set; }
+        public required OpenAIFileObject Object { get; set; }
 
         /// <summary>
         /// The intended purpose of the file. Supported values are `assistants`, `assistants_output`, `batch`, `batch_output`, `fine-tune`, `fine-tune-results` and `vision`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("purpose")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OpenAIFilePurposeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Purpose { get; set; }
+        public required OpenAIFilePurpose Purpose { get; set; }
 
         /// <summary>
         /// Deprecated. The current status of the file, which can be either `uploaded`, `processed`, or `error`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OpenAIFileStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
+        public required OpenAIFileStatus Status { get; set; }
 
         /// <summary>
         /// Deprecated. For details on why a fine-tuning training file failed validation, see the `error` field on `fine_tuning.job`.

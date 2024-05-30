@@ -11,19 +11,53 @@ namespace G
     /// * FULFILLED
     /// * UNFULFILLED
     /// </summary>
-    public abstract class CustomRewardRedemptionStatus
+    public enum CustomRewardRedemptionStatus
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string CANCELED = "CANCELED";
+        CANCELED,
         /// <summary>
         /// 
         /// </summary>
-        public const string FULFILLED = "FULFILLED";
+        FULFILLED,
         /// <summary>
         /// 
         /// </summary>
-        public const string UNFULFILLED = "UNFULFILLED";
+        UNFULFILLED,
+    }
+
+    public static class CustomRewardRedemptionStatusExtensions
+    {
+        public static string ToValueString(this CustomRewardRedemptionStatus value)
+        {
+            return value switch
+            {
+                CustomRewardRedemptionStatus.CANCELED => "CANCELED",
+                CustomRewardRedemptionStatus.FULFILLED => "FULFILLED",
+                CustomRewardRedemptionStatus.UNFULFILLED => "UNFULFILLED",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CustomRewardRedemptionStatus ToEnum(string value)
+        {
+            return value switch
+            {
+                "CANCELED" => CustomRewardRedemptionStatus.CANCELED,
+                "FULFILLED" => CustomRewardRedemptionStatus.FULFILLED,
+                "UNFULFILLED" => CustomRewardRedemptionStatus.UNFULFILLED,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CustomRewardRedemptionStatus ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => CustomRewardRedemptionStatus.CANCELED,
+                1 => CustomRewardRedemptionStatus.FULFILLED,
+                2 => CustomRewardRedemptionStatus.UNFULFILLED,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

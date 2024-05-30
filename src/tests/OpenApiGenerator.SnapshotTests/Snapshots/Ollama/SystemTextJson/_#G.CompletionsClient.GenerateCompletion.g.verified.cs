@@ -69,7 +69,7 @@ namespace G
             string? template = default,
             global::System.Collections.Generic.IList<int>? context = default,
             RequestOptions? options = default,
-            string? format = default,
+            GenerateCompletionRequestFormat? format = default,
             bool raw = default,
             bool stream = true,
             int keepAlive = default,

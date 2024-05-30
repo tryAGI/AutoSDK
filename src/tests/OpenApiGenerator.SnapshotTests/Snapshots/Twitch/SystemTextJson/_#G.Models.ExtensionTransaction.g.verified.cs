@@ -71,8 +71,9 @@ namespace G
         /// * BITS\_IN\_EXTENSION
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("product_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ExtensionTransactionProductTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ProductType { get; set; }
+        public required ExtensionTransactionProductType ProductType { get; set; }
 
         /// <summary>
         /// Contains details about the digital product.

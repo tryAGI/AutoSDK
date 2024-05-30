@@ -17,7 +17,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<GetExtensionConfigurationSegmentResponse> GetExtensionConfigurationSegmentAsync(
             string broadcasterId,
             string extensionId,
-            string segment,
+            GetExtensionConfigurationSegmentSegment segment,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

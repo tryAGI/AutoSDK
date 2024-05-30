@@ -24,8 +24,9 @@ namespace G
         /// * global
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("segment")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SetExtensionConfigurationSegmentBodySegmentJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Segment { get; set; }
+        public required SetExtensionConfigurationSegmentBodySegment Segment { get; set; }
 
         /// <summary>
         /// The ID of the broadcaster that installed the extension. Include this field only if the `segment` is set to developer or broadcaster.

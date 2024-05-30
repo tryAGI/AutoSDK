@@ -13,8 +13,9 @@ namespace G
         /// Anchor timestamp after which the expiration policy applies. Supported anchors: `last_active_at`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("anchor")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.VectorStoreExpirationAfterAnchorJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Anchor { get; set; }
+        public required VectorStoreExpirationAfterAnchor Anchor { get; set; }
 
         /// <summary>
         /// The number of days after the anchor time that the vector store will expire.

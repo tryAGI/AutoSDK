@@ -27,4 +27,38 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="high")]
         High,
     }
+
+    public static class MessageContentImageUrlObjectImageUrlDetailExtensions
+    {
+        public static string ToValueString(this MessageContentImageUrlObjectImageUrlDetail value)
+        {
+            return value switch
+            {
+                MessageContentImageUrlObjectImageUrlDetail.Auto => "auto",
+                MessageContentImageUrlObjectImageUrlDetail.Low => "low",
+                MessageContentImageUrlObjectImageUrlDetail.High => "high",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static MessageContentImageUrlObjectImageUrlDetail ToEnum(string value)
+        {
+            return value switch
+            {
+                "auto" => MessageContentImageUrlObjectImageUrlDetail.Auto,
+                "low" => MessageContentImageUrlObjectImageUrlDetail.Low,
+                "high" => MessageContentImageUrlObjectImageUrlDetail.High,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static MessageContentImageUrlObjectImageUrlDetail ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => MessageContentImageUrlObjectImageUrlDetail.Auto,
+                1 => MessageContentImageUrlObjectImageUrlDetail.Low,
+                2 => MessageContentImageUrlObjectImageUrlDetail.High,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

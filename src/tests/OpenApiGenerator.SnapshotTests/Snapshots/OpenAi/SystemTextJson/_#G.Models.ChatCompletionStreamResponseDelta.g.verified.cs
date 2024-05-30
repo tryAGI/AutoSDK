@@ -31,7 +31,8 @@ namespace G
         /// The role of the author of this message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        public string? Role { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatCompletionStreamResponseDeltaRoleJsonConverter))]
+        public ChatCompletionStreamResponseDeltaRole? Role { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

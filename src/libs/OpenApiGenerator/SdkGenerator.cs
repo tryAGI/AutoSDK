@@ -1,4 +1,5 @@
-﻿using H.Generators.Extensions;
+﻿using System.Collections.Immutable;
+using H.Generators.Extensions;
 using Microsoft.CodeAnalysis;
 using OpenApiGenerator.Core.Generation;
 using OpenApiGenerator.Core.Models;
@@ -41,6 +42,10 @@ public class SdkGenerator : IIncrementalGenerator
             .Select(static (x, _) => x.Models)
             .SelectAndReportExceptions(GetSuperTypeSourceCode, context, Id)
             .AddSource(context);
+        data
+            .SelectMany(static (x, _) => x.Models)
+            .SelectAndReportExceptions(GetEnumJsonConverterSourceCode, context, Id)
+            .AddSource(context);
         
         data
             .SelectMany(static (x, _) => x.AnyOfs)
@@ -48,7 +53,11 @@ public class SdkGenerator : IIncrementalGenerator
             .AddSource(context);
         data
             .SelectMany(static (x, _) => x.AnyOfs)
-            .SelectAndReportExceptions(GetAnyOfConverterSourceCode, context, Id)
+            .SelectAndReportExceptions(GetAnyOfJsonConverterSourceCode, context, Id)
+            .AddSource(context);
+        data
+            .SelectMany(static (x, _) => x.AnyOfs)
+            .SelectAndReportExceptions(GetAnyOfJsonConverterFactorySourceCode, context, Id)
             .AddSource(context);
     }
 
@@ -92,11 +101,33 @@ public class SdkGenerator : IIncrementalGenerator
             Text: fileWithName.Text);
     }
     
-    private static FileWithName GetAnyOfConverterSourceCode(
+    private static FileWithName GetAnyOfJsonConverterSourceCode(
         AnyOfData model,
         CancellationToken cancellationToken = default)
     {
-        var fileWithName = Data.GetSourceCodeForConverter(model, cancellationToken);
+        var fileWithName = Data.GetSourceCodeForAnyOfJsonConverter(model, cancellationToken);
+        
+        return new FileWithName(
+            Name: fileWithName.Name,
+            Text: fileWithName.Text);
+    }
+    
+    private static FileWithName GetEnumJsonConverterSourceCode(
+        ModelData model,
+        CancellationToken cancellationToken = default)
+    {
+        var fileWithName = Data.GetSourceCodeForEnumJsonConverter(model, cancellationToken);
+        
+        return new FileWithName(
+            Name: fileWithName.Name,
+            Text: fileWithName.Text);
+    }
+    
+    private static FileWithName GetAnyOfJsonConverterFactorySourceCode(
+        AnyOfData anyOf,
+        CancellationToken cancellationToken = default)
+    {
+        var fileWithName = Data.GetSourceCodeForAnyOfJsonConverterFactory(anyOf, cancellationToken);
         
         return new FileWithName(
             Name: fileWithName.Name,

@@ -9,15 +9,46 @@ namespace G
     /// <br/>Default Value: float
     /// <br/>Example: float
     /// </summary>
-    public abstract class CreateEmbeddingRequestEncodingFormat
+    public enum CreateEmbeddingRequestEncodingFormat
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Float = "float";
+        Float,
         /// <summary>
         /// 
         /// </summary>
-        public const string Base64 = "base64";
+        Base64,
+    }
+
+    public static class CreateEmbeddingRequestEncodingFormatExtensions
+    {
+        public static string ToValueString(this CreateEmbeddingRequestEncodingFormat value)
+        {
+            return value switch
+            {
+                CreateEmbeddingRequestEncodingFormat.Float => "float",
+                CreateEmbeddingRequestEncodingFormat.Base64 => "base64",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateEmbeddingRequestEncodingFormat ToEnum(string value)
+        {
+            return value switch
+            {
+                "float" => CreateEmbeddingRequestEncodingFormat.Float,
+                "base64" => CreateEmbeddingRequestEncodingFormat.Base64,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateEmbeddingRequestEncodingFormat ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => CreateEmbeddingRequestEncodingFormat.Float,
+                1 => CreateEmbeddingRequestEncodingFormat.Base64,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

@@ -7,15 +7,46 @@ namespace G
     /// <summary>
     /// `auto` is the default value
     /// </summary>
-    public abstract class AssistantObjectResponseFormat
+    public enum AssistantObjectResponseFormat
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string None = "none";
+        None,
         /// <summary>
         /// 
         /// </summary>
-        public const string Auto = "auto";
+        Auto,
+    }
+
+    public static class AssistantObjectResponseFormatExtensions
+    {
+        public static string ToValueString(this AssistantObjectResponseFormat value)
+        {
+            return value switch
+            {
+                AssistantObjectResponseFormat.None => "none",
+                AssistantObjectResponseFormat.Auto => "auto",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static AssistantObjectResponseFormat ToEnum(string value)
+        {
+            return value switch
+            {
+                "none" => AssistantObjectResponseFormat.None,
+                "auto" => AssistantObjectResponseFormat.Auto,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static AssistantObjectResponseFormat ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => AssistantObjectResponseFormat.None,
+                1 => AssistantObjectResponseFormat.Auto,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

@@ -13,8 +13,9 @@ namespace G
         /// The type of the integration being enabled for the fine-tuning job
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.FineTuningIntegrationTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required FineTuningIntegrationType Type { get; set; }
 
         /// <summary>
         /// The settings for your integration with Weights and Biases. This payload specifies the project that

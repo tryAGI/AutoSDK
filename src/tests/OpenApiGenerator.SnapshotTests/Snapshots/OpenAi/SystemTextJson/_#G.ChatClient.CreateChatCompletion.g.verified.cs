@@ -67,7 +67,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<CreateChatCompletionResponse> CreateChatCompletionAsync(
             global::System.Collections.Generic.IList<ChatCompletionRequestMessage> messages,
-            global::System.AnyOf<string, string> model,
+            global::System.AnyOf<string, CreateChatCompletionRequestModel> model,
             double? frequencyPenalty = 0,
             object? logitBias = default,
             bool? logprobs = false,
@@ -85,7 +85,7 @@ namespace G
             global::System.Collections.Generic.IList<ChatCompletionTool>? tools = default,
             ChatCompletionToolChoiceOption? toolChoice = default,
             string? user = default,
-            global::System.OneOf<string?, ChatCompletionFunctionCallOption?> functionCall = default,
+            global::System.OneOf<CreateChatCompletionRequestFunctionCall?, ChatCompletionFunctionCallOption?> functionCall = default,
             global::System.Collections.Generic.IList<ChatCompletionFunctions>? functions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

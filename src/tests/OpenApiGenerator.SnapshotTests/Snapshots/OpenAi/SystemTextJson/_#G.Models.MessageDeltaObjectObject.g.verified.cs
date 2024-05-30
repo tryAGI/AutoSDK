@@ -7,11 +7,39 @@ namespace G
     /// <summary>
     /// The object type, which is always `thread.message.delta`.
     /// </summary>
-    public abstract class MessageDeltaObjectObject
+    public enum MessageDeltaObjectObject
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Threadmessagedelta = "thread.message.delta";
+        Threadmessagedelta,
+    }
+
+    public static class MessageDeltaObjectObjectExtensions
+    {
+        public static string ToValueString(this MessageDeltaObjectObject value)
+        {
+            return value switch
+            {
+                MessageDeltaObjectObject.Threadmessagedelta => "thread.message.delta",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static MessageDeltaObjectObject ToEnum(string value)
+        {
+            return value switch
+            {
+                "thread.message.delta" => MessageDeltaObjectObject.Threadmessagedelta,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static MessageDeltaObjectObject ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => MessageDeltaObjectObject.Threadmessagedelta,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

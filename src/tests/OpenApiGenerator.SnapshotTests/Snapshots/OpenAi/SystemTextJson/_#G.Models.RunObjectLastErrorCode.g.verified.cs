@@ -7,19 +7,53 @@ namespace G
     /// <summary>
     /// One of `server_error`, `rate_limit_exceeded`, or `invalid_prompt`.
     /// </summary>
-    public abstract class RunObjectLastErrorCode
+    public enum RunObjectLastErrorCode
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string ServerError = "server_error";
+        ServerError,
         /// <summary>
         /// 
         /// </summary>
-        public const string RateLimitExceeded = "rate_limit_exceeded";
+        RateLimitExceeded,
         /// <summary>
         /// 
         /// </summary>
-        public const string InvalidPrompt = "invalid_prompt";
+        InvalidPrompt,
+    }
+
+    public static class RunObjectLastErrorCodeExtensions
+    {
+        public static string ToValueString(this RunObjectLastErrorCode value)
+        {
+            return value switch
+            {
+                RunObjectLastErrorCode.ServerError => "server_error",
+                RunObjectLastErrorCode.RateLimitExceeded => "rate_limit_exceeded",
+                RunObjectLastErrorCode.InvalidPrompt => "invalid_prompt",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RunObjectLastErrorCode ToEnum(string value)
+        {
+            return value switch
+            {
+                "server_error" => RunObjectLastErrorCode.ServerError,
+                "rate_limit_exceeded" => RunObjectLastErrorCode.RateLimitExceeded,
+                "invalid_prompt" => RunObjectLastErrorCode.InvalidPrompt,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RunObjectLastErrorCode ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => RunObjectLastErrorCode.ServerError,
+                1 => RunObjectLastErrorCode.RateLimitExceeded,
+                2 => RunObjectLastErrorCode.InvalidPrompt,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

@@ -7,15 +7,46 @@ namespace G
     /// <summary>
     /// Whether the model should be public or private. A public model can be viewed and run by anyone, whereas a private model can be viewed and run only by the user or organization members that own the model.
     /// </summary>
-    public abstract class CreateModelsRequestVisibility
+    public enum CreateModelsRequestVisibility
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Public = "public";
+        Public,
         /// <summary>
         /// 
         /// </summary>
-        public const string Private = "private";
+        Private,
+    }
+
+    public static class CreateModelsRequestVisibilityExtensions
+    {
+        public static string ToValueString(this CreateModelsRequestVisibility value)
+        {
+            return value switch
+            {
+                CreateModelsRequestVisibility.Public => "public",
+                CreateModelsRequestVisibility.Private => "private",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateModelsRequestVisibility ToEnum(string value)
+        {
+            return value switch
+            {
+                "public" => CreateModelsRequestVisibility.Public,
+                "private" => CreateModelsRequestVisibility.Private,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateModelsRequestVisibility ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => CreateModelsRequestVisibility.Public,
+                1 => CreateModelsRequestVisibility.Private,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

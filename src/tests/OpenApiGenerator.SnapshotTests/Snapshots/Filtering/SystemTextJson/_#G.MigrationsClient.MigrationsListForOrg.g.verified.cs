@@ -20,7 +20,7 @@ namespace G
             string org,
             int perPage,
             int page,
-            global::System.Collections.Generic.IList<string> exclude,
+            global::System.Collections.Generic.IList<MigrationsListForOrgExclude> exclude,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

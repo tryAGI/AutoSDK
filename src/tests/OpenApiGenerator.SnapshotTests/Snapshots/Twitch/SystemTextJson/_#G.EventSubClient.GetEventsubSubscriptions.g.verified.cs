@@ -16,8 +16,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<GetEventSubSubscriptionsResponse> GetEventsubSubscriptionsAsync(
-            string status,
-            string type,
+            GetEventsubSubscriptionsStatus status,
+            GetEventsubSubscriptionsType type,
             string userId,
             string after,
             global::System.Threading.CancellationToken cancellationToken = default)

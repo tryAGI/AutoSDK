@@ -48,8 +48,9 @@ namespace G
         /// The object type, which is always "text_completion"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateCompletionResponseObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Object { get; set; }
+        public required CreateCompletionResponseObject Object { get; set; }
 
         /// <summary>
         /// Usage statistics for the completion request.

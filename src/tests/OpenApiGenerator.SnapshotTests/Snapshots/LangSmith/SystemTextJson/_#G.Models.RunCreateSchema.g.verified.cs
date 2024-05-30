@@ -26,8 +26,9 @@ namespace G
         /// Enum for run types.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunCreateSchemaRunTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string RunType { get; set; }
+        public required RunCreateSchemaRunType RunType { get; set; }
 
         /// <summary>
         /// 

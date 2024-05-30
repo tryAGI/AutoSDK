@@ -7,11 +7,39 @@ namespace G
     /// <summary>
     /// The role of the messages author, in this case `user`.
     /// </summary>
-    public abstract class ChatCompletionRequestUserMessageRole
+    public enum ChatCompletionRequestUserMessageRole
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string User = "user";
+        User,
+    }
+
+    public static class ChatCompletionRequestUserMessageRoleExtensions
+    {
+        public static string ToValueString(this ChatCompletionRequestUserMessageRole value)
+        {
+            return value switch
+            {
+                ChatCompletionRequestUserMessageRole.User => "user",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static ChatCompletionRequestUserMessageRole ToEnum(string value)
+        {
+            return value switch
+            {
+                "user" => ChatCompletionRequestUserMessageRole.User,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static ChatCompletionRequestUserMessageRole ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => ChatCompletionRequestUserMessageRole.User,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

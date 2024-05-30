@@ -14,31 +14,74 @@ namespace G
     /// * MODERATED — The poll was deleted.
     /// * INVALID — Something went wrong while determining the state.
     /// </summary>
-    public abstract class PollStatus
+    public enum PollStatus
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string ACTIVE = "ACTIVE";
+        ACTIVE,
         /// <summary>
         /// 
         /// </summary>
-        public const string COMPLETED = "COMPLETED";
+        COMPLETED,
         /// <summary>
         /// 
         /// </summary>
-        public const string TERMINATED = "TERMINATED";
+        TERMINATED,
         /// <summary>
         /// 
         /// </summary>
-        public const string ARCHIVED = "ARCHIVED";
+        ARCHIVED,
         /// <summary>
         /// 
         /// </summary>
-        public const string MODERATED = "MODERATED";
+        MODERATED,
         /// <summary>
         /// 
         /// </summary>
-        public const string INVALID = "INVALID";
+        INVALID,
+    }
+
+    public static class PollStatusExtensions
+    {
+        public static string ToValueString(this PollStatus value)
+        {
+            return value switch
+            {
+                PollStatus.ACTIVE => "ACTIVE",
+                PollStatus.COMPLETED => "COMPLETED",
+                PollStatus.TERMINATED => "TERMINATED",
+                PollStatus.ARCHIVED => "ARCHIVED",
+                PollStatus.MODERATED => "MODERATED",
+                PollStatus.INVALID => "INVALID",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static PollStatus ToEnum(string value)
+        {
+            return value switch
+            {
+                "ACTIVE" => PollStatus.ACTIVE,
+                "COMPLETED" => PollStatus.COMPLETED,
+                "TERMINATED" => PollStatus.TERMINATED,
+                "ARCHIVED" => PollStatus.ARCHIVED,
+                "MODERATED" => PollStatus.MODERATED,
+                "INVALID" => PollStatus.INVALID,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static PollStatus ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => PollStatus.ACTIVE,
+                1 => PollStatus.COMPLETED,
+                2 => PollStatus.TERMINATED,
+                3 => PollStatus.ARCHIVED,
+                4 => PollStatus.MODERATED,
+                5 => PollStatus.INVALID,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

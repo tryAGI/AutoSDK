@@ -63,8 +63,9 @@ namespace G
         /// * 3000 — Tier 3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UserSubscriptionTierJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Tier { get; set; }
+        public required UserSubscriptionTier Tier { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

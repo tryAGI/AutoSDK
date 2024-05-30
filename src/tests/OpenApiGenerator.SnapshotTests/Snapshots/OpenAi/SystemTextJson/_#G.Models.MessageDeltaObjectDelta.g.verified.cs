@@ -13,7 +13,8 @@ namespace G
         /// The entity that produced the message. One of `user` or `assistant`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        public string? Role { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageDeltaObjectDeltaRoleJsonConverter))]
+        public MessageDeltaObjectDeltaRole? Role { get; set; }
 
         /// <summary>
         /// The content of the message in array of text and/or images.

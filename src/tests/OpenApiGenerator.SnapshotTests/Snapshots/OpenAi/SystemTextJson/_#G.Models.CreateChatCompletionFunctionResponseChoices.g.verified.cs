@@ -13,8 +13,9 @@ namespace G
         /// The reason the model stopped generating tokens. This will be `stop` if the model hit a natural stop point or a provided stop sequence, `length` if the maximum number of tokens specified in the request was reached, `content_filter` if content was omitted due to a flag from our content filters, or `function_call` if the model called a function.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateChatCompletionFunctionResponseChoicesFinishReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string FinishReason { get; set; }
+        public required CreateChatCompletionFunctionResponseChoicesFinishReason FinishReason { get; set; }
 
         /// <summary>
         /// The index of the choice in the list of choices.

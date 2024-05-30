@@ -26,4 +26,38 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="required")]
         Required,
     }
+
+    public static class CreateThreadAndRunRequestToolChoiceExtensions
+    {
+        public static string ToValueString(this CreateThreadAndRunRequestToolChoice value)
+        {
+            return value switch
+            {
+                CreateThreadAndRunRequestToolChoice.None => "none",
+                CreateThreadAndRunRequestToolChoice.Auto => "auto",
+                CreateThreadAndRunRequestToolChoice.Required => "required",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateThreadAndRunRequestToolChoice ToEnum(string value)
+        {
+            return value switch
+            {
+                "none" => CreateThreadAndRunRequestToolChoice.None,
+                "auto" => CreateThreadAndRunRequestToolChoice.Auto,
+                "required" => CreateThreadAndRunRequestToolChoice.Required,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static CreateThreadAndRunRequestToolChoice ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => CreateThreadAndRunRequestToolChoice.None,
+                1 => CreateThreadAndRunRequestToolChoice.Auto,
+                2 => CreateThreadAndRunRequestToolChoice.Required,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

@@ -51,7 +51,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<EndPredictionResponse> EndPredictionAsync(
             string broadcasterId,
             string id,
-            string status,
+            EndPredictionBodyStatus status,
             string? winningOutcomeId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

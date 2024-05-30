@@ -9,11 +9,39 @@ namespace G
     ///   
     /// * bits — The minimum price is 1 and the maximum is 10000.
     /// </summary>
-    public abstract class UpdateExtensionBitsProductBodyCostType
+    public enum UpdateExtensionBitsProductBodyCostType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Bits = "bits";
+        Bits,
+    }
+
+    public static class UpdateExtensionBitsProductBodyCostTypeExtensions
+    {
+        public static string ToValueString(this UpdateExtensionBitsProductBodyCostType value)
+        {
+            return value switch
+            {
+                UpdateExtensionBitsProductBodyCostType.Bits => "bits",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static UpdateExtensionBitsProductBodyCostType ToEnum(string value)
+        {
+            return value switch
+            {
+                "bits" => UpdateExtensionBitsProductBodyCostType.Bits,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static UpdateExtensionBitsProductBodyCostType ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => UpdateExtensionBitsProductBodyCostType.Bits,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

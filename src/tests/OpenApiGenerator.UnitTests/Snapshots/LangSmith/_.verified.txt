@@ -14,14 +14,15 @@
           CSharpType: global::System.DateTime,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.DateTime
+          CSharpTypeWithoutNullability: global::System.DateTime,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: endTime,
         ArgumentName: endTime,
         ParameterDefaultValue: default
@@ -33,14 +34,15 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: error,
         ArgumentName: error,
         ParameterDefaultValue: default
@@ -52,14 +54,16 @@
           CSharpType: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: true,
+          AnyOfCount: 3,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>
+          CSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>,
+          ConverterType: AnyOfJsonConverterFactory3
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: AnyOfJsonConverterFactory3,
         ParameterName: inputs,
         ArgumentName: inputs,
         ParameterDefaultValue: default
@@ -71,14 +75,16 @@
           CSharpType: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: true,
+          AnyOfCount: 3,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>
+          CSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>,
+          ConverterType: AnyOfJsonConverterFactory3
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: AnyOfJsonConverterFactory3,
         ParameterName: outputs,
         ArgumentName: outputs,
         ParameterDefaultValue: default
@@ -90,14 +96,15 @@
           CSharpType: global::System.Collections.Generic.IList<object?>?,
           IsArray: true,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object?>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object?>,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: events,
         ArgumentName: events,
         ParameterDefaultValue: default
@@ -109,6 +116,7 @@
     Enumerations: null,
     Name: RunUpdateSchemaExtended,
     ClassName: RunUpdateSchemaExtended,
+    GlobalClassName: global::G.RunUpdateSchemaExtended,
     ExternalClassName: RunUpdateSchemaExtended,
     FileNameWithoutExtension: G.Models.RunUpdateSchemaExtended
   },
@@ -127,16 +135,17 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
         Summary:
 <br/>Default Value: ,
+        ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
         ParameterDefaultValue: ""
@@ -148,16 +157,17 @@
           CSharpType: global::System.Collections.Generic.IList<ChatCompletionRequestMessage>?,
           IsArray: true,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionRequestMessage>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionRequestMessage>,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: ,
         IsDeprecated: false,
         Summary:
 <br/>Default Value: [],
+        ConverterType: ,
         ParameterName: messages,
         ArgumentName: messages,
         ParameterDefaultValue: default
@@ -169,16 +179,17 @@
           CSharpType: global::System.Collections.Generic.IList<ChatCompletionFunctions>?,
           IsArray: true,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionFunctions>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionFunctions>,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: ,
         IsDeprecated: false,
         Summary:
 <br/>Default Value: [],
+        ConverterType: ,
         ParameterName: functions,
         ArgumentName: functions,
         ParameterDefaultValue: default
@@ -190,14 +201,15 @@
           CSharpType: double,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: double
+          CSharpTypeWithoutNullability: double,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: temperature,
         ArgumentName: temperature,
         ParameterDefaultValue: default
@@ -209,14 +221,15 @@
           CSharpType: double,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: double
+          CSharpTypeWithoutNullability: double,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: topP,
         ArgumentName: topP,
         ParameterDefaultValue: default
@@ -228,14 +241,15 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: int
+          CSharpTypeWithoutNullability: int,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: n,
         ArgumentName: n,
         ParameterDefaultValue: default
@@ -247,14 +261,15 @@
           CSharpType: bool,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: bool
+          CSharpTypeWithoutNullability: bool,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: stream,
         ArgumentName: stream,
         ParameterDefaultValue: default
@@ -266,14 +281,16 @@
           CSharpType: global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?>,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: true,
+          AnyOfCount: 2,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?>
+          CSharpTypeWithoutNullability: global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?>,
+          ConverterType: AnyOfJsonConverterFactory2
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: AnyOfJsonConverterFactory2,
         ParameterName: stop,
         ArgumentName: stop,
         ParameterDefaultValue: default
@@ -285,14 +302,15 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: int
+          CSharpTypeWithoutNullability: int,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: maxTokens,
         ArgumentName: maxTokens,
         ParameterDefaultValue: default
@@ -304,14 +322,15 @@
           CSharpType: double,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: double
+          CSharpTypeWithoutNullability: double,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: presencePenalty,
         ArgumentName: presencePenalty,
         ParameterDefaultValue: default
@@ -323,14 +342,15 @@
           CSharpType: double,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: double
+          CSharpTypeWithoutNullability: double,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: frequencyPenalty,
         ArgumentName: frequencyPenalty,
         ParameterDefaultValue: default
@@ -342,15 +362,16 @@
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: object,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: ,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: logitBias,
         ArgumentName: logitBias,
         ParameterDefaultValue: default
@@ -362,6 +383,7 @@
     Enumerations: null,
     Name: CreateChatCompletionRequest,
     ClassName: CreateChatCompletionRequest,
+    GlobalClassName: global::G.CreateChatCompletionRequest,
     ExternalClassName: CreateChatCompletionRequest,
     FileNameWithoutExtension: G.Models.CreateChatCompletionRequest
   },
@@ -380,16 +402,17 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
         Summary:
 <br/>Default Value: ,
+        ConverterType: ,
         ParameterName: role,
         ArgumentName: role,
         ParameterDefaultValue: ""
@@ -401,14 +424,15 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: content,
         ArgumentName: content,
         ParameterDefaultValue: default
@@ -420,14 +444,15 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: name,
         ArgumentName: name,
         ParameterDefaultValue: default
@@ -439,17 +464,18 @@
           CSharpType: ChatCompletionFunctionCall?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: [
             name,
             arguments
           ],
           EnumValues: null,
-          CSharpTypeWithoutNullability: ChatCompletionFunctionCall
+          CSharpTypeWithoutNullability: ChatCompletionFunctionCall,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: functionCall,
         ArgumentName: functionCall,
         ParameterDefaultValue: default
@@ -461,6 +487,7 @@
     Enumerations: null,
     Name: ChatCompletionRequestMessage,
     ClassName: ChatCompletionRequestMessage,
+    GlobalClassName: global::G.ChatCompletionRequestMessage,
     ExternalClassName: ChatCompletionRequestMessage,
     FileNameWithoutExtension: G.Models.ChatCompletionRequestMessage
   },
@@ -479,16 +506,17 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
         Summary:
 <br/>Default Value: ,
+        ConverterType: ,
         ParameterName: name,
         ArgumentName: name,
         ParameterDefaultValue: ""
@@ -500,16 +528,17 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
         Summary:
 <br/>Default Value: ,
+        ConverterType: ,
         ParameterName: arguments,
         ArgumentName: arguments,
         ParameterDefaultValue: ""
@@ -521,6 +550,7 @@
     Enumerations: null,
     Name: ChatCompletionFunctionCall,
     ClassName: ChatCompletionFunctionCall,
+    GlobalClassName: global::G.ChatCompletionFunctionCall,
     ExternalClassName: ChatCompletionFunctionCall,
     FileNameWithoutExtension: G.Models.ChatCompletionFunctionCall
   },
@@ -539,16 +569,17 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
         Summary:
 <br/>Default Value: ,
+        ConverterType: ,
         ParameterName: name,
         ArgumentName: name,
         ParameterDefaultValue: ""
@@ -560,16 +591,17 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
         Summary:
 <br/>Default Value: ,
+        ConverterType: ,
         ParameterName: description,
         ArgumentName: description,
         ParameterDefaultValue: ""
@@ -581,17 +613,18 @@
           CSharpType: ChatCompletionFunctionParameters?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: [
             type,
             properties
           ],
           EnumValues: null,
-          CSharpTypeWithoutNullability: ChatCompletionFunctionParameters
+          CSharpTypeWithoutNullability: ChatCompletionFunctionParameters,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: parameters,
         ArgumentName: parameters,
         ParameterDefaultValue: default
@@ -603,6 +636,7 @@
     Enumerations: null,
     Name: ChatCompletionFunctions,
     ClassName: ChatCompletionFunctions,
+    GlobalClassName: global::G.ChatCompletionFunctions,
     ExternalClassName: ChatCompletionFunctions,
     FileNameWithoutExtension: G.Models.ChatCompletionFunctions
   },
@@ -621,16 +655,17 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
         Summary:
 <br/>Default Value: ,
+        ConverterType: ,
         ParameterName: type,
         ArgumentName: type,
         ParameterDefaultValue: ""
@@ -642,16 +677,17 @@
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: object,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: ,
         IsDeprecated: false,
         Summary:
 <br/>Default Value: ,
+        ConverterType: ,
         ParameterName: properties,
         ArgumentName: properties,
         ParameterDefaultValue: default
@@ -663,6 +699,7 @@
     Enumerations: null,
     Name: ChatCompletionFunctionParameters,
     ClassName: ChatCompletionFunctionParameters,
+    GlobalClassName: global::G.ChatCompletionFunctionParameters,
     ExternalClassName: ChatCompletionFunctionParameters,
     FileNameWithoutExtension: G.Models.ChatCompletionFunctionParameters
   },
@@ -681,14 +718,16 @@
           CSharpType: global::System.AnyOf<string, object>,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: true,
+          AnyOfCount: 2,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.AnyOf<string, object>
+          CSharpTypeWithoutNullability: global::System.AnyOf<string, object>,
+          ConverterType: AnyOfJsonConverterFactory2
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: AnyOfJsonConverterFactory2,
         ParameterName: model,
         ArgumentName: model,
         ParameterDefaultValue: default
@@ -700,14 +739,16 @@
           CSharpType: global::System.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: true,
+          AnyOfCount: 4,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>
+          CSharpTypeWithoutNullability: global::System.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>,
+          ConverterType: AnyOfJsonConverterFactory4
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: AnyOfJsonConverterFactory4,
         ParameterName: prompt,
         ArgumentName: prompt,
         ParameterDefaultValue: default
@@ -719,14 +760,15 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: suffix,
         ArgumentName: suffix,
         ParameterDefaultValue: default
@@ -738,14 +780,15 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: int
+          CSharpTypeWithoutNullability: int,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: maxTokens,
         ArgumentName: maxTokens,
         ParameterDefaultValue: default
@@ -757,14 +800,15 @@
           CSharpType: double,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: double
+          CSharpTypeWithoutNullability: double,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: temperature,
         ArgumentName: temperature,
         ParameterDefaultValue: default
@@ -776,14 +820,15 @@
           CSharpType: double,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: double
+          CSharpTypeWithoutNullability: double,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: topP,
         ArgumentName: topP,
         ParameterDefaultValue: default
@@ -795,14 +840,15 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: int
+          CSharpTypeWithoutNullability: int,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: n,
         ArgumentName: n,
         ParameterDefaultValue: default
@@ -814,14 +860,15 @@
           CSharpType: bool,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: bool
+          CSharpTypeWithoutNullability: bool,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: stream,
         ArgumentName: stream,
         ParameterDefaultValue: default
@@ -833,14 +880,15 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: int
+          CSharpTypeWithoutNullability: int,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: logprobs,
         ArgumentName: logprobs,
         ParameterDefaultValue: default
@@ -852,14 +900,15 @@
           CSharpType: bool,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: bool
+          CSharpTypeWithoutNullability: bool,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: echo,
         ArgumentName: echo,
         ParameterDefaultValue: default
@@ -871,14 +920,16 @@
           CSharpType: global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?>,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: true,
+          AnyOfCount: 2,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?>
+          CSharpTypeWithoutNullability: global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?>,
+          ConverterType: AnyOfJsonConverterFactory2
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: AnyOfJsonConverterFactory2,
         ParameterName: stop,
         ArgumentName: stop,
         ParameterDefaultValue: default
@@ -890,14 +941,15 @@
           CSharpType: double,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: double
+          CSharpTypeWithoutNullability: double,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: presencePenalty,
         ArgumentName: presencePenalty,
         ParameterDefaultValue: default
@@ -909,14 +961,15 @@
           CSharpType: double,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: double
+          CSharpTypeWithoutNullability: double,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: frequencyPenalty,
         ArgumentName: frequencyPenalty,
         ParameterDefaultValue: default
@@ -928,14 +981,15 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: int
+          CSharpTypeWithoutNullability: int,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: bestOf,
         ArgumentName: bestOf,
         ParameterDefaultValue: default
@@ -947,15 +1001,16 @@
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: object,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: ,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: logitBias,
         ArgumentName: logitBias,
         ParameterDefaultValue: default
@@ -967,14 +1022,15 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: user,
         ArgumentName: user,
         ParameterDefaultValue: default
@@ -986,6 +1042,7 @@
     Enumerations: null,
     Name: CreateCompletionRequest,
     ClassName: CreateCompletionRequest,
+    GlobalClassName: global::G.CreateCompletionRequest,
     ExternalClassName: CreateCompletionRequest,
     FileNameWithoutExtension: G.Models.CreateCompletionRequest
   },
@@ -1004,16 +1061,17 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
         Summary:
 <br/>Default Value: ,
+        ConverterType: ,
         ParameterName: id,
         ArgumentName: id,
         ParameterDefaultValue: ""
@@ -1025,16 +1083,17 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
         Summary:
 <br/>Default Value: ,
+        ConverterType: ,
         ParameterName: object,
         ArgumentName: object,
         ParameterDefaultValue: ""
@@ -1046,16 +1105,17 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: int
+          CSharpTypeWithoutNullability: int,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: 0,
         IsDeprecated: false,
         Summary:
 <br/>Default Value: 0,
+        ConverterType: ,
         ParameterName: created,
         ArgumentName: created,
         ParameterDefaultValue: 0
@@ -1067,16 +1127,17 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
         Summary:
 <br/>Default Value: ,
+        ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
         ParameterDefaultValue: ""
@@ -1088,16 +1149,17 @@
           CSharpType: global::System.Collections.Generic.IList<ChatCompletionChoice>?,
           IsArray: true,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionChoice>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionChoice>,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: ,
         IsDeprecated: false,
         Summary:
 <br/>Default Value: [],
+        ConverterType: ,
         ParameterName: choices,
         ArgumentName: choices,
         ParameterDefaultValue: default
@@ -1109,18 +1171,19 @@
           CSharpType: CompletionUsage?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: [
             prompt_tokens,
             completion_tokens,
             total_tokens
           ],
           EnumValues: null,
-          CSharpTypeWithoutNullability: CompletionUsage
+          CSharpTypeWithoutNullability: CompletionUsage,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: usage,
         ArgumentName: usage,
         ParameterDefaultValue: default
@@ -1132,6 +1195,7 @@
     Enumerations: null,
     Name: CreateChatCompletionResponse,
     ClassName: CreateChatCompletionResponse,
+    GlobalClassName: global::G.CreateChatCompletionResponse,
     ExternalClassName: CreateChatCompletionResponse,
     FileNameWithoutExtension: G.Models.CreateChatCompletionResponse
   },
@@ -1150,16 +1214,17 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: int
+          CSharpTypeWithoutNullability: int,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: 0,
         IsDeprecated: false,
         Summary:
 <br/>Default Value: 0,
+        ConverterType: ,
         ParameterName: index,
         ArgumentName: index,
         ParameterDefaultValue: 0
@@ -1171,18 +1236,19 @@
           CSharpType: ChatCompletionResponseMessage?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: [
             role,
             content,
             function_call
           ],
           EnumValues: null,
-          CSharpTypeWithoutNullability: ChatCompletionResponseMessage
+          CSharpTypeWithoutNullability: ChatCompletionResponseMessage,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: message,
         ArgumentName: message,
         ParameterDefaultValue: default
@@ -1194,16 +1260,17 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
         Summary:
 <br/>Default Value: ,
+        ConverterType: ,
         ParameterName: finishReason,
         ArgumentName: finishReason,
         ParameterDefaultValue: ""
@@ -1215,6 +1282,7 @@
     Enumerations: null,
     Name: ChatCompletionChoice,
     ClassName: ChatCompletionChoice,
+    GlobalClassName: global::G.ChatCompletionChoice,
     ExternalClassName: ChatCompletionChoice,
     FileNameWithoutExtension: G.Models.ChatCompletionChoice
   },
@@ -1233,16 +1301,17 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
         Summary:
 <br/>Default Value: ,
+        ConverterType: ,
         ParameterName: role,
         ArgumentName: role,
         ParameterDefaultValue: ""
@@ -1254,14 +1323,15 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: content,
         ArgumentName: content,
         ParameterDefaultValue: default
@@ -1273,17 +1343,18 @@
           CSharpType: ChatCompletionFunctionCall?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: [
             name,
             arguments
           ],
           EnumValues: null,
-          CSharpTypeWithoutNullability: ChatCompletionFunctionCall
+          CSharpTypeWithoutNullability: ChatCompletionFunctionCall,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: functionCall,
         ArgumentName: functionCall,
         ParameterDefaultValue: default
@@ -1295,6 +1366,7 @@
     Enumerations: null,
     Name: ChatCompletionResponseMessage,
     ClassName: ChatCompletionResponseMessage,
+    GlobalClassName: global::G.ChatCompletionResponseMessage,
     ExternalClassName: ChatCompletionResponseMessage,
     FileNameWithoutExtension: G.Models.ChatCompletionResponseMessage
   },
@@ -1313,16 +1385,17 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: int
+          CSharpTypeWithoutNullability: int,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: 0,
         IsDeprecated: false,
         Summary:
 <br/>Default Value: 0,
+        ConverterType: ,
         ParameterName: promptTokens,
         ArgumentName: promptTokens,
         ParameterDefaultValue: 0
@@ -1334,16 +1407,17 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: int
+          CSharpTypeWithoutNullability: int,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: 0,
         IsDeprecated: false,
         Summary:
 <br/>Default Value: 0,
+        ConverterType: ,
         ParameterName: completionTokens,
         ArgumentName: completionTokens,
         ParameterDefaultValue: 0
@@ -1355,16 +1429,17 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: int
+          CSharpTypeWithoutNullability: int,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: 0,
         IsDeprecated: false,
         Summary:
 <br/>Default Value: 0,
+        ConverterType: ,
         ParameterName: totalTokens,
         ArgumentName: totalTokens,
         ParameterDefaultValue: 0
@@ -1376,6 +1451,7 @@
     Enumerations: null,
     Name: CompletionUsage,
     ClassName: CompletionUsage,
+    GlobalClassName: global::G.CompletionUsage,
     ExternalClassName: CompletionUsage,
     FileNameWithoutExtension: G.Models.CompletionUsage
   },
@@ -1394,14 +1470,15 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: id,
         ArgumentName: id,
         ParameterDefaultValue: default
@@ -1413,14 +1490,15 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: object,
         ArgumentName: object,
         ParameterDefaultValue: default
@@ -1432,14 +1510,15 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: created,
         ArgumentName: created,
         ParameterDefaultValue: default
@@ -1451,14 +1530,15 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
         ParameterDefaultValue: default
@@ -1470,16 +1550,17 @@
           CSharpType: global::System.Collections.Generic.IList<Choice>?,
           IsArray: true,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Choice>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Choice>,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: ,
         IsDeprecated: false,
         Summary:
 <br/>Default Value: [],
+        ConverterType: ,
         ParameterName: choices,
         ArgumentName: choices,
         ParameterDefaultValue: default
@@ -1491,18 +1572,19 @@
           CSharpType: CompletionUsage?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: [
             prompt_tokens,
             completion_tokens,
             total_tokens
           ],
           EnumValues: null,
-          CSharpTypeWithoutNullability: CompletionUsage
+          CSharpTypeWithoutNullability: CompletionUsage,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: usage,
         ArgumentName: usage,
         ParameterDefaultValue: default
@@ -1514,6 +1596,7 @@
     Enumerations: null,
     Name: CreateCompletionResponse,
     ClassName: CreateCompletionResponse,
+    GlobalClassName: global::G.CreateCompletionResponse,
     ExternalClassName: CreateCompletionResponse,
     FileNameWithoutExtension: G.Models.CreateCompletionResponse
   },
@@ -1532,16 +1615,17 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
         Summary:
 <br/>Default Value: ,
+        ConverterType: ,
         ParameterName: text,
         ArgumentName: text,
         ParameterDefaultValue: ""
@@ -1553,16 +1637,17 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: int
+          CSharpTypeWithoutNullability: int,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: 0,
         IsDeprecated: false,
         Summary:
 <br/>Default Value: 0,
+        ConverterType: ,
         ParameterName: index,
         ArgumentName: index,
         ParameterDefaultValue: 0
@@ -1574,7 +1659,6 @@
           CSharpType: Logprobs?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: [
             tokens,
             token_logprobs,
@@ -1582,11 +1666,13 @@
             text_offset
           ],
           EnumValues: null,
-          CSharpTypeWithoutNullability: Logprobs
+          CSharpTypeWithoutNullability: Logprobs,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: logprobs,
         ArgumentName: logprobs,
         ParameterDefaultValue: default
@@ -1598,16 +1684,17 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
         Summary:
 <br/>Default Value: ,
+        ConverterType: ,
         ParameterName: finishReason,
         ArgumentName: finishReason,
         ParameterDefaultValue: ""
@@ -1619,6 +1706,7 @@
     Enumerations: null,
     Name: Choice,
     ClassName: Choice,
+    GlobalClassName: global::G.Choice,
     ExternalClassName: Choice,
     FileNameWithoutExtension: G.Models.Choice
   },
@@ -1637,16 +1725,17 @@
           CSharpType: global::System.Collections.Generic.IList<string?>?,
           IsArray: true,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: ,
         IsDeprecated: false,
         Summary:
 <br/>Default Value: [],
+        ConverterType: ,
         ParameterName: tokens,
         ArgumentName: tokens,
         ParameterDefaultValue: default
@@ -1658,16 +1747,17 @@
           CSharpType: global::System.Collections.Generic.IList<double>?,
           IsArray: true,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<double>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<double>,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: ,
         IsDeprecated: false,
         Summary:
 <br/>Default Value: [],
+        ConverterType: ,
         ParameterName: tokenLogprobs,
         ArgumentName: tokenLogprobs,
         ParameterDefaultValue: default
@@ -1679,16 +1769,17 @@
           CSharpType: global::System.Collections.Generic.IList<object?>?,
           IsArray: true,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object?>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object?>,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: ,
         IsDeprecated: false,
         Summary:
 <br/>Default Value: [],
+        ConverterType: ,
         ParameterName: topLogprobs,
         ArgumentName: topLogprobs,
         ParameterDefaultValue: default
@@ -1700,16 +1791,17 @@
           CSharpType: global::System.Collections.Generic.IList<int>?,
           IsArray: true,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<int>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<int>,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: ,
         IsDeprecated: false,
         Summary:
 <br/>Default Value: [],
+        ConverterType: ,
         ParameterName: textOffset,
         ArgumentName: textOffset,
         ParameterDefaultValue: default
@@ -1721,6 +1813,7 @@
     Enumerations: null,
     Name: Logprobs,
     ClassName: Logprobs,
+    GlobalClassName: global::G.Logprobs,
     ExternalClassName: Logprobs,
     FileNameWithoutExtension: G.Models.Logprobs
   },
@@ -1739,14 +1832,15 @@
           CSharpType: global::System.Collections.Generic.IList<ValidationError>?,
           IsArray: true,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ValidationError>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ValidationError>,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: detail,
         ArgumentName: detail,
         ParameterDefaultValue: default
@@ -1758,6 +1852,7 @@
     Enumerations: null,
     Name: HTTPValidationError,
     ClassName: HTTPValidationError,
+    GlobalClassName: global::G.HTTPValidationError,
     ExternalClassName: HTTPValidationError,
     FileNameWithoutExtension: G.Models.HTTPValidationError
   },
@@ -1776,14 +1871,15 @@
           CSharpType: global::System.Collections.Generic.IList<global::System.AnyOf<string, int>>,
           IsArray: true,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.AnyOf<string, int>>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.AnyOf<string, int>>,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: loc,
         ArgumentName: loc,
         ParameterDefaultValue: default
@@ -1795,14 +1891,15 @@
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: msg,
         ArgumentName: msg,
         ParameterDefaultValue: default
@@ -1814,14 +1911,15 @@
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: type,
         ArgumentName: type,
         ParameterDefaultValue: default
@@ -1833,6 +1931,7 @@
     Enumerations: null,
     Name: ValidationError,
     ClassName: ValidationError,
+    GlobalClassName: global::G.ValidationError,
     ExternalClassName: ValidationError,
     FileNameWithoutExtension: G.Models.ValidationError
   },
@@ -1851,14 +1950,15 @@
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: name,
         ArgumentName: name,
         ParameterDefaultValue: default
@@ -1870,14 +1970,16 @@
           CSharpType: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: true,
+          AnyOfCount: 3,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>
+          CSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>,
+          ConverterType: AnyOfJsonConverterFactory3
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: AnyOfJsonConverterFactory3,
         ParameterName: inputs,
         ArgumentName: inputs,
         ParameterDefaultValue: default
@@ -1886,10 +1988,9 @@
         Id: run_type,
         Name: RunType,
         Type: {
-          CSharpType: string,
+          CSharpType: RunCreateSchemaExtendedRunType,
           IsArray: false,
           IsEnum: true,
-          IsAnyOf: false,
           Properties: [
             Tool,
             Chain,
@@ -1908,11 +2009,13 @@
             prompt,
             parser
           ],
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: RunCreateSchemaExtendedRunType,
+          ConverterType: RunCreateSchemaExtendedRunTypeJsonConverter
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: Enum for run types.,
+        ConverterType: RunCreateSchemaExtendedRunTypeJsonConverter,
         ParameterName: runType,
         ArgumentName: runType,
         ParameterDefaultValue: default
@@ -1924,14 +2027,15 @@
           CSharpType: global::System.DateTime,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.DateTime
+          CSharpTypeWithoutNullability: global::System.DateTime,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: startTime,
         ArgumentName: startTime,
         ParameterDefaultValue: default
@@ -1943,14 +2047,15 @@
           CSharpType: global::System.DateTime,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.DateTime
+          CSharpTypeWithoutNullability: global::System.DateTime,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: endTime,
         ArgumentName: endTime,
         ParameterDefaultValue: default
@@ -1962,15 +2067,16 @@
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: object,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: ,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: extra,
         ArgumentName: extra,
         ParameterDefaultValue: default
@@ -1982,14 +2088,15 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: error,
         ArgumentName: error,
         ParameterDefaultValue: default
@@ -2001,16 +2108,17 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: int
+          CSharpTypeWithoutNullability: int,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: 1,
         IsDeprecated: false,
         Summary:
 <br/>Default Value: 1,
+        ConverterType: ,
         ParameterName: executionOrder,
         ArgumentName: executionOrder,
         ParameterDefaultValue: 1
@@ -2022,15 +2130,16 @@
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: object,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: ,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: serialized,
         ArgumentName: serialized,
         ParameterDefaultValue: default
@@ -2042,14 +2151,16 @@
           CSharpType: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: true,
+          AnyOfCount: 3,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>
+          CSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>,
+          ConverterType: AnyOfJsonConverterFactory3
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: AnyOfJsonConverterFactory3,
         ParameterName: outputs,
         ArgumentName: outputs,
         ParameterDefaultValue: default
@@ -2061,14 +2172,15 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: parentRunId,
         ArgumentName: parentRunId,
         ParameterDefaultValue: default
@@ -2080,14 +2192,15 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: manifestId,
         ArgumentName: manifestId,
         ParameterDefaultValue: default
@@ -2099,14 +2212,15 @@
           CSharpType: global::System.Collections.Generic.IList<object?>?,
           IsArray: true,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object?>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object?>,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: events,
         ArgumentName: events,
         ParameterDefaultValue: default
@@ -2118,14 +2232,15 @@
           CSharpType: global::System.Collections.Generic.IList<string?>?,
           IsArray: true,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: tags,
         ArgumentName: tags,
         ParameterDefaultValue: default
@@ -2137,14 +2252,15 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: id,
         ArgumentName: id,
         ParameterDefaultValue: default
@@ -2156,14 +2272,15 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: sessionId,
         ArgumentName: sessionId,
         ParameterDefaultValue: default
@@ -2175,14 +2292,15 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: sessionName,
         ArgumentName: sessionName,
         ParameterDefaultValue: default
@@ -2194,14 +2312,15 @@
           CSharpType: global::System.Collections.Generic.IList<RunCreateSchema>?,
           IsArray: true,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<RunCreateSchema>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<RunCreateSchema>,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: childRuns,
         ArgumentName: childRuns,
         ParameterDefaultValue: default
@@ -2213,14 +2332,15 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: referenceExampleId,
         ArgumentName: referenceExampleId,
         ParameterDefaultValue: default
@@ -2232,6 +2352,7 @@
     Enumerations: null,
     Name: RunCreateSchemaExtended,
     ClassName: RunCreateSchemaExtended,
+    GlobalClassName: global::G.RunCreateSchemaExtended,
     ExternalClassName: RunCreateSchemaExtended,
     FileNameWithoutExtension: G.Models.RunCreateSchemaExtended
   },
@@ -2251,14 +2372,15 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: tool,
         ArgumentName: tool,
         ParameterDefaultValue: default
@@ -2270,14 +2392,15 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: chain,
         ArgumentName: chain,
         ParameterDefaultValue: default
@@ -2289,14 +2412,15 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: llm,
         ArgumentName: llm,
         ParameterDefaultValue: default
@@ -2308,14 +2432,15 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: retriever,
         ArgumentName: retriever,
         ParameterDefaultValue: default
@@ -2327,14 +2452,15 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: embedding,
         ArgumentName: embedding,
         ParameterDefaultValue: default
@@ -2346,14 +2472,15 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: prompt,
         ArgumentName: prompt,
         ParameterDefaultValue: default
@@ -2365,14 +2492,15 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: parser,
         ArgumentName: parser,
         ParameterDefaultValue: default
@@ -2384,6 +2512,7 @@
     Enumerations: null,
     Name: RunType,
     ClassName: RunType,
+    GlobalClassName: global::G.RunType,
     ExternalClassName: RunType,
     FileNameWithoutExtension: G.Models.RunType
   },
@@ -2401,6 +2530,7 @@
     Enumerations: null,
     Name: RunTypeEnum,
     ClassName: RunTypeEnum,
+    GlobalClassName: global::G.RunTypeEnum,
     ExternalClassName: RunTypeEnum,
     FileNameWithoutExtension: G.Models.RunTypeEnum
   },
@@ -2419,14 +2549,15 @@
           CSharpType: string,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: name,
         ArgumentName: name,
         ParameterDefaultValue: default
@@ -2438,15 +2569,16 @@
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: object,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: ,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: inputs,
         ArgumentName: inputs,
         ParameterDefaultValue: default
@@ -2455,10 +2587,9 @@
         Id: run_type,
         Name: RunType,
         Type: {
-          CSharpType: string,
+          CSharpType: RunCreateSchemaRunType,
           IsArray: false,
           IsEnum: true,
-          IsAnyOf: false,
           Properties: [
             Tool,
             Chain,
@@ -2477,11 +2608,13 @@
             prompt,
             parser
           ],
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: RunCreateSchemaRunType,
+          ConverterType: RunCreateSchemaRunTypeJsonConverter
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: Enum for run types.,
+        ConverterType: RunCreateSchemaRunTypeJsonConverter,
         ParameterName: runType,
         ArgumentName: runType,
         ParameterDefaultValue: default
@@ -2493,14 +2626,15 @@
           CSharpType: global::System.DateTime,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.DateTime
+          CSharpTypeWithoutNullability: global::System.DateTime,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: startTime,
         ArgumentName: startTime,
         ParameterDefaultValue: default
@@ -2512,14 +2646,15 @@
           CSharpType: global::System.DateTime,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.DateTime
+          CSharpTypeWithoutNullability: global::System.DateTime,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: endTime,
         ArgumentName: endTime,
         ParameterDefaultValue: default
@@ -2531,15 +2666,16 @@
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: object,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: ,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: extra,
         ArgumentName: extra,
         ParameterDefaultValue: default
@@ -2551,14 +2687,15 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: error,
         ArgumentName: error,
         ParameterDefaultValue: default
@@ -2570,16 +2707,17 @@
           CSharpType: int,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: int
+          CSharpTypeWithoutNullability: int,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: 1,
         IsDeprecated: false,
         Summary:
 <br/>Default Value: 1,
+        ConverterType: ,
         ParameterName: executionOrder,
         ArgumentName: executionOrder,
         ParameterDefaultValue: 1
@@ -2591,15 +2729,16 @@
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: object,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: ,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: serialized,
         ArgumentName: serialized,
         ParameterDefaultValue: default
@@ -2611,15 +2750,16 @@
           CSharpType: object?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: object
+          CSharpTypeWithoutNullability: object,
+          ConverterType: 
         },
         IsRequired: false,
         DefaultValue: ,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: outputs,
         ArgumentName: outputs,
         ParameterDefaultValue: default
@@ -2631,14 +2771,15 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: parentRunId,
         ArgumentName: parentRunId,
         ParameterDefaultValue: default
@@ -2650,14 +2791,15 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: manifestId,
         ArgumentName: manifestId,
         ParameterDefaultValue: default
@@ -2669,14 +2811,15 @@
           CSharpType: global::System.Collections.Generic.IList<object?>?,
           IsArray: true,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object?>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object?>,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: events,
         ArgumentName: events,
         ParameterDefaultValue: default
@@ -2688,14 +2831,15 @@
           CSharpType: global::System.Collections.Generic.IList<string?>?,
           IsArray: true,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: tags,
         ArgumentName: tags,
         ParameterDefaultValue: default
@@ -2707,14 +2851,15 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: id,
         ArgumentName: id,
         ParameterDefaultValue: default
@@ -2726,14 +2871,15 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: sessionId,
         ArgumentName: sessionId,
         ParameterDefaultValue: default
@@ -2745,14 +2891,15 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: sessionName,
         ArgumentName: sessionName,
         ParameterDefaultValue: default
@@ -2764,14 +2911,15 @@
           CSharpType: global::System.Collections.Generic.IList<RunCreateSchema>?,
           IsArray: true,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<RunCreateSchema>
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<RunCreateSchema>,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: childRuns,
         ArgumentName: childRuns,
         ParameterDefaultValue: default
@@ -2783,14 +2931,15 @@
           CSharpType: string?,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: string
+          CSharpTypeWithoutNullability: string,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: referenceExampleId,
         ArgumentName: referenceExampleId,
         ParameterDefaultValue: default
@@ -2802,6 +2951,7 @@
     Enumerations: null,
     Name: RunCreateSchema,
     ClassName: RunCreateSchema,
+    GlobalClassName: global::G.RunCreateSchema,
     ExternalClassName: RunCreateSchema,
     FileNameWithoutExtension: G.Models.RunCreateSchema
   },
@@ -2821,14 +2971,15 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: tool,
         ArgumentName: tool,
         ParameterDefaultValue: default
@@ -2840,14 +2991,15 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: chain,
         ArgumentName: chain,
         ParameterDefaultValue: default
@@ -2859,14 +3011,15 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: llm,
         ArgumentName: llm,
         ParameterDefaultValue: default
@@ -2878,14 +3031,15 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: retriever,
         ArgumentName: retriever,
         ParameterDefaultValue: default
@@ -2897,14 +3051,15 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: embedding,
         ArgumentName: embedding,
         ParameterDefaultValue: default
@@ -2916,14 +3071,15 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: prompt,
         ArgumentName: prompt,
         ParameterDefaultValue: default
@@ -2935,14 +3091,15 @@
           CSharpType: ,
           IsArray: false,
           IsEnum: false,
-          IsAnyOf: false,
           Properties: null,
           EnumValues: null,
-          CSharpTypeWithoutNullability: 
+          CSharpTypeWithoutNullability: ,
+          ConverterType: 
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
+        ConverterType: ,
         ParameterName: parser,
         ArgumentName: parser,
         ParameterDefaultValue: default
@@ -2954,6 +3111,7 @@
     Enumerations: null,
     Name: RunType,
     ClassName: RunType,
+    GlobalClassName: global::G.RunType,
     ExternalClassName: RunType,
     FileNameWithoutExtension: G.Models.RunType
   }

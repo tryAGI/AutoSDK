@@ -22,15 +22,17 @@ namespace G
         /// The endpoint to be used for all requests in the batch. Currently `/v1/chat/completions` and `/v1/embeddings` are supported.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("endpoint")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateBatchRequestEndpointJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Endpoint { get; set; }
+        public required CreateBatchRequestEndpoint Endpoint { get; set; }
 
         /// <summary>
         /// The time frame within which the batch should be processed. Currently only `24h` is supported.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_window")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateBatchRequestCompletionWindowJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string CompletionWindow { get; set; }
+        public required CreateBatchRequestCompletionWindow CompletionWindow { get; set; }
 
         /// <summary>
         /// Optional custom metadata for the batch.

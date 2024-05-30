@@ -13,8 +13,9 @@ namespace G
         /// The type of tool being defined: `function`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AssistantToolsFunctionTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required AssistantToolsFunctionType Type { get; set; }
 
         /// <summary>
         /// 

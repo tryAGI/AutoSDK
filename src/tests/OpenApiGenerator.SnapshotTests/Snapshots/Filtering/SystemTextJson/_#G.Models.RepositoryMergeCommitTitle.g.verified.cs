@@ -9,15 +9,46 @@ namespace G
     /// - `PR_TITLE` - default to the pull request's title.
     /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
     /// </summary>
-    public abstract class RepositoryMergeCommitTitle
+    public enum RepositoryMergeCommitTitle
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string PRTITLE = "PR_TITLE";
+        PRTITLE,
         /// <summary>
         /// 
         /// </summary>
-        public const string MERGEMESSAGE = "MERGE_MESSAGE";
+        MERGEMESSAGE,
+    }
+
+    public static class RepositoryMergeCommitTitleExtensions
+    {
+        public static string ToValueString(this RepositoryMergeCommitTitle value)
+        {
+            return value switch
+            {
+                RepositoryMergeCommitTitle.PRTITLE => "PR_TITLE",
+                RepositoryMergeCommitTitle.MERGEMESSAGE => "MERGE_MESSAGE",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RepositoryMergeCommitTitle ToEnum(string value)
+        {
+            return value switch
+            {
+                "PR_TITLE" => RepositoryMergeCommitTitle.PRTITLE,
+                "MERGE_MESSAGE" => RepositoryMergeCommitTitle.MERGEMESSAGE,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static RepositoryMergeCommitTitle ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => RepositoryMergeCommitTitle.PRTITLE,
+                1 => RepositoryMergeCommitTitle.MERGEMESSAGE,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

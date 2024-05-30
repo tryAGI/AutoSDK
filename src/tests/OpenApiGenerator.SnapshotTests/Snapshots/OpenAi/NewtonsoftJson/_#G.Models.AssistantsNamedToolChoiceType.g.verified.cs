@@ -26,4 +26,38 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="file_search")]
         FileSearch,
     }
+
+    public static class AssistantsNamedToolChoiceTypeExtensions
+    {
+        public static string ToValueString(this AssistantsNamedToolChoiceType value)
+        {
+            return value switch
+            {
+                AssistantsNamedToolChoiceType.Function => "function",
+                AssistantsNamedToolChoiceType.CodeInterpreter => "code_interpreter",
+                AssistantsNamedToolChoiceType.FileSearch => "file_search",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static AssistantsNamedToolChoiceType ToEnum(string value)
+        {
+            return value switch
+            {
+                "function" => AssistantsNamedToolChoiceType.Function,
+                "code_interpreter" => AssistantsNamedToolChoiceType.CodeInterpreter,
+                "file_search" => AssistantsNamedToolChoiceType.FileSearch,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        public static AssistantsNamedToolChoiceType ToEnum(int value)
+        {
+            return value switch
+            {
+                0 => AssistantsNamedToolChoiceType.Function,
+                1 => AssistantsNamedToolChoiceType.CodeInterpreter,
+                2 => AssistantsNamedToolChoiceType.FileSearch,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

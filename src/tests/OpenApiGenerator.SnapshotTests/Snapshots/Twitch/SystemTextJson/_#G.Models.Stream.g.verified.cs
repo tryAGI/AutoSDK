@@ -59,8 +59,9 @@ namespace G
         /// If an error occurs, this field is set to an empty string.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.StreamTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required StreamType Type { get; set; }
 
         /// <summary>
         /// The stream’s title. Is an empty string if not set.

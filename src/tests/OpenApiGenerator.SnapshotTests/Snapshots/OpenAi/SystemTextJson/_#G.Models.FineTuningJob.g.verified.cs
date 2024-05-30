@@ -62,8 +62,9 @@ namespace G
         /// The object type, which is always "fine_tuning.job".
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.FineTuningJobObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Object { get; set; }
+        public required FineTuningJobObject Object { get; set; }
 
         /// <summary>
         /// The organization that owns the fine-tuning job.
@@ -83,8 +84,9 @@ namespace G
         /// The current status of the fine-tuning job, which can be either `validating_files`, `queued`, `running`, `succeeded`, `failed`, or `cancelled`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.FineTuningJobStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
+        public required FineTuningJobStatus Status { get; set; }
 
         /// <summary>
         /// The total number of billable tokens processed by this fine-tuning job. The value will be null if the fine-tuning job is still running.
