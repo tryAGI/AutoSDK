@@ -104,11 +104,7 @@ public readonly record struct EndPoint(
                     .ToImmutableArray(),
                 })
             .ToArray();
-        var requestMediaTypes =
-            ((operation.Value.RequestBody?.Reference?.HostDocument?.ResolveReference(operation.Value.RequestBody
-                  ?.Reference) as OpenApiRequestBody)?.Content ??
-              operation.Value.RequestBody?.Content)
-                ?.Values ?? [];
+        var requestMediaTypes = operation.Value.RequestBody?.ResolveIfRequired().Content?.Values ?? [];
         var requestBodyModels = requestMediaTypes
             .Where(x => x.Schema.Type == "object" || x.Schema.Type == "array") //&& x.Parameter.Schema.Items?.Type == "object"
             .Select(x => ModelData.FromSchema(
@@ -132,7 +128,7 @@ public readonly record struct EndPoint(
             : requestBodyTypes.First();
         
         var responses = operation.Value.Responses
-            .SelectMany(x => x.Value.Content?.Select(y => (Response: x, MediaType: y)) ?? [])
+            .SelectMany(x => x.Value?.ResolveIfRequired().Content?.Select(y => (Response: x, MediaType: y)) ?? [])
             .ToArray();
         var responseModels = responses
             .Where(x =>
@@ -143,14 +139,11 @@ public readonly record struct EndPoint(
                     ? x.MediaType.Value.Schema.UseReferenceIdOrKey(key: id + "Response")
                     : x.MediaType.Value.Schema.Items.UseReferenceIdOrKey(key: id + "Response"),
                 settings))
-            .Where(x => x.Properties.Any())
             .SelectMany(model => model.WithAdditionalModels())
             .ToArray();
         var responseTypes = responses
             .Select(x => x.MediaType.Value.Schema != null ? TypeData.FromSchema(
-                x.MediaType.Value.Schema.Reference?.Id != null
-                    ? x.MediaType.Value.Schema.WithKey(x.MediaType.Value.Schema.Reference.Id)
-                    : x.MediaType.Value.Schema.WithKey(id + "Response"),
+                x.MediaType.Value.Schema.UseReferenceIdOrKey(id + "Response"),
                 settings) : TypeData.Default)
             .ToArray();
         TypeData? responseType = responseTypes.Length == 0

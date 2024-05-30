@@ -180,6 +180,20 @@ public static class OpenApiExtensions
         return parents.Concat([schema.Key.ToPropertyName()]).ToArray();
     }
 
+    public static OpenApiRequestBody ResolveIfRequired(this OpenApiRequestBody body)
+    {
+        body = body ?? throw new ArgumentNullException(nameof(body));
+        
+        return body.Reference?.HostDocument?.ResolveReference(body.Reference) as OpenApiRequestBody ?? body;
+    }
+
+    public static OpenApiResponse ResolveIfRequired(this OpenApiResponse response)
+    {
+        response = response ?? throw new ArgumentNullException(nameof(response));
+        
+        return response.Reference?.HostDocument?.ResolveReference(response.Reference) as OpenApiResponse ?? response;
+    }
+
     public static KeyValuePair<string, OpenApiSchema> WithKey(
         this OpenApiSchema schema,
         string key)
