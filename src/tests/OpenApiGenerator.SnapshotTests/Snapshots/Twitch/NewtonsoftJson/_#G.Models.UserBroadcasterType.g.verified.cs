@@ -26,8 +26,14 @@ namespace G
         Partner,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class UserBroadcasterTypeExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this UserBroadcasterType value)
         {
             return value switch
@@ -37,21 +43,15 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static UserBroadcasterType ToEnum(string value)
         {
             return value switch
             {
                 "affiliate" => UserBroadcasterType.Affiliate,
                 "partner" => UserBroadcasterType.Partner,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static UserBroadcasterType ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => UserBroadcasterType.Affiliate,
-                1 => UserBroadcasterType.Partner,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

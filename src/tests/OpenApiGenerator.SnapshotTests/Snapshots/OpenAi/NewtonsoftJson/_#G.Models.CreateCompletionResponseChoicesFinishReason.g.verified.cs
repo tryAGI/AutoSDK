@@ -29,8 +29,14 @@ namespace G
         ContentFilter,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class CreateCompletionResponseChoicesFinishReasonExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this CreateCompletionResponseChoicesFinishReason value)
         {
             return value switch
@@ -41,6 +47,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static CreateCompletionResponseChoicesFinishReason ToEnum(string value)
         {
             return value switch
@@ -48,16 +57,6 @@ namespace G
                 "stop" => CreateCompletionResponseChoicesFinishReason.Stop,
                 "length" => CreateCompletionResponseChoicesFinishReason.Length,
                 "content_filter" => CreateCompletionResponseChoicesFinishReason.ContentFilter,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static CreateCompletionResponseChoicesFinishReason ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => CreateCompletionResponseChoicesFinishReason.Stop,
-                1 => CreateCompletionResponseChoicesFinishReason.Length,
-                2 => CreateCompletionResponseChoicesFinishReason.ContentFilter,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

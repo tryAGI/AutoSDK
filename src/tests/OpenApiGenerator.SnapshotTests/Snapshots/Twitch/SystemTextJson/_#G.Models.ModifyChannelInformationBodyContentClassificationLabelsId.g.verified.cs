@@ -37,8 +37,14 @@ namespace G
         ProfanityVulgarity,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class ModifyChannelInformationBodyContentClassificationLabelsIdExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this ModifyChannelInformationBodyContentClassificationLabelsId value)
         {
             return value switch
@@ -51,6 +57,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static ModifyChannelInformationBodyContentClassificationLabelsId ToEnum(string value)
         {
             return value switch
@@ -60,18 +69,6 @@ namespace G
                 "ViolentGraphic" => ModifyChannelInformationBodyContentClassificationLabelsId.ViolentGraphic,
                 "Gambling" => ModifyChannelInformationBodyContentClassificationLabelsId.Gambling,
                 "ProfanityVulgarity" => ModifyChannelInformationBodyContentClassificationLabelsId.ProfanityVulgarity,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static ModifyChannelInformationBodyContentClassificationLabelsId ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => ModifyChannelInformationBodyContentClassificationLabelsId.DrugsIntoxication,
-                1 => ModifyChannelInformationBodyContentClassificationLabelsId.SexualThemes,
-                2 => ModifyChannelInformationBodyContentClassificationLabelsId.ViolentGraphic,
-                3 => ModifyChannelInformationBodyContentClassificationLabelsId.Gambling,
-                4 => ModifyChannelInformationBodyContentClassificationLabelsId.ProfanityVulgarity,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

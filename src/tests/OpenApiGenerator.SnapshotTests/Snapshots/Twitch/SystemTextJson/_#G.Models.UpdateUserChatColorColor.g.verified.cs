@@ -71,8 +71,14 @@ namespace G
         YellowGreen,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class UpdateUserChatColorColorExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this UpdateUserChatColorColor value)
         {
             return value switch
@@ -95,6 +101,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static UpdateUserChatColorColor ToEnum(string value)
         {
             return value switch
@@ -114,28 +123,6 @@ namespace G
                 "sea_green" => UpdateUserChatColorColor.SeaGreen,
                 "spring_green" => UpdateUserChatColorColor.SpringGreen,
                 "yellow_green" => UpdateUserChatColorColor.YellowGreen,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static UpdateUserChatColorColor ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => UpdateUserChatColorColor.Blue,
-                1 => UpdateUserChatColorColor.BlueViolet,
-                2 => UpdateUserChatColorColor.CadetBlue,
-                3 => UpdateUserChatColorColor.Chocolate,
-                4 => UpdateUserChatColorColor.Coral,
-                5 => UpdateUserChatColorColor.DodgerBlue,
-                6 => UpdateUserChatColorColor.Firebrick,
-                7 => UpdateUserChatColorColor.GoldenRod,
-                8 => UpdateUserChatColorColor.Green,
-                9 => UpdateUserChatColorColor.HotPink,
-                10 => UpdateUserChatColorColor.OrangeRed,
-                11 => UpdateUserChatColorColor.Red,
-                12 => UpdateUserChatColorColor.SeaGreen,
-                13 => UpdateUserChatColorColor.SpringGreen,
-                14 => UpdateUserChatColorColor.YellowGreen,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

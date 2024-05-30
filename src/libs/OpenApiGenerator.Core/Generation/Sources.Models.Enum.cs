@@ -52,8 +52,10 @@ public static partial class Sources
         CancellationToken cancellationToken = default)
     {
         return $@" 
+    {"Enum extensions to do fast conversions without the reflection.".ToXmlDocumentationSummary(level: 4)}
     public static class {modelData.ClassName}Extensions
     {{
+        {"Converts an enum to a string.".ToXmlDocumentationSummary(level: 8)}
         public static string ToValueString(this {modelData.ClassName} value)
         {{
             return value switch
@@ -65,23 +67,13 @@ public static partial class Sources
             }};
         }}
         
+        {"Converts an string to a enum.".ToXmlDocumentationSummary(level: 8)}
         public static {modelData.ClassName} ToEnum(string value)
         {{
             return value switch
             {{
 {modelData.Properties.Select(property => @$" 
                 ""{property.Id}"" => {modelData.ClassName}.{property.Name},
- ").Inject()}
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            }};
-        }}
-        
-        public static {modelData.ClassName} ToEnum(int value)
-        {{
-            return value switch
-            {{
-{modelData.Properties.Select((property, i) => @$" 
-                {i} => {modelData.ClassName}.{property.Name},
  ").Inject()}
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             }};

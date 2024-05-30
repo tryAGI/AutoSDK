@@ -24,8 +24,14 @@ namespace G
         Natural,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class CreateImageRequestStyleExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this CreateImageRequestStyle value)
         {
             return value switch
@@ -35,21 +41,15 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static CreateImageRequestStyle ToEnum(string value)
         {
             return value switch
             {
                 "vivid" => CreateImageRequestStyle.Vivid,
                 "natural" => CreateImageRequestStyle.Natural,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static CreateImageRequestStyle ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => CreateImageRequestStyle.Vivid,
-                1 => CreateImageRequestStyle.Natural,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

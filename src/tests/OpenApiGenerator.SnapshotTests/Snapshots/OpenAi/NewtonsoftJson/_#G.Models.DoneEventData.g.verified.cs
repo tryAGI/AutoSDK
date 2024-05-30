@@ -17,8 +17,14 @@ namespace G
         DONE,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class DoneEventDataExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this DoneEventData value)
         {
             return value switch
@@ -27,19 +33,14 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static DoneEventData ToEnum(string value)
         {
             return value switch
             {
                 "[DONE]" => DoneEventData.DONE,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static DoneEventData ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => DoneEventData.DONE,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

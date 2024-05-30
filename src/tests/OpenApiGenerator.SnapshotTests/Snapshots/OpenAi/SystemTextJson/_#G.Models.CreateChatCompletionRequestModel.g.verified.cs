@@ -87,8 +87,14 @@ namespace G
         Gpt35Turbo16k0613,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class CreateChatCompletionRequestModelExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this CreateChatCompletionRequestModel value)
         {
             return value switch
@@ -115,6 +121,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static CreateChatCompletionRequestModel ToEnum(string value)
         {
             return value switch
@@ -138,32 +147,6 @@ namespace G
                 "gpt-3.5-turbo-1106" => CreateChatCompletionRequestModel.Gpt35Turbo1106,
                 "gpt-3.5-turbo-0125" => CreateChatCompletionRequestModel.Gpt35Turbo0125,
                 "gpt-3.5-turbo-16k-0613" => CreateChatCompletionRequestModel.Gpt35Turbo16k0613,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static CreateChatCompletionRequestModel ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => CreateChatCompletionRequestModel.Gpt4Turbo,
-                1 => CreateChatCompletionRequestModel.Gpt4Turbo20240409,
-                2 => CreateChatCompletionRequestModel.Gpt40125Preview,
-                3 => CreateChatCompletionRequestModel.Gpt4TurboPreview,
-                4 => CreateChatCompletionRequestModel.Gpt41106Preview,
-                5 => CreateChatCompletionRequestModel.Gpt4VisionPreview,
-                6 => CreateChatCompletionRequestModel.Gpt4,
-                7 => CreateChatCompletionRequestModel.Gpt40314,
-                8 => CreateChatCompletionRequestModel.Gpt40613,
-                9 => CreateChatCompletionRequestModel.Gpt432k,
-                10 => CreateChatCompletionRequestModel.Gpt432k0314,
-                11 => CreateChatCompletionRequestModel.Gpt432k0613,
-                12 => CreateChatCompletionRequestModel.Gpt35Turbo,
-                13 => CreateChatCompletionRequestModel.Gpt35Turbo16k,
-                14 => CreateChatCompletionRequestModel.Gpt35Turbo0301,
-                15 => CreateChatCompletionRequestModel.Gpt35Turbo0613,
-                16 => CreateChatCompletionRequestModel.Gpt35Turbo1106,
-                17 => CreateChatCompletionRequestModel.Gpt35Turbo0125,
-                18 => CreateChatCompletionRequestModel.Gpt35Turbo16k0613,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

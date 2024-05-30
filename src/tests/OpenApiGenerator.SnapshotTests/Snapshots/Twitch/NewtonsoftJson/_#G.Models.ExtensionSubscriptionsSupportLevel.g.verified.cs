@@ -25,8 +25,14 @@ namespace G
         Optional,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class ExtensionSubscriptionsSupportLevelExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this ExtensionSubscriptionsSupportLevel value)
         {
             return value switch
@@ -36,21 +42,15 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static ExtensionSubscriptionsSupportLevel ToEnum(string value)
         {
             return value switch
             {
                 "none" => ExtensionSubscriptionsSupportLevel.None,
                 "optional" => ExtensionSubscriptionsSupportLevel.Optional,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static ExtensionSubscriptionsSupportLevel ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => ExtensionSubscriptionsSupportLevel.None,
-                1 => ExtensionSubscriptionsSupportLevel.Optional,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

@@ -43,8 +43,14 @@ namespace G
         UPDATEFAILED,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class DropsEntitlementUpdatedStatusExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this DropsEntitlementUpdatedStatus value)
         {
             return value switch
@@ -57,6 +63,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static DropsEntitlementUpdatedStatus ToEnum(string value)
         {
             return value switch
@@ -66,18 +75,6 @@ namespace G
                 "SUCCESS" => DropsEntitlementUpdatedStatus.SUCCESS,
                 "UNAUTHORIZED" => DropsEntitlementUpdatedStatus.UNAUTHORIZED,
                 "UPDATE_FAILED" => DropsEntitlementUpdatedStatus.UPDATEFAILED,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static DropsEntitlementUpdatedStatus ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => DropsEntitlementUpdatedStatus.INVALIDID,
-                1 => DropsEntitlementUpdatedStatus.NOTFOUND,
-                2 => DropsEntitlementUpdatedStatus.SUCCESS,
-                3 => DropsEntitlementUpdatedStatus.UNAUTHORIZED,
-                4 => DropsEntitlementUpdatedStatus.UPDATEFAILED,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

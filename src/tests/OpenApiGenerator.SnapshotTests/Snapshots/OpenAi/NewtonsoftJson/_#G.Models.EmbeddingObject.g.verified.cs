@@ -17,8 +17,14 @@ namespace G
         Embedding,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class EmbeddingObjectExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this EmbeddingObject value)
         {
             return value switch
@@ -27,19 +33,14 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static EmbeddingObject ToEnum(string value)
         {
             return value switch
             {
                 "embedding" => EmbeddingObject.Embedding,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static EmbeddingObject ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => EmbeddingObject.Embedding,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

@@ -37,8 +37,14 @@ namespace G
         All,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class GetBitsLeaderboardPeriodExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this GetBitsLeaderboardPeriod value)
         {
             return value switch
@@ -51,6 +57,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static GetBitsLeaderboardPeriod ToEnum(string value)
         {
             return value switch
@@ -60,18 +69,6 @@ namespace G
                 "month" => GetBitsLeaderboardPeriod.Month,
                 "year" => GetBitsLeaderboardPeriod.Year,
                 "all" => GetBitsLeaderboardPeriod.All,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static GetBitsLeaderboardPeriod ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => GetBitsLeaderboardPeriod.Day,
-                1 => GetBitsLeaderboardPeriod.Week,
-                2 => GetBitsLeaderboardPeriod.Month,
-                3 => GetBitsLeaderboardPeriod.Year,
-                4 => GetBitsLeaderboardPeriod.All,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

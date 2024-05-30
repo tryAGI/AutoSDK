@@ -83,8 +83,14 @@ namespace G
         Gpt35Turbo16k0613,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class CreateThreadAndRunRequestModelExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this CreateThreadAndRunRequestModel value)
         {
             return value switch
@@ -110,6 +116,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static CreateThreadAndRunRequestModel ToEnum(string value)
         {
             return value switch
@@ -132,31 +141,6 @@ namespace G
                 "gpt-3.5-turbo-1106" => CreateThreadAndRunRequestModel.Gpt35Turbo1106,
                 "gpt-3.5-turbo-0125" => CreateThreadAndRunRequestModel.Gpt35Turbo0125,
                 "gpt-3.5-turbo-16k-0613" => CreateThreadAndRunRequestModel.Gpt35Turbo16k0613,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static CreateThreadAndRunRequestModel ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => CreateThreadAndRunRequestModel.Gpt4Turbo,
-                1 => CreateThreadAndRunRequestModel.Gpt4Turbo20240409,
-                2 => CreateThreadAndRunRequestModel.Gpt40125Preview,
-                3 => CreateThreadAndRunRequestModel.Gpt4TurboPreview,
-                4 => CreateThreadAndRunRequestModel.Gpt41106Preview,
-                5 => CreateThreadAndRunRequestModel.Gpt4VisionPreview,
-                6 => CreateThreadAndRunRequestModel.Gpt4,
-                7 => CreateThreadAndRunRequestModel.Gpt40314,
-                8 => CreateThreadAndRunRequestModel.Gpt40613,
-                9 => CreateThreadAndRunRequestModel.Gpt432k,
-                10 => CreateThreadAndRunRequestModel.Gpt432k0314,
-                11 => CreateThreadAndRunRequestModel.Gpt432k0613,
-                12 => CreateThreadAndRunRequestModel.Gpt35Turbo,
-                13 => CreateThreadAndRunRequestModel.Gpt35Turbo16k,
-                14 => CreateThreadAndRunRequestModel.Gpt35Turbo0613,
-                15 => CreateThreadAndRunRequestModel.Gpt35Turbo1106,
-                16 => CreateThreadAndRunRequestModel.Gpt35Turbo0125,
-                17 => CreateThreadAndRunRequestModel.Gpt35Turbo16k0613,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

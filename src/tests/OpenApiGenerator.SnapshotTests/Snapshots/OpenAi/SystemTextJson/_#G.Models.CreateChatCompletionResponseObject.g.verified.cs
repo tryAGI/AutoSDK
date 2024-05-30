@@ -15,8 +15,14 @@ namespace G
         Chatcompletion,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class CreateChatCompletionResponseObjectExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this CreateChatCompletionResponseObject value)
         {
             return value switch
@@ -25,19 +31,14 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static CreateChatCompletionResponseObject ToEnum(string value)
         {
             return value switch
             {
                 "chat.completion" => CreateChatCompletionResponseObject.Chatcompletion,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static CreateChatCompletionResponseObject ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => CreateChatCompletionResponseObject.Chatcompletion,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

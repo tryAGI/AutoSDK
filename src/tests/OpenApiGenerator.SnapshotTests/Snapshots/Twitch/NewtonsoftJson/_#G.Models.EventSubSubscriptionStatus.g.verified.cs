@@ -109,8 +109,14 @@ namespace G
         WebsocketNetworkError,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class EventSubSubscriptionStatusExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this EventSubSubscriptionStatus value)
         {
             return value switch
@@ -134,6 +140,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static EventSubSubscriptionStatus ToEnum(string value)
         {
             return value switch
@@ -154,29 +163,6 @@ namespace G
                 "websocket_internal_error" => EventSubSubscriptionStatus.WebsocketInternalError,
                 "websocket_network_timeout" => EventSubSubscriptionStatus.WebsocketNetworkTimeout,
                 "websocket_network_error" => EventSubSubscriptionStatus.WebsocketNetworkError,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static EventSubSubscriptionStatus ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => EventSubSubscriptionStatus.Enabled,
-                1 => EventSubSubscriptionStatus.WebhookCallbackVerificationPending,
-                2 => EventSubSubscriptionStatus.WebhookCallbackVerificationFailed,
-                3 => EventSubSubscriptionStatus.NotificationFailuresExceeded,
-                4 => EventSubSubscriptionStatus.AuthorizationRevoked,
-                5 => EventSubSubscriptionStatus.ModeratorRemoved,
-                6 => EventSubSubscriptionStatus.UserRemoved,
-                7 => EventSubSubscriptionStatus.VersionRemoved,
-                8 => EventSubSubscriptionStatus.BetaMaintenance,
-                9 => EventSubSubscriptionStatus.WebsocketDisconnected,
-                10 => EventSubSubscriptionStatus.WebsocketFailedPingPong,
-                11 => EventSubSubscriptionStatus.WebsocketReceivedInboundTraffic,
-                12 => EventSubSubscriptionStatus.WebsocketConnectionUnused,
-                13 => EventSubSubscriptionStatus.WebsocketInternalError,
-                14 => EventSubSubscriptionStatus.WebsocketNetworkTimeout,
-                15 => EventSubSubscriptionStatus.WebsocketNetworkError,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

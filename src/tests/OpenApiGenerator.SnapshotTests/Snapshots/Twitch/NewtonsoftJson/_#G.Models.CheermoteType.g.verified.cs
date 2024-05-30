@@ -43,8 +43,14 @@ namespace G
         Sponsored,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class CheermoteTypeExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this CheermoteType value)
         {
             return value switch
@@ -57,6 +63,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static CheermoteType ToEnum(string value)
         {
             return value switch
@@ -66,18 +75,6 @@ namespace G
                 "channel_custom" => CheermoteType.ChannelCustom,
                 "display_only" => CheermoteType.DisplayOnly,
                 "sponsored" => CheermoteType.Sponsored,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static CheermoteType ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => CheermoteType.GlobalFirstParty,
-                1 => CheermoteType.GlobalThirdParty,
-                2 => CheermoteType.ChannelCustom,
-                3 => CheermoteType.DisplayOnly,
-                4 => CheermoteType.Sponsored,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

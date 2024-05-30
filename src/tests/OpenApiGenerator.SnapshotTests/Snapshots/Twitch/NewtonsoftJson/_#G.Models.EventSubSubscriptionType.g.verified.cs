@@ -362,8 +362,14 @@ namespace G
         Userwhispermessage,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class EventSubSubscriptionTypeExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this EventSubSubscriptionType value)
         {
             return value switch
@@ -441,6 +447,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static EventSubSubscriptionType ToEnum(string value)
         {
             return value switch
@@ -515,83 +524,6 @@ namespace G
                 "user.authorization.revoke" => EventSubSubscriptionType.Userauthorizationrevoke,
                 "user.update" => EventSubSubscriptionType.Userupdate,
                 "user.whisper.message" => EventSubSubscriptionType.Userwhispermessage,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static EventSubSubscriptionType ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => EventSubSubscriptionType.Automodmessagehold,
-                1 => EventSubSubscriptionType.Automodmessageupdate,
-                2 => EventSubSubscriptionType.Automodsettingsupdate,
-                3 => EventSubSubscriptionType.Automodtermsupdate,
-                4 => EventSubSubscriptionType.Channelupdate,
-                5 => EventSubSubscriptionType.Channelfollow,
-                6 => EventSubSubscriptionType.ChanneladBreakbegin,
-                7 => EventSubSubscriptionType.Channelchatclear,
-                8 => EventSubSubscriptionType.ChannelchatclearUserMessages,
-                9 => EventSubSubscriptionType.Channelchatmessage,
-                10 => EventSubSubscriptionType.ChannelchatmessageDelete,
-                11 => EventSubSubscriptionType.Channelchatnotification,
-                12 => EventSubSubscriptionType.ChannelchatSettingsupdate,
-                13 => EventSubSubscriptionType.ChannelchatuserMessageHold,
-                14 => EventSubSubscriptionType.ChannelchatuserMessageUpdate,
-                15 => EventSubSubscriptionType.Channelsubscribe,
-                16 => EventSubSubscriptionType.Channelsubscriptionend,
-                17 => EventSubSubscriptionType.Channelsubscriptiongift,
-                18 => EventSubSubscriptionType.Channelsubscriptionmessage,
-                19 => EventSubSubscriptionType.Channelcheer,
-                20 => EventSubSubscriptionType.Channelraid,
-                21 => EventSubSubscriptionType.Channelban,
-                22 => EventSubSubscriptionType.Channelunban,
-                23 => EventSubSubscriptionType.ChannelunbanRequestcreate,
-                24 => EventSubSubscriptionType.ChannelunbanRequestresolve,
-                25 => EventSubSubscriptionType.Channelmoderate,
-                26 => EventSubSubscriptionType.Channelmoderatoradd,
-                27 => EventSubSubscriptionType.Channelmoderatorremove,
-                28 => EventSubSubscriptionType.ChannelguestStarSessionbegin,
-                29 => EventSubSubscriptionType.ChannelguestStarSessionend,
-                30 => EventSubSubscriptionType.ChannelguestStarGuestupdate,
-                31 => EventSubSubscriptionType.ChannelguestStarSettingsupdate,
-                32 => EventSubSubscriptionType.ChannelchannelPointsAutomaticRewardadd,
-                33 => EventSubSubscriptionType.ChannelchannelPointsCustomRewardadd,
-                34 => EventSubSubscriptionType.ChannelchannelPointsCustomRewardupdate,
-                35 => EventSubSubscriptionType.ChannelchannelPointsCustomRewardremove,
-                36 => EventSubSubscriptionType.ChannelchannelPointsCustomRewardRedemptionadd,
-                37 => EventSubSubscriptionType.ChannelchannelPointsCustomRewardRedemptionupdate,
-                38 => EventSubSubscriptionType.Channelpollbegin,
-                39 => EventSubSubscriptionType.Channelpollprogress,
-                40 => EventSubSubscriptionType.Channelpollend,
-                41 => EventSubSubscriptionType.Channelpredictionbegin,
-                42 => EventSubSubscriptionType.Channelpredictionprogress,
-                43 => EventSubSubscriptionType.Channelpredictionlock,
-                44 => EventSubSubscriptionType.Channelpredictionend,
-                45 => EventSubSubscriptionType.Channelvipadd,
-                46 => EventSubSubscriptionType.Channelvipremove,
-                47 => EventSubSubscriptionType.ChannelcharityCampaigndonate,
-                48 => EventSubSubscriptionType.ChannelcharityCampaignstart,
-                49 => EventSubSubscriptionType.ChannelcharityCampaignprogress,
-                50 => EventSubSubscriptionType.ChannelcharityCampaignstop,
-                51 => EventSubSubscriptionType.Conduitsharddisabled,
-                52 => EventSubSubscriptionType.Dropentitlementgrant,
-                53 => EventSubSubscriptionType.ExtensionbitsTransactioncreate,
-                54 => EventSubSubscriptionType.Channelgoalbegin,
-                55 => EventSubSubscriptionType.Channelgoalprogress,
-                56 => EventSubSubscriptionType.Channelgoalend,
-                57 => EventSubSubscriptionType.ChannelhypeTrainbegin,
-                58 => EventSubSubscriptionType.ChannelhypeTrainprogress,
-                59 => EventSubSubscriptionType.ChannelhypeTrainend,
-                60 => EventSubSubscriptionType.ChannelshieldModebegin,
-                61 => EventSubSubscriptionType.ChannelshieldModeend,
-                62 => EventSubSubscriptionType.Channelshoutoutcreate,
-                63 => EventSubSubscriptionType.Channelshoutoutreceive,
-                64 => EventSubSubscriptionType.Streamonline,
-                65 => EventSubSubscriptionType.Streamoffline,
-                66 => EventSubSubscriptionType.Userauthorizationgrant,
-                67 => EventSubSubscriptionType.Userauthorizationrevoke,
-                68 => EventSubSubscriptionType.Userupdate,
-                69 => EventSubSubscriptionType.Userwhispermessage,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

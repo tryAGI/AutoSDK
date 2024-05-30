@@ -42,8 +42,14 @@ namespace G
         Shimmer,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class CreateSpeechRequestVoiceExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this CreateSpeechRequestVoice value)
         {
             return value switch
@@ -57,6 +63,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static CreateSpeechRequestVoice ToEnum(string value)
         {
             return value switch
@@ -67,19 +76,6 @@ namespace G
                 "onyx" => CreateSpeechRequestVoice.Onyx,
                 "nova" => CreateSpeechRequestVoice.Nova,
                 "shimmer" => CreateSpeechRequestVoice.Shimmer,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static CreateSpeechRequestVoice ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => CreateSpeechRequestVoice.Alloy,
-                1 => CreateSpeechRequestVoice.Echo,
-                2 => CreateSpeechRequestVoice.Fable,
-                3 => CreateSpeechRequestVoice.Onyx,
-                4 => CreateSpeechRequestVoice.Nova,
-                5 => CreateSpeechRequestVoice.Shimmer,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

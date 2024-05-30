@@ -27,8 +27,14 @@ namespace G
         Completed,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class MessageObjectStatusExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this MessageObjectStatus value)
         {
             return value switch
@@ -39,6 +45,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static MessageObjectStatus ToEnum(string value)
         {
             return value switch
@@ -46,16 +55,6 @@ namespace G
                 "in_progress" => MessageObjectStatus.InProgress,
                 "incomplete" => MessageObjectStatus.Incomplete,
                 "completed" => MessageObjectStatus.Completed,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static MessageObjectStatus ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => MessageObjectStatus.InProgress,
-                1 => MessageObjectStatus.Incomplete,
-                2 => MessageObjectStatus.Completed,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

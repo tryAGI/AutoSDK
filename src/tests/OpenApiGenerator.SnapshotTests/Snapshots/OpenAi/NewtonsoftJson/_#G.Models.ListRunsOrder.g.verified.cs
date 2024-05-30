@@ -22,8 +22,14 @@ namespace G
         Desc,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class ListRunsOrderExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this ListRunsOrder value)
         {
             return value switch
@@ -33,21 +39,15 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static ListRunsOrder ToEnum(string value)
         {
             return value switch
             {
                 "asc" => ListRunsOrder.Asc,
                 "desc" => ListRunsOrder.Desc,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static ListRunsOrder ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => ListRunsOrder.Asc,
-                1 => ListRunsOrder.Desc,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

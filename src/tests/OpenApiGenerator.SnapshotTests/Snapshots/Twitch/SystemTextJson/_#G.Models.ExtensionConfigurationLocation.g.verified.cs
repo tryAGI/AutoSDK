@@ -27,8 +27,14 @@ namespace G
         None,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class ExtensionConfigurationLocationExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this ExtensionConfigurationLocation value)
         {
             return value switch
@@ -39,6 +45,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static ExtensionConfigurationLocation ToEnum(string value)
         {
             return value switch
@@ -46,16 +55,6 @@ namespace G
                 "hosted" => ExtensionConfigurationLocation.Hosted,
                 "custom" => ExtensionConfigurationLocation.Custom,
                 "none" => ExtensionConfigurationLocation.None,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static ExtensionConfigurationLocation ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => ExtensionConfigurationLocation.Hosted,
-                1 => ExtensionConfigurationLocation.Custom,
-                2 => ExtensionConfigurationLocation.None,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

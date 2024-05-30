@@ -37,8 +37,14 @@ namespace G
         NewSubscriptionCount,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class CreatorGoalTypeExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this CreatorGoalType value)
         {
             return value switch
@@ -51,6 +57,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static CreatorGoalType ToEnum(string value)
         {
             return value switch
@@ -60,18 +69,6 @@ namespace G
                 "subscription_count" => CreatorGoalType.SubscriptionCount,
                 "new_subscription" => CreatorGoalType.NewSubscription,
                 "new_subscription_count" => CreatorGoalType.NewSubscriptionCount,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static CreatorGoalType ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => CreatorGoalType.Follower,
-                1 => CreatorGoalType.Subscription,
-                2 => CreatorGoalType.SubscriptionCount,
-                3 => CreatorGoalType.NewSubscription,
-                4 => CreatorGoalType.NewSubscriptionCount,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

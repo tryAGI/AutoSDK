@@ -77,16 +77,6 @@ public static class TestEnumExtensions
             _ => throw new ArgumentOutOfRangeException(nameof(value), value, null),
         };
     }
-    
-    public static TestEnum ToEnum(int value)
-    {
-        return value switch
-        {
-            0 => TestEnum.PullingManifest,
-            1 => TestEnum.Success,
-            _ => throw new ArgumentOutOfRangeException(nameof(value), value, null),
-        };
-    }
 }
 
 internal sealed class TestEnumJsonStringEnumConverter : global::System.Text.Json.Serialization.JsonConverter<TestEnum>
@@ -110,8 +100,7 @@ internal sealed class TestEnumJsonStringEnumConverter : global::System.Text.Json
             }
             case global::System.Text.Json.JsonTokenType.Number:
             {
-                var numValue = reader.GetInt32();
-                return TestEnumExtensions.ToEnum(numValue);
+                return (TestEnum)reader.GetInt32();
             }
             default:
                 throw new global::System.ArgumentOutOfRangeException();
@@ -163,7 +152,7 @@ internal sealed class TestEnumNewtonsoftJsonStringEnumConverter : Newtonsoft.Jso
                 var numValue = reader.ReadAsInt32();
                 if (numValue != null)
                 {
-                    return TestEnumExtensions.ToEnum(numValue.Value);
+                    return (TestEnum)numValue.Value;
                 }
                 
                 break;

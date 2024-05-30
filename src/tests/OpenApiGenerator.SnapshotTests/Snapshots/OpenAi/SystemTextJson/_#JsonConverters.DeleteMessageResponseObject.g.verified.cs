@@ -3,8 +3,10 @@
 
 namespace OpenApiGenerator.JsonConverters
 {
+    /// <inheritdoc />
     public sealed class DeleteMessageResponseObjectJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.DeleteMessageResponseObject>
     {
+        /// <inheritdoc />
         public override global::G.DeleteMessageResponseObject Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
@@ -25,7 +27,7 @@ namespace OpenApiGenerator.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return global::G.DeleteMessageResponseObjectExtensions.ToEnum(numValue);
+                    return (global::G.DeleteMessageResponseObject)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException();
@@ -34,6 +36,7 @@ namespace OpenApiGenerator.JsonConverters
             return default;
         }
 
+        /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
             global::G.DeleteMessageResponseObject value,

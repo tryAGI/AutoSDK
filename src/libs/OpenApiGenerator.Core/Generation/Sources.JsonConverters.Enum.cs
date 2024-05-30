@@ -18,8 +18,10 @@ public static partial class Sources
 
 namespace OpenApiGenerator.JsonConverters
 {{
+    /// <inheritdoc />
     public sealed class {model.ClassName}JsonConverter : global::System.Text.Json.Serialization.JsonConverter<{model.GlobalClassName}>
     {{
+        /// <inheritdoc />
         public override {model.GlobalClassName} Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
@@ -40,7 +42,7 @@ namespace OpenApiGenerator.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {{
                     var numValue = reader.GetInt32();
-                    return {model.GlobalClassName}Extensions.ToEnum(numValue);
+                    return ({model.GlobalClassName})numValue;
                 }}
                 default:
                     throw new global::System.ArgumentOutOfRangeException();
@@ -49,6 +51,7 @@ namespace OpenApiGenerator.JsonConverters
             return default;
         }}
 
+        /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
             {model.GlobalClassName} value,

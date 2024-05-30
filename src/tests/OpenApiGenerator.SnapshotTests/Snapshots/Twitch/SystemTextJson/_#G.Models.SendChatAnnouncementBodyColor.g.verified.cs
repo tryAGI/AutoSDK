@@ -39,8 +39,14 @@ namespace G
         PrimaryDefault,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class SendChatAnnouncementBodyColorExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this SendChatAnnouncementBodyColor value)
         {
             return value switch
@@ -53,6 +59,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static SendChatAnnouncementBodyColor ToEnum(string value)
         {
             return value switch
@@ -62,18 +71,6 @@ namespace G
                 "orange" => SendChatAnnouncementBodyColor.Orange,
                 "purple" => SendChatAnnouncementBodyColor.Purple,
                 "primary (default)" => SendChatAnnouncementBodyColor.PrimaryDefault,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static SendChatAnnouncementBodyColor ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => SendChatAnnouncementBodyColor.Blue,
-                1 => SendChatAnnouncementBodyColor.Green,
-                2 => SendChatAnnouncementBodyColor.Orange,
-                3 => SendChatAnnouncementBodyColor.Purple,
-                4 => SendChatAnnouncementBodyColor.PrimaryDefault,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

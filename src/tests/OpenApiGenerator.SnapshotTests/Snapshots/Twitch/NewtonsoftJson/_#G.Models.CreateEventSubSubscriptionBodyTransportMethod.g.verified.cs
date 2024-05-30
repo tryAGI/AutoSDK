@@ -31,8 +31,14 @@ namespace G
         Conduit,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class CreateEventSubSubscriptionBodyTransportMethodExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this CreateEventSubSubscriptionBodyTransportMethod value)
         {
             return value switch
@@ -43,6 +49,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static CreateEventSubSubscriptionBodyTransportMethod ToEnum(string value)
         {
             return value switch
@@ -50,16 +59,6 @@ namespace G
                 "webhook" => CreateEventSubSubscriptionBodyTransportMethod.Webhook,
                 "websocket" => CreateEventSubSubscriptionBodyTransportMethod.Websocket,
                 "conduit" => CreateEventSubSubscriptionBodyTransportMethod.Conduit,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static CreateEventSubSubscriptionBodyTransportMethod ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => CreateEventSubSubscriptionBodyTransportMethod.Webhook,
-                1 => CreateEventSubSubscriptionBodyTransportMethod.Websocket,
-                2 => CreateEventSubSubscriptionBodyTransportMethod.Conduit,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

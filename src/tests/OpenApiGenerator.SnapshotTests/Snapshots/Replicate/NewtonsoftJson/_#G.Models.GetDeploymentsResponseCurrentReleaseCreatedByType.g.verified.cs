@@ -22,8 +22,14 @@ namespace G
         User,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class GetDeploymentsResponseCurrentReleaseCreatedByTypeExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this GetDeploymentsResponseCurrentReleaseCreatedByType value)
         {
             return value switch
@@ -33,21 +39,15 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static GetDeploymentsResponseCurrentReleaseCreatedByType ToEnum(string value)
         {
             return value switch
             {
                 "organization" => GetDeploymentsResponseCurrentReleaseCreatedByType.Organization,
                 "user" => GetDeploymentsResponseCurrentReleaseCreatedByType.User,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static GetDeploymentsResponseCurrentReleaseCreatedByType ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => GetDeploymentsResponseCurrentReleaseCreatedByType.Organization,
-                1 => GetDeploymentsResponseCurrentReleaseCreatedByType.User,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

@@ -37,8 +37,14 @@ namespace G
         RESOLVED,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class PredictionStatusExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this PredictionStatus value)
         {
             return value switch
@@ -50,6 +56,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static PredictionStatus ToEnum(string value)
         {
             return value switch
@@ -58,17 +67,6 @@ namespace G
                 "CANCELED" => PredictionStatus.CANCELED,
                 "LOCKED" => PredictionStatus.LOCKED,
                 "RESOLVED" => PredictionStatus.RESOLVED,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static PredictionStatus ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => PredictionStatus.ACTIVE,
-                1 => PredictionStatus.CANCELED,
-                2 => PredictionStatus.LOCKED,
-                3 => PredictionStatus.RESOLVED,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

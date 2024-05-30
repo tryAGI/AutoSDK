@@ -92,8 +92,14 @@ namespace G
         DetectionNeedsAuth,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class ImportStatusExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this ImportStatus value)
         {
             return value switch
@@ -117,6 +123,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static ImportStatus ToEnum(string value)
         {
             return value switch
@@ -137,29 +146,6 @@ namespace G
                 "detection_found_multiple" => ImportStatus.DetectionFoundMultiple,
                 "detection_found_nothing" => ImportStatus.DetectionFoundNothing,
                 "detection_needs_auth" => ImportStatus.DetectionNeedsAuth,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static ImportStatus ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => ImportStatus.Auth,
-                1 => ImportStatus.Error,
-                2 => ImportStatus.None,
-                3 => ImportStatus.Detecting,
-                4 => ImportStatus.Choose,
-                5 => ImportStatus.AuthFailed,
-                6 => ImportStatus.Importing,
-                7 => ImportStatus.Mapping,
-                8 => ImportStatus.WaitingToPush,
-                9 => ImportStatus.Pushing,
-                10 => ImportStatus.Complete,
-                11 => ImportStatus.Setup,
-                12 => ImportStatus.Unknown,
-                13 => ImportStatus.DetectionFoundMultiple,
-                14 => ImportStatus.DetectionFoundNothing,
-                15 => ImportStatus.DetectionNeedsAuth,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

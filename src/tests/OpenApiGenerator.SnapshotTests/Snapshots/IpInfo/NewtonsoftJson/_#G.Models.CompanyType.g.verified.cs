@@ -32,8 +32,14 @@ namespace G
         Hosting,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class CompanyTypeExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this CompanyType value)
         {
             return value switch
@@ -45,6 +51,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static CompanyType ToEnum(string value)
         {
             return value switch
@@ -53,17 +62,6 @@ namespace G
                 "business" => CompanyType.Business,
                 "education" => CompanyType.Education,
                 "hosting" => CompanyType.Hosting,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static CompanyType ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => CompanyType.Isp,
-                1 => CompanyType.Business,
-                2 => CompanyType.Education,
-                3 => CompanyType.Hosting,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

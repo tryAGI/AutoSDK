@@ -43,8 +43,14 @@ namespace G
         Success,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class PullModelResponseStatusExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this PullModelResponseStatus value)
         {
             return value switch
@@ -58,6 +64,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static PullModelResponseStatus ToEnum(string value)
         {
             return value switch
@@ -68,19 +77,6 @@ namespace G
                 "writing manifest" => PullModelResponseStatus.WritingManifest,
                 "removing any unused layers" => PullModelResponseStatus.RemovingAnyUnusedLayers,
                 "success" => PullModelResponseStatus.Success,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static PullModelResponseStatus ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => PullModelResponseStatus.PullingManifest,
-                1 => PullModelResponseStatus.DownloadingDigestname,
-                2 => PullModelResponseStatus.VerifyingSha256Digest,
-                3 => PullModelResponseStatus.WritingManifest,
-                4 => PullModelResponseStatus.RemovingAnyUnusedLayers,
-                5 => PullModelResponseStatus.Success,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

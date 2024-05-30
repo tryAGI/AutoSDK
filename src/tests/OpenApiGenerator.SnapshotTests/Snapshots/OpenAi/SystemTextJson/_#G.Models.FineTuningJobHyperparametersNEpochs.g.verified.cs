@@ -15,8 +15,14 @@ namespace G
         Auto,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class FineTuningJobHyperparametersNEpochsExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this FineTuningJobHyperparametersNEpochs value)
         {
             return value switch
@@ -25,19 +31,14 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static FineTuningJobHyperparametersNEpochs ToEnum(string value)
         {
             return value switch
             {
                 "auto" => FineTuningJobHyperparametersNEpochs.Auto,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static FineTuningJobHyperparametersNEpochs ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => FineTuningJobHyperparametersNEpochs.Auto,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

@@ -25,8 +25,14 @@ namespace G
         _1024x1024,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class CreateImageEditRequestSizeExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this CreateImageEditRequestSize value)
         {
             return value switch
@@ -37,6 +43,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static CreateImageEditRequestSize ToEnum(string value)
         {
             return value switch
@@ -44,16 +53,6 @@ namespace G
                 "256x256" => CreateImageEditRequestSize._256x256,
                 "512x512" => CreateImageEditRequestSize._512x512,
                 "1024x1024" => CreateImageEditRequestSize._1024x1024,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static CreateImageEditRequestSize ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => CreateImageEditRequestSize._256x256,
-                1 => CreateImageEditRequestSize._512x512,
-                2 => CreateImageEditRequestSize._1024x1024,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

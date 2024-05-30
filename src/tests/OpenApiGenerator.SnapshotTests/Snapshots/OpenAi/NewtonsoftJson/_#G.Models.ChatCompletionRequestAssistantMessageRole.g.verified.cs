@@ -17,8 +17,14 @@ namespace G
         Assistant,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class ChatCompletionRequestAssistantMessageRoleExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this ChatCompletionRequestAssistantMessageRole value)
         {
             return value switch
@@ -27,19 +33,14 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static ChatCompletionRequestAssistantMessageRole ToEnum(string value)
         {
             return value switch
             {
                 "assistant" => ChatCompletionRequestAssistantMessageRole.Assistant,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static ChatCompletionRequestAssistantMessageRole ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => ChatCompletionRequestAssistantMessageRole.Assistant,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

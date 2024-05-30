@@ -37,8 +37,14 @@ namespace G
         RunFailed,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class MessageObjectIncompleteDetailsReasonExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this MessageObjectIncompleteDetailsReason value)
         {
             return value switch
@@ -51,6 +57,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static MessageObjectIncompleteDetailsReason ToEnum(string value)
         {
             return value switch
@@ -60,18 +69,6 @@ namespace G
                 "run_cancelled" => MessageObjectIncompleteDetailsReason.RunCancelled,
                 "run_expired" => MessageObjectIncompleteDetailsReason.RunExpired,
                 "run_failed" => MessageObjectIncompleteDetailsReason.RunFailed,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static MessageObjectIncompleteDetailsReason ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => MessageObjectIncompleteDetailsReason.ContentFilter,
-                1 => MessageObjectIncompleteDetailsReason.MaxTokens,
-                2 => MessageObjectIncompleteDetailsReason.RunCancelled,
-                3 => MessageObjectIncompleteDetailsReason.RunExpired,
-                4 => MessageObjectIncompleteDetailsReason.RunFailed,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

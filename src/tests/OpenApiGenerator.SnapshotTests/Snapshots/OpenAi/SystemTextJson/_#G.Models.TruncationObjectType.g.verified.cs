@@ -19,8 +19,14 @@ namespace G
         LastMessages,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class TruncationObjectTypeExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this TruncationObjectType value)
         {
             return value switch
@@ -30,21 +36,15 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static TruncationObjectType ToEnum(string value)
         {
             return value switch
             {
                 "auto" => TruncationObjectType.Auto,
                 "last_messages" => TruncationObjectType.LastMessages,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static TruncationObjectType ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => TruncationObjectType.Auto,
-                1 => TruncationObjectType.LastMessages,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

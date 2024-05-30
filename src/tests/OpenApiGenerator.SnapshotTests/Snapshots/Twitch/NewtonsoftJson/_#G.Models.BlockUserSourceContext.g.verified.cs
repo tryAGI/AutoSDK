@@ -22,8 +22,14 @@ namespace G
         Whisper,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class BlockUserSourceContextExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this BlockUserSourceContext value)
         {
             return value switch
@@ -33,21 +39,15 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static BlockUserSourceContext ToEnum(string value)
         {
             return value switch
             {
                 "chat" => BlockUserSourceContext.Chat,
                 "whisper" => BlockUserSourceContext.Whisper,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static BlockUserSourceContext ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => BlockUserSourceContext.Chat,
-                1 => BlockUserSourceContext.Whisper,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

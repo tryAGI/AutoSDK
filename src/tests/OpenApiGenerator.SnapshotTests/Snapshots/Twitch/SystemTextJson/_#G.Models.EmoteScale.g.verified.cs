@@ -23,8 +23,14 @@ namespace G
         _30,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class EmoteScaleExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this EmoteScale value)
         {
             return value switch
@@ -35,6 +41,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static EmoteScale ToEnum(string value)
         {
             return value switch
@@ -42,16 +51,6 @@ namespace G
                 "1.0" => EmoteScale._10,
                 "2.0" => EmoteScale._20,
                 "3.0" => EmoteScale._30,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static EmoteScale ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => EmoteScale._10,
-                1 => EmoteScale._20,
-                2 => EmoteScale._30,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

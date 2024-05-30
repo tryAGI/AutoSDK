@@ -62,8 +62,14 @@ namespace G
         WebsocketNetworkError,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class GetConduitShardsResponseDataStatusExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this GetConduitShardsResponseDataStatus value)
         {
             return value switch
@@ -81,6 +87,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static GetConduitShardsResponseDataStatus ToEnum(string value)
         {
             return value switch
@@ -95,23 +104,6 @@ namespace G
                 "websocket_internal_error" => GetConduitShardsResponseDataStatus.WebsocketInternalError,
                 "websocket_network_timeout" => GetConduitShardsResponseDataStatus.WebsocketNetworkTimeout,
                 "websocket_network_error" => GetConduitShardsResponseDataStatus.WebsocketNetworkError,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static GetConduitShardsResponseDataStatus ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => GetConduitShardsResponseDataStatus.Enabled,
-                1 => GetConduitShardsResponseDataStatus.WebhookCallbackVerificationPending,
-                2 => GetConduitShardsResponseDataStatus.WebhookCallbackVerificationFailed,
-                3 => GetConduitShardsResponseDataStatus.NotificationFailuresExceeded,
-                4 => GetConduitShardsResponseDataStatus.WebsocketDisconnected,
-                5 => GetConduitShardsResponseDataStatus.WebsocketFailedPingPong,
-                6 => GetConduitShardsResponseDataStatus.WebsocketReceivedInboundTraffic,
-                7 => GetConduitShardsResponseDataStatus.WebsocketInternalError,
-                8 => GetConduitShardsResponseDataStatus.WebsocketNetworkTimeout,
-                9 => GetConduitShardsResponseDataStatus.WebsocketNetworkError,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

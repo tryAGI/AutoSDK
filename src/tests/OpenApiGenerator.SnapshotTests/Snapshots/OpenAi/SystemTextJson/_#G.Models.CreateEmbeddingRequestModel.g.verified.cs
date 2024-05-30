@@ -23,8 +23,14 @@ namespace G
         TextEmbedding3Large,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class CreateEmbeddingRequestModelExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this CreateEmbeddingRequestModel value)
         {
             return value switch
@@ -35,6 +41,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static CreateEmbeddingRequestModel ToEnum(string value)
         {
             return value switch
@@ -42,16 +51,6 @@ namespace G
                 "text-embedding-ada-002" => CreateEmbeddingRequestModel.TextEmbeddingAda002,
                 "text-embedding-3-small" => CreateEmbeddingRequestModel.TextEmbedding3Small,
                 "text-embedding-3-large" => CreateEmbeddingRequestModel.TextEmbedding3Large,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static CreateEmbeddingRequestModel ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => CreateEmbeddingRequestModel.TextEmbeddingAda002,
-                1 => CreateEmbeddingRequestModel.TextEmbedding3Small,
-                2 => CreateEmbeddingRequestModel.TextEmbedding3Large,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

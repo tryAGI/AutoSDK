@@ -17,8 +17,14 @@ namespace G
         List,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class ListModelsResponseObjectExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this ListModelsResponseObject value)
         {
             return value switch
@@ -27,19 +33,14 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static ListModelsResponseObject ToEnum(string value)
         {
             return value switch
             {
                 "list" => ListModelsResponseObject.List,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static ListModelsResponseObject ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => ListModelsResponseObject.List,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

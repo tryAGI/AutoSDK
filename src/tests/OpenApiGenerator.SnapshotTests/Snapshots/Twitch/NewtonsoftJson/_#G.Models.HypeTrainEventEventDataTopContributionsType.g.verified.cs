@@ -31,8 +31,14 @@ namespace G
         OTHER,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class HypeTrainEventEventDataTopContributionsTypeExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this HypeTrainEventEventDataTopContributionsType value)
         {
             return value switch
@@ -43,6 +49,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static HypeTrainEventEventDataTopContributionsType ToEnum(string value)
         {
             return value switch
@@ -50,16 +59,6 @@ namespace G
                 "BITS" => HypeTrainEventEventDataTopContributionsType.BITS,
                 "SUBS" => HypeTrainEventEventDataTopContributionsType.SUBS,
                 "OTHER" => HypeTrainEventEventDataTopContributionsType.OTHER,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static HypeTrainEventEventDataTopContributionsType ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => HypeTrainEventEventDataTopContributionsType.BITS,
-                1 => HypeTrainEventEventDataTopContributionsType.SUBS,
-                2 => HypeTrainEventEventDataTopContributionsType.OTHER,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

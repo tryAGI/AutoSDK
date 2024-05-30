@@ -36,8 +36,14 @@ namespace G
         Pcm,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class CreateSpeechRequestResponseFormatExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this CreateSpeechRequestResponseFormat value)
         {
             return value switch
@@ -51,6 +57,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static CreateSpeechRequestResponseFormat ToEnum(string value)
         {
             return value switch
@@ -61,19 +70,6 @@ namespace G
                 "flac" => CreateSpeechRequestResponseFormat.Flac,
                 "wav" => CreateSpeechRequestResponseFormat.Wav,
                 "pcm" => CreateSpeechRequestResponseFormat.Pcm,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static CreateSpeechRequestResponseFormat ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => CreateSpeechRequestResponseFormat.Mp3,
-                1 => CreateSpeechRequestResponseFormat.Opus,
-                2 => CreateSpeechRequestResponseFormat.Aac,
-                3 => CreateSpeechRequestResponseFormat.Flac,
-                4 => CreateSpeechRequestResponseFormat.Wav,
-                5 => CreateSpeechRequestResponseFormat.Pcm,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

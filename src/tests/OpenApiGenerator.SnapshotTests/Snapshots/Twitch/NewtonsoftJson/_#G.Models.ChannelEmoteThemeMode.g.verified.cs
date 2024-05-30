@@ -22,8 +22,14 @@ namespace G
         Light,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class ChannelEmoteThemeModeExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this ChannelEmoteThemeMode value)
         {
             return value switch
@@ -33,21 +39,15 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static ChannelEmoteThemeMode ToEnum(string value)
         {
             return value switch
             {
                 "dark" => ChannelEmoteThemeMode.Dark,
                 "light" => ChannelEmoteThemeMode.Light,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static ChannelEmoteThemeMode ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => ChannelEmoteThemeMode.Dark,
-                1 => ChannelEmoteThemeMode.Light,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

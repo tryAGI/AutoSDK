@@ -23,8 +23,14 @@ namespace G
         FileSearch,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class AssistantsNamedToolChoiceTypeExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this AssistantsNamedToolChoiceType value)
         {
             return value switch
@@ -35,6 +41,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static AssistantsNamedToolChoiceType ToEnum(string value)
         {
             return value switch
@@ -42,16 +51,6 @@ namespace G
                 "function" => AssistantsNamedToolChoiceType.Function,
                 "code_interpreter" => AssistantsNamedToolChoiceType.CodeInterpreter,
                 "file_search" => AssistantsNamedToolChoiceType.FileSearch,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static AssistantsNamedToolChoiceType ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => AssistantsNamedToolChoiceType.Function,
-                1 => AssistantsNamedToolChoiceType.CodeInterpreter,
-                2 => AssistantsNamedToolChoiceType.FileSearch,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

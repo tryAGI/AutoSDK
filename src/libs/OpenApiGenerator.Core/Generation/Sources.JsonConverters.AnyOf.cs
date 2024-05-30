@@ -22,8 +22,10 @@ public static partial class Sources
 
 namespace OpenApiGenerator.JsonConverters
 {{
+    /// <inheritdoc />
     public class {subType}JsonConverter{types} : global::System.Text.Json.Serialization.JsonConverter<global::System.{subType}{types}>
     {{
+        /// <inheritdoc />
         public override global::System.{subType}{types} Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
@@ -62,6 +64,7 @@ namespace OpenApiGenerator.JsonConverters
             return result;
         }}
 
+        /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
             global::System.{subType}{types} value,

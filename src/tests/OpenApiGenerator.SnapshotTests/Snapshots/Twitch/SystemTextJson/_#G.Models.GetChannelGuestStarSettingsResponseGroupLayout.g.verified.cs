@@ -22,8 +22,14 @@ namespace G
         SCREENSHARELAYOUT,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class GetChannelGuestStarSettingsResponseGroupLayoutExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this GetChannelGuestStarSettingsResponseGroupLayout value)
         {
             return value switch
@@ -33,21 +39,15 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static GetChannelGuestStarSettingsResponseGroupLayout ToEnum(string value)
         {
             return value switch
             {
                 "TILED_LAYOUT" => GetChannelGuestStarSettingsResponseGroupLayout.TILEDLAYOUT,
                 "SCREENSHARE_LAYOUT" => GetChannelGuestStarSettingsResponseGroupLayout.SCREENSHARELAYOUT,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static GetChannelGuestStarSettingsResponseGroupLayout ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => GetChannelGuestStarSettingsResponseGroupLayout.TILEDLAYOUT,
-                1 => GetChannelGuestStarSettingsResponseGroupLayout.SCREENSHARELAYOUT,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

@@ -28,8 +28,14 @@ namespace G
         High,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class MessageDeltaContentImageFileObjectImageFileDetailExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this MessageDeltaContentImageFileObjectImageFileDetail value)
         {
             return value switch
@@ -40,6 +46,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static MessageDeltaContentImageFileObjectImageFileDetail ToEnum(string value)
         {
             return value switch
@@ -47,16 +56,6 @@ namespace G
                 "auto" => MessageDeltaContentImageFileObjectImageFileDetail.Auto,
                 "low" => MessageDeltaContentImageFileObjectImageFileDetail.Low,
                 "high" => MessageDeltaContentImageFileObjectImageFileDetail.High,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static MessageDeltaContentImageFileObjectImageFileDetail ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => MessageDeltaContentImageFileObjectImageFileDetail.Auto,
-                1 => MessageDeltaContentImageFileObjectImageFileDetail.Low,
-                2 => MessageDeltaContentImageFileObjectImageFileDetail.High,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

@@ -31,8 +31,14 @@ namespace G
         Subscriptions,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class GetUserEmotesResponseDataEmoteTypeExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this GetUserEmotesResponseDataEmoteType value)
         {
             return value switch
@@ -43,6 +49,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static GetUserEmotesResponseDataEmoteType ToEnum(string value)
         {
             return value switch
@@ -50,16 +59,6 @@ namespace G
                 "bitstier" => GetUserEmotesResponseDataEmoteType.Bitstier,
                 "follower" => GetUserEmotesResponseDataEmoteType.Follower,
                 "subscriptions" => GetUserEmotesResponseDataEmoteType.Subscriptions,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static GetUserEmotesResponseDataEmoteType ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => GetUserEmotesResponseDataEmoteType.Bitstier,
-                1 => GetUserEmotesResponseDataEmoteType.Follower,
-                2 => GetUserEmotesResponseDataEmoteType.Subscriptions,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

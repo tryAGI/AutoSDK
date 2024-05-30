@@ -22,8 +22,14 @@ namespace G
         Disabled,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class SecurityAndAnalysisAdvancedSecurityStatusExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this SecurityAndAnalysisAdvancedSecurityStatus value)
         {
             return value switch
@@ -33,21 +39,15 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static SecurityAndAnalysisAdvancedSecurityStatus ToEnum(string value)
         {
             return value switch
             {
                 "enabled" => SecurityAndAnalysisAdvancedSecurityStatus.Enabled,
                 "disabled" => SecurityAndAnalysisAdvancedSecurityStatus.Disabled,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static SecurityAndAnalysisAdvancedSecurityStatus ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => SecurityAndAnalysisAdvancedSecurityStatus.Enabled,
-                1 => SecurityAndAnalysisAdvancedSecurityStatus.Disabled,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

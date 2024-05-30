@@ -362,8 +362,14 @@ namespace G
         Userwhispermessage,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class CreateEventSubSubscriptionBodyTypeExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this CreateEventSubSubscriptionBodyType value)
         {
             return value switch
@@ -441,6 +447,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static CreateEventSubSubscriptionBodyType ToEnum(string value)
         {
             return value switch
@@ -515,83 +524,6 @@ namespace G
                 "user.authorization.revoke" => CreateEventSubSubscriptionBodyType.Userauthorizationrevoke,
                 "user.update" => CreateEventSubSubscriptionBodyType.Userupdate,
                 "user.whisper.message" => CreateEventSubSubscriptionBodyType.Userwhispermessage,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static CreateEventSubSubscriptionBodyType ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => CreateEventSubSubscriptionBodyType.Automodmessagehold,
-                1 => CreateEventSubSubscriptionBodyType.Automodmessageupdate,
-                2 => CreateEventSubSubscriptionBodyType.Automodsettingsupdate,
-                3 => CreateEventSubSubscriptionBodyType.Automodtermsupdate,
-                4 => CreateEventSubSubscriptionBodyType.Channelupdate,
-                5 => CreateEventSubSubscriptionBodyType.Channelfollow,
-                6 => CreateEventSubSubscriptionBodyType.ChanneladBreakbegin,
-                7 => CreateEventSubSubscriptionBodyType.Channelchatclear,
-                8 => CreateEventSubSubscriptionBodyType.ChannelchatclearUserMessages,
-                9 => CreateEventSubSubscriptionBodyType.Channelchatmessage,
-                10 => CreateEventSubSubscriptionBodyType.ChannelchatmessageDelete,
-                11 => CreateEventSubSubscriptionBodyType.Channelchatnotification,
-                12 => CreateEventSubSubscriptionBodyType.ChannelchatSettingsupdate,
-                13 => CreateEventSubSubscriptionBodyType.ChannelchatuserMessageHold,
-                14 => CreateEventSubSubscriptionBodyType.ChannelchatuserMessageUpdate,
-                15 => CreateEventSubSubscriptionBodyType.Channelsubscribe,
-                16 => CreateEventSubSubscriptionBodyType.Channelsubscriptionend,
-                17 => CreateEventSubSubscriptionBodyType.Channelsubscriptiongift,
-                18 => CreateEventSubSubscriptionBodyType.Channelsubscriptionmessage,
-                19 => CreateEventSubSubscriptionBodyType.Channelcheer,
-                20 => CreateEventSubSubscriptionBodyType.Channelraid,
-                21 => CreateEventSubSubscriptionBodyType.Channelban,
-                22 => CreateEventSubSubscriptionBodyType.Channelunban,
-                23 => CreateEventSubSubscriptionBodyType.ChannelunbanRequestcreate,
-                24 => CreateEventSubSubscriptionBodyType.ChannelunbanRequestresolve,
-                25 => CreateEventSubSubscriptionBodyType.Channelmoderate,
-                26 => CreateEventSubSubscriptionBodyType.Channelmoderatoradd,
-                27 => CreateEventSubSubscriptionBodyType.Channelmoderatorremove,
-                28 => CreateEventSubSubscriptionBodyType.ChannelguestStarSessionbegin,
-                29 => CreateEventSubSubscriptionBodyType.ChannelguestStarSessionend,
-                30 => CreateEventSubSubscriptionBodyType.ChannelguestStarGuestupdate,
-                31 => CreateEventSubSubscriptionBodyType.ChannelguestStarSettingsupdate,
-                32 => CreateEventSubSubscriptionBodyType.ChannelchannelPointsAutomaticRewardadd,
-                33 => CreateEventSubSubscriptionBodyType.ChannelchannelPointsCustomRewardadd,
-                34 => CreateEventSubSubscriptionBodyType.ChannelchannelPointsCustomRewardupdate,
-                35 => CreateEventSubSubscriptionBodyType.ChannelchannelPointsCustomRewardremove,
-                36 => CreateEventSubSubscriptionBodyType.ChannelchannelPointsCustomRewardRedemptionadd,
-                37 => CreateEventSubSubscriptionBodyType.ChannelchannelPointsCustomRewardRedemptionupdate,
-                38 => CreateEventSubSubscriptionBodyType.Channelpollbegin,
-                39 => CreateEventSubSubscriptionBodyType.Channelpollprogress,
-                40 => CreateEventSubSubscriptionBodyType.Channelpollend,
-                41 => CreateEventSubSubscriptionBodyType.Channelpredictionbegin,
-                42 => CreateEventSubSubscriptionBodyType.Channelpredictionprogress,
-                43 => CreateEventSubSubscriptionBodyType.Channelpredictionlock,
-                44 => CreateEventSubSubscriptionBodyType.Channelpredictionend,
-                45 => CreateEventSubSubscriptionBodyType.Channelvipadd,
-                46 => CreateEventSubSubscriptionBodyType.Channelvipremove,
-                47 => CreateEventSubSubscriptionBodyType.ChannelcharityCampaigndonate,
-                48 => CreateEventSubSubscriptionBodyType.ChannelcharityCampaignstart,
-                49 => CreateEventSubSubscriptionBodyType.ChannelcharityCampaignprogress,
-                50 => CreateEventSubSubscriptionBodyType.ChannelcharityCampaignstop,
-                51 => CreateEventSubSubscriptionBodyType.Conduitsharddisabled,
-                52 => CreateEventSubSubscriptionBodyType.Dropentitlementgrant,
-                53 => CreateEventSubSubscriptionBodyType.ExtensionbitsTransactioncreate,
-                54 => CreateEventSubSubscriptionBodyType.Channelgoalbegin,
-                55 => CreateEventSubSubscriptionBodyType.Channelgoalprogress,
-                56 => CreateEventSubSubscriptionBodyType.Channelgoalend,
-                57 => CreateEventSubSubscriptionBodyType.ChannelhypeTrainbegin,
-                58 => CreateEventSubSubscriptionBodyType.ChannelhypeTrainprogress,
-                59 => CreateEventSubSubscriptionBodyType.ChannelhypeTrainend,
-                60 => CreateEventSubSubscriptionBodyType.ChannelshieldModebegin,
-                61 => CreateEventSubSubscriptionBodyType.ChannelshieldModeend,
-                62 => CreateEventSubSubscriptionBodyType.Channelshoutoutcreate,
-                63 => CreateEventSubSubscriptionBodyType.Channelshoutoutreceive,
-                64 => CreateEventSubSubscriptionBodyType.Streamonline,
-                65 => CreateEventSubSubscriptionBodyType.Streamoffline,
-                66 => CreateEventSubSubscriptionBodyType.Userauthorizationgrant,
-                67 => CreateEventSubSubscriptionBodyType.Userauthorizationrevoke,
-                68 => CreateEventSubSubscriptionBodyType.Userupdate,
-                69 => CreateEventSubSubscriptionBodyType.Userwhispermessage,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

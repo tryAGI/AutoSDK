@@ -32,8 +32,14 @@ namespace G
         Week,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class GetVideosPeriodExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this GetVideosPeriod value)
         {
             return value switch
@@ -45,6 +51,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static GetVideosPeriod ToEnum(string value)
         {
             return value switch
@@ -53,17 +62,6 @@ namespace G
                 "day" => GetVideosPeriod.Day,
                 "month" => GetVideosPeriod.Month,
                 "week" => GetVideosPeriod.Week,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static GetVideosPeriod ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => GetVideosPeriod.All,
-                1 => GetVideosPeriod.Day,
-                2 => GetVideosPeriod.Month,
-                3 => GetVideosPeriod.Week,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

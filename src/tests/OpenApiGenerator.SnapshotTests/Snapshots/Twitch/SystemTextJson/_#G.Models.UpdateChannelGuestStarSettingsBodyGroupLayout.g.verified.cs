@@ -32,8 +32,14 @@ namespace G
         VERTICALLAYOUT,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class UpdateChannelGuestStarSettingsBodyGroupLayoutExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this UpdateChannelGuestStarSettingsBodyGroupLayout value)
         {
             return value switch
@@ -45,6 +51,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static UpdateChannelGuestStarSettingsBodyGroupLayout ToEnum(string value)
         {
             return value switch
@@ -53,17 +62,6 @@ namespace G
                 "SCREENSHARE_LAYOUT" => UpdateChannelGuestStarSettingsBodyGroupLayout.SCREENSHARELAYOUT,
                 "HORIZONTAL_LAYOUT" => UpdateChannelGuestStarSettingsBodyGroupLayout.HORIZONTALLAYOUT,
                 "VERTICAL_LAYOUT" => UpdateChannelGuestStarSettingsBodyGroupLayout.VERTICALLAYOUT,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static UpdateChannelGuestStarSettingsBodyGroupLayout ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => UpdateChannelGuestStarSettingsBodyGroupLayout.TILEDLAYOUT,
-                1 => UpdateChannelGuestStarSettingsBodyGroupLayout.SCREENSHARELAYOUT,
-                2 => UpdateChannelGuestStarSettingsBodyGroupLayout.HORIZONTALLAYOUT,
-                3 => UpdateChannelGuestStarSettingsBodyGroupLayout.VERTICALLAYOUT,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

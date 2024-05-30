@@ -3,8 +3,10 @@
 
 namespace OpenApiGenerator.JsonConverters
 {
+    /// <inheritdoc />
     public class OneOfJsonConverter<T1, T2, T3, T4> : global::System.Text.Json.Serialization.JsonConverter<global::System.OneOf<T1, T2, T3, T4>>
     {
+        /// <inheritdoc />
         public override global::System.OneOf<T1, T2, T3, T4> Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
@@ -86,6 +88,7 @@ namespace OpenApiGenerator.JsonConverters
             return result;
         }
 
+        /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
             global::System.OneOf<T1, T2, T3, T4> value,

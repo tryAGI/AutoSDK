@@ -17,8 +17,14 @@ namespace G
         FilePath,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class MessageDeltaContentTextAnnotationsFilePathObjectTypeExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this MessageDeltaContentTextAnnotationsFilePathObjectType value)
         {
             return value switch
@@ -27,19 +33,14 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static MessageDeltaContentTextAnnotationsFilePathObjectType ToEnum(string value)
         {
             return value switch
             {
                 "file_path" => MessageDeltaContentTextAnnotationsFilePathObjectType.FilePath,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static MessageDeltaContentTextAnnotationsFilePathObjectType ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => MessageDeltaContentTextAnnotationsFilePathObjectType.FilePath,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

@@ -31,8 +31,14 @@ namespace G
         Upload,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class VideoTypeExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this VideoType value)
         {
             return value switch
@@ -43,6 +49,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static VideoType ToEnum(string value)
         {
             return value switch
@@ -50,16 +59,6 @@ namespace G
                 "archive" => VideoType.Archive,
                 "highlight" => VideoType.Highlight,
                 "upload" => VideoType.Upload,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static VideoType ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => VideoType.Archive,
-                1 => VideoType.Highlight,
-                2 => VideoType.Upload,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

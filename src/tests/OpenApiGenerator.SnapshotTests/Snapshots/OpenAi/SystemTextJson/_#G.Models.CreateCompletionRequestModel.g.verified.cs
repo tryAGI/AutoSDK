@@ -23,8 +23,14 @@ namespace G
         Babbage002,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class CreateCompletionRequestModelExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this CreateCompletionRequestModel value)
         {
             return value switch
@@ -35,6 +41,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static CreateCompletionRequestModel ToEnum(string value)
         {
             return value switch
@@ -42,16 +51,6 @@ namespace G
                 "gpt-3.5-turbo-instruct" => CreateCompletionRequestModel.Gpt35TurboInstruct,
                 "davinci-002" => CreateCompletionRequestModel.Davinci002,
                 "babbage-002" => CreateCompletionRequestModel.Babbage002,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static CreateCompletionRequestModel ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => CreateCompletionRequestModel.Gpt35TurboInstruct,
-                1 => CreateCompletionRequestModel.Davinci002,
-                2 => CreateCompletionRequestModel.Babbage002,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

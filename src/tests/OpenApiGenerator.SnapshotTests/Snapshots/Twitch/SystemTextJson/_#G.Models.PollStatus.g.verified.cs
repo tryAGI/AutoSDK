@@ -42,8 +42,14 @@ namespace G
         INVALID,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class PollStatusExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this PollStatus value)
         {
             return value switch
@@ -57,6 +63,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static PollStatus ToEnum(string value)
         {
             return value switch
@@ -67,19 +76,6 @@ namespace G
                 "ARCHIVED" => PollStatus.ARCHIVED,
                 "MODERATED" => PollStatus.MODERATED,
                 "INVALID" => PollStatus.INVALID,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static PollStatus ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => PollStatus.ACTIVE,
-                1 => PollStatus.COMPLETED,
-                2 => PollStatus.TERMINATED,
-                3 => PollStatus.ARCHIVED,
-                4 => PollStatus.MODERATED,
-                5 => PollStatus.INVALID,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

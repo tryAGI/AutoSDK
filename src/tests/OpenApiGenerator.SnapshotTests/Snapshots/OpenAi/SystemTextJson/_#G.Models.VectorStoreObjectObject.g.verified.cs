@@ -15,8 +15,14 @@ namespace G
         VectorStore,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class VectorStoreObjectObjectExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this VectorStoreObjectObject value)
         {
             return value switch
@@ -25,19 +31,14 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static VectorStoreObjectObject ToEnum(string value)
         {
             return value switch
             {
                 "vector_store" => VectorStoreObjectObject.VectorStore,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static VectorStoreObjectObject ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => VectorStoreObjectObject.VectorStore,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

@@ -32,8 +32,14 @@ namespace G
         Vtt,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class CreateTranscriptionRequestResponseFormatExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this CreateTranscriptionRequestResponseFormat value)
         {
             return value switch
@@ -46,6 +52,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static CreateTranscriptionRequestResponseFormat ToEnum(string value)
         {
             return value switch
@@ -55,18 +64,6 @@ namespace G
                 "srt" => CreateTranscriptionRequestResponseFormat.Srt,
                 "verbose_json" => CreateTranscriptionRequestResponseFormat.VerboseJson,
                 "vtt" => CreateTranscriptionRequestResponseFormat.Vtt,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static CreateTranscriptionRequestResponseFormat ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => CreateTranscriptionRequestResponseFormat.Json,
-                1 => CreateTranscriptionRequestResponseFormat.Text,
-                2 => CreateTranscriptionRequestResponseFormat.Srt,
-                3 => CreateTranscriptionRequestResponseFormat.VerboseJson,
-                4 => CreateTranscriptionRequestResponseFormat.Vtt,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

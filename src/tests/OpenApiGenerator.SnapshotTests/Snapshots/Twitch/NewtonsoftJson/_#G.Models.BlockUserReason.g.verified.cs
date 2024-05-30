@@ -27,8 +27,14 @@ namespace G
         Other,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class BlockUserReasonExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this BlockUserReason value)
         {
             return value switch
@@ -39,6 +45,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static BlockUserReason ToEnum(string value)
         {
             return value switch
@@ -46,16 +55,6 @@ namespace G
                 "harassment" => BlockUserReason.Harassment,
                 "spam" => BlockUserReason.Spam,
                 "other" => BlockUserReason.Other,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static BlockUserReason ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => BlockUserReason.Harassment,
-                1 => BlockUserReason.Spam,
-                2 => BlockUserReason.Other,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

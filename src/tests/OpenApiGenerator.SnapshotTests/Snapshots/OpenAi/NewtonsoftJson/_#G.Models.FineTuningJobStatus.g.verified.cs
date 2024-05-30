@@ -42,8 +42,14 @@ namespace G
         Cancelled,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class FineTuningJobStatusExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this FineTuningJobStatus value)
         {
             return value switch
@@ -57,6 +63,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static FineTuningJobStatus ToEnum(string value)
         {
             return value switch
@@ -67,19 +76,6 @@ namespace G
                 "succeeded" => FineTuningJobStatus.Succeeded,
                 "failed" => FineTuningJobStatus.Failed,
                 "cancelled" => FineTuningJobStatus.Cancelled,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static FineTuningJobStatus ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => FineTuningJobStatus.ValidatingFiles,
-                1 => FineTuningJobStatus.Queued,
-                2 => FineTuningJobStatus.Running,
-                3 => FineTuningJobStatus.Succeeded,
-                4 => FineTuningJobStatus.Failed,
-                5 => FineTuningJobStatus.Cancelled,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

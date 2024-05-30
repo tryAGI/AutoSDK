@@ -35,8 +35,14 @@ namespace G
         LOCKED,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class EndPredictionBodyStatusExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this EndPredictionBodyStatus value)
         {
             return value switch
@@ -47,6 +53,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static EndPredictionBodyStatus ToEnum(string value)
         {
             return value switch
@@ -54,16 +63,6 @@ namespace G
                 "RESOLVED" => EndPredictionBodyStatus.RESOLVED,
                 "CANCELED" => EndPredictionBodyStatus.CANCELED,
                 "LOCKED" => EndPredictionBodyStatus.LOCKED,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static EndPredictionBodyStatus ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => EndPredictionBodyStatus.RESOLVED,
-                1 => EndPredictionBodyStatus.CANCELED,
-                2 => EndPredictionBodyStatus.LOCKED,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

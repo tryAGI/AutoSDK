@@ -15,8 +15,14 @@ namespace G
         Threaddeleted,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class DeleteThreadResponseObjectExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this DeleteThreadResponseObject value)
         {
             return value switch
@@ -25,19 +31,14 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static DeleteThreadResponseObject ToEnum(string value)
         {
             return value switch
             {
                 "thread.deleted" => DeleteThreadResponseObject.Threaddeleted,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static DeleteThreadResponseObject ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => DeleteThreadResponseObject.Threaddeleted,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

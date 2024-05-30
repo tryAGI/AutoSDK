@@ -37,8 +37,14 @@ namespace G
         Inactive,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class AsnResponseTypeExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this AsnResponseType value)
         {
             return value switch
@@ -51,6 +57,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static AsnResponseType ToEnum(string value)
         {
             return value switch
@@ -60,18 +69,6 @@ namespace G
                 "education" => AsnResponseType.Education,
                 "hosting" => AsnResponseType.Hosting,
                 "inactive" => AsnResponseType.Inactive,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static AsnResponseType ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => AsnResponseType.Isp,
-                1 => AsnResponseType.Business,
-                2 => AsnResponseType.Education,
-                3 => AsnResponseType.Hosting,
-                4 => AsnResponseType.Inactive,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

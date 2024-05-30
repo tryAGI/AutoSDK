@@ -25,8 +25,14 @@ namespace G
         _1024x1024,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class CreateImageVariationRequestSizeExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this CreateImageVariationRequestSize value)
         {
             return value switch
@@ -37,6 +43,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static CreateImageVariationRequestSize ToEnum(string value)
         {
             return value switch
@@ -44,16 +53,6 @@ namespace G
                 "256x256" => CreateImageVariationRequestSize._256x256,
                 "512x512" => CreateImageVariationRequestSize._512x512,
                 "1024x1024" => CreateImageVariationRequestSize._1024x1024,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static CreateImageVariationRequestSize ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => CreateImageVariationRequestSize._256x256,
-                1 => CreateImageVariationRequestSize._512x512,
-                2 => CreateImageVariationRequestSize._1024x1024,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

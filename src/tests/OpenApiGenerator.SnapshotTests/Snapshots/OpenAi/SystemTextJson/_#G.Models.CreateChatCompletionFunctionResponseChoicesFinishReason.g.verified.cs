@@ -27,8 +27,14 @@ namespace G
         ContentFilter,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class CreateChatCompletionFunctionResponseChoicesFinishReasonExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this CreateChatCompletionFunctionResponseChoicesFinishReason value)
         {
             return value switch
@@ -40,6 +46,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static CreateChatCompletionFunctionResponseChoicesFinishReason ToEnum(string value)
         {
             return value switch
@@ -48,17 +57,6 @@ namespace G
                 "length" => CreateChatCompletionFunctionResponseChoicesFinishReason.Length,
                 "function_call" => CreateChatCompletionFunctionResponseChoicesFinishReason.FunctionCall,
                 "content_filter" => CreateChatCompletionFunctionResponseChoicesFinishReason.ContentFilter,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static CreateChatCompletionFunctionResponseChoicesFinishReason ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => CreateChatCompletionFunctionResponseChoicesFinishReason.Stop,
-                1 => CreateChatCompletionFunctionResponseChoicesFinishReason.Length,
-                2 => CreateChatCompletionFunctionResponseChoicesFinishReason.FunctionCall,
-                3 => CreateChatCompletionFunctionResponseChoicesFinishReason.ContentFilter,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

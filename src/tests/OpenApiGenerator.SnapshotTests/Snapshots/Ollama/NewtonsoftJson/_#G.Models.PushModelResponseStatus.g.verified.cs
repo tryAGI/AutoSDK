@@ -32,8 +32,14 @@ namespace G
         Success,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class PushModelResponseStatusExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this PushModelResponseStatus value)
         {
             return value switch
@@ -45,6 +51,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static PushModelResponseStatus ToEnum(string value)
         {
             return value switch
@@ -53,17 +62,6 @@ namespace G
                 "starting upload" => PushModelResponseStatus.StartingUpload,
                 "pushing manifest" => PushModelResponseStatus.PushingManifest,
                 "success" => PushModelResponseStatus.Success,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static PushModelResponseStatus ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => PushModelResponseStatus.RetrievingManifest,
-                1 => PushModelResponseStatus.StartingUpload,
-                2 => PushModelResponseStatus.PushingManifest,
-                3 => PushModelResponseStatus.Success,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

@@ -59,8 +59,14 @@ namespace G
         DnsChanged,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class PagesHttpsCertificateStateExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this PagesHttpsCertificateState value)
         {
             return value switch
@@ -80,6 +86,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static PagesHttpsCertificateState ToEnum(string value)
         {
             return value switch
@@ -96,25 +105,6 @@ namespace G
                 "bad_authz" => PagesHttpsCertificateState.BadAuthz,
                 "destroy_pending" => PagesHttpsCertificateState.DestroyPending,
                 "dns_changed" => PagesHttpsCertificateState.DnsChanged,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static PagesHttpsCertificateState ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => PagesHttpsCertificateState.New,
-                1 => PagesHttpsCertificateState.AuthorizationCreated,
-                2 => PagesHttpsCertificateState.AuthorizationPending,
-                3 => PagesHttpsCertificateState.Authorized,
-                4 => PagesHttpsCertificateState.AuthorizationRevoked,
-                5 => PagesHttpsCertificateState.Issued,
-                6 => PagesHttpsCertificateState.Uploaded,
-                7 => PagesHttpsCertificateState.Approved,
-                8 => PagesHttpsCertificateState.Errored,
-                9 => PagesHttpsCertificateState.BadAuthz,
-                10 => PagesHttpsCertificateState.DestroyPending,
-                11 => PagesHttpsCertificateState.DnsChanged,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

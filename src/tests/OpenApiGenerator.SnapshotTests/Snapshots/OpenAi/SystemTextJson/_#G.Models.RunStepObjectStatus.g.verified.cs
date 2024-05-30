@@ -31,8 +31,14 @@ namespace G
         Expired,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class RunStepObjectStatusExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this RunStepObjectStatus value)
         {
             return value switch
@@ -45,6 +51,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static RunStepObjectStatus ToEnum(string value)
         {
             return value switch
@@ -54,18 +63,6 @@ namespace G
                 "failed" => RunStepObjectStatus.Failed,
                 "completed" => RunStepObjectStatus.Completed,
                 "expired" => RunStepObjectStatus.Expired,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static RunStepObjectStatus ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => RunStepObjectStatus.InProgress,
-                1 => RunStepObjectStatus.Cancelled,
-                2 => RunStepObjectStatus.Failed,
-                3 => RunStepObjectStatus.Completed,
-                4 => RunStepObjectStatus.Expired,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

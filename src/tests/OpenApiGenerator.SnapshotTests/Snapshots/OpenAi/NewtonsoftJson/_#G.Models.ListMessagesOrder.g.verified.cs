@@ -22,8 +22,14 @@ namespace G
         Desc,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class ListMessagesOrderExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this ListMessagesOrder value)
         {
             return value switch
@@ -33,21 +39,15 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static ListMessagesOrder ToEnum(string value)
         {
             return value switch
             {
                 "asc" => ListMessagesOrder.Asc,
                 "desc" => ListMessagesOrder.Desc,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static ListMessagesOrder ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => ListMessagesOrder.Asc,
-                1 => ListMessagesOrder.Desc,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

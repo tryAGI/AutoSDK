@@ -23,8 +23,14 @@ namespace G
         UNFULFILLED,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class GetCustomRewardRedemptionStatusExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this GetCustomRewardRedemptionStatus value)
         {
             return value switch
@@ -35,6 +41,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static GetCustomRewardRedemptionStatus ToEnum(string value)
         {
             return value switch
@@ -42,16 +51,6 @@ namespace G
                 "CANCELED" => GetCustomRewardRedemptionStatus.CANCELED,
                 "FULFILLED" => GetCustomRewardRedemptionStatus.FULFILLED,
                 "UNFULFILLED" => GetCustomRewardRedemptionStatus.UNFULFILLED,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static GetCustomRewardRedemptionStatus ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => GetCustomRewardRedemptionStatus.CANCELED,
-                1 => GetCustomRewardRedemptionStatus.FULFILLED,
-                2 => GetCustomRewardRedemptionStatus.UNFULFILLED,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

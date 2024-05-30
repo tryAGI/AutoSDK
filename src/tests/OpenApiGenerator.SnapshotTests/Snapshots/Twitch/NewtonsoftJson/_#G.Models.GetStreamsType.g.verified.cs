@@ -22,8 +22,14 @@ namespace G
         Live,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class GetStreamsTypeExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this GetStreamsType value)
         {
             return value switch
@@ -33,21 +39,15 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static GetStreamsType ToEnum(string value)
         {
             return value switch
             {
                 "all" => GetStreamsType.All,
                 "live" => GetStreamsType.Live,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static GetStreamsType ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => GetStreamsType.All,
-                1 => GetStreamsType.Live,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

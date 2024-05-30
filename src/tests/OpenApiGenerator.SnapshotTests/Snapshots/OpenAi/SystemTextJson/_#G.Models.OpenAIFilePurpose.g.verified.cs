@@ -39,8 +39,14 @@ namespace G
         Vision,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class OpenAIFilePurposeExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this OpenAIFilePurpose value)
         {
             return value switch
@@ -55,6 +61,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static OpenAIFilePurpose ToEnum(string value)
         {
             return value switch
@@ -66,20 +75,6 @@ namespace G
                 "fine-tune" => OpenAIFilePurpose.FineTune,
                 "fine-tune-results" => OpenAIFilePurpose.FineTuneResults,
                 "vision" => OpenAIFilePurpose.Vision,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static OpenAIFilePurpose ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => OpenAIFilePurpose.Assistants,
-                1 => OpenAIFilePurpose.AssistantsOutput,
-                2 => OpenAIFilePurpose.Batch,
-                3 => OpenAIFilePurpose.BatchOutput,
-                4 => OpenAIFilePurpose.FineTune,
-                5 => OpenAIFilePurpose.FineTuneResults,
-                6 => OpenAIFilePurpose.Vision,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

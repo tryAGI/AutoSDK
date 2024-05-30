@@ -27,8 +27,14 @@ namespace G
         Required,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class RunObjectToolChoiceExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this RunObjectToolChoice value)
         {
             return value switch
@@ -39,6 +45,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static RunObjectToolChoice ToEnum(string value)
         {
             return value switch
@@ -46,16 +55,6 @@ namespace G
                 "none" => RunObjectToolChoice.None,
                 "auto" => RunObjectToolChoice.Auto,
                 "required" => RunObjectToolChoice.Required,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static RunObjectToolChoice ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => RunObjectToolChoice.None,
-                1 => RunObjectToolChoice.Auto,
-                2 => RunObjectToolChoice.Required,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

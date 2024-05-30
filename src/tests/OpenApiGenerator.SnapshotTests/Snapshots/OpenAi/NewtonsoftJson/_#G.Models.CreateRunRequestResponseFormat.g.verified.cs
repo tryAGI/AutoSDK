@@ -22,8 +22,14 @@ namespace G
         Auto,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class CreateRunRequestResponseFormatExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this CreateRunRequestResponseFormat value)
         {
             return value switch
@@ -33,21 +39,15 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static CreateRunRequestResponseFormat ToEnum(string value)
         {
             return value switch
             {
                 "none" => CreateRunRequestResponseFormat.None,
                 "auto" => CreateRunRequestResponseFormat.Auto,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static CreateRunRequestResponseFormat ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => CreateRunRequestResponseFormat.None,
-                1 => CreateRunRequestResponseFormat.Auto,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

@@ -23,8 +23,14 @@ namespace G
         Assistant,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class MessageRoleExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this MessageRole value)
         {
             return value switch
@@ -35,6 +41,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static MessageRole ToEnum(string value)
         {
             return value switch
@@ -42,16 +51,6 @@ namespace G
                 "system" => MessageRole.System,
                 "user" => MessageRole.User,
                 "assistant" => MessageRole.Assistant,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static MessageRole ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => MessageRole.System,
-                1 => MessageRole.User,
-                2 => MessageRole.Assistant,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

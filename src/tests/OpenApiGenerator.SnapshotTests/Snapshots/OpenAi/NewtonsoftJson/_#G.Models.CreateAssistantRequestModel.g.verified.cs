@@ -102,8 +102,14 @@ namespace G
         Gpt35Turbo16k0613,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class CreateAssistantRequestModelExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this CreateAssistantRequestModel value)
         {
             return value switch
@@ -129,6 +135,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static CreateAssistantRequestModel ToEnum(string value)
         {
             return value switch
@@ -151,31 +160,6 @@ namespace G
                 "gpt-3.5-turbo-1106" => CreateAssistantRequestModel.Gpt35Turbo1106,
                 "gpt-3.5-turbo-0125" => CreateAssistantRequestModel.Gpt35Turbo0125,
                 "gpt-3.5-turbo-16k-0613" => CreateAssistantRequestModel.Gpt35Turbo16k0613,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static CreateAssistantRequestModel ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => CreateAssistantRequestModel.Gpt4Turbo,
-                1 => CreateAssistantRequestModel.Gpt4Turbo20240409,
-                2 => CreateAssistantRequestModel.Gpt40125Preview,
-                3 => CreateAssistantRequestModel.Gpt4TurboPreview,
-                4 => CreateAssistantRequestModel.Gpt41106Preview,
-                5 => CreateAssistantRequestModel.Gpt4VisionPreview,
-                6 => CreateAssistantRequestModel.Gpt4,
-                7 => CreateAssistantRequestModel.Gpt40314,
-                8 => CreateAssistantRequestModel.Gpt40613,
-                9 => CreateAssistantRequestModel.Gpt432k,
-                10 => CreateAssistantRequestModel.Gpt432k0314,
-                11 => CreateAssistantRequestModel.Gpt432k0613,
-                12 => CreateAssistantRequestModel.Gpt35Turbo,
-                13 => CreateAssistantRequestModel.Gpt35Turbo16k,
-                14 => CreateAssistantRequestModel.Gpt35Turbo0613,
-                15 => CreateAssistantRequestModel.Gpt35Turbo1106,
-                16 => CreateAssistantRequestModel.Gpt35Turbo0125,
-                17 => CreateAssistantRequestModel.Gpt35Turbo16k0613,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

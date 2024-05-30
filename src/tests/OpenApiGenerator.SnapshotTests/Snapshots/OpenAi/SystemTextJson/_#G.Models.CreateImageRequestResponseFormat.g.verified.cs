@@ -21,8 +21,14 @@ namespace G
         B64Json,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class CreateImageRequestResponseFormatExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this CreateImageRequestResponseFormat value)
         {
             return value switch
@@ -32,21 +38,15 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static CreateImageRequestResponseFormat ToEnum(string value)
         {
             return value switch
             {
                 "url" => CreateImageRequestResponseFormat.Url,
                 "b64_json" => CreateImageRequestResponseFormat.B64Json,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static CreateImageRequestResponseFormat ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => CreateImageRequestResponseFormat.Url,
-                1 => CreateImageRequestResponseFormat.B64Json,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

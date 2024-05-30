@@ -19,8 +19,14 @@ namespace G
         OptOut,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class MigrationsSetLfsPreferenceRequestUseLfsExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this MigrationsSetLfsPreferenceRequestUseLfs value)
         {
             return value switch
@@ -30,21 +36,15 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static MigrationsSetLfsPreferenceRequestUseLfs ToEnum(string value)
         {
             return value switch
             {
                 "opt_in" => MigrationsSetLfsPreferenceRequestUseLfs.OptIn,
                 "opt_out" => MigrationsSetLfsPreferenceRequestUseLfs.OptOut,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static MigrationsSetLfsPreferenceRequestUseLfs ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => MigrationsSetLfsPreferenceRequestUseLfs.OptIn,
-                1 => MigrationsSetLfsPreferenceRequestUseLfs.OptOut,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

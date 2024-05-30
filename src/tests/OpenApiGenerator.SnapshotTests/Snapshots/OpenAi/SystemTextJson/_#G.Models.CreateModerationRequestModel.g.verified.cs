@@ -19,8 +19,14 @@ namespace G
         TextModerationStable,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class CreateModerationRequestModelExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this CreateModerationRequestModel value)
         {
             return value switch
@@ -30,21 +36,15 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static CreateModerationRequestModel ToEnum(string value)
         {
             return value switch
             {
                 "text-moderation-latest" => CreateModerationRequestModel.TextModerationLatest,
                 "text-moderation-stable" => CreateModerationRequestModel.TextModerationStable,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static CreateModerationRequestModel ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => CreateModerationRequestModel.TextModerationLatest,
-                1 => CreateModerationRequestModel.TextModerationStable,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

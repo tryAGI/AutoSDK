@@ -26,8 +26,14 @@ namespace G
         BLANK,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class RepositoryMergeCommitMessageExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this RepositoryMergeCommitMessage value)
         {
             return value switch
@@ -38,6 +44,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static RepositoryMergeCommitMessage ToEnum(string value)
         {
             return value switch
@@ -45,16 +54,6 @@ namespace G
                 "PR_BODY" => RepositoryMergeCommitMessage.PRBODY,
                 "PR_TITLE" => RepositoryMergeCommitMessage.PRTITLE,
                 "BLANK" => RepositoryMergeCommitMessage.BLANK,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static RepositoryMergeCommitMessage ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => RepositoryMergeCommitMessage.PRBODY,
-                1 => RepositoryMergeCommitMessage.PRTITLE,
-                2 => RepositoryMergeCommitMessage.BLANK,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

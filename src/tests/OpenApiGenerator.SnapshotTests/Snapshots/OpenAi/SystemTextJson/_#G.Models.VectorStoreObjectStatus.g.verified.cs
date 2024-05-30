@@ -23,8 +23,14 @@ namespace G
         Completed,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class VectorStoreObjectStatusExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this VectorStoreObjectStatus value)
         {
             return value switch
@@ -35,6 +41,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static VectorStoreObjectStatus ToEnum(string value)
         {
             return value switch
@@ -42,16 +51,6 @@ namespace G
                 "expired" => VectorStoreObjectStatus.Expired,
                 "in_progress" => VectorStoreObjectStatus.InProgress,
                 "completed" => VectorStoreObjectStatus.Completed,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static VectorStoreObjectStatus ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => VectorStoreObjectStatus.Expired,
-                1 => VectorStoreObjectStatus.InProgress,
-                2 => VectorStoreObjectStatus.Completed,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

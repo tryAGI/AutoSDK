@@ -32,8 +32,14 @@ namespace G
         Staff,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class UserTypeExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this UserType value)
         {
             return value switch
@@ -44,6 +50,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static UserType ToEnum(string value)
         {
             return value switch
@@ -51,16 +60,6 @@ namespace G
                 "admin" => UserType.Admin,
                 "global_mod" => UserType.GlobalMod,
                 "staff" => UserType.Staff,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static UserType ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => UserType.Admin,
-                1 => UserType.GlobalMod,
-                2 => UserType.Staff,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

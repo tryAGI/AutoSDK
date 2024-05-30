@@ -22,8 +22,14 @@ namespace G
         User,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class GetAccountResponseTypeExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this GetAccountResponseType value)
         {
             return value switch
@@ -33,21 +39,15 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static GetAccountResponseType ToEnum(string value)
         {
             return value switch
             {
                 "organization" => GetAccountResponseType.Organization,
                 "user" => GetAccountResponseType.User,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static GetAccountResponseType ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => GetAccountResponseType.Organization,
-                1 => GetAccountResponseType.User,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

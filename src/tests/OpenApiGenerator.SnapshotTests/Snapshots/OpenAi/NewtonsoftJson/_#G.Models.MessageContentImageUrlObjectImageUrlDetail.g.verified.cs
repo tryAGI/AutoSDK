@@ -28,8 +28,14 @@ namespace G
         High,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class MessageContentImageUrlObjectImageUrlDetailExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this MessageContentImageUrlObjectImageUrlDetail value)
         {
             return value switch
@@ -40,6 +46,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static MessageContentImageUrlObjectImageUrlDetail ToEnum(string value)
         {
             return value switch
@@ -47,16 +56,6 @@ namespace G
                 "auto" => MessageContentImageUrlObjectImageUrlDetail.Auto,
                 "low" => MessageContentImageUrlObjectImageUrlDetail.Low,
                 "high" => MessageContentImageUrlObjectImageUrlDetail.High,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static MessageContentImageUrlObjectImageUrlDetail ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => MessageContentImageUrlObjectImageUrlDetail.Auto,
-                1 => MessageContentImageUrlObjectImageUrlDetail.Low,
-                2 => MessageContentImageUrlObjectImageUrlDetail.High,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

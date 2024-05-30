@@ -28,8 +28,14 @@ namespace G
         FineTune,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class CreateFileRequestPurposeExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this CreateFileRequestPurpose value)
         {
             return value switch
@@ -40,6 +46,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static CreateFileRequestPurpose ToEnum(string value)
         {
             return value switch
@@ -47,16 +56,6 @@ namespace G
                 "assistants" => CreateFileRequestPurpose.Assistants,
                 "batch" => CreateFileRequestPurpose.Batch,
                 "fine-tune" => CreateFileRequestPurpose.FineTune,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static CreateFileRequestPurpose ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => CreateFileRequestPurpose.Assistants,
-                1 => CreateFileRequestPurpose.Batch,
-                2 => CreateFileRequestPurpose.FineTune,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

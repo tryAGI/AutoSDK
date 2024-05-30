@@ -47,8 +47,14 @@ namespace G
         Parser,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class RunCreateSchemaRunTypeExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this RunCreateSchemaRunType value)
         {
             return value switch
@@ -63,6 +69,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static RunCreateSchemaRunType ToEnum(string value)
         {
             return value switch
@@ -74,20 +83,6 @@ namespace G
                 "embedding" => RunCreateSchemaRunType.Embedding,
                 "prompt" => RunCreateSchemaRunType.Prompt,
                 "parser" => RunCreateSchemaRunType.Parser,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static RunCreateSchemaRunType ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => RunCreateSchemaRunType.Tool,
-                1 => RunCreateSchemaRunType.Chain,
-                2 => RunCreateSchemaRunType.Llm,
-                3 => RunCreateSchemaRunType.Retriever,
-                4 => RunCreateSchemaRunType.Embedding,
-                5 => RunCreateSchemaRunType.Prompt,
-                6 => RunCreateSchemaRunType.Parser,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

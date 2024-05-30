@@ -52,8 +52,14 @@ namespace G
         Cancelled,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class BatchStatusExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this BatchStatus value)
         {
             return value switch
@@ -69,6 +75,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static BatchStatus ToEnum(string value)
         {
             return value switch
@@ -81,21 +90,6 @@ namespace G
                 "expired" => BatchStatus.Expired,
                 "cancelling" => BatchStatus.Cancelling,
                 "cancelled" => BatchStatus.Cancelled,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static BatchStatus ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => BatchStatus.Validating,
-                1 => BatchStatus.Failed,
-                2 => BatchStatus.InProgress,
-                3 => BatchStatus.Finalizing,
-                4 => BatchStatus.Completed,
-                5 => BatchStatus.Expired,
-                6 => BatchStatus.Cancelling,
-                7 => BatchStatus.Cancelled,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

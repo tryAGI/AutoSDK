@@ -24,8 +24,14 @@ namespace G
         Unverified,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class PageProtectedDomainStateExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this PageProtectedDomainState value)
         {
             return value switch
@@ -36,6 +42,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static PageProtectedDomainState ToEnum(string value)
         {
             return value switch
@@ -43,16 +52,6 @@ namespace G
                 "pending" => PageProtectedDomainState.Pending,
                 "verified" => PageProtectedDomainState.Verified,
                 "unverified" => PageProtectedDomainState.Unverified,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static PageProtectedDomainState ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => PageProtectedDomainState.Pending,
-                1 => PageProtectedDomainState.Verified,
-                2 => PageProtectedDomainState.Unverified,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

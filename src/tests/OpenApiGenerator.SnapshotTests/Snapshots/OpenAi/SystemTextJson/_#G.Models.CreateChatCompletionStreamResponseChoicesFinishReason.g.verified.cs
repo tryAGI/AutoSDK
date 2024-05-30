@@ -34,8 +34,14 @@ namespace G
         FunctionCall,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class CreateChatCompletionStreamResponseChoicesFinishReasonExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this CreateChatCompletionStreamResponseChoicesFinishReason value)
         {
             return value switch
@@ -48,6 +54,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static CreateChatCompletionStreamResponseChoicesFinishReason ToEnum(string value)
         {
             return value switch
@@ -57,18 +66,6 @@ namespace G
                 "tool_calls" => CreateChatCompletionStreamResponseChoicesFinishReason.ToolCalls,
                 "content_filter" => CreateChatCompletionStreamResponseChoicesFinishReason.ContentFilter,
                 "function_call" => CreateChatCompletionStreamResponseChoicesFinishReason.FunctionCall,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static CreateChatCompletionStreamResponseChoicesFinishReason ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => CreateChatCompletionStreamResponseChoicesFinishReason.Stop,
-                1 => CreateChatCompletionStreamResponseChoicesFinishReason.Length,
-                2 => CreateChatCompletionStreamResponseChoicesFinishReason.ToolCalls,
-                3 => CreateChatCompletionStreamResponseChoicesFinishReason.ContentFilter,
-                4 => CreateChatCompletionStreamResponseChoicesFinishReason.FunctionCall,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

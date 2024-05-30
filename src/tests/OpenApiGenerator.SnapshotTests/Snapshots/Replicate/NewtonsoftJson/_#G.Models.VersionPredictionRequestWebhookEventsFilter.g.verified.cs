@@ -32,8 +32,14 @@ namespace G
         Completed,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class VersionPredictionRequestWebhookEventsFilterExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this VersionPredictionRequestWebhookEventsFilter value)
         {
             return value switch
@@ -45,6 +51,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static VersionPredictionRequestWebhookEventsFilter ToEnum(string value)
         {
             return value switch
@@ -53,17 +62,6 @@ namespace G
                 "output" => VersionPredictionRequestWebhookEventsFilter.Output,
                 "logs" => VersionPredictionRequestWebhookEventsFilter.Logs,
                 "completed" => VersionPredictionRequestWebhookEventsFilter.Completed,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static VersionPredictionRequestWebhookEventsFilter ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => VersionPredictionRequestWebhookEventsFilter.Start,
-                1 => VersionPredictionRequestWebhookEventsFilter.Output,
-                2 => VersionPredictionRequestWebhookEventsFilter.Logs,
-                3 => VersionPredictionRequestWebhookEventsFilter.Completed,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

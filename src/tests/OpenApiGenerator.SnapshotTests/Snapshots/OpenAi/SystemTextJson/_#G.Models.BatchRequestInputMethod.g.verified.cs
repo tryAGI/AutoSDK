@@ -15,8 +15,14 @@ namespace G
         POST,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class BatchRequestInputMethodExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this BatchRequestInputMethod value)
         {
             return value switch
@@ -25,19 +31,14 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static BatchRequestInputMethod ToEnum(string value)
         {
             return value switch
             {
                 "POST" => BatchRequestInputMethod.POST,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static BatchRequestInputMethod ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => BatchRequestInputMethod.POST,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

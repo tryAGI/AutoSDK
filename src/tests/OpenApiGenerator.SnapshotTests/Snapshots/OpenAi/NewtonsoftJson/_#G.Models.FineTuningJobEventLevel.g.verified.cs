@@ -27,8 +27,14 @@ namespace G
         Error,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class FineTuningJobEventLevelExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this FineTuningJobEventLevel value)
         {
             return value switch
@@ -39,6 +45,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static FineTuningJobEventLevel ToEnum(string value)
         {
             return value switch
@@ -46,16 +55,6 @@ namespace G
                 "info" => FineTuningJobEventLevel.Info,
                 "warn" => FineTuningJobEventLevel.Warn,
                 "error" => FineTuningJobEventLevel.Error,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static FineTuningJobEventLevel ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => FineTuningJobEventLevel.Info,
-                1 => FineTuningJobEventLevel.Warn,
-                2 => FineTuningJobEventLevel.Error,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

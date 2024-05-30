@@ -67,8 +67,14 @@ namespace G
         Released,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class ExtensionStateExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this ExtensionState value)
         {
             return value switch
@@ -85,6 +91,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static ExtensionState ToEnum(string value)
         {
             return value switch
@@ -98,22 +107,6 @@ namespace G
                 "PendingAction" => ExtensionState.PendingAction,
                 "Rejected" => ExtensionState.Rejected,
                 "Released" => ExtensionState.Released,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static ExtensionState ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => ExtensionState.Approved,
-                1 => ExtensionState.AssetsUploaded,
-                2 => ExtensionState.Deleted,
-                3 => ExtensionState.Deprecated,
-                4 => ExtensionState.InReview,
-                5 => ExtensionState.InTest,
-                6 => ExtensionState.PendingAction,
-                7 => ExtensionState.Rejected,
-                8 => ExtensionState.Released,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

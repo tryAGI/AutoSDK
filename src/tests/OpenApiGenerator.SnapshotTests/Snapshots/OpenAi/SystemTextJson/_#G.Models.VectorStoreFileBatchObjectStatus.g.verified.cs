@@ -27,8 +27,14 @@ namespace G
         Failed,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class VectorStoreFileBatchObjectStatusExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this VectorStoreFileBatchObjectStatus value)
         {
             return value switch
@@ -40,6 +46,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static VectorStoreFileBatchObjectStatus ToEnum(string value)
         {
             return value switch
@@ -48,17 +57,6 @@ namespace G
                 "completed" => VectorStoreFileBatchObjectStatus.Completed,
                 "cancelled" => VectorStoreFileBatchObjectStatus.Cancelled,
                 "failed" => VectorStoreFileBatchObjectStatus.Failed,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static VectorStoreFileBatchObjectStatus ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => VectorStoreFileBatchObjectStatus.InProgress,
-                1 => VectorStoreFileBatchObjectStatus.Completed,
-                2 => VectorStoreFileBatchObjectStatus.Cancelled,
-                3 => VectorStoreFileBatchObjectStatus.Failed,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

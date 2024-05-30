@@ -27,8 +27,14 @@ namespace G
         _3000,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class UserSubscriptionTierExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this UserSubscriptionTier value)
         {
             return value switch
@@ -39,6 +45,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static UserSubscriptionTier ToEnum(string value)
         {
             return value switch
@@ -46,16 +55,6 @@ namespace G
                 "1000" => UserSubscriptionTier._1000,
                 "2000" => UserSubscriptionTier._2000,
                 "3000" => UserSubscriptionTier._3000,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static UserSubscriptionTier ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => UserSubscriptionTier._1000,
-                1 => UserSubscriptionTier._2000,
-                2 => UserSubscriptionTier._3000,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

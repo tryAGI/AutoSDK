@@ -47,8 +47,14 @@ namespace G
         _100000,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class CheermoteTiersIdExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this CheermoteTiersId value)
         {
             return value switch
@@ -63,6 +69,9 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static CheermoteTiersId ToEnum(string value)
         {
             return value switch
@@ -74,20 +83,6 @@ namespace G
                 "5000" => CheermoteTiersId._5000,
                 "10000" => CheermoteTiersId._10000,
                 "100000" => CheermoteTiersId._100000,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static CheermoteTiersId ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => CheermoteTiersId._1,
-                1 => CheermoteTiersId._100,
-                2 => CheermoteTiersId._500,
-                3 => CheermoteTiersId._1000,
-                4 => CheermoteTiersId._5000,
-                5 => CheermoteTiersId._10000,
-                6 => CheermoteTiersId._100000,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }

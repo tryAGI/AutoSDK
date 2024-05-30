@@ -21,8 +21,14 @@ namespace G
         JsonObject,
     }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
     public static class AssistantsApiResponseFormatTypeExtensions
     {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
         public static string ToValueString(this AssistantsApiResponseFormatType value)
         {
             return value switch
@@ -32,21 +38,15 @@ namespace G
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
         public static AssistantsApiResponseFormatType ToEnum(string value)
         {
             return value switch
             {
                 "text" => AssistantsApiResponseFormatType.Text,
                 "json_object" => AssistantsApiResponseFormatType.JsonObject,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        public static AssistantsApiResponseFormatType ToEnum(int value)
-        {
-            return value switch
-            {
-                0 => AssistantsApiResponseFormatType.Text,
-                1 => AssistantsApiResponseFormatType.JsonObject,
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
