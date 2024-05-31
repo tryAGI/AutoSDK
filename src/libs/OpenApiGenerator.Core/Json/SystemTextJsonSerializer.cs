@@ -3,7 +3,7 @@ namespace OpenApiGenerator.Core.Json;
 public class SystemTextJsonSerializer : IJsonSerializer
 {
     public static IJsonSerializer Instance { get; } = new SystemTextJsonSerializer();
-    
+
     public string GeneratePropertyAttribute(string id, bool isRequired)
     {
         return $"[global::System.Text.Json.Serialization.JsonPropertyName(\"{id}\")]";
@@ -28,22 +28,42 @@ public class SystemTextJsonSerializer : IJsonSerializer
         
         return $"[global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.{type}))]";
     }
+
+    private static readonly char[] ContextTypeSeparators = [',', '<', '>'];
     
     private static string GetContextType(string type)
     {
-        type = type.Replace("global::", string.Empty).TrimEnd('?');
-        
-        return type switch
-        {
-            "System.Collections.Generic.IList<string>" => "IListString",
-            "string" => "String",
-            "object" => "Object",
-            _ => type,
-        };
+        return string.Concat(type
+            .Replace("global::", string.Empty)
+            .TrimEnd('?')
+            .Replace("System.Collections.Generic.", string.Empty)
+            .Replace("System.", string.Empty)
+            .Split(ContextTypeSeparators, StringSplitOptions.RemoveEmptyEntries)
+            .Select(x => x.Trim() switch
+            {
+                "bool" => "Boolean",
+                "short" => "Int16",
+                "int" => "Int32",
+                "long" => "Int64",
+                "sbyte" => "SByte",
+                "ushort" => "UInt16",
+                "uint" => "UInt32",
+                "ulong" => "UInt64",
+                "float" => "Single",
+                "double" => "Double",
+                "decimal" => "Decimal",
+                "string" => "String",
+                "char" => "Char",
+                "byte" => "Byte",
+                "object" => "Object",
+                _ => x.Trim(),
+            }));
     }
     
     public string GenerateSerializeCall(string type, string jsonSerializerContext)
     {
+        type = type ?? throw new ArgumentNullException(nameof(type));
+        
         return string.IsNullOrWhiteSpace(jsonSerializerContext)
             ? "global::System.Text.Json.JsonSerializer.Serialize(request)"
             : $"global::System.Text.Json.JsonSerializer.Serialize(request, global::{jsonSerializerContext}.Default.{GetContextType(type)})";
@@ -51,6 +71,8 @@ public class SystemTextJsonSerializer : IJsonSerializer
     
     public string GenerateDeserializeCall(string type, string jsonSerializerContext)
     {
+        type = type ?? throw new ArgumentNullException(nameof(type));
+
         return string.IsNullOrWhiteSpace(jsonSerializerContext)
             ? $"global::System.Text.Json.JsonSerializer.Deserialize<{type}>(content)"
             : $"global::System.Text.Json.JsonSerializer.Deserialize(content, global::{jsonSerializerContext}.Default.{GetContextType(type)})";
