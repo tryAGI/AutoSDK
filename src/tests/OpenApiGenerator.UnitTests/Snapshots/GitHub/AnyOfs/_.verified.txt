@@ -1,0 +1,58 @@
+﻿[
+  {
+    SubType: AnyOf,
+    Count: 2
+  },
+  {
+    SubType: AnyOf,
+    Count: 15
+  },
+  {
+    SubType: AnyOf,
+    Count: 22
+  },
+  {
+    SubType: AnyOf,
+    Count: 5
+  },
+  {
+    SubType: AnyOf,
+    Count: 3
+  },
+  {
+    SubType: OneOf,
+    Count: 2
+  },
+  {
+    SubType: OneOf,
+    Count: 3
+  },
+  {
+    SubType: OneOf,
+    Count: 1
+  },
+  {
+    SubType: OneOf,
+    Count: 20
+  },
+  {
+    SubType: OneOf,
+    Count: 16
+  },
+  {
+    SubType: OneOf,
+    Count: 13
+  },
+  {
+    SubType: OneOf,
+    Count: 4
+  },
+  {
+    SubType: AllOf,
+    Count: 1
+  },
+  {
+    SubType: AllOf,
+    Count: 2
+  }
+]

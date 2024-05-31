@@ -79,8 +79,7 @@ public partial class Tests
                 text: H.Resources.ollamacurated_yaml.AsString())
         ], new Dictionary<string, string>
         {
-            ["build_property.OpenApiGenerator_GenerateSuperTypeForJsonSerializerContext"] = "true",
-            // //["build_property.OpenApiGenerator_JsonSerializerContext"] = "SourceGenerationContext",text",
+            ["build_property.OpenApiGenerator_GenerateJsonSerializerContextTypes"] = "true",
             //["build_property.OpenApiGenerator_GenerateConstructors"] = "true",
             //["build_property.OpenApiGenerator_GenerateMethods"] = "true",
             //["build_property.OpenApiGenerator_IncludeOperationIds"] = "ListModels",

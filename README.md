@@ -64,7 +64,7 @@ Since there are two source generators involved, we will have to create a second 
 <PropertyGroup Label="OpenApiGenerator">
     <OpenApiGenerator_GenerateSdk>false</OpenApiGenerator_GenerateSdk>
     <OpenApiGenerator_GenerateModels>true</OpenApiGenerator_GenerateModels>
-    <OpenApiGenerator_GenerateSuperTypeForJsonSerializerContext>true</OpenApiGenerator_GenerateSuperTypeForJsonSerializerContext>
+    <OpenApiGenerator_GenerateJsonSerializerContextTypes>true</OpenApiGenerator_GenerateJsonSerializerContextTypes>
 </PropertyGroup>
 ```
 - Reference this project in your main project.

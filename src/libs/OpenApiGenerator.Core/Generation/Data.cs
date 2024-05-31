@@ -10,7 +10,7 @@ public static class Data
 {
     #region Methods
 
-    public static (EquatableArray<ModelData> Models, EquatableArray<EndPoint> Methods, EquatableArray<AnyOfData> AnyOfs) Prepare(
+    public static (EquatableArray<ModelData> Models, EquatableArray<EndPoint> Methods, EquatableArray<AnyOfData> AnyOfs, EquatableArray<TypeData> Types) Prepare(
         (string text, Settings settings) tuple,
         CancellationToken cancellationToken = default)
     {
@@ -81,6 +81,8 @@ public static class Data
                 !excludedModels.Contains(schema.Key))
             .Select(schema => ModelData.FromSchema(schema, settings))
             .SelectMany(model => model.WithAdditionalModels())
+            .GroupBy(x => x.ClassName)
+            .Select(x => x.First())
             .ToDictionary(x => x.ClassName, x => x);
 
         var operations = openApiDocument.Paths.SelectMany(path =>
@@ -146,7 +148,8 @@ public static class Data
                 Summary: openApiDocument.Info?.Description?.ClearForXml() ?? string.Empty,
                 RequestType: TypeData.Default,
                 ResponseType: TypeData.Default,
-                AdditionalModels: [])] : [];
+                AdditionalModels: [],
+                AdditionalTypes: [])] : [];
         if (settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors))
         {
             constructors = constructors.Concat(
@@ -167,7 +170,8 @@ public static class Data
                         Summary: x.Description?.ClearForXml() ?? string.Empty,
                         RequestType: TypeData.Default,
                         ResponseType: TypeData.Default,
-                        AdditionalModels: [])))
+                        AdditionalModels: [],
+                        AdditionalTypes: [])))
                 .ToArray();
         }
             
@@ -214,6 +218,18 @@ public static class Data
             ..allOfs,
         ];
 
+        var types =
+            settings.GenerateJsonSerializerContextTypes &&
+            (settings.GenerateSdk || settings.GenerateModels)
+                ? schemas.Values
+                    .SelectMany(model => model.Properties)
+                    .Select(x => x.Type)
+                    .Concat(methods.SelectMany(x => x.AdditionalTypes))
+                    .Where(x => !string.IsNullOrWhiteSpace(x.CSharpType))
+                    .GroupBy(x => x.CSharpTypeWithNullability)
+                    .Select(x => x.First())
+                    .ToImmutableArray()
+                : [];
         var models = settings.GenerateSdk || settings.GenerateModels ? schemas.Values
                 .Select(model => model with
                 {
@@ -233,7 +249,8 @@ public static class Data
                 Methods: settings.GenerateSdk || settings.GenerateMethods
                     ? methods.Select(x => x with{ AdditionalModels = []}).ToImmutableArray()
                     : [],
-                AnyOfs: anyOfDatas.ToImmutableArray());
+                AnyOfs: anyOfDatas.ToImmutableArray(),
+                Types: types);
     }
     
     public static FileWithName GetSourceCode(
@@ -297,20 +314,20 @@ public static class Data
             Text: Sources.GenerateAnyOfJsonConverterFactory(anyOf, cancellationToken: cancellationToken));
     }
     
-    public static FileWithName GetSourceCodeForSuperClass(
-        EquatableArray<ModelData> models,
+    public static FileWithName GetSourceCodeForJsonSerializerContextTypes(
+        EquatableArray<TypeData> types,
         CancellationToken cancellationToken = default)
     {
-        if (models.IsEmpty ||
-            !models[0].GenerateSuperTypeForJsonSerializerContext ||
-            models[0].JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+        if (types.IsEmpty ||
+            !types[0].GenerateJsonSerializerContextTypes ||
+            types[0].JsonSerializerType == JsonSerializerType.NewtonsoftJson)
         {
             return FileWithName.Empty;
         }
         
         return new FileWithName(
-            Name: "OpenApiGeneratorTrimmableSupport.g.cs",
-            Text: Sources.GenerateSuperClass(models, cancellationToken: cancellationToken));
+            Name: "JsonSerializerContextTypes.g.cs",
+            Text: Sources.GenerateJsonSerializerContextTypes(types, cancellationToken: cancellationToken));
     }
     
     public static FileWithName GetSourceCode(

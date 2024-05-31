@@ -1,0 +1,593 @@
+﻿[
+  {
+    CSharpType: string,
+    IsArray: false,
+    IsEnum: false,
+    Properties: null,
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: string,
+    CSharpTypeWithNullability: string?,
+    ConverterType: 
+  },
+  {
+    CSharpType: global::System.Collections.Generic.IList<string?>?,
+    IsArray: true,
+    IsEnum: false,
+    Properties: null,
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
+    CSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
+    ConverterType: 
+  },
+  {
+    CSharpType: global::System.Collections.Generic.IList<int>?,
+    IsArray: true,
+    IsEnum: false,
+    Properties: null,
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<int>,
+    CSharpTypeWithNullability: global::System.Collections.Generic.IList<int>?,
+    ConverterType: 
+  },
+  {
+    CSharpType: RequestOptions?,
+    IsArray: false,
+    IsEnum: false,
+    Properties: [
+      num_keep,
+      seed,
+      num_predict,
+      top_k,
+      top_p,
+      tfs_z,
+      typical_p,
+      repeat_last_n,
+      temperature,
+      repeat_penalty,
+      presence_penalty,
+      frequency_penalty,
+      mirostat,
+      mirostat_tau,
+      mirostat_eta,
+      penalize_newline,
+      stop,
+      numa,
+      num_ctx,
+      num_batch,
+      num_gqa,
+      num_gpu,
+      main_gpu,
+      low_vram,
+      f16_kv,
+      logits_all,
+      vocab_only,
+      use_mmap,
+      use_mlock,
+      embedding_only,
+      rope_frequency_base,
+      rope_frequency_scale,
+      num_thread
+    ],
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: RequestOptions,
+    CSharpTypeWithNullability: RequestOptions?,
+    ConverterType: 
+  },
+  {
+    CSharpType: GenerateCompletionRequestFormat?,
+    IsArray: false,
+    IsEnum: true,
+    Properties: [
+      Json
+    ],
+    EnumValues: [
+      json
+    ],
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: GenerateCompletionRequestFormat,
+    CSharpTypeWithNullability: GenerateCompletionRequestFormat?,
+    ConverterType: GenerateCompletionRequestFormatJsonConverter
+  },
+  {
+    CSharpType: bool,
+    IsArray: false,
+    IsEnum: false,
+    Properties: null,
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: bool,
+    CSharpTypeWithNullability: bool?,
+    ConverterType: 
+  },
+  {
+    CSharpType: int,
+    IsArray: false,
+    IsEnum: false,
+    Properties: null,
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: int,
+    CSharpTypeWithNullability: int?,
+    ConverterType: 
+  },
+  {
+    CSharpType: float,
+    IsArray: false,
+    IsEnum: false,
+    Properties: null,
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: float,
+    CSharpTypeWithNullability: float?,
+    ConverterType: 
+  },
+  {
+    CSharpType: global::System.DateTime,
+    IsArray: false,
+    IsEnum: false,
+    Properties: null,
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: global::System.DateTime,
+    CSharpTypeWithNullability: global::System.DateTime?,
+    ConverterType: 
+  },
+  {
+    CSharpType: global::System.Collections.Generic.IList<Message>,
+    IsArray: true,
+    IsEnum: false,
+    Properties: null,
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Message>,
+    CSharpTypeWithNullability: global::System.Collections.Generic.IList<Message>?,
+    ConverterType: 
+  },
+  {
+    CSharpType: GenerateChatCompletionRequestFormat?,
+    IsArray: false,
+    IsEnum: true,
+    Properties: [
+      Json
+    ],
+    EnumValues: [
+      json
+    ],
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: GenerateChatCompletionRequestFormat,
+    CSharpTypeWithNullability: GenerateChatCompletionRequestFormat?,
+    ConverterType: GenerateChatCompletionRequestFormatJsonConverter
+  },
+  {
+    CSharpType: Message?,
+    IsArray: false,
+    IsEnum: false,
+    Properties: [
+      role,
+      content,
+      images
+    ],
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: Message,
+    CSharpTypeWithNullability: Message?,
+    ConverterType: 
+  },
+  {
+    CSharpType: MessageRole,
+    IsArray: false,
+    IsEnum: true,
+    Properties: [
+      System,
+      User,
+      Assistant
+    ],
+    EnumValues: [
+      system,
+      user,
+      assistant
+    ],
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: MessageRole,
+    CSharpTypeWithNullability: MessageRole?,
+    ConverterType: MessageRoleJsonConverter
+  },
+  {
+    CSharpType: global::System.Collections.Generic.IList<double>?,
+    IsArray: true,
+    IsEnum: false,
+    Properties: null,
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<double>,
+    CSharpTypeWithNullability: global::System.Collections.Generic.IList<double>?,
+    ConverterType: 
+  },
+  {
+    CSharpType: CreateModelResponseStatus?,
+    IsArray: false,
+    IsEnum: true,
+    Properties: [
+      CreatingSystemLayer,
+      ParsingModelfile,
+      Success
+    ],
+    EnumValues: [
+      creating system layer,
+      parsing modelfile,
+      success
+    ],
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: CreateModelResponseStatus,
+    CSharpTypeWithNullability: CreateModelResponseStatus?,
+    ConverterType: CreateModelResponseStatusJsonConverter
+  },
+  {
+    CSharpType: global::System.Collections.Generic.IList<Model>?,
+    IsArray: true,
+    IsEnum: false,
+    Properties: null,
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Model>,
+    CSharpTypeWithNullability: global::System.Collections.Generic.IList<Model>?,
+    ConverterType: 
+  },
+  {
+    CSharpType: PullModelResponseStatus?,
+    IsArray: false,
+    IsEnum: true,
+    Properties: [
+      PullingManifest,
+      DownloadingDigestname,
+      VerifyingSha256Digest,
+      WritingManifest,
+      RemovingAnyUnusedLayers,
+      Success
+    ],
+    EnumValues: [
+      pulling manifest,
+      downloading digestname,
+      verifying sha256 digest,
+      writing manifest,
+      removing any unused layers,
+      success
+    ],
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: PullModelResponseStatus,
+    CSharpTypeWithNullability: PullModelResponseStatus?,
+    ConverterType: PullModelResponseStatusJsonConverter
+  },
+  {
+    CSharpType: PushModelResponseStatus?,
+    IsArray: false,
+    IsEnum: true,
+    Properties: [
+      RetrievingManifest,
+      StartingUpload,
+      PushingManifest,
+      Success
+    ],
+    EnumValues: [
+      retrieving manifest,
+      starting upload,
+      pushing manifest,
+      success
+    ],
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: PushModelResponseStatus,
+    CSharpTypeWithNullability: PushModelResponseStatus?,
+    ConverterType: PushModelResponseStatusJsonConverter
+  },
+  {
+    CSharpType: GenerateCompletionRequest,
+    IsArray: false,
+    IsEnum: false,
+    Properties: [
+      model,
+      prompt,
+      images,
+      system,
+      template,
+      context,
+      options,
+      format,
+      raw,
+      stream,
+      keep_alive
+    ],
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: GenerateCompletionRequest,
+    CSharpTypeWithNullability: GenerateCompletionRequest?,
+    ConverterType: 
+  },
+  {
+    CSharpType: GenerateCompletionResponse,
+    IsArray: false,
+    IsEnum: false,
+    Properties: [
+      model,
+      created_at,
+      response,
+      done,
+      context,
+      total_duration,
+      load_duration,
+      prompt_eval_count,
+      prompt_eval_duration,
+      eval_count,
+      eval_duration
+    ],
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: GenerateCompletionResponse,
+    CSharpTypeWithNullability: GenerateCompletionResponse?,
+    ConverterType: 
+  },
+  {
+    CSharpType: GenerateChatCompletionRequest,
+    IsArray: false,
+    IsEnum: false,
+    Properties: [
+      model,
+      messages,
+      format,
+      options,
+      stream,
+      keep_alive
+    ],
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: GenerateChatCompletionRequest,
+    CSharpTypeWithNullability: GenerateChatCompletionRequest?,
+    ConverterType: 
+  },
+  {
+    CSharpType: GenerateChatCompletionResponse,
+    IsArray: false,
+    IsEnum: false,
+    Properties: [
+      message,
+      model,
+      created_at,
+      done,
+      total_duration,
+      load_duration,
+      prompt_eval_count,
+      prompt_eval_duration,
+      eval_count,
+      eval_duration
+    ],
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: GenerateChatCompletionResponse,
+    CSharpTypeWithNullability: GenerateChatCompletionResponse?,
+    ConverterType: 
+  },
+  {
+    CSharpType: GenerateEmbeddingRequest,
+    IsArray: false,
+    IsEnum: false,
+    Properties: [
+      model,
+      prompt,
+      options
+    ],
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: GenerateEmbeddingRequest,
+    CSharpTypeWithNullability: GenerateEmbeddingRequest?,
+    ConverterType: 
+  },
+  {
+    CSharpType: GenerateEmbeddingResponse,
+    IsArray: false,
+    IsEnum: false,
+    Properties: [
+      embedding
+    ],
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: GenerateEmbeddingResponse,
+    CSharpTypeWithNullability: GenerateEmbeddingResponse?,
+    ConverterType: 
+  },
+  {
+    CSharpType: CreateModelRequest,
+    IsArray: false,
+    IsEnum: false,
+    Properties: [
+      name,
+      modelfile,
+      stream
+    ],
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: CreateModelRequest,
+    CSharpTypeWithNullability: CreateModelRequest?,
+    ConverterType: 
+  },
+  {
+    CSharpType: CreateModelResponse,
+    IsArray: false,
+    IsEnum: false,
+    Properties: [
+      status
+    ],
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: CreateModelResponse,
+    CSharpTypeWithNullability: CreateModelResponse?,
+    ConverterType: 
+  },
+  {
+    CSharpType: ModelsResponse,
+    IsArray: false,
+    IsEnum: false,
+    Properties: [
+      models
+    ],
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: ModelsResponse,
+    CSharpTypeWithNullability: ModelsResponse?,
+    ConverterType: 
+  },
+  {
+    CSharpType: ModelInfoRequest,
+    IsArray: false,
+    IsEnum: false,
+    Properties: [
+      name
+    ],
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: ModelInfoRequest,
+    CSharpTypeWithNullability: ModelInfoRequest?,
+    ConverterType: 
+  },
+  {
+    CSharpType: ModelInfo,
+    IsArray: false,
+    IsEnum: false,
+    Properties: [
+      license,
+      modelfile,
+      parameters,
+      template
+    ],
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: ModelInfo,
+    CSharpTypeWithNullability: ModelInfo?,
+    ConverterType: 
+  },
+  {
+    CSharpType: CopyModelRequest,
+    IsArray: false,
+    IsEnum: false,
+    Properties: [
+      source,
+      destination
+    ],
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: CopyModelRequest,
+    CSharpTypeWithNullability: CopyModelRequest?,
+    ConverterType: 
+  },
+  {
+    CSharpType: DeleteModelRequest,
+    IsArray: false,
+    IsEnum: false,
+    Properties: [
+      name
+    ],
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: DeleteModelRequest,
+    CSharpTypeWithNullability: DeleteModelRequest?,
+    ConverterType: 
+  },
+  {
+    CSharpType: PullModelRequest,
+    IsArray: false,
+    IsEnum: false,
+    Properties: [
+      name,
+      insecure,
+      stream
+    ],
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: PullModelRequest,
+    CSharpTypeWithNullability: PullModelRequest?,
+    ConverterType: 
+  },
+  {
+    CSharpType: PullModelResponse,
+    IsArray: false,
+    IsEnum: false,
+    Properties: [
+      status,
+      digest,
+      total,
+      completed
+    ],
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: PullModelResponse,
+    CSharpTypeWithNullability: PullModelResponse?,
+    ConverterType: 
+  },
+  {
+    CSharpType: PushModelRequest,
+    IsArray: false,
+    IsEnum: false,
+    Properties: [
+      name,
+      insecure,
+      stream
+    ],
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: PushModelRequest,
+    CSharpTypeWithNullability: PushModelRequest?,
+    ConverterType: 
+  },
+  {
+    CSharpType: PushModelResponse,
+    IsArray: false,
+    IsEnum: false,
+    Properties: [
+      status,
+      digest,
+      total
+    ],
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: PushModelResponse,
+    CSharpTypeWithNullability: PushModelResponse?,
+    ConverterType: 
+  }
+]

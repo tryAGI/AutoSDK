@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using Microsoft.OpenApi.Models;
 using OpenApiGenerator.Core.Extensions;
+using OpenApiGenerator.Core.Json;
 
 namespace OpenApiGenerator.Core.Models;
 
@@ -12,7 +13,10 @@ public readonly record struct TypeData(
     int OneOfCount,
     int AllOfCount,
     ImmutableArray<string> Properties,
-    ImmutableArray<string> EnumValues)
+    ImmutableArray<string> EnumValues,
+    string Namespace,
+    JsonSerializerType JsonSerializerType,
+    bool GenerateJsonSerializerContextTypes)
 {
     public static TypeData Default => new(
         CSharpType: string.Empty,
@@ -22,7 +26,10 @@ public readonly record struct TypeData(
         OneOfCount: 0,
         AllOfCount: 0,
         Properties: [],
-        EnumValues: []);
+        EnumValues: [],
+        Namespace: string.Empty,
+        JsonSerializerType: JsonSerializerType.SystemTextJson,
+        GenerateJsonSerializerContextTypes: false);
     
     public string CSharpTypeWithoutNullability => CSharpType.TrimEnd('?');
     public string CSharpTypeWithNullability => CSharpTypeWithoutNullability + "?";
@@ -45,7 +52,7 @@ public readonly record struct TypeData(
         parents = parents ?? throw new ArgumentNullException(nameof(parents));
 
         var properties = ImmutableArray<string>.Empty;
-        if (schema.Value.Reference?.HostDocument.ResolveReference(schema.Value.Reference) is OpenApiSchema referenceSchema)
+        if (schema.Value.Reference?.HostDocument?.ResolveReference(schema.Value.Reference) is OpenApiSchema referenceSchema)
         {
             properties = referenceSchema.Properties
                 .Select(x => x.Key)
@@ -73,7 +80,10 @@ public readonly record struct TypeData(
             OneOfCount: schema.Value.OneOf?.Count ?? 0,
             AllOfCount: schema.Value.AllOf?.Count ?? 0,
             Properties: properties,
-            EnumValues: enumValues);
+            EnumValues: enumValues,
+            Namespace: settings.Namespace,
+            JsonSerializerType: settings.JsonSerializerType,
+            GenerateJsonSerializerContextTypes: settings.GenerateJsonSerializerContextTypes);
     }
     
     public static string GetCSharpType(

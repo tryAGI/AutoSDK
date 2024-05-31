@@ -51,7 +51,7 @@
     <!-- Full name with namespace of JsonSerializerContext to enable trimming support for System.Text.Json. Default: Empty -->
     <CompilerVisibleProperty Include="OpenApiGenerator_JsonSerializerContext"/>
     <!-- Allow you to specify only one type for JsonSerializerContext to enable trimming support for System.Text.Json. true/false. Default: false -->
-    <CompilerVisibleProperty Include="OpenApiGenerator_GenerateSuperTypeForJsonSerializerContext"/>
+    <CompilerVisibleProperty Include="OpenApiGenerator_GenerateJsonSerializerContextTypes"/>
 
     <!-- Models generation -->
     <!-- true/false. Default: false -->

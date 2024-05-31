@@ -1,0 +1,14 @@
+﻿[
+  {
+    SubType: AnyOf,
+    Count: 3
+  },
+  {
+    SubType: AnyOf,
+    Count: 2
+  },
+  {
+    SubType: AnyOf,
+    Count: 4
+  }
+]

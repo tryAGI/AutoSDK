@@ -13,7 +13,7 @@
     <OpenApiGenerator_GenerateModels>true</OpenApiGenerator_GenerateModels>
     <OpenApiGenerator_GenerateMethods>true</OpenApiGenerator_GenerateMethods>
     <OpenApiGenerator_GenerateConstructors>true</OpenApiGenerator_GenerateConstructors>
-    <OpenApiGenerator_GenerateSuperTypeForJsonSerializerContext>true</OpenApiGenerator_GenerateSuperTypeForJsonSerializerContext>
+    <OpenApiGenerator_GenerateJsonSerializerContextTypes>true</OpenApiGenerator_GenerateJsonSerializerContextTypes>
   </PropertyGroup>
 
   <ItemGroup>

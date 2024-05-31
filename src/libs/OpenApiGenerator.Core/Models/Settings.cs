@@ -24,7 +24,7 @@ public readonly record struct Settings(
     ImmutableArray<string> IncludeTags,
     ImmutableArray<string> ExcludeTags,
     string JsonSerializerContext,
-    bool GenerateSuperTypeForJsonSerializerContext,
+    bool GenerateJsonSerializerContextTypes,
     
     bool GenerateModels,
     ModelStyle ModelStyle,

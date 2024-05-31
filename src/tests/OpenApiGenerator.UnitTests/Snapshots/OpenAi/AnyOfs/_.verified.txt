@@ -1,0 +1,42 @@
+﻿[
+  {
+    SubType: AnyOf,
+    Count: 2
+  },
+  {
+    SubType: AnyOf,
+    Count: 1
+  },
+  {
+    SubType: OneOf,
+    Count: 4
+  },
+  {
+    SubType: OneOf,
+    Count: 2
+  },
+  {
+    SubType: OneOf,
+    Count: 5
+  },
+  {
+    SubType: OneOf,
+    Count: 1
+  },
+  {
+    SubType: OneOf,
+    Count: 6
+  },
+  {
+    SubType: OneOf,
+    Count: 9
+  },
+  {
+    SubType: OneOf,
+    Count: 7
+  },
+  {
+    SubType: OneOf,
+    Count: 3
+  }
+]

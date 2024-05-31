@@ -19,30 +19,6 @@ namespace {modelData.Namespace}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
     
-    public static string GenerateSuperClass(
-        EquatableArray<ModelData> models,
-        CancellationToken cancellationToken = default)
-    {
-        if (models.IsEmpty)
-        {
-            return string.Empty;
-        }
-        
-        return $@"
-#nullable enable
-
-namespace {models[0].Namespace}
-{{
-    {string.Empty.ToXmlDocumentationSummary(level: 4)}
-    public sealed partial class OpenApiGeneratorTrimmableSupport
-    {{
-{models.Select(model => @$"
-        {string.Empty.ToXmlDocumentationSummary(level: 8)}
-        public {model.ClassName}? {model.ClassName} {{ get; set; }}").Inject()}
-    }}
-}}".RemoveBlankLinesWhereOnlyWhitespaces();
-    }
-    
     private static string GenerateModel(
         ModelData modelData,
         int level,

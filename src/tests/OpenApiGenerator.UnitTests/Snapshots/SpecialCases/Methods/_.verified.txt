@@ -1,0 +1,314 @@
+﻿[
+  {
+    Id: ListPets,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Stream: false,
+    Path: $"/pets?limit={limit}",
+    AuthorizationScheme: ,
+    Properties: [
+      {
+        Id: limit,
+        Name: Limit,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        ParameterLocation: Query,
+        ParameterStyle: Form,
+        ParameterExplode: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: limit,
+        ArgumentName: limit,
+        ParameterDefaultValue: default
+      }
+    ],
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    Summary: List all pets,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      Namespace: ,
+      GenerateJsonSerializerContextTypes: false,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
+    ResponseType: {
+      CSharpType: global::System.Collections.Generic.IList<Pet>,
+      IsArray: true,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      Namespace: G,
+      GenerateJsonSerializerContextTypes: false,
+      CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Pet>,
+      CSharpTypeWithNullability: global::System.Collections.Generic.IList<Pet>?,
+      ConverterType: 
+    },
+    AdditionalModels: null,
+    AdditionalTypes: [
+      {
+        CSharpType: global::System.Collections.Generic.IList<Pet>,
+        IsArray: true,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Pet>,
+        CSharpTypeWithNullability: global::System.Collections.Generic.IList<Pet>?,
+        ConverterType: 
+      },
+      {
+        CSharpType: Error,
+        IsArray: false,
+        IsEnum: false,
+        Properties: [
+          code,
+          message
+        ],
+        EnumValues: null,
+        Namespace: G,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: Error,
+        CSharpTypeWithNullability: Error?,
+        ConverterType: 
+      }
+    ],
+    MethodName: ListPetsAsync,
+    NotAsyncMethodName: ListPets,
+    FileNameWithoutExtension: G.Api.ListPets
+  },
+  {
+    Id: CreatePets,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Stream: false,
+    Path: "/pets",
+    AuthorizationScheme: ,
+    Properties: null,
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    HttpMethod: Post,
+    Summary: Create a pet,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      Namespace: ,
+      GenerateJsonSerializerContextTypes: false,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
+    ResponseType: {
+      CSharpType: Error,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        code,
+        message
+      ],
+      EnumValues: null,
+      Namespace: G,
+      GenerateJsonSerializerContextTypes: false,
+      CSharpTypeWithoutNullability: Error,
+      CSharpTypeWithNullability: Error?,
+      ConverterType: 
+    },
+    AdditionalModels: null,
+    AdditionalTypes: [
+      {
+        CSharpType: Error,
+        IsArray: false,
+        IsEnum: false,
+        Properties: [
+          code,
+          message
+        ],
+        EnumValues: null,
+        Namespace: G,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: Error,
+        CSharpTypeWithNullability: Error?,
+        ConverterType: 
+      }
+    ],
+    MethodName: CreatePetsAsync,
+    NotAsyncMethodName: CreatePets,
+    FileNameWithoutExtension: G.Api.CreatePets
+  },
+  {
+    Id: ShowPetById,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: ,
+    Stream: false,
+    Path: $"/pets/{petId}",
+    AuthorizationScheme: ,
+    Properties: [
+      {
+        Id: petId,
+        Name: PetId,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: true,
+        ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: petId,
+        ArgumentName: petId,
+        ParameterDefaultValue: default
+      }
+    ],
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    Summary: Info for a specific pet,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      Namespace: ,
+      GenerateJsonSerializerContextTypes: false,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
+    ResponseType: {
+      CSharpType: Pet,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        4,
+        1.5,
+        16:9,
+        id,
+        name,
+        tag
+      ],
+      EnumValues: null,
+      Namespace: G,
+      GenerateJsonSerializerContextTypes: false,
+      CSharpTypeWithoutNullability: Pet,
+      CSharpTypeWithNullability: Pet?,
+      ConverterType: 
+    },
+    AdditionalModels: null,
+    AdditionalTypes: [
+      {
+        CSharpType: Pet,
+        IsArray: false,
+        IsEnum: false,
+        Properties: [
+          4,
+          1.5,
+          16:9,
+          id,
+          name,
+          tag
+        ],
+        EnumValues: null,
+        Namespace: G,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: Pet,
+        CSharpTypeWithNullability: Pet?,
+        ConverterType: 
+      },
+      {
+        CSharpType: Error,
+        IsArray: false,
+        IsEnum: false,
+        Properties: [
+          code,
+          message
+        ],
+        EnumValues: null,
+        Namespace: G,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: Error,
+        CSharpTypeWithNullability: Error?,
+        ConverterType: 
+      }
+    ],
+    MethodName: ShowPetByIdAsync,
+    NotAsyncMethodName: ShowPetById,
+    FileNameWithoutExtension: G.Api.ShowPetById
+  },
+  {
+    Id: Constructors,
+    Namespace: G,
+    ClassName: Api,
+    BaseUrl: http://petstore.swagger.io/v1,
+    Stream: false,
+    Path: ,
+    AuthorizationScheme: ,
+    Properties: null,
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    Summary: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      Namespace: ,
+      GenerateJsonSerializerContextTypes: false,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      Namespace: ,
+      GenerateJsonSerializerContextTypes: false,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
+    AdditionalModels: null,
+    AdditionalTypes: null,
+    MethodName: ConstructorsAsync,
+    NotAsyncMethodName: Constructors,
+    FileNameWithoutExtension: G.Api
+  }
+]

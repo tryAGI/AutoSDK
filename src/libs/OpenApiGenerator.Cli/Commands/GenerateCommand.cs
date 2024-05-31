@@ -84,7 +84,7 @@ public class GenerateCommand : Command
             IncludeTags: [],
             ExcludeTags: [],
             JsonSerializerContext: string.Empty,
-            GenerateSuperTypeForJsonSerializerContext: false,
+            GenerateJsonSerializerContextTypes: false,
             GenerateModels: false,
             ModelStyle: default,
             IncludeModels: [],
@@ -92,7 +92,7 @@ public class GenerateCommand : Command
             GenerateSdk: true
         );
 
-        var (models, methods, _) = Data.Prepare((yaml, settings));
+        var (models, methods, _, _) = Data.Prepare((yaml, settings));
         var files = models
             .Select(x => Data.GetSourceCode(x)).Concat(methods
                 .Select(x => Data.GetSourceCode(x)))

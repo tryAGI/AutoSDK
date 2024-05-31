@@ -1,5 +1,4 @@
-﻿using System.Collections.Immutable;
-using H.Generators.Extensions;
+﻿using H.Generators.Extensions;
 using Microsoft.CodeAnalysis;
 using OpenApiGenerator.Core.Generation;
 using OpenApiGenerator.Core.Models;
@@ -39,8 +38,8 @@ public class SdkGenerator : IIncrementalGenerator
             .SelectAndReportExceptions(GetModelSourceCode, context, Id)
             .AddSource(context);
         data
-            .Select(static (x, _) => x.Models)
-            .SelectAndReportExceptions(GetSuperTypeSourceCode, context, Id)
+            .Select(static (x, _) => x.Types)
+            .SelectAndReportExceptions(GetSourceCodeForJsonSerializerContextTypes, context, Id)
             .AddSource(context);
         data
             .SelectMany(static (x, _) => x.Models)
@@ -134,16 +133,16 @@ public class SdkGenerator : IIncrementalGenerator
             Text: fileWithName.Text);
     }
     
-    private static FileWithName GetSuperTypeSourceCode(
-        Core.Models.EquatableArray<ModelData> models,
+    private static FileWithName GetSourceCodeForJsonSerializerContextTypes(
+        Core.Models.EquatableArray<TypeData> types,
         CancellationToken cancellationToken = default)
     {
-        if (models.IsEmpty)
+        if (types.IsEmpty)
         {
             return FileWithName.Empty;
         }
         
-        var fileWithName = Data.GetSourceCodeForSuperClass(models, cancellationToken);
+        var fileWithName = Data.GetSourceCodeForJsonSerializerContextTypes(types, cancellationToken);
         
         return new FileWithName(
             Name: fileWithName.Name,
