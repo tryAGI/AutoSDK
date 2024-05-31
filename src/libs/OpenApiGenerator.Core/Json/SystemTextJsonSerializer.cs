@@ -29,10 +29,12 @@ public class SystemTextJsonSerializer : IJsonSerializer
         return $"[global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.{type}))]";
     }
 
-    private static readonly char[] ContextTypeSeparators = [',', '<', '>'];
+    private static readonly char[] ContextTypeSeparators = [',', '<', '>', '['];
     
-    private static string GetContextType(string type)
+    public static string GetContextType(string type)
     {
+        type = type ?? throw new ArgumentNullException(nameof(type));
+        
         return string.Concat(type
             .Replace("global::", string.Empty)
             .TrimEnd('?')
@@ -41,6 +43,7 @@ public class SystemTextJsonSerializer : IJsonSerializer
             .Split(ContextTypeSeparators, StringSplitOptions.RemoveEmptyEntries)
             .Select(x => x.Trim() switch
             {
+                "]" => "Array",
                 "bool" => "Boolean",
                 "short" => "Int16",
                 "int" => "Int32",
