@@ -1,4 +1,4 @@
-﻿//HintName: G.ModelsClient.DeleteModel.g.cs
+﻿//HintName: G.ModelsClient.CreateBlob.g.cs
 
 #nullable enable
 
@@ -7,22 +7,24 @@ namespace G
     public partial class ModelsClient
     {
         /// <summary>
-        /// Delete a model and its data.
+        /// Create a blob from a file. Returns the server file path.
         /// </summary>
+        /// <param name="digest"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task DeleteModelAsync(
-            DeleteModelRequest request,
+        public async global::System.Threading.Tasks.Task CreateBlobAsync(
+            string digest,
+            byte[] request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Delete,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + "/delete", global::System.UriKind.RelativeOrAbsolute));
+                method: global::System.Net.Http.HttpMethod.Post,
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/blobs/{digest}", global::System.UriKind.RelativeOrAbsolute));
             httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: global::System.Text.Json.JsonSerializer.Serialize(request),
+                content: global::Newtonsoft.Json.JsonConvert.SerializeObject(request),
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
 
@@ -34,21 +36,21 @@ namespace G
         }
 
         /// <summary>
-        /// Delete a model and its data.
+        /// Create a blob from a file. Returns the server file path.
         /// </summary>
-        /// <param name="model"></param>
+        /// <param name="digest"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task DeleteModelAsync(
-            string model,
+        public async global::System.Threading.Tasks.Task CreateBlobAsync(
+            string digest,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new DeleteModelRequest
+            var request = new byte[]
             {
-                Model = model,
             };
 
-            await DeleteModelAsync(
+            await CreateBlobAsync(
+                digest: digest,
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

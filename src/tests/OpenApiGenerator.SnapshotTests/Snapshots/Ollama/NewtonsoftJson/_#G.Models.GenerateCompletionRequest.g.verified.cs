@@ -46,7 +46,7 @@ namespace G
         /// The context parameter returned from a previous request to [generateCompletion], this can be used to keep a short conversational memory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("context")]
-        public global::System.Collections.Generic.IList<int>? Context { get; set; }
+        public global::System.Collections.Generic.IList<long>? Context { get; set; }
 
         /// <summary>
         /// Additional model parameters listed in the documentation for the Modelfile such as `temperature`.
@@ -84,7 +84,7 @@ namespace G
         /// - If not set, the model will stay loaded for 5 minutes by default
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("keep_alive")]
-        public int KeepAlive { get; set; }
+        public int? KeepAlive { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

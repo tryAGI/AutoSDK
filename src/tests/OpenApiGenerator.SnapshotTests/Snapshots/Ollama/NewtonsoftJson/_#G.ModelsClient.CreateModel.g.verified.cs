@@ -48,21 +48,27 @@ namespace G
         /// <summary>
         /// Create a model from a Modelfile.
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="model"></param>
         /// <param name="modelfile"></param>
+        /// <param name="path"></param>
+        /// <param name="quantize"></param>
         /// <param name="stream"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Collections.Generic.IAsyncEnumerable<CreateModelResponse> CreateModelAsync(
-            string name,
+            string model,
             string modelfile,
+            string? path = default,
+            string? quantize = default,
             bool stream = true,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateModelRequest
             {
-                Name = name,
+                Model = model,
                 Modelfile = modelfile,
+                Path = path,
+                Quantize = quantize,
                 Stream = stream,
             };
 

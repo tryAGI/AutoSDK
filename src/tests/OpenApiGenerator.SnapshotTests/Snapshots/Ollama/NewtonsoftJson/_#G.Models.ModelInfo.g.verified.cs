@@ -38,6 +38,24 @@ namespace G
         public string? Template { get; set; }
 
         /// <summary>
+        /// The system prompt for the model.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("system")]
+        public string? System { get; set; }
+
+        /// <summary>
+        /// Details about a model.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("details")]
+        public ModelDetails? Details { get; set; }
+
+        /// <summary>
+        /// The default messages for the model.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("messages")]
+        public global::System.Collections.Generic.IList<Message>? Messages { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]

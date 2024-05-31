@@ -14,8 +14,8 @@ namespace G
         /// Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
         /// <br/>Example: llama2:7b
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Name { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Model { get; set; } = default!;
 
         /// <summary>
         /// Allow insecure connections to the library. 
@@ -24,6 +24,18 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("insecure")]
         public bool Insecure { get; set; } = false;
+
+        /// <summary>
+        /// Ollama username.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("username")]
+        public string? Username { get; set; }
+
+        /// <summary>
+        /// Ollama password.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("password")]
+        public string? Password { get; set; }
 
         /// <summary>
         /// If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.

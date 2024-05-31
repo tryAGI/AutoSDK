@@ -13,7 +13,7 @@ namespace G
         /// Status creating the model
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        public CreateModelResponseStatus? Status { get; set; }
+        public CreateModelStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

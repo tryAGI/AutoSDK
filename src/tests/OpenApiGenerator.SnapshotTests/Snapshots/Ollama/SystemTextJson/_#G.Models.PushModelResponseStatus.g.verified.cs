@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Status pushing the model.
+    /// 
     /// </summary>
     public enum PushModelResponseStatus
     {

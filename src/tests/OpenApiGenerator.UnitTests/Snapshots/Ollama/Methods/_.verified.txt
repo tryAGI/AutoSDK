@@ -134,15 +134,15 @@ The prompt to generate a response.
         Id: context,
         Name: Context,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<int>?,
+          CSharpType: global::System.Collections.Generic.IList<long>?,
           IsArray: true,
           IsEnum: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<int>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<int>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<long>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<long>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -190,9 +190,6 @@ The prompt to generate a response.
             vocab_only,
             use_mmap,
             use_mlock,
-            embedding_only,
-            rope_frequency_base,
-            rope_frequency_scale,
             num_thread
           ],
           EnumValues: null,
@@ -286,22 +283,22 @@ You may choose to use the `raw` parameter if you are specifying a full templated
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: false,
+        DefaultValue: true,
         IsDeprecated: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
 
-<br/>Default Value: false,
+<br/>Default Value: true,
         ConverterType: ,
         ParameterName: stream,
         ArgumentName: stream,
-        ParameterDefaultValue: false
+        ParameterDefaultValue: true
       },
       {
         Id: keep_alive,
         Name: KeepAlive,
         Type: {
-          CSharpType: int,
+          CSharpType: int?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -565,9 +562,6 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
             vocab_only,
             use_mmap,
             use_mlock,
-            embedding_only,
-            rope_frequency_base,
-            rope_frequency_scale,
             num_thread
           ],
           EnumValues: null,
@@ -601,22 +595,22 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: false,
+        DefaultValue: true,
         IsDeprecated: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
 
-<br/>Default Value: false,
+<br/>Default Value: true,
         ConverterType: ,
         ParameterName: stream,
         ArgumentName: stream,
-        ParameterDefaultValue: false
+        ParameterDefaultValue: true
       },
       {
         Id: keep_alive,
         Name: KeepAlive,
         Type: {
-          CSharpType: int,
+          CSharpType: int?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -675,6 +669,7 @@ How long (in minutes) to keep the model loaded in memory.
         model,
         created_at,
         done,
+        done_reason,
         total_duration,
         load_duration,
         prompt_eval_count,
@@ -719,6 +714,7 @@ How long (in minutes) to keep the model loaded in memory.
           model,
           created_at,
           done,
+          done_reason,
           total_duration,
           load_duration,
           prompt_eval_count,
@@ -837,9 +833,6 @@ Text to generate embeddings for.
             vocab_only,
             use_mmap,
             use_mlock,
-            embedding_only,
-            rope_frequency_base,
-            rope_frequency_scale,
             num_thread
           ],
           EnumValues: null,
@@ -856,6 +849,36 @@ Text to generate embeddings for.
         ParameterName: options,
         ArgumentName: options,
         ParameterDefaultValue: default
+      },
+      {
+        Id: keep_alive,
+        Name: KeepAlive,
+        Type: {
+          CSharpType: int?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary:
+How long (in minutes) to keep the model loaded in memory.
+
+- If set to a positive duration (e.g. 20), the model will stay loaded for the provided duration.
+- If set to a negative duration (e.g. -1), the model will stay loaded indefinitely.
+- If set to 0, the model will be unloaded immediately once finished.
+- If not set, the model will stay loaded for 5 minutes by default
+,
+        ConverterType: ,
+        ParameterName: keepAlive,
+        ArgumentName: keepAlive,
+        ParameterDefaultValue: default
       }
     ],
     TargetFramework: netstandard2.0,
@@ -869,7 +892,8 @@ Text to generate embeddings for.
       Properties: [
         model,
         prompt,
-        options
+        options,
+        keep_alive
       ],
       EnumValues: null,
       Namespace: G,
@@ -901,7 +925,8 @@ Text to generate embeddings for.
         Properties: [
           model,
           prompt,
-          options
+          options,
+          keep_alive
         ],
         EnumValues: null,
         Namespace: G,
@@ -939,8 +964,8 @@ Text to generate embeddings for.
     AuthorizationScheme: ,
     Properties: [
       {
-        Id: name,
-        Name: Name,
+        Id: model,
+        Name: Model,
         Type: {
           CSharpType: string,
           IsArray: false,
@@ -962,8 +987,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 
 <br/>Example: mario,
         ConverterType: ,
-        ParameterName: name,
-        ArgumentName: name,
+        ParameterName: model,
+        ArgumentName: model,
         ParameterDefaultValue: default
       },
       {
@@ -992,6 +1017,52 @@ The contents of the Modelfile.
         ParameterDefaultValue: default
       },
       {
+        Id: path,
+        Name: Path,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: Path to the Modelfile (optional),
+        ConverterType: ,
+        ParameterName: path,
+        ArgumentName: path,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: quantize,
+        Name: Quantize,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The quantization level of the model.,
+        ConverterType: ,
+        ParameterName: quantize,
+        ArgumentName: quantize,
+        ParameterDefaultValue: default
+      },
+      {
         Id: stream,
         Name: Stream,
         Type: {
@@ -1007,16 +1078,16 @@ The contents of the Modelfile.
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: false,
+        DefaultValue: true,
         IsDeprecated: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
 
-<br/>Default Value: false,
+<br/>Default Value: true,
         ConverterType: ,
         ParameterName: stream,
         ArgumentName: stream,
-        ParameterDefaultValue: false
+        ParameterDefaultValue: true
       }
     ],
     TargetFramework: netstandard2.0,
@@ -1028,8 +1099,10 @@ If `false` the response will be returned as a single response object, otherwise 
       IsArray: false,
       IsEnum: false,
       Properties: [
-        name,
+        model,
         modelfile,
+        path,
+        quantize,
         stream
       ],
       EnumValues: null,
@@ -1060,8 +1133,10 @@ If `false` the response will be returned as a single response object, otherwise 
         IsArray: false,
         IsEnum: false,
         Properties: [
-          name,
+          model,
           modelfile,
+          path,
+          quantize,
           stream
         ],
         EnumValues: null,
@@ -1159,8 +1234,8 @@ If `false` the response will be returned as a single response object, otherwise 
     AuthorizationScheme: ,
     Properties: [
       {
-        Id: name,
-        Name: Name,
+        Id: model,
+        Name: Model,
         Type: {
           CSharpType: string,
           IsArray: false,
@@ -1182,8 +1257,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 
 <br/>Example: llama2:7b,
         ConverterType: ,
-        ParameterName: name,
-        ArgumentName: name,
+        ParameterName: model,
+        ArgumentName: model,
         ParameterDefaultValue: default
       }
     ],
@@ -1196,7 +1271,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
       IsArray: false,
       IsEnum: false,
       Properties: [
-        name
+        model
       ],
       EnumValues: null,
       Namespace: G,
@@ -1213,7 +1288,10 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         license,
         modelfile,
         parameters,
-        template
+        template,
+        system,
+        details,
+        messages
       ],
       EnumValues: null,
       Namespace: G,
@@ -1229,7 +1307,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         IsArray: false,
         IsEnum: false,
         Properties: [
-          name
+          model
         ],
         EnumValues: null,
         Namespace: G,
@@ -1246,7 +1324,10 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           license,
           modelfile,
           parameters,
-          template
+          template,
+          system,
+          details,
+          messages
         ],
         EnumValues: null,
         Namespace: G,
@@ -1383,8 +1464,8 @@ Name of the new model.
     AuthorizationScheme: ,
     Properties: [
       {
-        Id: name,
-        Name: Name,
+        Id: model,
+        Name: Model,
         Type: {
           CSharpType: string,
           IsArray: false,
@@ -1406,8 +1487,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 
 <br/>Example: llama2:13b,
         ConverterType: ,
-        ParameterName: name,
-        ArgumentName: name,
+        ParameterName: model,
+        ArgumentName: model,
         ParameterDefaultValue: default
       }
     ],
@@ -1420,7 +1501,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
       IsArray: false,
       IsEnum: false,
       Properties: [
-        name
+        model
       ],
       EnumValues: null,
       Namespace: G,
@@ -1448,7 +1529,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         IsArray: false,
         IsEnum: false,
         Properties: [
-          name
+          model
         ],
         EnumValues: null,
         Namespace: G,
@@ -1467,13 +1548,13 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     Namespace: G,
     ClassName: ModelsClient,
     BaseUrl: ,
-    Stream: false,
+    Stream: true,
     Path: "/pull",
     AuthorizationScheme: ,
     Properties: [
       {
-        Id: name,
-        Name: Name,
+        Id: model,
+        Name: Model,
         Type: {
           CSharpType: string,
           IsArray: false,
@@ -1495,8 +1576,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 
 <br/>Example: llama2:7b,
         ConverterType: ,
-        ParameterName: name,
-        ArgumentName: name,
+        ParameterName: model,
+        ArgumentName: model,
         ParameterDefaultValue: default
       },
       {
@@ -1529,6 +1610,52 @@ Only use this if you are pulling from your own library during development.
         ParameterDefaultValue: false
       },
       {
+        Id: username,
+        Name: Username,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: Ollama username.,
+        ConverterType: ,
+        ParameterName: username,
+        ArgumentName: username,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: password,
+        Name: Password,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: Ollama password.,
+        ConverterType: ,
+        ParameterName: password,
+        ArgumentName: password,
+        ParameterDefaultValue: default
+      },
+      {
         Id: stream,
         Name: Stream,
         Type: {
@@ -1544,16 +1671,16 @@ Only use this if you are pulling from your own library during development.
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: false,
+        DefaultValue: true,
         IsDeprecated: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
 
-<br/>Default Value: false,
+<br/>Default Value: true,
         ConverterType: ,
         ParameterName: stream,
         ArgumentName: stream,
-        ParameterDefaultValue: false
+        ParameterDefaultValue: true
       }
     ],
     TargetFramework: netstandard2.0,
@@ -1565,8 +1692,10 @@ If `false` the response will be returned as a single response object, otherwise 
       IsArray: false,
       IsEnum: false,
       Properties: [
-        name,
+        model,
         insecure,
+        username,
+        password,
         stream
       ],
       EnumValues: null,
@@ -1600,8 +1729,10 @@ If `false` the response will be returned as a single response object, otherwise 
         IsArray: false,
         IsEnum: false,
         Properties: [
-          name,
+          model,
           insecure,
+          username,
+          password,
           stream
         ],
         EnumValues: null,
@@ -1638,13 +1769,13 @@ If `false` the response will be returned as a single response object, otherwise 
     Namespace: G,
     ClassName: ModelsClient,
     BaseUrl: ,
-    Stream: false,
+    Stream: true,
     Path: "/push",
     AuthorizationScheme: ,
     Properties: [
       {
-        Id: name,
-        Name: Name,
+        Id: model,
+        Name: Model,
         Type: {
           CSharpType: string,
           IsArray: false,
@@ -1663,8 +1794,8 @@ If `false` the response will be returned as a single response object, otherwise 
 The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt;tag&gt;.
 <br/>Example: mattw/pygmalion:latest,
         ConverterType: ,
-        ParameterName: name,
-        ArgumentName: name,
+        ParameterName: model,
+        ArgumentName: model,
         ParameterDefaultValue: default
       },
       {
@@ -1697,6 +1828,52 @@ Only use this if you are pushing to your library during development.
         ParameterDefaultValue: false
       },
       {
+        Id: username,
+        Name: Username,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: Ollama username.,
+        ConverterType: ,
+        ParameterName: username,
+        ArgumentName: username,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: password,
+        Name: Password,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: Ollama password.,
+        ConverterType: ,
+        ParameterName: password,
+        ArgumentName: password,
+        ParameterDefaultValue: default
+      },
+      {
         Id: stream,
         Name: Stream,
         Type: {
@@ -1712,16 +1889,16 @@ Only use this if you are pushing to your library during development.
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: false,
+        DefaultValue: true,
         IsDeprecated: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
 
-<br/>Default Value: false,
+<br/>Default Value: true,
         ConverterType: ,
         ParameterName: stream,
         ArgumentName: stream,
-        ParameterDefaultValue: false
+        ParameterDefaultValue: true
       }
     ],
     TargetFramework: netstandard2.0,
@@ -1733,8 +1910,10 @@ If `false` the response will be returned as a single response object, otherwise 
       IsArray: false,
       IsEnum: false,
       Properties: [
-        name,
+        model,
         insecure,
+        username,
+        password,
         stream
       ],
       EnumValues: null,
@@ -1751,7 +1930,8 @@ If `false` the response will be returned as a single response object, otherwise 
       Properties: [
         status,
         digest,
-        total
+        total,
+        completed
       ],
       EnumValues: null,
       Namespace: G,
@@ -1767,8 +1947,10 @@ If `false` the response will be returned as a single response object, otherwise 
         IsArray: false,
         IsEnum: false,
         Properties: [
-          name,
+          model,
           insecure,
+          username,
+          password,
           stream
         ],
         EnumValues: null,
@@ -1785,7 +1967,8 @@ If `false` the response will be returned as a single response object, otherwise 
         Properties: [
           status,
           digest,
-          total
+          total,
+          completed
         ],
         EnumValues: null,
         Namespace: G,
@@ -1798,6 +1981,159 @@ If `false` the response will be returned as a single response object, otherwise 
     MethodName: PushModelAsync,
     NotAsyncMethodName: PushModel,
     FileNameWithoutExtension: G.ModelsClient.PushModel
+  },
+  {
+    Id: CheckBlob,
+    Namespace: G,
+    ClassName: ModelsClient,
+    BaseUrl: ,
+    Stream: false,
+    Path: $"/blobs/{digest}",
+    AuthorizationScheme: ,
+    Properties: [
+      {
+        Id: digest,
+        Name: Digest,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: true,
+        ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: digest,
+        ArgumentName: digest,
+        ParameterDefaultValue: default
+      }
+    ],
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    HttpMethod: Head,
+    Summary: Check to see if a blob exists on the Ollama server which is useful when creating models.,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      Namespace: ,
+      GenerateJsonSerializerContextTypes: false,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      Namespace: ,
+      GenerateJsonSerializerContextTypes: false,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
+    AdditionalModels: null,
+    AdditionalTypes: null,
+    MethodName: CheckBlobAsync,
+    NotAsyncMethodName: CheckBlob,
+    FileNameWithoutExtension: G.ModelsClient.CheckBlob
+  },
+  {
+    Id: CreateBlob,
+    Namespace: G,
+    ClassName: ModelsClient,
+    BaseUrl: ,
+    Stream: false,
+    Path: $"/blobs/{digest}",
+    AuthorizationScheme: ,
+    Properties: [
+      {
+        Id: digest,
+        Name: Digest,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: true,
+        ParameterLocation: Path,
+        ParameterStyle: Simple,
+        ParameterExplode: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: digest,
+        ArgumentName: digest,
+        ParameterDefaultValue: default
+      }
+    ],
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    HttpMethod: Post,
+    Summary: Create a blob from a file. Returns the server file path.,
+    RequestType: {
+      CSharpType: byte[],
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      Namespace: G,
+      GenerateJsonSerializerContextTypes: true,
+      CSharpTypeWithoutNullability: byte[],
+      CSharpTypeWithNullability: byte[]?,
+      ConverterType: 
+    },
+    ResponseType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      Namespace: ,
+      GenerateJsonSerializerContextTypes: false,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ConverterType: 
+    },
+    AdditionalModels: null,
+    AdditionalTypes: [
+      {
+        CSharpType: byte[],
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        GenerateJsonSerializerContextTypes: true,
+        CSharpTypeWithoutNullability: byte[],
+        CSharpTypeWithNullability: byte[]?,
+        ConverterType: 
+      }
+    ],
+    MethodName: CreateBlobAsync,
+    NotAsyncMethodName: CreateBlob,
+    FileNameWithoutExtension: G.ModelsClient.CreateBlob
   },
   {
     Id: Constructors,

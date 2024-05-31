@@ -16,8 +16,8 @@ namespace G
         /// <br/>Example: pulling manifest
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PullModelResponseStatusJsonConverter))]
-        public PullModelResponseStatus? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
+        public PullModelStatus? Status { get; set; }
 
         /// <summary>
         /// The model's digest.
@@ -31,14 +31,14 @@ namespace G
         /// <br/>Example: 2142590208
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total")]
-        public int Total { get; set; }
+        public long Total { get; set; }
 
         /// <summary>
         /// Total bytes transferred.
         /// <br/>Example: 2142590208
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed")]
-        public int Completed { get; set; }
+        public long Completed { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

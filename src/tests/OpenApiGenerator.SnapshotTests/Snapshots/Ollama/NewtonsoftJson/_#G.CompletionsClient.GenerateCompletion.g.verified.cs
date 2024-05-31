@@ -67,12 +67,12 @@ namespace G
             global::System.Collections.Generic.IList<string?>? images = default,
             string? system = default,
             string? template = default,
-            global::System.Collections.Generic.IList<int>? context = default,
+            global::System.Collections.Generic.IList<long>? context = default,
             RequestOptions? options = default,
             GenerateCompletionRequestFormat? format = default,
             bool raw = default,
             bool stream = true,
-            int keepAlive = default,
+            int? keepAlive = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new GenerateCompletionRequest

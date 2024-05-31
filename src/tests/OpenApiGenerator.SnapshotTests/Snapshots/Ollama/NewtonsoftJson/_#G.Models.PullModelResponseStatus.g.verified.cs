@@ -5,8 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Status pulling the model.
-    /// <br/>Example: pulling manifest
+    /// 
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum PullModelResponseStatus

@@ -31,6 +31,16 @@ namespace G
         public RequestOptions? Options { get; set; }
 
         /// <summary>
+        /// How long (in minutes) to keep the model loaded in memory.
+        /// - If set to a positive duration (e.g. 20), the model will stay loaded for the provided duration.
+        /// - If set to a negative duration (e.g. -1), the model will stay loaded indefinitely.
+        /// - If set to 0, the model will be unloaded immediately once finished.
+        /// - If not set, the model will stay loaded for 5 minutes by default
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("keep_alive")]
+        public int? KeepAlive { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]

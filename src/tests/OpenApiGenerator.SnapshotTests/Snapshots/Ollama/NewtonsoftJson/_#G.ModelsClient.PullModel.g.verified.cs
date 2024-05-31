@@ -12,9 +12,9 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<PullModelResponse> PullModelAsync(
+        public async global::System.Collections.Generic.IAsyncEnumerable<PullModelResponse> PullModelAsync(
             PullModelRequest request,
-            global::System.Threading.CancellationToken cancellationToken = default)
+            [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
@@ -28,41 +28,58 @@ namespace G
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
-                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseHeadersRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
 
-            var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            using var stream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
+            using var reader = new global::System.IO.StreamReader(stream);
 
-            return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<PullModelResponse?>(content) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{content}\" ");
+            while (!reader.EndOfStream && !cancellationToken.IsCancellationRequested)
+            {
+                var content = await reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
+                var streamedResponse = global::Newtonsoft.Json.JsonConvert.DeserializeObject<PullModelResponse>(content) ??
+                                       throw new global::System.InvalidOperationException($"Response deserialization failed for \"{content}\" ");
+
+                yield return streamedResponse;
+            }
         }
 
         /// <summary>
         /// Download a model from the ollama library.
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="model"></param>
         /// <param name="insecure"></param>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
         /// <param name="stream"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<PullModelResponse> PullModelAsync(
-            string name,
+        public async global::System.Collections.Generic.IAsyncEnumerable<PullModelResponse> PullModelAsync(
+            string model,
             bool insecure = false,
+            string? username = default,
+            string? password = default,
             bool stream = true,
-            global::System.Threading.CancellationToken cancellationToken = default)
+            [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new PullModelRequest
             {
-                Name = name,
+                Model = model,
                 Insecure = insecure,
+                Username = username,
+                Password = password,
                 Stream = stream,
             };
 
-            return await PullModelAsync(
+            var enumerable = PullModelAsync(
                 request: request,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
+                cancellationToken: cancellationToken);
+
+            await foreach (var response in enumerable)
+            {
+                yield return response;
+            }
         }
     }
 }

@@ -24,15 +24,15 @@
     ConverterType: 
   },
   {
-    CSharpType: global::System.Collections.Generic.IList<int>?,
+    CSharpType: global::System.Collections.Generic.IList<long>?,
     IsArray: true,
     IsEnum: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<int>,
-    CSharpTypeWithNullability: global::System.Collections.Generic.IList<int>?,
+    CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<long>,
+    CSharpTypeWithNullability: global::System.Collections.Generic.IList<long>?,
     ConverterType: 
   },
   {
@@ -69,9 +69,6 @@
       vocab_only,
       use_mmap,
       use_mlock,
-      embedding_only,
-      rope_frequency_base,
-      rope_frequency_scale,
       num_thread
     ],
     EnumValues: null,
@@ -110,7 +107,7 @@
     ConverterType: 
   },
   {
-    CSharpType: int,
+    CSharpType: int?,
     IsArray: false,
     IsEnum: false,
     Properties: null,
@@ -122,7 +119,7 @@
     ConverterType: 
   },
   {
-    CSharpType: float,
+    CSharpType: float?,
     IsArray: false,
     IsEnum: false,
     Properties: null,
@@ -143,6 +140,18 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::System.DateTime,
     CSharpTypeWithNullability: global::System.DateTime?,
+    ConverterType: 
+  },
+  {
+    CSharpType: long,
+    IsArray: false,
+    IsEnum: false,
+    Properties: null,
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: long,
+    CSharpTypeWithNullability: long?,
     ConverterType: 
   },
   {
@@ -222,84 +231,74 @@
     ConverterType: 
   },
   {
-    CSharpType: CreateModelResponseStatus?,
+    CSharpType: CreateModelStatus?,
     IsArray: false,
-    IsEnum: true,
-    Properties: [
-      CreatingSystemLayer,
-      ParsingModelfile,
-      Success
-    ],
-    EnumValues: [
-      creating system layer,
-      parsing modelfile,
-      success
-    ],
+    IsEnum: false,
+    AnyOfCount: 2,
+    Properties: null,
+    EnumValues: null,
     Namespace: G,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: CreateModelResponseStatus,
-    CSharpTypeWithNullability: CreateModelResponseStatus?,
-    ConverterType: CreateModelResponseStatusJsonConverter
+    CSharpTypeWithoutNullability: CreateModelStatus,
+    CSharpTypeWithNullability: CreateModelStatus?,
+    ConverterType: AnyOfJsonConverterFactory2
   },
   {
-    CSharpType: global::System.Collections.Generic.IList<Model>?,
+    CSharpType: global::System.Collections.Generic.IList<LocalModel>?,
     IsArray: true,
     IsEnum: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Model>,
-    CSharpTypeWithNullability: global::System.Collections.Generic.IList<Model>?,
+    CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<LocalModel>,
+    CSharpTypeWithNullability: global::System.Collections.Generic.IList<LocalModel>?,
     ConverterType: 
   },
   {
-    CSharpType: PullModelResponseStatus?,
+    CSharpType: ModelDetails?,
     IsArray: false,
-    IsEnum: true,
+    IsEnum: false,
     Properties: [
-      PullingManifest,
-      DownloadingDigestname,
-      VerifyingSha256Digest,
-      WritingManifest,
-      RemovingAnyUnusedLayers,
-      Success
+      parent_model,
+      format,
+      family,
+      families,
+      parameter_size,
+      quantization_level
     ],
-    EnumValues: [
-      pulling manifest,
-      downloading digestname,
-      verifying sha256 digest,
-      writing manifest,
-      removing any unused layers,
-      success
-    ],
+    EnumValues: null,
     Namespace: G,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: PullModelResponseStatus,
-    CSharpTypeWithNullability: PullModelResponseStatus?,
-    ConverterType: PullModelResponseStatusJsonConverter
+    CSharpTypeWithoutNullability: ModelDetails,
+    CSharpTypeWithNullability: ModelDetails?,
+    ConverterType: 
   },
   {
-    CSharpType: PushModelResponseStatus?,
+    CSharpType: PullModelStatus?,
     IsArray: false,
-    IsEnum: true,
-    Properties: [
-      RetrievingManifest,
-      StartingUpload,
-      PushingManifest,
-      Success
-    ],
-    EnumValues: [
-      retrieving manifest,
-      starting upload,
-      pushing manifest,
-      success
-    ],
+    IsEnum: false,
+    AnyOfCount: 2,
+    Properties: null,
+    EnumValues: null,
     Namespace: G,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: PushModelResponseStatus,
-    CSharpTypeWithNullability: PushModelResponseStatus?,
-    ConverterType: PushModelResponseStatusJsonConverter
+    CSharpTypeWithoutNullability: PullModelStatus,
+    CSharpTypeWithNullability: PullModelStatus?,
+    ConverterType: AnyOfJsonConverterFactory2
+  },
+  {
+    CSharpType: PushModelStatus?,
+    IsArray: false,
+    IsEnum: false,
+    AnyOfCount: 2,
+    Properties: null,
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: PushModelStatus,
+    CSharpTypeWithNullability: PushModelStatus?,
+    ConverterType: AnyOfJsonConverterFactory2
   },
   {
     CSharpType: GenerateCompletionRequest,
@@ -377,6 +376,7 @@
       model,
       created_at,
       done,
+      done_reason,
       total_duration,
       load_duration,
       prompt_eval_count,
@@ -398,7 +398,8 @@
     Properties: [
       model,
       prompt,
-      options
+      options,
+      keep_alive
     ],
     EnumValues: null,
     Namespace: G,
@@ -426,8 +427,10 @@
     IsArray: false,
     IsEnum: false,
     Properties: [
-      name,
+      model,
       modelfile,
+      path,
+      quantize,
       stream
     ],
     EnumValues: null,
@@ -470,7 +473,7 @@
     IsArray: false,
     IsEnum: false,
     Properties: [
-      name
+      model
     ],
     EnumValues: null,
     Namespace: G,
@@ -487,7 +490,10 @@
       license,
       modelfile,
       parameters,
-      template
+      template,
+      system,
+      details,
+      messages
     ],
     EnumValues: null,
     Namespace: G,
@@ -516,7 +522,7 @@
     IsArray: false,
     IsEnum: false,
     Properties: [
-      name
+      model
     ],
     EnumValues: null,
     Namespace: G,
@@ -530,8 +536,10 @@
     IsArray: false,
     IsEnum: false,
     Properties: [
-      name,
+      model,
       insecure,
+      username,
+      password,
       stream
     ],
     EnumValues: null,
@@ -563,8 +571,10 @@
     IsArray: false,
     IsEnum: false,
     Properties: [
-      name,
+      model,
       insecure,
+      username,
+      password,
       stream
     ],
     EnumValues: null,
@@ -581,13 +591,26 @@
     Properties: [
       status,
       digest,
-      total
+      total,
+      completed
     ],
     EnumValues: null,
     Namespace: G,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: PushModelResponse,
     CSharpTypeWithNullability: PushModelResponse?,
+    ConverterType: 
+  },
+  {
+    CSharpType: byte[],
+    IsArray: false,
+    IsEnum: false,
+    Properties: null,
+    EnumValues: null,
+    Namespace: G,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: byte[],
+    CSharpTypeWithNullability: byte[]?,
     ConverterType: 
   }
 ]

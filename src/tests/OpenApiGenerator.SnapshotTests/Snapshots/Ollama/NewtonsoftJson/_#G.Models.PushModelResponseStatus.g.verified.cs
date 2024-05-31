@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Status pushing the model.
+    /// 
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum PushModelResponseStatus

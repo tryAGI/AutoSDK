@@ -13,9 +13,9 @@ namespace G
         /// The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt;tag&gt;.
         /// <br/>Example: mattw/pygmalion:latest
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public required string Model { get; set; }
 
         /// <summary>
         /// Allow insecure connections to the library. 
@@ -24,6 +24,18 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("insecure")]
         public bool Insecure { get; set; } = false;
+
+        /// <summary>
+        /// Ollama username.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("username")]
+        public string? Username { get; set; }
+
+        /// <summary>
+        /// Ollama password.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("password")]
+        public string? Password { get; set; }
 
         /// <summary>
         /// If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.

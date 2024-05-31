@@ -45,12 +45,14 @@ namespace G
         /// <param name="model"></param>
         /// <param name="prompt"></param>
         /// <param name="options"></param>
+        /// <param name="keepAlive"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<GenerateEmbeddingResponse> GenerateEmbeddingAsync(
             string model,
             string prompt,
             RequestOptions? options = default,
+            int? keepAlive = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new GenerateEmbeddingRequest
@@ -58,6 +60,7 @@ namespace G
                 Model = model,
                 Prompt = prompt,
                 Options = options,
+                KeepAlive = keepAlive,
             };
 
             return await GenerateEmbeddingAsync(

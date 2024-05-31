@@ -62,7 +62,7 @@ namespace G
             GenerateChatCompletionRequestFormat? format = default,
             RequestOptions? options = default,
             bool stream = true,
-            int keepAlive = default,
+            int? keepAlive = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new GenerateChatCompletionRequest

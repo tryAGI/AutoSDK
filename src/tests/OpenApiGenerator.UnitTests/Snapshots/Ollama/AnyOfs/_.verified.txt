@@ -1,1 +1,6 @@
-﻿[]
+﻿[
+  {
+    SubType: AnyOf,
+    Count: 2
+  }
+]

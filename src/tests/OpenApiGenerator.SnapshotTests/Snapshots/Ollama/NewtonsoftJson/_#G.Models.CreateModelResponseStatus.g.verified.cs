@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Status creating the model
+    /// 
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum CreateModelResponseStatus

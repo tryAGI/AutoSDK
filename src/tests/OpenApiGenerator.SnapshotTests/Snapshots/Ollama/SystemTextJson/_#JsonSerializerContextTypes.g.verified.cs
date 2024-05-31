@@ -20,7 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<int>? Type2 { get; set; }
+        public global::System.Collections.Generic.IList<long>? Type2 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -48,106 +48,118 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<Message>? Type9 { get; set; }
+        public long? Type9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public GenerateChatCompletionRequestFormat? Type10 { get; set; }
+        public global::System.Collections.Generic.IList<Message>? Type10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public Message? Type11 { get; set; }
+        public GenerateChatCompletionRequestFormat? Type11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public MessageRole? Type12 { get; set; }
+        public Message? Type12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<double>? Type13 { get; set; }
+        public MessageRole? Type13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public CreateModelResponseStatus? Type14 { get; set; }
+        public global::System.Collections.Generic.IList<double>? Type14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<Model>? Type15 { get; set; }
+        public CreateModelStatus? Type15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public PullModelResponseStatus? Type16 { get; set; }
+        public global::System.Collections.Generic.IList<LocalModel>? Type16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public PushModelResponseStatus? Type17 { get; set; }
+        public ModelDetails? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public GenerateCompletionRequest? Type18 { get; set; }
+        public PullModelStatus? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public GenerateCompletionResponse? Type19 { get; set; }
+        public PushModelStatus? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public GenerateChatCompletionRequest? Type20 { get; set; }
+        public GenerateCompletionRequest? Type20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public GenerateChatCompletionResponse? Type21 { get; set; }
+        public GenerateCompletionResponse? Type21 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public GenerateEmbeddingRequest? Type22 { get; set; }
+        public GenerateChatCompletionRequest? Type22 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public GenerateEmbeddingResponse? Type23 { get; set; }
+        public GenerateChatCompletionResponse? Type23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public CreateModelRequest? Type24 { get; set; }
+        public GenerateEmbeddingRequest? Type24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public CreateModelResponse? Type25 { get; set; }
+        public GenerateEmbeddingResponse? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public ModelsResponse? Type26 { get; set; }
+        public CreateModelRequest? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public ModelInfoRequest? Type27 { get; set; }
+        public CreateModelResponse? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public ModelInfo? Type28 { get; set; }
+        public ModelsResponse? Type28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public CopyModelRequest? Type29 { get; set; }
+        public ModelInfoRequest? Type29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public DeleteModelRequest? Type30 { get; set; }
+        public ModelInfo? Type30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public PullModelRequest? Type31 { get; set; }
+        public CopyModelRequest? Type31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public PullModelResponse? Type32 { get; set; }
+        public DeleteModelRequest? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public PushModelRequest? Type33 { get; set; }
+        public PullModelRequest? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public PushModelResponse? Type34 { get; set; }
+        public PullModelResponse? Type34 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public PushModelRequest? Type35 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public PushModelResponse? Type36 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[]? Type37 { get; set; }
     }
 }

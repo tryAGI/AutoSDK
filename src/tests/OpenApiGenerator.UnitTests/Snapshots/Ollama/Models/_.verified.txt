@@ -132,15 +132,15 @@ The prompt to generate a response.
         Id: context,
         Name: Context,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<int>?,
+          CSharpType: global::System.Collections.Generic.IList<long>?,
           IsArray: true,
           IsEnum: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<int>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<int>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<long>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<long>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -188,9 +188,6 @@ The prompt to generate a response.
             vocab_only,
             use_mmap,
             use_mlock,
-            embedding_only,
-            rope_frequency_base,
-            rope_frequency_scale,
             num_thread
           ],
           EnumValues: null,
@@ -284,22 +281,22 @@ You may choose to use the `raw` parameter if you are specifying a full templated
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: false,
+        DefaultValue: true,
         IsDeprecated: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
 
-<br/>Default Value: false,
+<br/>Default Value: true,
         ConverterType: ,
         ParameterName: stream,
         ArgumentName: stream,
-        ParameterDefaultValue: false
+        ParameterDefaultValue: true
       },
       {
         Id: keep_alive,
         Name: KeepAlive,
         Type: {
-          CSharpType: int,
+          CSharpType: int?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -395,7 +392,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
         Id: num_keep,
         Name: NumKeep,
         Type: {
-          CSharpType: int,
+          CSharpType: int?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -420,7 +417,7 @@ Number of tokens to keep from the prompt.
         Id: seed,
         Name: Seed,
         Type: {
-          CSharpType: int,
+          CSharpType: int?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -445,7 +442,7 @@ Sets the random number seed to use for generation. Setting this to a specific nu
         Id: num_predict,
         Name: NumPredict,
         Type: {
-          CSharpType: int,
+          CSharpType: int?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -470,7 +467,7 @@ Maximum number of tokens to predict when generating text. (Default: 128, -1 = in
         Id: top_k,
         Name: TopK,
         Type: {
-          CSharpType: int,
+          CSharpType: int?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -495,7 +492,7 @@ Reduces the probability of generating nonsense. A higher value (e.g. 100) will g
         Id: top_p,
         Name: TopP,
         Type: {
-          CSharpType: float,
+          CSharpType: float?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -520,7 +517,7 @@ Works together with top-k. A higher value (e.g., 0.95) will lead to more diverse
         Id: tfs_z,
         Name: TfsZ,
         Type: {
-          CSharpType: float,
+          CSharpType: float?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -545,7 +542,7 @@ Tail free sampling is used to reduce the impact of less probable tokens from the
         Id: typical_p,
         Name: TypicalP,
         Type: {
-          CSharpType: float,
+          CSharpType: float?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -570,7 +567,7 @@ Typical p is used to reduce the impact of less probable tokens from the output.
         Id: repeat_last_n,
         Name: RepeatLastN,
         Type: {
-          CSharpType: int,
+          CSharpType: int?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -595,7 +592,7 @@ Sets how far back for the model to look back to prevent repetition. (Default: 64
         Id: temperature,
         Name: Temperature,
         Type: {
-          CSharpType: float,
+          CSharpType: float?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -620,7 +617,7 @@ The temperature of the model. Increasing the temperature will make the model ans
         Id: repeat_penalty,
         Name: RepeatPenalty,
         Type: {
-          CSharpType: float,
+          CSharpType: float?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -645,7 +642,7 @@ Sets how strongly to penalize repetitions. A higher value (e.g., 1.5) will penal
         Id: presence_penalty,
         Name: PresencePenalty,
         Type: {
-          CSharpType: float,
+          CSharpType: float?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -670,7 +667,7 @@ Positive values penalize new tokens based on whether they appear in the text so 
         Id: frequency_penalty,
         Name: FrequencyPenalty,
         Type: {
-          CSharpType: float,
+          CSharpType: float?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -695,7 +692,7 @@ Positive values penalize new tokens based on their existing frequency in the tex
         Id: mirostat,
         Name: Mirostat,
         Type: {
-          CSharpType: int,
+          CSharpType: int?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -720,7 +717,7 @@ Enable Mirostat sampling for controlling perplexity. (default: 0, 0 = disabled, 
         Id: mirostat_tau,
         Name: MirostatTau,
         Type: {
-          CSharpType: float,
+          CSharpType: float?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -745,7 +742,7 @@ Controls the balance between coherence and diversity of the output. A lower valu
         Id: mirostat_eta,
         Name: MirostatEta,
         Type: {
-          CSharpType: float,
+          CSharpType: float?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -770,7 +767,7 @@ Influences how quickly the algorithm responds to feedback from the generated tex
         Id: penalize_newline,
         Name: PenalizeNewline,
         Type: {
-          CSharpType: bool,
+          CSharpType: bool?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -818,7 +815,7 @@ Penalize newlines in the output. (Default: false)
         Id: numa,
         Name: Numa,
         Type: {
-          CSharpType: bool,
+          CSharpType: bool?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -843,7 +840,7 @@ Enable NUMA support. (Default: false)
         Id: num_ctx,
         Name: NumCtx,
         Type: {
-          CSharpType: int,
+          CSharpType: int?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -868,7 +865,7 @@ Sets the size of the context window used to generate the next token.
         Id: num_batch,
         Name: NumBatch,
         Type: {
-          CSharpType: int,
+          CSharpType: int?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -893,7 +890,7 @@ Sets the number of batches to use for generation. (Default: 1)
         Id: num_gqa,
         Name: NumGqa,
         Type: {
-          CSharpType: int,
+          CSharpType: int?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -918,7 +915,7 @@ The number of GQA groups in the transformer layer. Required for some models, for
         Id: num_gpu,
         Name: NumGpu,
         Type: {
-          CSharpType: int,
+          CSharpType: int?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -943,7 +940,7 @@ The number of layers to send to the GPU(s). On macOS it defaults to 1 to enable 
         Id: main_gpu,
         Name: MainGpu,
         Type: {
-          CSharpType: int,
+          CSharpType: int?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -968,7 +965,7 @@ The GPU to use for the main model. Default is 0.
         Id: low_vram,
         Name: LowVram,
         Type: {
-          CSharpType: bool,
+          CSharpType: bool?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -993,7 +990,7 @@ Enable low VRAM mode. (Default: false)
         Id: f16_kv,
         Name: F16Kv,
         Type: {
-          CSharpType: bool,
+          CSharpType: bool?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -1018,7 +1015,7 @@ Enable f16 key/value. (Default: false)
         Id: logits_all,
         Name: LogitsAll,
         Type: {
-          CSharpType: bool,
+          CSharpType: bool?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -1043,7 +1040,7 @@ Enable logits all. (Default: false)
         Id: vocab_only,
         Name: VocabOnly,
         Type: {
-          CSharpType: bool,
+          CSharpType: bool?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -1068,7 +1065,7 @@ Enable vocab only. (Default: false)
         Id: use_mmap,
         Name: UseMmap,
         Type: {
-          CSharpType: bool,
+          CSharpType: bool?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -1093,7 +1090,7 @@ Enable mmap. (Default: false)
         Id: use_mlock,
         Name: UseMlock,
         Type: {
-          CSharpType: bool,
+          CSharpType: bool?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -1115,85 +1112,10 @@ Enable mlock. (Default: false)
         ParameterDefaultValue: default
       },
       {
-        Id: embedding_only,
-        Name: EmbeddingOnly,
-        Type: {
-          CSharpType: bool,
-          IsArray: false,
-          IsEnum: false,
-          Properties: null,
-          EnumValues: null,
-          Namespace: G,
-          GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: bool,
-          CSharpTypeWithNullability: bool?,
-          ConverterType: 
-        },
-        IsRequired: false,
-        IsDeprecated: false,
-        Summary:
-Enable embedding only. (Default: false)
-,
-        ConverterType: ,
-        ParameterName: embeddingOnly,
-        ArgumentName: embeddingOnly,
-        ParameterDefaultValue: default
-      },
-      {
-        Id: rope_frequency_base,
-        Name: RopeFrequencyBase,
-        Type: {
-          CSharpType: float,
-          IsArray: false,
-          IsEnum: false,
-          Properties: null,
-          EnumValues: null,
-          Namespace: G,
-          GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: float,
-          CSharpTypeWithNullability: float?,
-          ConverterType: 
-        },
-        IsRequired: false,
-        IsDeprecated: false,
-        Summary:
-The base of the rope frequency scale. (Default: 1.0)
-,
-        ConverterType: ,
-        ParameterName: ropeFrequencyBase,
-        ArgumentName: ropeFrequencyBase,
-        ParameterDefaultValue: default
-      },
-      {
-        Id: rope_frequency_scale,
-        Name: RopeFrequencyScale,
-        Type: {
-          CSharpType: float,
-          IsArray: false,
-          IsEnum: false,
-          Properties: null,
-          EnumValues: null,
-          Namespace: G,
-          GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: float,
-          CSharpTypeWithNullability: float?,
-          ConverterType: 
-        },
-        IsRequired: false,
-        IsDeprecated: false,
-        Summary:
-The scale of the rope frequency. (Default: 1.0)
-,
-        ConverterType: ,
-        ParameterName: ropeFrequencyScale,
-        ArgumentName: ropeFrequencyScale,
-        ParameterDefaultValue: default
-      },
-      {
         Id: num_thread,
         Name: NumThread,
         Type: {
-          CSharpType: int,
+          CSharpType: int?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -1362,15 +1284,15 @@ Whether the response has completed.
         Id: context,
         Name: Context,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<int>?,
+          CSharpType: global::System.Collections.Generic.IList<long>?,
           IsArray: true,
           IsEnum: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<int>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<int>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<long>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<long>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1388,15 +1310,15 @@ An encoding of the conversation used in this response, this can be sent in the n
         Id: total_duration,
         Name: TotalDuration,
         Type: {
-          CSharpType: int,
+          CSharpType: long,
           IsArray: false,
           IsEnum: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: int,
-          CSharpTypeWithNullability: int?,
+          CSharpTypeWithoutNullability: long,
+          CSharpTypeWithNullability: long?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1413,15 +1335,15 @@ Time spent generating the response.
         Id: load_duration,
         Name: LoadDuration,
         Type: {
-          CSharpType: int,
+          CSharpType: long,
           IsArray: false,
           IsEnum: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: int,
-          CSharpTypeWithNullability: int?,
+          CSharpTypeWithoutNullability: long,
+          CSharpTypeWithNullability: long?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1463,15 +1385,15 @@ Number of tokens in the prompt.
         Id: prompt_eval_duration,
         Name: PromptEvalDuration,
         Type: {
-          CSharpType: int,
+          CSharpType: long,
           IsArray: false,
           IsEnum: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: int,
-          CSharpTypeWithNullability: int?,
+          CSharpTypeWithoutNullability: long,
+          CSharpTypeWithNullability: long?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1513,15 +1435,15 @@ Number of tokens the response.
         Id: eval_duration,
         Name: EvalDuration,
         Type: {
-          CSharpType: int,
+          CSharpType: long,
           IsArray: false,
           IsEnum: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: int,
-          CSharpTypeWithNullability: int?,
+          CSharpTypeWithoutNullability: long,
+          CSharpTypeWithNullability: long?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1673,9 +1595,6 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
             vocab_only,
             use_mmap,
             use_mlock,
-            embedding_only,
-            rope_frequency_base,
-            rope_frequency_scale,
             num_thread
           ],
           EnumValues: null,
@@ -1709,22 +1628,22 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: false,
+        DefaultValue: true,
         IsDeprecated: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
 
-<br/>Default Value: false,
+<br/>Default Value: true,
         ConverterType: ,
         ParameterName: stream,
         ArgumentName: stream,
-        ParameterDefaultValue: false
+        ParameterDefaultValue: true
       },
       {
         Id: keep_alive,
         Name: KeepAlive,
         Type: {
-          CSharpType: int,
+          CSharpType: int?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -1922,18 +1841,41 @@ Whether the response has completed.
         ParameterDefaultValue: default
       },
       {
-        Id: total_duration,
-        Name: TotalDuration,
+        Id: done_reason,
+        Name: DoneReason,
         Type: {
-          CSharpType: int,
+          CSharpType: string?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: int,
-          CSharpTypeWithNullability: int?,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: Reason the response is done.,
+        ConverterType: ,
+        ParameterName: doneReason,
+        ArgumentName: doneReason,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: total_duration,
+        Name: TotalDuration,
+        Type: {
+          CSharpType: long,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: long,
+          CSharpTypeWithNullability: long?,
           ConverterType: 
         },
         IsRequired: false,
@@ -1950,15 +1892,15 @@ Time spent generating the response.
         Id: load_duration,
         Name: LoadDuration,
         Type: {
-          CSharpType: int,
+          CSharpType: long,
           IsArray: false,
           IsEnum: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: int,
-          CSharpTypeWithNullability: int?,
+          CSharpTypeWithoutNullability: long,
+          CSharpTypeWithNullability: long?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2000,15 +1942,15 @@ Number of tokens in the prompt.
         Id: prompt_eval_duration,
         Name: PromptEvalDuration,
         Type: {
-          CSharpType: int,
+          CSharpType: long,
           IsArray: false,
           IsEnum: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: int,
-          CSharpTypeWithNullability: int?,
+          CSharpTypeWithoutNullability: long,
+          CSharpTypeWithNullability: long?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2050,15 +1992,15 @@ Number of tokens the response.
         Id: eval_duration,
         Name: EvalDuration,
         Type: {
-          CSharpType: int,
+          CSharpType: long,
           IsArray: false,
           IsEnum: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: int,
-          CSharpTypeWithNullability: int?,
+          CSharpTypeWithoutNullability: long,
+          CSharpTypeWithNullability: long?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2364,9 +2306,6 @@ Text to generate embeddings for.
             vocab_only,
             use_mmap,
             use_mlock,
-            embedding_only,
-            rope_frequency_base,
-            rope_frequency_scale,
             num_thread
           ],
           EnumValues: null,
@@ -2382,6 +2321,36 @@ Text to generate embeddings for.
         ConverterType: ,
         ParameterName: options,
         ArgumentName: options,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: keep_alive,
+        Name: KeepAlive,
+        Type: {
+          CSharpType: int?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary:
+How long (in minutes) to keep the model loaded in memory.
+
+- If set to a positive duration (e.g. 20), the model will stay loaded for the provided duration.
+- If set to a negative duration (e.g. -1), the model will stay loaded indefinitely.
+- If set to 0, the model will be unloaded immediately once finished.
+- If not set, the model will stay loaded for 5 minutes by default
+,
+        ConverterType: ,
+        ParameterName: keepAlive,
+        ArgumentName: keepAlive,
         ParameterDefaultValue: default
       }
     ],
@@ -2446,8 +2415,8 @@ The embedding for the prompt.
     Namespace: G,
     Properties: [
       {
-        Id: name,
-        Name: Name,
+        Id: model,
+        Name: Model,
         Type: {
           CSharpType: string,
           IsArray: false,
@@ -2469,8 +2438,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 
 <br/>Example: mario,
         ConverterType: ,
-        ParameterName: name,
-        ArgumentName: name,
+        ParameterName: model,
+        ArgumentName: model,
         ParameterDefaultValue: default
       },
       {
@@ -2499,6 +2468,52 @@ The contents of the Modelfile.
         ParameterDefaultValue: default
       },
       {
+        Id: path,
+        Name: Path,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: Path to the Modelfile (optional),
+        ConverterType: ,
+        ParameterName: path,
+        ArgumentName: path,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: quantize,
+        Name: Quantize,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The quantization level of the model.,
+        ConverterType: ,
+        ParameterName: quantize,
+        ArgumentName: quantize,
+        ParameterDefaultValue: default
+      },
+      {
         Id: stream,
         Name: Stream,
         Type: {
@@ -2514,16 +2529,16 @@ The contents of the Modelfile.
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: false,
+        DefaultValue: true,
         IsDeprecated: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
 
-<br/>Default Value: false,
+<br/>Default Value: true,
         ConverterType: ,
         ParameterName: stream,
         ArgumentName: stream,
-        ParameterDefaultValue: false
+        ParameterDefaultValue: true
       }
     ],
     Summary: Create model request object.,
@@ -2547,29 +2562,22 @@ If `false` the response will be returned as a single response object, otherwise 
         Id: status,
         Name: Status,
         Type: {
-          CSharpType: CreateModelResponseStatus?,
+          CSharpType: CreateModelStatus?,
           IsArray: false,
-          IsEnum: true,
-          Properties: [
-            CreatingSystemLayer,
-            ParsingModelfile,
-            Success
-          ],
-          EnumValues: [
-            creating system layer,
-            parsing modelfile,
-            success
-          ],
+          IsEnum: false,
+          AnyOfCount: 2,
+          Properties: null,
+          EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: CreateModelResponseStatus,
-          CSharpTypeWithNullability: CreateModelResponseStatus?,
-          ConverterType: CreateModelResponseStatusJsonConverter
+          CSharpTypeWithoutNullability: CreateModelStatus,
+          CSharpTypeWithNullability: CreateModelStatus?,
+          ConverterType: AnyOfJsonConverterFactory2
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: Status creating the model,
-        ConverterType: CreateModelResponseStatusJsonConverter,
+        ConverterType: AnyOfJsonConverterFactory2,
         ParameterName: status,
         ArgumentName: status,
         ParameterDefaultValue: default
@@ -2663,7 +2671,7 @@ If `false` the response will be returned as a single response object, otherwise 
         ParameterDefaultValue: default
       }
     ],
-    Summary: Status creating the model,
+    Summary: ,
     IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
@@ -2701,15 +2709,15 @@ If `false` the response will be returned as a single response object, otherwise 
         Id: models,
         Name: Models,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<Model>?,
+          CSharpType: global::System.Collections.Generic.IList<LocalModel>?,
           IsArray: true,
           IsEnum: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Model>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<Model>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<LocalModel>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<LocalModel>?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2732,15 +2740,15 @@ If `false` the response will be returned as a single response object, otherwise 
     FileNameWithoutExtension: G.Models.ModelsResponse
   },
   {
-    Id: Model,
+    Id: LocalModel,
     AddTypeName: false,
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
     Properties: [
       {
-        Id: name,
-        Name: Name,
+        Id: model,
+        Name: Model,
         Type: {
           CSharpType: string?,
           IsArray: false,
@@ -2762,8 +2770,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 
 <br/>Example: llama2:7b,
         ConverterType: ,
-        ParameterName: name,
-        ArgumentName: name,
+        ParameterName: model,
+        ArgumentName: model,
         ParameterDefaultValue: default
       },
       {
@@ -2795,15 +2803,15 @@ Model modification date.
         Id: size,
         Name: Size,
         Type: {
-          CSharpType: int,
+          CSharpType: long,
           IsArray: false,
           IsEnum: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: int,
-          CSharpTypeWithNullability: int?,
+          CSharpTypeWithoutNullability: long,
+          CSharpTypeWithNullability: long?,
           ConverterType: 
         },
         IsRequired: false,
@@ -2815,17 +2823,228 @@ Size of the model on disk.
         ParameterName: size,
         ArgumentName: size,
         ParameterDefaultValue: default
+      },
+      {
+        Id: digest,
+        Name: Digest,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary:
+The model's digest.
+<br/>Example: sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a,
+        ConverterType: ,
+        ParameterName: digest,
+        ArgumentName: digest,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: details,
+        Name: Details,
+        Type: {
+          CSharpType: ModelDetails?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            parent_model,
+            format,
+            family,
+            families,
+            parameter_size,
+            quantization_level
+          ],
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: ModelDetails,
+          CSharpTypeWithNullability: ModelDetails?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: Details about a model.,
+        ConverterType: ,
+        ParameterName: details,
+        ArgumentName: details,
+        ParameterDefaultValue: default
       }
     ],
     Summary: A model available locally.,
     IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
-    Name: Model,
-    ClassName: Model,
-    GlobalClassName: global::G.Model,
-    ExternalClassName: Model,
-    FileNameWithoutExtension: G.Models.Model
+    Name: LocalModel,
+    ClassName: LocalModel,
+    GlobalClassName: global::G.LocalModel,
+    ExternalClassName: LocalModel,
+    FileNameWithoutExtension: G.Models.LocalModel
+  },
+  {
+    Id: ModelDetails,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: parent_model,
+        Name: ParentModel,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The parent model of the model.,
+        ConverterType: ,
+        ParameterName: parentModel,
+        ArgumentName: parentModel,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: format,
+        Name: Format,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The format of the model.,
+        ConverterType: ,
+        ParameterName: format,
+        ArgumentName: format,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: family,
+        Name: Family,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The family of the model.,
+        ConverterType: ,
+        ParameterName: family,
+        ArgumentName: family,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: families,
+        Name: Families,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<string?>?,
+          IsArray: true,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The families of the model.,
+        ConverterType: ,
+        ParameterName: families,
+        ArgumentName: families,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: parameter_size,
+        Name: ParameterSize,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The size of the model's parameters.,
+        ConverterType: ,
+        ParameterName: parameterSize,
+        ArgumentName: parameterSize,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: quantization_level,
+        Name: QuantizationLevel,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The quantization level of the model.,
+        ConverterType: ,
+        ParameterName: quantizationLevel,
+        ArgumentName: quantizationLevel,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Details about a model.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ModelDetails,
+    ClassName: ModelDetails,
+    GlobalClassName: global::G.ModelDetails,
+    ExternalClassName: ModelDetails,
+    FileNameWithoutExtension: G.Models.ModelDetails
   },
   {
     Id: ModelInfoRequest,
@@ -2835,8 +3054,8 @@ Size of the model on disk.
     Namespace: G,
     Properties: [
       {
-        Id: name,
-        Name: Name,
+        Id: model,
+        Name: Model,
         Type: {
           CSharpType: string,
           IsArray: false,
@@ -2858,8 +3077,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 
 <br/>Example: llama2:7b,
         ConverterType: ,
-        ParameterName: name,
-        ArgumentName: name,
+        ParameterName: model,
+        ArgumentName: model,
         ParameterDefaultValue: default
       }
     ],
@@ -2979,6 +3198,82 @@ The prompt template for the model.
         ParameterName: template,
         ArgumentName: template,
         ParameterDefaultValue: default
+      },
+      {
+        Id: system,
+        Name: System,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The system prompt for the model.,
+        ConverterType: ,
+        ParameterName: system,
+        ArgumentName: system,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: details,
+        Name: Details,
+        Type: {
+          CSharpType: ModelDetails?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            parent_model,
+            format,
+            family,
+            families,
+            parameter_size,
+            quantization_level
+          ],
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: ModelDetails,
+          CSharpTypeWithNullability: ModelDetails?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: Details about a model.,
+        ConverterType: ,
+        ParameterName: details,
+        ArgumentName: details,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: messages,
+        Name: Messages,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<Message>?,
+          IsArray: true,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Message>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<Message>?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The default messages for the model.,
+        ConverterType: ,
+        ParameterName: messages,
+        ArgumentName: messages,
+        ParameterDefaultValue: default
       }
     ],
     Summary: Details about a model including modelfile, template, parameters, license, and system prompt.,
@@ -3067,8 +3362,8 @@ Name of the new model.
     Namespace: G,
     Properties: [
       {
-        Id: name,
-        Name: Name,
+        Id: model,
+        Name: Model,
         Type: {
           CSharpType: string,
           IsArray: false,
@@ -3090,8 +3385,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 
 <br/>Example: llama2:13b,
         ConverterType: ,
-        ParameterName: name,
-        ArgumentName: name,
+        ParameterName: model,
+        ArgumentName: model,
         ParameterDefaultValue: default
       }
     ],
@@ -3113,8 +3408,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     Namespace: G,
     Properties: [
       {
-        Id: name,
-        Name: Name,
+        Id: model,
+        Name: Model,
         Type: {
           CSharpType: string,
           IsArray: false,
@@ -3136,8 +3431,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 
 <br/>Example: llama2:7b,
         ConverterType: ,
-        ParameterName: name,
-        ArgumentName: name,
+        ParameterName: model,
+        ArgumentName: model,
         ParameterDefaultValue: default
       },
       {
@@ -3170,6 +3465,52 @@ Only use this if you are pulling from your own library during development.
         ParameterDefaultValue: false
       },
       {
+        Id: username,
+        Name: Username,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: Ollama username.,
+        ConverterType: ,
+        ParameterName: username,
+        ArgumentName: username,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: password,
+        Name: Password,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: Ollama password.,
+        ConverterType: ,
+        ParameterName: password,
+        ArgumentName: password,
+        ParameterDefaultValue: default
+      },
+      {
         Id: stream,
         Name: Stream,
         Type: {
@@ -3185,16 +3526,16 @@ Only use this if you are pulling from your own library during development.
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: false,
+        DefaultValue: true,
         IsDeprecated: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
 
-<br/>Default Value: false,
+<br/>Default Value: true,
         ConverterType: ,
         ParameterName: stream,
         ArgumentName: stream,
-        ParameterDefaultValue: false
+        ParameterDefaultValue: true
       }
     ],
     Summary: Request class for pulling a model.,
@@ -3218,37 +3559,24 @@ If `false` the response will be returned as a single response object, otherwise 
         Id: status,
         Name: Status,
         Type: {
-          CSharpType: PullModelResponseStatus?,
+          CSharpType: PullModelStatus?,
           IsArray: false,
-          IsEnum: true,
-          Properties: [
-            PullingManifest,
-            DownloadingDigestname,
-            VerifyingSha256Digest,
-            WritingManifest,
-            RemovingAnyUnusedLayers,
-            Success
-          ],
-          EnumValues: [
-            pulling manifest,
-            downloading digestname,
-            verifying sha256 digest,
-            writing manifest,
-            removing any unused layers,
-            success
-          ],
+          IsEnum: false,
+          AnyOfCount: 2,
+          Properties: null,
+          EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: PullModelResponseStatus,
-          CSharpTypeWithNullability: PullModelResponseStatus?,
-          ConverterType: PullModelResponseStatusJsonConverter
+          CSharpTypeWithoutNullability: PullModelStatus,
+          CSharpTypeWithNullability: PullModelStatus?,
+          ConverterType: AnyOfJsonConverterFactory2
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary:
 Status pulling the model.
 <br/>Example: pulling manifest,
-        ConverterType: PullModelResponseStatusJsonConverter,
+        ConverterType: AnyOfJsonConverterFactory2,
         ParameterName: status,
         ArgumentName: status,
         ParameterDefaultValue: default
@@ -3282,15 +3610,15 @@ The model's digest.
         Id: total,
         Name: Total,
         Type: {
-          CSharpType: int,
+          CSharpType: long,
           IsArray: false,
           IsEnum: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: int,
-          CSharpTypeWithNullability: int?,
+          CSharpTypeWithoutNullability: long,
+          CSharpTypeWithNullability: long?,
           ConverterType: 
         },
         IsRequired: false,
@@ -3307,15 +3635,15 @@ Total size of the model.
         Id: completed,
         Name: Completed,
         Type: {
-          CSharpType: int,
+          CSharpType: long,
           IsArray: false,
           IsEnum: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: int,
-          CSharpTypeWithNullability: int?,
+          CSharpTypeWithoutNullability: long,
+          CSharpTypeWithNullability: long?,
           ConverterType: 
         },
         IsRequired: false,
@@ -3492,9 +3820,7 @@ The number of files to be downloaded depends on the number of layers specified i
         ParameterDefaultValue: default
       }
     ],
-    Summary:
-Status pulling the model.
-<br/>Example: pulling manifest,
+    Summary: ,
     IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
@@ -3531,8 +3857,8 @@ Status pulling the model.
     Namespace: G,
     Properties: [
       {
-        Id: name,
-        Name: Name,
+        Id: model,
+        Name: Model,
         Type: {
           CSharpType: string,
           IsArray: false,
@@ -3551,8 +3877,8 @@ Status pulling the model.
 The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt;tag&gt;.
 <br/>Example: mattw/pygmalion:latest,
         ConverterType: ,
-        ParameterName: name,
-        ArgumentName: name,
+        ParameterName: model,
+        ArgumentName: model,
         ParameterDefaultValue: default
       },
       {
@@ -3585,6 +3911,52 @@ Only use this if you are pushing to your library during development.
         ParameterDefaultValue: false
       },
       {
+        Id: username,
+        Name: Username,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: Ollama username.,
+        ConverterType: ,
+        ParameterName: username,
+        ArgumentName: username,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: password,
+        Name: Password,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: Ollama password.,
+        ConverterType: ,
+        ParameterName: password,
+        ArgumentName: password,
+        ParameterDefaultValue: default
+      },
+      {
         Id: stream,
         Name: Stream,
         Type: {
@@ -3600,16 +3972,16 @@ Only use this if you are pushing to your library during development.
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: false,
+        DefaultValue: true,
         IsDeprecated: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
 
-<br/>Default Value: false,
+<br/>Default Value: true,
         ConverterType: ,
         ParameterName: stream,
         ArgumentName: stream,
-        ParameterDefaultValue: false
+        ParameterDefaultValue: true
       }
     ],
     Summary: Request class for pushing a model.,
@@ -3633,31 +4005,22 @@ If `false` the response will be returned as a single response object, otherwise 
         Id: status,
         Name: Status,
         Type: {
-          CSharpType: PushModelResponseStatus?,
+          CSharpType: PushModelStatus?,
           IsArray: false,
-          IsEnum: true,
-          Properties: [
-            RetrievingManifest,
-            StartingUpload,
-            PushingManifest,
-            Success
-          ],
-          EnumValues: [
-            retrieving manifest,
-            starting upload,
-            pushing manifest,
-            success
-          ],
+          IsEnum: false,
+          AnyOfCount: 2,
+          Properties: null,
+          EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: PushModelResponseStatus,
-          CSharpTypeWithNullability: PushModelResponseStatus?,
-          ConverterType: PushModelResponseStatusJsonConverter
+          CSharpTypeWithoutNullability: PushModelStatus,
+          CSharpTypeWithNullability: PushModelStatus?,
+          ConverterType: AnyOfJsonConverterFactory2
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: Status pushing the model.,
-        ConverterType: PushModelResponseStatusJsonConverter,
+        ConverterType: AnyOfJsonConverterFactory2,
         ParameterName: status,
         ArgumentName: status,
         ParameterDefaultValue: default
@@ -3691,15 +4054,15 @@ the model's digest
         Id: total,
         Name: Total,
         Type: {
-          CSharpType: int,
+          CSharpType: long,
           IsArray: false,
           IsEnum: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: int,
-          CSharpTypeWithNullability: int?,
+          CSharpTypeWithoutNullability: long,
+          CSharpTypeWithNullability: long?,
           ConverterType: 
         },
         IsRequired: false,
@@ -3710,6 +4073,31 @@ total size of the model
         ConverterType: ,
         ParameterName: total,
         ArgumentName: total,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: completed,
+        Name: Completed,
+        Type: {
+          CSharpType: long,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: long,
+          CSharpTypeWithNullability: long?,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary:
+Total bytes transferred.
+<br/>Example: 2142590208,
+        ConverterType: ,
+        ParameterName: completed,
+        ArgumentName: completed,
         ParameterDefaultValue: default
       }
     ],
@@ -3824,7 +4212,7 @@ total size of the model
         ParameterDefaultValue: default
       }
     ],
-    Summary: Status pushing the model.,
+    Summary: ,
     IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,

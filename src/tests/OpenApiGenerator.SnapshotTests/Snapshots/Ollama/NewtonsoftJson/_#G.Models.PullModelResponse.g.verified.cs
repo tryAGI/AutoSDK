@@ -16,7 +16,7 @@ namespace G
         /// <br/>Example: pulling manifest
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        public PullModelResponseStatus? Status { get; set; }
+        public PullModelStatus? Status { get; set; }
 
         /// <summary>
         /// The model's digest.
@@ -30,14 +30,14 @@ namespace G
         /// <br/>Example: 2142590208
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total")]
-        public int Total { get; set; }
+        public long Total { get; set; }
 
         /// <summary>
         /// Total bytes transferred.
         /// <br/>Example: 2142590208
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completed")]
-        public int Completed { get; set; }
+        public long Completed { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

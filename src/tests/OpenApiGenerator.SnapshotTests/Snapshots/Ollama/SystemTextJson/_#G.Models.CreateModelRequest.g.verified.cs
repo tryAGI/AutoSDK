@@ -14,9 +14,9 @@ namespace G
         /// Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
         /// <br/>Example: mario
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public required string Model { get; set; }
 
         /// <summary>
         /// The contents of the Modelfile.
@@ -25,6 +25,18 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("modelfile")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Modelfile { get; set; }
+
+        /// <summary>
+        /// Path to the Modelfile (optional)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("path")]
+        public string? Path { get; set; }
+
+        /// <summary>
+        /// The quantization level of the model.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("quantize")]
+        public string? Quantize { get; set; }
 
         /// <summary>
         /// If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.

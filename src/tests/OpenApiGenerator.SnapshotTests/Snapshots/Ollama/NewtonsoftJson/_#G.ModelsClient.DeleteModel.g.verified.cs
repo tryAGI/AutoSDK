@@ -36,16 +36,16 @@ namespace G
         /// <summary>
         /// Delete a model and its data.
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="model"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task DeleteModelAsync(
-            string name,
+            string model,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new DeleteModelRequest
             {
-                Name = name,
+                Model = model,
             };
 
             await DeleteModelAsync(

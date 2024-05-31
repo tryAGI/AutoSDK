@@ -38,18 +38,24 @@ namespace G
         public bool Done { get; set; }
 
         /// <summary>
+        /// Reason the response is done.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("done_reason")]
+        public string? DoneReason { get; set; }
+
+        /// <summary>
         /// Time spent generating the response.
         /// <br/>Example: 5589157167
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_duration")]
-        public int TotalDuration { get; set; }
+        public long TotalDuration { get; set; }
 
         /// <summary>
         /// Time spent in nanoseconds loading the model.
         /// <br/>Example: 3013701500
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("load_duration")]
-        public int LoadDuration { get; set; }
+        public long LoadDuration { get; set; }
 
         /// <summary>
         /// Number of tokens in the prompt.
@@ -63,7 +69,7 @@ namespace G
         /// <br/>Example: 1160282000
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_eval_duration")]
-        public int PromptEvalDuration { get; set; }
+        public long PromptEvalDuration { get; set; }
 
         /// <summary>
         /// Number of tokens the response.
@@ -77,7 +83,7 @@ namespace G
         /// <br/>Example: 1325948000
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("eval_duration")]
-        public int EvalDuration { get; set; }
+        public long EvalDuration { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

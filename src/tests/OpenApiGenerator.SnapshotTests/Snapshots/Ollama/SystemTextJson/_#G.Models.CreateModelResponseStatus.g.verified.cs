@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Status creating the model
+    /// 
     /// </summary>
     public enum CreateModelResponseStatus
     {

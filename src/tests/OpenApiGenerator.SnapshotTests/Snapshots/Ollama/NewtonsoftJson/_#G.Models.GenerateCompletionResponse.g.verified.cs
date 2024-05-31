@@ -43,21 +43,21 @@ namespace G
         /// <br/>Example: [1, 2, 3]
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("context")]
-        public global::System.Collections.Generic.IList<int>? Context { get; set; }
+        public global::System.Collections.Generic.IList<long>? Context { get; set; }
 
         /// <summary>
         /// Time spent generating the response.
         /// <br/>Example: 5589157167
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_duration")]
-        public int TotalDuration { get; set; }
+        public long TotalDuration { get; set; }
 
         /// <summary>
         /// Time spent in nanoseconds loading the model.
         /// <br/>Example: 3013701500
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("load_duration")]
-        public int LoadDuration { get; set; }
+        public long LoadDuration { get; set; }
 
         /// <summary>
         /// Number of tokens in the prompt.
@@ -71,7 +71,7 @@ namespace G
         /// <br/>Example: 1160282000
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt_eval_duration")]
-        public int PromptEvalDuration { get; set; }
+        public long PromptEvalDuration { get; set; }
 
         /// <summary>
         /// Number of tokens the response.
@@ -85,7 +85,7 @@ namespace G
         /// <br/>Example: 1325948000
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("eval_duration")]
-        public int EvalDuration { get; set; }
+        public long EvalDuration { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
