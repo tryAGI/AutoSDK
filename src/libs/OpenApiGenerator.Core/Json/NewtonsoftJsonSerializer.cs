@@ -32,6 +32,6 @@ public class NewtonsoftJsonSerializer : IJsonSerializer
     
     public string GenerateDeserializeCall(string type, string jsonSerializerContext)
     {
-        return $"global::Newtonsoft.Json.JsonConvert.DeserializeObject<{type}>(content)";
+        return $"global::Newtonsoft.Json.JsonConvert.DeserializeObject<{type}>(__content)";
     }
 }

@@ -150,6 +150,22 @@ public readonly record struct EndPoint(
         TypeData? responseType = responseTypes.Length == 0
             ? null
             : responseTypes.First();
+
+        var properties = parameters.ToList();
+        foreach (var requestProperty in requestModel?.Properties ?? [])
+        {
+            //if (properties.All(x => x.Name != requestProperty.Name))
+            {
+                properties.Add(requestProperty);
+            }
+            // else
+            // {
+            //     properties.Add(requestProperty with
+            //     {
+            //         Name = $"request{requestProperty.Name.ToPropertyName()}",
+            //     });
+            // }
+        }
         
         var endPoint = new EndPoint(
             Id: id,
@@ -162,7 +178,7 @@ public readonly record struct EndPoint(
                 .Any(x => x.MediaType.Key.Contains("application/x-ndjson")),
             Path: preparedPath,
             AuthorizationScheme: string.Empty,
-            Properties: [..parameters.Concat(requestModel?.Properties ?? [])],
+            Properties: properties.ToImmutableArray(),
             TargetFramework: settings.TargetFramework,
             JsonSerializerType: settings.JsonSerializerType,
             JsonSerializerContext: settings.JsonSerializerContext,

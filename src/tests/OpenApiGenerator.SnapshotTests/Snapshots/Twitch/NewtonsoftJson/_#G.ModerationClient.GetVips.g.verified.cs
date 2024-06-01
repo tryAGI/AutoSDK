@@ -33,11 +33,11 @@ namespace G
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
 
-            var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<GetVIPsResponse?>(content) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{content}\" ");
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<GetVIPsResponse?>(__content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
 }

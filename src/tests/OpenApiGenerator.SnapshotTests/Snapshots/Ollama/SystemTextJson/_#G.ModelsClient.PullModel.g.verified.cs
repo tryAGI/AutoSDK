@@ -37,9 +37,9 @@ namespace G
 
             while (!reader.EndOfStream && !cancellationToken.IsCancellationRequested)
             {
-                var content = await reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
-                var streamedResponse = global::System.Text.Json.JsonSerializer.Deserialize<PullModelResponse>(content) ??
-                                       throw new global::System.InvalidOperationException($"Response deserialization failed for \"{content}\" ");
+                var __content = await reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
+                var streamedResponse = global::System.Text.Json.JsonSerializer.Deserialize<PullModelResponse>(__content) ??
+                                       throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
 
                 yield return streamedResponse;
             }

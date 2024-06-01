@@ -114,20 +114,20 @@ namespace {endPoint.Namespace}
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
 {(string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType) || endPoint.Stream ? " " : $@"
-            var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
                 {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType.CSharpTypeWithNullability, endPoint.JsonSerializerContext)} ??
-                throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{content}}\"" "");")}
+                throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");")}
 {(endPoint.Stream ? $@"
             using var stream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
             using var reader = new global::System.IO.StreamReader(stream);
 
             while (!reader.EndOfStream && !cancellationToken.IsCancellationRequested)
             {{
-                var content = await reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
+                var __content = await reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
                 var streamedResponse = {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType.CSharpType, endPoint.JsonSerializerContext)} ??
-                                       throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{content}}\"" "");
+                                       throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");
 
                 yield return streamedResponse;
             }}" : " ")}

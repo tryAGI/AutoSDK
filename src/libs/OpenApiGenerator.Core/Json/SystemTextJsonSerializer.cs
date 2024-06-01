@@ -77,7 +77,7 @@ public class SystemTextJsonSerializer : IJsonSerializer
         type = type ?? throw new ArgumentNullException(nameof(type));
 
         return string.IsNullOrWhiteSpace(jsonSerializerContext)
-            ? $"global::System.Text.Json.JsonSerializer.Deserialize<{type}>(content)"
-            : $"global::System.Text.Json.JsonSerializer.Deserialize(content, global::{jsonSerializerContext}.Default.{GetContextType(type)})";
+            ? $"global::System.Text.Json.JsonSerializer.Deserialize<{type}>(__content)"
+            : $"global::System.Text.Json.JsonSerializer.Deserialize(__content, global::{jsonSerializerContext}.Default.{GetContextType(type)})";
     }
 }

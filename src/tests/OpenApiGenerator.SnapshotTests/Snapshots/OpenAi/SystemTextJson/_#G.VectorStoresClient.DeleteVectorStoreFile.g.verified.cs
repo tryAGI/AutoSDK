@@ -28,11 +28,11 @@ namespace G
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
 
-            var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<DeleteVectorStoreFileResponse?>(content) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{content}\" ");
+                global::System.Text.Json.JsonSerializer.Deserialize<DeleteVectorStoreFileResponse?>(__content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
 }
