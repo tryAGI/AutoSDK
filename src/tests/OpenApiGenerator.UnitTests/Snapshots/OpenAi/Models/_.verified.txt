@@ -185,8 +185,8 @@
         IsDeprecated: false,
         Summary: ,
         ConverterType: ListModelsResponseObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -337,8 +337,8 @@
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       }
     ],
@@ -1122,8 +1122,8 @@ Can be used in conjunction with the `seed` request parameter to understand when 
         IsDeprecated: false,
         Summary: The object type, which is always "text_completion",
         ConverterType: CreateCompletionResponseObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -5761,8 +5761,8 @@ Can be used in conjunction with the `seed` request parameter to understand when 
         IsDeprecated: false,
         Summary: The object type, which is always `chat.completion`.,
         ConverterType: CreateChatCompletionResponseObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -6306,8 +6306,8 @@ Can be used in conjunction with the `seed` request parameter to understand when 
         IsDeprecated: false,
         Summary: The object type, which is always `chat.completion`.,
         ConverterType: CreateChatCompletionFunctionResponseObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -6880,8 +6880,8 @@ The reason the model stopped generating tokens. This will be `stop` if the model
         IsDeprecated: false,
         Summary: ,
         ConverterType: ListPaginatedFineTuningJobsResponseObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       }
     ],
@@ -7088,8 +7088,8 @@ Can be used in conjunction with the `seed` request parameter to understand when 
         IsDeprecated: false,
         Summary: The object type, which is always `chat.completion.chunk`.,
         ConverterType: CreateChatCompletionStreamResponseObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -10146,8 +10146,8 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
         IsDeprecated: false,
         Summary: ,
         ConverterType: ListFilesResponseObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       }
     ],
@@ -10426,8 +10426,8 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
         IsDeprecated: false,
         Summary: ,
         ConverterType: DeleteFileResponseObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -11330,8 +11330,8 @@ to your run, and set a default entity (team, username, etc) to be associated wit
         IsDeprecated: false,
         Summary: ,
         ConverterType: ListFineTuningJobEventsResponseObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       }
     ],
@@ -11440,8 +11440,8 @@ to your run, and set a default entity (team, username, etc) to be associated wit
         IsDeprecated: false,
         Summary: ,
         ConverterType: ListFineTuningJobCheckpointsResponseObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -11749,8 +11749,8 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: float,
-        ArgumentName: float,
+        ParameterName: @float,
+        ArgumentName: @float,
         ParameterDefaultValue: default
       },
       {
@@ -11954,8 +11954,8 @@ The format to return the embeddings in. Can be either `float` or [`base64`](http
         IsDeprecated: false,
         Summary: The object type, which is always "list".,
         ConverterType: CreateEmbeddingResponseObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -13941,8 +13941,8 @@ The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav
         IsDeprecated: false,
         Summary: The object type, which is always "model".,
         ConverterType: ModelObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -14143,8 +14143,8 @@ The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav
         IsDeprecated: false,
         Summary: The object type, which is always `file`.,
         ConverterType: OpenAIFileObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -14639,8 +14639,8 @@ The embedding vector, which is a list of floats. The length of vector depends on
         IsDeprecated: false,
         Summary: The object type, which is always "embedding".,
         ConverterType: EmbeddingObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       }
     ],
@@ -14889,8 +14889,8 @@ Represents an embedding vector returned by embedding endpoint.
         IsDeprecated: false,
         Summary: The object type, which is always "fine_tuning.job".,
         ConverterType: FineTuningJobObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -15870,8 +15870,8 @@ to your run, and set a default entity (team, username, etc) to be associated wit
         IsDeprecated: false,
         Summary: ,
         ConverterType: FineTuningJobEventObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       }
     ],
@@ -16183,8 +16183,8 @@ to your run, and set a default entity (team, username, etc) to be associated wit
         IsDeprecated: false,
         Summary: The object type, which is always "fine_tuning.job.checkpoint".,
         ConverterType: FineTuningJobCheckpointObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       }
     ],
@@ -16879,8 +16879,8 @@ Must be one of `text` or `json_object`.
         IsDeprecated: false,
         Summary: The object type, which is always `assistant`.,
         ConverterType: AssistantObjectObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -19063,8 +19063,8 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
         IsDeprecated: false,
         Summary: ,
         ConverterType: DeleteAssistantResponseObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       }
     ],
@@ -19147,8 +19147,8 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
         Summary:
 <br/>Example: list,
         ConverterType: ,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -19957,8 +19957,8 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
         IsDeprecated: false,
         Summary: The object type, which is always `thread.run`.,
         ConverterType: RunObjectObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -22419,8 +22419,8 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         Summary:
 <br/>Example: list,
         ConverterType: ,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -24107,8 +24107,8 @@ The ID of the [vector store](/docs/api-reference/vector-stores/object) attached 
         IsDeprecated: false,
         Summary: The object type, which is always `thread`.,
         ConverterType: ThreadObjectObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -25032,8 +25032,8 @@ The [vector store](/docs/api-reference/vector-stores/object) attached to this th
         IsDeprecated: false,
         Summary: ,
         ConverterType: DeleteThreadResponseObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       }
     ],
@@ -25116,8 +25116,8 @@ The [vector store](/docs/api-reference/vector-stores/object) attached to this th
         Summary:
 <br/>Example: list,
         ConverterType: ,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -25279,8 +25279,8 @@ The [vector store](/docs/api-reference/vector-stores/object) attached to this th
         IsDeprecated: false,
         Summary: The object type, which is always `thread.message`.,
         ConverterType: MessageObjectObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -26086,8 +26086,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         IsDeprecated: false,
         Summary: The object type, which is always `thread.message.delta`.,
         ConverterType: MessageDeltaObjectObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -26680,8 +26680,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         IsDeprecated: false,
         Summary: ,
         ConverterType: DeleteMessageResponseObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       }
     ],
@@ -26764,8 +26764,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Summary:
 <br/>Example: list,
         ConverterType: ,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -29526,8 +29526,8 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
         IsDeprecated: false,
         Summary: The object type, which is always `thread.run.step`.,
         ConverterType: RunStepObjectObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -30337,8 +30337,8 @@ Represents a step in execution of a run.
         IsDeprecated: false,
         Summary: The object type, which is always `thread.run.step.delta`.,
         ConverterType: RunStepDeltaObjectObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -30506,8 +30506,8 @@ Represents a run step delta i.e. any changed fields on a run step during streami
         Summary:
 <br/>Example: list,
         ConverterType: ,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -33076,8 +33076,8 @@ An array of tool calls the run step was involved in. These can be associated wit
         IsDeprecated: false,
         Summary: The object type, which is always `vector_store`.,
         ConverterType: VectorStoreObjectObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -33811,8 +33811,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Summary:
 <br/>Example: list,
         ConverterType: ,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -33997,8 +33997,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         IsDeprecated: false,
         Summary: ,
         ConverterType: DeleteVectorStoreResponseObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       }
     ],
@@ -34107,8 +34107,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         IsDeprecated: false,
         Summary: The object type, which is always `vector_store.file`.,
         ConverterType: VectorStoreFileObjectObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -34653,8 +34653,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Summary:
 <br/>Example: list,
         ConverterType: ,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -34839,8 +34839,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         IsDeprecated: false,
         Summary: ,
         ConverterType: DeleteVectorStoreFileResponseObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       }
     ],
@@ -34949,8 +34949,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         IsDeprecated: false,
         Summary: The object type, which is always `vector_store.file_batch`.,
         ConverterType: VectorStoreFileBatchObjectObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -35822,8 +35822,8 @@ integrate the Assistants API with streaming.
         IsDeprecated: false,
         Summary: The object type, which is always `batch`.,
         ConverterType: BatchObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -36298,8 +36298,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         IsDeprecated: false,
         Summary: The object type, which is always `list`.,
         ConverterType: ,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
@@ -37297,8 +37297,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         IsDeprecated: false,
         Summary: ,
         ConverterType: ListBatchesResponseObjectJsonConverter,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       }
     ],

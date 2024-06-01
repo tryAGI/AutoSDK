@@ -72,13 +72,19 @@ public static class Data
                     !excludedModels.Contains(schema.Key))
                 .SelectMany(schema => schema.GetReferences())
                 .Select(reference => reference.Id));
-        
-        Dictionary<string, ModelData> schemas = openApiDocument.Components.Schemas
+
+        var includedSchemas = openApiDocument.Components.Schemas
             .Where(schema =>
                 (includedModels.Count == 0 ||
-                includedModels.Contains(schema.Key) ||
-                referencesOfIncludedModels.Contains(schema.Key)) &&
+                 includedModels.Contains(schema.Key) ||
+                 referencesOfIncludedModels.Contains(schema.Key)) &&
                 !excludedModels.Contains(schema.Key))
+            .ToArray();
+        Dictionary<string, ModelData> classes = includedSchemas
+            // .Where(schema =>
+            //     schema.Value.AnyOf is not { Count: >0 } &&
+            //     schema.Value.OneOf is not { Count: >0 } &&
+            //     schema.Value.AllOf is not { Count: >0 })
             .Select(schema => ModelData.FromSchema(schema, settings))
             .SelectMany(model => model.WithAdditionalModels())
             .GroupBy(x => x.ClassName)
@@ -181,7 +187,7 @@ public static class Data
             ..constructors,
         ];
         
-        var allSchemas = settings.GenerateSdk || settings.GenerateModels ? schemas.Values.Concat(methods
+        var allSchemas = settings.GenerateSdk || settings.GenerateModels ? classes.Values.Concat(methods
                 .SelectMany(x => x.AdditionalModels))
             .SelectMany(x => x.Schema.Value.Properties.Concat([x.Schema]).ToArray())
             .Select(x => x.Value)
@@ -221,7 +227,7 @@ public static class Data
         var types =
             settings.GenerateJsonSerializerContextTypes &&
             (settings.GenerateSdk || settings.GenerateModels)
-                ? schemas.Values
+                ? classes.Values
                     .SelectMany(model => model.Properties)
                     .Select(x => x.Type)
                     .Concat(methods.SelectMany(x => x.AdditionalTypes))
@@ -230,7 +236,7 @@ public static class Data
                     .Select(x => x.First())
                     .ToImmutableArray()
                 : [];
-        var models = settings.GenerateSdk || settings.GenerateModels ? schemas.Values
+        var models = settings.GenerateSdk || settings.GenerateModels ? classes.Values
                 .Select(model => model with
                 {
                     Schema = default,

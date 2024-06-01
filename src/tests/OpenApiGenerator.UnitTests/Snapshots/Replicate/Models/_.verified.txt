@@ -3698,8 +3698,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: public,
-        ArgumentName: public,
+        ParameterName: @public,
+        ArgumentName: @public,
         ParameterDefaultValue: default
       },
       {
@@ -3721,8 +3721,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: private,
-        ArgumentName: private,
+        ParameterName: @private,
+        ArgumentName: @private,
         ParameterDefaultValue: default
       }
     ],

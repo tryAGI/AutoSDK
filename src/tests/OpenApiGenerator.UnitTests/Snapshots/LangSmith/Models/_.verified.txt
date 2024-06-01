@@ -1224,8 +1224,8 @@
         Summary:
 <br/>Default Value: ,
         ConverterType: ,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: ""
       },
       {
@@ -1670,8 +1670,8 @@
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: object,
-        ArgumentName: object,
+        ParameterName: @object,
+        ArgumentName: @object,
         ParameterDefaultValue: default
       },
       {
