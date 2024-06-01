@@ -45,7 +45,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task ActionsSetGithubActionsDefaultWorkflowPermissionsOrganizationAsync(
             string org,
-            string? defaultWorkflowPermissions = default,
+            ActionsSetDefaultWorkflowPermissionsDefaultWorkflowPermissions? defaultWorkflowPermissions = default,
             bool canApprovePullRequestReviews = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

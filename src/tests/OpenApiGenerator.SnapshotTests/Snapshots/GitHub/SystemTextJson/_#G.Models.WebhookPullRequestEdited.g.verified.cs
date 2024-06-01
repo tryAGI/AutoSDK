@@ -13,8 +13,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestEditedActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Action { get; set; }
+        public required WebhookPullRequestEditedAction Action { get; set; }
 
         /// <summary>
         /// The changes to the comment if the action was `edited`.
@@ -57,8 +58,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_request")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AllOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required PullRequestWebhook PullRequest { get; set; }
+        public required global::System.AllOf<PullRequest, WebhookPullRequestEditedPullRequest> PullRequest { get; set; }
 
         /// <summary>
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property

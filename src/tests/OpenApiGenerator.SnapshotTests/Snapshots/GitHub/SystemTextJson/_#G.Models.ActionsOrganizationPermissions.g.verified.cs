@@ -13,8 +13,9 @@ namespace G
         /// The policy that controls the repositories in the organization that are allowed to run GitHub Actions.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled_repositories")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ActionsOrganizationPermissionsEnabledRepositoriesJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string EnabledRepositories { get; set; }
+        public required ActionsOrganizationPermissionsEnabledRepositories EnabledRepositories { get; set; }
 
         /// <summary>
         /// The API URL to use to get or set the selected repositories that are allowed to run GitHub Actions, when `enabled_repositories` is set to `selected`.
@@ -26,7 +27,8 @@ namespace G
         /// The permissions policy that controls the actions and reusable workflows that are allowed to run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_actions")]
-        public string? AllowedActions { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ActionsOrganizationPermissionsAllowedActionsJsonConverter))]
+        public ActionsOrganizationPermissionsAllowedActions? AllowedActions { get; set; }
 
         /// <summary>
         /// The API URL to use to get or set the actions and reusable workflows that are allowed to run, when `allowed_actions` is set to `selected`.

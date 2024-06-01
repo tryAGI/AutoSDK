@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public object? Id { get; set; }
+        public global::System.OneOf<string?, object?, int>? Id { get; set; }
 
         /// <summary>
         /// 
@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("value")]
-        public object? Value { get; set; }
+        public global::System.OneOf<bool, string?, int, WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataValue?> Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

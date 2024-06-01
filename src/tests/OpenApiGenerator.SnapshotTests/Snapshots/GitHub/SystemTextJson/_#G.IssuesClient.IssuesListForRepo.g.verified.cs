@@ -24,17 +24,17 @@ namespace G
         /// <param name="page"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task IssuesListForRepoAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<Issue>> IssuesListForRepoAsync(
             string owner,
             string repo,
             string milestone,
-            string state,
+            IssuesListForRepoState state,
             string assignee,
             string creator,
             string mentioned,
             string labels,
-            string sort,
-            string direction,
+            IssuesListForRepoSort sort,
+            IssuesListForRepoDirection direction,
             global::System.DateTime since,
             int perPage,
             int page,
@@ -49,6 +49,12 @@ namespace G
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
+
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return
+                global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<Issue>?>(__content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
 }

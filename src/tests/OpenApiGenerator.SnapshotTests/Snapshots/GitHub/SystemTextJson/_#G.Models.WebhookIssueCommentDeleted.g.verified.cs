@@ -13,8 +13,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookIssueCommentDeletedActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Action { get; set; }
+        public required WebhookIssueCommentDeletedAction Action { get; set; }
 
         /// <summary>
         /// The [comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment) itself.
@@ -43,8 +44,9 @@ namespace G
         /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) the comment belongs to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("issue")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AllOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Issue { get; set; }
+        public required global::System.AllOf<WebhookIssueCommentDeletedIssue, WebhookIssueCommentDeletedIssue> Issue { get; set; }
 
         /// <summary>
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an

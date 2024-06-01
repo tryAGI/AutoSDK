@@ -15,9 +15,9 @@ namespace G
         /// <param name="perPage"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task PackagesListPackagesForAuthenticatedUserAsync(
-            string packageType,
-            string visibility,
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<Package>> PackagesListPackagesForAuthenticatedUserAsync(
+            PackagesListPackagesForAuthenticatedUserPackageType packageType,
+            PackagesListPackagesForAuthenticatedUserVisibility visibility,
             int page,
             int perPage,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -31,6 +31,12 @@ namespace G
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
+
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return
+                global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<Package>?>(__content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
 }

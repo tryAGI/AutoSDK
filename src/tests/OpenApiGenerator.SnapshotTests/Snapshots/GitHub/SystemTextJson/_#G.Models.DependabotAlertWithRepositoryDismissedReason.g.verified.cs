@@ -7,27 +7,64 @@ namespace G
     /// <summary>
     /// The reason that the alert was dismissed.
     /// </summary>
-    public abstract class DependabotAlertWithRepositoryDismissedReason
+    public enum DependabotAlertWithRepositoryDismissedReason
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string FixStarted = "fix_started";
+        FixStarted,
         /// <summary>
         /// 
         /// </summary>
-        public const string Inaccurate = "inaccurate";
+        Inaccurate,
         /// <summary>
         /// 
         /// </summary>
-        public const string NoBandwidth = "no_bandwidth";
+        NoBandwidth,
         /// <summary>
         /// 
         /// </summary>
-        public const string NotUsed = "not_used";
+        NotUsed,
         /// <summary>
         /// 
         /// </summary>
-        public const string TolerableRisk = "tolerable_risk";
+        TolerableRisk,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class DependabotAlertWithRepositoryDismissedReasonExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this DependabotAlertWithRepositoryDismissedReason value)
+        {
+            return value switch
+            {
+                DependabotAlertWithRepositoryDismissedReason.FixStarted => "fix_started",
+                DependabotAlertWithRepositoryDismissedReason.Inaccurate => "inaccurate",
+                DependabotAlertWithRepositoryDismissedReason.NoBandwidth => "no_bandwidth",
+                DependabotAlertWithRepositoryDismissedReason.NotUsed => "not_used",
+                DependabotAlertWithRepositoryDismissedReason.TolerableRisk => "tolerable_risk",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static DependabotAlertWithRepositoryDismissedReason ToEnum(string value)
+        {
+            return value switch
+            {
+                "fix_started" => DependabotAlertWithRepositoryDismissedReason.FixStarted,
+                "inaccurate" => DependabotAlertWithRepositoryDismissedReason.Inaccurate,
+                "no_bandwidth" => DependabotAlertWithRepositoryDismissedReason.NoBandwidth,
+                "not_used" => DependabotAlertWithRepositoryDismissedReason.NotUsed,
+                "tolerable_risk" => DependabotAlertWithRepositoryDismissedReason.TolerableRisk,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

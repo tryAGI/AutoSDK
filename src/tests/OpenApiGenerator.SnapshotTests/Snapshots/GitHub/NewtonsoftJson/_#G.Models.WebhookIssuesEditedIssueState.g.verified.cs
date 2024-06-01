@@ -21,4 +21,35 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="closed")]
         Closed,
     }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssuesEditedIssueStateExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssuesEditedIssueState value)
+        {
+            return value switch
+            {
+                WebhookIssuesEditedIssueState.Open => "open",
+                WebhookIssuesEditedIssueState.Closed => "closed",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssuesEditedIssueState ToEnum(string value)
+        {
+            return value switch
+            {
+                "open" => WebhookIssuesEditedIssueState.Open,
+                "closed" => WebhookIssuesEditedIssueState.Closed,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

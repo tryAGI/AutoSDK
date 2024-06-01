@@ -7,23 +7,58 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookIssuesDemilestonedIssueUserType
+    public enum WebhookIssuesDemilestonedIssueUserType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Bot = "Bot";
+        Bot,
         /// <summary>
         /// 
         /// </summary>
-        public const string User = "User";
+        User,
         /// <summary>
         /// 
         /// </summary>
-        public const string Organization = "Organization";
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        public const string Mannequin = "Mannequin";
+        Mannequin,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssuesDemilestonedIssueUserTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssuesDemilestonedIssueUserType value)
+        {
+            return value switch
+            {
+                WebhookIssuesDemilestonedIssueUserType.Bot => "Bot",
+                WebhookIssuesDemilestonedIssueUserType.User => "User",
+                WebhookIssuesDemilestonedIssueUserType.Organization => "Organization",
+                WebhookIssuesDemilestonedIssueUserType.Mannequin => "Mannequin",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssuesDemilestonedIssueUserType ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhookIssuesDemilestonedIssueUserType.Bot,
+                "User" => WebhookIssuesDemilestonedIssueUserType.User,
+                "Organization" => WebhookIssuesDemilestonedIssueUserType.Organization,
+                "Mannequin" => WebhookIssuesDemilestonedIssueUserType.Mannequin,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

@@ -7,35 +7,76 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookDeploymentReviewApprovedWorkflowRunConclusion
+    public enum WebhookDeploymentReviewApprovedWorkflowRunConclusion
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Success = "success";
+        Success,
         /// <summary>
         /// 
         /// </summary>
-        public const string Failure = "failure";
+        Failure,
         /// <summary>
         /// 
         /// </summary>
-        public const string Neutral = "neutral";
+        Neutral,
         /// <summary>
         /// 
         /// </summary>
-        public const string Cancelled = "cancelled";
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
-        public const string TimedOut = "timed_out";
+        TimedOut,
         /// <summary>
         /// 
         /// </summary>
-        public const string ActionRequired = "action_required";
+        ActionRequired,
         /// <summary>
         /// 
         /// </summary>
-        public const string Stale = "stale";
+        Stale,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookDeploymentReviewApprovedWorkflowRunConclusionExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookDeploymentReviewApprovedWorkflowRunConclusion value)
+        {
+            return value switch
+            {
+                WebhookDeploymentReviewApprovedWorkflowRunConclusion.Success => "success",
+                WebhookDeploymentReviewApprovedWorkflowRunConclusion.Failure => "failure",
+                WebhookDeploymentReviewApprovedWorkflowRunConclusion.Neutral => "neutral",
+                WebhookDeploymentReviewApprovedWorkflowRunConclusion.Cancelled => "cancelled",
+                WebhookDeploymentReviewApprovedWorkflowRunConclusion.TimedOut => "timed_out",
+                WebhookDeploymentReviewApprovedWorkflowRunConclusion.ActionRequired => "action_required",
+                WebhookDeploymentReviewApprovedWorkflowRunConclusion.Stale => "stale",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookDeploymentReviewApprovedWorkflowRunConclusion ToEnum(string value)
+        {
+            return value switch
+            {
+                "success" => WebhookDeploymentReviewApprovedWorkflowRunConclusion.Success,
+                "failure" => WebhookDeploymentReviewApprovedWorkflowRunConclusion.Failure,
+                "neutral" => WebhookDeploymentReviewApprovedWorkflowRunConclusion.Neutral,
+                "cancelled" => WebhookDeploymentReviewApprovedWorkflowRunConclusion.Cancelled,
+                "timed_out" => WebhookDeploymentReviewApprovedWorkflowRunConclusion.TimedOut,
+                "action_required" => WebhookDeploymentReviewApprovedWorkflowRunConclusion.ActionRequired,
+                "stale" => WebhookDeploymentReviewApprovedWorkflowRunConclusion.Stale,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

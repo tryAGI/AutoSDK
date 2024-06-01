@@ -106,8 +106,9 @@ namespace G
         /// <br/>Example: open
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PullRequestStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string State { get; set; }
+        public required PullRequestState State { get; set; }
 
         /// <summary>
         /// <br/>Example: true
@@ -244,8 +245,9 @@ namespace G
         /// <br/>Example: OWNER
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PullRequestAuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string AuthorAssociation { get; set; }
+        public required PullRequestAuthorAssociation AuthorAssociation { get; set; }
 
         /// <summary>
         /// The status of auto merging a pull request.

@@ -66,7 +66,7 @@ namespace G
         /// Built-in deployment protection rules for the environment.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("protection_rules")]
-        public global::System.Collections.Generic.IList<object?>? ProtectionRules { get; set; }
+        public global::System.Collections.Generic.IList<global::System.AnyOf<EnvironmentProtectionRules?, EnvironmentProtectionRules?, EnvironmentProtectionRules?>>? ProtectionRules { get; set; }
 
         /// <summary>
         /// The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.

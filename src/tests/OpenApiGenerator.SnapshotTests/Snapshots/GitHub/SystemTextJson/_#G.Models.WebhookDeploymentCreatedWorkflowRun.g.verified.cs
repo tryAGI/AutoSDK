@@ -52,8 +52,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookDeploymentCreatedWorkflowRunConclusionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Conclusion { get; set; }
+        public required WebhookDeploymentCreatedWorkflowRunConclusion? Conclusion { get; set; }
 
         /// <summary>
         /// 
@@ -205,8 +206,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookDeploymentCreatedWorkflowRunStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
+        public required WebhookDeploymentCreatedWorkflowRunStatus Status { get; set; }
 
         /// <summary>
         /// 

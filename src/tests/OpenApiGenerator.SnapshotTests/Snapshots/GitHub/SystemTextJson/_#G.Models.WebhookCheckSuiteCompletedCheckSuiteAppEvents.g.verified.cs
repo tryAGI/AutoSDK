@@ -7,215 +7,346 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookCheckSuiteCompletedCheckSuiteAppEvents
+    public enum WebhookCheckSuiteCompletedCheckSuiteAppEvents
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string BranchProtectionRule = "branch_protection_rule";
+        BranchProtectionRule,
         /// <summary>
         /// 
         /// </summary>
-        public const string CheckRun = "check_run";
+        CheckRun,
         /// <summary>
         /// 
         /// </summary>
-        public const string CheckSuite = "check_suite";
+        CheckSuite,
         /// <summary>
         /// 
         /// </summary>
-        public const string CodeScanningAlert = "code_scanning_alert";
+        CodeScanningAlert,
         /// <summary>
         /// 
         /// </summary>
-        public const string CommitComment = "commit_comment";
+        CommitComment,
         /// <summary>
         /// 
         /// </summary>
-        public const string ContentReference = "content_reference";
+        ContentReference,
         /// <summary>
         /// 
         /// </summary>
-        public const string Create = "create";
+        Create,
         /// <summary>
         /// 
         /// </summary>
-        public const string Delete = "delete";
+        Delete,
         /// <summary>
         /// 
         /// </summary>
-        public const string Deployment = "deployment";
+        Deployment,
         /// <summary>
         /// 
         /// </summary>
-        public const string DeploymentReview = "deployment_review";
+        DeploymentReview,
         /// <summary>
         /// 
         /// </summary>
-        public const string DeploymentStatus = "deployment_status";
+        DeploymentStatus,
         /// <summary>
         /// 
         /// </summary>
-        public const string DeployKey = "deploy_key";
+        DeployKey,
         /// <summary>
         /// 
         /// </summary>
-        public const string Discussion = "discussion";
+        Discussion,
         /// <summary>
         /// 
         /// </summary>
-        public const string DiscussionComment = "discussion_comment";
+        DiscussionComment,
         /// <summary>
         /// 
         /// </summary>
-        public const string Fork = "fork";
+        Fork,
         /// <summary>
         /// 
         /// </summary>
-        public const string Gollum = "gollum";
+        Gollum,
         /// <summary>
         /// 
         /// </summary>
-        public const string Issues = "issues";
+        Issues,
         /// <summary>
         /// 
         /// </summary>
-        public const string IssueComment = "issue_comment";
+        IssueComment,
         /// <summary>
         /// 
         /// </summary>
-        public const string Label = "label";
+        Label,
         /// <summary>
         /// 
         /// </summary>
-        public const string Member = "member";
+        Member,
         /// <summary>
         /// 
         /// </summary>
-        public const string Membership = "membership";
+        Membership,
         /// <summary>
         /// 
         /// </summary>
-        public const string Milestone = "milestone";
+        Milestone,
         /// <summary>
         /// 
         /// </summary>
-        public const string Organization = "organization";
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        public const string OrgBlock = "org_block";
+        OrgBlock,
         /// <summary>
         /// 
         /// </summary>
-        public const string PageBuild = "page_build";
+        PageBuild,
         /// <summary>
         /// 
         /// </summary>
-        public const string Project = "project";
+        Project,
         /// <summary>
         /// 
         /// </summary>
-        public const string ProjectCard = "project_card";
+        ProjectCard,
         /// <summary>
         /// 
         /// </summary>
-        public const string ProjectColumn = "project_column";
+        ProjectColumn,
         /// <summary>
         /// 
         /// </summary>
-        public const string Public = "public";
+        Public,
         /// <summary>
         /// 
         /// </summary>
-        public const string PullRequest = "pull_request";
+        PullRequest,
         /// <summary>
         /// 
         /// </summary>
-        public const string PullRequestReview = "pull_request_review";
+        PullRequestReview,
         /// <summary>
         /// 
         /// </summary>
-        public const string PullRequestReviewComment = "pull_request_review_comment";
+        PullRequestReviewComment,
         /// <summary>
         /// 
         /// </summary>
-        public const string Push = "push";
+        Push,
         /// <summary>
         /// 
         /// </summary>
-        public const string RegistryPackage = "registry_package";
+        RegistryPackage,
         /// <summary>
         /// 
         /// </summary>
-        public const string Release = "release";
+        Release,
         /// <summary>
         /// 
         /// </summary>
-        public const string Repository = "repository";
+        Repository,
         /// <summary>
         /// 
         /// </summary>
-        public const string RepositoryDispatch = "repository_dispatch";
+        RepositoryDispatch,
         /// <summary>
         /// 
         /// </summary>
-        public const string SecretScanningAlert = "secret_scanning_alert";
+        SecretScanningAlert,
         /// <summary>
         /// 
         /// </summary>
-        public const string Star = "star";
+        Star,
         /// <summary>
         /// 
         /// </summary>
-        public const string Status = "status";
+        Status,
         /// <summary>
         /// 
         /// </summary>
-        public const string Team = "team";
+        Team,
         /// <summary>
         /// 
         /// </summary>
-        public const string TeamAdd = "team_add";
+        TeamAdd,
         /// <summary>
         /// 
         /// </summary>
-        public const string Watch = "watch";
+        Watch,
         /// <summary>
         /// 
         /// </summary>
-        public const string WorkflowDispatch = "workflow_dispatch";
+        WorkflowDispatch,
         /// <summary>
         /// 
         /// </summary>
-        public const string WorkflowRun = "workflow_run";
+        WorkflowRun,
         /// <summary>
         /// 
         /// </summary>
-        public const string MergeGroup = "merge_group";
+        MergeGroup,
         /// <summary>
         /// 
         /// </summary>
-        public const string PullRequestReviewThread = "pull_request_review_thread";
+        PullRequestReviewThread,
         /// <summary>
         /// 
         /// </summary>
-        public const string WorkflowJob = "workflow_job";
+        WorkflowJob,
         /// <summary>
         /// 
         /// </summary>
-        public const string MergeQueueEntry = "merge_queue_entry";
+        MergeQueueEntry,
         /// <summary>
         /// 
         /// </summary>
-        public const string SecurityAndAnalysis = "security_and_analysis";
+        SecurityAndAnalysis,
         /// <summary>
         /// 
         /// </summary>
-        public const string ProjectsV2Item = "projects_v2_item";
+        ProjectsV2Item,
         /// <summary>
         /// 
         /// </summary>
-        public const string SecretScanningAlertLocation = "secret_scanning_alert_location";
+        SecretScanningAlertLocation,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookCheckSuiteCompletedCheckSuiteAppEventsExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookCheckSuiteCompletedCheckSuiteAppEvents value)
+        {
+            return value switch
+            {
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.BranchProtectionRule => "branch_protection_rule",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.CheckRun => "check_run",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.CheckSuite => "check_suite",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.CodeScanningAlert => "code_scanning_alert",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.CommitComment => "commit_comment",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.ContentReference => "content_reference",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.Create => "create",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.Delete => "delete",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.Deployment => "deployment",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.DeploymentReview => "deployment_review",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.DeploymentStatus => "deployment_status",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.DeployKey => "deploy_key",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.Discussion => "discussion",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.DiscussionComment => "discussion_comment",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.Fork => "fork",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.Gollum => "gollum",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.Issues => "issues",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.IssueComment => "issue_comment",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.Label => "label",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.Member => "member",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.Membership => "membership",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.Milestone => "milestone",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.Organization => "organization",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.OrgBlock => "org_block",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.PageBuild => "page_build",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.Project => "project",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.ProjectCard => "project_card",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.ProjectColumn => "project_column",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.Public => "public",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.PullRequest => "pull_request",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.PullRequestReview => "pull_request_review",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.PullRequestReviewComment => "pull_request_review_comment",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.Push => "push",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.RegistryPackage => "registry_package",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.Release => "release",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.Repository => "repository",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.RepositoryDispatch => "repository_dispatch",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.SecretScanningAlert => "secret_scanning_alert",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.Star => "star",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.Status => "status",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.Team => "team",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.TeamAdd => "team_add",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.Watch => "watch",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.WorkflowDispatch => "workflow_dispatch",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.WorkflowRun => "workflow_run",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.MergeGroup => "merge_group",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.PullRequestReviewThread => "pull_request_review_thread",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.WorkflowJob => "workflow_job",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.MergeQueueEntry => "merge_queue_entry",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.SecurityAndAnalysis => "security_and_analysis",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.ProjectsV2Item => "projects_v2_item",
+                WebhookCheckSuiteCompletedCheckSuiteAppEvents.SecretScanningAlertLocation => "secret_scanning_alert_location",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookCheckSuiteCompletedCheckSuiteAppEvents ToEnum(string value)
+        {
+            return value switch
+            {
+                "branch_protection_rule" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.BranchProtectionRule,
+                "check_run" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.CheckRun,
+                "check_suite" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.CheckSuite,
+                "code_scanning_alert" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.CodeScanningAlert,
+                "commit_comment" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.CommitComment,
+                "content_reference" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.ContentReference,
+                "create" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.Create,
+                "delete" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.Delete,
+                "deployment" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.Deployment,
+                "deployment_review" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.DeploymentReview,
+                "deployment_status" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.DeploymentStatus,
+                "deploy_key" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.DeployKey,
+                "discussion" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.Discussion,
+                "discussion_comment" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.DiscussionComment,
+                "fork" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.Fork,
+                "gollum" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.Gollum,
+                "issues" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.Issues,
+                "issue_comment" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.IssueComment,
+                "label" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.Label,
+                "member" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.Member,
+                "membership" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.Membership,
+                "milestone" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.Milestone,
+                "organization" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.Organization,
+                "org_block" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.OrgBlock,
+                "page_build" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.PageBuild,
+                "project" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.Project,
+                "project_card" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.ProjectCard,
+                "project_column" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.ProjectColumn,
+                "public" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.Public,
+                "pull_request" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.PullRequest,
+                "pull_request_review" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.PullRequestReview,
+                "pull_request_review_comment" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.PullRequestReviewComment,
+                "push" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.Push,
+                "registry_package" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.RegistryPackage,
+                "release" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.Release,
+                "repository" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.Repository,
+                "repository_dispatch" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.RepositoryDispatch,
+                "secret_scanning_alert" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.SecretScanningAlert,
+                "star" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.Star,
+                "status" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.Status,
+                "team" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.Team,
+                "team_add" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.TeamAdd,
+                "watch" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.Watch,
+                "workflow_dispatch" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.WorkflowDispatch,
+                "workflow_run" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.WorkflowRun,
+                "merge_group" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.MergeGroup,
+                "pull_request_review_thread" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.PullRequestReviewThread,
+                "workflow_job" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.WorkflowJob,
+                "merge_queue_entry" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.MergeQueueEntry,
+                "security_and_analysis" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.SecurityAndAnalysis,
+                "projects_v2_item" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.ProjectsV2Item,
+                "secret_scanning_alert_location" => WebhookCheckSuiteCompletedCheckSuiteAppEvents.SecretScanningAlertLocation,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

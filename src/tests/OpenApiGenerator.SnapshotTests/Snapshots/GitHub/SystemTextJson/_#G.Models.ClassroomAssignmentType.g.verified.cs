@@ -8,15 +8,46 @@ namespace G
     /// Whether it's a group assignment or individual assignment.
     /// <br/>Example: individual
     /// </summary>
-    public abstract class ClassroomAssignmentType
+    public enum ClassroomAssignmentType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Individual = "individual";
+        Individual,
         /// <summary>
         /// 
         /// </summary>
-        public const string Group = "group";
+        Group,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ClassroomAssignmentTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ClassroomAssignmentType value)
+        {
+            return value switch
+            {
+                ClassroomAssignmentType.Individual => "individual",
+                ClassroomAssignmentType.Group => "group",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ClassroomAssignmentType ToEnum(string value)
+        {
+            return value switch
+            {
+                "individual" => ClassroomAssignmentType.Individual,
+                "group" => ClassroomAssignmentType.Group,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

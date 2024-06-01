@@ -105,8 +105,9 @@ namespace G
         /// <br/>Example: OWNER
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.TimelineReviewedEventAuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string AuthorAssociation { get; set; }
+        public required TimelineReviewedEventAuthorAssociation AuthorAssociation { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

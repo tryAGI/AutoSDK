@@ -13,8 +13,9 @@ namespace G
         /// The package's language or package management ecosystem.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ecosystem")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystemJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Ecosystem { get; set; }
+        public required RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem Ecosystem { get; set; }
 
         /// <summary>
         /// The unique package name within its ecosystem.

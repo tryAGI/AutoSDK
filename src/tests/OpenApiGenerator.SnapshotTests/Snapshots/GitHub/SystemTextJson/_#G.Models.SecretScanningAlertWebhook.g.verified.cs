@@ -49,7 +49,8 @@ namespace G
         /// The reason for resolving the alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resolution")]
-        public string? Resolution { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SecretScanningAlertWebhookResolutionJsonConverter))]
+        public SecretScanningAlertWebhookResolution? Resolution { get; set; }
 
         /// <summary>
         /// The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -79,7 +80,8 @@ namespace G
         /// The token status as of the latest validity check.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("validity")]
-        public string? Validity { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SecretScanningAlertWebhookValidityJsonConverter))]
+        public SecretScanningAlertWebhookValidity? Validity { get; set; }
 
         /// <summary>
         /// Whether push protection was bypassed for the detected secret.

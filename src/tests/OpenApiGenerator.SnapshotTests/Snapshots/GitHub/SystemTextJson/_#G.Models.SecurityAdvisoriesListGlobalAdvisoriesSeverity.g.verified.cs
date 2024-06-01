@@ -7,27 +7,64 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class SecurityAdvisoriesListGlobalAdvisoriesSeverity
+    public enum SecurityAdvisoriesListGlobalAdvisoriesSeverity
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Unknown = "unknown";
+        Unknown,
         /// <summary>
         /// 
         /// </summary>
-        public const string Low = "low";
+        Low,
         /// <summary>
         /// 
         /// </summary>
-        public const string Medium = "medium";
+        Medium,
         /// <summary>
         /// 
         /// </summary>
-        public const string High = "high";
+        High,
         /// <summary>
         /// 
         /// </summary>
-        public const string Critical = "critical";
+        Critical,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class SecurityAdvisoriesListGlobalAdvisoriesSeverityExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this SecurityAdvisoriesListGlobalAdvisoriesSeverity value)
+        {
+            return value switch
+            {
+                SecurityAdvisoriesListGlobalAdvisoriesSeverity.Unknown => "unknown",
+                SecurityAdvisoriesListGlobalAdvisoriesSeverity.Low => "low",
+                SecurityAdvisoriesListGlobalAdvisoriesSeverity.Medium => "medium",
+                SecurityAdvisoriesListGlobalAdvisoriesSeverity.High => "high",
+                SecurityAdvisoriesListGlobalAdvisoriesSeverity.Critical => "critical",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static SecurityAdvisoriesListGlobalAdvisoriesSeverity ToEnum(string value)
+        {
+            return value switch
+            {
+                "unknown" => SecurityAdvisoriesListGlobalAdvisoriesSeverity.Unknown,
+                "low" => SecurityAdvisoriesListGlobalAdvisoriesSeverity.Low,
+                "medium" => SecurityAdvisoriesListGlobalAdvisoriesSeverity.Medium,
+                "high" => SecurityAdvisoriesListGlobalAdvisoriesSeverity.High,
+                "critical" => SecurityAdvisoriesListGlobalAdvisoriesSeverity.Critical,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

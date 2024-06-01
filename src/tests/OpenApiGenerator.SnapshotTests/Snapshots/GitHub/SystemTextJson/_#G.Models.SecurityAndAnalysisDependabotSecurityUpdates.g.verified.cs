@@ -13,7 +13,8 @@ namespace G
         /// The enablement status of Dependabot security updates for the repository.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SecurityAndAnalysisDependabotSecurityUpdatesStatusJsonConverter))]
+        public SecurityAndAnalysisDependabotSecurityUpdatesStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

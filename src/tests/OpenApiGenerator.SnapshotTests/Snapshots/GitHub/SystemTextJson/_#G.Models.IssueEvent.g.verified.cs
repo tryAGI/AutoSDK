@@ -136,7 +136,8 @@ namespace G
         /// <br/>Example: OWNER
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
-        public string? AuthorAssociation { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.IssueEventAuthorAssociationJsonConverter))]
+        public IssueEventAuthorAssociation? AuthorAssociation { get; set; }
 
         /// <summary>
         /// 

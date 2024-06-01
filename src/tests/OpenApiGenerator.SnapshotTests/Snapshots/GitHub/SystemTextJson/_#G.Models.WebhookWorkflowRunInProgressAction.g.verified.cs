@@ -7,11 +7,40 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookWorkflowRunInProgressAction
+    public enum WebhookWorkflowRunInProgressAction
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string InProgress = "in_progress";
+        InProgress,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookWorkflowRunInProgressActionExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookWorkflowRunInProgressAction value)
+        {
+            return value switch
+            {
+                WebhookWorkflowRunInProgressAction.InProgress => "in_progress",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookWorkflowRunInProgressAction ToEnum(string value)
+        {
+            return value switch
+            {
+                "in_progress" => WebhookWorkflowRunInProgressAction.InProgress,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

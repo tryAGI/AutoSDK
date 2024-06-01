@@ -22,4 +22,35 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="development")]
         Development,
     }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class DependencyScopeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this DependencyScope value)
+        {
+            return value switch
+            {
+                DependencyScope.Runtime => "runtime",
+                DependencyScope.Development => "development",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static DependencyScope ToEnum(string value)
+        {
+            return value switch
+            {
+                "runtime" => DependencyScope.Runtime,
+                "development" => DependencyScope.Development,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

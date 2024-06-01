@@ -7,15 +7,46 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class ReposListForOrgDirection
+    public enum ReposListForOrgDirection
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Asc = "asc";
+        Asc,
         /// <summary>
         /// 
         /// </summary>
-        public const string Desc = "desc";
+        Desc,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ReposListForOrgDirectionExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ReposListForOrgDirection value)
+        {
+            return value switch
+            {
+                ReposListForOrgDirection.Asc => "asc",
+                ReposListForOrgDirection.Desc => "desc",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ReposListForOrgDirection ToEnum(string value)
+        {
+            return value switch
+            {
+                "asc" => ReposListForOrgDirection.Asc,
+                "desc" => ReposListForOrgDirection.Desc,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

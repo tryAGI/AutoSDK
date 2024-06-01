@@ -13,7 +13,8 @@ namespace G
         /// The current status of the deployment.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PagesDeploymentStatusStatusJsonConverter))]
+        public PagesDeploymentStatusStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

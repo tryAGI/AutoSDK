@@ -62,15 +62,17 @@ namespace G
         /// The type of advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.GlobalAdvisoryTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required GlobalAdvisoryType Type { get; set; }
 
         /// <summary>
         /// The severity of the advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.GlobalAdvisorySeverityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Severity { get; set; }
+        public required GlobalAdvisorySeverity Severity { get; set; }
 
         /// <summary>
         /// The URL of the advisory's source code.

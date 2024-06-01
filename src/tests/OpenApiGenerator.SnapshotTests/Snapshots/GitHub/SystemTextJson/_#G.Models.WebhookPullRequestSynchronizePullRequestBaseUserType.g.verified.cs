@@ -7,19 +7,52 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookPullRequestSynchronizePullRequestBaseUserType
+    public enum WebhookPullRequestSynchronizePullRequestBaseUserType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Bot = "Bot";
+        Bot,
         /// <summary>
         /// 
         /// </summary>
-        public const string User = "User";
+        User,
         /// <summary>
         /// 
         /// </summary>
-        public const string Organization = "Organization";
+        Organization,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestSynchronizePullRequestBaseUserTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestSynchronizePullRequestBaseUserType value)
+        {
+            return value switch
+            {
+                WebhookPullRequestSynchronizePullRequestBaseUserType.Bot => "Bot",
+                WebhookPullRequestSynchronizePullRequestBaseUserType.User => "User",
+                WebhookPullRequestSynchronizePullRequestBaseUserType.Organization => "Organization",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestSynchronizePullRequestBaseUserType ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhookPullRequestSynchronizePullRequestBaseUserType.Bot,
+                "User" => WebhookPullRequestSynchronizePullRequestBaseUserType.User,
+                "Organization" => WebhookPullRequestSynchronizePullRequestBaseUserType.Organization,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

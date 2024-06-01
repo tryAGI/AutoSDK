@@ -7,35 +7,76 @@ namespace G
     /// <summary>
     /// Severity of a code scanning alert.
     /// </summary>
-    public abstract class CodeScanningListAlertsForOrgSeverity
+    public enum CodeScanningListAlertsForOrgSeverity
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Critical = "critical";
+        Critical,
         /// <summary>
         /// 
         /// </summary>
-        public const string High = "high";
+        High,
         /// <summary>
         /// 
         /// </summary>
-        public const string Medium = "medium";
+        Medium,
         /// <summary>
         /// 
         /// </summary>
-        public const string Low = "low";
+        Low,
         /// <summary>
         /// 
         /// </summary>
-        public const string Warning = "warning";
+        Warning,
         /// <summary>
         /// 
         /// </summary>
-        public const string Note = "note";
+        Note,
         /// <summary>
         /// 
         /// </summary>
-        public const string Error = "error";
+        Error,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class CodeScanningListAlertsForOrgSeverityExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this CodeScanningListAlertsForOrgSeverity value)
+        {
+            return value switch
+            {
+                CodeScanningListAlertsForOrgSeverity.Critical => "critical",
+                CodeScanningListAlertsForOrgSeverity.High => "high",
+                CodeScanningListAlertsForOrgSeverity.Medium => "medium",
+                CodeScanningListAlertsForOrgSeverity.Low => "low",
+                CodeScanningListAlertsForOrgSeverity.Warning => "warning",
+                CodeScanningListAlertsForOrgSeverity.Note => "note",
+                CodeScanningListAlertsForOrgSeverity.Error => "error",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static CodeScanningListAlertsForOrgSeverity ToEnum(string value)
+        {
+            return value switch
+            {
+                "critical" => CodeScanningListAlertsForOrgSeverity.Critical,
+                "high" => CodeScanningListAlertsForOrgSeverity.High,
+                "medium" => CodeScanningListAlertsForOrgSeverity.Medium,
+                "low" => CodeScanningListAlertsForOrgSeverity.Low,
+                "warning" => CodeScanningListAlertsForOrgSeverity.Warning,
+                "note" => CodeScanningListAlertsForOrgSeverity.Note,
+                "error" => CodeScanningListAlertsForOrgSeverity.Error,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

@@ -36,11 +36,11 @@ namespace G
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
 
-            var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<EmptyObject>(content) ??
-                throw new global::System.InvalidOperationException("Response deserialization failed for \"{content}\" ");
+                global::System.Text.Json.JsonSerializer.Deserialize<EmptyObject?>(__content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
         /// <summary>
@@ -56,9 +56,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<EmptyObject> CodeScanningUpdateDefaultSetupAsync(
             string owner,
             string repo,
-            string? state = default,
-            string? querySuite = default,
-            global::System.Collections.Generic.IList<string?>? languages = default,
+            CodeScanningDefaultSetupUpdateState? state = default,
+            CodeScanningDefaultSetupUpdateQuerySuite? querySuite = default,
+            global::System.Collections.Generic.IList<CodeScanningDefaultSetupUpdateLanguages?>? languages = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CodeScanningDefaultSetupUpdate

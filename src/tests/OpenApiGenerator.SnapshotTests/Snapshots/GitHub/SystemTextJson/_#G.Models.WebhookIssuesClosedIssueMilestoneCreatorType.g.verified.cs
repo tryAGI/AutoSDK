@@ -7,23 +7,58 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookIssuesClosedIssueMilestoneCreatorType
+    public enum WebhookIssuesClosedIssueMilestoneCreatorType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Bot = "Bot";
+        Bot,
         /// <summary>
         /// 
         /// </summary>
-        public const string User = "User";
+        User,
         /// <summary>
         /// 
         /// </summary>
-        public const string Organization = "Organization";
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        public const string Mannequin = "Mannequin";
+        Mannequin,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssuesClosedIssueMilestoneCreatorTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssuesClosedIssueMilestoneCreatorType value)
+        {
+            return value switch
+            {
+                WebhookIssuesClosedIssueMilestoneCreatorType.Bot => "Bot",
+                WebhookIssuesClosedIssueMilestoneCreatorType.User => "User",
+                WebhookIssuesClosedIssueMilestoneCreatorType.Organization => "Organization",
+                WebhookIssuesClosedIssueMilestoneCreatorType.Mannequin => "Mannequin",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssuesClosedIssueMilestoneCreatorType ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhookIssuesClosedIssueMilestoneCreatorType.Bot,
+                "User" => WebhookIssuesClosedIssueMilestoneCreatorType.User,
+                "Organization" => WebhookIssuesClosedIssueMilestoneCreatorType.Organization,
+                "Mannequin" => WebhookIssuesClosedIssueMilestoneCreatorType.Mannequin,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

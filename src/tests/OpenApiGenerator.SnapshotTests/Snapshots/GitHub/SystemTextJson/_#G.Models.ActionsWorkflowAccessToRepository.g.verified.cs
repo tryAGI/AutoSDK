@@ -15,8 +15,9 @@ namespace G
         /// `none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repositories only. `organization` level access allows sharing across the organization.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_level")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ActionsWorkflowAccessToRepositoryAccessLevelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string AccessLevel { get; set; }
+        public required ActionsWorkflowAccessToRepositoryAccessLevel AccessLevel { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

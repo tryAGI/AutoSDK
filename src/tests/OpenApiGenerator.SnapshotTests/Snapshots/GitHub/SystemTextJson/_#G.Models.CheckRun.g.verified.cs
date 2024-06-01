@@ -65,15 +65,17 @@ namespace G
         /// <br/>Example: queued
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CheckRunStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
+        public required CheckRunStatus Status { get; set; }
 
         /// <summary>
         /// <br/>Example: neutral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CheckRunConclusionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Conclusion { get; set; }
+        public required CheckRunConclusion? Conclusion { get; set; }
 
         /// <summary>
         /// <br/>Example: 

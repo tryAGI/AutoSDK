@@ -38,7 +38,8 @@ namespace G
         /// State of a code scanning alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        public string? State { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningAlertInstanceStateJsonConverter))]
+        public CodeScanningAlertInstanceState? State { get; set; }
 
         /// <summary>
         /// 

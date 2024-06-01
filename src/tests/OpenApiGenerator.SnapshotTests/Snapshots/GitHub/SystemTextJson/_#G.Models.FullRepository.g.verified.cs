@@ -585,7 +585,8 @@ namespace G
         /// <br/>Example: PR_TITLE
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("squash_merge_commit_title")]
-        public string? SquashMergeCommitTitle { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.FullRepositorySquashMergeCommitTitleJsonConverter))]
+        public FullRepositorySquashMergeCommitTitle? SquashMergeCommitTitle { get; set; }
 
         /// <summary>
         /// The default value for a squash merge commit message:
@@ -595,7 +596,8 @@ namespace G
         /// <br/>Example: PR_BODY
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("squash_merge_commit_message")]
-        public string? SquashMergeCommitMessage { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.FullRepositorySquashMergeCommitMessageJsonConverter))]
+        public FullRepositorySquashMergeCommitMessage? SquashMergeCommitMessage { get; set; }
 
         /// <summary>
         /// The default value for a merge commit title.
@@ -604,7 +606,8 @@ namespace G
         /// <br/>Example: PR_TITLE
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_commit_title")]
-        public string? MergeCommitTitle { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.FullRepositoryMergeCommitTitleJsonConverter))]
+        public FullRepositoryMergeCommitTitle? MergeCommitTitle { get; set; }
 
         /// <summary>
         /// The default value for a merge commit message.
@@ -614,7 +617,8 @@ namespace G
         /// <br/>Example: PR_BODY
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_commit_message")]
-        public string? MergeCommitMessage { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.FullRepositoryMergeCommitMessageJsonConverter))]
+        public FullRepositoryMergeCommitMessage? MergeCommitMessage { get; set; }
 
         /// <summary>
         /// <br/>Example: true

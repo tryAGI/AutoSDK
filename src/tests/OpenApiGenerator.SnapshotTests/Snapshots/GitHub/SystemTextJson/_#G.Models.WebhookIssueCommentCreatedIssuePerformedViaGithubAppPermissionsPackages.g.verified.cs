@@ -7,15 +7,46 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsPackages
+    public enum WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsPackages
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Read = "read";
+        Read,
         /// <summary>
         /// 
         /// </summary>
-        public const string Write = "write";
+        Write,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsPackagesExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsPackages value)
+        {
+            return value switch
+            {
+                WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsPackages.Read => "read",
+                WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsPackages.Write => "write",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsPackages ToEnum(string value)
+        {
+            return value switch
+            {
+                "read" => WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsPackages.Read,
+                "write" => WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsPackages.Write,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

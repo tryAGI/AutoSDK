@@ -20,7 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reviewer")]
-        public object? Reviewer { get; set; }
+        public global::System.AnyOf<SimpleUser?, Team?> Reviewer { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

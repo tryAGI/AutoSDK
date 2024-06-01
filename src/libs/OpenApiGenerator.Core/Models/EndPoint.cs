@@ -107,12 +107,16 @@ public readonly record struct EndPoint(
             .ToArray();
         var requestMediaTypes = operation.Value.RequestBody?.ResolveIfRequired().Content?.Values ?? [];
         var requestBodyModels = requestMediaTypes
-            .Where(x => x.Schema.Type == "object" || x.Schema.Type == "array") //&& x.Parameter.Schema.Items?.Type == "object"
-            .Select(x => ModelData.FromSchema(
-                x.Schema.Type == "object"
-                    ? x.Schema.UseReferenceIdOrKey(id + "Request")
-                    : x.Schema.Items.UseReferenceIdOrKey(id + "Request"),
-                    settings))
+            .Where(x =>
+                x.Schema.Type == "object" ||
+                x.Schema.Type == "array" ||
+                x.Schema.AnyOf is { Count: > 0 } ||
+                x.Schema.OneOf is { Count: > 0 } ||
+                x.Schema.AllOf is { Count: > 0 }) //&& x.Parameter.Schema.Items?.Type == "object"
+            .SelectMany(x => ModelData.FromSchemas(
+                x.Schema,
+                settings,
+                id + "Request"))
             .SelectMany(model => model.WithAdditionalModels())
             .ToArray();
         var requestBodyTypes = requestMediaTypes
@@ -134,12 +138,15 @@ public readonly record struct EndPoint(
         var responseModels = responses
             .Where(x =>
                 x.MediaType.Value.Schema != null &&
-                (x.MediaType.Value.Schema.Type == "object" || x.MediaType.Value.Schema.Type == "array")) //&& x.Parameter.Schema.Items?.Type == "object"
-            .Select(x => ModelData.FromSchema(
-                x.MediaType.Value.Schema.Type == "object"
-                    ? x.MediaType.Value.Schema.UseReferenceIdOrKey(key: id + "Response")
-                    : x.MediaType.Value.Schema.Items.UseReferenceIdOrKey(key: id + "Response"),
-                settings))
+                (x.MediaType.Value.Schema.Type == "object" ||
+                 x.MediaType.Value.Schema.Type == "array" ||
+                 x.MediaType.Value.Schema.AnyOf is { Count: > 0 } ||
+                 x.MediaType.Value.Schema.OneOf is { Count: > 0 } ||
+                 x.MediaType.Value.Schema.AllOf is { Count: > 0 })) //&& x.Parameter.Schema.Items?.Type == "object"
+            .SelectMany(x => ModelData.FromSchemas(
+                x.MediaType.Value.Schema,
+                settings,
+                key: id + "Response"))
             .SelectMany(model => model.WithAdditionalModels())
             .ToArray();
         var responseTypes = responses

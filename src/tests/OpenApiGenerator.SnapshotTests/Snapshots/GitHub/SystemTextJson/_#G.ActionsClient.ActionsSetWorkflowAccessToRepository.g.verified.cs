@@ -48,7 +48,7 @@ namespace G
         public async global::System.Threading.Tasks.Task ActionsSetWorkflowAccessToRepositoryAsync(
             string owner,
             string repo,
-            string accessLevel,
+            ActionsWorkflowAccessToRepositoryAccessLevel accessLevel,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new ActionsWorkflowAccessToRepository

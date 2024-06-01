@@ -38,11 +38,11 @@ namespace G
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
 
-            var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<DeploymentBranchPolicy>(content) ??
-                throw new global::System.InvalidOperationException("Response deserialization failed for \"{content}\" ");
+                global::System.Text.Json.JsonSerializer.Deserialize<DeploymentBranchPolicy?>(__content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace G
             string repo,
             string environmentName,
             string name,
-            string? type = default,
+            DeploymentBranchPolicyNamePatternWithTypeType? type = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new DeploymentBranchPolicyNamePatternWithType

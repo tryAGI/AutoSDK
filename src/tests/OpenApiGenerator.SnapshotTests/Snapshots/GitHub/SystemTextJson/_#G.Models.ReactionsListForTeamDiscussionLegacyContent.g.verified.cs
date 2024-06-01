@@ -7,39 +7,82 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class ReactionsListForTeamDiscussionLegacyContent
+    public enum ReactionsListForTeamDiscussionLegacyContent
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Plus1 = "+1";
+        Plus1,
         /// <summary>
         /// 
         /// </summary>
-        public const string Minus1 = "-1";
+        Minus1,
         /// <summary>
         /// 
         /// </summary>
-        public const string Laugh = "laugh";
+        Laugh,
         /// <summary>
         /// 
         /// </summary>
-        public const string Confused = "confused";
+        Confused,
         /// <summary>
         /// 
         /// </summary>
-        public const string Heart = "heart";
+        Heart,
         /// <summary>
         /// 
         /// </summary>
-        public const string Hooray = "hooray";
+        Hooray,
         /// <summary>
         /// 
         /// </summary>
-        public const string Rocket = "rocket";
+        Rocket,
         /// <summary>
         /// 
         /// </summary>
-        public const string Eyes = "eyes";
+        Eyes,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ReactionsListForTeamDiscussionLegacyContentExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ReactionsListForTeamDiscussionLegacyContent value)
+        {
+            return value switch
+            {
+                ReactionsListForTeamDiscussionLegacyContent.Plus1 => "+1",
+                ReactionsListForTeamDiscussionLegacyContent.Minus1 => "-1",
+                ReactionsListForTeamDiscussionLegacyContent.Laugh => "laugh",
+                ReactionsListForTeamDiscussionLegacyContent.Confused => "confused",
+                ReactionsListForTeamDiscussionLegacyContent.Heart => "heart",
+                ReactionsListForTeamDiscussionLegacyContent.Hooray => "hooray",
+                ReactionsListForTeamDiscussionLegacyContent.Rocket => "rocket",
+                ReactionsListForTeamDiscussionLegacyContent.Eyes => "eyes",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ReactionsListForTeamDiscussionLegacyContent ToEnum(string value)
+        {
+            return value switch
+            {
+                "+1" => ReactionsListForTeamDiscussionLegacyContent.Plus1,
+                "-1" => ReactionsListForTeamDiscussionLegacyContent.Minus1,
+                "laugh" => ReactionsListForTeamDiscussionLegacyContent.Laugh,
+                "confused" => ReactionsListForTeamDiscussionLegacyContent.Confused,
+                "heart" => ReactionsListForTeamDiscussionLegacyContent.Heart,
+                "hooray" => ReactionsListForTeamDiscussionLegacyContent.Hooray,
+                "rocket" => ReactionsListForTeamDiscussionLegacyContent.Rocket,
+                "eyes" => ReactionsListForTeamDiscussionLegacyContent.Eyes,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

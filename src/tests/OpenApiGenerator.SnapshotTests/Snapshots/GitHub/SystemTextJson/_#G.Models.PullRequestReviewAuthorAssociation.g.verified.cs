@@ -8,39 +8,82 @@ namespace G
     /// How the author is associated with the repository.
     /// <br/>Example: OWNER
     /// </summary>
-    public abstract class PullRequestReviewAuthorAssociation
+    public enum PullRequestReviewAuthorAssociation
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string COLLABORATOR = "COLLABORATOR";
+        COLLABORATOR,
         /// <summary>
         /// 
         /// </summary>
-        public const string CONTRIBUTOR = "CONTRIBUTOR";
+        CONTRIBUTOR,
         /// <summary>
         /// 
         /// </summary>
-        public const string FIRSTTIMER = "FIRST_TIMER";
+        FIRSTTIMER,
         /// <summary>
         /// 
         /// </summary>
-        public const string FIRSTTIMECONTRIBUTOR = "FIRST_TIME_CONTRIBUTOR";
+        FIRSTTIMECONTRIBUTOR,
         /// <summary>
         /// 
         /// </summary>
-        public const string MANNEQUIN = "MANNEQUIN";
+        MANNEQUIN,
         /// <summary>
         /// 
         /// </summary>
-        public const string MEMBER = "MEMBER";
+        MEMBER,
         /// <summary>
         /// 
         /// </summary>
-        public const string NONE = "NONE";
+        NONE,
         /// <summary>
         /// 
         /// </summary>
-        public const string OWNER = "OWNER";
+        OWNER,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class PullRequestReviewAuthorAssociationExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this PullRequestReviewAuthorAssociation value)
+        {
+            return value switch
+            {
+                PullRequestReviewAuthorAssociation.COLLABORATOR => "COLLABORATOR",
+                PullRequestReviewAuthorAssociation.CONTRIBUTOR => "CONTRIBUTOR",
+                PullRequestReviewAuthorAssociation.FIRSTTIMER => "FIRST_TIMER",
+                PullRequestReviewAuthorAssociation.FIRSTTIMECONTRIBUTOR => "FIRST_TIME_CONTRIBUTOR",
+                PullRequestReviewAuthorAssociation.MANNEQUIN => "MANNEQUIN",
+                PullRequestReviewAuthorAssociation.MEMBER => "MEMBER",
+                PullRequestReviewAuthorAssociation.NONE => "NONE",
+                PullRequestReviewAuthorAssociation.OWNER => "OWNER",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static PullRequestReviewAuthorAssociation ToEnum(string value)
+        {
+            return value switch
+            {
+                "COLLABORATOR" => PullRequestReviewAuthorAssociation.COLLABORATOR,
+                "CONTRIBUTOR" => PullRequestReviewAuthorAssociation.CONTRIBUTOR,
+                "FIRST_TIMER" => PullRequestReviewAuthorAssociation.FIRSTTIMER,
+                "FIRST_TIME_CONTRIBUTOR" => PullRequestReviewAuthorAssociation.FIRSTTIMECONTRIBUTOR,
+                "MANNEQUIN" => PullRequestReviewAuthorAssociation.MANNEQUIN,
+                "MEMBER" => PullRequestReviewAuthorAssociation.MEMBER,
+                "NONE" => PullRequestReviewAuthorAssociation.NONE,
+                "OWNER" => PullRequestReviewAuthorAssociation.OWNER,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

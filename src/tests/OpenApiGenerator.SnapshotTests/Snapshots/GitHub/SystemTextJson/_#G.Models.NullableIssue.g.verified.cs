@@ -87,7 +87,8 @@ namespace G
         /// <br/>Example: not_planned
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state_reason")]
-        public string? StateReason { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.NullableIssueStateReasonJsonConverter))]
+        public NullableIssueStateReason? StateReason { get; set; }
 
         /// <summary>
         /// Title of the issue
@@ -117,7 +118,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<object> Labels { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.OneOf<string, NullableIssueLabels>> Labels { get; set; }
 
         /// <summary>
         /// A GitHub user.
@@ -233,8 +234,9 @@ namespace G
         /// <br/>Example: OWNER
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.NullableIssueAuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string AuthorAssociation { get; set; }
+        public required NullableIssueAuthorAssociation AuthorAssociation { get; set; }
 
         /// <summary>
         /// 

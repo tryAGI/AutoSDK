@@ -25,8 +25,9 @@ namespace G
         /// The operator to use for matching.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("operator")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryRuleCommitterEmailPatternParametersOperatorJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Operator { get; set; }
+        public required RepositoryRuleCommitterEmailPatternParametersOperator Operator { get; set; }
 
         /// <summary>
         /// The pattern to match with.

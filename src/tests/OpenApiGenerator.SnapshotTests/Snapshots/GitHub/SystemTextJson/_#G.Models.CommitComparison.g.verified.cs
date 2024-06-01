@@ -62,8 +62,9 @@ namespace G
         /// <br/>Example: ahead
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CommitComparisonStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
+        public required CommitComparisonStatus Status { get; set; }
 
         /// <summary>
         /// <br/>Example: 4

@@ -7,43 +7,88 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookWorkflowRunRequestedWorkflowRunConclusion
+    public enum WebhookWorkflowRunRequestedWorkflowRunConclusion
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Success = "success";
+        Success,
         /// <summary>
         /// 
         /// </summary>
-        public const string Failure = "failure";
+        Failure,
         /// <summary>
         /// 
         /// </summary>
-        public const string Neutral = "neutral";
+        Neutral,
         /// <summary>
         /// 
         /// </summary>
-        public const string Cancelled = "cancelled";
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
-        public const string TimedOut = "timed_out";
+        TimedOut,
         /// <summary>
         /// 
         /// </summary>
-        public const string ActionRequired = "action_required";
+        ActionRequired,
         /// <summary>
         /// 
         /// </summary>
-        public const string Stale = "stale";
+        Stale,
         /// <summary>
         /// 
         /// </summary>
-        public const string Skipped = "skipped";
+        Skipped,
         /// <summary>
         /// 
         /// </summary>
-        public const string StartupFailure = "startup_failure";
+        StartupFailure,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookWorkflowRunRequestedWorkflowRunConclusionExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookWorkflowRunRequestedWorkflowRunConclusion value)
+        {
+            return value switch
+            {
+                WebhookWorkflowRunRequestedWorkflowRunConclusion.Success => "success",
+                WebhookWorkflowRunRequestedWorkflowRunConclusion.Failure => "failure",
+                WebhookWorkflowRunRequestedWorkflowRunConclusion.Neutral => "neutral",
+                WebhookWorkflowRunRequestedWorkflowRunConclusion.Cancelled => "cancelled",
+                WebhookWorkflowRunRequestedWorkflowRunConclusion.TimedOut => "timed_out",
+                WebhookWorkflowRunRequestedWorkflowRunConclusion.ActionRequired => "action_required",
+                WebhookWorkflowRunRequestedWorkflowRunConclusion.Stale => "stale",
+                WebhookWorkflowRunRequestedWorkflowRunConclusion.Skipped => "skipped",
+                WebhookWorkflowRunRequestedWorkflowRunConclusion.StartupFailure => "startup_failure",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookWorkflowRunRequestedWorkflowRunConclusion ToEnum(string value)
+        {
+            return value switch
+            {
+                "success" => WebhookWorkflowRunRequestedWorkflowRunConclusion.Success,
+                "failure" => WebhookWorkflowRunRequestedWorkflowRunConclusion.Failure,
+                "neutral" => WebhookWorkflowRunRequestedWorkflowRunConclusion.Neutral,
+                "cancelled" => WebhookWorkflowRunRequestedWorkflowRunConclusion.Cancelled,
+                "timed_out" => WebhookWorkflowRunRequestedWorkflowRunConclusion.TimedOut,
+                "action_required" => WebhookWorkflowRunRequestedWorkflowRunConclusion.ActionRequired,
+                "stale" => WebhookWorkflowRunRequestedWorkflowRunConclusion.Stale,
+                "skipped" => WebhookWorkflowRunRequestedWorkflowRunConclusion.Skipped,
+                "startup_failure" => WebhookWorkflowRunRequestedWorkflowRunConclusion.StartupFailure,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

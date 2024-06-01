@@ -138,8 +138,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object CreatedAt { get; set; }
+        public required global::System.OneOf<int, global::System.DateTime> CreatedAt { get; set; }
 
         /// <summary>
         /// The default branch of the repository.
@@ -486,8 +487,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pushed_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? PushedAt { get; set; }
+        public required global::System.OneOf<int, global::System.DateTime>? PushedAt { get; set; }
 
         /// <summary>
         /// 
@@ -610,8 +612,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestReviewEditedPullRequestBaseRepoVisibilityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Visibility { get; set; }
+        public required WebhookPullRequestReviewEditedPullRequestBaseRepoVisibility Visibility { get; set; }
 
         /// <summary>
         /// 

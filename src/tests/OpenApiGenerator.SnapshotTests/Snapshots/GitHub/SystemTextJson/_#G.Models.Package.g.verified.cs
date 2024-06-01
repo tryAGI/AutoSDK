@@ -29,8 +29,9 @@ namespace G
         /// <br/>Example: docker
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("package_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PackagePackageTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string PackageType { get; set; }
+        public required PackagePackageType PackageType { get; set; }
 
         /// <summary>
         /// <br/>Example: https://api.github.com/orgs/github/packages/container/super-linter
@@ -58,8 +59,9 @@ namespace G
         /// <br/>Example: private
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PackageVisibilityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Visibility { get; set; }
+        public required PackageVisibility Visibility { get; set; }
 
         /// <summary>
         /// A GitHub user.

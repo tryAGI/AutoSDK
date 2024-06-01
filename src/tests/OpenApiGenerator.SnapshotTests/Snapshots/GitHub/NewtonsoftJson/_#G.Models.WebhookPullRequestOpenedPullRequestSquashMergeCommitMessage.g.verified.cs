@@ -29,4 +29,37 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
         BLANK,
     }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestOpenedPullRequestSquashMergeCommitMessageExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestOpenedPullRequestSquashMergeCommitMessage value)
+        {
+            return value switch
+            {
+                WebhookPullRequestOpenedPullRequestSquashMergeCommitMessage.PRBODY => "PR_BODY",
+                WebhookPullRequestOpenedPullRequestSquashMergeCommitMessage.COMMITMESSAGES => "COMMIT_MESSAGES",
+                WebhookPullRequestOpenedPullRequestSquashMergeCommitMessage.BLANK => "BLANK",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestOpenedPullRequestSquashMergeCommitMessage ToEnum(string value)
+        {
+            return value switch
+            {
+                "PR_BODY" => WebhookPullRequestOpenedPullRequestSquashMergeCommitMessage.PRBODY,
+                "COMMIT_MESSAGES" => WebhookPullRequestOpenedPullRequestSquashMergeCommitMessage.COMMITMESSAGES,
+                "BLANK" => WebhookPullRequestOpenedPullRequestSquashMergeCommitMessage.BLANK,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

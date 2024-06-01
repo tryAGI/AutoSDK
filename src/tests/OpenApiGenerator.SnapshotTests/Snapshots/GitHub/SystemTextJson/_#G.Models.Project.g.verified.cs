@@ -107,7 +107,8 @@ namespace G
         /// The baseline permission that all organization members have on this project. Only present if owner is an organization.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_permission")]
-        public string? OrganizationPermission { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ProjectOrganizationPermissionJsonConverter))]
+        public ProjectOrganizationPermission? OrganizationPermission { get; set; }
 
         /// <summary>
         /// Whether or not this project can be seen by everyone. Only present if owner is an organization.

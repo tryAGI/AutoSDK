@@ -21,16 +21,18 @@ namespace G
         /// <br/>Example: active
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OrgMembershipStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string State { get; set; }
+        public required OrgMembershipState State { get; set; }
 
         /// <summary>
         /// The user's membership type in the organization.
         /// <br/>Example: admin
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OrgMembershipRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Role { get; set; }
+        public required OrgMembershipRole Role { get; set; }
 
         /// <summary>
         /// <br/>Example: https://api.github.com/orgs/octocat

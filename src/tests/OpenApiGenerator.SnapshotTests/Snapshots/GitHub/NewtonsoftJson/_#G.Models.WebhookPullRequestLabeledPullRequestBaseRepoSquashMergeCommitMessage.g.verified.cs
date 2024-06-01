@@ -29,4 +29,37 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
         BLANK,
     }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestLabeledPullRequestBaseRepoSquashMergeCommitMessageExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestLabeledPullRequestBaseRepoSquashMergeCommitMessage value)
+        {
+            return value switch
+            {
+                WebhookPullRequestLabeledPullRequestBaseRepoSquashMergeCommitMessage.PRBODY => "PR_BODY",
+                WebhookPullRequestLabeledPullRequestBaseRepoSquashMergeCommitMessage.COMMITMESSAGES => "COMMIT_MESSAGES",
+                WebhookPullRequestLabeledPullRequestBaseRepoSquashMergeCommitMessage.BLANK => "BLANK",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestLabeledPullRequestBaseRepoSquashMergeCommitMessage ToEnum(string value)
+        {
+            return value switch
+            {
+                "PR_BODY" => WebhookPullRequestLabeledPullRequestBaseRepoSquashMergeCommitMessage.PRBODY,
+                "COMMIT_MESSAGES" => WebhookPullRequestLabeledPullRequestBaseRepoSquashMergeCommitMessage.COMMITMESSAGES,
+                "BLANK" => WebhookPullRequestLabeledPullRequestBaseRepoSquashMergeCommitMessage.BLANK,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

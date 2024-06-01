@@ -51,4 +51,47 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="OWNER")]
         OWNER,
     }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssueCommentCreatedIssueAuthorAssociationExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssueCommentCreatedIssueAuthorAssociation value)
+        {
+            return value switch
+            {
+                WebhookIssueCommentCreatedIssueAuthorAssociation.COLLABORATOR => "COLLABORATOR",
+                WebhookIssueCommentCreatedIssueAuthorAssociation.CONTRIBUTOR => "CONTRIBUTOR",
+                WebhookIssueCommentCreatedIssueAuthorAssociation.FIRSTTIMER => "FIRST_TIMER",
+                WebhookIssueCommentCreatedIssueAuthorAssociation.FIRSTTIMECONTRIBUTOR => "FIRST_TIME_CONTRIBUTOR",
+                WebhookIssueCommentCreatedIssueAuthorAssociation.MANNEQUIN => "MANNEQUIN",
+                WebhookIssueCommentCreatedIssueAuthorAssociation.MEMBER => "MEMBER",
+                WebhookIssueCommentCreatedIssueAuthorAssociation.NONE => "NONE",
+                WebhookIssueCommentCreatedIssueAuthorAssociation.OWNER => "OWNER",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssueCommentCreatedIssueAuthorAssociation ToEnum(string value)
+        {
+            return value switch
+            {
+                "COLLABORATOR" => WebhookIssueCommentCreatedIssueAuthorAssociation.COLLABORATOR,
+                "CONTRIBUTOR" => WebhookIssueCommentCreatedIssueAuthorAssociation.CONTRIBUTOR,
+                "FIRST_TIMER" => WebhookIssueCommentCreatedIssueAuthorAssociation.FIRSTTIMER,
+                "FIRST_TIME_CONTRIBUTOR" => WebhookIssueCommentCreatedIssueAuthorAssociation.FIRSTTIMECONTRIBUTOR,
+                "MANNEQUIN" => WebhookIssueCommentCreatedIssueAuthorAssociation.MANNEQUIN,
+                "MEMBER" => WebhookIssueCommentCreatedIssueAuthorAssociation.MEMBER,
+                "NONE" => WebhookIssueCommentCreatedIssueAuthorAssociation.NONE,
+                "OWNER" => WebhookIssueCommentCreatedIssueAuthorAssociation.OWNER,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

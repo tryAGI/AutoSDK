@@ -8,15 +8,46 @@ namespace G
     /// Whether this rule targets a branch or tag
     /// <br/>Example: branch
     /// </summary>
-    public abstract class DeploymentBranchPolicyNamePatternWithTypeType
+    public enum DeploymentBranchPolicyNamePatternWithTypeType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Branch = "branch";
+        Branch,
         /// <summary>
         /// 
         /// </summary>
-        public const string Tag = "tag";
+        Tag,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class DeploymentBranchPolicyNamePatternWithTypeTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this DeploymentBranchPolicyNamePatternWithTypeType value)
+        {
+            return value switch
+            {
+                DeploymentBranchPolicyNamePatternWithTypeType.Branch => "branch",
+                DeploymentBranchPolicyNamePatternWithTypeType.Tag => "tag",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static DeploymentBranchPolicyNamePatternWithTypeType ToEnum(string value)
+        {
+            return value switch
+            {
+                "branch" => DeploymentBranchPolicyNamePatternWithTypeType.Branch,
+                "tag" => DeploymentBranchPolicyNamePatternWithTypeType.Tag,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

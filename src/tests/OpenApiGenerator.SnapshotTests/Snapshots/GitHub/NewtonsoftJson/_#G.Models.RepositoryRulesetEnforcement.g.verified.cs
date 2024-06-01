@@ -26,4 +26,37 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="evaluate")]
         Evaluate,
     }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class RepositoryRulesetEnforcementExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this RepositoryRulesetEnforcement value)
+        {
+            return value switch
+            {
+                RepositoryRulesetEnforcement.Disabled => "disabled",
+                RepositoryRulesetEnforcement.Active => "active",
+                RepositoryRulesetEnforcement.Evaluate => "evaluate",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static RepositoryRulesetEnforcement ToEnum(string value)
+        {
+            return value switch
+            {
+                "disabled" => RepositoryRulesetEnforcement.Disabled,
+                "active" => RepositoryRulesetEnforcement.Active,
+                "evaluate" => RepositoryRulesetEnforcement.Evaluate,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

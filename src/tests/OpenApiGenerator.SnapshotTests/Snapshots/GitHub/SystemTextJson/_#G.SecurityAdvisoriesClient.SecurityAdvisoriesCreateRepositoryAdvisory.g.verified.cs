@@ -36,11 +36,11 @@ namespace G
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
 
-            var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<RepositoryAdvisory>(content) ??
-                throw new global::System.InvalidOperationException("Response deserialization failed for \"{content}\" ");
+                global::System.Text.Json.JsonSerializer.Deserialize<RepositoryAdvisory?>(__content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace G
             string? cveId = default,
             global::System.Collections.Generic.IList<string?>? cweIds = default,
             global::System.Collections.Generic.IList<RepositoryAdvisoryCreateCredits?>? credits = default,
-            string? severity = default,
+            RepositoryAdvisoryCreateSeverity? severity = default,
             string? cvssVectorString = default,
             bool startPrivateFork = false,
             global::System.Threading.CancellationToken cancellationToken = default)

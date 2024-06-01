@@ -10,19 +10,52 @@ namespace G
     /// - `COMMIT_MESSAGES` - default to the branch's commit messages.
     /// - `BLANK` - default to a blank commit message.
     /// </summary>
-    public abstract class WebhookPullRequestEnqueuedPullRequestHeadRepoSquashMergeCommitMessage
+    public enum WebhookPullRequestEnqueuedPullRequestHeadRepoSquashMergeCommitMessage
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string PRBODY = "PR_BODY";
+        PRBODY,
         /// <summary>
         /// 
         /// </summary>
-        public const string COMMITMESSAGES = "COMMIT_MESSAGES";
+        COMMITMESSAGES,
         /// <summary>
         /// 
         /// </summary>
-        public const string BLANK = "BLANK";
+        BLANK,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestEnqueuedPullRequestHeadRepoSquashMergeCommitMessageExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestEnqueuedPullRequestHeadRepoSquashMergeCommitMessage value)
+        {
+            return value switch
+            {
+                WebhookPullRequestEnqueuedPullRequestHeadRepoSquashMergeCommitMessage.PRBODY => "PR_BODY",
+                WebhookPullRequestEnqueuedPullRequestHeadRepoSquashMergeCommitMessage.COMMITMESSAGES => "COMMIT_MESSAGES",
+                WebhookPullRequestEnqueuedPullRequestHeadRepoSquashMergeCommitMessage.BLANK => "BLANK",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestEnqueuedPullRequestHeadRepoSquashMergeCommitMessage ToEnum(string value)
+        {
+            return value switch
+            {
+                "PR_BODY" => WebhookPullRequestEnqueuedPullRequestHeadRepoSquashMergeCommitMessage.PRBODY,
+                "COMMIT_MESSAGES" => WebhookPullRequestEnqueuedPullRequestHeadRepoSquashMergeCommitMessage.COMMITMESSAGES,
+                "BLANK" => WebhookPullRequestEnqueuedPullRequestHeadRepoSquashMergeCommitMessage.BLANK,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

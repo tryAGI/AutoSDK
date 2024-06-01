@@ -21,7 +21,7 @@ namespace G
         /// The created [`repository`](https://docs.github.com/rest/repos/repos#get-a-repository) resource.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("forkee", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Forkee { get; set; } = default!;
+        public global::System.AllOf<WebhookForkForkee, WebhookForkForkee> Forkee { get; set; } = default!;
 
         /// <summary>
         /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured

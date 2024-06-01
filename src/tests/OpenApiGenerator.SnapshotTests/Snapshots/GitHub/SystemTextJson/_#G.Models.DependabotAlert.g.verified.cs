@@ -20,8 +20,9 @@ namespace G
         /// The state of the Dependabot alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DependabotAlertStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string State { get; set; }
+        public required DependabotAlertState State { get; set; }
 
         /// <summary>
         /// Details for the vulnerable dependency.
@@ -90,8 +91,9 @@ namespace G
         /// The reason that the alert was dismissed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_reason")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DependabotAlertDismissedReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? DismissedReason { get; set; }
+        public required DependabotAlertDismissedReason? DismissedReason { get; set; }
 
         /// <summary>
         /// An optional comment associated with the alert's dismissal.

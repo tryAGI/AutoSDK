@@ -12,23 +12,66 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="issueNumber"></param>
+        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task IssuesAddLabelsAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<Label>> IssuesAddLabelsAsync(
             string owner,
             string repo,
             int issueNumber,
+            global::System.OneOf<IssuesAddLabelsRequest, global::System.Collections.Generic.IList<string>, IssuesAddLabelsRequest, global::System.Collections.Generic.IList<IssuesAddLabelsRequest>, string> request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/repos/{owner}/{repo}/issues/{issueNumber}/labels", global::System.UriKind.RelativeOrAbsolute));
+            httpRequest.Content = new global::System.Net.Http.StringContent(
+                content: global::Newtonsoft.Json.JsonConvert.SerializeObject(request),
+                encoding: global::System.Text.Encoding.UTF8,
+                mediaType: "application/json");
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
+
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<Label>?>(__content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+        }
+
+        /// <summary>
+        /// Add labels to an issue
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="issueNumber"></param>
+        /// <param name="labels"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<Label>> IssuesAddLabelsAsync(
+            string owner,
+            string repo,
+            int issueNumber,
+            global::System.Collections.Generic.IList<string?>? labels = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var request = new global::System.OneOf<IssuesAddLabelsRequest, global::System.Collections.Generic.IList<string>, IssuesAddLabelsRequest, global::System.Collections.Generic.IList<IssuesAddLabelsRequest>, string>
+            {
+                Labels = labels,
+            };
+
+            return await IssuesAddLabelsAsync(
+                owner: owner,
+                repo: repo,
+                issueNumber: issueNumber,
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

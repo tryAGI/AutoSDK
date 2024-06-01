@@ -7,19 +7,52 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookIssuesOpenedIssueUserType
+    public enum WebhookIssuesOpenedIssueUserType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Bot = "Bot";
+        Bot,
         /// <summary>
         /// 
         /// </summary>
-        public const string User = "User";
+        User,
         /// <summary>
         /// 
         /// </summary>
-        public const string Organization = "Organization";
+        Organization,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssuesOpenedIssueUserTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssuesOpenedIssueUserType value)
+        {
+            return value switch
+            {
+                WebhookIssuesOpenedIssueUserType.Bot => "Bot",
+                WebhookIssuesOpenedIssueUserType.User => "User",
+                WebhookIssuesOpenedIssueUserType.Organization => "Organization",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssuesOpenedIssueUserType ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhookIssuesOpenedIssueUserType.Bot,
+                "User" => WebhookIssuesOpenedIssueUserType.User,
+                "Organization" => WebhookIssuesOpenedIssueUserType.Organization,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

@@ -7,47 +7,94 @@ namespace G
     /// <summary>
     /// The type of credit the user is receiving.
     /// </summary>
-    public abstract class RepositoryAdvisoryCreditType
+    public enum RepositoryAdvisoryCreditType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Analyst = "analyst";
+        Analyst,
         /// <summary>
         /// 
         /// </summary>
-        public const string Finder = "finder";
+        Finder,
         /// <summary>
         /// 
         /// </summary>
-        public const string Reporter = "reporter";
+        Reporter,
         /// <summary>
         /// 
         /// </summary>
-        public const string Coordinator = "coordinator";
+        Coordinator,
         /// <summary>
         /// 
         /// </summary>
-        public const string RemediationDeveloper = "remediation_developer";
+        RemediationDeveloper,
         /// <summary>
         /// 
         /// </summary>
-        public const string RemediationReviewer = "remediation_reviewer";
+        RemediationReviewer,
         /// <summary>
         /// 
         /// </summary>
-        public const string RemediationVerifier = "remediation_verifier";
+        RemediationVerifier,
         /// <summary>
         /// 
         /// </summary>
-        public const string Tool = "tool";
+        Tool,
         /// <summary>
         /// 
         /// </summary>
-        public const string Sponsor = "sponsor";
+        Sponsor,
         /// <summary>
         /// 
         /// </summary>
-        public const string Other = "other";
+        Other,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class RepositoryAdvisoryCreditTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this RepositoryAdvisoryCreditType value)
+        {
+            return value switch
+            {
+                RepositoryAdvisoryCreditType.Analyst => "analyst",
+                RepositoryAdvisoryCreditType.Finder => "finder",
+                RepositoryAdvisoryCreditType.Reporter => "reporter",
+                RepositoryAdvisoryCreditType.Coordinator => "coordinator",
+                RepositoryAdvisoryCreditType.RemediationDeveloper => "remediation_developer",
+                RepositoryAdvisoryCreditType.RemediationReviewer => "remediation_reviewer",
+                RepositoryAdvisoryCreditType.RemediationVerifier => "remediation_verifier",
+                RepositoryAdvisoryCreditType.Tool => "tool",
+                RepositoryAdvisoryCreditType.Sponsor => "sponsor",
+                RepositoryAdvisoryCreditType.Other => "other",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static RepositoryAdvisoryCreditType ToEnum(string value)
+        {
+            return value switch
+            {
+                "analyst" => RepositoryAdvisoryCreditType.Analyst,
+                "finder" => RepositoryAdvisoryCreditType.Finder,
+                "reporter" => RepositoryAdvisoryCreditType.Reporter,
+                "coordinator" => RepositoryAdvisoryCreditType.Coordinator,
+                "remediation_developer" => RepositoryAdvisoryCreditType.RemediationDeveloper,
+                "remediation_reviewer" => RepositoryAdvisoryCreditType.RemediationReviewer,
+                "remediation_verifier" => RepositoryAdvisoryCreditType.RemediationVerifier,
+                "tool" => RepositoryAdvisoryCreditType.Tool,
+                "sponsor" => RepositoryAdvisoryCreditType.Sponsor,
+                "other" => RepositoryAdvisoryCreditType.Other,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

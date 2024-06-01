@@ -7,31 +7,70 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType
+    public enum PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Npm = "npm";
+        Npm,
         /// <summary>
         /// 
         /// </summary>
-        public const string Maven = "maven";
+        Maven,
         /// <summary>
         /// 
         /// </summary>
-        public const string Rubygems = "rubygems";
+        Rubygems,
         /// <summary>
         /// 
         /// </summary>
-        public const string Docker = "docker";
+        Docker,
         /// <summary>
         /// 
         /// </summary>
-        public const string Nuget = "nuget";
+        Nuget,
         /// <summary>
         /// 
         /// </summary>
-        public const string Container = "container";
+        Container,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType value)
+        {
+            return value switch
+            {
+                PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType.Npm => "npm",
+                PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType.Maven => "maven",
+                PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType.Rubygems => "rubygems",
+                PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType.Docker => "docker",
+                PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType.Nuget => "nuget",
+                PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType.Container => "container",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType ToEnum(string value)
+        {
+            return value switch
+            {
+                "npm" => PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType.Npm,
+                "maven" => PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType.Maven,
+                "rubygems" => PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType.Rubygems,
+                "docker" => PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType.Docker,
+                "nuget" => PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType.Nuget,
+                "container" => PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType.Container,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

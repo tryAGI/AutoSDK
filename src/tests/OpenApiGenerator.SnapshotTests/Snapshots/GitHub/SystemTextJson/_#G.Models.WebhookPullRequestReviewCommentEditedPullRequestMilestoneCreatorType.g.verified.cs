@@ -7,23 +7,58 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookPullRequestReviewCommentEditedPullRequestMilestoneCreatorType
+    public enum WebhookPullRequestReviewCommentEditedPullRequestMilestoneCreatorType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Bot = "Bot";
+        Bot,
         /// <summary>
         /// 
         /// </summary>
-        public const string User = "User";
+        User,
         /// <summary>
         /// 
         /// </summary>
-        public const string Organization = "Organization";
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        public const string Mannequin = "Mannequin";
+        Mannequin,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestReviewCommentEditedPullRequestMilestoneCreatorTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestReviewCommentEditedPullRequestMilestoneCreatorType value)
+        {
+            return value switch
+            {
+                WebhookPullRequestReviewCommentEditedPullRequestMilestoneCreatorType.Bot => "Bot",
+                WebhookPullRequestReviewCommentEditedPullRequestMilestoneCreatorType.User => "User",
+                WebhookPullRequestReviewCommentEditedPullRequestMilestoneCreatorType.Organization => "Organization",
+                WebhookPullRequestReviewCommentEditedPullRequestMilestoneCreatorType.Mannequin => "Mannequin",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestReviewCommentEditedPullRequestMilestoneCreatorType ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhookPullRequestReviewCommentEditedPullRequestMilestoneCreatorType.Bot,
+                "User" => WebhookPullRequestReviewCommentEditedPullRequestMilestoneCreatorType.User,
+                "Organization" => WebhookPullRequestReviewCommentEditedPullRequestMilestoneCreatorType.Organization,
+                "Mannequin" => WebhookPullRequestReviewCommentEditedPullRequestMilestoneCreatorType.Mannequin,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

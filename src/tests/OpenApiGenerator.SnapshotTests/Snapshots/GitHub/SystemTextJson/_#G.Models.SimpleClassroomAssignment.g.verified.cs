@@ -38,8 +38,9 @@ namespace G
         /// <br/>Example: individual
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SimpleClassroomAssignmentTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required SimpleClassroomAssignmentType Type { get; set; }
 
         /// <summary>
         /// The link that a student can use to accept the assignment.

@@ -14,13 +14,15 @@ namespace G
         /// <br/>Example: User
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PendingDeploymentReviewersTypeJsonConverter))]
+        public PendingDeploymentReviewersType? Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reviewer")]
-        public object? Reviewer { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::System.AnyOf<SimpleUser?, Team?> Reviewer { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

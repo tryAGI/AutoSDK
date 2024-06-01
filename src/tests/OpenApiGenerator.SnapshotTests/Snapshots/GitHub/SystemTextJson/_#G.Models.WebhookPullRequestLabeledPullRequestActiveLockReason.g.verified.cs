@@ -7,23 +7,58 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookPullRequestLabeledPullRequestActiveLockReason
+    public enum WebhookPullRequestLabeledPullRequestActiveLockReason
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Resolved = "resolved";
+        Resolved,
         /// <summary>
         /// 
         /// </summary>
-        public const string OffTopic = "off-topic";
+        OffTopic,
         /// <summary>
         /// 
         /// </summary>
-        public const string TooHeated = "too heated";
+        TooHeated,
         /// <summary>
         /// 
         /// </summary>
-        public const string Spam = "spam";
+        Spam,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestLabeledPullRequestActiveLockReasonExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestLabeledPullRequestActiveLockReason value)
+        {
+            return value switch
+            {
+                WebhookPullRequestLabeledPullRequestActiveLockReason.Resolved => "resolved",
+                WebhookPullRequestLabeledPullRequestActiveLockReason.OffTopic => "off-topic",
+                WebhookPullRequestLabeledPullRequestActiveLockReason.TooHeated => "too heated",
+                WebhookPullRequestLabeledPullRequestActiveLockReason.Spam => "spam",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestLabeledPullRequestActiveLockReason ToEnum(string value)
+        {
+            return value switch
+            {
+                "resolved" => WebhookPullRequestLabeledPullRequestActiveLockReason.Resolved,
+                "off-topic" => WebhookPullRequestLabeledPullRequestActiveLockReason.OffTopic,
+                "too heated" => WebhookPullRequestLabeledPullRequestActiveLockReason.TooHeated,
+                "spam" => WebhookPullRequestLabeledPullRequestActiveLockReason.Spam,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

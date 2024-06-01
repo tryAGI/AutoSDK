@@ -21,4 +21,35 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="write")]
         Write,
     }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsContentsExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsContents value)
+        {
+            return value switch
+            {
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsContents.Read => "read",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsContents.Write => "write",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsContents ToEnum(string value)
+        {
+            return value switch
+            {
+                "read" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsContents.Read,
+                "write" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsContents.Write,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

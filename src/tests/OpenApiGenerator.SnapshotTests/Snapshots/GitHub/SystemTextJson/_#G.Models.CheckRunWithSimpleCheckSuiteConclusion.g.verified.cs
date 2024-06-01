@@ -7,51 +7,100 @@ namespace G
     /// <summary>
     /// <br/>Example: neutral
     /// </summary>
-    public abstract class CheckRunWithSimpleCheckSuiteConclusion
+    public enum CheckRunWithSimpleCheckSuiteConclusion
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Waiting = "waiting";
+        Waiting,
         /// <summary>
         /// 
         /// </summary>
-        public const string Pending = "pending";
+        Pending,
         /// <summary>
         /// 
         /// </summary>
-        public const string StartupFailure = "startup_failure";
+        StartupFailure,
         /// <summary>
         /// 
         /// </summary>
-        public const string Stale = "stale";
+        Stale,
         /// <summary>
         /// 
         /// </summary>
-        public const string Success = "success";
+        Success,
         /// <summary>
         /// 
         /// </summary>
-        public const string Failure = "failure";
+        Failure,
         /// <summary>
         /// 
         /// </summary>
-        public const string Neutral = "neutral";
+        Neutral,
         /// <summary>
         /// 
         /// </summary>
-        public const string Cancelled = "cancelled";
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
-        public const string Skipped = "skipped";
+        Skipped,
         /// <summary>
         /// 
         /// </summary>
-        public const string TimedOut = "timed_out";
+        TimedOut,
         /// <summary>
         /// 
         /// </summary>
-        public const string ActionRequired = "action_required";
+        ActionRequired,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class CheckRunWithSimpleCheckSuiteConclusionExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this CheckRunWithSimpleCheckSuiteConclusion value)
+        {
+            return value switch
+            {
+                CheckRunWithSimpleCheckSuiteConclusion.Waiting => "waiting",
+                CheckRunWithSimpleCheckSuiteConclusion.Pending => "pending",
+                CheckRunWithSimpleCheckSuiteConclusion.StartupFailure => "startup_failure",
+                CheckRunWithSimpleCheckSuiteConclusion.Stale => "stale",
+                CheckRunWithSimpleCheckSuiteConclusion.Success => "success",
+                CheckRunWithSimpleCheckSuiteConclusion.Failure => "failure",
+                CheckRunWithSimpleCheckSuiteConclusion.Neutral => "neutral",
+                CheckRunWithSimpleCheckSuiteConclusion.Cancelled => "cancelled",
+                CheckRunWithSimpleCheckSuiteConclusion.Skipped => "skipped",
+                CheckRunWithSimpleCheckSuiteConclusion.TimedOut => "timed_out",
+                CheckRunWithSimpleCheckSuiteConclusion.ActionRequired => "action_required",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static CheckRunWithSimpleCheckSuiteConclusion ToEnum(string value)
+        {
+            return value switch
+            {
+                "waiting" => CheckRunWithSimpleCheckSuiteConclusion.Waiting,
+                "pending" => CheckRunWithSimpleCheckSuiteConclusion.Pending,
+                "startup_failure" => CheckRunWithSimpleCheckSuiteConclusion.StartupFailure,
+                "stale" => CheckRunWithSimpleCheckSuiteConclusion.Stale,
+                "success" => CheckRunWithSimpleCheckSuiteConclusion.Success,
+                "failure" => CheckRunWithSimpleCheckSuiteConclusion.Failure,
+                "neutral" => CheckRunWithSimpleCheckSuiteConclusion.Neutral,
+                "cancelled" => CheckRunWithSimpleCheckSuiteConclusion.Cancelled,
+                "skipped" => CheckRunWithSimpleCheckSuiteConclusion.Skipped,
+                "timed_out" => CheckRunWithSimpleCheckSuiteConclusion.TimedOut,
+                "action_required" => CheckRunWithSimpleCheckSuiteConclusion.ActionRequired,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

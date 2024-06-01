@@ -7,15 +7,46 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsTeamDiscussions
+    public enum WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsTeamDiscussions
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Read = "read";
+        Read,
         /// <summary>
         /// 
         /// </summary>
-        public const string Write = "write";
+        Write,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsTeamDiscussionsExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsTeamDiscussions value)
+        {
+            return value switch
+            {
+                WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsTeamDiscussions.Read => "read",
+                WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsTeamDiscussions.Write => "write",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsTeamDiscussions ToEnum(string value)
+        {
+            return value switch
+            {
+                "read" => WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsTeamDiscussions.Read,
+                "write" => WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsTeamDiscussions.Write,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

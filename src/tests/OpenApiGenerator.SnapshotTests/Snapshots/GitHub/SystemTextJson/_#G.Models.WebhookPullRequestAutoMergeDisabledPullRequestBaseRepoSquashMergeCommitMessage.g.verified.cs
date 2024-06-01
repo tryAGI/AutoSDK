@@ -10,19 +10,52 @@ namespace G
     /// - `COMMIT_MESSAGES` - default to the branch's commit messages.
     /// - `BLANK` - default to a blank commit message.
     /// </summary>
-    public abstract class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitMessage
+    public enum WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitMessage
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string PRBODY = "PR_BODY";
+        PRBODY,
         /// <summary>
         /// 
         /// </summary>
-        public const string COMMITMESSAGES = "COMMIT_MESSAGES";
+        COMMITMESSAGES,
         /// <summary>
         /// 
         /// </summary>
-        public const string BLANK = "BLANK";
+        BLANK,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitMessageExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitMessage value)
+        {
+            return value switch
+            {
+                WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitMessage.PRBODY => "PR_BODY",
+                WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitMessage.COMMITMESSAGES => "COMMIT_MESSAGES",
+                WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitMessage.BLANK => "BLANK",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitMessage ToEnum(string value)
+        {
+            return value switch
+            {
+                "PR_BODY" => WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitMessage.PRBODY,
+                "COMMIT_MESSAGES" => WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitMessage.COMMITMESSAGES,
+                "BLANK" => WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitMessage.BLANK,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

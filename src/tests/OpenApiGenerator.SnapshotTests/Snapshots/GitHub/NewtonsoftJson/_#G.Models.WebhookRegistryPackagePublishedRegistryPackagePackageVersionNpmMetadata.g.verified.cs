@@ -31,13 +31,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author")]
-        public object? Author { get; set; }
+        public global::System.OneOf<string?, object?>? Author { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("bugs")]
-        public object? Bugs { get; set; }
+        public global::System.OneOf<string?, object?>? Bugs { get; set; }
 
         /// <summary>
         /// 
@@ -73,7 +73,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dist")]
-        public object? Dist { get; set; }
+        public global::System.OneOf<string?, object?>? Dist { get; set; }
 
         /// <summary>
         /// 
@@ -103,7 +103,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository")]
-        public object? Repository { get; set; }
+        public global::System.OneOf<string?, object?>? Repository { get; set; }
 
         /// <summary>
         /// 
@@ -181,7 +181,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("directories")]
-        public object? Directories { get; set; }
+        public global::System.OneOf<string?, object?>? Directories { get; set; }
 
         /// <summary>
         /// 

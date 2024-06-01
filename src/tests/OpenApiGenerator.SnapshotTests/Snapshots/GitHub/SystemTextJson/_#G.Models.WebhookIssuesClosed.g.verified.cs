@@ -13,8 +13,9 @@ namespace G
         /// The action that was performed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookIssuesClosedActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Action { get; set; }
+        public required WebhookIssuesClosedAction Action { get; set; }
 
         /// <summary>
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured
@@ -36,8 +37,9 @@ namespace G
         /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("issue")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AllOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Issue { get; set; }
+        public required global::System.AllOf<WebhookIssuesClosedIssue, WebhookIssuesClosedIssue> Issue { get; set; }
 
         /// <summary>
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an

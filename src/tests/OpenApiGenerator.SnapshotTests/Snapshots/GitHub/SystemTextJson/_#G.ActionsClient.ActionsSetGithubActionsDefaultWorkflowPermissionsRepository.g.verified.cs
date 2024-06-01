@@ -49,7 +49,7 @@ namespace G
         public async global::System.Threading.Tasks.Task ActionsSetGithubActionsDefaultWorkflowPermissionsRepositoryAsync(
             string owner,
             string repo,
-            string? defaultWorkflowPermissions = default,
+            ActionsSetDefaultWorkflowPermissionsDefaultWorkflowPermissions? defaultWorkflowPermissions = default,
             bool canApprovePullRequestReviews = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

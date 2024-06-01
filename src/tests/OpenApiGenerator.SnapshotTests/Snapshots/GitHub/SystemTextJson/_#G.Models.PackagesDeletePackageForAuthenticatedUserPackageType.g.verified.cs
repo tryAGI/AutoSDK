@@ -7,31 +7,70 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class PackagesDeletePackageForAuthenticatedUserPackageType
+    public enum PackagesDeletePackageForAuthenticatedUserPackageType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Npm = "npm";
+        Npm,
         /// <summary>
         /// 
         /// </summary>
-        public const string Maven = "maven";
+        Maven,
         /// <summary>
         /// 
         /// </summary>
-        public const string Rubygems = "rubygems";
+        Rubygems,
         /// <summary>
         /// 
         /// </summary>
-        public const string Docker = "docker";
+        Docker,
         /// <summary>
         /// 
         /// </summary>
-        public const string Nuget = "nuget";
+        Nuget,
         /// <summary>
         /// 
         /// </summary>
-        public const string Container = "container";
+        Container,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class PackagesDeletePackageForAuthenticatedUserPackageTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this PackagesDeletePackageForAuthenticatedUserPackageType value)
+        {
+            return value switch
+            {
+                PackagesDeletePackageForAuthenticatedUserPackageType.Npm => "npm",
+                PackagesDeletePackageForAuthenticatedUserPackageType.Maven => "maven",
+                PackagesDeletePackageForAuthenticatedUserPackageType.Rubygems => "rubygems",
+                PackagesDeletePackageForAuthenticatedUserPackageType.Docker => "docker",
+                PackagesDeletePackageForAuthenticatedUserPackageType.Nuget => "nuget",
+                PackagesDeletePackageForAuthenticatedUserPackageType.Container => "container",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static PackagesDeletePackageForAuthenticatedUserPackageType ToEnum(string value)
+        {
+            return value switch
+            {
+                "npm" => PackagesDeletePackageForAuthenticatedUserPackageType.Npm,
+                "maven" => PackagesDeletePackageForAuthenticatedUserPackageType.Maven,
+                "rubygems" => PackagesDeletePackageForAuthenticatedUserPackageType.Rubygems,
+                "docker" => PackagesDeletePackageForAuthenticatedUserPackageType.Docker,
+                "nuget" => PackagesDeletePackageForAuthenticatedUserPackageType.Nuget,
+                "container" => PackagesDeletePackageForAuthenticatedUserPackageType.Container,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

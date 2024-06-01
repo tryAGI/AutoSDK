@@ -129,7 +129,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksMilestone3CreatorTypeJsonConverter))]
+        public WebhooksMilestone3CreatorType? Type { get; set; }
 
         /// <summary>
         /// 

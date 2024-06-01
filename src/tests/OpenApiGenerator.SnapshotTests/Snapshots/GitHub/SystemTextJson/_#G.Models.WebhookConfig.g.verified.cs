@@ -34,7 +34,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("insecure_ssl")]
-        public WebhookConfigInsecureSsl? InsecureSsl { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
+        public global::System.OneOf<string?, double> InsecureSsl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

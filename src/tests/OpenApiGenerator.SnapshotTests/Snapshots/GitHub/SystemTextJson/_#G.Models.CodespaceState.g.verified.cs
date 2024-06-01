@@ -8,75 +8,136 @@ namespace G
     /// State of this codespace.
     /// <br/>Example: Available
     /// </summary>
-    public abstract class CodespaceState
+    public enum CodespaceState
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Unknown = "Unknown";
+        Unknown,
         /// <summary>
         /// 
         /// </summary>
-        public const string Created = "Created";
+        Created,
         /// <summary>
         /// 
         /// </summary>
-        public const string Queued = "Queued";
+        Queued,
         /// <summary>
         /// 
         /// </summary>
-        public const string Provisioning = "Provisioning";
+        Provisioning,
         /// <summary>
         /// 
         /// </summary>
-        public const string Available = "Available";
+        Available,
         /// <summary>
         /// 
         /// </summary>
-        public const string Awaiting = "Awaiting";
+        Awaiting,
         /// <summary>
         /// 
         /// </summary>
-        public const string Unavailable = "Unavailable";
+        Unavailable,
         /// <summary>
         /// 
         /// </summary>
-        public const string Deleted = "Deleted";
+        Deleted,
         /// <summary>
         /// 
         /// </summary>
-        public const string Moved = "Moved";
+        Moved,
         /// <summary>
         /// 
         /// </summary>
-        public const string Shutdown = "Shutdown";
+        Shutdown,
         /// <summary>
         /// 
         /// </summary>
-        public const string Archived = "Archived";
+        Archived,
         /// <summary>
         /// 
         /// </summary>
-        public const string Starting = "Starting";
+        Starting,
         /// <summary>
         /// 
         /// </summary>
-        public const string ShuttingDown = "ShuttingDown";
+        ShuttingDown,
         /// <summary>
         /// 
         /// </summary>
-        public const string Failed = "Failed";
+        Failed,
         /// <summary>
         /// 
         /// </summary>
-        public const string Exporting = "Exporting";
+        Exporting,
         /// <summary>
         /// 
         /// </summary>
-        public const string Updating = "Updating";
+        Updating,
         /// <summary>
         /// 
         /// </summary>
-        public const string Rebuilding = "Rebuilding";
+        Rebuilding,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class CodespaceStateExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this CodespaceState value)
+        {
+            return value switch
+            {
+                CodespaceState.Unknown => "Unknown",
+                CodespaceState.Created => "Created",
+                CodespaceState.Queued => "Queued",
+                CodespaceState.Provisioning => "Provisioning",
+                CodespaceState.Available => "Available",
+                CodespaceState.Awaiting => "Awaiting",
+                CodespaceState.Unavailable => "Unavailable",
+                CodespaceState.Deleted => "Deleted",
+                CodespaceState.Moved => "Moved",
+                CodespaceState.Shutdown => "Shutdown",
+                CodespaceState.Archived => "Archived",
+                CodespaceState.Starting => "Starting",
+                CodespaceState.ShuttingDown => "ShuttingDown",
+                CodespaceState.Failed => "Failed",
+                CodespaceState.Exporting => "Exporting",
+                CodespaceState.Updating => "Updating",
+                CodespaceState.Rebuilding => "Rebuilding",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static CodespaceState ToEnum(string value)
+        {
+            return value switch
+            {
+                "Unknown" => CodespaceState.Unknown,
+                "Created" => CodespaceState.Created,
+                "Queued" => CodespaceState.Queued,
+                "Provisioning" => CodespaceState.Provisioning,
+                "Available" => CodespaceState.Available,
+                "Awaiting" => CodespaceState.Awaiting,
+                "Unavailable" => CodespaceState.Unavailable,
+                "Deleted" => CodespaceState.Deleted,
+                "Moved" => CodespaceState.Moved,
+                "Shutdown" => CodespaceState.Shutdown,
+                "Archived" => CodespaceState.Archived,
+                "Starting" => CodespaceState.Starting,
+                "ShuttingDown" => CodespaceState.ShuttingDown,
+                "Failed" => CodespaceState.Failed,
+                "Exporting" => CodespaceState.Exporting,
+                "Updating" => CodespaceState.Updating,
+                "Rebuilding" => CodespaceState.Rebuilding,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

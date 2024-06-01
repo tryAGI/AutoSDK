@@ -35,8 +35,9 @@ namespace G
         /// Visibility of a secret
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OrganizationActionsSecretVisibilityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Visibility { get; set; }
+        public required OrganizationActionsSecretVisibility Visibility { get; set; }
 
         /// <summary>
         /// <br/>Example: https://api.github.com/organizations/org/secrets/my_secret/repositories

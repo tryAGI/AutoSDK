@@ -14,8 +14,9 @@ namespace G
         /// <br/>Example: collaborators_only
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.InteractionLimitResponseLimitJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Limit { get; set; }
+        public required InteractionLimitResponseLimit Limit { get; set; }
 
         /// <summary>
         /// <br/>Example: repository

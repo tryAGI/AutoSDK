@@ -7,71 +7,130 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class ImportStatus
+    public enum ImportStatus
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Auth = "auth";
+        Auth,
         /// <summary>
         /// 
         /// </summary>
-        public const string Error = "error";
+        Error,
         /// <summary>
         /// 
         /// </summary>
-        public const string None = "none";
+        None,
         /// <summary>
         /// 
         /// </summary>
-        public const string Detecting = "detecting";
+        Detecting,
         /// <summary>
         /// 
         /// </summary>
-        public const string Choose = "choose";
+        Choose,
         /// <summary>
         /// 
         /// </summary>
-        public const string AuthFailed = "auth_failed";
+        AuthFailed,
         /// <summary>
         /// 
         /// </summary>
-        public const string Importing = "importing";
+        Importing,
         /// <summary>
         /// 
         /// </summary>
-        public const string Mapping = "mapping";
+        Mapping,
         /// <summary>
         /// 
         /// </summary>
-        public const string WaitingToPush = "waiting_to_push";
+        WaitingToPush,
         /// <summary>
         /// 
         /// </summary>
-        public const string Pushing = "pushing";
+        Pushing,
         /// <summary>
         /// 
         /// </summary>
-        public const string Complete = "complete";
+        Complete,
         /// <summary>
         /// 
         /// </summary>
-        public const string Setup = "setup";
+        Setup,
         /// <summary>
         /// 
         /// </summary>
-        public const string Unknown = "unknown";
+        Unknown,
         /// <summary>
         /// 
         /// </summary>
-        public const string DetectionFoundMultiple = "detection_found_multiple";
+        DetectionFoundMultiple,
         /// <summary>
         /// 
         /// </summary>
-        public const string DetectionFoundNothing = "detection_found_nothing";
+        DetectionFoundNothing,
         /// <summary>
         /// 
         /// </summary>
-        public const string DetectionNeedsAuth = "detection_needs_auth";
+        DetectionNeedsAuth,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ImportStatusExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ImportStatus value)
+        {
+            return value switch
+            {
+                ImportStatus.Auth => "auth",
+                ImportStatus.Error => "error",
+                ImportStatus.None => "none",
+                ImportStatus.Detecting => "detecting",
+                ImportStatus.Choose => "choose",
+                ImportStatus.AuthFailed => "auth_failed",
+                ImportStatus.Importing => "importing",
+                ImportStatus.Mapping => "mapping",
+                ImportStatus.WaitingToPush => "waiting_to_push",
+                ImportStatus.Pushing => "pushing",
+                ImportStatus.Complete => "complete",
+                ImportStatus.Setup => "setup",
+                ImportStatus.Unknown => "unknown",
+                ImportStatus.DetectionFoundMultiple => "detection_found_multiple",
+                ImportStatus.DetectionFoundNothing => "detection_found_nothing",
+                ImportStatus.DetectionNeedsAuth => "detection_needs_auth",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ImportStatus ToEnum(string value)
+        {
+            return value switch
+            {
+                "auth" => ImportStatus.Auth,
+                "error" => ImportStatus.Error,
+                "none" => ImportStatus.None,
+                "detecting" => ImportStatus.Detecting,
+                "choose" => ImportStatus.Choose,
+                "auth_failed" => ImportStatus.AuthFailed,
+                "importing" => ImportStatus.Importing,
+                "mapping" => ImportStatus.Mapping,
+                "waiting_to_push" => ImportStatus.WaitingToPush,
+                "pushing" => ImportStatus.Pushing,
+                "complete" => ImportStatus.Complete,
+                "setup" => ImportStatus.Setup,
+                "unknown" => ImportStatus.Unknown,
+                "detection_found_multiple" => ImportStatus.DetectionFoundMultiple,
+                "detection_found_nothing" => ImportStatus.DetectionFoundNothing,
+                "detection_needs_auth" => ImportStatus.DetectionNeedsAuth,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

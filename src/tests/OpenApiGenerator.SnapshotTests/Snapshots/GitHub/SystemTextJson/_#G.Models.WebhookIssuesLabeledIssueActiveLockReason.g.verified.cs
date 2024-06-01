@@ -7,23 +7,58 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookIssuesLabeledIssueActiveLockReason
+    public enum WebhookIssuesLabeledIssueActiveLockReason
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Resolved = "resolved";
+        Resolved,
         /// <summary>
         /// 
         /// </summary>
-        public const string OffTopic = "off-topic";
+        OffTopic,
         /// <summary>
         /// 
         /// </summary>
-        public const string TooHeated = "too heated";
+        TooHeated,
         /// <summary>
         /// 
         /// </summary>
-        public const string Spam = "spam";
+        Spam,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssuesLabeledIssueActiveLockReasonExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssuesLabeledIssueActiveLockReason value)
+        {
+            return value switch
+            {
+                WebhookIssuesLabeledIssueActiveLockReason.Resolved => "resolved",
+                WebhookIssuesLabeledIssueActiveLockReason.OffTopic => "off-topic",
+                WebhookIssuesLabeledIssueActiveLockReason.TooHeated => "too heated",
+                WebhookIssuesLabeledIssueActiveLockReason.Spam => "spam",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssuesLabeledIssueActiveLockReason ToEnum(string value)
+        {
+            return value switch
+            {
+                "resolved" => WebhookIssuesLabeledIssueActiveLockReason.Resolved,
+                "off-topic" => WebhookIssuesLabeledIssueActiveLockReason.OffTopic,
+                "too heated" => WebhookIssuesLabeledIssueActiveLockReason.TooHeated,
+                "spam" => WebhookIssuesLabeledIssueActiveLockReason.Spam,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

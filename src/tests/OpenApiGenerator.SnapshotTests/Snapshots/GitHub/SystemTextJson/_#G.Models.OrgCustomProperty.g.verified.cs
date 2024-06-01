@@ -21,8 +21,9 @@ namespace G
         /// <br/>Example: single_select
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OrgCustomPropertyValueTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ValueType { get; set; }
+        public required OrgCustomPropertyValueType ValueType { get; set; }
 
         /// <summary>
         /// Whether the property is required.
@@ -34,7 +35,8 @@ namespace G
         /// Default value of the property
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_value")]
-        public object? DefaultValue { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
+        public global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>? DefaultValue { get; set; }
 
         /// <summary>
         /// Short description of the property
@@ -54,7 +56,8 @@ namespace G
         /// <br/>Example: org_actors
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("values_editable_by")]
-        public string? ValuesEditableBy { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OrgCustomPropertyValuesEditableByJsonConverter))]
+        public OrgCustomPropertyValuesEditableBy? ValuesEditableBy { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -7,15 +7,46 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookIssuesLabeledIssuePerformedViaGithubAppPermissionsPages
+    public enum WebhookIssuesLabeledIssuePerformedViaGithubAppPermissionsPages
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Read = "read";
+        Read,
         /// <summary>
         /// 
         /// </summary>
-        public const string Write = "write";
+        Write,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssuesLabeledIssuePerformedViaGithubAppPermissionsPagesExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssuesLabeledIssuePerformedViaGithubAppPermissionsPages value)
+        {
+            return value switch
+            {
+                WebhookIssuesLabeledIssuePerformedViaGithubAppPermissionsPages.Read => "read",
+                WebhookIssuesLabeledIssuePerformedViaGithubAppPermissionsPages.Write => "write",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssuesLabeledIssuePerformedViaGithubAppPermissionsPages ToEnum(string value)
+        {
+            return value switch
+            {
+                "read" => WebhookIssuesLabeledIssuePerformedViaGithubAppPermissionsPages.Read,
+                "write" => WebhookIssuesLabeledIssuePerformedViaGithubAppPermissionsPages.Write,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

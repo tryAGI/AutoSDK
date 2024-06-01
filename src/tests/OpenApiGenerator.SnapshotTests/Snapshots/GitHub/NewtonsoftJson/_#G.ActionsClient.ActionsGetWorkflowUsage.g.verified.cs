@@ -17,7 +17,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<WorkflowUsage> ActionsGetWorkflowUsageAsync(
             string owner,
             string repo,
-            object workflowId,
+            global::System.OneOf<int, string> workflowId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -30,11 +30,11 @@ namespace G
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
 
-            var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<WorkflowUsage>(content) ??
-                throw new global::System.InvalidOperationException("Response deserialization failed for \"{content}\" ");
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<WorkflowUsage?>(__content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
 }

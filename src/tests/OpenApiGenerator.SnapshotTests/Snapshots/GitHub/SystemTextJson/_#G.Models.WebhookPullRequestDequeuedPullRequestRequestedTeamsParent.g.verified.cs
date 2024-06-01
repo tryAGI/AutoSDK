@@ -62,8 +62,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("privacy")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestDequeuedPullRequestRequestedTeamsParentPrivacyJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Privacy { get; set; }
+        public required WebhookPullRequestDequeuedPullRequestRequestedTeamsParentPrivacy Privacy { get; set; }
 
         /// <summary>
         /// 

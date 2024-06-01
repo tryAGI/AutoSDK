@@ -60,8 +60,9 @@ namespace G
         /// <br/>Example: force_push
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("activity_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ActivityActivityTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ActivityType { get; set; }
+        public required ActivityActivityType ActivityType { get; set; }
 
         /// <summary>
         /// A GitHub user.

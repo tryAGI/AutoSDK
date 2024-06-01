@@ -54,8 +54,9 @@ namespace G
         /// State of a code scanning alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningOrganizationAlertItemsStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string State { get; set; }
+        public required CodeScanningOrganizationAlertItemsState State { get; set; }
 
         /// <summary>
         /// The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -81,8 +82,9 @@ namespace G
         /// **Required when the state is dismissed.** The reason for dismissing or closing the alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_reason")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningOrganizationAlertItemsDismissedReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? DismissedReason { get; set; }
+        public required CodeScanningOrganizationAlertItemsDismissedReason? DismissedReason { get; set; }
 
         /// <summary>
         /// The dismissal comment associated with the dismissal of the alert.

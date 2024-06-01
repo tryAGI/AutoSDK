@@ -13,8 +13,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookMetaDeletedHookConfigContentTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ContentType { get; set; }
+        public required WebhookMetaDeletedHookConfigContentType ContentType { get; set; }
 
         /// <summary>
         /// 

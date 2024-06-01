@@ -7,19 +7,52 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookPullRequestAssignedPullRequestBaseRepoVisibility
+    public enum WebhookPullRequestAssignedPullRequestBaseRepoVisibility
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Public = "public";
+        Public,
         /// <summary>
         /// 
         /// </summary>
-        public const string Private = "private";
+        Private,
         /// <summary>
         /// 
         /// </summary>
-        public const string Internal = "internal";
+        Internal,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestAssignedPullRequestBaseRepoVisibilityExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestAssignedPullRequestBaseRepoVisibility value)
+        {
+            return value switch
+            {
+                WebhookPullRequestAssignedPullRequestBaseRepoVisibility.Public => "public",
+                WebhookPullRequestAssignedPullRequestBaseRepoVisibility.Private => "private",
+                WebhookPullRequestAssignedPullRequestBaseRepoVisibility.Internal => "internal",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestAssignedPullRequestBaseRepoVisibility ToEnum(string value)
+        {
+            return value switch
+            {
+                "public" => WebhookPullRequestAssignedPullRequestBaseRepoVisibility.Public,
+                "private" => WebhookPullRequestAssignedPullRequestBaseRepoVisibility.Private,
+                "internal" => WebhookPullRequestAssignedPullRequestBaseRepoVisibility.Internal,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

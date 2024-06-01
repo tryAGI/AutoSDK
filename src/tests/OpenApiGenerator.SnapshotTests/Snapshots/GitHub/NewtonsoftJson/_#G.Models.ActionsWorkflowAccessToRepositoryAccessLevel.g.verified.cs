@@ -28,4 +28,37 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="organization")]
         Organization,
     }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ActionsWorkflowAccessToRepositoryAccessLevelExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ActionsWorkflowAccessToRepositoryAccessLevel value)
+        {
+            return value switch
+            {
+                ActionsWorkflowAccessToRepositoryAccessLevel.None => "none",
+                ActionsWorkflowAccessToRepositoryAccessLevel.User => "user",
+                ActionsWorkflowAccessToRepositoryAccessLevel.Organization => "organization",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ActionsWorkflowAccessToRepositoryAccessLevel ToEnum(string value)
+        {
+            return value switch
+            {
+                "none" => ActionsWorkflowAccessToRepositoryAccessLevel.None,
+                "user" => ActionsWorkflowAccessToRepositoryAccessLevel.User,
+                "organization" => ActionsWorkflowAccessToRepositoryAccessLevel.Organization,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

@@ -7,19 +7,52 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class DiscussionAnswerChosenByType
+    public enum DiscussionAnswerChosenByType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Bot = "Bot";
+        Bot,
         /// <summary>
         /// 
         /// </summary>
-        public const string User = "User";
+        User,
         /// <summary>
         /// 
         /// </summary>
-        public const string Organization = "Organization";
+        Organization,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class DiscussionAnswerChosenByTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this DiscussionAnswerChosenByType value)
+        {
+            return value switch
+            {
+                DiscussionAnswerChosenByType.Bot => "Bot",
+                DiscussionAnswerChosenByType.User => "User",
+                DiscussionAnswerChosenByType.Organization => "Organization",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static DiscussionAnswerChosenByType ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => DiscussionAnswerChosenByType.Bot,
+                "User" => DiscussionAnswerChosenByType.User,
+                "Organization" => DiscussionAnswerChosenByType.Organization,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

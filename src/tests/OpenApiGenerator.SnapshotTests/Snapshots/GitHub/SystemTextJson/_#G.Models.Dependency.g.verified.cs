@@ -27,14 +27,16 @@ namespace G
         /// <br/>Example: direct
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("relationship")]
-        public string? Relationship { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DependencyRelationshipJsonConverter))]
+        public DependencyRelationship? Relationship { get; set; }
 
         /// <summary>
         /// A notation of whether the dependency is required for the primary build artifact (runtime) or is only used for development. Future versions of this specification may allow for more granular scopes.
         /// <br/>Example: runtime
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
-        public string? Scope { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DependencyScopeJsonConverter))]
+        public DependencyScope? Scope { get; set; }
 
         /// <summary>
         /// Array of package-url (PURLs) of direct child dependencies.

@@ -10,19 +10,52 @@ namespace G
     /// - `PR_BODY` - default to the pull request's body.
     /// - `BLANK` - default to a blank commit message.
     /// </summary>
-    public abstract class WebhookPullRequestReviewSubmittedPullRequestHeadRepoMergeCommitMessage
+    public enum WebhookPullRequestReviewSubmittedPullRequestHeadRepoMergeCommitMessage
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string PRBODY = "PR_BODY";
+        PRBODY,
         /// <summary>
         /// 
         /// </summary>
-        public const string PRTITLE = "PR_TITLE";
+        PRTITLE,
         /// <summary>
         /// 
         /// </summary>
-        public const string BLANK = "BLANK";
+        BLANK,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestReviewSubmittedPullRequestHeadRepoMergeCommitMessageExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestReviewSubmittedPullRequestHeadRepoMergeCommitMessage value)
+        {
+            return value switch
+            {
+                WebhookPullRequestReviewSubmittedPullRequestHeadRepoMergeCommitMessage.PRBODY => "PR_BODY",
+                WebhookPullRequestReviewSubmittedPullRequestHeadRepoMergeCommitMessage.PRTITLE => "PR_TITLE",
+                WebhookPullRequestReviewSubmittedPullRequestHeadRepoMergeCommitMessage.BLANK => "BLANK",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestReviewSubmittedPullRequestHeadRepoMergeCommitMessage ToEnum(string value)
+        {
+            return value switch
+            {
+                "PR_BODY" => WebhookPullRequestReviewSubmittedPullRequestHeadRepoMergeCommitMessage.PRBODY,
+                "PR_TITLE" => WebhookPullRequestReviewSubmittedPullRequestHeadRepoMergeCommitMessage.PRTITLE,
+                "BLANK" => WebhookPullRequestReviewSubmittedPullRequestHeadRepoMergeCommitMessage.BLANK,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

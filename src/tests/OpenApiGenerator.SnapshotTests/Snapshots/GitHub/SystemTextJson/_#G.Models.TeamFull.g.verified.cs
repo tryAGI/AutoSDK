@@ -66,14 +66,16 @@ namespace G
         /// <br/>Example: closed
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("privacy")]
-        public string? Privacy { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.TeamFullPrivacyJsonConverter))]
+        public TeamFullPrivacy? Privacy { get; set; }
 
         /// <summary>
         /// The notification setting the team has set
         /// <br/>Example: notifications_enabled
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("notification_setting")]
-        public string? NotificationSetting { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.TeamFullNotificationSettingJsonConverter))]
+        public TeamFullNotificationSetting? NotificationSetting { get; set; }
 
         /// <summary>
         /// Permission that the team will have for its repositories

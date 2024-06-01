@@ -13,8 +13,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AllOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Author { get; set; }
+        public required global::System.AllOf<WebhookStatusCommitCommitAuthor, WebhookStatusCommitCommitAuthor> Author { get; set; }
 
         /// <summary>
         /// 
@@ -27,8 +28,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("committer")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AllOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Committer { get; set; }
+        public required global::System.AllOf<WebhookStatusCommitCommitCommitter, WebhookStatusCommitCommitCommitter> Committer { get; set; }
 
         /// <summary>
         /// 

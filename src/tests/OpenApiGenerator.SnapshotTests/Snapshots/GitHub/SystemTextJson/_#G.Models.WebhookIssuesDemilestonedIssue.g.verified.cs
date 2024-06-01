@@ -13,8 +13,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("active_lock_reason")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookIssuesDemilestonedIssueActiveLockReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? ActiveLockReason { get; set; }
+        public required WebhookIssuesDemilestonedIssueActiveLockReason? ActiveLockReason { get; set; }
 
         /// <summary>
         /// 
@@ -33,8 +34,9 @@ namespace G
         /// How the author is associated with the repository.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookIssuesDemilestonedIssueAuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string AuthorAssociation { get; set; }
+        public required WebhookIssuesDemilestonedIssueAuthorAssociation AuthorAssociation { get; set; }
 
         /// <summary>
         /// Contents of the issue
@@ -168,7 +170,8 @@ namespace G
         /// State of the issue; either 'open' or 'closed'
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        public string? State { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookIssuesDemilestonedIssueStateJsonConverter))]
+        public WebhookIssuesDemilestonedIssueState? State { get; set; }
 
         /// <summary>
         /// 

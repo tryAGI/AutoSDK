@@ -7,23 +7,58 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookIssuesClosedIssueUserType
+    public enum WebhookIssuesClosedIssueUserType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Bot = "Bot";
+        Bot,
         /// <summary>
         /// 
         /// </summary>
-        public const string User = "User";
+        User,
         /// <summary>
         /// 
         /// </summary>
-        public const string Organization = "Organization";
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        public const string Mannequin = "Mannequin";
+        Mannequin,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssuesClosedIssueUserTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssuesClosedIssueUserType value)
+        {
+            return value switch
+            {
+                WebhookIssuesClosedIssueUserType.Bot => "Bot",
+                WebhookIssuesClosedIssueUserType.User => "User",
+                WebhookIssuesClosedIssueUserType.Organization => "Organization",
+                WebhookIssuesClosedIssueUserType.Mannequin => "Mannequin",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssuesClosedIssueUserType ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhookIssuesClosedIssueUserType.Bot,
+                "User" => WebhookIssuesClosedIssueUserType.User,
+                "Organization" => WebhookIssuesClosedIssueUserType.Organization,
+                "Mannequin" => WebhookIssuesClosedIssueUserType.Mannequin,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

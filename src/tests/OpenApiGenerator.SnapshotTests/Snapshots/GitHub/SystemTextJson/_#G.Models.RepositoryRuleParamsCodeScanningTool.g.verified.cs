@@ -13,15 +13,17 @@ namespace G
         /// The severity level at which code scanning results that raise alerts block a reference update. For more information on alert severity levels, see "[About code scanning alerts](https://docs.github.com/code-security/code-scanning/managing-code-scanning-alerts/about-code-scanning-alerts#about-alert-severity-and-security-severity-levels)."
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("alerts_threshold")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryRuleParamsCodeScanningToolAlertsThresholdJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string AlertsThreshold { get; set; }
+        public required RepositoryRuleParamsCodeScanningToolAlertsThreshold AlertsThreshold { get; set; }
 
         /// <summary>
         /// The severity level at which code scanning results that raise security alerts block a reference update. For more information on security severity levels, see "[About code scanning alerts](https://docs.github.com/code-security/code-scanning/managing-code-scanning-alerts/about-code-scanning-alerts#about-alert-severity-and-security-severity-levels)."
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("security_alerts_threshold")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryRuleParamsCodeScanningToolSecurityAlertsThresholdJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string SecurityAlertsThreshold { get; set; }
+        public required RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold SecurityAlertsThreshold { get; set; }
 
         /// <summary>
         /// The name of a code scanning tool

@@ -41,8 +41,9 @@ namespace G
         /// The summary conclusion for all check runs that are part of the check suite. This value will be `null` until the check run has completed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookCheckSuiteRerequestedCheckSuiteConclusionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Conclusion { get; set; }
+        public required WebhookCheckSuiteRerequestedCheckSuiteConclusion? Conclusion { get; set; }
 
         /// <summary>
         /// 
@@ -116,8 +117,9 @@ namespace G
         /// The summary status for all check runs that are part of the check suite. Can be `requested`, `in_progress`, or `completed`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookCheckSuiteRerequestedCheckSuiteStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Status { get; set; }
+        public required WebhookCheckSuiteRerequestedCheckSuiteStatus? Status { get; set; }
 
         /// <summary>
         /// 

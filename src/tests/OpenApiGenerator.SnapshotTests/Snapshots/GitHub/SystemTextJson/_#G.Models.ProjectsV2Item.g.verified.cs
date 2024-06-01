@@ -39,8 +39,9 @@ namespace G
         /// The type of content tracked in a project item
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ProjectsV2ItemContentTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ContentType { get; set; }
+        public required ProjectsV2ItemContentType ContentType { get; set; }
 
         /// <summary>
         /// A GitHub user.

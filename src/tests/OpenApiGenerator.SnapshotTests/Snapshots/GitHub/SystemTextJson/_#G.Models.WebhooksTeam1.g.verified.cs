@@ -69,13 +69,15 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("privacy")]
-        public string? Privacy { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksTeam1PrivacyJsonConverter))]
+        public WebhooksTeam1Privacy? Privacy { get; set; }
 
         /// <summary>
         /// Whether team members will receive notifications when their team is @mentioned
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("notification_setting")]
-        public string? NotificationSetting { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksTeam1NotificationSettingJsonConverter))]
+        public WebhooksTeam1NotificationSetting? NotificationSetting { get; set; }
 
         /// <summary>
         /// 

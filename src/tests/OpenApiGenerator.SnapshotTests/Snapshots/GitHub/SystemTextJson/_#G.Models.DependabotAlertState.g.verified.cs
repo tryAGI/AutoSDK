@@ -7,23 +7,58 @@ namespace G
     /// <summary>
     /// The state of the Dependabot alert.
     /// </summary>
-    public abstract class DependabotAlertState
+    public enum DependabotAlertState
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string AutoDismissed = "auto_dismissed";
+        AutoDismissed,
         /// <summary>
         /// 
         /// </summary>
-        public const string Dismissed = "dismissed";
+        Dismissed,
         /// <summary>
         /// 
         /// </summary>
-        public const string Fixed = "fixed";
+        Fixed,
         /// <summary>
         /// 
         /// </summary>
-        public const string Open = "open";
+        Open,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class DependabotAlertStateExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this DependabotAlertState value)
+        {
+            return value switch
+            {
+                DependabotAlertState.AutoDismissed => "auto_dismissed",
+                DependabotAlertState.Dismissed => "dismissed",
+                DependabotAlertState.Fixed => "fixed",
+                DependabotAlertState.Open => "open",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static DependabotAlertState ToEnum(string value)
+        {
+            return value switch
+            {
+                "auto_dismissed" => DependabotAlertState.AutoDismissed,
+                "dismissed" => DependabotAlertState.Dismissed,
+                "fixed" => DependabotAlertState.Fixed,
+                "open" => DependabotAlertState.Open,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

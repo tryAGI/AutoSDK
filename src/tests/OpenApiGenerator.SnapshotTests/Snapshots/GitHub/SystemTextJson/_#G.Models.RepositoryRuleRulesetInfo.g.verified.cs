@@ -13,7 +13,8 @@ namespace G
         /// The type of source for the ruleset that includes this rule.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ruleset_source_type")]
-        public string? RulesetSourceType { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryRuleRulesetInfoRulesetSourceTypeJsonConverter))]
+        public RepositoryRuleRulesetInfoRulesetSourceType? RulesetSourceType { get; set; }
 
         /// <summary>
         /// The name of the source of the ruleset that includes this rule.

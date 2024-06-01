@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Author { get; set; } = default!;
+        public global::System.AllOf<WebhookStatusCommitCommitAuthor, WebhookStatusCommitCommitAuthor> Author { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("committer", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Committer { get; set; } = default!;
+        public global::System.AllOf<WebhookStatusCommitCommitCommitter, WebhookStatusCommitCommitCommitter> Committer { get; set; } = default!;
 
         /// <summary>
         /// 

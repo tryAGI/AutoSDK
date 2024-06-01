@@ -15,7 +15,7 @@ namespace G
         /// <param name="perPage"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task CodespacesListSelectedReposForOrgSecretAsync(
+        public async global::System.Threading.Tasks.Task<CodespacesListSelectedReposForOrgSecretResponse> CodespacesListSelectedReposForOrgSecretAsync(
             string org,
             string secretName,
             int page,
@@ -31,6 +31,12 @@ namespace G
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
+
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return
+                global::System.Text.Json.JsonSerializer.Deserialize<CodespacesListSelectedReposForOrgSecretResponse?>(__content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
 }

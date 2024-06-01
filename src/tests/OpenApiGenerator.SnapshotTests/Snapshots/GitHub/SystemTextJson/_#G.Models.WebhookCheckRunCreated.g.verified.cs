@@ -13,7 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
-        public string? Action { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookCheckRunCreatedActionJsonConverter))]
+        public WebhookCheckRunCreatedAction? Action { get; set; }
 
         /// <summary>
         /// A check performed on the code of a given code change

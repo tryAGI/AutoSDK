@@ -41,8 +41,9 @@ namespace G
         /// How the author is associated with the repository.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DiscussionAuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string AuthorAssociation { get; set; }
+        public required DiscussionAuthorAssociation AuthorAssociation { get; set; }
 
         /// <summary>
         /// 
@@ -126,16 +127,18 @@ namespace G
         /// `transferring` means that the discussion is being transferred from another repository.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DiscussionStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string State { get; set; }
+        public required DiscussionState State { get; set; }
 
         /// <summary>
         /// The reason for the current state
         /// <br/>Example: resolved
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state_reason")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DiscussionStateReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? StateReason { get; set; }
+        public required DiscussionStateReason? StateReason { get; set; }
 
         /// <summary>
         /// 

@@ -7,23 +7,58 @@ namespace G
     /// <summary>
     /// <br/>Default Value: full_name
     /// </summary>
-    public abstract class ReposListForAuthenticatedUserSort
+    public enum ReposListForAuthenticatedUserSort
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Created = "created";
+        Created,
         /// <summary>
         /// 
         /// </summary>
-        public const string Updated = "updated";
+        Updated,
         /// <summary>
         /// 
         /// </summary>
-        public const string Pushed = "pushed";
+        Pushed,
         /// <summary>
         /// 
         /// </summary>
-        public const string FullName = "full_name";
+        FullName,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ReposListForAuthenticatedUserSortExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ReposListForAuthenticatedUserSort value)
+        {
+            return value switch
+            {
+                ReposListForAuthenticatedUserSort.Created => "created",
+                ReposListForAuthenticatedUserSort.Updated => "updated",
+                ReposListForAuthenticatedUserSort.Pushed => "pushed",
+                ReposListForAuthenticatedUserSort.FullName => "full_name",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ReposListForAuthenticatedUserSort ToEnum(string value)
+        {
+            return value switch
+            {
+                "created" => ReposListForAuthenticatedUserSort.Created,
+                "updated" => ReposListForAuthenticatedUserSort.Updated,
+                "pushed" => ReposListForAuthenticatedUserSort.Pushed,
+                "full_name" => ReposListForAuthenticatedUserSort.FullName,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

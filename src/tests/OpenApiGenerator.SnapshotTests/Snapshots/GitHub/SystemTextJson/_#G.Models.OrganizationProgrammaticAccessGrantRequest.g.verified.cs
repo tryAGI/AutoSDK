@@ -34,8 +34,9 @@ namespace G
         /// Type of repository selection requested.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_selection")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OrganizationProgrammaticAccessGrantRequestRepositorySelectionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string RepositorySelection { get; set; }
+        public required OrganizationProgrammaticAccessGrantRequestRepositorySelection RepositorySelection { get; set; }
 
         /// <summary>
         /// URL to the list of repositories requested to be accessed via fine-grained personal access token. Should only be followed when `repository_selection` is `subset`.

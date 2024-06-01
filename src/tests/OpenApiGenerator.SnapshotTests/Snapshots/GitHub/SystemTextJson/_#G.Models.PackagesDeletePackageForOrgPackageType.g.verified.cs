@@ -7,31 +7,70 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class PackagesDeletePackageForOrgPackageType
+    public enum PackagesDeletePackageForOrgPackageType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Npm = "npm";
+        Npm,
         /// <summary>
         /// 
         /// </summary>
-        public const string Maven = "maven";
+        Maven,
         /// <summary>
         /// 
         /// </summary>
-        public const string Rubygems = "rubygems";
+        Rubygems,
         /// <summary>
         /// 
         /// </summary>
-        public const string Docker = "docker";
+        Docker,
         /// <summary>
         /// 
         /// </summary>
-        public const string Nuget = "nuget";
+        Nuget,
         /// <summary>
         /// 
         /// </summary>
-        public const string Container = "container";
+        Container,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class PackagesDeletePackageForOrgPackageTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this PackagesDeletePackageForOrgPackageType value)
+        {
+            return value switch
+            {
+                PackagesDeletePackageForOrgPackageType.Npm => "npm",
+                PackagesDeletePackageForOrgPackageType.Maven => "maven",
+                PackagesDeletePackageForOrgPackageType.Rubygems => "rubygems",
+                PackagesDeletePackageForOrgPackageType.Docker => "docker",
+                PackagesDeletePackageForOrgPackageType.Nuget => "nuget",
+                PackagesDeletePackageForOrgPackageType.Container => "container",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static PackagesDeletePackageForOrgPackageType ToEnum(string value)
+        {
+            return value switch
+            {
+                "npm" => PackagesDeletePackageForOrgPackageType.Npm,
+                "maven" => PackagesDeletePackageForOrgPackageType.Maven,
+                "rubygems" => PackagesDeletePackageForOrgPackageType.Rubygems,
+                "docker" => PackagesDeletePackageForOrgPackageType.Docker,
+                "nuget" => PackagesDeletePackageForOrgPackageType.Nuget,
+                "container" => PackagesDeletePackageForOrgPackageType.Container,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

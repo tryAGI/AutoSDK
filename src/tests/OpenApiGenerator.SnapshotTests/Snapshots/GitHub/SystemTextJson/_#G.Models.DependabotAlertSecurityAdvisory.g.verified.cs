@@ -48,8 +48,9 @@ namespace G
         /// The severity of the advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DependabotAlertSecurityAdvisorySeverityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Severity { get; set; }
+        public required DependabotAlertSecurityAdvisorySeverity Severity { get; set; }
 
         /// <summary>
         /// Details for the advisory pertaining to the Common Vulnerability Scoring System.

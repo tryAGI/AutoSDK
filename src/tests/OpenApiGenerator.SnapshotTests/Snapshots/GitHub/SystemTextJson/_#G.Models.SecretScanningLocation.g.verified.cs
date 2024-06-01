@@ -14,13 +14,15 @@ namespace G
         /// <br/>Example: commit
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SecretScanningLocationTypeJsonConverter))]
+        public SecretScanningLocationType? Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("details")]
-        public object? Details { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory13))]
+        public global::System.OneOf<SecretScanningLocationCommit?, SecretScanningLocationWikiCommit?, SecretScanningLocationIssueTitle?, SecretScanningLocationIssueBody?, SecretScanningLocationIssueComment?, SecretScanningLocationDiscussionTitle?, SecretScanningLocationDiscussionBody?, SecretScanningLocationDiscussionComment?, SecretScanningLocationPullRequestTitle?, SecretScanningLocationPullRequestBody?, SecretScanningLocationPullRequestComment?, SecretScanningLocationPullRequestReview?, SecretScanningLocationPullRequestReviewComment?> Details { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -34,8 +34,9 @@ namespace G
         /// The merge method to use.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_method")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestReviewCommentDeletedPullRequestAutoMergeMergeMethodJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string MergeMethod { get; set; }
+        public required WebhookPullRequestReviewCommentDeletedPullRequestAutoMergeMergeMethod MergeMethod { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

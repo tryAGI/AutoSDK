@@ -52,7 +52,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("payload", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Payload { get; set; } = default!;
+        public global::System.OneOf<object, string> Payload { get; set; } = default!;
 
         /// <summary>
         /// <br/>Example: staging

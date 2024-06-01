@@ -7,23 +7,58 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookPullRequestLockedPullRequestAssigneesType
+    public enum WebhookPullRequestLockedPullRequestAssigneesType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Bot = "Bot";
+        Bot,
         /// <summary>
         /// 
         /// </summary>
-        public const string User = "User";
+        User,
         /// <summary>
         /// 
         /// </summary>
-        public const string Organization = "Organization";
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        public const string Mannequin = "Mannequin";
+        Mannequin,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestLockedPullRequestAssigneesTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestLockedPullRequestAssigneesType value)
+        {
+            return value switch
+            {
+                WebhookPullRequestLockedPullRequestAssigneesType.Bot => "Bot",
+                WebhookPullRequestLockedPullRequestAssigneesType.User => "User",
+                WebhookPullRequestLockedPullRequestAssigneesType.Organization => "Organization",
+                WebhookPullRequestLockedPullRequestAssigneesType.Mannequin => "Mannequin",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestLockedPullRequestAssigneesType ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhookPullRequestLockedPullRequestAssigneesType.Bot,
+                "User" => WebhookPullRequestLockedPullRequestAssigneesType.User,
+                "Organization" => WebhookPullRequestLockedPullRequestAssigneesType.Organization,
+                "Mannequin" => WebhookPullRequestLockedPullRequestAssigneesType.Mannequin,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

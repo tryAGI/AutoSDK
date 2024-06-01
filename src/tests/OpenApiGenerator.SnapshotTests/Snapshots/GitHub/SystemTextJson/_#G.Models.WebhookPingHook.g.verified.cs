@@ -66,8 +66,9 @@ namespace G
         /// The type of webhook. The only valid value is 'web'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPingHookNameJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public required WebhookPingHookName Name { get; set; }
 
         /// <summary>
         /// 

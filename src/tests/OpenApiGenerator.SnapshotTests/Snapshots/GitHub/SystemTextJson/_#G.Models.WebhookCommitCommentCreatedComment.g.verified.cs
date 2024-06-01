@@ -13,8 +13,9 @@ namespace G
         /// How the author is associated with the repository.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookCommitCommentCreatedCommentAuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string AuthorAssociation { get; set; }
+        public required WebhookCommitCommentCreatedCommentAuthorAssociation AuthorAssociation { get; set; }
 
         /// <summary>
         /// The text of the comment.

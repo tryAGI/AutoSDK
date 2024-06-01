@@ -13,19 +13,21 @@ namespace G
         /// Code scanning default setup has been configured or not.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        public string? State { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningDefaultSetupStateJsonConverter))]
+        public CodeScanningDefaultSetupState? State { get; set; }
 
         /// <summary>
         /// Languages to be analyzed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("languages")]
-        public global::System.Collections.Generic.IList<string?>? Languages { get; set; }
+        public global::System.Collections.Generic.IList<CodeScanningDefaultSetupLanguages?>? Languages { get; set; }
 
         /// <summary>
         /// CodeQL query suite to be used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("query_suite")]
-        public string? QuerySuite { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningDefaultSetupQuerySuiteJsonConverter))]
+        public CodeScanningDefaultSetupQuerySuite? QuerySuite { get; set; }
 
         /// <summary>
         /// Timestamp of latest configuration update.
@@ -38,7 +40,8 @@ namespace G
         /// The frequency of the periodic analysis.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("schedule")]
-        public string? Schedule { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningDefaultSetupScheduleJsonConverter))]
+        public CodeScanningDefaultSetupSchedule? Schedule { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

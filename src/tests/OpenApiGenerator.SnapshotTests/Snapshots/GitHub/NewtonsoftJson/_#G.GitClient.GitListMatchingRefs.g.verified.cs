@@ -14,7 +14,7 @@ namespace G
         /// <param name="@ref"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task GitListMatchingRefsAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<GitRef>> GitListMatchingRefsAsync(
             string owner,
             string repo,
             string @ref,
@@ -29,6 +29,12 @@ namespace G
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
+
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<GitRef>?>(__content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
 }

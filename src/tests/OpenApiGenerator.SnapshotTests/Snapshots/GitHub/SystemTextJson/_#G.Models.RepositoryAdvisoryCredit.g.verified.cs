@@ -20,15 +20,17 @@ namespace G
         /// The type of credit the user is receiving.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryAdvisoryCreditTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required RepositoryAdvisoryCreditType Type { get; set; }
 
         /// <summary>
         /// The state of the user's acceptance of the credit.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryAdvisoryCreditStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string State { get; set; }
+        public required RepositoryAdvisoryCreditState State { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

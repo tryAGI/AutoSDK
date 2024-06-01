@@ -7,15 +7,46 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookCheckSuiteCompletedCheckSuiteAppPermissionsEnvironments
+    public enum WebhookCheckSuiteCompletedCheckSuiteAppPermissionsEnvironments
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Read = "read";
+        Read,
         /// <summary>
         /// 
         /// </summary>
-        public const string Write = "write";
+        Write,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookCheckSuiteCompletedCheckSuiteAppPermissionsEnvironmentsExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookCheckSuiteCompletedCheckSuiteAppPermissionsEnvironments value)
+        {
+            return value switch
+            {
+                WebhookCheckSuiteCompletedCheckSuiteAppPermissionsEnvironments.Read => "read",
+                WebhookCheckSuiteCompletedCheckSuiteAppPermissionsEnvironments.Write => "write",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookCheckSuiteCompletedCheckSuiteAppPermissionsEnvironments ToEnum(string value)
+        {
+            return value switch
+            {
+                "read" => WebhookCheckSuiteCompletedCheckSuiteAppPermissionsEnvironments.Read,
+                "write" => WebhookCheckSuiteCompletedCheckSuiteAppPermissionsEnvironments.Write,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

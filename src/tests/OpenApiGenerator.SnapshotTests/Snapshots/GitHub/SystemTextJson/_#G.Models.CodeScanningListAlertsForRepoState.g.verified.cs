@@ -7,23 +7,58 @@ namespace G
     /// <summary>
     /// State of a code scanning alert.
     /// </summary>
-    public abstract class CodeScanningListAlertsForRepoState
+    public enum CodeScanningListAlertsForRepoState
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Open = "open";
+        Open,
         /// <summary>
         /// 
         /// </summary>
-        public const string Closed = "closed";
+        Closed,
         /// <summary>
         /// 
         /// </summary>
-        public const string Dismissed = "dismissed";
+        Dismissed,
         /// <summary>
         /// 
         /// </summary>
-        public const string Fixed = "fixed";
+        Fixed,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class CodeScanningListAlertsForRepoStateExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this CodeScanningListAlertsForRepoState value)
+        {
+            return value switch
+            {
+                CodeScanningListAlertsForRepoState.Open => "open",
+                CodeScanningListAlertsForRepoState.Closed => "closed",
+                CodeScanningListAlertsForRepoState.Dismissed => "dismissed",
+                CodeScanningListAlertsForRepoState.Fixed => "fixed",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static CodeScanningListAlertsForRepoState ToEnum(string value)
+        {
+            return value switch
+            {
+                "open" => CodeScanningListAlertsForRepoState.Open,
+                "closed" => CodeScanningListAlertsForRepoState.Closed,
+                "dismissed" => CodeScanningListAlertsForRepoState.Dismissed,
+                "fixed" => CodeScanningListAlertsForRepoState.Fixed,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

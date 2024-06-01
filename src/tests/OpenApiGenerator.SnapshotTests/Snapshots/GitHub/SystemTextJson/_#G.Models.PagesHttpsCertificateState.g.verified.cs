@@ -7,55 +7,106 @@ namespace G
     /// <summary>
     /// <br/>Example: approved
     /// </summary>
-    public abstract class PagesHttpsCertificateState
+    public enum PagesHttpsCertificateState
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string New = "new";
+        New,
         /// <summary>
         /// 
         /// </summary>
-        public const string AuthorizationCreated = "authorization_created";
+        AuthorizationCreated,
         /// <summary>
         /// 
         /// </summary>
-        public const string AuthorizationPending = "authorization_pending";
+        AuthorizationPending,
         /// <summary>
         /// 
         /// </summary>
-        public const string Authorized = "authorized";
+        Authorized,
         /// <summary>
         /// 
         /// </summary>
-        public const string AuthorizationRevoked = "authorization_revoked";
+        AuthorizationRevoked,
         /// <summary>
         /// 
         /// </summary>
-        public const string Issued = "issued";
+        Issued,
         /// <summary>
         /// 
         /// </summary>
-        public const string Uploaded = "uploaded";
+        Uploaded,
         /// <summary>
         /// 
         /// </summary>
-        public const string Approved = "approved";
+        Approved,
         /// <summary>
         /// 
         /// </summary>
-        public const string Errored = "errored";
+        Errored,
         /// <summary>
         /// 
         /// </summary>
-        public const string BadAuthz = "bad_authz";
+        BadAuthz,
         /// <summary>
         /// 
         /// </summary>
-        public const string DestroyPending = "destroy_pending";
+        DestroyPending,
         /// <summary>
         /// 
         /// </summary>
-        public const string DnsChanged = "dns_changed";
+        DnsChanged,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class PagesHttpsCertificateStateExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this PagesHttpsCertificateState value)
+        {
+            return value switch
+            {
+                PagesHttpsCertificateState.New => "new",
+                PagesHttpsCertificateState.AuthorizationCreated => "authorization_created",
+                PagesHttpsCertificateState.AuthorizationPending => "authorization_pending",
+                PagesHttpsCertificateState.Authorized => "authorized",
+                PagesHttpsCertificateState.AuthorizationRevoked => "authorization_revoked",
+                PagesHttpsCertificateState.Issued => "issued",
+                PagesHttpsCertificateState.Uploaded => "uploaded",
+                PagesHttpsCertificateState.Approved => "approved",
+                PagesHttpsCertificateState.Errored => "errored",
+                PagesHttpsCertificateState.BadAuthz => "bad_authz",
+                PagesHttpsCertificateState.DestroyPending => "destroy_pending",
+                PagesHttpsCertificateState.DnsChanged => "dns_changed",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static PagesHttpsCertificateState ToEnum(string value)
+        {
+            return value switch
+            {
+                "new" => PagesHttpsCertificateState.New,
+                "authorization_created" => PagesHttpsCertificateState.AuthorizationCreated,
+                "authorization_pending" => PagesHttpsCertificateState.AuthorizationPending,
+                "authorized" => PagesHttpsCertificateState.Authorized,
+                "authorization_revoked" => PagesHttpsCertificateState.AuthorizationRevoked,
+                "issued" => PagesHttpsCertificateState.Issued,
+                "uploaded" => PagesHttpsCertificateState.Uploaded,
+                "approved" => PagesHttpsCertificateState.Approved,
+                "errored" => PagesHttpsCertificateState.Errored,
+                "bad_authz" => PagesHttpsCertificateState.BadAuthz,
+                "destroy_pending" => PagesHttpsCertificateState.DestroyPending,
+                "dns_changed" => PagesHttpsCertificateState.DnsChanged,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

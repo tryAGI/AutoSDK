@@ -21,4 +21,35 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="write")]
         Write,
     }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssueCommentDeletedIssuePerformedViaGithubAppPermissionsKeysExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssueCommentDeletedIssuePerformedViaGithubAppPermissionsKeys value)
+        {
+            return value switch
+            {
+                WebhookIssueCommentDeletedIssuePerformedViaGithubAppPermissionsKeys.Read => "read",
+                WebhookIssueCommentDeletedIssuePerformedViaGithubAppPermissionsKeys.Write => "write",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssueCommentDeletedIssuePerformedViaGithubAppPermissionsKeys ToEnum(string value)
+        {
+            return value switch
+            {
+                "read" => WebhookIssueCommentDeletedIssuePerformedViaGithubAppPermissionsKeys.Read,
+                "write" => WebhookIssueCommentDeletedIssuePerformedViaGithubAppPermissionsKeys.Write,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

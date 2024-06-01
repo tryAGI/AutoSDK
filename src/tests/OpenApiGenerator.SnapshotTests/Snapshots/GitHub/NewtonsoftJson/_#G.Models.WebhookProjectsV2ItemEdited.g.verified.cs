@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("changes")]
-        public object? Changes { get; set; }
+        public global::System.OneOf<WebhookProjectsV2ItemEditedChanges?, WebhookProjectsV2ItemEditedChanges?> Changes { get; set; }
 
         /// <summary>
         /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured

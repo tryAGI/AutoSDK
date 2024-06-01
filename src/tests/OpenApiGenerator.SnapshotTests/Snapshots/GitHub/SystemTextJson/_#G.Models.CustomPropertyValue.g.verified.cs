@@ -20,8 +20,9 @@ namespace G
         /// The value assigned to the property
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Value { get; set; }
+        public required global::System.OneOf<string, global::System.Collections.Generic.IList<string>>? Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

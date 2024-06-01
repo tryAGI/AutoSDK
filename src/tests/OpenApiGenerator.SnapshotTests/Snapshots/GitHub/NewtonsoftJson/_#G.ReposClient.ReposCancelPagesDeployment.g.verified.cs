@@ -14,10 +14,10 @@ namespace G
         /// <param name="pagesDeploymentId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task ReposCancelPagesDeploymentAsync(
+        public async global::System.Threading.Tasks.Task<BasicError> ReposCancelPagesDeploymentAsync(
             string owner,
             string repo,
-            object pagesDeploymentId,
+            global::System.OneOf<int, string> pagesDeploymentId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -29,6 +29,12 @@ namespace G
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
+
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<BasicError?>(__content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
 }

@@ -251,4 +251,127 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="reminder")]
         Reminder,
     }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssuesOpenedIssuePerformedViaGithubAppEventsExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssuesOpenedIssuePerformedViaGithubAppEvents value)
+        {
+            return value switch
+            {
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.BranchProtectionRule => "branch_protection_rule",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.CheckRun => "check_run",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.CheckSuite => "check_suite",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.CodeScanningAlert => "code_scanning_alert",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.CommitComment => "commit_comment",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.ContentReference => "content_reference",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Create => "create",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Delete => "delete",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Deployment => "deployment",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.DeploymentReview => "deployment_review",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.DeploymentStatus => "deployment_status",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.DeployKey => "deploy_key",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Discussion => "discussion",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.DiscussionComment => "discussion_comment",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Fork => "fork",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Gollum => "gollum",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Issues => "issues",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.IssueComment => "issue_comment",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Label => "label",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Member => "member",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Membership => "membership",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Milestone => "milestone",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Organization => "organization",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.OrgBlock => "org_block",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.PageBuild => "page_build",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Project => "project",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.ProjectCard => "project_card",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.ProjectColumn => "project_column",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Public => "public",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.PullRequest => "pull_request",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.PullRequestReview => "pull_request_review",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.PullRequestReviewComment => "pull_request_review_comment",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Push => "push",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.RegistryPackage => "registry_package",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Release => "release",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Repository => "repository",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.RepositoryDispatch => "repository_dispatch",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.SecretScanningAlert => "secret_scanning_alert",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Star => "star",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Status => "status",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Team => "team",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.TeamAdd => "team_add",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Watch => "watch",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.WorkflowDispatch => "workflow_dispatch",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.WorkflowRun => "workflow_run",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.SecurityAndAnalysis => "security_and_analysis",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.PullRequestReviewThread => "pull_request_review_thread",
+                WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Reminder => "reminder",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssuesOpenedIssuePerformedViaGithubAppEvents ToEnum(string value)
+        {
+            return value switch
+            {
+                "branch_protection_rule" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.BranchProtectionRule,
+                "check_run" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.CheckRun,
+                "check_suite" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.CheckSuite,
+                "code_scanning_alert" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.CodeScanningAlert,
+                "commit_comment" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.CommitComment,
+                "content_reference" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.ContentReference,
+                "create" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Create,
+                "delete" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Delete,
+                "deployment" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Deployment,
+                "deployment_review" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.DeploymentReview,
+                "deployment_status" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.DeploymentStatus,
+                "deploy_key" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.DeployKey,
+                "discussion" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Discussion,
+                "discussion_comment" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.DiscussionComment,
+                "fork" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Fork,
+                "gollum" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Gollum,
+                "issues" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Issues,
+                "issue_comment" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.IssueComment,
+                "label" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Label,
+                "member" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Member,
+                "membership" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Membership,
+                "milestone" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Milestone,
+                "organization" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Organization,
+                "org_block" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.OrgBlock,
+                "page_build" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.PageBuild,
+                "project" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Project,
+                "project_card" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.ProjectCard,
+                "project_column" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.ProjectColumn,
+                "public" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Public,
+                "pull_request" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.PullRequest,
+                "pull_request_review" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.PullRequestReview,
+                "pull_request_review_comment" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.PullRequestReviewComment,
+                "push" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Push,
+                "registry_package" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.RegistryPackage,
+                "release" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Release,
+                "repository" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Repository,
+                "repository_dispatch" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.RepositoryDispatch,
+                "secret_scanning_alert" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.SecretScanningAlert,
+                "star" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Star,
+                "status" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Status,
+                "team" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Team,
+                "team_add" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.TeamAdd,
+                "watch" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Watch,
+                "workflow_dispatch" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.WorkflowDispatch,
+                "workflow_run" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.WorkflowRun,
+                "security_and_analysis" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.SecurityAndAnalysis,
+                "pull_request_review_thread" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.PullRequestReviewThread,
+                "reminder" => WebhookIssuesOpenedIssuePerformedViaGithubAppEvents.Reminder,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

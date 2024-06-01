@@ -8,35 +8,76 @@ namespace G
     /// The state of the status.
     /// <br/>Example: success
     /// </summary>
-    public abstract class DeploymentStatusState
+    public enum DeploymentStatusState
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Error = "error";
+        Error,
         /// <summary>
         /// 
         /// </summary>
-        public const string Failure = "failure";
+        Failure,
         /// <summary>
         /// 
         /// </summary>
-        public const string Inactive = "inactive";
+        Inactive,
         /// <summary>
         /// 
         /// </summary>
-        public const string Pending = "pending";
+        Pending,
         /// <summary>
         /// 
         /// </summary>
-        public const string Success = "success";
+        Success,
         /// <summary>
         /// 
         /// </summary>
-        public const string Queued = "queued";
+        Queued,
         /// <summary>
         /// 
         /// </summary>
-        public const string InProgress = "in_progress";
+        InProgress,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class DeploymentStatusStateExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this DeploymentStatusState value)
+        {
+            return value switch
+            {
+                DeploymentStatusState.Error => "error",
+                DeploymentStatusState.Failure => "failure",
+                DeploymentStatusState.Inactive => "inactive",
+                DeploymentStatusState.Pending => "pending",
+                DeploymentStatusState.Success => "success",
+                DeploymentStatusState.Queued => "queued",
+                DeploymentStatusState.InProgress => "in_progress",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static DeploymentStatusState ToEnum(string value)
+        {
+            return value switch
+            {
+                "error" => DeploymentStatusState.Error,
+                "failure" => DeploymentStatusState.Failure,
+                "inactive" => DeploymentStatusState.Inactive,
+                "pending" => DeploymentStatusState.Pending,
+                "success" => DeploymentStatusState.Success,
+                "queued" => DeploymentStatusState.Queued,
+                "in_progress" => DeploymentStatusState.InProgress,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

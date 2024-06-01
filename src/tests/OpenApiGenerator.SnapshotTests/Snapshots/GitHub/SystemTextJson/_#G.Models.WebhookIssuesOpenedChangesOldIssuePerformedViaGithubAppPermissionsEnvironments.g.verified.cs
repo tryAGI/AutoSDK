@@ -7,15 +7,46 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEnvironments
+    public enum WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEnvironments
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Read = "read";
+        Read,
         /// <summary>
         /// 
         /// </summary>
-        public const string Write = "write";
+        Write,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEnvironmentsExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEnvironments value)
+        {
+            return value switch
+            {
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEnvironments.Read => "read",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEnvironments.Write => "write",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEnvironments ToEnum(string value)
+        {
+            return value switch
+            {
+                "read" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEnvironments.Read,
+                "write" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEnvironments.Write,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

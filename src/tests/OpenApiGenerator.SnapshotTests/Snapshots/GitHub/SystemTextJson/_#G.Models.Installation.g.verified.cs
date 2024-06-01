@@ -21,15 +21,17 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("account")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Account { get; set; }
+        public required global::System.AnyOf<SimpleUser, Enterprise>? Account { get; set; }
 
         /// <summary>
         /// Describe whether all repositories have been selected or there's a selection involved
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_selection")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.InstallationRepositorySelectionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string RepositorySelection { get; set; }
+        public required InstallationRepositorySelection RepositorySelection { get; set; }
 
         /// <summary>
         /// <br/>Example: https://api.github.com/app/installations/1/access_tokens

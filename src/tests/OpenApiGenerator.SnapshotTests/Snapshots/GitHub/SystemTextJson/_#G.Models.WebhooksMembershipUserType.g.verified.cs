@@ -7,19 +7,52 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhooksMembershipUserType
+    public enum WebhooksMembershipUserType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Bot = "Bot";
+        Bot,
         /// <summary>
         /// 
         /// </summary>
-        public const string User = "User";
+        User,
         /// <summary>
         /// 
         /// </summary>
-        public const string Organization = "Organization";
+        Organization,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhooksMembershipUserTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhooksMembershipUserType value)
+        {
+            return value switch
+            {
+                WebhooksMembershipUserType.Bot => "Bot",
+                WebhooksMembershipUserType.User => "User",
+                WebhooksMembershipUserType.Organization => "Organization",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhooksMembershipUserType ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhooksMembershipUserType.Bot,
+                "User" => WebhooksMembershipUserType.User,
+                "Organization" => WebhooksMembershipUserType.Organization,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

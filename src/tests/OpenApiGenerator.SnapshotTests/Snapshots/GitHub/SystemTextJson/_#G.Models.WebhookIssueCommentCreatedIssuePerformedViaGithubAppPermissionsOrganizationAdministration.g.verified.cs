@@ -7,15 +7,46 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsOrganizationAdministration
+    public enum WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsOrganizationAdministration
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Read = "read";
+        Read,
         /// <summary>
         /// 
         /// </summary>
-        public const string Write = "write";
+        Write,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsOrganizationAdministrationExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsOrganizationAdministration value)
+        {
+            return value switch
+            {
+                WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsOrganizationAdministration.Read => "read",
+                WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsOrganizationAdministration.Write => "write",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsOrganizationAdministration ToEnum(string value)
+        {
+            return value switch
+            {
+                "read" => WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsOrganizationAdministration.Read,
+                "write" => WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsOrganizationAdministration.Write,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

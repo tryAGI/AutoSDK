@@ -9,15 +9,46 @@ namespace G
     /// - `PR_TITLE` - default to the pull request's title.
     /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
     /// </summary>
-    public abstract class WebhookPullRequestAssignedPullRequestBaseRepoMergeCommitTitle
+    public enum WebhookPullRequestAssignedPullRequestBaseRepoMergeCommitTitle
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string PRTITLE = "PR_TITLE";
+        PRTITLE,
         /// <summary>
         /// 
         /// </summary>
-        public const string MERGEMESSAGE = "MERGE_MESSAGE";
+        MERGEMESSAGE,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestAssignedPullRequestBaseRepoMergeCommitTitleExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestAssignedPullRequestBaseRepoMergeCommitTitle value)
+        {
+            return value switch
+            {
+                WebhookPullRequestAssignedPullRequestBaseRepoMergeCommitTitle.PRTITLE => "PR_TITLE",
+                WebhookPullRequestAssignedPullRequestBaseRepoMergeCommitTitle.MERGEMESSAGE => "MERGE_MESSAGE",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestAssignedPullRequestBaseRepoMergeCommitTitle ToEnum(string value)
+        {
+            return value switch
+            {
+                "PR_TITLE" => WebhookPullRequestAssignedPullRequestBaseRepoMergeCommitTitle.PRTITLE,
+                "MERGE_MESSAGE" => WebhookPullRequestAssignedPullRequestBaseRepoMergeCommitTitle.MERGEMESSAGE,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

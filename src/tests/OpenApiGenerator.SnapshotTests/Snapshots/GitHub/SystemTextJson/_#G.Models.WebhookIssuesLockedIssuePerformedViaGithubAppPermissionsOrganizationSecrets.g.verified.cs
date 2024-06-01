@@ -7,15 +7,46 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsOrganizationSecrets
+    public enum WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsOrganizationSecrets
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Read = "read";
+        Read,
         /// <summary>
         /// 
         /// </summary>
-        public const string Write = "write";
+        Write,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsOrganizationSecretsExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsOrganizationSecrets value)
+        {
+            return value switch
+            {
+                WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsOrganizationSecrets.Read => "read",
+                WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsOrganizationSecrets.Write => "write",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsOrganizationSecrets ToEnum(string value)
+        {
+            return value switch
+            {
+                "read" => WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsOrganizationSecrets.Read,
+                "write" => WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsOrganizationSecrets.Write,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

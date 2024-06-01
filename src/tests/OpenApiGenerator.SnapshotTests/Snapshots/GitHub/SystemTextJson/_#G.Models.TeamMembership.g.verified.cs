@@ -22,15 +22,17 @@ namespace G
         /// <br/>Example: member
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.TeamMembershipRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Role { get; set; }
+        public required TeamMembershipRole Role { get; set; }
 
         /// <summary>
         /// The state of the user's membership in the team.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.TeamMembershipStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string State { get; set; }
+        public required TeamMembershipState State { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

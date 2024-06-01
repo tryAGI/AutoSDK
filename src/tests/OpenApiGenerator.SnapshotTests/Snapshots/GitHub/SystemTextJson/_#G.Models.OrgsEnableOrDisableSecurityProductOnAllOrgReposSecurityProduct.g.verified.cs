@@ -7,35 +7,76 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct
+    public enum OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string DependencyGraph = "dependency_graph";
+        DependencyGraph,
         /// <summary>
         /// 
         /// </summary>
-        public const string DependabotAlerts = "dependabot_alerts";
+        DependabotAlerts,
         /// <summary>
         /// 
         /// </summary>
-        public const string DependabotSecurityUpdates = "dependabot_security_updates";
+        DependabotSecurityUpdates,
         /// <summary>
         /// 
         /// </summary>
-        public const string AdvancedSecurity = "advanced_security";
+        AdvancedSecurity,
         /// <summary>
         /// 
         /// </summary>
-        public const string CodeScanningDefaultSetup = "code_scanning_default_setup";
+        CodeScanningDefaultSetup,
         /// <summary>
         /// 
         /// </summary>
-        public const string SecretScanning = "secret_scanning";
+        SecretScanning,
         /// <summary>
         /// 
         /// </summary>
-        public const string SecretScanningPushProtection = "secret_scanning_push_protection";
+        SecretScanningPushProtection,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProductExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct value)
+        {
+            return value switch
+            {
+                OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.DependencyGraph => "dependency_graph",
+                OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.DependabotAlerts => "dependabot_alerts",
+                OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.DependabotSecurityUpdates => "dependabot_security_updates",
+                OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.AdvancedSecurity => "advanced_security",
+                OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.CodeScanningDefaultSetup => "code_scanning_default_setup",
+                OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.SecretScanning => "secret_scanning",
+                OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.SecretScanningPushProtection => "secret_scanning_push_protection",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct ToEnum(string value)
+        {
+            return value switch
+            {
+                "dependency_graph" => OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.DependencyGraph,
+                "dependabot_alerts" => OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.DependabotAlerts,
+                "dependabot_security_updates" => OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.DependabotSecurityUpdates,
+                "advanced_security" => OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.AdvancedSecurity,
+                "code_scanning_default_setup" => OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.CodeScanningDefaultSetup,
+                "secret_scanning" => OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.SecretScanning,
+                "secret_scanning_push_protection" => OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.SecretScanningPushProtection,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

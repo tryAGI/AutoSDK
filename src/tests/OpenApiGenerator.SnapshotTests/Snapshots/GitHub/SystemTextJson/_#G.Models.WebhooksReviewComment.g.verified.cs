@@ -20,8 +20,9 @@ namespace G
         /// How the author is associated with the repository.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksReviewCommentAuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string AuthorAssociation { get; set; }
+        public required WebhooksReviewCommentAuthorAssociation AuthorAssociation { get; set; }
 
         /// <summary>
         /// The text of the comment.
@@ -152,8 +153,9 @@ namespace G
         /// The side of the first line of the range for a multi-line comment.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("side")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksReviewCommentSideJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Side { get; set; }
+        public required WebhooksReviewCommentSide Side { get; set; }
 
         /// <summary>
         /// The first line of the range for a multi-line comment.
@@ -167,14 +169,16 @@ namespace G
         /// <br/>Default Value: RIGHT
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_side")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksReviewCommentStartSideJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? StartSide { get; set; }
+        public required WebhooksReviewCommentStartSide? StartSide { get; set; }
 
         /// <summary>
         /// The level at which the comment is targeted, can be a diff line or a file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("subject_type")]
-        public string? SubjectType { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhooksReviewCommentSubjectTypeJsonConverter))]
+        public WebhooksReviewCommentSubjectType? SubjectType { get; set; }
 
         /// <summary>
         /// 

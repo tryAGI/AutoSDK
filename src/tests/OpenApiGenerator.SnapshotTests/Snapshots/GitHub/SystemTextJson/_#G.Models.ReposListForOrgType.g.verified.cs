@@ -7,31 +7,70 @@ namespace G
     /// <summary>
     /// <br/>Default Value: all
     /// </summary>
-    public abstract class ReposListForOrgType
+    public enum ReposListForOrgType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string All = "all";
+        All,
         /// <summary>
         /// 
         /// </summary>
-        public const string Public = "public";
+        Public,
         /// <summary>
         /// 
         /// </summary>
-        public const string Private = "private";
+        Private,
         /// <summary>
         /// 
         /// </summary>
-        public const string Forks = "forks";
+        Forks,
         /// <summary>
         /// 
         /// </summary>
-        public const string Sources = "sources";
+        Sources,
         /// <summary>
         /// 
         /// </summary>
-        public const string Member = "member";
+        Member,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ReposListForOrgTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ReposListForOrgType value)
+        {
+            return value switch
+            {
+                ReposListForOrgType.All => "all",
+                ReposListForOrgType.Public => "public",
+                ReposListForOrgType.Private => "private",
+                ReposListForOrgType.Forks => "forks",
+                ReposListForOrgType.Sources => "sources",
+                ReposListForOrgType.Member => "member",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ReposListForOrgType ToEnum(string value)
+        {
+            return value switch
+            {
+                "all" => ReposListForOrgType.All,
+                "public" => ReposListForOrgType.Public,
+                "private" => ReposListForOrgType.Private,
+                "forks" => ReposListForOrgType.Forks,
+                "sources" => ReposListForOrgType.Sources,
+                "member" => ReposListForOrgType.Member,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

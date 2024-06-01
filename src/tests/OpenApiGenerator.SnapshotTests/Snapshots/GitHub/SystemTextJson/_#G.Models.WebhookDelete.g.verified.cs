@@ -50,8 +50,9 @@ namespace G
         /// The type of Git ref object deleted in the repository.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ref_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookDeleteRefTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string RefType { get; set; }
+        public required WebhookDeleteRefType RefType { get; set; }
 
         /// <summary>
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property

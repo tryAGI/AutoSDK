@@ -7,63 +7,118 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class ActionsListWorkflowRunsForRepoStatus
+    public enum ActionsListWorkflowRunsForRepoStatus
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Completed = "completed";
+        Completed,
         /// <summary>
         /// 
         /// </summary>
-        public const string ActionRequired = "action_required";
+        ActionRequired,
         /// <summary>
         /// 
         /// </summary>
-        public const string Cancelled = "cancelled";
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
-        public const string Failure = "failure";
+        Failure,
         /// <summary>
         /// 
         /// </summary>
-        public const string Neutral = "neutral";
+        Neutral,
         /// <summary>
         /// 
         /// </summary>
-        public const string Skipped = "skipped";
+        Skipped,
         /// <summary>
         /// 
         /// </summary>
-        public const string Stale = "stale";
+        Stale,
         /// <summary>
         /// 
         /// </summary>
-        public const string Success = "success";
+        Success,
         /// <summary>
         /// 
         /// </summary>
-        public const string TimedOut = "timed_out";
+        TimedOut,
         /// <summary>
         /// 
         /// </summary>
-        public const string InProgress = "in_progress";
+        InProgress,
         /// <summary>
         /// 
         /// </summary>
-        public const string Queued = "queued";
+        Queued,
         /// <summary>
         /// 
         /// </summary>
-        public const string Requested = "requested";
+        Requested,
         /// <summary>
         /// 
         /// </summary>
-        public const string Waiting = "waiting";
+        Waiting,
         /// <summary>
         /// 
         /// </summary>
-        public const string Pending = "pending";
+        Pending,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ActionsListWorkflowRunsForRepoStatusExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ActionsListWorkflowRunsForRepoStatus value)
+        {
+            return value switch
+            {
+                ActionsListWorkflowRunsForRepoStatus.Completed => "completed",
+                ActionsListWorkflowRunsForRepoStatus.ActionRequired => "action_required",
+                ActionsListWorkflowRunsForRepoStatus.Cancelled => "cancelled",
+                ActionsListWorkflowRunsForRepoStatus.Failure => "failure",
+                ActionsListWorkflowRunsForRepoStatus.Neutral => "neutral",
+                ActionsListWorkflowRunsForRepoStatus.Skipped => "skipped",
+                ActionsListWorkflowRunsForRepoStatus.Stale => "stale",
+                ActionsListWorkflowRunsForRepoStatus.Success => "success",
+                ActionsListWorkflowRunsForRepoStatus.TimedOut => "timed_out",
+                ActionsListWorkflowRunsForRepoStatus.InProgress => "in_progress",
+                ActionsListWorkflowRunsForRepoStatus.Queued => "queued",
+                ActionsListWorkflowRunsForRepoStatus.Requested => "requested",
+                ActionsListWorkflowRunsForRepoStatus.Waiting => "waiting",
+                ActionsListWorkflowRunsForRepoStatus.Pending => "pending",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ActionsListWorkflowRunsForRepoStatus ToEnum(string value)
+        {
+            return value switch
+            {
+                "completed" => ActionsListWorkflowRunsForRepoStatus.Completed,
+                "action_required" => ActionsListWorkflowRunsForRepoStatus.ActionRequired,
+                "cancelled" => ActionsListWorkflowRunsForRepoStatus.Cancelled,
+                "failure" => ActionsListWorkflowRunsForRepoStatus.Failure,
+                "neutral" => ActionsListWorkflowRunsForRepoStatus.Neutral,
+                "skipped" => ActionsListWorkflowRunsForRepoStatus.Skipped,
+                "stale" => ActionsListWorkflowRunsForRepoStatus.Stale,
+                "success" => ActionsListWorkflowRunsForRepoStatus.Success,
+                "timed_out" => ActionsListWorkflowRunsForRepoStatus.TimedOut,
+                "in_progress" => ActionsListWorkflowRunsForRepoStatus.InProgress,
+                "queued" => ActionsListWorkflowRunsForRepoStatus.Queued,
+                "requested" => ActionsListWorkflowRunsForRepoStatus.Requested,
+                "waiting" => ActionsListWorkflowRunsForRepoStatus.Waiting,
+                "pending" => ActionsListWorkflowRunsForRepoStatus.Pending,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

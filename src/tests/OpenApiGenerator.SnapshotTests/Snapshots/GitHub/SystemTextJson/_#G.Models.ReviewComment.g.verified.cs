@@ -132,8 +132,9 @@ namespace G
         /// <br/>Example: OWNER
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ReviewCommentAuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string AuthorAssociation { get; set; }
+        public required ReviewCommentAuthorAssociation AuthorAssociation { get; set; }
 
         /// <summary>
         /// 
@@ -165,14 +166,16 @@ namespace G
         /// <br/>Default Value: RIGHT
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("side")]
-        public string? Side { get; set; } = ReviewCommentSide.RIGHT;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ReviewCommentSideJsonConverter))]
+        public ReviewCommentSide? Side { get; set; } = ReviewCommentSide.RIGHT;
 
         /// <summary>
         /// The side of the first line of the range for a multi-line comment.
         /// <br/>Default Value: RIGHT
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_side")]
-        public string? StartSide { get; set; } = ReviewCommentStartSide.RIGHT;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ReviewCommentStartSideJsonConverter))]
+        public ReviewCommentStartSide? StartSide { get; set; } = ReviewCommentStartSide.RIGHT;
 
         /// <summary>
         /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment

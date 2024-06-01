@@ -7,11 +7,40 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookDeploymentReviewApprovedReviewersType
+    public enum WebhookDeploymentReviewApprovedReviewersType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string User = "User";
+        User,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookDeploymentReviewApprovedReviewersTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookDeploymentReviewApprovedReviewersType value)
+        {
+            return value switch
+            {
+                WebhookDeploymentReviewApprovedReviewersType.User => "User",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookDeploymentReviewApprovedReviewersType ToEnum(string value)
+        {
+            return value switch
+            {
+                "User" => WebhookDeploymentReviewApprovedReviewersType.User,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

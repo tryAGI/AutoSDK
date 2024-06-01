@@ -13,8 +13,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookInstallationRepositoriesAddedActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Action { get; set; }
+        public required WebhookInstallationRepositoriesAddedAction Action { get; set; }
 
         /// <summary>
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured
@@ -63,8 +64,9 @@ namespace G
         /// Describe whether all repositories have been selected or there's a selection involved
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_selection")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookInstallationRepositoriesAddedRepositorySelectionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string RepositorySelection { get; set; }
+        public required WebhookInstallationRepositoriesAddedRepositorySelection RepositorySelection { get; set; }
 
         /// <summary>
         /// 

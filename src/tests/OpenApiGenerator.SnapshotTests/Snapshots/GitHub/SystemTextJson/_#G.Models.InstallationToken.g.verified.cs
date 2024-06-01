@@ -34,7 +34,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_selection")]
-        public string? RepositorySelection { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.InstallationTokenRepositorySelectionJsonConverter))]
+        public InstallationTokenRepositorySelection? RepositorySelection { get; set; }
 
         /// <summary>
         /// 

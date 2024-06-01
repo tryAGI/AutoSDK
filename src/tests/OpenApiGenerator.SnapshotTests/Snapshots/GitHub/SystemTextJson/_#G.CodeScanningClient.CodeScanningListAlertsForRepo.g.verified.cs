@@ -22,7 +22,7 @@ namespace G
         /// <param name="severity"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task CodeScanningListAlertsForRepoAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<CodeScanningAlertItems>> CodeScanningListAlertsForRepoAsync(
             string owner,
             string repo,
             string toolName,
@@ -30,10 +30,10 @@ namespace G
             int page,
             int perPage,
             string @ref,
-            string direction,
-            string sort,
-            string state,
-            string severity,
+            CodeScanningListAlertsForRepoDirection direction,
+            CodeScanningListAlertsForRepoSort sort,
+            CodeScanningListAlertsForRepoState state,
+            CodeScanningListAlertsForRepoSeverity severity,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -45,6 +45,12 @@ namespace G
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
+
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return
+                global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<CodeScanningAlertItems>?>(__content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
 }

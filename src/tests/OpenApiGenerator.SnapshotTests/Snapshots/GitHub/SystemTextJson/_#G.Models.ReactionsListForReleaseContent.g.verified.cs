@@ -7,31 +7,70 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class ReactionsListForReleaseContent
+    public enum ReactionsListForReleaseContent
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Plus1 = "+1";
+        Plus1,
         /// <summary>
         /// 
         /// </summary>
-        public const string Laugh = "laugh";
+        Laugh,
         /// <summary>
         /// 
         /// </summary>
-        public const string Heart = "heart";
+        Heart,
         /// <summary>
         /// 
         /// </summary>
-        public const string Hooray = "hooray";
+        Hooray,
         /// <summary>
         /// 
         /// </summary>
-        public const string Rocket = "rocket";
+        Rocket,
         /// <summary>
         /// 
         /// </summary>
-        public const string Eyes = "eyes";
+        Eyes,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ReactionsListForReleaseContentExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ReactionsListForReleaseContent value)
+        {
+            return value switch
+            {
+                ReactionsListForReleaseContent.Plus1 => "+1",
+                ReactionsListForReleaseContent.Laugh => "laugh",
+                ReactionsListForReleaseContent.Heart => "heart",
+                ReactionsListForReleaseContent.Hooray => "hooray",
+                ReactionsListForReleaseContent.Rocket => "rocket",
+                ReactionsListForReleaseContent.Eyes => "eyes",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ReactionsListForReleaseContent ToEnum(string value)
+        {
+            return value switch
+            {
+                "+1" => ReactionsListForReleaseContent.Plus1,
+                "laugh" => ReactionsListForReleaseContent.Laugh,
+                "heart" => ReactionsListForReleaseContent.Heart,
+                "hooray" => ReactionsListForReleaseContent.Hooray,
+                "rocket" => ReactionsListForReleaseContent.Rocket,
+                "eyes" => ReactionsListForReleaseContent.Eyes,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

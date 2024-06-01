@@ -20,8 +20,9 @@ namespace G
         /// Whether to approve or reject deployment to the specified environments.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ReviewCustomGatesStateRequiredStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string State { get; set; }
+        public required ReviewCustomGatesStateRequiredState State { get; set; }
 
         /// <summary>
         /// Optional comment to include with the review.

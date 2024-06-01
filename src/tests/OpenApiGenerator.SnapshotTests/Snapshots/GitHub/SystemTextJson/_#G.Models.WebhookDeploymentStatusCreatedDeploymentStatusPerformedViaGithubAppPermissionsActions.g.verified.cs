@@ -7,15 +7,46 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppPermissionsActions
+    public enum WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppPermissionsActions
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Read = "read";
+        Read,
         /// <summary>
         /// 
         /// </summary>
-        public const string Write = "write";
+        Write,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppPermissionsActionsExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppPermissionsActions value)
+        {
+            return value switch
+            {
+                WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppPermissionsActions.Read => "read",
+                WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppPermissionsActions.Write => "write",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppPermissionsActions ToEnum(string value)
+        {
+            return value switch
+            {
+                "read" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppPermissionsActions.Read,
+                "write" => WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppPermissionsActions.Write,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

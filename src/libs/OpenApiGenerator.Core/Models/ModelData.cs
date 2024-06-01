@@ -61,6 +61,38 @@ public readonly record struct ModelData(
             Enumerations: ImmutableArray<ModelData>.Empty
         );
     }
+
+    public static ModelData[] FromSchemas(
+        OpenApiSchema schema,
+        Settings settings,
+        string key,
+        params ModelData[] parents)
+    {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+
+        if (schema.AnyOf is { Count: > 0 })
+        {
+            return schema.AnyOf
+                .Select(x => FromSchema(x.UseReferenceIdOrKey(key), settings, parents))
+                .ToArray();
+        }
+        if (schema.AllOf is { Count: > 0 })
+        {
+            return schema.AllOf
+                .Select(x => FromSchema(x.UseReferenceIdOrKey(key), settings, parents))
+                .ToArray();
+        }
+        if (schema.OneOf is { Count: > 0 })
+        {
+            return schema.OneOf
+                .Select(x => FromSchema(x.UseReferenceIdOrKey(key), settings, parents))
+                .ToArray();
+        }
+        
+        return [FromSchema(schema.Type == "object"
+            ? schema.UseReferenceIdOrKey(key)
+            : schema.Items.UseReferenceIdOrKey(key), settings, parents)];
+    }
     
     public static ModelData FromSchema(
         KeyValuePair<string, OpenApiSchema> schema,

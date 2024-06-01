@@ -44,7 +44,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        public object? Value { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory3))]
+        public global::System.OneOf<string?, int?, global::System.Collections.Generic.IList<string?>?> Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,7 +13,7 @@ namespace G
         /// <param name="secretName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task CodespacesDeleteOrgSecretAsync(
+        public async global::System.Threading.Tasks.Task<BasicError> CodespacesDeleteOrgSecretAsync(
             string org,
             string secretName,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -27,6 +27,12 @@ namespace G
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
+
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return
+                global::System.Text.Json.JsonSerializer.Deserialize<BasicError?>(__content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
 }

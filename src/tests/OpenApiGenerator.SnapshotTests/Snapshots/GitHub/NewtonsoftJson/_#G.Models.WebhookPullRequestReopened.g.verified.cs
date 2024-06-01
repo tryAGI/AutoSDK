@@ -48,7 +48,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pull_request", Required = global::Newtonsoft.Json.Required.Always)]
-        public PullRequestWebhook PullRequest { get; set; } = default!;
+        public global::System.AllOf<PullRequest, WebhookPullRequestReopenedPullRequest> PullRequest { get; set; } = default!;
 
         /// <summary>
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property

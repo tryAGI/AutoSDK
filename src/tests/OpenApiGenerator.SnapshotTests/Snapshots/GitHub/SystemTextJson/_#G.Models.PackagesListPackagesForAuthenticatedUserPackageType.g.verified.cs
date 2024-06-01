@@ -7,31 +7,70 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class PackagesListPackagesForAuthenticatedUserPackageType
+    public enum PackagesListPackagesForAuthenticatedUserPackageType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Npm = "npm";
+        Npm,
         /// <summary>
         /// 
         /// </summary>
-        public const string Maven = "maven";
+        Maven,
         /// <summary>
         /// 
         /// </summary>
-        public const string Rubygems = "rubygems";
+        Rubygems,
         /// <summary>
         /// 
         /// </summary>
-        public const string Docker = "docker";
+        Docker,
         /// <summary>
         /// 
         /// </summary>
-        public const string Nuget = "nuget";
+        Nuget,
         /// <summary>
         /// 
         /// </summary>
-        public const string Container = "container";
+        Container,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class PackagesListPackagesForAuthenticatedUserPackageTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this PackagesListPackagesForAuthenticatedUserPackageType value)
+        {
+            return value switch
+            {
+                PackagesListPackagesForAuthenticatedUserPackageType.Npm => "npm",
+                PackagesListPackagesForAuthenticatedUserPackageType.Maven => "maven",
+                PackagesListPackagesForAuthenticatedUserPackageType.Rubygems => "rubygems",
+                PackagesListPackagesForAuthenticatedUserPackageType.Docker => "docker",
+                PackagesListPackagesForAuthenticatedUserPackageType.Nuget => "nuget",
+                PackagesListPackagesForAuthenticatedUserPackageType.Container => "container",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static PackagesListPackagesForAuthenticatedUserPackageType ToEnum(string value)
+        {
+            return value switch
+            {
+                "npm" => PackagesListPackagesForAuthenticatedUserPackageType.Npm,
+                "maven" => PackagesListPackagesForAuthenticatedUserPackageType.Maven,
+                "rubygems" => PackagesListPackagesForAuthenticatedUserPackageType.Rubygems,
+                "docker" => PackagesListPackagesForAuthenticatedUserPackageType.Docker,
+                "nuget" => PackagesListPackagesForAuthenticatedUserPackageType.Nuget,
+                "container" => PackagesListPackagesForAuthenticatedUserPackageType.Container,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

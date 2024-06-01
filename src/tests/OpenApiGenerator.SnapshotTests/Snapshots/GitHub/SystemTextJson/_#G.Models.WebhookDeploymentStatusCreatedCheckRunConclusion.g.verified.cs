@@ -7,39 +7,82 @@ namespace G
     /// <summary>
     /// The result of the completed check run. This value will be `null` until the check run has completed.
     /// </summary>
-    public abstract class WebhookDeploymentStatusCreatedCheckRunConclusion
+    public enum WebhookDeploymentStatusCreatedCheckRunConclusion
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Success = "success";
+        Success,
         /// <summary>
         /// 
         /// </summary>
-        public const string Failure = "failure";
+        Failure,
         /// <summary>
         /// 
         /// </summary>
-        public const string Neutral = "neutral";
+        Neutral,
         /// <summary>
         /// 
         /// </summary>
-        public const string Cancelled = "cancelled";
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
-        public const string TimedOut = "timed_out";
+        TimedOut,
         /// <summary>
         /// 
         /// </summary>
-        public const string ActionRequired = "action_required";
+        ActionRequired,
         /// <summary>
         /// 
         /// </summary>
-        public const string Stale = "stale";
+        Stale,
         /// <summary>
         /// 
         /// </summary>
-        public const string Skipped = "skipped";
+        Skipped,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookDeploymentStatusCreatedCheckRunConclusionExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookDeploymentStatusCreatedCheckRunConclusion value)
+        {
+            return value switch
+            {
+                WebhookDeploymentStatusCreatedCheckRunConclusion.Success => "success",
+                WebhookDeploymentStatusCreatedCheckRunConclusion.Failure => "failure",
+                WebhookDeploymentStatusCreatedCheckRunConclusion.Neutral => "neutral",
+                WebhookDeploymentStatusCreatedCheckRunConclusion.Cancelled => "cancelled",
+                WebhookDeploymentStatusCreatedCheckRunConclusion.TimedOut => "timed_out",
+                WebhookDeploymentStatusCreatedCheckRunConclusion.ActionRequired => "action_required",
+                WebhookDeploymentStatusCreatedCheckRunConclusion.Stale => "stale",
+                WebhookDeploymentStatusCreatedCheckRunConclusion.Skipped => "skipped",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookDeploymentStatusCreatedCheckRunConclusion ToEnum(string value)
+        {
+            return value switch
+            {
+                "success" => WebhookDeploymentStatusCreatedCheckRunConclusion.Success,
+                "failure" => WebhookDeploymentStatusCreatedCheckRunConclusion.Failure,
+                "neutral" => WebhookDeploymentStatusCreatedCheckRunConclusion.Neutral,
+                "cancelled" => WebhookDeploymentStatusCreatedCheckRunConclusion.Cancelled,
+                "timed_out" => WebhookDeploymentStatusCreatedCheckRunConclusion.TimedOut,
+                "action_required" => WebhookDeploymentStatusCreatedCheckRunConclusion.ActionRequired,
+                "stale" => WebhookDeploymentStatusCreatedCheckRunConclusion.Stale,
+                "skipped" => WebhookDeploymentStatusCreatedCheckRunConclusion.Skipped,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

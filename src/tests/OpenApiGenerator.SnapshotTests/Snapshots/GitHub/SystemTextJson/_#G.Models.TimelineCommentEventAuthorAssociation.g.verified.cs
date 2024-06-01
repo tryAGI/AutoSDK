@@ -8,39 +8,82 @@ namespace G
     /// How the author is associated with the repository.
     /// <br/>Example: OWNER
     /// </summary>
-    public abstract class TimelineCommentEventAuthorAssociation
+    public enum TimelineCommentEventAuthorAssociation
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string COLLABORATOR = "COLLABORATOR";
+        COLLABORATOR,
         /// <summary>
         /// 
         /// </summary>
-        public const string CONTRIBUTOR = "CONTRIBUTOR";
+        CONTRIBUTOR,
         /// <summary>
         /// 
         /// </summary>
-        public const string FIRSTTIMER = "FIRST_TIMER";
+        FIRSTTIMER,
         /// <summary>
         /// 
         /// </summary>
-        public const string FIRSTTIMECONTRIBUTOR = "FIRST_TIME_CONTRIBUTOR";
+        FIRSTTIMECONTRIBUTOR,
         /// <summary>
         /// 
         /// </summary>
-        public const string MANNEQUIN = "MANNEQUIN";
+        MANNEQUIN,
         /// <summary>
         /// 
         /// </summary>
-        public const string MEMBER = "MEMBER";
+        MEMBER,
         /// <summary>
         /// 
         /// </summary>
-        public const string NONE = "NONE";
+        NONE,
         /// <summary>
         /// 
         /// </summary>
-        public const string OWNER = "OWNER";
+        OWNER,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class TimelineCommentEventAuthorAssociationExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this TimelineCommentEventAuthorAssociation value)
+        {
+            return value switch
+            {
+                TimelineCommentEventAuthorAssociation.COLLABORATOR => "COLLABORATOR",
+                TimelineCommentEventAuthorAssociation.CONTRIBUTOR => "CONTRIBUTOR",
+                TimelineCommentEventAuthorAssociation.FIRSTTIMER => "FIRST_TIMER",
+                TimelineCommentEventAuthorAssociation.FIRSTTIMECONTRIBUTOR => "FIRST_TIME_CONTRIBUTOR",
+                TimelineCommentEventAuthorAssociation.MANNEQUIN => "MANNEQUIN",
+                TimelineCommentEventAuthorAssociation.MEMBER => "MEMBER",
+                TimelineCommentEventAuthorAssociation.NONE => "NONE",
+                TimelineCommentEventAuthorAssociation.OWNER => "OWNER",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static TimelineCommentEventAuthorAssociation ToEnum(string value)
+        {
+            return value switch
+            {
+                "COLLABORATOR" => TimelineCommentEventAuthorAssociation.COLLABORATOR,
+                "CONTRIBUTOR" => TimelineCommentEventAuthorAssociation.CONTRIBUTOR,
+                "FIRST_TIMER" => TimelineCommentEventAuthorAssociation.FIRSTTIMER,
+                "FIRST_TIME_CONTRIBUTOR" => TimelineCommentEventAuthorAssociation.FIRSTTIMECONTRIBUTOR,
+                "MANNEQUIN" => TimelineCommentEventAuthorAssociation.MANNEQUIN,
+                "MEMBER" => TimelineCommentEventAuthorAssociation.MEMBER,
+                "NONE" => TimelineCommentEventAuthorAssociation.NONE,
+                "OWNER" => TimelineCommentEventAuthorAssociation.OWNER,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

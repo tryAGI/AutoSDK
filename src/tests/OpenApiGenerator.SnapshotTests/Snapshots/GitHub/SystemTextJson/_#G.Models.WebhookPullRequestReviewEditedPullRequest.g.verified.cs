@@ -20,8 +20,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("active_lock_reason")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestReviewEditedPullRequestActiveLockReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? ActiveLockReason { get; set; }
+        public required WebhookPullRequestReviewEditedPullRequestActiveLockReason? ActiveLockReason { get; set; }
 
         /// <summary>
         /// 
@@ -41,8 +42,9 @@ namespace G
         /// How the author is associated with the repository.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestReviewEditedPullRequestAuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string AuthorAssociation { get; set; }
+        public required WebhookPullRequestReviewEditedPullRequestAuthorAssociation AuthorAssociation { get; set; }
 
         /// <summary>
         /// The status of auto merging a pull request.
@@ -196,7 +198,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requested_reviewers")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<object> RequestedReviewers { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.OneOf<WebhookPullRequestReviewEditedPullRequestRequestedReviewers?, WebhookPullRequestReviewEditedPullRequestRequestedReviewers>> RequestedReviewers { get; set; }
 
         /// <summary>
         /// 
@@ -223,8 +225,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestReviewEditedPullRequestStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string State { get; set; }
+        public required WebhookPullRequestReviewEditedPullRequestState State { get; set; }
 
         /// <summary>
         /// 

@@ -21,8 +21,9 @@ namespace G
         /// Describe whether all repositories have been selected or there's a selection involved
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_selection")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.NullableScopedInstallationRepositorySelectionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string RepositorySelection { get; set; }
+        public required NullableScopedInstallationRepositorySelection RepositorySelection { get; set; }
 
         /// <summary>
         /// <br/>Example: config.yaml

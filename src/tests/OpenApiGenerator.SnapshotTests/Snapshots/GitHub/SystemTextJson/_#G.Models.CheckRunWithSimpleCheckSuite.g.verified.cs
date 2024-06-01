@@ -34,8 +34,9 @@ namespace G
         /// <br/>Example: neutral
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CheckRunWithSimpleCheckSuiteConclusionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Conclusion { get; set; }
+        public required CheckRunWithSimpleCheckSuiteConclusion? Conclusion { get; set; }
 
         /// <summary>
         /// A deployment created as the result of an Actions check run from a workflow that references an environment
@@ -121,8 +122,9 @@ namespace G
         /// <br/>Example: queued
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CheckRunWithSimpleCheckSuiteStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
+        public required CheckRunWithSimpleCheckSuiteStatus Status { get; set; }
 
         /// <summary>
         /// <br/>Example: https://api.github.com/repos/github/hello-world/check-runs/4

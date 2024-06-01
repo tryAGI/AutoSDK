@@ -7,39 +7,82 @@ namespace G
     /// <summary>
     /// How the author is associated with the repository.
     /// </summary>
-    public abstract class WebhookIssuesOpenedIssueAuthorAssociation
+    public enum WebhookIssuesOpenedIssueAuthorAssociation
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string COLLABORATOR = "COLLABORATOR";
+        COLLABORATOR,
         /// <summary>
         /// 
         /// </summary>
-        public const string CONTRIBUTOR = "CONTRIBUTOR";
+        CONTRIBUTOR,
         /// <summary>
         /// 
         /// </summary>
-        public const string FIRSTTIMER = "FIRST_TIMER";
+        FIRSTTIMER,
         /// <summary>
         /// 
         /// </summary>
-        public const string FIRSTTIMECONTRIBUTOR = "FIRST_TIME_CONTRIBUTOR";
+        FIRSTTIMECONTRIBUTOR,
         /// <summary>
         /// 
         /// </summary>
-        public const string MANNEQUIN = "MANNEQUIN";
+        MANNEQUIN,
         /// <summary>
         /// 
         /// </summary>
-        public const string MEMBER = "MEMBER";
+        MEMBER,
         /// <summary>
         /// 
         /// </summary>
-        public const string NONE = "NONE";
+        NONE,
         /// <summary>
         /// 
         /// </summary>
-        public const string OWNER = "OWNER";
+        OWNER,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssuesOpenedIssueAuthorAssociationExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssuesOpenedIssueAuthorAssociation value)
+        {
+            return value switch
+            {
+                WebhookIssuesOpenedIssueAuthorAssociation.COLLABORATOR => "COLLABORATOR",
+                WebhookIssuesOpenedIssueAuthorAssociation.CONTRIBUTOR => "CONTRIBUTOR",
+                WebhookIssuesOpenedIssueAuthorAssociation.FIRSTTIMER => "FIRST_TIMER",
+                WebhookIssuesOpenedIssueAuthorAssociation.FIRSTTIMECONTRIBUTOR => "FIRST_TIME_CONTRIBUTOR",
+                WebhookIssuesOpenedIssueAuthorAssociation.MANNEQUIN => "MANNEQUIN",
+                WebhookIssuesOpenedIssueAuthorAssociation.MEMBER => "MEMBER",
+                WebhookIssuesOpenedIssueAuthorAssociation.NONE => "NONE",
+                WebhookIssuesOpenedIssueAuthorAssociation.OWNER => "OWNER",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssuesOpenedIssueAuthorAssociation ToEnum(string value)
+        {
+            return value switch
+            {
+                "COLLABORATOR" => WebhookIssuesOpenedIssueAuthorAssociation.COLLABORATOR,
+                "CONTRIBUTOR" => WebhookIssuesOpenedIssueAuthorAssociation.CONTRIBUTOR,
+                "FIRST_TIMER" => WebhookIssuesOpenedIssueAuthorAssociation.FIRSTTIMER,
+                "FIRST_TIME_CONTRIBUTOR" => WebhookIssuesOpenedIssueAuthorAssociation.FIRSTTIMECONTRIBUTOR,
+                "MANNEQUIN" => WebhookIssuesOpenedIssueAuthorAssociation.MANNEQUIN,
+                "MEMBER" => WebhookIssuesOpenedIssueAuthorAssociation.MEMBER,
+                "NONE" => WebhookIssuesOpenedIssueAuthorAssociation.NONE,
+                "OWNER" => WebhookIssuesOpenedIssueAuthorAssociation.OWNER,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

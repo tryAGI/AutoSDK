@@ -26,7 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("account", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Account { get; set; } = default!;
+        public global::System.AnyOf<SimpleUser, Enterprise> Account { get; set; } = default!;
 
         /// <summary>
         /// A GitHub user.

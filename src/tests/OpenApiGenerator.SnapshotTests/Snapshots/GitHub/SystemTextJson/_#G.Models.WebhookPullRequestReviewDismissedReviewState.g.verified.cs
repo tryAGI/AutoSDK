@@ -7,19 +7,52 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookPullRequestReviewDismissedReviewState
+    public enum WebhookPullRequestReviewDismissedReviewState
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Dismissed = "dismissed";
+        Dismissed,
         /// <summary>
         /// 
         /// </summary>
-        public const string Approved = "approved";
+        Approved,
         /// <summary>
         /// 
         /// </summary>
-        public const string ChangesRequested = "changes_requested";
+        ChangesRequested,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestReviewDismissedReviewStateExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestReviewDismissedReviewState value)
+        {
+            return value switch
+            {
+                WebhookPullRequestReviewDismissedReviewState.Dismissed => "dismissed",
+                WebhookPullRequestReviewDismissedReviewState.Approved => "approved",
+                WebhookPullRequestReviewDismissedReviewState.ChangesRequested => "changes_requested",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestReviewDismissedReviewState ToEnum(string value)
+        {
+            return value switch
+            {
+                "dismissed" => WebhookPullRequestReviewDismissedReviewState.Dismissed,
+                "approved" => WebhookPullRequestReviewDismissedReviewState.Approved,
+                "changes_requested" => WebhookPullRequestReviewDismissedReviewState.ChangesRequested,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

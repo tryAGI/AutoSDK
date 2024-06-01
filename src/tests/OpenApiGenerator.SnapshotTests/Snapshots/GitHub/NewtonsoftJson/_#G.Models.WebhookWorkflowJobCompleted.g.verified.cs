@@ -55,7 +55,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("workflow_job", Required = global::Newtonsoft.Json.Required.Always)]
-        public object WorkflowJob { get; set; } = default!;
+        public global::System.AllOf<WebhookWorkflowJobCompletedWorkflowJob, WebhookWorkflowJobCompletedWorkflowJob> WorkflowJob { get; set; } = default!;
 
         /// <summary>
         /// A request for a specific ref(branch,sha,tag) to be deployed

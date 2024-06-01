@@ -27,8 +27,9 @@ namespace G
         /// <br/>Example: added
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DiffEntryStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
+        public required DiffEntryStatus Status { get; set; }
 
         /// <summary>
         /// <br/>Example: 103

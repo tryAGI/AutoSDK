@@ -7,207 +7,334 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents
+    public enum WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string BranchProtectionRule = "branch_protection_rule";
+        BranchProtectionRule,
         /// <summary>
         /// 
         /// </summary>
-        public const string CheckRun = "check_run";
+        CheckRun,
         /// <summary>
         /// 
         /// </summary>
-        public const string CheckSuite = "check_suite";
+        CheckSuite,
         /// <summary>
         /// 
         /// </summary>
-        public const string CodeScanningAlert = "code_scanning_alert";
+        CodeScanningAlert,
         /// <summary>
         /// 
         /// </summary>
-        public const string CommitComment = "commit_comment";
+        CommitComment,
         /// <summary>
         /// 
         /// </summary>
-        public const string ContentReference = "content_reference";
+        ContentReference,
         /// <summary>
         /// 
         /// </summary>
-        public const string Create = "create";
+        Create,
         /// <summary>
         /// 
         /// </summary>
-        public const string Delete = "delete";
+        Delete,
         /// <summary>
         /// 
         /// </summary>
-        public const string Deployment = "deployment";
+        Deployment,
         /// <summary>
         /// 
         /// </summary>
-        public const string DeploymentReview = "deployment_review";
+        DeploymentReview,
         /// <summary>
         /// 
         /// </summary>
-        public const string DeploymentStatus = "deployment_status";
+        DeploymentStatus,
         /// <summary>
         /// 
         /// </summary>
-        public const string DeployKey = "deploy_key";
+        DeployKey,
         /// <summary>
         /// 
         /// </summary>
-        public const string Discussion = "discussion";
+        Discussion,
         /// <summary>
         /// 
         /// </summary>
-        public const string DiscussionComment = "discussion_comment";
+        DiscussionComment,
         /// <summary>
         /// 
         /// </summary>
-        public const string Fork = "fork";
+        Fork,
         /// <summary>
         /// 
         /// </summary>
-        public const string Gollum = "gollum";
+        Gollum,
         /// <summary>
         /// 
         /// </summary>
-        public const string Issues = "issues";
+        Issues,
         /// <summary>
         /// 
         /// </summary>
-        public const string IssueComment = "issue_comment";
+        IssueComment,
         /// <summary>
         /// 
         /// </summary>
-        public const string Label = "label";
+        Label,
         /// <summary>
         /// 
         /// </summary>
-        public const string Member = "member";
+        Member,
         /// <summary>
         /// 
         /// </summary>
-        public const string Membership = "membership";
+        Membership,
         /// <summary>
         /// 
         /// </summary>
-        public const string Milestone = "milestone";
+        Milestone,
         /// <summary>
         /// 
         /// </summary>
-        public const string Organization = "organization";
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        public const string OrgBlock = "org_block";
+        OrgBlock,
         /// <summary>
         /// 
         /// </summary>
-        public const string PageBuild = "page_build";
+        PageBuild,
         /// <summary>
         /// 
         /// </summary>
-        public const string Project = "project";
+        Project,
         /// <summary>
         /// 
         /// </summary>
-        public const string ProjectCard = "project_card";
+        ProjectCard,
         /// <summary>
         /// 
         /// </summary>
-        public const string ProjectColumn = "project_column";
+        ProjectColumn,
         /// <summary>
         /// 
         /// </summary>
-        public const string Public = "public";
+        Public,
         /// <summary>
         /// 
         /// </summary>
-        public const string PullRequest = "pull_request";
+        PullRequest,
         /// <summary>
         /// 
         /// </summary>
-        public const string PullRequestReview = "pull_request_review";
+        PullRequestReview,
         /// <summary>
         /// 
         /// </summary>
-        public const string PullRequestReviewComment = "pull_request_review_comment";
+        PullRequestReviewComment,
         /// <summary>
         /// 
         /// </summary>
-        public const string Push = "push";
+        Push,
         /// <summary>
         /// 
         /// </summary>
-        public const string RegistryPackage = "registry_package";
+        RegistryPackage,
         /// <summary>
         /// 
         /// </summary>
-        public const string Release = "release";
+        Release,
         /// <summary>
         /// 
         /// </summary>
-        public const string Repository = "repository";
+        Repository,
         /// <summary>
         /// 
         /// </summary>
-        public const string RepositoryDispatch = "repository_dispatch";
+        RepositoryDispatch,
         /// <summary>
         /// 
         /// </summary>
-        public const string SecretScanningAlert = "secret_scanning_alert";
+        SecretScanningAlert,
         /// <summary>
         /// 
         /// </summary>
-        public const string Star = "star";
+        Star,
         /// <summary>
         /// 
         /// </summary>
-        public const string Status = "status";
+        Status,
         /// <summary>
         /// 
         /// </summary>
-        public const string Team = "team";
+        Team,
         /// <summary>
         /// 
         /// </summary>
-        public const string TeamAdd = "team_add";
+        TeamAdd,
         /// <summary>
         /// 
         /// </summary>
-        public const string Watch = "watch";
+        Watch,
         /// <summary>
         /// 
         /// </summary>
-        public const string WorkflowDispatch = "workflow_dispatch";
+        WorkflowDispatch,
         /// <summary>
         /// 
         /// </summary>
-        public const string WorkflowRun = "workflow_run";
+        WorkflowRun,
         /// <summary>
         /// 
         /// </summary>
-        public const string MergeQueueEntry = "merge_queue_entry";
+        MergeQueueEntry,
         /// <summary>
         /// 
         /// </summary>
-        public const string WorkflowJob = "workflow_job";
+        WorkflowJob,
         /// <summary>
         /// 
         /// </summary>
-        public const string PullRequestReviewThread = "pull_request_review_thread";
+        PullRequestReviewThread,
         /// <summary>
         /// 
         /// </summary>
-        public const string SecretScanningAlertLocation = "secret_scanning_alert_location";
+        SecretScanningAlertLocation,
         /// <summary>
         /// 
         /// </summary>
-        public const string MergeGroup = "merge_group";
+        MergeGroup,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEventsExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents value)
+        {
+            return value switch
+            {
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.BranchProtectionRule => "branch_protection_rule",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.CheckRun => "check_run",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.CheckSuite => "check_suite",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.CodeScanningAlert => "code_scanning_alert",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.CommitComment => "commit_comment",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.ContentReference => "content_reference",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Create => "create",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Delete => "delete",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Deployment => "deployment",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.DeploymentReview => "deployment_review",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.DeploymentStatus => "deployment_status",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.DeployKey => "deploy_key",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Discussion => "discussion",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.DiscussionComment => "discussion_comment",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Fork => "fork",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Gollum => "gollum",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Issues => "issues",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.IssueComment => "issue_comment",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Label => "label",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Member => "member",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Membership => "membership",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Milestone => "milestone",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Organization => "organization",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.OrgBlock => "org_block",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.PageBuild => "page_build",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Project => "project",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.ProjectCard => "project_card",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.ProjectColumn => "project_column",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Public => "public",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.PullRequest => "pull_request",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.PullRequestReview => "pull_request_review",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.PullRequestReviewComment => "pull_request_review_comment",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Push => "push",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.RegistryPackage => "registry_package",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Release => "release",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Repository => "repository",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.RepositoryDispatch => "repository_dispatch",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.SecretScanningAlert => "secret_scanning_alert",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Star => "star",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Status => "status",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Team => "team",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.TeamAdd => "team_add",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Watch => "watch",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.WorkflowDispatch => "workflow_dispatch",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.WorkflowRun => "workflow_run",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.MergeQueueEntry => "merge_queue_entry",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.WorkflowJob => "workflow_job",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.PullRequestReviewThread => "pull_request_review_thread",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.SecretScanningAlertLocation => "secret_scanning_alert_location",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.MergeGroup => "merge_group",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents ToEnum(string value)
+        {
+            return value switch
+            {
+                "branch_protection_rule" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.BranchProtectionRule,
+                "check_run" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.CheckRun,
+                "check_suite" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.CheckSuite,
+                "code_scanning_alert" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.CodeScanningAlert,
+                "commit_comment" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.CommitComment,
+                "content_reference" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.ContentReference,
+                "create" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Create,
+                "delete" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Delete,
+                "deployment" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Deployment,
+                "deployment_review" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.DeploymentReview,
+                "deployment_status" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.DeploymentStatus,
+                "deploy_key" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.DeployKey,
+                "discussion" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Discussion,
+                "discussion_comment" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.DiscussionComment,
+                "fork" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Fork,
+                "gollum" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Gollum,
+                "issues" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Issues,
+                "issue_comment" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.IssueComment,
+                "label" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Label,
+                "member" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Member,
+                "membership" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Membership,
+                "milestone" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Milestone,
+                "organization" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Organization,
+                "org_block" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.OrgBlock,
+                "page_build" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.PageBuild,
+                "project" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Project,
+                "project_card" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.ProjectCard,
+                "project_column" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.ProjectColumn,
+                "public" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Public,
+                "pull_request" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.PullRequest,
+                "pull_request_review" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.PullRequestReview,
+                "pull_request_review_comment" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.PullRequestReviewComment,
+                "push" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Push,
+                "registry_package" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.RegistryPackage,
+                "release" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Release,
+                "repository" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Repository,
+                "repository_dispatch" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.RepositoryDispatch,
+                "secret_scanning_alert" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.SecretScanningAlert,
+                "star" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Star,
+                "status" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Status,
+                "team" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Team,
+                "team_add" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.TeamAdd,
+                "watch" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.Watch,
+                "workflow_dispatch" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.WorkflowDispatch,
+                "workflow_run" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.WorkflowRun,
+                "merge_queue_entry" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.MergeQueueEntry,
+                "workflow_job" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.WorkflowJob,
+                "pull_request_review_thread" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.PullRequestReviewThread,
+                "secret_scanning_alert_location" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.SecretScanningAlertLocation,
+                "merge_group" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.MergeGroup,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

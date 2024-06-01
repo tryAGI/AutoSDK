@@ -7,39 +7,82 @@ namespace G
     /// <summary>
     /// How the author is associated with the repository.
     /// </summary>
-    public abstract class WebhookPullRequestUnassignedPullRequestAuthorAssociation
+    public enum WebhookPullRequestUnassignedPullRequestAuthorAssociation
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string COLLABORATOR = "COLLABORATOR";
+        COLLABORATOR,
         /// <summary>
         /// 
         /// </summary>
-        public const string CONTRIBUTOR = "CONTRIBUTOR";
+        CONTRIBUTOR,
         /// <summary>
         /// 
         /// </summary>
-        public const string FIRSTTIMER = "FIRST_TIMER";
+        FIRSTTIMER,
         /// <summary>
         /// 
         /// </summary>
-        public const string FIRSTTIMECONTRIBUTOR = "FIRST_TIME_CONTRIBUTOR";
+        FIRSTTIMECONTRIBUTOR,
         /// <summary>
         /// 
         /// </summary>
-        public const string MANNEQUIN = "MANNEQUIN";
+        MANNEQUIN,
         /// <summary>
         /// 
         /// </summary>
-        public const string MEMBER = "MEMBER";
+        MEMBER,
         /// <summary>
         /// 
         /// </summary>
-        public const string NONE = "NONE";
+        NONE,
         /// <summary>
         /// 
         /// </summary>
-        public const string OWNER = "OWNER";
+        OWNER,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestUnassignedPullRequestAuthorAssociationExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestUnassignedPullRequestAuthorAssociation value)
+        {
+            return value switch
+            {
+                WebhookPullRequestUnassignedPullRequestAuthorAssociation.COLLABORATOR => "COLLABORATOR",
+                WebhookPullRequestUnassignedPullRequestAuthorAssociation.CONTRIBUTOR => "CONTRIBUTOR",
+                WebhookPullRequestUnassignedPullRequestAuthorAssociation.FIRSTTIMER => "FIRST_TIMER",
+                WebhookPullRequestUnassignedPullRequestAuthorAssociation.FIRSTTIMECONTRIBUTOR => "FIRST_TIME_CONTRIBUTOR",
+                WebhookPullRequestUnassignedPullRequestAuthorAssociation.MANNEQUIN => "MANNEQUIN",
+                WebhookPullRequestUnassignedPullRequestAuthorAssociation.MEMBER => "MEMBER",
+                WebhookPullRequestUnassignedPullRequestAuthorAssociation.NONE => "NONE",
+                WebhookPullRequestUnassignedPullRequestAuthorAssociation.OWNER => "OWNER",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestUnassignedPullRequestAuthorAssociation ToEnum(string value)
+        {
+            return value switch
+            {
+                "COLLABORATOR" => WebhookPullRequestUnassignedPullRequestAuthorAssociation.COLLABORATOR,
+                "CONTRIBUTOR" => WebhookPullRequestUnassignedPullRequestAuthorAssociation.CONTRIBUTOR,
+                "FIRST_TIMER" => WebhookPullRequestUnassignedPullRequestAuthorAssociation.FIRSTTIMER,
+                "FIRST_TIME_CONTRIBUTOR" => WebhookPullRequestUnassignedPullRequestAuthorAssociation.FIRSTTIMECONTRIBUTOR,
+                "MANNEQUIN" => WebhookPullRequestUnassignedPullRequestAuthorAssociation.MANNEQUIN,
+                "MEMBER" => WebhookPullRequestUnassignedPullRequestAuthorAssociation.MEMBER,
+                "NONE" => WebhookPullRequestUnassignedPullRequestAuthorAssociation.NONE,
+                "OWNER" => WebhookPullRequestUnassignedPullRequestAuthorAssociation.OWNER,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

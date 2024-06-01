@@ -17,7 +17,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<PagesDeploymentStatus> ReposGetPagesDeploymentAsync(
             string owner,
             string repo,
-            object pagesDeploymentId,
+            global::System.OneOf<int, string> pagesDeploymentId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -30,11 +30,11 @@ namespace G
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
 
-            var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<PagesDeploymentStatus>(content) ??
-                throw new global::System.InvalidOperationException("Response deserialization failed for \"{content}\" ");
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<PagesDeploymentStatus?>(__content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
 }

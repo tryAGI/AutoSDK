@@ -16,4 +16,33 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="file_path_restriction")]
         FilePathRestriction,
     }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookRepositoryRulesetEditedChangesRulesUpdatedRuleTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookRepositoryRulesetEditedChangesRulesUpdatedRuleType value)
+        {
+            return value switch
+            {
+                WebhookRepositoryRulesetEditedChangesRulesUpdatedRuleType.FilePathRestriction => "file_path_restriction",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookRepositoryRulesetEditedChangesRulesUpdatedRuleType ToEnum(string value)
+        {
+            return value switch
+            {
+                "file_path_restriction" => WebhookRepositoryRulesetEditedChangesRulesUpdatedRuleType.FilePathRestriction,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

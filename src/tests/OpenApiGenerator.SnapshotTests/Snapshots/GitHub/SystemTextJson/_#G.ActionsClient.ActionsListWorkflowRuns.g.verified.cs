@@ -24,14 +24,14 @@ namespace G
         /// <param name="headSha"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task ActionsListWorkflowRunsAsync(
+        public async global::System.Threading.Tasks.Task<ActionsListWorkflowRunsResponse> ActionsListWorkflowRunsAsync(
             string owner,
             string repo,
-            object workflowId,
+            global::System.OneOf<int, string> workflowId,
             string actor,
             string branch,
             string @event,
-            string status,
+            ActionsListWorkflowRunsStatus status,
             int perPage,
             int page,
             global::System.DateTime created,
@@ -49,6 +49,12 @@ namespace G
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
+
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return
+                global::System.Text.Json.JsonSerializer.Deserialize<ActionsListWorkflowRunsResponse?>(__content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
 }

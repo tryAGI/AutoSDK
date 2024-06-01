@@ -633,7 +633,8 @@ namespace G
         /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("squash_merge_commit_title")]
-        public string? SquashMergeCommitTitle { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryWebhooksSquashMergeCommitTitleJsonConverter))]
+        public RepositoryWebhooksSquashMergeCommitTitle? SquashMergeCommitTitle { get; set; }
 
         /// <summary>
         /// The default value for a squash merge commit message:
@@ -642,7 +643,8 @@ namespace G
         /// - `BLANK` - default to a blank commit message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("squash_merge_commit_message")]
-        public string? SquashMergeCommitMessage { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryWebhooksSquashMergeCommitMessageJsonConverter))]
+        public RepositoryWebhooksSquashMergeCommitMessage? SquashMergeCommitMessage { get; set; }
 
         /// <summary>
         /// The default value for a merge commit title.
@@ -650,7 +652,8 @@ namespace G
         /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_commit_title")]
-        public string? MergeCommitTitle { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryWebhooksMergeCommitTitleJsonConverter))]
+        public RepositoryWebhooksMergeCommitTitle? MergeCommitTitle { get; set; }
 
         /// <summary>
         /// The default value for a merge commit message.
@@ -659,7 +662,8 @@ namespace G
         /// - `BLANK` - default to a blank commit message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_commit_message")]
-        public string? MergeCommitMessage { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryWebhooksMergeCommitMessageJsonConverter))]
+        public RepositoryWebhooksMergeCommitMessage? MergeCommitMessage { get; set; }
 
         /// <summary>
         /// Whether to allow merge commits for pull requests.

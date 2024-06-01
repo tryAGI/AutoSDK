@@ -7,187 +7,304 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents
+    public enum WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string BranchProtectionRule = "branch_protection_rule";
+        BranchProtectionRule,
         /// <summary>
         /// 
         /// </summary>
-        public const string CheckRun = "check_run";
+        CheckRun,
         /// <summary>
         /// 
         /// </summary>
-        public const string CheckSuite = "check_suite";
+        CheckSuite,
         /// <summary>
         /// 
         /// </summary>
-        public const string CodeScanningAlert = "code_scanning_alert";
+        CodeScanningAlert,
         /// <summary>
         /// 
         /// </summary>
-        public const string CommitComment = "commit_comment";
+        CommitComment,
         /// <summary>
         /// 
         /// </summary>
-        public const string ContentReference = "content_reference";
+        ContentReference,
         /// <summary>
         /// 
         /// </summary>
-        public const string Create = "create";
+        Create,
         /// <summary>
         /// 
         /// </summary>
-        public const string Delete = "delete";
+        Delete,
         /// <summary>
         /// 
         /// </summary>
-        public const string Deployment = "deployment";
+        Deployment,
         /// <summary>
         /// 
         /// </summary>
-        public const string DeploymentReview = "deployment_review";
+        DeploymentReview,
         /// <summary>
         /// 
         /// </summary>
-        public const string DeploymentStatus = "deployment_status";
+        DeploymentStatus,
         /// <summary>
         /// 
         /// </summary>
-        public const string DeployKey = "deploy_key";
+        DeployKey,
         /// <summary>
         /// 
         /// </summary>
-        public const string Discussion = "discussion";
+        Discussion,
         /// <summary>
         /// 
         /// </summary>
-        public const string DiscussionComment = "discussion_comment";
+        DiscussionComment,
         /// <summary>
         /// 
         /// </summary>
-        public const string Fork = "fork";
+        Fork,
         /// <summary>
         /// 
         /// </summary>
-        public const string Gollum = "gollum";
+        Gollum,
         /// <summary>
         /// 
         /// </summary>
-        public const string Issues = "issues";
+        Issues,
         /// <summary>
         /// 
         /// </summary>
-        public const string IssueComment = "issue_comment";
+        IssueComment,
         /// <summary>
         /// 
         /// </summary>
-        public const string Label = "label";
+        Label,
         /// <summary>
         /// 
         /// </summary>
-        public const string Member = "member";
+        Member,
         /// <summary>
         /// 
         /// </summary>
-        public const string Membership = "membership";
+        Membership,
         /// <summary>
         /// 
         /// </summary>
-        public const string Milestone = "milestone";
+        Milestone,
         /// <summary>
         /// 
         /// </summary>
-        public const string Organization = "organization";
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        public const string OrgBlock = "org_block";
+        OrgBlock,
         /// <summary>
         /// 
         /// </summary>
-        public const string PageBuild = "page_build";
+        PageBuild,
         /// <summary>
         /// 
         /// </summary>
-        public const string Project = "project";
+        Project,
         /// <summary>
         /// 
         /// </summary>
-        public const string ProjectCard = "project_card";
+        ProjectCard,
         /// <summary>
         /// 
         /// </summary>
-        public const string ProjectColumn = "project_column";
+        ProjectColumn,
         /// <summary>
         /// 
         /// </summary>
-        public const string Public = "public";
+        Public,
         /// <summary>
         /// 
         /// </summary>
-        public const string PullRequest = "pull_request";
+        PullRequest,
         /// <summary>
         /// 
         /// </summary>
-        public const string PullRequestReview = "pull_request_review";
+        PullRequestReview,
         /// <summary>
         /// 
         /// </summary>
-        public const string PullRequestReviewComment = "pull_request_review_comment";
+        PullRequestReviewComment,
         /// <summary>
         /// 
         /// </summary>
-        public const string Push = "push";
+        Push,
         /// <summary>
         /// 
         /// </summary>
-        public const string RegistryPackage = "registry_package";
+        RegistryPackage,
         /// <summary>
         /// 
         /// </summary>
-        public const string Release = "release";
+        Release,
         /// <summary>
         /// 
         /// </summary>
-        public const string Repository = "repository";
+        Repository,
         /// <summary>
         /// 
         /// </summary>
-        public const string RepositoryDispatch = "repository_dispatch";
+        RepositoryDispatch,
         /// <summary>
         /// 
         /// </summary>
-        public const string SecretScanningAlert = "secret_scanning_alert";
+        SecretScanningAlert,
         /// <summary>
         /// 
         /// </summary>
-        public const string Star = "star";
+        Star,
         /// <summary>
         /// 
         /// </summary>
-        public const string Status = "status";
+        Status,
         /// <summary>
         /// 
         /// </summary>
-        public const string Team = "team";
+        Team,
         /// <summary>
         /// 
         /// </summary>
-        public const string TeamAdd = "team_add";
+        TeamAdd,
         /// <summary>
         /// 
         /// </summary>
-        public const string Watch = "watch";
+        Watch,
         /// <summary>
         /// 
         /// </summary>
-        public const string WorkflowDispatch = "workflow_dispatch";
+        WorkflowDispatch,
         /// <summary>
         /// 
         /// </summary>
-        public const string WorkflowRun = "workflow_run";
+        WorkflowRun,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEventsExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents value)
+        {
+            return value switch
+            {
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.BranchProtectionRule => "branch_protection_rule",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.CheckRun => "check_run",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.CheckSuite => "check_suite",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.CodeScanningAlert => "code_scanning_alert",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.CommitComment => "commit_comment",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.ContentReference => "content_reference",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Create => "create",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Delete => "delete",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Deployment => "deployment",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.DeploymentReview => "deployment_review",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.DeploymentStatus => "deployment_status",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.DeployKey => "deploy_key",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Discussion => "discussion",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.DiscussionComment => "discussion_comment",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Fork => "fork",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Gollum => "gollum",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Issues => "issues",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.IssueComment => "issue_comment",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Label => "label",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Member => "member",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Membership => "membership",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Milestone => "milestone",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Organization => "organization",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.OrgBlock => "org_block",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.PageBuild => "page_build",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Project => "project",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.ProjectCard => "project_card",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.ProjectColumn => "project_column",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Public => "public",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.PullRequest => "pull_request",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.PullRequestReview => "pull_request_review",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.PullRequestReviewComment => "pull_request_review_comment",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Push => "push",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.RegistryPackage => "registry_package",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Release => "release",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Repository => "repository",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.RepositoryDispatch => "repository_dispatch",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.SecretScanningAlert => "secret_scanning_alert",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Star => "star",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Status => "status",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Team => "team",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.TeamAdd => "team_add",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Watch => "watch",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.WorkflowDispatch => "workflow_dispatch",
+                WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.WorkflowRun => "workflow_run",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents ToEnum(string value)
+        {
+            return value switch
+            {
+                "branch_protection_rule" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.BranchProtectionRule,
+                "check_run" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.CheckRun,
+                "check_suite" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.CheckSuite,
+                "code_scanning_alert" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.CodeScanningAlert,
+                "commit_comment" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.CommitComment,
+                "content_reference" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.ContentReference,
+                "create" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Create,
+                "delete" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Delete,
+                "deployment" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Deployment,
+                "deployment_review" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.DeploymentReview,
+                "deployment_status" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.DeploymentStatus,
+                "deploy_key" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.DeployKey,
+                "discussion" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Discussion,
+                "discussion_comment" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.DiscussionComment,
+                "fork" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Fork,
+                "gollum" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Gollum,
+                "issues" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Issues,
+                "issue_comment" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.IssueComment,
+                "label" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Label,
+                "member" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Member,
+                "membership" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Membership,
+                "milestone" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Milestone,
+                "organization" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Organization,
+                "org_block" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.OrgBlock,
+                "page_build" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.PageBuild,
+                "project" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Project,
+                "project_card" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.ProjectCard,
+                "project_column" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.ProjectColumn,
+                "public" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Public,
+                "pull_request" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.PullRequest,
+                "pull_request_review" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.PullRequestReview,
+                "pull_request_review_comment" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.PullRequestReviewComment,
+                "push" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Push,
+                "registry_package" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.RegistryPackage,
+                "release" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Release,
+                "repository" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Repository,
+                "repository_dispatch" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.RepositoryDispatch,
+                "secret_scanning_alert" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.SecretScanningAlert,
+                "star" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Star,
+                "status" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Status,
+                "team" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Team,
+                "team_add" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.TeamAdd,
+                "watch" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.Watch,
+                "workflow_dispatch" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.WorkflowDispatch,
+                "workflow_run" => WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppEvents.WorkflowRun,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

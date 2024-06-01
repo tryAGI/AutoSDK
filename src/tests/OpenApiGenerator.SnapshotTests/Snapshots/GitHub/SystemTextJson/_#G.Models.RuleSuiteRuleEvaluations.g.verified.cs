@@ -19,13 +19,15 @@ namespace G
         /// The enforcement level of this rule source.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enforcement")]
-        public string? Enforcement { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RuleSuiteRuleEvaluationsEnforcementJsonConverter))]
+        public RuleSuiteRuleEvaluationsEnforcement? Enforcement { get; set; }
 
         /// <summary>
         /// The result of the evaluation of the individual rule.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("result")]
-        public string? Result { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RuleSuiteRuleEvaluationsResultJsonConverter))]
+        public RuleSuiteRuleEvaluationsResult? Result { get; set; }
 
         /// <summary>
         /// The type of rule.

@@ -7,59 +7,112 @@ namespace G
     /// <summary>
     /// The package's language or package management ecosystem.
     /// </summary>
-    public abstract class RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem
+    public enum RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Rubygems = "rubygems";
+        Rubygems,
         /// <summary>
         /// 
         /// </summary>
-        public const string Npm = "npm";
+        Npm,
         /// <summary>
         /// 
         /// </summary>
-        public const string Pip = "pip";
+        Pip,
         /// <summary>
         /// 
         /// </summary>
-        public const string Maven = "maven";
+        Maven,
         /// <summary>
         /// 
         /// </summary>
-        public const string Nuget = "nuget";
+        Nuget,
         /// <summary>
         /// 
         /// </summary>
-        public const string Composer = "composer";
+        Composer,
         /// <summary>
         /// 
         /// </summary>
-        public const string Go = "go";
+        Go,
         /// <summary>
         /// 
         /// </summary>
-        public const string Rust = "rust";
+        Rust,
         /// <summary>
         /// 
         /// </summary>
-        public const string Erlang = "erlang";
+        Erlang,
         /// <summary>
         /// 
         /// </summary>
-        public const string Actions = "actions";
+        Actions,
         /// <summary>
         /// 
         /// </summary>
-        public const string Pub = "pub";
+        Pub,
         /// <summary>
         /// 
         /// </summary>
-        public const string Other = "other";
+        Other,
         /// <summary>
         /// 
         /// </summary>
-        public const string Swift = "swift";
+        Swift,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystemExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem value)
+        {
+            return value switch
+            {
+                RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem.Rubygems => "rubygems",
+                RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem.Npm => "npm",
+                RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem.Pip => "pip",
+                RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem.Maven => "maven",
+                RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem.Nuget => "nuget",
+                RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem.Composer => "composer",
+                RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem.Go => "go",
+                RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem.Rust => "rust",
+                RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem.Erlang => "erlang",
+                RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem.Actions => "actions",
+                RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem.Pub => "pub",
+                RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem.Other => "other",
+                RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem.Swift => "swift",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem ToEnum(string value)
+        {
+            return value switch
+            {
+                "rubygems" => RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem.Rubygems,
+                "npm" => RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem.Npm,
+                "pip" => RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem.Pip,
+                "maven" => RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem.Maven,
+                "nuget" => RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem.Nuget,
+                "composer" => RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem.Composer,
+                "go" => RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem.Go,
+                "rust" => RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem.Rust,
+                "erlang" => RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem.Erlang,
+                "actions" => RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem.Actions,
+                "pub" => RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem.Pub,
+                "other" => RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem.Other,
+                "swift" => RepositoryAdvisoryUpdateVulnerabilitiesPackageEcosystem.Swift,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

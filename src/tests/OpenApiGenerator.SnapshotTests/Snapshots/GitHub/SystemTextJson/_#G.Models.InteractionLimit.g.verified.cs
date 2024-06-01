@@ -14,15 +14,17 @@ namespace G
         /// <br/>Example: collaborators_only
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.InteractionLimitLimitJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Limit { get; set; }
+        public required InteractionLimitLimit Limit { get; set; }
 
         /// <summary>
         /// The duration of the interaction restriction. Default: `one_day`.
         /// <br/>Example: one_month
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expiry")]
-        public string? Expiry { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.InteractionLimitExpiryJsonConverter))]
+        public InteractionLimitExpiry? Expiry { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

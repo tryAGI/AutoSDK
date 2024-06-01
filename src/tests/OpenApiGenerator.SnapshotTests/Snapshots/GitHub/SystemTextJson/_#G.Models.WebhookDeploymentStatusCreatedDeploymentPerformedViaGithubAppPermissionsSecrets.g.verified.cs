@@ -7,15 +7,46 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsSecrets
+    public enum WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsSecrets
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Read = "read";
+        Read,
         /// <summary>
         /// 
         /// </summary>
-        public const string Write = "write";
+        Write,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsSecretsExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsSecrets value)
+        {
+            return value switch
+            {
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsSecrets.Read => "read",
+                WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsSecrets.Write => "write",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsSecrets ToEnum(string value)
+        {
+            return value switch
+            {
+                "read" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsSecrets.Read,
+                "write" => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissionsSecrets.Write,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

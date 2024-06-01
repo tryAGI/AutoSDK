@@ -139,8 +139,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookWorkflowJobQueuedWorkflowJobStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
+        public required WebhookWorkflowJobQueuedWorkflowJobStatus Status { get; set; }
 
         /// <summary>
         /// The name of the current branch.

@@ -7,19 +7,52 @@ namespace G
     /// <summary>
     /// <br/>Default Value: reviewed
     /// </summary>
-    public abstract class SecurityAdvisoriesListGlobalAdvisoriesType
+    public enum SecurityAdvisoriesListGlobalAdvisoriesType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Reviewed = "reviewed";
+        Reviewed,
         /// <summary>
         /// 
         /// </summary>
-        public const string Malware = "malware";
+        Malware,
         /// <summary>
         /// 
         /// </summary>
-        public const string Unreviewed = "unreviewed";
+        Unreviewed,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class SecurityAdvisoriesListGlobalAdvisoriesTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this SecurityAdvisoriesListGlobalAdvisoriesType value)
+        {
+            return value switch
+            {
+                SecurityAdvisoriesListGlobalAdvisoriesType.Reviewed => "reviewed",
+                SecurityAdvisoriesListGlobalAdvisoriesType.Malware => "malware",
+                SecurityAdvisoriesListGlobalAdvisoriesType.Unreviewed => "unreviewed",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static SecurityAdvisoriesListGlobalAdvisoriesType ToEnum(string value)
+        {
+            return value switch
+            {
+                "reviewed" => SecurityAdvisoriesListGlobalAdvisoriesType.Reviewed,
+                "malware" => SecurityAdvisoriesListGlobalAdvisoriesType.Malware,
+                "unreviewed" => SecurityAdvisoriesListGlobalAdvisoriesType.Unreviewed,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

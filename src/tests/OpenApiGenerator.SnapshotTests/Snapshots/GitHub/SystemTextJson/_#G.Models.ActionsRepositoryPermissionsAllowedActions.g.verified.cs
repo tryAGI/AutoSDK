@@ -7,19 +7,52 @@ namespace G
     /// <summary>
     /// The permissions policy that controls the actions and reusable workflows that are allowed to run.
     /// </summary>
-    public abstract class ActionsRepositoryPermissionsAllowedActions
+    public enum ActionsRepositoryPermissionsAllowedActions
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string All = "all";
+        All,
         /// <summary>
         /// 
         /// </summary>
-        public const string LocalOnly = "local_only";
+        LocalOnly,
         /// <summary>
         /// 
         /// </summary>
-        public const string Selected = "selected";
+        Selected,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ActionsRepositoryPermissionsAllowedActionsExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ActionsRepositoryPermissionsAllowedActions value)
+        {
+            return value switch
+            {
+                ActionsRepositoryPermissionsAllowedActions.All => "all",
+                ActionsRepositoryPermissionsAllowedActions.LocalOnly => "local_only",
+                ActionsRepositoryPermissionsAllowedActions.Selected => "selected",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ActionsRepositoryPermissionsAllowedActions ToEnum(string value)
+        {
+            return value switch
+            {
+                "all" => ActionsRepositoryPermissionsAllowedActions.All,
+                "local_only" => ActionsRepositoryPermissionsAllowedActions.LocalOnly,
+                "selected" => ActionsRepositoryPermissionsAllowedActions.Selected,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

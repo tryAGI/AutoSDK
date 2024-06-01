@@ -7,19 +7,52 @@ namespace G
     /// <summary>
     /// The level of permission to grant the access token to manage repository projects, columns, and cards.
     /// </summary>
-    public abstract class AppPermissionsRepositoryProjects
+    public enum AppPermissionsRepositoryProjects
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Read = "read";
+        Read,
         /// <summary>
         /// 
         /// </summary>
-        public const string Write = "write";
+        Write,
         /// <summary>
         /// 
         /// </summary>
-        public const string Admin = "admin";
+        Admin,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class AppPermissionsRepositoryProjectsExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this AppPermissionsRepositoryProjects value)
+        {
+            return value switch
+            {
+                AppPermissionsRepositoryProjects.Read => "read",
+                AppPermissionsRepositoryProjects.Write => "write",
+                AppPermissionsRepositoryProjects.Admin => "admin",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static AppPermissionsRepositoryProjects ToEnum(string value)
+        {
+            return value switch
+            {
+                "read" => AppPermissionsRepositoryProjects.Read,
+                "write" => AppPermissionsRepositoryProjects.Write,
+                "admin" => AppPermissionsRepositoryProjects.Admin,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

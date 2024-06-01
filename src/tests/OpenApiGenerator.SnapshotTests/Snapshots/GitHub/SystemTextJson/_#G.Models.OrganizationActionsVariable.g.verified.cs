@@ -45,8 +45,9 @@ namespace G
         /// Visibility of a variable
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OrganizationActionsVariableVisibilityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Visibility { get; set; }
+        public required OrganizationActionsVariableVisibility Visibility { get; set; }
 
         /// <summary>
         /// <br/>Example: https://api.github.com/organizations/org/variables/USERNAME/repositories

@@ -7,27 +7,64 @@ namespace G
     /// <summary>
     /// <br/>Default Value: all
     /// </summary>
-    public abstract class ReposListForAuthenticatedUserType
+    public enum ReposListForAuthenticatedUserType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string All = "all";
+        All,
         /// <summary>
         /// 
         /// </summary>
-        public const string Owner = "owner";
+        Owner,
         /// <summary>
         /// 
         /// </summary>
-        public const string Public = "public";
+        Public,
         /// <summary>
         /// 
         /// </summary>
-        public const string Private = "private";
+        Private,
         /// <summary>
         /// 
         /// </summary>
-        public const string Member = "member";
+        Member,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ReposListForAuthenticatedUserTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ReposListForAuthenticatedUserType value)
+        {
+            return value switch
+            {
+                ReposListForAuthenticatedUserType.All => "all",
+                ReposListForAuthenticatedUserType.Owner => "owner",
+                ReposListForAuthenticatedUserType.Public => "public",
+                ReposListForAuthenticatedUserType.Private => "private",
+                ReposListForAuthenticatedUserType.Member => "member",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ReposListForAuthenticatedUserType ToEnum(string value)
+        {
+            return value switch
+            {
+                "all" => ReposListForAuthenticatedUserType.All,
+                "owner" => ReposListForAuthenticatedUserType.Owner,
+                "public" => ReposListForAuthenticatedUserType.Public,
+                "private" => ReposListForAuthenticatedUserType.Private,
+                "member" => ReposListForAuthenticatedUserType.Member,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

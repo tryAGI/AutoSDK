@@ -34,7 +34,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("insecure_ssl")]
-        public WebhookConfigInsecureSsl? InsecureSsl { get; set; }
+        public global::System.OneOf<string?, double> InsecureSsl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

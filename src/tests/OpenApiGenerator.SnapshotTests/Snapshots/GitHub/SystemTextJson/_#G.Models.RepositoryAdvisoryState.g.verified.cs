@@ -7,27 +7,64 @@ namespace G
     /// <summary>
     /// The state of the advisory.
     /// </summary>
-    public abstract class RepositoryAdvisoryState
+    public enum RepositoryAdvisoryState
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Published = "published";
+        Published,
         /// <summary>
         /// 
         /// </summary>
-        public const string Closed = "closed";
+        Closed,
         /// <summary>
         /// 
         /// </summary>
-        public const string Withdrawn = "withdrawn";
+        Withdrawn,
         /// <summary>
         /// 
         /// </summary>
-        public const string Draft = "draft";
+        Draft,
         /// <summary>
         /// 
         /// </summary>
-        public const string Triage = "triage";
+        Triage,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class RepositoryAdvisoryStateExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this RepositoryAdvisoryState value)
+        {
+            return value switch
+            {
+                RepositoryAdvisoryState.Published => "published",
+                RepositoryAdvisoryState.Closed => "closed",
+                RepositoryAdvisoryState.Withdrawn => "withdrawn",
+                RepositoryAdvisoryState.Draft => "draft",
+                RepositoryAdvisoryState.Triage => "triage",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static RepositoryAdvisoryState ToEnum(string value)
+        {
+            return value switch
+            {
+                "published" => RepositoryAdvisoryState.Published,
+                "closed" => RepositoryAdvisoryState.Closed,
+                "withdrawn" => RepositoryAdvisoryState.Withdrawn,
+                "draft" => RepositoryAdvisoryState.Draft,
+                "triage" => RepositoryAdvisoryState.Triage,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

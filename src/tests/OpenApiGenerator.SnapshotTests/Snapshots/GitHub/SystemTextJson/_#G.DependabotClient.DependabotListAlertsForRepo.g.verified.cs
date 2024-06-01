@@ -27,7 +27,7 @@ namespace G
         /// <param name="last"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task DependabotListAlertsForRepoAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<DependabotAlert>> DependabotListAlertsForRepoAsync(
             string owner,
             string repo,
             string state,
@@ -35,9 +35,9 @@ namespace G
             string ecosystem,
             string package,
             string manifest,
-            string scope,
-            string sort,
-            string direction,
+            DependabotListAlertsForRepoScope scope,
+            DependabotListAlertsForRepoSort sort,
+            DependabotListAlertsForRepoDirection direction,
             int page,
             int perPage,
             string before,
@@ -55,6 +55,12 @@ namespace G
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
+
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return
+                global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<DependabotAlert>?>(__content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
 }

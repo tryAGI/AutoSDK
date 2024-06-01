@@ -51,8 +51,9 @@ namespace G
         /// The severity of the alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookCodeScanningAlertReopenedAlertRuleSeverityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Severity { get; set; }
+        public required WebhookCodeScanningAlertReopenedAlertRuleSeverity? Severity { get; set; }
 
         /// <summary>
         /// 

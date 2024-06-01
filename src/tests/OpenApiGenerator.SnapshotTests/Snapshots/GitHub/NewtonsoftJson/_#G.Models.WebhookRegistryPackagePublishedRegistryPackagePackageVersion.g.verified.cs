@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("body")]
-        public object? Body { get; set; }
+        public global::System.OneOf<string?, object?> Body { get; set; }
 
         /// <summary>
         /// 

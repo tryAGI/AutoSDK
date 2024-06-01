@@ -113,8 +113,9 @@ namespace G
         /// The new state. Can be `pending`, `success`, `failure`, or `error`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookStatusStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string State { get; set; }
+        public required WebhookStatusState State { get; set; }
 
         /// <summary>
         /// The optional link added to the status.

@@ -14,7 +14,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task DependencyGraphCreateRepositorySnapshotAsync(
+        public async global::System.Threading.Tasks.Task<DependencyGraphCreateRepositorySnapshotResponse> DependencyGraphCreateRepositorySnapshotAsync(
             string owner,
             string repo,
             Snapshot request,
@@ -35,6 +35,12 @@ namespace G
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
+
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return
+                global::System.Text.Json.JsonSerializer.Deserialize<DependencyGraphCreateRepositorySnapshotResponse?>(__content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
         /// <summary>
@@ -52,7 +58,7 @@ namespace G
         /// <param name="scanned"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task DependencyGraphCreateRepositorySnapshotAsync(
+        public async global::System.Threading.Tasks.Task<DependencyGraphCreateRepositorySnapshotResponse> DependencyGraphCreateRepositorySnapshotAsync(
             string owner,
             string repo,
             int version,
@@ -77,7 +83,7 @@ namespace G
                 Scanned = scanned,
             };
 
-            await DependencyGraphCreateRepositorySnapshotAsync(
+            return await DependencyGraphCreateRepositorySnapshotAsync(
                 owner: owner,
                 repo: repo,
                 request: request,

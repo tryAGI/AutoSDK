@@ -55,22 +55,25 @@ namespace G
         /// The severity of the advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryAdvisorySeverityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Severity { get; set; }
+        public required RepositoryAdvisorySeverity? Severity { get; set; }
 
         /// <summary>
         /// The author of the advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AllOfJsonConverterFactory1))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Author { get; set; }
+        public required global::System.AllOf<SimpleUser>? Author { get; set; }
 
         /// <summary>
         /// The publisher of the advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("publisher")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AllOfJsonConverterFactory1))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Publisher { get; set; }
+        public required global::System.AllOf<SimpleUser>? Publisher { get; set; }
 
         /// <summary>
         /// 
@@ -83,8 +86,9 @@ namespace G
         /// The state of the advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryAdvisoryStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string State { get; set; }
+        public required RepositoryAdvisoryState State { get; set; }
 
         /// <summary>
         /// The date and time of when the advisory was created, in ISO 8601 format.
@@ -188,8 +192,9 @@ namespace G
         /// A temporary private fork of the advisory's repository for collaborating on a fix.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("private_fork")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AllOfJsonConverterFactory1))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? PrivateFork { get; set; }
+        public required global::System.AllOf<SimpleRepository>? PrivateFork { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -7,19 +7,52 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookPullRequestAutoMergeEnabledPullRequestRequestedTeamsPrivacy
+    public enum WebhookPullRequestAutoMergeEnabledPullRequestRequestedTeamsPrivacy
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Open = "open";
+        Open,
         /// <summary>
         /// 
         /// </summary>
-        public const string Closed = "closed";
+        Closed,
         /// <summary>
         /// 
         /// </summary>
-        public const string Secret = "secret";
+        Secret,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestAutoMergeEnabledPullRequestRequestedTeamsPrivacyExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestAutoMergeEnabledPullRequestRequestedTeamsPrivacy value)
+        {
+            return value switch
+            {
+                WebhookPullRequestAutoMergeEnabledPullRequestRequestedTeamsPrivacy.Open => "open",
+                WebhookPullRequestAutoMergeEnabledPullRequestRequestedTeamsPrivacy.Closed => "closed",
+                WebhookPullRequestAutoMergeEnabledPullRequestRequestedTeamsPrivacy.Secret => "secret",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestAutoMergeEnabledPullRequestRequestedTeamsPrivacy ToEnum(string value)
+        {
+            return value switch
+            {
+                "open" => WebhookPullRequestAutoMergeEnabledPullRequestRequestedTeamsPrivacy.Open,
+                "closed" => WebhookPullRequestAutoMergeEnabledPullRequestRequestedTeamsPrivacy.Closed,
+                "secret" => WebhookPullRequestAutoMergeEnabledPullRequestRequestedTeamsPrivacy.Secret,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

@@ -7,23 +7,58 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookPullRequestDequeuedPullRequestMilestoneCreatorType
+    public enum WebhookPullRequestDequeuedPullRequestMilestoneCreatorType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Bot = "Bot";
+        Bot,
         /// <summary>
         /// 
         /// </summary>
-        public const string User = "User";
+        User,
         /// <summary>
         /// 
         /// </summary>
-        public const string Organization = "Organization";
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        public const string Mannequin = "Mannequin";
+        Mannequin,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestDequeuedPullRequestMilestoneCreatorTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestDequeuedPullRequestMilestoneCreatorType value)
+        {
+            return value switch
+            {
+                WebhookPullRequestDequeuedPullRequestMilestoneCreatorType.Bot => "Bot",
+                WebhookPullRequestDequeuedPullRequestMilestoneCreatorType.User => "User",
+                WebhookPullRequestDequeuedPullRequestMilestoneCreatorType.Organization => "Organization",
+                WebhookPullRequestDequeuedPullRequestMilestoneCreatorType.Mannequin => "Mannequin",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestDequeuedPullRequestMilestoneCreatorType ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhookPullRequestDequeuedPullRequestMilestoneCreatorType.Bot,
+                "User" => WebhookPullRequestDequeuedPullRequestMilestoneCreatorType.User,
+                "Organization" => WebhookPullRequestDequeuedPullRequestMilestoneCreatorType.Organization,
+                "Mannequin" => WebhookPullRequestDequeuedPullRequestMilestoneCreatorType.Mannequin,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

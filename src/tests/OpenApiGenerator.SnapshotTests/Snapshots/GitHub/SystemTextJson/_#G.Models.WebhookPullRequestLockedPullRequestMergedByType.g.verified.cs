@@ -7,23 +7,58 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookPullRequestLockedPullRequestMergedByType
+    public enum WebhookPullRequestLockedPullRequestMergedByType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Bot = "Bot";
+        Bot,
         /// <summary>
         /// 
         /// </summary>
-        public const string User = "User";
+        User,
         /// <summary>
         /// 
         /// </summary>
-        public const string Organization = "Organization";
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        public const string Mannequin = "Mannequin";
+        Mannequin,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestLockedPullRequestMergedByTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestLockedPullRequestMergedByType value)
+        {
+            return value switch
+            {
+                WebhookPullRequestLockedPullRequestMergedByType.Bot => "Bot",
+                WebhookPullRequestLockedPullRequestMergedByType.User => "User",
+                WebhookPullRequestLockedPullRequestMergedByType.Organization => "Organization",
+                WebhookPullRequestLockedPullRequestMergedByType.Mannequin => "Mannequin",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestLockedPullRequestMergedByType ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhookPullRequestLockedPullRequestMergedByType.Bot,
+                "User" => WebhookPullRequestLockedPullRequestMergedByType.User,
+                "Organization" => WebhookPullRequestLockedPullRequestMergedByType.Organization,
+                "Mannequin" => WebhookPullRequestLockedPullRequestMergedByType.Mannequin,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

@@ -24,7 +24,8 @@ namespace G
         /// <br/>Example: branch
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DeploymentBranchPolicyNamePatternWithTypeTypeJsonConverter))]
+        public DeploymentBranchPolicyNamePatternWithTypeType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

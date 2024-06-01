@@ -58,8 +58,9 @@ namespace G
         /// <br/>Example: open
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MilestoneStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string State { get; set; }
+        public required MilestoneState State { get; set; }
 
         /// <summary>
         /// The title of the milestone.

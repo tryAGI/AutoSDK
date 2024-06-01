@@ -13,8 +13,9 @@ namespace G
         /// <br/>Example: docker
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("package_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PackageVersionMetadataPackageTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string PackageType { get; set; }
+        public required PackageVersionMetadataPackageType PackageType { get; set; }
 
         /// <summary>
         /// 

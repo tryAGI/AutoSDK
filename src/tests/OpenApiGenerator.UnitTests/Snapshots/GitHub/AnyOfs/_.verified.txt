@@ -13,10 +13,6 @@
   },
   {
     SubType: AnyOf,
-    Count: 5
-  },
-  {
-    SubType: AnyOf,
     Count: 3
   },
   {

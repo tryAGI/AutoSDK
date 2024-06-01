@@ -29,4 +29,37 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
         BLANK,
     }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class RepositoryWebhooksTemplateRepositoryMergeCommitMessageExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this RepositoryWebhooksTemplateRepositoryMergeCommitMessage value)
+        {
+            return value switch
+            {
+                RepositoryWebhooksTemplateRepositoryMergeCommitMessage.PRBODY => "PR_BODY",
+                RepositoryWebhooksTemplateRepositoryMergeCommitMessage.PRTITLE => "PR_TITLE",
+                RepositoryWebhooksTemplateRepositoryMergeCommitMessage.BLANK => "BLANK",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static RepositoryWebhooksTemplateRepositoryMergeCommitMessage ToEnum(string value)
+        {
+            return value switch
+            {
+                "PR_BODY" => RepositoryWebhooksTemplateRepositoryMergeCommitMessage.PRBODY,
+                "PR_TITLE" => RepositoryWebhooksTemplateRepositoryMergeCommitMessage.PRTITLE,
+                "BLANK" => RepositoryWebhooksTemplateRepositoryMergeCommitMessage.BLANK,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

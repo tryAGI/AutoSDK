@@ -75,7 +75,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("conditions")]
-        public object? Conditions { get; set; }
+        public global::System.AnyOf<RepositoryRulesetConditions?, OrgRulesetConditions?>? Conditions { get; set; }
 
         /// <summary>
         /// 

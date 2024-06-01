@@ -20,7 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("details")]
-        public object? Details { get; set; }
+        public global::System.OneOf<SecretScanningLocationCommit?, SecretScanningLocationWikiCommit?, SecretScanningLocationIssueTitle?, SecretScanningLocationIssueBody?, SecretScanningLocationIssueComment?, SecretScanningLocationDiscussionTitle?, SecretScanningLocationDiscussionBody?, SecretScanningLocationDiscussionComment?, SecretScanningLocationPullRequestTitle?, SecretScanningLocationPullRequestBody?, SecretScanningLocationPullRequestComment?, SecretScanningLocationPullRequestReview?, SecretScanningLocationPullRequestReviewComment?> Details { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

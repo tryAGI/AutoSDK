@@ -7,23 +7,58 @@ namespace G
     /// <summary>
     /// <br/>Default Value: newest
     /// </summary>
-    public abstract class ReposListForksSort
+    public enum ReposListForksSort
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Newest = "newest";
+        Newest,
         /// <summary>
         /// 
         /// </summary>
-        public const string Oldest = "oldest";
+        Oldest,
         /// <summary>
         /// 
         /// </summary>
-        public const string Stargazers = "stargazers";
+        Stargazers,
         /// <summary>
         /// 
         /// </summary>
-        public const string Watchers = "watchers";
+        Watchers,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ReposListForksSortExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ReposListForksSort value)
+        {
+            return value switch
+            {
+                ReposListForksSort.Newest => "newest",
+                ReposListForksSort.Oldest => "oldest",
+                ReposListForksSort.Stargazers => "stargazers",
+                ReposListForksSort.Watchers => "watchers",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ReposListForksSort ToEnum(string value)
+        {
+            return value switch
+            {
+                "newest" => ReposListForksSort.Newest,
+                "oldest" => ReposListForksSort.Oldest,
+                "stargazers" => ReposListForksSort.Stargazers,
+                "watchers" => ReposListForksSort.Watchers,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

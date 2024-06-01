@@ -7,15 +7,46 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookIssueCommentDeletedIssuePerformedViaGithubAppPermissionsRepositoryProjects
+    public enum WebhookIssueCommentDeletedIssuePerformedViaGithubAppPermissionsRepositoryProjects
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Read = "read";
+        Read,
         /// <summary>
         /// 
         /// </summary>
-        public const string Write = "write";
+        Write,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssueCommentDeletedIssuePerformedViaGithubAppPermissionsRepositoryProjectsExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssueCommentDeletedIssuePerformedViaGithubAppPermissionsRepositoryProjects value)
+        {
+            return value switch
+            {
+                WebhookIssueCommentDeletedIssuePerformedViaGithubAppPermissionsRepositoryProjects.Read => "read",
+                WebhookIssueCommentDeletedIssuePerformedViaGithubAppPermissionsRepositoryProjects.Write => "write",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssueCommentDeletedIssuePerformedViaGithubAppPermissionsRepositoryProjects ToEnum(string value)
+        {
+            return value switch
+            {
+                "read" => WebhookIssueCommentDeletedIssuePerformedViaGithubAppPermissionsRepositoryProjects.Read,
+                "write" => WebhookIssueCommentDeletedIssuePerformedViaGithubAppPermissionsRepositoryProjects.Write,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

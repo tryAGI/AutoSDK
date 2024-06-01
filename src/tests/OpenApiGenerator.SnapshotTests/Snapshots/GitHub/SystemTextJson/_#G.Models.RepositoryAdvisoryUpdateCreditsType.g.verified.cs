@@ -7,47 +7,94 @@ namespace G
     /// <summary>
     /// The type of credit the user is receiving.
     /// </summary>
-    public abstract class RepositoryAdvisoryUpdateCreditsType
+    public enum RepositoryAdvisoryUpdateCreditsType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Analyst = "analyst";
+        Analyst,
         /// <summary>
         /// 
         /// </summary>
-        public const string Finder = "finder";
+        Finder,
         /// <summary>
         /// 
         /// </summary>
-        public const string Reporter = "reporter";
+        Reporter,
         /// <summary>
         /// 
         /// </summary>
-        public const string Coordinator = "coordinator";
+        Coordinator,
         /// <summary>
         /// 
         /// </summary>
-        public const string RemediationDeveloper = "remediation_developer";
+        RemediationDeveloper,
         /// <summary>
         /// 
         /// </summary>
-        public const string RemediationReviewer = "remediation_reviewer";
+        RemediationReviewer,
         /// <summary>
         /// 
         /// </summary>
-        public const string RemediationVerifier = "remediation_verifier";
+        RemediationVerifier,
         /// <summary>
         /// 
         /// </summary>
-        public const string Tool = "tool";
+        Tool,
         /// <summary>
         /// 
         /// </summary>
-        public const string Sponsor = "sponsor";
+        Sponsor,
         /// <summary>
         /// 
         /// </summary>
-        public const string Other = "other";
+        Other,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class RepositoryAdvisoryUpdateCreditsTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this RepositoryAdvisoryUpdateCreditsType value)
+        {
+            return value switch
+            {
+                RepositoryAdvisoryUpdateCreditsType.Analyst => "analyst",
+                RepositoryAdvisoryUpdateCreditsType.Finder => "finder",
+                RepositoryAdvisoryUpdateCreditsType.Reporter => "reporter",
+                RepositoryAdvisoryUpdateCreditsType.Coordinator => "coordinator",
+                RepositoryAdvisoryUpdateCreditsType.RemediationDeveloper => "remediation_developer",
+                RepositoryAdvisoryUpdateCreditsType.RemediationReviewer => "remediation_reviewer",
+                RepositoryAdvisoryUpdateCreditsType.RemediationVerifier => "remediation_verifier",
+                RepositoryAdvisoryUpdateCreditsType.Tool => "tool",
+                RepositoryAdvisoryUpdateCreditsType.Sponsor => "sponsor",
+                RepositoryAdvisoryUpdateCreditsType.Other => "other",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static RepositoryAdvisoryUpdateCreditsType ToEnum(string value)
+        {
+            return value switch
+            {
+                "analyst" => RepositoryAdvisoryUpdateCreditsType.Analyst,
+                "finder" => RepositoryAdvisoryUpdateCreditsType.Finder,
+                "reporter" => RepositoryAdvisoryUpdateCreditsType.Reporter,
+                "coordinator" => RepositoryAdvisoryUpdateCreditsType.Coordinator,
+                "remediation_developer" => RepositoryAdvisoryUpdateCreditsType.RemediationDeveloper,
+                "remediation_reviewer" => RepositoryAdvisoryUpdateCreditsType.RemediationReviewer,
+                "remediation_verifier" => RepositoryAdvisoryUpdateCreditsType.RemediationVerifier,
+                "tool" => RepositoryAdvisoryUpdateCreditsType.Tool,
+                "sponsor" => RepositoryAdvisoryUpdateCreditsType.Sponsor,
+                "other" => RepositoryAdvisoryUpdateCreditsType.Other,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

@@ -13,7 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
-        public string? Action { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookDeploymentProtectionRuleRequestedActionJsonConverter))]
+        public WebhookDeploymentProtectionRuleRequestedAction? Action { get; set; }
 
         /// <summary>
         /// The name of the environment that has the deployment protection rule.

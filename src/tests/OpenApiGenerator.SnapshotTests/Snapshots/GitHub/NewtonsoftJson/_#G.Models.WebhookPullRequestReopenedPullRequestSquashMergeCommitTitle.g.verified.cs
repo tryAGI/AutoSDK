@@ -23,4 +23,35 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="COMMIT_OR_PR_TITLE")]
         COMMITORPRTITLE,
     }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestReopenedPullRequestSquashMergeCommitTitleExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestReopenedPullRequestSquashMergeCommitTitle value)
+        {
+            return value switch
+            {
+                WebhookPullRequestReopenedPullRequestSquashMergeCommitTitle.PRTITLE => "PR_TITLE",
+                WebhookPullRequestReopenedPullRequestSquashMergeCommitTitle.COMMITORPRTITLE => "COMMIT_OR_PR_TITLE",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestReopenedPullRequestSquashMergeCommitTitle ToEnum(string value)
+        {
+            return value switch
+            {
+                "PR_TITLE" => WebhookPullRequestReopenedPullRequestSquashMergeCommitTitle.PRTITLE,
+                "COMMIT_OR_PR_TITLE" => WebhookPullRequestReopenedPullRequestSquashMergeCommitTitle.COMMITORPRTITLE,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

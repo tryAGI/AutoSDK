@@ -138,8 +138,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object CreatedAt { get; set; }
+        public required global::System.OneOf<int, global::System.DateTime> CreatedAt { get; set; }
 
         /// <summary>
         /// The default branch of the repository.
@@ -401,7 +402,8 @@ namespace G
         /// - `BLANK` - default to a blank commit message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_commit_message")]
-        public string? MergeCommitMessage { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoMergeCommitMessageJsonConverter))]
+        public WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoMergeCommitMessage? MergeCommitMessage { get; set; }
 
         /// <summary>
         /// The default value for a merge commit title.
@@ -409,7 +411,8 @@ namespace G
         /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_commit_title")]
-        public string? MergeCommitTitle { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoMergeCommitTitleJsonConverter))]
+        public WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoMergeCommitTitle? MergeCommitTitle { get; set; }
 
         /// <summary>
         /// 
@@ -510,8 +513,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pushed_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? PushedAt { get; set; }
+        public required global::System.OneOf<int, global::System.DateTime>? PushedAt { get; set; }
 
         /// <summary>
         /// 
@@ -540,7 +544,8 @@ namespace G
         /// - `BLANK` - default to a blank commit message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("squash_merge_commit_message")]
-        public string? SquashMergeCommitMessage { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoSquashMergeCommitMessageJsonConverter))]
+        public WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoSquashMergeCommitMessage? SquashMergeCommitMessage { get; set; }
 
         /// <summary>
         /// The default value for a squash merge commit title:
@@ -548,7 +553,8 @@ namespace G
         /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("squash_merge_commit_title")]
-        public string? SquashMergeCommitTitle { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoSquashMergeCommitTitleJsonConverter))]
+        public WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoSquashMergeCommitTitle? SquashMergeCommitTitle { get; set; }
 
         /// <summary>
         /// 
@@ -658,8 +664,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoVisibilityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Visibility { get; set; }
+        public required WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoVisibility Visibility { get; set; }
 
         /// <summary>
         /// 

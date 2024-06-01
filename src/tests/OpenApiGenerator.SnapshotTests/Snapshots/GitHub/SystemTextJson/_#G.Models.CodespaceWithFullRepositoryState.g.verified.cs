@@ -8,75 +8,136 @@ namespace G
     /// State of this codespace.
     /// <br/>Example: Available
     /// </summary>
-    public abstract class CodespaceWithFullRepositoryState
+    public enum CodespaceWithFullRepositoryState
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Unknown = "Unknown";
+        Unknown,
         /// <summary>
         /// 
         /// </summary>
-        public const string Created = "Created";
+        Created,
         /// <summary>
         /// 
         /// </summary>
-        public const string Queued = "Queued";
+        Queued,
         /// <summary>
         /// 
         /// </summary>
-        public const string Provisioning = "Provisioning";
+        Provisioning,
         /// <summary>
         /// 
         /// </summary>
-        public const string Available = "Available";
+        Available,
         /// <summary>
         /// 
         /// </summary>
-        public const string Awaiting = "Awaiting";
+        Awaiting,
         /// <summary>
         /// 
         /// </summary>
-        public const string Unavailable = "Unavailable";
+        Unavailable,
         /// <summary>
         /// 
         /// </summary>
-        public const string Deleted = "Deleted";
+        Deleted,
         /// <summary>
         /// 
         /// </summary>
-        public const string Moved = "Moved";
+        Moved,
         /// <summary>
         /// 
         /// </summary>
-        public const string Shutdown = "Shutdown";
+        Shutdown,
         /// <summary>
         /// 
         /// </summary>
-        public const string Archived = "Archived";
+        Archived,
         /// <summary>
         /// 
         /// </summary>
-        public const string Starting = "Starting";
+        Starting,
         /// <summary>
         /// 
         /// </summary>
-        public const string ShuttingDown = "ShuttingDown";
+        ShuttingDown,
         /// <summary>
         /// 
         /// </summary>
-        public const string Failed = "Failed";
+        Failed,
         /// <summary>
         /// 
         /// </summary>
-        public const string Exporting = "Exporting";
+        Exporting,
         /// <summary>
         /// 
         /// </summary>
-        public const string Updating = "Updating";
+        Updating,
         /// <summary>
         /// 
         /// </summary>
-        public const string Rebuilding = "Rebuilding";
+        Rebuilding,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class CodespaceWithFullRepositoryStateExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this CodespaceWithFullRepositoryState value)
+        {
+            return value switch
+            {
+                CodespaceWithFullRepositoryState.Unknown => "Unknown",
+                CodespaceWithFullRepositoryState.Created => "Created",
+                CodespaceWithFullRepositoryState.Queued => "Queued",
+                CodespaceWithFullRepositoryState.Provisioning => "Provisioning",
+                CodespaceWithFullRepositoryState.Available => "Available",
+                CodespaceWithFullRepositoryState.Awaiting => "Awaiting",
+                CodespaceWithFullRepositoryState.Unavailable => "Unavailable",
+                CodespaceWithFullRepositoryState.Deleted => "Deleted",
+                CodespaceWithFullRepositoryState.Moved => "Moved",
+                CodespaceWithFullRepositoryState.Shutdown => "Shutdown",
+                CodespaceWithFullRepositoryState.Archived => "Archived",
+                CodespaceWithFullRepositoryState.Starting => "Starting",
+                CodespaceWithFullRepositoryState.ShuttingDown => "ShuttingDown",
+                CodespaceWithFullRepositoryState.Failed => "Failed",
+                CodespaceWithFullRepositoryState.Exporting => "Exporting",
+                CodespaceWithFullRepositoryState.Updating => "Updating",
+                CodespaceWithFullRepositoryState.Rebuilding => "Rebuilding",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static CodespaceWithFullRepositoryState ToEnum(string value)
+        {
+            return value switch
+            {
+                "Unknown" => CodespaceWithFullRepositoryState.Unknown,
+                "Created" => CodespaceWithFullRepositoryState.Created,
+                "Queued" => CodespaceWithFullRepositoryState.Queued,
+                "Provisioning" => CodespaceWithFullRepositoryState.Provisioning,
+                "Available" => CodespaceWithFullRepositoryState.Available,
+                "Awaiting" => CodespaceWithFullRepositoryState.Awaiting,
+                "Unavailable" => CodespaceWithFullRepositoryState.Unavailable,
+                "Deleted" => CodespaceWithFullRepositoryState.Deleted,
+                "Moved" => CodespaceWithFullRepositoryState.Moved,
+                "Shutdown" => CodespaceWithFullRepositoryState.Shutdown,
+                "Archived" => CodespaceWithFullRepositoryState.Archived,
+                "Starting" => CodespaceWithFullRepositoryState.Starting,
+                "ShuttingDown" => CodespaceWithFullRepositoryState.ShuttingDown,
+                "Failed" => CodespaceWithFullRepositoryState.Failed,
+                "Exporting" => CodespaceWithFullRepositoryState.Exporting,
+                "Updating" => CodespaceWithFullRepositoryState.Updating,
+                "Rebuilding" => CodespaceWithFullRepositoryState.Rebuilding,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

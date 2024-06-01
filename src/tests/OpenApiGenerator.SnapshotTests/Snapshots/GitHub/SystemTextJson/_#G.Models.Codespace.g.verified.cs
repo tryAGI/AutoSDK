@@ -109,8 +109,9 @@ namespace G
         /// <br/>Example: Available
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodespaceStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string State { get; set; }
+        public required CodespaceState State { get; set; }
 
         /// <summary>
         /// API URL for this codespace.
@@ -131,8 +132,9 @@ namespace G
         /// <br/>Example: WestUs2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("location")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodespaceLocationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Location { get; set; }
+        public required CodespaceLocation Location { get; set; }
 
         /// <summary>
         /// The number of minutes of inactivity after which this codespace will be automatically stopped.

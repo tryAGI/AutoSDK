@@ -7,19 +7,52 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhooksRuleAllowForcePushesEnforcementLevel
+    public enum WebhooksRuleAllowForcePushesEnforcementLevel
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Off = "off";
+        Off,
         /// <summary>
         /// 
         /// </summary>
-        public const string NonAdmins = "non_admins";
+        NonAdmins,
         /// <summary>
         /// 
         /// </summary>
-        public const string Everyone = "everyone";
+        Everyone,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhooksRuleAllowForcePushesEnforcementLevelExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhooksRuleAllowForcePushesEnforcementLevel value)
+        {
+            return value switch
+            {
+                WebhooksRuleAllowForcePushesEnforcementLevel.Off => "off",
+                WebhooksRuleAllowForcePushesEnforcementLevel.NonAdmins => "non_admins",
+                WebhooksRuleAllowForcePushesEnforcementLevel.Everyone => "everyone",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhooksRuleAllowForcePushesEnforcementLevel ToEnum(string value)
+        {
+            return value switch
+            {
+                "off" => WebhooksRuleAllowForcePushesEnforcementLevel.Off,
+                "non_admins" => WebhooksRuleAllowForcePushesEnforcementLevel.NonAdmins,
+                "everyone" => WebhooksRuleAllowForcePushesEnforcementLevel.Everyone,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

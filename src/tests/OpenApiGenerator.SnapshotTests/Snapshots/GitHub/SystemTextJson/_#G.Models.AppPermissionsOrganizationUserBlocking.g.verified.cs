@@ -7,15 +7,46 @@ namespace G
     /// <summary>
     /// The level of permission to grant the access token to view and manage users blocked by the organization.
     /// </summary>
-    public abstract class AppPermissionsOrganizationUserBlocking
+    public enum AppPermissionsOrganizationUserBlocking
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Read = "read";
+        Read,
         /// <summary>
         /// 
         /// </summary>
-        public const string Write = "write";
+        Write,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class AppPermissionsOrganizationUserBlockingExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this AppPermissionsOrganizationUserBlocking value)
+        {
+            return value switch
+            {
+                AppPermissionsOrganizationUserBlocking.Read => "read",
+                AppPermissionsOrganizationUserBlocking.Write => "write",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static AppPermissionsOrganizationUserBlocking ToEnum(string value)
+        {
+            return value switch
+            {
+                "read" => AppPermissionsOrganizationUserBlocking.Read,
+                "write" => AppPermissionsOrganizationUserBlocking.Write,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

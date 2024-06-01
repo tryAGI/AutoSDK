@@ -35,8 +35,9 @@ namespace G
         /// <br/>Example: success
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DeploymentStatusStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string State { get; set; }
+        public required DeploymentStatusState State { get; set; }
 
         /// <summary>
         /// A GitHub user.

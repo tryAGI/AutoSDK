@@ -21,13 +21,13 @@ namespace G
         /// <param name="validity"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task SecretScanningListAlertsForEnterpriseAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<OrganizationSecretScanningAlert>> SecretScanningListAlertsForEnterpriseAsync(
             string enterprise,
-            string state,
+            SecretScanningListAlertsForEnterpriseState state,
             string secretType,
             string resolution,
-            string sort,
-            string direction,
+            SecretScanningListAlertsForEnterpriseSort sort,
+            SecretScanningListAlertsForEnterpriseDirection direction,
             int perPage,
             string before,
             string after,
@@ -43,6 +43,12 @@ namespace G
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
+
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return
+                global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<OrganizationSecretScanningAlert>?>(__content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
 }

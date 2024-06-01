@@ -26,7 +26,8 @@ namespace G
         /// The type of label. Read-only labels are applied automatically when the runner is configured.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunnerLabelTypeJsonConverter))]
+        public RunnerLabelType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -10,19 +10,52 @@ namespace G
     /// - `PR_BODY` - default to the pull request's body.
     /// - `BLANK` - default to a blank commit message.
     /// </summary>
-    public abstract class WebhookPullRequestAssignedPullRequestHeadRepoMergeCommitMessage
+    public enum WebhookPullRequestAssignedPullRequestHeadRepoMergeCommitMessage
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string PRBODY = "PR_BODY";
+        PRBODY,
         /// <summary>
         /// 
         /// </summary>
-        public const string PRTITLE = "PR_TITLE";
+        PRTITLE,
         /// <summary>
         /// 
         /// </summary>
-        public const string BLANK = "BLANK";
+        BLANK,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestAssignedPullRequestHeadRepoMergeCommitMessageExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestAssignedPullRequestHeadRepoMergeCommitMessage value)
+        {
+            return value switch
+            {
+                WebhookPullRequestAssignedPullRequestHeadRepoMergeCommitMessage.PRBODY => "PR_BODY",
+                WebhookPullRequestAssignedPullRequestHeadRepoMergeCommitMessage.PRTITLE => "PR_TITLE",
+                WebhookPullRequestAssignedPullRequestHeadRepoMergeCommitMessage.BLANK => "BLANK",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestAssignedPullRequestHeadRepoMergeCommitMessage ToEnum(string value)
+        {
+            return value switch
+            {
+                "PR_BODY" => WebhookPullRequestAssignedPullRequestHeadRepoMergeCommitMessage.PRBODY,
+                "PR_TITLE" => WebhookPullRequestAssignedPullRequestHeadRepoMergeCommitMessage.PRTITLE,
+                "BLANK" => WebhookPullRequestAssignedPullRequestHeadRepoMergeCommitMessage.BLANK,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

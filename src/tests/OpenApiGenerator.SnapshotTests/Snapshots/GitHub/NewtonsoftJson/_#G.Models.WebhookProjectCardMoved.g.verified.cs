@@ -48,7 +48,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("project_card", Required = global::Newtonsoft.Json.Required.Always)]
-        public object ProjectCard { get; set; } = default!;
+        public global::System.AllOf<WebhookProjectCardMovedProjectCard, WebhookProjectCardMovedProjectCard> ProjectCard { get; set; } = default!;
 
         /// <summary>
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property

@@ -69,8 +69,9 @@ namespace G
         /// <br/>Example: FLAT_RATE
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("price_model")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MarketplaceListingPlanPriceModelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string PriceModel { get; set; }
+        public required MarketplaceListingPlanPriceModel PriceModel { get; set; }
 
         /// <summary>
         /// <br/>Example: true

@@ -13,8 +13,9 @@ namespace G
         /// The type of advisory identifier.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DependabotAlertSecurityAdvisoryIdentifiersTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required DependabotAlertSecurityAdvisoryIdentifiersType Type { get; set; }
 
         /// <summary>
         /// The value of the advisory identifer.

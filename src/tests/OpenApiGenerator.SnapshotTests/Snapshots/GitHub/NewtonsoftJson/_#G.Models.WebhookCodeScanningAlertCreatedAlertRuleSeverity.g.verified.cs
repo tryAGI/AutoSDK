@@ -31,4 +31,39 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="error")]
         Error,
     }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookCodeScanningAlertCreatedAlertRuleSeverityExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookCodeScanningAlertCreatedAlertRuleSeverity value)
+        {
+            return value switch
+            {
+                WebhookCodeScanningAlertCreatedAlertRuleSeverity.None => "none",
+                WebhookCodeScanningAlertCreatedAlertRuleSeverity.Note => "note",
+                WebhookCodeScanningAlertCreatedAlertRuleSeverity.Warning => "warning",
+                WebhookCodeScanningAlertCreatedAlertRuleSeverity.Error => "error",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookCodeScanningAlertCreatedAlertRuleSeverity ToEnum(string value)
+        {
+            return value switch
+            {
+                "none" => WebhookCodeScanningAlertCreatedAlertRuleSeverity.None,
+                "note" => WebhookCodeScanningAlertCreatedAlertRuleSeverity.Note,
+                "warning" => WebhookCodeScanningAlertCreatedAlertRuleSeverity.Warning,
+                "error" => WebhookCodeScanningAlertCreatedAlertRuleSeverity.Error,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

@@ -15,7 +15,7 @@ namespace G
         /// <param name="packageVersionId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task PackagesRestorePackageVersionForUserAsync(
+        public async global::System.Threading.Tasks.Task<BasicError> PackagesRestorePackageVersionForUserAsync(
             PackagesRestorePackageVersionForUserPackageType packageType,
             string packageName,
             string username,
@@ -41,6 +41,12 @@ namespace G
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
+
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<BasicError?>(__content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
 }

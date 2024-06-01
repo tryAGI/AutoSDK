@@ -34,8 +34,9 @@ namespace G
         /// The language targeted by the CodeQL query
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("query_language")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningVariantAnalysisQueryLanguageJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string QueryLanguage { get; set; }
+        public required CodeScanningVariantAnalysisQueryLanguage QueryLanguage { get; set; }
 
         /// <summary>
         /// The download url for the query pack.
@@ -66,8 +67,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningVariantAnalysisStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
+        public required CodeScanningVariantAnalysisStatus Status { get; set; }
 
         /// <summary>
         /// The GitHub Actions workflow run used to execute this variant analysis. This is only available if the workflow run has started.
@@ -79,7 +81,8 @@ namespace G
         /// The reason for a failure of the variant analysis. This is only available if the variant analysis has failed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("failure_reason")]
-        public string? FailureReason { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningVariantAnalysisFailureReasonJsonConverter))]
+        public CodeScanningVariantAnalysisFailureReason? FailureReason { get; set; }
 
         /// <summary>
         /// 

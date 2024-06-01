@@ -7,19 +7,52 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookPullRequestLockedPullRequestHeadUserType
+    public enum WebhookPullRequestLockedPullRequestHeadUserType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Bot = "Bot";
+        Bot,
         /// <summary>
         /// 
         /// </summary>
-        public const string User = "User";
+        User,
         /// <summary>
         /// 
         /// </summary>
-        public const string Organization = "Organization";
+        Organization,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestLockedPullRequestHeadUserTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestLockedPullRequestHeadUserType value)
+        {
+            return value switch
+            {
+                WebhookPullRequestLockedPullRequestHeadUserType.Bot => "Bot",
+                WebhookPullRequestLockedPullRequestHeadUserType.User => "User",
+                WebhookPullRequestLockedPullRequestHeadUserType.Organization => "Organization",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestLockedPullRequestHeadUserType ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhookPullRequestLockedPullRequestHeadUserType.Bot,
+                "User" => WebhookPullRequestLockedPullRequestHeadUserType.User,
+                "Organization" => WebhookPullRequestLockedPullRequestHeadUserType.Organization,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

@@ -7,19 +7,52 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookPullRequestReviewDismissedPullRequestRequestedTeamsParentPrivacy
+    public enum WebhookPullRequestReviewDismissedPullRequestRequestedTeamsParentPrivacy
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Open = "open";
+        Open,
         /// <summary>
         /// 
         /// </summary>
-        public const string Closed = "closed";
+        Closed,
         /// <summary>
         /// 
         /// </summary>
-        public const string Secret = "secret";
+        Secret,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestReviewDismissedPullRequestRequestedTeamsParentPrivacyExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestReviewDismissedPullRequestRequestedTeamsParentPrivacy value)
+        {
+            return value switch
+            {
+                WebhookPullRequestReviewDismissedPullRequestRequestedTeamsParentPrivacy.Open => "open",
+                WebhookPullRequestReviewDismissedPullRequestRequestedTeamsParentPrivacy.Closed => "closed",
+                WebhookPullRequestReviewDismissedPullRequestRequestedTeamsParentPrivacy.Secret => "secret",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestReviewDismissedPullRequestRequestedTeamsParentPrivacy ToEnum(string value)
+        {
+            return value switch
+            {
+                "open" => WebhookPullRequestReviewDismissedPullRequestRequestedTeamsParentPrivacy.Open,
+                "closed" => WebhookPullRequestReviewDismissedPullRequestRequestedTeamsParentPrivacy.Closed,
+                "secret" => WebhookPullRequestReviewDismissedPullRequestRequestedTeamsParentPrivacy.Secret,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

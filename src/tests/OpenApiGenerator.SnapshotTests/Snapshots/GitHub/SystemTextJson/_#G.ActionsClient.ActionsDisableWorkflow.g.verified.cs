@@ -17,7 +17,7 @@ namespace G
         public async global::System.Threading.Tasks.Task ActionsDisableWorkflowAsync(
             string owner,
             string repo,
-            object workflowId,
+            global::System.OneOf<int, string> workflowId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

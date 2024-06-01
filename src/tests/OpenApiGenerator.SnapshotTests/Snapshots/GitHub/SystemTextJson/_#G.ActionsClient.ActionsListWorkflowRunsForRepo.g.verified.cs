@@ -23,13 +23,13 @@ namespace G
         /// <param name="headSha"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task ActionsListWorkflowRunsForRepoAsync(
+        public async global::System.Threading.Tasks.Task<ActionsListWorkflowRunsForRepoResponse> ActionsListWorkflowRunsForRepoAsync(
             string owner,
             string repo,
             string actor,
             string branch,
             string @event,
-            string status,
+            ActionsListWorkflowRunsForRepoStatus status,
             int perPage,
             int page,
             global::System.DateTime created,
@@ -47,6 +47,12 @@ namespace G
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
+
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return
+                global::System.Text.Json.JsonSerializer.Deserialize<ActionsListWorkflowRunsForRepoResponse?>(__content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
 }

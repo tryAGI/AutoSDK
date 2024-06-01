@@ -49,7 +49,8 @@ namespace G
         /// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
-        public string? Severity { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryAdvisoryUpdateSeverityJsonConverter))]
+        public RepositoryAdvisoryUpdateSeverity? Severity { get; set; }
 
         /// <summary>
         /// The CVSS vector that calculates the severity of the advisory. You must choose between setting this field or `severity`.
@@ -61,7 +62,8 @@ namespace G
         /// The state of the advisory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        public string? State { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryAdvisoryUpdateStateJsonConverter))]
+        public RepositoryAdvisoryUpdateState? State { get; set; }
 
         /// <summary>
         /// A list of usernames who have been granted write access to the advisory.

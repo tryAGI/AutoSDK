@@ -48,8 +48,9 @@ namespace G
         /// Type of repository selection requested.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_selection")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PersonalAccessTokenRequestRepositorySelectionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string RepositorySelection { get; set; }
+        public required PersonalAccessTokenRequestRepositorySelection RepositorySelection { get; set; }
 
         /// <summary>
         /// The number of repositories the token is requesting access to. This field is only populated when `repository_selection` is `subset`.

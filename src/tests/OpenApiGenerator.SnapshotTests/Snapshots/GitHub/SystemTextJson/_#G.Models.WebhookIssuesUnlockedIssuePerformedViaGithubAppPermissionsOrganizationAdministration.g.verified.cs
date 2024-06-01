@@ -7,15 +7,46 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsOrganizationAdministration
+    public enum WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsOrganizationAdministration
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Read = "read";
+        Read,
         /// <summary>
         /// 
         /// </summary>
-        public const string Write = "write";
+        Write,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsOrganizationAdministrationExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsOrganizationAdministration value)
+        {
+            return value switch
+            {
+                WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsOrganizationAdministration.Read => "read",
+                WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsOrganizationAdministration.Write => "write",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsOrganizationAdministration ToEnum(string value)
+        {
+            return value switch
+            {
+                "read" => WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsOrganizationAdministration.Read,
+                "write" => WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsOrganizationAdministration.Write,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

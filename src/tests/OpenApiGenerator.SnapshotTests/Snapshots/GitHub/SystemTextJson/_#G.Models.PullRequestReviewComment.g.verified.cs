@@ -144,8 +144,9 @@ namespace G
         /// <br/>Example: OWNER
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PullRequestReviewCommentAuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string AuthorAssociation { get; set; }
+        public required PullRequestReviewCommentAuthorAssociation AuthorAssociation { get; set; }
 
         /// <summary>
         /// 
@@ -173,7 +174,8 @@ namespace G
         /// <br/>Default Value: RIGHT
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_side")]
-        public string? StartSide { get; set; } = PullRequestReviewCommentStartSide.RIGHT;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PullRequestReviewCommentStartSideJsonConverter))]
+        public PullRequestReviewCommentStartSide? StartSide { get; set; } = PullRequestReviewCommentStartSide.RIGHT;
 
         /// <summary>
         /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment
@@ -194,13 +196,15 @@ namespace G
         /// <br/>Default Value: RIGHT
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("side")]
-        public string? Side { get; set; } = PullRequestReviewCommentSide.RIGHT;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PullRequestReviewCommentSideJsonConverter))]
+        public PullRequestReviewCommentSide? Side { get; set; } = PullRequestReviewCommentSide.RIGHT;
 
         /// <summary>
         /// The level at which the comment is targeted, can be a diff line or a file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("subject_type")]
-        public string? SubjectType { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PullRequestReviewCommentSubjectTypeJsonConverter))]
+        public PullRequestReviewCommentSubjectType? SubjectType { get; set; }
 
         /// <summary>
         /// 

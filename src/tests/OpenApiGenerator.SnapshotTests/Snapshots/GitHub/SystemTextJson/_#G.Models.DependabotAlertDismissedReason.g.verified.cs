@@ -7,27 +7,64 @@ namespace G
     /// <summary>
     /// The reason that the alert was dismissed.
     /// </summary>
-    public abstract class DependabotAlertDismissedReason
+    public enum DependabotAlertDismissedReason
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string FixStarted = "fix_started";
+        FixStarted,
         /// <summary>
         /// 
         /// </summary>
-        public const string Inaccurate = "inaccurate";
+        Inaccurate,
         /// <summary>
         /// 
         /// </summary>
-        public const string NoBandwidth = "no_bandwidth";
+        NoBandwidth,
         /// <summary>
         /// 
         /// </summary>
-        public const string NotUsed = "not_used";
+        NotUsed,
         /// <summary>
         /// 
         /// </summary>
-        public const string TolerableRisk = "tolerable_risk";
+        TolerableRisk,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class DependabotAlertDismissedReasonExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this DependabotAlertDismissedReason value)
+        {
+            return value switch
+            {
+                DependabotAlertDismissedReason.FixStarted => "fix_started",
+                DependabotAlertDismissedReason.Inaccurate => "inaccurate",
+                DependabotAlertDismissedReason.NoBandwidth => "no_bandwidth",
+                DependabotAlertDismissedReason.NotUsed => "not_used",
+                DependabotAlertDismissedReason.TolerableRisk => "tolerable_risk",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static DependabotAlertDismissedReason ToEnum(string value)
+        {
+            return value switch
+            {
+                "fix_started" => DependabotAlertDismissedReason.FixStarted,
+                "inaccurate" => DependabotAlertDismissedReason.Inaccurate,
+                "no_bandwidth" => DependabotAlertDismissedReason.NoBandwidth,
+                "not_used" => DependabotAlertDismissedReason.NotUsed,
+                "tolerable_risk" => DependabotAlertDismissedReason.TolerableRisk,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

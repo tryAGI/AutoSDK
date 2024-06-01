@@ -20,12 +20,12 @@ namespace G
         /// <param name="before"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task ReposListForAuthenticatedUserAsync(
-            string visibility,
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<Repository>> ReposListForAuthenticatedUserAsync(
+            ReposListForAuthenticatedUserVisibility visibility,
             string affiliation,
-            string type,
-            string sort,
-            string direction,
+            ReposListForAuthenticatedUserType type,
+            ReposListForAuthenticatedUserSort sort,
+            ReposListForAuthenticatedUserDirection direction,
             int perPage,
             int page,
             global::System.DateTime since,
@@ -41,6 +41,12 @@ namespace G
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
+
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return
+                global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<Repository>?>(__content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
 }

@@ -12,7 +12,7 @@ namespace G
         /// <param name="appSlug"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<Integration> AppsGetBySlugAsync(
+        public async global::System.Threading.Tasks.Task<Integration?> AppsGetBySlugAsync(
             string appSlug,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -26,11 +26,11 @@ namespace G
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
 
-            var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<Integration>(content) ??
-                throw new global::System.InvalidOperationException("Response deserialization failed for \"{content}\" ");
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<Integration?>(__content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
 }

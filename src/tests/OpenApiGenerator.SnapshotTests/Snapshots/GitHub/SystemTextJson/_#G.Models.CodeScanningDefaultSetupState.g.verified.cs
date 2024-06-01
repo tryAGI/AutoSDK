@@ -7,15 +7,46 @@ namespace G
     /// <summary>
     /// Code scanning default setup has been configured or not.
     /// </summary>
-    public abstract class CodeScanningDefaultSetupState
+    public enum CodeScanningDefaultSetupState
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Configured = "configured";
+        Configured,
         /// <summary>
         /// 
         /// </summary>
-        public const string NotConfigured = "not-configured";
+        NotConfigured,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class CodeScanningDefaultSetupStateExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this CodeScanningDefaultSetupState value)
+        {
+            return value switch
+            {
+                CodeScanningDefaultSetupState.Configured => "configured",
+                CodeScanningDefaultSetupState.NotConfigured => "not-configured",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static CodeScanningDefaultSetupState ToEnum(string value)
+        {
+            return value switch
+            {
+                "configured" => CodeScanningDefaultSetupState.Configured,
+                "not-configured" => CodeScanningDefaultSetupState.NotConfigured,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

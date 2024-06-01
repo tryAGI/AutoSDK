@@ -7,11 +7,40 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookDiscussionCategoryChangedAction
+    public enum WebhookDiscussionCategoryChangedAction
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string CategoryChanged = "category_changed";
+        CategoryChanged,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookDiscussionCategoryChangedActionExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookDiscussionCategoryChangedAction value)
+        {
+            return value switch
+            {
+                WebhookDiscussionCategoryChangedAction.CategoryChanged => "category_changed",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookDiscussionCategoryChangedAction ToEnum(string value)
+        {
+            return value switch
+            {
+                "category_changed" => WebhookDiscussionCategoryChangedAction.CategoryChanged,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

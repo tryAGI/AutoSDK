@@ -49,13 +49,15 @@ namespace G
         /// Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        public string? State { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OrganizationSecretScanningAlertStateJsonConverter))]
+        public OrganizationSecretScanningAlertState? State { get; set; }
 
         /// <summary>
         /// **Required when the `state` is `resolved`.** The reason for resolving the alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resolution")]
-        public string? Resolution { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OrganizationSecretScanningAlertResolutionJsonConverter))]
+        public OrganizationSecretScanningAlertResolution? Resolution { get; set; }
 
         /// <summary>
         /// The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -122,7 +124,8 @@ namespace G
         /// The token status as of the latest validity check.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("validity")]
-        public string? Validity { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OrganizationSecretScanningAlertValidityJsonConverter))]
+        public OrganizationSecretScanningAlertValidity? Validity { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

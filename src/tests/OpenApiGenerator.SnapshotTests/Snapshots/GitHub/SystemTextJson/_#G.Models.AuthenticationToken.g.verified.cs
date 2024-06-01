@@ -47,7 +47,8 @@ namespace G
         /// Describe whether all repositories have been selected or there's a selection involved
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_selection")]
-        public string? RepositorySelection { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AuthenticationTokenRepositorySelectionJsonConverter))]
+        public AuthenticationTokenRepositorySelection? RepositorySelection { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

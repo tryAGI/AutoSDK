@@ -73,16 +73,18 @@ namespace G
         /// <br/>Example: queued
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.JobStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
+        public required JobStatus Status { get; set; }
 
         /// <summary>
         /// The outcome of the job.
         /// <br/>Example: success
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.JobConclusionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Conclusion { get; set; }
+        public required JobConclusion? Conclusion { get; set; }
 
         /// <summary>
         /// The time that the job created, in ISO 8601 format.

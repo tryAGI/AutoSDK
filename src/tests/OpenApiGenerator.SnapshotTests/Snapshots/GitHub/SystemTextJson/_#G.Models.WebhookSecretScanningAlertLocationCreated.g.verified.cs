@@ -13,7 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
-        public string? Action { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookSecretScanningAlertLocationCreatedActionJsonConverter))]
+        public WebhookSecretScanningAlertLocationCreatedAction? Action { get; set; }
 
         /// <summary>
         /// 

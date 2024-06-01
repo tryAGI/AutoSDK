@@ -7,23 +7,58 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhooksIssueMilestoneCreatorType
+    public enum WebhooksIssueMilestoneCreatorType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Bot = "Bot";
+        Bot,
         /// <summary>
         /// 
         /// </summary>
-        public const string User = "User";
+        User,
         /// <summary>
         /// 
         /// </summary>
-        public const string Organization = "Organization";
+        Organization,
         /// <summary>
         /// 
         /// </summary>
-        public const string Mannequin = "Mannequin";
+        Mannequin,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhooksIssueMilestoneCreatorTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhooksIssueMilestoneCreatorType value)
+        {
+            return value switch
+            {
+                WebhooksIssueMilestoneCreatorType.Bot => "Bot",
+                WebhooksIssueMilestoneCreatorType.User => "User",
+                WebhooksIssueMilestoneCreatorType.Organization => "Organization",
+                WebhooksIssueMilestoneCreatorType.Mannequin => "Mannequin",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhooksIssueMilestoneCreatorType ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhooksIssueMilestoneCreatorType.Bot,
+                "User" => WebhooksIssueMilestoneCreatorType.User,
+                "Organization" => WebhooksIssueMilestoneCreatorType.Organization,
+                "Mannequin" => WebhooksIssueMilestoneCreatorType.Mannequin,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

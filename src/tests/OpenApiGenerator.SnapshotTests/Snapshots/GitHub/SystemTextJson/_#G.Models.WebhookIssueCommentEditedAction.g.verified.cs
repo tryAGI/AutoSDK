@@ -7,11 +7,40 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookIssueCommentEditedAction
+    public enum WebhookIssueCommentEditedAction
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Edited = "edited";
+        Edited,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssueCommentEditedActionExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssueCommentEditedAction value)
+        {
+            return value switch
+            {
+                WebhookIssueCommentEditedAction.Edited => "edited",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssueCommentEditedAction ToEnum(string value)
+        {
+            return value switch
+            {
+                "edited" => WebhookIssueCommentEditedAction.Edited,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

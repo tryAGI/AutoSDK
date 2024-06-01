@@ -13,8 +13,9 @@ namespace G
         /// The action performed. Can be `created`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookCommitCommentCreatedActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Action { get; set; }
+        public required WebhookCommitCommentCreatedAction Action { get; set; }
 
         /// <summary>
         /// The [commit comment](https://docs.github.com/rest/commits/comments#get-a-commit-comment) resource.

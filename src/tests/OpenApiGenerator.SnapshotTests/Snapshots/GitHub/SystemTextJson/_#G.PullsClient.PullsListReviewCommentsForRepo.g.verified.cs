@@ -18,11 +18,11 @@ namespace G
         /// <param name="page"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task PullsListReviewCommentsForRepoAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<PullRequestReviewComment>> PullsListReviewCommentsForRepoAsync(
             string owner,
             string repo,
-            string sort,
-            string direction,
+            PullsListReviewCommentsForRepoSort sort,
+            PullsListReviewCommentsForRepoDirection direction,
             global::System.DateTime since,
             int perPage,
             int page,
@@ -37,6 +37,12 @@ namespace G
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
+
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return
+                global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<PullRequestReviewComment>?>(__content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
 }

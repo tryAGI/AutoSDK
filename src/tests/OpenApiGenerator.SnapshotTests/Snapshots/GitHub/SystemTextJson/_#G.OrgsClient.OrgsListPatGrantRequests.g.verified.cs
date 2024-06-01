@@ -26,8 +26,8 @@ namespace G
             string org,
             int perPage,
             int page,
-            string sort,
-            string direction,
+            OrgsListPatGrantRequestsSort sort,
+            OrgsListPatGrantRequestsDirection direction,
             global::System.Collections.Generic.IList<string> owner,
             string repository,
             string permission,
@@ -45,11 +45,11 @@ namespace G
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
 
-            var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<BasicError>(content) ??
-                throw new global::System.InvalidOperationException("Response deserialization failed for \"{content}\" ");
+                global::System.Text.Json.JsonSerializer.Deserialize<BasicError?>(__content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
 }

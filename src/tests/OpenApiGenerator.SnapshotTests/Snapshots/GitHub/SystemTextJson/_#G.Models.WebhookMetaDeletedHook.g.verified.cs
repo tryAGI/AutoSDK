@@ -35,7 +35,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("events")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> Events { get; set; }
+        public required global::System.Collections.Generic.IList<WebhookMetaDeletedHookEvents> Events { get; set; }
 
         /// <summary>
         /// 

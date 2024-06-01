@@ -20,8 +20,9 @@ namespace G
         /// The merge method to use.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_method")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AutoMergeMergeMethodJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string MergeMethod { get; set; }
+        public required AutoMergeMergeMethod MergeMethod { get; set; }
 
         /// <summary>
         /// Title for the merge commit message.

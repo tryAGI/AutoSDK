@@ -10,19 +10,52 @@ namespace G
     /// - `PR_BODY` - default to the pull request's body.
     /// - `BLANK` - default to a blank commit message.
     /// </summary>
-    public abstract class WebhookPullRequestReopenedPullRequestMergeCommitMessage
+    public enum WebhookPullRequestReopenedPullRequestMergeCommitMessage
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string PRBODY = "PR_BODY";
+        PRBODY,
         /// <summary>
         /// 
         /// </summary>
-        public const string PRTITLE = "PR_TITLE";
+        PRTITLE,
         /// <summary>
         /// 
         /// </summary>
-        public const string BLANK = "BLANK";
+        BLANK,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestReopenedPullRequestMergeCommitMessageExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestReopenedPullRequestMergeCommitMessage value)
+        {
+            return value switch
+            {
+                WebhookPullRequestReopenedPullRequestMergeCommitMessage.PRBODY => "PR_BODY",
+                WebhookPullRequestReopenedPullRequestMergeCommitMessage.PRTITLE => "PR_TITLE",
+                WebhookPullRequestReopenedPullRequestMergeCommitMessage.BLANK => "BLANK",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestReopenedPullRequestMergeCommitMessage ToEnum(string value)
+        {
+            return value switch
+            {
+                "PR_BODY" => WebhookPullRequestReopenedPullRequestMergeCommitMessage.PRBODY,
+                "PR_TITLE" => WebhookPullRequestReopenedPullRequestMergeCommitMessage.PRTITLE,
+                "BLANK" => WebhookPullRequestReopenedPullRequestMergeCommitMessage.BLANK,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

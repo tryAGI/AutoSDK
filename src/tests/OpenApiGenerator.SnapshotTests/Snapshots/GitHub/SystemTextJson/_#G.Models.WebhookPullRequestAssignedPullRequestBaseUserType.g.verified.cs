@@ -7,19 +7,52 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookPullRequestAssignedPullRequestBaseUserType
+    public enum WebhookPullRequestAssignedPullRequestBaseUserType
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Bot = "Bot";
+        Bot,
         /// <summary>
         /// 
         /// </summary>
-        public const string User = "User";
+        User,
         /// <summary>
         /// 
         /// </summary>
-        public const string Organization = "Organization";
+        Organization,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestAssignedPullRequestBaseUserTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestAssignedPullRequestBaseUserType value)
+        {
+            return value switch
+            {
+                WebhookPullRequestAssignedPullRequestBaseUserType.Bot => "Bot",
+                WebhookPullRequestAssignedPullRequestBaseUserType.User => "User",
+                WebhookPullRequestAssignedPullRequestBaseUserType.Organization => "Organization",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestAssignedPullRequestBaseUserType ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhookPullRequestAssignedPullRequestBaseUserType.Bot,
+                "User" => WebhookPullRequestAssignedPullRequestBaseUserType.User,
+                "Organization" => WebhookPullRequestAssignedPullRequestBaseUserType.Organization,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

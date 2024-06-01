@@ -27,8 +27,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookWorkflowJobInProgressWorkflowJobConclusionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Conclusion { get; set; }
+        public required WebhookWorkflowJobInProgressWorkflowJobConclusion? Conclusion { get; set; }
 
         /// <summary>
         /// The time that the job created.
@@ -139,8 +140,9 @@ namespace G
         /// The current status of the job. Can be `queued`, `in_progress`, or `completed`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookWorkflowJobInProgressWorkflowJobStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
+        public required WebhookWorkflowJobInProgressWorkflowJobStatus Status { get; set; }
 
         /// <summary>
         /// The name of the current branch.

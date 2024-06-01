@@ -22,8 +22,9 @@ namespace G
         /// <br/>Example: built
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PageStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Status { get; set; }
+        public required PageStatus? Status { get; set; }
 
         /// <summary>
         /// The Pages site's custom domain
@@ -38,7 +39,8 @@ namespace G
         /// <br/>Example: pending
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("protected_domain_state")]
-        public string? ProtectedDomainState { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PageProtectedDomainStateJsonConverter))]
+        public PageProtectedDomainState? ProtectedDomainState { get; set; }
 
         /// <summary>
         /// The timestamp when a pending domain becomes unverified.
@@ -67,7 +69,8 @@ namespace G
         /// <br/>Example: legacy
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("build_type")]
-        public string? BuildType { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PageBuildTypeJsonConverter))]
+        public PageBuildType? BuildType { get; set; }
 
         /// <summary>
         /// 

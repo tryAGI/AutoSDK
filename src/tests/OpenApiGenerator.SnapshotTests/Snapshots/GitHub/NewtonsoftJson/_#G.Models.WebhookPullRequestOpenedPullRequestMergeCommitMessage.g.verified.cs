@@ -29,4 +29,37 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="BLANK")]
         BLANK,
     }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestOpenedPullRequestMergeCommitMessageExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestOpenedPullRequestMergeCommitMessage value)
+        {
+            return value switch
+            {
+                WebhookPullRequestOpenedPullRequestMergeCommitMessage.PRBODY => "PR_BODY",
+                WebhookPullRequestOpenedPullRequestMergeCommitMessage.PRTITLE => "PR_TITLE",
+                WebhookPullRequestOpenedPullRequestMergeCommitMessage.BLANK => "BLANK",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestOpenedPullRequestMergeCommitMessage ToEnum(string value)
+        {
+            return value switch
+            {
+                "PR_BODY" => WebhookPullRequestOpenedPullRequestMergeCommitMessage.PRBODY,
+                "PR_TITLE" => WebhookPullRequestOpenedPullRequestMergeCommitMessage.PRTITLE,
+                "BLANK" => WebhookPullRequestOpenedPullRequestMergeCommitMessage.BLANK,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

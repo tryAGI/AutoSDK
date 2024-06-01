@@ -13,8 +13,9 @@ namespace G
         /// The action that was performed on the page. Can be `created` or `edited`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookGollumPagesActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Action { get; set; }
+        public required WebhookGollumPagesAction Action { get; set; }
 
         /// <summary>
         /// Points to the HTML wiki page.

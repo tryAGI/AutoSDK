@@ -14,8 +14,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookRepositoryRulesetEditedChangesRulesUpdatedRuleTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required WebhookRepositoryRulesetEditedChangesRulesUpdatedRuleType Type { get; set; }
 
         /// <summary>
         /// 

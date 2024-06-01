@@ -7,15 +7,46 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public abstract class WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking
+    public enum WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string Read = "read";
+        Read,
         /// <summary>
         /// 
         /// </summary>
-        public const string Write = "write";
+        Write,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsOrganizationUserBlockingExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking value)
+        {
+            return value switch
+            {
+                WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking.Read => "read",
+                WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking.Write => "write",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking ToEnum(string value)
+        {
+            return value switch
+            {
+                "read" => WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking.Read,
+                "write" => WebhookIssueCommentCreatedIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking.Write,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

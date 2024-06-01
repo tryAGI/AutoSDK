@@ -52,4 +52,47 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="OWNER")]
         OWNER,
     }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class PullRequestSimpleAuthorAssociationExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this PullRequestSimpleAuthorAssociation value)
+        {
+            return value switch
+            {
+                PullRequestSimpleAuthorAssociation.COLLABORATOR => "COLLABORATOR",
+                PullRequestSimpleAuthorAssociation.CONTRIBUTOR => "CONTRIBUTOR",
+                PullRequestSimpleAuthorAssociation.FIRSTTIMER => "FIRST_TIMER",
+                PullRequestSimpleAuthorAssociation.FIRSTTIMECONTRIBUTOR => "FIRST_TIME_CONTRIBUTOR",
+                PullRequestSimpleAuthorAssociation.MANNEQUIN => "MANNEQUIN",
+                PullRequestSimpleAuthorAssociation.MEMBER => "MEMBER",
+                PullRequestSimpleAuthorAssociation.NONE => "NONE",
+                PullRequestSimpleAuthorAssociation.OWNER => "OWNER",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static PullRequestSimpleAuthorAssociation ToEnum(string value)
+        {
+            return value switch
+            {
+                "COLLABORATOR" => PullRequestSimpleAuthorAssociation.COLLABORATOR,
+                "CONTRIBUTOR" => PullRequestSimpleAuthorAssociation.CONTRIBUTOR,
+                "FIRST_TIMER" => PullRequestSimpleAuthorAssociation.FIRSTTIMER,
+                "FIRST_TIME_CONTRIBUTOR" => PullRequestSimpleAuthorAssociation.FIRSTTIMECONTRIBUTOR,
+                "MANNEQUIN" => PullRequestSimpleAuthorAssociation.MANNEQUIN,
+                "MEMBER" => PullRequestSimpleAuthorAssociation.MEMBER,
+                "NONE" => PullRequestSimpleAuthorAssociation.NONE,
+                "OWNER" => PullRequestSimpleAuthorAssociation.OWNER,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+    }
 }

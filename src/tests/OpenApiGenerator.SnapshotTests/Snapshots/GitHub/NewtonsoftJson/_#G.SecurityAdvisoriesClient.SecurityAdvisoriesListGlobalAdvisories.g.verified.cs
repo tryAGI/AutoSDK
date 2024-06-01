@@ -27,15 +27,15 @@ namespace G
         /// <param name="sort"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task SecurityAdvisoriesListGlobalAdvisoriesAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<GlobalAdvisory>> SecurityAdvisoriesListGlobalAdvisoriesAsync(
             string ghsaId,
             SecurityAdvisoriesListGlobalAdvisoriesType type,
             string cveId,
             SecurityAdvisoriesListGlobalAdvisoriesEcosystem ecosystem,
             SecurityAdvisoriesListGlobalAdvisoriesSeverity severity,
-            object cwes,
+            global::System.OneOf<string, global::System.Collections.Generic.IList<string>> cwes,
             bool isWithdrawn,
-            object affects,
+            global::System.OneOf<string, global::System.Collections.Generic.IList<string>> affects,
             string published,
             string updated,
             string modified,
@@ -100,6 +100,12 @@ namespace G
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
+
+            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<GlobalAdvisory>?>(__content) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
 }

@@ -27,8 +27,9 @@ namespace G
         /// The severity of the alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Severity { get; set; }
+        public required WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity? Severity { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

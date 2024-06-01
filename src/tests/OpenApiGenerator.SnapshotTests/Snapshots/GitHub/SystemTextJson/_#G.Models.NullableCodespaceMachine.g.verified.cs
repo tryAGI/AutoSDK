@@ -62,8 +62,9 @@ namespace G
         /// <br/>Example: ready
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prebuild_availability")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.NullableCodespaceMachinePrebuildAvailabilityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? PrebuildAvailability { get; set; }
+        public required NullableCodespaceMachinePrebuildAvailability? PrebuildAvailability { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

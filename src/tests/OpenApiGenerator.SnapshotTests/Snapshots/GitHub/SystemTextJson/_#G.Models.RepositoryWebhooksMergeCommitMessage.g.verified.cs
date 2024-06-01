@@ -10,19 +10,52 @@ namespace G
     /// - `PR_BODY` - default to the pull request's body.
     /// - `BLANK` - default to a blank commit message.
     /// </summary>
-    public abstract class RepositoryWebhooksMergeCommitMessage
+    public enum RepositoryWebhooksMergeCommitMessage
     {
         /// <summary>
         /// 
         /// </summary>
-        public const string PRBODY = "PR_BODY";
+        PRBODY,
         /// <summary>
         /// 
         /// </summary>
-        public const string PRTITLE = "PR_TITLE";
+        PRTITLE,
         /// <summary>
         /// 
         /// </summary>
-        public const string BLANK = "BLANK";
+        BLANK,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class RepositoryWebhooksMergeCommitMessageExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this RepositoryWebhooksMergeCommitMessage value)
+        {
+            return value switch
+            {
+                RepositoryWebhooksMergeCommitMessage.PRBODY => "PR_BODY",
+                RepositoryWebhooksMergeCommitMessage.PRTITLE => "PR_TITLE",
+                RepositoryWebhooksMergeCommitMessage.BLANK => "BLANK",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static RepositoryWebhooksMergeCommitMessage ToEnum(string value)
+        {
+            return value switch
+            {
+                "PR_BODY" => RepositoryWebhooksMergeCommitMessage.PRBODY,
+                "PR_TITLE" => RepositoryWebhooksMergeCommitMessage.PRTITLE,
+                "BLANK" => RepositoryWebhooksMergeCommitMessage.BLANK,
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
     }
 }

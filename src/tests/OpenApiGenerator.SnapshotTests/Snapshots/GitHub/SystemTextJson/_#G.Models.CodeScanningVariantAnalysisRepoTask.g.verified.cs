@@ -20,8 +20,9 @@ namespace G
         /// The new status of the CodeQL variant analysis repository task.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("analysis_status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CodeScanningVariantAnalysisRepoTaskAnalysisStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string AnalysisStatus { get; set; }
+        public required CodeScanningVariantAnalysisRepoTaskAnalysisStatus AnalysisStatus { get; set; }
 
         /// <summary>
         /// The size of the artifact. This is only available for successful analyses.
