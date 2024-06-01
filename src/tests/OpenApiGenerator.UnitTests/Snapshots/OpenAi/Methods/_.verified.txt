@@ -474,7 +474,7 @@ A list of tools the model may call. Currently, only functions are supported as a
         Id: tool_choice,
         Name: ToolChoice,
         Type: {
-          CSharpType: ChatCompletionToolChoiceOption?,
+          CSharpType: global::System.OneOf<CreateChatCompletionRequestToolChoice?, ChatCompletionNamedToolChoice?>,
           IsArray: false,
           IsEnum: false,
           OneOfCount: 2,
@@ -482,8 +482,8 @@ A list of tools the model may call. Currently, only functions are supported as a
           EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: ChatCompletionToolChoiceOption,
-          CSharpTypeWithNullability: ChatCompletionToolChoiceOption?,
+          CSharpTypeWithoutNullability: global::System.OneOf<CreateChatCompletionRequestToolChoice?, ChatCompletionNamedToolChoice?>,
+          CSharpTypeWithNullability: global::System.OneOf<CreateChatCompletionRequestToolChoice?, ChatCompletionNamedToolChoice?>?,
           ConverterType: OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -5483,7 +5483,7 @@ We generally recommend altering this or temperature but not both.
         Id: response_format,
         Name: ResponseFormat,
         Type: {
-          CSharpType: AssistantsApiResponseFormatOption?,
+          CSharpType: global::System.OneOf<CreateAssistantRequestResponseFormat?, AssistantsApiResponseFormat?>,
           IsArray: false,
           IsEnum: false,
           OneOfCount: 2,
@@ -5491,8 +5491,8 @@ We generally recommend altering this or temperature but not both.
           EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: AssistantsApiResponseFormatOption,
-          CSharpTypeWithNullability: AssistantsApiResponseFormatOption?,
+          CSharpTypeWithoutNullability: global::System.OneOf<CreateAssistantRequestResponseFormat?, AssistantsApiResponseFormat?>,
+          CSharpTypeWithNullability: global::System.OneOf<CreateAssistantRequestResponseFormat?, AssistantsApiResponseFormat?>?,
           ConverterType: OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -6005,7 +6005,7 @@ We generally recommend altering this or temperature but not both.
         Id: response_format,
         Name: ResponseFormat,
         Type: {
-          CSharpType: AssistantsApiResponseFormatOption?,
+          CSharpType: global::System.OneOf<ModifyAssistantRequestResponseFormat?, AssistantsApiResponseFormat?>,
           IsArray: false,
           IsEnum: false,
           OneOfCount: 2,
@@ -6013,8 +6013,8 @@ We generally recommend altering this or temperature but not both.
           EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: AssistantsApiResponseFormatOption,
-          CSharpTypeWithNullability: AssistantsApiResponseFormatOption?,
+          CSharpTypeWithoutNullability: global::System.OneOf<ModifyAssistantRequestResponseFormat?, AssistantsApiResponseFormat?>,
+          CSharpTypeWithNullability: global::System.OneOf<ModifyAssistantRequestResponseFormat?, AssistantsApiResponseFormat?>?,
           ConverterType: OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -8000,7 +8000,7 @@ The maximum number of completion tokens that may be used over the course of the 
         Id: tool_choice,
         Name: ToolChoice,
         Type: {
-          CSharpType: AssistantsApiToolChoiceOption?,
+          CSharpType: global::System.OneOf<CreateThreadAndRunRequestToolChoice?, AssistantsNamedToolChoice?>,
           IsArray: false,
           IsEnum: false,
           OneOfCount: 2,
@@ -8008,8 +8008,8 @@ The maximum number of completion tokens that may be used over the course of the 
           EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: AssistantsApiToolChoiceOption,
-          CSharpTypeWithNullability: AssistantsApiToolChoiceOption?,
+          CSharpTypeWithoutNullability: global::System.OneOf<CreateThreadAndRunRequestToolChoice?, AssistantsNamedToolChoice?>,
+          CSharpTypeWithNullability: global::System.OneOf<CreateThreadAndRunRequestToolChoice?, AssistantsNamedToolChoice?>?,
           ConverterType: OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -8030,7 +8030,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
         Id: response_format,
         Name: ResponseFormat,
         Type: {
-          CSharpType: AssistantsApiResponseFormatOption?,
+          CSharpType: global::System.OneOf<CreateThreadAndRunRequestResponseFormat?, AssistantsApiResponseFormat?>,
           IsArray: false,
           IsEnum: false,
           OneOfCount: 2,
@@ -8038,8 +8038,8 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: AssistantsApiResponseFormatOption,
-          CSharpTypeWithNullability: AssistantsApiResponseFormatOption?,
+          CSharpTypeWithoutNullability: global::System.OneOf<CreateThreadAndRunRequestResponseFormat?, AssistantsApiResponseFormat?>,
+          CSharpTypeWithNullability: global::System.OneOf<CreateThreadAndRunRequestResponseFormat?, AssistantsApiResponseFormat?>?,
           ConverterType: OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -8775,7 +8775,7 @@ The maximum number of completion tokens that may be used over the course of the 
         Id: tool_choice,
         Name: ToolChoice,
         Type: {
-          CSharpType: AssistantsApiToolChoiceOption?,
+          CSharpType: global::System.OneOf<CreateRunRequestToolChoice?, AssistantsNamedToolChoice?>,
           IsArray: false,
           IsEnum: false,
           OneOfCount: 2,
@@ -8783,8 +8783,8 @@ The maximum number of completion tokens that may be used over the course of the 
           EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: AssistantsApiToolChoiceOption,
-          CSharpTypeWithNullability: AssistantsApiToolChoiceOption?,
+          CSharpTypeWithoutNullability: global::System.OneOf<CreateRunRequestToolChoice?, AssistantsNamedToolChoice?>,
+          CSharpTypeWithNullability: global::System.OneOf<CreateRunRequestToolChoice?, AssistantsNamedToolChoice?>?,
           ConverterType: OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -8805,7 +8805,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
         Id: response_format,
         Name: ResponseFormat,
         Type: {
-          CSharpType: AssistantsApiResponseFormatOption?,
+          CSharpType: global::System.OneOf<CreateRunRequestResponseFormat?, AssistantsApiResponseFormat?>,
           IsArray: false,
           IsEnum: false,
           OneOfCount: 2,
@@ -8813,8 +8813,8 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: AssistantsApiResponseFormatOption,
-          CSharpTypeWithNullability: AssistantsApiResponseFormatOption?,
+          CSharpTypeWithoutNullability: global::System.OneOf<CreateRunRequestResponseFormat?, AssistantsApiResponseFormat?>,
+          CSharpTypeWithNullability: global::System.OneOf<CreateRunRequestResponseFormat?, AssistantsApiResponseFormat?>?,
           ConverterType: OneOfJsonConverterFactory2
         },
         IsRequired: false,

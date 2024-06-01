@@ -83,7 +83,7 @@ namespace G
             double? temperature = 1,
             double? topP = 1,
             global::System.Collections.Generic.IList<ChatCompletionTool>? tools = default,
-            ChatCompletionToolChoiceOption? toolChoice = default,
+            global::System.OneOf<CreateChatCompletionRequestToolChoice?, ChatCompletionNamedToolChoice?> toolChoice = default,
             string? user = default,
             global::System.OneOf<CreateChatCompletionRequestFunctionCall?, ChatCompletionFunctionCallOption?> functionCall = default,
             global::System.Collections.Generic.IList<ChatCompletionFunctions>? functions = default,

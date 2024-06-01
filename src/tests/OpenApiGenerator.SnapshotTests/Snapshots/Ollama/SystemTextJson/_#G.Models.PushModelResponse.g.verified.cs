@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public PushModelStatus? Status { get; set; }
+        public global::System.AnyOf<string?, PushModelResponseStatus?> Status { get; set; }
 
         /// <summary>
         /// the model's digest

@@ -149,7 +149,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public ChatCompletionToolChoiceOption? ToolChoice { get; set; }
+        public global::System.OneOf<CreateChatCompletionRequestToolChoice?, ChatCompletionNamedToolChoice?> ToolChoice { get; set; }
 
         /// <summary>
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).

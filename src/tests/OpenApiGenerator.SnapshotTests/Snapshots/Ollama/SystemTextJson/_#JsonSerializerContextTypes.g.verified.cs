@@ -72,7 +72,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CreateModelStatus? Type15 { get; set; }
+        public global::System.AnyOf<string?, CreateModelResponseStatus?>? Type15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -84,11 +84,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PullModelStatus? Type18 { get; set; }
+        public global::System.AnyOf<string?, PullModelResponseStatus?>? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public PushModelStatus? Type19 { get; set; }
+        public global::System.AnyOf<string?, PushModelResponseStatus?>? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>

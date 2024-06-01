@@ -16,7 +16,7 @@ namespace G
         /// <br/>Example: pulling manifest
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        public PullModelStatus? Status { get; set; }
+        public global::System.AnyOf<string?, PullModelResponseStatus?> Status { get; set; }
 
         /// <summary>
         /// The model's digest.

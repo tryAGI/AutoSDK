@@ -77,8 +77,8 @@ namespace G
             int? maxPromptTokens = default,
             int? maxCompletionTokens = default,
             TruncationObject? truncationStrategy = default,
-            AssistantsApiToolChoiceOption? toolChoice = default,
-            AssistantsApiResponseFormatOption? responseFormat = default,
+            global::System.OneOf<CreateRunRequestToolChoice?, AssistantsNamedToolChoice?> toolChoice = default,
+            global::System.OneOf<CreateRunRequestResponseFormat?, AssistantsApiResponseFormat?> responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateRunRequest

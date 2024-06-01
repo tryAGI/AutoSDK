@@ -79,7 +79,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public AssistantsApiResponseFormatOption? ResponseFormat { get; set; }
+        public global::System.OneOf<CreateAssistantRequestResponseFormat?, AssistantsApiResponseFormat?> ResponseFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

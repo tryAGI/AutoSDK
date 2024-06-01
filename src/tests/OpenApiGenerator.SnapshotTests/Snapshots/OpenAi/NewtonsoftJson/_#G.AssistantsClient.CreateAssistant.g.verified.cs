@@ -64,7 +64,7 @@ namespace G
             object? metadata = default,
             double? temperature = 1,
             double? topP = 1,
-            AssistantsApiResponseFormatOption? responseFormat = default,
+            global::System.OneOf<CreateAssistantRequestResponseFormat?, AssistantsApiResponseFormat?> responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateAssistantRequest

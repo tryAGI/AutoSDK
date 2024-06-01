@@ -2562,7 +2562,7 @@ If `false` the response will be returned as a single response object, otherwise 
         Id: status,
         Name: Status,
         Type: {
-          CSharpType: CreateModelStatus?,
+          CSharpType: global::System.AnyOf<string?, CreateModelResponseStatus?>,
           IsArray: false,
           IsEnum: false,
           AnyOfCount: 2,
@@ -2570,8 +2570,8 @@ If `false` the response will be returned as a single response object, otherwise 
           EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: CreateModelStatus,
-          CSharpTypeWithNullability: CreateModelStatus?,
+          CSharpTypeWithoutNullability: global::System.AnyOf<string?, CreateModelResponseStatus?>,
+          CSharpTypeWithNullability: global::System.AnyOf<string?, CreateModelResponseStatus?>?,
           ConverterType: AnyOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -3559,7 +3559,7 @@ If `false` the response will be returned as a single response object, otherwise 
         Id: status,
         Name: Status,
         Type: {
-          CSharpType: PullModelStatus?,
+          CSharpType: global::System.AnyOf<string?, PullModelResponseStatus?>,
           IsArray: false,
           IsEnum: false,
           AnyOfCount: 2,
@@ -3567,8 +3567,8 @@ If `false` the response will be returned as a single response object, otherwise 
           EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: PullModelStatus,
-          CSharpTypeWithNullability: PullModelStatus?,
+          CSharpTypeWithoutNullability: global::System.AnyOf<string?, PullModelResponseStatus?>,
+          CSharpTypeWithNullability: global::System.AnyOf<string?, PullModelResponseStatus?>?,
           ConverterType: AnyOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -4005,7 +4005,7 @@ If `false` the response will be returned as a single response object, otherwise 
         Id: status,
         Name: Status,
         Type: {
-          CSharpType: PushModelStatus?,
+          CSharpType: global::System.AnyOf<string?, PushModelResponseStatus?>,
           IsArray: false,
           IsEnum: false,
           AnyOfCount: 2,
@@ -4013,8 +4013,8 @@ If `false` the response will be returned as a single response object, otherwise 
           EnumValues: null,
           Namespace: G,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: PushModelStatus,
-          CSharpTypeWithNullability: PushModelStatus?,
+          CSharpTypeWithoutNullability: global::System.AnyOf<string?, PushModelResponseStatus?>,
+          CSharpTypeWithNullability: global::System.AnyOf<string?, PushModelResponseStatus?>?,
           ConverterType: AnyOfJsonConverterFactory2
         },
         IsRequired: false,

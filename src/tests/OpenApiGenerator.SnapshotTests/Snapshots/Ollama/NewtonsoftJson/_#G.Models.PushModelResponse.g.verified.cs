@@ -13,7 +13,7 @@ namespace G
         /// Status pushing the model.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        public PushModelStatus? Status { get; set; }
+        public global::System.AnyOf<string?, PushModelResponseStatus?> Status { get; set; }
 
         /// <summary>
         /// the model's digest

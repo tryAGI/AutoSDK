@@ -144,7 +144,7 @@ namespace G
         /// `none` is the default when no tools are present. `auto` is the default if tools are present.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_choice")]
-        public ChatCompletionToolChoiceOption? ToolChoice { get; set; }
+        public global::System.OneOf<CreateChatCompletionRequestToolChoice?, ChatCompletionNamedToolChoice?> ToolChoice { get; set; }
 
         /// <summary>
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).

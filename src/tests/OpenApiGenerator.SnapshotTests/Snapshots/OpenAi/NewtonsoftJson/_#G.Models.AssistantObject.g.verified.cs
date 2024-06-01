@@ -93,7 +93,7 @@ namespace G
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
-        public AssistantsApiResponseFormatOption? ResponseFormat { get; set; }
+        public global::System.OneOf<AssistantObjectResponseFormat?, AssistantsApiResponseFormat?> ResponseFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

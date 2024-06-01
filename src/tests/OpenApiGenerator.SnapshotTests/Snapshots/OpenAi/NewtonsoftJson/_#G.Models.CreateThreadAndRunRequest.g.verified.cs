@@ -101,7 +101,7 @@ namespace G
         /// Specifying a particular tool like `{"type": "file_search"}` or `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_choice")]
-        public AssistantsApiToolChoiceOption? ToolChoice { get; set; }
+        public global::System.OneOf<CreateThreadAndRunRequestToolChoice?, AssistantsNamedToolChoice?> ToolChoice { get; set; }
 
         /// <summary>
         /// Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
@@ -109,7 +109,7 @@ namespace G
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
-        public AssistantsApiResponseFormatOption? ResponseFormat { get; set; }
+        public global::System.OneOf<CreateThreadAndRunRequestResponseFormat?, AssistantsApiResponseFormat?> ResponseFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

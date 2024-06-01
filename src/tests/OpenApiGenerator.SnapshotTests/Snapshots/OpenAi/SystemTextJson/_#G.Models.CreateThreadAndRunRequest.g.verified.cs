@@ -104,7 +104,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public AssistantsApiToolChoiceOption? ToolChoice { get; set; }
+        public global::System.OneOf<CreateThreadAndRunRequestToolChoice?, AssistantsNamedToolChoice?> ToolChoice { get; set; }
 
         /// <summary>
         /// Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
@@ -113,7 +113,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public AssistantsApiResponseFormatOption? ResponseFormat { get; set; }
+        public global::System.OneOf<CreateThreadAndRunRequestResponseFormat?, AssistantsApiResponseFormat?> ResponseFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

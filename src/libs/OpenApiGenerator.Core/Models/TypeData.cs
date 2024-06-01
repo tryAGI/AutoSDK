@@ -96,6 +96,10 @@ public readonly record struct TypeData(
         var model = ModelData.FromSchema(schema, settings, parents);
         var (type, reference) = (schema.Value.Type, schema.Value.Format) switch
         {
+            (null, _) when schema.Value.AnyOf.Any() => ($"global::System.AnyOf<{string.Join(", ", schema.Value.AnyOf.Select(x => GetCSharpType(x.WithKey(schema.Key), settings, parents)))}>", false),
+            (null, _) when schema.Value.OneOf.Any() => ($"global::System.OneOf<{string.Join(", ", schema.Value.OneOf.Select(x => GetCSharpType(x.WithKey(schema.Key), settings, parents)))}>", false),
+            (null, _) when schema.Value.AllOf.Any() => ($"global::System.AllOf<{string.Join(", ", schema.Value.AllOf.Select(x => GetCSharpType(x.WithKey(schema.Key), settings, parents)))}>", false),
+
             ("object", _) or (null, _) when schema.Value.Reference != null =>
                 ($"{ModelData.FromKey(schema.Value.Reference.Id, settings).ClassName}", true),
             ("object", _) when schema.Value.Reference == null &&
@@ -103,10 +107,6 @@ public readonly record struct TypeData(
                 ("object", true),
             ("object", _) when schema.Value.Reference == null =>
                 ($"{model.ExternalClassName}", true),
-
-            (null, _) when schema.Value.AnyOf.Any() => ($"global::System.AnyOf<{string.Join(", ", schema.Value.AnyOf.Select(x => GetCSharpType(x.WithKey(schema.Key), settings, parents)))}>", false),
-            (null, _) when schema.Value.OneOf.Any() => ($"global::System.OneOf<{string.Join(", ", schema.Value.OneOf.Select(x => GetCSharpType(x.WithKey(schema.Key), settings, parents)))}>", false),
-            (null, _) when schema.Value.AllOf.Any() => ($"global::System.AllOf<{string.Join(", ", schema.Value.AllOf.Select(x => GetCSharpType(x.WithKey(schema.Key), settings, parents)))}>", false),
 
             ("string", _) when schema.Value.Enum.Any() =>
                 ($"{(model with { Style = ModelStyle.Enumeration }).ExternalClassName}", true),
