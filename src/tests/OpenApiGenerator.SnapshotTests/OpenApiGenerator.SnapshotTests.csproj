@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup Label="Base packages">
-    <PackageReference Include="GitHubActionsTestLogger" Version="2.3.3">
+    <PackageReference Include="GitHubActionsTestLogger" Version="2.4.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -13,15 +13,15 @@
     <PackageReference Include="H.Generators.Tests.Extensions" Version="1.22.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
     <PackageReference Include="Microsoft.OpenApi" Version="1.6.14" />
-    <PackageReference Include="MSTest.TestAdapter" Version="3.4.0" />
-    <PackageReference Include="MSTest.TestFramework" Version="3.4.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="3.4.3" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.4.3" />
     <PackageReference Include="FluentAssertions" Version="6.12.0" />
   </ItemGroup>
 
   <ItemGroup Label="Generator tests packages">
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.SourceGenerators.Testing.MSTest" Version="1.1.1" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.9.2" />
-    <PackageReference Include="Verify.MSTest" Version="24.2.0" />
+    <PackageReference Include="Verify.MSTest" Version="25.0.1" />
     <PackageReference Include="Verify.SourceGenerators" Version="2.2.0" />
     <PackageReference Include="H.Resources.Generator" Version="1.6.0">
       <PrivateAssets>all</PrivateAssets>
