@@ -16,7 +16,7 @@ namespace OpenApiGenerator.JsonConverters
             T1? value1 = default;
             try
             {
-                value1 = global::System.Text.Json.JsonSerializer.Deserialize<T1>(ref readerCopy);
+                value1 = global::System.Text.Json.JsonSerializer.Deserialize<T1>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -26,7 +26,7 @@ namespace OpenApiGenerator.JsonConverters
             T2? value2 = default;
             try
             {
-                value2 = global::System.Text.Json.JsonSerializer.Deserialize<T2>(ref readerCopy);
+                value2 = global::System.Text.Json.JsonSerializer.Deserialize<T2>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -40,11 +40,11 @@ namespace OpenApiGenerator.JsonConverters
 
             if (value1 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T1>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T1>(ref reader, options);
             }
             else if (value2 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T2>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T2>(ref reader, options);
             }
         
             return result;

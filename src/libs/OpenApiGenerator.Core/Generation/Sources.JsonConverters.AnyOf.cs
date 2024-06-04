@@ -37,7 +37,7 @@ namespace OpenApiGenerator.JsonConverters
             T{x}? value{x} = default;
             try
             {{
-                value{x} = global::System.Text.Json.JsonSerializer.Deserialize<T{x}>(ref readerCopy);
+                value{x} = global::System.Text.Json.JsonSerializer.Deserialize<T{x}>(ref readerCopy, options);
             }}
             catch (global::System.Text.Json.JsonException)
             {{
@@ -57,7 +57,7 @@ namespace OpenApiGenerator.JsonConverters
 {Enumerable.Range(1, count).Select(x => $@"
             {(x == 1 ? "" : "else ")}if (value{x} != null)
             {{
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T{x}>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T{x}>(ref reader, options);
             }}
 ").Inject().TrimEnd(',')}
         

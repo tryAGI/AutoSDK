@@ -17,7 +17,7 @@ namespace OpenApiGenerator.JsonConverters
             T1? value1 = default;
             try
             {
-                value1 = global::System.Text.Json.JsonSerializer.Deserialize<T1>(ref readerCopy);
+                value1 = global::System.Text.Json.JsonSerializer.Deserialize<T1>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -32,7 +32,7 @@ namespace OpenApiGenerator.JsonConverters
 
             if (value1 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T1>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T1>(ref reader, options);
             }
             return result;
         }

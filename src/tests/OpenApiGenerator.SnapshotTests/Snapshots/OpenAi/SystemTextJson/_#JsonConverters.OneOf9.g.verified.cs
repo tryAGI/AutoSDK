@@ -17,7 +17,7 @@ namespace OpenApiGenerator.JsonConverters
             T1? value1 = default;
             try
             {
-                value1 = global::System.Text.Json.JsonSerializer.Deserialize<T1>(ref readerCopy);
+                value1 = global::System.Text.Json.JsonSerializer.Deserialize<T1>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -27,7 +27,7 @@ namespace OpenApiGenerator.JsonConverters
             T2? value2 = default;
             try
             {
-                value2 = global::System.Text.Json.JsonSerializer.Deserialize<T2>(ref readerCopy);
+                value2 = global::System.Text.Json.JsonSerializer.Deserialize<T2>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -37,7 +37,7 @@ namespace OpenApiGenerator.JsonConverters
             T3? value3 = default;
             try
             {
-                value3 = global::System.Text.Json.JsonSerializer.Deserialize<T3>(ref readerCopy);
+                value3 = global::System.Text.Json.JsonSerializer.Deserialize<T3>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -47,7 +47,7 @@ namespace OpenApiGenerator.JsonConverters
             T4? value4 = default;
             try
             {
-                value4 = global::System.Text.Json.JsonSerializer.Deserialize<T4>(ref readerCopy);
+                value4 = global::System.Text.Json.JsonSerializer.Deserialize<T4>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -57,7 +57,7 @@ namespace OpenApiGenerator.JsonConverters
             T5? value5 = default;
             try
             {
-                value5 = global::System.Text.Json.JsonSerializer.Deserialize<T5>(ref readerCopy);
+                value5 = global::System.Text.Json.JsonSerializer.Deserialize<T5>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -67,7 +67,7 @@ namespace OpenApiGenerator.JsonConverters
             T6? value6 = default;
             try
             {
-                value6 = global::System.Text.Json.JsonSerializer.Deserialize<T6>(ref readerCopy);
+                value6 = global::System.Text.Json.JsonSerializer.Deserialize<T6>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -77,7 +77,7 @@ namespace OpenApiGenerator.JsonConverters
             T7? value7 = default;
             try
             {
-                value7 = global::System.Text.Json.JsonSerializer.Deserialize<T7>(ref readerCopy);
+                value7 = global::System.Text.Json.JsonSerializer.Deserialize<T7>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -87,7 +87,7 @@ namespace OpenApiGenerator.JsonConverters
             T8? value8 = default;
             try
             {
-                value8 = global::System.Text.Json.JsonSerializer.Deserialize<T8>(ref readerCopy);
+                value8 = global::System.Text.Json.JsonSerializer.Deserialize<T8>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -97,7 +97,7 @@ namespace OpenApiGenerator.JsonConverters
             T9? value9 = default;
             try
             {
-                value9 = global::System.Text.Json.JsonSerializer.Deserialize<T9>(ref readerCopy);
+                value9 = global::System.Text.Json.JsonSerializer.Deserialize<T9>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -128,47 +128,47 @@ namespace OpenApiGenerator.JsonConverters
 
             if (value1 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T1>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T1>(ref reader, options);
             }
 
             else if (value2 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T2>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T2>(ref reader, options);
             }
 
             else if (value3 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T3>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T3>(ref reader, options);
             }
 
             else if (value4 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T4>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T4>(ref reader, options);
             }
 
             else if (value5 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T5>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T5>(ref reader, options);
             }
 
             else if (value6 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T6>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T6>(ref reader, options);
             }
 
             else if (value7 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T7>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T7>(ref reader, options);
             }
 
             else if (value8 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T8>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T8>(ref reader, options);
             }
 
             else if (value9 != null)
             {
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T9>(ref reader);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<T9>(ref reader, options);
             }
             return result;
         }
