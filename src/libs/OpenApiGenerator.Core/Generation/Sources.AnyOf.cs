@@ -20,6 +20,7 @@ public static partial class Sources
             _ => throw new NotImplementedException(),
         };
         var constructorWithAllValues = count > 1 ? $@"
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public {subType}(
 {Enumerable.Range(1, count).Select(x => $@"
             T{x}? value{x},
@@ -37,24 +38,30 @@ public static partial class Sources
 
 namespace System
 {{
+    {string.Empty.ToXmlDocumentationSummary(level: 4)}
     public readonly struct {subType}{types} : global::System.IEquatable<{subType}{types}>
     {{
 {Enumerable.Range(1, count).Select(x => $@"
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
 #if NET6_0_OR_GREATER
         public T{x}? Value{x} {{ get; init; }}
 #else
         public T{x}? Value{x} {{ get; }}
 #endif
 
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value{x}))]
 #endif
         public bool IsValue{x} => Value{x} != null;
 
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public static implicit operator {subType}{types}(T{x} value) => new {subType}{types}(value);
 
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public static implicit operator T{x}?({subType}{types} @this) => @this.Value{x};
 
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public {subType}(T{x}? value)
         {{
             Value{x} = value;
@@ -67,6 +74,7 @@ namespace System
             return {validation};
         }}
 
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public override int GetHashCode()
         {{
             var fields = new object?[]
@@ -87,6 +95,7 @@ namespace System
             return fields.Aggregate(offset, HashCodeAggregator);
         }}
 
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public bool Equals({subType}{types} other)
         {{
             return
@@ -96,16 +105,19 @@ namespace System
                 ;
         }}
 
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public static bool operator ==({subType}{types} obj1, {subType}{types} obj2)
         {{
             return global::System.Collections.Generic.EqualityComparer<{subType}{types}>.Default.Equals(obj1, obj2);
         }}
 
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public static bool operator !=({subType}{types} obj1, {subType}{types} obj2)
         {{
             return !(obj1 == obj2);
         }}
 
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public override bool Equals(object? obj)
         {{
             return obj is {subType}{types} o && Equals(o);
