@@ -48,6 +48,13 @@ namespace System
         /// <summary>
         /// 
         /// </summary>
+        public object? Object =>
+            Value1 as object 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return !IsValue1;

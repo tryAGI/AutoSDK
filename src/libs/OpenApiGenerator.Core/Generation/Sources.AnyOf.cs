@@ -22,12 +22,12 @@ public static partial class Sources
         var constructorWithAllValues = count > 1 ? $@"
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public {subType}(
-{Enumerable.Range(1, count).Select(x => $@"
+{Enumerable.Range(1, count).Select(x => $@" 
             T{x}? value{x},
 ").Inject().TrimEnd(',', '\n')}
             )
         {{
-{Enumerable.Range(1, count).Select(x => $@"
+{Enumerable.Range(1, count).Select(x => $@" 
             Value{x} = value{x};
 ").Inject()}
         }}" : " ";
@@ -69,6 +69,14 @@ namespace System
 ").Inject()}
 {constructorWithAllValues}
 
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
+        public object? Object =>
+{Enumerable.Range(1, count).Reverse().Select(x => $@" 
+            Value{x} as object ??
+").Inject().TrimEnd('?', '\n')}
+            ;
+
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public bool Validate()
         {{
             return {validation};
@@ -79,7 +87,7 @@ namespace System
         {{
             var fields = new object?[]
             {{
-{Enumerable.Range(1, count).Select(x => $@"
+{Enumerable.Range(1, count).Select(x => $@" 
                 Value{x},
                 typeof(T{x}),
 ").Inject()}
@@ -99,7 +107,7 @@ namespace System
         public bool Equals({subType}{types} other)
         {{
             return
-{Enumerable.Range(1, count).Select(x => $@"
+{Enumerable.Range(1, count).Select(x => $@" 
                 global::System.Collections.Generic.EqualityComparer<T{x}?>.Default.Equals(Value{x}, other.Value{x}) &&
 ").Inject().TrimEnd('&', '\n')}
                 ;

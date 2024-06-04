@@ -23,6 +23,10 @@ namespace OpenApiGenerator.JsonConverters
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
 #endif
         public bool IsValue2 => Value2 != null;
+        
+        public object? Object =>
+            Value2 as object ??
+            Value1 as object;
 
         public bool Validate()
         {

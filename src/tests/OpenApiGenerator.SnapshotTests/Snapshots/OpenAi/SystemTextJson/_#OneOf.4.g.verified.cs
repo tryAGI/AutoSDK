@@ -155,22 +155,26 @@ namespace System
         /// </summary>
         public OneOf(
             T1? value1,
-
             T2? value2,
-
             T3? value3,
-
             T4? value4
             )
         {
             Value1 = value1;
-
             Value2 = value2;
-
             Value3 = value3;
-
             Value4 = value4;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object? Object =>
+            Value4 as object ??
+            Value3 as object ??
+            Value2 as object ??
+            Value1 as object 
+            ;
 
         /// <summary>
         /// 
@@ -189,13 +193,10 @@ namespace System
             {
                 Value1,
                 typeof(T1),
-
                 Value2,
                 typeof(T2),
-
                 Value3,
                 typeof(T3),
-
                 Value4,
                 typeof(T4),
             };
@@ -214,11 +215,8 @@ namespace System
         {
             return
                 global::System.Collections.Generic.EqualityComparer<T1?>.Default.Equals(Value1, other.Value1) &&
-
                 global::System.Collections.Generic.EqualityComparer<T2?>.Default.Equals(Value2, other.Value2) &&
-
                 global::System.Collections.Generic.EqualityComparer<T3?>.Default.Equals(Value3, other.Value3) &&
-
                 global::System.Collections.Generic.EqualityComparer<T4?>.Default.Equals(Value4, other.Value4) 
                 ;
         }
