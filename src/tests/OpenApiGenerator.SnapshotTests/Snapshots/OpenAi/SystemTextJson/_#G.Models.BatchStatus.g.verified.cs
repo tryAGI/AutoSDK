@@ -69,7 +69,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static BatchStatus ToEnum(string value)
+        public static BatchStatus? ToEnum(string value)
         {
             return value switch
             {
@@ -81,7 +81,7 @@ namespace G
                 "expired" => BatchStatus.Expired,
                 "cancelling" => BatchStatus.Cancelling,
                 "cancelled" => BatchStatus.Cancelled,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

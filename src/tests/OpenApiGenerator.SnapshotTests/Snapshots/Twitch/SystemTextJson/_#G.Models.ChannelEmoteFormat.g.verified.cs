@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ChannelEmoteFormat ToEnum(string value)
+        public static ChannelEmoteFormat? ToEnum(string value)
         {
             return value switch
             {
                 "animated" => ChannelEmoteFormat.Animated,
                 "static" => ChannelEmoteFormat.Static,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

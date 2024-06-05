@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RunStepDeltaStepDetailsToolCallsCodeObjectType ToEnum(string value)
+        public static RunStepDeltaStepDetailsToolCallsCodeObjectType? ToEnum(string value)
         {
             return value switch
             {
                 "code_interpreter" => RunStepDeltaStepDetailsToolCallsCodeObjectType.CodeInterpreter,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static MessageDeltaContentTextObjectType ToEnum(string value)
+        public static MessageDeltaContentTextObjectType? ToEnum(string value)
         {
             return value switch
             {
                 "text" => MessageDeltaContentTextObjectType.Text,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

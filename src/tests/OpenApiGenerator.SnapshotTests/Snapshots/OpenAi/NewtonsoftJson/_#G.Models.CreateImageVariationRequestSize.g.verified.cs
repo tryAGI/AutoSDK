@@ -50,14 +50,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateImageVariationRequestSize ToEnum(string value)
+        public static CreateImageVariationRequestSize? ToEnum(string value)
         {
             return value switch
             {
                 "256x256" => CreateImageVariationRequestSize._256x256,
                 "512x512" => CreateImageVariationRequestSize._512x512,
                 "1024x1024" => CreateImageVariationRequestSize._1024x1024,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

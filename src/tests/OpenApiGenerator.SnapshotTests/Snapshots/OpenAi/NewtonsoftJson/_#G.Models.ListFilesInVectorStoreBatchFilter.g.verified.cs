@@ -54,7 +54,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ListFilesInVectorStoreBatchFilter ToEnum(string value)
+        public static ListFilesInVectorStoreBatchFilter? ToEnum(string value)
         {
             return value switch
             {
@@ -62,7 +62,7 @@ namespace G
                 "completed" => ListFilesInVectorStoreBatchFilter.Completed,
                 "failed" => ListFilesInVectorStoreBatchFilter.Failed,
                 "cancelled" => ListFilesInVectorStoreBatchFilter.Cancelled,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

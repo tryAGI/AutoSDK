@@ -57,7 +57,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateChatCompletionResponseChoicesFinishReason ToEnum(string value)
+        public static CreateChatCompletionResponseChoicesFinishReason? ToEnum(string value)
         {
             return value switch
             {
@@ -66,7 +66,7 @@ namespace G
                 "tool_calls" => CreateChatCompletionResponseChoicesFinishReason.ToolCalls,
                 "content_filter" => CreateChatCompletionResponseChoicesFinishReason.ContentFilter,
                 "function_call" => CreateChatCompletionResponseChoicesFinishReason.FunctionCall,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

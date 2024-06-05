@@ -124,7 +124,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateChatCompletionRequestModel ToEnum(string value)
+        public static CreateChatCompletionRequestModel? ToEnum(string value)
         {
             return value switch
             {
@@ -147,7 +147,7 @@ namespace G
                 "gpt-3.5-turbo-1106" => CreateChatCompletionRequestModel.Gpt35Turbo1106,
                 "gpt-3.5-turbo-0125" => CreateChatCompletionRequestModel.Gpt35Turbo0125,
                 "gpt-3.5-turbo-16k-0613" => CreateChatCompletionRequestModel.Gpt35Turbo16k0613,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

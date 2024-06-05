@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static BatchObject ToEnum(string value)
+        public static BatchObject? ToEnum(string value)
         {
             return value switch
             {
                 "batch" => BatchObject.Batch,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

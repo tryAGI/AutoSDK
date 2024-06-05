@@ -104,7 +104,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static UpdateUserChatColorColor ToEnum(string value)
+        public static UpdateUserChatColorColor? ToEnum(string value)
         {
             return value switch
             {
@@ -123,7 +123,7 @@ namespace G
                 "sea_green" => UpdateUserChatColorColor.SeaGreen,
                 "spring_green" => UpdateUserChatColorColor.SpringGreen,
                 "yellow_green" => UpdateUserChatColorColor.YellowGreen,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

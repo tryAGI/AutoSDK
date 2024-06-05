@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateModelResponseStatus ToEnum(string value)
+        public static CreateModelResponseStatus? ToEnum(string value)
         {
             return value switch
             {
                 "creating system layer" => CreateModelResponseStatus.CreatingSystemLayer,
                 "parsing modelfile" => CreateModelResponseStatus.ParsingModelfile,
                 "success" => CreateModelResponseStatus.Success,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

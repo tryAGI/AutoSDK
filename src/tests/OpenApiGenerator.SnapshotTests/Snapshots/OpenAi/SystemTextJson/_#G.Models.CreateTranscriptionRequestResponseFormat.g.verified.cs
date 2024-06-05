@@ -55,7 +55,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateTranscriptionRequestResponseFormat ToEnum(string value)
+        public static CreateTranscriptionRequestResponseFormat? ToEnum(string value)
         {
             return value switch
             {
@@ -64,7 +64,7 @@ namespace G
                 "srt" => CreateTranscriptionRequestResponseFormat.Srt,
                 "verbose_json" => CreateTranscriptionRequestResponseFormat.VerboseJson,
                 "vtt" => CreateTranscriptionRequestResponseFormat.Vtt,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

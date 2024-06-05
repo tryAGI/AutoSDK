@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static GetChannelGuestStarSettingsResponseGroupLayout ToEnum(string value)
+        public static GetChannelGuestStarSettingsResponseGroupLayout? ToEnum(string value)
         {
             return value switch
             {
                 "TILED_LAYOUT" => GetChannelGuestStarSettingsResponseGroupLayout.TILEDLAYOUT,
                 "SCREENSHARE_LAYOUT" => GetChannelGuestStarSettingsResponseGroupLayout.SCREENSHARELAYOUT,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

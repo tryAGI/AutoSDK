@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateRunRequestToolChoice ToEnum(string value)
+        public static CreateRunRequestToolChoice? ToEnum(string value)
         {
             return value switch
             {
                 "none" => CreateRunRequestToolChoice.None,
                 "auto" => CreateRunRequestToolChoice.Auto,
                 "required" => CreateRunRequestToolChoice.Required,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static VectorStoreExpirationAfterAnchor ToEnum(string value)
+        public static VectorStoreExpirationAfterAnchor? ToEnum(string value)
         {
             return value switch
             {
                 "last_active_at" => VectorStoreExpirationAfterAnchor.LastActiveAt,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

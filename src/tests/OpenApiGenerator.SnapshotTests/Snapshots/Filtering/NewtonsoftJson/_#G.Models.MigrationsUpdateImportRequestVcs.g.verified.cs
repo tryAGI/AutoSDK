@@ -55,7 +55,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static MigrationsUpdateImportRequestVcs ToEnum(string value)
+        public static MigrationsUpdateImportRequestVcs? ToEnum(string value)
         {
             return value switch
             {
@@ -63,7 +63,7 @@ namespace G
                 "tfvc" => MigrationsUpdateImportRequestVcs.Tfvc,
                 "git" => MigrationsUpdateImportRequestVcs.Git,
                 "mercurial" => MigrationsUpdateImportRequestVcs.Mercurial,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

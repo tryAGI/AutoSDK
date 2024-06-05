@@ -72,7 +72,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CheermoteTiersId ToEnum(string value)
+        public static CheermoteTiersId? ToEnum(string value)
         {
             return value switch
             {
@@ -83,7 +83,7 @@ namespace G
                 "5000" => CheermoteTiersId._5000,
                 "10000" => CheermoteTiersId._10000,
                 "100000" => CheermoteTiersId._100000,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

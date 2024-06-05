@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ChannelEmoteScale ToEnum(string value)
+        public static ChannelEmoteScale? ToEnum(string value)
         {
             return value switch
             {
                 "1.0" => ChannelEmoteScale._10,
                 "2.0" => ChannelEmoteScale._20,
                 "3.0" => ChannelEmoteScale._30,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

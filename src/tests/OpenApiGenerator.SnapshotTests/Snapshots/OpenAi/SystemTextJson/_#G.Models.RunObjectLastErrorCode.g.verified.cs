@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RunObjectLastErrorCode ToEnum(string value)
+        public static RunObjectLastErrorCode? ToEnum(string value)
         {
             return value switch
             {
                 "server_error" => RunObjectLastErrorCode.ServerError,
                 "rate_limit_exceeded" => RunObjectLastErrorCode.RateLimitExceeded,
                 "invalid_prompt" => RunObjectLastErrorCode.InvalidPrompt,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

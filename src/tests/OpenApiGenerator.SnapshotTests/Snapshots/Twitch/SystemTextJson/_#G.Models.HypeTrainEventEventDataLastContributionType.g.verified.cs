@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static HypeTrainEventEventDataLastContributionType ToEnum(string value)
+        public static HypeTrainEventEventDataLastContributionType? ToEnum(string value)
         {
             return value switch
             {
                 "BITS" => HypeTrainEventEventDataLastContributionType.BITS,
                 "SUBS" => HypeTrainEventEventDataLastContributionType.SUBS,
                 "OTHER" => HypeTrainEventEventDataLastContributionType.OTHER,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

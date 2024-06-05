@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateChatCompletionRequestFunctionCall ToEnum(string value)
+        public static CreateChatCompletionRequestFunctionCall? ToEnum(string value)
         {
             return value switch
             {
                 "none" => CreateChatCompletionRequestFunctionCall.None,
                 "auto" => CreateChatCompletionRequestFunctionCall.Auto,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static AssistantObjectResponseFormat ToEnum(string value)
+        public static AssistantObjectResponseFormat? ToEnum(string value)
         {
             return value switch
             {
                 "none" => AssistantObjectResponseFormat.None,
                 "auto" => AssistantObjectResponseFormat.Auto,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

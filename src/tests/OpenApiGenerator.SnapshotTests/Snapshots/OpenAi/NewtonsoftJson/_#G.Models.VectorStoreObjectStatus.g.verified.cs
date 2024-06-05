@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static VectorStoreObjectStatus ToEnum(string value)
+        public static VectorStoreObjectStatus? ToEnum(string value)
         {
             return value switch
             {
                 "expired" => VectorStoreObjectStatus.Expired,
                 "in_progress" => VectorStoreObjectStatus.InProgress,
                 "completed" => VectorStoreObjectStatus.Completed,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

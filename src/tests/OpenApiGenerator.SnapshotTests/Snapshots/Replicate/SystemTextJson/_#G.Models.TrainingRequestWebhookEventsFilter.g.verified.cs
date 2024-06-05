@@ -49,7 +49,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static TrainingRequestWebhookEventsFilter ToEnum(string value)
+        public static TrainingRequestWebhookEventsFilter? ToEnum(string value)
         {
             return value switch
             {
@@ -57,7 +57,7 @@ namespace G
                 "output" => TrainingRequestWebhookEventsFilter.Output,
                 "logs" => TrainingRequestWebhookEventsFilter.Logs,
                 "completed" => TrainingRequestWebhookEventsFilter.Completed,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

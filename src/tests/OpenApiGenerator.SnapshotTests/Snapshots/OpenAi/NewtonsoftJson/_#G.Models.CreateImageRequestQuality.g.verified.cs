@@ -44,13 +44,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateImageRequestQuality ToEnum(string value)
+        public static CreateImageRequestQuality? ToEnum(string value)
         {
             return value switch
             {
                 "standard" => CreateImageRequestQuality.Standard,
                 "hd" => CreateImageRequestQuality.Hd,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -47,13 +47,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PredictionOutcomeColor ToEnum(string value)
+        public static PredictionOutcomeColor? ToEnum(string value)
         {
             return value switch
             {
                 "BLUE" => PredictionOutcomeColor.BLUE,
                 "PINK" => PredictionOutcomeColor.PINK,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

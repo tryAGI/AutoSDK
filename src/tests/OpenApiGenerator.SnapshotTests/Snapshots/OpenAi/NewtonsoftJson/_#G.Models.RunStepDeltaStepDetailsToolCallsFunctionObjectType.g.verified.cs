@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RunStepDeltaStepDetailsToolCallsFunctionObjectType ToEnum(string value)
+        public static RunStepDeltaStepDetailsToolCallsFunctionObjectType? ToEnum(string value)
         {
             return value switch
             {
                 "function" => RunStepDeltaStepDetailsToolCallsFunctionObjectType.Function,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ExtensionConfigurationLocation ToEnum(string value)
+        public static ExtensionConfigurationLocation? ToEnum(string value)
         {
             return value switch
             {
                 "hosted" => ExtensionConfigurationLocation.Hosted,
                 "custom" => ExtensionConfigurationLocation.Custom,
                 "none" => ExtensionConfigurationLocation.None,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

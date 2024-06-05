@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static BlockUserReason ToEnum(string value)
+        public static BlockUserReason? ToEnum(string value)
         {
             return value switch
             {
                 "harassment" => BlockUserReason.Harassment,
                 "spam" => BlockUserReason.Spam,
                 "other" => BlockUserReason.Other,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

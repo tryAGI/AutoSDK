@@ -72,7 +72,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static OpenAIFilePurpose ToEnum(string value)
+        public static OpenAIFilePurpose? ToEnum(string value)
         {
             return value switch
             {
@@ -83,7 +83,7 @@ namespace G
                 "fine-tune" => OpenAIFilePurpose.FineTune,
                 "fine-tune-results" => OpenAIFilePurpose.FineTuneResults,
                 "vision" => OpenAIFilePurpose.Vision,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

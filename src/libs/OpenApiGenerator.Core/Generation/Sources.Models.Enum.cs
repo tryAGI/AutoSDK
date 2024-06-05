@@ -68,14 +68,14 @@ public static partial class Sources
         }}
         
         {"Converts an string to a enum.".ToXmlDocumentationSummary(level: 8)}
-        public static {modelData.ClassName} ToEnum(string value)
+        public static {modelData.ClassName}? ToEnum(string value)
         {{
             return value switch
             {{
 {modelData.Properties.Select(property => @$" 
                 ""{property.Id}"" => {modelData.ClassName}.{property.Name},
  ").Inject()}
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             }};
         }}
     }}

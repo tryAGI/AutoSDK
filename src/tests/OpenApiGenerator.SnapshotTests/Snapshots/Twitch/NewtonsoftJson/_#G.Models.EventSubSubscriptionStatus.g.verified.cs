@@ -143,7 +143,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static EventSubSubscriptionStatus ToEnum(string value)
+        public static EventSubSubscriptionStatus? ToEnum(string value)
         {
             return value switch
             {
@@ -163,7 +163,7 @@ namespace G
                 "websocket_internal_error" => EventSubSubscriptionStatus.WebsocketInternalError,
                 "websocket_network_timeout" => EventSubSubscriptionStatus.WebsocketNetworkTimeout,
                 "websocket_network_error" => EventSubSubscriptionStatus.WebsocketNetworkError,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

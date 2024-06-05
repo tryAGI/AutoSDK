@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ListRunStepsOrder ToEnum(string value)
+        public static ListRunStepsOrder? ToEnum(string value)
         {
             return value switch
             {
                 "asc" => ListRunStepsOrder.Asc,
                 "desc" => ListRunStepsOrder.Desc,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

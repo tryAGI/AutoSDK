@@ -66,7 +66,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static FineTuningJobStatus ToEnum(string value)
+        public static FineTuningJobStatus? ToEnum(string value)
         {
             return value switch
             {
@@ -76,7 +76,7 @@ namespace G
                 "succeeded" => FineTuningJobStatus.Succeeded,
                 "failed" => FineTuningJobStatus.Failed,
                 "cancelled" => FineTuningJobStatus.Cancelled,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

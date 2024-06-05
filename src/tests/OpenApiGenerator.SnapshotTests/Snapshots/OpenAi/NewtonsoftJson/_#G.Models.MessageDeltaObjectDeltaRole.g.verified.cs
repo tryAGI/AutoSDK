@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static MessageDeltaObjectDeltaRole ToEnum(string value)
+        public static MessageDeltaObjectDeltaRole? ToEnum(string value)
         {
             return value switch
             {
                 "user" => MessageDeltaObjectDeltaRole.User,
                 "assistant" => MessageDeltaObjectDeltaRole.Assistant,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

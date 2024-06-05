@@ -50,14 +50,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateCompletionResponseChoicesFinishReason ToEnum(string value)
+        public static CreateCompletionResponseChoicesFinishReason? ToEnum(string value)
         {
             return value switch
             {
                 "stop" => CreateCompletionResponseChoicesFinishReason.Stop,
                 "length" => CreateCompletionResponseChoicesFinishReason.Length,
                 "content_filter" => CreateCompletionResponseChoicesFinishReason.ContentFilter,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

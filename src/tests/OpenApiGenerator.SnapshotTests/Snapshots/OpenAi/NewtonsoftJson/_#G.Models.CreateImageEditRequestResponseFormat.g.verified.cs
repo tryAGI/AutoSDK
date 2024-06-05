@@ -44,13 +44,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateImageEditRequestResponseFormat ToEnum(string value)
+        public static CreateImageEditRequestResponseFormat? ToEnum(string value)
         {
             return value switch
             {
                 "url" => CreateImageEditRequestResponseFormat.Url,
                 "b64_json" => CreateImageEditRequestResponseFormat.B64Json,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

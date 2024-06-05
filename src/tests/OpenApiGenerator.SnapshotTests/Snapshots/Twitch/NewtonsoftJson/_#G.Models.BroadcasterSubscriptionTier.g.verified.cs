@@ -52,14 +52,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static BroadcasterSubscriptionTier ToEnum(string value)
+        public static BroadcasterSubscriptionTier? ToEnum(string value)
         {
             return value switch
             {
                 "1000" => BroadcasterSubscriptionTier._1000,
                 "2000" => BroadcasterSubscriptionTier._2000,
                 "3000" => BroadcasterSubscriptionTier._3000,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateChatCompletionRequestToolChoice ToEnum(string value)
+        public static CreateChatCompletionRequestToolChoice? ToEnum(string value)
         {
             return value switch
             {
                 "none" => CreateChatCompletionRequestToolChoice.None,
                 "auto" => CreateChatCompletionRequestToolChoice.Auto,
                 "required" => CreateChatCompletionRequestToolChoice.Required,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

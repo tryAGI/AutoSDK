@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RepositorySquashMergeCommitMessage ToEnum(string value)
+        public static RepositorySquashMergeCommitMessage? ToEnum(string value)
         {
             return value switch
             {
                 "PR_BODY" => RepositorySquashMergeCommitMessage.PRBODY,
                 "COMMIT_MESSAGES" => RepositorySquashMergeCommitMessage.COMMITMESSAGES,
                 "BLANK" => RepositorySquashMergeCommitMessage.BLANK,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

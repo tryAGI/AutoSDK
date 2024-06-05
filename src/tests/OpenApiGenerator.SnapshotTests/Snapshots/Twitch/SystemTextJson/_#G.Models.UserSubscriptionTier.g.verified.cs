@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static UserSubscriptionTier ToEnum(string value)
+        public static UserSubscriptionTier? ToEnum(string value)
         {
             return value switch
             {
                 "1000" => UserSubscriptionTier._1000,
                 "2000" => UserSubscriptionTier._2000,
                 "3000" => UserSubscriptionTier._3000,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

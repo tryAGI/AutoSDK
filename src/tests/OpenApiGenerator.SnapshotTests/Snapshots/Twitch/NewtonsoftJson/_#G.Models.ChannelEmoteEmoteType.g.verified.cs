@@ -52,14 +52,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ChannelEmoteEmoteType ToEnum(string value)
+        public static ChannelEmoteEmoteType? ToEnum(string value)
         {
             return value switch
             {
                 "bitstier" => ChannelEmoteEmoteType.Bitstier,
                 "follower" => ChannelEmoteEmoteType.Follower,
                 "subscriptions" => ChannelEmoteEmoteType.Subscriptions,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

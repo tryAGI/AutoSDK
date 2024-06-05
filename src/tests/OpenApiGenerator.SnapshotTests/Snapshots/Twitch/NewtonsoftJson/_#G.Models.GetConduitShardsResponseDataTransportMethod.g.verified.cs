@@ -45,13 +45,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static GetConduitShardsResponseDataTransportMethod ToEnum(string value)
+        public static GetConduitShardsResponseDataTransportMethod? ToEnum(string value)
         {
             return value switch
             {
                 "webhook" => GetConduitShardsResponseDataTransportMethod.Webhook,
                 "websocket" => GetConduitShardsResponseDataTransportMethod.Websocket,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

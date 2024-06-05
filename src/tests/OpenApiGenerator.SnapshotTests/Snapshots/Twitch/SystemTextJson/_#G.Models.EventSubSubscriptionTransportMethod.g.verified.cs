@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static EventSubSubscriptionTransportMethod ToEnum(string value)
+        public static EventSubSubscriptionTransportMethod? ToEnum(string value)
         {
             return value switch
             {
                 "webhook" => EventSubSubscriptionTransportMethod.Webhook,
                 "websocket" => EventSubSubscriptionTransportMethod.Websocket,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

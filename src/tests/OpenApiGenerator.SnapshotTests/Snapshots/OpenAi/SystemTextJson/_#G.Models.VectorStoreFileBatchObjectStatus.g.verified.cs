@@ -49,7 +49,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static VectorStoreFileBatchObjectStatus ToEnum(string value)
+        public static VectorStoreFileBatchObjectStatus? ToEnum(string value)
         {
             return value switch
             {
@@ -57,7 +57,7 @@ namespace G
                 "completed" => VectorStoreFileBatchObjectStatus.Completed,
                 "cancelled" => VectorStoreFileBatchObjectStatus.Cancelled,
                 "failed" => VectorStoreFileBatchObjectStatus.Failed,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

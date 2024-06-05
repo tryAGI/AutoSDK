@@ -60,7 +60,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static MessageObjectIncompleteDetailsReason ToEnum(string value)
+        public static MessageObjectIncompleteDetailsReason? ToEnum(string value)
         {
             return value switch
             {
@@ -69,7 +69,7 @@ namespace G
                 "run_cancelled" => MessageObjectIncompleteDetailsReason.RunCancelled,
                 "run_expired" => MessageObjectIncompleteDetailsReason.RunExpired,
                 "run_failed" => MessageObjectIncompleteDetailsReason.RunFailed,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

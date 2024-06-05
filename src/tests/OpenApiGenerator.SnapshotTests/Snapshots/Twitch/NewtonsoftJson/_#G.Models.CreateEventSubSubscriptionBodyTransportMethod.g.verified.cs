@@ -52,14 +52,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateEventSubSubscriptionBodyTransportMethod ToEnum(string value)
+        public static CreateEventSubSubscriptionBodyTransportMethod? ToEnum(string value)
         {
             return value switch
             {
                 "webhook" => CreateEventSubSubscriptionBodyTransportMethod.Webhook,
                 "websocket" => CreateEventSubSubscriptionBodyTransportMethod.Websocket,
                 "conduit" => CreateEventSubSubscriptionBodyTransportMethod.Conduit,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

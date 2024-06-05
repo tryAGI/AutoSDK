@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateImageVariationRequestModel ToEnum(string value)
+        public static CreateImageVariationRequestModel? ToEnum(string value)
         {
             return value switch
             {
                 "dall-e-2" => CreateImageVariationRequestModel.DallE2,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

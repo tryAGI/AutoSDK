@@ -66,7 +66,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreatorGoalType ToEnum(string value)
+        public static CreatorGoalType? ToEnum(string value)
         {
             return value switch
             {
@@ -75,7 +75,7 @@ namespace G
                 "subscription_count" => CreatorGoalType.SubscriptionCount,
                 "new_subscription" => CreatorGoalType.NewSubscription,
                 "new_subscription_count" => CreatorGoalType.NewSubscriptionCount,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -54,7 +54,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static GetVideosPeriod ToEnum(string value)
+        public static GetVideosPeriod? ToEnum(string value)
         {
             return value switch
             {
@@ -62,7 +62,7 @@ namespace G
                 "day" => GetVideosPeriod.Day,
                 "month" => GetVideosPeriod.Month,
                 "week" => GetVideosPeriod.Week,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

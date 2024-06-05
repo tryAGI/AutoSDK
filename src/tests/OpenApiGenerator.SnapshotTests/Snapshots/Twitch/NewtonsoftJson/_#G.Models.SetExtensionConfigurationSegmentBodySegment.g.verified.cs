@@ -52,14 +52,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static SetExtensionConfigurationSegmentBodySegment ToEnum(string value)
+        public static SetExtensionConfigurationSegmentBodySegment? ToEnum(string value)
         {
             return value switch
             {
                 "broadcaster" => SetExtensionConfigurationSegmentBodySegment.Broadcaster,
                 "developer" => SetExtensionConfigurationSegmentBodySegment.Developer,
                 "global" => SetExtensionConfigurationSegmentBodySegment.Global,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateModerationRequestModel ToEnum(string value)
+        public static CreateModerationRequestModel? ToEnum(string value)
         {
             return value switch
             {
                 "text-moderation-latest" => CreateModerationRequestModel.TextModerationLatest,
                 "text-moderation-stable" => CreateModerationRequestModel.TextModerationStable,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

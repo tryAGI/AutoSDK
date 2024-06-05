@@ -54,7 +54,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ChatCompletionStreamResponseDeltaRole ToEnum(string value)
+        public static ChatCompletionStreamResponseDeltaRole? ToEnum(string value)
         {
             return value switch
             {
@@ -62,7 +62,7 @@ namespace G
                 "user" => ChatCompletionStreamResponseDeltaRole.User,
                 "assistant" => ChatCompletionStreamResponseDeltaRole.Assistant,
                 "tool" => ChatCompletionStreamResponseDeltaRole.Tool,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

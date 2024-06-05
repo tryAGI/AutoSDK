@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static MessageDeltaContentImageFileObjectType ToEnum(string value)
+        public static MessageDeltaContentImageFileObjectType? ToEnum(string value)
         {
             return value switch
             {
                 "image_file" => MessageDeltaContentImageFileObjectType.ImageFile,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

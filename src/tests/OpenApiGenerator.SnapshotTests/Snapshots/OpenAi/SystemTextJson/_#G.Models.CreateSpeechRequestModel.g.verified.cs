@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateSpeechRequestModel ToEnum(string value)
+        public static CreateSpeechRequestModel? ToEnum(string value)
         {
             return value switch
             {
                 "tts-1" => CreateSpeechRequestModel.Tts1,
                 "tts-1-hd" => CreateSpeechRequestModel.Tts1Hd,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

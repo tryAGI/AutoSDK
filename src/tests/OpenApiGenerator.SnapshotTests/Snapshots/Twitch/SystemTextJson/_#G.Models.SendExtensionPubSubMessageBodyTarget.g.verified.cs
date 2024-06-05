@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static SendExtensionPubSubMessageBodyTarget ToEnum(string value)
+        public static SendExtensionPubSubMessageBodyTarget? ToEnum(string value)
         {
             return value switch
             {
                 "broadcast" => SendExtensionPubSubMessageBodyTarget.Broadcast,
                 "global" => SendExtensionPubSubMessageBodyTarget.Global,
                 "whisper-<user-id>" => SendExtensionPubSubMessageBodyTarget.Whisper_userId_,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

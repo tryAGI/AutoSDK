@@ -5,7 +5,7 @@
         <IsPackable>false</IsPackable>
         <Nullable>disable</Nullable>
         <ImplicitUsings>disable</ImplicitUsings>
-        <NoWarn>$(NoWarn);IDE0001;IDE0190;CA1308</NoWarn>
+        <NoWarn>$(NoWarn);IDE0001;IDE0190;CA1308;CA1711</NoWarn>
         <RootNamespace>OpenApiGenerator</RootNamespace>
     </PropertyGroup>
 

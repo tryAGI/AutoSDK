@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateChatCompletionStreamResponseObject ToEnum(string value)
+        public static CreateChatCompletionStreamResponseObject? ToEnum(string value)
         {
             return value switch
             {
                 "chat.completion.chunk" => CreateChatCompletionStreamResponseObject.Chatcompletionchunk,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateRunRequestResponseFormat ToEnum(string value)
+        public static CreateRunRequestResponseFormat? ToEnum(string value)
         {
             return value switch
             {
                 "none" => CreateRunRequestResponseFormat.None,
                 "auto" => CreateRunRequestResponseFormat.Auto,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

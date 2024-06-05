@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateBatchRequestEndpoint ToEnum(string value)
+        public static CreateBatchRequestEndpoint? ToEnum(string value)
         {
             return value switch
             {
                 "/v1/chat/completions" => CreateBatchRequestEndpoint.V1ChatCompletions,
                 "/v1/embeddings" => CreateBatchRequestEndpoint.V1Embeddings,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

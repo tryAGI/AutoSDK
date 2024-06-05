@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static MessageContentTextAnnotationsFileCitationObjectType ToEnum(string value)
+        public static MessageContentTextAnnotationsFileCitationObjectType? ToEnum(string value)
         {
             return value switch
             {
                 "file_citation" => MessageContentTextAnnotationsFileCitationObjectType.FileCitation,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

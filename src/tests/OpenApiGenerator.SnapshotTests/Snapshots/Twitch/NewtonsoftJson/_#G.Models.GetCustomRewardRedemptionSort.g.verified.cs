@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static GetCustomRewardRedemptionSort ToEnum(string value)
+        public static GetCustomRewardRedemptionSort? ToEnum(string value)
         {
             return value switch
             {
                 "OLDEST" => GetCustomRewardRedemptionSort.OLDEST,
                 "NEWEST" => GetCustomRewardRedemptionSort.NEWEST,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static GetUserEmotesResponseDataEmoteType ToEnum(string value)
+        public static GetUserEmotesResponseDataEmoteType? ToEnum(string value)
         {
             return value switch
             {
                 "bitstier" => GetUserEmotesResponseDataEmoteType.Bitstier,
                 "follower" => GetUserEmotesResponseDataEmoteType.Follower,
                 "subscriptions" => GetUserEmotesResponseDataEmoteType.Subscriptions,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -45,14 +45,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PageProtectedDomainState ToEnum(string value)
+        public static PageProtectedDomainState? ToEnum(string value)
         {
             return value switch
             {
                 "pending" => PageProtectedDomainState.Pending,
                 "verified" => PageProtectedDomainState.Verified,
                 "unverified" => PageProtectedDomainState.Unverified,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -34,7 +34,7 @@ namespace OpenApiGenerator.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {{
-                        return {model.GlobalClassName}Extensions.ToEnum(stringValue);
+                        return {model.GlobalClassName}Extensions.ToEnum(stringValue) ?? default;
                     }}
                     
                     break;
@@ -45,7 +45,7 @@ namespace OpenApiGenerator.JsonConverters
                     return ({model.GlobalClassName})numValue;
                 }}
                 default:
-                    throw new global::System.ArgumentOutOfRangeException();
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
             }}
 
             return default;
@@ -57,6 +57,8 @@ namespace OpenApiGenerator.JsonConverters
             {model.GlobalClassName} value,
             global::System.Text.Json.JsonSerializerOptions options)
         {{
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
             writer.WriteStringValue({model.GlobalClassName}Extensions.ToValueString(value));
         }}
     }}

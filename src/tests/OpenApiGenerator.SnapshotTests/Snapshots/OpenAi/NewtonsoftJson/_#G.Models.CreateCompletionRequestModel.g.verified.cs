@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateCompletionRequestModel ToEnum(string value)
+        public static CreateCompletionRequestModel? ToEnum(string value)
         {
             return value switch
             {
                 "gpt-3.5-turbo-instruct" => CreateCompletionRequestModel.Gpt35TurboInstruct,
                 "davinci-002" => CreateCompletionRequestModel.Davinci002,
                 "babbage-002" => CreateCompletionRequestModel.Babbage002,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

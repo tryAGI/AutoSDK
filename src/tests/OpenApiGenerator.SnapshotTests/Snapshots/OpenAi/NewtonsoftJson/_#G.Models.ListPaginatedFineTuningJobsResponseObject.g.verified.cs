@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ListPaginatedFineTuningJobsResponseObject ToEnum(string value)
+        public static ListPaginatedFineTuningJobsResponseObject? ToEnum(string value)
         {
             return value switch
             {
                 "list" => ListPaginatedFineTuningJobsResponseObject.List,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

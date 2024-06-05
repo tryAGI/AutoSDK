@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static BatchRequestInputMethod ToEnum(string value)
+        public static BatchRequestInputMethod? ToEnum(string value)
         {
             return value switch
             {
                 "POST" => BatchRequestInputMethod.POST,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

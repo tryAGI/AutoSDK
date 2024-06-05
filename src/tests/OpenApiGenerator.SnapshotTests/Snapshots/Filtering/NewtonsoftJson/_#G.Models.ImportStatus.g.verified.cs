@@ -126,7 +126,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ImportStatus ToEnum(string value)
+        public static ImportStatus? ToEnum(string value)
         {
             return value switch
             {
@@ -146,7 +146,7 @@ namespace G
                 "detection_found_multiple" => ImportStatus.DetectionFoundMultiple,
                 "detection_found_nothing" => ImportStatus.DetectionFoundNothing,
                 "detection_needs_auth" => ImportStatus.DetectionNeedsAuth,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

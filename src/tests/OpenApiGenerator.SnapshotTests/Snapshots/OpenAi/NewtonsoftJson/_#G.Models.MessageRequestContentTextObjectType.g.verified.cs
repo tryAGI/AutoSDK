@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static MessageRequestContentTextObjectType ToEnum(string value)
+        public static MessageRequestContentTextObjectType? ToEnum(string value)
         {
             return value switch
             {
                 "text" => MessageRequestContentTextObjectType.Text,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

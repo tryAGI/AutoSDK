@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateCompletionResponseObject ToEnum(string value)
+        public static CreateCompletionResponseObject? ToEnum(string value)
         {
             return value switch
             {
                 "text_completion" => CreateCompletionResponseObject.TextCompletion,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

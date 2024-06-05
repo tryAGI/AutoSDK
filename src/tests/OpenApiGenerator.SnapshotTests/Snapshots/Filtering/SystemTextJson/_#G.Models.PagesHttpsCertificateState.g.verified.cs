@@ -89,7 +89,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PagesHttpsCertificateState ToEnum(string value)
+        public static PagesHttpsCertificateState? ToEnum(string value)
         {
             return value switch
             {
@@ -105,7 +105,7 @@ namespace G
                 "bad_authz" => PagesHttpsCertificateState.BadAuthz,
                 "destroy_pending" => PagesHttpsCertificateState.DestroyPending,
                 "dns_changed" => PagesHttpsCertificateState.DnsChanged,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static MessageObjectStatus ToEnum(string value)
+        public static MessageObjectStatus? ToEnum(string value)
         {
             return value switch
             {
                 "in_progress" => MessageObjectStatus.InProgress,
                 "incomplete" => MessageObjectStatus.Incomplete,
                 "completed" => MessageObjectStatus.Completed,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -54,7 +54,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static VectorStoreFileObjectLastErrorCode ToEnum(string value)
+        public static VectorStoreFileObjectLastErrorCode? ToEnum(string value)
         {
             return value switch
             {
@@ -62,7 +62,7 @@ namespace G
                 "file_not_found" => VectorStoreFileObjectLastErrorCode.FileNotFound,
                 "parsing_error" => VectorStoreFileObjectLastErrorCode.ParsingError,
                 "unhandled_mime_type" => VectorStoreFileObjectLastErrorCode.UnhandledMimeType,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

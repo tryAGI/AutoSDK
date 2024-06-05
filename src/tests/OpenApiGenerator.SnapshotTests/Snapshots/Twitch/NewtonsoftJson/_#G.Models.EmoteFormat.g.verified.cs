@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static EmoteFormat ToEnum(string value)
+        public static EmoteFormat? ToEnum(string value)
         {
             return value switch
             {
                 "animated" => EmoteFormat.Animated,
                 "static" => EmoteFormat.Static,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

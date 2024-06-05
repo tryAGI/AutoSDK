@@ -60,7 +60,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ModifyChannelInformationBodyContentClassificationLabelsId ToEnum(string value)
+        public static ModifyChannelInformationBodyContentClassificationLabelsId? ToEnum(string value)
         {
             return value switch
             {
@@ -69,7 +69,7 @@ namespace G
                 "ViolentGraphic" => ModifyChannelInformationBodyContentClassificationLabelsId.ViolentGraphic,
                 "Gambling" => ModifyChannelInformationBodyContentClassificationLabelsId.Gambling,
                 "ProfanityVulgarity" => ModifyChannelInformationBodyContentClassificationLabelsId.ProfanityVulgarity,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

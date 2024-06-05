@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static VectorStoreFileBatchObjectObject ToEnum(string value)
+        public static VectorStoreFileBatchObjectObject? ToEnum(string value)
         {
             return value switch
             {
                 "vector_store.files_batch" => VectorStoreFileBatchObjectObject.VectorStorefilesBatch,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

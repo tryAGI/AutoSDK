@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static MessageDeltaContentTextAnnotationsFilePathObjectType ToEnum(string value)
+        public static MessageDeltaContentTextAnnotationsFilePathObjectType? ToEnum(string value)
         {
             return value switch
             {
                 "file_path" => MessageDeltaContentTextAnnotationsFilePathObjectType.FilePath,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

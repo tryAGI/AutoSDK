@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateImageRequestModel ToEnum(string value)
+        public static CreateImageRequestModel? ToEnum(string value)
         {
             return value switch
             {
                 "dall-e-2" => CreateImageRequestModel.DallE2,
                 "dall-e-3" => CreateImageRequestModel.DallE3,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

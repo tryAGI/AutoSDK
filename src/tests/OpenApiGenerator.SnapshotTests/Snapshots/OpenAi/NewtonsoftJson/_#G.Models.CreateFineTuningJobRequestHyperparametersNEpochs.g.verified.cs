@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateFineTuningJobRequestHyperparametersNEpochs ToEnum(string value)
+        public static CreateFineTuningJobRequestHyperparametersNEpochs? ToEnum(string value)
         {
             return value switch
             {
                 "auto" => CreateFineTuningJobRequestHyperparametersNEpochs.Auto,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

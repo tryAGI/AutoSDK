@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static OpenAIFileStatus ToEnum(string value)
+        public static OpenAIFileStatus? ToEnum(string value)
         {
             return value switch
             {
                 "uploaded" => OpenAIFileStatus.Uploaded,
                 "processed" => OpenAIFileStatus.Processed,
                 "error" => OpenAIFileStatus.Error,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

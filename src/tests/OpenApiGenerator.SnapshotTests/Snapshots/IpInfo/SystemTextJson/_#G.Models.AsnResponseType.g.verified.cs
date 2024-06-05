@@ -54,7 +54,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static AsnResponseType ToEnum(string value)
+        public static AsnResponseType? ToEnum(string value)
         {
             return value switch
             {
@@ -63,7 +63,7 @@ namespace G
                 "education" => AsnResponseType.Education,
                 "hosting" => AsnResponseType.Hosting,
                 "inactive" => AsnResponseType.Inactive,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

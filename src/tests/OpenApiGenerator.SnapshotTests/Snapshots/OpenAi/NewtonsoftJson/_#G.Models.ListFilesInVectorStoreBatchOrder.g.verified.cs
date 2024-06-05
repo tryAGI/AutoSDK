@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ListFilesInVectorStoreBatchOrder ToEnum(string value)
+        public static ListFilesInVectorStoreBatchOrder? ToEnum(string value)
         {
             return value switch
             {
                 "asc" => ListFilesInVectorStoreBatchOrder.Asc,
                 "desc" => ListFilesInVectorStoreBatchOrder.Desc,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

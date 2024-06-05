@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static GetCustomRewardRedemptionStatus ToEnum(string value)
+        public static GetCustomRewardRedemptionStatus? ToEnum(string value)
         {
             return value switch
             {
                 "CANCELED" => GetCustomRewardRedemptionStatus.CANCELED,
                 "FULFILLED" => GetCustomRewardRedemptionStatus.FULFILLED,
                 "UNFULFILLED" => GetCustomRewardRedemptionStatus.UNFULFILLED,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

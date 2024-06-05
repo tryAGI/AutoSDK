@@ -19,7 +19,7 @@ namespace OpenApiGenerator.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::G.AssistantsNamedToolChoiceTypeExtensions.ToEnum(stringValue);
+                        return global::G.AssistantsNamedToolChoiceTypeExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -30,7 +30,7 @@ namespace OpenApiGenerator.JsonConverters
                     return (global::G.AssistantsNamedToolChoiceType)numValue;
                 }
                 default:
-                    throw new global::System.ArgumentOutOfRangeException();
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
             }
 
             return default;
@@ -42,6 +42,8 @@ namespace OpenApiGenerator.JsonConverters
             global::G.AssistantsNamedToolChoiceType value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
             writer.WriteStringValue(global::G.AssistantsNamedToolChoiceTypeExtensions.ToValueString(value));
         }
     }

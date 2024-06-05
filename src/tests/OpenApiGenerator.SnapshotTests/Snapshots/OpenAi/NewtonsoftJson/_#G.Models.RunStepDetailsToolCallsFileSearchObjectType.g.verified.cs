@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RunStepDetailsToolCallsFileSearchObjectType ToEnum(string value)
+        public static RunStepDetailsToolCallsFileSearchObjectType? ToEnum(string value)
         {
             return value switch
             {
                 "file_search" => RunStepDetailsToolCallsFileSearchObjectType.FileSearch,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

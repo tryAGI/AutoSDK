@@ -45,13 +45,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static UpdateDropsEntitlementsBodyFulfillmentStatus ToEnum(string value)
+        public static UpdateDropsEntitlementsBodyFulfillmentStatus? ToEnum(string value)
         {
             return value switch
             {
                 "CLAIMED" => UpdateDropsEntitlementsBodyFulfillmentStatus.CLAIMED,
                 "FULFILLED" => UpdateDropsEntitlementsBodyFulfillmentStatus.FULFILLED,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

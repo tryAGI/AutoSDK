@@ -101,7 +101,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static GetConduitShardsResponseDataStatus ToEnum(string value)
+        public static GetConduitShardsResponseDataStatus? ToEnum(string value)
         {
             return value switch
             {
@@ -115,7 +115,7 @@ namespace G
                 "websocket_internal_error" => GetConduitShardsResponseDataStatus.WebsocketInternalError,
                 "websocket_network_timeout" => GetConduitShardsResponseDataStatus.WebsocketNetworkTimeout,
                 "websocket_network_error" => GetConduitShardsResponseDataStatus.WebsocketNetworkError,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

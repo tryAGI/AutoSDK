@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static UpdateDeploymentsResponseCurrentReleaseCreatedByType ToEnum(string value)
+        public static UpdateDeploymentsResponseCurrentReleaseCreatedByType? ToEnum(string value)
         {
             return value switch
             {
                 "organization" => UpdateDeploymentsResponseCurrentReleaseCreatedByType.Organization,
                 "user" => UpdateDeploymentsResponseCurrentReleaseCreatedByType.User,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

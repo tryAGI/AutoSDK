@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static AssistantsNamedToolChoiceType ToEnum(string value)
+        public static AssistantsNamedToolChoiceType? ToEnum(string value)
         {
             return value switch
             {
                 "function" => AssistantsNamedToolChoiceType.Function,
                 "code_interpreter" => AssistantsNamedToolChoiceType.CodeInterpreter,
                 "file_search" => AssistantsNamedToolChoiceType.FileSearch,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

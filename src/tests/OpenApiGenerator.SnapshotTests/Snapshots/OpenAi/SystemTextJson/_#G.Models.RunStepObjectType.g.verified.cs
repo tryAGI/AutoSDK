@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RunStepObjectType ToEnum(string value)
+        public static RunStepObjectType? ToEnum(string value)
         {
             return value switch
             {
                 "message_creation" => RunStepObjectType.MessageCreation,
                 "tool_calls" => RunStepObjectType.ToolCalls,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -66,7 +66,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PullModelResponseStatus ToEnum(string value)
+        public static PullModelResponseStatus? ToEnum(string value)
         {
             return value switch
             {
@@ -76,7 +76,7 @@ namespace G
                 "writing manifest" => PullModelResponseStatus.WritingManifest,
                 "removing any unused layers" => PullModelResponseStatus.RemovingAnyUnusedLayers,
                 "success" => PullModelResponseStatus.Success,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

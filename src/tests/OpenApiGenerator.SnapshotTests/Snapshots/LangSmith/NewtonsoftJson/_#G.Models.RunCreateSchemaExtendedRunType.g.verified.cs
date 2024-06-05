@@ -72,7 +72,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RunCreateSchemaExtendedRunType ToEnum(string value)
+        public static RunCreateSchemaExtendedRunType? ToEnum(string value)
         {
             return value switch
             {
@@ -83,7 +83,7 @@ namespace G
                 "embedding" => RunCreateSchemaExtendedRunType.Embedding,
                 "prompt" => RunCreateSchemaExtendedRunType.Prompt,
                 "parser" => RunCreateSchemaExtendedRunType.Parser,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static VectorStoreObjectObject ToEnum(string value)
+        public static VectorStoreObjectObject? ToEnum(string value)
         {
             return value switch
             {
                 "vector_store" => VectorStoreObjectObject.VectorStore,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

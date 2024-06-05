@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RunObjectIncompleteDetailsReason ToEnum(string value)
+        public static RunObjectIncompleteDetailsReason? ToEnum(string value)
         {
             return value switch
             {
                 "max_completion_tokens" => RunObjectIncompleteDetailsReason.MaxCompletionTokens,
                 "max_prompt_tokens" => RunObjectIncompleteDetailsReason.MaxPromptTokens,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

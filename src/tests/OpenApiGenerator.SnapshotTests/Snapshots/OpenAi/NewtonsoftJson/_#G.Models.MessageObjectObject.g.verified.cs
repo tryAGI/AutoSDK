@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static MessageObjectObject ToEnum(string value)
+        public static MessageObjectObject? ToEnum(string value)
         {
             return value switch
             {
                 "thread.message" => MessageObjectObject.Threadmessage,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

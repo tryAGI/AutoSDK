@@ -49,14 +49,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static UserType ToEnum(string value)
+        public static UserType? ToEnum(string value)
         {
             return value switch
             {
                 "admin" => UserType.Admin,
                 "global_mod" => UserType.GlobalMod,
                 "staff" => UserType.Staff,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

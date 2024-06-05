@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ChannelEmoteThemeMode ToEnum(string value)
+        public static ChannelEmoteThemeMode? ToEnum(string value)
         {
             return value switch
             {
                 "dark" => ChannelEmoteThemeMode.Dark,
                 "light" => ChannelEmoteThemeMode.Light,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

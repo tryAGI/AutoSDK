@@ -138,7 +138,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateRunRequestModel ToEnum(string value)
+        public static CreateRunRequestModel? ToEnum(string value)
         {
             return value switch
             {
@@ -160,7 +160,7 @@ namespace G
                 "gpt-3.5-turbo-1106" => CreateRunRequestModel.Gpt35Turbo1106,
                 "gpt-3.5-turbo-0125" => CreateRunRequestModel.Gpt35Turbo0125,
                 "gpt-3.5-turbo-16k-0613" => CreateRunRequestModel.Gpt35Turbo16k0613,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

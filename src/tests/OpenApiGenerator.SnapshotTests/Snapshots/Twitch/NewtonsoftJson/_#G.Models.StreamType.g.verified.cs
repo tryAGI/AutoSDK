@@ -40,12 +40,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static StreamType ToEnum(string value)
+        public static StreamType? ToEnum(string value)
         {
             return value switch
             {
                 "live" => StreamType.Live,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

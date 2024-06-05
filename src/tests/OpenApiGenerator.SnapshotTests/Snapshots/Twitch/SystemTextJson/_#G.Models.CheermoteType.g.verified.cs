@@ -60,7 +60,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CheermoteType ToEnum(string value)
+        public static CheermoteType? ToEnum(string value)
         {
             return value switch
             {
@@ -69,7 +69,7 @@ namespace G
                 "channel_custom" => CheermoteType.ChannelCustom,
                 "display_only" => CheermoteType.DisplayOnly,
                 "sponsored" => CheermoteType.Sponsored,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

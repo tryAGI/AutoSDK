@@ -14,13 +14,13 @@ public static class TestEnumExtensions
         };
     }
     
-    public static TestEnum ToEnum(string value)
+    public static TestEnum? ToEnum(string value)
     {
         return value switch
         {
             "pulling manifest" => TestEnum.PullingManifest,
             "success" => TestEnum.Success,
-            _ => throw new ArgumentOutOfRangeException(nameof(value), value, null),
+            _ => null,
         };
     }
 }

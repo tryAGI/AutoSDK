@@ -43,13 +43,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static UserBroadcasterType ToEnum(string value)
+        public static UserBroadcasterType? ToEnum(string value)
         {
             return value switch
             {
                 "affiliate" => UserBroadcasterType.Affiliate,
                 "partner" => UserBroadcasterType.Partner,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

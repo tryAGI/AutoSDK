@@ -14,7 +14,7 @@ public sealed class TestEnumJsonStringEnumConverter : global::System.Text.Json.S
                 var stringValue = reader.GetString();
                 if (stringValue != null)
                 {
-                    return TestEnumExtensions.ToEnum(stringValue);
+                    return TestEnumExtensions.ToEnum(stringValue) ?? default;
                 }
                 
                 break;
@@ -24,7 +24,7 @@ public sealed class TestEnumJsonStringEnumConverter : global::System.Text.Json.S
                 return (TestEnum)reader.GetInt32();
             }
             default:
-                throw new global::System.ArgumentOutOfRangeException();
+                throw new global::System.ArgumentOutOfRangeException(nameof(reader));
         }
 
         return default;
@@ -35,6 +35,8 @@ public sealed class TestEnumJsonStringEnumConverter : global::System.Text.Json.S
         TestEnum value,
         global::System.Text.Json.JsonSerializerOptions options)
     {
+        writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+        
         writer.WriteStringValue(value.ToValueString());
     }
 }

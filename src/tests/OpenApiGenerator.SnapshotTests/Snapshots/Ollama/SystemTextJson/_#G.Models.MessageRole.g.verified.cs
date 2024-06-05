@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static MessageRole ToEnum(string value)
+        public static MessageRole? ToEnum(string value)
         {
             return value switch
             {
                 "system" => MessageRole.System,
                 "user" => MessageRole.User,
                 "assistant" => MessageRole.Assistant,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

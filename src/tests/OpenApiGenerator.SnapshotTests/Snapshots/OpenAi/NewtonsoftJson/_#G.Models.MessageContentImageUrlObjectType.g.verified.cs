@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static MessageContentImageUrlObjectType ToEnum(string value)
+        public static MessageContentImageUrlObjectType? ToEnum(string value)
         {
             return value switch
             {
                 "image_url" => MessageContentImageUrlObjectType.ImageUrl,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

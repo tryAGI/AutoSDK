@@ -54,7 +54,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PredictionStatus ToEnum(string value)
+        public static PredictionStatus? ToEnum(string value)
         {
             return value switch
             {
@@ -62,7 +62,7 @@ namespace G
                 "CANCELED" => PredictionStatus.CANCELED,
                 "LOCKED" => PredictionStatus.LOCKED,
                 "RESOLVED" => PredictionStatus.RESOLVED,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

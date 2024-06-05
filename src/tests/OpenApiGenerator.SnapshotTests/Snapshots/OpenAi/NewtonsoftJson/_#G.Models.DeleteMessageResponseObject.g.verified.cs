@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static DeleteMessageResponseObject ToEnum(string value)
+        public static DeleteMessageResponseObject? ToEnum(string value)
         {
             return value switch
             {
                 "thread.message.deleted" => DeleteMessageResponseObject.Threadmessagedeleted,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

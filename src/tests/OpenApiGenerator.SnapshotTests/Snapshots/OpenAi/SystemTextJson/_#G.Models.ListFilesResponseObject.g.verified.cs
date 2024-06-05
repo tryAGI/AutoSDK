@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ListFilesResponseObject ToEnum(string value)
+        public static ListFilesResponseObject? ToEnum(string value)
         {
             return value switch
             {
                 "list" => ListFilesResponseObject.List,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

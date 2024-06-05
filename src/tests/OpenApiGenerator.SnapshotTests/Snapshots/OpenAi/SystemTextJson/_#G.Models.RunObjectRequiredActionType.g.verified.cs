@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RunObjectRequiredActionType ToEnum(string value)
+        public static RunObjectRequiredActionType? ToEnum(string value)
         {
             return value switch
             {
                 "submit_tool_outputs" => RunObjectRequiredActionType.SubmitToolOutputs,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

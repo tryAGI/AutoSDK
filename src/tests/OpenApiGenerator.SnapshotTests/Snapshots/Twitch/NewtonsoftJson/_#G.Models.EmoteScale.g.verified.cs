@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static EmoteScale ToEnum(string value)
+        public static EmoteScale? ToEnum(string value)
         {
             return value switch
             {
                 "1.0" => EmoteScale._10,
                 "2.0" => EmoteScale._20,
                 "3.0" => EmoteScale._30,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

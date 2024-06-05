@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ExtensionConfigurationSegmentSegment ToEnum(string value)
+        public static ExtensionConfigurationSegmentSegment? ToEnum(string value)
         {
             return value switch
             {
                 "broadcaster" => ExtensionConfigurationSegmentSegment.Broadcaster,
                 "developer" => ExtensionConfigurationSegmentSegment.Developer,
                 "global" => ExtensionConfigurationSegmentSegment.Global,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

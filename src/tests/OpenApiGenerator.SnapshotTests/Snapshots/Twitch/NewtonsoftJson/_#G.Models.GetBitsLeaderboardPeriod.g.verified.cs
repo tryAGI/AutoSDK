@@ -60,7 +60,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static GetBitsLeaderboardPeriod ToEnum(string value)
+        public static GetBitsLeaderboardPeriod? ToEnum(string value)
         {
             return value switch
             {
@@ -69,7 +69,7 @@ namespace G
                 "month" => GetBitsLeaderboardPeriod.Month,
                 "year" => GetBitsLeaderboardPeriod.Year,
                 "all" => GetBitsLeaderboardPeriod.All,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

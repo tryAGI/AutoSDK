@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateTranslationRequestModel ToEnum(string value)
+        public static CreateTranslationRequestModel? ToEnum(string value)
         {
             return value switch
             {
                 "whisper-1" => CreateTranslationRequestModel.Whisper1,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

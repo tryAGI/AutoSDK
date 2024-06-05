@@ -45,13 +45,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ManageHeldAutoModMessagesBodyAction ToEnum(string value)
+        public static ManageHeldAutoModMessagesBodyAction? ToEnum(string value)
         {
             return value switch
             {
                 "ALLOW" => ManageHeldAutoModMessagesBodyAction.ALLOW,
                 "DENY" => ManageHeldAutoModMessagesBodyAction.DENY,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

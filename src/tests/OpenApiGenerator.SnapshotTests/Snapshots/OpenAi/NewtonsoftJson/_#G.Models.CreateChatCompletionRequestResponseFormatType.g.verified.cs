@@ -44,13 +44,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateChatCompletionRequestResponseFormatType ToEnum(string value)
+        public static CreateChatCompletionRequestResponseFormatType? ToEnum(string value)
         {
             return value switch
             {
                 "text" => CreateChatCompletionRequestResponseFormatType.Text,
                 "json_object" => CreateChatCompletionRequestResponseFormatType.JsonObject,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

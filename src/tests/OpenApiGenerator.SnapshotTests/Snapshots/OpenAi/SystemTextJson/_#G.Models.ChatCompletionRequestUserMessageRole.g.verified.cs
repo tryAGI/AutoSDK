@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ChatCompletionRequestUserMessageRole ToEnum(string value)
+        public static ChatCompletionRequestUserMessageRole? ToEnum(string value)
         {
             return value switch
             {
                 "user" => ChatCompletionRequestUserMessageRole.User,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

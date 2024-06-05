@@ -73,7 +73,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PollStatus ToEnum(string value)
+        public static PollStatus? ToEnum(string value)
         {
             return value switch
             {
@@ -83,7 +83,7 @@ namespace G
                 "ARCHIVED" => PollStatus.ARCHIVED,
                 "MODERATED" => PollStatus.MODERATED,
                 "INVALID" => PollStatus.INVALID,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

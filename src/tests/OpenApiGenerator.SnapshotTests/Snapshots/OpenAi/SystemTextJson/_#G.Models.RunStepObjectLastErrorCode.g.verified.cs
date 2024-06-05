@@ -39,13 +39,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RunStepObjectLastErrorCode ToEnum(string value)
+        public static RunStepObjectLastErrorCode? ToEnum(string value)
         {
             return value switch
             {
                 "server_error" => RunStepObjectLastErrorCode.ServerError,
                 "rate_limit_exceeded" => RunStepObjectLastErrorCode.RateLimitExceeded,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

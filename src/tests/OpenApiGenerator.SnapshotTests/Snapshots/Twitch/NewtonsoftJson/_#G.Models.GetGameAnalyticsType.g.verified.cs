@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static GetGameAnalyticsType ToEnum(string value)
+        public static GetGameAnalyticsType? ToEnum(string value)
         {
             return value switch
             {
                 "overview_v2" => GetGameAnalyticsType.OverviewV2,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -38,12 +38,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static UpdateExtensionBitsProductBodyCostType ToEnum(string value)
+        public static UpdateExtensionBitsProductBodyCostType? ToEnum(string value)
         {
             return value switch
             {
                 "bits" => UpdateExtensionBitsProductBodyCostType.Bits,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -59,7 +59,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static UpdateChannelGuestStarSettingsBodyGroupLayout ToEnum(string value)
+        public static UpdateChannelGuestStarSettingsBodyGroupLayout? ToEnum(string value)
         {
             return value switch
             {
@@ -67,7 +67,7 @@ namespace G
                 "SCREENSHARE_LAYOUT" => UpdateChannelGuestStarSettingsBodyGroupLayout.SCREENSHARELAYOUT,
                 "HORIZONTAL_LAYOUT" => UpdateChannelGuestStarSettingsBodyGroupLayout.HORIZONTALLAYOUT,
                 "VERTICAL_LAYOUT" => UpdateChannelGuestStarSettingsBodyGroupLayout.VERTICALLAYOUT,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

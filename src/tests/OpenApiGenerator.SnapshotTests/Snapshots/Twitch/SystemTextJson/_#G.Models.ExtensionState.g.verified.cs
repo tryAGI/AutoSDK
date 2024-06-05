@@ -84,7 +84,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ExtensionState ToEnum(string value)
+        public static ExtensionState? ToEnum(string value)
         {
             return value switch
             {
@@ -97,7 +97,7 @@ namespace G
                 "PendingAction" => ExtensionState.PendingAction,
                 "Rejected" => ExtensionState.Rejected,
                 "Released" => ExtensionState.Released,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

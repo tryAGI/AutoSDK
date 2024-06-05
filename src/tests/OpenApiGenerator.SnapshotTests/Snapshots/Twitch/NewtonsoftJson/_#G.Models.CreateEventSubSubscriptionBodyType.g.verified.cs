@@ -450,7 +450,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateEventSubSubscriptionBodyType ToEnum(string value)
+        public static CreateEventSubSubscriptionBodyType? ToEnum(string value)
         {
             return value switch
             {
@@ -524,7 +524,7 @@ namespace G
                 "user.authorization.revoke" => CreateEventSubSubscriptionBodyType.Userauthorizationrevoke,
                 "user.update" => CreateEventSubSubscriptionBodyType.Userupdate,
                 "user.whisper.message" => CreateEventSubSubscriptionBodyType.Userwhispermessage,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

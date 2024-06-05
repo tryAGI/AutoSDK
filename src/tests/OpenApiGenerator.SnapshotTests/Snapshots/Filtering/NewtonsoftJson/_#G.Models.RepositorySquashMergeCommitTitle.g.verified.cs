@@ -44,13 +44,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RepositorySquashMergeCommitTitle ToEnum(string value)
+        public static RepositorySquashMergeCommitTitle? ToEnum(string value)
         {
             return value switch
             {
                 "PR_TITLE" => RepositorySquashMergeCommitTitle.PRTITLE,
                 "COMMIT_OR_PR_TITLE" => RepositorySquashMergeCommitTitle.COMMITORPRTITLE,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

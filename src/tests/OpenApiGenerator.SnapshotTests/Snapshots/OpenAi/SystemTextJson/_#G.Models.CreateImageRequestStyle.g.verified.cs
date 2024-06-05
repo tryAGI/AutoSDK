@@ -41,13 +41,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateImageRequestStyle ToEnum(string value)
+        public static CreateImageRequestStyle? ToEnum(string value)
         {
             return value switch
             {
                 "vivid" => CreateImageRequestStyle.Vivid,
                 "natural" => CreateImageRequestStyle.Natural,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

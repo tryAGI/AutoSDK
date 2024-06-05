@@ -78,7 +78,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RunObjectStatus ToEnum(string value)
+        public static RunObjectStatus? ToEnum(string value)
         {
             return value switch
             {
@@ -90,7 +90,7 @@ namespace G
                 "failed" => RunObjectStatus.Failed,
                 "completed" => RunObjectStatus.Completed,
                 "expired" => RunObjectStatus.Expired,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

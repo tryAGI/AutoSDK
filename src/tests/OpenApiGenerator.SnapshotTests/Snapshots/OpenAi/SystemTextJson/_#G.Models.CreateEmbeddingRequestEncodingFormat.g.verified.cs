@@ -41,13 +41,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateEmbeddingRequestEncodingFormat ToEnum(string value)
+        public static CreateEmbeddingRequestEncodingFormat? ToEnum(string value)
         {
             return value switch
             {
                 "float" => CreateEmbeddingRequestEncodingFormat.Float,
                 "base64" => CreateEmbeddingRequestEncodingFormat.Base64,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

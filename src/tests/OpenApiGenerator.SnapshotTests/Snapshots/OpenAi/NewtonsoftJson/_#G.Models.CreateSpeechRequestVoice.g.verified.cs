@@ -66,7 +66,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateSpeechRequestVoice ToEnum(string value)
+        public static CreateSpeechRequestVoice? ToEnum(string value)
         {
             return value switch
             {
@@ -76,7 +76,7 @@ namespace G
                 "onyx" => CreateSpeechRequestVoice.Onyx,
                 "nova" => CreateSpeechRequestVoice.Nova,
                 "shimmer" => CreateSpeechRequestVoice.Shimmer,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

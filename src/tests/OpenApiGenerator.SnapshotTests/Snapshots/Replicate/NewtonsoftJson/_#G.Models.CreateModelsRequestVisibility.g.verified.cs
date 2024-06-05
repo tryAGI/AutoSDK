@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateModelsRequestVisibility ToEnum(string value)
+        public static CreateModelsRequestVisibility? ToEnum(string value)
         {
             return value switch
             {
                 "public" => CreateModelsRequestVisibility.Public,
                 "private" => CreateModelsRequestVisibility.Private,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

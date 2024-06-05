@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static FineTuningIntegrationType ToEnum(string value)
+        public static FineTuningIntegrationType? ToEnum(string value)
         {
             return value switch
             {
                 "wandb" => FineTuningIntegrationType.Wandb,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

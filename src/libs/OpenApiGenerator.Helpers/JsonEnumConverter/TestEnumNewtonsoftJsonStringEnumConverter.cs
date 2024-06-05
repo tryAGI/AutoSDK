@@ -7,12 +7,16 @@ public sealed class TestEnumNewtonsoftJsonStringEnumConverter : Newtonsoft.Json.
 {
     public override void WriteJson(JsonWriter writer, TestEnum value, Newtonsoft.Json.JsonSerializer serializer)
     {
+        writer = writer ?? throw new ArgumentNullException(nameof(writer));
+        
         writer.WriteValue(value.ToValueString());
     }
 
     public override TestEnum ReadJson(JsonReader reader, Type objectType, TestEnum existingValue, bool hasExistingValue,
         Newtonsoft.Json.JsonSerializer serializer)
     {
+        reader = reader ?? throw new ArgumentNullException(nameof(reader));
+        
         if (hasExistingValue)
         {
             return existingValue;
@@ -27,7 +31,7 @@ public sealed class TestEnumNewtonsoftJsonStringEnumConverter : Newtonsoft.Json.
                 var stringValue = reader.ReadAsString();
                 if (stringValue != null)
                 {
-                    return TestEnumExtensions.ToEnum(stringValue);
+                    return TestEnumExtensions.ToEnum(stringValue) ?? default;
                 }
                 break;
             }

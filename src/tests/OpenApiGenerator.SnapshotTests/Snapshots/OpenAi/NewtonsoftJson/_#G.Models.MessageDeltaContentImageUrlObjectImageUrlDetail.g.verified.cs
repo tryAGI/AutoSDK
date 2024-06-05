@@ -49,14 +49,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static MessageDeltaContentImageUrlObjectImageUrlDetail ToEnum(string value)
+        public static MessageDeltaContentImageUrlObjectImageUrlDetail? ToEnum(string value)
         {
             return value switch
             {
                 "auto" => MessageDeltaContentImageUrlObjectImageUrlDetail.Auto,
                 "low" => MessageDeltaContentImageUrlObjectImageUrlDetail.Low,
                 "high" => MessageDeltaContentImageUrlObjectImageUrlDetail.High,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

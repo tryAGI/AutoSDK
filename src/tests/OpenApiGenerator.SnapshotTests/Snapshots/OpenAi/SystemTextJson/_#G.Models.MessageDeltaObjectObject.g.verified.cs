@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static MessageDeltaObjectObject ToEnum(string value)
+        public static MessageDeltaObjectObject? ToEnum(string value)
         {
             return value switch
             {
                 "thread.message.delta" => MessageDeltaObjectObject.Threadmessagedelta,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

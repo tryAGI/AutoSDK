@@ -48,14 +48,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static VideoType ToEnum(string value)
+        public static VideoType? ToEnum(string value)
         {
             return value switch
             {
                 "archive" => VideoType.Archive,
                 "highlight" => VideoType.Highlight,
                 "upload" => VideoType.Upload,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

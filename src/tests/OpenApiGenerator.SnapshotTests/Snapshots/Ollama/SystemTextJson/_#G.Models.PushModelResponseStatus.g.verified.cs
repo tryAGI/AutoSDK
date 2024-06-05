@@ -49,7 +49,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PushModelResponseStatus ToEnum(string value)
+        public static PushModelResponseStatus? ToEnum(string value)
         {
             return value switch
             {
@@ -57,7 +57,7 @@ namespace G
                 "starting upload" => PushModelResponseStatus.StartingUpload,
                 "pushing manifest" => PushModelResponseStatus.PushingManifest,
                 "success" => PushModelResponseStatus.Success,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

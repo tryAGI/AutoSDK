@@ -42,13 +42,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static GetAccountResponseType ToEnum(string value)
+        public static GetAccountResponseType? ToEnum(string value)
         {
             return value switch
             {
                 "organization" => GetAccountResponseType.Organization,
                 "user" => GetAccountResponseType.User,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

@@ -41,13 +41,13 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateMessageRequestRole ToEnum(string value)
+        public static CreateMessageRequestRole? ToEnum(string value)
         {
             return value switch
             {
                 "user" => CreateMessageRequestRole.User,
                 "assistant" => CreateMessageRequestRole.Assistant,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

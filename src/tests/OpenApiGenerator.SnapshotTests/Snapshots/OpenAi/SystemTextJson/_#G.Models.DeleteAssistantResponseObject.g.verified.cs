@@ -34,12 +34,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static DeleteAssistantResponseObject ToEnum(string value)
+        public static DeleteAssistantResponseObject? ToEnum(string value)
         {
             return value switch
             {
                 "assistant.deleted" => DeleteAssistantResponseObject.Assistantdeleted,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

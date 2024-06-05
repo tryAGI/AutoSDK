@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static EmbeddingObject ToEnum(string value)
+        public static EmbeddingObject? ToEnum(string value)
         {
             return value switch
             {
                 "embedding" => EmbeddingObject.Embedding,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

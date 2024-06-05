@@ -44,14 +44,14 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateEmbeddingRequestModel ToEnum(string value)
+        public static CreateEmbeddingRequestModel? ToEnum(string value)
         {
             return value switch
             {
                 "text-embedding-ada-002" => CreateEmbeddingRequestModel.TextEmbeddingAda002,
                 "text-embedding-3-small" => CreateEmbeddingRequestModel.TextEmbedding3Small,
                 "text-embedding-3-large" => CreateEmbeddingRequestModel.TextEmbedding3Large,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

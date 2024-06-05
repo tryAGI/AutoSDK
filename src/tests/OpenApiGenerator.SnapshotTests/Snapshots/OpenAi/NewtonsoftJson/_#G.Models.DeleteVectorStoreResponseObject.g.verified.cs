@@ -36,12 +36,12 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static DeleteVectorStoreResponseObject ToEnum(string value)
+        public static DeleteVectorStoreResponseObject? ToEnum(string value)
         {
             return value switch
             {
                 "vector_store.deleted" => DeleteVectorStoreResponseObject.VectorStoredeleted,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }

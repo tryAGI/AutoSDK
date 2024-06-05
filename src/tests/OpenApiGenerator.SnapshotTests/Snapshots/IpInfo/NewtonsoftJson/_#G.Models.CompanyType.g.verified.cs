@@ -54,7 +54,7 @@ namespace G
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CompanyType ToEnum(string value)
+        public static CompanyType? ToEnum(string value)
         {
             return value switch
             {
@@ -62,7 +62,7 @@ namespace G
                 "business" => CompanyType.Business,
                 "education" => CompanyType.Education,
                 "hosting" => CompanyType.Hosting,
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+                _ => null,
             };
         }
     }
