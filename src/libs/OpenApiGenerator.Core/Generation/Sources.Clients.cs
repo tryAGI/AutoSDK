@@ -12,7 +12,7 @@ public static partial class Sources
         var serializer = endPoint.JsonSerializerType.GetSerializer();
         var hasOptions = string.IsNullOrWhiteSpace(endPoint.JsonSerializerContext);
         
-        return $@"
+        var code = $@"
 #nullable enable
 
 namespace {endPoint.Namespace}
@@ -55,6 +55,18 @@ namespace {endPoint.Namespace}
         }}
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
+        if (!hasOptions && endPoint.Id == "MainConstructor")
+        {
+            code = code.TrimEnd('}');
+            code += $@"
+    internal class JsonSerializerContextConverters
+    {{
+        private readonly {serializer.GetOptionsType()} _jsonSerializerOptions = {serializer.CreateDefaultSettings(endPoint.Converters)}; 
+    }}
+}}".RemoveBlankLinesWhereOnlyWhitespaces();
+        }
+        
+        return code;
     }
     
     public static string GenerateAuthorizationMethod(
