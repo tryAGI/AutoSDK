@@ -92,6 +92,7 @@
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: ListPetsAsync,
     NotAsyncMethodName: ListPets,
     FileNameWithoutExtension: G.Api.ListPets
@@ -154,6 +155,7 @@
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CreatePetsAsync,
     NotAsyncMethodName: CreatePets,
     FileNameWithoutExtension: G.Api.CreatePets
@@ -265,12 +267,13 @@
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: ShowPetByIdAsync,
     NotAsyncMethodName: ShowPetById,
     FileNameWithoutExtension: G.Api.ShowPetById
   },
   {
-    Id: Constructors,
+    Id: MainConstructor,
     Namespace: G,
     ClassName: Api,
     BaseUrl: http://petstore.swagger.io/v1,
@@ -307,8 +310,9 @@
     },
     AdditionalModels: null,
     AdditionalTypes: null,
-    MethodName: ConstructorsAsync,
-    NotAsyncMethodName: Constructors,
+    Converters: null,
+    MethodName: MainConstructorAsync,
+    NotAsyncMethodName: MainConstructor,
     FileNameWithoutExtension: G.Api
   }
 ]

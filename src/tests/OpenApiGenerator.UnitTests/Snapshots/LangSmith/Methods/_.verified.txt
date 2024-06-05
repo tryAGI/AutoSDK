@@ -233,6 +233,7 @@
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: UpdateRunRunsRunIdPatchAsync,
     NotAsyncMethodName: UpdateRunRunsRunIdPatch,
     FileNameWithoutExtension: G.Api.UpdateRunRunsRunIdPatch
@@ -815,12 +816,13 @@
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CreateRunRunsPostAsync,
     NotAsyncMethodName: CreateRunRunsPost,
     FileNameWithoutExtension: G.Api.CreateRunRunsPost
   },
   {
-    Id: Constructors,
+    Id: MainConstructor,
     Namespace: G,
     ClassName: Api,
     BaseUrl: ,
@@ -857,8 +859,12 @@
     },
     AdditionalModels: null,
     AdditionalTypes: null,
-    MethodName: ConstructorsAsync,
-    NotAsyncMethodName: Constructors,
+    Converters: [
+      global::OpenApiGenerator.JsonConverters.RunCreateSchemaExtendedRunTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunCreateSchemaRunTypeJsonConverter
+    ],
+    MethodName: MainConstructorAsync,
+    NotAsyncMethodName: MainConstructor,
     FileNameWithoutExtension: G.Api
   }
 ]

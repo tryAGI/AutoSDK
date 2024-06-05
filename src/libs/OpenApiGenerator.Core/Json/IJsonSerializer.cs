@@ -8,4 +8,6 @@ public interface IJsonSerializer
     string GenerateDeserializeCall(string type, string jsonSerializerContext);
     string GenerateSerializeCall(string type, string jsonSerializerContext);
     string GenerateConverterAttribute(string type);
+    string GetOptionsType();
+    string CreateDefaultSettings(IReadOnlyList<string> converters);
 }

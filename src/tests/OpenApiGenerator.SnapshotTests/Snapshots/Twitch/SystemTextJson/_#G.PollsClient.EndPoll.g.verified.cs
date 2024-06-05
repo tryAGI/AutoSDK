@@ -22,7 +22,7 @@ namespace G
                 method: global::System.Net.Http.HttpMethod.Patch,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + "/polls", global::System.UriKind.RelativeOrAbsolute));
             httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: global::System.Text.Json.JsonSerializer.Serialize(request),
+                content: global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions),
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
 
@@ -35,7 +35,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<EndPollResponse?>(__content) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<EndPollResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 

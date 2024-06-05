@@ -1,3 +1,5 @@
+using OpenApiGenerator.Core.Extensions;
+
 namespace OpenApiGenerator.Core.Json;
 
 public class SystemTextJsonSerializer : IJsonSerializer
@@ -17,6 +19,26 @@ public class SystemTextJsonSerializer : IJsonSerializer
     public string GenerateRequiredAttribute()
     {
         return "[global::System.Text.Json.Serialization.JsonRequired]";
+    }
+    
+    public string GetOptionsType()
+    {
+        return "global::System.Text.Json.JsonSerializerOptions";
+    }
+    
+    public string CreateDefaultSettings(IReadOnlyList<string> converters)
+    {
+        return @$"new global::System.Text.Json.JsonSerializerOptions
+            {{
+                PropertyNameCaseInsensitive = true,
+                DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+                Converters =
+                {{
+{converters.Select(x => $@" 
+                    new {x}(),
+").Inject()}
+                }}
+            }}";
     }
 
     public string GenerateConverterAttribute(string type)
@@ -68,7 +90,7 @@ public class SystemTextJsonSerializer : IJsonSerializer
         type = type ?? throw new ArgumentNullException(nameof(type));
         
         return string.IsNullOrWhiteSpace(jsonSerializerContext)
-            ? "global::System.Text.Json.JsonSerializer.Serialize(request)"
+            ? "global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions)"
             : $"global::System.Text.Json.JsonSerializer.Serialize(request, global::{jsonSerializerContext}.Default.{GetContextType(type)})";
     }
     
@@ -77,7 +99,7 @@ public class SystemTextJsonSerializer : IJsonSerializer
         type = type ?? throw new ArgumentNullException(nameof(type));
 
         return string.IsNullOrWhiteSpace(jsonSerializerContext)
-            ? $"global::System.Text.Json.JsonSerializer.Deserialize<{type}>(__content)"
+            ? $"global::System.Text.Json.JsonSerializer.Deserialize<{type}>(__content, _jsonSerializerOptions)"
             : $"global::System.Text.Json.JsonSerializer.Deserialize(__content, global::{jsonSerializerContext}.Default.{GetContextType(type)})";
     }
 }

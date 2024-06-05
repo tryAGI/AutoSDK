@@ -10,42 +10,68 @@ public partial class JsonTests
     public void Enum2_AnyOfStringAndEnum_SystemTextJson_String()
     {
         const string json = "{\"status\":\"pulling 797b70c4edf8\",\"digest\":\"sha256:797b70c4edf85907fe0a49eb85811256f65fa0f7bf52166b147fd16be2be4662\",\"total\":45949216}";
-
         var response = JsonSerializer.Deserialize<TestEnumClassAnyOf>(json);
         response.Should().NotBeNull();
         response!.Status.Value1.Should().Be(null);
-        response!.Status.Value2.Should().Be("pulling 797b70c4edf8");
-        response!.Status.Object.Should().Be("pulling 797b70c4edf8");
+        response.Status.Value2.Should().Be("pulling 797b70c4edf8");
+        response.Status.Object.Should().Be("pulling 797b70c4edf8");
+        
+        var response2 = JsonSerializer.Deserialize(json, TestSourceGenerationContext.Default.TestEnumClassAnyOf);
+        response2.Should().NotBeNull();
+        response2!.Status.Value1.Should().Be(default); // TODO: Should be nullable
+        response2.Status.Value2.Should().Be("pulling 797b70c4edf8");
+        response2.Status.Object.Should().Be("pulling 797b70c4edf8");
         
         var responseReverted = JsonSerializer.Deserialize<TestEnumClassAnyOfReverted>(json);
         responseReverted.Should().NotBeNull();
         responseReverted!.Status.Value2.Should().Be(null);
-        responseReverted!.Status.Value1.Should().Be("pulling 797b70c4edf8");
-        response!.Status.Object.Should().Be("pulling 797b70c4edf8");
+        responseReverted.Status.Value1.Should().Be("pulling 797b70c4edf8");
+        responseReverted.Status.Object.Should().Be("pulling 797b70c4edf8");
+        
+        var responseReverted2 = JsonSerializer.Deserialize(json, TestSourceGenerationContext.Default.TestEnumClassAnyOfReverted);
+        responseReverted2.Should().NotBeNull();
+        responseReverted2!.Status.Value2.Should().Be(default); // TODO: Should be nullable
+        responseReverted2.Status.Value1.Should().Be("pulling 797b70c4edf8");
+        responseReverted2.Status.Object.Should().Be(default(TestEnum)); // TODO: Should be nullable
     }
     
     [TestMethod]
     public void Enum2_AnyOfStringAndEnum_SystemTextJson_Enum()
     {
         const string json = "{\"status\":\"pulling manifest\",\"digest\":\"sha256:797b70c4edf85907fe0a49eb85811256f65fa0f7bf52166b147fd16be2be4662\",\"total\":45949216}";
-
-        var response = JsonSerializer.Deserialize<TestEnumClassAnyOf>(json, new JsonSerializerOptions
+        var options = new global::System.Text.Json.JsonSerializerOptions
         {
-            Converters = { new AnyOfConverterFactorySystemTextJson(), new TestEnumJsonStringEnumConverter() }
-        });
+            PropertyNameCaseInsensitive = true,
+            DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+            Converters =
+            {
+                new TestEnumJsonStringEnumConverter(),
+            }
+        };
+
+        var response = JsonSerializer.Deserialize<TestEnumClassAnyOf>(json, options);
         response.Should().NotBeNull();
         response!.Status.Value1.Should().Be(TestEnum.PullingManifest);
-        response!.Status.Value2.Should().Be("pulling manifest");
-        response!.Status.Object.Should().Be("pulling manifest");
+        response.Status.Value2.Should().Be("pulling manifest");
+        response.Status.Object.Should().Be("pulling manifest");
         
-        var responseReverted = JsonSerializer.Deserialize<TestEnumClassAnyOfReverted>(json, new JsonSerializerOptions
-        {
-            Converters = { new AnyOfConverterFactorySystemTextJson(), new TestEnumJsonStringEnumConverter() }
-        });
+        var response2 = JsonSerializer.Deserialize(json, TestSourceGenerationContext.Default.TestEnumClassAnyOf);
+        response2.Should().NotBeNull();
+        response2!.Status.Value1.Should().Be(TestEnum.PullingManifest);
+        response2.Status.Value2.Should().Be("pulling manifest");
+        response2.Status.Object.Should().Be("pulling manifest");
+        
+        var responseReverted = JsonSerializer.Deserialize(json, TestSourceGenerationContext.Default.TestEnumClassAnyOfReverted);
         responseReverted.Should().NotBeNull();
         responseReverted!.Status.Value2.Should().Be(TestEnum.PullingManifest);
-        responseReverted!.Status.Value1.Should().Be("pulling manifest");
-        responseReverted!.Status.Object.Should().Be(TestEnum.PullingManifest);
+        responseReverted.Status.Value1.Should().Be("pulling manifest");
+        responseReverted.Status.Object.Should().Be(TestEnum.PullingManifest);
+        
+        var responseReverted2 = JsonSerializer.Deserialize<TestEnumClassAnyOfReverted>(json, options);
+        responseReverted2.Should().NotBeNull();
+        responseReverted2!.Status.Value2.Should().Be(TestEnum.PullingManifest);
+        responseReverted2.Status.Value1.Should().Be("pulling manifest");
+        responseReverted2.Status.Object.Should().Be(TestEnum.PullingManifest);
     }
 }
 

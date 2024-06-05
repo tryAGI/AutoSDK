@@ -12,26 +12,28 @@ namespace G
     public sealed partial class Api : global::System.IDisposable
     {
         private readonly global::System.Net.Http.HttpClient _httpClient;
+        private readonly global::Newtonsoft.Json.JsonSerializerSettings _jsonSerializerOptions;
+
 
         /// <summary>
         /// Given a prompt, the model will generate a completion.
         /// </summary>
-        public CompletionsClient Completions => new CompletionsClient(_httpClient);
+        public CompletionsClient Completions => new CompletionsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
 
         /// <summary>
         /// Given a list of messages comprising a conversation, the model will return a response.
         /// </summary>
-        public ChatClient Chat => new ChatClient(_httpClient);
+        public ChatClient Chat => new ChatClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
 
         /// <summary>
         /// Get a vector representation of a given input.
         /// </summary>
-        public EmbeddingsClient Embeddings => new EmbeddingsClient(_httpClient);
+        public EmbeddingsClient Embeddings => new EmbeddingsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
 
         /// <summary>
         /// List and describe the various models available.
         /// </summary>
-        public ModelsClient Models => new ModelsClient(_httpClient);
+        public ModelsClient Models => new ModelsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
 
         /// <summary>
         /// Creates a new instance of the Api.
@@ -42,10 +44,13 @@ namespace G
         /// <param name="baseUri"></param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null)
+            global::System.Uri? baseUri = null,
+            global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null
+            )
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri("http://localhost:11434/api");
+            _jsonSerializerOptions = _jsonSerializerOptions ?? new global::Newtonsoft.Json.JsonSerializerSettings();
         }
 
         /// <inheritdoc/>

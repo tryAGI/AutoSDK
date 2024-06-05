@@ -38,6 +38,13 @@ public partial class JsonTests
     // }
 }
 
-[JsonSourceGenerationOptions(DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull)]
+[JsonSourceGenerationOptions(
+    DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+    Converters =
+    [
+        typeof(TestEnumJsonStringEnumConverter)
+    ])]
 [JsonSerializable(typeof(TestEnumClass))]
+[JsonSerializable(typeof(TestEnumClassAnyOf))]
+[JsonSerializable(typeof(TestEnumClassAnyOfReverted))]
 internal sealed partial class TestSourceGenerationContext : JsonSerializerContext;

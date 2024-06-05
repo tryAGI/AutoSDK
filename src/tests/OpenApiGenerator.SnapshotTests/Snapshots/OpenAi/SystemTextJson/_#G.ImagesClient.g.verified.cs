@@ -12,6 +12,8 @@ namespace G
     public sealed partial class ImagesClient : global::System.IDisposable
     {
         private readonly global::System.Net.Http.HttpClient _httpClient;
+        private readonly global::System.Text.Json.JsonSerializerOptions _jsonSerializerOptions;
+
 
         /// <summary>
         /// Creates a new instance of the ImagesClient.
@@ -22,10 +24,13 @@ namespace G
         /// <param name="baseUri"></param>
         public ImagesClient(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null)
+            global::System.Uri? baseUri = null,
+            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null
+            )
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri("https://api.openai.com/v1");
+            _jsonSerializerOptions = _jsonSerializerOptions ?? new global::System.Text.Json.JsonSerializerOptions();
         }
 
         /// <inheritdoc/>

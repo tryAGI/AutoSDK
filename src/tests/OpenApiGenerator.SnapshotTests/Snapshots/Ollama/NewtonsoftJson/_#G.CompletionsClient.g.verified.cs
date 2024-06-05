@@ -12,6 +12,8 @@ namespace G
     public sealed partial class CompletionsClient : global::System.IDisposable
     {
         private readonly global::System.Net.Http.HttpClient _httpClient;
+        private readonly global::Newtonsoft.Json.JsonSerializerSettings _jsonSerializerOptions;
+
 
         /// <summary>
         /// Creates a new instance of the CompletionsClient.
@@ -22,10 +24,13 @@ namespace G
         /// <param name="baseUri"></param>
         public CompletionsClient(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null)
+            global::System.Uri? baseUri = null,
+            global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null
+            )
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri("http://localhost:11434/api");
+            _jsonSerializerOptions = _jsonSerializerOptions ?? new global::Newtonsoft.Json.JsonSerializerSettings();
         }
 
         /// <inheritdoc/>

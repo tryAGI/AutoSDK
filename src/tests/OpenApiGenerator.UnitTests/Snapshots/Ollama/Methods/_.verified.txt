@@ -428,6 +428,7 @@ How long (in minutes) to keep the model loaded in memory.
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: GenerateCompletionAsync,
     NotAsyncMethodName: GenerateCompletion,
     FileNameWithoutExtension: G.CompletionsClient.GenerateCompletion
@@ -730,6 +731,7 @@ How long (in minutes) to keep the model loaded in memory.
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: GenerateChatCompletionAsync,
     NotAsyncMethodName: GenerateChatCompletion,
     FileNameWithoutExtension: G.ChatClient.GenerateChatCompletion
@@ -950,6 +952,7 @@ How long (in minutes) to keep the model loaded in memory.
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: GenerateEmbeddingAsync,
     NotAsyncMethodName: GenerateEmbedding,
     FileNameWithoutExtension: G.EmbeddingsClient.GenerateEmbedding
@@ -1161,6 +1164,7 @@ If `false` the response will be returned as a single response object, otherwise 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CreateModelAsync,
     NotAsyncMethodName: CreateModel,
     FileNameWithoutExtension: G.ModelsClient.CreateModel
@@ -1220,6 +1224,7 @@ If `false` the response will be returned as a single response object, otherwise 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: ListModelsAsync,
     NotAsyncMethodName: ListModels,
     FileNameWithoutExtension: G.ModelsClient.ListModels
@@ -1337,6 +1342,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: ShowModelInfoAsync,
     NotAsyncMethodName: ShowModelInfo,
     FileNameWithoutExtension: G.ModelsClient.ShowModelInfo
@@ -1450,6 +1456,7 @@ Name of the new model.
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CopyModelAsync,
     NotAsyncMethodName: CopyModel,
     FileNameWithoutExtension: G.ModelsClient.CopyModel
@@ -1539,6 +1546,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: DeleteModelAsync,
     NotAsyncMethodName: DeleteModel,
     FileNameWithoutExtension: G.ModelsClient.DeleteModel
@@ -1760,6 +1768,7 @@ If `false` the response will be returned as a single response object, otherwise 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: PullModelAsync,
     NotAsyncMethodName: PullModel,
     FileNameWithoutExtension: G.ModelsClient.PullModel
@@ -1978,6 +1987,7 @@ If `false` the response will be returned as a single response object, otherwise 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: PushModelAsync,
     NotAsyncMethodName: PushModel,
     FileNameWithoutExtension: G.ModelsClient.PushModel
@@ -2048,6 +2058,7 @@ If `false` the response will be returned as a single response object, otherwise 
     },
     AdditionalModels: null,
     AdditionalTypes: null,
+    Converters: null,
     MethodName: CheckBlobAsync,
     NotAsyncMethodName: CheckBlob,
     FileNameWithoutExtension: G.ModelsClient.CheckBlob
@@ -2131,12 +2142,13 @@ If `false` the response will be returned as a single response object, otherwise 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CreateBlobAsync,
     NotAsyncMethodName: CreateBlob,
     FileNameWithoutExtension: G.ModelsClient.CreateBlob
   },
   {
-    Id: Constructors,
+    Id: MainConstructor,
     Namespace: G,
     ClassName: Api,
     BaseUrl: http://localhost:11434/api,
@@ -2266,8 +2278,16 @@ If `false` the response will be returned as a single response object, otherwise 
     },
     AdditionalModels: null,
     AdditionalTypes: null,
-    MethodName: ConstructorsAsync,
-    NotAsyncMethodName: Constructors,
+    Converters: [
+      global::OpenApiGenerator.JsonConverters.GenerateCompletionRequestFormatJsonConverter,
+      global::OpenApiGenerator.JsonConverters.GenerateChatCompletionRequestFormatJsonConverter,
+      global::OpenApiGenerator.JsonConverters.MessageRoleJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateModelResponseStatusJsonConverter,
+      global::OpenApiGenerator.JsonConverters.PullModelResponseStatusJsonConverter,
+      global::OpenApiGenerator.JsonConverters.PushModelResponseStatusJsonConverter
+    ],
+    MethodName: MainConstructorAsync,
+    NotAsyncMethodName: MainConstructor,
     FileNameWithoutExtension: G.Api
   },
   {
@@ -2308,6 +2328,7 @@ If `false` the response will be returned as a single response object, otherwise 
     },
     AdditionalModels: null,
     AdditionalTypes: null,
+    Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
     FileNameWithoutExtension: G.CompletionsClient
@@ -2350,6 +2371,7 @@ If `false` the response will be returned as a single response object, otherwise 
     },
     AdditionalModels: null,
     AdditionalTypes: null,
+    Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
     FileNameWithoutExtension: G.ChatClient
@@ -2392,6 +2414,7 @@ If `false` the response will be returned as a single response object, otherwise 
     },
     AdditionalModels: null,
     AdditionalTypes: null,
+    Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
     FileNameWithoutExtension: G.EmbeddingsClient
@@ -2434,6 +2457,7 @@ If `false` the response will be returned as a single response object, otherwise 
     },
     AdditionalModels: null,
     AdditionalTypes: null,
+    Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
     FileNameWithoutExtension: G.ModelsClient

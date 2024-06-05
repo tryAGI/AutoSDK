@@ -31,7 +31,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<GetChannelGuestStarSettingsResponse?>(__content) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<GetChannelGuestStarSettingsResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

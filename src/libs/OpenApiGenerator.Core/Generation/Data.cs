@@ -127,7 +127,7 @@ public static class Data
                 !settings.ExcludeTags.Contains(x.Name))
             .ToArray();
         EndPoint[] constructors = settings.GenerateSdk || settings.GenerateConstructors ? [new EndPoint(
-                Id: "Constructors",
+                Id: "MainConstructor",
                 Namespace: settings.Namespace,
                 ClassName: settings.ClassName.Replace(".", string.Empty),
                 BaseUrl: openApiDocument.Servers.FirstOrDefault()?.Url ?? string.Empty,
@@ -155,7 +155,8 @@ public static class Data
                 RequestType: TypeData.Default,
                 ResponseType: TypeData.Default,
                 AdditionalModels: [],
-                AdditionalTypes: [])] : [];
+                AdditionalTypes: [],
+                Converters: [])] : [];
         if (settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors))
         {
             constructors = constructors.Concat(
@@ -177,7 +178,8 @@ public static class Data
                         RequestType: TypeData.Default,
                         ResponseType: TypeData.Default,
                         AdditionalModels: [],
-                        AdditionalTypes: [])))
+                        AdditionalTypes: [],
+                        Converters: [])))
                 .ToArray();
         }
             
@@ -250,6 +252,22 @@ public static class Data
             .GroupBy(x => x.FileNameWithoutExtension)
             .Select(x => x.First())
             .ToImmutableArray() : [];
+
+        for (var i = 0; i < methods.Length; i++)
+        {
+            if (methods[i].Id != "MainConstructor")
+            {
+                continue;
+            }
+            
+            methods[i] = methods[i] with
+            {
+                Converters = models
+                    .Where(x => x.Style == ModelStyle.Enumeration && x.JsonSerializerType != JsonSerializerType.NewtonsoftJson)
+                    .Select(x => $"global::OpenApiGenerator.JsonConverters.{x.ClassName}JsonConverter")
+                    .ToImmutableArray(),
+            };
+        }
         
         return (Models: models,
                 Methods: settings.GenerateSdk || settings.GenerateMethods

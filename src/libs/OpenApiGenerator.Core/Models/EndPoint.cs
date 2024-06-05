@@ -22,7 +22,8 @@ public readonly record struct EndPoint(
     TypeData RequestType,
     TypeData ResponseType,
     ImmutableArray<ModelData> AdditionalModels,
-    ImmutableArray<TypeData> AdditionalTypes
+    ImmutableArray<TypeData> AdditionalTypes,
+    ImmutableArray<string> Converters
 )
 {
     public string MethodName => $"{NotAsyncMethodName}Async";
@@ -202,7 +203,8 @@ public readonly record struct EndPoint(
             AdditionalTypes: [
                 ..requestBodyTypes,
                 ..responseTypes,
-            ]);
+            ],
+            Converters: []);
         
         return endPoint;
     }
@@ -228,7 +230,8 @@ public readonly record struct EndPoint(
             RequestType: TypeData.Default,
             ResponseType: TypeData.Default,
             AdditionalModels: [],
-            AdditionalTypes: []);
+            AdditionalTypes: [],
+            Converters: []);
         
         return endPoint;
     }

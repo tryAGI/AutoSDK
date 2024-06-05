@@ -11,6 +11,8 @@ namespace G
     public sealed partial class BitsClient : global::System.IDisposable
     {
         private readonly global::System.Net.Http.HttpClient _httpClient;
+        private readonly global::System.Text.Json.JsonSerializerOptions _jsonSerializerOptions;
+
 
         /// <summary>
         /// Creates a new instance of the BitsClient.
@@ -21,10 +23,13 @@ namespace G
         /// <param name="baseUri"></param>
         public BitsClient(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null)
+            global::System.Uri? baseUri = null,
+            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null
+            )
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri("https://api.twitch.tv/helix");
+            _jsonSerializerOptions = _jsonSerializerOptions ?? new global::System.Text.Json.JsonSerializerOptions();
         }
 
         /// <inheritdoc/>

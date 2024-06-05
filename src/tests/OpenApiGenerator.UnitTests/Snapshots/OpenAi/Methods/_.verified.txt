@@ -704,6 +704,7 @@ A list of functions the model may generate JSON inputs for.
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CreateChatCompletionAsync,
     NotAsyncMethodName: CreateChatCompletion,
     FileNameWithoutExtension: G.ChatClient.CreateChatCompletion
@@ -1342,6 +1343,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CreateCompletionAsync,
     NotAsyncMethodName: CreateCompletion,
     FileNameWithoutExtension: G.CompletionsClient.CreateCompletion
@@ -1679,6 +1681,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CreateImageAsync,
     NotAsyncMethodName: CreateImage,
     FileNameWithoutExtension: G.ImagesClient.CreateImage
@@ -1992,6 +1995,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CreateImageEditAsync,
     NotAsyncMethodName: CreateImageEdit,
     FileNameWithoutExtension: G.ImagesClient.CreateImageEdit
@@ -2253,6 +2257,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CreateImageVariationAsync,
     NotAsyncMethodName: CreateImageVariation,
     FileNameWithoutExtension: G.ImagesClient.CreateImageVariation
@@ -2482,6 +2487,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CreateEmbeddingAsync,
     NotAsyncMethodName: CreateEmbedding,
     FileNameWithoutExtension: G.EmbeddingsClient.CreateEmbedding
@@ -2715,6 +2721,7 @@ The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CreateSpeechAsync,
     NotAsyncMethodName: CreateSpeech,
     FileNameWithoutExtension: G.AudioClient.CreateSpeech
@@ -2968,6 +2975,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
         ConverterType: OneOfJsonConverterFactory2
       }
     ],
+    Converters: null,
     MethodName: CreateTranscriptionAsync,
     NotAsyncMethodName: CreateTranscription,
     FileNameWithoutExtension: G.AudioClient.CreateTranscription
@@ -3182,6 +3190,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
         ConverterType: OneOfJsonConverterFactory2
       }
     ],
+    Converters: null,
     MethodName: CreateTranslationAsync,
     NotAsyncMethodName: CreateTranslation,
     FileNameWithoutExtension: G.AudioClient.CreateTranslation
@@ -3270,6 +3279,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: ListFilesAsync,
     NotAsyncMethodName: ListFiles,
     FileNameWithoutExtension: G.FilesClient.ListFiles
@@ -3423,6 +3433,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CreateFileAsync,
     NotAsyncMethodName: CreateFile,
     FileNameWithoutExtension: G.FilesClient.CreateFile
@@ -3514,6 +3525,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: DeleteFileAsync,
     NotAsyncMethodName: DeleteFile,
     FileNameWithoutExtension: G.FilesClient.DeleteFile
@@ -3614,6 +3626,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: RetrieveFileAsync,
     NotAsyncMethodName: RetrieveFile,
     FileNameWithoutExtension: G.FilesClient.RetrieveFile
@@ -3696,6 +3709,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: DownloadFileAsync,
     NotAsyncMethodName: DownloadFile,
     FileNameWithoutExtension: G.FilesClient.DownloadFile
@@ -4013,6 +4027,7 @@ If a seed is not specified, one will be generated for you.
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CreateFineTuningJobAsync,
     NotAsyncMethodName: CreateFineTuningJob,
     FileNameWithoutExtension: G.FineTuningClient.CreateFineTuningJob
@@ -4131,6 +4146,7 @@ If a seed is not specified, one will be generated for you.
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: ListPaginatedFineTuningJobsAsync,
     NotAsyncMethodName: ListPaginatedFineTuningJobs,
     FileNameWithoutExtension: G.FineTuningClient.ListPaginatedFineTuningJobs
@@ -4250,6 +4266,7 @@ If a seed is not specified, one will be generated for you.
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: RetrieveFineTuningJobAsync,
     NotAsyncMethodName: RetrieveFineTuningJob,
     FileNameWithoutExtension: G.FineTuningClient.RetrieveFineTuningJob
@@ -4393,6 +4410,7 @@ If a seed is not specified, one will be generated for you.
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: ListFineTuningEventsAsync,
     NotAsyncMethodName: ListFineTuningEvents,
     FileNameWithoutExtension: G.FineTuningClient.ListFineTuningEvents
@@ -4513,6 +4531,7 @@ If a seed is not specified, one will be generated for you.
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CancelFineTuningJobAsync,
     NotAsyncMethodName: CancelFineTuningJob,
     FileNameWithoutExtension: G.FineTuningClient.CancelFineTuningJob
@@ -4662,6 +4681,7 @@ If a seed is not specified, one will be generated for you.
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: ListFineTuningJobCheckpointsAsync,
     NotAsyncMethodName: ListFineTuningJobCheckpoints,
     FileNameWithoutExtension: G.FineTuningClient.ListFineTuningJobCheckpoints
@@ -4723,6 +4743,7 @@ If a seed is not specified, one will be generated for you.
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: ListModelsAsync,
     NotAsyncMethodName: ListModels,
     FileNameWithoutExtension: G.ModelsClient.ListModels
@@ -4816,6 +4837,7 @@ If a seed is not specified, one will be generated for you.
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: RetrieveModelAsync,
     NotAsyncMethodName: RetrieveModel,
     FileNameWithoutExtension: G.ModelsClient.RetrieveModel
@@ -4908,6 +4930,7 @@ If a seed is not specified, one will be generated for you.
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: DeleteModelAsync,
     NotAsyncMethodName: DeleteModel,
     FileNameWithoutExtension: G.ModelsClient.DeleteModel
@@ -5046,6 +5069,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CreateModerationAsync,
     NotAsyncMethodName: CreateModeration,
     FileNameWithoutExtension: G.ModerationsClient.CreateModeration
@@ -5228,6 +5252,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: ListAssistantsAsync,
     NotAsyncMethodName: ListAssistants,
     FileNameWithoutExtension: G.AssistantsClient.ListAssistants
@@ -5615,6 +5640,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CreateAssistantAsync,
     NotAsyncMethodName: CreateAssistant,
     FileNameWithoutExtension: G.AssistantsClient.CreateAssistant
@@ -5725,6 +5751,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: GetAssistantAsync,
     NotAsyncMethodName: GetAssistant,
     FileNameWithoutExtension: G.AssistantsClient.GetAssistant
@@ -6137,6 +6164,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: ModifyAssistantAsync,
     NotAsyncMethodName: ModifyAssistant,
     FileNameWithoutExtension: G.AssistantsClient.ModifyAssistant
@@ -6228,6 +6256,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: DeleteAssistantAsync,
     NotAsyncMethodName: DeleteAssistant,
     FileNameWithoutExtension: G.AssistantsClient.DeleteAssistant
@@ -6391,6 +6420,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CreateThreadAsync,
     NotAsyncMethodName: CreateThread,
     FileNameWithoutExtension: G.AssistantsClient.CreateThread
@@ -6485,6 +6515,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: GetThreadAsync,
     NotAsyncMethodName: GetThread,
     FileNameWithoutExtension: G.AssistantsClient.GetThread
@@ -6649,6 +6680,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: ModifyThreadAsync,
     NotAsyncMethodName: ModifyThread,
     FileNameWithoutExtension: G.AssistantsClient.ModifyThread
@@ -6740,6 +6772,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: DeleteThreadAsync,
     NotAsyncMethodName: DeleteThread,
     FileNameWithoutExtension: G.AssistantsClient.DeleteThread
@@ -6974,6 +7007,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: ListMessagesAsync,
     NotAsyncMethodName: ListMessages,
     FileNameWithoutExtension: G.AssistantsClient.ListMessages
@@ -7215,6 +7249,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CreateMessageAsync,
     NotAsyncMethodName: CreateMessage,
     FileNameWithoutExtension: G.AssistantsClient.CreateMessage
@@ -7353,6 +7388,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: GetMessageAsync,
     NotAsyncMethodName: GetMessage,
     FileNameWithoutExtension: G.AssistantsClient.GetMessage
@@ -7534,6 +7570,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: ModifyMessageAsync,
     NotAsyncMethodName: ModifyMessage,
     FileNameWithoutExtension: G.AssistantsClient.ModifyMessage
@@ -7651,6 +7688,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: DeleteMessageAsync,
     NotAsyncMethodName: DeleteMessage,
     FileNameWithoutExtension: G.AssistantsClient.DeleteMessage
@@ -8198,6 +8236,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CreateThreadAndRunAsync,
     NotAsyncMethodName: CreateThreadAndRun,
     FileNameWithoutExtension: G.AssistantsClient.CreateThreadAndRun
@@ -8406,6 +8445,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: ListRunsAsync,
     NotAsyncMethodName: ListRuns,
     FileNameWithoutExtension: G.AssistantsClient.ListRuns
@@ -8973,6 +9013,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CreateRunAsync,
     NotAsyncMethodName: CreateRun,
     FileNameWithoutExtension: G.AssistantsClient.CreateRun
@@ -9135,6 +9176,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: GetRunAsync,
     NotAsyncMethodName: GetRun,
     FileNameWithoutExtension: G.AssistantsClient.GetRun
@@ -9340,6 +9382,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: ModifyRunAsync,
     NotAsyncMethodName: ModifyRun,
     FileNameWithoutExtension: G.AssistantsClient.ModifyRun
@@ -9569,6 +9612,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: SubmitToolOuputsToRunAsync,
     NotAsyncMethodName: SubmitToolOuputsToRun,
     FileNameWithoutExtension: G.AssistantsClient.SubmitToolOuputsToRun
@@ -9732,6 +9776,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CancelRunAsync,
     NotAsyncMethodName: CancelRun,
     FileNameWithoutExtension: G.AssistantsClient.CancelRun
@@ -9966,6 +10011,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: ListRunStepsAsync,
     NotAsyncMethodName: ListRunSteps,
     FileNameWithoutExtension: G.AssistantsClient.ListRunSteps
@@ -10134,6 +10180,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: GetRunStepAsync,
     NotAsyncMethodName: GetRunStep,
     FileNameWithoutExtension: G.AssistantsClient.GetRunStep
@@ -10316,6 +10363,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: ListVectorStoresAsync,
     NotAsyncMethodName: ListVectorStores,
     FileNameWithoutExtension: G.VectorStoresClient.ListVectorStores
@@ -10517,6 +10565,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CreateVectorStoreAsync,
     NotAsyncMethodName: CreateVectorStore,
     FileNameWithoutExtension: G.VectorStoresClient.CreateVectorStore
@@ -10623,6 +10672,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: GetVectorStoreAsync,
     NotAsyncMethodName: GetVectorStore,
     FileNameWithoutExtension: G.VectorStoresClient.GetVectorStore
@@ -10825,6 +10875,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: ModifyVectorStoreAsync,
     NotAsyncMethodName: ModifyVectorStore,
     FileNameWithoutExtension: G.VectorStoresClient.ModifyVectorStore
@@ -10916,6 +10967,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: DeleteVectorStoreAsync,
     NotAsyncMethodName: DeleteVectorStore,
     FileNameWithoutExtension: G.VectorStoresClient.DeleteVectorStore
@@ -11160,6 +11212,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: ListVectorStoreFilesAsync,
     NotAsyncMethodName: ListVectorStoreFiles,
     FileNameWithoutExtension: G.VectorStoresClient.ListVectorStoreFiles
@@ -11299,6 +11352,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CreateVectorStoreFileAsync,
     NotAsyncMethodName: CreateVectorStoreFile,
     FileNameWithoutExtension: G.VectorStoresClient.CreateVectorStoreFile
@@ -11425,6 +11479,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: GetVectorStoreFileAsync,
     NotAsyncMethodName: GetVectorStoreFile,
     FileNameWithoutExtension: G.VectorStoresClient.GetVectorStoreFile
@@ -11542,6 +11597,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: DeleteVectorStoreFileAsync,
     NotAsyncMethodName: DeleteVectorStoreFile,
     FileNameWithoutExtension: G.VectorStoresClient.DeleteVectorStoreFile
@@ -11679,6 +11735,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CreateVectorStoreFileBatchAsync,
     NotAsyncMethodName: CreateVectorStoreFileBatch,
     FileNameWithoutExtension: G.VectorStoresClient.CreateVectorStoreFileBatch
@@ -11803,6 +11860,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: GetVectorStoreFileBatchAsync,
     NotAsyncMethodName: GetVectorStoreFileBatch,
     FileNameWithoutExtension: G.VectorStoresClient.GetVectorStoreFileBatch
@@ -11926,6 +11984,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CancelVectorStoreFileBatchAsync,
     NotAsyncMethodName: CancelVectorStoreFileBatch,
     FileNameWithoutExtension: G.VectorStoresClient.CancelVectorStoreFileBatch
@@ -12196,6 +12255,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: ListFilesInVectorStoreBatchAsync,
     NotAsyncMethodName: ListFilesInVectorStoreBatch,
     FileNameWithoutExtension: G.VectorStoresClient.ListFilesInVectorStoreBatch
@@ -12416,6 +12476,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CreateBatchAsync,
     NotAsyncMethodName: CreateBatch,
     FileNameWithoutExtension: G.BatchClient.CreateBatch
@@ -12538,6 +12599,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: ListBatchesAsync,
     NotAsyncMethodName: ListBatches,
     FileNameWithoutExtension: G.BatchClient.ListBatches
@@ -12662,6 +12724,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: RetrieveBatchAsync,
     NotAsyncMethodName: RetrieveBatch,
     FileNameWithoutExtension: G.BatchClient.RetrieveBatch
@@ -12787,6 +12850,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
         ConverterType: 
       }
     ],
+    Converters: null,
     MethodName: CancelBatchAsync,
     NotAsyncMethodName: CancelBatch,
     FileNameWithoutExtension: G.BatchClient.CancelBatch
@@ -12829,12 +12893,13 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     },
     AdditionalModels: null,
     AdditionalTypes: null,
+    Converters: null,
     MethodName: AuthorizeUsingBearerAsync,
     NotAsyncMethodName: AuthorizeUsingBearer,
     FileNameWithoutExtension: G.Api.Authorization
   },
   {
-    Id: Constructors,
+    Id: MainConstructor,
     Namespace: G,
     ClassName: Api,
     BaseUrl: https://api.openai.com/v1,
@@ -13148,8 +13213,180 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     },
     AdditionalModels: null,
     AdditionalTypes: null,
-    MethodName: ConstructorsAsync,
-    NotAsyncMethodName: Constructors,
+    Converters: [
+      global::OpenApiGenerator.JsonConverters.ListModelsResponseObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateCompletionRequestModelJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateCompletionResponseChoicesFinishReasonJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateCompletionResponseObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartImageImageUrlDetailJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartImageTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartTextTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ChatCompletionRequestSystemMessageRoleJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ChatCompletionRequestUserMessageRoleJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ChatCompletionRequestAssistantMessageRoleJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ChatCompletionRequestToolMessageRoleJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ChatCompletionRequestFunctionMessageRoleJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ChatCompletionToolTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ChatCompletionNamedToolChoiceTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ChatCompletionMessageToolCallTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ChatCompletionMessageToolCallChunkTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ChatCompletionResponseMessageRoleJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ChatCompletionStreamResponseDeltaRoleJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateChatCompletionRequestResponseFormatTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateChatCompletionRequestModelJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateChatCompletionRequestToolChoiceJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateChatCompletionRequestFunctionCallJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateChatCompletionResponseChoicesFinishReasonJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateChatCompletionResponseObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateChatCompletionFunctionResponseChoicesFinishReasonJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateChatCompletionFunctionResponseObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ListPaginatedFineTuningJobsResponseObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateChatCompletionStreamResponseChoicesFinishReasonJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateChatCompletionStreamResponseObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateImageRequestQualityJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateImageRequestResponseFormatJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateImageRequestSizeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateImageRequestStyleJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateImageRequestModelJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateImageEditRequestSizeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateImageEditRequestResponseFormatJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateImageEditRequestModelJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateImageVariationRequestResponseFormatJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateImageVariationRequestSizeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateImageVariationRequestModelJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateModerationRequestModelJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ListFilesResponseObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateFileRequestPurposeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.DeleteFileResponseObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateFineTuningJobRequestHyperparametersBatchSizeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateFineTuningJobRequestHyperparametersLearningRateMultiplierJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateFineTuningJobRequestHyperparametersNEpochsJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateFineTuningJobRequestIntegrationsTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateFineTuningJobRequestModelJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ListFineTuningJobEventsResponseObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ListFineTuningJobCheckpointsResponseObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateEmbeddingRequestEncodingFormatJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateEmbeddingRequestModelJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateEmbeddingResponseObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateTranscriptionRequestResponseFormatJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateTranscriptionRequestModelJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateTranslationRequestModelJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateSpeechRequestVoiceJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateSpeechRequestResponseFormatJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateSpeechRequestModelJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ModelObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.OpenAIFileObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.OpenAIFilePurposeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.OpenAIFileStatusJsonConverter,
+      global::OpenApiGenerator.JsonConverters.EmbeddingObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.FineTuningJobHyperparametersNEpochsJsonConverter,
+      global::OpenApiGenerator.JsonConverters.FineTuningJobObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.FineTuningJobStatusJsonConverter,
+      global::OpenApiGenerator.JsonConverters.FineTuningIntegrationTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.FineTuningJobEventLevelJsonConverter,
+      global::OpenApiGenerator.JsonConverters.FineTuningJobEventObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.FineTuningJobCheckpointObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.AssistantObjectObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.AssistantObjectResponseFormatJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateAssistantRequestModelJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateAssistantRequestResponseFormatJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ModifyAssistantRequestResponseFormatJsonConverter,
+      global::OpenApiGenerator.JsonConverters.DeleteAssistantResponseObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.AssistantToolsCodeTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.AssistantToolsFileSearchTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.AssistantToolsFunctionTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.TruncationObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.AssistantsNamedToolChoiceTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunObjectRequiredActionTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunObjectLastErrorCodeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunObjectIncompleteDetailsReasonJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunObjectObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunObjectStatusJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunObjectToolChoiceJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunObjectResponseFormatJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateRunRequestModelJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateRunRequestToolChoiceJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateRunRequestResponseFormatJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunToolCallObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateThreadAndRunRequestModelJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateThreadAndRunRequestToolChoiceJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateThreadAndRunRequestResponseFormatJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ThreadObjectObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.DeleteThreadResponseObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.MessageObjectIncompleteDetailsReasonJsonConverter,
+      global::OpenApiGenerator.JsonConverters.MessageObjectObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.MessageObjectStatusJsonConverter,
+      global::OpenApiGenerator.JsonConverters.MessageObjectRoleJsonConverter,
+      global::OpenApiGenerator.JsonConverters.MessageDeltaObjectDeltaRoleJsonConverter,
+      global::OpenApiGenerator.JsonConverters.MessageDeltaObjectObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateMessageRequestRoleJsonConverter,
+      global::OpenApiGenerator.JsonConverters.DeleteMessageResponseObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.MessageContentImageFileObjectImageFileDetailJsonConverter,
+      global::OpenApiGenerator.JsonConverters.MessageContentImageFileObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.MessageDeltaContentImageFileObjectImageFileDetailJsonConverter,
+      global::OpenApiGenerator.JsonConverters.MessageDeltaContentImageFileObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.MessageContentImageUrlObjectImageUrlDetailJsonConverter,
+      global::OpenApiGenerator.JsonConverters.MessageContentImageUrlObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.MessageDeltaContentImageUrlObjectImageUrlDetailJsonConverter,
+      global::OpenApiGenerator.JsonConverters.MessageDeltaContentImageUrlObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.MessageContentTextObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.MessageRequestContentTextObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.MessageContentTextAnnotationsFileCitationObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.MessageContentTextAnnotationsFilePathObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.MessageDeltaContentTextObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.MessageDeltaContentTextAnnotationsFileCitationObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.MessageDeltaContentTextAnnotationsFilePathObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunStepObjectLastErrorCodeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunStepObjectObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunStepObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunStepObjectStatusJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunStepDeltaObjectObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunStepDetailsMessageCreationObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsMessageCreationObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunStepDetailsToolCallsObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsToolCallsObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunStepDetailsToolCallsCodeObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsToolCallsCodeObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunStepDetailsToolCallsCodeOutputLogsObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunStepDetailsToolCallsCodeOutputImageObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunStepDetailsToolCallsFileSearchObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsToolCallsFileSearchObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunStepDetailsToolCallsFunctionObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsToolCallsFunctionObjectTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.VectorStoreExpirationAfterAnchorJsonConverter,
+      global::OpenApiGenerator.JsonConverters.VectorStoreObjectObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.VectorStoreObjectStatusJsonConverter,
+      global::OpenApiGenerator.JsonConverters.DeleteVectorStoreResponseObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.VectorStoreFileObjectLastErrorCodeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.VectorStoreFileObjectObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.VectorStoreFileObjectStatusJsonConverter,
+      global::OpenApiGenerator.JsonConverters.DeleteVectorStoreFileResponseObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.VectorStoreFileBatchObjectObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.VectorStoreFileBatchObjectStatusJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ErrorEventEventJsonConverter,
+      global::OpenApiGenerator.JsonConverters.DoneEventEventJsonConverter,
+      global::OpenApiGenerator.JsonConverters.DoneEventDataJsonConverter,
+      global::OpenApiGenerator.JsonConverters.BatchObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.BatchStatusJsonConverter,
+      global::OpenApiGenerator.JsonConverters.BatchRequestInputMethodJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ListBatchesResponseObjectJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ListAssistantsOrderJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ListMessagesOrderJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ListRunsOrderJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ListRunStepsOrderJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ListVectorStoresOrderJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ListVectorStoreFilesOrderJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ListVectorStoreFilesFilterJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ListFilesInVectorStoreBatchOrderJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ListFilesInVectorStoreBatchFilterJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateBatchRequestEndpointJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateBatchRequestCompletionWindowJsonConverter
+    ],
+    MethodName: MainConstructorAsync,
+    NotAsyncMethodName: MainConstructor,
     FileNameWithoutExtension: G.Api
   },
   {
@@ -13190,6 +13427,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     },
     AdditionalModels: null,
     AdditionalTypes: null,
+    Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
     FileNameWithoutExtension: G.AssistantsClient
@@ -13232,6 +13470,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     },
     AdditionalModels: null,
     AdditionalTypes: null,
+    Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
     FileNameWithoutExtension: G.AudioClient
@@ -13274,6 +13513,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     },
     AdditionalModels: null,
     AdditionalTypes: null,
+    Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
     FileNameWithoutExtension: G.ChatClient
@@ -13316,6 +13556,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     },
     AdditionalModels: null,
     AdditionalTypes: null,
+    Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
     FileNameWithoutExtension: G.CompletionsClient
@@ -13358,6 +13599,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     },
     AdditionalModels: null,
     AdditionalTypes: null,
+    Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
     FileNameWithoutExtension: G.EmbeddingsClient
@@ -13400,6 +13642,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     },
     AdditionalModels: null,
     AdditionalTypes: null,
+    Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
     FileNameWithoutExtension: G.FineTuningClient
@@ -13442,6 +13685,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     },
     AdditionalModels: null,
     AdditionalTypes: null,
+    Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
     FileNameWithoutExtension: G.BatchClient
@@ -13484,6 +13728,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     },
     AdditionalModels: null,
     AdditionalTypes: null,
+    Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
     FileNameWithoutExtension: G.FilesClient
@@ -13526,6 +13771,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     },
     AdditionalModels: null,
     AdditionalTypes: null,
+    Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
     FileNameWithoutExtension: G.ImagesClient
@@ -13568,6 +13814,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     },
     AdditionalModels: null,
     AdditionalTypes: null,
+    Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
     FileNameWithoutExtension: G.ModelsClient
@@ -13610,6 +13857,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     },
     AdditionalModels: null,
     AdditionalTypes: null,
+    Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
     FileNameWithoutExtension: G.ModerationsClient
@@ -13652,6 +13900,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     },
     AdditionalModels: null,
     AdditionalTypes: null,
+    Converters: null,
     MethodName: ConstructorsAsync,
     NotAsyncMethodName: Constructors,
     FileNameWithoutExtension: G.VectorStoresClient

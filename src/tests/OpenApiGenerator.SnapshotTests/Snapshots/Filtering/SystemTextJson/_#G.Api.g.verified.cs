@@ -12,11 +12,13 @@ namespace G
     public sealed partial class Api : global::System.IDisposable
     {
         private readonly global::System.Net.Http.HttpClient _httpClient;
+        private readonly global::System.Text.Json.JsonSerializerOptions _jsonSerializerOptions;
+
 
         /// <summary>
         /// Move projects to or from GitHub.
         /// </summary>
-        public MigrationsClient Migrations => new MigrationsClient(_httpClient);
+        public MigrationsClient Migrations => new MigrationsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
 
         /// <summary>
         /// Creates a new instance of the Api.
@@ -27,10 +29,40 @@ namespace G
         /// <param name="baseUri"></param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null)
+            global::System.Uri? baseUri = null,
+            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null
+            )
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri("https://api.github.com");
+            _jsonSerializerOptions = _jsonSerializerOptions ?? new global::System.Text.Json.JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true,
+                DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+                Converters =
+                {
+                    new global::OpenApiGenerator.JsonConverters.RepositorySquashMergeCommitTitleJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.RepositorySquashMergeCommitMessageJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.RepositoryMergeCommitTitleJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.RepositoryMergeCommitMessageJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.SecurityAndAnalysisAdvancedSecurityStatusJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.SecurityAndAnalysisDependabotSecurityUpdatesStatusJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.SecurityAndAnalysisSecretScanningStatusJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.SecurityAndAnalysisSecretScanningPushProtectionStatusJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ImportStatusJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.PagesHttpsCertificateStateJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.PageStatusJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.PageProtectedDomainStateJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.PageBuildTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.MigrationsListForOrgExcludeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.MigrationsStartForOrgRequestExcludeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.MigrationsGetStatusForOrgExcludeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.MigrationsStartImportRequestVcsJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.MigrationsUpdateImportRequestVcsJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.MigrationsSetLfsPreferenceRequestUseLfsJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.MigrationsStartForAuthenticatedUserRequestExcludeJsonConverter(),
+                }
+            };
         }
 
         /// <inheritdoc/>

@@ -11,6 +11,8 @@ namespace G
     public sealed partial class Api : global::System.IDisposable
     {
         private readonly global::System.Net.Http.HttpClient _httpClient;
+        private readonly global::Newtonsoft.Json.JsonSerializerSettings _jsonSerializerOptions;
+
 
         /// <summary>
         /// Creates a new instance of the Api.
@@ -21,10 +23,13 @@ namespace G
         /// <param name="baseUri"></param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null)
+            global::System.Uri? baseUri = null,
+            global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null
+            )
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri("http://petstore.swagger.io/v1");
+            _jsonSerializerOptions = _jsonSerializerOptions ?? new global::Newtonsoft.Json.JsonSerializerSettings();
         }
 
         /// <inheritdoc/>
