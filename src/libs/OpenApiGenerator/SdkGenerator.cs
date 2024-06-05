@@ -45,6 +45,10 @@ public class SdkGenerator : IIncrementalGenerator
             .SelectMany(static (x, _) => x.Models)
             .SelectAndReportExceptions(GetEnumJsonConverterSourceCode, context, Id)
             .AddSource(context);
+        data
+            .SelectMany(static (x, _) => x.Models)
+            .SelectAndReportExceptions(GetEnumNullableJsonConverterSourceCode, context, Id)
+            .AddSource(context);
         
         data
             .SelectMany(static (x, _) => x.AnyOfs)
@@ -116,6 +120,17 @@ public class SdkGenerator : IIncrementalGenerator
         CancellationToken cancellationToken = default)
     {
         var fileWithName = Data.GetSourceCodeForEnumJsonConverter(model, cancellationToken);
+        
+        return new FileWithName(
+            Name: fileWithName.Name,
+            Text: fileWithName.Text);
+    }
+    
+    private static FileWithName GetEnumNullableJsonConverterSourceCode(
+        ModelData model,
+        CancellationToken cancellationToken = default)
+    {
+        var fileWithName = Data.GetSourceCodeForEnumNullableJsonConverter(model, cancellationToken);
         
         return new FileWithName(
             Name: fileWithName.Name,

@@ -72,7 +72,9 @@ namespace G
                 Converters =
                 {
                     new global::OpenApiGenerator.JsonConverters.AsnResponseTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.AsnResponseTypeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CompanyTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.CompanyTypeNullableJsonConverter(),
                 }
             };
         }

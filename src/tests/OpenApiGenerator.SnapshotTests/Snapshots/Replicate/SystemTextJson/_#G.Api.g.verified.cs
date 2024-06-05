@@ -37,14 +37,23 @@ namespace G
                 Converters =
                 {
                     new global::OpenApiGenerator.JsonConverters.PredictionRequestWebhookEventsFilterJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.PredictionRequestWebhookEventsFilterNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.TrainingRequestWebhookEventsFilterJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.TrainingRequestWebhookEventsFilterNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.VersionPredictionRequestWebhookEventsFilterJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.VersionPredictionRequestWebhookEventsFilterNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.GetAccountResponseTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.GetAccountResponseTypeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ListDeploymentsResponseResultsCurrentReleaseCreatedByTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ListDeploymentsResponseResultsCurrentReleaseCreatedByTypeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CreateDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.CreateDeploymentsResponseCurrentReleaseCreatedByTypeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.GetDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.GetDeploymentsResponseCurrentReleaseCreatedByTypeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.UpdateDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.UpdateDeploymentsResponseCurrentReleaseCreatedByTypeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CreateModelsRequestVisibilityJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.CreateModelsRequestVisibilityNullableJsonConverter(),
                 }
             };
         }

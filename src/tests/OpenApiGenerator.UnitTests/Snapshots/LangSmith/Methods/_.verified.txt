@@ -861,7 +861,9 @@
     AdditionalTypes: null,
     Converters: [
       global::OpenApiGenerator.JsonConverters.RunCreateSchemaExtendedRunTypeJsonConverter,
-      global::OpenApiGenerator.JsonConverters.RunCreateSchemaRunTypeJsonConverter
+      global::OpenApiGenerator.JsonConverters.RunCreateSchemaExtendedRunTypeNullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunCreateSchemaRunTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunCreateSchemaRunTypeNullableJsonConverter
     ],
     MethodName: MainConstructorAsync,
     NotAsyncMethodName: MainConstructor,

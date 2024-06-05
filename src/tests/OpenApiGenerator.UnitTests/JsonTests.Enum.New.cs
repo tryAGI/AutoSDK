@@ -42,7 +42,8 @@ public partial class JsonTests
     DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
     Converters =
     [
-        typeof(TestEnumJsonStringEnumConverter)
+        typeof(TestEnumJsonStringEnumConverter),
+        typeof(TestEnumNullableJsonStringEnumConverter),
     ])]
 [JsonSerializable(typeof(TestEnumClass))]
 [JsonSerializable(typeof(TestEnumClassAnyOf))]

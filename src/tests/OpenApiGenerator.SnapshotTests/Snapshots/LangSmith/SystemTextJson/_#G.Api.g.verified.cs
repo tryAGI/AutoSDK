@@ -37,7 +37,9 @@ namespace G
                 Converters =
                 {
                     new global::OpenApiGenerator.JsonConverters.RunCreateSchemaExtendedRunTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.RunCreateSchemaExtendedRunTypeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.RunCreateSchemaRunTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.RunCreateSchemaRunTypeNullableJsonConverter(),
                 }
             };
         }

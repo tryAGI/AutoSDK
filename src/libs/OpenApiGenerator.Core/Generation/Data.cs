@@ -264,7 +264,10 @@ public static class Data
             {
                 Converters = models
                     .Where(x => x.Style == ModelStyle.Enumeration && x.JsonSerializerType != JsonSerializerType.NewtonsoftJson)
-                    .Select(x => $"global::OpenApiGenerator.JsonConverters.{x.ClassName}JsonConverter")
+                    .SelectMany(x => new [] {
+                        $"global::OpenApiGenerator.JsonConverters.{x.ClassName}JsonConverter",
+                        $"global::OpenApiGenerator.JsonConverters.{x.ClassName}NullableJsonConverter"
+                    })
                     .ToImmutableArray(),
             };
         }
@@ -322,6 +325,21 @@ public static class Data
         return new FileWithName(
             Name: $"JsonConverters.{data.ClassName}.g.cs",
             Text: Sources.GenerateEnumJsonConverter(data, cancellationToken: cancellationToken));
+    }
+    
+    public static FileWithName GetSourceCodeForEnumNullableJsonConverter(
+        ModelData data,
+        CancellationToken cancellationToken = default)
+    {
+        if (data.Style != ModelStyle.Enumeration ||
+            data.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+        {
+            return FileWithName.Empty;
+        }
+        
+        return new FileWithName(
+            Name: $"JsonConverters.{data.ClassName}Nullable.g.cs",
+            Text: Sources.GenerateEnumNullableJsonConverter(data, cancellationToken: cancellationToken));
     }
 
     public static FileWithName GetSourceCodeForAnyOfJsonConverterFactory(
