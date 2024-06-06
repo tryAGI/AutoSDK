@@ -15,8 +15,6 @@ public static partial class Sources
             return string.Empty;
         }
         
-        var serializer = endPoint.JsonSerializerType.GetSerializer();
-        
         return $@"
 #nullable enable
 
@@ -25,7 +23,12 @@ namespace {endPoint.Namespace}
     {string.Empty.ToXmlDocumentationSummary(level: 4)}
     internal sealed partial class JsonSerializerContextConverters
     {{
-        private readonly {serializer.GetOptionsType()} _jsonSerializerOptions = {serializer.CreateDefaultSettings(endPoint.Converters)}; 
+        private readonly global::System.Type[] _types = new[]
+        {{
+{endPoint.Converters.Select(x => $@" 
+            typeof({x}),
+").Inject()}
+        }};
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
