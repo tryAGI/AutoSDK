@@ -154,6 +154,7 @@
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Patch,
     Summary: Update Run,
     RequestType: {
@@ -709,6 +710,7 @@
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create Run,
     RequestType: {
@@ -832,6 +834,7 @@
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: From https://github.com/langchain-ai/langsmith-sdk/blob/main/openapi/openapi.yaml,
     RequestType: {
       CSharpType: ,

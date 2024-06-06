@@ -1,6 +1,7 @@
 ﻿using H.Generators.Extensions;
 using Microsoft.CodeAnalysis;
 using OpenApiGenerator.Core.Generation;
+using OpenApiGenerator.Core.Json;
 using OpenApiGenerator.Core.Models;
 using FileWithName = H.Generators.Extensions.FileWithName;
 
@@ -61,6 +62,11 @@ public class SdkGenerator : IIncrementalGenerator
         data
             .SelectMany(static (x, _) => x.AnyOfs)
             .SelectAndReportExceptions(GetAnyOfJsonConverterFactorySourceCode, context, Id)
+            .AddSource(context);
+        
+        data
+            .Select(static (x, _) => x.Converters)
+            .SelectAndReportExceptions(GetSourceCodeForJsonSerializerContextConverters, context, Id)
             .AddSource(context);
     }
 
@@ -158,6 +164,23 @@ public class SdkGenerator : IIncrementalGenerator
         }
         
         var fileWithName = Data.GetSourceCodeForJsonSerializerContextTypes(types, cancellationToken);
+        
+        return new FileWithName(
+            Name: fileWithName.Name,
+            Text: fileWithName.Text);
+    }
+    
+    private static FileWithName GetSourceCodeForJsonSerializerContextConverters(
+        EndPoint endPoint,
+        CancellationToken cancellationToken = default)
+    {
+        if (!endPoint.GenerateJsonSerializerContextTypes ||
+            endPoint.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+        {
+            return FileWithName.Empty;
+        }
+        
+        var fileWithName = Data.GetSourceCodeForJsonSerializerContextConverters(endPoint, cancellationToken);
         
         return new FileWithName(
             Name: fileWithName.Name,

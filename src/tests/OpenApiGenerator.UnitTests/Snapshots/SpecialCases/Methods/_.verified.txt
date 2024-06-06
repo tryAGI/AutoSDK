@@ -37,6 +37,7 @@
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: List all pets,
     RequestType: {
       CSharpType: ,
@@ -108,6 +109,7 @@
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a pet,
     RequestType: {
@@ -198,6 +200,7 @@
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Info for a specific pet,
     RequestType: {
       CSharpType: ,
@@ -283,6 +286,7 @@
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: ,
     RequestType: {
       CSharpType: ,

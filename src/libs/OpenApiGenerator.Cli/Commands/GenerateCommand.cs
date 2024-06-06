@@ -92,7 +92,7 @@ public class GenerateCommand : Command
             GenerateSdk: true
         );
 
-        var (models, methods, _, _) = Data.Prepare((yaml, settings));
+        var (models, methods, _, _, _) = Data.Prepare((yaml, settings));
         var files = models
             .Select(x => Data.GetSourceCode(x)).Concat(methods
                 .Select(x => Data.GetSourceCode(x)))

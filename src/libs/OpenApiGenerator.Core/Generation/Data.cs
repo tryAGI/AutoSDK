@@ -10,7 +10,7 @@ public static class Data
 {
     #region Methods
 
-    public static (EquatableArray<ModelData> Models, EquatableArray<EndPoint> Methods, EquatableArray<AnyOfData> AnyOfs, EquatableArray<TypeData> Types) Prepare(
+    public static (EquatableArray<ModelData> Models, EquatableArray<EndPoint> Methods, EquatableArray<AnyOfData> AnyOfs, EquatableArray<TypeData> Types, EndPoint Converters) Prepare(
         (string text, Settings settings) tuple,
         CancellationToken cancellationToken = default)
     {
@@ -150,6 +150,7 @@ public static class Data
                 TargetFramework: settings.TargetFramework,
                 JsonSerializerType: settings.JsonSerializerType,
                 JsonSerializerContext: settings.JsonSerializerContext,
+                GenerateJsonSerializerContextTypes: settings.GenerateJsonSerializerContextTypes,
                 HttpMethod: OperationType.Get,
                 Summary: openApiDocument.Info?.Description?.ClearForXml() ?? string.Empty,
                 RequestType: TypeData.Default,
@@ -173,6 +174,7 @@ public static class Data
                         TargetFramework: settings.TargetFramework,
                         JsonSerializerType: settings.JsonSerializerType,
                         JsonSerializerContext: settings.JsonSerializerContext,
+                        GenerateJsonSerializerContextTypes: settings.GenerateJsonSerializerContextTypes,
                         HttpMethod: OperationType.Get,
                         Summary: x.Description?.ClearForXml() ?? string.Empty,
                         RequestType: TypeData.Default,
@@ -253,6 +255,14 @@ public static class Data
             .Select(x => x.First())
             .ToImmutableArray() : [];
 
+        var converters = models
+            .Where(x => x.Style == ModelStyle.Enumeration && x.JsonSerializerType != JsonSerializerType.NewtonsoftJson)
+            .SelectMany(x => new[]
+            {
+                $"global::OpenApiGenerator.JsonConverters.{x.ClassName}JsonConverter",
+                $"global::OpenApiGenerator.JsonConverters.{x.ClassName}NullableJsonConverter"
+            })
+            .ToImmutableArray();
         for (var i = 0; i < methods.Length; i++)
         {
             if (methods[i].Id != "MainConstructor")
@@ -262,13 +272,7 @@ public static class Data
             
             methods[i] = methods[i] with
             {
-                Converters = models
-                    .Where(x => x.Style == ModelStyle.Enumeration && x.JsonSerializerType != JsonSerializerType.NewtonsoftJson)
-                    .SelectMany(x => new [] {
-                        $"global::OpenApiGenerator.JsonConverters.{x.ClassName}JsonConverter",
-                        $"global::OpenApiGenerator.JsonConverters.{x.ClassName}NullableJsonConverter"
-                    })
-                    .ToImmutableArray(),
+                Converters = converters,
             };
         }
         
@@ -277,7 +281,27 @@ public static class Data
                     ? methods.Select(x => x with{ AdditionalModels = []}).ToImmutableArray()
                     : [],
                 AnyOfs: anyOfDatas.ToImmutableArray(),
-                Types: types);
+                Types: types,
+                Converters: new EndPoint(
+                    Id: "Converters",
+                    Namespace: settings.Namespace,
+                    ClassName: string.Empty,
+                    BaseUrl: string.Empty,
+                    Stream: false,
+                    Path: string.Empty,
+                    AuthorizationScheme: string.Empty,
+                    Properties: [],
+                    TargetFramework: settings.TargetFramework,
+                    JsonSerializerType: settings.JsonSerializerType,
+                    JsonSerializerContext: settings.JsonSerializerContext,
+                    GenerateJsonSerializerContextTypes: settings.GenerateJsonSerializerContextTypes,
+                    HttpMethod: OperationType.Get,
+                    Summary: string.Empty,
+                    RequestType: TypeData.Default,
+                    ResponseType: TypeData.Default,
+                    AdditionalModels: [],
+                    AdditionalTypes: [],
+                    Converters: converters));
     }
     
     public static FileWithName GetSourceCode(
@@ -370,6 +394,21 @@ public static class Data
         return new FileWithName(
             Name: "JsonSerializerContextTypes.g.cs",
             Text: Sources.GenerateJsonSerializerContextTypes(types, cancellationToken: cancellationToken));
+    }
+    
+    public static FileWithName GetSourceCodeForJsonSerializerContextConverters(
+        EndPoint endPoint,
+        CancellationToken cancellationToken = default)
+    {
+        if (!endPoint.GenerateJsonSerializerContextTypes ||
+            endPoint.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+        {
+            return FileWithName.Empty;
+        }
+        
+        return new FileWithName(
+            Name: "JsonSerializerContextConverters.g.cs",
+            Text: Sources.GenerateJsonSerializerContextConverters(endPoint));
     }
     
     public static FileWithName GetSourceCode(

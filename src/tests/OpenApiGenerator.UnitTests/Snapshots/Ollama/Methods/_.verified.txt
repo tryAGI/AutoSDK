@@ -327,6 +327,7 @@ How long (in minutes) to keep the model loaded in memory.
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
     Summary: Generate a response for a given prompt with a provided model.,
     RequestType: {
@@ -640,6 +641,7 @@ How long (in minutes) to keep the model loaded in memory.
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
     Summary: Generate the next message in a chat with a provided model.,
     RequestType: {
@@ -885,6 +887,7 @@ How long (in minutes) to keep the model loaded in memory.
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
     Summary: Generate embeddings from a model.,
     RequestType: {
@@ -1095,6 +1098,7 @@ If `false` the response will be returned as a single response object, otherwise 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
     Summary: Create a model from a Modelfile.,
     RequestType: {
@@ -1180,6 +1184,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: true,
     Summary: List models that are available locally.,
     RequestType: {
       CSharpType: ,
@@ -1269,6 +1274,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
     Summary: Show details about a model including modelfile, template, parameters, license, and system prompt.,
     RequestType: {
@@ -1409,6 +1415,7 @@ Name of the new model.
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
     Summary: Creates a model with another name from an existing model.,
     RequestType: {
@@ -1501,6 +1508,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: true,
     HttpMethod: Delete,
     Summary: Delete a model and its data.,
     RequestType: {
@@ -1693,6 +1701,7 @@ If `false` the response will be returned as a single response object, otherwise 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
     Summary: Download a model from the ollama library.,
     RequestType: {
@@ -1912,6 +1921,7 @@ If `false` the response will be returned as a single response object, otherwise 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
     Summary: Upload a model to a model library.,
     RequestType: {
@@ -2030,6 +2040,7 @@ If `false` the response will be returned as a single response object, otherwise 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: true,
     HttpMethod: Head,
     Summary: Check to see if a blob exists on the Ollama server which is useful when creating models.,
     RequestType: {
@@ -2101,6 +2112,7 @@ If `false` the response will be returned as a single response object, otherwise 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
     Summary: Create a blob from a file. Returns the server file path.,
     RequestType: {
@@ -2251,6 +2263,7 @@ If `false` the response will be returned as a single response object, otherwise 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: true,
     Summary: API Spec for Ollama API. Please see https://github.com/jmorganca/ollama/blob/main/docs/api.md for more details.,
     RequestType: {
       CSharpType: ,
@@ -2307,6 +2320,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: true,
     Summary: Given a prompt, the model will generate a completion.,
     RequestType: {
       CSharpType: ,
@@ -2350,6 +2364,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: true,
     Summary: Given a list of messages comprising a conversation, the model will return a response.,
     RequestType: {
       CSharpType: ,
@@ -2393,6 +2408,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: true,
     Summary: Get a vector representation of a given input.,
     RequestType: {
       CSharpType: ,
@@ -2436,6 +2452,7 @@ If `false` the response will be returned as a single response object, otherwise 
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: true,
     Summary: List and describe the various models available.,
     RequestType: {
       CSharpType: ,

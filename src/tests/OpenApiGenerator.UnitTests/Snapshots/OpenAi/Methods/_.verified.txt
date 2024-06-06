@@ -591,6 +591,7 @@ A list of functions the model may generate JSON inputs for.
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Creates a model response for the given chat conversation.,
     RequestType: {
@@ -1236,6 +1237,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Creates a completion for the provided prompt and parameters.,
     RequestType: {
@@ -1604,6 +1606,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Creates an image given a prompt.,
     RequestType: {
@@ -1918,6 +1921,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Creates an edited or extended image given an original image and a prompt.,
     RequestType: {
@@ -2184,6 +2188,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Creates a variation of a given image.,
     RequestType: {
@@ -2412,6 +2417,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Creates an embedding vector representing the input text.,
     RequestType: {
@@ -2656,6 +2662,7 @@ The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Generates audio from the input text.,
     RequestType: {
@@ -2906,6 +2913,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Transcribes audio into the input language.,
     RequestType: {
@@ -3123,6 +3131,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Translates audio into English.,
     RequestType: {
@@ -3233,6 +3242,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of files that belong to the user's organization.,
     RequestType: {
       CSharpType: ,
@@ -3356,6 +3366,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Upload a file that can be used across various endpoints. The size of all the files uploaded by one organization can be up to 100 GB.The size of individual files can be a maximum of 512 MB or 2 million tokens for Assistants. See the [Assistants Tools guide](/docs/assistants/tools) to learn more about the types of files supported. The Fine-tuning API only supports `.jsonl` files.Please [contact us](https://help.openai.com/) if you need to increase these storage limits.,
     RequestType: {
@@ -3476,6 +3487,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary: Delete a file.,
     RequestType: {
@@ -3568,6 +3580,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Returns information about a specific file.,
     RequestType: {
       CSharpType: ,
@@ -3669,6 +3682,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Returns the contents of the specified file.,
     RequestType: {
       CSharpType: ,
@@ -3922,6 +3936,7 @@ If a seed is not specified, one will be generated for you.
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Creates a fine-tuning job which begins the process of creating a new model from a given dataset.Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.[Learn more about fine-tuning](/docs/guides/fine-tuning),
     RequestType: {
@@ -4098,6 +4113,7 @@ If a seed is not specified, one will be generated for you.
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: List your organization's fine-tuning jobs,
     RequestType: {
       CSharpType: ,
@@ -4190,6 +4206,7 @@ If a seed is not specified, one will be generated for you.
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Get info about a fine-tuning job.[Learn more about fine-tuning](/docs/guides/fine-tuning),
     RequestType: {
       CSharpType: ,
@@ -4364,6 +4381,7 @@ If a seed is not specified, one will be generated for you.
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Get status updates for a fine-tuning job.,
     RequestType: {
       CSharpType: ,
@@ -4454,6 +4472,7 @@ If a seed is not specified, one will be generated for you.
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Immediately cancel a fine-tune job.,
     RequestType: {
@@ -4629,6 +4648,7 @@ If a seed is not specified, one will be generated for you.
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: List checkpoints for a fine-tuning job.,
     RequestType: {
       CSharpType: ,
@@ -4697,6 +4717,7 @@ If a seed is not specified, one will be generated for you.
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Lists the currently available models, and provides basic information about each one such as the owner and availability.,
     RequestType: {
       CSharpType: ,
@@ -4787,6 +4808,7 @@ If a seed is not specified, one will be generated for you.
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a model instance, providing basic information about the model such as the owner and permissioning.,
     RequestType: {
       CSharpType: ,
@@ -4881,6 +4903,7 @@ If a seed is not specified, one will be generated for you.
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary: Delete a fine-tuned model. You must have the Owner role in your organization to delete a model.,
     RequestType: {
@@ -5002,6 +5025,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Classifies if text is potentially harmful.,
     RequestType: {
@@ -5200,6 +5224,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of assistants.,
     RequestType: {
       CSharpType: ,
@@ -5537,6 +5562,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create an assistant with a model and instructions.,
     RequestType: {
@@ -5683,6 +5709,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves an assistant.,
     RequestType: {
       CSharpType: ,
@@ -6061,6 +6088,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Modifies an assistant.,
     RequestType: {
@@ -6207,6 +6235,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary: Delete an assistant.,
     RequestType: {
@@ -6347,6 +6376,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a thread.,
     RequestType: {
@@ -6463,6 +6493,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a thread.,
     RequestType: {
       CSharpType: ,
@@ -6609,6 +6640,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Modifies a thread.,
     RequestType: {
@@ -6723,6 +6755,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary: Delete a thread.,
     RequestType: {
@@ -6955,6 +6988,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of messages for a given thread.,
     RequestType: {
       CSharpType: ,
@@ -7156,6 +7190,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a message.,
     RequestType: {
@@ -7318,6 +7353,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Retrieve a message.,
     RequestType: {
       CSharpType: ,
@@ -7483,6 +7519,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Modifies a message.,
     RequestType: {
@@ -7639,6 +7676,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary: Deletes a message.,
     RequestType: {
@@ -8097,6 +8135,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a thread and run it in one request.,
     RequestType: {
@@ -8393,6 +8432,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of runs belonging to a thread.,
     RequestType: {
       CSharpType: ,
@@ -8874,6 +8914,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a run.,
     RequestType: {
@@ -9082,6 +9123,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a run.,
     RequestType: {
       CSharpType: ,
@@ -9271,6 +9313,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Modifies a run.,
     RequestType: {
@@ -9499,6 +9542,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: When a run has the `status: "requires_action"` and `required_action.type` is `submit_tool_outputs`, this endpoint can be used to submit the outputs from the tool calls once they're all completed. All outputs must be submitted in a single request.,
     RequestType: {
@@ -9681,6 +9725,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Cancels a run that is `in_progress`.,
     RequestType: {
@@ -9959,6 +10004,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of run steps belonging to a run.,
     RequestType: {
       CSharpType: ,
@@ -10106,6 +10152,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a run step.,
     RequestType: {
       CSharpType: ,
@@ -10311,6 +10358,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of vector stores.,
     RequestType: {
       CSharpType: ,
@@ -10478,6 +10526,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a vector store.,
     RequestType: {
@@ -10608,6 +10657,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a vector store.,
     RequestType: {
       CSharpType: ,
@@ -10790,6 +10840,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Modifies a vector store.,
     RequestType: {
@@ -10918,6 +10969,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary: Delete a vector store.,
     RequestType: {
@@ -11160,6 +11212,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of vector store files.,
     RequestType: {
       CSharpType: ,
@@ -11279,6 +11332,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a vector store file by attaching a [File](/docs/api-reference/files) to a [vector store](/docs/api-reference/vector-stores/object).,
     RequestType: {
@@ -11423,6 +11477,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a vector store file.,
     RequestType: {
       CSharpType: ,
@@ -11548,6 +11603,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary: Delete a vector store file. This will remove the file from the vector store but the file itself will not be deleted. To delete the file, use the [delete file](/docs/api-reference/files/delete) endpoint.,
     RequestType: {
@@ -11664,6 +11720,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a vector store file batch.,
     RequestType: {
@@ -11806,6 +11863,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a vector store file batch.,
     RequestType: {
       CSharpType: ,
@@ -11929,6 +11987,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Cancel a vector store file batch. This attempts to cancel the processing of files in this batch as soon as possible.,
     RequestType: {
@@ -12203,6 +12262,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of vector store files in a batch.,
     RequestType: {
       CSharpType: ,
@@ -12381,6 +12441,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Creates and executes a batch from an uploaded file of requests,
     RequestType: {
@@ -12547,6 +12608,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: List your organization's batches.,
     RequestType: {
       CSharpType: ,
@@ -12642,6 +12704,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a batch.,
     RequestType: {
       CSharpType: ,
@@ -12767,6 +12830,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Cancels an in-progress batch.,
     RequestType: {
@@ -12866,6 +12930,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: ,
     RequestType: {
       CSharpType: ,
@@ -13186,6 +13251,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     ],
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: The OpenAI REST API. Please see https://platform.openai.com/docs/api-reference for more details.,
     RequestType: {
       CSharpType: ,
@@ -13570,6 +13636,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Build Assistants that can call models and use tools.,
     RequestType: {
       CSharpType: ,
@@ -13613,6 +13680,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Learn how to turn audio into text or text into audio.,
     RequestType: {
       CSharpType: ,
@@ -13656,6 +13724,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Given a list of messages comprising a conversation, the model will return a response.,
     RequestType: {
       CSharpType: ,
@@ -13699,6 +13768,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Given a prompt, the model will return one or more predicted completions, and can also return the probabilities of alternative tokens at each position.,
     RequestType: {
       CSharpType: ,
@@ -13742,6 +13812,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Get a vector representation of a given input that can be easily consumed by machine learning models and algorithms.,
     RequestType: {
       CSharpType: ,
@@ -13785,6 +13856,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Manage fine-tuning jobs to tailor a model to your specific training data.,
     RequestType: {
       CSharpType: ,
@@ -13828,6 +13900,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Create large batches of API requests to run asynchronously.,
     RequestType: {
       CSharpType: ,
@@ -13871,6 +13944,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Files are used to upload documents that can be used with features like Assistants and Fine-tuning.,
     RequestType: {
       CSharpType: ,
@@ -13914,6 +13988,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Given a prompt and/or an input image, the model will generate a new image.,
     RequestType: {
       CSharpType: ,
@@ -13957,6 +14032,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: List and describe the various models available in the API.,
     RequestType: {
       CSharpType: ,
@@ -14000,6 +14076,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: Given a input text, outputs if the model classifies it as potentially harmful.,
     RequestType: {
       CSharpType: ,
@@ -14043,6 +14120,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Properties: null,
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: false,
     Summary: ,
     RequestType: {
       CSharpType: ,

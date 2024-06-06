@@ -37,7 +37,7 @@ public partial class DataTests : VerifyBase
     );
 
     private Task VerifyAsync(
-        (EquatableArray<ModelData> Models, EquatableArray<EndPoint> Methods, EquatableArray<AnyOfData> AnyOfs, EquatableArray<TypeData> Types) tuple,
+        (EquatableArray<ModelData> Models, EquatableArray<EndPoint> Methods, EquatableArray<AnyOfData> AnyOfs, EquatableArray<TypeData> Types, EndPoint Converters) tuple,
         [CallerMemberName] string? callerName = null)
     {
         var modelsTask =
