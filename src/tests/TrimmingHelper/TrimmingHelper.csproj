@@ -13,15 +13,15 @@
   <ItemGroup>
     <ProjectReference Include="..\..\libs\OpenApiGenerator.Helpers\OpenApiGenerator.Helpers.csproj" />
     <ProjectReference Include="..\OpenApiGenerator.IntegrationTests.Twitch\OpenApiGenerator.IntegrationTests.Twitch.csproj" />
-    <ProjectReference Include="..\OpenApiGenerator.IntegrationTests\OpenApiGenerator.IntegrationTests.csproj" />
+    <ProjectReference Include="..\OpenApiGenerator.IntegrationTests.IpInfo\OpenApiGenerator.IntegrationTests.IpInfo.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests" />
-    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.Data" />
+    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.IpInfo" />
+    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.IpInfo.Data" />
     <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.Twitch" />
     <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.Twitch.Data" />
-    <TrimmerRootAssembly Include="OpenApiGenerator.Helpers" />
+    <!-- <TrimmerRootAssembly Include="OpenApiGenerator.Helpers" /> -->
   </ItemGroup>
 
   <PropertyGroup Label="Publish">
