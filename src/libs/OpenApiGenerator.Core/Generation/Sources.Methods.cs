@@ -126,7 +126,7 @@ namespace {endPoint.Namespace}
             while (!reader.EndOfStream && !cancellationToken.IsCancellationRequested)
             {{
                 var __content = await reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
-                var streamedResponse = {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType.CSharpType, endPoint.JsonSerializerContext)} ??
+                var streamedResponse = {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType.CSharpTypeWithNullability, endPoint.JsonSerializerContext)} ??
                                        throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");
 
                 yield return streamedResponse;

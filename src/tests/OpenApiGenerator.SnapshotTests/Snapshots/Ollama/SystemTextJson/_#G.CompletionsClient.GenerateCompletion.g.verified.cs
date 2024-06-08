@@ -38,7 +38,7 @@ namespace G
             while (!reader.EndOfStream && !cancellationToken.IsCancellationRequested)
             {
                 var __content = await reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
-                var streamedResponse = global::System.Text.Json.JsonSerializer.Deserialize<GenerateCompletionResponse>(__content, _jsonSerializerOptions) ??
+                var streamedResponse = global::System.Text.Json.JsonSerializer.Deserialize<GenerateCompletionResponse?>(__content, _jsonSerializerOptions) ??
                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
 
                 yield return streamedResponse;
