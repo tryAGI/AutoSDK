@@ -12,6 +12,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\libs\OpenApiGenerator.Helpers\OpenApiGenerator.Helpers.csproj" />
+    <ProjectReference Include="..\OpenApiGenerator.IntegrationTests.Ollama\OpenApiGenerator.IntegrationTests.Ollama.csproj" />
+    <ProjectReference Include="..\OpenApiGenerator.IntegrationTests.OpenAI\OpenApiGenerator.IntegrationTests.OpenAI.csproj" />
     <ProjectReference Include="..\OpenApiGenerator.IntegrationTests.Twitch\OpenApiGenerator.IntegrationTests.Twitch.csproj" />
     <ProjectReference Include="..\OpenApiGenerator.IntegrationTests.IpInfo\OpenApiGenerator.IntegrationTests.IpInfo.csproj" />
   </ItemGroup>
@@ -21,6 +23,10 @@
     <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.IpInfo.Data" />
     <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.Twitch" />
     <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.Twitch.Data" />
+    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.Ollama" />
+    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.Ollama.Models" />
+    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.OpenAI" />
+    <TrimmerRootAssembly Include="OpenApiGenerator.IntegrationTests.OpenAI.Models" />
     <!-- <TrimmerRootAssembly Include="OpenApiGenerator.Helpers" /> -->
   </ItemGroup>
 
