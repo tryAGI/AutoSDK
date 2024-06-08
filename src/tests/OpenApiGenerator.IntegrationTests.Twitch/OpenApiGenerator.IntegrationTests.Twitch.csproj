@@ -44,7 +44,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\libs\OpenApiGenerator.Core\OpenApiGenerator.Core.csproj" OutputItemType="Analyzer" />
     <ProjectReference Include="..\..\libs\OpenApiGenerator\OpenApiGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
-    <ProjectReference Include="..\OpenApiGenerator.IntegrationTests.Data\OpenApiGenerator.IntegrationTests.Data.csproj" />
+    <ProjectReference Include="..\OpenApiGenerator.IntegrationTests.Twitch.Data\OpenApiGenerator.IntegrationTests.Twitch.Data.csproj" />
   </ItemGroup>
 
 </Project>

@@ -40,6 +40,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenApiGenerator.Integratio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenApiGenerator.IntegrationTests.Twitch.Data", "src\tests\OpenApiGenerator.IntegrationTests.Twitch.Data\OpenApiGenerator.IntegrationTests.Twitch.Data.csproj", "{1C0BC591-1413-4710-BF9F-DEC8E142DD16}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrimmingHelper", "src\tests\TrimmingHelper\TrimmingHelper.csproj", "{0FF0639B-E69A-44AC-A1E5-6C7CECD80210}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,6 +88,10 @@ Global
 		{1C0BC591-1413-4710-BF9F-DEC8E142DD16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C0BC591-1413-4710-BF9F-DEC8E142DD16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C0BC591-1413-4710-BF9F-DEC8E142DD16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FF0639B-E69A-44AC-A1E5-6C7CECD80210}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FF0639B-E69A-44AC-A1E5-6C7CECD80210}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FF0639B-E69A-44AC-A1E5-6C7CECD80210}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FF0639B-E69A-44AC-A1E5-6C7CECD80210}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -101,6 +107,7 @@ Global
 		{522FA7E8-2FF4-4381-83E9-ADB1851AC26E} = {9CAA231D-7BE1-46C9-ACD6-EB2E569CEBEA}
 		{CFB5BF63-EE61-43F8-B39B-7ECB51967210} = {9CAA231D-7BE1-46C9-ACD6-EB2E569CEBEA}
 		{1C0BC591-1413-4710-BF9F-DEC8E142DD16} = {9CAA231D-7BE1-46C9-ACD6-EB2E569CEBEA}
+		{0FF0639B-E69A-44AC-A1E5-6C7CECD80210} = {9CAA231D-7BE1-46C9-ACD6-EB2E569CEBEA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1493AEE4-9211-46E9-BFE6-8F629EAC5693}

@@ -11,8 +11,6 @@
     <OpenApiGenerator_Namespace>OpenApiGenerator.IntegrationTests.Twitch</OpenApiGenerator_Namespace>
     <OpenApiGenerator_GenerateSdk>false</OpenApiGenerator_GenerateSdk>
     <OpenApiGenerator_GenerateModels>true</OpenApiGenerator_GenerateModels>
-    <OpenApiGenerator_GenerateMethods>true</OpenApiGenerator_GenerateMethods>
-    <OpenApiGenerator_GenerateConstructors>true</OpenApiGenerator_GenerateConstructors>
     <OpenApiGenerator_GenerateJsonSerializerContextTypes>true</OpenApiGenerator_GenerateJsonSerializerContextTypes>
   </PropertyGroup>
 

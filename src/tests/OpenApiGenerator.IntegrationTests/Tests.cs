@@ -15,9 +15,9 @@ public class NSwagGeneratorTests
                 Title = "title",
                 Message = "message",
             }
-        });
+        }, SourceGenerationContext.Default.Error);
         
-        var error = JsonSerializer.Deserialize<Error>(json);
+        var error = JsonSerializer.Deserialize(json, SourceGenerationContext.Default.Error);
         error.Should().NotBeNull();
         error!.Error1.Should().BeEquivalentTo(new ErrorError
         {
