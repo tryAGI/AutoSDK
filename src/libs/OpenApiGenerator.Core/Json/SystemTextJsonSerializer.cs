@@ -57,7 +57,7 @@ public class SystemTextJsonSerializer : IJsonSerializer
     {
         type = type ?? throw new ArgumentNullException(nameof(type));
         
-        return string.Concat(type
+        var result = string.Concat(type
             .Replace("global::", string.Empty)
             .TrimEnd('?')
             .Replace("System.Collections.Generic.", string.Empty)
@@ -83,6 +83,14 @@ public class SystemTextJsonSerializer : IJsonSerializer
                 "object" => "Object",
                 _ => x.Trim(),
             }));
+        result =
+            result.StartsWith("AnyOf", StringComparison.Ordinal) ||
+            result.StartsWith("OneOf", StringComparison.Ordinal) ||
+            result.StartsWith("AllOf", StringComparison.Ordinal)
+                ? "Nullable" + result 
+                : result;
+        
+        return result;
     }
     
     public string GenerateSerializeCall(string type, string jsonSerializerContext)
