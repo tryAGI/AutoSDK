@@ -26,11 +26,12 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Text.Json" Version="8.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\libs\OpenApiGenerator.Core\OpenApiGenerator.Core.csproj" />
-    <ProjectReference Include="..\..\libs\OpenApiGenerator.Helpers\OpenApiGenerator.Helpers.csproj" />
   </ItemGroup>
 
 </Project>

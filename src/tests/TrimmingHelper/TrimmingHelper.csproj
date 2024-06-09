@@ -11,7 +11,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\libs\OpenApiGenerator.Helpers\OpenApiGenerator.Helpers.csproj" />
     <ProjectReference Include="..\OpenApiGenerator.IntegrationTests.Ollama\OpenApiGenerator.IntegrationTests.Ollama.csproj" />
     <ProjectReference Include="..\OpenApiGenerator.IntegrationTests.OpenAI\OpenApiGenerator.IntegrationTests.OpenAI.csproj" />
     <ProjectReference Include="..\OpenApiGenerator.IntegrationTests.Twitch\OpenApiGenerator.IntegrationTests.Twitch.csproj" />
