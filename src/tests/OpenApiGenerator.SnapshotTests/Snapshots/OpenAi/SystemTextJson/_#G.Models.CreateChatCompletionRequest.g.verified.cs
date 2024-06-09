@@ -175,6 +175,7 @@ namespace G
         /// A list of functions the model may generate JSON inputs for.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("functions")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.Collections.Generic.IList<ChatCompletionFunctions>? Functions { get; set; }
 
         /// <summary>

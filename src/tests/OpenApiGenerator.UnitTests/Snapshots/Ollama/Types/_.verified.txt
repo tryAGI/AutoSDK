@@ -6,9 +6,11 @@
     Properties: null,
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: string,
     CSharpTypeWithNullability: string?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -18,9 +20,11 @@
     Properties: null,
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
     CSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -30,9 +34,11 @@
     Properties: null,
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<long>,
     CSharpTypeWithNullability: global::System.Collections.Generic.IList<long>?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -73,9 +79,11 @@
     ],
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: RequestOptions,
     CSharpTypeWithNullability: RequestOptions?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -89,9 +97,11 @@
       json
     ],
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: GenerateCompletionRequestFormat,
     CSharpTypeWithNullability: GenerateCompletionRequestFormat?,
+    IsAnyOf: false,
     ConverterType: GenerateCompletionRequestFormatJsonConverter
   },
   {
@@ -101,9 +111,11 @@
     Properties: null,
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: bool,
     CSharpTypeWithNullability: bool?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -113,9 +125,11 @@
     Properties: null,
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: int,
     CSharpTypeWithNullability: int?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -125,9 +139,11 @@
     Properties: null,
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: float,
     CSharpTypeWithNullability: float?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -137,9 +153,11 @@
     Properties: null,
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::System.DateTime,
     CSharpTypeWithNullability: global::System.DateTime?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -149,9 +167,11 @@
     Properties: null,
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: long,
     CSharpTypeWithNullability: long?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -161,9 +181,11 @@
     Properties: null,
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Message>,
     CSharpTypeWithNullability: global::System.Collections.Generic.IList<Message>?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -177,9 +199,11 @@
       json
     ],
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: GenerateChatCompletionRequestFormat,
     CSharpTypeWithNullability: GenerateChatCompletionRequestFormat?,
+    IsAnyOf: false,
     ConverterType: GenerateChatCompletionRequestFormatJsonConverter
   },
   {
@@ -193,9 +217,11 @@
     ],
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: Message,
     CSharpTypeWithNullability: Message?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -213,9 +239,11 @@
       assistant
     ],
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: MessageRole,
     CSharpTypeWithNullability: MessageRole?,
+    IsAnyOf: false,
     ConverterType: MessageRoleJsonConverter
   },
   {
@@ -225,9 +253,11 @@
     Properties: null,
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<double>,
     CSharpTypeWithNullability: global::System.Collections.Generic.IList<double>?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -238,9 +268,11 @@
     Properties: null,
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::System.AnyOf<string?, CreateModelResponseStatus?>,
     CSharpTypeWithNullability: global::System.AnyOf<string?, CreateModelResponseStatus?>?,
+    IsAnyOf: true,
     ConverterType: AnyOfJsonConverterFactory2
   },
   {
@@ -250,9 +282,11 @@
     Properties: null,
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<LocalModel>,
     CSharpTypeWithNullability: global::System.Collections.Generic.IList<LocalModel>?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -269,9 +303,11 @@
     ],
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: ModelDetails,
     CSharpTypeWithNullability: ModelDetails?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -282,9 +318,11 @@
     Properties: null,
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::System.AnyOf<string?, PullModelResponseStatus?>,
     CSharpTypeWithNullability: global::System.AnyOf<string?, PullModelResponseStatus?>?,
+    IsAnyOf: true,
     ConverterType: AnyOfJsonConverterFactory2
   },
   {
@@ -295,9 +333,11 @@
     Properties: null,
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::System.AnyOf<string?, PushModelResponseStatus?>,
     CSharpTypeWithNullability: global::System.AnyOf<string?, PushModelResponseStatus?>?,
+    IsAnyOf: true,
     ConverterType: AnyOfJsonConverterFactory2
   },
   {
@@ -319,9 +359,11 @@
     ],
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: GenerateCompletionRequest,
     CSharpTypeWithNullability: GenerateCompletionRequest?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -343,9 +385,11 @@
     ],
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: GenerateCompletionResponse,
     CSharpTypeWithNullability: GenerateCompletionResponse?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -362,9 +406,11 @@
     ],
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: GenerateChatCompletionRequest,
     CSharpTypeWithNullability: GenerateChatCompletionRequest?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -386,9 +432,11 @@
     ],
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: GenerateChatCompletionResponse,
     CSharpTypeWithNullability: GenerateChatCompletionResponse?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -403,9 +451,11 @@
     ],
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: GenerateEmbeddingRequest,
     CSharpTypeWithNullability: GenerateEmbeddingRequest?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -417,9 +467,11 @@
     ],
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: GenerateEmbeddingResponse,
     CSharpTypeWithNullability: GenerateEmbeddingResponse?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -435,9 +487,11 @@
     ],
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: CreateModelRequest,
     CSharpTypeWithNullability: CreateModelRequest?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -449,9 +503,11 @@
     ],
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: CreateModelResponse,
     CSharpTypeWithNullability: CreateModelResponse?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -463,9 +519,11 @@
     ],
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: ModelsResponse,
     CSharpTypeWithNullability: ModelsResponse?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -477,9 +535,11 @@
     ],
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: ModelInfoRequest,
     CSharpTypeWithNullability: ModelInfoRequest?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -497,9 +557,11 @@
     ],
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: ModelInfo,
     CSharpTypeWithNullability: ModelInfo?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -512,9 +574,11 @@
     ],
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: CopyModelRequest,
     CSharpTypeWithNullability: CopyModelRequest?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -526,9 +590,11 @@
     ],
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: DeleteModelRequest,
     CSharpTypeWithNullability: DeleteModelRequest?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -544,9 +610,11 @@
     ],
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: PullModelRequest,
     CSharpTypeWithNullability: PullModelRequest?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -561,9 +629,11 @@
     ],
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: PullModelResponse,
     CSharpTypeWithNullability: PullModelResponse?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -579,9 +649,11 @@
     ],
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: PushModelRequest,
     CSharpTypeWithNullability: PushModelRequest?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -596,9 +668,11 @@
     ],
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: PushModelResponse,
     CSharpTypeWithNullability: PushModelResponse?,
+    IsAnyOf: false,
     ConverterType: 
   },
   {
@@ -608,9 +682,11 @@
     Properties: null,
     EnumValues: null,
     Namespace: G,
+    IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: byte[],
     CSharpTypeWithNullability: byte[]?,
+    IsAnyOf: false,
     ConverterType: 
   }
 ]

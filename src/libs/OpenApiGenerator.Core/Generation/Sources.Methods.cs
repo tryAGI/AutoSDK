@@ -175,13 +175,13 @@ namespace {endPoint.Namespace}
         public async {taskType} {endPoint.MethodName}(
 {endPoint.Properties.Where(static x => x.IsRequired).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName},").Inject()}
-{endPoint.Properties.Where(static x => !x.IsRequired).Select(x => $@"
+{endPoint.Properties.Where(static x => x is { IsRequired: false, IsDeprecated: false }).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default)
         {{
             var request = new {endPoint.RequestType.CSharpTypeWithoutNullability}
             {{
-{endPoint.Properties.Where(x => x.ParameterLocation == null).Select(x => $@"
+{endPoint.Properties.Where(x => x.ParameterLocation == null && (x.IsRequired || !x.IsDeprecated)).Select(x => $@"
                 {x.Name} = {x.ParameterName},").Inject()}
             }};
 

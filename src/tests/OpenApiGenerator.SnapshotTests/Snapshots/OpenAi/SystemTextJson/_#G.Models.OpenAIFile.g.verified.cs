@@ -65,6 +65,7 @@ namespace G
         /// Deprecated. For details on why a fine-tuning training file failed validation, see the `error` field on `fine_tuning.job`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status_details")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? StatusDetails { get; set; }
 
         /// <summary>

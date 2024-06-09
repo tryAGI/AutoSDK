@@ -20,6 +20,8 @@ public static partial class Sources
         return $@"
 #nullable enable
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 namespace {types[0].Namespace}
 {{
     {string.Empty.ToXmlDocumentationSummary(level: 4)}

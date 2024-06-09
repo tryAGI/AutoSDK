@@ -18,9 +18,11 @@
           Properties: null,
           EnumValues: null,
           Namespace: G,
+          IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          IsAnyOf: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -46,9 +48,11 @@
       Properties: null,
       EnumValues: null,
       Namespace: ,
+      IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
       CSharpTypeWithoutNullability: ,
       CSharpTypeWithNullability: ?,
+      IsAnyOf: false,
       ConverterType: 
     },
     ResponseType: {
@@ -58,9 +62,11 @@
       Properties: null,
       EnumValues: null,
       Namespace: G,
+      IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
       CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Pet>,
       CSharpTypeWithNullability: global::System.Collections.Generic.IList<Pet>?,
+      IsAnyOf: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -72,9 +78,11 @@
         Properties: null,
         EnumValues: null,
         Namespace: G,
+        IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Pet>,
         CSharpTypeWithNullability: global::System.Collections.Generic.IList<Pet>?,
+        IsAnyOf: false,
         ConverterType: 
       },
       {
@@ -87,9 +95,11 @@
         ],
         EnumValues: null,
         Namespace: G,
+        IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: Error,
         CSharpTypeWithNullability: Error?,
+        IsAnyOf: false,
         ConverterType: 
       }
     ],
@@ -119,9 +129,11 @@
       Properties: null,
       EnumValues: null,
       Namespace: ,
+      IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
       CSharpTypeWithoutNullability: ,
       CSharpTypeWithNullability: ?,
+      IsAnyOf: false,
       ConverterType: 
     },
     ResponseType: {
@@ -134,9 +146,11 @@
       ],
       EnumValues: null,
       Namespace: G,
+      IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
       CSharpTypeWithoutNullability: Error,
       CSharpTypeWithNullability: Error?,
+      IsAnyOf: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -151,9 +165,11 @@
         ],
         EnumValues: null,
         Namespace: G,
+        IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: Error,
         CSharpTypeWithNullability: Error?,
+        IsAnyOf: false,
         ConverterType: 
       }
     ],
@@ -181,9 +197,11 @@
           Properties: null,
           EnumValues: null,
           Namespace: G,
+          IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          IsAnyOf: false,
           ConverterType: 
         },
         IsRequired: true,
@@ -209,9 +227,11 @@
       Properties: null,
       EnumValues: null,
       Namespace: ,
+      IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
       CSharpTypeWithoutNullability: ,
       CSharpTypeWithNullability: ?,
+      IsAnyOf: false,
       ConverterType: 
     },
     ResponseType: {
@@ -228,9 +248,11 @@
       ],
       EnumValues: null,
       Namespace: G,
+      IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
       CSharpTypeWithoutNullability: Pet,
       CSharpTypeWithNullability: Pet?,
+      IsAnyOf: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -249,9 +271,11 @@
         ],
         EnumValues: null,
         Namespace: G,
+        IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: Pet,
         CSharpTypeWithNullability: Pet?,
+        IsAnyOf: false,
         ConverterType: 
       },
       {
@@ -264,9 +288,11 @@
         ],
         EnumValues: null,
         Namespace: G,
+        IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: Error,
         CSharpTypeWithNullability: Error?,
+        IsAnyOf: false,
         ConverterType: 
       }
     ],
@@ -295,9 +321,11 @@
       Properties: null,
       EnumValues: null,
       Namespace: ,
+      IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
       CSharpTypeWithoutNullability: ,
       CSharpTypeWithNullability: ?,
+      IsAnyOf: false,
       ConverterType: 
     },
     ResponseType: {
@@ -307,9 +335,11 @@
       Properties: null,
       EnumValues: null,
       Namespace: ,
+      IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
       CSharpTypeWithoutNullability: ,
       CSharpTypeWithNullability: ?,
+      IsAnyOf: false,
       ConverterType: 
     },
     AdditionalModels: null,

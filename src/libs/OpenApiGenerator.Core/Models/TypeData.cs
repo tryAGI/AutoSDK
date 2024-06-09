@@ -15,6 +15,7 @@ public readonly record struct TypeData(
     ImmutableArray<string> Properties,
     ImmutableArray<string> EnumValues,
     string Namespace,
+    bool IsDeprecated,
     JsonSerializerType JsonSerializerType,
     bool GenerateJsonSerializerContextTypes)
 {
@@ -28,11 +29,13 @@ public readonly record struct TypeData(
         Properties: [],
         EnumValues: [],
         Namespace: string.Empty,
+        IsDeprecated: false,
         JsonSerializerType: JsonSerializerType.SystemTextJson,
         GenerateJsonSerializerContextTypes: false);
     
     public string CSharpTypeWithoutNullability => CSharpType.TrimEnd('?');
     public string CSharpTypeWithNullability => CSharpTypeWithoutNullability + "?";
+    public bool IsAnyOf => AnyOfCount > 0 || OneOfCount > 0 || AllOfCount > 0;
     
     public string ConverterType => IsEnum
         ? $"{CSharpTypeWithoutNullability}JsonConverter"
@@ -82,6 +85,7 @@ public readonly record struct TypeData(
             Properties: properties,
             EnumValues: enumValues,
             Namespace: settings.Namespace,
+            IsDeprecated: schema.Value.Deprecated,
             JsonSerializerType: settings.JsonSerializerType,
             GenerateJsonSerializerContextTypes: settings.GenerateJsonSerializerContextTypes);
     }

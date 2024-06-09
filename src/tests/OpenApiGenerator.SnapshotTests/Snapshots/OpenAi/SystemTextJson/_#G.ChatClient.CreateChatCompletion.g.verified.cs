@@ -85,8 +85,6 @@ namespace G
             global::System.Collections.Generic.IList<ChatCompletionTool>? tools = default,
             global::System.OneOf<CreateChatCompletionRequestToolChoice?, ChatCompletionNamedToolChoice?> toolChoice = default,
             string? user = default,
-            global::System.OneOf<CreateChatCompletionRequestFunctionCall?, ChatCompletionFunctionCallOption?> functionCall = default,
-            global::System.Collections.Generic.IList<ChatCompletionFunctions>? functions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new CreateChatCompletionRequest
@@ -110,8 +108,6 @@ namespace G
                 Tools = tools,
                 ToolChoice = toolChoice,
                 User = user,
-                FunctionCall = functionCall,
-                Functions = functions,
             };
 
             return await CreateChatCompletionAsync(

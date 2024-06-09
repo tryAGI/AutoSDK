@@ -606,6 +606,7 @@ namespace G
         /// <br/>Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("use_squash_pr_title_as_default")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool UseSquashPrTitleAsDefault { get; set; } = false;
 
         /// <summary>
