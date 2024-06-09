@@ -1,14 +1,17 @@
 ﻿[
   {
     SubType: AnyOf,
-    Count: 3
+    Count: 3,
+    IsTrimming: false
   },
   {
     SubType: AnyOf,
-    Count: 2
+    Count: 2,
+    IsTrimming: false
   },
   {
     SubType: AnyOf,
-    Count: 4
+    Count: 4,
+    IsTrimming: false
   }
 ]

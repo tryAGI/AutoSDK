@@ -191,6 +191,10 @@ public static class Data
             ..constructors,
         ];
         
+        var isTrimming =
+            settings.JsonSerializerType == JsonSerializerType.SystemTextJson &&
+            (!string.IsNullOrWhiteSpace(settings.JsonSerializerContext) ||
+             settings.GenerateJsonSerializerContextTypes);
         var allSchemas = settings.GenerateSdk || settings.GenerateModels ? classes.Values.Concat(methods
                 .SelectMany(x => x.AdditionalModels))
             .SelectMany(x => x.Schema.Value.Properties.Concat([x.Schema]).ToArray())
@@ -198,26 +202,26 @@ public static class Data
             .ToArray() : [];
         var anyOfs = allSchemas
             .Where(x => x.AnyOf is { Count: > 0 })
-            .Select(x => new AnyOfData("AnyOf", x.AnyOf.Count, settings.JsonSerializerType))
+            .Select(x => new AnyOfData("AnyOf", x.AnyOf.Count, settings.JsonSerializerType, isTrimming))
             .Concat(allSchemas
                 .Where(x => x.Items?.AnyOf is { Count: > 0 })
-                .Select(x => new AnyOfData("AnyOf", x.Items.AnyOf.Count, settings.JsonSerializerType)))
+                .Select(x => new AnyOfData("AnyOf", x.Items.AnyOf.Count, settings.JsonSerializerType, isTrimming)))
             .Distinct()
             .ToImmutableArray();
         var oneOfs = allSchemas
             .Where(x => x.OneOf is { Count: > 0 })
-            .Select(x => new AnyOfData("OneOf", x.OneOf.Count, settings.JsonSerializerType))
+            .Select(x => new AnyOfData("OneOf", x.OneOf.Count, settings.JsonSerializerType, isTrimming))
             .Concat(allSchemas
                 .Where(x => x.Items?.OneOf is { Count: > 0 })
-                .Select(x => new AnyOfData("OneOf", x.Items.OneOf.Count, settings.JsonSerializerType)))
+                .Select(x => new AnyOfData("OneOf", x.Items.OneOf.Count, settings.JsonSerializerType, isTrimming)))
             .Distinct()
             .ToImmutableArray();
         var allOfs = allSchemas
             .Where(x => x.AllOf is { Count: > 0 })
-            .Select(x => new AnyOfData("AllOf", x.AllOf.Count, settings.JsonSerializerType))
+            .Select(x => new AnyOfData("AllOf", x.AllOf.Count, settings.JsonSerializerType, isTrimming))
             .Concat(allSchemas
                 .Where(x => x.Items?.AllOf is { Count: > 0 })
-                .Select(x => new AnyOfData("AllOf", x.Items.AllOf.Count, settings.JsonSerializerType)))
+                .Select(x => new AnyOfData("AllOf", x.Items.AllOf.Count, settings.JsonSerializerType, isTrimming)))
             .Distinct()
             .ToImmutableArray();
 

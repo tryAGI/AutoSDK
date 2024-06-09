@@ -1,6 +1,7 @@
 ﻿[
   {
     SubType: AnyOf,
-    Count: 2
+    Count: 2,
+    IsTrimming: true
   }
 ]

@@ -1,5 +1,4 @@
 ﻿using System.Text.Json;
-using AnyOfTypes;
 using OpenApiGenerator.JsonConverters;
 using JsonException = System.Text.Json.JsonException;
 using JsonSerializer = System.Text.Json.JsonSerializer;
@@ -21,8 +20,28 @@ public partial class JsonTests
             Converters = { new AnyOfConverterFactorySystemTextJson() }
         });
         json.Should().Be("{\"status\":\"pulling manifest\"}");
+        
+        json = JsonSerializer.Serialize(value, new JsonSerializerOptions
+        {
+            TypeInfoResolver = TestSourceGenerationContext.Default,
+            Converters = { new AnyOfConverterFactorySystemTextJson() }
+        });
+        json.Should().Be("{\"status\":\"pulling manifest\"}");
+        
+        json = JsonSerializer.Serialize(value, TestSourceGenerationContext.Default.AnyOfPullModelResponse2PullModelResponse);
+        json.Should().Be("{\"status\":\"pulling manifest\"}");
+
         var response = JsonSerializer.Deserialize<AnyOf<PullModelResponse2, PullModelResponse>>(json, new JsonSerializerOptions
         {
+            Converters = { new AnyOfConverterFactorySystemTextJson() }
+        });
+        response.Should().NotBeNull();
+        response.Value1.Should().NotBeNull();
+        response.Value1!.Status.Should().Be(PullModelResponseStatus2.PullingManifest);
+        
+        response = JsonSerializer.Deserialize<AnyOf<PullModelResponse2, PullModelResponse>>(json, new JsonSerializerOptions
+        {
+            TypeInfoResolver = TestSourceGenerationContext.Default,
             Converters = { new AnyOfConverterFactorySystemTextJson() }
         });
         response.Should().NotBeNull();

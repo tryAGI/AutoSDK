@@ -1,42 +1,52 @@
 ﻿[
   {
     SubType: AnyOf,
-    Count: 2
+    Count: 2,
+    IsTrimming: false
   },
   {
     SubType: AnyOf,
-    Count: 1
+    Count: 1,
+    IsTrimming: false
   },
   {
     SubType: OneOf,
-    Count: 4
+    Count: 4,
+    IsTrimming: false
   },
   {
     SubType: OneOf,
-    Count: 2
+    Count: 2,
+    IsTrimming: false
   },
   {
     SubType: OneOf,
-    Count: 5
+    Count: 5,
+    IsTrimming: false
   },
   {
     SubType: OneOf,
-    Count: 1
+    Count: 1,
+    IsTrimming: false
   },
   {
     SubType: OneOf,
-    Count: 6
+    Count: 6,
+    IsTrimming: false
   },
   {
     SubType: OneOf,
-    Count: 9
+    Count: 9,
+    IsTrimming: false
   },
   {
     SubType: OneOf,
-    Count: 7
+    Count: 7,
+    IsTrimming: false
   },
   {
     SubType: OneOf,
-    Count: 3
+    Count: 3,
+    IsTrimming: false
   }
 ]

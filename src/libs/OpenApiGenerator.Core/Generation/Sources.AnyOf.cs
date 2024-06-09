@@ -9,7 +9,7 @@ public static partial class Sources
         AnyOfData anyOfData,
         CancellationToken cancellationToken = default)
     {
-        var (subType, count, _) = anyOfData;
+        var (subType, count, _, _) = anyOfData;
         var types = $"<{string.Join(", ", Enumerable.Range(1, count).Select(x => $"T{x}"))}>";
         var validation = subType switch
         {

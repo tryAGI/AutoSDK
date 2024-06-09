@@ -5,5 +5,6 @@ namespace OpenApiGenerator.Core.Models;
 public readonly record struct AnyOfData(
     string SubType,
     int Count,
-    JsonSerializerType JsonSerializerType
+    JsonSerializerType JsonSerializerType,
+    bool IsTrimming
 );

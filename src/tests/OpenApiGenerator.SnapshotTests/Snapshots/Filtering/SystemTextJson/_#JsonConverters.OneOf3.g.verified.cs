@@ -12,6 +12,8 @@ namespace OpenApiGenerator.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+
             var
             readerCopy = reader;
             T1? value1 = default;
@@ -77,6 +79,8 @@ namespace OpenApiGenerator.JsonConverters
             global::System.OneOf<T1, T2, T3> value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+
             if (!value.Validate())
             {
                 throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(T1).Name}, {typeof(T2).Name}, {typeof(T3).Name}> object.");
@@ -84,17 +88,17 @@ namespace OpenApiGenerator.JsonConverters
 
             if (value.IsValue1)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, value.Value1!.GetType(), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeof(T1), options);
             }
 
             else if (value.IsValue2)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, value.Value2!.GetType(), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeof(T2), options);
             }
 
             else if (value.IsValue3)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3, value.Value3!.GetType(), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3, typeof(T3), options);
             }
         }
     }
