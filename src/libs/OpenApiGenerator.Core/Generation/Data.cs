@@ -85,7 +85,15 @@ public static class Data
             //     schema.Value.AnyOf is not { Count: >0 } &&
             //     schema.Value.OneOf is not { Count: >0 } &&
             //     schema.Value.AllOf is not { Count: >0 })
-            .Select(schema => ModelData.FromSchema(schema, settings))
+            .SelectMany(schema =>
+                schema.Value.AnyOf is { Count: >0 } ||
+                schema.Value.OneOf is { Count: >0 } ||
+                schema.Value.AllOf is { Count: >0 }
+                    ? [
+                        ModelData.FromSchema(schema, settings),
+                        .. ModelData.FromSchemas(schema.Value, settings, schema.Key)
+                    ]
+                    : new [] { ModelData.FromSchema(schema, settings) })
             .SelectMany(model => model.WithAdditionalModels())
             .GroupBy(x => x.ClassName)
             .Select(x => x.First())

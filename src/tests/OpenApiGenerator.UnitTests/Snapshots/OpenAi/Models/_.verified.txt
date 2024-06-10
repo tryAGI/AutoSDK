@@ -1652,6 +1652,122 @@ or `content_filter` if content was omitted due to a flag from our content filter
     FileNameWithoutExtension: G.Models.ChatCompletionRequestMessageContentPart
   },
   {
+    Id: ChatCompletionRequestMessageContentPartText,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: type,
+        Name: Type,
+        Type: {
+          CSharpType: ChatCompletionRequestMessageContentPartTextType,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            Text
+          ],
+          EnumValues: [
+            text
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ChatCompletionRequestMessageContentPartTextType,
+          CSharpTypeWithNullability: ChatCompletionRequestMessageContentPartTextType?,
+          IsAnyOf: false,
+          ConverterType: ChatCompletionRequestMessageContentPartTextTypeJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: The type of the content part.,
+        ConverterType: ChatCompletionRequestMessageContentPartTextTypeJsonConverter,
+        ParameterName: type,
+        ArgumentName: type,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: text,
+        Name: Text,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: The text content.,
+        ConverterType: ,
+        ParameterName: text,
+        ArgumentName: text,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ChatCompletionRequestMessageContentPartText,
+    ClassName: ChatCompletionRequestMessageContentPartText,
+    GlobalClassName: global::G.ChatCompletionRequestMessageContentPartText,
+    ExternalClassName: ChatCompletionRequestMessageContentPartText,
+    FileNameWithoutExtension: G.Models.ChatCompletionRequestMessageContentPartText
+  },
+  {
+    Id: type,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: text,
+        Name: Text,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: text,
+        ArgumentName: text,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: The type of the content part.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Type,
+    ClassName: Type,
+    GlobalClassName: global::G.Type,
+    ExternalClassName: Type,
+    FileNameWithoutExtension: G.Models.Type
+  },
+  {
     Id: ChatCompletionRequestMessageContentPartImage,
     AddTypeName: false,
     Parents: null,
@@ -1929,122 +2045,6 @@ Specifies the detail level of the image. Learn more in the [Vision guide](/docs/
         ConverterType: ,
         ParameterName: imageUrl,
         ArgumentName: imageUrl,
-        ParameterDefaultValue: default
-      }
-    ],
-    Summary: The type of the content part.,
-    IsDeprecated: false,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: Type,
-    ClassName: Type,
-    GlobalClassName: global::G.Type,
-    ExternalClassName: Type,
-    FileNameWithoutExtension: G.Models.Type
-  },
-  {
-    Id: ChatCompletionRequestMessageContentPartText,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    Properties: [
-      {
-        Id: type,
-        Name: Type,
-        Type: {
-          CSharpType: ChatCompletionRequestMessageContentPartTextType,
-          IsArray: false,
-          IsEnum: true,
-          Properties: [
-            Text
-          ],
-          EnumValues: [
-            text
-          ],
-          Namespace: G,
-          IsDeprecated: false,
-          GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: ChatCompletionRequestMessageContentPartTextType,
-          CSharpTypeWithNullability: ChatCompletionRequestMessageContentPartTextType?,
-          IsAnyOf: false,
-          ConverterType: ChatCompletionRequestMessageContentPartTextTypeJsonConverter
-        },
-        IsRequired: true,
-        IsDeprecated: false,
-        Summary: The type of the content part.,
-        ConverterType: ChatCompletionRequestMessageContentPartTextTypeJsonConverter,
-        ParameterName: type,
-        ArgumentName: type,
-        ParameterDefaultValue: default
-      },
-      {
-        Id: text,
-        Name: Text,
-        Type: {
-          CSharpType: string,
-          IsArray: false,
-          IsEnum: false,
-          Properties: null,
-          EnumValues: null,
-          Namespace: G,
-          IsDeprecated: false,
-          GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: string,
-          CSharpTypeWithNullability: string?,
-          IsAnyOf: false,
-          ConverterType: 
-        },
-        IsRequired: true,
-        IsDeprecated: false,
-        Summary: The text content.,
-        ConverterType: ,
-        ParameterName: text,
-        ArgumentName: text,
-        ParameterDefaultValue: default
-      }
-    ],
-    Summary: ,
-    IsDeprecated: false,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: ChatCompletionRequestMessageContentPartText,
-    ClassName: ChatCompletionRequestMessageContentPartText,
-    GlobalClassName: global::G.ChatCompletionRequestMessageContentPartText,
-    ExternalClassName: ChatCompletionRequestMessageContentPartText,
-    FileNameWithoutExtension: G.Models.ChatCompletionRequestMessageContentPartText
-  },
-  {
-    Id: type,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    Style: Enumeration,
-    Properties: [
-      {
-        Id: text,
-        Name: Text,
-        Type: {
-          CSharpType: ,
-          IsArray: false,
-          IsEnum: false,
-          Properties: null,
-          EnumValues: null,
-          Namespace: ,
-          IsDeprecated: false,
-          GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: ,
-          CSharpTypeWithNullability: ?,
-          IsAnyOf: false,
-          ConverterType: 
-        },
-        IsRequired: false,
-        IsDeprecated: false,
-        Summary: ,
-        ConverterType: ,
-        ParameterName: text,
-        ArgumentName: text,
         ParameterDefaultValue: default
       }
     ],
@@ -38092,6 +38092,182 @@ integrate the Assistants API with streaming.
     GlobalClassName: global::G.Data,
     ExternalClassName: Data,
     FileNameWithoutExtension: G.Models.Data
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.created,
+        Name: ThreadCreated,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadCreated,
+        ArgumentName: threadCreated,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.run.created,
+        Name: ThreadRunCreated,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadRunCreated,
+        ArgumentName: threadRunCreated,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.run.step.created,
+        Name: ThreadRunStepCreated,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadRunStepCreated,
+        ArgumentName: threadRunStepCreated,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.message.created,
+        Name: ThreadMessageCreated,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadMessageCreated,
+        ArgumentName: threadMessageCreated,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
   },
   {
     Id: Batch,
