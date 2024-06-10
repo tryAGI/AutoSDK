@@ -88,10 +88,17 @@ public readonly record struct ModelData(
                 .Select(x => FromSchema(x.UseReferenceIdOrKey(key), settings, parents))
                 .ToArray();
         }
+
+        if (schema.Type == "object")
+        {
+            return [FromSchema(schema.UseReferenceIdOrKey(key), settings, parents)];
+        }
+        if (schema.Items != null)
+        {
+            return [FromSchema(schema.Items.UseReferenceIdOrKey(key), settings, parents)];
+        }
         
-        return [FromSchema(schema.Type == "object"
-            ? schema.UseReferenceIdOrKey(key)
-            : schema.Items.UseReferenceIdOrKey(key), settings, parents)];
+        return [];
     }
     
     public static ModelData FromSchema(
