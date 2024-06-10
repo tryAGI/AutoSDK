@@ -14,7 +14,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="assistant.deleted")]
-        Assistantdeleted,
+        AssistantDeleted,
     }
 
     /// <summary>
@@ -29,7 +29,7 @@ namespace G
         {
             return value switch
             {
-                DeleteAssistantResponseObject.Assistantdeleted => "assistant.deleted",
+                DeleteAssistantResponseObject.AssistantDeleted => "assistant.deleted",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -40,7 +40,7 @@ namespace G
         {
             return value switch
             {
-                "assistant.deleted" => DeleteAssistantResponseObject.Assistantdeleted,
+                "assistant.deleted" => DeleteAssistantResponseObject.AssistantDeleted,
                 _ => null,
             };
         }

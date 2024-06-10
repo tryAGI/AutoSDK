@@ -234,7 +234,7 @@ public static class OpenApiExtensions
         var name = id
             .ReplacePlusAndMinusOnStart()
             .ToPropertyName()
-            .UseWordSeparator('_', '-', ' ')
+            .UseWordSeparator('_', '-', ' ', '.')
             .Replace("+", "Plus")
             .Replace("*", "Any")
             .Replace("'", string.Empty)

@@ -14,7 +14,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="thread.deleted")]
-        Threaddeleted,
+        ThreadDeleted,
     }
 
     /// <summary>
@@ -29,7 +29,7 @@ namespace G
         {
             return value switch
             {
-                DeleteThreadResponseObject.Threaddeleted => "thread.deleted",
+                DeleteThreadResponseObject.ThreadDeleted => "thread.deleted",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -40,7 +40,7 @@ namespace G
         {
             return value switch
             {
-                "thread.deleted" => DeleteThreadResponseObject.Threaddeleted,
+                "thread.deleted" => DeleteThreadResponseObject.ThreadDeleted,
                 _ => null,
             };
         }

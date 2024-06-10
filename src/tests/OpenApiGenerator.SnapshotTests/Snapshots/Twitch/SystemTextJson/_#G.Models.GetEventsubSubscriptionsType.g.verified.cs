@@ -12,283 +12,283 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Automodmessagehold,
+        AutomodMessageHold,
         /// <summary>
         /// 
         /// </summary>
-        Automodmessageupdate,
+        AutomodMessageUpdate,
         /// <summary>
         /// 
         /// </summary>
-        Automodsettingsupdate,
+        AutomodSettingsUpdate,
         /// <summary>
         /// 
         /// </summary>
-        Automodtermsupdate,
+        AutomodTermsUpdate,
         /// <summary>
         /// 
         /// </summary>
-        Channelupdate,
+        ChannelUpdate,
         /// <summary>
         /// 
         /// </summary>
-        Channelfollow,
+        ChannelFollow,
         /// <summary>
         /// 
         /// </summary>
-        ChanneladBreakbegin,
+        ChannelAdBreakBegin,
         /// <summary>
         /// 
         /// </summary>
-        Channelchatclear,
+        ChannelChatClear,
         /// <summary>
         /// 
         /// </summary>
-        ChannelchatclearUserMessages,
+        ChannelChatClearUserMessages,
         /// <summary>
         /// 
         /// </summary>
-        Channelchatmessage,
+        ChannelChatMessage,
         /// <summary>
         /// 
         /// </summary>
-        ChannelchatmessageDelete,
+        ChannelChatMessageDelete,
         /// <summary>
         /// 
         /// </summary>
-        Channelchatnotification,
+        ChannelChatNotification,
         /// <summary>
         /// 
         /// </summary>
-        ChannelchatSettingsupdate,
+        ChannelChatSettingsUpdate,
         /// <summary>
         /// 
         /// </summary>
-        ChannelchatuserMessageHold,
+        ChannelChatUserMessageHold,
         /// <summary>
         /// 
         /// </summary>
-        ChannelchatuserMessageUpdate,
+        ChannelChatUserMessageUpdate,
         /// <summary>
         /// 
         /// </summary>
-        Channelsubscribe,
+        ChannelSubscribe,
         /// <summary>
         /// 
         /// </summary>
-        Channelsubscriptionend,
+        ChannelSubscriptionEnd,
         /// <summary>
         /// 
         /// </summary>
-        Channelsubscriptiongift,
+        ChannelSubscriptionGift,
         /// <summary>
         /// 
         /// </summary>
-        Channelsubscriptionmessage,
+        ChannelSubscriptionMessage,
         /// <summary>
         /// 
         /// </summary>
-        Channelcheer,
+        ChannelCheer,
         /// <summary>
         /// 
         /// </summary>
-        Channelraid,
+        ChannelRaid,
         /// <summary>
         /// 
         /// </summary>
-        Channelban,
+        ChannelBan,
         /// <summary>
         /// 
         /// </summary>
-        Channelunban,
+        ChannelUnban,
         /// <summary>
         /// 
         /// </summary>
-        ChannelunbanRequestcreate,
+        ChannelUnbanRequestCreate,
         /// <summary>
         /// 
         /// </summary>
-        ChannelunbanRequestresolve,
+        ChannelUnbanRequestResolve,
         /// <summary>
         /// 
         /// </summary>
-        Channelmoderate,
+        ChannelModerate,
         /// <summary>
         /// 
         /// </summary>
-        Channelmoderatoradd,
+        ChannelModeratorAdd,
         /// <summary>
         /// 
         /// </summary>
-        Channelmoderatorremove,
+        ChannelModeratorRemove,
         /// <summary>
         /// 
         /// </summary>
-        ChannelguestStarSessionbegin,
+        ChannelGuestStarSessionBegin,
         /// <summary>
         /// 
         /// </summary>
-        ChannelguestStarSessionend,
+        ChannelGuestStarSessionEnd,
         /// <summary>
         /// 
         /// </summary>
-        ChannelguestStarGuestupdate,
+        ChannelGuestStarGuestUpdate,
         /// <summary>
         /// 
         /// </summary>
-        ChannelguestStarSettingsupdate,
+        ChannelGuestStarSettingsUpdate,
         /// <summary>
         /// 
         /// </summary>
-        ChannelchannelPointsAutomaticRewardadd,
+        ChannelChannelPointsAutomaticRewardAdd,
         /// <summary>
         /// 
         /// </summary>
-        ChannelchannelPointsCustomRewardadd,
+        ChannelChannelPointsCustomRewardAdd,
         /// <summary>
         /// 
         /// </summary>
-        ChannelchannelPointsCustomRewardupdate,
+        ChannelChannelPointsCustomRewardUpdate,
         /// <summary>
         /// 
         /// </summary>
-        ChannelchannelPointsCustomRewardremove,
+        ChannelChannelPointsCustomRewardRemove,
         /// <summary>
         /// 
         /// </summary>
-        ChannelchannelPointsCustomRewardRedemptionadd,
+        ChannelChannelPointsCustomRewardRedemptionAdd,
         /// <summary>
         /// 
         /// </summary>
-        ChannelchannelPointsCustomRewardRedemptionupdate,
+        ChannelChannelPointsCustomRewardRedemptionUpdate,
         /// <summary>
         /// 
         /// </summary>
-        Channelpollbegin,
+        ChannelPollBegin,
         /// <summary>
         /// 
         /// </summary>
-        Channelpollprogress,
+        ChannelPollProgress,
         /// <summary>
         /// 
         /// </summary>
-        Channelpollend,
+        ChannelPollEnd,
         /// <summary>
         /// 
         /// </summary>
-        Channelpredictionbegin,
+        ChannelPredictionBegin,
         /// <summary>
         /// 
         /// </summary>
-        Channelpredictionprogress,
+        ChannelPredictionProgress,
         /// <summary>
         /// 
         /// </summary>
-        Channelpredictionlock,
+        ChannelPredictionLock,
         /// <summary>
         /// 
         /// </summary>
-        Channelpredictionend,
+        ChannelPredictionEnd,
         /// <summary>
         /// 
         /// </summary>
-        Channelvipadd,
+        ChannelVipAdd,
         /// <summary>
         /// 
         /// </summary>
-        Channelvipremove,
+        ChannelVipRemove,
         /// <summary>
         /// 
         /// </summary>
-        ChannelcharityCampaigndonate,
+        ChannelCharityCampaignDonate,
         /// <summary>
         /// 
         /// </summary>
-        ChannelcharityCampaignstart,
+        ChannelCharityCampaignStart,
         /// <summary>
         /// 
         /// </summary>
-        ChannelcharityCampaignprogress,
+        ChannelCharityCampaignProgress,
         /// <summary>
         /// 
         /// </summary>
-        ChannelcharityCampaignstop,
+        ChannelCharityCampaignStop,
         /// <summary>
         /// 
         /// </summary>
-        Conduitsharddisabled,
+        ConduitShardDisabled,
         /// <summary>
         /// 
         /// </summary>
-        Dropentitlementgrant,
+        DropEntitlementGrant,
         /// <summary>
         /// 
         /// </summary>
-        ExtensionbitsTransactioncreate,
+        ExtensionBitsTransactionCreate,
         /// <summary>
         /// 
         /// </summary>
-        Channelgoalbegin,
+        ChannelGoalBegin,
         /// <summary>
         /// 
         /// </summary>
-        Channelgoalprogress,
+        ChannelGoalProgress,
         /// <summary>
         /// 
         /// </summary>
-        Channelgoalend,
+        ChannelGoalEnd,
         /// <summary>
         /// 
         /// </summary>
-        ChannelhypeTrainbegin,
+        ChannelHypeTrainBegin,
         /// <summary>
         /// 
         /// </summary>
-        ChannelhypeTrainprogress,
+        ChannelHypeTrainProgress,
         /// <summary>
         /// 
         /// </summary>
-        ChannelhypeTrainend,
+        ChannelHypeTrainEnd,
         /// <summary>
         /// 
         /// </summary>
-        ChannelshieldModebegin,
+        ChannelShieldModeBegin,
         /// <summary>
         /// 
         /// </summary>
-        ChannelshieldModeend,
+        ChannelShieldModeEnd,
         /// <summary>
         /// 
         /// </summary>
-        Channelshoutoutcreate,
+        ChannelShoutoutCreate,
         /// <summary>
         /// 
         /// </summary>
-        Channelshoutoutreceive,
+        ChannelShoutoutReceive,
         /// <summary>
         /// 
         /// </summary>
-        Streamonline,
+        StreamOnline,
         /// <summary>
         /// 
         /// </summary>
-        Streamoffline,
+        StreamOffline,
         /// <summary>
         /// 
         /// </summary>
-        Userauthorizationgrant,
+        UserAuthorizationGrant,
         /// <summary>
         /// 
         /// </summary>
-        Userauthorizationrevoke,
+        UserAuthorizationRevoke,
         /// <summary>
         /// 
         /// </summary>
-        Userupdate,
+        UserUpdate,
         /// <summary>
         /// 
         /// </summary>
-        Userwhispermessage,
+        UserWhisperMessage,
     }
 
     /// <summary>
@@ -303,76 +303,76 @@ namespace G
         {
             return value switch
             {
-                GetEventsubSubscriptionsType.Automodmessagehold => "automod.message.hold",
-                GetEventsubSubscriptionsType.Automodmessageupdate => "automod.message.update",
-                GetEventsubSubscriptionsType.Automodsettingsupdate => "automod.settings.update",
-                GetEventsubSubscriptionsType.Automodtermsupdate => "automod.terms.update",
-                GetEventsubSubscriptionsType.Channelupdate => "channel.update",
-                GetEventsubSubscriptionsType.Channelfollow => "channel.follow",
-                GetEventsubSubscriptionsType.ChanneladBreakbegin => "channel.ad_break.begin",
-                GetEventsubSubscriptionsType.Channelchatclear => "channel.chat.clear",
-                GetEventsubSubscriptionsType.ChannelchatclearUserMessages => "channel.chat.clear_user_messages",
-                GetEventsubSubscriptionsType.Channelchatmessage => "channel.chat.message",
-                GetEventsubSubscriptionsType.ChannelchatmessageDelete => "channel.chat.message_delete",
-                GetEventsubSubscriptionsType.Channelchatnotification => "channel.chat.notification",
-                GetEventsubSubscriptionsType.ChannelchatSettingsupdate => "channel.chat_settings.update",
-                GetEventsubSubscriptionsType.ChannelchatuserMessageHold => "channel.chat.user_message_hold",
-                GetEventsubSubscriptionsType.ChannelchatuserMessageUpdate => "channel.chat.user_message_update",
-                GetEventsubSubscriptionsType.Channelsubscribe => "channel.subscribe",
-                GetEventsubSubscriptionsType.Channelsubscriptionend => "channel.subscription.end",
-                GetEventsubSubscriptionsType.Channelsubscriptiongift => "channel.subscription.gift",
-                GetEventsubSubscriptionsType.Channelsubscriptionmessage => "channel.subscription.message",
-                GetEventsubSubscriptionsType.Channelcheer => "channel.cheer",
-                GetEventsubSubscriptionsType.Channelraid => "channel.raid",
-                GetEventsubSubscriptionsType.Channelban => "channel.ban",
-                GetEventsubSubscriptionsType.Channelunban => "channel.unban",
-                GetEventsubSubscriptionsType.ChannelunbanRequestcreate => "channel.unban_request.create",
-                GetEventsubSubscriptionsType.ChannelunbanRequestresolve => "channel.unban_request.resolve",
-                GetEventsubSubscriptionsType.Channelmoderate => "channel.moderate",
-                GetEventsubSubscriptionsType.Channelmoderatoradd => "channel.moderator.add",
-                GetEventsubSubscriptionsType.Channelmoderatorremove => "channel.moderator.remove",
-                GetEventsubSubscriptionsType.ChannelguestStarSessionbegin => "channel.guest_star_session.begin",
-                GetEventsubSubscriptionsType.ChannelguestStarSessionend => "channel.guest_star_session.end",
-                GetEventsubSubscriptionsType.ChannelguestStarGuestupdate => "channel.guest_star_guest.update",
-                GetEventsubSubscriptionsType.ChannelguestStarSettingsupdate => "channel.guest_star_settings.update",
-                GetEventsubSubscriptionsType.ChannelchannelPointsAutomaticRewardadd => "channel.channel_points_automatic_reward.add",
-                GetEventsubSubscriptionsType.ChannelchannelPointsCustomRewardadd => "channel.channel_points_custom_reward.add",
-                GetEventsubSubscriptionsType.ChannelchannelPointsCustomRewardupdate => "channel.channel_points_custom_reward.update",
-                GetEventsubSubscriptionsType.ChannelchannelPointsCustomRewardremove => "channel.channel_points_custom_reward.remove",
-                GetEventsubSubscriptionsType.ChannelchannelPointsCustomRewardRedemptionadd => "channel.channel_points_custom_reward_redemption.add",
-                GetEventsubSubscriptionsType.ChannelchannelPointsCustomRewardRedemptionupdate => "channel.channel_points_custom_reward_redemption.update",
-                GetEventsubSubscriptionsType.Channelpollbegin => "channel.poll.begin",
-                GetEventsubSubscriptionsType.Channelpollprogress => "channel.poll.progress",
-                GetEventsubSubscriptionsType.Channelpollend => "channel.poll.end",
-                GetEventsubSubscriptionsType.Channelpredictionbegin => "channel.prediction.begin",
-                GetEventsubSubscriptionsType.Channelpredictionprogress => "channel.prediction.progress",
-                GetEventsubSubscriptionsType.Channelpredictionlock => "channel.prediction.lock",
-                GetEventsubSubscriptionsType.Channelpredictionend => "channel.prediction.end",
-                GetEventsubSubscriptionsType.Channelvipadd => "channel.vip.add",
-                GetEventsubSubscriptionsType.Channelvipremove => "channel.vip.remove",
-                GetEventsubSubscriptionsType.ChannelcharityCampaigndonate => "channel.charity_campaign.donate",
-                GetEventsubSubscriptionsType.ChannelcharityCampaignstart => "channel.charity_campaign.start",
-                GetEventsubSubscriptionsType.ChannelcharityCampaignprogress => "channel.charity_campaign.progress",
-                GetEventsubSubscriptionsType.ChannelcharityCampaignstop => "channel.charity_campaign.stop",
-                GetEventsubSubscriptionsType.Conduitsharddisabled => "conduit.shard.disabled",
-                GetEventsubSubscriptionsType.Dropentitlementgrant => "drop.entitlement.grant",
-                GetEventsubSubscriptionsType.ExtensionbitsTransactioncreate => "extension.bits_transaction.create",
-                GetEventsubSubscriptionsType.Channelgoalbegin => "channel.goal.begin",
-                GetEventsubSubscriptionsType.Channelgoalprogress => "channel.goal.progress",
-                GetEventsubSubscriptionsType.Channelgoalend => "channel.goal.end",
-                GetEventsubSubscriptionsType.ChannelhypeTrainbegin => "channel.hype_train.begin",
-                GetEventsubSubscriptionsType.ChannelhypeTrainprogress => "channel.hype_train.progress",
-                GetEventsubSubscriptionsType.ChannelhypeTrainend => "channel.hype_train.end",
-                GetEventsubSubscriptionsType.ChannelshieldModebegin => "channel.shield_mode.begin",
-                GetEventsubSubscriptionsType.ChannelshieldModeend => "channel.shield_mode.end",
-                GetEventsubSubscriptionsType.Channelshoutoutcreate => "channel.shoutout.create",
-                GetEventsubSubscriptionsType.Channelshoutoutreceive => "channel.shoutout.receive",
-                GetEventsubSubscriptionsType.Streamonline => "stream.online",
-                GetEventsubSubscriptionsType.Streamoffline => "stream.offline",
-                GetEventsubSubscriptionsType.Userauthorizationgrant => "user.authorization.grant",
-                GetEventsubSubscriptionsType.Userauthorizationrevoke => "user.authorization.revoke",
-                GetEventsubSubscriptionsType.Userupdate => "user.update",
-                GetEventsubSubscriptionsType.Userwhispermessage => "user.whisper.message",
+                GetEventsubSubscriptionsType.AutomodMessageHold => "automod.message.hold",
+                GetEventsubSubscriptionsType.AutomodMessageUpdate => "automod.message.update",
+                GetEventsubSubscriptionsType.AutomodSettingsUpdate => "automod.settings.update",
+                GetEventsubSubscriptionsType.AutomodTermsUpdate => "automod.terms.update",
+                GetEventsubSubscriptionsType.ChannelUpdate => "channel.update",
+                GetEventsubSubscriptionsType.ChannelFollow => "channel.follow",
+                GetEventsubSubscriptionsType.ChannelAdBreakBegin => "channel.ad_break.begin",
+                GetEventsubSubscriptionsType.ChannelChatClear => "channel.chat.clear",
+                GetEventsubSubscriptionsType.ChannelChatClearUserMessages => "channel.chat.clear_user_messages",
+                GetEventsubSubscriptionsType.ChannelChatMessage => "channel.chat.message",
+                GetEventsubSubscriptionsType.ChannelChatMessageDelete => "channel.chat.message_delete",
+                GetEventsubSubscriptionsType.ChannelChatNotification => "channel.chat.notification",
+                GetEventsubSubscriptionsType.ChannelChatSettingsUpdate => "channel.chat_settings.update",
+                GetEventsubSubscriptionsType.ChannelChatUserMessageHold => "channel.chat.user_message_hold",
+                GetEventsubSubscriptionsType.ChannelChatUserMessageUpdate => "channel.chat.user_message_update",
+                GetEventsubSubscriptionsType.ChannelSubscribe => "channel.subscribe",
+                GetEventsubSubscriptionsType.ChannelSubscriptionEnd => "channel.subscription.end",
+                GetEventsubSubscriptionsType.ChannelSubscriptionGift => "channel.subscription.gift",
+                GetEventsubSubscriptionsType.ChannelSubscriptionMessage => "channel.subscription.message",
+                GetEventsubSubscriptionsType.ChannelCheer => "channel.cheer",
+                GetEventsubSubscriptionsType.ChannelRaid => "channel.raid",
+                GetEventsubSubscriptionsType.ChannelBan => "channel.ban",
+                GetEventsubSubscriptionsType.ChannelUnban => "channel.unban",
+                GetEventsubSubscriptionsType.ChannelUnbanRequestCreate => "channel.unban_request.create",
+                GetEventsubSubscriptionsType.ChannelUnbanRequestResolve => "channel.unban_request.resolve",
+                GetEventsubSubscriptionsType.ChannelModerate => "channel.moderate",
+                GetEventsubSubscriptionsType.ChannelModeratorAdd => "channel.moderator.add",
+                GetEventsubSubscriptionsType.ChannelModeratorRemove => "channel.moderator.remove",
+                GetEventsubSubscriptionsType.ChannelGuestStarSessionBegin => "channel.guest_star_session.begin",
+                GetEventsubSubscriptionsType.ChannelGuestStarSessionEnd => "channel.guest_star_session.end",
+                GetEventsubSubscriptionsType.ChannelGuestStarGuestUpdate => "channel.guest_star_guest.update",
+                GetEventsubSubscriptionsType.ChannelGuestStarSettingsUpdate => "channel.guest_star_settings.update",
+                GetEventsubSubscriptionsType.ChannelChannelPointsAutomaticRewardAdd => "channel.channel_points_automatic_reward.add",
+                GetEventsubSubscriptionsType.ChannelChannelPointsCustomRewardAdd => "channel.channel_points_custom_reward.add",
+                GetEventsubSubscriptionsType.ChannelChannelPointsCustomRewardUpdate => "channel.channel_points_custom_reward.update",
+                GetEventsubSubscriptionsType.ChannelChannelPointsCustomRewardRemove => "channel.channel_points_custom_reward.remove",
+                GetEventsubSubscriptionsType.ChannelChannelPointsCustomRewardRedemptionAdd => "channel.channel_points_custom_reward_redemption.add",
+                GetEventsubSubscriptionsType.ChannelChannelPointsCustomRewardRedemptionUpdate => "channel.channel_points_custom_reward_redemption.update",
+                GetEventsubSubscriptionsType.ChannelPollBegin => "channel.poll.begin",
+                GetEventsubSubscriptionsType.ChannelPollProgress => "channel.poll.progress",
+                GetEventsubSubscriptionsType.ChannelPollEnd => "channel.poll.end",
+                GetEventsubSubscriptionsType.ChannelPredictionBegin => "channel.prediction.begin",
+                GetEventsubSubscriptionsType.ChannelPredictionProgress => "channel.prediction.progress",
+                GetEventsubSubscriptionsType.ChannelPredictionLock => "channel.prediction.lock",
+                GetEventsubSubscriptionsType.ChannelPredictionEnd => "channel.prediction.end",
+                GetEventsubSubscriptionsType.ChannelVipAdd => "channel.vip.add",
+                GetEventsubSubscriptionsType.ChannelVipRemove => "channel.vip.remove",
+                GetEventsubSubscriptionsType.ChannelCharityCampaignDonate => "channel.charity_campaign.donate",
+                GetEventsubSubscriptionsType.ChannelCharityCampaignStart => "channel.charity_campaign.start",
+                GetEventsubSubscriptionsType.ChannelCharityCampaignProgress => "channel.charity_campaign.progress",
+                GetEventsubSubscriptionsType.ChannelCharityCampaignStop => "channel.charity_campaign.stop",
+                GetEventsubSubscriptionsType.ConduitShardDisabled => "conduit.shard.disabled",
+                GetEventsubSubscriptionsType.DropEntitlementGrant => "drop.entitlement.grant",
+                GetEventsubSubscriptionsType.ExtensionBitsTransactionCreate => "extension.bits_transaction.create",
+                GetEventsubSubscriptionsType.ChannelGoalBegin => "channel.goal.begin",
+                GetEventsubSubscriptionsType.ChannelGoalProgress => "channel.goal.progress",
+                GetEventsubSubscriptionsType.ChannelGoalEnd => "channel.goal.end",
+                GetEventsubSubscriptionsType.ChannelHypeTrainBegin => "channel.hype_train.begin",
+                GetEventsubSubscriptionsType.ChannelHypeTrainProgress => "channel.hype_train.progress",
+                GetEventsubSubscriptionsType.ChannelHypeTrainEnd => "channel.hype_train.end",
+                GetEventsubSubscriptionsType.ChannelShieldModeBegin => "channel.shield_mode.begin",
+                GetEventsubSubscriptionsType.ChannelShieldModeEnd => "channel.shield_mode.end",
+                GetEventsubSubscriptionsType.ChannelShoutoutCreate => "channel.shoutout.create",
+                GetEventsubSubscriptionsType.ChannelShoutoutReceive => "channel.shoutout.receive",
+                GetEventsubSubscriptionsType.StreamOnline => "stream.online",
+                GetEventsubSubscriptionsType.StreamOffline => "stream.offline",
+                GetEventsubSubscriptionsType.UserAuthorizationGrant => "user.authorization.grant",
+                GetEventsubSubscriptionsType.UserAuthorizationRevoke => "user.authorization.revoke",
+                GetEventsubSubscriptionsType.UserUpdate => "user.update",
+                GetEventsubSubscriptionsType.UserWhisperMessage => "user.whisper.message",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -383,76 +383,76 @@ namespace G
         {
             return value switch
             {
-                "automod.message.hold" => GetEventsubSubscriptionsType.Automodmessagehold,
-                "automod.message.update" => GetEventsubSubscriptionsType.Automodmessageupdate,
-                "automod.settings.update" => GetEventsubSubscriptionsType.Automodsettingsupdate,
-                "automod.terms.update" => GetEventsubSubscriptionsType.Automodtermsupdate,
-                "channel.update" => GetEventsubSubscriptionsType.Channelupdate,
-                "channel.follow" => GetEventsubSubscriptionsType.Channelfollow,
-                "channel.ad_break.begin" => GetEventsubSubscriptionsType.ChanneladBreakbegin,
-                "channel.chat.clear" => GetEventsubSubscriptionsType.Channelchatclear,
-                "channel.chat.clear_user_messages" => GetEventsubSubscriptionsType.ChannelchatclearUserMessages,
-                "channel.chat.message" => GetEventsubSubscriptionsType.Channelchatmessage,
-                "channel.chat.message_delete" => GetEventsubSubscriptionsType.ChannelchatmessageDelete,
-                "channel.chat.notification" => GetEventsubSubscriptionsType.Channelchatnotification,
-                "channel.chat_settings.update" => GetEventsubSubscriptionsType.ChannelchatSettingsupdate,
-                "channel.chat.user_message_hold" => GetEventsubSubscriptionsType.ChannelchatuserMessageHold,
-                "channel.chat.user_message_update" => GetEventsubSubscriptionsType.ChannelchatuserMessageUpdate,
-                "channel.subscribe" => GetEventsubSubscriptionsType.Channelsubscribe,
-                "channel.subscription.end" => GetEventsubSubscriptionsType.Channelsubscriptionend,
-                "channel.subscription.gift" => GetEventsubSubscriptionsType.Channelsubscriptiongift,
-                "channel.subscription.message" => GetEventsubSubscriptionsType.Channelsubscriptionmessage,
-                "channel.cheer" => GetEventsubSubscriptionsType.Channelcheer,
-                "channel.raid" => GetEventsubSubscriptionsType.Channelraid,
-                "channel.ban" => GetEventsubSubscriptionsType.Channelban,
-                "channel.unban" => GetEventsubSubscriptionsType.Channelunban,
-                "channel.unban_request.create" => GetEventsubSubscriptionsType.ChannelunbanRequestcreate,
-                "channel.unban_request.resolve" => GetEventsubSubscriptionsType.ChannelunbanRequestresolve,
-                "channel.moderate" => GetEventsubSubscriptionsType.Channelmoderate,
-                "channel.moderator.add" => GetEventsubSubscriptionsType.Channelmoderatoradd,
-                "channel.moderator.remove" => GetEventsubSubscriptionsType.Channelmoderatorremove,
-                "channel.guest_star_session.begin" => GetEventsubSubscriptionsType.ChannelguestStarSessionbegin,
-                "channel.guest_star_session.end" => GetEventsubSubscriptionsType.ChannelguestStarSessionend,
-                "channel.guest_star_guest.update" => GetEventsubSubscriptionsType.ChannelguestStarGuestupdate,
-                "channel.guest_star_settings.update" => GetEventsubSubscriptionsType.ChannelguestStarSettingsupdate,
-                "channel.channel_points_automatic_reward.add" => GetEventsubSubscriptionsType.ChannelchannelPointsAutomaticRewardadd,
-                "channel.channel_points_custom_reward.add" => GetEventsubSubscriptionsType.ChannelchannelPointsCustomRewardadd,
-                "channel.channel_points_custom_reward.update" => GetEventsubSubscriptionsType.ChannelchannelPointsCustomRewardupdate,
-                "channel.channel_points_custom_reward.remove" => GetEventsubSubscriptionsType.ChannelchannelPointsCustomRewardremove,
-                "channel.channel_points_custom_reward_redemption.add" => GetEventsubSubscriptionsType.ChannelchannelPointsCustomRewardRedemptionadd,
-                "channel.channel_points_custom_reward_redemption.update" => GetEventsubSubscriptionsType.ChannelchannelPointsCustomRewardRedemptionupdate,
-                "channel.poll.begin" => GetEventsubSubscriptionsType.Channelpollbegin,
-                "channel.poll.progress" => GetEventsubSubscriptionsType.Channelpollprogress,
-                "channel.poll.end" => GetEventsubSubscriptionsType.Channelpollend,
-                "channel.prediction.begin" => GetEventsubSubscriptionsType.Channelpredictionbegin,
-                "channel.prediction.progress" => GetEventsubSubscriptionsType.Channelpredictionprogress,
-                "channel.prediction.lock" => GetEventsubSubscriptionsType.Channelpredictionlock,
-                "channel.prediction.end" => GetEventsubSubscriptionsType.Channelpredictionend,
-                "channel.vip.add" => GetEventsubSubscriptionsType.Channelvipadd,
-                "channel.vip.remove" => GetEventsubSubscriptionsType.Channelvipremove,
-                "channel.charity_campaign.donate" => GetEventsubSubscriptionsType.ChannelcharityCampaigndonate,
-                "channel.charity_campaign.start" => GetEventsubSubscriptionsType.ChannelcharityCampaignstart,
-                "channel.charity_campaign.progress" => GetEventsubSubscriptionsType.ChannelcharityCampaignprogress,
-                "channel.charity_campaign.stop" => GetEventsubSubscriptionsType.ChannelcharityCampaignstop,
-                "conduit.shard.disabled" => GetEventsubSubscriptionsType.Conduitsharddisabled,
-                "drop.entitlement.grant" => GetEventsubSubscriptionsType.Dropentitlementgrant,
-                "extension.bits_transaction.create" => GetEventsubSubscriptionsType.ExtensionbitsTransactioncreate,
-                "channel.goal.begin" => GetEventsubSubscriptionsType.Channelgoalbegin,
-                "channel.goal.progress" => GetEventsubSubscriptionsType.Channelgoalprogress,
-                "channel.goal.end" => GetEventsubSubscriptionsType.Channelgoalend,
-                "channel.hype_train.begin" => GetEventsubSubscriptionsType.ChannelhypeTrainbegin,
-                "channel.hype_train.progress" => GetEventsubSubscriptionsType.ChannelhypeTrainprogress,
-                "channel.hype_train.end" => GetEventsubSubscriptionsType.ChannelhypeTrainend,
-                "channel.shield_mode.begin" => GetEventsubSubscriptionsType.ChannelshieldModebegin,
-                "channel.shield_mode.end" => GetEventsubSubscriptionsType.ChannelshieldModeend,
-                "channel.shoutout.create" => GetEventsubSubscriptionsType.Channelshoutoutcreate,
-                "channel.shoutout.receive" => GetEventsubSubscriptionsType.Channelshoutoutreceive,
-                "stream.online" => GetEventsubSubscriptionsType.Streamonline,
-                "stream.offline" => GetEventsubSubscriptionsType.Streamoffline,
-                "user.authorization.grant" => GetEventsubSubscriptionsType.Userauthorizationgrant,
-                "user.authorization.revoke" => GetEventsubSubscriptionsType.Userauthorizationrevoke,
-                "user.update" => GetEventsubSubscriptionsType.Userupdate,
-                "user.whisper.message" => GetEventsubSubscriptionsType.Userwhispermessage,
+                "automod.message.hold" => GetEventsubSubscriptionsType.AutomodMessageHold,
+                "automod.message.update" => GetEventsubSubscriptionsType.AutomodMessageUpdate,
+                "automod.settings.update" => GetEventsubSubscriptionsType.AutomodSettingsUpdate,
+                "automod.terms.update" => GetEventsubSubscriptionsType.AutomodTermsUpdate,
+                "channel.update" => GetEventsubSubscriptionsType.ChannelUpdate,
+                "channel.follow" => GetEventsubSubscriptionsType.ChannelFollow,
+                "channel.ad_break.begin" => GetEventsubSubscriptionsType.ChannelAdBreakBegin,
+                "channel.chat.clear" => GetEventsubSubscriptionsType.ChannelChatClear,
+                "channel.chat.clear_user_messages" => GetEventsubSubscriptionsType.ChannelChatClearUserMessages,
+                "channel.chat.message" => GetEventsubSubscriptionsType.ChannelChatMessage,
+                "channel.chat.message_delete" => GetEventsubSubscriptionsType.ChannelChatMessageDelete,
+                "channel.chat.notification" => GetEventsubSubscriptionsType.ChannelChatNotification,
+                "channel.chat_settings.update" => GetEventsubSubscriptionsType.ChannelChatSettingsUpdate,
+                "channel.chat.user_message_hold" => GetEventsubSubscriptionsType.ChannelChatUserMessageHold,
+                "channel.chat.user_message_update" => GetEventsubSubscriptionsType.ChannelChatUserMessageUpdate,
+                "channel.subscribe" => GetEventsubSubscriptionsType.ChannelSubscribe,
+                "channel.subscription.end" => GetEventsubSubscriptionsType.ChannelSubscriptionEnd,
+                "channel.subscription.gift" => GetEventsubSubscriptionsType.ChannelSubscriptionGift,
+                "channel.subscription.message" => GetEventsubSubscriptionsType.ChannelSubscriptionMessage,
+                "channel.cheer" => GetEventsubSubscriptionsType.ChannelCheer,
+                "channel.raid" => GetEventsubSubscriptionsType.ChannelRaid,
+                "channel.ban" => GetEventsubSubscriptionsType.ChannelBan,
+                "channel.unban" => GetEventsubSubscriptionsType.ChannelUnban,
+                "channel.unban_request.create" => GetEventsubSubscriptionsType.ChannelUnbanRequestCreate,
+                "channel.unban_request.resolve" => GetEventsubSubscriptionsType.ChannelUnbanRequestResolve,
+                "channel.moderate" => GetEventsubSubscriptionsType.ChannelModerate,
+                "channel.moderator.add" => GetEventsubSubscriptionsType.ChannelModeratorAdd,
+                "channel.moderator.remove" => GetEventsubSubscriptionsType.ChannelModeratorRemove,
+                "channel.guest_star_session.begin" => GetEventsubSubscriptionsType.ChannelGuestStarSessionBegin,
+                "channel.guest_star_session.end" => GetEventsubSubscriptionsType.ChannelGuestStarSessionEnd,
+                "channel.guest_star_guest.update" => GetEventsubSubscriptionsType.ChannelGuestStarGuestUpdate,
+                "channel.guest_star_settings.update" => GetEventsubSubscriptionsType.ChannelGuestStarSettingsUpdate,
+                "channel.channel_points_automatic_reward.add" => GetEventsubSubscriptionsType.ChannelChannelPointsAutomaticRewardAdd,
+                "channel.channel_points_custom_reward.add" => GetEventsubSubscriptionsType.ChannelChannelPointsCustomRewardAdd,
+                "channel.channel_points_custom_reward.update" => GetEventsubSubscriptionsType.ChannelChannelPointsCustomRewardUpdate,
+                "channel.channel_points_custom_reward.remove" => GetEventsubSubscriptionsType.ChannelChannelPointsCustomRewardRemove,
+                "channel.channel_points_custom_reward_redemption.add" => GetEventsubSubscriptionsType.ChannelChannelPointsCustomRewardRedemptionAdd,
+                "channel.channel_points_custom_reward_redemption.update" => GetEventsubSubscriptionsType.ChannelChannelPointsCustomRewardRedemptionUpdate,
+                "channel.poll.begin" => GetEventsubSubscriptionsType.ChannelPollBegin,
+                "channel.poll.progress" => GetEventsubSubscriptionsType.ChannelPollProgress,
+                "channel.poll.end" => GetEventsubSubscriptionsType.ChannelPollEnd,
+                "channel.prediction.begin" => GetEventsubSubscriptionsType.ChannelPredictionBegin,
+                "channel.prediction.progress" => GetEventsubSubscriptionsType.ChannelPredictionProgress,
+                "channel.prediction.lock" => GetEventsubSubscriptionsType.ChannelPredictionLock,
+                "channel.prediction.end" => GetEventsubSubscriptionsType.ChannelPredictionEnd,
+                "channel.vip.add" => GetEventsubSubscriptionsType.ChannelVipAdd,
+                "channel.vip.remove" => GetEventsubSubscriptionsType.ChannelVipRemove,
+                "channel.charity_campaign.donate" => GetEventsubSubscriptionsType.ChannelCharityCampaignDonate,
+                "channel.charity_campaign.start" => GetEventsubSubscriptionsType.ChannelCharityCampaignStart,
+                "channel.charity_campaign.progress" => GetEventsubSubscriptionsType.ChannelCharityCampaignProgress,
+                "channel.charity_campaign.stop" => GetEventsubSubscriptionsType.ChannelCharityCampaignStop,
+                "conduit.shard.disabled" => GetEventsubSubscriptionsType.ConduitShardDisabled,
+                "drop.entitlement.grant" => GetEventsubSubscriptionsType.DropEntitlementGrant,
+                "extension.bits_transaction.create" => GetEventsubSubscriptionsType.ExtensionBitsTransactionCreate,
+                "channel.goal.begin" => GetEventsubSubscriptionsType.ChannelGoalBegin,
+                "channel.goal.progress" => GetEventsubSubscriptionsType.ChannelGoalProgress,
+                "channel.goal.end" => GetEventsubSubscriptionsType.ChannelGoalEnd,
+                "channel.hype_train.begin" => GetEventsubSubscriptionsType.ChannelHypeTrainBegin,
+                "channel.hype_train.progress" => GetEventsubSubscriptionsType.ChannelHypeTrainProgress,
+                "channel.hype_train.end" => GetEventsubSubscriptionsType.ChannelHypeTrainEnd,
+                "channel.shield_mode.begin" => GetEventsubSubscriptionsType.ChannelShieldModeBegin,
+                "channel.shield_mode.end" => GetEventsubSubscriptionsType.ChannelShieldModeEnd,
+                "channel.shoutout.create" => GetEventsubSubscriptionsType.ChannelShoutoutCreate,
+                "channel.shoutout.receive" => GetEventsubSubscriptionsType.ChannelShoutoutReceive,
+                "stream.online" => GetEventsubSubscriptionsType.StreamOnline,
+                "stream.offline" => GetEventsubSubscriptionsType.StreamOffline,
+                "user.authorization.grant" => GetEventsubSubscriptionsType.UserAuthorizationGrant,
+                "user.authorization.revoke" => GetEventsubSubscriptionsType.UserAuthorizationRevoke,
+                "user.update" => GetEventsubSubscriptionsType.UserUpdate,
+                "user.whisper.message" => GetEventsubSubscriptionsType.UserWhisperMessage,
                 _ => null,
             };
         }

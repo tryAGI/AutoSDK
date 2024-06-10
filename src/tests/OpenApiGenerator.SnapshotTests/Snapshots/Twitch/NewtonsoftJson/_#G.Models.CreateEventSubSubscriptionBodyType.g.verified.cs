@@ -14,352 +14,352 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="automod.message.hold")]
-        Automodmessagehold,
+        AutomodMessageHold,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="automod.message.update")]
-        Automodmessageupdate,
+        AutomodMessageUpdate,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="automod.settings.update")]
-        Automodsettingsupdate,
+        AutomodSettingsUpdate,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="automod.terms.update")]
-        Automodtermsupdate,
+        AutomodTermsUpdate,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.update")]
-        Channelupdate,
+        ChannelUpdate,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.follow")]
-        Channelfollow,
+        ChannelFollow,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.ad_break.begin")]
-        ChanneladBreakbegin,
+        ChannelAdBreakBegin,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.chat.clear")]
-        Channelchatclear,
+        ChannelChatClear,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.chat.clear_user_messages")]
-        ChannelchatclearUserMessages,
+        ChannelChatClearUserMessages,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.chat.message")]
-        Channelchatmessage,
+        ChannelChatMessage,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.chat.message_delete")]
-        ChannelchatmessageDelete,
+        ChannelChatMessageDelete,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.chat.notification")]
-        Channelchatnotification,
+        ChannelChatNotification,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.chat_settings.update")]
-        ChannelchatSettingsupdate,
+        ChannelChatSettingsUpdate,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.chat.user_message_hold")]
-        ChannelchatuserMessageHold,
+        ChannelChatUserMessageHold,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.chat.user_message_update")]
-        ChannelchatuserMessageUpdate,
+        ChannelChatUserMessageUpdate,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.subscribe")]
-        Channelsubscribe,
+        ChannelSubscribe,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.subscription.end")]
-        Channelsubscriptionend,
+        ChannelSubscriptionEnd,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.subscription.gift")]
-        Channelsubscriptiongift,
+        ChannelSubscriptionGift,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.subscription.message")]
-        Channelsubscriptionmessage,
+        ChannelSubscriptionMessage,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.cheer")]
-        Channelcheer,
+        ChannelCheer,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.raid")]
-        Channelraid,
+        ChannelRaid,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.ban")]
-        Channelban,
+        ChannelBan,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.unban")]
-        Channelunban,
+        ChannelUnban,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.unban_request.create")]
-        ChannelunbanRequestcreate,
+        ChannelUnbanRequestCreate,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.unban_request.resolve")]
-        ChannelunbanRequestresolve,
+        ChannelUnbanRequestResolve,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.moderate")]
-        Channelmoderate,
+        ChannelModerate,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.moderator.add")]
-        Channelmoderatoradd,
+        ChannelModeratorAdd,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.moderator.remove")]
-        Channelmoderatorremove,
+        ChannelModeratorRemove,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.guest_star_session.begin")]
-        ChannelguestStarSessionbegin,
+        ChannelGuestStarSessionBegin,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.guest_star_session.end")]
-        ChannelguestStarSessionend,
+        ChannelGuestStarSessionEnd,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.guest_star_guest.update")]
-        ChannelguestStarGuestupdate,
+        ChannelGuestStarGuestUpdate,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.guest_star_settings.update")]
-        ChannelguestStarSettingsupdate,
+        ChannelGuestStarSettingsUpdate,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.channel_points_automatic_reward.add")]
-        ChannelchannelPointsAutomaticRewardadd,
+        ChannelChannelPointsAutomaticRewardAdd,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.channel_points_custom_reward.add")]
-        ChannelchannelPointsCustomRewardadd,
+        ChannelChannelPointsCustomRewardAdd,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.channel_points_custom_reward.update")]
-        ChannelchannelPointsCustomRewardupdate,
+        ChannelChannelPointsCustomRewardUpdate,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.channel_points_custom_reward.remove")]
-        ChannelchannelPointsCustomRewardremove,
+        ChannelChannelPointsCustomRewardRemove,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.channel_points_custom_reward_redemption.add")]
-        ChannelchannelPointsCustomRewardRedemptionadd,
+        ChannelChannelPointsCustomRewardRedemptionAdd,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.channel_points_custom_reward_redemption.update")]
-        ChannelchannelPointsCustomRewardRedemptionupdate,
+        ChannelChannelPointsCustomRewardRedemptionUpdate,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.poll.begin")]
-        Channelpollbegin,
+        ChannelPollBegin,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.poll.progress")]
-        Channelpollprogress,
+        ChannelPollProgress,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.poll.end")]
-        Channelpollend,
+        ChannelPollEnd,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.prediction.begin")]
-        Channelpredictionbegin,
+        ChannelPredictionBegin,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.prediction.progress")]
-        Channelpredictionprogress,
+        ChannelPredictionProgress,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.prediction.lock")]
-        Channelpredictionlock,
+        ChannelPredictionLock,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.prediction.end")]
-        Channelpredictionend,
+        ChannelPredictionEnd,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.vip.add")]
-        Channelvipadd,
+        ChannelVipAdd,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.vip.remove")]
-        Channelvipremove,
+        ChannelVipRemove,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.charity_campaign.donate")]
-        ChannelcharityCampaigndonate,
+        ChannelCharityCampaignDonate,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.charity_campaign.start")]
-        ChannelcharityCampaignstart,
+        ChannelCharityCampaignStart,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.charity_campaign.progress")]
-        ChannelcharityCampaignprogress,
+        ChannelCharityCampaignProgress,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.charity_campaign.stop")]
-        ChannelcharityCampaignstop,
+        ChannelCharityCampaignStop,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="conduit.shard.disabled")]
-        Conduitsharddisabled,
+        ConduitShardDisabled,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="drop.entitlement.grant")]
-        Dropentitlementgrant,
+        DropEntitlementGrant,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="extension.bits_transaction.create")]
-        ExtensionbitsTransactioncreate,
+        ExtensionBitsTransactionCreate,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.goal.begin")]
-        Channelgoalbegin,
+        ChannelGoalBegin,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.goal.progress")]
-        Channelgoalprogress,
+        ChannelGoalProgress,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.goal.end")]
-        Channelgoalend,
+        ChannelGoalEnd,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.hype_train.begin")]
-        ChannelhypeTrainbegin,
+        ChannelHypeTrainBegin,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.hype_train.progress")]
-        ChannelhypeTrainprogress,
+        ChannelHypeTrainProgress,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.hype_train.end")]
-        ChannelhypeTrainend,
+        ChannelHypeTrainEnd,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.shield_mode.begin")]
-        ChannelshieldModebegin,
+        ChannelShieldModeBegin,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.shield_mode.end")]
-        ChannelshieldModeend,
+        ChannelShieldModeEnd,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.shoutout.create")]
-        Channelshoutoutcreate,
+        ChannelShoutoutCreate,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="channel.shoutout.receive")]
-        Channelshoutoutreceive,
+        ChannelShoutoutReceive,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="stream.online")]
-        Streamonline,
+        StreamOnline,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="stream.offline")]
-        Streamoffline,
+        StreamOffline,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="user.authorization.grant")]
-        Userauthorizationgrant,
+        UserAuthorizationGrant,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="user.authorization.revoke")]
-        Userauthorizationrevoke,
+        UserAuthorizationRevoke,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="user.update")]
-        Userupdate,
+        UserUpdate,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="user.whisper.message")]
-        Userwhispermessage,
+        UserWhisperMessage,
     }
 
     /// <summary>
@@ -374,76 +374,76 @@ namespace G
         {
             return value switch
             {
-                CreateEventSubSubscriptionBodyType.Automodmessagehold => "automod.message.hold",
-                CreateEventSubSubscriptionBodyType.Automodmessageupdate => "automod.message.update",
-                CreateEventSubSubscriptionBodyType.Automodsettingsupdate => "automod.settings.update",
-                CreateEventSubSubscriptionBodyType.Automodtermsupdate => "automod.terms.update",
-                CreateEventSubSubscriptionBodyType.Channelupdate => "channel.update",
-                CreateEventSubSubscriptionBodyType.Channelfollow => "channel.follow",
-                CreateEventSubSubscriptionBodyType.ChanneladBreakbegin => "channel.ad_break.begin",
-                CreateEventSubSubscriptionBodyType.Channelchatclear => "channel.chat.clear",
-                CreateEventSubSubscriptionBodyType.ChannelchatclearUserMessages => "channel.chat.clear_user_messages",
-                CreateEventSubSubscriptionBodyType.Channelchatmessage => "channel.chat.message",
-                CreateEventSubSubscriptionBodyType.ChannelchatmessageDelete => "channel.chat.message_delete",
-                CreateEventSubSubscriptionBodyType.Channelchatnotification => "channel.chat.notification",
-                CreateEventSubSubscriptionBodyType.ChannelchatSettingsupdate => "channel.chat_settings.update",
-                CreateEventSubSubscriptionBodyType.ChannelchatuserMessageHold => "channel.chat.user_message_hold",
-                CreateEventSubSubscriptionBodyType.ChannelchatuserMessageUpdate => "channel.chat.user_message_update",
-                CreateEventSubSubscriptionBodyType.Channelsubscribe => "channel.subscribe",
-                CreateEventSubSubscriptionBodyType.Channelsubscriptionend => "channel.subscription.end",
-                CreateEventSubSubscriptionBodyType.Channelsubscriptiongift => "channel.subscription.gift",
-                CreateEventSubSubscriptionBodyType.Channelsubscriptionmessage => "channel.subscription.message",
-                CreateEventSubSubscriptionBodyType.Channelcheer => "channel.cheer",
-                CreateEventSubSubscriptionBodyType.Channelraid => "channel.raid",
-                CreateEventSubSubscriptionBodyType.Channelban => "channel.ban",
-                CreateEventSubSubscriptionBodyType.Channelunban => "channel.unban",
-                CreateEventSubSubscriptionBodyType.ChannelunbanRequestcreate => "channel.unban_request.create",
-                CreateEventSubSubscriptionBodyType.ChannelunbanRequestresolve => "channel.unban_request.resolve",
-                CreateEventSubSubscriptionBodyType.Channelmoderate => "channel.moderate",
-                CreateEventSubSubscriptionBodyType.Channelmoderatoradd => "channel.moderator.add",
-                CreateEventSubSubscriptionBodyType.Channelmoderatorremove => "channel.moderator.remove",
-                CreateEventSubSubscriptionBodyType.ChannelguestStarSessionbegin => "channel.guest_star_session.begin",
-                CreateEventSubSubscriptionBodyType.ChannelguestStarSessionend => "channel.guest_star_session.end",
-                CreateEventSubSubscriptionBodyType.ChannelguestStarGuestupdate => "channel.guest_star_guest.update",
-                CreateEventSubSubscriptionBodyType.ChannelguestStarSettingsupdate => "channel.guest_star_settings.update",
-                CreateEventSubSubscriptionBodyType.ChannelchannelPointsAutomaticRewardadd => "channel.channel_points_automatic_reward.add",
-                CreateEventSubSubscriptionBodyType.ChannelchannelPointsCustomRewardadd => "channel.channel_points_custom_reward.add",
-                CreateEventSubSubscriptionBodyType.ChannelchannelPointsCustomRewardupdate => "channel.channel_points_custom_reward.update",
-                CreateEventSubSubscriptionBodyType.ChannelchannelPointsCustomRewardremove => "channel.channel_points_custom_reward.remove",
-                CreateEventSubSubscriptionBodyType.ChannelchannelPointsCustomRewardRedemptionadd => "channel.channel_points_custom_reward_redemption.add",
-                CreateEventSubSubscriptionBodyType.ChannelchannelPointsCustomRewardRedemptionupdate => "channel.channel_points_custom_reward_redemption.update",
-                CreateEventSubSubscriptionBodyType.Channelpollbegin => "channel.poll.begin",
-                CreateEventSubSubscriptionBodyType.Channelpollprogress => "channel.poll.progress",
-                CreateEventSubSubscriptionBodyType.Channelpollend => "channel.poll.end",
-                CreateEventSubSubscriptionBodyType.Channelpredictionbegin => "channel.prediction.begin",
-                CreateEventSubSubscriptionBodyType.Channelpredictionprogress => "channel.prediction.progress",
-                CreateEventSubSubscriptionBodyType.Channelpredictionlock => "channel.prediction.lock",
-                CreateEventSubSubscriptionBodyType.Channelpredictionend => "channel.prediction.end",
-                CreateEventSubSubscriptionBodyType.Channelvipadd => "channel.vip.add",
-                CreateEventSubSubscriptionBodyType.Channelvipremove => "channel.vip.remove",
-                CreateEventSubSubscriptionBodyType.ChannelcharityCampaigndonate => "channel.charity_campaign.donate",
-                CreateEventSubSubscriptionBodyType.ChannelcharityCampaignstart => "channel.charity_campaign.start",
-                CreateEventSubSubscriptionBodyType.ChannelcharityCampaignprogress => "channel.charity_campaign.progress",
-                CreateEventSubSubscriptionBodyType.ChannelcharityCampaignstop => "channel.charity_campaign.stop",
-                CreateEventSubSubscriptionBodyType.Conduitsharddisabled => "conduit.shard.disabled",
-                CreateEventSubSubscriptionBodyType.Dropentitlementgrant => "drop.entitlement.grant",
-                CreateEventSubSubscriptionBodyType.ExtensionbitsTransactioncreate => "extension.bits_transaction.create",
-                CreateEventSubSubscriptionBodyType.Channelgoalbegin => "channel.goal.begin",
-                CreateEventSubSubscriptionBodyType.Channelgoalprogress => "channel.goal.progress",
-                CreateEventSubSubscriptionBodyType.Channelgoalend => "channel.goal.end",
-                CreateEventSubSubscriptionBodyType.ChannelhypeTrainbegin => "channel.hype_train.begin",
-                CreateEventSubSubscriptionBodyType.ChannelhypeTrainprogress => "channel.hype_train.progress",
-                CreateEventSubSubscriptionBodyType.ChannelhypeTrainend => "channel.hype_train.end",
-                CreateEventSubSubscriptionBodyType.ChannelshieldModebegin => "channel.shield_mode.begin",
-                CreateEventSubSubscriptionBodyType.ChannelshieldModeend => "channel.shield_mode.end",
-                CreateEventSubSubscriptionBodyType.Channelshoutoutcreate => "channel.shoutout.create",
-                CreateEventSubSubscriptionBodyType.Channelshoutoutreceive => "channel.shoutout.receive",
-                CreateEventSubSubscriptionBodyType.Streamonline => "stream.online",
-                CreateEventSubSubscriptionBodyType.Streamoffline => "stream.offline",
-                CreateEventSubSubscriptionBodyType.Userauthorizationgrant => "user.authorization.grant",
-                CreateEventSubSubscriptionBodyType.Userauthorizationrevoke => "user.authorization.revoke",
-                CreateEventSubSubscriptionBodyType.Userupdate => "user.update",
-                CreateEventSubSubscriptionBodyType.Userwhispermessage => "user.whisper.message",
+                CreateEventSubSubscriptionBodyType.AutomodMessageHold => "automod.message.hold",
+                CreateEventSubSubscriptionBodyType.AutomodMessageUpdate => "automod.message.update",
+                CreateEventSubSubscriptionBodyType.AutomodSettingsUpdate => "automod.settings.update",
+                CreateEventSubSubscriptionBodyType.AutomodTermsUpdate => "automod.terms.update",
+                CreateEventSubSubscriptionBodyType.ChannelUpdate => "channel.update",
+                CreateEventSubSubscriptionBodyType.ChannelFollow => "channel.follow",
+                CreateEventSubSubscriptionBodyType.ChannelAdBreakBegin => "channel.ad_break.begin",
+                CreateEventSubSubscriptionBodyType.ChannelChatClear => "channel.chat.clear",
+                CreateEventSubSubscriptionBodyType.ChannelChatClearUserMessages => "channel.chat.clear_user_messages",
+                CreateEventSubSubscriptionBodyType.ChannelChatMessage => "channel.chat.message",
+                CreateEventSubSubscriptionBodyType.ChannelChatMessageDelete => "channel.chat.message_delete",
+                CreateEventSubSubscriptionBodyType.ChannelChatNotification => "channel.chat.notification",
+                CreateEventSubSubscriptionBodyType.ChannelChatSettingsUpdate => "channel.chat_settings.update",
+                CreateEventSubSubscriptionBodyType.ChannelChatUserMessageHold => "channel.chat.user_message_hold",
+                CreateEventSubSubscriptionBodyType.ChannelChatUserMessageUpdate => "channel.chat.user_message_update",
+                CreateEventSubSubscriptionBodyType.ChannelSubscribe => "channel.subscribe",
+                CreateEventSubSubscriptionBodyType.ChannelSubscriptionEnd => "channel.subscription.end",
+                CreateEventSubSubscriptionBodyType.ChannelSubscriptionGift => "channel.subscription.gift",
+                CreateEventSubSubscriptionBodyType.ChannelSubscriptionMessage => "channel.subscription.message",
+                CreateEventSubSubscriptionBodyType.ChannelCheer => "channel.cheer",
+                CreateEventSubSubscriptionBodyType.ChannelRaid => "channel.raid",
+                CreateEventSubSubscriptionBodyType.ChannelBan => "channel.ban",
+                CreateEventSubSubscriptionBodyType.ChannelUnban => "channel.unban",
+                CreateEventSubSubscriptionBodyType.ChannelUnbanRequestCreate => "channel.unban_request.create",
+                CreateEventSubSubscriptionBodyType.ChannelUnbanRequestResolve => "channel.unban_request.resolve",
+                CreateEventSubSubscriptionBodyType.ChannelModerate => "channel.moderate",
+                CreateEventSubSubscriptionBodyType.ChannelModeratorAdd => "channel.moderator.add",
+                CreateEventSubSubscriptionBodyType.ChannelModeratorRemove => "channel.moderator.remove",
+                CreateEventSubSubscriptionBodyType.ChannelGuestStarSessionBegin => "channel.guest_star_session.begin",
+                CreateEventSubSubscriptionBodyType.ChannelGuestStarSessionEnd => "channel.guest_star_session.end",
+                CreateEventSubSubscriptionBodyType.ChannelGuestStarGuestUpdate => "channel.guest_star_guest.update",
+                CreateEventSubSubscriptionBodyType.ChannelGuestStarSettingsUpdate => "channel.guest_star_settings.update",
+                CreateEventSubSubscriptionBodyType.ChannelChannelPointsAutomaticRewardAdd => "channel.channel_points_automatic_reward.add",
+                CreateEventSubSubscriptionBodyType.ChannelChannelPointsCustomRewardAdd => "channel.channel_points_custom_reward.add",
+                CreateEventSubSubscriptionBodyType.ChannelChannelPointsCustomRewardUpdate => "channel.channel_points_custom_reward.update",
+                CreateEventSubSubscriptionBodyType.ChannelChannelPointsCustomRewardRemove => "channel.channel_points_custom_reward.remove",
+                CreateEventSubSubscriptionBodyType.ChannelChannelPointsCustomRewardRedemptionAdd => "channel.channel_points_custom_reward_redemption.add",
+                CreateEventSubSubscriptionBodyType.ChannelChannelPointsCustomRewardRedemptionUpdate => "channel.channel_points_custom_reward_redemption.update",
+                CreateEventSubSubscriptionBodyType.ChannelPollBegin => "channel.poll.begin",
+                CreateEventSubSubscriptionBodyType.ChannelPollProgress => "channel.poll.progress",
+                CreateEventSubSubscriptionBodyType.ChannelPollEnd => "channel.poll.end",
+                CreateEventSubSubscriptionBodyType.ChannelPredictionBegin => "channel.prediction.begin",
+                CreateEventSubSubscriptionBodyType.ChannelPredictionProgress => "channel.prediction.progress",
+                CreateEventSubSubscriptionBodyType.ChannelPredictionLock => "channel.prediction.lock",
+                CreateEventSubSubscriptionBodyType.ChannelPredictionEnd => "channel.prediction.end",
+                CreateEventSubSubscriptionBodyType.ChannelVipAdd => "channel.vip.add",
+                CreateEventSubSubscriptionBodyType.ChannelVipRemove => "channel.vip.remove",
+                CreateEventSubSubscriptionBodyType.ChannelCharityCampaignDonate => "channel.charity_campaign.donate",
+                CreateEventSubSubscriptionBodyType.ChannelCharityCampaignStart => "channel.charity_campaign.start",
+                CreateEventSubSubscriptionBodyType.ChannelCharityCampaignProgress => "channel.charity_campaign.progress",
+                CreateEventSubSubscriptionBodyType.ChannelCharityCampaignStop => "channel.charity_campaign.stop",
+                CreateEventSubSubscriptionBodyType.ConduitShardDisabled => "conduit.shard.disabled",
+                CreateEventSubSubscriptionBodyType.DropEntitlementGrant => "drop.entitlement.grant",
+                CreateEventSubSubscriptionBodyType.ExtensionBitsTransactionCreate => "extension.bits_transaction.create",
+                CreateEventSubSubscriptionBodyType.ChannelGoalBegin => "channel.goal.begin",
+                CreateEventSubSubscriptionBodyType.ChannelGoalProgress => "channel.goal.progress",
+                CreateEventSubSubscriptionBodyType.ChannelGoalEnd => "channel.goal.end",
+                CreateEventSubSubscriptionBodyType.ChannelHypeTrainBegin => "channel.hype_train.begin",
+                CreateEventSubSubscriptionBodyType.ChannelHypeTrainProgress => "channel.hype_train.progress",
+                CreateEventSubSubscriptionBodyType.ChannelHypeTrainEnd => "channel.hype_train.end",
+                CreateEventSubSubscriptionBodyType.ChannelShieldModeBegin => "channel.shield_mode.begin",
+                CreateEventSubSubscriptionBodyType.ChannelShieldModeEnd => "channel.shield_mode.end",
+                CreateEventSubSubscriptionBodyType.ChannelShoutoutCreate => "channel.shoutout.create",
+                CreateEventSubSubscriptionBodyType.ChannelShoutoutReceive => "channel.shoutout.receive",
+                CreateEventSubSubscriptionBodyType.StreamOnline => "stream.online",
+                CreateEventSubSubscriptionBodyType.StreamOffline => "stream.offline",
+                CreateEventSubSubscriptionBodyType.UserAuthorizationGrant => "user.authorization.grant",
+                CreateEventSubSubscriptionBodyType.UserAuthorizationRevoke => "user.authorization.revoke",
+                CreateEventSubSubscriptionBodyType.UserUpdate => "user.update",
+                CreateEventSubSubscriptionBodyType.UserWhisperMessage => "user.whisper.message",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -454,76 +454,76 @@ namespace G
         {
             return value switch
             {
-                "automod.message.hold" => CreateEventSubSubscriptionBodyType.Automodmessagehold,
-                "automod.message.update" => CreateEventSubSubscriptionBodyType.Automodmessageupdate,
-                "automod.settings.update" => CreateEventSubSubscriptionBodyType.Automodsettingsupdate,
-                "automod.terms.update" => CreateEventSubSubscriptionBodyType.Automodtermsupdate,
-                "channel.update" => CreateEventSubSubscriptionBodyType.Channelupdate,
-                "channel.follow" => CreateEventSubSubscriptionBodyType.Channelfollow,
-                "channel.ad_break.begin" => CreateEventSubSubscriptionBodyType.ChanneladBreakbegin,
-                "channel.chat.clear" => CreateEventSubSubscriptionBodyType.Channelchatclear,
-                "channel.chat.clear_user_messages" => CreateEventSubSubscriptionBodyType.ChannelchatclearUserMessages,
-                "channel.chat.message" => CreateEventSubSubscriptionBodyType.Channelchatmessage,
-                "channel.chat.message_delete" => CreateEventSubSubscriptionBodyType.ChannelchatmessageDelete,
-                "channel.chat.notification" => CreateEventSubSubscriptionBodyType.Channelchatnotification,
-                "channel.chat_settings.update" => CreateEventSubSubscriptionBodyType.ChannelchatSettingsupdate,
-                "channel.chat.user_message_hold" => CreateEventSubSubscriptionBodyType.ChannelchatuserMessageHold,
-                "channel.chat.user_message_update" => CreateEventSubSubscriptionBodyType.ChannelchatuserMessageUpdate,
-                "channel.subscribe" => CreateEventSubSubscriptionBodyType.Channelsubscribe,
-                "channel.subscription.end" => CreateEventSubSubscriptionBodyType.Channelsubscriptionend,
-                "channel.subscription.gift" => CreateEventSubSubscriptionBodyType.Channelsubscriptiongift,
-                "channel.subscription.message" => CreateEventSubSubscriptionBodyType.Channelsubscriptionmessage,
-                "channel.cheer" => CreateEventSubSubscriptionBodyType.Channelcheer,
-                "channel.raid" => CreateEventSubSubscriptionBodyType.Channelraid,
-                "channel.ban" => CreateEventSubSubscriptionBodyType.Channelban,
-                "channel.unban" => CreateEventSubSubscriptionBodyType.Channelunban,
-                "channel.unban_request.create" => CreateEventSubSubscriptionBodyType.ChannelunbanRequestcreate,
-                "channel.unban_request.resolve" => CreateEventSubSubscriptionBodyType.ChannelunbanRequestresolve,
-                "channel.moderate" => CreateEventSubSubscriptionBodyType.Channelmoderate,
-                "channel.moderator.add" => CreateEventSubSubscriptionBodyType.Channelmoderatoradd,
-                "channel.moderator.remove" => CreateEventSubSubscriptionBodyType.Channelmoderatorremove,
-                "channel.guest_star_session.begin" => CreateEventSubSubscriptionBodyType.ChannelguestStarSessionbegin,
-                "channel.guest_star_session.end" => CreateEventSubSubscriptionBodyType.ChannelguestStarSessionend,
-                "channel.guest_star_guest.update" => CreateEventSubSubscriptionBodyType.ChannelguestStarGuestupdate,
-                "channel.guest_star_settings.update" => CreateEventSubSubscriptionBodyType.ChannelguestStarSettingsupdate,
-                "channel.channel_points_automatic_reward.add" => CreateEventSubSubscriptionBodyType.ChannelchannelPointsAutomaticRewardadd,
-                "channel.channel_points_custom_reward.add" => CreateEventSubSubscriptionBodyType.ChannelchannelPointsCustomRewardadd,
-                "channel.channel_points_custom_reward.update" => CreateEventSubSubscriptionBodyType.ChannelchannelPointsCustomRewardupdate,
-                "channel.channel_points_custom_reward.remove" => CreateEventSubSubscriptionBodyType.ChannelchannelPointsCustomRewardremove,
-                "channel.channel_points_custom_reward_redemption.add" => CreateEventSubSubscriptionBodyType.ChannelchannelPointsCustomRewardRedemptionadd,
-                "channel.channel_points_custom_reward_redemption.update" => CreateEventSubSubscriptionBodyType.ChannelchannelPointsCustomRewardRedemptionupdate,
-                "channel.poll.begin" => CreateEventSubSubscriptionBodyType.Channelpollbegin,
-                "channel.poll.progress" => CreateEventSubSubscriptionBodyType.Channelpollprogress,
-                "channel.poll.end" => CreateEventSubSubscriptionBodyType.Channelpollend,
-                "channel.prediction.begin" => CreateEventSubSubscriptionBodyType.Channelpredictionbegin,
-                "channel.prediction.progress" => CreateEventSubSubscriptionBodyType.Channelpredictionprogress,
-                "channel.prediction.lock" => CreateEventSubSubscriptionBodyType.Channelpredictionlock,
-                "channel.prediction.end" => CreateEventSubSubscriptionBodyType.Channelpredictionend,
-                "channel.vip.add" => CreateEventSubSubscriptionBodyType.Channelvipadd,
-                "channel.vip.remove" => CreateEventSubSubscriptionBodyType.Channelvipremove,
-                "channel.charity_campaign.donate" => CreateEventSubSubscriptionBodyType.ChannelcharityCampaigndonate,
-                "channel.charity_campaign.start" => CreateEventSubSubscriptionBodyType.ChannelcharityCampaignstart,
-                "channel.charity_campaign.progress" => CreateEventSubSubscriptionBodyType.ChannelcharityCampaignprogress,
-                "channel.charity_campaign.stop" => CreateEventSubSubscriptionBodyType.ChannelcharityCampaignstop,
-                "conduit.shard.disabled" => CreateEventSubSubscriptionBodyType.Conduitsharddisabled,
-                "drop.entitlement.grant" => CreateEventSubSubscriptionBodyType.Dropentitlementgrant,
-                "extension.bits_transaction.create" => CreateEventSubSubscriptionBodyType.ExtensionbitsTransactioncreate,
-                "channel.goal.begin" => CreateEventSubSubscriptionBodyType.Channelgoalbegin,
-                "channel.goal.progress" => CreateEventSubSubscriptionBodyType.Channelgoalprogress,
-                "channel.goal.end" => CreateEventSubSubscriptionBodyType.Channelgoalend,
-                "channel.hype_train.begin" => CreateEventSubSubscriptionBodyType.ChannelhypeTrainbegin,
-                "channel.hype_train.progress" => CreateEventSubSubscriptionBodyType.ChannelhypeTrainprogress,
-                "channel.hype_train.end" => CreateEventSubSubscriptionBodyType.ChannelhypeTrainend,
-                "channel.shield_mode.begin" => CreateEventSubSubscriptionBodyType.ChannelshieldModebegin,
-                "channel.shield_mode.end" => CreateEventSubSubscriptionBodyType.ChannelshieldModeend,
-                "channel.shoutout.create" => CreateEventSubSubscriptionBodyType.Channelshoutoutcreate,
-                "channel.shoutout.receive" => CreateEventSubSubscriptionBodyType.Channelshoutoutreceive,
-                "stream.online" => CreateEventSubSubscriptionBodyType.Streamonline,
-                "stream.offline" => CreateEventSubSubscriptionBodyType.Streamoffline,
-                "user.authorization.grant" => CreateEventSubSubscriptionBodyType.Userauthorizationgrant,
-                "user.authorization.revoke" => CreateEventSubSubscriptionBodyType.Userauthorizationrevoke,
-                "user.update" => CreateEventSubSubscriptionBodyType.Userupdate,
-                "user.whisper.message" => CreateEventSubSubscriptionBodyType.Userwhispermessage,
+                "automod.message.hold" => CreateEventSubSubscriptionBodyType.AutomodMessageHold,
+                "automod.message.update" => CreateEventSubSubscriptionBodyType.AutomodMessageUpdate,
+                "automod.settings.update" => CreateEventSubSubscriptionBodyType.AutomodSettingsUpdate,
+                "automod.terms.update" => CreateEventSubSubscriptionBodyType.AutomodTermsUpdate,
+                "channel.update" => CreateEventSubSubscriptionBodyType.ChannelUpdate,
+                "channel.follow" => CreateEventSubSubscriptionBodyType.ChannelFollow,
+                "channel.ad_break.begin" => CreateEventSubSubscriptionBodyType.ChannelAdBreakBegin,
+                "channel.chat.clear" => CreateEventSubSubscriptionBodyType.ChannelChatClear,
+                "channel.chat.clear_user_messages" => CreateEventSubSubscriptionBodyType.ChannelChatClearUserMessages,
+                "channel.chat.message" => CreateEventSubSubscriptionBodyType.ChannelChatMessage,
+                "channel.chat.message_delete" => CreateEventSubSubscriptionBodyType.ChannelChatMessageDelete,
+                "channel.chat.notification" => CreateEventSubSubscriptionBodyType.ChannelChatNotification,
+                "channel.chat_settings.update" => CreateEventSubSubscriptionBodyType.ChannelChatSettingsUpdate,
+                "channel.chat.user_message_hold" => CreateEventSubSubscriptionBodyType.ChannelChatUserMessageHold,
+                "channel.chat.user_message_update" => CreateEventSubSubscriptionBodyType.ChannelChatUserMessageUpdate,
+                "channel.subscribe" => CreateEventSubSubscriptionBodyType.ChannelSubscribe,
+                "channel.subscription.end" => CreateEventSubSubscriptionBodyType.ChannelSubscriptionEnd,
+                "channel.subscription.gift" => CreateEventSubSubscriptionBodyType.ChannelSubscriptionGift,
+                "channel.subscription.message" => CreateEventSubSubscriptionBodyType.ChannelSubscriptionMessage,
+                "channel.cheer" => CreateEventSubSubscriptionBodyType.ChannelCheer,
+                "channel.raid" => CreateEventSubSubscriptionBodyType.ChannelRaid,
+                "channel.ban" => CreateEventSubSubscriptionBodyType.ChannelBan,
+                "channel.unban" => CreateEventSubSubscriptionBodyType.ChannelUnban,
+                "channel.unban_request.create" => CreateEventSubSubscriptionBodyType.ChannelUnbanRequestCreate,
+                "channel.unban_request.resolve" => CreateEventSubSubscriptionBodyType.ChannelUnbanRequestResolve,
+                "channel.moderate" => CreateEventSubSubscriptionBodyType.ChannelModerate,
+                "channel.moderator.add" => CreateEventSubSubscriptionBodyType.ChannelModeratorAdd,
+                "channel.moderator.remove" => CreateEventSubSubscriptionBodyType.ChannelModeratorRemove,
+                "channel.guest_star_session.begin" => CreateEventSubSubscriptionBodyType.ChannelGuestStarSessionBegin,
+                "channel.guest_star_session.end" => CreateEventSubSubscriptionBodyType.ChannelGuestStarSessionEnd,
+                "channel.guest_star_guest.update" => CreateEventSubSubscriptionBodyType.ChannelGuestStarGuestUpdate,
+                "channel.guest_star_settings.update" => CreateEventSubSubscriptionBodyType.ChannelGuestStarSettingsUpdate,
+                "channel.channel_points_automatic_reward.add" => CreateEventSubSubscriptionBodyType.ChannelChannelPointsAutomaticRewardAdd,
+                "channel.channel_points_custom_reward.add" => CreateEventSubSubscriptionBodyType.ChannelChannelPointsCustomRewardAdd,
+                "channel.channel_points_custom_reward.update" => CreateEventSubSubscriptionBodyType.ChannelChannelPointsCustomRewardUpdate,
+                "channel.channel_points_custom_reward.remove" => CreateEventSubSubscriptionBodyType.ChannelChannelPointsCustomRewardRemove,
+                "channel.channel_points_custom_reward_redemption.add" => CreateEventSubSubscriptionBodyType.ChannelChannelPointsCustomRewardRedemptionAdd,
+                "channel.channel_points_custom_reward_redemption.update" => CreateEventSubSubscriptionBodyType.ChannelChannelPointsCustomRewardRedemptionUpdate,
+                "channel.poll.begin" => CreateEventSubSubscriptionBodyType.ChannelPollBegin,
+                "channel.poll.progress" => CreateEventSubSubscriptionBodyType.ChannelPollProgress,
+                "channel.poll.end" => CreateEventSubSubscriptionBodyType.ChannelPollEnd,
+                "channel.prediction.begin" => CreateEventSubSubscriptionBodyType.ChannelPredictionBegin,
+                "channel.prediction.progress" => CreateEventSubSubscriptionBodyType.ChannelPredictionProgress,
+                "channel.prediction.lock" => CreateEventSubSubscriptionBodyType.ChannelPredictionLock,
+                "channel.prediction.end" => CreateEventSubSubscriptionBodyType.ChannelPredictionEnd,
+                "channel.vip.add" => CreateEventSubSubscriptionBodyType.ChannelVipAdd,
+                "channel.vip.remove" => CreateEventSubSubscriptionBodyType.ChannelVipRemove,
+                "channel.charity_campaign.donate" => CreateEventSubSubscriptionBodyType.ChannelCharityCampaignDonate,
+                "channel.charity_campaign.start" => CreateEventSubSubscriptionBodyType.ChannelCharityCampaignStart,
+                "channel.charity_campaign.progress" => CreateEventSubSubscriptionBodyType.ChannelCharityCampaignProgress,
+                "channel.charity_campaign.stop" => CreateEventSubSubscriptionBodyType.ChannelCharityCampaignStop,
+                "conduit.shard.disabled" => CreateEventSubSubscriptionBodyType.ConduitShardDisabled,
+                "drop.entitlement.grant" => CreateEventSubSubscriptionBodyType.DropEntitlementGrant,
+                "extension.bits_transaction.create" => CreateEventSubSubscriptionBodyType.ExtensionBitsTransactionCreate,
+                "channel.goal.begin" => CreateEventSubSubscriptionBodyType.ChannelGoalBegin,
+                "channel.goal.progress" => CreateEventSubSubscriptionBodyType.ChannelGoalProgress,
+                "channel.goal.end" => CreateEventSubSubscriptionBodyType.ChannelGoalEnd,
+                "channel.hype_train.begin" => CreateEventSubSubscriptionBodyType.ChannelHypeTrainBegin,
+                "channel.hype_train.progress" => CreateEventSubSubscriptionBodyType.ChannelHypeTrainProgress,
+                "channel.hype_train.end" => CreateEventSubSubscriptionBodyType.ChannelHypeTrainEnd,
+                "channel.shield_mode.begin" => CreateEventSubSubscriptionBodyType.ChannelShieldModeBegin,
+                "channel.shield_mode.end" => CreateEventSubSubscriptionBodyType.ChannelShieldModeEnd,
+                "channel.shoutout.create" => CreateEventSubSubscriptionBodyType.ChannelShoutoutCreate,
+                "channel.shoutout.receive" => CreateEventSubSubscriptionBodyType.ChannelShoutoutReceive,
+                "stream.online" => CreateEventSubSubscriptionBodyType.StreamOnline,
+                "stream.offline" => CreateEventSubSubscriptionBodyType.StreamOffline,
+                "user.authorization.grant" => CreateEventSubSubscriptionBodyType.UserAuthorizationGrant,
+                "user.authorization.revoke" => CreateEventSubSubscriptionBodyType.UserAuthorizationRevoke,
+                "user.update" => CreateEventSubSubscriptionBodyType.UserUpdate,
+                "user.whisper.message" => CreateEventSubSubscriptionBodyType.UserWhisperMessage,
                 _ => null,
             };
         }

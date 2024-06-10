@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        FineTuningjobevent,
+        FineTuningJobEvent,
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ namespace G
         {
             return value switch
             {
-                FineTuningJobEventObject.FineTuningjobevent => "fine_tuning.job.event",
+                FineTuningJobEventObject.FineTuningJobEvent => "fine_tuning.job.event",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,7 +38,7 @@ namespace G
         {
             return value switch
             {
-                "fine_tuning.job.event" => FineTuningJobEventObject.FineTuningjobevent,
+                "fine_tuning.job.event" => FineTuningJobEventObject.FineTuningJobEvent,
                 _ => null,
             };
         }

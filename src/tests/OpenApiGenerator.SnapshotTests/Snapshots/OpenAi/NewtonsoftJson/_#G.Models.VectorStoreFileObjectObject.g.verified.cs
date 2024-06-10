@@ -14,7 +14,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="vector_store.file")]
-        VectorStorefile,
+        VectorStoreFile,
     }
 
     /// <summary>
@@ -29,7 +29,7 @@ namespace G
         {
             return value switch
             {
-                VectorStoreFileObjectObject.VectorStorefile => "vector_store.file",
+                VectorStoreFileObjectObject.VectorStoreFile => "vector_store.file",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -40,7 +40,7 @@ namespace G
         {
             return value switch
             {
-                "vector_store.file" => VectorStoreFileObjectObject.VectorStorefile,
+                "vector_store.file" => VectorStoreFileObjectObject.VectorStoreFile,
                 _ => null,
             };
         }

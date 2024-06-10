@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        FineTuningjobcheckpoint,
+        FineTuningJobCheckpoint,
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ namespace G
         {
             return value switch
             {
-                FineTuningJobCheckpointObject.FineTuningjobcheckpoint => "fine_tuning.job.checkpoint",
+                FineTuningJobCheckpointObject.FineTuningJobCheckpoint => "fine_tuning.job.checkpoint",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,7 +38,7 @@ namespace G
         {
             return value switch
             {
-                "fine_tuning.job.checkpoint" => FineTuningJobCheckpointObject.FineTuningjobcheckpoint,
+                "fine_tuning.job.checkpoint" => FineTuningJobCheckpointObject.FineTuningJobCheckpoint,
                 _ => null,
             };
         }

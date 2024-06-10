@@ -14,7 +14,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="thread.run.step.delta")]
-        Threadrunstepdelta,
+        ThreadRunStepDelta,
     }
 
     /// <summary>
@@ -29,7 +29,7 @@ namespace G
         {
             return value switch
             {
-                RunStepDeltaObjectObject.Threadrunstepdelta => "thread.run.step.delta",
+                RunStepDeltaObjectObject.ThreadRunStepDelta => "thread.run.step.delta",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -40,7 +40,7 @@ namespace G
         {
             return value switch
             {
-                "thread.run.step.delta" => RunStepDeltaObjectObject.Threadrunstepdelta,
+                "thread.run.step.delta" => RunStepDeltaObjectObject.ThreadRunStepDelta,
                 _ => null,
             };
         }

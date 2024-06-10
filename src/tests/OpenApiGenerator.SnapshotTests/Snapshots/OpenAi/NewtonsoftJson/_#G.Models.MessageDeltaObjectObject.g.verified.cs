@@ -14,7 +14,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="thread.message.delta")]
-        Threadmessagedelta,
+        ThreadMessageDelta,
     }
 
     /// <summary>
@@ -29,7 +29,7 @@ namespace G
         {
             return value switch
             {
-                MessageDeltaObjectObject.Threadmessagedelta => "thread.message.delta",
+                MessageDeltaObjectObject.ThreadMessageDelta => "thread.message.delta",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -40,7 +40,7 @@ namespace G
         {
             return value switch
             {
-                "thread.message.delta" => MessageDeltaObjectObject.Threadmessagedelta,
+                "thread.message.delta" => MessageDeltaObjectObject.ThreadMessageDelta,
                 _ => null,
             };
         }

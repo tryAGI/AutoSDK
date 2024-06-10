@@ -14,7 +14,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="thread.message")]
-        Threadmessage,
+        ThreadMessage,
     }
 
     /// <summary>
@@ -29,7 +29,7 @@ namespace G
         {
             return value switch
             {
-                MessageObjectObject.Threadmessage => "thread.message",
+                MessageObjectObject.ThreadMessage => "thread.message",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -40,7 +40,7 @@ namespace G
         {
             return value switch
             {
-                "thread.message" => MessageObjectObject.Threadmessage,
+                "thread.message" => MessageObjectObject.ThreadMessage,
                 _ => null,
             };
         }

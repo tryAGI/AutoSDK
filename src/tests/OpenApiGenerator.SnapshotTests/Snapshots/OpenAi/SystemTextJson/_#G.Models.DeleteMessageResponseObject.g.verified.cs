@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Threadmessagedeleted,
+        ThreadMessageDeleted,
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ namespace G
         {
             return value switch
             {
-                DeleteMessageResponseObject.Threadmessagedeleted => "thread.message.deleted",
+                DeleteMessageResponseObject.ThreadMessageDeleted => "thread.message.deleted",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,7 +38,7 @@ namespace G
         {
             return value switch
             {
-                "thread.message.deleted" => DeleteMessageResponseObject.Threadmessagedeleted,
+                "thread.message.deleted" => DeleteMessageResponseObject.ThreadMessageDeleted,
                 _ => null,
             };
         }

@@ -14,7 +14,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="chat.completion")]
-        Chatcompletion,
+        ChatCompletion,
     }
 
     /// <summary>
@@ -29,7 +29,7 @@ namespace G
         {
             return value switch
             {
-                CreateChatCompletionResponseObject.Chatcompletion => "chat.completion",
+                CreateChatCompletionResponseObject.ChatCompletion => "chat.completion",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -40,7 +40,7 @@ namespace G
         {
             return value switch
             {
-                "chat.completion" => CreateChatCompletionResponseObject.Chatcompletion,
+                "chat.completion" => CreateChatCompletionResponseObject.ChatCompletion,
                 _ => null,
             };
         }

@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        VectorStorefiledeleted,
+        VectorStoreFileDeleted,
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ namespace G
         {
             return value switch
             {
-                DeleteVectorStoreFileResponseObject.VectorStorefiledeleted => "vector_store.file.deleted",
+                DeleteVectorStoreFileResponseObject.VectorStoreFileDeleted => "vector_store.file.deleted",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,7 +38,7 @@ namespace G
         {
             return value switch
             {
-                "vector_store.file.deleted" => DeleteVectorStoreFileResponseObject.VectorStorefiledeleted,
+                "vector_store.file.deleted" => DeleteVectorStoreFileResponseObject.VectorStoreFileDeleted,
                 _ => null,
             };
         }

@@ -14,7 +14,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="fine_tuning.job")]
-        FineTuningjob,
+        FineTuningJob,
     }
 
     /// <summary>
@@ -29,7 +29,7 @@ namespace G
         {
             return value switch
             {
-                FineTuningJobObject.FineTuningjob => "fine_tuning.job",
+                FineTuningJobObject.FineTuningJob => "fine_tuning.job",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -40,7 +40,7 @@ namespace G
         {
             return value switch
             {
-                "fine_tuning.job" => FineTuningJobObject.FineTuningjob,
+                "fine_tuning.job" => FineTuningJobObject.FineTuningJob,
                 _ => null,
             };
         }

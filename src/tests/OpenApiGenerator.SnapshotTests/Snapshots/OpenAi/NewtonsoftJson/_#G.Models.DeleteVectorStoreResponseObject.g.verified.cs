@@ -14,7 +14,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="vector_store.deleted")]
-        VectorStoredeleted,
+        VectorStoreDeleted,
     }
 
     /// <summary>
@@ -29,7 +29,7 @@ namespace G
         {
             return value switch
             {
-                DeleteVectorStoreResponseObject.VectorStoredeleted => "vector_store.deleted",
+                DeleteVectorStoreResponseObject.VectorStoreDeleted => "vector_store.deleted",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -40,7 +40,7 @@ namespace G
         {
             return value switch
             {
-                "vector_store.deleted" => DeleteVectorStoreResponseObject.VectorStoredeleted,
+                "vector_store.deleted" => DeleteVectorStoreResponseObject.VectorStoreDeleted,
                 _ => null,
             };
         }

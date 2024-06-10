@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        VectorStorefilesBatch,
+        VectorStoreFilesBatch,
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ namespace G
         {
             return value switch
             {
-                VectorStoreFileBatchObjectObject.VectorStorefilesBatch => "vector_store.files_batch",
+                VectorStoreFileBatchObjectObject.VectorStoreFilesBatch => "vector_store.files_batch",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,7 +38,7 @@ namespace G
         {
             return value switch
             {
-                "vector_store.files_batch" => VectorStoreFileBatchObjectObject.VectorStorefilesBatch,
+                "vector_store.files_batch" => VectorStoreFileBatchObjectObject.VectorStoreFilesBatch,
                 _ => null,
             };
         }

@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Threadrun,
+        ThreadRun,
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ namespace G
         {
             return value switch
             {
-                RunObjectObject.Threadrun => "thread.run",
+                RunObjectObject.ThreadRun => "thread.run",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,7 +38,7 @@ namespace G
         {
             return value switch
             {
-                "thread.run" => RunObjectObject.Threadrun,
+                "thread.run" => RunObjectObject.ThreadRun,
                 _ => null,
             };
         }

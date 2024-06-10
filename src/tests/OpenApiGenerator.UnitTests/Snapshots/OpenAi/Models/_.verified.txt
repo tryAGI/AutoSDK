@@ -6114,7 +6114,7 @@ Can be used in conjunction with the `seed` request parameter to understand when 
           IsArray: false,
           IsEnum: true,
           Properties: [
-            Chatcompletion
+            ChatCompletion
           ],
           EnumValues: [
             chat.completion
@@ -6517,7 +6517,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
     Properties: [
       {
         Id: chat.completion,
-        Name: Chatcompletion,
+        Name: ChatCompletion,
         Type: {
           CSharpType: ,
           IsArray: false,
@@ -6536,8 +6536,8 @@ The reason the model stopped generating tokens. This will be `stop` if the model
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: chatcompletion,
-        ArgumentName: chatcompletion,
+        ParameterName: chatCompletion,
+        ArgumentName: chatCompletion,
         ParameterDefaultValue: default
       }
     ],
@@ -6695,7 +6695,7 @@ Can be used in conjunction with the `seed` request parameter to understand when 
           IsArray: false,
           IsEnum: true,
           Properties: [
-            Chatcompletion
+            ChatCompletion
           ],
           EnumValues: [
             chat.completion
@@ -6997,7 +6997,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
     Properties: [
       {
         Id: chat.completion,
-        Name: Chatcompletion,
+        Name: ChatCompletion,
         Type: {
           CSharpType: ,
           IsArray: false,
@@ -7016,8 +7016,8 @@ The reason the model stopped generating tokens. This will be `stop` if the model
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: chatcompletion,
-        ArgumentName: chatcompletion,
+        ParameterName: chatCompletion,
+        ArgumentName: chatCompletion,
         ParameterDefaultValue: default
       }
     ],
@@ -7529,7 +7529,7 @@ Can be used in conjunction with the `seed` request parameter to understand when 
           IsArray: false,
           IsEnum: true,
           Properties: [
-            Chatcompletionchunk
+            ChatCompletionChunk
           ],
           EnumValues: [
             chat.completion.chunk
@@ -8027,7 +8027,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
     Properties: [
       {
         Id: chat.completion.chunk,
-        Name: Chatcompletionchunk,
+        Name: ChatCompletionChunk,
         Type: {
           CSharpType: ,
           IsArray: false,
@@ -8046,8 +8046,8 @@ The reason the model stopped generating tokens. This will be `stop` if the model
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: chatcompletionchunk,
-        ArgumentName: chatcompletionchunk,
+        ParameterName: chatCompletionChunk,
+        ArgumentName: chatCompletionChunk,
         ParameterDefaultValue: default
       }
     ],
@@ -15844,7 +15844,7 @@ Represents an embedding vector returned by embedding endpoint.
           IsArray: false,
           IsEnum: true,
           Properties: [
-            FineTuningjob
+            FineTuningJob
           ],
           EnumValues: [
             fine_tuning.job
@@ -16312,7 +16312,7 @@ The number of epochs to train the model for. An epoch refers to one full cycle t
     Properties: [
       {
         Id: fine_tuning.job,
-        Name: FineTuningjob,
+        Name: FineTuningJob,
         Type: {
           CSharpType: ,
           IsArray: false,
@@ -16331,8 +16331,8 @@ The number of epochs to train the model for. An epoch refers to one full cycle t
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: fineTuningjob,
-        ArgumentName: fineTuningjob,
+        ParameterName: fineTuningJob,
+        ArgumentName: fineTuningJob,
         ParameterDefaultValue: default
       }
     ],
@@ -16891,7 +16891,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
           IsArray: false,
           IsEnum: true,
           Properties: [
-            FineTuningjobevent
+            FineTuningJobEvent
           ],
           EnumValues: [
             fine_tuning.job.event
@@ -17027,7 +17027,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
     Properties: [
       {
         Id: fine_tuning.job.event,
-        Name: FineTuningjobevent,
+        Name: FineTuningJobEvent,
         Type: {
           CSharpType: ,
           IsArray: false,
@@ -17046,8 +17046,8 @@ to your run, and set a default entity (team, username, etc) to be associated wit
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: fineTuningjobevent,
-        ArgumentName: fineTuningjobevent,
+        ParameterName: fineTuningJobEvent,
+        ArgumentName: fineTuningJobEvent,
         ParameterDefaultValue: default
       }
     ],
@@ -17226,7 +17226,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
           IsArray: false,
           IsEnum: true,
           Properties: [
-            FineTuningjobcheckpoint
+            FineTuningJobCheckpoint
           ],
           EnumValues: [
             fine_tuning.job.checkpoint
@@ -17463,7 +17463,7 @@ The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine
     Properties: [
       {
         Id: fine_tuning.job.checkpoint,
-        Name: FineTuningjobcheckpoint,
+        Name: FineTuningJobCheckpoint,
         Type: {
           CSharpType: ,
           IsArray: false,
@@ -17482,8 +17482,8 @@ The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: fineTuningjobcheckpoint,
-        ArgumentName: fineTuningjobcheckpoint,
+        ParameterName: fineTuningJobCheckpoint,
+        ArgumentName: fineTuningJobCheckpoint,
         ParameterDefaultValue: default
       }
     ],
@@ -20298,7 +20298,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
           IsArray: false,
           IsEnum: true,
           Properties: [
-            Assistantdeleted
+            AssistantDeleted
           ],
           EnumValues: [
             assistant.deleted
@@ -20340,7 +20340,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
     Properties: [
       {
         Id: assistant.deleted,
-        Name: Assistantdeleted,
+        Name: AssistantDeleted,
         Type: {
           CSharpType: ,
           IsArray: false,
@@ -20359,8 +20359,8 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: assistantdeleted,
-        ArgumentName: assistantdeleted,
+        ParameterName: assistantDeleted,
+        ArgumentName: assistantDeleted,
         ParameterDefaultValue: default
       }
     ],
@@ -21242,7 +21242,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           IsArray: false,
           IsEnum: true,
           Properties: [
-            Threadrun
+            ThreadRun
           ],
           EnumValues: [
             thread.run
@@ -22380,7 +22380,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Properties: [
       {
         Id: thread.run,
-        Name: Threadrun,
+        Name: ThreadRun,
         Type: {
           CSharpType: ,
           IsArray: false,
@@ -22399,8 +22399,8 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: threadrun,
-        ArgumentName: threadrun,
+        ParameterName: threadRun,
+        ArgumentName: threadRun,
         ParameterDefaultValue: default
       }
     ],
@@ -26667,7 +26667,7 @@ The [vector store](/docs/api-reference/vector-stores/object) attached to this th
           IsArray: false,
           IsEnum: true,
           Properties: [
-            Threaddeleted
+            ThreadDeleted
           ],
           EnumValues: [
             thread.deleted
@@ -26709,7 +26709,7 @@ The [vector store](/docs/api-reference/vector-stores/object) attached to this th
     Properties: [
       {
         Id: thread.deleted,
-        Name: Threaddeleted,
+        Name: ThreadDeleted,
         Type: {
           CSharpType: ,
           IsArray: false,
@@ -26728,8 +26728,8 @@ The [vector store](/docs/api-reference/vector-stores/object) attached to this th
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: threaddeleted,
-        ArgumentName: threaddeleted,
+        ParameterName: threadDeleted,
+        ArgumentName: threadDeleted,
         ParameterDefaultValue: default
       }
     ],
@@ -26930,7 +26930,7 @@ The [vector store](/docs/api-reference/vector-stores/object) attached to this th
           IsArray: false,
           IsEnum: true,
           Properties: [
-            Threadmessage
+            ThreadMessage
           ],
           EnumValues: [
             thread.message
@@ -27556,7 +27556,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Properties: [
       {
         Id: thread.message,
-        Name: Threadmessage,
+        Name: ThreadMessage,
         Type: {
           CSharpType: ,
           IsArray: false,
@@ -27575,8 +27575,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: threadmessage,
-        ArgumentName: threadmessage,
+        ParameterName: threadMessage,
+        ArgumentName: threadMessage,
         ParameterDefaultValue: default
       }
     ],
@@ -27793,7 +27793,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsArray: false,
           IsEnum: true,
           Properties: [
-            Threadmessagedelta
+            ThreadMessageDelta
           ],
           EnumValues: [
             thread.message.delta
@@ -28005,7 +28005,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
     Properties: [
       {
         Id: thread.message.delta,
-        Name: Threadmessagedelta,
+        Name: ThreadMessageDelta,
         Type: {
           CSharpType: ,
           IsArray: false,
@@ -28024,8 +28024,8 @@ Represents a message delta i.e. any changed fields on a message during streaming
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: threadmessagedelta,
-        ArgumentName: threadmessagedelta,
+        ParameterName: threadMessageDelta,
+        ArgumentName: threadMessageDelta,
         ParameterDefaultValue: default
       }
     ],
@@ -28423,7 +28423,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsArray: false,
           IsEnum: true,
           Properties: [
-            Threadmessagedeleted
+            ThreadMessageDeleted
           ],
           EnumValues: [
             thread.message.deleted
@@ -28465,7 +28465,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Properties: [
       {
         Id: thread.message.deleted,
-        Name: Threadmessagedeleted,
+        Name: ThreadMessageDeleted,
         Type: {
           CSharpType: ,
           IsArray: false,
@@ -28484,8 +28484,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: threadmessagedeleted,
-        ArgumentName: threadmessagedeleted,
+        ParameterName: threadMessageDeleted,
+        ArgumentName: threadMessageDeleted,
         ParameterDefaultValue: default
       }
     ],
@@ -31445,7 +31445,7 @@ Specifies the detail level of the image. `low` uses fewer tokens, you can opt in
           IsArray: false,
           IsEnum: true,
           Properties: [
-            Threadrunstep
+            ThreadRunStep
           ],
           EnumValues: [
             thread.run.step
@@ -32025,7 +32025,7 @@ Represents a step in execution of a run.
     Properties: [
       {
         Id: thread.run.step,
-        Name: Threadrunstep,
+        Name: ThreadRunStep,
         Type: {
           CSharpType: ,
           IsArray: false,
@@ -32044,8 +32044,8 @@ Represents a step in execution of a run.
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: threadrunstep,
-        ArgumentName: threadrunstep,
+        ParameterName: threadRunStep,
+        ArgumentName: threadRunStep,
         ParameterDefaultValue: default
       }
     ],
@@ -32312,7 +32312,7 @@ Represents a step in execution of a run.
           IsArray: false,
           IsEnum: true,
           Properties: [
-            Threadrunstepdelta
+            ThreadRunStepDelta
           ],
           EnumValues: [
             thread.run.step.delta
@@ -32443,7 +32443,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
     Properties: [
       {
         Id: thread.run.step.delta,
-        Name: Threadrunstepdelta,
+        Name: ThreadRunStepDelta,
         Type: {
           CSharpType: ,
           IsArray: false,
@@ -32462,8 +32462,8 @@ Represents a run step delta i.e. any changed fields on a run step during streami
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: threadrunstepdelta,
-        ArgumentName: threadrunstepdelta,
+        ParameterName: threadRunStepDelta,
+        ArgumentName: threadRunStepDelta,
         ParameterDefaultValue: default
       }
     ],
@@ -36198,7 +36198,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsArray: false,
           IsEnum: true,
           Properties: [
-            VectorStoredeleted
+            VectorStoreDeleted
           ],
           EnumValues: [
             vector_store.deleted
@@ -36240,7 +36240,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Properties: [
       {
         Id: vector_store.deleted,
-        Name: VectorStoredeleted,
+        Name: VectorStoreDeleted,
         Type: {
           CSharpType: ,
           IsArray: false,
@@ -36259,8 +36259,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: vectorStoredeleted,
-        ArgumentName: vectorStoredeleted,
+        ParameterName: vectorStoreDeleted,
+        ArgumentName: vectorStoreDeleted,
         ParameterDefaultValue: default
       }
     ],
@@ -36314,7 +36314,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsArray: false,
           IsEnum: true,
           Properties: [
-            VectorStorefile
+            VectorStoreFile
           ],
           EnumValues: [
             vector_store.file
@@ -36688,7 +36688,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Properties: [
       {
         Id: vector_store.file,
-        Name: VectorStorefile,
+        Name: VectorStoreFile,
         Type: {
           CSharpType: ,
           IsArray: false,
@@ -36707,8 +36707,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: vectorStorefile,
-        ArgumentName: vectorStorefile,
+        ParameterName: vectorStoreFile,
+        ArgumentName: vectorStoreFile,
         ParameterDefaultValue: default
       }
     ],
@@ -37096,7 +37096,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsArray: false,
           IsEnum: true,
           Properties: [
-            VectorStorefiledeleted
+            VectorStoreFileDeleted
           ],
           EnumValues: [
             vector_store.file.deleted
@@ -37138,7 +37138,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Properties: [
       {
         Id: vector_store.file.deleted,
-        Name: VectorStorefiledeleted,
+        Name: VectorStoreFileDeleted,
         Type: {
           CSharpType: ,
           IsArray: false,
@@ -37157,8 +37157,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: vectorStorefiledeleted,
-        ArgumentName: vectorStorefiledeleted,
+        ParameterName: vectorStoreFileDeleted,
+        ArgumentName: vectorStoreFileDeleted,
         ParameterDefaultValue: default
       }
     ],
@@ -37212,7 +37212,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsArray: false,
           IsEnum: true,
           Properties: [
-            VectorStorefilesBatch
+            VectorStoreFilesBatch
           ],
           EnumValues: [
             vector_store.files_batch
@@ -37507,7 +37507,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Properties: [
       {
         Id: vector_store.files_batch,
-        Name: VectorStorefilesBatch,
+        Name: VectorStoreFilesBatch,
         Type: {
           CSharpType: ,
           IsArray: false,
@@ -37526,8 +37526,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: vectorStorefilesBatch,
-        ArgumentName: vectorStorefilesBatch,
+        ParameterName: vectorStoreFilesBatch,
+        ArgumentName: vectorStoreFilesBatch,
         ParameterDefaultValue: default
       }
     ],
