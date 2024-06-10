@@ -81,10 +81,6 @@ public static class Data
                 !excludedModels.Contains(schema.Key))
             .ToArray();
         Dictionary<string, ModelData> classes = includedSchemas
-            // .Where(schema =>
-            //     schema.Value.AnyOf is not { Count: >0 } &&
-            //     schema.Value.OneOf is not { Count: >0 } &&
-            //     schema.Value.AllOf is not { Count: >0 })
             .SelectMany(schema =>
                 schema.Value.AnyOf is { Count: >0 } ||
                 schema.Value.OneOf is { Count: >0 } ||
@@ -210,28 +206,64 @@ public static class Data
             .ToArray() : [];
         var anyOfs = allSchemas
             .Where(x => x.AnyOf is { Count: > 0 })
-            .Select(x => new AnyOfData("AnyOf", x.AnyOf.Count, settings.JsonSerializerType, isTrimming, string.Empty, ImmutableArray<TypeData>.Empty))
+            .Select(x => new AnyOfData("AnyOf", x.AnyOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, ImmutableArray<TypeData>.Empty))
             .Concat(allSchemas
                 .Where(x => x.Items?.AnyOf is { Count: > 0 })
-                .Select(x => new AnyOfData("AnyOf", x.Items.AnyOf.Count, settings.JsonSerializerType, isTrimming, string.Empty, ImmutableArray<TypeData>.Empty)))
+                .Select(x => new AnyOfData("AnyOf", x.Items.AnyOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, ImmutableArray<TypeData>.Empty)))
             .Distinct()
             .ToImmutableArray();
         var oneOfs = allSchemas
             .Where(x => x.OneOf is { Count: > 0 })
-            .Select(x => new AnyOfData("OneOf", x.OneOf.Count, settings.JsonSerializerType, isTrimming, string.Empty, ImmutableArray<TypeData>.Empty))
+            .Select(x => new AnyOfData("OneOf", x.OneOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, ImmutableArray<TypeData>.Empty))
             .Concat(allSchemas
                 .Where(x => x.Items?.OneOf is { Count: > 0 })
-                .Select(x => new AnyOfData("OneOf", x.Items.OneOf.Count, settings.JsonSerializerType, isTrimming, string.Empty, ImmutableArray<TypeData>.Empty)))
+                .Select(x => new AnyOfData("OneOf", x.Items.OneOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, ImmutableArray<TypeData>.Empty)))
             .Distinct()
             .ToImmutableArray();
         var allOfs = allSchemas
             .Where(x => x.AllOf is { Count: > 0 })
-            .Select(x => new AnyOfData("AllOf", x.AllOf.Count, settings.JsonSerializerType, isTrimming, string.Empty, ImmutableArray<TypeData>.Empty))
+            .Select(x => new AnyOfData("AllOf", x.AllOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, ImmutableArray<TypeData>.Empty))
             .Concat(allSchemas
                 .Where(x => x.Items?.AllOf is { Count: > 0 })
-                .Select(x => new AnyOfData("AllOf", x.Items.AllOf.Count, settings.JsonSerializerType, isTrimming, string.Empty, ImmutableArray<TypeData>.Empty)))
+                .Select(x => new AnyOfData("AllOf", x.Items.AllOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, ImmutableArray<TypeData>.Empty)))
             .Distinct()
             .ToImmutableArray();
+        // anyOfs = anyOfs
+        //     .Concat(includedSchemas
+        //         .Where(x => x.Value.AnyOf is { Count: >0 })
+        //         .Select(schema => new AnyOfData(
+        //             "AnyOf",
+        //             schema.Value.AnyOf.Count,
+        //             settings.JsonSerializerType,
+        //             isTrimming,
+        //             settings.Namespace,
+        //             schema.Key, 
+        //             schema.Value.AnyOf.Select(x => TypeData.FromSchema(x.WithKey(schema.Key), settings)).ToImmutableArray())))
+        //     .ToImmutableArray();
+        // oneOfs = oneOfs
+        //     .Concat(includedSchemas
+        //         .Where(x => x.Value.OneOf is { Count: >0 })
+        //         .Select(schema => new AnyOfData(
+        //             "OneOf",
+        //             schema.Value.OneOf.Count,
+        //             settings.JsonSerializerType,
+        //             isTrimming,
+        //             settings.Namespace,
+        //             schema.Key, 
+        //             schema.Value.OneOf.Select(x => TypeData.FromSchema(x.WithKey(schema.Key), settings)).ToImmutableArray())))
+        //     .ToImmutableArray();
+        // allOfs = allOfs
+        //     .Concat(includedSchemas
+        //         .Where(x => x.Value.AllOf is { Count: >0 })
+        //         .Select(schema => new AnyOfData(
+        //             "AllOf",
+        //             schema.Value.AllOf.Count,
+        //             settings.JsonSerializerType,
+        //             isTrimming,
+        //             settings.Namespace,
+        //             schema.Key, 
+        //             schema.Value.AllOf.Select(x => TypeData.FromSchema(x.WithKey(schema.Key), settings)).ToImmutableArray())))
+        //     .ToImmutableArray();
 
         AnyOfData[] anyOfDatas =
         [
@@ -263,6 +295,7 @@ public static class Data
                     {
                         Schema = default,
                     }))
+            //.Where(x => x.Properties.Any())
             .GroupBy(x => x.FileNameWithoutExtension)
             .Select(x => x.First())
             .ToImmutableArray() : [];
@@ -329,8 +362,12 @@ public static class Data
         AnyOfData data,
         CancellationToken cancellationToken = default)
     {
+        var name = string.IsNullOrWhiteSpace(data.Name)
+            ? $"{data.SubType}.{data.Count}"
+            : $"{data.Namespace}.Models.{data.Name}";
+        
         return new FileWithName(
-            Name: $"{data.SubType}.{data.Count}.g.cs",
+            Name: $"{name}.g.cs",
             Text: Sources.GenerateAnyOf(data, cancellationToken: cancellationToken));
     }
     
@@ -343,8 +380,12 @@ public static class Data
             return FileWithName.Empty;
         }
         
+        var name = string.IsNullOrWhiteSpace(data.Name)
+            ? $"{data.SubType}{data.Count}"
+            : data.Name;
+
         return new FileWithName(
-            Name: $"JsonConverters.{data.SubType}{data.Count}.g.cs",
+            Name: $"JsonConverters.{name}.g.cs",
             Text: Sources.GenerateAnyOfJsonConverter(data, cancellationToken: cancellationToken));
     }
     
@@ -382,7 +423,8 @@ public static class Data
         AnyOfData anyOf,
         CancellationToken cancellationToken = default)
     {
-        if (anyOf.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+        if (anyOf.JsonSerializerType == JsonSerializerType.NewtonsoftJson ||
+            !anyOf.Types.IsEmpty)
         {
             return FileWithName.Empty;
         }

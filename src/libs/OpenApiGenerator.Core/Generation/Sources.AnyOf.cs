@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using OpenApiGenerator.Core.Extensions;
 using OpenApiGenerator.Core.Models;
 
@@ -9,7 +10,7 @@ public static partial class Sources
         AnyOfData anyOfData,
         CancellationToken cancellationToken = default)
     {
-        var (subType, count, _, _, className, fixedTypes) = anyOfData;
+        var (subType, count, _, _, @namespace, className, fixedTypes) = anyOfData;
         var types = $"<{string.Join(", ", Enumerable.Range(1, count).Select(x => $"T{x}"))}>";
         var validation = subType switch
         {
@@ -19,16 +20,39 @@ public static partial class Sources
             "AllOf" => string.Join(" && ", Enumerable.Range(1, count).Select(x => $"IsValue{x}")),
             _ => throw new NotImplementedException(),
         };
+        var classNameWithoutTypes = string.IsNullOrWhiteSpace(className)
+            ? $"{subType}"
+            : className;
+        className = string.IsNullOrWhiteSpace(className)
+            ? $"{subType}{types}"
+            : className;
+        var allTypes = fixedTypes.IsEmpty
+            ? Enumerable
+                .Range(1, count)
+                .Select(i => PropertyData.Default with
+                {
+                    Name = $"Value{i}",
+                    Type = TypeData.Default with
+                    {
+                        CSharpType = $"T{i}",
+                    },
+                })
+                .ToImmutableArray()
+            : fixedTypes.Select((type, i) => PropertyData.Default with
+            {
+                Name = $"Value{i + 1}",
+                Type = type,
+            }).ToImmutableArray();
         var constructorWithAllValues = count > 1 ? $@"
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
-        public {subType}(
-{Enumerable.Range(1, count).Select(x => $@" 
-            T{x}? value{x},
+        public {classNameWithoutTypes}(
+{allTypes.Select(x => $@" 
+            {x.Type.CSharpTypeWithNullability} {x.Name.ToParameterName()},
 ").Inject().TrimEnd(',', '\n')}
             )
         {{
-{Enumerable.Range(1, count).Select(x => $@" 
-            Value{x} = value{x};
+{allTypes.Select(x => $@" 
+            {x.Name} = {x.Name.ToParameterName()};
 ").Inject()}
         }}" : " ";
         
@@ -36,43 +60,44 @@ public static partial class Sources
 
 #nullable enable
 
-namespace System
+namespace {@namespace}
 {{
     {string.Empty.ToXmlDocumentationSummary(level: 4)}
-    public readonly struct {subType}{types} : global::System.IEquatable<{subType}{types}>
+    public readonly struct {className} : global::System.IEquatable<{className}>
     {{
-{Enumerable.Range(1, count).Select(x => $@"
-        {string.Empty.ToXmlDocumentationSummary(level: 8)}
+{allTypes.Select(x => $@"
+        {x.Summary.ToXmlDocumentationSummary(level: 8)}
 #if NET6_0_OR_GREATER
-        public T{x}? Value{x} {{ get; init; }}
+        public {x.Type.CSharpTypeWithNullability} {x.Name} {{ get; init; }}
 #else
-        public T{x}? Value{x} {{ get; }}
+        public {x.Type.CSharpTypeWithNullability} {x.Name} {{ get; }}
 #endif
 
-        {string.Empty.ToXmlDocumentationSummary(level: 8)}
+        {x.Summary.ToXmlDocumentationSummary(level: 8)}
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value{x}))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof({x.Name}))]
 #endif
-        public bool IsValue{x} => Value{x} != null;
+        public bool Is{x.Name} => {x.Name} != null;
+{(className != x.Type.CSharpTypeWithoutNullability ? $@"
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
+        public static implicit operator {className}({x.Type.CSharpTypeWithoutNullability} value) => new {className}(value);
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
-        public static implicit operator {subType}{types}(T{x} value) => new {subType}{types}(value);
+        public static implicit operator {x.Type.CSharpTypeWithNullability}({className} @this) => @this.{x.Name};
+ " : " ")}
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
-        public static implicit operator T{x}?({subType}{types} @this) => @this.Value{x};
-
-        {string.Empty.ToXmlDocumentationSummary(level: 8)}
-        public {subType}(T{x}? value)
+        public {classNameWithoutTypes}({x.Type.CSharpTypeWithNullability} value)
         {{
-            Value{x} = value;
+            {x.Name} = value;
         }}
 ").Inject()}
 {constructorWithAllValues}
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public object? Object =>
-{Enumerable.Range(1, count).Reverse().Select(x => $@" 
-            Value{x} as object ??
+{allTypes.Reverse().Select(x => $@" 
+            {x.Name} as object ??
 ").Inject().TrimEnd('?', '\n')}
             ;
 
@@ -87,9 +112,9 @@ namespace System
         {{
             var fields = new object?[]
             {{
-{Enumerable.Range(1, count).Select(x => $@" 
-                Value{x},
-                typeof(T{x}),
+{allTypes.Select(x => $@" 
+                {x.Name},
+                typeof({x.Type.CSharpTypeWithoutNullability}),
 ").Inject()}
             }};
             
@@ -104,23 +129,23 @@ namespace System
         }}
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
-        public bool Equals({subType}{types} other)
+        public bool Equals({className} other)
         {{
             return
-{Enumerable.Range(1, count).Select(x => $@" 
-                global::System.Collections.Generic.EqualityComparer<T{x}?>.Default.Equals(Value{x}, other.Value{x}) &&
+{allTypes.Select(x => $@" 
+                global::System.Collections.Generic.EqualityComparer<{x.Type.CSharpTypeWithNullability}>.Default.Equals({x.Name}, other.{x.Name}) &&
 ").Inject().TrimEnd('&', '\n')}
                 ;
         }}
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
-        public static bool operator ==({subType}{types} obj1, {subType}{types} obj2)
+        public static bool operator ==({className} obj1, {className} obj2)
         {{
-            return global::System.Collections.Generic.EqualityComparer<{subType}{types}>.Default.Equals(obj1, obj2);
+            return global::System.Collections.Generic.EqualityComparer<{className}>.Default.Equals(obj1, obj2);
         }}
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
-        public static bool operator !=({subType}{types} obj1, {subType}{types} obj2)
+        public static bool operator !=({className} obj1, {className} obj2)
         {{
             return !(obj1 == obj2);
         }}
@@ -128,7 +153,7 @@ namespace System
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public override bool Equals(object? obj)
         {{
-            return obj is {subType}{types} o && Equals(o);
+            return obj is {className} o && Equals(o);
         }}
     }}
 }}

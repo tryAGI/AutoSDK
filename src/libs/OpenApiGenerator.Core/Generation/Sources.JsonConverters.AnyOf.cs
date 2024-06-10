@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using OpenApiGenerator.Core.Extensions;
 using OpenApiGenerator.Core.Json;
 using OpenApiGenerator.Core.Models;
@@ -10,23 +11,46 @@ public static partial class Sources
         AnyOfData anyOfData,
         CancellationToken cancellationToken = default)
     {
-        var (subType, count, jsonSerializerType, isTrimming, name, fixedTypes) = anyOfData;
+        var (subType, count, jsonSerializerType, isTrimming, @namespace, name, fixedTypes) = anyOfData;
         if (jsonSerializerType == JsonSerializerType.NewtonsoftJson)
         {
             return string.Empty;
         }
         
         var types = $"<{string.Join(", ", Enumerable.Range(1, count).Select(x => $"T{x}"))}>";
+        var classNameWithTypes = string.IsNullOrWhiteSpace(name)
+            ? $"{subType}JsonConverter{types}"
+            : $"{name}JsonConverter";
+        var typeNameWithTypes = string.IsNullOrWhiteSpace(name)
+            ? $"global::System.{subType}{types}"
+            : $"global::{@namespace}.{name}";
+        var allTypes = fixedTypes.IsEmpty
+            ? Enumerable
+                .Range(1, count)
+                .Select(i => PropertyData.Default with
+                {
+                    Name = $"Value{i}",
+                    Type = TypeData.Default with
+                    {
+                        CSharpType = $"T{i}",
+                    },
+                })
+                .ToImmutableArray()
+            : fixedTypes.Select((type, i) => PropertyData.Default with
+            {
+                Name = $"Value{i + 1}",
+                Type = type,
+            }).ToImmutableArray();
         
         return $@"#nullable enable
 
 namespace OpenApiGenerator.JsonConverters
 {{
     /// <inheritdoc />
-    public class {subType}JsonConverter{types} : global::System.Text.Json.Serialization.JsonConverter<global::System.{subType}{types}>
+    public class {classNameWithTypes} : global::System.Text.Json.Serialization.JsonConverter<{typeNameWithTypes}>
     {{
         /// <inheritdoc />
-        public override global::System.{subType}{types} Read(
+        public override {typeNameWithTypes} Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -35,17 +59,17 @@ namespace OpenApiGenerator.JsonConverters
             options.TypeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException(""TypeInfoResolver is not set."");" : " ")}
 
             var
-{Enumerable.Range(1, count).Select(x => $@"
+{allTypes.Select(x => $@"
             readerCopy = reader;
-            T{x}? value{x} = default;
+            {x.Type.CSharpTypeWithNullability} {x.ParameterName} = default;
             try
             {{
 {(isTrimming ? $@" 
-                var typeInfo = options.TypeInfoResolver.GetTypeInfo(typeof(T{x}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T{x}> ??
-                               throw new global::System.InvalidOperationException($""Cannot get type info for {{typeof(T{x}).Name}}"");
-                value{x} = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                var typeInfo = options.TypeInfoResolver.GetTypeInfo(typeof({x.Type.CSharpTypeWithoutNullability}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<{x.Type.CSharpTypeWithoutNullability}> ??
+                               throw new global::System.InvalidOperationException($""Cannot get type info for {{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"");
+                {x.ParameterName} = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
  " : $@" 
-                value{x} = global::System.Text.Json.JsonSerializer.Deserialize<T{x}>(ref readerCopy, options);
+                {x.ParameterName} = global::System.Text.Json.JsonSerializer.Deserialize<{x.Type.CSharpTypeWithoutNullability}>(ref readerCopy, options);
  ")}
             }}
             catch (global::System.Text.Json.JsonException)
@@ -53,25 +77,25 @@ namespace OpenApiGenerator.JsonConverters
             }}
 ").Inject()}
         
-            var result = new global::System.{subType}{types}(
-{Enumerable.Range(1, count).Select(x => $@"
-                value{x},
+            var result = new {typeNameWithTypes}(
+{allTypes.Select(x => $@"
+                {x.ParameterName},
 ").Inject().TrimEnd(',')}
                 );
             if (!result.Validate())
             {{
-                throw new global::System.Text.Json.JsonException($""Invalid JSON format for {subType}<{string.Join(", ", Enumerable.Range(1, count).Select(x => $"{{typeof(T{x}).Name}}"))}>"");
+                throw new global::System.Text.Json.JsonException($""Invalid JSON format for {subType}<{string.Join(", ", allTypes.Select(x => $"{{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"))}>"");
             }}
 
-{Enumerable.Range(1, count).Select(x => $@"
-            {(x == 1 ? "" : "else ")}if (value{x} != null)
+{allTypes.Select((x, i) => $@"
+            {(i == 0 ? "" : "else ")}if ({x.ParameterName} != null)
             {{
 {(isTrimming ? $@" 
-                var typeInfo = options.TypeInfoResolver.GetTypeInfo(typeof(T{x}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T{x}> ??
-                               throw new global::System.InvalidOperationException($""Cannot get type info for {{typeof(T{x}).Name}}"");
+                var typeInfo = options.TypeInfoResolver.GetTypeInfo(typeof({x.Type.CSharpTypeWithoutNullability}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<{x.Type.CSharpTypeWithoutNullability}> ??
+                               throw new global::System.InvalidOperationException($""Cannot get type info for {{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
  " : $@" 
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<T{x}>(ref reader, options);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<{x.Type.CSharpTypeWithoutNullability}>(ref reader, options);
  ")}
             }}
 ").Inject().TrimEnd(',')}
@@ -82,7 +106,7 @@ namespace OpenApiGenerator.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::System.{subType}{types} value,
+            {typeNameWithTypes} value,
             global::System.Text.Json.JsonSerializerOptions options)
         {{
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));{(isTrimming ? @"
@@ -90,18 +114,18 @@ namespace OpenApiGenerator.JsonConverters
 
             if (!value.Validate())
             {{
-                throw new global::System.Text.Json.JsonException($""Invalid {subType}<{string.Join(", ", Enumerable.Range(1, count).Select(x => $"{{typeof(T{x}).Name}}"))}> object."");
+                throw new global::System.Text.Json.JsonException($""Invalid {subType}<{string.Join(", ", allTypes.Select(x => $"{{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"))}> object."");
             }}
 
-{Enumerable.Range(1, count).Select(x => $@"
-            {(x == 1 ? "" : "else ")}if (value.IsValue{x})
+{allTypes.Select((x, i) => $@"
+            {(i == 0 ? "" : "else ")}if (value.Is{x.Name})
             {{
 {(isTrimming ? $@" 
-                var typeInfo = options.TypeInfoResolver.GetTypeInfo(typeof(T{x}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T{x}?> ??
-                               throw new global::System.InvalidOperationException($""Cannot get type info for {{typeof(T{x}).Name}}"");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value{x}, typeInfo);
+                var typeInfo = options.TypeInfoResolver.GetTypeInfo(typeof({x.Type.CSharpTypeWithoutNullability}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<{x.Type.CSharpTypeWithNullability}> ??
+                               throw new global::System.InvalidOperationException($""Cannot get type info for {{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.{x.Name}, typeInfo);
  " : $@" 
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value{x}, typeof(T{x}), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.{x.Name}, typeof({x.Type.CSharpTypeWithoutNullability}), options);
  ")}
             }}
 ").Inject().TrimEnd(',')}

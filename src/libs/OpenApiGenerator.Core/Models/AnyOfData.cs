@@ -8,6 +8,7 @@ public readonly record struct AnyOfData(
     int Count,
     JsonSerializerType JsonSerializerType,
     bool IsTrimming,
+    string Namespace,
     string Name,
     ImmutableArray<TypeData> Types
 );

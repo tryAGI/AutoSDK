@@ -3,6 +3,7 @@
     SubType: AnyOf,
     Count: 2,
     IsTrimming: true,
+    Namespace: System,
     Name: ,
     Types: null
   }
