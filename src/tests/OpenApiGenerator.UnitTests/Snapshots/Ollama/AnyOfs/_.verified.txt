@@ -2,6 +2,8 @@
   {
     SubType: AnyOf,
     Count: 2,
-    IsTrimming: true
+    IsTrimming: true,
+    Name: ,
+    Types: null
   }
 ]

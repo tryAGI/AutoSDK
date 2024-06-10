@@ -210,26 +210,26 @@ public static class Data
             .ToArray() : [];
         var anyOfs = allSchemas
             .Where(x => x.AnyOf is { Count: > 0 })
-            .Select(x => new AnyOfData("AnyOf", x.AnyOf.Count, settings.JsonSerializerType, isTrimming))
+            .Select(x => new AnyOfData("AnyOf", x.AnyOf.Count, settings.JsonSerializerType, isTrimming, string.Empty, ImmutableArray<TypeData>.Empty))
             .Concat(allSchemas
                 .Where(x => x.Items?.AnyOf is { Count: > 0 })
-                .Select(x => new AnyOfData("AnyOf", x.Items.AnyOf.Count, settings.JsonSerializerType, isTrimming)))
+                .Select(x => new AnyOfData("AnyOf", x.Items.AnyOf.Count, settings.JsonSerializerType, isTrimming, string.Empty, ImmutableArray<TypeData>.Empty)))
             .Distinct()
             .ToImmutableArray();
         var oneOfs = allSchemas
             .Where(x => x.OneOf is { Count: > 0 })
-            .Select(x => new AnyOfData("OneOf", x.OneOf.Count, settings.JsonSerializerType, isTrimming))
+            .Select(x => new AnyOfData("OneOf", x.OneOf.Count, settings.JsonSerializerType, isTrimming, string.Empty, ImmutableArray<TypeData>.Empty))
             .Concat(allSchemas
                 .Where(x => x.Items?.OneOf is { Count: > 0 })
-                .Select(x => new AnyOfData("OneOf", x.Items.OneOf.Count, settings.JsonSerializerType, isTrimming)))
+                .Select(x => new AnyOfData("OneOf", x.Items.OneOf.Count, settings.JsonSerializerType, isTrimming, string.Empty, ImmutableArray<TypeData>.Empty)))
             .Distinct()
             .ToImmutableArray();
         var allOfs = allSchemas
             .Where(x => x.AllOf is { Count: > 0 })
-            .Select(x => new AnyOfData("AllOf", x.AllOf.Count, settings.JsonSerializerType, isTrimming))
+            .Select(x => new AnyOfData("AllOf", x.AllOf.Count, settings.JsonSerializerType, isTrimming, string.Empty, ImmutableArray<TypeData>.Empty))
             .Concat(allSchemas
                 .Where(x => x.Items?.AllOf is { Count: > 0 })
-                .Select(x => new AnyOfData("AllOf", x.Items.AllOf.Count, settings.JsonSerializerType, isTrimming)))
+                .Select(x => new AnyOfData("AllOf", x.Items.AllOf.Count, settings.JsonSerializerType, isTrimming, string.Empty, ImmutableArray<TypeData>.Empty)))
             .Distinct()
             .ToImmutableArray();
 

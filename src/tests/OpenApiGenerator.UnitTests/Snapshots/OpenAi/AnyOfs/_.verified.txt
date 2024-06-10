@@ -2,51 +2,71 @@
   {
     SubType: AnyOf,
     Count: 2,
-    IsTrimming: false
+    IsTrimming: false,
+    Name: ,
+    Types: null
   },
   {
     SubType: AnyOf,
     Count: 1,
-    IsTrimming: false
+    IsTrimming: false,
+    Name: ,
+    Types: null
   },
   {
     SubType: OneOf,
     Count: 4,
-    IsTrimming: false
+    IsTrimming: false,
+    Name: ,
+    Types: null
   },
   {
     SubType: OneOf,
     Count: 2,
-    IsTrimming: false
+    IsTrimming: false,
+    Name: ,
+    Types: null
   },
   {
     SubType: OneOf,
     Count: 5,
-    IsTrimming: false
+    IsTrimming: false,
+    Name: ,
+    Types: null
   },
   {
     SubType: OneOf,
     Count: 1,
-    IsTrimming: false
+    IsTrimming: false,
+    Name: ,
+    Types: null
   },
   {
     SubType: OneOf,
     Count: 6,
-    IsTrimming: false
+    IsTrimming: false,
+    Name: ,
+    Types: null
   },
   {
     SubType: OneOf,
     Count: 9,
-    IsTrimming: false
+    IsTrimming: false,
+    Name: ,
+    Types: null
   },
   {
     SubType: OneOf,
     Count: 7,
-    IsTrimming: false
+    IsTrimming: false,
+    Name: ,
+    Types: null
   },
   {
     SubType: OneOf,
     Count: 3,
-    IsTrimming: false
+    IsTrimming: false,
+    Name: ,
+    Types: null
   }
 ]

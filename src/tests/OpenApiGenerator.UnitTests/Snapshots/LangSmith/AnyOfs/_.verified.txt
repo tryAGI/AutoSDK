@@ -2,16 +2,22 @@
   {
     SubType: AnyOf,
     Count: 3,
-    IsTrimming: false
+    IsTrimming: false,
+    Name: ,
+    Types: null
   },
   {
     SubType: AnyOf,
     Count: 2,
-    IsTrimming: false
+    IsTrimming: false,
+    Name: ,
+    Types: null
   },
   {
     SubType: AnyOf,
     Count: 4,
-    IsTrimming: false
+    IsTrimming: false,
+    Name: ,
+    Types: null
   }
 ]
