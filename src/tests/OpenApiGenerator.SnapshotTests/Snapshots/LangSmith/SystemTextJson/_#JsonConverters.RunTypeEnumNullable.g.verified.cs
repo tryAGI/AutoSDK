@@ -1,13 +1,13 @@
-﻿//HintName: JsonConverters.RunCreateSchemaExtendedRunType.g.cs
+﻿//HintName: JsonConverters.RunTypeEnumNullable.g.cs
 #nullable enable
 
 namespace OpenApiGenerator.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class RunCreateSchemaExtendedRunTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RunCreateSchemaExtendedRunType>
+    public sealed class RunTypeEnumNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.RunTypeEnum?>
     {
         /// <inheritdoc />
-        public override global::G.RunCreateSchemaExtendedRunType Read(
+        public override global::G.RunTypeEnum? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -19,7 +19,7 @@ namespace OpenApiGenerator.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::G.RunCreateSchemaExtendedRunTypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::G.RunTypeEnumExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -27,7 +27,7 @@ namespace OpenApiGenerator.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::G.RunCreateSchemaExtendedRunType)numValue;
+                    return (global::G.RunTypeEnum)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -39,12 +39,19 @@ namespace OpenApiGenerator.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::G.RunCreateSchemaExtendedRunType value,
+            global::G.RunTypeEnum? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::G.RunCreateSchemaExtendedRunTypeExtensions.ToValueString(value));
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::G.RunTypeEnumExtensions.ToValueString(value.Value));
+            }
         }
     }
 }

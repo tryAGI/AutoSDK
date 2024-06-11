@@ -223,7 +223,7 @@ The prompt to generate a response.
         Id: format,
         Name: Format,
         Type: {
-          CSharpType: global::G.GenerateCompletionRequestFormat?,
+          CSharpType: global::G.ResponseFormat?,
           IsArray: false,
           IsEnum: true,
           Properties: [
@@ -235,10 +235,10 @@ The prompt to generate a response.
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: global::G.GenerateCompletionRequestFormat,
-          CSharpTypeWithNullability: global::G.GenerateCompletionRequestFormat?,
+          CSharpTypeWithoutNullability: global::G.ResponseFormat,
+          CSharpTypeWithNullability: global::G.ResponseFormat?,
           IsAnyOf: false,
-          ConverterType: global::OpenApiGenerator.JsonConverters.GenerateCompletionRequestFormatJsonConverter
+          ConverterType: global::OpenApiGenerator.JsonConverters.ResponseFormatJsonConverter
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -249,7 +249,7 @@ Enable JSON mode by setting the format parameter to json. This will structure th
 
 Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
 ,
-        ConverterType: global::OpenApiGenerator.JsonConverters.GenerateCompletionRequestFormatJsonConverter,
+        ConverterType: global::OpenApiGenerator.JsonConverters.ResponseFormatJsonConverter,
         ParameterName: format,
         ArgumentName: format,
         ParameterDefaultValue: default
@@ -354,56 +354,6 @@ How long (in minutes) to keep the model loaded in memory.
     GlobalClassName: global::G.GenerateCompletionRequest,
     ExternalClassName: GenerateCompletionRequest,
     FileNameWithoutExtension: G.Models.GenerateCompletionRequest
-  },
-  {
-    Id: format,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    Style: Enumeration,
-    Properties: [
-      {
-        Id: json,
-        Name: Json,
-        Type: {
-          CSharpType: ,
-          IsArray: false,
-          IsEnum: false,
-          Properties: null,
-          EnumValues: null,
-          Namespace: ,
-          IsDeprecated: false,
-          GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: ,
-          CSharpTypeWithNullability: ?,
-          IsAnyOf: false,
-          ConverterType: 
-        },
-        IsRequired: false,
-        IsDeprecated: false,
-        Summary: ,
-        ConverterType: ,
-        ParameterName: json,
-        ArgumentName: json,
-        ParameterDefaultValue: default
-      }
-    ],
-    Summary:
-The format to return a response in. Currently the only accepted value is json.
-
-Enable JSON mode by setting the format parameter to json. This will structure the response as valid JSON.
-
-Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
-,
-    IsDeprecated: false,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: Format,
-    ClassName: Format,
-    GlobalClassName: global::G.Format,
-    ExternalClassName: Format,
-    FileNameWithoutExtension: G.Models.Format
   },
   {
     Id: RequestOptions,
@@ -1237,7 +1187,34 @@ Sets the number of threads to use during computation. By default, Ollama will de
     Parents: null,
     TargetFramework: netstandard2.0,
     Namespace: G,
-    Properties: null,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: json,
+        Name: Json,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: json,
+        ArgumentName: json,
+        ParameterDefaultValue: default
+      }
+    ],
     Summary:
 The format to return a response in. Currently the only accepted value is json.
 
@@ -1639,7 +1616,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         Id: format,
         Name: Format,
         Type: {
-          CSharpType: global::G.GenerateChatCompletionRequestFormat?,
+          CSharpType: global::G.ResponseFormat?,
           IsArray: false,
           IsEnum: true,
           Properties: [
@@ -1651,10 +1628,10 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: global::G.GenerateChatCompletionRequestFormat,
-          CSharpTypeWithNullability: global::G.GenerateChatCompletionRequestFormat?,
+          CSharpTypeWithoutNullability: global::G.ResponseFormat,
+          CSharpTypeWithNullability: global::G.ResponseFormat?,
           IsAnyOf: false,
-          ConverterType: global::OpenApiGenerator.JsonConverters.GenerateChatCompletionRequestFormatJsonConverter
+          ConverterType: global::OpenApiGenerator.JsonConverters.ResponseFormatJsonConverter
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1665,7 +1642,7 @@ Enable JSON mode by setting the format parameter to json. This will structure th
 
 Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
 ,
-        ConverterType: global::OpenApiGenerator.JsonConverters.GenerateChatCompletionRequestFormatJsonConverter,
+        ConverterType: global::OpenApiGenerator.JsonConverters.ResponseFormatJsonConverter,
         ParameterName: format,
         ArgumentName: format,
         ParameterDefaultValue: default
@@ -1797,56 +1774,6 @@ How long (in minutes) to keep the model loaded in memory.
     GlobalClassName: global::G.GenerateChatCompletionRequest,
     ExternalClassName: GenerateChatCompletionRequest,
     FileNameWithoutExtension: G.Models.GenerateChatCompletionRequest
-  },
-  {
-    Id: format,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    Style: Enumeration,
-    Properties: [
-      {
-        Id: json,
-        Name: Json,
-        Type: {
-          CSharpType: ,
-          IsArray: false,
-          IsEnum: false,
-          Properties: null,
-          EnumValues: null,
-          Namespace: ,
-          IsDeprecated: false,
-          GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: ,
-          CSharpTypeWithNullability: ?,
-          IsAnyOf: false,
-          ConverterType: 
-        },
-        IsRequired: false,
-        IsDeprecated: false,
-        Summary: ,
-        ConverterType: ,
-        ParameterName: json,
-        ArgumentName: json,
-        ParameterDefaultValue: default
-      }
-    ],
-    Summary:
-The format to return a response in. Currently the only accepted value is json.
-
-Enable JSON mode by setting the format parameter to json. This will structure the response as valid JSON.
-
-Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
-,
-    IsDeprecated: false,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: Format,
-    ClassName: Format,
-    GlobalClassName: global::G.Format,
-    ExternalClassName: Format,
-    FileNameWithoutExtension: G.Models.Format
   },
   {
     Id: GenerateChatCompletionResponse,
@@ -2881,7 +2808,7 @@ If `false` the response will be returned as a single response object, otherwise 
     FileNameWithoutExtension: G.Models.CreateModelStatus
   },
   {
-    Id: CreateModelStatusVariant1,
+    Id: CreateModelStatusVariant2,
     AddTypeName: false,
     Parents: null,
     TargetFramework: netstandard2.0,
@@ -2968,11 +2895,11 @@ If `false` the response will be returned as a single response object, otherwise 
     IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
-    Name: CreateModelStatusVariant1,
-    ClassName: CreateModelStatusVariant1,
-    GlobalClassName: global::G.CreateModelStatusVariant1,
-    ExternalClassName: CreateModelStatusVariant1,
-    FileNameWithoutExtension: G.Models.CreateModelStatusVariant1
+    Name: CreateModelStatusVariant2,
+    ClassName: CreateModelStatusVariant2,
+    GlobalClassName: global::G.CreateModelStatusVariant2,
+    ExternalClassName: CreateModelStatusVariant2,
+    FileNameWithoutExtension: G.Models.CreateModelStatusVariant2
   },
   {
     Id: ModelsResponse,
@@ -4202,7 +4129,7 @@ Status pulling the model.
     FileNameWithoutExtension: G.Models.PullModelStatus
   },
   {
-    Id: PullModelStatusVariant1,
+    Id: PullModelStatusVariant2,
     AddTypeName: false,
     Parents: null,
     TargetFramework: netstandard2.0,
@@ -4364,11 +4291,11 @@ Status pulling the model.
     IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
-    Name: PullModelStatusVariant1,
-    ClassName: PullModelStatusVariant1,
-    GlobalClassName: global::G.PullModelStatusVariant1,
-    ExternalClassName: PullModelStatusVariant1,
-    FileNameWithoutExtension: G.Models.PullModelStatusVariant1
+    Name: PullModelStatusVariant2,
+    ClassName: PullModelStatusVariant2,
+    GlobalClassName: global::G.PullModelStatusVariant2,
+    ExternalClassName: PullModelStatusVariant2,
+    FileNameWithoutExtension: G.Models.PullModelStatusVariant2
   },
   {
     Id: PushModelRequest,
@@ -4787,7 +4714,7 @@ Total bytes transferred.
     FileNameWithoutExtension: G.Models.PushModelStatus
   },
   {
-    Id: PushModelStatusVariant1,
+    Id: PushModelStatusVariant2,
     AddTypeName: false,
     Parents: null,
     TargetFramework: netstandard2.0,
@@ -4899,10 +4826,10 @@ Total bytes transferred.
     IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
-    Name: PushModelStatusVariant1,
-    ClassName: PushModelStatusVariant1,
-    GlobalClassName: global::G.PushModelStatusVariant1,
-    ExternalClassName: PushModelStatusVariant1,
-    FileNameWithoutExtension: G.Models.PushModelStatusVariant1
+    Name: PushModelStatusVariant2,
+    ClassName: PushModelStatusVariant2,
+    GlobalClassName: global::G.PushModelStatusVariant2,
+    ExternalClassName: PushModelStatusVariant2,
+    FileNameWithoutExtension: G.Models.PushModelStatusVariant2
   }
 ]

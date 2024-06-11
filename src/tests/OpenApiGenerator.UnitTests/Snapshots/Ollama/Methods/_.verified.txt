@@ -225,7 +225,7 @@ The prompt to generate a response.
         Id: format,
         Name: Format,
         Type: {
-          CSharpType: global::G.GenerateCompletionRequestFormat?,
+          CSharpType: global::G.ResponseFormat?,
           IsArray: false,
           IsEnum: true,
           Properties: [
@@ -237,10 +237,10 @@ The prompt to generate a response.
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: global::G.GenerateCompletionRequestFormat,
-          CSharpTypeWithNullability: global::G.GenerateCompletionRequestFormat?,
+          CSharpTypeWithoutNullability: global::G.ResponseFormat,
+          CSharpTypeWithNullability: global::G.ResponseFormat?,
           IsAnyOf: false,
-          ConverterType: global::OpenApiGenerator.JsonConverters.GenerateCompletionRequestFormatJsonConverter
+          ConverterType: global::OpenApiGenerator.JsonConverters.ResponseFormatJsonConverter
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -251,7 +251,7 @@ Enable JSON mode by setting the format parameter to json. This will structure th
 
 Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
 ,
-        ConverterType: global::OpenApiGenerator.JsonConverters.GenerateCompletionRequestFormatJsonConverter,
+        ConverterType: global::OpenApiGenerator.JsonConverters.ResponseFormatJsonConverter,
         ParameterName: format,
         ArgumentName: format,
         ParameterDefaultValue: default
@@ -532,7 +532,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         Id: format,
         Name: Format,
         Type: {
-          CSharpType: global::G.GenerateChatCompletionRequestFormat?,
+          CSharpType: global::G.ResponseFormat?,
           IsArray: false,
           IsEnum: true,
           Properties: [
@@ -544,10 +544,10 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: global::G.GenerateChatCompletionRequestFormat,
-          CSharpTypeWithNullability: global::G.GenerateChatCompletionRequestFormat?,
+          CSharpTypeWithoutNullability: global::G.ResponseFormat,
+          CSharpTypeWithNullability: global::G.ResponseFormat?,
           IsAnyOf: false,
-          ConverterType: global::OpenApiGenerator.JsonConverters.GenerateChatCompletionRequestFormatJsonConverter
+          ConverterType: global::OpenApiGenerator.JsonConverters.ResponseFormatJsonConverter
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -558,7 +558,7 @@ Enable JSON mode by setting the format parameter to json. This will structure th
 
 Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
 ,
-        ConverterType: global::OpenApiGenerator.JsonConverters.GenerateChatCompletionRequestFormatJsonConverter,
+        ConverterType: global::OpenApiGenerator.JsonConverters.ResponseFormatJsonConverter,
         ParameterName: format,
         ArgumentName: format,
         ParameterDefaultValue: default
@@ -2472,24 +2472,22 @@ If `false` the response will be returned as a single response object, otherwise 
     AdditionalModels: null,
     AdditionalTypes: null,
     Converters: [
-      global::OpenApiGenerator.JsonConverters.GenerateCompletionRequestFormatJsonConverter,
-      global::OpenApiGenerator.JsonConverters.GenerateCompletionRequestFormatNullableJsonConverter,
-      global::OpenApiGenerator.JsonConverters.GenerateChatCompletionRequestFormatJsonConverter,
-      global::OpenApiGenerator.JsonConverters.GenerateChatCompletionRequestFormatNullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ResponseFormatJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ResponseFormatNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.MessageRoleJsonConverter,
       global::OpenApiGenerator.JsonConverters.MessageRoleNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateModelResponseStatusJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateModelResponseStatusNullableJsonConverter,
-      global::OpenApiGenerator.JsonConverters.CreateModelStatusVariant1JsonConverter,
-      global::OpenApiGenerator.JsonConverters.CreateModelStatusVariant1NullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateModelStatusVariant2JsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateModelStatusVariant2NullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.PullModelResponseStatusJsonConverter,
       global::OpenApiGenerator.JsonConverters.PullModelResponseStatusNullableJsonConverter,
-      global::OpenApiGenerator.JsonConverters.PullModelStatusVariant1JsonConverter,
-      global::OpenApiGenerator.JsonConverters.PullModelStatusVariant1NullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.PullModelStatusVariant2JsonConverter,
+      global::OpenApiGenerator.JsonConverters.PullModelStatusVariant2NullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.PushModelResponseStatusJsonConverter,
       global::OpenApiGenerator.JsonConverters.PushModelResponseStatusNullableJsonConverter,
-      global::OpenApiGenerator.JsonConverters.PushModelStatusVariant1JsonConverter,
-      global::OpenApiGenerator.JsonConverters.PushModelStatusVariant1NullableJsonConverter
+      global::OpenApiGenerator.JsonConverters.PushModelStatusVariant2JsonConverter,
+      global::OpenApiGenerator.JsonConverters.PushModelStatusVariant2NullableJsonConverter
     ],
     MethodName: MainConstructorAsync,
     NotAsyncMethodName: MainConstructor,

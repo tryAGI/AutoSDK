@@ -1,13 +1,13 @@
-﻿//HintName: JsonConverters.GenerateCompletionRequestFormatNullable.g.cs
+﻿//HintName: JsonConverters.ChatCompletionRoleNullable.g.cs
 #nullable enable
 
 namespace OpenApiGenerator.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class GenerateCompletionRequestFormatNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.GenerateCompletionRequestFormat?>
+    public sealed class ChatCompletionRoleNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ChatCompletionRole?>
     {
         /// <inheritdoc />
-        public override global::G.GenerateCompletionRequestFormat? Read(
+        public override global::G.ChatCompletionRole? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -19,7 +19,7 @@ namespace OpenApiGenerator.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::G.GenerateCompletionRequestFormatExtensions.ToEnum(stringValue);
+                        return global::G.ChatCompletionRoleExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -27,7 +27,7 @@ namespace OpenApiGenerator.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::G.GenerateCompletionRequestFormat)numValue;
+                    return (global::G.ChatCompletionRole)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -39,7 +39,7 @@ namespace OpenApiGenerator.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::G.GenerateCompletionRequestFormat? value,
+            global::G.ChatCompletionRole? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -50,7 +50,7 @@ namespace OpenApiGenerator.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::G.GenerateCompletionRequestFormatExtensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::G.ChatCompletionRoleExtensions.ToValueString(value.Value));
             }
         }
     }

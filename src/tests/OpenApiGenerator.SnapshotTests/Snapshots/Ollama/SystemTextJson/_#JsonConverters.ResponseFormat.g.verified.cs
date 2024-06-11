@@ -1,13 +1,13 @@
-﻿//HintName: JsonConverters.GenerateChatCompletionRequestFormat.g.cs
+﻿//HintName: JsonConverters.ResponseFormat.g.cs
 #nullable enable
 
 namespace OpenApiGenerator.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class GenerateChatCompletionRequestFormatJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.GenerateChatCompletionRequestFormat>
+    public sealed class ResponseFormatJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ResponseFormat>
     {
         /// <inheritdoc />
-        public override global::G.GenerateChatCompletionRequestFormat Read(
+        public override global::G.ResponseFormat Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -19,7 +19,7 @@ namespace OpenApiGenerator.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::G.GenerateChatCompletionRequestFormatExtensions.ToEnum(stringValue) ?? default;
+                        return global::G.ResponseFormatExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -27,7 +27,7 @@ namespace OpenApiGenerator.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::G.GenerateChatCompletionRequestFormat)numValue;
+                    return (global::G.ResponseFormat)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -39,12 +39,12 @@ namespace OpenApiGenerator.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::G.GenerateChatCompletionRequestFormat value,
+            global::G.ResponseFormat value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::G.GenerateChatCompletionRequestFormatExtensions.ToValueString(value));
+            writer.WriteStringValue(global::G.ResponseFormatExtensions.ToValueString(value));
         }
     }
 }

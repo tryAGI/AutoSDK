@@ -1,13 +1,13 @@
-﻿//HintName: JsonConverters.PushModelStatusVariant1.g.cs
+﻿//HintName: JsonConverters.PullModelStatusVariant2.g.cs
 #nullable enable
 
 namespace OpenApiGenerator.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class PushModelStatusVariant1JsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.PushModelStatusVariant1>
+    public sealed class PullModelStatusVariant2JsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.PullModelStatusVariant2>
     {
         /// <inheritdoc />
-        public override global::G.PushModelStatusVariant1 Read(
+        public override global::G.PullModelStatusVariant2 Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -19,7 +19,7 @@ namespace OpenApiGenerator.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::G.PushModelStatusVariant1Extensions.ToEnum(stringValue) ?? default;
+                        return global::G.PullModelStatusVariant2Extensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -27,7 +27,7 @@ namespace OpenApiGenerator.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::G.PushModelStatusVariant1)numValue;
+                    return (global::G.PullModelStatusVariant2)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -39,12 +39,12 @@ namespace OpenApiGenerator.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::G.PushModelStatusVariant1 value,
+            global::G.PullModelStatusVariant2 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::G.PushModelStatusVariant1Extensions.ToValueString(value));
+            writer.WriteStringValue(global::G.PullModelStatusVariant2Extensions.ToValueString(value));
         }
     }
 }

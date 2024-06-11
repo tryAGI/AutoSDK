@@ -1,13 +1,13 @@
-﻿//HintName: JsonConverters.GenerateCompletionRequestFormat.g.cs
+﻿//HintName: JsonConverters.ResponseFormatNullable.g.cs
 #nullable enable
 
 namespace OpenApiGenerator.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class GenerateCompletionRequestFormatJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.GenerateCompletionRequestFormat>
+    public sealed class ResponseFormatNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ResponseFormat?>
     {
         /// <inheritdoc />
-        public override global::G.GenerateCompletionRequestFormat Read(
+        public override global::G.ResponseFormat? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -19,7 +19,7 @@ namespace OpenApiGenerator.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::G.GenerateCompletionRequestFormatExtensions.ToEnum(stringValue) ?? default;
+                        return global::G.ResponseFormatExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -27,7 +27,7 @@ namespace OpenApiGenerator.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::G.GenerateCompletionRequestFormat)numValue;
+                    return (global::G.ResponseFormat)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -39,12 +39,19 @@ namespace OpenApiGenerator.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::G.GenerateCompletionRequestFormat value,
+            global::G.ResponseFormat? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::G.GenerateCompletionRequestFormatExtensions.ToValueString(value));
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::G.ResponseFormatExtensions.ToValueString(value.Value));
+            }
         }
     }
 }

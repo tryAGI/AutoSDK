@@ -325,7 +325,7 @@
         Id: run_type,
         Name: RunType,
         Type: {
-          CSharpType: global::G.RunCreateSchemaExtendedRunType,
+          CSharpType: global::G.RunTypeEnum,
           IsArray: false,
           IsEnum: true,
           Properties: [
@@ -349,15 +349,15 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::G.RunCreateSchemaExtendedRunType,
-          CSharpTypeWithNullability: global::G.RunCreateSchemaExtendedRunType?,
+          CSharpTypeWithoutNullability: global::G.RunTypeEnum,
+          CSharpTypeWithNullability: global::G.RunTypeEnum?,
           IsAnyOf: false,
-          ConverterType: global::OpenApiGenerator.JsonConverters.RunCreateSchemaExtendedRunTypeJsonConverter
+          ConverterType: global::OpenApiGenerator.JsonConverters.RunTypeEnumJsonConverter
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: Enum for run types.,
-        ConverterType: global::OpenApiGenerator.JsonConverters.RunCreateSchemaExtendedRunTypeJsonConverter,
+        ConverterType: global::OpenApiGenerator.JsonConverters.RunTypeEnumJsonConverter,
         ParameterName: runType,
         ArgumentName: runType,
         ParameterDefaultValue: default
@@ -937,10 +937,8 @@
     AdditionalModels: null,
     AdditionalTypes: null,
     Converters: [
-      global::OpenApiGenerator.JsonConverters.RunCreateSchemaExtendedRunTypeJsonConverter,
-      global::OpenApiGenerator.JsonConverters.RunCreateSchemaExtendedRunTypeNullableJsonConverter,
-      global::OpenApiGenerator.JsonConverters.RunCreateSchemaRunTypeJsonConverter,
-      global::OpenApiGenerator.JsonConverters.RunCreateSchemaRunTypeNullableJsonConverter
+      global::OpenApiGenerator.JsonConverters.RunTypeEnumJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunTypeEnumNullableJsonConverter
     ],
     MethodName: MainConstructorAsync,
     NotAsyncMethodName: MainConstructor,

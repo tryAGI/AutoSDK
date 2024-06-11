@@ -237,7 +237,7 @@ public static class Data
         //             settings.JsonSerializerType,
         //             isTrimming,
         //             settings.Namespace,
-        //             schema.Key + "Temp", 
+        //             schema.Key, 
         //             schema.Value.AnyOf.Select((x, i) => TypeData.FromSchema(x.UseReferenceIdOrKey(schema.Key + $"Variant{i + 1}"), settings)).ToImmutableArray())))
         //     .ToImmutableArray();
         // oneOfs = oneOfs
@@ -249,7 +249,7 @@ public static class Data
         //             settings.JsonSerializerType,
         //             isTrimming,
         //             settings.Namespace,
-        //             schema.Key + "Temp", 
+        //             schema.Key, 
         //             schema.Value.OneOf.Select((x, i) => TypeData.FromSchema(x.UseReferenceIdOrKey(schema.Key + $"Variant{i + 1}"), settings)).ToImmutableArray())))
         //     .ToImmutableArray();
         // allOfs = allOfs
@@ -261,7 +261,7 @@ public static class Data
         //             settings.JsonSerializerType,
         //             isTrimming,
         //             settings.Namespace,
-        //             schema.Key + "Temp", 
+        //             schema.Key, 
         //             schema.Value.AllOf.Select((x, i) => TypeData.FromSchema(x.UseReferenceIdOrKey(schema.Key + $"Variant{i + 1}"), settings)).ToImmutableArray())))
         //     .ToImmutableArray();
 

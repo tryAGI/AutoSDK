@@ -60,7 +60,7 @@ namespace G
         /// Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format")]
-        public global::G.GenerateCompletionRequestFormat? Format { get; set; }
+        public global::G.ResponseFormat? Format { get; set; }
 
         /// <summary>
         /// If `true` no formatting will be applied to the prompt and no context will be returned. 

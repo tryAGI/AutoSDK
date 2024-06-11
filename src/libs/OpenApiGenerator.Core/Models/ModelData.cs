@@ -72,75 +72,30 @@ public readonly record struct ModelData(
 
         if (schema.AnyOf is { Count: > 0 })
         {
-            var classes = schema.AnyOf
-                .Where(x => x.IsObjectWithoutReference())
-                .Select((x, i) => FromSchema(x.UseReferenceIdOrKey(key + $"Variant{i + 1}"), settings, parents))
+            return schema.AnyOf
+                .SelectMany((x, i) =>
+                    x.IsObjectWithoutReference() || x.IsEnum()
+                        ? new [] { FromSchema(x.UseReferenceIdOrKey(key + $"Variant{i + 1}"), settings, parents) }
+                        : [])
                 .ToArray();
-            var enums = schema.AnyOf
-                .Where(x => x.IsEnum())
-                .Select((x, i) => FromSchema(x.UseReferenceIdOrKey(key + $"Variant{i + 1}"), settings, parents) with
-                {
-                    Style = ModelStyle.Enumeration,
-                    Properties = x.Enum
-                        .Select(value => value.ToEnumValue())
-                        .Where(value => !string.IsNullOrWhiteSpace(value.Name))
-                        .ToImmutableArray(),
-                })
-                .ToArray();
-
-            return
-            [
-                ..classes,
-                ..enums
-            ];
         }
         if (schema.AllOf is { Count: > 0 })
         {
-            var classes = schema.AllOf
-                .Where(x => x.IsObjectWithoutReference())
-                .Select((x, i) => FromSchema(x.UseReferenceIdOrKey(key + $"Variant{i + 1}"), settings, parents))
+            return schema.AllOf
+                .SelectMany((x, i) =>
+                    x.IsObjectWithoutReference() || x.IsEnum()
+                        ? new [] { FromSchema(x.UseReferenceIdOrKey(key + $"Variant{i + 1}"), settings, parents) }
+                        : [])
                 .ToArray();
-            var enums = schema.AllOf
-                .Where(x => x.IsEnum())
-                .Select((x, i) => FromSchema(x.UseReferenceIdOrKey(key + $"Variant{i + 1}"), settings, parents) with
-                {
-                    Style = ModelStyle.Enumeration,
-                    Properties = x.Enum
-                        .Select(value => value.ToEnumValue())
-                        .Where(value => !string.IsNullOrWhiteSpace(value.Name))
-                        .ToImmutableArray(),
-                })
-                .ToArray();
-
-            return
-            [
-                ..classes,
-                ..enums,
-            ];
         }
         if (schema.OneOf is { Count: > 0 })
         {
-            var classes = schema.OneOf
-                .Where(x => x.IsObjectWithoutReference())
-                .Select((x, i) => FromSchema(x.UseReferenceIdOrKey(key + $"Variant{i + 1}"), settings, parents))
+            return schema.OneOf
+                .SelectMany((x, i) =>
+                    x.IsObjectWithoutReference() || x.IsEnum()
+                        ? new [] { FromSchema(x.UseReferenceIdOrKey(key + $"Variant{i + 1}"), settings, parents) }
+                        : [])
                 .ToArray();
-            var enums = schema.OneOf
-                .Where(x => x.IsEnum())
-                .Select((x, i) => FromSchema(x.UseReferenceIdOrKey(key + $"Variant{i + 1}"), settings, parents) with
-                {
-                    Style = ModelStyle.Enumeration,
-                    Properties = x.Enum
-                        .Select(value => value.ToEnumValue())
-                        .Where(value => !string.IsNullOrWhiteSpace(value.Name))
-                        .ToImmutableArray(),
-                })
-                .ToArray();
-
-            return
-            [
-                ..classes,
-                ..enums,
-            ];
         }
 
         if (schema.Type == "object")
@@ -183,17 +138,23 @@ public readonly record struct ModelData(
         
         return model with
         {
-            Properties = schema.Value.Properties
-                .Select(x => PropertyData.FromSchema(
-                    schema: x,
-                    requiredProperties: requiredProperties,
-                    parameterLocation: null,
-                    parameterStyle: null,
-                    parameterExplode: null,
-                    operationId: string.Empty,
-                    settings: settings,
-                    parents: innerParents))
-                .ToImmutableArray(),
+            Style = schema.Value.IsEnum() ? ModelStyle.Enumeration : model.Style,
+            Properties = schema.Value.IsEnum()
+                ? schema.Value.Enum
+                    .Select(value => value.ToEnumValue())
+                    .Where(value => !string.IsNullOrWhiteSpace(value.Name))
+                    .ToImmutableArray()
+                : schema.Value.Properties
+                    .Select(x => PropertyData.FromSchema(
+                        schema: x,
+                        requiredProperties: requiredProperties,
+                        parameterLocation: null,
+                        parameterStyle: null,
+                        parameterExplode: null,
+                        operationId: string.Empty,
+                        settings: settings,
+                        parents: innerParents))
+                    .ToImmutableArray(),
             AdditionalModels = schema.Value.Properties
                 .Select(x => FromSchema(x, settings, innerParents))
                 .Concat(schema.Value.Properties.SelectMany(x => x.Value.Items != null && x.Value.Items.IsObjectWithoutReference()
@@ -211,6 +172,7 @@ public readonly record struct ModelData(
                     .Where(static x => x.Schema.Value.IsObjectWithoutReference()))
                 .ToImmutableArray(),
             Enumerations = schema.Value.Properties
+                .Where(x => x.Value is { Reference: null })
                 .Select(x => FromSchema(x, settings, innerParents))
                 .Concat(schema.Value.Properties.SelectMany(x => x.Value.Items != null && x.Value.Items.IsEnum()
                     ? [FromSchema(x.Value.Items.WithKey(x.Key), settings, innerParents)]

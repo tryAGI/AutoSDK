@@ -14314,6 +14314,8 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       global::OpenApiGenerator.JsonConverters.ChatCompletionMessageToolCallTypeNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.ChatCompletionMessageToolCallChunkTypeJsonConverter,
       global::OpenApiGenerator.JsonConverters.ChatCompletionMessageToolCallChunkTypeNullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ChatCompletionRoleJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ChatCompletionRoleNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.ChatCompletionResponseMessageRoleJsonConverter,
       global::OpenApiGenerator.JsonConverters.ChatCompletionResponseMessageRoleNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.ChatCompletionStreamResponseDeltaRoleJsonConverter,

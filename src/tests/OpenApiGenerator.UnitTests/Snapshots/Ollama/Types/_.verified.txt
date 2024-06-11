@@ -87,7 +87,7 @@
     ConverterType: 
   },
   {
-    CSharpType: global::G.GenerateCompletionRequestFormat?,
+    CSharpType: global::G.ResponseFormat?,
     IsArray: false,
     IsEnum: true,
     Properties: [
@@ -99,10 +99,10 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: global::G.GenerateCompletionRequestFormat,
-    CSharpTypeWithNullability: global::G.GenerateCompletionRequestFormat?,
+    CSharpTypeWithoutNullability: global::G.ResponseFormat,
+    CSharpTypeWithNullability: global::G.ResponseFormat?,
     IsAnyOf: false,
-    ConverterType: global::OpenApiGenerator.JsonConverters.GenerateCompletionRequestFormatJsonConverter
+    ConverterType: global::OpenApiGenerator.JsonConverters.ResponseFormatJsonConverter
   },
   {
     CSharpType: bool,
@@ -187,24 +187,6 @@
     CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.Message>?,
     IsAnyOf: false,
     ConverterType: 
-  },
-  {
-    CSharpType: global::G.GenerateChatCompletionRequestFormat?,
-    IsArray: false,
-    IsEnum: true,
-    Properties: [
-      Json
-    ],
-    EnumValues: [
-      json
-    ],
-    Namespace: G,
-    IsDeprecated: false,
-    GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: global::G.GenerateChatCompletionRequestFormat,
-    CSharpTypeWithNullability: global::G.GenerateChatCompletionRequestFormat?,
-    IsAnyOf: false,
-    ConverterType: global::OpenApiGenerator.JsonConverters.GenerateChatCompletionRequestFormatJsonConverter
   },
   {
     CSharpType: global::G.Message?,

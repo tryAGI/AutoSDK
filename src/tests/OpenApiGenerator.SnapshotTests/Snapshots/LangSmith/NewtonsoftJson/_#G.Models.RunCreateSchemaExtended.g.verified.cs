@@ -25,7 +25,7 @@ namespace G
         /// Enum for run types.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RunCreateSchemaExtendedRunType RunType { get; set; } = default!;
+        public global::G.RunTypeEnum RunType { get; set; } = default!;
 
         /// <summary>
         /// 

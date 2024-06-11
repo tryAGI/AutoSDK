@@ -56,24 +56,22 @@ namespace G
                 DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
                 Converters =
                 {
-                    new global::OpenApiGenerator.JsonConverters.GenerateCompletionRequestFormatJsonConverter(),
-                    new global::OpenApiGenerator.JsonConverters.GenerateCompletionRequestFormatNullableJsonConverter(),
-                    new global::OpenApiGenerator.JsonConverters.GenerateChatCompletionRequestFormatJsonConverter(),
-                    new global::OpenApiGenerator.JsonConverters.GenerateChatCompletionRequestFormatNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ResponseFormatJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ResponseFormatNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.MessageRoleJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.MessageRoleNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CreateModelResponseStatusJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CreateModelResponseStatusNullableJsonConverter(),
-                    new global::OpenApiGenerator.JsonConverters.CreateModelStatusVariant1JsonConverter(),
-                    new global::OpenApiGenerator.JsonConverters.CreateModelStatusVariant1NullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.CreateModelStatusVariant2JsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.CreateModelStatusVariant2NullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.PullModelResponseStatusJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.PullModelResponseStatusNullableJsonConverter(),
-                    new global::OpenApiGenerator.JsonConverters.PullModelStatusVariant1JsonConverter(),
-                    new global::OpenApiGenerator.JsonConverters.PullModelStatusVariant1NullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.PullModelStatusVariant2JsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.PullModelStatusVariant2NullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.PushModelResponseStatusJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.PushModelResponseStatusNullableJsonConverter(),
-                    new global::OpenApiGenerator.JsonConverters.PushModelStatusVariant1JsonConverter(),
-                    new global::OpenApiGenerator.JsonConverters.PushModelStatusVariant1NullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.PushModelStatusVariant2JsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.PushModelStatusVariant2NullableJsonConverter(),
                 }
             };
         }

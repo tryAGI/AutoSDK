@@ -130,6 +130,8 @@ namespace G
                     new global::OpenApiGenerator.JsonConverters.ChatCompletionMessageToolCallTypeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ChatCompletionMessageToolCallChunkTypeJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ChatCompletionMessageToolCallChunkTypeNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ChatCompletionRoleJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.ChatCompletionRoleNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ChatCompletionResponseMessageRoleJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ChatCompletionResponseMessageRoleNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ChatCompletionStreamResponseDeltaRoleJsonConverter(),

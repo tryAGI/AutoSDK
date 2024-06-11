@@ -31,8 +31,8 @@ namespace G
         /// Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.GenerateChatCompletionRequestFormatJsonConverter))]
-        public global::G.GenerateChatCompletionRequestFormat? Format { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ResponseFormatJsonConverter))]
+        public global::G.ResponseFormat? Format { get; set; }
 
         /// <summary>
         /// Additional model parameters listed in the documentation for the Modelfile such as `temperature`.
