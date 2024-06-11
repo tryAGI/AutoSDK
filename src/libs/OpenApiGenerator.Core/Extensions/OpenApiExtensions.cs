@@ -173,6 +173,12 @@ public static class OpenApiExtensions
         return schema.Type == "string" && schema.Enum.Any();
     }
 
+    public static bool IsComponent(
+        this KeyValuePair<string, OpenApiSchema> schema)
+    {
+        return schema.Value.Reference?.HostDocument?.Components?.Schemas?.ContainsKey(schema.Key) == true;
+    }
+
     public static string[] Append(
         this string[] parents,
         KeyValuePair<string, OpenApiSchema> schema)

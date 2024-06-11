@@ -86,7 +86,7 @@ public static class Data
                 schema.Value.OneOf is { Count: >0 } ||
                 schema.Value.AllOf is { Count: >0 }
                     ? [
-                        ModelData.FromSchema(schema, settings),
+                        //ModelData.FromSchema(schema, settings),
                         .. ModelData.FromSchemas(schema.Value, settings, schema.Key)
                     ]
                     : new [] { ModelData.FromSchema(schema, settings) })
@@ -206,64 +206,67 @@ public static class Data
             .ToArray() : [];
         var anyOfs = allSchemas
             .Where(x => x.AnyOf is { Count: > 0 })
-            .Select(x => new AnyOfData("AnyOf", x.AnyOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, ImmutableArray<TypeData>.Empty))
+            .Select(x => new AnyOfData("AnyOf", x.AnyOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, string.Empty, ImmutableArray<TypeData>.Empty))
             .Concat(allSchemas
                 .Where(x => x.Items?.AnyOf is { Count: > 0 })
-                .Select(x => new AnyOfData("AnyOf", x.Items.AnyOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, ImmutableArray<TypeData>.Empty)))
+                .Select(x => new AnyOfData("AnyOf", x.Items.AnyOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, string.Empty, ImmutableArray<TypeData>.Empty)))
             .Distinct()
             .ToImmutableArray();
         var oneOfs = allSchemas
             .Where(x => x.OneOf is { Count: > 0 })
-            .Select(x => new AnyOfData("OneOf", x.OneOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, ImmutableArray<TypeData>.Empty))
+            .Select(x => new AnyOfData("OneOf", x.OneOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, string.Empty, ImmutableArray<TypeData>.Empty))
             .Concat(allSchemas
                 .Where(x => x.Items?.OneOf is { Count: > 0 })
-                .Select(x => new AnyOfData("OneOf", x.Items.OneOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, ImmutableArray<TypeData>.Empty)))
+                .Select(x => new AnyOfData("OneOf", x.Items.OneOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, string.Empty, ImmutableArray<TypeData>.Empty)))
             .Distinct()
             .ToImmutableArray();
         var allOfs = allSchemas
             .Where(x => x.AllOf is { Count: > 0 })
-            .Select(x => new AnyOfData("AllOf", x.AllOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, ImmutableArray<TypeData>.Empty))
+            .Select(x => new AnyOfData("AllOf", x.AllOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, string.Empty, ImmutableArray<TypeData>.Empty))
             .Concat(allSchemas
                 .Where(x => x.Items?.AllOf is { Count: > 0 })
-                .Select(x => new AnyOfData("AllOf", x.Items.AllOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, ImmutableArray<TypeData>.Empty)))
+                .Select(x => new AnyOfData("AllOf", x.Items.AllOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, string.Empty, ImmutableArray<TypeData>.Empty)))
             .Distinct()
             .ToImmutableArray();
-        // anyOfs = anyOfs
-        //     .Concat(includedSchemas
-        //         .Where(x => x.Value.AnyOf is { Count: >0 })
-        //         .Select(schema => new AnyOfData(
-        //             "AnyOf",
-        //             schema.Value.AnyOf.Count,
-        //             settings.JsonSerializerType,
-        //             isTrimming,
-        //             settings.Namespace,
-        //             schema.Key, 
-        //             schema.Value.AnyOf.Select((x, i) => TypeData.FromSchema(x.UseReferenceIdOrKey(schema.Key + $"Variant{i + 1}"), settings)).ToImmutableArray())))
-        //     .ToImmutableArray();
-        // oneOfs = oneOfs
-        //     .Concat(includedSchemas
-        //         .Where(x => x.Value.OneOf is { Count: >0 })
-        //         .Select(schema => new AnyOfData(
-        //             "OneOf",
-        //             schema.Value.OneOf.Count,
-        //             settings.JsonSerializerType,
-        //             isTrimming,
-        //             settings.Namespace,
-        //             schema.Key, 
-        //             schema.Value.OneOf.Select((x, i) => TypeData.FromSchema(x.UseReferenceIdOrKey(schema.Key + $"Variant{i + 1}"), settings)).ToImmutableArray())))
-        //     .ToImmutableArray();
-        // allOfs = allOfs
-        //     .Concat(includedSchemas
-        //         .Where(x => x.Value.AllOf is { Count: >0 })
-        //         .Select(schema => new AnyOfData(
-        //             "AllOf",
-        //             schema.Value.AllOf.Count,
-        //             settings.JsonSerializerType,
-        //             isTrimming,
-        //             settings.Namespace,
-        //             schema.Key, 
-        //             schema.Value.AllOf.Select((x, i) => TypeData.FromSchema(x.UseReferenceIdOrKey(schema.Key + $"Variant{i + 1}"), settings)).ToImmutableArray())))
-        //     .ToImmutableArray();
+        anyOfs = anyOfs
+            .Concat(includedSchemas
+                .Where(x => x.Value.AnyOf is { Count: >0 })
+                .Select(schema => new AnyOfData(
+                    "AnyOf",
+                    schema.Value.AnyOf.Count,
+                    settings.JsonSerializerType,
+                    isTrimming,
+                    settings.Namespace,
+                    schema.Key,
+                    schema.Value.GetSummary(),
+                    schema.Value.AnyOf.Select((x, i) => TypeData.FromSchema(x.UseReferenceIdOrKey(schema.Key + $"Variant{i + 1}"), settings)).ToImmutableArray())))
+            .ToImmutableArray();
+        oneOfs = oneOfs
+            .Concat(includedSchemas
+                .Where(x => x.Value.OneOf is { Count: >0 })
+                .Select(schema => new AnyOfData(
+                    "OneOf",
+                    schema.Value.OneOf.Count,
+                    settings.JsonSerializerType,
+                    isTrimming,
+                    settings.Namespace,
+                    schema.Key,
+                    schema.Value.GetSummary(),
+                    schema.Value.OneOf.Select((x, i) => TypeData.FromSchema(x.UseReferenceIdOrKey(schema.Key + $"Variant{i + 1}"), settings)).ToImmutableArray())))
+            .ToImmutableArray();
+        allOfs = allOfs
+            .Concat(includedSchemas
+                .Where(x => x.Value.AllOf is { Count: >0 })
+                .Select(schema => new AnyOfData(
+                    "AllOf",
+                    schema.Value.AllOf.Count,
+                    settings.JsonSerializerType,
+                    isTrimming,
+                    settings.Namespace,
+                    schema.Key,
+                    schema.Value.GetSummary(),
+                    schema.Value.AllOf.Select((x, i) => TypeData.FromSchema(x.UseReferenceIdOrKey(schema.Key + $"Variant{i + 1}"), settings)).ToImmutableArray())))
+            .ToImmutableArray();
 
         AnyOfData[] anyOfDatas =
         [

@@ -10,5 +10,6 @@ public readonly record struct AnyOfData(
     bool IsTrimming,
     string Namespace,
     string Name,
+    string Summary,
     ImmutableArray<TypeData> Types
 );

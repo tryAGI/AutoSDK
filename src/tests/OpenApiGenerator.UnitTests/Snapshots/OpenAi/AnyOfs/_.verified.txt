@@ -5,6 +5,7 @@
     IsTrimming: false,
     Namespace: System,
     Name: ,
+    Summary: ,
     Types: null
   },
   {
@@ -13,6 +14,7 @@
     IsTrimming: false,
     Namespace: System,
     Name: ,
+    Summary: ,
     Types: null
   },
   {
@@ -21,6 +23,7 @@
     IsTrimming: false,
     Namespace: System,
     Name: ,
+    Summary: ,
     Types: null
   },
   {
@@ -29,14 +32,7 @@
     IsTrimming: false,
     Namespace: System,
     Name: ,
-    Types: null
-  },
-  {
-    SubType: OneOf,
-    Count: 5,
-    IsTrimming: false,
-    Namespace: System,
-    Name: ,
+    Summary: ,
     Types: null
   },
   {
@@ -45,30 +41,16 @@
     IsTrimming: false,
     Namespace: System,
     Name: ,
+    Summary: ,
     Types: null
   },
   {
     SubType: OneOf,
-    Count: 6,
+    Count: 5,
     IsTrimming: false,
     Namespace: System,
     Name: ,
-    Types: null
-  },
-  {
-    SubType: OneOf,
-    Count: 9,
-    IsTrimming: false,
-    Namespace: System,
-    Name: ,
-    Types: null
-  },
-  {
-    SubType: OneOf,
-    Count: 7,
-    IsTrimming: false,
-    Namespace: System,
-    Name: ,
+    Summary: ,
     Types: null
   },
   {
@@ -77,6 +59,789 @@
     IsTrimming: false,
     Namespace: System,
     Name: ,
+    Summary: ,
     Types: null
+  },
+  {
+    SubType: OneOf,
+    Count: 2,
+    IsTrimming: false,
+    Namespace: G,
+    Name: ChatCompletionRequestMessageContentPart,
+    Summary: ,
+    Types: [
+      {
+        CSharpType: global::G.ChatCompletionRequestMessageContentPartText,
+        IsArray: false,
+        IsEnum: false,
+        Properties: [
+          type,
+          text
+        ],
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.ChatCompletionRequestMessageContentPartText,
+        CSharpTypeWithNullability: global::G.ChatCompletionRequestMessageContentPartText?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.ChatCompletionRequestMessageContentPartImage,
+        IsArray: false,
+        IsEnum: false,
+        Properties: [
+          type,
+          image_url
+        ],
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.ChatCompletionRequestMessageContentPartImage,
+        CSharpTypeWithNullability: global::G.ChatCompletionRequestMessageContentPartImage?,
+        IsAnyOf: false,
+        ConverterType: 
+      }
+    ]
+  },
+  {
+    SubType: OneOf,
+    Count: 5,
+    IsTrimming: false,
+    Namespace: G,
+    Name: ChatCompletionRequestMessage,
+    Summary: ,
+    Types: [
+      {
+        CSharpType: global::G.ChatCompletionRequestSystemMessage,
+        IsArray: false,
+        IsEnum: false,
+        Properties: [
+          content,
+          role,
+          name
+        ],
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.ChatCompletionRequestSystemMessage,
+        CSharpTypeWithNullability: global::G.ChatCompletionRequestSystemMessage?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.ChatCompletionRequestUserMessage,
+        IsArray: false,
+        IsEnum: false,
+        Properties: [
+          content,
+          role,
+          name
+        ],
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.ChatCompletionRequestUserMessage,
+        CSharpTypeWithNullability: global::G.ChatCompletionRequestUserMessage?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.ChatCompletionRequestAssistantMessage,
+        IsArray: false,
+        IsEnum: false,
+        Properties: [
+          content,
+          role,
+          name,
+          tool_calls,
+          function_call
+        ],
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.ChatCompletionRequestAssistantMessage,
+        CSharpTypeWithNullability: global::G.ChatCompletionRequestAssistantMessage?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.ChatCompletionRequestToolMessage,
+        IsArray: false,
+        IsEnum: false,
+        Properties: [
+          role,
+          content,
+          tool_call_id
+        ],
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.ChatCompletionRequestToolMessage,
+        CSharpTypeWithNullability: global::G.ChatCompletionRequestToolMessage?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.ChatCompletionRequestFunctionMessage,
+        IsArray: false,
+        IsEnum: false,
+        Properties: [
+          role,
+          content,
+          name
+        ],
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: true,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.ChatCompletionRequestFunctionMessage,
+        CSharpTypeWithNullability: global::G.ChatCompletionRequestFunctionMessage?,
+        IsAnyOf: false,
+        ConverterType: 
+      }
+    ]
+  },
+  {
+    SubType: OneOf,
+    Count: 2,
+    IsTrimming: false,
+    Namespace: G,
+    Name: ChatCompletionToolChoiceOption,
+    Summary:
+Controls which (if any) tool is called by the model.
+`none` means the model will not call any tool and instead generates a message.
+`auto` means the model can pick between generating a message or calling one or more tools.
+`required` means the model must call one or more tools.
+Specifying a particular tool via `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.
+
+`none` is the default when no tools are present. `auto` is the default if tools are present.
+,
+    Types: [
+      {
+        CSharpType: global::G.ChatCompletionToolChoiceOptionVariant1,
+        IsArray: false,
+        IsEnum: true,
+        Properties: [
+          None,
+          Auto,
+          Required
+        ],
+        EnumValues: [
+          none,
+          auto,
+          required
+        ],
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.ChatCompletionToolChoiceOptionVariant1,
+        CSharpTypeWithNullability: global::G.ChatCompletionToolChoiceOptionVariant1?,
+        IsAnyOf: false,
+        ConverterType: global::OpenApiGenerator.JsonConverters.ChatCompletionToolChoiceOptionVariant1JsonConverter
+      },
+      {
+        CSharpType: global::G.ChatCompletionNamedToolChoice,
+        IsArray: false,
+        IsEnum: false,
+        Properties: [
+          type,
+          function
+        ],
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.ChatCompletionNamedToolChoice,
+        CSharpTypeWithNullability: global::G.ChatCompletionNamedToolChoice?,
+        IsAnyOf: false,
+        ConverterType: 
+      }
+    ]
+  },
+  {
+    SubType: OneOf,
+    Count: 2,
+    IsTrimming: false,
+    Namespace: G,
+    Name: AssistantsApiResponseFormatOption,
+    Summary:
+Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
+
+Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.
+
+**Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
+,
+    Types: [
+      {
+        CSharpType: global::G.AssistantsApiResponseFormatOptionVariant1,
+        IsArray: false,
+        IsEnum: true,
+        Properties: [
+          None,
+          Auto
+        ],
+        EnumValues: [
+          none,
+          auto
+        ],
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.AssistantsApiResponseFormatOptionVariant1,
+        CSharpTypeWithNullability: global::G.AssistantsApiResponseFormatOptionVariant1?,
+        IsAnyOf: false,
+        ConverterType: global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatOptionVariant1JsonConverter
+      },
+      {
+        CSharpType: global::G.AssistantsApiResponseFormat,
+        IsArray: false,
+        IsEnum: false,
+        Properties: [
+          type
+        ],
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.AssistantsApiResponseFormat,
+        CSharpTypeWithNullability: global::G.AssistantsApiResponseFormat?,
+        IsAnyOf: false,
+        ConverterType: 
+      }
+    ]
+  },
+  {
+    SubType: OneOf,
+    Count: 2,
+    IsTrimming: false,
+    Namespace: G,
+    Name: AssistantsApiToolChoiceOption,
+    Summary:
+Controls which (if any) tool is called by the model.
+`none` means the model will not call any tools and instead generates a message.
+`auto` is the default value and means the model can pick between generating a message or calling one or more tools.
+`required` means the model must call one or more tools before responding to the user.
+Specifying a particular tool like `{"type": "file_search"}` or `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.
+,
+    Types: [
+      {
+        CSharpType: global::G.AssistantsApiToolChoiceOptionVariant1,
+        IsArray: false,
+        IsEnum: true,
+        Properties: [
+          None,
+          Auto,
+          Required
+        ],
+        EnumValues: [
+          none,
+          auto,
+          required
+        ],
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.AssistantsApiToolChoiceOptionVariant1,
+        CSharpTypeWithNullability: global::G.AssistantsApiToolChoiceOptionVariant1?,
+        IsAnyOf: false,
+        ConverterType: global::OpenApiGenerator.JsonConverters.AssistantsApiToolChoiceOptionVariant1JsonConverter
+      },
+      {
+        CSharpType: global::G.AssistantsNamedToolChoice,
+        IsArray: false,
+        IsEnum: false,
+        Properties: [
+          type,
+          function
+        ],
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.AssistantsNamedToolChoice,
+        CSharpTypeWithNullability: global::G.AssistantsNamedToolChoice?,
+        IsAnyOf: false,
+        ConverterType: 
+      }
+    ]
+  },
+  {
+    SubType: OneOf,
+    Count: 6,
+    IsTrimming: false,
+    Namespace: G,
+    Name: AssistantStreamEvent,
+    Summary:
+Represents an event emitted when streaming a Run.
+
+Each event in a server-sent events stream has an `event` and `data` property:
+
+```
+event: thread.created
+data: {"id": "thread_123", "object": "thread", ...}
+```
+
+We emit events whenever a new object is created, transitions to a new state, or is being
+streamed in parts (deltas). For example, we emit `thread.run.created` when a new run
+is created, `thread.run.completed` when a run completes, and so on. When an Assistant chooses
+to create a message during a run, we emit a `thread.message.created event`, a
+`thread.message.in_progress` event, many `thread.message.delta` events, and finally a
+`thread.message.completed` event.
+
+We may add additional events over time, so we recommend handling unknown events gracefully
+in your code. See the [Assistants API quickstart](/docs/assistants/overview) to learn how to
+integrate the Assistants API with streaming.
+,
+    Types: [
+      {
+        CSharpType: global::G.ThreadStreamEvent,
+        IsArray: false,
+        IsEnum: false,
+        OneOfCount: 1,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.ThreadStreamEvent,
+        CSharpTypeWithNullability: global::G.ThreadStreamEvent?,
+        IsAnyOf: true,
+        ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory1
+      },
+      {
+        CSharpType: global::G.RunStreamEvent,
+        IsArray: false,
+        IsEnum: false,
+        OneOfCount: 9,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.RunStreamEvent,
+        CSharpTypeWithNullability: global::G.RunStreamEvent?,
+        IsAnyOf: true,
+        ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory9
+      },
+      {
+        CSharpType: global::G.RunStepStreamEvent,
+        IsArray: false,
+        IsEnum: false,
+        OneOfCount: 7,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.RunStepStreamEvent,
+        CSharpTypeWithNullability: global::G.RunStepStreamEvent?,
+        IsAnyOf: true,
+        ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory7
+      },
+      {
+        CSharpType: global::G.MessageStreamEvent,
+        IsArray: false,
+        IsEnum: false,
+        OneOfCount: 5,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.MessageStreamEvent,
+        CSharpTypeWithNullability: global::G.MessageStreamEvent?,
+        IsAnyOf: true,
+        ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory5
+      },
+      {
+        CSharpType: global::G.ErrorEvent,
+        IsArray: false,
+        IsEnum: false,
+        Properties: [
+          event,
+          data
+        ],
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.ErrorEvent,
+        CSharpTypeWithNullability: global::G.ErrorEvent?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.DoneEvent,
+        IsArray: false,
+        IsEnum: false,
+        Properties: [
+          event,
+          data
+        ],
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.DoneEvent,
+        CSharpTypeWithNullability: global::G.DoneEvent?,
+        IsAnyOf: false,
+        ConverterType: 
+      }
+    ]
+  },
+  {
+    SubType: OneOf,
+    Count: 1,
+    IsTrimming: false,
+    Namespace: G,
+    Name: ThreadStreamEvent,
+    Summary: ,
+    Types: [
+      {
+        CSharpType: global::G.ThreadStreamEventVariant1,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.ThreadStreamEventVariant1,
+        CSharpTypeWithNullability: global::G.ThreadStreamEventVariant1?,
+        IsAnyOf: false,
+        ConverterType: 
+      }
+    ]
+  },
+  {
+    SubType: OneOf,
+    Count: 9,
+    IsTrimming: false,
+    Namespace: G,
+    Name: RunStreamEvent,
+    Summary: ,
+    Types: [
+      {
+        CSharpType: global::G.RunStreamEventVariant1,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.RunStreamEventVariant1,
+        CSharpTypeWithNullability: global::G.RunStreamEventVariant1?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.RunStreamEventVariant2,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.RunStreamEventVariant2,
+        CSharpTypeWithNullability: global::G.RunStreamEventVariant2?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.RunStreamEventVariant3,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.RunStreamEventVariant3,
+        CSharpTypeWithNullability: global::G.RunStreamEventVariant3?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.RunStreamEventVariant4,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.RunStreamEventVariant4,
+        CSharpTypeWithNullability: global::G.RunStreamEventVariant4?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.RunStreamEventVariant5,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.RunStreamEventVariant5,
+        CSharpTypeWithNullability: global::G.RunStreamEventVariant5?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.RunStreamEventVariant6,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.RunStreamEventVariant6,
+        CSharpTypeWithNullability: global::G.RunStreamEventVariant6?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.RunStreamEventVariant7,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.RunStreamEventVariant7,
+        CSharpTypeWithNullability: global::G.RunStreamEventVariant7?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.RunStreamEventVariant8,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.RunStreamEventVariant8,
+        CSharpTypeWithNullability: global::G.RunStreamEventVariant8?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.RunStreamEventVariant9,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.RunStreamEventVariant9,
+        CSharpTypeWithNullability: global::G.RunStreamEventVariant9?,
+        IsAnyOf: false,
+        ConverterType: 
+      }
+    ]
+  },
+  {
+    SubType: OneOf,
+    Count: 7,
+    IsTrimming: false,
+    Namespace: G,
+    Name: RunStepStreamEvent,
+    Summary: ,
+    Types: [
+      {
+        CSharpType: global::G.RunStepStreamEventVariant1,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.RunStepStreamEventVariant1,
+        CSharpTypeWithNullability: global::G.RunStepStreamEventVariant1?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.RunStepStreamEventVariant2,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.RunStepStreamEventVariant2,
+        CSharpTypeWithNullability: global::G.RunStepStreamEventVariant2?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.RunStepStreamEventVariant3,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.RunStepStreamEventVariant3,
+        CSharpTypeWithNullability: global::G.RunStepStreamEventVariant3?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.RunStepStreamEventVariant4,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.RunStepStreamEventVariant4,
+        CSharpTypeWithNullability: global::G.RunStepStreamEventVariant4?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.RunStepStreamEventVariant5,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.RunStepStreamEventVariant5,
+        CSharpTypeWithNullability: global::G.RunStepStreamEventVariant5?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.RunStepStreamEventVariant6,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.RunStepStreamEventVariant6,
+        CSharpTypeWithNullability: global::G.RunStepStreamEventVariant6?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.RunStepStreamEventVariant7,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.RunStepStreamEventVariant7,
+        CSharpTypeWithNullability: global::G.RunStepStreamEventVariant7?,
+        IsAnyOf: false,
+        ConverterType: 
+      }
+    ]
+  },
+  {
+    SubType: OneOf,
+    Count: 5,
+    IsTrimming: false,
+    Namespace: G,
+    Name: MessageStreamEvent,
+    Summary: ,
+    Types: [
+      {
+        CSharpType: global::G.MessageStreamEventVariant1,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.MessageStreamEventVariant1,
+        CSharpTypeWithNullability: global::G.MessageStreamEventVariant1?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.MessageStreamEventVariant2,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.MessageStreamEventVariant2,
+        CSharpTypeWithNullability: global::G.MessageStreamEventVariant2?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.MessageStreamEventVariant3,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.MessageStreamEventVariant3,
+        CSharpTypeWithNullability: global::G.MessageStreamEventVariant3?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.MessageStreamEventVariant4,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.MessageStreamEventVariant4,
+        CSharpTypeWithNullability: global::G.MessageStreamEventVariant4?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.MessageStreamEventVariant5,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.MessageStreamEventVariant5,
+        CSharpTypeWithNullability: global::G.MessageStreamEventVariant5?,
+        IsAnyOf: false,
+        ConverterType: 
+      }
+    ]
   }
 ]

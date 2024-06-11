@@ -10,7 +10,7 @@ public static partial class Sources
         AnyOfData anyOfData,
         CancellationToken cancellationToken = default)
     {
-        var (subType, count, _, _, @namespace, className, fixedTypes) = anyOfData;
+        var (subType, count, _, _, @namespace, className, summary, fixedTypes) = anyOfData;
         var types = $"<{string.Join(", ", Enumerable.Range(1, count).Select(x => $"T{x}"))}>";
         var validation = subType switch
         {
@@ -62,7 +62,7 @@ public static partial class Sources
 
 namespace {@namespace}
 {{
-    {string.Empty.ToXmlDocumentationSummary(level: 4)}
+    {summary.ToXmlDocumentationSummary(level: 4)}
     public readonly struct {className} : global::System.IEquatable<{className}>
     {{
 {allTypes.Select(x => $@"

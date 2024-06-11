@@ -1635,23 +1635,6 @@ or `content_filter` if content was omitted due to a flag from our content filter
     FileNameWithoutExtension: G.Models.Object
   },
   {
-    Id: ChatCompletionRequestMessageContentPart,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    Properties: null,
-    Summary: ,
-    IsDeprecated: false,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: ChatCompletionRequestMessageContentPart,
-    ClassName: ChatCompletionRequestMessageContentPart,
-    GlobalClassName: global::G.ChatCompletionRequestMessageContentPart,
-    ExternalClassName: ChatCompletionRequestMessageContentPart,
-    FileNameWithoutExtension: G.Models.ChatCompletionRequestMessageContentPart
-  },
-  {
     Id: ChatCompletionRequestMessageContentPartImage,
     AddTypeName: false,
     Parents: null,
@@ -2057,23 +2040,6 @@ Specifies the detail level of the image. Learn more in the [Vision guide](/docs/
     GlobalClassName: global::G.Type,
     ExternalClassName: Type,
     FileNameWithoutExtension: G.Models.Type
-  },
-  {
-    Id: ChatCompletionRequestMessage,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    Properties: null,
-    Summary: ,
-    IsDeprecated: false,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: ChatCompletionRequestMessage,
-    ClassName: ChatCompletionRequestMessage,
-    GlobalClassName: global::G.ChatCompletionRequestMessage,
-    ExternalClassName: ChatCompletionRequestMessage,
-    FileNameWithoutExtension: G.Models.ChatCompletionRequestMessage
   },
   {
     Id: ChatCompletionRequestSystemMessage,
@@ -3279,31 +3245,6 @@ Omitting `parameters` defines a function with an empty parameter list.,
     GlobalClassName: global::G.FunctionObject,
     ExternalClassName: FunctionObject,
     FileNameWithoutExtension: G.Models.FunctionObject
-  },
-  {
-    Id: ChatCompletionToolChoiceOption,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    Properties: null,
-    Summary:
-Controls which (if any) tool is called by the model.
-`none` means the model will not call any tool and instead generates a message.
-`auto` means the model can pick between generating a message or calling one or more tools.
-`required` means the model must call one or more tools.
-Specifying a particular tool via `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.
-
-`none` is the default when no tools are present. `auto` is the default if tools are present.
-,
-    IsDeprecated: false,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: ChatCompletionToolChoiceOption,
-    ClassName: ChatCompletionToolChoiceOption,
-    GlobalClassName: global::G.ChatCompletionToolChoiceOption,
-    ExternalClassName: ChatCompletionToolChoiceOption,
-    FileNameWithoutExtension: G.Models.ChatCompletionToolChoiceOption
   },
   {
     Id: ChatCompletionToolChoiceOptionVariant1,
@@ -18000,29 +17941,6 @@ The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine
     FileNameWithoutExtension: G.Models.RunStepCompletionUsage
   },
   {
-    Id: AssistantsApiResponseFormatOption,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    Properties: null,
-    Summary:
-Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
-
-Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.
-
-**Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
-,
-    IsDeprecated: false,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: AssistantsApiResponseFormatOption,
-    ClassName: AssistantsApiResponseFormatOption,
-    GlobalClassName: global::G.AssistantsApiResponseFormatOption,
-    ExternalClassName: AssistantsApiResponseFormatOption,
-    FileNameWithoutExtension: G.Models.AssistantsApiResponseFormatOption
-  },
-  {
     Id: AssistantsApiResponseFormatOptionVariant1,
     AddTypeName: false,
     Parents: null,
@@ -21259,29 +21177,6 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
     GlobalClassName: global::G.Type,
     ExternalClassName: Type,
     FileNameWithoutExtension: G.Models.Type
-  },
-  {
-    Id: AssistantsApiToolChoiceOption,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    Properties: null,
-    Summary:
-Controls which (if any) tool is called by the model.
-`none` means the model will not call any tools and instead generates a message.
-`auto` is the default value and means the model can pick between generating a message or calling one or more tools.
-`required` means the model must call one or more tools before responding to the user.
-Specifying a particular tool like `{"type": "file_search"}` or `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.
-,
-    IsDeprecated: false,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: AssistantsApiToolChoiceOption,
-    ClassName: AssistantsApiToolChoiceOption,
-    GlobalClassName: global::G.AssistantsApiToolChoiceOption,
-    ExternalClassName: AssistantsApiToolChoiceOption,
-    FileNameWithoutExtension: G.Models.AssistantsApiToolChoiceOption
   },
   {
     Id: AssistantsApiToolChoiceOptionVariant1,
@@ -38094,60 +37989,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     FileNameWithoutExtension: G.Models.CreateVectorStoreFileBatchRequest
   },
   {
-    Id: AssistantStreamEvent,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    Properties: null,
-    Summary:
-Represents an event emitted when streaming a Run.
-
-Each event in a server-sent events stream has an `event` and `data` property:
-
-```
-event: thread.created
-data: {"id": "thread_123", "object": "thread", ...}
-```
-
-We emit events whenever a new object is created, transitions to a new state, or is being
-streamed in parts (deltas). For example, we emit `thread.run.created` when a new run
-is created, `thread.run.completed` when a run completes, and so on. When an Assistant chooses
-to create a message during a run, we emit a `thread.message.created event`, a
-`thread.message.in_progress` event, many `thread.message.delta` events, and finally a
-`thread.message.completed` event.
-
-We may add additional events over time, so we recommend handling unknown events gracefully
-in your code. See the [Assistants API quickstart](/docs/assistants/overview) to learn how to
-integrate the Assistants API with streaming.
-,
-    IsDeprecated: false,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: AssistantStreamEvent,
-    ClassName: AssistantStreamEvent,
-    GlobalClassName: global::G.AssistantStreamEvent,
-    ExternalClassName: AssistantStreamEvent,
-    FileNameWithoutExtension: G.Models.AssistantStreamEvent
-  },
-  {
-    Id: ThreadStreamEvent,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    Properties: null,
-    Summary: ,
-    IsDeprecated: false,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: ThreadStreamEvent,
-    ClassName: ThreadStreamEvent,
-    GlobalClassName: global::G.ThreadStreamEvent,
-    ExternalClassName: ThreadStreamEvent,
-    FileNameWithoutExtension: G.Models.ThreadStreamEvent
-  },
-  {
     Id: ThreadStreamEventVariant1,
     AddTypeName: false,
     Parents: null,
@@ -38268,23 +38109,6 @@ integrate the Assistants API with streaming.
     GlobalClassName: global::G.Event,
     ExternalClassName: Event,
     FileNameWithoutExtension: G.Models.Event
-  },
-  {
-    Id: RunStreamEvent,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    Properties: null,
-    Summary: ,
-    IsDeprecated: false,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: RunStreamEvent,
-    ClassName: RunStreamEvent,
-    GlobalClassName: global::G.RunStreamEvent,
-    ExternalClassName: RunStreamEvent,
-    FileNameWithoutExtension: G.Models.RunStreamEvent
   },
   {
     Id: RunStreamEventVariant1,
@@ -39574,23 +39398,6 @@ integrate the Assistants API with streaming.
     FileNameWithoutExtension: G.Models.Event
   },
   {
-    Id: RunStepStreamEvent,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    Properties: null,
-    Summary: ,
-    IsDeprecated: false,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: RunStepStreamEvent,
-    ClassName: RunStepStreamEvent,
-    GlobalClassName: global::G.RunStepStreamEvent,
-    ExternalClassName: RunStepStreamEvent,
-    FileNameWithoutExtension: G.Models.RunStepStreamEvent
-  },
-  {
     Id: RunStepStreamEventVariant1,
     AddTypeName: false,
     Parents: null,
@@ -40521,23 +40328,6 @@ Represents a step in execution of a run.
     GlobalClassName: global::G.Event,
     ExternalClassName: Event,
     FileNameWithoutExtension: G.Models.Event
-  },
-  {
-    Id: MessageStreamEvent,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    Properties: null,
-    Summary: ,
-    IsDeprecated: false,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: MessageStreamEvent,
-    ClassName: MessageStreamEvent,
-    GlobalClassName: global::G.MessageStreamEvent,
-    ExternalClassName: MessageStreamEvent,
-    FileNameWithoutExtension: G.Models.MessageStreamEvent
   },
   {
     Id: MessageStreamEventVariant1,

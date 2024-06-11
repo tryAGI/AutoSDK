@@ -5,6 +5,7 @@
     IsTrimming: false,
     Namespace: System,
     Name: ,
+    Summary: ,
     Types: null
   },
   {
@@ -13,6 +14,7 @@
     IsTrimming: false,
     Namespace: System,
     Name: ,
+    Summary: ,
     Types: null
   },
   {
@@ -21,6 +23,7 @@
     IsTrimming: false,
     Namespace: System,
     Name: ,
+    Summary: ,
     Types: null
   }
 ]

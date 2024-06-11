@@ -2791,23 +2791,6 @@ If `false` the response will be returned as a single response object, otherwise 
     FileNameWithoutExtension: G.Models.Status
   },
   {
-    Id: CreateModelStatus,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    Properties: null,
-    Summary: Status creating the model,
-    IsDeprecated: false,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: CreateModelStatus,
-    ClassName: CreateModelStatus,
-    GlobalClassName: global::G.CreateModelStatus,
-    ExternalClassName: CreateModelStatus,
-    FileNameWithoutExtension: G.Models.CreateModelStatus
-  },
-  {
     Id: CreateModelStatusVariant2,
     AddTypeName: false,
     Parents: null,
@@ -4110,25 +4093,6 @@ The number of files to be downloaded depends on the number of layers specified i
     FileNameWithoutExtension: G.Models.Status
   },
   {
-    Id: PullModelStatus,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    Properties: null,
-    Summary:
-Status pulling the model.
-<br/>Example: pulling manifest,
-    IsDeprecated: false,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: PullModelStatus,
-    ClassName: PullModelStatus,
-    GlobalClassName: global::G.PullModelStatus,
-    ExternalClassName: PullModelStatus,
-    FileNameWithoutExtension: G.Models.PullModelStatus
-  },
-  {
     Id: PullModelStatusVariant2,
     AddTypeName: false,
     Parents: null,
@@ -4695,23 +4659,6 @@ Total bytes transferred.
     GlobalClassName: global::G.Status,
     ExternalClassName: Status,
     FileNameWithoutExtension: G.Models.Status
-  },
-  {
-    Id: PushModelStatus,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    Properties: null,
-    Summary: Status pushing the model.,
-    IsDeprecated: false,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: PushModelStatus,
-    ClassName: PushModelStatus,
-    GlobalClassName: global::G.PushModelStatus,
-    ExternalClassName: PushModelStatus,
-    FileNameWithoutExtension: G.Models.PushModelStatus
   },
   {
     Id: PushModelStatusVariant2,

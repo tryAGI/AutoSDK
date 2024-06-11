@@ -5,6 +5,155 @@
     IsTrimming: true,
     Namespace: System,
     Name: ,
+    Summary: ,
     Types: null
+  },
+  {
+    SubType: AnyOf,
+    Count: 2,
+    IsTrimming: true,
+    Namespace: G,
+    Name: CreateModelStatus,
+    Summary: Status creating the model,
+    Types: [
+      {
+        CSharpType: string,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: true,
+        CSharpTypeWithoutNullability: string,
+        CSharpTypeWithNullability: string?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.CreateModelStatusVariant2,
+        IsArray: false,
+        IsEnum: true,
+        Properties: [
+          CreatingSystemLayer,
+          ParsingModelfile,
+          Success
+        ],
+        EnumValues: [
+          creating system layer,
+          parsing modelfile,
+          success
+        ],
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: true,
+        CSharpTypeWithoutNullability: global::G.CreateModelStatusVariant2,
+        CSharpTypeWithNullability: global::G.CreateModelStatusVariant2?,
+        IsAnyOf: false,
+        ConverterType: global::OpenApiGenerator.JsonConverters.CreateModelStatusVariant2JsonConverter
+      }
+    ]
+  },
+  {
+    SubType: AnyOf,
+    Count: 2,
+    IsTrimming: true,
+    Namespace: G,
+    Name: PullModelStatus,
+    Summary:
+Status pulling the model.
+<br/>Example: pulling manifest,
+    Types: [
+      {
+        CSharpType: string,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: true,
+        CSharpTypeWithoutNullability: string,
+        CSharpTypeWithNullability: string?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.PullModelStatusVariant2,
+        IsArray: false,
+        IsEnum: true,
+        Properties: [
+          PullingManifest,
+          DownloadingDigestname,
+          VerifyingSha256Digest,
+          WritingManifest,
+          RemovingAnyUnusedLayers,
+          Success
+        ],
+        EnumValues: [
+          pulling manifest,
+          downloading digestname,
+          verifying sha256 digest,
+          writing manifest,
+          removing any unused layers,
+          success
+        ],
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: true,
+        CSharpTypeWithoutNullability: global::G.PullModelStatusVariant2,
+        CSharpTypeWithNullability: global::G.PullModelStatusVariant2?,
+        IsAnyOf: false,
+        ConverterType: global::OpenApiGenerator.JsonConverters.PullModelStatusVariant2JsonConverter
+      }
+    ]
+  },
+  {
+    SubType: AnyOf,
+    Count: 2,
+    IsTrimming: true,
+    Namespace: G,
+    Name: PushModelStatus,
+    Summary: Status pushing the model.,
+    Types: [
+      {
+        CSharpType: string,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: true,
+        CSharpTypeWithoutNullability: string,
+        CSharpTypeWithNullability: string?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.PushModelStatusVariant2,
+        IsArray: false,
+        IsEnum: true,
+        Properties: [
+          RetrievingManifest,
+          StartingUpload,
+          PushingManifest,
+          Success
+        ],
+        EnumValues: [
+          retrieving manifest,
+          starting upload,
+          pushing manifest,
+          success
+        ],
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: true,
+        CSharpTypeWithoutNullability: global::G.PushModelStatusVariant2,
+        CSharpTypeWithNullability: global::G.PushModelStatusVariant2?,
+        IsAnyOf: false,
+        ConverterType: global::OpenApiGenerator.JsonConverters.PushModelStatusVariant2JsonConverter
+      }
+    ]
   }
 ]

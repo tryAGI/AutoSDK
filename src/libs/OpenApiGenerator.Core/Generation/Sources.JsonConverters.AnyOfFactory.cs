@@ -9,7 +9,7 @@ public static partial class Sources
         AnyOfData anyOfData,
         CancellationToken cancellationToken = default)
     {
-        var (subType, count, jsonSerializerType, _, _, _, fixedTypes) = anyOfData;
+        var (subType, count, jsonSerializerType, _, _, _, _, fixedTypes) = anyOfData;
         if (jsonSerializerType == JsonSerializerType.NewtonsoftJson ||
             !fixedTypes.IsEmpty)
         {
