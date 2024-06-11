@@ -1652,122 +1652,6 @@ or `content_filter` if content was omitted due to a flag from our content filter
     FileNameWithoutExtension: G.Models.ChatCompletionRequestMessageContentPart
   },
   {
-    Id: ChatCompletionRequestMessageContentPartText,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    Properties: [
-      {
-        Id: type,
-        Name: Type,
-        Type: {
-          CSharpType: global::G.ChatCompletionRequestMessageContentPartTextType,
-          IsArray: false,
-          IsEnum: true,
-          Properties: [
-            Text
-          ],
-          EnumValues: [
-            text
-          ],
-          Namespace: G,
-          IsDeprecated: false,
-          GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::G.ChatCompletionRequestMessageContentPartTextType,
-          CSharpTypeWithNullability: global::G.ChatCompletionRequestMessageContentPartTextType?,
-          IsAnyOf: false,
-          ConverterType: global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartTextTypeJsonConverter
-        },
-        IsRequired: true,
-        IsDeprecated: false,
-        Summary: The type of the content part.,
-        ConverterType: global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartTextTypeJsonConverter,
-        ParameterName: type,
-        ArgumentName: type,
-        ParameterDefaultValue: default
-      },
-      {
-        Id: text,
-        Name: Text,
-        Type: {
-          CSharpType: string,
-          IsArray: false,
-          IsEnum: false,
-          Properties: null,
-          EnumValues: null,
-          Namespace: G,
-          IsDeprecated: false,
-          GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: string,
-          CSharpTypeWithNullability: string?,
-          IsAnyOf: false,
-          ConverterType: 
-        },
-        IsRequired: true,
-        IsDeprecated: false,
-        Summary: The text content.,
-        ConverterType: ,
-        ParameterName: text,
-        ArgumentName: text,
-        ParameterDefaultValue: default
-      }
-    ],
-    Summary: ,
-    IsDeprecated: false,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: ChatCompletionRequestMessageContentPartText,
-    ClassName: ChatCompletionRequestMessageContentPartText,
-    GlobalClassName: global::G.ChatCompletionRequestMessageContentPartText,
-    ExternalClassName: ChatCompletionRequestMessageContentPartText,
-    FileNameWithoutExtension: G.Models.ChatCompletionRequestMessageContentPartText
-  },
-  {
-    Id: type,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    Style: Enumeration,
-    Properties: [
-      {
-        Id: text,
-        Name: Text,
-        Type: {
-          CSharpType: ,
-          IsArray: false,
-          IsEnum: false,
-          Properties: null,
-          EnumValues: null,
-          Namespace: ,
-          IsDeprecated: false,
-          GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: ,
-          CSharpTypeWithNullability: ?,
-          IsAnyOf: false,
-          ConverterType: 
-        },
-        IsRequired: false,
-        IsDeprecated: false,
-        Summary: ,
-        ConverterType: ,
-        ParameterName: text,
-        ArgumentName: text,
-        ParameterDefaultValue: default
-      }
-    ],
-    Summary: The type of the content part.,
-    IsDeprecated: false,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: Type,
-    ClassName: Type,
-    GlobalClassName: global::G.Type,
-    ExternalClassName: Type,
-    FileNameWithoutExtension: G.Models.Type
-  },
-  {
     Id: ChatCompletionRequestMessageContentPartImage,
     AddTypeName: false,
     Parents: null,
@@ -2045,6 +1929,122 @@ Specifies the detail level of the image. Learn more in the [Vision guide](/docs/
         ConverterType: ,
         ParameterName: imageUrl,
         ArgumentName: imageUrl,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: The type of the content part.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Type,
+    ClassName: Type,
+    GlobalClassName: global::G.Type,
+    ExternalClassName: Type,
+    FileNameWithoutExtension: G.Models.Type
+  },
+  {
+    Id: ChatCompletionRequestMessageContentPartText,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: type,
+        Name: Type,
+        Type: {
+          CSharpType: global::G.ChatCompletionRequestMessageContentPartTextType,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            Text
+          ],
+          EnumValues: [
+            text
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.ChatCompletionRequestMessageContentPartTextType,
+          CSharpTypeWithNullability: global::G.ChatCompletionRequestMessageContentPartTextType?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartTextTypeJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: The type of the content part.,
+        ConverterType: global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartTextTypeJsonConverter,
+        ParameterName: type,
+        ArgumentName: type,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: text,
+        Name: Text,
+        Type: {
+          CSharpType: string,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: The text content.,
+        ConverterType: ,
+        ParameterName: text,
+        ArgumentName: text,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ChatCompletionRequestMessageContentPartText,
+    ClassName: ChatCompletionRequestMessageContentPartText,
+    GlobalClassName: global::G.ChatCompletionRequestMessageContentPartText,
+    ExternalClassName: ChatCompletionRequestMessageContentPartText,
+    FileNameWithoutExtension: G.Models.ChatCompletionRequestMessageContentPartText
+  },
+  {
+    Id: type,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: text,
+        Name: Text,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: text,
+        ArgumentName: text,
         ParameterDefaultValue: default
       }
     ],
@@ -37758,6 +37758,128 @@ integrate the Assistants API with streaming.
     FileNameWithoutExtension: G.Models.ThreadStreamEvent
   },
   {
+    Id: ThreadStreamEventVariant1,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: event,
+        Name: Event,
+        Type: {
+          CSharpType: global::G.ThreadStreamEventVariant1Event,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            ThreadCreated
+          ],
+          EnumValues: [
+            thread.created
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.ThreadStreamEventVariant1Event,
+          CSharpTypeWithNullability: global::G.ThreadStreamEventVariant1Event?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.ThreadStreamEventVariant1EventJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: global::OpenApiGenerator.JsonConverters.ThreadStreamEventVariant1EventJsonConverter,
+        ParameterName: @event,
+        ArgumentName: @event,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: data,
+        Name: Data,
+        Type: {
+          CSharpType: global::G.ThreadObject,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            id,
+            object,
+            created_at,
+            tool_resources,
+            metadata
+          ],
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.ThreadObject,
+          CSharpTypeWithNullability: global::G.ThreadObject?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: Represents a thread that contains [messages](/docs/api-reference/messages).,
+        ConverterType: ,
+        ParameterName: data,
+        ArgumentName: data,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Occurs when a new [thread](/docs/api-reference/threads/object) is created.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ThreadStreamEventVariant1,
+    ClassName: ThreadStreamEventVariant1,
+    GlobalClassName: global::G.ThreadStreamEventVariant1,
+    ExternalClassName: ThreadStreamEventVariant1,
+    FileNameWithoutExtension: G.Models.ThreadStreamEventVariant1
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.created,
+        Name: ThreadCreated,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadCreated,
+        ArgumentName: threadCreated,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
+  },
+  {
     Id: RunStreamEvent,
     AddTypeName: false,
     Parents: null,
@@ -37773,6 +37895,1293 @@ integrate the Assistants API with streaming.
     GlobalClassName: global::G.RunStreamEvent,
     ExternalClassName: RunStreamEvent,
     FileNameWithoutExtension: G.Models.RunStreamEvent
+  },
+  {
+    Id: RunStreamEventVariant1,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: event,
+        Name: Event,
+        Type: {
+          CSharpType: global::G.RunStreamEventVariant1Event,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            ThreadRunCreated
+          ],
+          EnumValues: [
+            thread.run.created
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunStreamEventVariant1Event,
+          CSharpTypeWithNullability: global::G.RunStreamEventVariant1Event?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant1EventJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant1EventJsonConverter,
+        ParameterName: @event,
+        ArgumentName: @event,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: data,
+        Name: Data,
+        Type: {
+          CSharpType: global::G.RunObject,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            id,
+            object,
+            created_at,
+            thread_id,
+            assistant_id,
+            status,
+            required_action,
+            last_error,
+            expires_at,
+            started_at,
+            cancelled_at,
+            failed_at,
+            completed_at,
+            incomplete_details,
+            model,
+            instructions,
+            tools,
+            metadata,
+            usage,
+            temperature,
+            top_p,
+            max_prompt_tokens,
+            max_completion_tokens,
+            truncation_strategy,
+            tool_choice,
+            response_format
+          ],
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunObject,
+          CSharpTypeWithNullability: global::G.RunObject?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: Represents an execution run on a [thread](/docs/api-reference/threads).,
+        ConverterType: ,
+        ParameterName: data,
+        ArgumentName: data,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Occurs when a new [run](/docs/api-reference/runs/object) is created.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: RunStreamEventVariant1,
+    ClassName: RunStreamEventVariant1,
+    GlobalClassName: global::G.RunStreamEventVariant1,
+    ExternalClassName: RunStreamEventVariant1,
+    FileNameWithoutExtension: G.Models.RunStreamEventVariant1
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.run.created,
+        Name: ThreadRunCreated,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadRunCreated,
+        ArgumentName: threadRunCreated,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
+  },
+  {
+    Id: RunStreamEventVariant2,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: event,
+        Name: Event,
+        Type: {
+          CSharpType: global::G.RunStreamEventVariant2Event,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            ThreadRunQueued
+          ],
+          EnumValues: [
+            thread.run.queued
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunStreamEventVariant2Event,
+          CSharpTypeWithNullability: global::G.RunStreamEventVariant2Event?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant2EventJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant2EventJsonConverter,
+        ParameterName: @event,
+        ArgumentName: @event,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: data,
+        Name: Data,
+        Type: {
+          CSharpType: global::G.RunObject,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            id,
+            object,
+            created_at,
+            thread_id,
+            assistant_id,
+            status,
+            required_action,
+            last_error,
+            expires_at,
+            started_at,
+            cancelled_at,
+            failed_at,
+            completed_at,
+            incomplete_details,
+            model,
+            instructions,
+            tools,
+            metadata,
+            usage,
+            temperature,
+            top_p,
+            max_prompt_tokens,
+            max_completion_tokens,
+            truncation_strategy,
+            tool_choice,
+            response_format
+          ],
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunObject,
+          CSharpTypeWithNullability: global::G.RunObject?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: Represents an execution run on a [thread](/docs/api-reference/threads).,
+        ConverterType: ,
+        ParameterName: data,
+        ArgumentName: data,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Occurs when a [run](/docs/api-reference/runs/object) moves to a `queued` status.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: RunStreamEventVariant2,
+    ClassName: RunStreamEventVariant2,
+    GlobalClassName: global::G.RunStreamEventVariant2,
+    ExternalClassName: RunStreamEventVariant2,
+    FileNameWithoutExtension: G.Models.RunStreamEventVariant2
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.run.queued,
+        Name: ThreadRunQueued,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadRunQueued,
+        ArgumentName: threadRunQueued,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
+  },
+  {
+    Id: RunStreamEventVariant3,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: event,
+        Name: Event,
+        Type: {
+          CSharpType: global::G.RunStreamEventVariant3Event,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            ThreadRunInProgress
+          ],
+          EnumValues: [
+            thread.run.in_progress
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunStreamEventVariant3Event,
+          CSharpTypeWithNullability: global::G.RunStreamEventVariant3Event?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant3EventJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant3EventJsonConverter,
+        ParameterName: @event,
+        ArgumentName: @event,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: data,
+        Name: Data,
+        Type: {
+          CSharpType: global::G.RunObject,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            id,
+            object,
+            created_at,
+            thread_id,
+            assistant_id,
+            status,
+            required_action,
+            last_error,
+            expires_at,
+            started_at,
+            cancelled_at,
+            failed_at,
+            completed_at,
+            incomplete_details,
+            model,
+            instructions,
+            tools,
+            metadata,
+            usage,
+            temperature,
+            top_p,
+            max_prompt_tokens,
+            max_completion_tokens,
+            truncation_strategy,
+            tool_choice,
+            response_format
+          ],
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunObject,
+          CSharpTypeWithNullability: global::G.RunObject?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: Represents an execution run on a [thread](/docs/api-reference/threads).,
+        ConverterType: ,
+        ParameterName: data,
+        ArgumentName: data,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Occurs when a [run](/docs/api-reference/runs/object) moves to an `in_progress` status.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: RunStreamEventVariant3,
+    ClassName: RunStreamEventVariant3,
+    GlobalClassName: global::G.RunStreamEventVariant3,
+    ExternalClassName: RunStreamEventVariant3,
+    FileNameWithoutExtension: G.Models.RunStreamEventVariant3
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.run.in_progress,
+        Name: ThreadRunInProgress,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadRunInProgress,
+        ArgumentName: threadRunInProgress,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
+  },
+  {
+    Id: RunStreamEventVariant4,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: event,
+        Name: Event,
+        Type: {
+          CSharpType: global::G.RunStreamEventVariant4Event,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            ThreadRunRequiresAction
+          ],
+          EnumValues: [
+            thread.run.requires_action
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunStreamEventVariant4Event,
+          CSharpTypeWithNullability: global::G.RunStreamEventVariant4Event?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant4EventJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant4EventJsonConverter,
+        ParameterName: @event,
+        ArgumentName: @event,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: data,
+        Name: Data,
+        Type: {
+          CSharpType: global::G.RunObject,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            id,
+            object,
+            created_at,
+            thread_id,
+            assistant_id,
+            status,
+            required_action,
+            last_error,
+            expires_at,
+            started_at,
+            cancelled_at,
+            failed_at,
+            completed_at,
+            incomplete_details,
+            model,
+            instructions,
+            tools,
+            metadata,
+            usage,
+            temperature,
+            top_p,
+            max_prompt_tokens,
+            max_completion_tokens,
+            truncation_strategy,
+            tool_choice,
+            response_format
+          ],
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunObject,
+          CSharpTypeWithNullability: global::G.RunObject?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: Represents an execution run on a [thread](/docs/api-reference/threads).,
+        ConverterType: ,
+        ParameterName: data,
+        ArgumentName: data,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Occurs when a [run](/docs/api-reference/runs/object) moves to a `requires_action` status.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: RunStreamEventVariant4,
+    ClassName: RunStreamEventVariant4,
+    GlobalClassName: global::G.RunStreamEventVariant4,
+    ExternalClassName: RunStreamEventVariant4,
+    FileNameWithoutExtension: G.Models.RunStreamEventVariant4
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.run.requires_action,
+        Name: ThreadRunRequiresAction,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadRunRequiresAction,
+        ArgumentName: threadRunRequiresAction,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
+  },
+  {
+    Id: RunStreamEventVariant5,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: event,
+        Name: Event,
+        Type: {
+          CSharpType: global::G.RunStreamEventVariant5Event,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            ThreadRunCompleted
+          ],
+          EnumValues: [
+            thread.run.completed
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunStreamEventVariant5Event,
+          CSharpTypeWithNullability: global::G.RunStreamEventVariant5Event?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant5EventJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant5EventJsonConverter,
+        ParameterName: @event,
+        ArgumentName: @event,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: data,
+        Name: Data,
+        Type: {
+          CSharpType: global::G.RunObject,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            id,
+            object,
+            created_at,
+            thread_id,
+            assistant_id,
+            status,
+            required_action,
+            last_error,
+            expires_at,
+            started_at,
+            cancelled_at,
+            failed_at,
+            completed_at,
+            incomplete_details,
+            model,
+            instructions,
+            tools,
+            metadata,
+            usage,
+            temperature,
+            top_p,
+            max_prompt_tokens,
+            max_completion_tokens,
+            truncation_strategy,
+            tool_choice,
+            response_format
+          ],
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunObject,
+          CSharpTypeWithNullability: global::G.RunObject?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: Represents an execution run on a [thread](/docs/api-reference/threads).,
+        ConverterType: ,
+        ParameterName: data,
+        ArgumentName: data,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Occurs when a [run](/docs/api-reference/runs/object) is completed.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: RunStreamEventVariant5,
+    ClassName: RunStreamEventVariant5,
+    GlobalClassName: global::G.RunStreamEventVariant5,
+    ExternalClassName: RunStreamEventVariant5,
+    FileNameWithoutExtension: G.Models.RunStreamEventVariant5
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.run.completed,
+        Name: ThreadRunCompleted,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadRunCompleted,
+        ArgumentName: threadRunCompleted,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
+  },
+  {
+    Id: RunStreamEventVariant6,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: event,
+        Name: Event,
+        Type: {
+          CSharpType: global::G.RunStreamEventVariant6Event,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            ThreadRunFailed
+          ],
+          EnumValues: [
+            thread.run.failed
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunStreamEventVariant6Event,
+          CSharpTypeWithNullability: global::G.RunStreamEventVariant6Event?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant6EventJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant6EventJsonConverter,
+        ParameterName: @event,
+        ArgumentName: @event,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: data,
+        Name: Data,
+        Type: {
+          CSharpType: global::G.RunObject,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            id,
+            object,
+            created_at,
+            thread_id,
+            assistant_id,
+            status,
+            required_action,
+            last_error,
+            expires_at,
+            started_at,
+            cancelled_at,
+            failed_at,
+            completed_at,
+            incomplete_details,
+            model,
+            instructions,
+            tools,
+            metadata,
+            usage,
+            temperature,
+            top_p,
+            max_prompt_tokens,
+            max_completion_tokens,
+            truncation_strategy,
+            tool_choice,
+            response_format
+          ],
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunObject,
+          CSharpTypeWithNullability: global::G.RunObject?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: Represents an execution run on a [thread](/docs/api-reference/threads).,
+        ConverterType: ,
+        ParameterName: data,
+        ArgumentName: data,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Occurs when a [run](/docs/api-reference/runs/object) fails.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: RunStreamEventVariant6,
+    ClassName: RunStreamEventVariant6,
+    GlobalClassName: global::G.RunStreamEventVariant6,
+    ExternalClassName: RunStreamEventVariant6,
+    FileNameWithoutExtension: G.Models.RunStreamEventVariant6
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.run.failed,
+        Name: ThreadRunFailed,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadRunFailed,
+        ArgumentName: threadRunFailed,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
+  },
+  {
+    Id: RunStreamEventVariant7,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: event,
+        Name: Event,
+        Type: {
+          CSharpType: global::G.RunStreamEventVariant7Event,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            ThreadRunCancelling
+          ],
+          EnumValues: [
+            thread.run.cancelling
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunStreamEventVariant7Event,
+          CSharpTypeWithNullability: global::G.RunStreamEventVariant7Event?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant7EventJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant7EventJsonConverter,
+        ParameterName: @event,
+        ArgumentName: @event,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: data,
+        Name: Data,
+        Type: {
+          CSharpType: global::G.RunObject,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            id,
+            object,
+            created_at,
+            thread_id,
+            assistant_id,
+            status,
+            required_action,
+            last_error,
+            expires_at,
+            started_at,
+            cancelled_at,
+            failed_at,
+            completed_at,
+            incomplete_details,
+            model,
+            instructions,
+            tools,
+            metadata,
+            usage,
+            temperature,
+            top_p,
+            max_prompt_tokens,
+            max_completion_tokens,
+            truncation_strategy,
+            tool_choice,
+            response_format
+          ],
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunObject,
+          CSharpTypeWithNullability: global::G.RunObject?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: Represents an execution run on a [thread](/docs/api-reference/threads).,
+        ConverterType: ,
+        ParameterName: data,
+        ArgumentName: data,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Occurs when a [run](/docs/api-reference/runs/object) moves to a `cancelling` status.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: RunStreamEventVariant7,
+    ClassName: RunStreamEventVariant7,
+    GlobalClassName: global::G.RunStreamEventVariant7,
+    ExternalClassName: RunStreamEventVariant7,
+    FileNameWithoutExtension: G.Models.RunStreamEventVariant7
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.run.cancelling,
+        Name: ThreadRunCancelling,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadRunCancelling,
+        ArgumentName: threadRunCancelling,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
+  },
+  {
+    Id: RunStreamEventVariant8,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: event,
+        Name: Event,
+        Type: {
+          CSharpType: global::G.RunStreamEventVariant8Event,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            ThreadRunCancelled
+          ],
+          EnumValues: [
+            thread.run.cancelled
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunStreamEventVariant8Event,
+          CSharpTypeWithNullability: global::G.RunStreamEventVariant8Event?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant8EventJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant8EventJsonConverter,
+        ParameterName: @event,
+        ArgumentName: @event,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: data,
+        Name: Data,
+        Type: {
+          CSharpType: global::G.RunObject,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            id,
+            object,
+            created_at,
+            thread_id,
+            assistant_id,
+            status,
+            required_action,
+            last_error,
+            expires_at,
+            started_at,
+            cancelled_at,
+            failed_at,
+            completed_at,
+            incomplete_details,
+            model,
+            instructions,
+            tools,
+            metadata,
+            usage,
+            temperature,
+            top_p,
+            max_prompt_tokens,
+            max_completion_tokens,
+            truncation_strategy,
+            tool_choice,
+            response_format
+          ],
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunObject,
+          CSharpTypeWithNullability: global::G.RunObject?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: Represents an execution run on a [thread](/docs/api-reference/threads).,
+        ConverterType: ,
+        ParameterName: data,
+        ArgumentName: data,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Occurs when a [run](/docs/api-reference/runs/object) is cancelled.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: RunStreamEventVariant8,
+    ClassName: RunStreamEventVariant8,
+    GlobalClassName: global::G.RunStreamEventVariant8,
+    ExternalClassName: RunStreamEventVariant8,
+    FileNameWithoutExtension: G.Models.RunStreamEventVariant8
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.run.cancelled,
+        Name: ThreadRunCancelled,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadRunCancelled,
+        ArgumentName: threadRunCancelled,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
+  },
+  {
+    Id: RunStreamEventVariant9,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: event,
+        Name: Event,
+        Type: {
+          CSharpType: global::G.RunStreamEventVariant9Event,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            ThreadRunExpired
+          ],
+          EnumValues: [
+            thread.run.expired
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunStreamEventVariant9Event,
+          CSharpTypeWithNullability: global::G.RunStreamEventVariant9Event?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant9EventJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant9EventJsonConverter,
+        ParameterName: @event,
+        ArgumentName: @event,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: data,
+        Name: Data,
+        Type: {
+          CSharpType: global::G.RunObject,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            id,
+            object,
+            created_at,
+            thread_id,
+            assistant_id,
+            status,
+            required_action,
+            last_error,
+            expires_at,
+            started_at,
+            cancelled_at,
+            failed_at,
+            completed_at,
+            incomplete_details,
+            model,
+            instructions,
+            tools,
+            metadata,
+            usage,
+            temperature,
+            top_p,
+            max_prompt_tokens,
+            max_completion_tokens,
+            truncation_strategy,
+            tool_choice,
+            response_format
+          ],
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunObject,
+          CSharpTypeWithNullability: global::G.RunObject?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: Represents an execution run on a [thread](/docs/api-reference/threads).,
+        ConverterType: ,
+        ParameterName: data,
+        ArgumentName: data,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Occurs when a [run](/docs/api-reference/runs/object) expires.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: RunStreamEventVariant9,
+    ClassName: RunStreamEventVariant9,
+    GlobalClassName: global::G.RunStreamEventVariant9,
+    ExternalClassName: RunStreamEventVariant9,
+    FileNameWithoutExtension: G.Models.RunStreamEventVariant9
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.run.expired,
+        Name: ThreadRunExpired,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadRunExpired,
+        ArgumentName: threadRunExpired,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
   },
   {
     Id: RunStepStreamEvent,
@@ -37792,6 +39201,938 @@ integrate the Assistants API with streaming.
     FileNameWithoutExtension: G.Models.RunStepStreamEvent
   },
   {
+    Id: RunStepStreamEventVariant1,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: event,
+        Name: Event,
+        Type: {
+          CSharpType: global::G.RunStepStreamEventVariant1Event,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            ThreadRunStepCreated
+          ],
+          EnumValues: [
+            thread.run.step.created
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunStepStreamEventVariant1Event,
+          CSharpTypeWithNullability: global::G.RunStepStreamEventVariant1Event?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant1EventJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant1EventJsonConverter,
+        ParameterName: @event,
+        ArgumentName: @event,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: data,
+        Name: Data,
+        Type: {
+          CSharpType: global::G.RunStepObject,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            id,
+            object,
+            created_at,
+            assistant_id,
+            thread_id,
+            run_id,
+            type,
+            status,
+            step_details,
+            last_error,
+            expired_at,
+            cancelled_at,
+            failed_at,
+            completed_at,
+            metadata,
+            usage
+          ],
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunStepObject,
+          CSharpTypeWithNullability: global::G.RunStepObject?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary:
+Represents a step in execution of a run.
+,
+        ConverterType: ,
+        ParameterName: data,
+        ArgumentName: data,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Occurs when a [run step](/docs/api-reference/runs/step-object) is created.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: RunStepStreamEventVariant1,
+    ClassName: RunStepStreamEventVariant1,
+    GlobalClassName: global::G.RunStepStreamEventVariant1,
+    ExternalClassName: RunStepStreamEventVariant1,
+    FileNameWithoutExtension: G.Models.RunStepStreamEventVariant1
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.run.step.created,
+        Name: ThreadRunStepCreated,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadRunStepCreated,
+        ArgumentName: threadRunStepCreated,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
+  },
+  {
+    Id: RunStepStreamEventVariant2,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: event,
+        Name: Event,
+        Type: {
+          CSharpType: global::G.RunStepStreamEventVariant2Event,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            ThreadRunStepInProgress
+          ],
+          EnumValues: [
+            thread.run.step.in_progress
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunStepStreamEventVariant2Event,
+          CSharpTypeWithNullability: global::G.RunStepStreamEventVariant2Event?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant2EventJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant2EventJsonConverter,
+        ParameterName: @event,
+        ArgumentName: @event,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: data,
+        Name: Data,
+        Type: {
+          CSharpType: global::G.RunStepObject,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            id,
+            object,
+            created_at,
+            assistant_id,
+            thread_id,
+            run_id,
+            type,
+            status,
+            step_details,
+            last_error,
+            expired_at,
+            cancelled_at,
+            failed_at,
+            completed_at,
+            metadata,
+            usage
+          ],
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunStepObject,
+          CSharpTypeWithNullability: global::G.RunStepObject?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary:
+Represents a step in execution of a run.
+,
+        ConverterType: ,
+        ParameterName: data,
+        ArgumentName: data,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Occurs when a [run step](/docs/api-reference/runs/step-object) moves to an `in_progress` state.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: RunStepStreamEventVariant2,
+    ClassName: RunStepStreamEventVariant2,
+    GlobalClassName: global::G.RunStepStreamEventVariant2,
+    ExternalClassName: RunStepStreamEventVariant2,
+    FileNameWithoutExtension: G.Models.RunStepStreamEventVariant2
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.run.step.in_progress,
+        Name: ThreadRunStepInProgress,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadRunStepInProgress,
+        ArgumentName: threadRunStepInProgress,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
+  },
+  {
+    Id: RunStepStreamEventVariant3,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: event,
+        Name: Event,
+        Type: {
+          CSharpType: global::G.RunStepStreamEventVariant3Event,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            ThreadRunStepDelta
+          ],
+          EnumValues: [
+            thread.run.step.delta
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunStepStreamEventVariant3Event,
+          CSharpTypeWithNullability: global::G.RunStepStreamEventVariant3Event?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant3EventJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant3EventJsonConverter,
+        ParameterName: @event,
+        ArgumentName: @event,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: data,
+        Name: Data,
+        Type: {
+          CSharpType: global::G.RunStepDeltaObject,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            id,
+            object,
+            delta
+          ],
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunStepDeltaObject,
+          CSharpTypeWithNullability: global::G.RunStepDeltaObject?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary:
+Represents a run step delta i.e. any changed fields on a run step during streaming.
+,
+        ConverterType: ,
+        ParameterName: data,
+        ArgumentName: data,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Occurs when parts of a [run step](/docs/api-reference/runs/step-object) are being streamed.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: RunStepStreamEventVariant3,
+    ClassName: RunStepStreamEventVariant3,
+    GlobalClassName: global::G.RunStepStreamEventVariant3,
+    ExternalClassName: RunStepStreamEventVariant3,
+    FileNameWithoutExtension: G.Models.RunStepStreamEventVariant3
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.run.step.delta,
+        Name: ThreadRunStepDelta,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadRunStepDelta,
+        ArgumentName: threadRunStepDelta,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
+  },
+  {
+    Id: RunStepStreamEventVariant4,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: event,
+        Name: Event,
+        Type: {
+          CSharpType: global::G.RunStepStreamEventVariant4Event,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            ThreadRunStepCompleted
+          ],
+          EnumValues: [
+            thread.run.step.completed
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunStepStreamEventVariant4Event,
+          CSharpTypeWithNullability: global::G.RunStepStreamEventVariant4Event?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant4EventJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant4EventJsonConverter,
+        ParameterName: @event,
+        ArgumentName: @event,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: data,
+        Name: Data,
+        Type: {
+          CSharpType: global::G.RunStepObject,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            id,
+            object,
+            created_at,
+            assistant_id,
+            thread_id,
+            run_id,
+            type,
+            status,
+            step_details,
+            last_error,
+            expired_at,
+            cancelled_at,
+            failed_at,
+            completed_at,
+            metadata,
+            usage
+          ],
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunStepObject,
+          CSharpTypeWithNullability: global::G.RunStepObject?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary:
+Represents a step in execution of a run.
+,
+        ConverterType: ,
+        ParameterName: data,
+        ArgumentName: data,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Occurs when a [run step](/docs/api-reference/runs/step-object) is completed.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: RunStepStreamEventVariant4,
+    ClassName: RunStepStreamEventVariant4,
+    GlobalClassName: global::G.RunStepStreamEventVariant4,
+    ExternalClassName: RunStepStreamEventVariant4,
+    FileNameWithoutExtension: G.Models.RunStepStreamEventVariant4
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.run.step.completed,
+        Name: ThreadRunStepCompleted,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadRunStepCompleted,
+        ArgumentName: threadRunStepCompleted,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
+  },
+  {
+    Id: RunStepStreamEventVariant5,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: event,
+        Name: Event,
+        Type: {
+          CSharpType: global::G.RunStepStreamEventVariant5Event,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            ThreadRunStepFailed
+          ],
+          EnumValues: [
+            thread.run.step.failed
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunStepStreamEventVariant5Event,
+          CSharpTypeWithNullability: global::G.RunStepStreamEventVariant5Event?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant5EventJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant5EventJsonConverter,
+        ParameterName: @event,
+        ArgumentName: @event,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: data,
+        Name: Data,
+        Type: {
+          CSharpType: global::G.RunStepObject,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            id,
+            object,
+            created_at,
+            assistant_id,
+            thread_id,
+            run_id,
+            type,
+            status,
+            step_details,
+            last_error,
+            expired_at,
+            cancelled_at,
+            failed_at,
+            completed_at,
+            metadata,
+            usage
+          ],
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunStepObject,
+          CSharpTypeWithNullability: global::G.RunStepObject?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary:
+Represents a step in execution of a run.
+,
+        ConverterType: ,
+        ParameterName: data,
+        ArgumentName: data,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Occurs when a [run step](/docs/api-reference/runs/step-object) fails.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: RunStepStreamEventVariant5,
+    ClassName: RunStepStreamEventVariant5,
+    GlobalClassName: global::G.RunStepStreamEventVariant5,
+    ExternalClassName: RunStepStreamEventVariant5,
+    FileNameWithoutExtension: G.Models.RunStepStreamEventVariant5
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.run.step.failed,
+        Name: ThreadRunStepFailed,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadRunStepFailed,
+        ArgumentName: threadRunStepFailed,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
+  },
+  {
+    Id: RunStepStreamEventVariant6,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: event,
+        Name: Event,
+        Type: {
+          CSharpType: global::G.RunStepStreamEventVariant6Event,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            ThreadRunStepCancelled
+          ],
+          EnumValues: [
+            thread.run.step.cancelled
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunStepStreamEventVariant6Event,
+          CSharpTypeWithNullability: global::G.RunStepStreamEventVariant6Event?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant6EventJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant6EventJsonConverter,
+        ParameterName: @event,
+        ArgumentName: @event,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: data,
+        Name: Data,
+        Type: {
+          CSharpType: global::G.RunStepObject,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            id,
+            object,
+            created_at,
+            assistant_id,
+            thread_id,
+            run_id,
+            type,
+            status,
+            step_details,
+            last_error,
+            expired_at,
+            cancelled_at,
+            failed_at,
+            completed_at,
+            metadata,
+            usage
+          ],
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunStepObject,
+          CSharpTypeWithNullability: global::G.RunStepObject?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary:
+Represents a step in execution of a run.
+,
+        ConverterType: ,
+        ParameterName: data,
+        ArgumentName: data,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Occurs when a [run step](/docs/api-reference/runs/step-object) is cancelled.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: RunStepStreamEventVariant6,
+    ClassName: RunStepStreamEventVariant6,
+    GlobalClassName: global::G.RunStepStreamEventVariant6,
+    ExternalClassName: RunStepStreamEventVariant6,
+    FileNameWithoutExtension: G.Models.RunStepStreamEventVariant6
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.run.step.cancelled,
+        Name: ThreadRunStepCancelled,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadRunStepCancelled,
+        ArgumentName: threadRunStepCancelled,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
+  },
+  {
+    Id: RunStepStreamEventVariant7,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: event,
+        Name: Event,
+        Type: {
+          CSharpType: global::G.RunStepStreamEventVariant7Event,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            ThreadRunStepExpired
+          ],
+          EnumValues: [
+            thread.run.step.expired
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunStepStreamEventVariant7Event,
+          CSharpTypeWithNullability: global::G.RunStepStreamEventVariant7Event?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant7EventJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant7EventJsonConverter,
+        ParameterName: @event,
+        ArgumentName: @event,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: data,
+        Name: Data,
+        Type: {
+          CSharpType: global::G.RunStepObject,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            id,
+            object,
+            created_at,
+            assistant_id,
+            thread_id,
+            run_id,
+            type,
+            status,
+            step_details,
+            last_error,
+            expired_at,
+            cancelled_at,
+            failed_at,
+            completed_at,
+            metadata,
+            usage
+          ],
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunStepObject,
+          CSharpTypeWithNullability: global::G.RunStepObject?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary:
+Represents a step in execution of a run.
+,
+        ConverterType: ,
+        ParameterName: data,
+        ArgumentName: data,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Occurs when a [run step](/docs/api-reference/runs/step-object) expires.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: RunStepStreamEventVariant7,
+    ClassName: RunStepStreamEventVariant7,
+    GlobalClassName: global::G.RunStepStreamEventVariant7,
+    ExternalClassName: RunStepStreamEventVariant7,
+    FileNameWithoutExtension: G.Models.RunStepStreamEventVariant7
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.run.step.expired,
+        Name: ThreadRunStepExpired,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadRunStepExpired,
+        ArgumentName: threadRunStepExpired,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
+  },
+  {
     Id: MessageStreamEvent,
     AddTypeName: false,
     Parents: null,
@@ -37807,6 +40148,652 @@ integrate the Assistants API with streaming.
     GlobalClassName: global::G.MessageStreamEvent,
     ExternalClassName: MessageStreamEvent,
     FileNameWithoutExtension: G.Models.MessageStreamEvent
+  },
+  {
+    Id: MessageStreamEventVariant1,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: event,
+        Name: Event,
+        Type: {
+          CSharpType: global::G.MessageStreamEventVariant1Event,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            ThreadMessageCreated
+          ],
+          EnumValues: [
+            thread.message.created
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.MessageStreamEventVariant1Event,
+          CSharpTypeWithNullability: global::G.MessageStreamEventVariant1Event?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.MessageStreamEventVariant1EventJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: global::OpenApiGenerator.JsonConverters.MessageStreamEventVariant1EventJsonConverter,
+        ParameterName: @event,
+        ArgumentName: @event,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: data,
+        Name: Data,
+        Type: {
+          CSharpType: global::G.MessageObject,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            id,
+            object,
+            created_at,
+            thread_id,
+            status,
+            incomplete_details,
+            completed_at,
+            incomplete_at,
+            role,
+            content,
+            assistant_id,
+            run_id,
+            attachments,
+            metadata
+          ],
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.MessageObject,
+          CSharpTypeWithNullability: global::G.MessageObject?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: Represents a message within a [thread](/docs/api-reference/threads).,
+        ConverterType: ,
+        ParameterName: data,
+        ArgumentName: data,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Occurs when a [message](/docs/api-reference/messages/object) is created.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: MessageStreamEventVariant1,
+    ClassName: MessageStreamEventVariant1,
+    GlobalClassName: global::G.MessageStreamEventVariant1,
+    ExternalClassName: MessageStreamEventVariant1,
+    FileNameWithoutExtension: G.Models.MessageStreamEventVariant1
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.message.created,
+        Name: ThreadMessageCreated,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadMessageCreated,
+        ArgumentName: threadMessageCreated,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
+  },
+  {
+    Id: MessageStreamEventVariant2,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: event,
+        Name: Event,
+        Type: {
+          CSharpType: global::G.MessageStreamEventVariant2Event,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            ThreadMessageInProgress
+          ],
+          EnumValues: [
+            thread.message.in_progress
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.MessageStreamEventVariant2Event,
+          CSharpTypeWithNullability: global::G.MessageStreamEventVariant2Event?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.MessageStreamEventVariant2EventJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: global::OpenApiGenerator.JsonConverters.MessageStreamEventVariant2EventJsonConverter,
+        ParameterName: @event,
+        ArgumentName: @event,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: data,
+        Name: Data,
+        Type: {
+          CSharpType: global::G.MessageObject,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            id,
+            object,
+            created_at,
+            thread_id,
+            status,
+            incomplete_details,
+            completed_at,
+            incomplete_at,
+            role,
+            content,
+            assistant_id,
+            run_id,
+            attachments,
+            metadata
+          ],
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.MessageObject,
+          CSharpTypeWithNullability: global::G.MessageObject?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: Represents a message within a [thread](/docs/api-reference/threads).,
+        ConverterType: ,
+        ParameterName: data,
+        ArgumentName: data,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Occurs when a [message](/docs/api-reference/messages/object) moves to an `in_progress` state.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: MessageStreamEventVariant2,
+    ClassName: MessageStreamEventVariant2,
+    GlobalClassName: global::G.MessageStreamEventVariant2,
+    ExternalClassName: MessageStreamEventVariant2,
+    FileNameWithoutExtension: G.Models.MessageStreamEventVariant2
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.message.in_progress,
+        Name: ThreadMessageInProgress,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadMessageInProgress,
+        ArgumentName: threadMessageInProgress,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
+  },
+  {
+    Id: MessageStreamEventVariant3,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: event,
+        Name: Event,
+        Type: {
+          CSharpType: global::G.MessageStreamEventVariant3Event,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            ThreadMessageDelta
+          ],
+          EnumValues: [
+            thread.message.delta
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.MessageStreamEventVariant3Event,
+          CSharpTypeWithNullability: global::G.MessageStreamEventVariant3Event?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.MessageStreamEventVariant3EventJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: global::OpenApiGenerator.JsonConverters.MessageStreamEventVariant3EventJsonConverter,
+        ParameterName: @event,
+        ArgumentName: @event,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: data,
+        Name: Data,
+        Type: {
+          CSharpType: global::G.MessageDeltaObject,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            id,
+            object,
+            delta
+          ],
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.MessageDeltaObject,
+          CSharpTypeWithNullability: global::G.MessageDeltaObject?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary:
+Represents a message delta i.e. any changed fields on a message during streaming.
+,
+        ConverterType: ,
+        ParameterName: data,
+        ArgumentName: data,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Occurs when parts of a [Message](/docs/api-reference/messages/object) are being streamed.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: MessageStreamEventVariant3,
+    ClassName: MessageStreamEventVariant3,
+    GlobalClassName: global::G.MessageStreamEventVariant3,
+    ExternalClassName: MessageStreamEventVariant3,
+    FileNameWithoutExtension: G.Models.MessageStreamEventVariant3
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.message.delta,
+        Name: ThreadMessageDelta,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadMessageDelta,
+        ArgumentName: threadMessageDelta,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
+  },
+  {
+    Id: MessageStreamEventVariant4,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: event,
+        Name: Event,
+        Type: {
+          CSharpType: global::G.MessageStreamEventVariant4Event,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            ThreadMessageCompleted
+          ],
+          EnumValues: [
+            thread.message.completed
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.MessageStreamEventVariant4Event,
+          CSharpTypeWithNullability: global::G.MessageStreamEventVariant4Event?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.MessageStreamEventVariant4EventJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: global::OpenApiGenerator.JsonConverters.MessageStreamEventVariant4EventJsonConverter,
+        ParameterName: @event,
+        ArgumentName: @event,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: data,
+        Name: Data,
+        Type: {
+          CSharpType: global::G.MessageObject,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            id,
+            object,
+            created_at,
+            thread_id,
+            status,
+            incomplete_details,
+            completed_at,
+            incomplete_at,
+            role,
+            content,
+            assistant_id,
+            run_id,
+            attachments,
+            metadata
+          ],
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.MessageObject,
+          CSharpTypeWithNullability: global::G.MessageObject?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: Represents a message within a [thread](/docs/api-reference/threads).,
+        ConverterType: ,
+        ParameterName: data,
+        ArgumentName: data,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Occurs when a [message](/docs/api-reference/messages/object) is completed.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: MessageStreamEventVariant4,
+    ClassName: MessageStreamEventVariant4,
+    GlobalClassName: global::G.MessageStreamEventVariant4,
+    ExternalClassName: MessageStreamEventVariant4,
+    FileNameWithoutExtension: G.Models.MessageStreamEventVariant4
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.message.completed,
+        Name: ThreadMessageCompleted,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadMessageCompleted,
+        ArgumentName: threadMessageCompleted,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
+  },
+  {
+    Id: MessageStreamEventVariant5,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: event,
+        Name: Event,
+        Type: {
+          CSharpType: global::G.MessageStreamEventVariant5Event,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            ThreadMessageIncomplete
+          ],
+          EnumValues: [
+            thread.message.incomplete
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.MessageStreamEventVariant5Event,
+          CSharpTypeWithNullability: global::G.MessageStreamEventVariant5Event?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.MessageStreamEventVariant5EventJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: global::OpenApiGenerator.JsonConverters.MessageStreamEventVariant5EventJsonConverter,
+        ParameterName: @event,
+        ArgumentName: @event,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: data,
+        Name: Data,
+        Type: {
+          CSharpType: global::G.MessageObject,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            id,
+            object,
+            created_at,
+            thread_id,
+            status,
+            incomplete_details,
+            completed_at,
+            incomplete_at,
+            role,
+            content,
+            assistant_id,
+            run_id,
+            attachments,
+            metadata
+          ],
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.MessageObject,
+          CSharpTypeWithNullability: global::G.MessageObject?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: Represents a message within a [thread](/docs/api-reference/threads).,
+        ConverterType: ,
+        ParameterName: data,
+        ArgumentName: data,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Occurs when a [message](/docs/api-reference/messages/object) ends before it is completed.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: MessageStreamEventVariant5,
+    ClassName: MessageStreamEventVariant5,
+    GlobalClassName: global::G.MessageStreamEventVariant5,
+    ExternalClassName: MessageStreamEventVariant5,
+    FileNameWithoutExtension: G.Models.MessageStreamEventVariant5
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.message.incomplete,
+        Name: ThreadMessageIncomplete,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadMessageIncomplete,
+        ArgumentName: threadMessageIncomplete,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
   },
   {
     Id: ErrorEvent,
@@ -38092,182 +41079,6 @@ integrate the Assistants API with streaming.
     GlobalClassName: global::G.Data,
     ExternalClassName: Data,
     FileNameWithoutExtension: G.Models.Data
-  },
-  {
-    Id: event,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    Style: Enumeration,
-    Properties: [
-      {
-        Id: thread.created,
-        Name: ThreadCreated,
-        Type: {
-          CSharpType: ,
-          IsArray: false,
-          IsEnum: false,
-          Properties: null,
-          EnumValues: null,
-          Namespace: ,
-          IsDeprecated: false,
-          GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: ,
-          CSharpTypeWithNullability: ?,
-          IsAnyOf: false,
-          ConverterType: 
-        },
-        IsRequired: false,
-        IsDeprecated: false,
-        Summary: ,
-        ConverterType: ,
-        ParameterName: threadCreated,
-        ArgumentName: threadCreated,
-        ParameterDefaultValue: default
-      }
-    ],
-    Summary: ,
-    IsDeprecated: false,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: Event,
-    ClassName: Event,
-    GlobalClassName: global::G.Event,
-    ExternalClassName: Event,
-    FileNameWithoutExtension: G.Models.Event
-  },
-  {
-    Id: event,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    Style: Enumeration,
-    Properties: [
-      {
-        Id: thread.run.created,
-        Name: ThreadRunCreated,
-        Type: {
-          CSharpType: ,
-          IsArray: false,
-          IsEnum: false,
-          Properties: null,
-          EnumValues: null,
-          Namespace: ,
-          IsDeprecated: false,
-          GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: ,
-          CSharpTypeWithNullability: ?,
-          IsAnyOf: false,
-          ConverterType: 
-        },
-        IsRequired: false,
-        IsDeprecated: false,
-        Summary: ,
-        ConverterType: ,
-        ParameterName: threadRunCreated,
-        ArgumentName: threadRunCreated,
-        ParameterDefaultValue: default
-      }
-    ],
-    Summary: ,
-    IsDeprecated: false,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: Event,
-    ClassName: Event,
-    GlobalClassName: global::G.Event,
-    ExternalClassName: Event,
-    FileNameWithoutExtension: G.Models.Event
-  },
-  {
-    Id: event,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    Style: Enumeration,
-    Properties: [
-      {
-        Id: thread.run.step.created,
-        Name: ThreadRunStepCreated,
-        Type: {
-          CSharpType: ,
-          IsArray: false,
-          IsEnum: false,
-          Properties: null,
-          EnumValues: null,
-          Namespace: ,
-          IsDeprecated: false,
-          GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: ,
-          CSharpTypeWithNullability: ?,
-          IsAnyOf: false,
-          ConverterType: 
-        },
-        IsRequired: false,
-        IsDeprecated: false,
-        Summary: ,
-        ConverterType: ,
-        ParameterName: threadRunStepCreated,
-        ArgumentName: threadRunStepCreated,
-        ParameterDefaultValue: default
-      }
-    ],
-    Summary: ,
-    IsDeprecated: false,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: Event,
-    ClassName: Event,
-    GlobalClassName: global::G.Event,
-    ExternalClassName: Event,
-    FileNameWithoutExtension: G.Models.Event
-  },
-  {
-    Id: event,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    Style: Enumeration,
-    Properties: [
-      {
-        Id: thread.message.created,
-        Name: ThreadMessageCreated,
-        Type: {
-          CSharpType: ,
-          IsArray: false,
-          IsEnum: false,
-          Properties: null,
-          EnumValues: null,
-          Namespace: ,
-          IsDeprecated: false,
-          GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: ,
-          CSharpTypeWithNullability: ?,
-          IsAnyOf: false,
-          ConverterType: 
-        },
-        IsRequired: false,
-        IsDeprecated: false,
-        Summary: ,
-        ConverterType: ,
-        ParameterName: threadMessageCreated,
-        ArgumentName: threadMessageCreated,
-        ParameterDefaultValue: default
-      }
-    ],
-    Summary: ,
-    IsDeprecated: false,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: Event,
-    ClassName: Event,
-    GlobalClassName: global::G.Event,
-    ExternalClassName: Event,
-    FileNameWithoutExtension: G.Models.Event
   },
   {
     Id: Batch,

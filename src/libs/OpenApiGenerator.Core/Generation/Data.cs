@@ -91,8 +91,8 @@ public static class Data
                     ]
                     : new [] { ModelData.FromSchema(schema, settings) })
             .SelectMany(model => model.WithAdditionalModels())
-            .GroupBy(x => x.ClassName)
-            .Select(x => x.First())
+            //.GroupBy(x => x.ClassName)
+            //.Select(x => x.First())
             .ToDictionary(x => x.ClassName, x => x);
 
         var operations = openApiDocument.Paths.SelectMany(path =>
@@ -237,8 +237,8 @@ public static class Data
         //             settings.JsonSerializerType,
         //             isTrimming,
         //             settings.Namespace,
-        //             schema.Key, 
-        //             schema.Value.AnyOf.Select(x => TypeData.FromSchema(x.WithKey(schema.Key), settings)).ToImmutableArray())))
+        //             schema.Key + "Temp", 
+        //             schema.Value.AnyOf.Select((x, i) => TypeData.FromSchema(x.UseReferenceIdOrKey(schema.Key + $"Variant{i + 1}"), settings)).ToImmutableArray())))
         //     .ToImmutableArray();
         // oneOfs = oneOfs
         //     .Concat(includedSchemas
@@ -249,8 +249,8 @@ public static class Data
         //             settings.JsonSerializerType,
         //             isTrimming,
         //             settings.Namespace,
-        //             schema.Key, 
-        //             schema.Value.OneOf.Select(x => TypeData.FromSchema(x.WithKey(schema.Key), settings)).ToImmutableArray())))
+        //             schema.Key + "Temp", 
+        //             schema.Value.OneOf.Select((x, i) => TypeData.FromSchema(x.UseReferenceIdOrKey(schema.Key + $"Variant{i + 1}"), settings)).ToImmutableArray())))
         //     .ToImmutableArray();
         // allOfs = allOfs
         //     .Concat(includedSchemas
@@ -261,8 +261,8 @@ public static class Data
         //             settings.JsonSerializerType,
         //             isTrimming,
         //             settings.Namespace,
-        //             schema.Key, 
-        //             schema.Value.AllOf.Select(x => TypeData.FromSchema(x.WithKey(schema.Key), settings)).ToImmutableArray())))
+        //             schema.Key + "Temp", 
+        //             schema.Value.AllOf.Select((x, i) => TypeData.FromSchema(x.UseReferenceIdOrKey(schema.Key + $"Variant{i + 1}"), settings)).ToImmutableArray())))
         //     .ToImmutableArray();
 
         AnyOfData[] anyOfDatas =

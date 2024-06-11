@@ -73,19 +73,22 @@ public readonly record struct ModelData(
         if (schema.AnyOf is { Count: > 0 })
         {
             return schema.AnyOf
-                .Select(x => FromSchema(x.UseReferenceIdOrKey(key), settings, parents))
+                .Where(x => x.IsObjectWithoutReference())
+                .Select((x, i) => FromSchema(x.UseReferenceIdOrKey(key + $"Variant{i + 1}"), settings, parents))
                 .ToArray();
         }
         if (schema.AllOf is { Count: > 0 })
         {
             return schema.AllOf
-                .Select(x => FromSchema(x.UseReferenceIdOrKey(key), settings, parents))
+                .Where(x => x.IsObjectWithoutReference())
+                .Select((x, i) => FromSchema(x.UseReferenceIdOrKey(key + $"Variant{i + 1}"), settings, parents))
                 .ToArray();
         }
         if (schema.OneOf is { Count: > 0 })
         {
             return schema.OneOf
-                .Select(x => FromSchema(x.UseReferenceIdOrKey(key), settings, parents))
+                .Where(x => x.IsObjectWithoutReference())
+                .Select((x, i) => FromSchema(x.UseReferenceIdOrKey(key + $"Variant{i + 1}"), settings, parents))
                 .ToArray();
         }
 
