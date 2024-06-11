@@ -171,23 +171,6 @@
     FileNameWithoutExtension: G.Models.Pet
   },
   {
-    Id: Pets,
-    AddTypeName: false,
-    Parents: null,
-    TargetFramework: netstandard2.0,
-    Namespace: G,
-    Properties: null,
-    Summary: ,
-    IsDeprecated: false,
-    AdditionalModels: null,
-    Enumerations: null,
-    Name: Pets,
-    ClassName: Pets,
-    GlobalClassName: global::G.Pets,
-    ExternalClassName: Pets,
-    FileNameWithoutExtension: G.Models.Pets
-  },
-  {
     Id: Error,
     AddTypeName: false,
     Parents: null,

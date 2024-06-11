@@ -98,13 +98,13 @@ public readonly record struct ModelData(
                 .ToArray();
         }
 
-        if (schema.Type == "object")
-        {
-            return [FromSchema(schema.UseReferenceIdOrKey(key), settings, parents)];
-        }
-        if (schema.Items != null)
+        if (schema.Items != null && schema.Items.IsObjectWithoutReference())
         {
             return [FromSchema(schema.Items.UseReferenceIdOrKey(key), settings, parents)];
+        }
+        if (schema.Type == "object" || schema.IsEnum() || schema.Properties.Any())
+        {
+            return [FromSchema(schema.UseReferenceIdOrKey(key), settings, parents)];
         }
         
         return [];

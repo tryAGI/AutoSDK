@@ -81,15 +81,7 @@ public static class Data
                 !excludedModels.Contains(schema.Key))
             .ToArray();
         Dictionary<string, ModelData> classes = includedSchemas
-            .SelectMany(schema =>
-                schema.Value.AnyOf is { Count: >0 } ||
-                schema.Value.OneOf is { Count: >0 } ||
-                schema.Value.AllOf is { Count: >0 }
-                    ? [
-                        //ModelData.FromSchema(schema, settings),
-                        .. ModelData.FromSchemas(schema.Value, settings, schema.Key)
-                    ]
-                    : new [] { ModelData.FromSchema(schema, settings) })
+            .SelectMany(schema => ModelData.FromSchemas(schema.Value, settings, schema.Key))
             .SelectMany(model => model.WithAdditionalModels())
             //.GroupBy(x => x.ClassName)
             //.Select(x => x.First())
