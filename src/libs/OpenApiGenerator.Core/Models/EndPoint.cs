@@ -111,7 +111,8 @@ public readonly record struct EndPoint(
         var requestBodyModels = requestMediaTypes
             .Where(x =>
                 x.Schema.Type == "object" ||
-                x.Schema.Type == "array" ||
+                (x.Schema.Type == "array"
+                && x.Schema.Items?.Type == "object") ||
                 x.Schema.AnyOf is { Count: > 0 } ||
                 x.Schema.OneOf is { Count: > 0 } ||
                 x.Schema.AllOf is { Count: > 0 }) //&& x.Parameter.Schema.Items?.Type == "object"
@@ -141,10 +142,11 @@ public readonly record struct EndPoint(
             .Where(x =>
                 x.MediaType.Value.Schema != null &&
                 (x.MediaType.Value.Schema.Type == "object" ||
-                 x.MediaType.Value.Schema.Type == "array" ||
+                 (x.MediaType.Value.Schema.Type == "array"
+                  && x.MediaType.Value.Schema.Items?.Type == "object") ||
                  x.MediaType.Value.Schema.AnyOf is { Count: > 0 } ||
                  x.MediaType.Value.Schema.OneOf is { Count: > 0 } ||
-                 x.MediaType.Value.Schema.AllOf is { Count: > 0 })) //&& x.Parameter.Schema.Items?.Type == "object"
+                 x.MediaType.Value.Schema.AllOf is { Count: > 0 }))
             .SelectMany(x => ModelData.FromSchemas(
                 x.MediaType.Value.Schema,
                 settings,
