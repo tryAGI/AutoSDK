@@ -3306,6 +3306,102 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
     FileNameWithoutExtension: G.Models.ChatCompletionToolChoiceOption
   },
   {
+    Id: ChatCompletionToolChoiceOptionVariant1,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: none,
+        Name: None,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: none,
+        ArgumentName: none,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: auto,
+        Name: Auto,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: auto,
+        ArgumentName: auto,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: required,
+        Name: Required,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: required,
+        ArgumentName: required,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary:
+`none` means the model will not call any tool and instead generates a message. `auto` means the model can pick between generating a message or calling one or more tools. `required` means the model must call one or more tools.
+,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ChatCompletionToolChoiceOptionVariant1,
+    ClassName: ChatCompletionToolChoiceOptionVariant1,
+    GlobalClassName: global::G.ChatCompletionToolChoiceOptionVariant1,
+    ExternalClassName: ChatCompletionToolChoiceOptionVariant1,
+    FileNameWithoutExtension: G.Models.ChatCompletionToolChoiceOptionVariant1
+  },
+  {
     Id: ChatCompletionNamedToolChoice,
     AddTypeName: false,
     Parents: null,
@@ -17800,6 +17896,77 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     FileNameWithoutExtension: G.Models.AssistantsApiResponseFormatOption
   },
   {
+    Id: AssistantsApiResponseFormatOptionVariant1,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: none,
+        Name: None,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: none,
+        ArgumentName: none,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: auto,
+        Name: Auto,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: auto,
+        ArgumentName: auto,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary:
+`auto` is the default value
+,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: AssistantsApiResponseFormatOptionVariant1,
+    ClassName: AssistantsApiResponseFormatOptionVariant1,
+    GlobalClassName: global::G.AssistantsApiResponseFormatOptionVariant1,
+    ExternalClassName: AssistantsApiResponseFormatOptionVariant1,
+    FileNameWithoutExtension: G.Models.AssistantsApiResponseFormatOptionVariant1
+  },
+  {
     Id: AssistantsApiResponseFormat,
     AddTypeName: false,
     Parents: null,
@@ -20988,6 +21155,102 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
     GlobalClassName: global::G.AssistantsApiToolChoiceOption,
     ExternalClassName: AssistantsApiToolChoiceOption,
     FileNameWithoutExtension: G.Models.AssistantsApiToolChoiceOption
+  },
+  {
+    Id: AssistantsApiToolChoiceOptionVariant1,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: none,
+        Name: None,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: none,
+        ArgumentName: none,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: auto,
+        Name: Auto,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: auto,
+        ArgumentName: auto,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: required,
+        Name: Required,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: required,
+        ArgumentName: required,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary:
+`none` means the model will not call any tools and instead generates a message. `auto` means the model can pick between generating a message or calling one or more tools. `required` means the model must call one or more tools before responding to the user.
+,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: AssistantsApiToolChoiceOptionVariant1,
+    ClassName: AssistantsApiToolChoiceOptionVariant1,
+    GlobalClassName: global::G.AssistantsApiToolChoiceOptionVariant1,
+    ExternalClassName: AssistantsApiToolChoiceOptionVariant1,
+    FileNameWithoutExtension: G.Models.AssistantsApiToolChoiceOptionVariant1
   },
   {
     Id: AssistantsNamedToolChoice,

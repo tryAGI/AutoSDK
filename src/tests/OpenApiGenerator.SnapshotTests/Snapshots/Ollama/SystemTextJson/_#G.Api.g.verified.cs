@@ -64,10 +64,16 @@ namespace G
                     new global::OpenApiGenerator.JsonConverters.MessageRoleNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CreateModelResponseStatusJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CreateModelResponseStatusNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.CreateModelStatusVariant1JsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.CreateModelStatusVariant1NullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.PullModelResponseStatusJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.PullModelResponseStatusNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.PullModelStatusVariant1JsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.PullModelStatusVariant1NullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.PushModelResponseStatusJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.PushModelResponseStatusNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.PushModelStatusVariant1JsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.PushModelStatusVariant1NullableJsonConverter(),
                 }
             };
         }

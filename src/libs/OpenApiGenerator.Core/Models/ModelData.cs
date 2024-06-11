@@ -72,24 +72,75 @@ public readonly record struct ModelData(
 
         if (schema.AnyOf is { Count: > 0 })
         {
-            return schema.AnyOf
+            var classes = schema.AnyOf
                 .Where(x => x.IsObjectWithoutReference())
                 .Select((x, i) => FromSchema(x.UseReferenceIdOrKey(key + $"Variant{i + 1}"), settings, parents))
                 .ToArray();
+            var enums = schema.AnyOf
+                .Where(x => x.IsEnum())
+                .Select((x, i) => FromSchema(x.UseReferenceIdOrKey(key + $"Variant{i + 1}"), settings, parents) with
+                {
+                    Style = ModelStyle.Enumeration,
+                    Properties = x.Enum
+                        .Select(value => value.ToEnumValue())
+                        .Where(value => !string.IsNullOrWhiteSpace(value.Name))
+                        .ToImmutableArray(),
+                })
+                .ToArray();
+
+            return
+            [
+                ..classes,
+                ..enums
+            ];
         }
         if (schema.AllOf is { Count: > 0 })
         {
-            return schema.AllOf
+            var classes = schema.AllOf
                 .Where(x => x.IsObjectWithoutReference())
                 .Select((x, i) => FromSchema(x.UseReferenceIdOrKey(key + $"Variant{i + 1}"), settings, parents))
                 .ToArray();
+            var enums = schema.AllOf
+                .Where(x => x.IsEnum())
+                .Select((x, i) => FromSchema(x.UseReferenceIdOrKey(key + $"Variant{i + 1}"), settings, parents) with
+                {
+                    Style = ModelStyle.Enumeration,
+                    Properties = x.Enum
+                        .Select(value => value.ToEnumValue())
+                        .Where(value => !string.IsNullOrWhiteSpace(value.Name))
+                        .ToImmutableArray(),
+                })
+                .ToArray();
+
+            return
+            [
+                ..classes,
+                ..enums,
+            ];
         }
         if (schema.OneOf is { Count: > 0 })
         {
-            return schema.OneOf
+            var classes = schema.OneOf
                 .Where(x => x.IsObjectWithoutReference())
                 .Select((x, i) => FromSchema(x.UseReferenceIdOrKey(key + $"Variant{i + 1}"), settings, parents))
                 .ToArray();
+            var enums = schema.OneOf
+                .Where(x => x.IsEnum())
+                .Select((x, i) => FromSchema(x.UseReferenceIdOrKey(key + $"Variant{i + 1}"), settings, parents) with
+                {
+                    Style = ModelStyle.Enumeration,
+                    Properties = x.Enum
+                        .Select(value => value.ToEnumValue())
+                        .Where(value => !string.IsNullOrWhiteSpace(value.Name))
+                        .ToImmutableArray(),
+                })
+                .ToArray();
+
+            return
+            [
+                ..classes,
+                ..enums,
+            ];
         }
 
         if (schema.Type == "object")

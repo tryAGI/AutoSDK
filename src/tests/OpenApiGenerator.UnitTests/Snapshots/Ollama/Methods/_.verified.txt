@@ -2480,10 +2480,16 @@ If `false` the response will be returned as a single response object, otherwise 
       global::OpenApiGenerator.JsonConverters.MessageRoleNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateModelResponseStatusJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateModelResponseStatusNullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateModelStatusVariant1JsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateModelStatusVariant1NullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.PullModelResponseStatusJsonConverter,
       global::OpenApiGenerator.JsonConverters.PullModelResponseStatusNullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.PullModelStatusVariant1JsonConverter,
+      global::OpenApiGenerator.JsonConverters.PullModelStatusVariant1NullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.PushModelResponseStatusJsonConverter,
-      global::OpenApiGenerator.JsonConverters.PushModelResponseStatusNullableJsonConverter
+      global::OpenApiGenerator.JsonConverters.PushModelResponseStatusNullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.PushModelStatusVariant1JsonConverter,
+      global::OpenApiGenerator.JsonConverters.PushModelStatusVariant1NullableJsonConverter
     ],
     MethodName: MainConstructorAsync,
     NotAsyncMethodName: MainConstructor,
