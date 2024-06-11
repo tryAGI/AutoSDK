@@ -12,8 +12,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<CreatePollResponse> CreatePollAsync(
-            CreatePollBody request,
+        public async global::System.Threading.Tasks.Task<global::G.CreatePollResponse> CreatePollAsync(
+            global::G.CreatePollBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -35,7 +35,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<CreatePollResponse?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.CreatePollResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -50,16 +50,16 @@ namespace G
         /// <param name="channelPointsPerVote"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<CreatePollResponse> CreatePollAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CreatePollResponse> CreatePollAsync(
             string broadcasterId,
             string title,
-            global::System.Collections.Generic.IList<CreatePollBodyChoices> choices,
+            global::System.Collections.Generic.IList<global::G.CreatePollBodyChoices> choices,
             int duration,
             bool channelPointsVotingEnabled = default,
             int channelPointsPerVote = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new CreatePollBody
+            var request = new global::G.CreatePollBody
             {
                 BroadcasterId = broadcasterId,
                 Title = title,

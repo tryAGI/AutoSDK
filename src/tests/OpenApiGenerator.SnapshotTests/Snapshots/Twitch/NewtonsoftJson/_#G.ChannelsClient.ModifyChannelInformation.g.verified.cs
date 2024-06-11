@@ -15,7 +15,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task ModifyChannelInformationAsync(
             string broadcasterId,
-            ModifyChannelInformationBody request,
+            global::G.ModifyChannelInformationBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -55,11 +55,11 @@ namespace G
             string? title = default,
             int delay = default,
             global::System.Collections.Generic.IList<string?>? tags = default,
-            global::System.Collections.Generic.IList<ModifyChannelInformationBodyContentClassificationLabels?>? contentClassificationLabels = default,
+            global::System.Collections.Generic.IList<global::G.ModifyChannelInformationBodyContentClassificationLabels?>? contentClassificationLabels = default,
             bool isBrandedContent = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new ModifyChannelInformationBody
+            var request = new global::G.ModifyChannelInformationBody
             {
                 GameId = gameId,
                 BroadcasterLanguage = broadcasterLanguage,

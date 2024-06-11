@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory1))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<CreateFineTuningJobRequestIntegrationsType> Type { get; set; }
+        public required global::System.OneOf<global::G.CreateFineTuningJobRequestIntegrationsType> Type { get; set; }
 
         /// <summary>
         /// The settings for your integration with Weights and Biases. This payload specifies the project that
@@ -24,7 +24,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("wandb")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CreateFineTuningJobRequestIntegrationsWandb Wandb { get; set; }
+        public required global::G.CreateFineTuningJobRequestIntegrationsWandb Wandb { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

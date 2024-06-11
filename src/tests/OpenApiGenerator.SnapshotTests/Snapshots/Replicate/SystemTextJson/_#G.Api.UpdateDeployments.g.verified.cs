@@ -14,10 +14,10 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<UpdateDeploymentsResponse> UpdateDeploymentsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.UpdateDeploymentsResponse> UpdateDeploymentsAsync(
             string deploymentOwner,
             string deploymentName,
-            UpdateDeploymentsRequest request,
+            global::G.UpdateDeploymentsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -39,7 +39,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<UpdateDeploymentsResponse?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.UpdateDeploymentsResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -54,7 +54,7 @@ namespace G
         /// <param name="version"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<UpdateDeploymentsResponse> UpdateDeploymentsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.UpdateDeploymentsResponse> UpdateDeploymentsAsync(
             string deploymentOwner,
             string deploymentName,
             string? hardware = default,
@@ -63,7 +63,7 @@ namespace G
             string? version = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new UpdateDeploymentsRequest
+            var request = new global::G.UpdateDeploymentsRequest
             {
                 Hardware = hardware,
                 MaxInstances = maxInstances,

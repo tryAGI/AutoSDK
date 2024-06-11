@@ -13,7 +13,7 @@ namespace G
         /// An array that contains a single object with the status of your start commercial request.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<StartCommercialResponseData> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.StartCommercialResponseData> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

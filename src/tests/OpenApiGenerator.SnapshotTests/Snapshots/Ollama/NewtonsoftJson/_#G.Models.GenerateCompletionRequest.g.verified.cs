@@ -52,7 +52,7 @@ namespace G
         /// Additional model parameters listed in the documentation for the Modelfile such as `temperature`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("options")]
-        public RequestOptions? Options { get; set; }
+        public global::G.RequestOptions? Options { get; set; }
 
         /// <summary>
         /// The format to return a response in. Currently the only accepted value is json.
@@ -60,7 +60,7 @@ namespace G
         /// Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format")]
-        public GenerateCompletionRequestFormat? Format { get; set; }
+        public global::G.GenerateCompletionRequestFormat? Format { get; set; }
 
         /// <summary>
         /// If `true` no formatting will be applied to the prompt and no context will be returned. 

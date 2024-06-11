@@ -13,7 +13,7 @@ namespace G
         /// The type of tool being defined: `code_interpreter`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public AssistantToolsCodeType Type { get; set; } = default!;
+        public global::G.AssistantToolsCodeType Type { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

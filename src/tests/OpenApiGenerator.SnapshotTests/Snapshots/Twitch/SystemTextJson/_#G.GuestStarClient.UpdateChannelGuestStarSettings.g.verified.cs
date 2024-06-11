@@ -15,7 +15,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task UpdateChannelGuestStarSettingsAsync(
             string broadcasterId,
-            UpdateChannelGuestStarSettingsBody request,
+            global::G.UpdateChannelGuestStarSettingsBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -51,11 +51,11 @@ namespace G
             bool isModeratorSendLiveEnabled = default,
             int slotCount = default,
             bool isBrowserSourceAudioEnabled = default,
-            UpdateChannelGuestStarSettingsBodyGroupLayout? groupLayout = default,
+            global::G.UpdateChannelGuestStarSettingsBodyGroupLayout? groupLayout = default,
             bool regenerateBrowserSources = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new UpdateChannelGuestStarSettingsBody
+            var request = new global::G.UpdateChannelGuestStarSettingsBody
             {
                 IsModeratorSendLiveEnabled = isModeratorSendLiveEnabled,
                 SlotCount = slotCount,

@@ -29,7 +29,7 @@ namespace G
         /// * **subscriptions** — A subscriber emote.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("emote_type", Required = global::Newtonsoft.Json.Required.Always)]
-        public GetUserEmotesResponseDataEmoteType EmoteType { get; set; } = default!;
+        public global::G.GetUserEmotesResponseDataEmoteType EmoteType { get; set; } = default!;
 
         /// <summary>
         /// An ID that identifies the emote set that the emote belongs to.

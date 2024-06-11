@@ -13,7 +13,7 @@ namespace G
         /// The active extensions that the broadcaster has installed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data")]
-        public GetUserActiveExtensionsResponseData? Data { get; set; }
+        public global::G.GetUserActiveExtensionsResponseData? Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

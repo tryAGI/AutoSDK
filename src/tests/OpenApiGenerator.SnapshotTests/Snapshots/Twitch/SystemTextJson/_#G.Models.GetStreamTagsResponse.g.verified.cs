@@ -16,7 +16,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public required global::System.Collections.Generic.IList<StreamTag> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.StreamTag> Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

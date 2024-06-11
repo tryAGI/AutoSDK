@@ -22,7 +22,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageContentImageFileObjectImageFileDetailJsonConverter))]
-        public MessageContentImageFileObjectImageFileDetail? Detail { get; set; } = MessageContentImageFileObjectImageFileDetail.Auto;
+        public global::G.MessageContentImageFileObjectImageFileDetail? Detail { get; set; } = global::G.MessageContentImageFileObjectImageFileDetail.Auto;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

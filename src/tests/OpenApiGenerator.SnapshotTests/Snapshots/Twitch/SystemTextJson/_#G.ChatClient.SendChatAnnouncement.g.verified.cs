@@ -17,7 +17,7 @@ namespace G
         public async global::System.Threading.Tasks.Task SendChatAnnouncementAsync(
             string broadcasterId,
             string moderatorId,
-            SendChatAnnouncementBody request,
+            global::G.SendChatAnnouncementBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -50,10 +50,10 @@ namespace G
             string broadcasterId,
             string moderatorId,
             string message,
-            SendChatAnnouncementBodyColor? color = default,
+            global::G.SendChatAnnouncementBodyColor? color = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new SendChatAnnouncementBody
+            var request = new global::G.SendChatAnnouncementBody
             {
                 Message = message,
                 Color = color,

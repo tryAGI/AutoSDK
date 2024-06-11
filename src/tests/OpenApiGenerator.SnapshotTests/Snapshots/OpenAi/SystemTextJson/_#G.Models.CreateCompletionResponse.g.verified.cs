@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("choices")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<CreateCompletionResponseChoices> Choices { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.CreateCompletionResponseChoices> Choices { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the completion was created.
@@ -50,13 +50,13 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateCompletionResponseObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CreateCompletionResponseObject Object { get; set; }
+        public required global::G.CreateCompletionResponseObject Object { get; set; }
 
         /// <summary>
         /// Usage statistics for the completion request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
-        public CompletionUsage? Usage { get; set; }
+        public global::G.CompletionUsage? Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

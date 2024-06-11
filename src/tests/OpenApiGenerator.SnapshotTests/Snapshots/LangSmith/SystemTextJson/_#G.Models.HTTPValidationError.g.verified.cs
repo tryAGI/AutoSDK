@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
-        public global::System.Collections.Generic.IList<ValidationError>? Detail { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ValidationError>? Detail { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

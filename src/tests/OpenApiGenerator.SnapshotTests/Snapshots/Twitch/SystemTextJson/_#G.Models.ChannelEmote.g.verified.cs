@@ -30,7 +30,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("images")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ChannelEmoteImages Images { get; set; }
+        public required global::G.ChannelEmoteImages Images { get; set; }
 
         /// <summary>
         /// The subscriber tier at which the emote is unlocked. This field contains the tier information only if `emote_type` is set to `subscriptions`, otherwise, it's an empty string.
@@ -49,7 +49,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("emote_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChannelEmoteEmoteTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ChannelEmoteEmoteType EmoteType { get; set; }
+        public required global::G.ChannelEmoteEmoteType EmoteType { get; set; }
 
         /// <summary>
         /// An ID that identifies the emote set that the emote belongs to.
@@ -66,7 +66,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<ChannelEmoteFormat> Format { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.ChannelEmoteFormat> Format { get; set; }
 
         /// <summary>
         /// The sizes that the emote is available in. For example, if the emote is available in small and medium sizes, the array contains 1.0 and 2.0\. Possible sizes are:  
@@ -77,7 +77,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scale")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<ChannelEmoteScale> Scale { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.ChannelEmoteScale> Scale { get; set; }
 
         /// <summary>
         /// The background themes that the emote is available in. Possible themes are:  
@@ -87,7 +87,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("theme_mode")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<ChannelEmoteThemeMode> ThemeMode { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.ChannelEmoteThemeMode> ThemeMode { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

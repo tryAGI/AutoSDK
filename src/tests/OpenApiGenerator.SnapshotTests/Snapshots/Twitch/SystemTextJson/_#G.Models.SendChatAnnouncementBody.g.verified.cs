@@ -29,7 +29,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("color")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SendChatAnnouncementBodyColorJsonConverter))]
-        public SendChatAnnouncementBodyColor? Color { get; set; }
+        public global::G.SendChatAnnouncementBodyColor? Color { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

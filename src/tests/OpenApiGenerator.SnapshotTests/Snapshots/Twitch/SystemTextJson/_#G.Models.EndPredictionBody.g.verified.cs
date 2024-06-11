@@ -37,7 +37,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.EndPredictionBodyStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required EndPredictionBodyStatus Status { get; set; }
+        public required global::G.EndPredictionBodyStatus Status { get; set; }
 
         /// <summary>
         /// The ID of the winning outcome. You must set this parameter if you set `status` to RESOLVED.

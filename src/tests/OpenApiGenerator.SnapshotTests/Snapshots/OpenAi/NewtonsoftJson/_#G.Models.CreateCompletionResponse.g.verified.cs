@@ -19,7 +19,7 @@ namespace G
         /// The list of completion choices the model generated for the input prompt.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("choices", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<CreateCompletionResponseChoices> Choices { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.CreateCompletionResponseChoices> Choices { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the completion was created.
@@ -44,13 +44,13 @@ namespace G
         /// The object type, which is always "text_completion"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public CreateCompletionResponseObject Object { get; set; } = default!;
+        public global::G.CreateCompletionResponseObject Object { get; set; } = default!;
 
         /// <summary>
         /// Usage statistics for the completion request.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("usage")]
-        public CompletionUsage? Usage { get; set; }
+        public global::G.CompletionUsage? Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

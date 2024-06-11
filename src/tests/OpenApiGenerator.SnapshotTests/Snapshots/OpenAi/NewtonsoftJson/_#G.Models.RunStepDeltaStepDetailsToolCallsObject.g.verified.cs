@@ -13,13 +13,13 @@ namespace G
         /// Always `tool_calls`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public RunStepDeltaStepDetailsToolCallsObjectType Type { get; set; } = default!;
+        public global::G.RunStepDeltaStepDetailsToolCallsObjectType Type { get; set; } = default!;
 
         /// <summary>
         /// An array of tool calls the run step was involved in. These can be associated with one of three types of tools: `code_interpreter`, `file_search`, or `function`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_calls")]
-        public global::System.Collections.Generic.IList<global::System.OneOf<RunStepDeltaStepDetailsToolCallsCodeObject?, RunStepDeltaStepDetailsToolCallsFileSearchObject?, RunStepDeltaStepDetailsToolCallsFunctionObject?>>? ToolCalls { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::G.RunStepDeltaStepDetailsToolCallsCodeObject?, global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject?, global::G.RunStepDeltaStepDetailsToolCallsFunctionObject?>>? ToolCalls { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

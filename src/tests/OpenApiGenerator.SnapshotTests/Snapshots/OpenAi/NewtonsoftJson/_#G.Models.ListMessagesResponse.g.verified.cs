@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<MessageObject> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.MessageObject> Data { get; set; } = default!;
 
         /// <summary>
         /// <br/>Example: msg_abc123

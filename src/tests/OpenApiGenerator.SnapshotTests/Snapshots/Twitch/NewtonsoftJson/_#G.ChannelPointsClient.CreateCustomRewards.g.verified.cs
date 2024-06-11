@@ -13,9 +13,9 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<CreateCustomRewardsResponse> CreateCustomRewardsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CreateCustomRewardsResponse> CreateCustomRewardsAsync(
             string broadcasterId,
-            CreateCustomRewardsBody request,
+            global::G.CreateCustomRewardsBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -37,7 +37,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<CreateCustomRewardsResponse?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.CreateCustomRewardsResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -60,7 +60,7 @@ namespace G
         /// <param name="shouldRedemptionsSkipRequestQueue"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<CreateCustomRewardsResponse> CreateCustomRewardsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CreateCustomRewardsResponse> CreateCustomRewardsAsync(
             string broadcasterId,
             string title,
             long cost,
@@ -77,7 +77,7 @@ namespace G
             bool shouldRedemptionsSkipRequestQueue = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new CreateCustomRewardsBody
+            var request = new global::G.CreateCustomRewardsBody
             {
                 Title = title,
                 Cost = cost,

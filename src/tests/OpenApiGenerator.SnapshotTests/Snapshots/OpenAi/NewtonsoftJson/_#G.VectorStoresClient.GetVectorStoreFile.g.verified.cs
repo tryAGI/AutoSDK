@@ -13,7 +13,7 @@ namespace G
         /// <param name="fileId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<VectorStoreFileObject> GetVectorStoreFileAsync(
+        public async global::System.Threading.Tasks.Task<global::G.VectorStoreFileObject> GetVectorStoreFileAsync(
             string vectorStoreId,
             string fileId,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -31,7 +31,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<VectorStoreFileObject?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.VectorStoreFileObject?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

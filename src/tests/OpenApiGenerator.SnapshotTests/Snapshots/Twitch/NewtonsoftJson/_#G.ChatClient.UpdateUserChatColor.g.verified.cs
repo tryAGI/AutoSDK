@@ -15,26 +15,26 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task UpdateUserChatColorAsync(
             string userId,
-            UpdateUserChatColorColor color,
+            global::G.UpdateUserChatColorColor color,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var colorValue = color switch
             {
-                UpdateUserChatColorColor.Blue => "blue",
-                UpdateUserChatColorColor.BlueViolet => "blue_violet",
-                UpdateUserChatColorColor.CadetBlue => "cadet_blue",
-                UpdateUserChatColorColor.Chocolate => "chocolate",
-                UpdateUserChatColorColor.Coral => "coral",
-                UpdateUserChatColorColor.DodgerBlue => "dodger_blue",
-                UpdateUserChatColorColor.Firebrick => "firebrick",
-                UpdateUserChatColorColor.GoldenRod => "golden_rod",
-                UpdateUserChatColorColor.Green => "green",
-                UpdateUserChatColorColor.HotPink => "hot_pink",
-                UpdateUserChatColorColor.OrangeRed => "orange_red",
-                UpdateUserChatColorColor.Red => "red",
-                UpdateUserChatColorColor.SeaGreen => "sea_green",
-                UpdateUserChatColorColor.SpringGreen => "spring_green",
-                UpdateUserChatColorColor.YellowGreen => "yellow_green",
+                global::G.UpdateUserChatColorColor.Blue => "blue",
+                global::G.UpdateUserChatColorColor.BlueViolet => "blue_violet",
+                global::G.UpdateUserChatColorColor.CadetBlue => "cadet_blue",
+                global::G.UpdateUserChatColorColor.Chocolate => "chocolate",
+                global::G.UpdateUserChatColorColor.Coral => "coral",
+                global::G.UpdateUserChatColorColor.DodgerBlue => "dodger_blue",
+                global::G.UpdateUserChatColorColor.Firebrick => "firebrick",
+                global::G.UpdateUserChatColorColor.GoldenRod => "golden_rod",
+                global::G.UpdateUserChatColorColor.Green => "green",
+                global::G.UpdateUserChatColorColor.HotPink => "hot_pink",
+                global::G.UpdateUserChatColorColor.OrangeRed => "orange_red",
+                global::G.UpdateUserChatColorColor.Red => "red",
+                global::G.UpdateUserChatColorColor.SeaGreen => "sea_green",
+                global::G.UpdateUserChatColorColor.SpringGreen => "spring_green",
+                global::G.UpdateUserChatColorColor.YellowGreen => "yellow_green",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

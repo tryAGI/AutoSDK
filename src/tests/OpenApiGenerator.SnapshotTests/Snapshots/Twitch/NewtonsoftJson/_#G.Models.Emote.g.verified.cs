@@ -27,7 +27,7 @@ namespace G
         /// **NOTE:** You should use the templated URL in the `template` field to fetch the image instead of using these URLs.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("images", Required = global::Newtonsoft.Json.Required.Always)]
-        public EmoteImages Images { get; set; } = default!;
+        public global::G.EmoteImages Images { get; set; } = default!;
 
         /// <summary>
         /// The type of emote. The possible values are:   
@@ -37,7 +37,7 @@ namespace G
         /// * subscriptions — A subscriber emote.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("emote_type", Required = global::Newtonsoft.Json.Required.Always)]
-        public EmoteEmoteType EmoteType { get; set; } = default!;
+        public global::G.EmoteEmoteType EmoteType { get; set; } = default!;
 
         /// <summary>
         /// An ID that identifies the emote set that the emote belongs to.
@@ -58,7 +58,7 @@ namespace G
         /// * static — A static PNG file is available for this emote.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<EmoteFormat> Format { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.EmoteFormat> Format { get; set; } = default!;
 
         /// <summary>
         /// The sizes that the emote is available in. For example, if the emote is available in small and medium sizes, the array contains 1.0 and 2.0\. Possible sizes are:   
@@ -68,7 +68,7 @@ namespace G
         /// * 3.0 — A large version (112px x 112px) is available.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scale", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<EmoteScale> Scale { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.EmoteScale> Scale { get; set; } = default!;
 
         /// <summary>
         /// The background themes that the emote is available in. Possible themes are:   
@@ -77,7 +77,7 @@ namespace G
         /// * light
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("theme_mode", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<EmoteThemeMode> ThemeMode { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.EmoteThemeMode> ThemeMode { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

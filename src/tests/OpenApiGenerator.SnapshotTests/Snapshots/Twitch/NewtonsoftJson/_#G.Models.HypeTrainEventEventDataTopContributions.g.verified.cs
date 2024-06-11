@@ -23,7 +23,7 @@ namespace G
         /// * OTHER — Covers other contribution methods not listed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public HypeTrainEventEventDataTopContributionsType Type { get; set; } = default!;
+        public global::G.HypeTrainEventEventDataTopContributionsType Type { get; set; } = default!;
 
         /// <summary>
         /// The ID of the user that made the contribution.

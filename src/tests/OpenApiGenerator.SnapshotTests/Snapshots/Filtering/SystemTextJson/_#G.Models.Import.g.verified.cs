@@ -47,7 +47,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ImportStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ImportStatus Status { get; set; }
+        public required global::G.ImportStatus Status { get; set; }
 
         /// <summary>
         /// 
@@ -107,7 +107,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_choices")]
-        public global::System.Collections.Generic.IList<ImportProjectChoices?>? ProjectChoices { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ImportProjectChoices?>? ProjectChoices { get; set; }
 
         /// <summary>
         /// 

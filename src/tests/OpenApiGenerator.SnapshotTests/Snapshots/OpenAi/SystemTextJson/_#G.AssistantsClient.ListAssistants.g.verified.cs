@@ -15,9 +15,9 @@ namespace G
         /// <param name="before"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<ListAssistantsResponse> ListAssistantsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.ListAssistantsResponse> ListAssistantsAsync(
             int limit,
-            ListAssistantsOrder order,
+            global::G.ListAssistantsOrder order,
             string after,
             string before,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -35,7 +35,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<ListAssistantsResponse?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.ListAssistantsResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

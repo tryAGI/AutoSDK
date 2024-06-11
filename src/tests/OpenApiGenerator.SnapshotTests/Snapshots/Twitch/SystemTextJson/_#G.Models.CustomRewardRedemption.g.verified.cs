@@ -63,7 +63,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reward")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CustomRewardRedemptionReward Reward { get; set; }
+        public required global::G.CustomRewardRedemptionReward Reward { get; set; }
 
         /// <summary>
         /// The text that the user entered at the prompt when they redeemed the reward; otherwise, an empty string if user input was not required.
@@ -82,7 +82,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CustomRewardRedemptionStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CustomRewardRedemptionStatus Status { get; set; }
+        public required global::G.CustomRewardRedemptionStatus Status { get; set; }
 
         /// <summary>
         /// The date and time of when the reward was redeemed, in RFC3339 format.

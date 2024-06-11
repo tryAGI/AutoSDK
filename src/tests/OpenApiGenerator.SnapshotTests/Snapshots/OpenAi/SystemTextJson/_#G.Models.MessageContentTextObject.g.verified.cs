@@ -15,14 +15,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageContentTextObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required MessageContentTextObjectType Type { get; set; }
+        public required global::G.MessageContentTextObjectType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required MessageContentTextObjectText Text { get; set; }
+        public required global::G.MessageContentTextObjectText Text { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -37,13 +37,13 @@ namespace G
         /// <br/>Default Value: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("choices")]
-        public global::System.Collections.Generic.IList<Choice>? Choices { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Choice>? Choices { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("usage")]
-        public CompletionUsage? Usage { get; set; }
+        public global::G.CompletionUsage? Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

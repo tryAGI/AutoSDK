@@ -42,7 +42,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required SimpleUser Owner { get; set; }
+        public required global::G.SimpleUser Owner { get; set; }
 
         /// <summary>
         /// 
@@ -497,7 +497,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
-        public MinimalRepositoryPermissions? Permissions { get; set; }
+        public global::G.MinimalRepositoryPermissions? Permissions { get; set; }
 
         /// <summary>
         /// <br/>Example: admin
@@ -533,13 +533,13 @@ namespace G
         /// Code Of Conduct
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code_of_conduct")]
-        public CodeOfConduct? CodeOfConduct { get; set; }
+        public global::G.CodeOfConduct? CodeOfConduct { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("license")]
-        public MinimalRepositoryLicense? License { get; set; }
+        public global::G.MinimalRepositoryLicense? License { get; set; }
 
         /// <summary>
         /// <br/>Example: 0
@@ -575,7 +575,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("security_and_analysis")]
-        public SecurityAndAnalysis? SecurityAndAnalysis { get; set; }
+        public global::G.SecurityAndAnalysis? SecurityAndAnalysis { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

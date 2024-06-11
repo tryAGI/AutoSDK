@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunObjectObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunObjectObject Object { get; set; }
+        public required global::G.RunObjectObject Object { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run was created.
@@ -51,21 +51,21 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunObjectStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunObjectStatus Status { get; set; }
+        public required global::G.RunObjectStatus Status { get; set; }
 
         /// <summary>
         /// Details on the action required to continue the run. Will be `null` if no action is required.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("required_action")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunObjectRequiredAction? RequiredAction { get; set; }
+        public required global::G.RunObjectRequiredAction? RequiredAction { get; set; }
 
         /// <summary>
         /// The last error associated with this run. Will be `null` if there are no errors.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunObjectLastError? LastError { get; set; }
+        public required global::G.RunObjectLastError? LastError { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run will expire.
@@ -107,7 +107,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("incomplete_details")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunObjectIncompleteDetails? IncompleteDetails { get; set; }
+        public required global::G.RunObjectIncompleteDetails? IncompleteDetails { get; set; }
 
         /// <summary>
         /// The model that the [assistant](/docs/api-reference/assistants) used for this run.
@@ -129,7 +129,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode, AssistantToolsFileSearch, AssistantToolsFunction>> Tools { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode, global::G.AssistantToolsFileSearch, global::G.AssistantToolsFunction>> Tools { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -143,7 +143,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunCompletionUsage? Usage { get; set; }
+        public required global::G.RunCompletionUsage? Usage { get; set; }
 
         /// <summary>
         /// The sampling temperature used for this run. If not set, defaults to 1.
@@ -176,7 +176,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncation_strategy")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required TruncationObject TruncationStrategy { get; set; }
+        public required global::G.TruncationObject TruncationStrategy { get; set; }
 
         /// <summary>
         /// Controls which (if any) tool is called by the model.
@@ -188,7 +188,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<RunObjectToolChoice, AssistantsNamedToolChoice> ToolChoice { get; set; }
+        public required global::System.OneOf<global::G.RunObjectToolChoice, global::G.AssistantsNamedToolChoice> ToolChoice { get; set; }
 
         /// <summary>
         /// Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
@@ -198,7 +198,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<RunObjectResponseFormat, AssistantsApiResponseFormat> ResponseFormat { get; set; }
+        public required global::System.OneOf<global::G.RunObjectResponseFormat, global::G.AssistantsApiResponseFormat> ResponseFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

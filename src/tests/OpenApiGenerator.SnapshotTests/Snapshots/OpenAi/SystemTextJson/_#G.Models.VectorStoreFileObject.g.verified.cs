@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.VectorStoreFileObjectObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required VectorStoreFileObjectObject Object { get; set; }
+        public required global::G.VectorStoreFileObjectObject Object { get; set; }
 
         /// <summary>
         /// The total vector store usage in bytes. Note that this may be different from the original file size.
@@ -51,14 +51,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.VectorStoreFileObjectStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required VectorStoreFileObjectStatus Status { get; set; }
+        public required global::G.VectorStoreFileObjectStatus Status { get; set; }
 
         /// <summary>
         /// The last error associated with this vector store file. Will be `null` if there are no errors.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required VectorStoreFileObjectLastError? LastError { get; set; }
+        public required global::G.VectorStoreFileObjectLastError? LastError { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

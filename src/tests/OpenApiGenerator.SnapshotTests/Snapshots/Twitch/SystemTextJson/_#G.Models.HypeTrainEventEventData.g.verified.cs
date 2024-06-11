@@ -49,7 +49,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_contribution")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required HypeTrainEventEventDataLastContribution LastContribution { get; set; }
+        public required global::G.HypeTrainEventEventDataLastContribution LastContribution { get; set; }
 
         /// <summary>
         /// The highest level that the Hype Train reached (the levels are 1 through 5).
@@ -70,7 +70,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_contributions")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<HypeTrainEventEventDataTopContributions> TopContributions { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.HypeTrainEventEventDataTopContributions> TopContributions { get; set; }
 
         /// <summary>
         /// The current total amount raised.

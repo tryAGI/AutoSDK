@@ -25,13 +25,13 @@ namespace G
         /// The type of the tool. Currently, only `function` is supported.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public ChatCompletionMessageToolCallChunkType? Type { get; set; }
+        public global::G.ChatCompletionMessageToolCallChunkType? Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("function")]
-        public ChatCompletionMessageToolCallChunkFunction? Function { get; set; }
+        public global::G.ChatCompletionMessageToolCallChunkFunction? Function { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

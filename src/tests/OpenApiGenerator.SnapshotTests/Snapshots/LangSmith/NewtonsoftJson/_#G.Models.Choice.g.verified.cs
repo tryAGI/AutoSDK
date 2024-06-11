@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("logprobs")]
-        public Logprobs? Logprobs { get; set; }
+        public global::G.Logprobs? Logprobs { get; set; }
 
         /// <summary>
         /// <br/>Default Value: 

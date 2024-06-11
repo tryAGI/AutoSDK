@@ -18,19 +18,19 @@ namespace G
         /// <param name="first"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<GetDropsEntitlementsResponse> GetDropsEntitlementsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.GetDropsEntitlementsResponse> GetDropsEntitlementsAsync(
             global::System.Collections.Generic.IList<string> id,
             string userId,
             string gameId,
-            GetDropsEntitlementsFulfillmentStatus fulfillmentStatus,
+            global::G.GetDropsEntitlementsFulfillmentStatus fulfillmentStatus,
             string after,
             int first,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var fulfillmentStatusValue = fulfillmentStatus switch
             {
-                GetDropsEntitlementsFulfillmentStatus.CLAIMED => "CLAIMED",
-                GetDropsEntitlementsFulfillmentStatus.FULFILLED => "FULFILLED",
+                global::G.GetDropsEntitlementsFulfillmentStatus.CLAIMED => "CLAIMED",
+                global::G.GetDropsEntitlementsFulfillmentStatus.FULFILLED => "FULFILLED",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -46,7 +46,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<GetDropsEntitlementsResponse?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.GetDropsEntitlementsResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

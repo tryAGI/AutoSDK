@@ -19,7 +19,7 @@ namespace G
         /// If `is_global_broadcast` is **true**, you must set this field to global. The broadcast and global values are mutually exclusive; specify only one of them.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<SendExtensionPubSubMessageBodyTarget> Target { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.SendExtensionPubSubMessageBodyTarget> Target { get; set; } = default!;
 
         /// <summary>
         /// The ID of the broadcaster to send the message to. Don’t include this field if `is_global_broadcast` is set to **true**.

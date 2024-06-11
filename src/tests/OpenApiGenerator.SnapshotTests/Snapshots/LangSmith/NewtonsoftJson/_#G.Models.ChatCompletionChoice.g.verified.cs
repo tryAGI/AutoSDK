@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("message")]
-        public ChatCompletionResponseMessage? Message { get; set; }
+        public global::G.ChatCompletionResponseMessage? Message { get; set; }
 
         /// <summary>
         /// <br/>Default Value: 

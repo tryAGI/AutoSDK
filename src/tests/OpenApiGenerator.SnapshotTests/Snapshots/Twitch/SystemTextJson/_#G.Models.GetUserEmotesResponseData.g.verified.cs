@@ -33,7 +33,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("emote_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.GetUserEmotesResponseDataEmoteTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required GetUserEmotesResponseDataEmoteType EmoteType { get; set; }
+        public required global::G.GetUserEmotesResponseDataEmoteType EmoteType { get; set; }
 
         /// <summary>
         /// An ID that identifies the emote set that the emote belongs to.

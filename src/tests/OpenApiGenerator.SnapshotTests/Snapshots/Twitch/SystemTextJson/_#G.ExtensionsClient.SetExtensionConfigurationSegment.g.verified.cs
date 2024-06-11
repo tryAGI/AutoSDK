@@ -13,7 +13,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task SetExtensionConfigurationSegmentAsync(
-            SetExtensionConfigurationSegmentBody request,
+            global::G.SetExtensionConfigurationSegmentBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -45,13 +45,13 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task SetExtensionConfigurationSegmentAsync(
             string extensionId,
-            SetExtensionConfigurationSegmentBodySegment segment,
+            global::G.SetExtensionConfigurationSegmentBodySegment segment,
             string? broadcasterId = default,
             string? content = default,
             string? version = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new SetExtensionConfigurationSegmentBody
+            var request = new global::G.SetExtensionConfigurationSegmentBody
             {
                 ExtensionId = extensionId,
                 Segment = segment,

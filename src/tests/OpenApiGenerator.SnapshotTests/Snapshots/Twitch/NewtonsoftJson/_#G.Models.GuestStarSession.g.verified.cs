@@ -19,7 +19,7 @@ namespace G
         /// List of guests currently interacting with the Guest Star session.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("guests", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<Guest> Guests { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.Guest> Guests { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

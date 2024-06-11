@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageObjectIncompleteDetailsReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required MessageObjectIncompleteDetailsReason Reason { get; set; }
+        public required global::G.MessageObjectIncompleteDetailsReason Reason { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

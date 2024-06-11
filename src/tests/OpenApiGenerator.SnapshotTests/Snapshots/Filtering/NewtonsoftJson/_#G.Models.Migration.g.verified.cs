@@ -19,7 +19,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableSimpleUser? Owner { get; set; } = default!;
+        public global::G.NullableSimpleUser? Owner { get; set; } = default!;
 
         /// <summary>
         /// <br/>Example: 0b989ba4-242f-11e5-81e1-c7b6966d2516
@@ -79,7 +79,7 @@ namespace G
         /// The repositories included in the migration. Only returned for export migrations.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repositories", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<Repository> Repositories { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.Repository> Repositories { get; set; } = default!;
 
         /// <summary>
         /// <br/>Example: https://api.github.com/orgs/octo-org/migrations/79

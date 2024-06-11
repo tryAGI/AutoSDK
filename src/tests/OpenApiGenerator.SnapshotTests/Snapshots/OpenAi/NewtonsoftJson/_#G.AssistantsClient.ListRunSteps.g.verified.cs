@@ -17,19 +17,19 @@ namespace G
         /// <param name="before"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<ListRunStepsResponse> ListRunStepsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.ListRunStepsResponse> ListRunStepsAsync(
             string threadId,
             string runId,
             int limit,
-            ListRunStepsOrder order,
+            global::G.ListRunStepsOrder order,
             string after,
             string before,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var orderValue = order switch
             {
-                ListRunStepsOrder.Asc => "asc",
-                ListRunStepsOrder.Desc => "desc",
+                global::G.ListRunStepsOrder.Asc => "asc",
+                global::G.ListRunStepsOrder.Desc => "desc",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -45,7 +45,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<ListRunStepsResponse?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.ListRunStepsResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

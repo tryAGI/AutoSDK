@@ -15,14 +15,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartImageTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ChatCompletionRequestMessageContentPartImageType Type { get; set; }
+        public required global::G.ChatCompletionRequestMessageContentPartImageType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ChatCompletionRequestMessageContentPartImageImageUrl ImageUrl { get; set; }
+        public required global::G.ChatCompletionRequestMessageContentPartImageImageUrl ImageUrl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

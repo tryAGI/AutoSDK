@@ -19,7 +19,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("method")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateEventSubSubscriptionBodyTransportMethodJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CreateEventSubSubscriptionBodyTransportMethod Method { get; set; }
+        public required global::G.CreateEventSubSubscriptionBodyTransportMethod Method { get; set; }
 
         /// <summary>
         /// The callback URL where the notifications are sent. The URL must use the HTTPS protocol and port 443\. See [Processing an event](https://dev.twitch.tv/docs/eventsub/handling-webhook-events#processing-an-event). Specify this field only if `method` is set to **webhook**.

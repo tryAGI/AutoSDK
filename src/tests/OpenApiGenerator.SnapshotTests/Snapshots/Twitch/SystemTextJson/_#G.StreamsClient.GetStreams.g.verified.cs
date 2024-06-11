@@ -20,11 +20,11 @@ namespace G
         /// <param name="after"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<GetStreamsResponse> GetStreamsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.GetStreamsResponse> GetStreamsAsync(
             global::System.Collections.Generic.IList<string> userId,
             global::System.Collections.Generic.IList<string> userLogin,
             global::System.Collections.Generic.IList<string> gameId,
-            GetStreamsType type,
+            global::G.GetStreamsType type,
             global::System.Collections.Generic.IList<string> language,
             int first,
             string before,
@@ -44,7 +44,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<GetStreamsResponse?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.GetStreamsResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

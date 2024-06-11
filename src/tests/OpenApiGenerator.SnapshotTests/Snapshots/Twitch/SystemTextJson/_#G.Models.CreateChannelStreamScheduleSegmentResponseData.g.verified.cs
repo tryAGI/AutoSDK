@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("segments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<ChannelStreamScheduleSegment> Segments { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.ChannelStreamScheduleSegment> Segments { get; set; }
 
         /// <summary>
         /// The ID of the broadcaster that owns the broadcast schedule.
@@ -42,7 +42,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vacation")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CreateChannelStreamScheduleSegmentResponseDataVacation Vacation { get; set; }
+        public required global::G.CreateChannelStreamScheduleSegmentResponseDataVacation Vacation { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

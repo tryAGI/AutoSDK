@@ -31,7 +31,7 @@ namespace G
         /// The reporting window’s start and end dates, in RFC3339 format.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("date_range", Required = global::Newtonsoft.Json.Required.Always)]
-        public GameAnalyticsDateRange DateRange { get; set; } = default!;
+        public global::G.GameAnalyticsDateRange DateRange { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

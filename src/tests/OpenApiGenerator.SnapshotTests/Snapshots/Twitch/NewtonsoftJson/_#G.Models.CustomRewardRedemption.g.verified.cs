@@ -55,7 +55,7 @@ namespace G
         /// An object that describes the reward that the user redeemed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reward", Required = global::Newtonsoft.Json.Required.Always)]
-        public CustomRewardRedemptionReward Reward { get; set; } = default!;
+        public global::G.CustomRewardRedemptionReward Reward { get; set; } = default!;
 
         /// <summary>
         /// The text that the user entered at the prompt when they redeemed the reward; otherwise, an empty string if user input was not required.
@@ -71,7 +71,7 @@ namespace G
         /// * UNFULFILLED
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public CustomRewardRedemptionStatus Status { get; set; } = default!;
+        public global::G.CustomRewardRedemptionStatus Status { get; set; } = default!;
 
         /// <summary>
         /// The date and time of when the reward was redeemed, in RFC3339 format.

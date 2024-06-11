@@ -19,7 +19,7 @@ namespace G
         /// Always `logs`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType Type { get; set; } = default!;
+        public global::G.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType Type { get; set; } = default!;
 
         /// <summary>
         /// The text output from the Code Interpreter tool call.

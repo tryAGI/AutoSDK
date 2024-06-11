@@ -56,7 +56,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::System.Collections.Generic.IList<Pet>,
+      CSharpType: global::System.Collections.Generic.IList<global::G.Pet>,
       IsArray: true,
       IsEnum: false,
       Properties: null,
@@ -64,15 +64,15 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Pet>,
-      CSharpTypeWithNullability: global::System.Collections.Generic.IList<Pet>?,
+      CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.Pet>,
+      CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.Pet>?,
       IsAnyOf: false,
       ConverterType: 
     },
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: global::System.Collections.Generic.IList<Pet>,
+        CSharpType: global::System.Collections.Generic.IList<global::G.Pet>,
         IsArray: true,
         IsEnum: false,
         Properties: null,
@@ -80,13 +80,13 @@
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
-        CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Pet>,
-        CSharpTypeWithNullability: global::System.Collections.Generic.IList<Pet>?,
+        CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.Pet>,
+        CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.Pet>?,
         IsAnyOf: false,
         ConverterType: 
       },
       {
-        CSharpType: Error,
+        CSharpType: global::G.Error,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -97,8 +97,8 @@
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
-        CSharpTypeWithoutNullability: Error,
-        CSharpTypeWithNullability: Error?,
+        CSharpTypeWithoutNullability: global::G.Error,
+        CSharpTypeWithNullability: global::G.Error?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -137,7 +137,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: Error,
+      CSharpType: global::G.Error,
       IsArray: false,
       IsEnum: false,
       Properties: [
@@ -148,15 +148,15 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: Error,
-      CSharpTypeWithNullability: Error?,
+      CSharpTypeWithoutNullability: global::G.Error,
+      CSharpTypeWithNullability: global::G.Error?,
       IsAnyOf: false,
       ConverterType: 
     },
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: Error,
+        CSharpType: global::G.Error,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -167,8 +167,8 @@
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
-        CSharpTypeWithoutNullability: Error,
-        CSharpTypeWithNullability: Error?,
+        CSharpTypeWithoutNullability: global::G.Error,
+        CSharpTypeWithNullability: global::G.Error?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -235,7 +235,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: Pet,
+      CSharpType: global::G.Pet,
       IsArray: false,
       IsEnum: false,
       Properties: [
@@ -250,15 +250,15 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: Pet,
-      CSharpTypeWithNullability: Pet?,
+      CSharpTypeWithoutNullability: global::G.Pet,
+      CSharpTypeWithNullability: global::G.Pet?,
       IsAnyOf: false,
       ConverterType: 
     },
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: Pet,
+        CSharpType: global::G.Pet,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -273,13 +273,13 @@
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
-        CSharpTypeWithoutNullability: Pet,
-        CSharpTypeWithNullability: Pet?,
+        CSharpTypeWithoutNullability: global::G.Pet,
+        CSharpTypeWithNullability: global::G.Pet?,
         IsAnyOf: false,
         ConverterType: 
       },
       {
-        CSharpType: Error,
+        CSharpType: global::G.Error,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -290,8 +290,8 @@
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
-        CSharpTypeWithoutNullability: Error,
-        CSharpTypeWithNullability: Error?,
+        CSharpTypeWithoutNullability: global::G.Error,
+        CSharpTypeWithNullability: global::G.Error?,
         IsAnyOf: false,
         ConverterType: 
       }

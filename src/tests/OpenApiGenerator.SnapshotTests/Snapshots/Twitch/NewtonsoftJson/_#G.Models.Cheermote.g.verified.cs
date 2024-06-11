@@ -19,7 +19,7 @@ namespace G
         /// A list of tier levels that the Cheermote supports. Each tier identifies the range of Bits that you can cheer at that tier level and an image that graphically identifies the tier level.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tiers", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<CheermoteTiers> Tiers { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.CheermoteTiers> Tiers { get; set; } = default!;
 
         /// <summary>
         /// The type of Cheermote. Possible values are:  
@@ -31,7 +31,7 @@ namespace G
         /// * sponsored — A sponsor-defined Cheermote. When used, the sponsor adds additional Bits to the amount that the user cheered. For example, if the user cheered Terminator100, the broadcaster might receive 110 Bits, which includes the sponsor's 10 Bits contribution.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public CheermoteType Type { get; set; } = default!;
+        public global::G.CheermoteType Type { get; set; } = default!;
 
         /// <summary>
         /// The order that the Cheermotes are shown in the Bits card. The numbers may not be consecutive. For example, the numbers may jump from 1 to 7 to 13\. The order numbers are unique within a Cheermote type (for example, global\_first\_party) but may not be unique amongst all Cheermotes in the response.

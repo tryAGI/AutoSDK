@@ -16,7 +16,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatTypeJsonConverter))]
-        public AssistantsApiResponseFormatType? Type { get; set; } = AssistantsApiResponseFormatType.Text;
+        public global::G.AssistantsApiResponseFormatType? Type { get; set; } = global::G.AssistantsApiResponseFormatType.Text;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

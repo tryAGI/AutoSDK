@@ -14,10 +14,10 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<RunObject> SubmitToolOuputsToRunAsync(
+        public async global::System.Threading.Tasks.Task<global::G.RunObject> SubmitToolOuputsToRunAsync(
             string threadId,
             string runId,
-            SubmitToolOutputsRunRequest request,
+            global::G.SubmitToolOutputsRunRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -39,7 +39,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<RunObject?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.RunObject?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -52,14 +52,14 @@ namespace G
         /// <param name="stream"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<RunObject> SubmitToolOuputsToRunAsync(
+        public async global::System.Threading.Tasks.Task<global::G.RunObject> SubmitToolOuputsToRunAsync(
             string threadId,
             string runId,
-            global::System.Collections.Generic.IList<SubmitToolOutputsRunRequestToolOutputs> toolOutputs,
+            global::System.Collections.Generic.IList<global::G.SubmitToolOutputsRunRequestToolOutputs> toolOutputs,
             bool? stream = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new SubmitToolOutputsRunRequest
+            var request = new global::G.SubmitToolOutputsRunRequest
             {
                 ToolOutputs = toolOutputs,
                 Stream = stream,

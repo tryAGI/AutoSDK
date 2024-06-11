@@ -42,7 +42,7 @@
     ConverterType: 
   },
   {
-    CSharpType: RequestOptions?,
+    CSharpType: global::G.RequestOptions?,
     IsArray: false,
     IsEnum: false,
     Properties: [
@@ -81,13 +81,13 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: RequestOptions,
-    CSharpTypeWithNullability: RequestOptions?,
+    CSharpTypeWithoutNullability: global::G.RequestOptions,
+    CSharpTypeWithNullability: global::G.RequestOptions?,
     IsAnyOf: false,
     ConverterType: 
   },
   {
-    CSharpType: GenerateCompletionRequestFormat?,
+    CSharpType: global::G.GenerateCompletionRequestFormat?,
     IsArray: false,
     IsEnum: true,
     Properties: [
@@ -99,10 +99,10 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: GenerateCompletionRequestFormat,
-    CSharpTypeWithNullability: GenerateCompletionRequestFormat?,
+    CSharpTypeWithoutNullability: global::G.GenerateCompletionRequestFormat,
+    CSharpTypeWithNullability: global::G.GenerateCompletionRequestFormat?,
     IsAnyOf: false,
-    ConverterType: GenerateCompletionRequestFormatJsonConverter
+    ConverterType: global::OpenApiGenerator.JsonConverters.GenerateCompletionRequestFormatJsonConverter
   },
   {
     CSharpType: bool,
@@ -175,7 +175,7 @@
     ConverterType: 
   },
   {
-    CSharpType: global::System.Collections.Generic.IList<Message>,
+    CSharpType: global::System.Collections.Generic.IList<global::G.Message>,
     IsArray: true,
     IsEnum: false,
     Properties: null,
@@ -183,13 +183,13 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Message>,
-    CSharpTypeWithNullability: global::System.Collections.Generic.IList<Message>?,
+    CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.Message>,
+    CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.Message>?,
     IsAnyOf: false,
     ConverterType: 
   },
   {
-    CSharpType: GenerateChatCompletionRequestFormat?,
+    CSharpType: global::G.GenerateChatCompletionRequestFormat?,
     IsArray: false,
     IsEnum: true,
     Properties: [
@@ -201,13 +201,13 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: GenerateChatCompletionRequestFormat,
-    CSharpTypeWithNullability: GenerateChatCompletionRequestFormat?,
+    CSharpTypeWithoutNullability: global::G.GenerateChatCompletionRequestFormat,
+    CSharpTypeWithNullability: global::G.GenerateChatCompletionRequestFormat?,
     IsAnyOf: false,
-    ConverterType: GenerateChatCompletionRequestFormatJsonConverter
+    ConverterType: global::OpenApiGenerator.JsonConverters.GenerateChatCompletionRequestFormatJsonConverter
   },
   {
-    CSharpType: Message?,
+    CSharpType: global::G.Message?,
     IsArray: false,
     IsEnum: false,
     Properties: [
@@ -219,13 +219,13 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: Message,
-    CSharpTypeWithNullability: Message?,
+    CSharpTypeWithoutNullability: global::G.Message,
+    CSharpTypeWithNullability: global::G.Message?,
     IsAnyOf: false,
     ConverterType: 
   },
   {
-    CSharpType: MessageRole,
+    CSharpType: global::G.MessageRole,
     IsArray: false,
     IsEnum: true,
     Properties: [
@@ -241,10 +241,10 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: MessageRole,
-    CSharpTypeWithNullability: MessageRole?,
+    CSharpTypeWithoutNullability: global::G.MessageRole,
+    CSharpTypeWithNullability: global::G.MessageRole?,
     IsAnyOf: false,
-    ConverterType: MessageRoleJsonConverter
+    ConverterType: global::OpenApiGenerator.JsonConverters.MessageRoleJsonConverter
   },
   {
     CSharpType: global::System.Collections.Generic.IList<double>?,
@@ -261,7 +261,7 @@
     ConverterType: 
   },
   {
-    CSharpType: global::System.AnyOf<string?, CreateModelResponseStatus?>,
+    CSharpType: global::System.AnyOf<string?, global::G.CreateModelResponseStatus?>,
     IsArray: false,
     IsEnum: false,
     AnyOfCount: 2,
@@ -270,13 +270,13 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: global::System.AnyOf<string?, CreateModelResponseStatus?>,
-    CSharpTypeWithNullability: global::System.AnyOf<string?, CreateModelResponseStatus?>?,
+    CSharpTypeWithoutNullability: global::System.AnyOf<string?, global::G.CreateModelResponseStatus?>,
+    CSharpTypeWithNullability: global::System.AnyOf<string?, global::G.CreateModelResponseStatus?>?,
     IsAnyOf: true,
-    ConverterType: AnyOfJsonConverterFactory2
+    ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
   },
   {
-    CSharpType: global::System.Collections.Generic.IList<LocalModel>?,
+    CSharpType: global::System.Collections.Generic.IList<global::G.LocalModel>?,
     IsArray: true,
     IsEnum: false,
     Properties: null,
@@ -284,13 +284,13 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<LocalModel>,
-    CSharpTypeWithNullability: global::System.Collections.Generic.IList<LocalModel>?,
+    CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.LocalModel>,
+    CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.LocalModel>?,
     IsAnyOf: false,
     ConverterType: 
   },
   {
-    CSharpType: ModelDetails?,
+    CSharpType: global::G.ModelDetails?,
     IsArray: false,
     IsEnum: false,
     Properties: [
@@ -305,13 +305,13 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: ModelDetails,
-    CSharpTypeWithNullability: ModelDetails?,
+    CSharpTypeWithoutNullability: global::G.ModelDetails,
+    CSharpTypeWithNullability: global::G.ModelDetails?,
     IsAnyOf: false,
     ConverterType: 
   },
   {
-    CSharpType: global::System.AnyOf<string?, PullModelResponseStatus?>,
+    CSharpType: global::System.AnyOf<string?, global::G.PullModelResponseStatus?>,
     IsArray: false,
     IsEnum: false,
     AnyOfCount: 2,
@@ -320,13 +320,13 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: global::System.AnyOf<string?, PullModelResponseStatus?>,
-    CSharpTypeWithNullability: global::System.AnyOf<string?, PullModelResponseStatus?>?,
+    CSharpTypeWithoutNullability: global::System.AnyOf<string?, global::G.PullModelResponseStatus?>,
+    CSharpTypeWithNullability: global::System.AnyOf<string?, global::G.PullModelResponseStatus?>?,
     IsAnyOf: true,
-    ConverterType: AnyOfJsonConverterFactory2
+    ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
   },
   {
-    CSharpType: global::System.AnyOf<string?, PushModelResponseStatus?>,
+    CSharpType: global::System.AnyOf<string?, global::G.PushModelResponseStatus?>,
     IsArray: false,
     IsEnum: false,
     AnyOfCount: 2,
@@ -335,13 +335,13 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: global::System.AnyOf<string?, PushModelResponseStatus?>,
-    CSharpTypeWithNullability: global::System.AnyOf<string?, PushModelResponseStatus?>?,
+    CSharpTypeWithoutNullability: global::System.AnyOf<string?, global::G.PushModelResponseStatus?>,
+    CSharpTypeWithNullability: global::System.AnyOf<string?, global::G.PushModelResponseStatus?>?,
     IsAnyOf: true,
-    ConverterType: AnyOfJsonConverterFactory2
+    ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
   },
   {
-    CSharpType: GenerateCompletionRequest,
+    CSharpType: global::G.GenerateCompletionRequest,
     IsArray: false,
     IsEnum: false,
     Properties: [
@@ -361,13 +361,13 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: GenerateCompletionRequest,
-    CSharpTypeWithNullability: GenerateCompletionRequest?,
+    CSharpTypeWithoutNullability: global::G.GenerateCompletionRequest,
+    CSharpTypeWithNullability: global::G.GenerateCompletionRequest?,
     IsAnyOf: false,
     ConverterType: 
   },
   {
-    CSharpType: GenerateCompletionResponse,
+    CSharpType: global::G.GenerateCompletionResponse,
     IsArray: false,
     IsEnum: false,
     Properties: [
@@ -387,13 +387,13 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: GenerateCompletionResponse,
-    CSharpTypeWithNullability: GenerateCompletionResponse?,
+    CSharpTypeWithoutNullability: global::G.GenerateCompletionResponse,
+    CSharpTypeWithNullability: global::G.GenerateCompletionResponse?,
     IsAnyOf: false,
     ConverterType: 
   },
   {
-    CSharpType: GenerateChatCompletionRequest,
+    CSharpType: global::G.GenerateChatCompletionRequest,
     IsArray: false,
     IsEnum: false,
     Properties: [
@@ -408,13 +408,13 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: GenerateChatCompletionRequest,
-    CSharpTypeWithNullability: GenerateChatCompletionRequest?,
+    CSharpTypeWithoutNullability: global::G.GenerateChatCompletionRequest,
+    CSharpTypeWithNullability: global::G.GenerateChatCompletionRequest?,
     IsAnyOf: false,
     ConverterType: 
   },
   {
-    CSharpType: GenerateChatCompletionResponse,
+    CSharpType: global::G.GenerateChatCompletionResponse,
     IsArray: false,
     IsEnum: false,
     Properties: [
@@ -434,13 +434,13 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: GenerateChatCompletionResponse,
-    CSharpTypeWithNullability: GenerateChatCompletionResponse?,
+    CSharpTypeWithoutNullability: global::G.GenerateChatCompletionResponse,
+    CSharpTypeWithNullability: global::G.GenerateChatCompletionResponse?,
     IsAnyOf: false,
     ConverterType: 
   },
   {
-    CSharpType: GenerateEmbeddingRequest,
+    CSharpType: global::G.GenerateEmbeddingRequest,
     IsArray: false,
     IsEnum: false,
     Properties: [
@@ -453,13 +453,13 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: GenerateEmbeddingRequest,
-    CSharpTypeWithNullability: GenerateEmbeddingRequest?,
+    CSharpTypeWithoutNullability: global::G.GenerateEmbeddingRequest,
+    CSharpTypeWithNullability: global::G.GenerateEmbeddingRequest?,
     IsAnyOf: false,
     ConverterType: 
   },
   {
-    CSharpType: GenerateEmbeddingResponse,
+    CSharpType: global::G.GenerateEmbeddingResponse,
     IsArray: false,
     IsEnum: false,
     Properties: [
@@ -469,13 +469,13 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: GenerateEmbeddingResponse,
-    CSharpTypeWithNullability: GenerateEmbeddingResponse?,
+    CSharpTypeWithoutNullability: global::G.GenerateEmbeddingResponse,
+    CSharpTypeWithNullability: global::G.GenerateEmbeddingResponse?,
     IsAnyOf: false,
     ConverterType: 
   },
   {
-    CSharpType: CreateModelRequest,
+    CSharpType: global::G.CreateModelRequest,
     IsArray: false,
     IsEnum: false,
     Properties: [
@@ -489,13 +489,13 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: CreateModelRequest,
-    CSharpTypeWithNullability: CreateModelRequest?,
+    CSharpTypeWithoutNullability: global::G.CreateModelRequest,
+    CSharpTypeWithNullability: global::G.CreateModelRequest?,
     IsAnyOf: false,
     ConverterType: 
   },
   {
-    CSharpType: CreateModelResponse,
+    CSharpType: global::G.CreateModelResponse,
     IsArray: false,
     IsEnum: false,
     Properties: [
@@ -505,13 +505,13 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: CreateModelResponse,
-    CSharpTypeWithNullability: CreateModelResponse?,
+    CSharpTypeWithoutNullability: global::G.CreateModelResponse,
+    CSharpTypeWithNullability: global::G.CreateModelResponse?,
     IsAnyOf: false,
     ConverterType: 
   },
   {
-    CSharpType: ModelsResponse,
+    CSharpType: global::G.ModelsResponse,
     IsArray: false,
     IsEnum: false,
     Properties: [
@@ -521,13 +521,13 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: ModelsResponse,
-    CSharpTypeWithNullability: ModelsResponse?,
+    CSharpTypeWithoutNullability: global::G.ModelsResponse,
+    CSharpTypeWithNullability: global::G.ModelsResponse?,
     IsAnyOf: false,
     ConverterType: 
   },
   {
-    CSharpType: ModelInfoRequest,
+    CSharpType: global::G.ModelInfoRequest,
     IsArray: false,
     IsEnum: false,
     Properties: [
@@ -537,13 +537,13 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: ModelInfoRequest,
-    CSharpTypeWithNullability: ModelInfoRequest?,
+    CSharpTypeWithoutNullability: global::G.ModelInfoRequest,
+    CSharpTypeWithNullability: global::G.ModelInfoRequest?,
     IsAnyOf: false,
     ConverterType: 
   },
   {
-    CSharpType: ModelInfo,
+    CSharpType: global::G.ModelInfo,
     IsArray: false,
     IsEnum: false,
     Properties: [
@@ -559,13 +559,13 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: ModelInfo,
-    CSharpTypeWithNullability: ModelInfo?,
+    CSharpTypeWithoutNullability: global::G.ModelInfo,
+    CSharpTypeWithNullability: global::G.ModelInfo?,
     IsAnyOf: false,
     ConverterType: 
   },
   {
-    CSharpType: CopyModelRequest,
+    CSharpType: global::G.CopyModelRequest,
     IsArray: false,
     IsEnum: false,
     Properties: [
@@ -576,13 +576,13 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: CopyModelRequest,
-    CSharpTypeWithNullability: CopyModelRequest?,
+    CSharpTypeWithoutNullability: global::G.CopyModelRequest,
+    CSharpTypeWithNullability: global::G.CopyModelRequest?,
     IsAnyOf: false,
     ConverterType: 
   },
   {
-    CSharpType: DeleteModelRequest,
+    CSharpType: global::G.DeleteModelRequest,
     IsArray: false,
     IsEnum: false,
     Properties: [
@@ -592,13 +592,13 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: DeleteModelRequest,
-    CSharpTypeWithNullability: DeleteModelRequest?,
+    CSharpTypeWithoutNullability: global::G.DeleteModelRequest,
+    CSharpTypeWithNullability: global::G.DeleteModelRequest?,
     IsAnyOf: false,
     ConverterType: 
   },
   {
-    CSharpType: PullModelRequest,
+    CSharpType: global::G.PullModelRequest,
     IsArray: false,
     IsEnum: false,
     Properties: [
@@ -612,13 +612,13 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: PullModelRequest,
-    CSharpTypeWithNullability: PullModelRequest?,
+    CSharpTypeWithoutNullability: global::G.PullModelRequest,
+    CSharpTypeWithNullability: global::G.PullModelRequest?,
     IsAnyOf: false,
     ConverterType: 
   },
   {
-    CSharpType: PullModelResponse,
+    CSharpType: global::G.PullModelResponse,
     IsArray: false,
     IsEnum: false,
     Properties: [
@@ -631,13 +631,13 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: PullModelResponse,
-    CSharpTypeWithNullability: PullModelResponse?,
+    CSharpTypeWithoutNullability: global::G.PullModelResponse,
+    CSharpTypeWithNullability: global::G.PullModelResponse?,
     IsAnyOf: false,
     ConverterType: 
   },
   {
-    CSharpType: PushModelRequest,
+    CSharpType: global::G.PushModelRequest,
     IsArray: false,
     IsEnum: false,
     Properties: [
@@ -651,13 +651,13 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: PushModelRequest,
-    CSharpTypeWithNullability: PushModelRequest?,
+    CSharpTypeWithoutNullability: global::G.PushModelRequest,
+    CSharpTypeWithNullability: global::G.PushModelRequest?,
     IsAnyOf: false,
     ConverterType: 
   },
   {
-    CSharpType: PushModelResponse,
+    CSharpType: global::G.PushModelResponse,
     IsArray: false,
     IsEnum: false,
     Properties: [
@@ -670,8 +670,8 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: PushModelResponse,
-    CSharpTypeWithNullability: PushModelResponse?,
+    CSharpTypeWithoutNullability: global::G.PushModelResponse,
+    CSharpTypeWithNullability: global::G.PushModelResponse?,
     IsAnyOf: false,
     ConverterType: 
   },

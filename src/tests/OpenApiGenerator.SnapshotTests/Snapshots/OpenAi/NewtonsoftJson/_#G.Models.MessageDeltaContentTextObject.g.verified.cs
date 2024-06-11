@@ -19,13 +19,13 @@ namespace G
         /// Always `text`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public MessageDeltaContentTextObjectType Type { get; set; } = default!;
+        public global::G.MessageDeltaContentTextObjectType Type { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text")]
-        public MessageDeltaContentTextObjectText? Text { get; set; }
+        public global::G.MessageDeltaContentTextObjectText? Text { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

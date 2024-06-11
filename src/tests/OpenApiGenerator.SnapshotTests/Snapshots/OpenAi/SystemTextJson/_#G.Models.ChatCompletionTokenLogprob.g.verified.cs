@@ -35,7 +35,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_logprobs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<ChatCompletionTokenLogprobTopLogprobs> TopLogprobs { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.ChatCompletionTokenLogprobTopLogprobs> TopLogprobs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

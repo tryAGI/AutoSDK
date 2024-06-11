@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<FineTuningJobCheckpoint> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.FineTuningJobCheckpoint> Data { get; set; }
 
         /// <summary>
         /// 
@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ListFineTuningJobCheckpointsResponseObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ListFineTuningJobCheckpointsResponseObject Object { get; set; }
+        public required global::G.ListFineTuningJobCheckpointsResponseObject Object { get; set; }
 
         /// <summary>
         /// 

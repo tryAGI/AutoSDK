@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepObjectObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunStepObjectObject Object { get; set; }
+        public required global::G.RunStepObjectObject Object { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run step was created.
@@ -58,7 +58,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunStepObjectType Type { get; set; }
+        public required global::G.RunStepObjectType Type { get; set; }
 
         /// <summary>
         /// The status of the run step, which can be either `in_progress`, `cancelled`, `failed`, `completed`, or `expired`.
@@ -66,7 +66,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepObjectStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunStepObjectStatus Status { get; set; }
+        public required global::G.RunStepObjectStatus Status { get; set; }
 
         /// <summary>
         /// The details of the run step.
@@ -81,7 +81,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunStepObjectLastError? LastError { get; set; }
+        public required global::G.RunStepObjectLastError? LastError { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run step expired. A step is considered expired if the parent run is expired.
@@ -123,7 +123,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunStepCompletionUsage? Usage { get; set; }
+        public required global::G.RunStepCompletionUsage? Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

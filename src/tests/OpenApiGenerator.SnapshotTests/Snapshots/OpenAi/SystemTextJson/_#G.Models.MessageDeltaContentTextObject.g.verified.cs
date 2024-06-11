@@ -22,13 +22,13 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageDeltaContentTextObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required MessageDeltaContentTextObjectType Type { get; set; }
+        public required global::G.MessageDeltaContentTextObjectType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        public MessageDeltaContentTextObjectText? Text { get; set; }
+        public global::G.MessageDeltaContentTextObjectText? Text { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

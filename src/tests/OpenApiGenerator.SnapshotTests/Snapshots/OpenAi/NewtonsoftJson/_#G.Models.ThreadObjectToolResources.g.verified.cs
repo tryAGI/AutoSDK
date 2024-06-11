@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("code_interpreter")]
-        public ThreadObjectToolResourcesCodeInterpreter? CodeInterpreter { get; set; }
+        public global::G.ThreadObjectToolResourcesCodeInterpreter? CodeInterpreter { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("file_search")]
-        public ThreadObjectToolResourcesFileSearch? FileSearch { get; set; }
+        public global::G.ThreadObjectToolResourcesFileSearch? FileSearch { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

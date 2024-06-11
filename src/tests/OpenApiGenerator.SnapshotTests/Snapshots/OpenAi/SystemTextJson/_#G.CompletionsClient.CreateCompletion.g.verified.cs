@@ -12,8 +12,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<CreateCompletionResponse> CreateCompletionAsync(
-            CreateCompletionRequest request,
+        public async global::System.Threading.Tasks.Task<global::G.CreateCompletionResponse> CreateCompletionAsync(
+            global::G.CreateCompletionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -35,7 +35,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<CreateCompletionResponse?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.CreateCompletionResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -62,8 +62,8 @@ namespace G
         /// <param name="user"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<CreateCompletionResponse> CreateCompletionAsync(
-            global::System.AnyOf<string, CreateCompletionRequestModel> model,
+        public async global::System.Threading.Tasks.Task<global::G.CreateCompletionResponse> CreateCompletionAsync(
+            global::System.AnyOf<string, global::G.CreateCompletionRequestModel> model,
             global::System.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>? prompt,
             int? bestOf = 1,
             bool? echo = false,
@@ -76,14 +76,14 @@ namespace G
             int? seed = default,
             global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>? stop = default,
             bool? stream = false,
-            ChatCompletionStreamOptions? streamOptions = default,
+            global::G.ChatCompletionStreamOptions? streamOptions = default,
             string? suffix = default,
             double? temperature = 1,
             double? topP = 1,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new CreateCompletionRequest
+            var request = new global::G.CreateCompletionRequest
             {
                 Model = model,
                 Prompt = prompt,

@@ -12,8 +12,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<UpdateExtensionBitsProductResponse> UpdateExtensionBitsProductAsync(
-            UpdateExtensionBitsProductBody request,
+        public async global::System.Threading.Tasks.Task<global::G.UpdateExtensionBitsProductResponse> UpdateExtensionBitsProductAsync(
+            global::G.UpdateExtensionBitsProductBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -35,7 +35,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<UpdateExtensionBitsProductResponse?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.UpdateExtensionBitsProductResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -50,16 +50,16 @@ namespace G
         /// <param name="isBroadcast"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<UpdateExtensionBitsProductResponse> UpdateExtensionBitsProductAsync(
+        public async global::System.Threading.Tasks.Task<global::G.UpdateExtensionBitsProductResponse> UpdateExtensionBitsProductAsync(
             string sku,
-            UpdateExtensionBitsProductBodyCost cost,
+            global::G.UpdateExtensionBitsProductBodyCost cost,
             string displayName,
             bool inDevelopment = default,
             global::System.DateTime expiration = default,
             bool isBroadcast = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new UpdateExtensionBitsProductBody
+            var request = new global::G.UpdateExtensionBitsProductBody
             {
                 Sku = sku,
                 Cost = cost,

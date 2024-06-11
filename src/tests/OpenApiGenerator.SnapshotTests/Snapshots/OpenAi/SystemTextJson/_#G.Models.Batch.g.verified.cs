@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.BatchObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required BatchObject Object { get; set; }
+        public required global::G.BatchObject Object { get; set; }
 
         /// <summary>
         /// The OpenAI API endpoint used by the batch.
@@ -35,7 +35,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("errors")]
-        public BatchErrors? Errors { get; set; }
+        public global::G.BatchErrors? Errors { get; set; }
 
         /// <summary>
         /// The ID of the input file for the batch.
@@ -57,7 +57,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.BatchStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required BatchStatus Status { get; set; }
+        public required global::G.BatchStatus Status { get; set; }
 
         /// <summary>
         /// The ID of the file containing the outputs of successfully executed requests.
@@ -130,7 +130,7 @@ namespace G
         /// The request counts for different statuses within the batch.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("request_counts")]
-        public BatchRequestCounts? RequestCounts { get; set; }
+        public global::G.BatchRequestCounts? RequestCounts { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.

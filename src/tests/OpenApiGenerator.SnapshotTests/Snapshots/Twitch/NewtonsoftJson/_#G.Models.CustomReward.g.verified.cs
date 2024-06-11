@@ -55,13 +55,13 @@ namespace G
         /// A set of custom images for the reward. This field is **null** if the broadcaster didn’t upload images.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("image", Required = global::Newtonsoft.Json.Required.Always)]
-        public CustomRewardImage Image { get; set; } = default!;
+        public global::G.CustomRewardImage Image { get; set; } = default!;
 
         /// <summary>
         /// A set of default images for the reward.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_image", Required = global::Newtonsoft.Json.Required.Always)]
-        public CustomRewardDefaultImage DefaultImage { get; set; } = default!;
+        public global::G.CustomRewardDefaultImage DefaultImage { get; set; } = default!;
 
         /// <summary>
         /// The background color to use for the reward. The color is in Hex format (for example, #00E5CB).
@@ -85,19 +85,19 @@ namespace G
         /// The settings used to determine whether to apply a maximum to the number of redemptions allowed per live stream.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_per_stream_setting", Required = global::Newtonsoft.Json.Required.Always)]
-        public CustomRewardMaxPerStreamSetting MaxPerStreamSetting { get; set; } = default!;
+        public global::G.CustomRewardMaxPerStreamSetting MaxPerStreamSetting { get; set; } = default!;
 
         /// <summary>
         /// The settings used to determine whether to apply a maximum to the number of redemptions allowed per user per live stream.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_per_user_per_stream_setting", Required = global::Newtonsoft.Json.Required.Always)]
-        public CustomRewardMaxPerUserPerStreamSetting MaxPerUserPerStreamSetting { get; set; } = default!;
+        public global::G.CustomRewardMaxPerUserPerStreamSetting MaxPerUserPerStreamSetting { get; set; } = default!;
 
         /// <summary>
         /// The settings used to determine whether to apply a cooldown period between redemptions and the length of the cooldown.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("global_cooldown_setting", Required = global::Newtonsoft.Json.Required.Always)]
-        public CustomRewardGlobalCooldownSetting GlobalCooldownSetting { get; set; } = default!;
+        public global::G.CustomRewardGlobalCooldownSetting GlobalCooldownSetting { get; set; } = default!;
 
         /// <summary>
         /// A Boolean value that determines whether the reward is currently paused. Is **true** if the reward is paused. Viewers can’t redeem paused rewards.

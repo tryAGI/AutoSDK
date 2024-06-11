@@ -13,13 +13,13 @@ namespace G
         /// The type of the content part.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public ChatCompletionRequestMessageContentPartImageType Type { get; set; } = default!;
+        public global::G.ChatCompletionRequestMessageContentPartImageType Type { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("image_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public ChatCompletionRequestMessageContentPartImageImageUrl ImageUrl { get; set; } = default!;
+        public global::G.ChatCompletionRequestMessageContentPartImageImageUrl ImageUrl { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

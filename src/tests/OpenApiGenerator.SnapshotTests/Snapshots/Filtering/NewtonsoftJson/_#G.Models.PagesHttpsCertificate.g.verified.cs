@@ -13,7 +13,7 @@ namespace G
         /// <br/>Example: approved
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
-        public PagesHttpsCertificateState State { get; set; } = default!;
+        public global::G.PagesHttpsCertificateState State { get; set; } = default!;
 
         /// <summary>
         /// <br/>Example: Certificate is approved

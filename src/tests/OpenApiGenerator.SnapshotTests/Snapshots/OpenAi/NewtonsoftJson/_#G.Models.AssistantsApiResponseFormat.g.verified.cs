@@ -15,7 +15,7 @@ namespace G
         /// <br/>Example: json_object
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public AssistantsApiResponseFormatType? Type { get; set; } = AssistantsApiResponseFormatType.Text;
+        public global::G.AssistantsApiResponseFormatType? Type { get; set; } = global::G.AssistantsApiResponseFormatType.Text;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

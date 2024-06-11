@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<ChatCompletionRequestMessage> Messages { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.ChatCompletionRequestMessage> Messages { get; set; }
 
         /// <summary>
         /// ID of the model to use. See the [model endpoint compatibility](/docs/models/model-endpoint-compatibility) table for details on which models work with the Chat API.
@@ -23,7 +23,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AnyOf<string, CreateChatCompletionRequestModel> Model { get; set; }
+        public required global::System.AnyOf<string, global::G.CreateChatCompletionRequestModel> Model { get; set; }
 
         /// <summary>
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.
@@ -83,7 +83,7 @@ namespace G
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        public CreateChatCompletionRequestResponseFormat? ResponseFormat { get; set; }
+        public global::G.CreateChatCompletionRequestResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
         /// This feature is in Beta.
@@ -113,7 +113,7 @@ namespace G
         /// <br/>Default Value: 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream_options")]
-        public ChatCompletionStreamOptions? StreamOptions { get; set; }
+        public global::G.ChatCompletionStreamOptions? StreamOptions { get; set; }
 
         /// <summary>
         /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
@@ -137,7 +137,7 @@ namespace G
         /// A list of tools the model may call. Currently, only functions are supported as a tool. Use this to provide a list of functions the model may generate JSON inputs for. A max of 128 functions are supported.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        public global::System.Collections.Generic.IList<ChatCompletionTool>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionTool>? Tools { get; set; }
 
         /// <summary>
         /// Controls which (if any) tool is called by the model.
@@ -149,7 +149,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<CreateChatCompletionRequestToolChoice?, ChatCompletionNamedToolChoice?> ToolChoice { get; set; }
+        public global::System.OneOf<global::G.CreateChatCompletionRequestToolChoice?, global::G.ChatCompletionNamedToolChoice?> ToolChoice { get; set; }
 
         /// <summary>
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).
@@ -168,7 +168,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function_call")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<CreateChatCompletionRequestFunctionCall?, ChatCompletionFunctionCallOption?> FunctionCall { get; set; }
+        public global::System.OneOf<global::G.CreateChatCompletionRequestFunctionCall?, global::G.ChatCompletionFunctionCallOption?> FunctionCall { get; set; }
 
         /// <summary>
         /// Deprecated in favor of `tools`.
@@ -176,7 +176,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("functions")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::System.Collections.Generic.IList<ChatCompletionFunctions>? Functions { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionFunctions>? Functions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

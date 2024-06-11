@@ -13,13 +13,13 @@ namespace G
         /// The contents of the user message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.OneOf<string, global::System.Collections.Generic.IList<ChatCompletionRequestMessageContentPart>> Content { get; set; } = default!;
+        public global::System.OneOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionRequestMessageContentPart>> Content { get; set; } = default!;
 
         /// <summary>
         /// The role of the messages author, in this case `user`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
-        public ChatCompletionRequestUserMessageRole Role { get; set; } = default!;
+        public global::G.ChatCompletionRequestUserMessageRole Role { get; set; } = default!;
 
         /// <summary>
         /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.

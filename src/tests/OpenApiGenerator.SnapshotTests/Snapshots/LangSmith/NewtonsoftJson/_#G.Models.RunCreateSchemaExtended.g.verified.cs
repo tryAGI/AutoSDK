@@ -19,13 +19,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs")]
-        public global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?> Inputs { get; set; }
+        public global::System.AnyOf<object?, global::G.CreateChatCompletionRequest?, global::G.CreateCompletionRequest?> Inputs { get; set; }
 
         /// <summary>
         /// Enum for run types.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_type", Required = global::Newtonsoft.Json.Required.Always)]
-        public RunCreateSchemaExtendedRunType RunType { get; set; } = default!;
+        public global::G.RunCreateSchemaExtendedRunType RunType { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -67,7 +67,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs")]
-        public global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?> Outputs { get; set; }
+        public global::System.AnyOf<object?, global::G.CreateChatCompletionResponse?, global::G.CreateCompletionResponse?> Outputs { get; set; }
 
         /// <summary>
         /// 
@@ -115,7 +115,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("child_runs")]
-        public global::System.Collections.Generic.IList<RunCreateSchema>? ChildRuns { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RunCreateSchema>? ChildRuns { get; set; }
 
         /// <summary>
         /// 

@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<FineTuningJob> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.FineTuningJob> Data { get; set; }
 
         /// <summary>
         /// 
@@ -29,7 +29,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ListPaginatedFineTuningJobsResponseObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ListPaginatedFineTuningJobsResponseObject Object { get; set; }
+        public required global::G.ListPaginatedFineTuningJobsResponseObject Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

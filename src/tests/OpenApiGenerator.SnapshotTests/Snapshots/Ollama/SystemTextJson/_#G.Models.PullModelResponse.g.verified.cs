@@ -17,7 +17,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, PullModelResponseStatus?> Status { get; set; }
+        public global::System.AnyOf<string?, global::G.PullModelResponseStatus?> Status { get; set; }
 
         /// <summary>
         /// The model's digest.

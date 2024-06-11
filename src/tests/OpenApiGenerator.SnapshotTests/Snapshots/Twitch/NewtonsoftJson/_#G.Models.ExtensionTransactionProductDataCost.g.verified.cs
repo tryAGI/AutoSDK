@@ -21,7 +21,7 @@ namespace G
         /// * bits
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public ExtensionTransactionProductDataCostType Type { get; set; } = default!;
+        public global::G.ExtensionTransactionProductDataCostType Type { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

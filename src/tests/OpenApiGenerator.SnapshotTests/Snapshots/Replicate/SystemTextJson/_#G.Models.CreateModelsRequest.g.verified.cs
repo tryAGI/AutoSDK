@@ -66,7 +66,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateModelsRequestVisibilityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CreateModelsRequestVisibility Visibility { get; set; }
+        public required global::G.CreateModelsRequestVisibility Visibility { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

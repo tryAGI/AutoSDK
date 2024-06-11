@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<Embedding> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.Embedding> Data { get; set; }
 
         /// <summary>
         /// The name of the model used to generate the embedding.
@@ -29,14 +29,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateEmbeddingResponseObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CreateEmbeddingResponseObject Object { get; set; }
+        public required global::G.CreateEmbeddingResponseObject Object { get; set; }
 
         /// <summary>
         /// The usage information for the request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CreateEmbeddingResponseUsage Usage { get; set; }
+        public required global::G.CreateEmbeddingResponseUsage Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

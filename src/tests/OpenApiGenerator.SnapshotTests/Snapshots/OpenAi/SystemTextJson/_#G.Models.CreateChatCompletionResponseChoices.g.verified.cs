@@ -18,7 +18,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateChatCompletionResponseChoicesFinishReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CreateChatCompletionResponseChoicesFinishReason FinishReason { get; set; }
+        public required global::G.CreateChatCompletionResponseChoicesFinishReason FinishReason { get; set; }
 
         /// <summary>
         /// The index of the choice in the list of choices.
@@ -32,14 +32,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ChatCompletionResponseMessage Message { get; set; }
+        public required global::G.ChatCompletionResponseMessage Message { get; set; }
 
         /// <summary>
         /// Log probability information for the choice.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CreateChatCompletionResponseChoicesLogprobs? Logprobs { get; set; }
+        public required global::G.CreateChatCompletionResponseChoicesLogprobs? Logprobs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

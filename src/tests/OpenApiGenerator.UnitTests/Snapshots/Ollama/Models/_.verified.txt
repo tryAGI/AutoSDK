@@ -167,7 +167,7 @@ The prompt to generate a response.
         Id: options,
         Name: Options,
         Type: {
-          CSharpType: RequestOptions?,
+          CSharpType: global::G.RequestOptions?,
           IsArray: false,
           IsEnum: false,
           Properties: [
@@ -206,8 +206,8 @@ The prompt to generate a response.
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: RequestOptions,
-          CSharpTypeWithNullability: RequestOptions?,
+          CSharpTypeWithoutNullability: global::G.RequestOptions,
+          CSharpTypeWithNullability: global::G.RequestOptions?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -223,7 +223,7 @@ The prompt to generate a response.
         Id: format,
         Name: Format,
         Type: {
-          CSharpType: GenerateCompletionRequestFormat?,
+          CSharpType: global::G.GenerateCompletionRequestFormat?,
           IsArray: false,
           IsEnum: true,
           Properties: [
@@ -235,10 +235,10 @@ The prompt to generate a response.
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: GenerateCompletionRequestFormat,
-          CSharpTypeWithNullability: GenerateCompletionRequestFormat?,
+          CSharpTypeWithoutNullability: global::G.GenerateCompletionRequestFormat,
+          CSharpTypeWithNullability: global::G.GenerateCompletionRequestFormat?,
           IsAnyOf: false,
-          ConverterType: GenerateCompletionRequestFormatJsonConverter
+          ConverterType: global::OpenApiGenerator.JsonConverters.GenerateCompletionRequestFormatJsonConverter
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -249,7 +249,7 @@ Enable JSON mode by setting the format parameter to json. This will structure th
 
 Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
 ,
-        ConverterType: GenerateCompletionRequestFormatJsonConverter,
+        ConverterType: global::OpenApiGenerator.JsonConverters.GenerateCompletionRequestFormatJsonConverter,
         ParameterName: format,
         ArgumentName: format,
         ParameterDefaultValue: default
@@ -1614,7 +1614,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         Id: messages,
         Name: Messages,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<Message>,
+          CSharpType: global::System.Collections.Generic.IList<global::G.Message>,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -1622,8 +1622,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Message>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<Message>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.Message>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.Message>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1639,7 +1639,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         Id: format,
         Name: Format,
         Type: {
-          CSharpType: GenerateChatCompletionRequestFormat?,
+          CSharpType: global::G.GenerateChatCompletionRequestFormat?,
           IsArray: false,
           IsEnum: true,
           Properties: [
@@ -1651,10 +1651,10 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: GenerateChatCompletionRequestFormat,
-          CSharpTypeWithNullability: GenerateChatCompletionRequestFormat?,
+          CSharpTypeWithoutNullability: global::G.GenerateChatCompletionRequestFormat,
+          CSharpTypeWithNullability: global::G.GenerateChatCompletionRequestFormat?,
           IsAnyOf: false,
-          ConverterType: GenerateChatCompletionRequestFormatJsonConverter
+          ConverterType: global::OpenApiGenerator.JsonConverters.GenerateChatCompletionRequestFormatJsonConverter
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -1665,7 +1665,7 @@ Enable JSON mode by setting the format parameter to json. This will structure th
 
 Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
 ,
-        ConverterType: GenerateChatCompletionRequestFormatJsonConverter,
+        ConverterType: global::OpenApiGenerator.JsonConverters.GenerateChatCompletionRequestFormatJsonConverter,
         ParameterName: format,
         ArgumentName: format,
         ParameterDefaultValue: default
@@ -1674,7 +1674,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
         Id: options,
         Name: Options,
         Type: {
-          CSharpType: RequestOptions?,
+          CSharpType: global::G.RequestOptions?,
           IsArray: false,
           IsEnum: false,
           Properties: [
@@ -1713,8 +1713,8 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: RequestOptions,
-          CSharpTypeWithNullability: RequestOptions?,
+          CSharpTypeWithoutNullability: global::G.RequestOptions,
+          CSharpTypeWithNullability: global::G.RequestOptions?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1859,7 +1859,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
         Id: message,
         Name: Message,
         Type: {
-          CSharpType: Message?,
+          CSharpType: global::G.Message?,
           IsArray: false,
           IsEnum: false,
           Properties: [
@@ -1871,8 +1871,8 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: Message,
-          CSharpTypeWithNullability: Message?,
+          CSharpTypeWithoutNullability: global::G.Message,
+          CSharpTypeWithNullability: global::G.Message?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2177,7 +2177,7 @@ Time in nanoseconds spent generating the response.
         Id: role,
         Name: Role,
         Type: {
-          CSharpType: MessageRole,
+          CSharpType: global::G.MessageRole,
           IsArray: false,
           IsEnum: true,
           Properties: [
@@ -2193,15 +2193,15 @@ Time in nanoseconds spent generating the response.
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: MessageRole,
-          CSharpTypeWithNullability: MessageRole?,
+          CSharpTypeWithoutNullability: global::G.MessageRole,
+          CSharpTypeWithNullability: global::G.MessageRole?,
           IsAnyOf: false,
-          ConverterType: MessageRoleJsonConverter
+          ConverterType: global::OpenApiGenerator.JsonConverters.MessageRoleJsonConverter
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: The role of the message,
-        ConverterType: MessageRoleJsonConverter,
+        ConverterType: global::OpenApiGenerator.JsonConverters.MessageRoleJsonConverter,
         ParameterName: role,
         ArgumentName: role,
         ParameterDefaultValue: default
@@ -2431,7 +2431,7 @@ Text to generate embeddings for.
         Id: options,
         Name: Options,
         Type: {
-          CSharpType: RequestOptions?,
+          CSharpType: global::G.RequestOptions?,
           IsArray: false,
           IsEnum: false,
           Properties: [
@@ -2470,8 +2470,8 @@ Text to generate embeddings for.
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: RequestOptions,
-          CSharpTypeWithNullability: RequestOptions?,
+          CSharpTypeWithoutNullability: global::G.RequestOptions,
+          CSharpTypeWithNullability: global::G.RequestOptions?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2736,7 +2736,7 @@ If `false` the response will be returned as a single response object, otherwise 
         Id: status,
         Name: Status,
         Type: {
-          CSharpType: global::System.AnyOf<string?, CreateModelResponseStatus?>,
+          CSharpType: global::System.AnyOf<string?, global::G.CreateModelResponseStatus?>,
           IsArray: false,
           IsEnum: false,
           AnyOfCount: 2,
@@ -2745,15 +2745,15 @@ If `false` the response will be returned as a single response object, otherwise 
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: global::System.AnyOf<string?, CreateModelResponseStatus?>,
-          CSharpTypeWithNullability: global::System.AnyOf<string?, CreateModelResponseStatus?>?,
+          CSharpTypeWithoutNullability: global::System.AnyOf<string?, global::G.CreateModelResponseStatus?>,
+          CSharpTypeWithNullability: global::System.AnyOf<string?, global::G.CreateModelResponseStatus?>?,
           IsAnyOf: true,
-          ConverterType: AnyOfJsonConverterFactory2
+          ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: Status creating the model,
-        ConverterType: AnyOfJsonConverterFactory2,
+        ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2,
         ParameterName: status,
         ArgumentName: status,
         ParameterDefaultValue: default
@@ -2891,7 +2891,7 @@ If `false` the response will be returned as a single response object, otherwise 
         Id: models,
         Name: Models,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<LocalModel>?,
+          CSharpType: global::System.Collections.Generic.IList<global::G.LocalModel>?,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -2899,8 +2899,8 @@ If `false` the response will be returned as a single response object, otherwise 
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<LocalModel>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<LocalModel>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.LocalModel>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.LocalModel>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3045,7 +3045,7 @@ The model's digest.
         Id: details,
         Name: Details,
         Type: {
-          CSharpType: ModelDetails?,
+          CSharpType: global::G.ModelDetails?,
           IsArray: false,
           IsEnum: false,
           Properties: [
@@ -3060,8 +3060,8 @@ The model's digest.
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: ModelDetails,
-          CSharpTypeWithNullability: ModelDetails?,
+          CSharpTypeWithoutNullability: global::G.ModelDetails,
+          CSharpTypeWithNullability: global::G.ModelDetails?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3444,7 +3444,7 @@ The prompt template for the model.
         Id: details,
         Name: Details,
         Type: {
-          CSharpType: ModelDetails?,
+          CSharpType: global::G.ModelDetails?,
           IsArray: false,
           IsEnum: false,
           Properties: [
@@ -3459,8 +3459,8 @@ The prompt template for the model.
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: ModelDetails,
-          CSharpTypeWithNullability: ModelDetails?,
+          CSharpTypeWithoutNullability: global::G.ModelDetails,
+          CSharpTypeWithNullability: global::G.ModelDetails?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3476,7 +3476,7 @@ The prompt template for the model.
         Id: messages,
         Name: Messages,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<Message>?,
+          CSharpType: global::System.Collections.Generic.IList<global::G.Message>?,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -3484,8 +3484,8 @@ The prompt template for the model.
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Message>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<Message>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.Message>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.Message>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3797,7 +3797,7 @@ If `false` the response will be returned as a single response object, otherwise 
         Id: status,
         Name: Status,
         Type: {
-          CSharpType: global::System.AnyOf<string?, PullModelResponseStatus?>,
+          CSharpType: global::System.AnyOf<string?, global::G.PullModelResponseStatus?>,
           IsArray: false,
           IsEnum: false,
           AnyOfCount: 2,
@@ -3806,17 +3806,17 @@ If `false` the response will be returned as a single response object, otherwise 
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: global::System.AnyOf<string?, PullModelResponseStatus?>,
-          CSharpTypeWithNullability: global::System.AnyOf<string?, PullModelResponseStatus?>?,
+          CSharpTypeWithoutNullability: global::System.AnyOf<string?, global::G.PullModelResponseStatus?>,
+          CSharpTypeWithNullability: global::System.AnyOf<string?, global::G.PullModelResponseStatus?>?,
           IsAnyOf: true,
-          ConverterType: AnyOfJsonConverterFactory2
+          ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary:
 Status pulling the model.
 <br/>Example: pulling manifest,
-        ConverterType: AnyOfJsonConverterFactory2,
+        ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2,
         ParameterName: status,
         ArgumentName: status,
         ParameterDefaultValue: default
@@ -4273,7 +4273,7 @@ If `false` the response will be returned as a single response object, otherwise 
         Id: status,
         Name: Status,
         Type: {
-          CSharpType: global::System.AnyOf<string?, PushModelResponseStatus?>,
+          CSharpType: global::System.AnyOf<string?, global::G.PushModelResponseStatus?>,
           IsArray: false,
           IsEnum: false,
           AnyOfCount: 2,
@@ -4282,15 +4282,15 @@ If `false` the response will be returned as a single response object, otherwise 
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: global::System.AnyOf<string?, PushModelResponseStatus?>,
-          CSharpTypeWithNullability: global::System.AnyOf<string?, PushModelResponseStatus?>?,
+          CSharpTypeWithoutNullability: global::System.AnyOf<string?, global::G.PushModelResponseStatus?>,
+          CSharpTypeWithNullability: global::System.AnyOf<string?, global::G.PushModelResponseStatus?>?,
           IsAnyOf: true,
-          ConverterType: AnyOfJsonConverterFactory2
+          ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: Status pushing the model.,
-        ConverterType: AnyOfJsonConverterFactory2,
+        ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2,
         ParameterName: status,
         ArgumentName: status,
         ParameterDefaultValue: default

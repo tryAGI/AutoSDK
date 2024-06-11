@@ -19,13 +19,13 @@ namespace G
         /// The object type, which is always `thread.run.step.delta`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public RunStepDeltaObjectObject Object { get; set; } = default!;
+        public global::G.RunStepDeltaObjectObject Object { get; set; } = default!;
 
         /// <summary>
         /// The delta containing the fields that have changed on the run step.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("delta", Required = global::Newtonsoft.Json.Required.Always)]
-        public RunStepDeltaObjectDelta Delta { get; set; } = default!;
+        public global::G.RunStepDeltaObjectDelta Delta { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -49,7 +49,7 @@ namespace G
         /// The list of possible outcomes for the prediction.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outcomes", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<PredictionOutcome> Outcomes { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.PredictionOutcome> Outcomes { get; set; } = default!;
 
         /// <summary>
         /// The length of time (in seconds) that the prediction will run for.
@@ -66,7 +66,7 @@ namespace G
         /// * RESOLVED — The winning outcome was determined and the Channel Points were distributed to the viewers who predicted the correct outcome.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public PredictionStatus Status { get; set; } = default!;
+        public global::G.PredictionStatus Status { get; set; } = default!;
 
         /// <summary>
         /// The UTC date and time of when the Prediction began.

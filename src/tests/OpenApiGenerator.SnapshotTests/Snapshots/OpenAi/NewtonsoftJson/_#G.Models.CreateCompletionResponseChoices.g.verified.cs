@@ -15,7 +15,7 @@ namespace G
         /// or `content_filter` if content was omitted due to a flag from our content filters.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finish_reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public CreateCompletionResponseChoicesFinishReason FinishReason { get; set; } = default!;
+        public global::G.CreateCompletionResponseChoicesFinishReason FinishReason { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("logprobs", Required = global::Newtonsoft.Json.Required.Always)]
-        public CreateCompletionResponseChoicesLogprobs? Logprobs { get; set; } = default!;
+        public global::G.CreateCompletionResponseChoicesLogprobs? Logprobs { get; set; } = default!;
 
         /// <summary>
         /// 

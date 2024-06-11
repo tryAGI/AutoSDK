@@ -16,7 +16,7 @@ namespace G
         /// * websocket
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("method", Required = global::Newtonsoft.Json.Required.Always)]
-        public EventSubSubscriptionTransportMethod Method { get; set; } = default!;
+        public global::G.EventSubSubscriptionTransportMethod Method { get; set; } = default!;
 
         /// <summary>
         /// The callback URL where the notifications are sent. Included only if `method` is set to **webhook**.

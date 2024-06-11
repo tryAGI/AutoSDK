@@ -19,7 +19,7 @@ namespace G
         /// The role of the messages author, in this case `system`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
-        public ChatCompletionRequestSystemMessageRole Role { get; set; } = default!;
+        public global::G.ChatCompletionRequestSystemMessageRole Role { get; set; } = default!;
 
         /// <summary>
         /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.

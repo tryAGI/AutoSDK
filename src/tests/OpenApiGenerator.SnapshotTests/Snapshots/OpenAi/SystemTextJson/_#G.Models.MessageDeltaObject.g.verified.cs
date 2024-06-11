@@ -22,14 +22,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageDeltaObjectObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required MessageDeltaObjectObject Object { get; set; }
+        public required global::G.MessageDeltaObjectObject Object { get; set; }
 
         /// <summary>
         /// The delta containing the fields that have changed on the Message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required MessageDeltaObjectDelta Delta { get; set; }
+        public required global::G.MessageDeltaObjectDelta Delta { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

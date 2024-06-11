@@ -19,7 +19,7 @@ namespace G
         /// The object type, which is always `vector_store.file_batch`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public VectorStoreFileBatchObjectObject Object { get; set; } = default!;
+        public global::G.VectorStoreFileBatchObjectObject Object { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the vector store files batch was created.
@@ -37,13 +37,13 @@ namespace G
         /// The status of the vector store files batch, which can be either `in_progress`, `completed`, `cancelled` or `failed`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public VectorStoreFileBatchObjectStatus Status { get; set; } = default!;
+        public global::G.VectorStoreFileBatchObjectStatus Status { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("file_counts", Required = global::Newtonsoft.Json.Required.Always)]
-        public VectorStoreFileBatchObjectFileCounts FileCounts { get; set; } = default!;
+        public global::G.VectorStoreFileBatchObjectFileCounts FileCounts { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

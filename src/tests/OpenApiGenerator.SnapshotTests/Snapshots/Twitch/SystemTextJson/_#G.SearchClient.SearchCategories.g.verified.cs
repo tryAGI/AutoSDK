@@ -14,7 +14,7 @@ namespace G
         /// <param name="after"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<SearchCategoriesResponse> SearchCategoriesAsync(
+        public async global::System.Threading.Tasks.Task<global::G.SearchCategoriesResponse> SearchCategoriesAsync(
             string query,
             int first,
             string after,
@@ -33,7 +33,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<SearchCategoriesResponse?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.SearchCategoriesResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

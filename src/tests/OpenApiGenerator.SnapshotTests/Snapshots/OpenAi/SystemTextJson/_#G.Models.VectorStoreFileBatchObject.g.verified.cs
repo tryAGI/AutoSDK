@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.VectorStoreFileBatchObjectObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required VectorStoreFileBatchObjectObject Object { get; set; }
+        public required global::G.VectorStoreFileBatchObjectObject Object { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the vector store files batch was created.
@@ -44,14 +44,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.VectorStoreFileBatchObjectStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required VectorStoreFileBatchObjectStatus Status { get; set; }
+        public required global::G.VectorStoreFileBatchObjectStatus Status { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_counts")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required VectorStoreFileBatchObjectFileCounts FileCounts { get; set; }
+        public required global::G.VectorStoreFileBatchObjectFileCounts FileCounts { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

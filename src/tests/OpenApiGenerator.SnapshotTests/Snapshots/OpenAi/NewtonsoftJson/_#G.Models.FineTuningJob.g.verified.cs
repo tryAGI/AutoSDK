@@ -25,7 +25,7 @@ namespace G
         /// For fine-tuning jobs that have `failed`, this will contain more information on the cause of the failure.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error", Required = global::Newtonsoft.Json.Required.Always)]
-        public FineTuningJobError? Error { get; set; } = default!;
+        public global::G.FineTuningJobError? Error { get; set; } = default!;
 
         /// <summary>
         /// The name of the fine-tuned model that is being created. The value will be null if the fine-tuning job is still running.
@@ -43,7 +43,7 @@ namespace G
         /// The hyperparameters used for the fine-tuning job. See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("hyperparameters", Required = global::Newtonsoft.Json.Required.Always)]
-        public FineTuningJobHyperparameters Hyperparameters { get; set; } = default!;
+        public global::G.FineTuningJobHyperparameters Hyperparameters { get; set; } = default!;
 
         /// <summary>
         /// The base model that is being fine-tuned.
@@ -55,7 +55,7 @@ namespace G
         /// The object type, which is always "fine_tuning.job".
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public FineTuningJobObject Object { get; set; } = default!;
+        public global::G.FineTuningJobObject Object { get; set; } = default!;
 
         /// <summary>
         /// The organization that owns the fine-tuning job.
@@ -73,7 +73,7 @@ namespace G
         /// The current status of the fine-tuning job, which can be either `validating_files`, `queued`, `running`, `succeeded`, `failed`, or `cancelled`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public FineTuningJobStatus Status { get; set; } = default!;
+        public global::G.FineTuningJobStatus Status { get; set; } = default!;
 
         /// <summary>
         /// The total number of billable tokens processed by this fine-tuning job. The value will be null if the fine-tuning job is still running.
@@ -97,7 +97,7 @@ namespace G
         /// A list of integrations to enable for this fine-tuning job.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("integrations")]
-        public global::System.Collections.Generic.IList<global::System.OneOf<FineTuningIntegration?>>? Integrations { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::G.FineTuningIntegration?>>? Integrations { get; set; }
 
         /// <summary>
         /// The seed used for the fine-tuning job.

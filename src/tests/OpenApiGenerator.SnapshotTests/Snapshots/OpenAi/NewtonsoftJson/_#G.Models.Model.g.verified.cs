@@ -25,7 +25,7 @@ namespace G
         /// The object type, which is always "model".
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public ModelObject Object { get; set; } = default!;
+        public global::G.ModelObject Object { get; set; } = default!;
 
         /// <summary>
         /// The organization that owns the model.

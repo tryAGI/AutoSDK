@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<string, global::System.Collections.Generic.IList<ChatCompletionRequestMessageContentPart>> Content { get; set; }
+        public required global::System.OneOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionRequestMessageContentPart>> Content { get; set; }
 
         /// <summary>
         /// The role of the messages author, in this case `user`.
@@ -23,7 +23,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatCompletionRequestUserMessageRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ChatCompletionRequestUserMessageRole Role { get; set; }
+        public required global::G.ChatCompletionRequestUserMessageRole Role { get; set; }
 
         /// <summary>
         /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.

@@ -15,14 +15,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageContentImageFileObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required MessageContentImageFileObjectType Type { get; set; }
+        public required global::G.MessageContentImageFileObjectType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_file")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required MessageContentImageFileObjectImageFile ImageFile { get; set; }
+        public required global::G.MessageContentImageFileObjectImageFile ImageFile { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

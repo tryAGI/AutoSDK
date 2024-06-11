@@ -15,14 +15,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDetailsToolCallsCodeOutputImageObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunStepDetailsToolCallsCodeOutputImageObjectType Type { get; set; }
+        public required global::G.RunStepDetailsToolCallsCodeOutputImageObjectType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunStepDetailsToolCallsCodeOutputImageObjectImage Image { get; set; }
+        public required global::G.RunStepDetailsToolCallsCodeOutputImageObjectImage Image { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

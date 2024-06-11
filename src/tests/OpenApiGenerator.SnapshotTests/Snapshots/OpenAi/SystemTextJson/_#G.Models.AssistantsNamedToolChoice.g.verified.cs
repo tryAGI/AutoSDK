@@ -15,13 +15,13 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AssistantsNamedToolChoiceTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required AssistantsNamedToolChoiceType Type { get; set; }
+        public required global::G.AssistantsNamedToolChoiceType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function")]
-        public AssistantsNamedToolChoiceFunction? Function { get; set; }
+        public global::G.AssistantsNamedToolChoiceFunction? Function { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -19,13 +19,13 @@ namespace G
         /// A list of the categories, and whether they are flagged or not.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("categories", Required = global::Newtonsoft.Json.Required.Always)]
-        public CreateModerationResponseResultsCategories Categories { get; set; } = default!;
+        public global::G.CreateModerationResponseResultsCategories Categories { get; set; } = default!;
 
         /// <summary>
         /// A list of the categories along with their scores as predicted by model.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("category_scores", Required = global::Newtonsoft.Json.Required.Always)]
-        public CreateModerationResponseResultsCategoryScores CategoryScores { get; set; } = default!;
+        public global::G.CreateModerationResponseResultsCategoryScores CategoryScores { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

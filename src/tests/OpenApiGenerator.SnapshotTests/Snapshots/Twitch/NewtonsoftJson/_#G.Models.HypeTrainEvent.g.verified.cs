@@ -37,7 +37,7 @@ namespace G
         /// The event’s data.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event_data", Required = global::Newtonsoft.Json.Required.Always)]
-        public HypeTrainEventEventData EventData { get; set; } = default!;
+        public global::G.HypeTrainEventEventData EventData { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

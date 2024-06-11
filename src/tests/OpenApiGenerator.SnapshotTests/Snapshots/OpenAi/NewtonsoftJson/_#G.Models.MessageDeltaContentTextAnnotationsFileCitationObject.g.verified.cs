@@ -19,7 +19,7 @@ namespace G
         /// Always `file_citation`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public MessageDeltaContentTextAnnotationsFileCitationObjectType Type { get; set; } = default!;
+        public global::G.MessageDeltaContentTextAnnotationsFileCitationObjectType Type { get; set; } = default!;
 
         /// <summary>
         /// The text in the message content that needs to be replaced.
@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("file_citation")]
-        public MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation? FileCitation { get; set; }
+        public global::G.MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation? FileCitation { get; set; }
 
         /// <summary>
         /// 

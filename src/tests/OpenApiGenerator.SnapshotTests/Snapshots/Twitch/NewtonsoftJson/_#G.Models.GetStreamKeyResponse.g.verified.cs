@@ -13,7 +13,7 @@ namespace G
         /// A list that contains the channel’s stream key.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<GetStreamKeyResponseData> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.GetStreamKeyResponseData> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

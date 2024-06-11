@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunObjectIncompleteDetailsReasonJsonConverter))]
-        public RunObjectIncompleteDetailsReason? Reason { get; set; }
+        public global::G.RunObjectIncompleteDetailsReason? Reason { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -17,7 +17,7 @@ namespace G
         /// <br/>Example: json_object
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public CreateChatCompletionRequestResponseFormatType? Type { get; set; } = CreateChatCompletionRequestResponseFormatType.Text;
+        public global::G.CreateChatCompletionRequestResponseFormatType? Type { get; set; } = global::G.CreateChatCompletionRequestResponseFormatType.Text;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

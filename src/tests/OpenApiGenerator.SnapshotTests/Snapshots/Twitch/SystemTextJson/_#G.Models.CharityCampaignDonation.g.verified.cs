@@ -49,7 +49,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("amount")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CharityCampaignDonationAmount Amount { get; set; }
+        public required global::G.CharityCampaignDonationAmount Amount { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

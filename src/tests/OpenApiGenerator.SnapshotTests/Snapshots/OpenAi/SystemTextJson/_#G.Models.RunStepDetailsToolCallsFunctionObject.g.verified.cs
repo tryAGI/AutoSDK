@@ -22,14 +22,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDetailsToolCallsFunctionObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunStepDetailsToolCallsFunctionObjectType Type { get; set; }
+        public required global::G.RunStepDetailsToolCallsFunctionObjectType Type { get; set; }
 
         /// <summary>
         /// The definition of the function that was called.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunStepDetailsToolCallsFunctionObjectFunction Function { get; set; }
+        public required global::G.RunStepDetailsToolCallsFunctionObjectFunction Function { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

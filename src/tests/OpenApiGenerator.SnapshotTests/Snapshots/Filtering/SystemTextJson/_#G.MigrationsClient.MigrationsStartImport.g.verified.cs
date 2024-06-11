@@ -14,10 +14,10 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<Import> MigrationsStartImportAsync(
+        public async global::System.Threading.Tasks.Task<global::G.Import> MigrationsStartImportAsync(
             string owner,
             string repo,
-            MigrationsStartImportRequest request,
+            global::G.MigrationsStartImportRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -39,7 +39,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<Import?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.Import?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -55,17 +55,17 @@ namespace G
         /// <param name="tfvcProject"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<Import> MigrationsStartImportAsync(
+        public async global::System.Threading.Tasks.Task<global::G.Import> MigrationsStartImportAsync(
             string owner,
             string repo,
             string vcsUrl,
-            MigrationsStartImportRequestVcs? vcs = default,
+            global::G.MigrationsStartImportRequestVcs? vcs = default,
             string? vcsUsername = default,
             string? vcsPassword = default,
             string? tfvcProject = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new MigrationsStartImportRequest
+            var request = new global::G.MigrationsStartImportRequest
             {
                 VcsUrl = vcsUrl,
                 Vcs = vcs,

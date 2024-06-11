@@ -24,7 +24,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PageStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required PageStatus? Status { get; set; }
+        public required global::G.PageStatus? Status { get; set; }
 
         /// <summary>
         /// The Pages site's custom domain
@@ -40,7 +40,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("protected_domain_state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PageProtectedDomainStateJsonConverter))]
-        public PageProtectedDomainState? ProtectedDomainState { get; set; }
+        public global::G.PageProtectedDomainState? ProtectedDomainState { get; set; }
 
         /// <summary>
         /// The timestamp when a pending domain becomes unverified.
@@ -70,13 +70,13 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("build_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PageBuildTypeJsonConverter))]
-        public PageBuildType? BuildType { get; set; }
+        public global::G.PageBuildType? BuildType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        public PagesSourceHash? Source { get; set; }
+        public global::G.PagesSourceHash? Source { get; set; }
 
         /// <summary>
         /// Whether the GitHub Pages site is publicly visible. If set to `true`, the site is accessible to anyone on the internet. If set to `false`, the site will only be accessible to users who have at least `read` access to the repository that published the site.
@@ -90,7 +90,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("https_certificate")]
-        public PagesHttpsCertificate? HttpsCertificate { get; set; }
+        public global::G.PagesHttpsCertificate? HttpsCertificate { get; set; }
 
         /// <summary>
         /// Whether https is enabled on the domain

@@ -20,7 +20,7 @@ namespace G
         /// <br/>Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("detail")]
-        public MessageDeltaContentImageFileObjectImageFileDetail? Detail { get; set; } = MessageDeltaContentImageFileObjectImageFileDetail.Auto;
+        public global::G.MessageDeltaContentImageFileObjectImageFileDetail? Detail { get; set; } = global::G.MessageDeltaContentImageFileObjectImageFileDetail.Auto;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -12,8 +12,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Collections.Generic.IAsyncEnumerable<GenerateChatCompletionResponse> GenerateChatCompletionAsync(
-            GenerateChatCompletionRequest request,
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::G.GenerateChatCompletionResponse> GenerateChatCompletionAsync(
+            global::G.GenerateChatCompletionRequest request,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -38,7 +38,7 @@ namespace G
             while (!reader.EndOfStream && !cancellationToken.IsCancellationRequested)
             {
                 var __content = await reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
-                var streamedResponse = global::System.Text.Json.JsonSerializer.Deserialize<GenerateChatCompletionResponse?>(__content, _jsonSerializerOptions) ??
+                var streamedResponse = global::System.Text.Json.JsonSerializer.Deserialize<global::G.GenerateChatCompletionResponse?>(__content, _jsonSerializerOptions) ??
                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
 
                 yield return streamedResponse;
@@ -56,16 +56,16 @@ namespace G
         /// <param name="keepAlive"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Collections.Generic.IAsyncEnumerable<GenerateChatCompletionResponse> GenerateChatCompletionAsync(
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::G.GenerateChatCompletionResponse> GenerateChatCompletionAsync(
             string model,
-            global::System.Collections.Generic.IList<Message> messages,
-            GenerateChatCompletionRequestFormat? format = default,
-            RequestOptions? options = default,
+            global::System.Collections.Generic.IList<global::G.Message> messages,
+            global::G.GenerateChatCompletionRequestFormat? format = default,
+            global::G.RequestOptions? options = default,
             bool stream = true,
             int? keepAlive = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new GenerateChatCompletionRequest
+            var request = new global::G.GenerateChatCompletionRequest
             {
                 Model = model,
                 Messages = messages,

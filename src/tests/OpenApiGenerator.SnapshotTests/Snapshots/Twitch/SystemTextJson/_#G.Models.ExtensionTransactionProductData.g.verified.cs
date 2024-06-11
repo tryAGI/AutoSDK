@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cost")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ExtensionTransactionProductDataCost Cost { get; set; }
+        public required global::G.ExtensionTransactionProductDataCost Cost { get; set; }
 
         /// <summary>
         /// A Boolean value that determines whether the product is in development. Is **true** if the digital product is in development and cannot be exchanged.

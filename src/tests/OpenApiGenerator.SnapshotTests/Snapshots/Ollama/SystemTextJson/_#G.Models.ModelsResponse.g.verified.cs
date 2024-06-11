@@ -13,7 +13,7 @@ namespace G
         /// List of models available locally.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("models")]
-        public global::System.Collections.Generic.IList<LocalModel>? Models { get; set; }
+        public global::System.Collections.Generic.IList<global::G.LocalModel>? Models { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

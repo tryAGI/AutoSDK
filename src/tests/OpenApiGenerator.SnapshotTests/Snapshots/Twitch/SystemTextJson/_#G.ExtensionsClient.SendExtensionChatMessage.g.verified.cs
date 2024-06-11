@@ -15,7 +15,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task SendExtensionChatMessageAsync(
             string broadcasterId,
-            SendExtensionChatMessageBody request,
+            global::G.SendExtensionChatMessageBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -51,7 +51,7 @@ namespace G
             string extensionVersion,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new SendExtensionChatMessageBody
+            var request = new global::G.SendExtensionChatMessageBody
             {
                 Text = text,
                 ExtensionId = extensionId,

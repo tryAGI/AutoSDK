@@ -13,7 +13,7 @@ namespace G
         /// The type of the content part.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public ChatCompletionRequestMessageContentPartTextType Type { get; set; } = default!;
+        public global::G.ChatCompletionRequestMessageContentPartTextType Type { get; set; } = default!;
 
         /// <summary>
         /// The text content.

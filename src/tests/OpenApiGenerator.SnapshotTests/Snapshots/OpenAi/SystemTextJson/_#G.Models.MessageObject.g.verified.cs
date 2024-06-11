@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageObjectObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required MessageObjectObject Object { get; set; }
+        public required global::G.MessageObjectObject Object { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the message was created.
@@ -44,14 +44,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageObjectStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required MessageObjectStatus Status { get; set; }
+        public required global::G.MessageObjectStatus Status { get; set; }
 
         /// <summary>
         /// On an incomplete message, details about why the message is incomplete.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("incomplete_details")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required MessageObjectIncompleteDetails? IncompleteDetails { get; set; }
+        public required global::G.MessageObjectIncompleteDetails? IncompleteDetails { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the message was completed.
@@ -73,14 +73,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageObjectRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required MessageObjectRole Role { get; set; }
+        public required global::G.MessageObjectRole Role { get; set; }
 
         /// <summary>
         /// The content of the message in array of text and/or images.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.OneOf<MessageContentImageFileObject, MessageContentImageUrlObject, MessageContentTextObject>> Content { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageContentTextObject>> Content { get; set; }
 
         /// <summary>
         /// If applicable, the ID of the [assistant](/docs/api-reference/assistants) that authored this message.
@@ -101,7 +101,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attachments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<MessageObjectAttachments>? Attachments { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.MessageObjectAttachments>? Attachments { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.

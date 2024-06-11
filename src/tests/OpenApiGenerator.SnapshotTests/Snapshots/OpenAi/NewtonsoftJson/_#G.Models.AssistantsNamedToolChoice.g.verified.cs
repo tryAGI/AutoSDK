@@ -13,13 +13,13 @@ namespace G
         /// The type of the tool. If type is `function`, the function name must be set
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public AssistantsNamedToolChoiceType Type { get; set; } = default!;
+        public global::G.AssistantsNamedToolChoiceType Type { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("function")]
-        public AssistantsNamedToolChoiceFunction? Function { get; set; }
+        public global::G.AssistantsNamedToolChoiceFunction? Function { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

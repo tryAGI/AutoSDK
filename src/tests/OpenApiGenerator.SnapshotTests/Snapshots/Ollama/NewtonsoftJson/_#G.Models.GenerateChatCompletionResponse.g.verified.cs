@@ -13,7 +13,7 @@ namespace G
         /// A message in the chat endpoint
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("message")]
-        public Message? Message { get; set; }
+        public global::G.Message? Message { get; set; }
 
         /// <summary>
         /// The model name. 

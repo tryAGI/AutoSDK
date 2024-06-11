@@ -14,10 +14,10 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<AddBlockedTermResponse> AddBlockedTermAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AddBlockedTermResponse> AddBlockedTermAsync(
             string broadcasterId,
             string moderatorId,
-            AddBlockedTermBody request,
+            global::G.AddBlockedTermBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -39,7 +39,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<AddBlockedTermResponse?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.AddBlockedTermResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -51,13 +51,13 @@ namespace G
         /// <param name="text"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<AddBlockedTermResponse> AddBlockedTermAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AddBlockedTermResponse> AddBlockedTermAsync(
             string broadcasterId,
             string moderatorId,
             string text,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new AddBlockedTermBody
+            var request = new global::G.AddBlockedTermBody
             {
                 Text = text,
             };

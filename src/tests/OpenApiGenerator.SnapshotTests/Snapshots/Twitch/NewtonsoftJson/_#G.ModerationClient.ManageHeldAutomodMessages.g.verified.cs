@@ -13,7 +13,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task ManageHeldAutomodMessagesAsync(
-            ManageHeldAutoModMessagesBody request,
+            global::G.ManageHeldAutoModMessagesBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -44,10 +44,10 @@ namespace G
         public async global::System.Threading.Tasks.Task ManageHeldAutomodMessagesAsync(
             string userId,
             string msgId,
-            ManageHeldAutoModMessagesBodyAction action,
+            global::G.ManageHeldAutoModMessagesBodyAction action,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new ManageHeldAutoModMessagesBody
+            var request = new global::G.ManageHeldAutoModMessagesBody
             {
                 UserId = userId,
                 MsgId = msgId,

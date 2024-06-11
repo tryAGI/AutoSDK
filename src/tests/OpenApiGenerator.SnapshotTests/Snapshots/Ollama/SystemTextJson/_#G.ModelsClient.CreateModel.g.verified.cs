@@ -12,8 +12,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Collections.Generic.IAsyncEnumerable<CreateModelResponse> CreateModelAsync(
-            CreateModelRequest request,
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::G.CreateModelResponse> CreateModelAsync(
+            global::G.CreateModelRequest request,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -38,7 +38,7 @@ namespace G
             while (!reader.EndOfStream && !cancellationToken.IsCancellationRequested)
             {
                 var __content = await reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
-                var streamedResponse = global::System.Text.Json.JsonSerializer.Deserialize<CreateModelResponse?>(__content, _jsonSerializerOptions) ??
+                var streamedResponse = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CreateModelResponse?>(__content, _jsonSerializerOptions) ??
                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
 
                 yield return streamedResponse;
@@ -55,7 +55,7 @@ namespace G
         /// <param name="stream"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Collections.Generic.IAsyncEnumerable<CreateModelResponse> CreateModelAsync(
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::G.CreateModelResponse> CreateModelAsync(
             string model,
             string modelfile,
             string? path = default,
@@ -63,7 +63,7 @@ namespace G
             bool stream = true,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new CreateModelRequest
+            var request = new global::G.CreateModelRequest
             {
                 Model = model,
                 Modelfile = modelfile,

@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageDeltaContentTextAnnotationsFilePathObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required MessageDeltaContentTextAnnotationsFilePathObjectType Type { get; set; }
+        public required global::G.MessageDeltaContentTextAnnotationsFilePathObjectType Type { get; set; }
 
         /// <summary>
         /// The text in the message content that needs to be replaced.
@@ -34,7 +34,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_path")]
-        public MessageDeltaContentTextAnnotationsFilePathObjectFilePath? FilePath { get; set; }
+        public global::G.MessageDeltaContentTextAnnotationsFilePathObjectFilePath? FilePath { get; set; }
 
         /// <summary>
         /// 

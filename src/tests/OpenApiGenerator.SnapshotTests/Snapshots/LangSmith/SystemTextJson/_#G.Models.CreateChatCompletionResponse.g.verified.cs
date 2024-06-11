@@ -37,13 +37,13 @@ namespace G
         /// <br/>Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("choices")]
-        public global::System.Collections.Generic.IList<ChatCompletionChoice>? Choices { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionChoice>? Choices { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
-        public CompletionUsage? Usage { get; set; }
+        public global::G.CompletionUsage? Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

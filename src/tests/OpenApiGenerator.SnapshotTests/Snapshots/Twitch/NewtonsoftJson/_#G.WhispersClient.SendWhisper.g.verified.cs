@@ -17,7 +17,7 @@ namespace G
         public async global::System.Threading.Tasks.Task SendWhisperAsync(
             string fromUserId,
             string toUserId,
-            SendWhisperBody request,
+            global::G.SendWhisperBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -51,7 +51,7 @@ namespace G
             string message,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new SendWhisperBody
+            var request = new global::G.SendWhisperBody
             {
                 Message = message,
             };

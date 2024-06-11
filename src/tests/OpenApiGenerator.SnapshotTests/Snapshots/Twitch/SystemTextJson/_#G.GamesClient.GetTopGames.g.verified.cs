@@ -14,7 +14,7 @@ namespace G
         /// <param name="before"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<GetTopGamesResponse> GetTopGamesAsync(
+        public async global::System.Threading.Tasks.Task<global::G.GetTopGamesResponse> GetTopGamesAsync(
             int first,
             string after,
             string before,
@@ -33,7 +33,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<GetTopGamesResponse?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.GetTopGamesResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

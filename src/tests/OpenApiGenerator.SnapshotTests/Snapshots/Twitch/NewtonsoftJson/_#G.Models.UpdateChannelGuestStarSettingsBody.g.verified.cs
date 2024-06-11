@@ -36,7 +36,7 @@ namespace G
         /// * `VERTICAL_LAYOUT`: All live guests are arranged in a vertical bar within the browser source
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("group_layout")]
-        public UpdateChannelGuestStarSettingsBodyGroupLayout? GroupLayout { get; set; }
+        public global::G.UpdateChannelGuestStarSettingsBodyGroupLayout? GroupLayout { get; set; }
 
         /// <summary>
         /// Flag determining if Guest Star should regenerate the auth token associated with the channel’s browser sources. Providing a true value for this will immediately invalidate all browser sources previously configured in your streaming software.

@@ -12,8 +12,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<CreatePredictionResponse> CreatePredictionAsync(
-            CreatePredictionBody request,
+        public async global::System.Threading.Tasks.Task<global::G.CreatePredictionResponse> CreatePredictionAsync(
+            global::G.CreatePredictionBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -35,7 +35,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<CreatePredictionResponse?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.CreatePredictionResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -48,14 +48,14 @@ namespace G
         /// <param name="predictionWindow"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<CreatePredictionResponse> CreatePredictionAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CreatePredictionResponse> CreatePredictionAsync(
             string broadcasterId,
             string title,
-            global::System.Collections.Generic.IList<CreatePredictionBodyOutcomes> outcomes,
+            global::System.Collections.Generic.IList<global::G.CreatePredictionBodyOutcomes> outcomes,
             int predictionWindow,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new CreatePredictionBody
+            var request = new global::G.CreatePredictionBody
             {
                 BroadcasterId = broadcasterId,
                 Title = title,

@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("configuration")]
-        public UpdateDeploymentsResponseCurrentReleaseConfiguration? Configuration { get; set; }
+        public global::G.UpdateDeploymentsResponseCurrentReleaseConfiguration? Configuration { get; set; }
 
         /// <summary>
         /// The time the release was created.
@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_by")]
-        public UpdateDeploymentsResponseCurrentReleaseCreatedBy? CreatedBy { get; set; }
+        public global::G.UpdateDeploymentsResponseCurrentReleaseCreatedBy? CreatedBy { get; set; }
 
         /// <summary>
         /// The model identifier string in the format of `{model_owner}/{model_name}`.

@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ErrorError Error1 { get; set; }
+        public required global::G.ErrorError Error1 { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

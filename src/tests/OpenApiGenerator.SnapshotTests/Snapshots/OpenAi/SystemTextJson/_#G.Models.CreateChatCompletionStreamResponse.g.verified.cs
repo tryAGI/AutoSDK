@@ -22,7 +22,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("choices")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<CreateChatCompletionStreamResponseChoices> Choices { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.CreateChatCompletionStreamResponseChoices> Choices { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the chat completion was created. Each chunk has the same timestamp.
@@ -51,14 +51,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateChatCompletionStreamResponseObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CreateChatCompletionStreamResponseObject Object { get; set; }
+        public required global::G.CreateChatCompletionStreamResponseObject Object { get; set; }
 
         /// <summary>
         /// An optional field that will only be present when you set `stream_options: {"include_usage": true}` in your request.
         /// When present, it contains a null value except for the last chunk which contains the token usage statistics for the entire request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
-        public CreateChatCompletionStreamResponseUsage? Usage { get; set; }
+        public global::G.CreateChatCompletionStreamResponseUsage? Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -12,8 +12,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<FineTuningJob> CreateFineTuningJobAsync(
-            CreateFineTuningJobRequest request,
+        public async global::System.Threading.Tasks.Task<global::G.FineTuningJob> CreateFineTuningJobAsync(
+            global::G.CreateFineTuningJobRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -35,7 +35,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<FineTuningJob?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.FineTuningJob?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -51,17 +51,17 @@ namespace G
         /// <param name="seed"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<FineTuningJob> CreateFineTuningJobAsync(
-            global::System.AnyOf<string, CreateFineTuningJobRequestModel> model,
+        public async global::System.Threading.Tasks.Task<global::G.FineTuningJob> CreateFineTuningJobAsync(
+            global::System.AnyOf<string, global::G.CreateFineTuningJobRequestModel> model,
             string trainingFile,
-            CreateFineTuningJobRequestHyperparameters? hyperparameters = default,
+            global::G.CreateFineTuningJobRequestHyperparameters? hyperparameters = default,
             string? suffix = default,
             string? validationFile = default,
-            global::System.Collections.Generic.IList<CreateFineTuningJobRequestIntegrations?>? integrations = default,
+            global::System.Collections.Generic.IList<global::G.CreateFineTuningJobRequestIntegrations?>? integrations = default,
             int? seed = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new CreateFineTuningJobRequest
+            var request = new global::G.CreateFineTuningJobRequest
             {
                 Model = model,
                 TrainingFile = trainingFile,

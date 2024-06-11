@@ -25,7 +25,7 @@ namespace G
         /// The type of tool call. This is always going to be `file_search` for this type of tool call.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public RunStepDeltaStepDetailsToolCallsFileSearchObjectType Type { get; set; } = default!;
+        public global::G.RunStepDeltaStepDetailsToolCallsFileSearchObjectType Type { get; set; } = default!;
 
         /// <summary>
         /// For now, this is always going to be an empty object.

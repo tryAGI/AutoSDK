@@ -13,25 +13,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("advanced_security")]
-        public SecurityAndAnalysisAdvancedSecurity? AdvancedSecurity { get; set; }
+        public global::G.SecurityAndAnalysisAdvancedSecurity? AdvancedSecurity { get; set; }
 
         /// <summary>
         /// Enable or disable Dependabot security updates for the repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependabot_security_updates")]
-        public SecurityAndAnalysisDependabotSecurityUpdates? DependabotSecurityUpdates { get; set; }
+        public global::G.SecurityAndAnalysisDependabotSecurityUpdates? DependabotSecurityUpdates { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secret_scanning")]
-        public SecurityAndAnalysisSecretScanning? SecretScanning { get; set; }
+        public global::G.SecurityAndAnalysisSecretScanning? SecretScanning { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secret_scanning_push_protection")]
-        public SecurityAndAnalysisSecretScanningPushProtection? SecretScanningPushProtection { get; set; }
+        public global::G.SecurityAndAnalysisSecretScanningPushProtection? SecretScanningPushProtection { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

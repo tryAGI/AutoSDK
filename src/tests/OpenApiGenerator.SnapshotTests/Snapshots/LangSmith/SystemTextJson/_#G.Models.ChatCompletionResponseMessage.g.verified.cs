@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function_call")]
-        public ChatCompletionFunctionCall? FunctionCall { get; set; }
+        public global::G.ChatCompletionFunctionCall? FunctionCall { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

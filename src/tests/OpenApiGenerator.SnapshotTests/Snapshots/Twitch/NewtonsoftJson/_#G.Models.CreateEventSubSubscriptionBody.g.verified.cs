@@ -13,7 +13,7 @@ namespace G
         /// The type of subscription to create. For a list of subscriptions that you can create, see [Subscription Types](https://dev.twitch.tv/docs/eventsub/eventsub-subscription-types#subscription-types). Set this field to the value in the **Name** column of the Subscription Types table.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public CreateEventSubSubscriptionBodyType Type { get; set; } = default!;
+        public global::G.CreateEventSubSubscriptionBodyType Type { get; set; } = default!;
 
         /// <summary>
         /// The version number that identifies the definition of the subscription type that you want the response to use.
@@ -31,7 +31,7 @@ namespace G
         /// The transport details that you want Twitch to use when sending you notifications.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transport", Required = global::Newtonsoft.Json.Required.Always)]
-        public CreateEventSubSubscriptionBodyTransport Transport { get; set; } = default!;
+        public global::G.CreateEventSubSubscriptionBodyTransport Transport { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

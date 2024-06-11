@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required FineTuningJobError? Error { get; set; }
+        public required global::G.FineTuningJobError? Error { get; set; }
 
         /// <summary>
         /// The name of the fine-tuned model that is being created. The value will be null if the fine-tuning job is still running.
@@ -49,7 +49,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hyperparameters")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required FineTuningJobHyperparameters Hyperparameters { get; set; }
+        public required global::G.FineTuningJobHyperparameters Hyperparameters { get; set; }
 
         /// <summary>
         /// The base model that is being fine-tuned.
@@ -64,7 +64,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.FineTuningJobObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required FineTuningJobObject Object { get; set; }
+        public required global::G.FineTuningJobObject Object { get; set; }
 
         /// <summary>
         /// The organization that owns the fine-tuning job.
@@ -86,7 +86,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.FineTuningJobStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required FineTuningJobStatus Status { get; set; }
+        public required global::G.FineTuningJobStatus Status { get; set; }
 
         /// <summary>
         /// The total number of billable tokens processed by this fine-tuning job. The value will be null if the fine-tuning job is still running.
@@ -113,7 +113,7 @@ namespace G
         /// A list of integrations to enable for this fine-tuning job.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("integrations")]
-        public global::System.Collections.Generic.IList<global::System.OneOf<FineTuningIntegration?>>? Integrations { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::G.FineTuningIntegration?>>? Integrations { get; set; }
 
         /// <summary>
         /// The seed used for the fine-tuning job.

@@ -37,7 +37,7 @@ namespace G
         /// A list of viewers who were the top predictors; otherwise, **null** if none.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("top_predictors", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<PredictionOutcomeTopPredictors>? TopPredictors { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.PredictionOutcomeTopPredictors>? TopPredictors { get; set; } = default!;
 
         /// <summary>
         /// The color that visually identifies this outcome in the UX. Possible values are:  
@@ -48,7 +48,7 @@ namespace G
         /// If the number of outcomes is two, the color is BLUE for the first outcome and PINK for the second outcome. If there are more than two outcomes, the color is BLUE for all outcomes.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("color", Required = global::Newtonsoft.Json.Required.Always)]
-        public PredictionOutcomeColor Color { get; set; } = default!;
+        public global::G.PredictionOutcomeColor Color { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

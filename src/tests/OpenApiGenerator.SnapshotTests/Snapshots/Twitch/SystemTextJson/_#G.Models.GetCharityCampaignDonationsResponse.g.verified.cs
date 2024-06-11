@@ -14,13 +14,13 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<CharityCampaignDonation> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.CharityCampaignDonation> Data { get; set; }
 
         /// <summary>
         /// An object that contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pagination")]
-        public GetCharityCampaignDonationsResponsePagination? Pagination { get; set; }
+        public global::G.GetCharityCampaignDonationsResponsePagination? Pagination { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

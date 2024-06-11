@@ -20,7 +20,7 @@ namespace G
         /// last chunk if you set `stream_options: {"include_usage": true}`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("choices", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<CreateChatCompletionStreamResponseChoices> Choices { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.CreateChatCompletionStreamResponseChoices> Choices { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the chat completion was created. Each chunk has the same timestamp.
@@ -45,14 +45,14 @@ namespace G
         /// The object type, which is always `chat.completion.chunk`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public CreateChatCompletionStreamResponseObject Object { get; set; } = default!;
+        public global::G.CreateChatCompletionStreamResponseObject Object { get; set; } = default!;
 
         /// <summary>
         /// An optional field that will only be present when you set `stream_options: {"include_usage": true}` in your request.
         /// When present, it contains a null value except for the last chunk which contains the token usage statistics for the entire request.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("usage")]
-        public CreateChatCompletionStreamResponseUsage? Usage { get; set; }
+        public global::G.CreateChatCompletionStreamResponseUsage? Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

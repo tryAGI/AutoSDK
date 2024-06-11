@@ -13,9 +13,9 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<ThreadObject> ModifyThreadAsync(
+        public async global::System.Threading.Tasks.Task<global::G.ThreadObject> ModifyThreadAsync(
             string threadId,
-            ModifyThreadRequest request,
+            global::G.ModifyThreadRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -37,7 +37,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<ThreadObject?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.ThreadObject?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -49,13 +49,13 @@ namespace G
         /// <param name="metadata"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<ThreadObject> ModifyThreadAsync(
+        public async global::System.Threading.Tasks.Task<global::G.ThreadObject> ModifyThreadAsync(
             string threadId,
-            ModifyThreadRequestToolResources? toolResources = default,
+            global::G.ModifyThreadRequestToolResources? toolResources = default,
             object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new ModifyThreadRequest
+            var request = new global::G.ModifyThreadRequest
             {
                 ToolResources = toolResources,
                 Metadata = metadata,

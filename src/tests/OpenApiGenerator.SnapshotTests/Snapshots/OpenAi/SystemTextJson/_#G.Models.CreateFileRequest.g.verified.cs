@@ -23,7 +23,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("purpose")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateFileRequestPurposeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CreateFileRequestPurpose Purpose { get; set; }
+        public required global::G.CreateFileRequestPurpose Purpose { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

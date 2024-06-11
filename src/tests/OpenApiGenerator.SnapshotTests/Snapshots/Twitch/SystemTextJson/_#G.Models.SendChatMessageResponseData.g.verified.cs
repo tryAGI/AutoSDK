@@ -27,7 +27,7 @@ namespace G
         /// The reason the message was dropped, if any.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("drop_reason")]
-        public global::System.Collections.Generic.IList<SendChatMessageResponseDataDropReason?>? DropReason { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SendChatMessageResponseDataDropReason?>? DropReason { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

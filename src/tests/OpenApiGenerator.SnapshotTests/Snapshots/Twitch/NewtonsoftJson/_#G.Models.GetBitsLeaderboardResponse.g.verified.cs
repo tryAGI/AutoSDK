@@ -13,13 +13,13 @@ namespace G
         /// A list of leaderboard leaders. The leaders are returned in rank order by how much they’ve cheered. The array is empty if nobody has cheered bits.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<BitsLeaderboard> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.BitsLeaderboard> Data { get; set; } = default!;
 
         /// <summary>
         /// The reporting window’s start and end dates, in RFC3339 format. The dates are calculated by using the _started\_at_ and _period_ query parameters. If you don’t specify the _started\_at_ query parameter, the fields contain empty strings.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("date_range", Required = global::Newtonsoft.Json.Required.Always)]
-        public GetBitsLeaderboardResponseDateRange DateRange { get; set; } = default!;
+        public global::G.GetBitsLeaderboardResponseDateRange DateRange { get; set; } = default!;
 
         /// <summary>
         /// The number of ranked users in `data`. This is the value in the _count_ query parameter or the total number of entries on the leaderboard, whichever is less.

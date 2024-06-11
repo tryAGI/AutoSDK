@@ -15,7 +15,7 @@ namespace G
         /// <param name="after"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<SearchChannelsResponse> SearchChannelsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.SearchChannelsResponse> SearchChannelsAsync(
             string query,
             bool liveOnly,
             int first,
@@ -35,7 +35,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<SearchChannelsResponse?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.SearchChannelsResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -49,7 +49,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("category")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ChannelStreamScheduleSegmentCategory Category { get; set; }
+        public required global::G.ChannelStreamScheduleSegmentCategory Category { get; set; }
 
         /// <summary>
         /// A Boolean value that determines whether the broadcast is part of a recurring series that streams at the same time each week or is a one-time broadcast. Is **true** if the broadcast is part of a recurring series.

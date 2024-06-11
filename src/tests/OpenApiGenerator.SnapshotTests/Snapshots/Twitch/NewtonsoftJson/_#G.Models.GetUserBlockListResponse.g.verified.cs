@@ -13,7 +13,7 @@ namespace G
         /// The list of blocked users. The list is in descending order by when the user was blocked.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<UserBlockList> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.UserBlockList> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

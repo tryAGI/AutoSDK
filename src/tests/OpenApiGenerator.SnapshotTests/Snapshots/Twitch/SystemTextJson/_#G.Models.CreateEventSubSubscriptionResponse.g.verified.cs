@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<EventSubSubscription> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.EventSubSubscription> Data { get; set; }
 
         /// <summary>
         /// The total number of subscriptions you’ve created.

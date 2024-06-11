@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ThreadObjectObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ThreadObjectObject Object { get; set; }
+        public required global::G.ThreadObjectObject Object { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the thread was created.
@@ -36,7 +36,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_resources")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ThreadObjectToolResources? ToolResources { get; set; }
+        public required global::G.ThreadObjectToolResources? ToolResources { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.

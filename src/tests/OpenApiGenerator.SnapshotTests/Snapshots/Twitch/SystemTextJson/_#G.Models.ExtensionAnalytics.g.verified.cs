@@ -35,7 +35,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("date_range")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ExtensionAnalyticsDateRange DateRange { get; set; }
+        public required global::G.ExtensionAnalyticsDateRange DateRange { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

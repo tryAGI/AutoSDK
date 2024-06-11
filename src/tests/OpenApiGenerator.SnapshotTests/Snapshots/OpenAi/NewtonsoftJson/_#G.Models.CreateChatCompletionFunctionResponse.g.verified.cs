@@ -19,7 +19,7 @@ namespace G
         /// A list of chat completion choices. Can be more than one if `n` is greater than 1.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("choices", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<CreateChatCompletionFunctionResponseChoices> Choices { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.CreateChatCompletionFunctionResponseChoices> Choices { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the chat completion was created.
@@ -44,13 +44,13 @@ namespace G
         /// The object type, which is always `chat.completion`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public CreateChatCompletionFunctionResponseObject Object { get; set; } = default!;
+        public global::G.CreateChatCompletionFunctionResponseObject Object { get; set; } = default!;
 
         /// <summary>
         /// Usage statistics for the completion request.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("usage")]
-        public CompletionUsage? Usage { get; set; }
+        public global::G.CompletionUsage? Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,7 +13,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task SendExtensionPubsubMessageAsync(
-            SendExtensionPubSubMessageBody request,
+            global::G.SendExtensionPubSubMessageBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -43,13 +43,13 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task SendExtensionPubsubMessageAsync(
-            global::System.Collections.Generic.IList<SendExtensionPubSubMessageBodyTarget> target,
+            global::System.Collections.Generic.IList<global::G.SendExtensionPubSubMessageBodyTarget> target,
             string broadcasterId,
             string message,
             bool isGlobalBroadcast = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new SendExtensionPubSubMessageBody
+            var request = new global::G.SendExtensionPubSubMessageBody
             {
                 Target = target,
                 BroadcasterId = broadcasterId,

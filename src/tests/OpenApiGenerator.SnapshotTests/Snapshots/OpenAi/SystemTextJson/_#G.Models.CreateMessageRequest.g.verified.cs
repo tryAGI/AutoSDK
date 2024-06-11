@@ -17,7 +17,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateMessageRequestRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CreateMessageRequestRole Role { get; set; }
+        public required global::G.CreateMessageRequestRole Role { get; set; }
 
         /// <summary>
         /// 
@@ -25,13 +25,13 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<MessageContentImageFileObject, MessageContentImageUrlObject, MessageRequestContentTextObject>>> Content { get; set; }
+        public required global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageRequestContentTextObject>>> Content { get; set; }
 
         /// <summary>
         /// A list of files attached to the message, and the tools they should be added to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attachments")]
-        public global::System.Collections.Generic.IList<CreateMessageRequestAttachments?>? Attachments { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CreateMessageRequestAttachments?>? Attachments { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.

@@ -27,7 +27,7 @@ namespace G
         /// **NOTE:** You should use the templated URL in the `template` field to fetch the image instead of using these URLs.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("images", Required = global::Newtonsoft.Json.Required.Always)]
-        public ChannelEmoteImages Images { get; set; } = default!;
+        public global::G.ChannelEmoteImages Images { get; set; } = default!;
 
         /// <summary>
         /// The subscriber tier at which the emote is unlocked. This field contains the tier information only if `emote_type` is set to `subscriptions`, otherwise, it's an empty string.
@@ -43,7 +43,7 @@ namespace G
         /// * subscriptions — A custom subscriber emote.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("emote_type", Required = global::Newtonsoft.Json.Required.Always)]
-        public ChannelEmoteEmoteType EmoteType { get; set; } = default!;
+        public global::G.ChannelEmoteEmoteType EmoteType { get; set; } = default!;
 
         /// <summary>
         /// An ID that identifies the emote set that the emote belongs to.
@@ -58,7 +58,7 @@ namespace G
         /// * static — A static PNG file is available for this emote.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<ChannelEmoteFormat> Format { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ChannelEmoteFormat> Format { get; set; } = default!;
 
         /// <summary>
         /// The sizes that the emote is available in. For example, if the emote is available in small and medium sizes, the array contains 1.0 and 2.0\. Possible sizes are:  
@@ -68,7 +68,7 @@ namespace G
         /// * 3.0 — A large version (112px x 112px) is available.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scale", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<ChannelEmoteScale> Scale { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ChannelEmoteScale> Scale { get; set; } = default!;
 
         /// <summary>
         /// The background themes that the emote is available in. Possible themes are:  
@@ -77,7 +77,7 @@ namespace G
         /// * light
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("theme_mode", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<ChannelEmoteThemeMode> ThemeMode { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ChannelEmoteThemeMode> ThemeMode { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

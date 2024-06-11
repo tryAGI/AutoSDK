@@ -19,27 +19,27 @@ namespace G
         /// <param name="first"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<GetCustomRewardRedemptionResponse> GetCustomRewardRedemptionAsync(
+        public async global::System.Threading.Tasks.Task<global::G.GetCustomRewardRedemptionResponse> GetCustomRewardRedemptionAsync(
             string broadcasterId,
             string rewardId,
-            GetCustomRewardRedemptionStatus status,
+            global::G.GetCustomRewardRedemptionStatus status,
             global::System.Collections.Generic.IList<string> id,
-            GetCustomRewardRedemptionSort sort,
+            global::G.GetCustomRewardRedemptionSort sort,
             string after,
             int first,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var statusValue = status switch
             {
-                GetCustomRewardRedemptionStatus.CANCELED => "CANCELED",
-                GetCustomRewardRedemptionStatus.FULFILLED => "FULFILLED",
-                GetCustomRewardRedemptionStatus.UNFULFILLED => "UNFULFILLED",
+                global::G.GetCustomRewardRedemptionStatus.CANCELED => "CANCELED",
+                global::G.GetCustomRewardRedemptionStatus.FULFILLED => "FULFILLED",
+                global::G.GetCustomRewardRedemptionStatus.UNFULFILLED => "UNFULFILLED",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var sortValue = sort switch
             {
-                GetCustomRewardRedemptionSort.OLDEST => "OLDEST",
-                GetCustomRewardRedemptionSort.NEWEST => "NEWEST",
+                global::G.GetCustomRewardRedemptionSort.OLDEST => "OLDEST",
+                global::G.GetCustomRewardRedemptionSort.NEWEST => "NEWEST",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -55,7 +55,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<GetCustomRewardRedemptionResponse?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.GetCustomRewardRedemptionResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

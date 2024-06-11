@@ -19,7 +19,7 @@ namespace G
         /// The list of chat badges in this set.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("versions", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<ChatBadgeVersions> Versions { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ChatBadgeVersions> Versions { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

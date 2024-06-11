@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.TruncationObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required TruncationObjectType Type { get; set; }
+        public required global::G.TruncationObjectType Type { get; set; }
 
         /// <summary>
         /// The number of most recent messages from the thread when constructing the context for the run.

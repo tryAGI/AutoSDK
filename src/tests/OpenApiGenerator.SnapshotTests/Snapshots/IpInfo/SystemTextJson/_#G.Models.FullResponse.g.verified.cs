@@ -74,31 +74,31 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("asn")]
-        public AsnResponse? Asn { get; set; }
+        public global::G.AsnResponse? Asn { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("company")]
-        public Company? Company { get; set; }
+        public global::G.Company? Company { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("carrier")]
-        public Carrier? Carrier { get; set; }
+        public global::G.Carrier? Carrier { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("privacy")]
-        public PrivacyResponse? Privacy { get; set; }
+        public global::G.PrivacyResponse? Privacy { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("domains")]
-        public DomainsResponse? Domains { get; set; }
+        public global::G.DomainsResponse? Domains { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

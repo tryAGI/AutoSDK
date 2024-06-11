@@ -18,28 +18,28 @@ namespace G
         /// <param name="filter"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<ListVectorStoreFilesResponse> ListFilesInVectorStoreBatchAsync(
+        public async global::System.Threading.Tasks.Task<global::G.ListVectorStoreFilesResponse> ListFilesInVectorStoreBatchAsync(
             string vectorStoreId,
             string batchId,
             int limit,
-            ListFilesInVectorStoreBatchOrder order,
+            global::G.ListFilesInVectorStoreBatchOrder order,
             string after,
             string before,
-            ListFilesInVectorStoreBatchFilter filter,
+            global::G.ListFilesInVectorStoreBatchFilter filter,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var orderValue = order switch
             {
-                ListFilesInVectorStoreBatchOrder.Asc => "asc",
-                ListFilesInVectorStoreBatchOrder.Desc => "desc",
+                global::G.ListFilesInVectorStoreBatchOrder.Asc => "asc",
+                global::G.ListFilesInVectorStoreBatchOrder.Desc => "desc",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var filterValue = filter switch
             {
-                ListFilesInVectorStoreBatchFilter.InProgress => "in_progress",
-                ListFilesInVectorStoreBatchFilter.Completed => "completed",
-                ListFilesInVectorStoreBatchFilter.Failed => "failed",
-                ListFilesInVectorStoreBatchFilter.Cancelled => "cancelled",
+                global::G.ListFilesInVectorStoreBatchFilter.InProgress => "in_progress",
+                global::G.ListFilesInVectorStoreBatchFilter.Completed => "completed",
+                global::G.ListFilesInVectorStoreBatchFilter.Failed => "failed",
+                global::G.ListFilesInVectorStoreBatchFilter.Cancelled => "cancelled",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -55,7 +55,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<ListVectorStoreFilesResponse?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.ListVectorStoreFilesResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

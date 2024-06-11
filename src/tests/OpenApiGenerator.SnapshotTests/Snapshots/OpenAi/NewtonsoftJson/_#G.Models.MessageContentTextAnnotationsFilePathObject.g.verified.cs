@@ -13,7 +13,7 @@ namespace G
         /// Always `file_path`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public MessageContentTextAnnotationsFilePathObjectType Type { get; set; } = default!;
+        public global::G.MessageContentTextAnnotationsFilePathObjectType Type { get; set; } = default!;
 
         /// <summary>
         /// The text in the message content that needs to be replaced.
@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("file_path", Required = global::Newtonsoft.Json.Required.Always)]
-        public MessageContentTextAnnotationsFilePathObjectFilePath FilePath { get; set; } = default!;
+        public global::G.MessageContentTextAnnotationsFilePathObjectFilePath FilePath { get; set; } = default!;
 
         /// <summary>
         /// 

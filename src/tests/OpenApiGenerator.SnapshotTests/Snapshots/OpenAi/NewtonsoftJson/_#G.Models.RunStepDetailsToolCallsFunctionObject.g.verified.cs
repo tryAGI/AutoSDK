@@ -19,13 +19,13 @@ namespace G
         /// The type of tool call. This is always going to be `function` for this type of tool call.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public RunStepDetailsToolCallsFunctionObjectType Type { get; set; } = default!;
+        public global::G.RunStepDetailsToolCallsFunctionObjectType Type { get; set; } = default!;
 
         /// <summary>
         /// The definition of the function that was called.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("function", Required = global::Newtonsoft.Json.Required.Always)]
-        public RunStepDetailsToolCallsFunctionObjectFunction Function { get; set; } = default!;
+        public global::G.RunStepDetailsToolCallsFunctionObjectFunction Function { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

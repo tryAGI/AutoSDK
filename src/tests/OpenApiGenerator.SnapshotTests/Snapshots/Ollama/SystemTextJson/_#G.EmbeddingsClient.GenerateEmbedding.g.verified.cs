@@ -12,8 +12,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<GenerateEmbeddingResponse> GenerateEmbeddingAsync(
-            GenerateEmbeddingRequest request,
+        public async global::System.Threading.Tasks.Task<global::G.GenerateEmbeddingResponse> GenerateEmbeddingAsync(
+            global::G.GenerateEmbeddingRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -35,7 +35,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<GenerateEmbeddingResponse?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.GenerateEmbeddingResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -48,14 +48,14 @@ namespace G
         /// <param name="keepAlive"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<GenerateEmbeddingResponse> GenerateEmbeddingAsync(
+        public async global::System.Threading.Tasks.Task<global::G.GenerateEmbeddingResponse> GenerateEmbeddingAsync(
             string model,
             string prompt,
-            RequestOptions? options = default,
+            global::G.RequestOptions? options = default,
             int? keepAlive = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new GenerateEmbeddingRequest
+            var request = new global::G.GenerateEmbeddingRequest
             {
                 Model = model,
                 Prompt = prompt,

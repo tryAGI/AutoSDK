@@ -12,8 +12,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<EndPollResponse> EndPollAsync(
-            EndPollBody request,
+        public async global::System.Threading.Tasks.Task<global::G.EndPollResponse> EndPollAsync(
+            global::G.EndPollBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -35,7 +35,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<EndPollResponse?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.EndPollResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -47,13 +47,13 @@ namespace G
         /// <param name="status"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<EndPollResponse> EndPollAsync(
+        public async global::System.Threading.Tasks.Task<global::G.EndPollResponse> EndPollAsync(
             string broadcasterId,
             string id,
-            EndPollBodyStatus status,
+            global::G.EndPollBodyStatus status,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new EndPollBody
+            var request = new global::G.EndPollBody
             {
                 BroadcasterId = broadcasterId,
                 Id = id,

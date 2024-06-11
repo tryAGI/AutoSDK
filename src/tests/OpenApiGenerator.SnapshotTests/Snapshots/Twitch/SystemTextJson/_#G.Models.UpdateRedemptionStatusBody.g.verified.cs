@@ -20,7 +20,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UpdateRedemptionStatusBodyStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required UpdateRedemptionStatusBodyStatus Status { get; set; }
+        public required global::G.UpdateRedemptionStatusBodyStatus Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

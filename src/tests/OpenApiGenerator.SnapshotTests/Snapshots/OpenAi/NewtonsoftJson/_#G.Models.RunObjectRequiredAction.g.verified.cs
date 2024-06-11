@@ -13,13 +13,13 @@ namespace G
         /// For now, this is always `submit_tool_outputs`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public RunObjectRequiredActionType Type { get; set; } = default!;
+        public global::G.RunObjectRequiredActionType Type { get; set; } = default!;
 
         /// <summary>
         /// Details on the tool outputs needed for this run to continue.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("submit_tool_outputs", Required = global::Newtonsoft.Json.Required.Always)]
-        public RunObjectRequiredActionSubmitToolOutputs SubmitToolOutputs { get; set; } = default!;
+        public global::G.RunObjectRequiredActionSubmitToolOutputs SubmitToolOutputs { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

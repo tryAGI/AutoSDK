@@ -13,7 +13,7 @@ namespace G
         /// A list of invite objects describing the invited user as well as their ready status.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<GuestStarInvite> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.GuestStarInvite> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

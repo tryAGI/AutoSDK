@@ -31,7 +31,7 @@ namespace G
         /// List of the most likely tokens and their log probability, at this token position. In rare cases, there may be fewer than the number of requested `top_logprobs` returned.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("top_logprobs", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<ChatCompletionTokenLogprobTopLogprobs> TopLogprobs { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionTokenLogprobTopLogprobs> TopLogprobs { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

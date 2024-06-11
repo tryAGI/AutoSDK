@@ -30,7 +30,7 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parameters")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public FunctionParameters? Parameters { get; set; }
+        public global::G.FunctionParameters? Parameters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

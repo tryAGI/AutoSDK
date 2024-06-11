@@ -169,7 +169,7 @@ The prompt to generate a response.
         Id: options,
         Name: Options,
         Type: {
-          CSharpType: RequestOptions?,
+          CSharpType: global::G.RequestOptions?,
           IsArray: false,
           IsEnum: false,
           Properties: [
@@ -208,8 +208,8 @@ The prompt to generate a response.
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: RequestOptions,
-          CSharpTypeWithNullability: RequestOptions?,
+          CSharpTypeWithoutNullability: global::G.RequestOptions,
+          CSharpTypeWithNullability: global::G.RequestOptions?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -225,7 +225,7 @@ The prompt to generate a response.
         Id: format,
         Name: Format,
         Type: {
-          CSharpType: GenerateCompletionRequestFormat?,
+          CSharpType: global::G.GenerateCompletionRequestFormat?,
           IsArray: false,
           IsEnum: true,
           Properties: [
@@ -237,10 +237,10 @@ The prompt to generate a response.
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: GenerateCompletionRequestFormat,
-          CSharpTypeWithNullability: GenerateCompletionRequestFormat?,
+          CSharpTypeWithoutNullability: global::G.GenerateCompletionRequestFormat,
+          CSharpTypeWithNullability: global::G.GenerateCompletionRequestFormat?,
           IsAnyOf: false,
-          ConverterType: GenerateCompletionRequestFormatJsonConverter
+          ConverterType: global::OpenApiGenerator.JsonConverters.GenerateCompletionRequestFormatJsonConverter
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -251,7 +251,7 @@ Enable JSON mode by setting the format parameter to json. This will structure th
 
 Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
 ,
-        ConverterType: GenerateCompletionRequestFormatJsonConverter,
+        ConverterType: global::OpenApiGenerator.JsonConverters.GenerateCompletionRequestFormatJsonConverter,
         ParameterName: format,
         ArgumentName: format,
         ParameterDefaultValue: default
@@ -353,7 +353,7 @@ How long (in minutes) to keep the model loaded in memory.
     HttpMethod: Post,
     Summary: Generate a response for a given prompt with a provided model.,
     RequestType: {
-      CSharpType: GenerateCompletionRequest,
+      CSharpType: global::G.GenerateCompletionRequest,
       IsArray: false,
       IsEnum: false,
       Properties: [
@@ -373,13 +373,13 @@ How long (in minutes) to keep the model loaded in memory.
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: true,
-      CSharpTypeWithoutNullability: GenerateCompletionRequest,
-      CSharpTypeWithNullability: GenerateCompletionRequest?,
+      CSharpTypeWithoutNullability: global::G.GenerateCompletionRequest,
+      CSharpTypeWithNullability: global::G.GenerateCompletionRequest?,
       IsAnyOf: false,
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: GenerateCompletionResponse,
+      CSharpType: global::G.GenerateCompletionResponse,
       IsArray: false,
       IsEnum: false,
       Properties: [
@@ -399,15 +399,15 @@ How long (in minutes) to keep the model loaded in memory.
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: true,
-      CSharpTypeWithoutNullability: GenerateCompletionResponse,
-      CSharpTypeWithNullability: GenerateCompletionResponse?,
+      CSharpTypeWithoutNullability: global::G.GenerateCompletionResponse,
+      CSharpTypeWithNullability: global::G.GenerateCompletionResponse?,
       IsAnyOf: false,
       ConverterType: 
     },
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: GenerateCompletionRequest,
+        CSharpType: global::G.GenerateCompletionRequest,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -427,13 +427,13 @@ How long (in minutes) to keep the model loaded in memory.
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: true,
-        CSharpTypeWithoutNullability: GenerateCompletionRequest,
-        CSharpTypeWithNullability: GenerateCompletionRequest?,
+        CSharpTypeWithoutNullability: global::G.GenerateCompletionRequest,
+        CSharpTypeWithNullability: global::G.GenerateCompletionRequest?,
         IsAnyOf: false,
         ConverterType: 
       },
       {
-        CSharpType: GenerateCompletionResponse,
+        CSharpType: global::G.GenerateCompletionResponse,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -453,8 +453,8 @@ How long (in minutes) to keep the model loaded in memory.
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: true,
-        CSharpTypeWithoutNullability: GenerateCompletionResponse,
-        CSharpTypeWithNullability: GenerateCompletionResponse?,
+        CSharpTypeWithoutNullability: global::G.GenerateCompletionResponse,
+        CSharpTypeWithNullability: global::G.GenerateCompletionResponse?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -507,7 +507,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         Id: messages,
         Name: Messages,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<Message>,
+          CSharpType: global::System.Collections.Generic.IList<global::G.Message>,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -515,8 +515,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Message>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<Message>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.Message>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.Message>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -532,7 +532,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         Id: format,
         Name: Format,
         Type: {
-          CSharpType: GenerateChatCompletionRequestFormat?,
+          CSharpType: global::G.GenerateChatCompletionRequestFormat?,
           IsArray: false,
           IsEnum: true,
           Properties: [
@@ -544,10 +544,10 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: GenerateChatCompletionRequestFormat,
-          CSharpTypeWithNullability: GenerateChatCompletionRequestFormat?,
+          CSharpTypeWithoutNullability: global::G.GenerateChatCompletionRequestFormat,
+          CSharpTypeWithNullability: global::G.GenerateChatCompletionRequestFormat?,
           IsAnyOf: false,
-          ConverterType: GenerateChatCompletionRequestFormatJsonConverter
+          ConverterType: global::OpenApiGenerator.JsonConverters.GenerateChatCompletionRequestFormatJsonConverter
         },
         IsRequired: false,
         IsDeprecated: false,
@@ -558,7 +558,7 @@ Enable JSON mode by setting the format parameter to json. This will structure th
 
 Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
 ,
-        ConverterType: GenerateChatCompletionRequestFormatJsonConverter,
+        ConverterType: global::OpenApiGenerator.JsonConverters.GenerateChatCompletionRequestFormatJsonConverter,
         ParameterName: format,
         ArgumentName: format,
         ParameterDefaultValue: default
@@ -567,7 +567,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
         Id: options,
         Name: Options,
         Type: {
-          CSharpType: RequestOptions?,
+          CSharpType: global::G.RequestOptions?,
           IsArray: false,
           IsEnum: false,
           Properties: [
@@ -606,8 +606,8 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: RequestOptions,
-          CSharpTypeWithNullability: RequestOptions?,
+          CSharpTypeWithoutNullability: global::G.RequestOptions,
+          CSharpTypeWithNullability: global::G.RequestOptions?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -687,7 +687,7 @@ How long (in minutes) to keep the model loaded in memory.
     HttpMethod: Post,
     Summary: Generate the next message in a chat with a provided model.,
     RequestType: {
-      CSharpType: GenerateChatCompletionRequest,
+      CSharpType: global::G.GenerateChatCompletionRequest,
       IsArray: false,
       IsEnum: false,
       Properties: [
@@ -702,13 +702,13 @@ How long (in minutes) to keep the model loaded in memory.
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: true,
-      CSharpTypeWithoutNullability: GenerateChatCompletionRequest,
-      CSharpTypeWithNullability: GenerateChatCompletionRequest?,
+      CSharpTypeWithoutNullability: global::G.GenerateChatCompletionRequest,
+      CSharpTypeWithNullability: global::G.GenerateChatCompletionRequest?,
       IsAnyOf: false,
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: GenerateChatCompletionResponse,
+      CSharpType: global::G.GenerateChatCompletionResponse,
       IsArray: false,
       IsEnum: false,
       Properties: [
@@ -728,15 +728,15 @@ How long (in minutes) to keep the model loaded in memory.
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: true,
-      CSharpTypeWithoutNullability: GenerateChatCompletionResponse,
-      CSharpTypeWithNullability: GenerateChatCompletionResponse?,
+      CSharpTypeWithoutNullability: global::G.GenerateChatCompletionResponse,
+      CSharpTypeWithNullability: global::G.GenerateChatCompletionResponse?,
       IsAnyOf: false,
       ConverterType: 
     },
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: GenerateChatCompletionRequest,
+        CSharpType: global::G.GenerateChatCompletionRequest,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -751,13 +751,13 @@ How long (in minutes) to keep the model loaded in memory.
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: true,
-        CSharpTypeWithoutNullability: GenerateChatCompletionRequest,
-        CSharpTypeWithNullability: GenerateChatCompletionRequest?,
+        CSharpTypeWithoutNullability: global::G.GenerateChatCompletionRequest,
+        CSharpTypeWithNullability: global::G.GenerateChatCompletionRequest?,
         IsAnyOf: false,
         ConverterType: 
       },
       {
-        CSharpType: GenerateChatCompletionResponse,
+        CSharpType: global::G.GenerateChatCompletionResponse,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -777,8 +777,8 @@ How long (in minutes) to keep the model loaded in memory.
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: true,
-        CSharpTypeWithoutNullability: GenerateChatCompletionResponse,
-        CSharpTypeWithNullability: GenerateChatCompletionResponse?,
+        CSharpTypeWithoutNullability: global::G.GenerateChatCompletionResponse,
+        CSharpTypeWithNullability: global::G.GenerateChatCompletionResponse?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -858,7 +858,7 @@ Text to generate embeddings for.
         Id: options,
         Name: Options,
         Type: {
-          CSharpType: RequestOptions?,
+          CSharpType: global::G.RequestOptions?,
           IsArray: false,
           IsEnum: false,
           Properties: [
@@ -897,8 +897,8 @@ Text to generate embeddings for.
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: RequestOptions,
-          CSharpTypeWithNullability: RequestOptions?,
+          CSharpTypeWithoutNullability: global::G.RequestOptions,
+          CSharpTypeWithNullability: global::G.RequestOptions?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -949,7 +949,7 @@ How long (in minutes) to keep the model loaded in memory.
     HttpMethod: Post,
     Summary: Generate embeddings from a model.,
     RequestType: {
-      CSharpType: GenerateEmbeddingRequest,
+      CSharpType: global::G.GenerateEmbeddingRequest,
       IsArray: false,
       IsEnum: false,
       Properties: [
@@ -962,13 +962,13 @@ How long (in minutes) to keep the model loaded in memory.
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: true,
-      CSharpTypeWithoutNullability: GenerateEmbeddingRequest,
-      CSharpTypeWithNullability: GenerateEmbeddingRequest?,
+      CSharpTypeWithoutNullability: global::G.GenerateEmbeddingRequest,
+      CSharpTypeWithNullability: global::G.GenerateEmbeddingRequest?,
       IsAnyOf: false,
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: GenerateEmbeddingResponse,
+      CSharpType: global::G.GenerateEmbeddingResponse,
       IsArray: false,
       IsEnum: false,
       Properties: [
@@ -978,15 +978,15 @@ How long (in minutes) to keep the model loaded in memory.
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: true,
-      CSharpTypeWithoutNullability: GenerateEmbeddingResponse,
-      CSharpTypeWithNullability: GenerateEmbeddingResponse?,
+      CSharpTypeWithoutNullability: global::G.GenerateEmbeddingResponse,
+      CSharpTypeWithNullability: global::G.GenerateEmbeddingResponse?,
       IsAnyOf: false,
       ConverterType: 
     },
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: GenerateEmbeddingRequest,
+        CSharpType: global::G.GenerateEmbeddingRequest,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -999,13 +999,13 @@ How long (in minutes) to keep the model loaded in memory.
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: true,
-        CSharpTypeWithoutNullability: GenerateEmbeddingRequest,
-        CSharpTypeWithNullability: GenerateEmbeddingRequest?,
+        CSharpTypeWithoutNullability: global::G.GenerateEmbeddingRequest,
+        CSharpTypeWithNullability: global::G.GenerateEmbeddingRequest?,
         IsAnyOf: false,
         ConverterType: 
       },
       {
-        CSharpType: GenerateEmbeddingResponse,
+        CSharpType: global::G.GenerateEmbeddingResponse,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -1015,8 +1015,8 @@ How long (in minutes) to keep the model loaded in memory.
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: true,
-        CSharpTypeWithoutNullability: GenerateEmbeddingResponse,
-        CSharpTypeWithNullability: GenerateEmbeddingResponse?,
+        CSharpTypeWithoutNullability: global::G.GenerateEmbeddingResponse,
+        CSharpTypeWithNullability: global::G.GenerateEmbeddingResponse?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -1178,7 +1178,7 @@ If `false` the response will be returned as a single response object, otherwise 
     HttpMethod: Post,
     Summary: Create a model from a Modelfile.,
     RequestType: {
-      CSharpType: CreateModelRequest,
+      CSharpType: global::G.CreateModelRequest,
       IsArray: false,
       IsEnum: false,
       Properties: [
@@ -1192,13 +1192,13 @@ If `false` the response will be returned as a single response object, otherwise 
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: true,
-      CSharpTypeWithoutNullability: CreateModelRequest,
-      CSharpTypeWithNullability: CreateModelRequest?,
+      CSharpTypeWithoutNullability: global::G.CreateModelRequest,
+      CSharpTypeWithNullability: global::G.CreateModelRequest?,
       IsAnyOf: false,
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: CreateModelResponse,
+      CSharpType: global::G.CreateModelResponse,
       IsArray: false,
       IsEnum: false,
       Properties: [
@@ -1208,15 +1208,15 @@ If `false` the response will be returned as a single response object, otherwise 
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: true,
-      CSharpTypeWithoutNullability: CreateModelResponse,
-      CSharpTypeWithNullability: CreateModelResponse?,
+      CSharpTypeWithoutNullability: global::G.CreateModelResponse,
+      CSharpTypeWithNullability: global::G.CreateModelResponse?,
       IsAnyOf: false,
       ConverterType: 
     },
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: CreateModelRequest,
+        CSharpType: global::G.CreateModelRequest,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -1230,13 +1230,13 @@ If `false` the response will be returned as a single response object, otherwise 
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: true,
-        CSharpTypeWithoutNullability: CreateModelRequest,
-        CSharpTypeWithNullability: CreateModelRequest?,
+        CSharpTypeWithoutNullability: global::G.CreateModelRequest,
+        CSharpTypeWithNullability: global::G.CreateModelRequest?,
         IsAnyOf: false,
         ConverterType: 
       },
       {
-        CSharpType: CreateModelResponse,
+        CSharpType: global::G.CreateModelResponse,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -1246,8 +1246,8 @@ If `false` the response will be returned as a single response object, otherwise 
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: true,
-        CSharpTypeWithoutNullability: CreateModelResponse,
-        CSharpTypeWithNullability: CreateModelResponse?,
+        CSharpTypeWithoutNullability: global::G.CreateModelResponse,
+        CSharpTypeWithNullability: global::G.CreateModelResponse?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -1285,7 +1285,7 @@ If `false` the response will be returned as a single response object, otherwise 
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: ModelsResponse,
+      CSharpType: global::G.ModelsResponse,
       IsArray: false,
       IsEnum: false,
       Properties: [
@@ -1295,15 +1295,15 @@ If `false` the response will be returned as a single response object, otherwise 
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: true,
-      CSharpTypeWithoutNullability: ModelsResponse,
-      CSharpTypeWithNullability: ModelsResponse?,
+      CSharpTypeWithoutNullability: global::G.ModelsResponse,
+      CSharpTypeWithNullability: global::G.ModelsResponse?,
       IsAnyOf: false,
       ConverterType: 
     },
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: ModelsResponse,
+        CSharpType: global::G.ModelsResponse,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -1313,8 +1313,8 @@ If `false` the response will be returned as a single response object, otherwise 
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: true,
-        CSharpTypeWithoutNullability: ModelsResponse,
-        CSharpTypeWithNullability: ModelsResponse?,
+        CSharpTypeWithoutNullability: global::G.ModelsResponse,
+        CSharpTypeWithNullability: global::G.ModelsResponse?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -1370,7 +1370,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     HttpMethod: Post,
     Summary: Show details about a model including modelfile, template, parameters, license, and system prompt.,
     RequestType: {
-      CSharpType: ModelInfoRequest,
+      CSharpType: global::G.ModelInfoRequest,
       IsArray: false,
       IsEnum: false,
       Properties: [
@@ -1380,13 +1380,13 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: true,
-      CSharpTypeWithoutNullability: ModelInfoRequest,
-      CSharpTypeWithNullability: ModelInfoRequest?,
+      CSharpTypeWithoutNullability: global::G.ModelInfoRequest,
+      CSharpTypeWithNullability: global::G.ModelInfoRequest?,
       IsAnyOf: false,
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: ModelInfo,
+      CSharpType: global::G.ModelInfo,
       IsArray: false,
       IsEnum: false,
       Properties: [
@@ -1402,15 +1402,15 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: true,
-      CSharpTypeWithoutNullability: ModelInfo,
-      CSharpTypeWithNullability: ModelInfo?,
+      CSharpTypeWithoutNullability: global::G.ModelInfo,
+      CSharpTypeWithNullability: global::G.ModelInfo?,
       IsAnyOf: false,
       ConverterType: 
     },
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: ModelInfoRequest,
+        CSharpType: global::G.ModelInfoRequest,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -1420,13 +1420,13 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: true,
-        CSharpTypeWithoutNullability: ModelInfoRequest,
-        CSharpTypeWithNullability: ModelInfoRequest?,
+        CSharpTypeWithoutNullability: global::G.ModelInfoRequest,
+        CSharpTypeWithNullability: global::G.ModelInfoRequest?,
         IsAnyOf: false,
         ConverterType: 
       },
       {
-        CSharpType: ModelInfo,
+        CSharpType: global::G.ModelInfo,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -1442,8 +1442,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: true,
-        CSharpTypeWithoutNullability: ModelInfo,
-        CSharpTypeWithNullability: ModelInfo?,
+        CSharpTypeWithoutNullability: global::G.ModelInfo,
+        CSharpTypeWithNullability: global::G.ModelInfo?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -1523,7 +1523,7 @@ Name of the new model.
     HttpMethod: Post,
     Summary: Creates a model with another name from an existing model.,
     RequestType: {
-      CSharpType: CopyModelRequest,
+      CSharpType: global::G.CopyModelRequest,
       IsArray: false,
       IsEnum: false,
       Properties: [
@@ -1534,8 +1534,8 @@ Name of the new model.
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: true,
-      CSharpTypeWithoutNullability: CopyModelRequest,
-      CSharpTypeWithNullability: CopyModelRequest?,
+      CSharpTypeWithoutNullability: global::G.CopyModelRequest,
+      CSharpTypeWithNullability: global::G.CopyModelRequest?,
       IsAnyOf: false,
       ConverterType: 
     },
@@ -1556,7 +1556,7 @@ Name of the new model.
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: CopyModelRequest,
+        CSharpType: global::G.CopyModelRequest,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -1567,8 +1567,8 @@ Name of the new model.
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: true,
-        CSharpTypeWithoutNullability: CopyModelRequest,
-        CSharpTypeWithNullability: CopyModelRequest?,
+        CSharpTypeWithoutNullability: global::G.CopyModelRequest,
+        CSharpTypeWithNullability: global::G.CopyModelRequest?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -1624,7 +1624,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     HttpMethod: Delete,
     Summary: Delete a model and its data.,
     RequestType: {
-      CSharpType: DeleteModelRequest,
+      CSharpType: global::G.DeleteModelRequest,
       IsArray: false,
       IsEnum: false,
       Properties: [
@@ -1634,8 +1634,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: true,
-      CSharpTypeWithoutNullability: DeleteModelRequest,
-      CSharpTypeWithNullability: DeleteModelRequest?,
+      CSharpTypeWithoutNullability: global::G.DeleteModelRequest,
+      CSharpTypeWithNullability: global::G.DeleteModelRequest?,
       IsAnyOf: false,
       ConverterType: 
     },
@@ -1656,7 +1656,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: DeleteModelRequest,
+        CSharpType: global::G.DeleteModelRequest,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -1666,8 +1666,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: true,
-        CSharpTypeWithoutNullability: DeleteModelRequest,
-        CSharpTypeWithNullability: DeleteModelRequest?,
+        CSharpTypeWithoutNullability: global::G.DeleteModelRequest,
+        CSharpTypeWithNullability: global::G.DeleteModelRequest?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -1833,7 +1833,7 @@ If `false` the response will be returned as a single response object, otherwise 
     HttpMethod: Post,
     Summary: Download a model from the ollama library.,
     RequestType: {
-      CSharpType: PullModelRequest,
+      CSharpType: global::G.PullModelRequest,
       IsArray: false,
       IsEnum: false,
       Properties: [
@@ -1847,13 +1847,13 @@ If `false` the response will be returned as a single response object, otherwise 
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: true,
-      CSharpTypeWithoutNullability: PullModelRequest,
-      CSharpTypeWithNullability: PullModelRequest?,
+      CSharpTypeWithoutNullability: global::G.PullModelRequest,
+      CSharpTypeWithNullability: global::G.PullModelRequest?,
       IsAnyOf: false,
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: PullModelResponse,
+      CSharpType: global::G.PullModelResponse,
       IsArray: false,
       IsEnum: false,
       Properties: [
@@ -1866,15 +1866,15 @@ If `false` the response will be returned as a single response object, otherwise 
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: true,
-      CSharpTypeWithoutNullability: PullModelResponse,
-      CSharpTypeWithNullability: PullModelResponse?,
+      CSharpTypeWithoutNullability: global::G.PullModelResponse,
+      CSharpTypeWithNullability: global::G.PullModelResponse?,
       IsAnyOf: false,
       ConverterType: 
     },
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: PullModelRequest,
+        CSharpType: global::G.PullModelRequest,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -1888,13 +1888,13 @@ If `false` the response will be returned as a single response object, otherwise 
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: true,
-        CSharpTypeWithoutNullability: PullModelRequest,
-        CSharpTypeWithNullability: PullModelRequest?,
+        CSharpTypeWithoutNullability: global::G.PullModelRequest,
+        CSharpTypeWithNullability: global::G.PullModelRequest?,
         IsAnyOf: false,
         ConverterType: 
       },
       {
-        CSharpType: PullModelResponse,
+        CSharpType: global::G.PullModelResponse,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -1907,8 +1907,8 @@ If `false` the response will be returned as a single response object, otherwise 
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: true,
-        CSharpTypeWithoutNullability: PullModelResponse,
-        CSharpTypeWithNullability: PullModelResponse?,
+        CSharpTypeWithoutNullability: global::G.PullModelResponse,
+        CSharpTypeWithNullability: global::G.PullModelResponse?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -2071,7 +2071,7 @@ If `false` the response will be returned as a single response object, otherwise 
     HttpMethod: Post,
     Summary: Upload a model to a model library.,
     RequestType: {
-      CSharpType: PushModelRequest,
+      CSharpType: global::G.PushModelRequest,
       IsArray: false,
       IsEnum: false,
       Properties: [
@@ -2085,13 +2085,13 @@ If `false` the response will be returned as a single response object, otherwise 
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: true,
-      CSharpTypeWithoutNullability: PushModelRequest,
-      CSharpTypeWithNullability: PushModelRequest?,
+      CSharpTypeWithoutNullability: global::G.PushModelRequest,
+      CSharpTypeWithNullability: global::G.PushModelRequest?,
       IsAnyOf: false,
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: PushModelResponse,
+      CSharpType: global::G.PushModelResponse,
       IsArray: false,
       IsEnum: false,
       Properties: [
@@ -2104,15 +2104,15 @@ If `false` the response will be returned as a single response object, otherwise 
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: true,
-      CSharpTypeWithoutNullability: PushModelResponse,
-      CSharpTypeWithNullability: PushModelResponse?,
+      CSharpTypeWithoutNullability: global::G.PushModelResponse,
+      CSharpTypeWithNullability: global::G.PushModelResponse?,
       IsAnyOf: false,
       ConverterType: 
     },
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: PushModelRequest,
+        CSharpType: global::G.PushModelRequest,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -2126,13 +2126,13 @@ If `false` the response will be returned as a single response object, otherwise 
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: true,
-        CSharpTypeWithoutNullability: PushModelRequest,
-        CSharpTypeWithNullability: PushModelRequest?,
+        CSharpTypeWithoutNullability: global::G.PushModelRequest,
+        CSharpTypeWithNullability: global::G.PushModelRequest?,
         IsAnyOf: false,
         ConverterType: 
       },
       {
-        CSharpType: PushModelResponse,
+        CSharpType: global::G.PushModelResponse,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -2145,8 +2145,8 @@ If `false` the response will be returned as a single response object, otherwise 
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: true,
-        CSharpTypeWithoutNullability: PushModelResponse,
-        CSharpTypeWithNullability: PushModelResponse?,
+        CSharpTypeWithoutNullability: global::G.PushModelResponse,
+        CSharpTypeWithNullability: global::G.PushModelResponse?,
         IsAnyOf: false,
         ConverterType: 
       }

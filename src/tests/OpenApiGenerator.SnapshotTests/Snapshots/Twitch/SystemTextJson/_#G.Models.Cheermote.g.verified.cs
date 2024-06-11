@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tiers")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<CheermoteTiers> Tiers { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.CheermoteTiers> Tiers { get; set; }
 
         /// <summary>
         /// The type of Cheermote. Possible values are:  
@@ -35,7 +35,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CheermoteTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CheermoteType Type { get; set; }
+        public required global::G.CheermoteType Type { get; set; }
 
         /// <summary>
         /// The order that the Cheermotes are shown in the Bits card. The numbers may not be consecutive. For example, the numbers may jump from 1 to 7 to 13\. The order numbers are unique within a Cheermote type (for example, global\_first\_party) but may not be unique amongst all Cheermotes in the response.

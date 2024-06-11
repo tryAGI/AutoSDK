@@ -37,7 +37,7 @@ namespace G
         /// * none — The extension doesn't require configuration.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("configuration_location", Required = global::Newtonsoft.Json.Required.Always)]
-        public ExtensionConfigurationLocation ConfigurationLocation { get; set; } = default!;
+        public global::G.ExtensionConfigurationLocation ConfigurationLocation { get; set; } = default!;
 
         /// <summary>
         /// A longer description of the extension. It appears on the details page.
@@ -67,7 +67,7 @@ namespace G
         /// A dictionary that contains URLs to different sizes of the default icon. The dictionary’s key identifies the icon’s size (for example, 24x24), and the dictionary’s value contains the URL to the icon.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("icon_urls", Required = global::Newtonsoft.Json.Required.Always)]
-        public ExtensionIconUrls IconUrls { get; set; } = default!;
+        public global::G.ExtensionIconUrls IconUrls { get; set; } = default!;
 
         /// <summary>
         /// The extension’s ID.
@@ -113,7 +113,7 @@ namespace G
         /// * Released
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
-        public ExtensionState State { get; set; } = default!;
+        public global::G.ExtensionState State { get; set; } = default!;
 
         /// <summary>
         /// Indicates whether the extension can view the user’s subscription level on the channel that the extension is installed on. Possible values are:  
@@ -122,7 +122,7 @@ namespace G
         /// * optional — The extension can view the user’s subscription level.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subscriptions_support_level", Required = global::Newtonsoft.Json.Required.Always)]
-        public ExtensionSubscriptionsSupportLevel SubscriptionsSupportLevel { get; set; } = default!;
+        public global::G.ExtensionSubscriptionsSupportLevel SubscriptionsSupportLevel { get; set; } = default!;
 
         /// <summary>
         /// A short description of the extension that streamers see when hovering over the discovery splash screen in the Extensions manager.
@@ -152,7 +152,7 @@ namespace G
         /// Describes all views-related information such as how the extension is displayed on mobile devices.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("views", Required = global::Newtonsoft.Json.Required.Always)]
-        public ExtensionViews Views { get; set; } = default!;
+        public global::G.ExtensionViews Views { get; set; } = default!;
 
         /// <summary>
         /// Allowlisted configuration URLs for displaying the extension (the allowlist is configured on Twitch’s [developer site](https://dev.twitch.tv/console/extensions) under the **Extensions** \-&gt; **Extension** \-&gt; **Version** \-&gt; **Capabilities**).

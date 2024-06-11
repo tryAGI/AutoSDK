@@ -12,8 +12,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<RunObject> CreateThreadAndRunAsync(
-            CreateThreadAndRunRequest request,
+        public async global::System.Threading.Tasks.Task<global::G.RunObject> CreateThreadAndRunAsync(
+            global::G.CreateThreadAndRunRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -35,7 +35,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<RunObject?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.RunObject?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -59,25 +59,25 @@ namespace G
         /// <param name="responseFormat"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<RunObject> CreateThreadAndRunAsync(
+        public async global::System.Threading.Tasks.Task<global::G.RunObject> CreateThreadAndRunAsync(
             string assistantId,
-            CreateThreadRequest? thread = default,
-            global::System.AnyOf<string?, CreateThreadAndRunRequestModel?>? model = default,
+            global::G.CreateThreadRequest? thread = default,
+            global::System.AnyOf<string?, global::G.CreateThreadAndRunRequestModel?>? model = default,
             string? instructions = default,
-            global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>? tools = default,
-            CreateThreadAndRunRequestToolResources? toolResources = default,
+            global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>>? tools = default,
+            global::G.CreateThreadAndRunRequestToolResources? toolResources = default,
             object? metadata = default,
             double? temperature = 1,
             double? topP = 1,
             bool? stream = default,
             int? maxPromptTokens = default,
             int? maxCompletionTokens = default,
-            TruncationObject? truncationStrategy = default,
-            global::System.OneOf<CreateThreadAndRunRequestToolChoice?, AssistantsNamedToolChoice?> toolChoice = default,
-            global::System.OneOf<CreateThreadAndRunRequestResponseFormat?, AssistantsApiResponseFormat?> responseFormat = default,
+            global::G.TruncationObject? truncationStrategy = default,
+            global::System.OneOf<global::G.CreateThreadAndRunRequestToolChoice?, global::G.AssistantsNamedToolChoice?> toolChoice = default,
+            global::System.OneOf<global::G.CreateThreadAndRunRequestResponseFormat?, global::G.AssistantsApiResponseFormat?> responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new CreateThreadAndRunRequest
+            var request = new global::G.CreateThreadAndRunRequest
             {
                 AssistantId = assistantId,
                 Thread = thread,

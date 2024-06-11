@@ -24,7 +24,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("endpoint")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateBatchRequestEndpointJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CreateBatchRequestEndpoint Endpoint { get; set; }
+        public required global::G.CreateBatchRequestEndpoint Endpoint { get; set; }
 
         /// <summary>
         /// The time frame within which the batch should be processed. Currently only `24h` is supported.
@@ -32,7 +32,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_window")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateBatchRequestCompletionWindowJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CreateBatchRequestCompletionWindow CompletionWindow { get; set; }
+        public required global::G.CreateBatchRequestCompletionWindow CompletionWindow { get; set; }
 
         /// <summary>
         /// Optional custom metadata for the batch.

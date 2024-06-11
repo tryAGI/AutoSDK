@@ -27,7 +27,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: GetAccountResponse,
+      CSharpType: global::G.GetAccountResponse,
       IsArray: false,
       IsEnum: false,
       Properties: null,
@@ -35,15 +35,15 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: GetAccountResponse,
-      CSharpTypeWithNullability: GetAccountResponse?,
+      CSharpTypeWithoutNullability: global::G.GetAccountResponse,
+      CSharpTypeWithNullability: global::G.GetAccountResponse?,
       IsAnyOf: false,
       ConverterType: 
     },
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: GetAccountResponse,
+        CSharpType: global::G.GetAccountResponse,
         IsArray: false,
         IsEnum: false,
         Properties: null,
@@ -51,8 +51,8 @@
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
-        CSharpTypeWithoutNullability: GetAccountResponse,
-        CSharpTypeWithNullability: GetAccountResponse?,
+        CSharpTypeWithoutNullability: global::G.GetAccountResponse,
+        CSharpTypeWithNullability: global::G.GetAccountResponse?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -215,7 +215,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: ListDeploymentsResponse,
+      CSharpType: global::G.ListDeploymentsResponse,
       IsArray: false,
       IsEnum: false,
       Properties: null,
@@ -223,15 +223,15 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: ListDeploymentsResponse,
-      CSharpTypeWithNullability: ListDeploymentsResponse?,
+      CSharpTypeWithoutNullability: global::G.ListDeploymentsResponse,
+      CSharpTypeWithNullability: global::G.ListDeploymentsResponse?,
       IsAnyOf: false,
       ConverterType: 
     },
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: ListDeploymentsResponse,
+        CSharpType: global::G.ListDeploymentsResponse,
         IsArray: false,
         IsEnum: false,
         Properties: null,
@@ -239,8 +239,8 @@
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
-        CSharpTypeWithoutNullability: ListDeploymentsResponse,
-        CSharpTypeWithNullability: ListDeploymentsResponse?,
+        CSharpTypeWithoutNullability: global::G.ListDeploymentsResponse,
+        CSharpTypeWithNullability: global::G.ListDeploymentsResponse?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -416,7 +416,7 @@
     HttpMethod: Post,
     Summary: Create a deployment,
     RequestType: {
-      CSharpType: CreateDeploymentsRequest,
+      CSharpType: global::G.CreateDeploymentsRequest,
       IsArray: false,
       IsEnum: false,
       Properties: null,
@@ -424,13 +424,13 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: CreateDeploymentsRequest,
-      CSharpTypeWithNullability: CreateDeploymentsRequest?,
+      CSharpTypeWithoutNullability: global::G.CreateDeploymentsRequest,
+      CSharpTypeWithNullability: global::G.CreateDeploymentsRequest?,
       IsAnyOf: false,
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: CreateDeploymentsResponse,
+      CSharpType: global::G.CreateDeploymentsResponse,
       IsArray: false,
       IsEnum: false,
       Properties: null,
@@ -438,15 +438,15 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: CreateDeploymentsResponse,
-      CSharpTypeWithNullability: CreateDeploymentsResponse?,
+      CSharpTypeWithoutNullability: global::G.CreateDeploymentsResponse,
+      CSharpTypeWithNullability: global::G.CreateDeploymentsResponse?,
       IsAnyOf: false,
       ConverterType: 
     },
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: CreateDeploymentsRequest,
+        CSharpType: global::G.CreateDeploymentsRequest,
         IsArray: false,
         IsEnum: false,
         Properties: null,
@@ -454,13 +454,13 @@
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
-        CSharpTypeWithoutNullability: CreateDeploymentsRequest,
-        CSharpTypeWithNullability: CreateDeploymentsRequest?,
+        CSharpTypeWithoutNullability: global::G.CreateDeploymentsRequest,
+        CSharpTypeWithNullability: global::G.CreateDeploymentsRequest?,
         IsAnyOf: false,
         ConverterType: 
       },
       {
-        CSharpType: CreateDeploymentsResponse,
+        CSharpType: global::G.CreateDeploymentsResponse,
         IsArray: false,
         IsEnum: false,
         Properties: null,
@@ -468,8 +468,8 @@
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
-        CSharpTypeWithoutNullability: CreateDeploymentsResponse,
-        CSharpTypeWithNullability: CreateDeploymentsResponse?,
+        CSharpTypeWithoutNullability: global::G.CreateDeploymentsResponse,
+        CSharpTypeWithNullability: global::G.CreateDeploymentsResponse?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -670,7 +670,7 @@
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: GetDeploymentsResponse,
+      CSharpType: global::G.GetDeploymentsResponse,
       IsArray: false,
       IsEnum: false,
       Properties: null,
@@ -678,15 +678,15 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: GetDeploymentsResponse,
-      CSharpTypeWithNullability: GetDeploymentsResponse?,
+      CSharpTypeWithoutNullability: global::G.GetDeploymentsResponse,
+      CSharpTypeWithNullability: global::G.GetDeploymentsResponse?,
       IsAnyOf: false,
       ConverterType: 
     },
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: GetDeploymentsResponse,
+        CSharpType: global::G.GetDeploymentsResponse,
         IsArray: false,
         IsEnum: false,
         Properties: null,
@@ -694,8 +694,8 @@
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
-        CSharpTypeWithoutNullability: GetDeploymentsResponse,
-        CSharpTypeWithNullability: GetDeploymentsResponse?,
+        CSharpTypeWithoutNullability: global::G.GetDeploymentsResponse,
+        CSharpTypeWithNullability: global::G.GetDeploymentsResponse?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -877,7 +877,7 @@
     HttpMethod: Patch,
     Summary: Update a deployment,
     RequestType: {
-      CSharpType: UpdateDeploymentsRequest,
+      CSharpType: global::G.UpdateDeploymentsRequest,
       IsArray: false,
       IsEnum: false,
       Properties: null,
@@ -885,13 +885,13 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: UpdateDeploymentsRequest,
-      CSharpTypeWithNullability: UpdateDeploymentsRequest?,
+      CSharpTypeWithoutNullability: global::G.UpdateDeploymentsRequest,
+      CSharpTypeWithNullability: global::G.UpdateDeploymentsRequest?,
       IsAnyOf: false,
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: UpdateDeploymentsResponse,
+      CSharpType: global::G.UpdateDeploymentsResponse,
       IsArray: false,
       IsEnum: false,
       Properties: null,
@@ -899,15 +899,15 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: UpdateDeploymentsResponse,
-      CSharpTypeWithNullability: UpdateDeploymentsResponse?,
+      CSharpTypeWithoutNullability: global::G.UpdateDeploymentsResponse,
+      CSharpTypeWithNullability: global::G.UpdateDeploymentsResponse?,
       IsAnyOf: false,
       ConverterType: 
     },
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: UpdateDeploymentsRequest,
+        CSharpType: global::G.UpdateDeploymentsRequest,
         IsArray: false,
         IsEnum: false,
         Properties: null,
@@ -915,13 +915,13 @@
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
-        CSharpTypeWithoutNullability: UpdateDeploymentsRequest,
-        CSharpTypeWithNullability: UpdateDeploymentsRequest?,
+        CSharpTypeWithoutNullability: global::G.UpdateDeploymentsRequest,
+        CSharpTypeWithNullability: global::G.UpdateDeploymentsRequest?,
         IsAnyOf: false,
         ConverterType: 
       },
       {
-        CSharpType: UpdateDeploymentsResponse,
+        CSharpType: global::G.UpdateDeploymentsResponse,
         IsArray: false,
         IsEnum: false,
         Properties: null,
@@ -929,8 +929,8 @@
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
-        CSharpTypeWithoutNullability: UpdateDeploymentsResponse,
-        CSharpTypeWithNullability: UpdateDeploymentsResponse?,
+        CSharpTypeWithoutNullability: global::G.UpdateDeploymentsResponse,
+        CSharpTypeWithNullability: global::G.UpdateDeploymentsResponse?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -1106,7 +1106,7 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
         Id: webhook_events_filter,
         Name: WebhookEventsFilter,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>?,
+          CSharpType: global::System.Collections.Generic.IList<global::G.PredictionRequestWebhookEventsFilter?>?,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -1114,8 +1114,8 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.PredictionRequestWebhookEventsFilter?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.PredictionRequestWebhookEventsFilter?>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1155,7 +1155,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     HttpMethod: Post,
     Summary: Create a prediction using a deployment,
     RequestType: {
-      CSharpType: PredictionRequest,
+      CSharpType: global::G.PredictionRequest,
       IsArray: false,
       IsEnum: false,
       Properties: [
@@ -1168,8 +1168,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: PredictionRequest,
-      CSharpTypeWithNullability: PredictionRequest?,
+      CSharpTypeWithoutNullability: global::G.PredictionRequest,
+      CSharpTypeWithNullability: global::G.PredictionRequest?,
       IsAnyOf: false,
       ConverterType: 
     },
@@ -1190,7 +1190,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: PredictionRequest,
+        CSharpType: global::G.PredictionRequest,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -1203,8 +1203,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
-        CSharpTypeWithoutNullability: PredictionRequest,
-        CSharpTypeWithNullability: PredictionRequest?,
+        CSharpTypeWithoutNullability: global::G.PredictionRequest,
+        CSharpTypeWithNullability: global::G.PredictionRequest?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -1242,7 +1242,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: global::System.Collections.Generic.IList<ListHardwareResponse>,
+      CSharpType: global::System.Collections.Generic.IList<global::G.ListHardwareResponse>,
       IsArray: true,
       IsEnum: false,
       Properties: null,
@@ -1250,15 +1250,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ListHardwareResponse>,
-      CSharpTypeWithNullability: global::System.Collections.Generic.IList<ListHardwareResponse>?,
+      CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.ListHardwareResponse>,
+      CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.ListHardwareResponse>?,
       IsAnyOf: false,
       ConverterType: 
     },
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: global::System.Collections.Generic.IList<ListHardwareResponse>,
+        CSharpType: global::System.Collections.Generic.IList<global::G.ListHardwareResponse>,
         IsArray: true,
         IsEnum: false,
         Properties: null,
@@ -1266,8 +1266,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
-        CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ListHardwareResponse>,
-        CSharpTypeWithNullability: global::System.Collections.Generic.IList<ListHardwareResponse>?,
+        CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.ListHardwareResponse>,
+        CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.ListHardwareResponse>?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -1538,7 +1538,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Id: visibility,
         Name: Visibility,
         Type: {
-          CSharpType: CreateModelsRequestVisibility,
+          CSharpType: global::G.CreateModelsRequestVisibility,
           IsArray: false,
           IsEnum: true,
           Properties: [
@@ -1552,15 +1552,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: CreateModelsRequestVisibility,
-          CSharpTypeWithNullability: CreateModelsRequestVisibility?,
+          CSharpTypeWithoutNullability: global::G.CreateModelsRequestVisibility,
+          CSharpTypeWithNullability: global::G.CreateModelsRequestVisibility?,
           IsAnyOf: false,
-          ConverterType: CreateModelsRequestVisibilityJsonConverter
+          ConverterType: global::OpenApiGenerator.JsonConverters.CreateModelsRequestVisibilityJsonConverter
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: Whether the model should be public or private. A public model can be viewed and run by anyone, whereas a private model can be viewed and run only by the user or organization members that own the model.,
-        ConverterType: CreateModelsRequestVisibilityJsonConverter,
+        ConverterType: global::OpenApiGenerator.JsonConverters.CreateModelsRequestVisibilityJsonConverter,
         ParameterName: visibility,
         ArgumentName: visibility,
         ParameterDefaultValue: default
@@ -1572,7 +1572,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     HttpMethod: Post,
     Summary: Create a model,
     RequestType: {
-      CSharpType: CreateModelsRequest,
+      CSharpType: global::G.CreateModelsRequest,
       IsArray: false,
       IsEnum: false,
       Properties: null,
@@ -1580,8 +1580,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: CreateModelsRequest,
-      CSharpTypeWithNullability: CreateModelsRequest?,
+      CSharpTypeWithoutNullability: global::G.CreateModelsRequest,
+      CSharpTypeWithNullability: global::G.CreateModelsRequest?,
       IsAnyOf: false,
       ConverterType: 
     },
@@ -1602,7 +1602,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: CreateModelsRequest,
+        CSharpType: global::G.CreateModelsRequest,
         IsArray: false,
         IsEnum: false,
         Properties: null,
@@ -1610,8 +1610,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
-        CSharpTypeWithoutNullability: CreateModelsRequest,
-        CSharpTypeWithNullability: CreateModelsRequest?,
+        CSharpTypeWithoutNullability: global::G.CreateModelsRequest,
+        CSharpTypeWithNullability: global::G.CreateModelsRequest?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -1998,7 +1998,7 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
         Id: webhook_events_filter,
         Name: WebhookEventsFilter,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>?,
+          CSharpType: global::System.Collections.Generic.IList<global::G.PredictionRequestWebhookEventsFilter?>?,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -2006,8 +2006,8 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.PredictionRequestWebhookEventsFilter?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.PredictionRequestWebhookEventsFilter?>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2047,7 +2047,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     HttpMethod: Post,
     Summary: Create a prediction using an official model,
     RequestType: {
-      CSharpType: PredictionRequest,
+      CSharpType: global::G.PredictionRequest,
       IsArray: false,
       IsEnum: false,
       Properties: [
@@ -2060,8 +2060,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: PredictionRequest,
-      CSharpTypeWithNullability: PredictionRequest?,
+      CSharpTypeWithoutNullability: global::G.PredictionRequest,
+      CSharpTypeWithNullability: global::G.PredictionRequest?,
       IsAnyOf: false,
       ConverterType: 
     },
@@ -2082,7 +2082,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: PredictionRequest,
+        CSharpType: global::G.PredictionRequest,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -2095,8 +2095,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
-        CSharpTypeWithoutNullability: PredictionRequest,
-        CSharpTypeWithNullability: PredictionRequest?,
+        CSharpTypeWithoutNullability: global::G.PredictionRequest,
+        CSharpTypeWithNullability: global::G.PredictionRequest?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -2654,7 +2654,7 @@ An object containing inputs to the Cog model's `train()` function.
         Id: webhook_events_filter,
         Name: WebhookEventsFilter,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<TrainingRequestWebhookEventsFilter?>?,
+          CSharpType: global::System.Collections.Generic.IList<global::G.TrainingRequestWebhookEventsFilter?>?,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -2662,8 +2662,8 @@ An object containing inputs to the Cog model's `train()` function.
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<TrainingRequestWebhookEventsFilter?>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<TrainingRequestWebhookEventsFilter?>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.TrainingRequestWebhookEventsFilter?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.TrainingRequestWebhookEventsFilter?>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2704,7 +2704,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     HttpMethod: Post,
     Summary: Create a training,
     RequestType: {
-      CSharpType: TrainingRequest,
+      CSharpType: global::G.TrainingRequest,
       IsArray: false,
       IsEnum: false,
       Properties: [
@@ -2717,8 +2717,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: TrainingRequest,
-      CSharpTypeWithNullability: TrainingRequest?,
+      CSharpTypeWithoutNullability: global::G.TrainingRequest,
+      CSharpTypeWithNullability: global::G.TrainingRequest?,
       IsAnyOf: false,
       ConverterType: 
     },
@@ -2739,7 +2739,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: TrainingRequest,
+        CSharpType: global::G.TrainingRequest,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -2752,8 +2752,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
-        CSharpTypeWithoutNullability: TrainingRequest,
-        CSharpTypeWithNullability: TrainingRequest?,
+        CSharpTypeWithoutNullability: global::G.TrainingRequest,
+        CSharpTypeWithNullability: global::G.TrainingRequest?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -2946,7 +2946,7 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
         Id: webhook_events_filter,
         Name: WebhookEventsFilter,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<VersionPredictionRequestWebhookEventsFilter?>?,
+          CSharpType: global::System.Collections.Generic.IList<global::G.VersionPredictionRequestWebhookEventsFilter?>?,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -2954,8 +2954,8 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<VersionPredictionRequestWebhookEventsFilter?>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<VersionPredictionRequestWebhookEventsFilter?>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.VersionPredictionRequestWebhookEventsFilter?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.VersionPredictionRequestWebhookEventsFilter?>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2996,7 +2996,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     HttpMethod: Post,
     Summary: Create a prediction,
     RequestType: {
-      CSharpType: VersionPredictionRequest,
+      CSharpType: global::G.VersionPredictionRequest,
       IsArray: false,
       IsEnum: false,
       Properties: [
@@ -3010,8 +3010,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: VersionPredictionRequest,
-      CSharpTypeWithNullability: VersionPredictionRequest?,
+      CSharpTypeWithoutNullability: global::G.VersionPredictionRequest,
+      CSharpTypeWithNullability: global::G.VersionPredictionRequest?,
       IsAnyOf: false,
       ConverterType: 
     },
@@ -3032,7 +3032,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: VersionPredictionRequest,
+        CSharpType: global::G.VersionPredictionRequest,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -3046,8 +3046,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
-        CSharpTypeWithoutNullability: VersionPredictionRequest,
-        CSharpTypeWithNullability: VersionPredictionRequest?,
+        CSharpTypeWithoutNullability: global::G.VersionPredictionRequest,
+        CSharpTypeWithNullability: global::G.VersionPredictionRequest?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -3443,7 +3443,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       ConverterType: 
     },
     ResponseType: {
-      CSharpType: GetSecretDefaultWebhooksResponse,
+      CSharpType: global::G.GetSecretDefaultWebhooksResponse,
       IsArray: false,
       IsEnum: false,
       Properties: null,
@@ -3451,15 +3451,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: GetSecretDefaultWebhooksResponse,
-      CSharpTypeWithNullability: GetSecretDefaultWebhooksResponse?,
+      CSharpTypeWithoutNullability: global::G.GetSecretDefaultWebhooksResponse,
+      CSharpTypeWithNullability: global::G.GetSecretDefaultWebhooksResponse?,
       IsAnyOf: false,
       ConverterType: 
     },
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: GetSecretDefaultWebhooksResponse,
+        CSharpType: global::G.GetSecretDefaultWebhooksResponse,
         IsArray: false,
         IsEnum: false,
         Properties: null,
@@ -3467,8 +3467,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
-        CSharpTypeWithoutNullability: GetSecretDefaultWebhooksResponse,
-        CSharpTypeWithNullability: GetSecretDefaultWebhooksResponse?,
+        CSharpTypeWithoutNullability: global::G.GetSecretDefaultWebhooksResponse,
+        CSharpTypeWithNullability: global::G.GetSecretDefaultWebhooksResponse?,
         IsAnyOf: false,
         ConverterType: 
       }

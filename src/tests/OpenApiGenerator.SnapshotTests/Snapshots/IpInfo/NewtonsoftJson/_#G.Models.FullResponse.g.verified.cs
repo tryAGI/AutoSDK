@@ -73,31 +73,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("asn")]
-        public AsnResponse? Asn { get; set; }
+        public global::G.AsnResponse? Asn { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("company")]
-        public Company? Company { get; set; }
+        public global::G.Company? Company { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("carrier")]
-        public Carrier? Carrier { get; set; }
+        public global::G.Carrier? Carrier { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("privacy")]
-        public PrivacyResponse? Privacy { get; set; }
+        public global::G.PrivacyResponse? Privacy { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("domains")]
-        public DomainsResponse? Domains { get; set; }
+        public global::G.DomainsResponse? Domains { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

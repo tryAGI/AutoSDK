@@ -14,13 +14,13 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<BroadcasterSubscription> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.BroadcasterSubscription> Data { get; set; }
 
         /// <summary>
         /// Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pagination")]
-        public GetBroadcasterSubscriptionsResponsePagination? Pagination { get; set; }
+        public global::G.GetBroadcasterSubscriptionsResponsePagination? Pagination { get; set; }
 
         /// <summary>
         /// The current number of subscriber points earned by this broadcaster. Points are based on the subscription tier of each user that subscribes to this broadcaster. For example, a Tier 1 subscription is worth 1 point, Tier 2 is worth 2 points, and Tier 3 is worth 6 points. The number of points determines the number of emote slots that are unlocked for the broadcaster (see [Subscriber Emote Slots](https://help.twitch.tv/s/article/subscriber-emote-guide#emoteslots)).

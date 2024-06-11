@@ -17,7 +17,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AnyOf<string, CreateFineTuningJobRequestModel> Model { get; set; }
+        public required global::System.AnyOf<string, global::G.CreateFineTuningJobRequestModel> Model { get; set; }
 
         /// <summary>
         /// The ID of an uploaded file that contains training data.
@@ -34,7 +34,7 @@ namespace G
         /// The hyperparameters used for the fine-tuning job.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hyperparameters")]
-        public CreateFineTuningJobRequestHyperparameters? Hyperparameters { get; set; }
+        public global::G.CreateFineTuningJobRequestHyperparameters? Hyperparameters { get; set; }
 
         /// <summary>
         /// A string of up to 18 characters that will be added to your fine-tuned model name.
@@ -61,7 +61,7 @@ namespace G
         /// A list of integrations to enable for your fine-tuning job.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("integrations")]
-        public global::System.Collections.Generic.IList<CreateFineTuningJobRequestIntegrations?>? Integrations { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CreateFineTuningJobRequestIntegrations?>? Integrations { get; set; }
 
         /// <summary>
         /// The seed controls the reproducibility of the job. Passing in the same seed and job parameters should produce the same results, but may differ in rare cases.

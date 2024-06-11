@@ -19,7 +19,7 @@ namespace G
         /// The object type, which is always `thread.message`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public MessageObjectObject Object { get; set; } = default!;
+        public global::G.MessageObjectObject Object { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the message was created.
@@ -37,13 +37,13 @@ namespace G
         /// The status of the message, which can be either `in_progress`, `incomplete`, or `completed`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public MessageObjectStatus Status { get; set; } = default!;
+        public global::G.MessageObjectStatus Status { get; set; } = default!;
 
         /// <summary>
         /// On an incomplete message, details about why the message is incomplete.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("incomplete_details", Required = global::Newtonsoft.Json.Required.Always)]
-        public MessageObjectIncompleteDetails? IncompleteDetails { get; set; } = default!;
+        public global::G.MessageObjectIncompleteDetails? IncompleteDetails { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the message was completed.
@@ -61,13 +61,13 @@ namespace G
         /// The entity that produced the message. One of `user` or `assistant`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
-        public MessageObjectRole Role { get; set; } = default!;
+        public global::G.MessageObjectRole Role { get; set; } = default!;
 
         /// <summary>
         /// The content of the message in array of text and/or images.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::System.OneOf<MessageContentImageFileObject, MessageContentImageUrlObject, MessageContentTextObject>> Content { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageContentTextObject>> Content { get; set; } = default!;
 
         /// <summary>
         /// If applicable, the ID of the [assistant](/docs/api-reference/assistants) that authored this message.
@@ -85,7 +85,7 @@ namespace G
         /// A list of files attached to the message, and the tools they were added to.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("attachments", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<MessageObjectAttachments>? Attachments { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.MessageObjectAttachments>? Attachments { get; set; } = default!;
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.

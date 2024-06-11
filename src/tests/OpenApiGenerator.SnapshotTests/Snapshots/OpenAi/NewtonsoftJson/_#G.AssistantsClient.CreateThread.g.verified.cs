@@ -12,8 +12,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<ThreadObject> CreateThreadAsync(
-            CreateThreadRequest request,
+        public async global::System.Threading.Tasks.Task<global::G.ThreadObject> CreateThreadAsync(
+            global::G.CreateThreadRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -35,7 +35,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<ThreadObject?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.ThreadObject?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -47,13 +47,13 @@ namespace G
         /// <param name="metadata"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<ThreadObject> CreateThreadAsync(
-            global::System.Collections.Generic.IList<CreateMessageRequest>? messages = default,
-            CreateThreadRequestToolResources? toolResources = default,
+        public async global::System.Threading.Tasks.Task<global::G.ThreadObject> CreateThreadAsync(
+            global::System.Collections.Generic.IList<global::G.CreateMessageRequest>? messages = default,
+            global::G.CreateThreadRequestToolResources? toolResources = default,
             object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new CreateThreadRequest
+            var request = new global::G.CreateThreadRequest
             {
                 Messages = messages,
                 ToolResources = toolResources,

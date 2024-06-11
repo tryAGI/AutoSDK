@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<OpenAIFile> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.OpenAIFile> Data { get; set; }
 
         /// <summary>
         /// 
@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ListFilesResponseObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ListFilesResponseObject Object { get; set; }
+        public required global::G.ListFilesResponseObject Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

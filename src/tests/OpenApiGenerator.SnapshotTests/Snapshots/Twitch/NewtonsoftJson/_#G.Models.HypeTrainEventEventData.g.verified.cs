@@ -43,7 +43,7 @@ namespace G
         /// The most recent contribution towards the Hype Train’s goal.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_contribution", Required = global::Newtonsoft.Json.Required.Always)]
-        public HypeTrainEventEventDataLastContribution LastContribution { get; set; } = default!;
+        public global::G.HypeTrainEventEventDataLastContribution LastContribution { get; set; } = default!;
 
         /// <summary>
         /// The highest level that the Hype Train reached (the levels are 1 through 5).
@@ -61,7 +61,7 @@ namespace G
         /// The top contributors for each contribution type. For example, the top contributor using BITS (by aggregate) and the top contributor using SUBS (by count).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("top_contributions", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<HypeTrainEventEventDataTopContributions> TopContributions { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.HypeTrainEventEventDataTopContributions> TopContributions { get; set; } = default!;
 
         /// <summary>
         /// The current total amount raised.

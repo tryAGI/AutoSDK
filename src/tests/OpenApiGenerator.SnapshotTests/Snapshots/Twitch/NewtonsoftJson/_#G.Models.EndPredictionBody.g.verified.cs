@@ -33,7 +33,7 @@ namespace G
         /// The broadcaster has up to 24 hours after the prediction window closes to resolve the prediction. If not, Twitch sets the status to CANCELED and returns the points.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public EndPredictionBodyStatus Status { get; set; } = default!;
+        public global::G.EndPredictionBodyStatus Status { get; set; } = default!;
 
         /// <summary>
         /// The ID of the winning outcome. You must set this parameter if you set `status` to RESOLVED.

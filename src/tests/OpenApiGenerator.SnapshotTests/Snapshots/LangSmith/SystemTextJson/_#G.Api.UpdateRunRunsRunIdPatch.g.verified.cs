@@ -15,7 +15,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<object> UpdateRunRunsRunIdPatchAsync(
             string runId,
-            RunUpdateSchemaExtended request,
+            global::G.RunUpdateSchemaExtended request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -56,12 +56,12 @@ namespace G
             string runId,
             global::System.DateTime endTime = default,
             string? error = default,
-            global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?> inputs = default,
-            global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?> outputs = default,
+            global::System.AnyOf<object?, global::G.CreateChatCompletionRequest?, global::G.CreateCompletionRequest?> inputs = default,
+            global::System.AnyOf<object?, global::G.CreateChatCompletionResponse?, global::G.CreateCompletionResponse?> outputs = default,
             global::System.Collections.Generic.IList<object?>? events = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new RunUpdateSchemaExtended
+            var request = new global::G.RunUpdateSchemaExtended
             {
                 EndTime = endTime,
                 Error = error,

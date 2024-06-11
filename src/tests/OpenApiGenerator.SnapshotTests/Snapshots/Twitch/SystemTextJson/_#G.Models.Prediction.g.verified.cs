@@ -56,7 +56,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outcomes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<PredictionOutcome> Outcomes { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.PredictionOutcome> Outcomes { get; set; }
 
         /// <summary>
         /// The length of time (in seconds) that the prediction will run for.
@@ -76,7 +76,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PredictionStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required PredictionStatus Status { get; set; }
+        public required global::G.PredictionStatus Status { get; set; }
 
         /// <summary>
         /// The UTC date and time of when the Prediction began.

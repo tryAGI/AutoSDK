@@ -25,13 +25,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response")]
-        public BatchRequestOutputResponse? Response { get; set; }
+        public global::G.BatchRequestOutputResponse? Response { get; set; }
 
         /// <summary>
         /// For requests that failed with a non-HTTP error, this will contain more information on the cause of the failure.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error")]
-        public BatchRequestOutputError? Error { get; set; }
+        public global::G.BatchRequestOutputError? Error { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

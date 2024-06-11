@@ -19,7 +19,7 @@ namespace G
         /// The object type, which is always `thread.run.step`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public RunStepObjectObject Object { get; set; } = default!;
+        public global::G.RunStepObjectObject Object { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run step was created.
@@ -49,13 +49,13 @@ namespace G
         /// The type of run step, which can be either `message_creation` or `tool_calls`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public RunStepObjectType Type { get; set; } = default!;
+        public global::G.RunStepObjectType Type { get; set; } = default!;
 
         /// <summary>
         /// The status of the run step, which can be either `in_progress`, `cancelled`, `failed`, `completed`, or `expired`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public RunStepObjectStatus Status { get; set; } = default!;
+        public global::G.RunStepObjectStatus Status { get; set; } = default!;
 
         /// <summary>
         /// The details of the run step.
@@ -67,7 +67,7 @@ namespace G
         /// The last error associated with this run step. Will be `null` if there are no errors.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_error", Required = global::Newtonsoft.Json.Required.Always)]
-        public RunStepObjectLastError? LastError { get; set; } = default!;
+        public global::G.RunStepObjectLastError? LastError { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run step expired. A step is considered expired if the parent run is expired.
@@ -103,7 +103,7 @@ namespace G
         /// Usage statistics related to the run step. This value will be `null` while the run step's status is `in_progress`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("usage", Required = global::Newtonsoft.Json.Required.Always)]
-        public RunStepCompletionUsage? Usage { get; set; } = default!;
+        public global::G.RunStepCompletionUsage? Usage { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

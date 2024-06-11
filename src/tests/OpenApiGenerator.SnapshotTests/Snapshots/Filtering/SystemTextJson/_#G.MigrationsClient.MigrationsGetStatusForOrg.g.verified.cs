@@ -15,10 +15,10 @@ namespace G
         /// <param name="exclude"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<Migration> MigrationsGetStatusForOrgAsync(
+        public async global::System.Threading.Tasks.Task<global::G.Migration> MigrationsGetStatusForOrgAsync(
             string org,
             int migrationId,
-            global::System.Collections.Generic.IList<MigrationsGetStatusForOrgExclude> exclude,
+            global::System.Collections.Generic.IList<global::G.MigrationsGetStatusForOrgExclude> exclude,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -34,7 +34,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<Migration?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.Migration?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

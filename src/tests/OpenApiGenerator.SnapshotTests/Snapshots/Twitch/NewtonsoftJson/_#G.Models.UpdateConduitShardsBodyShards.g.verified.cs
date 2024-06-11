@@ -19,7 +19,7 @@ namespace G
         /// The transport details that you want Twitch to use when sending you notifications.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transport", Required = global::Newtonsoft.Json.Required.Always)]
-        public UpdateConduitShardsBodyShardsTransport Transport { get; set; } = default!;
+        public global::G.UpdateConduitShardsBodyShardsTransport Transport { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

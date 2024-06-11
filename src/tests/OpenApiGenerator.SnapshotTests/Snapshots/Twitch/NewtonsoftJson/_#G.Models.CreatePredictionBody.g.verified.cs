@@ -25,7 +25,7 @@ namespace G
         /// The list of possible outcomes that the viewers may choose from. The list must contain a minimum of 2 choices and up to a maximum of 10 choices.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outcomes", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<CreatePredictionBodyOutcomes> Outcomes { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.CreatePredictionBodyOutcomes> Outcomes { get; set; } = default!;
 
         /// <summary>
         /// The length of time (in seconds) that the prediction will run for. The minimum is 30 seconds and the maximum is 1800 seconds (30 minutes).

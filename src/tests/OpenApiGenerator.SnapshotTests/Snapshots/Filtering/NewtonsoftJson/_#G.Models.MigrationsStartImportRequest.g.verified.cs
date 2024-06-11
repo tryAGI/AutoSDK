@@ -19,7 +19,7 @@ namespace G
         /// The originating VCS type. Without this parameter, the import job will take additional time to detect the VCS type before beginning the import. This detection step will be reflected in the response.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vcs")]
-        public MigrationsStartImportRequestVcs? Vcs { get; set; }
+        public global::G.MigrationsStartImportRequestVcs? Vcs { get; set; }
 
         /// <summary>
         /// If authentication is required, the username to provide to `vcs_url`.

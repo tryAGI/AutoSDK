@@ -38,13 +38,13 @@ public readonly record struct TypeData(
     public bool IsAnyOf => AnyOfCount > 0 || OneOfCount > 0 || AllOfCount > 0;
     
     public string ConverterType => IsEnum
-        ? $"{CSharpTypeWithoutNullability}JsonConverter"
+        ? $"global::OpenApiGenerator.JsonConverters.{CSharpTypeWithoutNullability.Replace($"global::{Namespace}.", string.Empty)}JsonConverter"
         : AnyOfCount > 0
-            ? $"AnyOfJsonConverterFactory{AnyOfCount}"
+            ? $"global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory{AnyOfCount}"
             : OneOfCount > 0
-                ? $"OneOfJsonConverterFactory{OneOfCount}"
+                ? $"global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory{OneOfCount}"
                 : AllOfCount > 0
-                    ? $"AllOfJsonConverterFactory{AllOfCount}"
+                    ? $"global::OpenApiGenerator.JsonConverters.AllOfJsonConverterFactory{AllOfCount}"
                     : string.Empty;
 
     public static TypeData FromSchema(
@@ -105,15 +105,15 @@ public readonly record struct TypeData(
             (null, _) when schema.Value.AllOf.Any() => ($"global::System.AllOf<{string.Join(", ", schema.Value.AllOf.Select(x => GetCSharpType(x.WithKey(schema.Key), settings, parents)))}>", false),
 
             ("object", _) or (null, _) when schema.Value.Reference != null =>
-                ($"{ModelData.FromKey(schema.Value.Reference.Id, settings).ClassName}", true),
+                ($"global::{settings.Namespace}.{ModelData.FromKey(schema.Value.Reference.Id, settings).ClassName}", true),
             ("object", _) when schema.Value.Reference == null &&
                                model.Properties.IsEmpty =>
                 ("object", true),
             ("object", _) when schema.Value.Reference == null =>
-                ($"{model.ExternalClassName}", true),
+                ($"global::{settings.Namespace}.{model.ExternalClassName}", true),
 
             ("string", _) when schema.Value.Enum.Any() =>
-                ($"{(model with { Style = ModelStyle.Enumeration }).ExternalClassName}", true),
+                ($"global::{settings.Namespace}.{(model with { Style = ModelStyle.Enumeration }).ExternalClassName}", true),
             // ("string", _) when schema.Value.Enum.Any() && settings.JsonSerializerType != JsonSerializerType.NewtonsoftJson =>
             //     ("string", true),
 
@@ -133,7 +133,7 @@ public readonly record struct TypeData(
             ("string", _) => ("string", true),
             ("object", _) => ("object", true),
             ("array", _) when schema.Value.Items.Reference != null =>
-                ($"{ModelData.FromKey(schema.Value.Items.Reference.Id, settings).ClassName}".AsArray(), true),
+                ($"global::{settings.Namespace}.{ModelData.FromKey(schema.Value.Items.Reference.Id, settings).ClassName}".AsArray(), true),
             ("array", _) when schema.Value.Items.Reference == null => (GetCSharpType(schema.Value.Items.WithKey(schema.Key), settings, parents.ToArray()).AsArray(), true),
             
             (null, null)  => ("object", true),

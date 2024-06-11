@@ -43,7 +43,7 @@ namespace G
         /// The list of markers in this video. The list in ascending order by when the marker was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("markers", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<StreamMarkersMarkers> Markers { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.StreamMarkersMarkers> Markers { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

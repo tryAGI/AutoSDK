@@ -20,7 +20,7 @@ namespace G
         /// Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](/docs/api-reference/messages) files, "vision" for Assistants image file inputs, "batch" for [Batch API](/docs/guides/batch), and "fine-tune" for [Fine-tuning](/docs/api-reference/fine-tuning).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("purpose", Required = global::Newtonsoft.Json.Required.Always)]
-        public CreateFileRequestPurpose Purpose { get; set; } = default!;
+        public global::G.CreateFileRequestPurpose Purpose { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

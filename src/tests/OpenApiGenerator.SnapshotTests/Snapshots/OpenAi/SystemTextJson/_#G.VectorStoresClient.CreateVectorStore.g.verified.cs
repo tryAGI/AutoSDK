@@ -12,8 +12,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<VectorStoreObject> CreateVectorStoreAsync(
-            CreateVectorStoreRequest request,
+        public async global::System.Threading.Tasks.Task<global::G.VectorStoreObject> CreateVectorStoreAsync(
+            global::G.CreateVectorStoreRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -35,7 +35,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<VectorStoreObject?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.VectorStoreObject?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -48,14 +48,14 @@ namespace G
         /// <param name="metadata"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<VectorStoreObject> CreateVectorStoreAsync(
+        public async global::System.Threading.Tasks.Task<global::G.VectorStoreObject> CreateVectorStoreAsync(
             global::System.Collections.Generic.IList<string?>? fileIds = default,
             string? name = default,
-            VectorStoreExpirationAfter? expiresAfter = default,
+            global::G.VectorStoreExpirationAfter? expiresAfter = default,
             object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new CreateVectorStoreRequest
+            var request = new global::G.CreateVectorStoreRequest
             {
                 FileIds = fileIds,
                 Name = name,

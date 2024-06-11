@@ -27,7 +27,7 @@ namespace G
         /// Omitting `parameters` defines a function with an empty parameter list.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
-        public FunctionParameters? Parameters { get; set; }
+        public global::G.FunctionParameters? Parameters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

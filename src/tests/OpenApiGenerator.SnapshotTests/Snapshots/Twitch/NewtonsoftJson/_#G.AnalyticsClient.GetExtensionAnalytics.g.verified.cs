@@ -17,9 +17,9 @@ namespace G
         /// <param name="after"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<GetExtensionAnalyticsResponse> GetExtensionAnalyticsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.GetExtensionAnalyticsResponse> GetExtensionAnalyticsAsync(
             string extensionId,
-            GetExtensionAnalyticsType type,
+            global::G.GetExtensionAnalyticsType type,
             global::System.DateTime startedAt,
             global::System.DateTime endedAt,
             int first,
@@ -28,7 +28,7 @@ namespace G
         {
             var typeValue = type switch
             {
-                GetExtensionAnalyticsType.OverviewV2 => "overview_v2",
+                global::G.GetExtensionAnalyticsType.OverviewV2 => "overview_v2",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -44,7 +44,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<GetExtensionAnalyticsResponse?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.GetExtensionAnalyticsResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

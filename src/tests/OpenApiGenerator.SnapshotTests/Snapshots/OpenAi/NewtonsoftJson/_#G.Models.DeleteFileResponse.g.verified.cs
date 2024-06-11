@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public DeleteFileResponseObject Object { get; set; } = default!;
+        public global::G.DeleteFileResponseObject Object { get; set; } = default!;
 
         /// <summary>
         /// 

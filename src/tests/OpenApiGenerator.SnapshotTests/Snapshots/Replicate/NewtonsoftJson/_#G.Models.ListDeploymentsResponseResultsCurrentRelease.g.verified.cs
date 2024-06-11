@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("configuration")]
-        public ListDeploymentsResponseResultsCurrentReleaseConfiguration? Configuration { get; set; }
+        public global::G.ListDeploymentsResponseResultsCurrentReleaseConfiguration? Configuration { get; set; }
 
         /// <summary>
         /// The time the release was created.
@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_by")]
-        public ListDeploymentsResponseResultsCurrentReleaseCreatedBy? CreatedBy { get; set; }
+        public global::G.ListDeploymentsResponseResultsCurrentReleaseCreatedBy? CreatedBy { get; set; }
 
         /// <summary>
         /// The model identifier string in the format of `{model_owner}/{model_name}`.

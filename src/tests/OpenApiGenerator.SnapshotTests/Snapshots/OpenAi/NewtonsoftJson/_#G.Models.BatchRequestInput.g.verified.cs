@@ -19,7 +19,7 @@ namespace G
         /// The HTTP method to be used for the request. Currently only `POST` is supported.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("method")]
-        public BatchRequestInputMethod? Method { get; set; }
+        public global::G.BatchRequestInputMethod? Method { get; set; }
 
         /// <summary>
         /// The OpenAI API relative URL to be used for the request. Currently `/v1/chat/completions` and `/v1/embeddings` are supported.

@@ -42,7 +42,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_predictors")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<PredictionOutcomeTopPredictors>? TopPredictors { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.PredictionOutcomeTopPredictors>? TopPredictors { get; set; }
 
         /// <summary>
         /// The color that visually identifies this outcome in the UX. Possible values are:  
@@ -55,7 +55,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("color")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PredictionOutcomeColorJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required PredictionOutcomeColor Color { get; set; }
+        public required global::G.PredictionOutcomeColor Color { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

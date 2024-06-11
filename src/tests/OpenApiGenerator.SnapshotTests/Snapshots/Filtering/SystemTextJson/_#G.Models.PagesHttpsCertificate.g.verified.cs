@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PagesHttpsCertificateStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required PagesHttpsCertificateState State { get; set; }
+        public required global::G.PagesHttpsCertificateState State { get; set; }
 
         /// <summary>
         /// <br/>Example: Certificate is approved

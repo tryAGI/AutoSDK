@@ -13,7 +13,7 @@ namespace G
         /// The list of Cheermotes. The list is in ascending order by the `order` field’s value.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<Cheermote> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.Cheermote> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

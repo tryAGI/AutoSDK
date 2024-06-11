@@ -12,7 +12,7 @@ namespace G
         /// <param name="batchId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<Batch> CancelBatchAsync(
+        public async global::System.Threading.Tasks.Task<global::G.Batch> CancelBatchAsync(
             string batchId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -29,7 +29,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<Batch?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.Batch?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

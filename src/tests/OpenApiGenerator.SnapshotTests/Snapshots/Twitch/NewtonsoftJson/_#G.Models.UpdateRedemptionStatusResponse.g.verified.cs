@@ -13,7 +13,7 @@ namespace G
         /// The list contains the single redemption that you updated.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<CustomRewardRedemption> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.CustomRewardRedemption> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

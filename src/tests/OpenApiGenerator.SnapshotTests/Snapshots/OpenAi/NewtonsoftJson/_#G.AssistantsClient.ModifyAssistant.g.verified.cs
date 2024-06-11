@@ -13,9 +13,9 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<AssistantObject> ModifyAssistantAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AssistantObject> ModifyAssistantAsync(
             string assistantId,
-            ModifyAssistantRequest request,
+            global::G.ModifyAssistantRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -37,7 +37,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<AssistantObject?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.AssistantObject?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -57,21 +57,21 @@ namespace G
         /// <param name="responseFormat"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<AssistantObject> ModifyAssistantAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AssistantObject> ModifyAssistantAsync(
             string assistantId,
             global::System.AnyOf<string?> model = default,
             string? name = default,
             string? description = default,
             string? instructions = default,
-            global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>? tools = default,
-            ModifyAssistantRequestToolResources? toolResources = default,
+            global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>>? tools = default,
+            global::G.ModifyAssistantRequestToolResources? toolResources = default,
             object? metadata = default,
             double? temperature = 1,
             double? topP = 1,
-            global::System.OneOf<ModifyAssistantRequestResponseFormat?, AssistantsApiResponseFormat?> responseFormat = default,
+            global::System.OneOf<global::G.ModifyAssistantRequestResponseFormat?, global::G.AssistantsApiResponseFormat?> responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new ModifyAssistantRequest
+            var request = new global::G.ModifyAssistantRequest
             {
                 Model = model,
                 Name = name,

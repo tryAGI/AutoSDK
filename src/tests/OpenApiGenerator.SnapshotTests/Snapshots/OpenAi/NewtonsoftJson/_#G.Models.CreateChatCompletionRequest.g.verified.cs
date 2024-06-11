@@ -13,14 +13,14 @@ namespace G
         /// A list of messages comprising the conversation so far. [Example Python code](https://cookbook.openai.com/examples/how_to_format_inputs_to_chatgpt_models).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("messages", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<ChatCompletionRequestMessage> Messages { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionRequestMessage> Messages { get; set; } = default!;
 
         /// <summary>
         /// ID of the model to use. See the [model endpoint compatibility](/docs/models/model-endpoint-compatibility) table for details on which models work with the Chat API.
         /// <br/>Example: gpt-4-turbo
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AnyOf<string, CreateChatCompletionRequestModel> Model { get; set; } = default!;
+        public global::System.AnyOf<string, global::G.CreateChatCompletionRequestModel> Model { get; set; } = default!;
 
         /// <summary>
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.
@@ -80,7 +80,7 @@ namespace G
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
-        public CreateChatCompletionRequestResponseFormat? ResponseFormat { get; set; }
+        public global::G.CreateChatCompletionRequestResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
         /// This feature is in Beta.
@@ -109,7 +109,7 @@ namespace G
         /// <br/>Default Value: 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stream_options")]
-        public ChatCompletionStreamOptions? StreamOptions { get; set; }
+        public global::G.ChatCompletionStreamOptions? StreamOptions { get; set; }
 
         /// <summary>
         /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
@@ -133,7 +133,7 @@ namespace G
         /// A list of tools the model may call. Currently, only functions are supported as a tool. Use this to provide a list of functions the model may generate JSON inputs for. A max of 128 functions are supported.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tools")]
-        public global::System.Collections.Generic.IList<ChatCompletionTool>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionTool>? Tools { get; set; }
 
         /// <summary>
         /// Controls which (if any) tool is called by the model.
@@ -144,7 +144,7 @@ namespace G
         /// `none` is the default when no tools are present. `auto` is the default if tools are present.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_choice")]
-        public global::System.OneOf<CreateChatCompletionRequestToolChoice?, ChatCompletionNamedToolChoice?> ToolChoice { get; set; }
+        public global::System.OneOf<global::G.CreateChatCompletionRequestToolChoice?, global::G.ChatCompletionNamedToolChoice?> ToolChoice { get; set; }
 
         /// <summary>
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).
@@ -162,7 +162,7 @@ namespace G
         /// `none` is the default when no functions are present. `auto` is the default if functions are present.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("function_call")]
-        public global::System.OneOf<CreateChatCompletionRequestFunctionCall?, ChatCompletionFunctionCallOption?> FunctionCall { get; set; }
+        public global::System.OneOf<global::G.CreateChatCompletionRequestFunctionCall?, global::G.ChatCompletionFunctionCallOption?> FunctionCall { get; set; }
 
         /// <summary>
         /// Deprecated in favor of `tools`.
@@ -170,7 +170,7 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("functions")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::System.Collections.Generic.IList<ChatCompletionFunctions>? Functions { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionFunctions>? Functions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

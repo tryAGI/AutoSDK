@@ -28,7 +28,7 @@ namespace G
         /// Additional model parameters listed in the documentation for the Modelfile such as `temperature`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("options")]
-        public RequestOptions? Options { get; set; }
+        public global::G.RequestOptions? Options { get; set; }
 
         /// <summary>
         /// How long (in minutes) to keep the model loaded in memory.

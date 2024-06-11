@@ -13,9 +13,9 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<CreateChannelStreamScheduleSegmentResponse> CreateChannelStreamScheduleSegmentAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CreateChannelStreamScheduleSegmentResponse> CreateChannelStreamScheduleSegmentAsync(
             string broadcasterId,
-            CreateChannelStreamScheduleSegmentBody request,
+            global::G.CreateChannelStreamScheduleSegmentBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -37,7 +37,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<CreateChannelStreamScheduleSegmentResponse?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.CreateChannelStreamScheduleSegmentResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -53,7 +53,7 @@ namespace G
         /// <param name="title"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<CreateChannelStreamScheduleSegmentResponse> CreateChannelStreamScheduleSegmentAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CreateChannelStreamScheduleSegmentResponse> CreateChannelStreamScheduleSegmentAsync(
             string broadcasterId,
             global::System.DateTime startTime,
             string timezone,
@@ -63,7 +63,7 @@ namespace G
             string? title = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new CreateChannelStreamScheduleSegmentBody
+            var request = new global::G.CreateChannelStreamScheduleSegmentBody
             {
                 StartTime = startTime,
                 Timezone = timezone,

@@ -23,7 +23,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fulfillment_status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UpdateDropsEntitlementsBodyFulfillmentStatusJsonConverter))]
-        public UpdateDropsEntitlementsBodyFulfillmentStatus? FulfillmentStatus { get; set; }
+        public global::G.UpdateDropsEntitlementsBodyFulfillmentStatus? FulfillmentStatus { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

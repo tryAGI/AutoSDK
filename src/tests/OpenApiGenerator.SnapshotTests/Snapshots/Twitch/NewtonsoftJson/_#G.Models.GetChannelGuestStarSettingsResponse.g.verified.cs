@@ -34,7 +34,7 @@ namespace G
         /// * `SCREENSHARE_LAYOUT`: All live guests are tiled within the browser source with the same size. If there is an active screen share, it is sized larger than the other guests.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("group_layout", Required = global::Newtonsoft.Json.Required.Always)]
-        public GetChannelGuestStarSettingsResponseGroupLayout GroupLayout { get; set; } = default!;
+        public global::G.GetChannelGuestStarSettingsResponseGroupLayout GroupLayout { get; set; } = default!;
 
         /// <summary>
         /// View only token to generate browser source URLs

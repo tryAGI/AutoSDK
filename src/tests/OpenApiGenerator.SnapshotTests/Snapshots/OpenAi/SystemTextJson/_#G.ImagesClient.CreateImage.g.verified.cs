@@ -12,8 +12,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<ImagesResponse> CreateImageAsync(
-            CreateImageRequest request,
+        public async global::System.Threading.Tasks.Task<global::G.ImagesResponse> CreateImageAsync(
+            global::G.CreateImageRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -35,7 +35,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<ImagesResponse?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.ImagesResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -52,18 +52,18 @@ namespace G
         /// <param name="user"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<ImagesResponse> CreateImageAsync(
+        public async global::System.Threading.Tasks.Task<global::G.ImagesResponse> CreateImageAsync(
             string prompt,
-            global::System.AnyOf<string?, CreateImageRequestModel?>? model = default,
+            global::System.AnyOf<string?, global::G.CreateImageRequestModel?>? model = default,
             int? n = 1,
-            CreateImageRequestQuality? quality = CreateImageRequestQuality.Standard,
-            CreateImageRequestResponseFormat? responseFormat = CreateImageRequestResponseFormat.Url,
-            CreateImageRequestSize? size = CreateImageRequestSize._1024x1024,
-            CreateImageRequestStyle? style = CreateImageRequestStyle.Vivid,
+            global::G.CreateImageRequestQuality? quality = global::G.CreateImageRequestQuality.Standard,
+            global::G.CreateImageRequestResponseFormat? responseFormat = global::G.CreateImageRequestResponseFormat.Url,
+            global::G.CreateImageRequestSize? size = global::G.CreateImageRequestSize._1024x1024,
+            global::G.CreateImageRequestStyle? style = global::G.CreateImageRequestStyle.Vivid,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new CreateImageRequest
+            var request = new global::G.CreateImageRequest
             {
                 Prompt = prompt,
                 Model = model,

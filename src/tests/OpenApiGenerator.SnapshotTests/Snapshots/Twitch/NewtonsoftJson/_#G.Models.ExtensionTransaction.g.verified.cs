@@ -63,13 +63,13 @@ namespace G
         /// * BITS\_IN\_EXTENSION
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("product_type", Required = global::Newtonsoft.Json.Required.Always)]
-        public ExtensionTransactionProductType ProductType { get; set; } = default!;
+        public global::G.ExtensionTransactionProductType ProductType { get; set; } = default!;
 
         /// <summary>
         /// Contains details about the digital product.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("product_data", Required = global::Newtonsoft.Json.Required.Always)]
-        public ExtensionTransactionProductData ProductData { get; set; } = default!;
+        public global::G.ExtensionTransactionProductData ProductData { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -25,7 +25,7 @@ namespace G
         /// An array containing a page of deployment objects
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("results")]
-        public global::System.Collections.Generic.IList<ListDeploymentsResponseResults?>? Results { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ListDeploymentsResponseResults?>? Results { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

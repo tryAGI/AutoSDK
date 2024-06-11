@@ -19,7 +19,7 @@ namespace G
         /// An object that contains the product's cost information.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cost", Required = global::Newtonsoft.Json.Required.Always)]
-        public ExtensionBitsProductCost Cost { get; set; } = default!;
+        public global::G.ExtensionBitsProductCost Cost { get; set; } = default!;
 
         /// <summary>
         /// A Boolean value that indicates whether the product is in development. If **true**, the product is not available for public use.

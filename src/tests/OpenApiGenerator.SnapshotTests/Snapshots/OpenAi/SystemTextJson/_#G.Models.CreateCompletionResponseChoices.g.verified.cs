@@ -17,7 +17,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateCompletionResponseChoicesFinishReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CreateCompletionResponseChoicesFinishReason FinishReason { get; set; }
+        public required global::G.CreateCompletionResponseChoicesFinishReason FinishReason { get; set; }
 
         /// <summary>
         /// 
@@ -31,7 +31,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CreateCompletionResponseChoicesLogprobs? Logprobs { get; set; }
+        public required global::G.CreateCompletionResponseChoicesLogprobs? Logprobs { get; set; }
 
         /// <summary>
         /// 

@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("choices")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<CreatePollBodyChoices> Choices { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.CreatePollBodyChoices> Choices { get; set; }
 
         /// <summary>
         /// The length of time (in seconds) that the poll will run for. The minimum is 15 seconds and the maximum is 1800 seconds (30 minutes).

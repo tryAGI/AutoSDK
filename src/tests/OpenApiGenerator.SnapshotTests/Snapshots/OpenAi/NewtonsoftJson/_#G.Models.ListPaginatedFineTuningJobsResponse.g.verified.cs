@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<FineTuningJob> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.FineTuningJob> Data { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public ListPaginatedFineTuningJobsResponseObject Object { get; set; } = default!;
+        public global::G.ListPaginatedFineTuningJobsResponseObject Object { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

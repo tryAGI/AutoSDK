@@ -19,13 +19,13 @@ namespace G
         /// The object type, which is always `thread.message.delta`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public MessageDeltaObjectObject Object { get; set; } = default!;
+        public global::G.MessageDeltaObjectObject Object { get; set; } = default!;
 
         /// <summary>
         /// The delta containing the fields that have changed on the Message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("delta", Required = global::Newtonsoft.Json.Required.Always)]
-        public MessageDeltaObjectDelta Delta { get; set; } = default!;
+        public global::G.MessageDeltaObjectDelta Delta { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

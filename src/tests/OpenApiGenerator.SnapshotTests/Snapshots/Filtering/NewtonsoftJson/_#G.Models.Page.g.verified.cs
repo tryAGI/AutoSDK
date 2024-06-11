@@ -21,7 +21,7 @@ namespace G
         /// <br/>Example: built
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public PageStatus? Status { get; set; } = default!;
+        public global::G.PageStatus? Status { get; set; } = default!;
 
         /// <summary>
         /// The Pages site's custom domain
@@ -35,7 +35,7 @@ namespace G
         /// <br/>Example: pending
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("protected_domain_state")]
-        public PageProtectedDomainState? ProtectedDomainState { get; set; }
+        public global::G.PageProtectedDomainState? ProtectedDomainState { get; set; }
 
         /// <summary>
         /// The timestamp when a pending domain becomes unverified.
@@ -63,13 +63,13 @@ namespace G
         /// <br/>Example: legacy
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("build_type")]
-        public PageBuildType? BuildType { get; set; }
+        public global::G.PageBuildType? BuildType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source")]
-        public PagesSourceHash? Source { get; set; }
+        public global::G.PagesSourceHash? Source { get; set; }
 
         /// <summary>
         /// Whether the GitHub Pages site is publicly visible. If set to `true`, the site is accessible to anyone on the internet. If set to `false`, the site will only be accessible to users who have at least `read` access to the repository that published the site.
@@ -82,7 +82,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("https_certificate")]
-        public PagesHttpsCertificate? HttpsCertificate { get; set; }
+        public global::G.PagesHttpsCertificate? HttpsCertificate { get; set; }
 
         /// <summary>
         /// Whether https is enabled on the domain

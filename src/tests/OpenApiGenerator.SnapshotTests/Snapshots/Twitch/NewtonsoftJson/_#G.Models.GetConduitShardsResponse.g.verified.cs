@@ -13,13 +13,13 @@ namespace G
         /// List of information about a conduit's shards.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<GetConduitShardsResponseData> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.GetConduitShardsResponseData> Data { get; set; } = default!;
 
         /// <summary>
         /// Contains information used to page through a list of results. The object is empty if there are no more pages left to page through.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pagination")]
-        public GetConduitShardsResponsePagination? Pagination { get; set; }
+        public global::G.GetConduitShardsResponsePagination? Pagination { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -25,7 +25,7 @@ namespace G
         /// The account type. Can be a user or an organization.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public GetAccountResponseType? Type { get; set; }
+        public global::G.GetAccountResponseType? Type { get; set; }
 
         /// <summary>
         /// The username of the account.

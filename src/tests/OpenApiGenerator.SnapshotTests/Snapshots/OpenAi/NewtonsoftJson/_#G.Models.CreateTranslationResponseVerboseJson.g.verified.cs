@@ -31,7 +31,7 @@ namespace G
         /// Segments of the translated text and their corresponding details.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("segments")]
-        public global::System.Collections.Generic.IList<TranscriptionSegment>? Segments { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TranscriptionSegment>? Segments { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

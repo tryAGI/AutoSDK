@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
-        public Logprobs? Logprobs { get; set; }
+        public global::G.Logprobs? Logprobs { get; set; }
 
         /// <summary>
         /// <br/>Default Value: 

@@ -66,19 +66,19 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AsnResponseTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required AsnResponseType Type { get; set; }
+        public required global::G.AsnResponseType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prefixes")]
-        public global::System.Collections.Generic.IList<Prefix>? Prefixes { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Prefix>? Prefixes { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prefixes6")]
-        public global::System.Collections.Generic.IList<Prefix6>? Prefixes6 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Prefix6>? Prefixes6 { get; set; }
 
         /// <summary>
         /// 

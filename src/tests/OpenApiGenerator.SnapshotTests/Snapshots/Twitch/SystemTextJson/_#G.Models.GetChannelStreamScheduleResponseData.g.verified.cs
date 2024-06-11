@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("segments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<ChannelStreamScheduleSegment> Segments { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.ChannelStreamScheduleSegment> Segments { get; set; }
 
         /// <summary>
         /// The ID of the broadcaster that owns the broadcast schedule.
@@ -42,13 +42,13 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vacation")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required GetChannelStreamScheduleResponseDataVacation Vacation { get; set; }
+        public required global::G.GetChannelStreamScheduleResponseDataVacation Vacation { get; set; }
 
         /// <summary>
         /// The information used to page through a list of results. The object is empty if there are no more pages left to page through. [Read more](https://dev.twitch.tv/docs/api/guide#pagination).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pagination")]
-        public GetChannelStreamScheduleResponseDataPagination? Pagination { get; set; }
+        public global::G.GetChannelStreamScheduleResponseDataPagination? Pagination { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

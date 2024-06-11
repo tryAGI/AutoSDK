@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("users")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<TeamUsers> Users { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.TeamUsers> Users { get; set; }
 
         /// <summary>
         /// A URL to the team’s background image.

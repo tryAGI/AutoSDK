@@ -13,13 +13,13 @@ namespace G
         /// Always `message_creation`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public RunStepDetailsMessageCreationObjectType Type { get; set; } = default!;
+        public global::G.RunStepDetailsMessageCreationObjectType Type { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("message_creation", Required = global::Newtonsoft.Json.Required.Always)]
-        public RunStepDetailsMessageCreationObjectMessageCreation MessageCreation { get; set; } = default!;
+        public global::G.RunStepDetailsMessageCreationObjectMessageCreation MessageCreation { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -42,7 +42,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metrics")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required FineTuningJobCheckpointMetrics Metrics { get; set; }
+        public required global::G.FineTuningJobCheckpointMetrics Metrics { get; set; }
 
         /// <summary>
         /// The name of the fine-tuning job that this checkpoint was created from.
@@ -57,7 +57,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.FineTuningJobCheckpointObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required FineTuningJobCheckpointObject Object { get; set; }
+        public required global::G.FineTuningJobCheckpointObject Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

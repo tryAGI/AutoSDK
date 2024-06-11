@@ -13,7 +13,7 @@ namespace G
         /// Always `file_citation`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public MessageContentTextAnnotationsFileCitationObjectType Type { get; set; } = default!;
+        public global::G.MessageContentTextAnnotationsFileCitationObjectType Type { get; set; } = default!;
 
         /// <summary>
         /// The text in the message content that needs to be replaced.
@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("file_citation", Required = global::Newtonsoft.Json.Required.Always)]
-        public MessageContentTextAnnotationsFileCitationObjectFileCitation FileCitation { get; set; } = default!;
+        public global::G.MessageContentTextAnnotationsFileCitationObjectFileCitation FileCitation { get; set; } = default!;
 
         /// <summary>
         /// 

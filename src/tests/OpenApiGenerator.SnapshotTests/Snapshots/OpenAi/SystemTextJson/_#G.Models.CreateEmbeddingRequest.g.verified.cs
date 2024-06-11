@@ -25,7 +25,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AnyOf<string, CreateEmbeddingRequestModel> Model { get; set; }
+        public required global::System.AnyOf<string, global::G.CreateEmbeddingRequestModel> Model { get; set; }
 
         /// <summary>
         /// The format to return the embeddings in. Can be either `float` or [`base64`](https://pypi.org/project/pybase64/).
@@ -34,7 +34,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("encoding_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateEmbeddingRequestEncodingFormatJsonConverter))]
-        public CreateEmbeddingRequestEncodingFormat? EncodingFormat { get; set; } = CreateEmbeddingRequestEncodingFormat.Float;
+        public global::G.CreateEmbeddingRequestEncodingFormat? EncodingFormat { get; set; } = global::G.CreateEmbeddingRequestEncodingFormat.Float;
 
         /// <summary>
         /// The number of dimensions the resulting output embeddings should have. Only supported in `text-embedding-3` and later models.

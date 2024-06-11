@@ -12,8 +12,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<SendChatMessageResponse> SendChatMessageAsync(
-            SendChatMessageBody request,
+        public async global::System.Threading.Tasks.Task<global::G.SendChatMessageResponse> SendChatMessageAsync(
+            global::G.SendChatMessageBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -35,7 +35,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<SendChatMessageResponse?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.SendChatMessageResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -48,14 +48,14 @@ namespace G
         /// <param name="replyParentMessageId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<SendChatMessageResponse> SendChatMessageAsync(
+        public async global::System.Threading.Tasks.Task<global::G.SendChatMessageResponse> SendChatMessageAsync(
             string broadcasterId,
             string senderId,
             string message,
             string? replyParentMessageId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new SendChatMessageBody
+            var request = new global::G.SendChatMessageBody
             {
                 BroadcasterId = broadcasterId,
                 SenderId = senderId,

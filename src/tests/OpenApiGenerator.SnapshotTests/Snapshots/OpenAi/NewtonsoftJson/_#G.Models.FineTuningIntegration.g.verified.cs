@@ -13,7 +13,7 @@ namespace G
         /// The type of the integration being enabled for the fine-tuning job
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public FineTuningIntegrationType Type { get; set; } = default!;
+        public global::G.FineTuningIntegrationType Type { get; set; } = default!;
 
         /// <summary>
         /// The settings for your integration with Weights and Biases. This payload specifies the project that
@@ -21,7 +21,7 @@ namespace G
         /// to your run, and set a default entity (team, username, etc) to be associated with your run.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("wandb", Required = global::Newtonsoft.Json.Required.Always)]
-        public FineTuningIntegrationWandb Wandb { get; set; } = default!;
+        public global::G.FineTuningIntegrationWandb Wandb { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

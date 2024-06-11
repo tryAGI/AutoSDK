@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AnyOf<string, CreateCompletionRequestModel> Model { get; set; }
+        public required global::System.AnyOf<string, global::G.CreateCompletionRequestModel> Model { get; set; }
 
         /// <summary>
         /// The prompt(s) to generate completions for, encoded as a string, array of strings, array of tokens, or array of token arrays.
@@ -121,7 +121,7 @@ namespace G
         /// <br/>Default Value: 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream_options")]
-        public ChatCompletionStreamOptions? StreamOptions { get; set; }
+        public global::G.ChatCompletionStreamOptions? StreamOptions { get; set; }
 
         /// <summary>
         /// The suffix that comes after a completion of inserted text.

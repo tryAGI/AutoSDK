@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.VectorStoreObjectObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required VectorStoreObjectObject Object { get; set; }
+        public required global::G.VectorStoreObjectObject Object { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the vector store was created.
@@ -50,7 +50,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_counts")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required VectorStoreObjectFileCounts FileCounts { get; set; }
+        public required global::G.VectorStoreObjectFileCounts FileCounts { get; set; }
 
         /// <summary>
         /// The status of the vector store, which can be either `expired`, `in_progress`, or `completed`. A status of `completed` indicates that the vector store is ready for use.
@@ -58,13 +58,13 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.VectorStoreObjectStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required VectorStoreObjectStatus Status { get; set; }
+        public required global::G.VectorStoreObjectStatus Status { get; set; }
 
         /// <summary>
         /// The expiration policy for a vector store.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_after")]
-        public VectorStoreExpirationAfter? ExpiresAfter { get; set; }
+        public global::G.VectorStoreExpirationAfter? ExpiresAfter { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the vector store will expire.

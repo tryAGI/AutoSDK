@@ -29,7 +29,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CompanyTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CompanyType Type { get; set; }
+        public required global::G.CompanyType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepObjectLastErrorCodeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunStepObjectLastErrorCode Code { get; set; }
+        public required global::G.RunStepObjectLastErrorCode Code { get; set; }
 
         /// <summary>
         /// A human-readable description of the error.

@@ -13,7 +13,7 @@ namespace G
         /// A list that indicates which entitlements were successfully updated and those that weren’t.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<DropsEntitlementUpdated> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.DropsEntitlementUpdated> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

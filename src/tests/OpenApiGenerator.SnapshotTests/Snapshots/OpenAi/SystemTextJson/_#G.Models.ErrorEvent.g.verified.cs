@@ -15,14 +15,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ErrorEventEventJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ErrorEventEvent Event { get; set; }
+        public required global::G.ErrorEventEvent Event { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required Error Data { get; set; }
+        public required global::G.Error Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

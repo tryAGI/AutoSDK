@@ -14,7 +14,7 @@ namespace G
         /// <param name="repoName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<BasicError> MigrationsUnlockRepoForOrgAsync(
+        public async global::System.Threading.Tasks.Task<global::G.BasicError> MigrationsUnlockRepoForOrgAsync(
             string org,
             int migrationId,
             string repoName,
@@ -33,7 +33,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<BasicError?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.BasicError?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

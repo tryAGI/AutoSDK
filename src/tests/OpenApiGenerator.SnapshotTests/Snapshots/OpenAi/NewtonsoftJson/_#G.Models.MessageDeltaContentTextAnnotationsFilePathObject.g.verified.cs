@@ -19,7 +19,7 @@ namespace G
         /// Always `file_path`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public MessageDeltaContentTextAnnotationsFilePathObjectType Type { get; set; } = default!;
+        public global::G.MessageDeltaContentTextAnnotationsFilePathObjectType Type { get; set; } = default!;
 
         /// <summary>
         /// The text in the message content that needs to be replaced.
@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("file_path")]
-        public MessageDeltaContentTextAnnotationsFilePathObjectFilePath? FilePath { get; set; }
+        public global::G.MessageDeltaContentTextAnnotationsFilePathObjectFilePath? FilePath { get; set; }
 
         /// <summary>
         /// 

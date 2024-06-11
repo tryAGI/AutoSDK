@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.VectorStoreFileObjectLastErrorCodeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required VectorStoreFileObjectLastErrorCode Code { get; set; }
+        public required global::G.VectorStoreFileObjectLastErrorCode Code { get; set; }
 
         /// <summary>
         /// A human-readable description of the error.

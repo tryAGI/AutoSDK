@@ -25,7 +25,7 @@ namespace G
         /// Contains details about the digital product’s cost.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cost", Required = global::Newtonsoft.Json.Required.Always)]
-        public ExtensionTransactionProductDataCost Cost { get; set; } = default!;
+        public global::G.ExtensionTransactionProductDataCost Cost { get; set; } = default!;
 
         /// <summary>
         /// A Boolean value that determines whether the product is in development. Is **true** if the digital product is in development and cannot be exchanged.

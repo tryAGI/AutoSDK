@@ -13,7 +13,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<byte[]> CreateSpeechAsync(
-            CreateSpeechRequest request,
+            global::G.CreateSpeechRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -50,14 +50,14 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<byte[]> CreateSpeechAsync(
-            global::System.AnyOf<string, CreateSpeechRequestModel> model,
+            global::System.AnyOf<string, global::G.CreateSpeechRequestModel> model,
             string input,
-            CreateSpeechRequestVoice voice,
-            CreateSpeechRequestResponseFormat? responseFormat = CreateSpeechRequestResponseFormat.Mp3,
+            global::G.CreateSpeechRequestVoice voice,
+            global::G.CreateSpeechRequestResponseFormat? responseFormat = global::G.CreateSpeechRequestResponseFormat.Mp3,
             double speed = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new CreateSpeechRequest
+            var request = new global::G.CreateSpeechRequest
             {
                 Model = model,
                 Input = input,

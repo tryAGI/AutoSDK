@@ -13,7 +13,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task DeleteModelAsync(
-            DeleteModelRequest request,
+            global::G.DeleteModelRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -43,7 +43,7 @@ namespace G
             string model,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new DeleteModelRequest
+            var request = new global::G.DeleteModelRequest
             {
                 Model = model,
             };

@@ -12,8 +12,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<ImagesResponse> CreateImageEditAsync(
-            CreateImageEditRequest request,
+        public async global::System.Threading.Tasks.Task<global::G.ImagesResponse> CreateImageEditAsync(
+            global::G.CreateImageEditRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -35,7 +35,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<ImagesResponse?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.ImagesResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -52,18 +52,18 @@ namespace G
         /// <param name="user"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<ImagesResponse> CreateImageEditAsync(
+        public async global::System.Threading.Tasks.Task<global::G.ImagesResponse> CreateImageEditAsync(
             byte[] image,
             string prompt,
             byte[]? mask = default,
-            global::System.AnyOf<string?, CreateImageEditRequestModel?>? model = default,
+            global::System.AnyOf<string?, global::G.CreateImageEditRequestModel?>? model = default,
             int? n = 1,
-            CreateImageEditRequestSize? size = CreateImageEditRequestSize._1024x1024,
-            CreateImageEditRequestResponseFormat? responseFormat = CreateImageEditRequestResponseFormat.Url,
+            global::G.CreateImageEditRequestSize? size = global::G.CreateImageEditRequestSize._1024x1024,
+            global::G.CreateImageEditRequestResponseFormat? responseFormat = global::G.CreateImageEditRequestResponseFormat.Url,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new CreateImageEditRequest
+            var request = new global::G.CreateImageEditRequest
             {
                 Image = image,
                 Prompt = prompt,

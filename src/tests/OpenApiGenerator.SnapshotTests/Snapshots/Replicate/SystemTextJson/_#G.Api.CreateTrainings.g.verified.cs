@@ -19,7 +19,7 @@ namespace G
             string modelOwner,
             string modelName,
             string versionId,
-            TrainingRequest request,
+            global::G.TrainingRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -58,10 +58,10 @@ namespace G
             string destination,
             object input,
             string? webhook = default,
-            global::System.Collections.Generic.IList<TrainingRequestWebhookEventsFilter?>? webhookEventsFilter = default,
+            global::System.Collections.Generic.IList<global::G.TrainingRequestWebhookEventsFilter?>? webhookEventsFilter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new TrainingRequest
+            var request = new global::G.TrainingRequest
             {
                 Destination = destination,
                 Input = input,

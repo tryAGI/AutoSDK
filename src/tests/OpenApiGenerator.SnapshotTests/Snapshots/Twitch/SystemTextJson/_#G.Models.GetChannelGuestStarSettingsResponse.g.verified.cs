@@ -39,7 +39,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("group_layout")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.GetChannelGuestStarSettingsResponseGroupLayoutJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required GetChannelGuestStarSettingsResponseGroupLayout GroupLayout { get; set; }
+        public required global::G.GetChannelGuestStarSettingsResponseGroupLayout GroupLayout { get; set; }
 
         /// <summary>
         /// View only token to generate browser source URLs

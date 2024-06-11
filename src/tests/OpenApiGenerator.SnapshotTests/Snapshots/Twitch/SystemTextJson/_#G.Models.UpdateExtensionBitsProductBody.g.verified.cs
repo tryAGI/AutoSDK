@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cost")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required UpdateExtensionBitsProductBodyCost Cost { get; set; }
+        public required global::G.UpdateExtensionBitsProductBodyCost Cost { get; set; }
 
         /// <summary>
         /// The product's name as displayed in the extension. The maximum length is 255 characters.

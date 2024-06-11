@@ -21,7 +21,7 @@ namespace G
         /// The messages of the chat, this can be used to keep a chat memory
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("messages", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<Message> Messages { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.Message> Messages { get; set; } = default!;
 
         /// <summary>
         /// The format to return a response in. Currently the only accepted value is json.
@@ -29,13 +29,13 @@ namespace G
         /// Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format")]
-        public GenerateChatCompletionRequestFormat? Format { get; set; }
+        public global::G.GenerateChatCompletionRequestFormat? Format { get; set; }
 
         /// <summary>
         /// Additional model parameters listed in the documentation for the Modelfile such as `temperature`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("options")]
-        public RequestOptions? Options { get; set; }
+        public global::G.RequestOptions? Options { get; set; }
 
         /// <summary>
         /// If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.

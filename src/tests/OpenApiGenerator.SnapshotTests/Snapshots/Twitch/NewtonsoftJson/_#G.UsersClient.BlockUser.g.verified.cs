@@ -16,21 +16,21 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task BlockUserAsync(
             string targetUserId,
-            BlockUserSourceContext sourceContext,
-            BlockUserReason reason,
+            global::G.BlockUserSourceContext sourceContext,
+            global::G.BlockUserReason reason,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var sourceContextValue = sourceContext switch
             {
-                BlockUserSourceContext.Chat => "chat",
-                BlockUserSourceContext.Whisper => "whisper",
+                global::G.BlockUserSourceContext.Chat => "chat",
+                global::G.BlockUserSourceContext.Whisper => "whisper",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var reasonValue = reason switch
             {
-                BlockUserReason.Harassment => "harassment",
-                BlockUserReason.Spam => "spam",
-                BlockUserReason.Other => "other",
+                global::G.BlockUserReason.Harassment => "harassment",
+                global::G.BlockUserReason.Spam => "spam",
+                global::G.BlockUserReason.Other => "other",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

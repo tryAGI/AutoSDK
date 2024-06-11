@@ -49,7 +49,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("choices")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<PollChoices> Choices { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.PollChoices> Choices { get; set; }
 
         /// <summary>
         /// Not used; will be set to **false**.
@@ -92,7 +92,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PollStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required PollStatus Status { get; set; }
+        public required global::G.PollStatus Status { get; set; }
 
         /// <summary>
         /// The length of time (in seconds) that the poll will run for.

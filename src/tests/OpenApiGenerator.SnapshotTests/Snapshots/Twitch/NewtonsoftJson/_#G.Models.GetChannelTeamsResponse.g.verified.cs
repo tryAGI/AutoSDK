@@ -13,7 +13,7 @@ namespace G
         /// The list of teams that the broadcaster is a member of. Returns an empty array if the broadcaster is not a member of a team.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<ChannelTeam> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ChannelTeam> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

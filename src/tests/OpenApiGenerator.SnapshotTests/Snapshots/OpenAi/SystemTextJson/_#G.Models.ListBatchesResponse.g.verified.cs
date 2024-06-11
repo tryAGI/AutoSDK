@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<Batch> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.Batch> Data { get; set; }
 
         /// <summary>
         /// <br/>Example: batch_abc123
@@ -41,7 +41,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ListBatchesResponseObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ListBatchesResponseObject Object { get; set; }
+        public required global::G.ListBatchesResponseObject Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

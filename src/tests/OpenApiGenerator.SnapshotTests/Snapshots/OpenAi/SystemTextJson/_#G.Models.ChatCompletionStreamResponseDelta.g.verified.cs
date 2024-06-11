@@ -20,20 +20,20 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function_call")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public ChatCompletionStreamResponseDeltaFunctionCall? FunctionCall { get; set; }
+        public global::G.ChatCompletionStreamResponseDeltaFunctionCall? FunctionCall { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_calls")]
-        public global::System.Collections.Generic.IList<ChatCompletionMessageToolCallChunk>? ToolCalls { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionMessageToolCallChunk>? ToolCalls { get; set; }
 
         /// <summary>
         /// The role of the author of this message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatCompletionStreamResponseDeltaRoleJsonConverter))]
-        public ChatCompletionStreamResponseDeltaRole? Role { get; set; }
+        public global::G.ChatCompletionStreamResponseDeltaRole? Role { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -12,8 +12,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<CreateStreamMarkerResponse> CreateStreamMarkerAsync(
-            CreateStreamMarkerBody request,
+        public async global::System.Threading.Tasks.Task<global::G.CreateStreamMarkerResponse> CreateStreamMarkerAsync(
+            global::G.CreateStreamMarkerBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -35,7 +35,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<CreateStreamMarkerResponse?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.CreateStreamMarkerResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -46,12 +46,12 @@ namespace G
         /// <param name="description"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<CreateStreamMarkerResponse> CreateStreamMarkerAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CreateStreamMarkerResponse> CreateStreamMarkerAsync(
             string userId,
             string? description = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new CreateStreamMarkerBody
+            var request = new global::G.CreateStreamMarkerBody
             {
                 UserId = userId,
                 Description = description,

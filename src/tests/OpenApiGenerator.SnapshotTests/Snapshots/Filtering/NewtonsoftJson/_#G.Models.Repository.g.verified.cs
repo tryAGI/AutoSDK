@@ -39,7 +39,7 @@ namespace G
         /// License Simple
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("license", Required = global::Newtonsoft.Json.Required.Always)]
-        public NullableLicenseSimple? License { get; set; } = default!;
+        public global::G.NullableLicenseSimple? License { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -51,13 +51,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions")]
-        public RepositoryPermissions? Permissions { get; set; }
+        public global::G.RepositoryPermissions? Permissions { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public SimpleUser Owner { get; set; } = default!;
+        public global::G.SimpleUser Owner { get; set; } = default!;
 
         /// <summary>
         /// Whether the repository is private or public.
@@ -544,7 +544,7 @@ namespace G
         /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("squash_merge_commit_title")]
-        public RepositorySquashMergeCommitTitle? SquashMergeCommitTitle { get; set; }
+        public global::G.RepositorySquashMergeCommitTitle? SquashMergeCommitTitle { get; set; }
 
         /// <summary>
         /// The default value for a squash merge commit message:
@@ -553,7 +553,7 @@ namespace G
         /// - `BLANK` - default to a blank commit message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("squash_merge_commit_message")]
-        public RepositorySquashMergeCommitMessage? SquashMergeCommitMessage { get; set; }
+        public global::G.RepositorySquashMergeCommitMessage? SquashMergeCommitMessage { get; set; }
 
         /// <summary>
         /// The default value for a merge commit title.
@@ -561,7 +561,7 @@ namespace G
         /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merge_commit_title")]
-        public RepositoryMergeCommitTitle? MergeCommitTitle { get; set; }
+        public global::G.RepositoryMergeCommitTitle? MergeCommitTitle { get; set; }
 
         /// <summary>
         /// The default value for a merge commit message.
@@ -570,7 +570,7 @@ namespace G
         /// - `BLANK` - default to a blank commit message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merge_commit_message")]
-        public RepositoryMergeCommitMessage? MergeCommitMessage { get; set; }
+        public global::G.RepositoryMergeCommitMessage? MergeCommitMessage { get; set; }
 
         /// <summary>
         /// Whether to allow merge commits for pull requests.

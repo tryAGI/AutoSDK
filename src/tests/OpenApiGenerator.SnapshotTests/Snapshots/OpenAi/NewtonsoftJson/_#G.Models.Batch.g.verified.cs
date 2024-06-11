@@ -19,7 +19,7 @@ namespace G
         /// The object type, which is always `batch`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public BatchObject Object { get; set; } = default!;
+        public global::G.BatchObject Object { get; set; } = default!;
 
         /// <summary>
         /// The OpenAI API endpoint used by the batch.
@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("errors")]
-        public BatchErrors? Errors { get; set; }
+        public global::G.BatchErrors? Errors { get; set; }
 
         /// <summary>
         /// The ID of the input file for the batch.
@@ -49,7 +49,7 @@ namespace G
         /// The current status of the batch.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public BatchStatus Status { get; set; } = default!;
+        public global::G.BatchStatus Status { get; set; } = default!;
 
         /// <summary>
         /// The ID of the file containing the outputs of successfully executed requests.
@@ -121,7 +121,7 @@ namespace G
         /// The request counts for different statuses within the batch.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("request_counts")]
-        public BatchRequestCounts? RequestCounts { get; set; }
+        public global::G.BatchRequestCounts? RequestCounts { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.

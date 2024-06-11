@@ -21,13 +21,13 @@ namespace G
         /// The endpoint to be used for all requests in the batch. Currently `/v1/chat/completions` and `/v1/embeddings` are supported.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("endpoint", Required = global::Newtonsoft.Json.Required.Always)]
-        public CreateBatchRequestEndpoint Endpoint { get; set; } = default!;
+        public global::G.CreateBatchRequestEndpoint Endpoint { get; set; } = default!;
 
         /// <summary>
         /// The time frame within which the batch should be processed. Currently only `24h` is supported.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completion_window", Required = global::Newtonsoft.Json.Required.Always)]
-        public CreateBatchRequestCompletionWindow CompletionWindow { get; set; } = default!;
+        public global::G.CreateBatchRequestCompletionWindow CompletionWindow { get; set; } = default!;
 
         /// <summary>
         /// Optional custom metadata for the batch.

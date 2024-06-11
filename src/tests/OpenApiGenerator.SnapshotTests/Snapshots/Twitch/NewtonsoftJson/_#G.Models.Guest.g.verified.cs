@@ -60,13 +60,13 @@ namespace G
         /// Information about the guest’s audio settings
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("audio_settings", Required = global::Newtonsoft.Json.Required.Always)]
-        public GuestAudioSettings AudioSettings { get; set; } = default!;
+        public global::G.GuestAudioSettings AudioSettings { get; set; } = default!;
 
         /// <summary>
         /// Information about the guest’s video settings
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("video_settings", Required = global::Newtonsoft.Json.Required.Always)]
-        public GuestVideoSettings VideoSettings { get; set; } = default!;
+        public global::G.GuestVideoSettings VideoSettings { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

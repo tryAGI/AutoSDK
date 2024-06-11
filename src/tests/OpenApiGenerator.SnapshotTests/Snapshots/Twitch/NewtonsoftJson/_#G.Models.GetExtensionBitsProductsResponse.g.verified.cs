@@ -13,7 +13,7 @@ namespace G
         /// A list of Bits products that the extension created. The list is in ascending SKU order. The list is empty if the extension hasn’t created any products or they’re all expired or disabled.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<ExtensionBitsProduct> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ExtensionBitsProduct> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

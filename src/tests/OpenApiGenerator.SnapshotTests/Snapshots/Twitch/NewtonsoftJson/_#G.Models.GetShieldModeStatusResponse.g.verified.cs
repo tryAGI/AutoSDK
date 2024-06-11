@@ -13,7 +13,7 @@ namespace G
         /// A list that contains a single object with the broadcaster’s Shield Mode status.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<GetShieldModeStatusResponseData> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.GetShieldModeStatusResponseData> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

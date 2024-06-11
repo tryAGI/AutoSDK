@@ -59,7 +59,7 @@ namespace G
         /// * 3000 — Tier 3
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tier", Required = global::Newtonsoft.Json.Required.Always)]
-        public UserSubscriptionTier Tier { get; set; } = default!;
+        public global::G.UserSubscriptionTier Tier { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

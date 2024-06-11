@@ -21,7 +21,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ModifyChannelInformationBodyContentClassificationLabelsIdJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ModifyChannelInformationBodyContentClassificationLabelsId Id { get; set; }
+        public required global::G.ModifyChannelInformationBodyContentClassificationLabelsId Id { get; set; }
 
         /// <summary>
         /// Boolean flag indicating whether the label should be enabled (true) or disabled for the channel.

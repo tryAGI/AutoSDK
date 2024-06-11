@@ -22,14 +22,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDetailsToolCallsCodeObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunStepDetailsToolCallsCodeObjectType Type { get; set; }
+        public required global::G.RunStepDetailsToolCallsCodeObjectType Type { get; set; }
 
         /// <summary>
         /// The Code Interpreter tool call definition.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code_interpreter")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunStepDetailsToolCallsCodeObjectCodeInterpreter CodeInterpreter { get; set; }
+        public required global::G.RunStepDetailsToolCallsCodeObjectCodeInterpreter CodeInterpreter { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

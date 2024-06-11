@@ -13,13 +13,13 @@ namespace G
         /// The list of channels that the user has moderator privileges in.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<GetModeratedChannelsResponseData> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.GetModeratedChannelsResponseData> Data { get; set; } = default!;
 
         /// <summary>
         /// Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pagination")]
-        public GetModeratedChannelsResponsePagination? Pagination { get; set; }
+        public global::G.GetModeratedChannelsResponsePagination? Pagination { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

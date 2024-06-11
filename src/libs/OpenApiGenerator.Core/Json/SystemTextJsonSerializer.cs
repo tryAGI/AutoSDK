@@ -48,7 +48,7 @@ public class SystemTextJsonSerializer : IJsonSerializer
             return string.Empty;
         }
         
-        return $"[global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.{type}))]";
+        return $"[global::System.Text.Json.Serialization.JsonConverter(typeof({type}))]";
     }
 
     private static readonly char[] ContextTypeSeparators = [',', '<', '>', '['];

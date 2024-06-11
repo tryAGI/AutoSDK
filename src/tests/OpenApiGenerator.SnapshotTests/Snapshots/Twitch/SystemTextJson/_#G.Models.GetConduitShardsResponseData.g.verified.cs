@@ -33,14 +33,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.GetConduitShardsResponseDataStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required GetConduitShardsResponseDataStatus Status { get; set; }
+        public required global::G.GetConduitShardsResponseDataStatus Status { get; set; }
 
         /// <summary>
         /// The transport details used to send the notifications.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transport")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required GetConduitShardsResponseDataTransport Transport { get; set; }
+        public required global::G.GetConduitShardsResponseDataTransport Transport { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -26,11 +26,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public RequestOptions? Type3 { get; set; }
+        public global::G.RequestOptions? Type3 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public GenerateCompletionRequestFormat? Type4 { get; set; }
+        public global::G.GenerateCompletionRequestFormat? Type4 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -54,19 +54,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<Message>? Type10 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Message>? Type10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public GenerateChatCompletionRequestFormat? Type11 { get; set; }
+        public global::G.GenerateChatCompletionRequestFormat? Type11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public Message? Type12 { get; set; }
+        public global::G.Message? Type12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public MessageRole? Type13 { get; set; }
+        public global::G.MessageRole? Type13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -74,91 +74,91 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string?, CreateModelResponseStatus?>? Type15 { get; set; }
+        public global::System.AnyOf<string?, global::G.CreateModelResponseStatus?>? Type15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<LocalModel>? Type16 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.LocalModel>? Type16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public ModelDetails? Type17 { get; set; }
+        public global::G.ModelDetails? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string?, PullModelResponseStatus?>? Type18 { get; set; }
+        public global::System.AnyOf<string?, global::G.PullModelResponseStatus?>? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string?, PushModelResponseStatus?>? Type19 { get; set; }
+        public global::System.AnyOf<string?, global::G.PushModelResponseStatus?>? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public GenerateCompletionRequest? Type20 { get; set; }
+        public global::G.GenerateCompletionRequest? Type20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public GenerateCompletionResponse? Type21 { get; set; }
+        public global::G.GenerateCompletionResponse? Type21 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public GenerateChatCompletionRequest? Type22 { get; set; }
+        public global::G.GenerateChatCompletionRequest? Type22 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public GenerateChatCompletionResponse? Type23 { get; set; }
+        public global::G.GenerateChatCompletionResponse? Type23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public GenerateEmbeddingRequest? Type24 { get; set; }
+        public global::G.GenerateEmbeddingRequest? Type24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public GenerateEmbeddingResponse? Type25 { get; set; }
+        public global::G.GenerateEmbeddingResponse? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public CreateModelRequest? Type26 { get; set; }
+        public global::G.CreateModelRequest? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public CreateModelResponse? Type27 { get; set; }
+        public global::G.CreateModelResponse? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public ModelsResponse? Type28 { get; set; }
+        public global::G.ModelsResponse? Type28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public ModelInfoRequest? Type29 { get; set; }
+        public global::G.ModelInfoRequest? Type29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public ModelInfo? Type30 { get; set; }
+        public global::G.ModelInfo? Type30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public CopyModelRequest? Type31 { get; set; }
+        public global::G.CopyModelRequest? Type31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public DeleteModelRequest? Type32 { get; set; }
+        public global::G.DeleteModelRequest? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public PullModelRequest? Type33 { get; set; }
+        public global::G.PullModelRequest? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public PullModelResponse? Type34 { get; set; }
+        public global::G.PullModelResponse? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public PushModelRequest? Type35 { get; set; }
+        public global::G.PushModelRequest? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public PushModelResponse? Type36 { get; set; }
+        public global::G.PushModelResponse? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>

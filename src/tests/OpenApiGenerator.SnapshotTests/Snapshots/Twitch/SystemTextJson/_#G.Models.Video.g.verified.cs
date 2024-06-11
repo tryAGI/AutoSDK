@@ -117,7 +117,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.VideoTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required VideoType Type { get; set; }
+        public required global::G.VideoType Type { get; set; }
 
         /// <summary>
         /// The video's length in ISO 8601 duration format. For example, 3m21s represents 3 minutes, 21 seconds.
@@ -131,7 +131,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("muted_segments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<VideoMutedSegments>? MutedSegments { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.VideoMutedSegments>? MutedSegments { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

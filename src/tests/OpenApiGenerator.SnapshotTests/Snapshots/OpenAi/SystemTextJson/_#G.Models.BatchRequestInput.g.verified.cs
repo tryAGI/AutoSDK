@@ -20,7 +20,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("method")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.BatchRequestInputMethodJsonConverter))]
-        public BatchRequestInputMethod? Method { get; set; }
+        public global::G.BatchRequestInputMethod? Method { get; set; }
 
         /// <summary>
         /// The OpenAI API relative URL to be used for the request. Currently `/v1/chat/completions` and `/v1/embeddings` are supported.

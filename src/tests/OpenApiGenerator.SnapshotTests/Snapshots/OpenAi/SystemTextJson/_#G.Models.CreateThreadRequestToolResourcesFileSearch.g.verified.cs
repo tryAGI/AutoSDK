@@ -19,7 +19,7 @@ namespace G
         /// A helper to create a [vector store](/docs/api-reference/vector-stores/object) with file_ids and attach it to this thread. There can be a maximum of 1 vector store attached to the thread.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vector_stores")]
-        public global::System.Collections.Generic.IList<CreateThreadRequestToolResourcesFileSearchVectorStores?>? VectorStores { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CreateThreadRequestToolResourcesFileSearchVectorStores?>? VectorStores { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

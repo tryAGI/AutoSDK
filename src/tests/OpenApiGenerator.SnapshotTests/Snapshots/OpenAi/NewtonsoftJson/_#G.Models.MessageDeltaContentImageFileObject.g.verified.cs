@@ -19,13 +19,13 @@ namespace G
         /// Always `image_file`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public MessageDeltaContentImageFileObjectType Type { get; set; } = default!;
+        public global::G.MessageDeltaContentImageFileObjectType Type { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("image_file")]
-        public MessageDeltaContentImageFileObjectImageFile? ImageFile { get; set; }
+        public global::G.MessageDeltaContentImageFileObjectImageFile? ImageFile { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

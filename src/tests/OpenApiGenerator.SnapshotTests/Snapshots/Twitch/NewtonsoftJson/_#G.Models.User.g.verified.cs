@@ -36,7 +36,7 @@ namespace G
         /// * "" — Normal user
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public UserType Type { get; set; } = default!;
+        public global::G.UserType Type { get; set; } = default!;
 
         /// <summary>
         /// The type of broadcaster. Possible values are:  
@@ -46,7 +46,7 @@ namespace G
         /// * "" — A normal broadcaster
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("broadcaster_type", Required = global::Newtonsoft.Json.Required.Always)]
-        public UserBroadcasterType BroadcasterType { get; set; } = default!;
+        public global::G.UserBroadcasterType BroadcasterType { get; set; } = default!;
 
         /// <summary>
         /// The user's description of their channel.

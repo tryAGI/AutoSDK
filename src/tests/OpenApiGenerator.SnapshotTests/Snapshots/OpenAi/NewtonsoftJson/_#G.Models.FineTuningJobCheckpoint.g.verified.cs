@@ -37,7 +37,7 @@ namespace G
         /// Metrics at the step number during the fine-tuning job.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metrics", Required = global::Newtonsoft.Json.Required.Always)]
-        public FineTuningJobCheckpointMetrics Metrics { get; set; } = default!;
+        public global::G.FineTuningJobCheckpointMetrics Metrics { get; set; } = default!;
 
         /// <summary>
         /// The name of the fine-tuning job that this checkpoint was created from.
@@ -49,7 +49,7 @@ namespace G
         /// The object type, which is always "fine_tuning.job.checkpoint".
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public FineTuningJobCheckpointObject Object { get; set; } = default!;
+        public global::G.FineTuningJobCheckpointObject Object { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

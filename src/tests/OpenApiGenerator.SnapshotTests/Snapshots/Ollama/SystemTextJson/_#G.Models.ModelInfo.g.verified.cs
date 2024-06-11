@@ -47,13 +47,13 @@ namespace G
         /// Details about a model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("details")]
-        public ModelDetails? Details { get; set; }
+        public global::G.ModelDetails? Details { get; set; }
 
         /// <summary>
         /// The default messages for the model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
-        public global::System.Collections.Generic.IList<Message>? Messages { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Message>? Messages { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

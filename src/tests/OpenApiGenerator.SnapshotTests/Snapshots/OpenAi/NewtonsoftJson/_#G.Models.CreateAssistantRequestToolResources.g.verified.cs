@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("code_interpreter")]
-        public CreateAssistantRequestToolResourcesCodeInterpreter? CodeInterpreter { get; set; }
+        public global::G.CreateAssistantRequestToolResourcesCodeInterpreter? CodeInterpreter { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("file_search")]
-        public CreateAssistantRequestToolResourcesFileSearch? FileSearch { get; set; }
+        public global::G.CreateAssistantRequestToolResourcesFileSearch? FileSearch { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

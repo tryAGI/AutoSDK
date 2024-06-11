@@ -57,7 +57,7 @@ namespace G
         /// Requests for event types `output` and `logs` will be sent at most once every 500ms. If you request `start` and `completed` webhooks, then they'll always be sent regardless of throttling.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhook_events_filter")]
-        public global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>? WebhookEventsFilter { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PredictionRequestWebhookEventsFilter?>? WebhookEventsFilter { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

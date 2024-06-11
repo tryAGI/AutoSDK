@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("guests")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<Guest> Guests { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.Guest> Guests { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

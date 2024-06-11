@@ -17,7 +17,7 @@ namespace G
         /// <param name="first"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<GetUnbanRequestsResponse> GetUnbanRequestsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.GetUnbanRequestsResponse> GetUnbanRequestsAsync(
             string broadcasterId,
             string moderatorId,
             string status,
@@ -39,7 +39,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<GetUnbanRequestsResponse?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.GetUnbanRequestsResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -15,7 +15,7 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public ChatCompletionRequestFunctionMessageRole Role { get; set; } = default!;
+        public global::G.ChatCompletionRequestFunctionMessageRole Role { get; set; } = default!;
 
         /// <summary>
         /// The contents of the function message.

@@ -13,7 +13,7 @@ namespace G
         /// The list of subscriptions. The list is ordered by the oldest subscription first. The list is empty if the client hasn't created subscriptions or there are no subscriptions that match the specified filter criteria.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<EventSubSubscription> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.EventSubSubscription> Data { get; set; } = default!;
 
         /// <summary>
         /// The total number of subscriptions that you've created.
@@ -37,7 +37,7 @@ namespace G
         /// An object that contains the cursor used to get the next page of subscriptions. The object is empty if there are no more pages to get. The number of subscriptions returned per page is undertermined.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pagination")]
-        public GetEventSubSubscriptionsResponsePagination? Pagination { get; set; }
+        public global::G.GetEventSubSubscriptionsResponsePagination? Pagination { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

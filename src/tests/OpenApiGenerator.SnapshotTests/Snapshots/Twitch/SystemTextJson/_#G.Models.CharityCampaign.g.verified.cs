@@ -70,14 +70,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("current_amount")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CharityCampaignCurrentAmount CurrentAmount { get; set; }
+        public required global::G.CharityCampaignCurrentAmount CurrentAmount { get; set; }
 
         /// <summary>
         /// The campaign’s fundraising goal. This field is **null** if the broadcaster has not defined a fundraising goal.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target_amount")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CharityCampaignTargetAmount TargetAmount { get; set; }
+        public required global::G.CharityCampaignTargetAmount TargetAmount { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

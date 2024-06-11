@@ -19,12 +19,12 @@ namespace G
         /// <param name="first"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<GetCustomRewardRedemptionResponse> GetCustomRewardRedemptionAsync(
+        public async global::System.Threading.Tasks.Task<global::G.GetCustomRewardRedemptionResponse> GetCustomRewardRedemptionAsync(
             string broadcasterId,
             string rewardId,
-            GetCustomRewardRedemptionStatus status,
+            global::G.GetCustomRewardRedemptionStatus status,
             global::System.Collections.Generic.IList<string> id,
-            GetCustomRewardRedemptionSort sort,
+            global::G.GetCustomRewardRedemptionSort sort,
             string after,
             int first,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -42,7 +42,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<GetCustomRewardRedemptionResponse?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.GetCustomRewardRedemptionResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<FineTuningJobCheckpoint> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.FineTuningJobCheckpoint> Data { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public ListFineTuningJobCheckpointsResponseObject Object { get; set; } = default!;
+        public global::G.ListFineTuningJobCheckpointsResponseObject Object { get; set; } = default!;
 
         /// <summary>
         /// 

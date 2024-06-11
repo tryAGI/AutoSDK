@@ -46,7 +46,7 @@ namespace G
         /// * FULFILLED
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fulfillment_status", Required = global::Newtonsoft.Json.Required.Always)]
-        public DropsEntitlementFulfillmentStatus FulfillmentStatus { get; set; } = default!;
+        public global::G.DropsEntitlementFulfillmentStatus FulfillmentStatus { get; set; } = default!;
 
         /// <summary>
         /// The UTC date and time (in RFC3339 format) of when the entitlement was last updated.

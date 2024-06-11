@@ -21,14 +21,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("categories")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CreateModerationResponseResultsCategories Categories { get; set; }
+        public required global::G.CreateModerationResponseResultsCategories Categories { get; set; }
 
         /// <summary>
         /// A list of the categories along with their scores as predicted by model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("category_scores")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CreateModerationResponseResultsCategoryScores CategoryScores { get; set; }
+        public required global::G.CreateModerationResponseResultsCategoryScores CategoryScores { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

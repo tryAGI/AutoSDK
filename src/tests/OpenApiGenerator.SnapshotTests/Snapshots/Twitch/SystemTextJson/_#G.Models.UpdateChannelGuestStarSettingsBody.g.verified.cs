@@ -37,7 +37,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_layout")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UpdateChannelGuestStarSettingsBodyGroupLayoutJsonConverter))]
-        public UpdateChannelGuestStarSettingsBodyGroupLayout? GroupLayout { get; set; }
+        public global::G.UpdateChannelGuestStarSettingsBodyGroupLayout? GroupLayout { get; set; }
 
         /// <summary>
         /// Flag determining if Guest Star should regenerate the auth token associated with the channel’s browser sources. Providing a true value for this will immediately invalidate all browser sources previously configured in your streaming software.

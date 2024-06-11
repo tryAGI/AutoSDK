@@ -13,7 +13,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task CreateModelsAsync(
-            CreateModelsRequest request,
+            global::G.CreateModelsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -51,7 +51,7 @@ namespace G
             string hardware,
             string name,
             string owner,
-            CreateModelsRequestVisibility visibility,
+            global::G.CreateModelsRequestVisibility visibility,
             string? coverImageUrl = default,
             string? description = default,
             string? githubUrl = default,
@@ -59,7 +59,7 @@ namespace G
             string? paperUrl = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new CreateModelsRequest
+            var request = new global::G.CreateModelsRequest
             {
                 CoverImageUrl = coverImageUrl,
                 Description = description,

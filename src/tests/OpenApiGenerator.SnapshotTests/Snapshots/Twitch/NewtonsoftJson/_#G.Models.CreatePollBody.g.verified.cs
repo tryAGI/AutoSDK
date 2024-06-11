@@ -25,7 +25,7 @@ namespace G
         /// A list of choices that viewers may choose from. The list must contain a minimum of 2 choices and up to a maximum of 5 choices.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("choices", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<CreatePollBodyChoices> Choices { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.CreatePollBodyChoices> Choices { get; set; } = default!;
 
         /// <summary>
         /// The length of time (in seconds) that the poll will run for. The minimum is 15 seconds and the maximum is 1800 seconds (30 minutes).

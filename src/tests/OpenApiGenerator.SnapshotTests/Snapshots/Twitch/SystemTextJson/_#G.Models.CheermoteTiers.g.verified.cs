@@ -30,7 +30,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CheermoteTiersIdJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CheermoteTiersId Id { get; set; }
+        public required global::G.CheermoteTiersId Id { get; set; }
 
         /// <summary>
         /// The hex code of the color associated with this tier level (for example, #979797).
@@ -44,7 +44,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("images")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CheermoteImages Images { get; set; }
+        public required global::G.CheermoteImages Images { get; set; }
 
         /// <summary>
         /// A Boolean value that determines whether users can cheer at this tier level.

@@ -13,7 +13,7 @@ namespace G
         /// <param name="hasDelay"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<CreateClipResponse> CreateClipAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CreateClipResponse> CreateClipAsync(
             string broadcasterId,
             bool hasDelay,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -31,7 +31,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<CreateClipResponse?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.CreateClipResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

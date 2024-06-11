@@ -19,14 +19,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("thread")]
-        public CreateThreadRequest? Thread { get; set; }
+        public global::G.CreateThreadRequest? Thread { get; set; }
 
         /// <summary>
         /// The ID of the [Model](/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.
         /// <br/>Example: gpt-4-turbo
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
-        public global::System.AnyOf<string?, CreateThreadAndRunRequestModel?>? Model { get; set; }
+        public global::System.AnyOf<string?, global::G.CreateThreadAndRunRequestModel?>? Model { get; set; }
 
         /// <summary>
         /// Override the default system message of the assistant. This is useful for modifying the behavior on a per-run basis.
@@ -38,13 +38,13 @@ namespace G
         /// Override the tools the assistant can use for this run. This is useful for modifying the behavior on a per-run basis.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tools")]
-        public global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>>? Tools { get; set; }
 
         /// <summary>
         /// A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_resources")]
-        public CreateThreadAndRunRequestToolResources? ToolResources { get; set; }
+        public global::G.CreateThreadAndRunRequestToolResources? ToolResources { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -91,7 +91,7 @@ namespace G
         /// Controls for how a thread will be truncated prior to the run. Use this to control the intial context window of the run.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("truncation_strategy")]
-        public TruncationObject? TruncationStrategy { get; set; }
+        public global::G.TruncationObject? TruncationStrategy { get; set; }
 
         /// <summary>
         /// Controls which (if any) tool is called by the model.
@@ -101,7 +101,7 @@ namespace G
         /// Specifying a particular tool like `{"type": "file_search"}` or `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_choice")]
-        public global::System.OneOf<CreateThreadAndRunRequestToolChoice?, AssistantsNamedToolChoice?> ToolChoice { get; set; }
+        public global::System.OneOf<global::G.CreateThreadAndRunRequestToolChoice?, global::G.AssistantsNamedToolChoice?> ToolChoice { get; set; }
 
         /// <summary>
         /// Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
@@ -109,7 +109,7 @@ namespace G
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
-        public global::System.OneOf<CreateThreadAndRunRequestResponseFormat?, AssistantsApiResponseFormat?> ResponseFormat { get; set; }
+        public global::System.OneOf<global::G.CreateThreadAndRunRequestResponseFormat?, global::G.AssistantsApiResponseFormat?> ResponseFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

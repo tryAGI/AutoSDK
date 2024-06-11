@@ -39,7 +39,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.EventSubSubscriptionStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required EventSubSubscriptionStatus Status { get; set; }
+        public required global::G.EventSubSubscriptionStatus Status { get; set; }
 
         /// <summary>
         /// The subscription's type. See [Subscription Types](https://dev.twitch.tv/docs/eventsub/eventsub-subscription-types#subscription-types).
@@ -47,7 +47,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.EventSubSubscriptionTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required EventSubSubscriptionType Type { get; set; }
+        public required global::G.EventSubSubscriptionType Type { get; set; }
 
         /// <summary>
         /// The version number that identifies this definition of the subscription's data.
@@ -75,7 +75,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transport")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required EventSubSubscriptionTransport Transport { get; set; }
+        public required global::G.EventSubSubscriptionTransport Transport { get; set; }
 
         /// <summary>
         /// The amount that the subscription counts against your limit. [Learn More](https://dev.twitch.tv/docs/eventsub/manage-subscriptions/#subscription-limits)

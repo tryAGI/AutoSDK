@@ -61,19 +61,19 @@ namespace G
         /// <br/>Example: isp
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public AsnResponseType Type { get; set; } = default!;
+        public global::G.AsnResponseType Type { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prefixes")]
-        public global::System.Collections.Generic.IList<Prefix>? Prefixes { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Prefix>? Prefixes { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prefixes6")]
-        public global::System.Collections.Generic.IList<Prefix6>? Prefixes6 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Prefix6>? Prefixes6 { get; set; }
 
         /// <summary>
         /// 

@@ -37,19 +37,19 @@ namespace G
         /// The object type, which is always `file`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public OpenAIFileObject Object { get; set; } = default!;
+        public global::G.OpenAIFileObject Object { get; set; } = default!;
 
         /// <summary>
         /// The intended purpose of the file. Supported values are `assistants`, `assistants_output`, `batch`, `batch_output`, `fine-tune`, `fine-tune-results` and `vision`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("purpose", Required = global::Newtonsoft.Json.Required.Always)]
-        public OpenAIFilePurpose Purpose { get; set; } = default!;
+        public global::G.OpenAIFilePurpose Purpose { get; set; } = default!;
 
         /// <summary>
         /// Deprecated. The current status of the file, which can be either `uploaded`, `processed`, or `error`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public OpenAIFileStatus Status { get; set; } = default!;
+        public global::G.OpenAIFileStatus Status { get; set; } = default!;
 
         /// <summary>
         /// Deprecated. For details on why a fine-tuning training file failed validation, see the `error` field on `fine_tuning.job`.

@@ -42,7 +42,7 @@ namespace G
         /// * panel
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<UserExtensionType> Type { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.UserExtensionType> Type { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

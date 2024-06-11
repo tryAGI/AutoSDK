@@ -101,7 +101,7 @@ namespace G
         /// * upload — A video that the broadcaster uploaded to their video library. See Upload under [Video Producer](https://help.twitch.tv/s/article/video-on-demand?language=en%5FUS#videoproducer).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public VideoType Type { get; set; } = default!;
+        public global::G.VideoType Type { get; set; } = default!;
 
         /// <summary>
         /// The video's length in ISO 8601 duration format. For example, 3m21s represents 3 minutes, 21 seconds.
@@ -113,7 +113,7 @@ namespace G
         /// The segments that Twitch Audio Recognition muted; otherwise, **null**.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("muted_segments", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<VideoMutedSegments>? MutedSegments { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.VideoMutedSegments>? MutedSegments { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

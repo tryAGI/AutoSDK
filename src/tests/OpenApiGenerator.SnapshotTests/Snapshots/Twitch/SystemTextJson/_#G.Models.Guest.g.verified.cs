@@ -68,14 +68,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_settings")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required GuestAudioSettings AudioSettings { get; set; }
+        public required global::G.GuestAudioSettings AudioSettings { get; set; }
 
         /// <summary>
         /// Information about the guest’s video settings
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("video_settings")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required GuestVideoSettings VideoSettings { get; set; }
+        public required global::G.GuestVideoSettings VideoSettings { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

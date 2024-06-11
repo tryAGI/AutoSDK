@@ -22,14 +22,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDeltaObjectObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunStepDeltaObjectObject Object { get; set; }
+        public required global::G.RunStepDeltaObjectObject Object { get; set; }
 
         /// <summary>
         /// The delta containing the fields that have changed on the run step.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunStepDeltaObjectDelta Delta { get; set; }
+        public required global::G.RunStepDeltaObjectDelta Delta { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

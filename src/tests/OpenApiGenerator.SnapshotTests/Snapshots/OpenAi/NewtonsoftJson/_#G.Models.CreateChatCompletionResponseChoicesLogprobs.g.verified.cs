@@ -13,7 +13,7 @@ namespace G
         /// A list of message content tokens with log probability information.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<ChatCompletionTokenLogprob>? Content { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionTokenLogprob>? Content { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

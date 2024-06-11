@@ -14,10 +14,10 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<BanUserResponse> BanUserAsync(
+        public async global::System.Threading.Tasks.Task<global::G.BanUserResponse> BanUserAsync(
             string broadcasterId,
             string moderatorId,
-            BanUserBody request,
+            global::G.BanUserBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -39,7 +39,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<BanUserResponse?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.BanUserResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -51,13 +51,13 @@ namespace G
         /// <param name="data"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<BanUserResponse> BanUserAsync(
+        public async global::System.Threading.Tasks.Task<global::G.BanUserResponse> BanUserAsync(
             string broadcasterId,
             string moderatorId,
-            BanUserBodyData data,
+            global::G.BanUserBodyData data,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new BanUserBody
+            var request = new global::G.BanUserBody
             {
                 Data = data,
             };

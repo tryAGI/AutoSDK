@@ -25,7 +25,7 @@ namespace G
         /// The account type of the creator. Can be a user or an organization.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public UpdateDeploymentsResponseCurrentReleaseCreatedByType? Type { get; set; }
+        public global::G.UpdateDeploymentsResponseCurrentReleaseCreatedByType? Type { get; set; }
 
         /// <summary>
         /// The username of the account that created the release.

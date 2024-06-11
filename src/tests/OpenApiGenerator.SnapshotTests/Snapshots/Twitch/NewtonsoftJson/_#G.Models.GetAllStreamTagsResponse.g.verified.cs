@@ -15,14 +15,14 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::System.Collections.Generic.IList<StreamTag> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.StreamTag> Data { get; set; } = default!;
 
         /// <summary>
         /// The information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pagination")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public GetAllStreamTagsResponsePagination? Pagination { get; set; }
+        public global::G.GetAllStreamTagsResponsePagination? Pagination { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

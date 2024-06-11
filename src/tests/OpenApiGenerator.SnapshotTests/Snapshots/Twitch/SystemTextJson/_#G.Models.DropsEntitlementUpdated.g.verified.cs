@@ -21,7 +21,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DropsEntitlementUpdatedStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required DropsEntitlementUpdatedStatus Status { get; set; }
+        public required global::G.DropsEntitlementUpdatedStatus Status { get; set; }
 
         /// <summary>
         /// The list of entitlements that the status in the `status` field applies to.

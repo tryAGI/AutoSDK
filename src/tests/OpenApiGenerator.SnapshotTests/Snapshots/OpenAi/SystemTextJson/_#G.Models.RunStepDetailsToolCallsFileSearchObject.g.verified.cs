@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDetailsToolCallsFileSearchObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunStepDetailsToolCallsFileSearchObjectType Type { get; set; }
+        public required global::G.RunStepDetailsToolCallsFileSearchObjectType Type { get; set; }
 
         /// <summary>
         /// For now, this is always going to be an empty object.

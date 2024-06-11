@@ -12,8 +12,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<ModelInfo> ShowModelInfoAsync(
-            ModelInfoRequest request,
+        public async global::System.Threading.Tasks.Task<global::G.ModelInfo> ShowModelInfoAsync(
+            global::G.ModelInfoRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -35,7 +35,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<ModelInfo?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.ModelInfo?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -45,11 +45,11 @@ namespace G
         /// <param name="model"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<ModelInfo> ShowModelInfoAsync(
+        public async global::System.Threading.Tasks.Task<global::G.ModelInfo> ShowModelInfoAsync(
             string model,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new ModelInfoRequest
+            var request = new global::G.ModelInfoRequest
             {
                 Model = model,
             };

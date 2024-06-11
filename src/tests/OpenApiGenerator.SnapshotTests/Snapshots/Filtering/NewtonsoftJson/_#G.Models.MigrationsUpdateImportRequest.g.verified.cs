@@ -26,7 +26,7 @@ namespace G
         /// <br/>Example: "git"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vcs")]
-        public MigrationsUpdateImportRequestVcs? Vcs { get; set; }
+        public global::G.MigrationsUpdateImportRequestVcs? Vcs { get; set; }
 
         /// <summary>
         /// For a tfvc import, the name of the project that is being imported.

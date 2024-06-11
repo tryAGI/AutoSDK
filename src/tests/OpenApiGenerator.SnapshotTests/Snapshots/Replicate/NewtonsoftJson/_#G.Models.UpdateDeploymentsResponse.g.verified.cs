@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("current_release")]
-        public UpdateDeploymentsResponseCurrentRelease? CurrentRelease { get; set; }
+        public global::G.UpdateDeploymentsResponseCurrentRelease? CurrentRelease { get; set; }
 
         /// <summary>
         /// The name of the deployment.

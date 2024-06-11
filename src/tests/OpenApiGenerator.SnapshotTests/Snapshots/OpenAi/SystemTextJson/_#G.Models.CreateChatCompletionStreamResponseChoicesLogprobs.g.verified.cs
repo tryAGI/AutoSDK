@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<ChatCompletionTokenLogprob>? Content { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.ChatCompletionTokenLogprob>? Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

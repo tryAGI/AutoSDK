@@ -49,7 +49,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreatorGoalTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CreatorGoalType Type { get; set; }
+        public required global::G.CreatorGoalType Type { get; set; }
 
         /// <summary>
         /// A description of the goal. Is an empty string if not specified.

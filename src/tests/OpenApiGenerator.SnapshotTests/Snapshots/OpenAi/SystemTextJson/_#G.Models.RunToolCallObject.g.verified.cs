@@ -22,14 +22,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunToolCallObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunToolCallObjectType Type { get; set; }
+        public required global::G.RunToolCallObjectType Type { get; set; }
 
         /// <summary>
         /// The function definition.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunToolCallObjectFunction Function { get; set; }
+        public required global::G.RunToolCallObjectFunction Function { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

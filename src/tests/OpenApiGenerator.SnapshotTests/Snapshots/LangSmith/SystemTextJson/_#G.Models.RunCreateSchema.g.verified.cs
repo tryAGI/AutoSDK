@@ -28,7 +28,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("run_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunCreateSchemaRunTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunCreateSchemaRunType RunType { get; set; }
+        public required global::G.RunCreateSchemaRunType RunType { get; set; }
 
         /// <summary>
         /// 
@@ -118,7 +118,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("child_runs")]
-        public global::System.Collections.Generic.IList<RunCreateSchema>? ChildRuns { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RunCreateSchema>? ChildRuns { get; set; }
 
         /// <summary>
         /// 

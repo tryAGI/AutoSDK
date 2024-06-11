@@ -13,7 +13,7 @@ namespace G
         /// The broadcaster’s streaming scheduled.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public UpdateChannelStreamScheduleSegmentResponseData Data { get; set; } = default!;
+        public global::G.UpdateChannelStreamScheduleSegmentResponseData Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

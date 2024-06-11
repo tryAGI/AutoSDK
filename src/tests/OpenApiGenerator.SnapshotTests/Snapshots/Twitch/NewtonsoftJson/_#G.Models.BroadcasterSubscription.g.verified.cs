@@ -65,7 +65,7 @@ namespace G
         /// * 3000 — Tier 3
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tier", Required = global::Newtonsoft.Json.Required.Always)]
-        public BroadcasterSubscriptionTier Tier { get; set; } = default!;
+        public global::G.BroadcasterSubscriptionTier Tier { get; set; } = default!;
 
         /// <summary>
         /// An ID that identifies the subscribing user.

@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public DeleteThreadResponseObject Object { get; set; } = default!;
+        public global::G.DeleteThreadResponseObject Object { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

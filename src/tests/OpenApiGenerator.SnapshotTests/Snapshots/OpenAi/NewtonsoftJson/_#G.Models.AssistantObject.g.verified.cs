@@ -19,7 +19,7 @@ namespace G
         /// The object type, which is always `assistant`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public AssistantObjectObject Object { get; set; } = default!;
+        public global::G.AssistantObjectObject Object { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the assistant was created.
@@ -56,13 +56,13 @@ namespace G
         /// <br/>Default Value: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tools", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode, AssistantToolsFileSearch, AssistantToolsFunction>> Tools { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode, global::G.AssistantToolsFileSearch, global::G.AssistantToolsFunction>> Tools { get; set; } = default!;
 
         /// <summary>
         /// A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_resources")]
-        public AssistantObjectToolResources? ToolResources { get; set; }
+        public global::G.AssistantObjectToolResources? ToolResources { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -93,7 +93,7 @@ namespace G
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
-        public global::System.OneOf<AssistantObjectResponseFormat?, AssistantsApiResponseFormat?> ResponseFormat { get; set; }
+        public global::System.OneOf<global::G.AssistantObjectResponseFormat?, global::G.AssistantsApiResponseFormat?> ResponseFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,7 +13,7 @@ namespace G
         /// The list of messages to check. The list must contain at least one message and may contain up to a maximum of 100 messages.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<CheckAutoModStatusBodyData> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.CheckAutoModStatusBodyData> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

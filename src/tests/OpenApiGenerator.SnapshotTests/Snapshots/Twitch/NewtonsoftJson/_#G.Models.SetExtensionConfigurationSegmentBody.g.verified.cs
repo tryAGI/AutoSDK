@@ -23,7 +23,7 @@ namespace G
         /// * global
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("segment", Required = global::Newtonsoft.Json.Required.Always)]
-        public SetExtensionConfigurationSegmentBodySegment Segment { get; set; } = default!;
+        public global::G.SetExtensionConfigurationSegmentBodySegment Segment { get; set; } = default!;
 
         /// <summary>
         /// The ID of the broadcaster that installed the extension. Include this field only if the `segment` is set to developer or broadcaster.

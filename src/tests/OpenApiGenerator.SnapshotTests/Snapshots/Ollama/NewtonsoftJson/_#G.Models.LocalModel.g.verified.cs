@@ -42,7 +42,7 @@ namespace G
         /// Details about a model.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("details")]
-        public ModelDetails? Details { get; set; }
+        public global::G.ModelDetails? Details { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -28,7 +28,7 @@ namespace G
         /// * DENY
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("action", Required = global::Newtonsoft.Json.Required.Always)]
-        public ManageHeldAutoModMessagesBodyAction Action { get; set; } = default!;
+        public global::G.ManageHeldAutoModMessagesBodyAction Action { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -18,7 +18,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateChatCompletionRequestResponseFormatTypeJsonConverter))]
-        public CreateChatCompletionRequestResponseFormatType? Type { get; set; } = CreateChatCompletionRequestResponseFormatType.Text;
+        public global::G.CreateChatCompletionRequestResponseFormatType? Type { get; set; } = global::G.CreateChatCompletionRequestResponseFormatType.Text;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

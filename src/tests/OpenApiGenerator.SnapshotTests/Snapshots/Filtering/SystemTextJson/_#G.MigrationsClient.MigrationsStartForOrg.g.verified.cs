@@ -13,9 +13,9 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<Migration> MigrationsStartForOrgAsync(
+        public async global::System.Threading.Tasks.Task<global::G.Migration> MigrationsStartForOrgAsync(
             string org,
-            MigrationsStartForOrgRequest request,
+            global::G.MigrationsStartForOrgRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -37,7 +37,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<Migration?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.Migration?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -56,7 +56,7 @@ namespace G
         /// <param name="exclude"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<Migration> MigrationsStartForOrgAsync(
+        public async global::System.Threading.Tasks.Task<global::G.Migration> MigrationsStartForOrgAsync(
             string org,
             global::System.Collections.Generic.IList<string> repositories,
             bool lockRepositories = false,
@@ -66,10 +66,10 @@ namespace G
             bool excludeReleases = false,
             bool excludeOwnerProjects = false,
             bool orgMetadataOnly = false,
-            global::System.Collections.Generic.IList<MigrationsStartForOrgRequestExclude?>? exclude = default,
+            global::System.Collections.Generic.IList<global::G.MigrationsStartForOrgRequestExclude?>? exclude = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new MigrationsStartForOrgRequest
+            var request = new global::G.MigrationsStartForOrgRequest
             {
                 Repositories = repositories,
                 LockRepositories = lockRepositories,

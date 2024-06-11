@@ -13,7 +13,7 @@ namespace G
         /// A list that contains the user you successfully banned or put in a timeout.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<BanUserResponseData> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.BanUserResponseData> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

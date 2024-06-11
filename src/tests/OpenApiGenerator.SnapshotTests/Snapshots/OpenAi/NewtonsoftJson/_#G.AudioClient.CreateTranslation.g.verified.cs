@@ -12,8 +12,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.OneOf<CreateTranslationResponseJson, CreateTranslationResponseVerboseJson>> CreateTranslationAsync(
-            CreateTranslationRequest request,
+        public async global::System.Threading.Tasks.Task<global::System.OneOf<global::G.CreateTranslationResponseJson, global::G.CreateTranslationResponseVerboseJson>> CreateTranslationAsync(
+            global::G.CreateTranslationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -35,7 +35,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.OneOf<CreateTranslationResponseJson, CreateTranslationResponseVerboseJson>?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.OneOf<global::G.CreateTranslationResponseJson, global::G.CreateTranslationResponseVerboseJson>?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -49,15 +49,15 @@ namespace G
         /// <param name="temperature"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.OneOf<CreateTranslationResponseJson, CreateTranslationResponseVerboseJson>> CreateTranslationAsync(
+        public async global::System.Threading.Tasks.Task<global::System.OneOf<global::G.CreateTranslationResponseJson, global::G.CreateTranslationResponseVerboseJson>> CreateTranslationAsync(
             byte[] file,
-            global::System.AnyOf<string, CreateTranslationRequestModel> model,
+            global::System.AnyOf<string, global::G.CreateTranslationRequestModel> model,
             string? prompt = default,
             string? responseFormat = "json",
             double temperature = 0,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new CreateTranslationRequest
+            var request = new global::G.CreateTranslationRequest
             {
                 File = file,
                 Model = model,

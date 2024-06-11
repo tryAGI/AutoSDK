@@ -14,13 +14,13 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ChatCompletionStreamResponseDelta Delta { get; set; }
+        public required global::G.ChatCompletionStreamResponseDelta Delta { get; set; }
 
         /// <summary>
         /// Log probability information for the choice.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
-        public CreateChatCompletionStreamResponseChoicesLogprobs? Logprobs { get; set; }
+        public global::G.CreateChatCompletionStreamResponseChoicesLogprobs? Logprobs { get; set; }
 
         /// <summary>
         /// The reason the model stopped generating tokens. This will be `stop` if the model hit a natural stop point or a provided stop sequence,
@@ -31,7 +31,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateChatCompletionStreamResponseChoicesFinishReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CreateChatCompletionStreamResponseChoicesFinishReason? FinishReason { get; set; }
+        public required global::G.CreateChatCompletionStreamResponseChoicesFinishReason? FinishReason { get; set; }
 
         /// <summary>
         /// The index of the choice in the list of choices.

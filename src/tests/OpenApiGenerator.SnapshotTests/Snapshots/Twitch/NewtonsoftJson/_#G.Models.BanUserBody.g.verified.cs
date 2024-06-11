@@ -13,7 +13,7 @@ namespace G
         /// Identifies the user and type of ban.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public BanUserBodyData Data { get; set; } = default!;
+        public global::G.BanUserBodyData Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

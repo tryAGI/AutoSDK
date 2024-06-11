@@ -21,7 +21,7 @@ namespace G
         /// <br/>Example: text-embedding-3-small
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AnyOf<string, CreateEmbeddingRequestModel> Model { get; set; } = default!;
+        public global::System.AnyOf<string, global::G.CreateEmbeddingRequestModel> Model { get; set; } = default!;
 
         /// <summary>
         /// The format to return the embeddings in. Can be either `float` or [`base64`](https://pypi.org/project/pybase64/).
@@ -29,7 +29,7 @@ namespace G
         /// <br/>Example: float
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("encoding_format")]
-        public CreateEmbeddingRequestEncodingFormat? EncodingFormat { get; set; } = CreateEmbeddingRequestEncodingFormat.Float;
+        public global::G.CreateEmbeddingRequestEncodingFormat? EncodingFormat { get; set; } = global::G.CreateEmbeddingRequestEncodingFormat.Float;
 
         /// <summary>
         /// The number of dimensions the resulting output embeddings should have. Only supported in `text-embedding-3` and later models.

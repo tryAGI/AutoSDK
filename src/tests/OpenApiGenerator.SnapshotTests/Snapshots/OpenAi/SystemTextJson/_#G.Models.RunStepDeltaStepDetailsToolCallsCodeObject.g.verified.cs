@@ -28,13 +28,13 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsToolCallsCodeObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunStepDeltaStepDetailsToolCallsCodeObjectType Type { get; set; }
+        public required global::G.RunStepDeltaStepDetailsToolCallsCodeObjectType Type { get; set; }
 
         /// <summary>
         /// The Code Interpreter tool call definition.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code_interpreter")]
-        public RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter? CodeInterpreter { get; set; }
+        public global::G.RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter? CodeInterpreter { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

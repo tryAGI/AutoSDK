@@ -20,19 +20,19 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("function_call")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public ChatCompletionStreamResponseDeltaFunctionCall? FunctionCall { get; set; }
+        public global::G.ChatCompletionStreamResponseDeltaFunctionCall? FunctionCall { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_calls")]
-        public global::System.Collections.Generic.IList<ChatCompletionMessageToolCallChunk>? ToolCalls { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionMessageToolCallChunk>? ToolCalls { get; set; }
 
         /// <summary>
         /// The role of the author of this message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
-        public ChatCompletionStreamResponseDeltaRole? Role { get; set; }
+        public global::G.ChatCompletionStreamResponseDeltaRole? Role { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

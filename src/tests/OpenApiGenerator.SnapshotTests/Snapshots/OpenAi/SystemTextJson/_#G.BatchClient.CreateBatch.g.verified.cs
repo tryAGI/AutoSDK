@@ -12,8 +12,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<Batch> CreateBatchAsync(
-            CreateBatchRequest request,
+        public async global::System.Threading.Tasks.Task<global::G.Batch> CreateBatchAsync(
+            global::G.CreateBatchRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -35,7 +35,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<Batch?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.Batch?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -48,14 +48,14 @@ namespace G
         /// <param name="metadata"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<Batch> CreateBatchAsync(
+        public async global::System.Threading.Tasks.Task<global::G.Batch> CreateBatchAsync(
             string inputFileId,
-            CreateBatchRequestEndpoint endpoint,
-            CreateBatchRequestCompletionWindow completionWindow,
+            global::G.CreateBatchRequestEndpoint endpoint,
+            global::G.CreateBatchRequestCompletionWindow completionWindow,
             object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new CreateBatchRequest
+            var request = new global::G.CreateBatchRequest
             {
                 InputFileId = inputFileId,
                 Endpoint = endpoint,

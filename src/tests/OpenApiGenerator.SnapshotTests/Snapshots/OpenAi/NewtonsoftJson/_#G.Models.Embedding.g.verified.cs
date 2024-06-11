@@ -25,7 +25,7 @@ namespace G
         /// The object type, which is always "embedding".
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public EmbeddingObject Object { get; set; } = default!;
+        public global::G.EmbeddingObject Object { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

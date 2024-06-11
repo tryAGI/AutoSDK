@@ -36,13 +36,13 @@ namespace G
         /// * websocket\_network\_error — The Twitch WebSocket server experienced a network error writing the message to the client.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public EventSubSubscriptionStatus Status { get; set; } = default!;
+        public global::G.EventSubSubscriptionStatus Status { get; set; } = default!;
 
         /// <summary>
         /// The subscription's type. See [Subscription Types](https://dev.twitch.tv/docs/eventsub/eventsub-subscription-types#subscription-types).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public EventSubSubscriptionType Type { get; set; } = default!;
+        public global::G.EventSubSubscriptionType Type { get; set; } = default!;
 
         /// <summary>
         /// The version number that identifies this definition of the subscription's data.
@@ -66,7 +66,7 @@ namespace G
         /// The transport details used to send the notifications.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transport", Required = global::Newtonsoft.Json.Required.Always)]
-        public EventSubSubscriptionTransport Transport { get; set; } = default!;
+        public global::G.EventSubSubscriptionTransport Transport { get; set; } = default!;
 
         /// <summary>
         /// The amount that the subscription counts against your limit. [Learn More](https://dev.twitch.tv/docs/eventsub/manage-subscriptions/#subscription-limits)

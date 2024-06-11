@@ -13,7 +13,7 @@ namespace G
         /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models/overview) for descriptions of them.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.AnyOf<string, CreateCompletionRequestModel> Model { get; set; } = default!;
+        public global::System.AnyOf<string, global::G.CreateCompletionRequestModel> Model { get; set; } = default!;
 
         /// <summary>
         /// The prompt(s) to generate completions for, encoded as a string, array of strings, array of tokens, or array of token arrays.
@@ -116,7 +116,7 @@ namespace G
         /// <br/>Default Value: 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stream_options")]
-        public ChatCompletionStreamOptions? StreamOptions { get; set; }
+        public global::G.ChatCompletionStreamOptions? StreamOptions { get; set; }
 
         /// <summary>
         /// The suffix that comes after a completion of inserted text.

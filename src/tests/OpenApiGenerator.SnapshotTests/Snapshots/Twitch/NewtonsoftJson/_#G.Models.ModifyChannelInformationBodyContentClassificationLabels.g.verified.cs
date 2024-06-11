@@ -19,7 +19,7 @@ namespace G
         /// * ProfanityVulgarity
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public ModifyChannelInformationBodyContentClassificationLabelsId Id { get; set; } = default!;
+        public global::G.ModifyChannelInformationBodyContentClassificationLabelsId Id { get; set; } = default!;
 
         /// <summary>
         /// Boolean flag indicating whether the label should be enabled (true) or disabled for the channel.

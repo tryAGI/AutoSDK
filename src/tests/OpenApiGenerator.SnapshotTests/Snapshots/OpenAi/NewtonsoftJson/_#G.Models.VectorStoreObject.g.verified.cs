@@ -19,7 +19,7 @@ namespace G
         /// The object type, which is always `vector_store`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public VectorStoreObjectObject Object { get; set; } = default!;
+        public global::G.VectorStoreObjectObject Object { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the vector store was created.
@@ -43,19 +43,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("file_counts", Required = global::Newtonsoft.Json.Required.Always)]
-        public VectorStoreObjectFileCounts FileCounts { get; set; } = default!;
+        public global::G.VectorStoreObjectFileCounts FileCounts { get; set; } = default!;
 
         /// <summary>
         /// The status of the vector store, which can be either `expired`, `in_progress`, or `completed`. A status of `completed` indicates that the vector store is ready for use.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public VectorStoreObjectStatus Status { get; set; } = default!;
+        public global::G.VectorStoreObjectStatus Status { get; set; } = default!;
 
         /// <summary>
         /// The expiration policy for a vector store.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expires_after")]
-        public VectorStoreExpirationAfter? ExpiresAfter { get; set; }
+        public global::G.VectorStoreExpirationAfter? ExpiresAfter { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the vector store will expire.

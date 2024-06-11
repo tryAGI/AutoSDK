@@ -28,13 +28,13 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsToolCallsFunctionObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunStepDeltaStepDetailsToolCallsFunctionObjectType Type { get; set; }
+        public required global::G.RunStepDeltaStepDetailsToolCallsFunctionObjectType Type { get; set; }
 
         /// <summary>
         /// The definition of the function that was called.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function")]
-        public RunStepDeltaStepDetailsToolCallsFunctionObjectFunction? Function { get; set; }
+        public global::G.RunStepDeltaStepDetailsToolCallsFunctionObjectFunction? Function { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

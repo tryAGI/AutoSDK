@@ -19,13 +19,13 @@ namespace G
         /// Always `image`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType Type { get; set; } = default!;
+        public global::G.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType Type { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("image")]
-        public RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage? Image { get; set; }
+        public global::G.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage? Image { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

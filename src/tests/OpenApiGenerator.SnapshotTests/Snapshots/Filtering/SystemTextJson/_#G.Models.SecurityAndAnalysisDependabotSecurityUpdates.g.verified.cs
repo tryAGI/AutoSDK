@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SecurityAndAnalysisDependabotSecurityUpdatesStatusJsonConverter))]
-        public SecurityAndAnalysisDependabotSecurityUpdatesStatus? Status { get; set; }
+        public global::G.SecurityAndAnalysisDependabotSecurityUpdatesStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

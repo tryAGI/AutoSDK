@@ -13,7 +13,7 @@ namespace G
         /// A list that contains the single marker that you added.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<StreamMarkerCreated> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.StreamMarkerCreated> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

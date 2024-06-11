@@ -21,7 +21,7 @@ namespace G
         /// <param name="isFeatured"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<GetClipsResponse> GetClipsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.GetClipsResponse> GetClipsAsync(
             string broadcasterId,
             string gameId,
             global::System.Collections.Generic.IList<string> id,
@@ -46,7 +46,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<GetClipsResponse?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.GetClipsResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

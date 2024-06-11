@@ -19,7 +19,7 @@ namespace G
         /// The list of secrets.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secrets", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<ExtensionSecretSecrets> Secrets { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ExtensionSecretSecrets> Secrets { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

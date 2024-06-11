@@ -22,14 +22,14 @@ namespace G
         /// <param name="before"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<GetVideosResponse> GetVideosAsync(
+        public async global::System.Threading.Tasks.Task<global::G.GetVideosResponse> GetVideosAsync(
             global::System.Collections.Generic.IList<string> id,
             string userId,
             string gameId,
             string language,
-            GetVideosPeriod period,
-            GetVideosSort sort,
-            GetVideosType type,
+            global::G.GetVideosPeriod period,
+            global::G.GetVideosSort sort,
+            global::G.GetVideosType type,
             string first,
             string after,
             string before,
@@ -37,25 +37,25 @@ namespace G
         {
             var periodValue = period switch
             {
-                GetVideosPeriod.All => "all",
-                GetVideosPeriod.Day => "day",
-                GetVideosPeriod.Month => "month",
-                GetVideosPeriod.Week => "week",
+                global::G.GetVideosPeriod.All => "all",
+                global::G.GetVideosPeriod.Day => "day",
+                global::G.GetVideosPeriod.Month => "month",
+                global::G.GetVideosPeriod.Week => "week",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var sortValue = sort switch
             {
-                GetVideosSort.Time => "time",
-                GetVideosSort.Trending => "trending",
-                GetVideosSort.Views => "views",
+                global::G.GetVideosSort.Time => "time",
+                global::G.GetVideosSort.Trending => "trending",
+                global::G.GetVideosSort.Views => "views",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var typeValue = type switch
             {
-                GetVideosType.All => "all",
-                GetVideosType.Archive => "archive",
-                GetVideosType.Highlight => "highlight",
-                GetVideosType.Upload => "upload",
+                global::G.GetVideosType.All => "all",
+                global::G.GetVideosType.Archive => "archive",
+                global::G.GetVideosType.Highlight => "highlight",
+                global::G.GetVideosType.Upload => "upload",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -71,7 +71,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<GetVideosResponse?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.GetVideosResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

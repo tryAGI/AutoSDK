@@ -18,7 +18,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("method")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UpdateConduitShardsResponseDataTransportMethodJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required UpdateConduitShardsResponseDataTransportMethod Method { get; set; }
+        public required global::G.UpdateConduitShardsResponseDataTransportMethod Method { get; set; }
 
         /// <summary>
         /// The callback URL where the notifications are sent. Included only if method is set to webhook.

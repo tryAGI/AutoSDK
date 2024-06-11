@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<EventSubSubscription> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.EventSubSubscription> Data { get; set; }
 
         /// <summary>
         /// The total number of subscriptions that you've created.
@@ -41,7 +41,7 @@ namespace G
         /// An object that contains the cursor used to get the next page of subscriptions. The object is empty if there are no more pages to get. The number of subscriptions returned per page is undertermined.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pagination")]
-        public GetEventSubSubscriptionsResponsePagination? Pagination { get; set; }
+        public global::G.GetEventSubSubscriptionsResponsePagination? Pagination { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

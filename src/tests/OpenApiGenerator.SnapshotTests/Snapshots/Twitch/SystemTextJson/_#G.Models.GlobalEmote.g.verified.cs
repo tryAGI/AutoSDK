@@ -30,7 +30,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("images")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required GlobalEmoteImages Images { get; set; }
+        public required global::G.GlobalEmoteImages Images { get; set; }
 
         /// <summary>
         /// The formats that the emote is available in. For example, if the emote is available only as a static PNG, the array contains only `static`. But if the emote is available as a static PNG and an animated GIF, the array contains `static` and `animated`. The possible formats are:  
@@ -40,7 +40,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<GlobalEmoteFormat> Format { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.GlobalEmoteFormat> Format { get; set; }
 
         /// <summary>
         /// The sizes that the emote is available in. For example, if the emote is available in small and medium sizes, the array contains 1.0 and 2.0\. Possible sizes are:  
@@ -51,7 +51,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scale")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<GlobalEmoteScale> Scale { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.GlobalEmoteScale> Scale { get; set; }
 
         /// <summary>
         /// The background themes that the emote is available in. Possible themes are:  
@@ -61,7 +61,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("theme_mode")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<GlobalEmoteThemeMode> ThemeMode { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.GlobalEmoteThemeMode> ThemeMode { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageContentTextAnnotationsFilePathObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required MessageContentTextAnnotationsFilePathObjectType Type { get; set; }
+        public required global::G.MessageContentTextAnnotationsFilePathObjectType Type { get; set; }
 
         /// <summary>
         /// The text in the message content that needs to be replaced.
@@ -29,7 +29,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_path")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required MessageContentTextAnnotationsFilePathObjectFilePath FilePath { get; set; }
+        public required global::G.MessageContentTextAnnotationsFilePathObjectFilePath FilePath { get; set; }
 
         /// <summary>
         /// 

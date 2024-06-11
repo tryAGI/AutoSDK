@@ -44,7 +44,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("license")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableLicenseSimple? License { get; set; }
+        public required global::G.NullableLicenseSimple? License { get; set; }
 
         /// <summary>
         /// 
@@ -57,14 +57,14 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
-        public RepositoryPermissions? Permissions { get; set; }
+        public global::G.RepositoryPermissions? Permissions { get; set; }
 
         /// <summary>
         /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required SimpleUser Owner { get; set; }
+        public required global::G.SimpleUser Owner { get; set; }
 
         /// <summary>
         /// Whether the repository is private or public.
@@ -616,7 +616,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("squash_merge_commit_title")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositorySquashMergeCommitTitleJsonConverter))]
-        public RepositorySquashMergeCommitTitle? SquashMergeCommitTitle { get; set; }
+        public global::G.RepositorySquashMergeCommitTitle? SquashMergeCommitTitle { get; set; }
 
         /// <summary>
         /// The default value for a squash merge commit message:
@@ -626,7 +626,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("squash_merge_commit_message")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositorySquashMergeCommitMessageJsonConverter))]
-        public RepositorySquashMergeCommitMessage? SquashMergeCommitMessage { get; set; }
+        public global::G.RepositorySquashMergeCommitMessage? SquashMergeCommitMessage { get; set; }
 
         /// <summary>
         /// The default value for a merge commit title.
@@ -635,7 +635,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_commit_title")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryMergeCommitTitleJsonConverter))]
-        public RepositoryMergeCommitTitle? MergeCommitTitle { get; set; }
+        public global::G.RepositoryMergeCommitTitle? MergeCommitTitle { get; set; }
 
         /// <summary>
         /// The default value for a merge commit message.
@@ -645,7 +645,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_commit_message")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RepositoryMergeCommitMessageJsonConverter))]
-        public RepositoryMergeCommitMessage? MergeCommitMessage { get; set; }
+        public global::G.RepositoryMergeCommitMessage? MergeCommitMessage { get; set; }
 
         /// <summary>
         /// Whether to allow merge commits for pull requests.

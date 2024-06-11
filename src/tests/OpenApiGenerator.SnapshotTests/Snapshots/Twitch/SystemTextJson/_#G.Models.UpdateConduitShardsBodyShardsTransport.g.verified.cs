@@ -17,7 +17,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("method")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UpdateConduitShardsBodyShardsTransportMethodJsonConverter))]
-        public UpdateConduitShardsBodyShardsTransportMethod? Method { get; set; }
+        public global::G.UpdateConduitShardsBodyShardsTransportMethod? Method { get; set; }
 
         /// <summary>
         /// The callback URL where the notifications are sent. The URL must use the HTTPS protocol and port 443\. See Processing an event.Specify this field only if method is set to webhook.NOTE: Redirects are not followed.

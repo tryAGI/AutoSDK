@@ -17,7 +17,7 @@ namespace G
         /// <param name="before"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<GetBroadcasterSubscriptionsResponse> GetBroadcasterSubscriptionsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.GetBroadcasterSubscriptionsResponse> GetBroadcasterSubscriptionsAsync(
             string broadcasterId,
             global::System.Collections.Generic.IList<string> userId,
             string first,
@@ -38,7 +38,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<GetBroadcasterSubscriptionsResponse?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.GetBroadcasterSubscriptionsResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

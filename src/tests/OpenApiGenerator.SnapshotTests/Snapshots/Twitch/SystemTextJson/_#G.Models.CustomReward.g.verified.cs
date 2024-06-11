@@ -63,14 +63,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CustomRewardImage Image { get; set; }
+        public required global::G.CustomRewardImage Image { get; set; }
 
         /// <summary>
         /// A set of default images for the reward.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_image")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CustomRewardDefaultImage DefaultImage { get; set; }
+        public required global::G.CustomRewardDefaultImage DefaultImage { get; set; }
 
         /// <summary>
         /// The background color to use for the reward. The color is in Hex format (for example, #00E5CB).
@@ -98,21 +98,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_per_stream_setting")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CustomRewardMaxPerStreamSetting MaxPerStreamSetting { get; set; }
+        public required global::G.CustomRewardMaxPerStreamSetting MaxPerStreamSetting { get; set; }
 
         /// <summary>
         /// The settings used to determine whether to apply a maximum to the number of redemptions allowed per user per live stream.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_per_user_per_stream_setting")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CustomRewardMaxPerUserPerStreamSetting MaxPerUserPerStreamSetting { get; set; }
+        public required global::G.CustomRewardMaxPerUserPerStreamSetting MaxPerUserPerStreamSetting { get; set; }
 
         /// <summary>
         /// The settings used to determine whether to apply a cooldown period between redemptions and the length of the cooldown.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("global_cooldown_setting")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CustomRewardGlobalCooldownSetting GlobalCooldownSetting { get; set; }
+        public required global::G.CustomRewardGlobalCooldownSetting GlobalCooldownSetting { get; set; }
 
         /// <summary>
         /// A Boolean value that determines whether the reward is currently paused. Is **true** if the reward is paused. Viewers can’t redeem paused rewards.

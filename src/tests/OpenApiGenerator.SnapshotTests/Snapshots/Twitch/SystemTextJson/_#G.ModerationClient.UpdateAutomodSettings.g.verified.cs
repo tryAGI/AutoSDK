@@ -14,10 +14,10 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<UpdateAutoModSettingsResponse> UpdateAutomodSettingsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.UpdateAutoModSettingsResponse> UpdateAutomodSettingsAsync(
             string broadcasterId,
             string moderatorId,
-            UpdateAutoModSettingsBody request,
+            global::G.UpdateAutoModSettingsBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -39,7 +39,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<UpdateAutoModSettingsResponse?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.UpdateAutoModSettingsResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -59,7 +59,7 @@ namespace G
         /// <param name="swearing"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<UpdateAutoModSettingsResponse> UpdateAutomodSettingsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.UpdateAutoModSettingsResponse> UpdateAutomodSettingsAsync(
             string broadcasterId,
             string moderatorId,
             int aggression = default,
@@ -73,7 +73,7 @@ namespace G
             int swearing = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new UpdateAutoModSettingsBody
+            var request = new global::G.UpdateAutoModSettingsBody
             {
                 Aggression = aggression,
                 Bullying = bullying,

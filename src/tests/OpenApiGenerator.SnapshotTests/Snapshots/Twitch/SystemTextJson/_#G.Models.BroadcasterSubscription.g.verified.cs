@@ -75,7 +75,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.BroadcasterSubscriptionTierJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required BroadcasterSubscriptionTier Tier { get; set; }
+        public required global::G.BroadcasterSubscriptionTier Tier { get; set; }
 
         /// <summary>
         /// An ID that identifies the subscribing user.

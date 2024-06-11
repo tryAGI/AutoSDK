@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<AssistantObject> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.AssistantObject> Data { get; set; }
 
         /// <summary>
         /// <br/>Example: asst_abc123

@@ -13,7 +13,7 @@ namespace G
         /// A list that contains the single subscription that you created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<EventSubSubscription> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.EventSubSubscription> Data { get; set; } = default!;
 
         /// <summary>
         /// The total number of subscriptions you’ve created.

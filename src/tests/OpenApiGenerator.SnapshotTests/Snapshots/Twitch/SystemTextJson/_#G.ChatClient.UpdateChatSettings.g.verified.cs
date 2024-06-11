@@ -14,10 +14,10 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<UpdateChatSettingsResponse> UpdateChatSettingsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.UpdateChatSettingsResponse> UpdateChatSettingsAsync(
             string broadcasterId,
             string moderatorId,
-            UpdateChatSettingsBody request,
+            global::G.UpdateChatSettingsBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -39,7 +39,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<UpdateChatSettingsResponse?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.UpdateChatSettingsResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -59,7 +59,7 @@ namespace G
         /// <param name="uniqueChatMode"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<UpdateChatSettingsResponse> UpdateChatSettingsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.UpdateChatSettingsResponse> UpdateChatSettingsAsync(
             string broadcasterId,
             string moderatorId,
             bool emoteMode = default,
@@ -73,7 +73,7 @@ namespace G
             bool uniqueChatMode = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new UpdateChatSettingsBody
+            var request = new global::G.UpdateChatSettingsBody
             {
                 EmoteMode = emoteMode,
                 FollowerMode = followerMode,

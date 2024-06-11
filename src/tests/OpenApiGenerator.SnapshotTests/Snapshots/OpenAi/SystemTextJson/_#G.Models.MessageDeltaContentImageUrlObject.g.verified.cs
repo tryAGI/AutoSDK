@@ -22,13 +22,13 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageDeltaContentImageUrlObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required MessageDeltaContentImageUrlObjectType Type { get; set; }
+        public required global::G.MessageDeltaContentImageUrlObjectType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
-        public MessageDeltaContentImageUrlObjectImageUrl? ImageUrl { get; set; }
+        public global::G.MessageDeltaContentImageUrlObjectImageUrl? ImageUrl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

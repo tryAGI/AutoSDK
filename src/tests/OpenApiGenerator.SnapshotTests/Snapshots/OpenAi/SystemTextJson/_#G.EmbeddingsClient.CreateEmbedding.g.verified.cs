@@ -12,8 +12,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<CreateEmbeddingResponse> CreateEmbeddingAsync(
-            CreateEmbeddingRequest request,
+        public async global::System.Threading.Tasks.Task<global::G.CreateEmbeddingResponse> CreateEmbeddingAsync(
+            global::G.CreateEmbeddingRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -35,7 +35,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<CreateEmbeddingResponse?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.CreateEmbeddingResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -49,15 +49,15 @@ namespace G
         /// <param name="user"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<CreateEmbeddingResponse> CreateEmbeddingAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CreateEmbeddingResponse> CreateEmbeddingAsync(
             global::System.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>> input,
-            global::System.AnyOf<string, CreateEmbeddingRequestModel> model,
-            CreateEmbeddingRequestEncodingFormat? encodingFormat = CreateEmbeddingRequestEncodingFormat.Float,
+            global::System.AnyOf<string, global::G.CreateEmbeddingRequestModel> model,
+            global::G.CreateEmbeddingRequestEncodingFormat? encodingFormat = global::G.CreateEmbeddingRequestEncodingFormat.Float,
             int dimensions = default,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new CreateEmbeddingRequest
+            var request = new global::G.CreateEmbeddingRequest
             {
                 Input = input,
                 Model = model,

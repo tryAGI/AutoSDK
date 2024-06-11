@@ -13,7 +13,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task CopyModelAsync(
-            CopyModelRequest request,
+            global::G.CopyModelRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -45,7 +45,7 @@ namespace G
             string destination,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new CopyModelRequest
+            var request = new global::G.CopyModelRequest
             {
                 Source = source,
                 Destination = destination,

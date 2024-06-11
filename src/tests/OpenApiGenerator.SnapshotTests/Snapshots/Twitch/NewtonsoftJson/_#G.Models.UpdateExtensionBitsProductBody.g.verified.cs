@@ -19,7 +19,7 @@ namespace G
         /// An object that contains the product's cost information.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cost", Required = global::Newtonsoft.Json.Required.Always)]
-        public UpdateExtensionBitsProductBodyCost Cost { get; set; } = default!;
+        public global::G.UpdateExtensionBitsProductBodyCost Cost { get; set; } = default!;
 
         /// <summary>
         /// The product's name as displayed in the extension. The maximum length is 255 characters.

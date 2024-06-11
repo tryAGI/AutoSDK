@@ -13,7 +13,7 @@ namespace G
         /// The list of redemptions for the specified reward. The list is empty if there are no redemptions that match the redemption criteria.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<CustomRewardRedemption> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.CustomRewardRedemption> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

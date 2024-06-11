@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cost")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ExtensionBitsProductCost Cost { get; set; }
+        public required global::G.ExtensionBitsProductCost Cost { get; set; }
 
         /// <summary>
         /// A Boolean value that indicates whether the product is in development. If **true**, the product is not available for public use.

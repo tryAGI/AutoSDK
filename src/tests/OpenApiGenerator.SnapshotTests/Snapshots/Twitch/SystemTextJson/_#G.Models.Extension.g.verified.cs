@@ -42,7 +42,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("configuration_location")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ExtensionConfigurationLocationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ExtensionConfigurationLocation ConfigurationLocation { get; set; }
+        public required global::G.ExtensionConfigurationLocation ConfigurationLocation { get; set; }
 
         /// <summary>
         /// A longer description of the extension. It appears on the details page.
@@ -77,7 +77,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("icon_urls")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ExtensionIconUrls IconUrls { get; set; }
+        public required global::G.ExtensionIconUrls IconUrls { get; set; }
 
         /// <summary>
         /// The extension’s ID.
@@ -130,7 +130,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ExtensionStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ExtensionState State { get; set; }
+        public required global::G.ExtensionState State { get; set; }
 
         /// <summary>
         /// Indicates whether the extension can view the user’s subscription level on the channel that the extension is installed on. Possible values are:  
@@ -141,7 +141,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("subscriptions_support_level")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ExtensionSubscriptionsSupportLevelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ExtensionSubscriptionsSupportLevel SubscriptionsSupportLevel { get; set; }
+        public required global::G.ExtensionSubscriptionsSupportLevel SubscriptionsSupportLevel { get; set; }
 
         /// <summary>
         /// A short description of the extension that streamers see when hovering over the discovery splash screen in the Extensions manager.
@@ -176,7 +176,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("views")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ExtensionViews Views { get; set; }
+        public required global::G.ExtensionViews Views { get; set; }
 
         /// <summary>
         /// Allowlisted configuration URLs for displaying the extension (the allowlist is configured on Twitch’s [developer site](https://dev.twitch.tv/console/extensions) under the **Extensions** \-&gt; **Extension** \-&gt; **Version** \-&gt; **Capabilities**).

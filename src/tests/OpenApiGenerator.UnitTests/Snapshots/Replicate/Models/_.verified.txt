@@ -107,7 +107,7 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
         Id: webhook_events_filter,
         Name: WebhookEventsFilter,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>?,
+          CSharpType: global::System.Collections.Generic.IList<global::G.PredictionRequestWebhookEventsFilter?>?,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -115,8 +115,8 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.PredictionRequestWebhookEventsFilter?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.PredictionRequestWebhookEventsFilter?>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -369,7 +369,7 @@ An object containing inputs to the Cog model's `train()` function.
         Id: webhook_events_filter,
         Name: WebhookEventsFilter,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<TrainingRequestWebhookEventsFilter?>?,
+          CSharpType: global::System.Collections.Generic.IList<global::G.TrainingRequestWebhookEventsFilter?>?,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -377,8 +377,8 @@ An object containing inputs to the Cog model's `train()` function.
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<TrainingRequestWebhookEventsFilter?>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<TrainingRequestWebhookEventsFilter?>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.TrainingRequestWebhookEventsFilter?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.TrainingRequestWebhookEventsFilter?>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -675,7 +675,7 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
         Id: webhook_events_filter,
         Name: WebhookEventsFilter,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<VersionPredictionRequestWebhookEventsFilter?>?,
+          CSharpType: global::System.Collections.Generic.IList<global::G.VersionPredictionRequestWebhookEventsFilter?>?,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -683,8 +683,8 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<VersionPredictionRequestWebhookEventsFilter?>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<VersionPredictionRequestWebhookEventsFilter?>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.VersionPredictionRequestWebhookEventsFilter?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.VersionPredictionRequestWebhookEventsFilter?>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -909,7 +909,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Id: type,
         Name: Type,
         Type: {
-          CSharpType: GetAccountResponseType?,
+          CSharpType: global::G.GetAccountResponseType?,
           IsArray: false,
           IsEnum: true,
           Properties: [
@@ -923,15 +923,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: GetAccountResponseType,
-          CSharpTypeWithNullability: GetAccountResponseType?,
+          CSharpTypeWithoutNullability: global::G.GetAccountResponseType,
+          CSharpTypeWithNullability: global::G.GetAccountResponseType?,
           IsAnyOf: false,
-          ConverterType: GetAccountResponseTypeJsonConverter
+          ConverterType: global::OpenApiGenerator.JsonConverters.GetAccountResponseTypeJsonConverter
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: The account type. Can be a user or an organization.,
-        ConverterType: GetAccountResponseTypeJsonConverter,
+        ConverterType: global::OpenApiGenerator.JsonConverters.GetAccountResponseTypeJsonConverter,
         ParameterName: type,
         ArgumentName: type,
         ParameterDefaultValue: default
@@ -1102,7 +1102,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Id: results,
         Name: Results,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<ListDeploymentsResponseResults?>?,
+          CSharpType: global::System.Collections.Generic.IList<global::G.ListDeploymentsResponseResults?>?,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -1110,8 +1110,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ListDeploymentsResponseResults?>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<ListDeploymentsResponseResults?>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.ListDeploymentsResponseResults?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.ListDeploymentsResponseResults?>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1145,7 +1145,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Id: current_release,
         Name: CurrentRelease,
         Type: {
-          CSharpType: ListDeploymentsResponseResultsCurrentRelease?,
+          CSharpType: global::G.ListDeploymentsResponseResultsCurrentRelease?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -1153,8 +1153,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: ListDeploymentsResponseResultsCurrentRelease,
-          CSharpTypeWithNullability: ListDeploymentsResponseResultsCurrentRelease?,
+          CSharpTypeWithoutNullability: global::G.ListDeploymentsResponseResultsCurrentRelease,
+          CSharpTypeWithNullability: global::G.ListDeploymentsResponseResultsCurrentRelease?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1238,7 +1238,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Id: configuration,
         Name: Configuration,
         Type: {
-          CSharpType: ListDeploymentsResponseResultsCurrentReleaseConfiguration?,
+          CSharpType: global::G.ListDeploymentsResponseResultsCurrentReleaseConfiguration?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -1246,8 +1246,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: ListDeploymentsResponseResultsCurrentReleaseConfiguration,
-          CSharpTypeWithNullability: ListDeploymentsResponseResultsCurrentReleaseConfiguration?,
+          CSharpTypeWithoutNullability: global::G.ListDeploymentsResponseResultsCurrentReleaseConfiguration,
+          CSharpTypeWithNullability: global::G.ListDeploymentsResponseResultsCurrentReleaseConfiguration?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1288,7 +1288,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Id: created_by,
         Name: CreatedBy,
         Type: {
-          CSharpType: ListDeploymentsResponseResultsCurrentReleaseCreatedBy?,
+          CSharpType: global::G.ListDeploymentsResponseResultsCurrentReleaseCreatedBy?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -1296,8 +1296,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: ListDeploymentsResponseResultsCurrentReleaseCreatedBy,
-          CSharpTypeWithNullability: ListDeploymentsResponseResultsCurrentReleaseCreatedBy?,
+          CSharpTypeWithoutNullability: global::G.ListDeploymentsResponseResultsCurrentReleaseCreatedBy,
+          CSharpTypeWithNullability: global::G.ListDeploymentsResponseResultsCurrentReleaseCreatedBy?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1549,7 +1549,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Id: type,
         Name: Type,
         Type: {
-          CSharpType: ListDeploymentsResponseResultsCurrentReleaseCreatedByType?,
+          CSharpType: global::G.ListDeploymentsResponseResultsCurrentReleaseCreatedByType?,
           IsArray: false,
           IsEnum: true,
           Properties: [
@@ -1563,15 +1563,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: ListDeploymentsResponseResultsCurrentReleaseCreatedByType,
-          CSharpTypeWithNullability: ListDeploymentsResponseResultsCurrentReleaseCreatedByType?,
+          CSharpTypeWithoutNullability: global::G.ListDeploymentsResponseResultsCurrentReleaseCreatedByType,
+          CSharpTypeWithNullability: global::G.ListDeploymentsResponseResultsCurrentReleaseCreatedByType?,
           IsAnyOf: false,
-          ConverterType: ListDeploymentsResponseResultsCurrentReleaseCreatedByTypeJsonConverter
+          ConverterType: global::OpenApiGenerator.JsonConverters.ListDeploymentsResponseResultsCurrentReleaseCreatedByTypeJsonConverter
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: The account type of the creator. Can be a user or an organization.,
-        ConverterType: ListDeploymentsResponseResultsCurrentReleaseCreatedByTypeJsonConverter,
+        ConverterType: global::OpenApiGenerator.JsonConverters.ListDeploymentsResponseResultsCurrentReleaseCreatedByTypeJsonConverter,
         ParameterName: type,
         ArgumentName: type,
         ParameterDefaultValue: default
@@ -1860,7 +1860,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Id: current_release,
         Name: CurrentRelease,
         Type: {
-          CSharpType: CreateDeploymentsResponseCurrentRelease?,
+          CSharpType: global::G.CreateDeploymentsResponseCurrentRelease?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -1868,8 +1868,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: CreateDeploymentsResponseCurrentRelease,
-          CSharpTypeWithNullability: CreateDeploymentsResponseCurrentRelease?,
+          CSharpTypeWithoutNullability: global::G.CreateDeploymentsResponseCurrentRelease,
+          CSharpTypeWithNullability: global::G.CreateDeploymentsResponseCurrentRelease?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1953,7 +1953,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Id: configuration,
         Name: Configuration,
         Type: {
-          CSharpType: CreateDeploymentsResponseCurrentReleaseConfiguration?,
+          CSharpType: global::G.CreateDeploymentsResponseCurrentReleaseConfiguration?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -1961,8 +1961,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: CreateDeploymentsResponseCurrentReleaseConfiguration,
-          CSharpTypeWithNullability: CreateDeploymentsResponseCurrentReleaseConfiguration?,
+          CSharpTypeWithoutNullability: global::G.CreateDeploymentsResponseCurrentReleaseConfiguration,
+          CSharpTypeWithNullability: global::G.CreateDeploymentsResponseCurrentReleaseConfiguration?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2003,7 +2003,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Id: created_by,
         Name: CreatedBy,
         Type: {
-          CSharpType: CreateDeploymentsResponseCurrentReleaseCreatedBy?,
+          CSharpType: global::G.CreateDeploymentsResponseCurrentReleaseCreatedBy?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -2011,8 +2011,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: CreateDeploymentsResponseCurrentReleaseCreatedBy,
-          CSharpTypeWithNullability: CreateDeploymentsResponseCurrentReleaseCreatedBy?,
+          CSharpTypeWithoutNullability: global::G.CreateDeploymentsResponseCurrentReleaseCreatedBy,
+          CSharpTypeWithNullability: global::G.CreateDeploymentsResponseCurrentReleaseCreatedBy?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2264,7 +2264,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Id: type,
         Name: Type,
         Type: {
-          CSharpType: CreateDeploymentsResponseCurrentReleaseCreatedByType?,
+          CSharpType: global::G.CreateDeploymentsResponseCurrentReleaseCreatedByType?,
           IsArray: false,
           IsEnum: true,
           Properties: [
@@ -2278,15 +2278,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: CreateDeploymentsResponseCurrentReleaseCreatedByType,
-          CSharpTypeWithNullability: CreateDeploymentsResponseCurrentReleaseCreatedByType?,
+          CSharpTypeWithoutNullability: global::G.CreateDeploymentsResponseCurrentReleaseCreatedByType,
+          CSharpTypeWithNullability: global::G.CreateDeploymentsResponseCurrentReleaseCreatedByType?,
           IsAnyOf: false,
-          ConverterType: CreateDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter
+          ConverterType: global::OpenApiGenerator.JsonConverters.CreateDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: The account type of the creator. Can be a user or an organization.,
-        ConverterType: CreateDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter,
+        ConverterType: global::OpenApiGenerator.JsonConverters.CreateDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter,
         ParameterName: type,
         ArgumentName: type,
         ParameterDefaultValue: default
@@ -2407,7 +2407,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Id: current_release,
         Name: CurrentRelease,
         Type: {
-          CSharpType: GetDeploymentsResponseCurrentRelease?,
+          CSharpType: global::G.GetDeploymentsResponseCurrentRelease?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -2415,8 +2415,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: GetDeploymentsResponseCurrentRelease,
-          CSharpTypeWithNullability: GetDeploymentsResponseCurrentRelease?,
+          CSharpTypeWithoutNullability: global::G.GetDeploymentsResponseCurrentRelease,
+          CSharpTypeWithNullability: global::G.GetDeploymentsResponseCurrentRelease?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2500,7 +2500,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Id: configuration,
         Name: Configuration,
         Type: {
-          CSharpType: GetDeploymentsResponseCurrentReleaseConfiguration?,
+          CSharpType: global::G.GetDeploymentsResponseCurrentReleaseConfiguration?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -2508,8 +2508,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: GetDeploymentsResponseCurrentReleaseConfiguration,
-          CSharpTypeWithNullability: GetDeploymentsResponseCurrentReleaseConfiguration?,
+          CSharpTypeWithoutNullability: global::G.GetDeploymentsResponseCurrentReleaseConfiguration,
+          CSharpTypeWithNullability: global::G.GetDeploymentsResponseCurrentReleaseConfiguration?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2550,7 +2550,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Id: created_by,
         Name: CreatedBy,
         Type: {
-          CSharpType: GetDeploymentsResponseCurrentReleaseCreatedBy?,
+          CSharpType: global::G.GetDeploymentsResponseCurrentReleaseCreatedBy?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -2558,8 +2558,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: GetDeploymentsResponseCurrentReleaseCreatedBy,
-          CSharpTypeWithNullability: GetDeploymentsResponseCurrentReleaseCreatedBy?,
+          CSharpTypeWithoutNullability: global::G.GetDeploymentsResponseCurrentReleaseCreatedBy,
+          CSharpTypeWithNullability: global::G.GetDeploymentsResponseCurrentReleaseCreatedBy?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2811,7 +2811,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Id: type,
         Name: Type,
         Type: {
-          CSharpType: GetDeploymentsResponseCurrentReleaseCreatedByType?,
+          CSharpType: global::G.GetDeploymentsResponseCurrentReleaseCreatedByType?,
           IsArray: false,
           IsEnum: true,
           Properties: [
@@ -2825,15 +2825,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: GetDeploymentsResponseCurrentReleaseCreatedByType,
-          CSharpTypeWithNullability: GetDeploymentsResponseCurrentReleaseCreatedByType?,
+          CSharpTypeWithoutNullability: global::G.GetDeploymentsResponseCurrentReleaseCreatedByType,
+          CSharpTypeWithNullability: global::G.GetDeploymentsResponseCurrentReleaseCreatedByType?,
           IsAnyOf: false,
-          ConverterType: GetDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter
+          ConverterType: global::OpenApiGenerator.JsonConverters.GetDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: The account type of the creator. Can be a user or an organization.,
-        ConverterType: GetDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter,
+        ConverterType: global::OpenApiGenerator.JsonConverters.GetDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter,
         ParameterName: type,
         ArgumentName: type,
         ParameterDefaultValue: default
@@ -3072,7 +3072,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Id: current_release,
         Name: CurrentRelease,
         Type: {
-          CSharpType: UpdateDeploymentsResponseCurrentRelease?,
+          CSharpType: global::G.UpdateDeploymentsResponseCurrentRelease?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -3080,8 +3080,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: UpdateDeploymentsResponseCurrentRelease,
-          CSharpTypeWithNullability: UpdateDeploymentsResponseCurrentRelease?,
+          CSharpTypeWithoutNullability: global::G.UpdateDeploymentsResponseCurrentRelease,
+          CSharpTypeWithNullability: global::G.UpdateDeploymentsResponseCurrentRelease?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3165,7 +3165,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Id: configuration,
         Name: Configuration,
         Type: {
-          CSharpType: UpdateDeploymentsResponseCurrentReleaseConfiguration?,
+          CSharpType: global::G.UpdateDeploymentsResponseCurrentReleaseConfiguration?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -3173,8 +3173,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: UpdateDeploymentsResponseCurrentReleaseConfiguration,
-          CSharpTypeWithNullability: UpdateDeploymentsResponseCurrentReleaseConfiguration?,
+          CSharpTypeWithoutNullability: global::G.UpdateDeploymentsResponseCurrentReleaseConfiguration,
+          CSharpTypeWithNullability: global::G.UpdateDeploymentsResponseCurrentReleaseConfiguration?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3215,7 +3215,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Id: created_by,
         Name: CreatedBy,
         Type: {
-          CSharpType: UpdateDeploymentsResponseCurrentReleaseCreatedBy?,
+          CSharpType: global::G.UpdateDeploymentsResponseCurrentReleaseCreatedBy?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -3223,8 +3223,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: UpdateDeploymentsResponseCurrentReleaseCreatedBy,
-          CSharpTypeWithNullability: UpdateDeploymentsResponseCurrentReleaseCreatedBy?,
+          CSharpTypeWithoutNullability: global::G.UpdateDeploymentsResponseCurrentReleaseCreatedBy,
+          CSharpTypeWithNullability: global::G.UpdateDeploymentsResponseCurrentReleaseCreatedBy?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3476,7 +3476,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Id: type,
         Name: Type,
         Type: {
-          CSharpType: UpdateDeploymentsResponseCurrentReleaseCreatedByType?,
+          CSharpType: global::G.UpdateDeploymentsResponseCurrentReleaseCreatedByType?,
           IsArray: false,
           IsEnum: true,
           Properties: [
@@ -3490,15 +3490,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: UpdateDeploymentsResponseCurrentReleaseCreatedByType,
-          CSharpTypeWithNullability: UpdateDeploymentsResponseCurrentReleaseCreatedByType?,
+          CSharpTypeWithoutNullability: global::G.UpdateDeploymentsResponseCurrentReleaseCreatedByType,
+          CSharpTypeWithNullability: global::G.UpdateDeploymentsResponseCurrentReleaseCreatedByType?,
           IsAnyOf: false,
-          ConverterType: UpdateDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter
+          ConverterType: global::OpenApiGenerator.JsonConverters.UpdateDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: The account type of the creator. Can be a user or an organization.,
-        ConverterType: UpdateDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter,
+        ConverterType: global::OpenApiGenerator.JsonConverters.UpdateDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter,
         ParameterName: type,
         ArgumentName: type,
         ParameterDefaultValue: default
@@ -3887,7 +3887,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         Id: visibility,
         Name: Visibility,
         Type: {
-          CSharpType: CreateModelsRequestVisibility,
+          CSharpType: global::G.CreateModelsRequestVisibility,
           IsArray: false,
           IsEnum: true,
           Properties: [
@@ -3901,15 +3901,15 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: CreateModelsRequestVisibility,
-          CSharpTypeWithNullability: CreateModelsRequestVisibility?,
+          CSharpTypeWithoutNullability: global::G.CreateModelsRequestVisibility,
+          CSharpTypeWithNullability: global::G.CreateModelsRequestVisibility?,
           IsAnyOf: false,
-          ConverterType: CreateModelsRequestVisibilityJsonConverter
+          ConverterType: global::OpenApiGenerator.JsonConverters.CreateModelsRequestVisibilityJsonConverter
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: Whether the model should be public or private. A public model can be viewed and run by anyone, whereas a private model can be viewed and run only by the user or organization members that own the model.,
-        ConverterType: CreateModelsRequestVisibilityJsonConverter,
+        ConverterType: global::OpenApiGenerator.JsonConverters.CreateModelsRequestVisibilityJsonConverter,
         ParameterName: visibility,
         ArgumentName: visibility,
         ParameterDefaultValue: default

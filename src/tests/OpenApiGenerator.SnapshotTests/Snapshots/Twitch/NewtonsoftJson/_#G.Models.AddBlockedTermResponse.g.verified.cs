@@ -13,7 +13,7 @@ namespace G
         /// A list that contains the single blocked term that the broadcaster added.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<BlockedTerm> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.BlockedTerm> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

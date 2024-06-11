@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        public SecurityAndAnalysisSecretScanningStatus? Status { get; set; }
+        public global::G.SecurityAndAnalysisSecretScanningStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

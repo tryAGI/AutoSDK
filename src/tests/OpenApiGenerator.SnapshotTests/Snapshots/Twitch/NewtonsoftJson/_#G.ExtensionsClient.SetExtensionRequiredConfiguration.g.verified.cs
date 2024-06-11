@@ -15,7 +15,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task SetExtensionRequiredConfigurationAsync(
             string broadcasterId,
-            SetExtensionRequiredConfigurationBody request,
+            global::G.SetExtensionRequiredConfigurationBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -51,7 +51,7 @@ namespace G
             string requiredConfiguration,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new SetExtensionRequiredConfigurationBody
+            var request = new global::G.SetExtensionRequiredConfigurationBody
             {
                 ExtensionId = extensionId,
                 ExtensionVersion = extensionVersion,

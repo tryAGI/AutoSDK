@@ -23,7 +23,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<Message> Messages { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.Message> Messages { get; set; }
 
         /// <summary>
         /// The format to return a response in. Currently the only accepted value is json.
@@ -32,13 +32,13 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.GenerateChatCompletionRequestFormatJsonConverter))]
-        public GenerateChatCompletionRequestFormat? Format { get; set; }
+        public global::G.GenerateChatCompletionRequestFormat? Format { get; set; }
 
         /// <summary>
         /// Additional model parameters listed in the documentation for the Modelfile such as `temperature`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("options")]
-        public RequestOptions? Options { get; set; }
+        public global::G.RequestOptions? Options { get; set; }
 
         /// <summary>
         /// If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.

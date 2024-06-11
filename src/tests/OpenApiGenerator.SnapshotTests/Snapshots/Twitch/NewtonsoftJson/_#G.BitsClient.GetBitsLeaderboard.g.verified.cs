@@ -15,20 +15,20 @@ namespace G
         /// <param name="userId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<GetBitsLeaderboardResponse> GetBitsLeaderboardAsync(
+        public async global::System.Threading.Tasks.Task<global::G.GetBitsLeaderboardResponse> GetBitsLeaderboardAsync(
             int count,
-            GetBitsLeaderboardPeriod period,
+            global::G.GetBitsLeaderboardPeriod period,
             global::System.DateTime startedAt,
             string userId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var periodValue = period switch
             {
-                GetBitsLeaderboardPeriod.Day => "day",
-                GetBitsLeaderboardPeriod.Week => "week",
-                GetBitsLeaderboardPeriod.Month => "month",
-                GetBitsLeaderboardPeriod.Year => "year",
-                GetBitsLeaderboardPeriod.All => "all",
+                global::G.GetBitsLeaderboardPeriod.Day => "day",
+                global::G.GetBitsLeaderboardPeriod.Week => "week",
+                global::G.GetBitsLeaderboardPeriod.Month => "month",
+                global::G.GetBitsLeaderboardPeriod.Year => "year",
+                global::G.GetBitsLeaderboardPeriod.All => "all",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -44,7 +44,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<GetBitsLeaderboardResponse?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.GetBitsLeaderboardResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

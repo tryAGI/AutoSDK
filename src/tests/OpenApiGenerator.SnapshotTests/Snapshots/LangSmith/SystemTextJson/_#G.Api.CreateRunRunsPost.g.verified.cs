@@ -13,7 +13,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<object> CreateRunRunsPostAsync(
-            RunCreateSchemaExtended request,
+            global::G.RunCreateSchemaExtended request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -65,15 +65,15 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<object> CreateRunRunsPostAsync(
             string name,
-            RunCreateSchemaExtendedRunType runType,
-            global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?> inputs = default,
+            global::G.RunCreateSchemaExtendedRunType runType,
+            global::System.AnyOf<object?, global::G.CreateChatCompletionRequest?, global::G.CreateCompletionRequest?> inputs = default,
             global::System.DateTime startTime = default,
             global::System.DateTime endTime = default,
             object? extra = default,
             string? error = default,
             int executionOrder = 1,
             object? serialized = default,
-            global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?> outputs = default,
+            global::System.AnyOf<object?, global::G.CreateChatCompletionResponse?, global::G.CreateCompletionResponse?> outputs = default,
             string? parentRunId = default,
             string? manifestId = default,
             global::System.Collections.Generic.IList<object?>? events = default,
@@ -81,11 +81,11 @@ namespace G
             string? id = default,
             string? sessionId = default,
             string? sessionName = default,
-            global::System.Collections.Generic.IList<RunCreateSchema>? childRuns = default,
+            global::System.Collections.Generic.IList<global::G.RunCreateSchema>? childRuns = default,
             string? referenceExampleId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new RunCreateSchemaExtended
+            var request = new global::G.RunCreateSchemaExtended
             {
                 Name = name,
                 Inputs = inputs,

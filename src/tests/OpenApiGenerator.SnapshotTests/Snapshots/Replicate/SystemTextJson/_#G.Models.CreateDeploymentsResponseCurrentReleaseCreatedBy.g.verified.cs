@@ -26,7 +26,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter))]
-        public CreateDeploymentsResponseCurrentReleaseCreatedByType? Type { get; set; }
+        public global::G.CreateDeploymentsResponseCurrentReleaseCreatedByType? Type { get; set; }
 
         /// <summary>
         /// The username of the account that created the release.

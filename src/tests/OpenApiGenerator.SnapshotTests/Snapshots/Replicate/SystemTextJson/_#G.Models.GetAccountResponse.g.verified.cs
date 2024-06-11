@@ -26,7 +26,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.GetAccountResponseTypeJsonConverter))]
-        public GetAccountResponseType? Type { get; set; }
+        public global::G.GetAccountResponseType? Type { get; set; }
 
         /// <summary>
         /// The username of the account.

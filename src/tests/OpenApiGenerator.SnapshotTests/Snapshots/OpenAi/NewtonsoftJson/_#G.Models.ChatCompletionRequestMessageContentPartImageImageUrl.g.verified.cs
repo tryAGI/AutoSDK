@@ -20,7 +20,7 @@ namespace G
         /// <br/>Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("detail")]
-        public ChatCompletionRequestMessageContentPartImageImageUrlDetail? Detail { get; set; } = ChatCompletionRequestMessageContentPartImageImageUrlDetail.Auto;
+        public global::G.ChatCompletionRequestMessageContentPartImageImageUrlDetail? Detail { get; set; } = global::G.ChatCompletionRequestMessageContentPartImageImageUrlDetail.Auto;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

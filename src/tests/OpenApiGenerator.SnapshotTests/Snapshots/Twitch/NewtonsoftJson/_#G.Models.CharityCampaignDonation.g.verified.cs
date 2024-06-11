@@ -43,7 +43,7 @@ namespace G
         /// An object that contains the amount of money that the user donated.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("amount", Required = global::Newtonsoft.Json.Required.Always)]
-        public CharityCampaignDonationAmount Amount { get; set; } = default!;
+        public global::G.CharityCampaignDonationAmount Amount { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

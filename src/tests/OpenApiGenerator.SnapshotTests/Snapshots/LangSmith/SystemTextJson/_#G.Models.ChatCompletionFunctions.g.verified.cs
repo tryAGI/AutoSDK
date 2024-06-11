@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
-        public ChatCompletionFunctionParameters? Parameters { get; set; }
+        public global::G.ChatCompletionFunctionParameters? Parameters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

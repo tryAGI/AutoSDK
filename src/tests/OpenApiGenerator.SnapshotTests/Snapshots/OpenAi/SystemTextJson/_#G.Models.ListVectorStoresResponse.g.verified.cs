@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<VectorStoreObject> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.VectorStoreObject> Data { get; set; }
 
         /// <summary>
         /// <br/>Example: vs_abc123

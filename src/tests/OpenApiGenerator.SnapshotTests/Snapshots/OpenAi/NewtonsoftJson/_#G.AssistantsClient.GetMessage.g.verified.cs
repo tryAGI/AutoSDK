@@ -13,7 +13,7 @@ namespace G
         /// <param name="messageId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<MessageObject> GetMessageAsync(
+        public async global::System.Threading.Tasks.Task<global::G.MessageObject> GetMessageAsync(
             string threadId,
             string messageId,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -31,7 +31,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<MessageObject?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.MessageObject?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

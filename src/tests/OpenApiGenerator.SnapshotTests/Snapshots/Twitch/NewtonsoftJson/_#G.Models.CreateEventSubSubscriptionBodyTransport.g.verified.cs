@@ -17,7 +17,7 @@ namespace G
         /// * conduit
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("method", Required = global::Newtonsoft.Json.Required.Always)]
-        public CreateEventSubSubscriptionBodyTransportMethod Method { get; set; } = default!;
+        public global::G.CreateEventSubSubscriptionBodyTransportMethod Method { get; set; } = default!;
 
         /// <summary>
         /// The callback URL where the notifications are sent. The URL must use the HTTPS protocol and port 443\. See [Processing an event](https://dev.twitch.tv/docs/eventsub/handling-webhook-events#processing-an-event). Specify this field only if `method` is set to **webhook**.

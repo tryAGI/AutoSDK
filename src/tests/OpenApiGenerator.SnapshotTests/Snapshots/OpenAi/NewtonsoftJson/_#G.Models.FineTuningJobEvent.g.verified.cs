@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("level", Required = global::Newtonsoft.Json.Required.Always)]
-        public FineTuningJobEventLevel Level { get; set; } = default!;
+        public global::G.FineTuningJobEventLevel Level { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public FineTuningJobEventObject Object { get; set; } = default!;
+        public global::G.FineTuningJobEventObject Object { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -15,14 +15,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDetailsMessageCreationObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunStepDetailsMessageCreationObjectType Type { get; set; }
+        public required global::G.RunStepDetailsMessageCreationObjectType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message_creation")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunStepDetailsMessageCreationObjectMessageCreation MessageCreation { get; set; }
+        public required global::G.RunStepDetailsMessageCreationObjectMessageCreation MessageCreation { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

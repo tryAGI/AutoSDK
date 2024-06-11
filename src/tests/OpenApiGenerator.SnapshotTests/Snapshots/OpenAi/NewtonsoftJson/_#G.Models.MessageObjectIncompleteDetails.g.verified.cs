@@ -13,7 +13,7 @@ namespace G
         /// The reason the message is incomplete.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public MessageObjectIncompleteDetailsReason Reason { get; set; } = default!;
+        public global::G.MessageObjectIncompleteDetailsReason Reason { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

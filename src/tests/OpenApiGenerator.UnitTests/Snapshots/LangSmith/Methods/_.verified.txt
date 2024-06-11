@@ -90,7 +90,7 @@
         Id: inputs,
         Name: Inputs,
         Type: {
-          CSharpType: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>,
+          CSharpType: global::System.AnyOf<object?, global::G.CreateChatCompletionRequest?, global::G.CreateCompletionRequest?>,
           IsArray: false,
           IsEnum: false,
           AnyOfCount: 3,
@@ -99,15 +99,15 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>,
-          CSharpTypeWithNullability: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>?,
+          CSharpTypeWithoutNullability: global::System.AnyOf<object?, global::G.CreateChatCompletionRequest?, global::G.CreateCompletionRequest?>,
+          CSharpTypeWithNullability: global::System.AnyOf<object?, global::G.CreateChatCompletionRequest?, global::G.CreateCompletionRequest?>?,
           IsAnyOf: true,
-          ConverterType: AnyOfJsonConverterFactory3
+          ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
-        ConverterType: AnyOfJsonConverterFactory3,
+        ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3,
         ParameterName: inputs,
         ArgumentName: inputs,
         ParameterDefaultValue: default
@@ -116,7 +116,7 @@
         Id: outputs,
         Name: Outputs,
         Type: {
-          CSharpType: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>,
+          CSharpType: global::System.AnyOf<object?, global::G.CreateChatCompletionResponse?, global::G.CreateCompletionResponse?>,
           IsArray: false,
           IsEnum: false,
           AnyOfCount: 3,
@@ -125,15 +125,15 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>,
-          CSharpTypeWithNullability: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>?,
+          CSharpTypeWithoutNullability: global::System.AnyOf<object?, global::G.CreateChatCompletionResponse?, global::G.CreateCompletionResponse?>,
+          CSharpTypeWithNullability: global::System.AnyOf<object?, global::G.CreateChatCompletionResponse?, global::G.CreateCompletionResponse?>?,
           IsAnyOf: true,
-          ConverterType: AnyOfJsonConverterFactory3
+          ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
-        ConverterType: AnyOfJsonConverterFactory3,
+        ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3,
         ParameterName: outputs,
         ArgumentName: outputs,
         ParameterDefaultValue: default
@@ -170,7 +170,7 @@
     HttpMethod: Patch,
     Summary: Update Run,
     RequestType: {
-      CSharpType: RunUpdateSchemaExtended,
+      CSharpType: global::G.RunUpdateSchemaExtended,
       IsArray: false,
       IsEnum: false,
       Properties: [
@@ -184,8 +184,8 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: RunUpdateSchemaExtended,
-      CSharpTypeWithNullability: RunUpdateSchemaExtended?,
+      CSharpTypeWithoutNullability: global::G.RunUpdateSchemaExtended,
+      CSharpTypeWithNullability: global::G.RunUpdateSchemaExtended?,
       IsAnyOf: false,
       ConverterType: 
     },
@@ -206,7 +206,7 @@
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: RunUpdateSchemaExtended,
+        CSharpType: global::G.RunUpdateSchemaExtended,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -220,8 +220,8 @@
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
-        CSharpTypeWithoutNullability: RunUpdateSchemaExtended,
-        CSharpTypeWithNullability: RunUpdateSchemaExtended?,
+        CSharpTypeWithoutNullability: global::G.RunUpdateSchemaExtended,
+        CSharpTypeWithNullability: global::G.RunUpdateSchemaExtended?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -240,7 +240,7 @@
         ConverterType: 
       },
       {
-        CSharpType: HTTPValidationError,
+        CSharpType: global::G.HTTPValidationError,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -250,8 +250,8 @@
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
-        CSharpTypeWithoutNullability: HTTPValidationError,
-        CSharpTypeWithNullability: HTTPValidationError?,
+        CSharpTypeWithoutNullability: global::G.HTTPValidationError,
+        CSharpTypeWithNullability: global::G.HTTPValidationError?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -299,7 +299,7 @@
         Id: inputs,
         Name: Inputs,
         Type: {
-          CSharpType: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>,
+          CSharpType: global::System.AnyOf<object?, global::G.CreateChatCompletionRequest?, global::G.CreateCompletionRequest?>,
           IsArray: false,
           IsEnum: false,
           AnyOfCount: 3,
@@ -308,15 +308,15 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>,
-          CSharpTypeWithNullability: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>?,
+          CSharpTypeWithoutNullability: global::System.AnyOf<object?, global::G.CreateChatCompletionRequest?, global::G.CreateCompletionRequest?>,
+          CSharpTypeWithNullability: global::System.AnyOf<object?, global::G.CreateChatCompletionRequest?, global::G.CreateCompletionRequest?>?,
           IsAnyOf: true,
-          ConverterType: AnyOfJsonConverterFactory3
+          ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
-        ConverterType: AnyOfJsonConverterFactory3,
+        ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3,
         ParameterName: inputs,
         ArgumentName: inputs,
         ParameterDefaultValue: default
@@ -325,7 +325,7 @@
         Id: run_type,
         Name: RunType,
         Type: {
-          CSharpType: RunCreateSchemaExtendedRunType,
+          CSharpType: global::G.RunCreateSchemaExtendedRunType,
           IsArray: false,
           IsEnum: true,
           Properties: [
@@ -349,15 +349,15 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: RunCreateSchemaExtendedRunType,
-          CSharpTypeWithNullability: RunCreateSchemaExtendedRunType?,
+          CSharpTypeWithoutNullability: global::G.RunCreateSchemaExtendedRunType,
+          CSharpTypeWithNullability: global::G.RunCreateSchemaExtendedRunType?,
           IsAnyOf: false,
-          ConverterType: RunCreateSchemaExtendedRunTypeJsonConverter
+          ConverterType: global::OpenApiGenerator.JsonConverters.RunCreateSchemaExtendedRunTypeJsonConverter
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: Enum for run types.,
-        ConverterType: RunCreateSchemaExtendedRunTypeJsonConverter,
+        ConverterType: global::OpenApiGenerator.JsonConverters.RunCreateSchemaExtendedRunTypeJsonConverter,
         ParameterName: runType,
         ArgumentName: runType,
         ParameterDefaultValue: default
@@ -520,7 +520,7 @@
         Id: outputs,
         Name: Outputs,
         Type: {
-          CSharpType: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>,
+          CSharpType: global::System.AnyOf<object?, global::G.CreateChatCompletionResponse?, global::G.CreateCompletionResponse?>,
           IsArray: false,
           IsEnum: false,
           AnyOfCount: 3,
@@ -529,15 +529,15 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>,
-          CSharpTypeWithNullability: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>?,
+          CSharpTypeWithoutNullability: global::System.AnyOf<object?, global::G.CreateChatCompletionResponse?, global::G.CreateCompletionResponse?>,
+          CSharpTypeWithNullability: global::System.AnyOf<object?, global::G.CreateChatCompletionResponse?, global::G.CreateCompletionResponse?>?,
           IsAnyOf: true,
-          ConverterType: AnyOfJsonConverterFactory3
+          ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
-        ConverterType: AnyOfJsonConverterFactory3,
+        ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3,
         ParameterName: outputs,
         ArgumentName: outputs,
         ParameterDefaultValue: default
@@ -721,7 +721,7 @@
         Id: child_runs,
         Name: ChildRuns,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<RunCreateSchema>?,
+          CSharpType: global::System.Collections.Generic.IList<global::G.RunCreateSchema>?,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -729,8 +729,8 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<RunCreateSchema>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<RunCreateSchema>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.RunCreateSchema>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.RunCreateSchema>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -774,7 +774,7 @@
     HttpMethod: Post,
     Summary: Create Run,
     RequestType: {
-      CSharpType: RunCreateSchemaExtended,
+      CSharpType: global::G.RunCreateSchemaExtended,
       IsArray: false,
       IsEnum: false,
       Properties: [
@@ -802,8 +802,8 @@
       Namespace: G,
       IsDeprecated: false,
       GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: RunCreateSchemaExtended,
-      CSharpTypeWithNullability: RunCreateSchemaExtended?,
+      CSharpTypeWithoutNullability: global::G.RunCreateSchemaExtended,
+      CSharpTypeWithNullability: global::G.RunCreateSchemaExtended?,
       IsAnyOf: false,
       ConverterType: 
     },
@@ -824,7 +824,7 @@
     AdditionalModels: null,
     AdditionalTypes: [
       {
-        CSharpType: RunCreateSchemaExtended,
+        CSharpType: global::G.RunCreateSchemaExtended,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -852,8 +852,8 @@
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
-        CSharpTypeWithoutNullability: RunCreateSchemaExtended,
-        CSharpTypeWithNullability: RunCreateSchemaExtended?,
+        CSharpTypeWithoutNullability: global::G.RunCreateSchemaExtended,
+        CSharpTypeWithNullability: global::G.RunCreateSchemaExtended?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -872,7 +872,7 @@
         ConverterType: 
       },
       {
-        CSharpType: HTTPValidationError,
+        CSharpType: global::G.HTTPValidationError,
         IsArray: false,
         IsEnum: false,
         Properties: [
@@ -882,8 +882,8 @@
         Namespace: G,
         IsDeprecated: false,
         GenerateJsonSerializerContextTypes: false,
-        CSharpTypeWithoutNullability: HTTPValidationError,
-        CSharpTypeWithNullability: HTTPValidationError?,
+        CSharpTypeWithoutNullability: global::G.HTTPValidationError,
+        CSharpTypeWithNullability: global::G.HTTPValidationError?,
         IsAnyOf: false,
         ConverterType: 
       }

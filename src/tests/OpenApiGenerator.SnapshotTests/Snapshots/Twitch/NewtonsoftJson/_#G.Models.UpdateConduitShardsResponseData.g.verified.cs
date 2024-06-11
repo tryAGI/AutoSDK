@@ -30,13 +30,13 @@ namespace G
         /// * websocket\_network\_error — The Twitch WebSocket server experienced a network error writing the message to the client.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public UpdateConduitShardsResponseDataStatus Status { get; set; } = default!;
+        public global::G.UpdateConduitShardsResponseDataStatus Status { get; set; } = default!;
 
         /// <summary>
         /// The transport details used to send the notifications.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transport", Required = global::Newtonsoft.Json.Required.Always)]
-        public UpdateConduitShardsResponseDataTransport Transport { get; set; } = default!;
+        public global::G.UpdateConduitShardsResponseDataTransport Transport { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

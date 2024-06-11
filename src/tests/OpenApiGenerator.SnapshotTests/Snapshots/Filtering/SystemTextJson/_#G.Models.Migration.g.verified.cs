@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required NullableSimpleUser? Owner { get; set; }
+        public required global::G.NullableSimpleUser? Owner { get; set; }
 
         /// <summary>
         /// <br/>Example: 0b989ba4-242f-11e5-81e1-c7b6966d2516
@@ -91,7 +91,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repositories")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<Repository> Repositories { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.Repository> Repositories { get; set; }
 
         /// <summary>
         /// <br/>Example: https://api.github.com/orgs/octo-org/migrations/79

@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<RunStepObject> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.RunStepObject> Data { get; set; } = default!;
 
         /// <summary>
         /// <br/>Example: step_abc123

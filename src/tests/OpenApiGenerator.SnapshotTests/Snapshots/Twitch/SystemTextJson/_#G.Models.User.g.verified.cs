@@ -41,7 +41,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UserTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required UserType Type { get; set; }
+        public required global::G.UserType Type { get; set; }
 
         /// <summary>
         /// The type of broadcaster. Possible values are:  
@@ -53,7 +53,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("broadcaster_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UserBroadcasterTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required UserBroadcasterType BroadcasterType { get; set; }
+        public required global::G.UserBroadcasterType BroadcasterType { get; set; }
 
         /// <summary>
         /// The user's description of their channel.

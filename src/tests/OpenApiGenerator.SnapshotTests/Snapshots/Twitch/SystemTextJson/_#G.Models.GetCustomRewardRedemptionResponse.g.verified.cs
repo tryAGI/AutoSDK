@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<CustomRewardRedemption> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.CustomRewardRedemption> Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

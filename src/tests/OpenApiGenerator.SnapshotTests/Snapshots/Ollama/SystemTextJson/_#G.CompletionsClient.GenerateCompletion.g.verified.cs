@@ -12,8 +12,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Collections.Generic.IAsyncEnumerable<GenerateCompletionResponse> GenerateCompletionAsync(
-            GenerateCompletionRequest request,
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::G.GenerateCompletionResponse> GenerateCompletionAsync(
+            global::G.GenerateCompletionRequest request,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -38,7 +38,7 @@ namespace G
             while (!reader.EndOfStream && !cancellationToken.IsCancellationRequested)
             {
                 var __content = await reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
-                var streamedResponse = global::System.Text.Json.JsonSerializer.Deserialize<GenerateCompletionResponse?>(__content, _jsonSerializerOptions) ??
+                var streamedResponse = global::System.Text.Json.JsonSerializer.Deserialize<global::G.GenerateCompletionResponse?>(__content, _jsonSerializerOptions) ??
                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
 
                 yield return streamedResponse;
@@ -61,21 +61,21 @@ namespace G
         /// <param name="keepAlive"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Collections.Generic.IAsyncEnumerable<GenerateCompletionResponse> GenerateCompletionAsync(
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::G.GenerateCompletionResponse> GenerateCompletionAsync(
             string model,
             string prompt,
             global::System.Collections.Generic.IList<string?>? images = default,
             string? system = default,
             string? template = default,
             global::System.Collections.Generic.IList<long>? context = default,
-            RequestOptions? options = default,
-            GenerateCompletionRequestFormat? format = default,
+            global::G.RequestOptions? options = default,
+            global::G.GenerateCompletionRequestFormat? format = default,
             bool raw = default,
             bool stream = true,
             int? keepAlive = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new GenerateCompletionRequest
+            var request = new global::G.GenerateCompletionRequest
             {
                 Model = model,
                 Prompt = prompt,

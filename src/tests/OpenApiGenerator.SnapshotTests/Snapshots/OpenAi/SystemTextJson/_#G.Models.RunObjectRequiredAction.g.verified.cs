@@ -15,14 +15,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunObjectRequiredActionTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunObjectRequiredActionType Type { get; set; }
+        public required global::G.RunObjectRequiredActionType Type { get; set; }
 
         /// <summary>
         /// Details on the tool outputs needed for this run to continue.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("submit_tool_outputs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunObjectRequiredActionSubmitToolOutputs SubmitToolOutputs { get; set; }
+        public required global::G.RunObjectRequiredActionSubmitToolOutputs SubmitToolOutputs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

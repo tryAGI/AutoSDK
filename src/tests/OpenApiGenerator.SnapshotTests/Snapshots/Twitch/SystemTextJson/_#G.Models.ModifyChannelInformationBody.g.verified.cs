@@ -45,7 +45,7 @@ namespace G
         /// List of labels that should be set as the Channel’s CCLs.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_classification_labels")]
-        public global::System.Collections.Generic.IList<ModifyChannelInformationBodyContentClassificationLabels?>? ContentClassificationLabels { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ModifyChannelInformationBodyContentClassificationLabels?>? ContentClassificationLabels { get; set; }
 
         /// <summary>
         /// Boolean flag indicating if the channel has branded content.

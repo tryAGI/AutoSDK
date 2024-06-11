@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("light")]
-        public CheermoteImageTheme? Light { get; set; }
+        public global::G.CheermoteImageTheme? Light { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dark")]
-        public CheermoteImageTheme? Dark { get; set; }
+        public global::G.CheermoteImageTheme? Dark { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

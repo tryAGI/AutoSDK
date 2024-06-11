@@ -60,7 +60,7 @@
         Id: inputs,
         Name: Inputs,
         Type: {
-          CSharpType: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>,
+          CSharpType: global::System.AnyOf<object?, global::G.CreateChatCompletionRequest?, global::G.CreateCompletionRequest?>,
           IsArray: false,
           IsEnum: false,
           AnyOfCount: 3,
@@ -69,15 +69,15 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>,
-          CSharpTypeWithNullability: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>?,
+          CSharpTypeWithoutNullability: global::System.AnyOf<object?, global::G.CreateChatCompletionRequest?, global::G.CreateCompletionRequest?>,
+          CSharpTypeWithNullability: global::System.AnyOf<object?, global::G.CreateChatCompletionRequest?, global::G.CreateCompletionRequest?>?,
           IsAnyOf: true,
-          ConverterType: AnyOfJsonConverterFactory3
+          ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
-        ConverterType: AnyOfJsonConverterFactory3,
+        ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3,
         ParameterName: inputs,
         ArgumentName: inputs,
         ParameterDefaultValue: default
@@ -86,7 +86,7 @@
         Id: outputs,
         Name: Outputs,
         Type: {
-          CSharpType: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>,
+          CSharpType: global::System.AnyOf<object?, global::G.CreateChatCompletionResponse?, global::G.CreateCompletionResponse?>,
           IsArray: false,
           IsEnum: false,
           AnyOfCount: 3,
@@ -95,15 +95,15 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>,
-          CSharpTypeWithNullability: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>?,
+          CSharpTypeWithoutNullability: global::System.AnyOf<object?, global::G.CreateChatCompletionResponse?, global::G.CreateCompletionResponse?>,
+          CSharpTypeWithNullability: global::System.AnyOf<object?, global::G.CreateChatCompletionResponse?, global::G.CreateCompletionResponse?>?,
           IsAnyOf: true,
-          ConverterType: AnyOfJsonConverterFactory3
+          ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
-        ConverterType: AnyOfJsonConverterFactory3,
+        ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3,
         ParameterName: outputs,
         ArgumentName: outputs,
         ParameterDefaultValue: default
@@ -182,7 +182,7 @@
         Id: messages,
         Name: Messages,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<ChatCompletionRequestMessage>?,
+          CSharpType: global::System.Collections.Generic.IList<global::G.ChatCompletionRequestMessage>?,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -190,8 +190,8 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionRequestMessage>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<ChatCompletionRequestMessage>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.ChatCompletionRequestMessage>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.ChatCompletionRequestMessage>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -209,7 +209,7 @@
         Id: functions,
         Name: Functions,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<ChatCompletionFunctions>?,
+          CSharpType: global::System.Collections.Generic.IList<global::G.ChatCompletionFunctions>?,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -217,8 +217,8 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionFunctions>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<ChatCompletionFunctions>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.ChatCompletionFunctions>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.ChatCompletionFunctions>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -348,12 +348,12 @@
           CSharpTypeWithoutNullability: global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?>,
           CSharpTypeWithNullability: global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?>?,
           IsAnyOf: true,
-          ConverterType: AnyOfJsonConverterFactory2
+          ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
-        ConverterType: AnyOfJsonConverterFactory2,
+        ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2,
         ParameterName: stop,
         ArgumentName: stop,
         ParameterDefaultValue: default
@@ -558,7 +558,7 @@
         Id: function_call,
         Name: FunctionCall,
         Type: {
-          CSharpType: ChatCompletionFunctionCall?,
+          CSharpType: global::G.ChatCompletionFunctionCall?,
           IsArray: false,
           IsEnum: false,
           Properties: [
@@ -569,8 +569,8 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: ChatCompletionFunctionCall,
-          CSharpTypeWithNullability: ChatCompletionFunctionCall?,
+          CSharpTypeWithoutNullability: global::G.ChatCompletionFunctionCall,
+          CSharpTypeWithNullability: global::G.ChatCompletionFunctionCall?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -730,7 +730,7 @@
         Id: parameters,
         Name: Parameters,
         Type: {
-          CSharpType: ChatCompletionFunctionParameters?,
+          CSharpType: global::G.ChatCompletionFunctionParameters?,
           IsArray: false,
           IsEnum: false,
           Properties: [
@@ -741,8 +741,8 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: ChatCompletionFunctionParameters,
-          CSharpTypeWithNullability: ChatCompletionFunctionParameters?,
+          CSharpTypeWithoutNullability: global::G.ChatCompletionFunctionParameters,
+          CSharpTypeWithNullability: global::G.ChatCompletionFunctionParameters?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -860,12 +860,12 @@
           CSharpTypeWithoutNullability: global::System.AnyOf<string, object>,
           CSharpTypeWithNullability: global::System.AnyOf<string, object>?,
           IsAnyOf: true,
-          ConverterType: AnyOfJsonConverterFactory2
+          ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: ,
-        ConverterType: AnyOfJsonConverterFactory2,
+        ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2,
         ParameterName: model,
         ArgumentName: model,
         ParameterDefaultValue: default
@@ -886,12 +886,12 @@
           CSharpTypeWithoutNullability: global::System.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>,
           CSharpTypeWithNullability: global::System.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>?,
           IsAnyOf: true,
-          ConverterType: AnyOfJsonConverterFactory4
+          ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory4
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: ,
-        ConverterType: AnyOfJsonConverterFactory4,
+        ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory4,
         ParameterName: prompt,
         ArgumentName: prompt,
         ParameterDefaultValue: default
@@ -1112,12 +1112,12 @@
           CSharpTypeWithoutNullability: global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?>,
           CSharpTypeWithNullability: global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?>?,
           IsAnyOf: true,
-          ConverterType: AnyOfJsonConverterFactory2
+          ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
-        ConverterType: AnyOfJsonConverterFactory2,
+        ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2,
         ParameterName: stop,
         ArgumentName: stop,
         ParameterDefaultValue: default
@@ -1378,7 +1378,7 @@
         Id: choices,
         Name: Choices,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<ChatCompletionChoice>?,
+          CSharpType: global::System.Collections.Generic.IList<global::G.ChatCompletionChoice>?,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -1386,8 +1386,8 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionChoice>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<ChatCompletionChoice>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.ChatCompletionChoice>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.ChatCompletionChoice>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1405,7 +1405,7 @@
         Id: usage,
         Name: Usage,
         Type: {
-          CSharpType: CompletionUsage?,
+          CSharpType: global::G.CompletionUsage?,
           IsArray: false,
           IsEnum: false,
           Properties: [
@@ -1417,8 +1417,8 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: CompletionUsage,
-          CSharpTypeWithNullability: CompletionUsage?,
+          CSharpTypeWithoutNullability: global::G.CompletionUsage,
+          CSharpTypeWithNullability: global::G.CompletionUsage?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1479,7 +1479,7 @@
         Id: message,
         Name: Message,
         Type: {
-          CSharpType: ChatCompletionResponseMessage?,
+          CSharpType: global::G.ChatCompletionResponseMessage?,
           IsArray: false,
           IsEnum: false,
           Properties: [
@@ -1491,8 +1491,8 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: ChatCompletionResponseMessage,
-          CSharpTypeWithNullability: ChatCompletionResponseMessage?,
+          CSharpTypeWithoutNullability: global::G.ChatCompletionResponseMessage,
+          CSharpTypeWithNullability: global::G.ChatCompletionResponseMessage?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1605,7 +1605,7 @@
         Id: function_call,
         Name: FunctionCall,
         Type: {
-          CSharpType: ChatCompletionFunctionCall?,
+          CSharpType: global::G.ChatCompletionFunctionCall?,
           IsArray: false,
           IsEnum: false,
           Properties: [
@@ -1616,8 +1616,8 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: ChatCompletionFunctionCall,
-          CSharpTypeWithNullability: ChatCompletionFunctionCall?,
+          CSharpTypeWithoutNullability: global::G.ChatCompletionFunctionCall,
+          CSharpTypeWithNullability: global::G.ChatCompletionFunctionCall?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1850,7 +1850,7 @@
         Id: choices,
         Name: Choices,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<Choice>?,
+          CSharpType: global::System.Collections.Generic.IList<global::G.Choice>?,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -1858,8 +1858,8 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Choice>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<Choice>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.Choice>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.Choice>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1877,7 +1877,7 @@
         Id: usage,
         Name: Usage,
         Type: {
-          CSharpType: CompletionUsage?,
+          CSharpType: global::G.CompletionUsage?,
           IsArray: false,
           IsEnum: false,
           Properties: [
@@ -1889,8 +1889,8 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: CompletionUsage,
-          CSharpTypeWithNullability: CompletionUsage?,
+          CSharpTypeWithoutNullability: global::G.CompletionUsage,
+          CSharpTypeWithNullability: global::G.CompletionUsage?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1978,7 +1978,7 @@
         Id: logprobs,
         Name: Logprobs,
         Type: {
-          CSharpType: Logprobs?,
+          CSharpType: global::G.Logprobs?,
           IsArray: false,
           IsEnum: false,
           Properties: [
@@ -1991,8 +1991,8 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: Logprobs,
-          CSharpTypeWithNullability: Logprobs?,
+          CSharpTypeWithoutNullability: global::G.Logprobs,
+          CSharpTypeWithNullability: global::G.Logprobs?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2179,7 +2179,7 @@
         Id: detail,
         Name: Detail,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<ValidationError>?,
+          CSharpType: global::System.Collections.Generic.IList<global::G.ValidationError>?,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -2187,8 +2187,8 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ValidationError>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<ValidationError>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.ValidationError>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.ValidationError>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2340,7 +2340,7 @@
         Id: inputs,
         Name: Inputs,
         Type: {
-          CSharpType: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>,
+          CSharpType: global::System.AnyOf<object?, global::G.CreateChatCompletionRequest?, global::G.CreateCompletionRequest?>,
           IsArray: false,
           IsEnum: false,
           AnyOfCount: 3,
@@ -2349,15 +2349,15 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>,
-          CSharpTypeWithNullability: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>?,
+          CSharpTypeWithoutNullability: global::System.AnyOf<object?, global::G.CreateChatCompletionRequest?, global::G.CreateCompletionRequest?>,
+          CSharpTypeWithNullability: global::System.AnyOf<object?, global::G.CreateChatCompletionRequest?, global::G.CreateCompletionRequest?>?,
           IsAnyOf: true,
-          ConverterType: AnyOfJsonConverterFactory3
+          ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
-        ConverterType: AnyOfJsonConverterFactory3,
+        ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3,
         ParameterName: inputs,
         ArgumentName: inputs,
         ParameterDefaultValue: default
@@ -2366,7 +2366,7 @@
         Id: run_type,
         Name: RunType,
         Type: {
-          CSharpType: RunCreateSchemaExtendedRunType,
+          CSharpType: global::G.RunCreateSchemaExtendedRunType,
           IsArray: false,
           IsEnum: true,
           Properties: [
@@ -2390,15 +2390,15 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: RunCreateSchemaExtendedRunType,
-          CSharpTypeWithNullability: RunCreateSchemaExtendedRunType?,
+          CSharpTypeWithoutNullability: global::G.RunCreateSchemaExtendedRunType,
+          CSharpTypeWithNullability: global::G.RunCreateSchemaExtendedRunType?,
           IsAnyOf: false,
-          ConverterType: RunCreateSchemaExtendedRunTypeJsonConverter
+          ConverterType: global::OpenApiGenerator.JsonConverters.RunCreateSchemaExtendedRunTypeJsonConverter
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: Enum for run types.,
-        ConverterType: RunCreateSchemaExtendedRunTypeJsonConverter,
+        ConverterType: global::OpenApiGenerator.JsonConverters.RunCreateSchemaExtendedRunTypeJsonConverter,
         ParameterName: runType,
         ArgumentName: runType,
         ParameterDefaultValue: default
@@ -2561,7 +2561,7 @@
         Id: outputs,
         Name: Outputs,
         Type: {
-          CSharpType: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>,
+          CSharpType: global::System.AnyOf<object?, global::G.CreateChatCompletionResponse?, global::G.CreateCompletionResponse?>,
           IsArray: false,
           IsEnum: false,
           AnyOfCount: 3,
@@ -2570,15 +2570,15 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>,
-          CSharpTypeWithNullability: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>?,
+          CSharpTypeWithoutNullability: global::System.AnyOf<object?, global::G.CreateChatCompletionResponse?, global::G.CreateCompletionResponse?>,
+          CSharpTypeWithNullability: global::System.AnyOf<object?, global::G.CreateChatCompletionResponse?, global::G.CreateCompletionResponse?>?,
           IsAnyOf: true,
-          ConverterType: AnyOfJsonConverterFactory3
+          ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3
         },
         IsRequired: false,
         IsDeprecated: false,
         Summary: ,
-        ConverterType: AnyOfJsonConverterFactory3,
+        ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3,
         ParameterName: outputs,
         ArgumentName: outputs,
         ParameterDefaultValue: default
@@ -2762,7 +2762,7 @@
         Id: child_runs,
         Name: ChildRuns,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<RunCreateSchema>?,
+          CSharpType: global::System.Collections.Generic.IList<global::G.RunCreateSchema>?,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -2770,8 +2770,8 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<RunCreateSchema>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<RunCreateSchema>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.RunCreateSchema>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.RunCreateSchema>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3092,7 +3092,7 @@
         Id: run_type,
         Name: RunType,
         Type: {
-          CSharpType: RunCreateSchemaRunType,
+          CSharpType: global::G.RunCreateSchemaRunType,
           IsArray: false,
           IsEnum: true,
           Properties: [
@@ -3116,15 +3116,15 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: RunCreateSchemaRunType,
-          CSharpTypeWithNullability: RunCreateSchemaRunType?,
+          CSharpTypeWithoutNullability: global::G.RunCreateSchemaRunType,
+          CSharpTypeWithNullability: global::G.RunCreateSchemaRunType?,
           IsAnyOf: false,
-          ConverterType: RunCreateSchemaRunTypeJsonConverter
+          ConverterType: global::OpenApiGenerator.JsonConverters.RunCreateSchemaRunTypeJsonConverter
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary: Enum for run types.,
-        ConverterType: RunCreateSchemaRunTypeJsonConverter,
+        ConverterType: global::OpenApiGenerator.JsonConverters.RunCreateSchemaRunTypeJsonConverter,
         ParameterName: runType,
         ArgumentName: runType,
         ParameterDefaultValue: default
@@ -3488,7 +3488,7 @@
         Id: child_runs,
         Name: ChildRuns,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<RunCreateSchema>?,
+          CSharpType: global::System.Collections.Generic.IList<global::G.RunCreateSchema>?,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -3496,8 +3496,8 @@
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<RunCreateSchema>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<RunCreateSchema>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.RunCreateSchema>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.RunCreateSchema>?,
           IsAnyOf: false,
           ConverterType: 
         },

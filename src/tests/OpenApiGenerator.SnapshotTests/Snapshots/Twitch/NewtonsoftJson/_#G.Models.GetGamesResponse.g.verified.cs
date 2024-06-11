@@ -13,7 +13,7 @@ namespace G
         /// The list of categories and games. The list is empty if the specified categories and games weren’t found.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<Game> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.Game> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

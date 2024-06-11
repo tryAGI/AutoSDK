@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code_interpreter")]
-        public CreateThreadAndRunRequestToolResourcesCodeInterpreter? CodeInterpreter { get; set; }
+        public global::G.CreateThreadAndRunRequestToolResourcesCodeInterpreter? CodeInterpreter { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_search")]
-        public CreateThreadAndRunRequestToolResourcesFileSearch? FileSearch { get; set; }
+        public global::G.CreateThreadAndRunRequestToolResourcesFileSearch? FileSearch { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

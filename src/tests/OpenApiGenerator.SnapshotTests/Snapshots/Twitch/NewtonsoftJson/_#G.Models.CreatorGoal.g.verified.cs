@@ -43,7 +43,7 @@ namespace G
         /// * new\_subscription\_count — The goal is to increase subscriptions. This type shows only the net increase in the number of subscriptions (it does not account for users that unsubscribed since the goal started).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public CreatorGoalType Type { get; set; } = default!;
+        public global::G.CreatorGoalType Type { get; set; } = default!;
 
         /// <summary>
         /// A description of the goal. Is an empty string if not specified.

@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<Batch> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.Batch> Data { get; set; } = default!;
 
         /// <summary>
         /// <br/>Example: batch_abc123
@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public ListBatchesResponseObject Object { get; set; } = default!;
+        public global::G.ListBatchesResponseObject Object { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

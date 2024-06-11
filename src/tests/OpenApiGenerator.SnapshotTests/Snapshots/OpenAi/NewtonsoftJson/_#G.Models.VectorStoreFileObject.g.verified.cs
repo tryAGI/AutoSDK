@@ -19,7 +19,7 @@ namespace G
         /// The object type, which is always `vector_store.file`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public VectorStoreFileObjectObject Object { get; set; } = default!;
+        public global::G.VectorStoreFileObjectObject Object { get; set; } = default!;
 
         /// <summary>
         /// The total vector store usage in bytes. Note that this may be different from the original file size.
@@ -43,13 +43,13 @@ namespace G
         /// The status of the vector store file, which can be either `in_progress`, `completed`, `cancelled`, or `failed`. The status `completed` indicates that the vector store file is ready for use.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public VectorStoreFileObjectStatus Status { get; set; } = default!;
+        public global::G.VectorStoreFileObjectStatus Status { get; set; } = default!;
 
         /// <summary>
         /// The last error associated with this vector store file. Will be `null` if there are no errors.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_error", Required = global::Newtonsoft.Json.Required.Always)]
-        public VectorStoreFileObjectLastError? LastError { get; set; } = default!;
+        public global::G.VectorStoreFileObjectLastError? LastError { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

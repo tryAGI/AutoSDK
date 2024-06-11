@@ -73,14 +73,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("product_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ExtensionTransactionProductTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ExtensionTransactionProductType ProductType { get; set; }
+        public required global::G.ExtensionTransactionProductType ProductType { get; set; }
 
         /// <summary>
         /// Contains details about the digital product.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("product_data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ExtensionTransactionProductData ProductData { get; set; }
+        public required global::G.ExtensionTransactionProductData ProductData { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

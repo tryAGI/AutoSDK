@@ -12,8 +12,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Collections.Generic.IAsyncEnumerable<PullModelResponse> PullModelAsync(
-            PullModelRequest request,
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::G.PullModelResponse> PullModelAsync(
+            global::G.PullModelRequest request,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -38,7 +38,7 @@ namespace G
             while (!reader.EndOfStream && !cancellationToken.IsCancellationRequested)
             {
                 var __content = await reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
-                var streamedResponse = global::System.Text.Json.JsonSerializer.Deserialize<PullModelResponse?>(__content, _jsonSerializerOptions) ??
+                var streamedResponse = global::System.Text.Json.JsonSerializer.Deserialize<global::G.PullModelResponse?>(__content, _jsonSerializerOptions) ??
                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
 
                 yield return streamedResponse;
@@ -55,7 +55,7 @@ namespace G
         /// <param name="stream"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Collections.Generic.IAsyncEnumerable<PullModelResponse> PullModelAsync(
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::G.PullModelResponse> PullModelAsync(
             string model,
             bool insecure = false,
             string? username = default,
@@ -63,7 +63,7 @@ namespace G
             bool stream = true,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new PullModelRequest
+            var request = new global::G.PullModelRequest
             {
                 Model = model,
                 Insecure = insecure,

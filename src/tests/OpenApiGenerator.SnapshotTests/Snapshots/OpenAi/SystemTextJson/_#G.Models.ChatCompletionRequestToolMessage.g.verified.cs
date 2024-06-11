@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatCompletionRequestToolMessageRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ChatCompletionRequestToolMessageRole Role { get; set; }
+        public required global::G.ChatCompletionRequestToolMessageRole Role { get; set; }
 
         /// <summary>
         /// The contents of the tool message.

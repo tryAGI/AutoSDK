@@ -37,7 +37,7 @@ namespace G
         /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public SimpleUser Owner { get; set; } = default!;
+        public global::G.SimpleUser Owner { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -451,7 +451,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions")]
-        public MinimalRepositoryPermissions? Permissions { get; set; }
+        public global::G.MinimalRepositoryPermissions? Permissions { get; set; }
 
         /// <summary>
         /// <br/>Example: admin
@@ -487,13 +487,13 @@ namespace G
         /// Code Of Conduct
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("code_of_conduct")]
-        public CodeOfConduct? CodeOfConduct { get; set; }
+        public global::G.CodeOfConduct? CodeOfConduct { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("license")]
-        public MinimalRepositoryLicense? License { get; set; }
+        public global::G.MinimalRepositoryLicense? License { get; set; }
 
         /// <summary>
         /// <br/>Example: 0
@@ -529,7 +529,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("security_and_analysis")]
-        public SecurityAndAnalysis? SecurityAndAnalysis { get; set; }
+        public global::G.SecurityAndAnalysis? SecurityAndAnalysis { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

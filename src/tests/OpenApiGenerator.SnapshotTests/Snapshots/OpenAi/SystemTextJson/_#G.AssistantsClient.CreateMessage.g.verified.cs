@@ -13,9 +13,9 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<MessageObject> CreateMessageAsync(
+        public async global::System.Threading.Tasks.Task<global::G.MessageObject> CreateMessageAsync(
             string threadId,
-            CreateMessageRequest request,
+            global::G.CreateMessageRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -37,7 +37,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<MessageObject?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.MessageObject?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -51,15 +51,15 @@ namespace G
         /// <param name="metadata"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<MessageObject> CreateMessageAsync(
+        public async global::System.Threading.Tasks.Task<global::G.MessageObject> CreateMessageAsync(
             string threadId,
-            CreateMessageRequestRole role,
-            global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<MessageContentImageFileObject, MessageContentImageUrlObject, MessageRequestContentTextObject>>> content,
-            global::System.Collections.Generic.IList<CreateMessageRequestAttachments?>? attachments = default,
+            global::G.CreateMessageRequestRole role,
+            global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageRequestContentTextObject>>> content,
+            global::System.Collections.Generic.IList<global::G.CreateMessageRequestAttachments?>? attachments = default,
             object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new CreateMessageRequest
+            var request = new global::G.CreateMessageRequest
             {
                 Role = role,
                 Content = content,

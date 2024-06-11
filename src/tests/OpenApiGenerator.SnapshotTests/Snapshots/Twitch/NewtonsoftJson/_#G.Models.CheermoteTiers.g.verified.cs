@@ -27,7 +27,7 @@ namespace G
         /// * 100000
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public CheermoteTiersId Id { get; set; } = default!;
+        public global::G.CheermoteTiersId Id { get; set; } = default!;
 
         /// <summary>
         /// The hex code of the color associated with this tier level (for example, #979797).
@@ -39,7 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("images", Required = global::Newtonsoft.Json.Required.Always)]
-        public CheermoteImages Images { get; set; } = default!;
+        public global::G.CheermoteImages Images { get; set; } = default!;
 
         /// <summary>
         /// A Boolean value that determines whether users can cheer at this tier level.

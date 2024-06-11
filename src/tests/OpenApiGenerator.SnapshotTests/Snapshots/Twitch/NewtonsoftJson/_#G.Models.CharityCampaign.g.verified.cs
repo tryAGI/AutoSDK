@@ -61,13 +61,13 @@ namespace G
         /// The current amount of donations that the campaign has received.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("current_amount", Required = global::Newtonsoft.Json.Required.Always)]
-        public CharityCampaignCurrentAmount CurrentAmount { get; set; } = default!;
+        public global::G.CharityCampaignCurrentAmount CurrentAmount { get; set; } = default!;
 
         /// <summary>
         /// The campaign’s fundraising goal. This field is **null** if the broadcaster has not defined a fundraising goal.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target_amount", Required = global::Newtonsoft.Json.Required.Always)]
-        public CharityCampaignTargetAmount TargetAmount { get; set; } = default!;
+        public global::G.CharityCampaignTargetAmount TargetAmount { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,7 +13,7 @@ namespace G
         /// A list that contains information about the available content classification labels.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<ContentClassificationLabel> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ContentClassificationLabel> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

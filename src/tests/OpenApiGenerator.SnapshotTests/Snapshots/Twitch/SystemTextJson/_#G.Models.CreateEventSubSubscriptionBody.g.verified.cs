@@ -15,7 +15,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateEventSubSubscriptionBodyTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CreateEventSubSubscriptionBodyType Type { get; set; }
+        public required global::G.CreateEventSubSubscriptionBodyType Type { get; set; }
 
         /// <summary>
         /// The version number that identifies the definition of the subscription type that you want the response to use.
@@ -36,7 +36,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transport")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required CreateEventSubSubscriptionBodyTransport Transport { get; set; }
+        public required global::G.CreateEventSubSubscriptionBodyTransport Transport { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

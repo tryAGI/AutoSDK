@@ -22,14 +22,14 @@ namespace G
         /// <param name="before"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<GetVideosResponse> GetVideosAsync(
+        public async global::System.Threading.Tasks.Task<global::G.GetVideosResponse> GetVideosAsync(
             global::System.Collections.Generic.IList<string> id,
             string userId,
             string gameId,
             string language,
-            GetVideosPeriod period,
-            GetVideosSort sort,
-            GetVideosType type,
+            global::G.GetVideosPeriod period,
+            global::G.GetVideosSort sort,
+            global::G.GetVideosType type,
             string first,
             string after,
             string before,
@@ -48,7 +48,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<GetVideosResponse?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::G.GetVideosResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

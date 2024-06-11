@@ -13,13 +13,13 @@ namespace G
         /// The list of broadcasts. The broadcasts are sorted by the number of viewers, with the most popular first.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<Game> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.Game> Data { get; set; } = default!;
 
         /// <summary>
         /// Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pagination")]
-        public GetTopGamesResponsePagination? Pagination { get; set; }
+        public global::G.GetTopGamesResponsePagination? Pagination { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -43,7 +43,7 @@ namespace G
         /// The type of content that the broadcaster plans to stream or **null** if not specified.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("category", Required = global::Newtonsoft.Json.Required.Always)]
-        public ChannelStreamScheduleSegmentCategory Category { get; set; } = default!;
+        public global::G.ChannelStreamScheduleSegmentCategory Category { get; set; } = default!;
 
         /// <summary>
         /// A Boolean value that determines whether the broadcast is part of a recurring series that streams at the same time each week or is a one-time broadcast. Is **true** if the broadcast is part of a recurring series.

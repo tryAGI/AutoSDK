@@ -15,14 +15,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ListModelsResponseObjectJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required ListModelsResponseObject Object { get; set; }
+        public required global::G.ListModelsResponseObject Object { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<Model> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.Model> Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

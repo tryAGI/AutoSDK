@@ -12,8 +12,8 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<CreateChatCompletionResponse> CreateChatCompletionAsync(
-            CreateChatCompletionRequest request,
+        public async global::System.Threading.Tasks.Task<global::G.CreateChatCompletionResponse> CreateChatCompletionAsync(
+            global::G.CreateChatCompletionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -35,7 +35,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<CreateChatCompletionResponse?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.CreateChatCompletionResponse?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -65,9 +65,9 @@ namespace G
         /// <param name="functions"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<CreateChatCompletionResponse> CreateChatCompletionAsync(
-            global::System.Collections.Generic.IList<ChatCompletionRequestMessage> messages,
-            global::System.AnyOf<string, CreateChatCompletionRequestModel> model,
+        public async global::System.Threading.Tasks.Task<global::G.CreateChatCompletionResponse> CreateChatCompletionAsync(
+            global::System.Collections.Generic.IList<global::G.ChatCompletionRequestMessage> messages,
+            global::System.AnyOf<string, global::G.CreateChatCompletionRequestModel> model,
             double? frequencyPenalty = 0,
             object? logitBias = default,
             bool? logprobs = false,
@@ -75,19 +75,19 @@ namespace G
             int? maxTokens = default,
             int? n = 1,
             double? presencePenalty = 0,
-            CreateChatCompletionRequestResponseFormat? responseFormat = default,
+            global::G.CreateChatCompletionRequestResponseFormat? responseFormat = default,
             int? seed = default,
             global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?> stop = default,
             bool? stream = false,
-            ChatCompletionStreamOptions? streamOptions = default,
+            global::G.ChatCompletionStreamOptions? streamOptions = default,
             double? temperature = 1,
             double? topP = 1,
-            global::System.Collections.Generic.IList<ChatCompletionTool>? tools = default,
-            global::System.OneOf<CreateChatCompletionRequestToolChoice?, ChatCompletionNamedToolChoice?> toolChoice = default,
+            global::System.Collections.Generic.IList<global::G.ChatCompletionTool>? tools = default,
+            global::System.OneOf<global::G.CreateChatCompletionRequestToolChoice?, global::G.ChatCompletionNamedToolChoice?> toolChoice = default,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new CreateChatCompletionRequest
+            var request = new global::G.CreateChatCompletionRequest
             {
                 Messages = messages,
                 Model = model,

@@ -13,9 +13,9 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<VectorStoreFileObject> CreateVectorStoreFileAsync(
+        public async global::System.Threading.Tasks.Task<global::G.VectorStoreFileObject> CreateVectorStoreFileAsync(
             string vectorStoreId,
-            CreateVectorStoreFileRequest request,
+            global::G.CreateVectorStoreFileRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -37,7 +37,7 @@ namespace G
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<VectorStoreFileObject?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.VectorStoreFileObject?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -48,12 +48,12 @@ namespace G
         /// <param name="fileId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<VectorStoreFileObject> CreateVectorStoreFileAsync(
+        public async global::System.Threading.Tasks.Task<global::G.VectorStoreFileObject> CreateVectorStoreFileAsync(
             string vectorStoreId,
             string fileId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new CreateVectorStoreFileRequest
+            var request = new global::G.CreateVectorStoreFileRequest
             {
                 FileId = fileId,
             };

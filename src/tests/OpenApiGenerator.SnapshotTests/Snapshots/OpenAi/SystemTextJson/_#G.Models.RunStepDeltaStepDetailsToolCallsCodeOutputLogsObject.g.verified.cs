@@ -22,7 +22,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType Type { get; set; }
+        public required global::G.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType Type { get; set; }
 
         /// <summary>
         /// The text output from the Code Interpreter tool call.

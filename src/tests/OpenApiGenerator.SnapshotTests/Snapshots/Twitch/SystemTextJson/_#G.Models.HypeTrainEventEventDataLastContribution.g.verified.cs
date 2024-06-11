@@ -26,7 +26,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.HypeTrainEventEventDataLastContributionTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required HypeTrainEventEventDataLastContributionType Type { get; set; }
+        public required global::G.HypeTrainEventEventDataLastContributionType Type { get; set; }
 
         /// <summary>
         /// The ID of the user that made the contribution.

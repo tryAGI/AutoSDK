@@ -13,7 +13,7 @@ namespace G
         /// The role of the message
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
-        public MessageRole Role { get; set; } = default!;
+        public global::G.MessageRole Role { get; set; } = default!;
 
         /// <summary>
         /// The content of the message
