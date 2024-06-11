@@ -11,6 +11,8 @@ namespace G
     /// </summary>
     public sealed partial class MigrationsClient : global::System.IDisposable
     {
+        public const string BaseUrl = "https://api.github.com";
+
         private readonly global::System.Net.Http.HttpClient _httpClient;
         private readonly global::System.Text.Json.JsonSerializerOptions _jsonSerializerOptions;
 
@@ -29,7 +31,7 @@ namespace G
             )
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
-            _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri("https://api.github.com");
+            _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
             _jsonSerializerOptions = _jsonSerializerOptions ?? new global::System.Text.Json.JsonSerializerOptions();
         }
 

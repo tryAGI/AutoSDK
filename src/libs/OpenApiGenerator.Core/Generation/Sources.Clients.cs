@@ -20,6 +20,8 @@ namespace {endPoint.Namespace}
     {(endPoint.Summary + "\nIf no httpClient is provided, a new one will be created.\nIf no baseUri is provided, the default baseUri from OpenAPI spec will be used.").ToXmlDocumentationSummary()}
     public sealed partial class {endPoint.ClassName} : global::System.IDisposable
     {{
+        public const string BaseUrl = ""{endPoint.BaseUrl}"";
+
         private readonly global::System.Net.Http.HttpClient _httpClient;
 {(hasOptions ? $@" 
         private readonly {serializer.GetOptionsType()} _jsonSerializerOptions;" : " ")}
@@ -43,7 +45,7 @@ namespace {endPoint.Namespace}
             )
         {{
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
-            _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(""{endPoint.BaseUrl}"");
+            _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
 {(hasOptions ? $@" 
             _jsonSerializerOptions = _jsonSerializerOptions ?? {(endPoint.Id == "MainConstructor" ? serializer.CreateDefaultSettings(endPoint.Converters) : $"new {serializer.GetOptionsType()}()")};" : " ")}
         }}

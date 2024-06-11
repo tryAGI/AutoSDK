@@ -11,6 +11,8 @@ namespace G
     /// </summary>
     public sealed partial class BatchClient : global::System.IDisposable
     {
+        public const string BaseUrl = "https://api.openai.com/v1";
+
         private readonly global::System.Net.Http.HttpClient _httpClient;
         private readonly global::Newtonsoft.Json.JsonSerializerSettings _jsonSerializerOptions;
 
@@ -29,7 +31,7 @@ namespace G
             )
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
-            _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri("https://api.openai.com/v1");
+            _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
             _jsonSerializerOptions = _jsonSerializerOptions ?? new global::Newtonsoft.Json.JsonSerializerSettings();
         }
 

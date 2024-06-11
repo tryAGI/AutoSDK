@@ -11,6 +11,8 @@ namespace G
     /// </summary>
     public sealed partial class AbuseClient : global::System.IDisposable
     {
+        public const string BaseUrl = "https://ipinfo.io/";
+
         private readonly global::System.Net.Http.HttpClient _httpClient;
         private readonly global::System.Text.Json.JsonSerializerOptions _jsonSerializerOptions;
 
@@ -29,7 +31,7 @@ namespace G
             )
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
-            _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri("https://ipinfo.io/");
+            _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
             _jsonSerializerOptions = _jsonSerializerOptions ?? new global::System.Text.Json.JsonSerializerOptions();
         }
 

@@ -19,6 +19,8 @@ namespace G
     /// </summary>
     public sealed partial class Api : global::System.IDisposable
     {
+        public const string BaseUrl = "https://api.twitch.tv/helix";
+
         private readonly global::System.Net.Http.HttpClient _httpClient;
         private readonly global::System.Text.Json.JsonSerializerOptions _jsonSerializerOptions;
 
@@ -187,7 +189,7 @@ namespace G
             )
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
-            _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri("https://api.twitch.tv/helix");
+            _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
             _jsonSerializerOptions = _jsonSerializerOptions ?? new global::System.Text.Json.JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true,
