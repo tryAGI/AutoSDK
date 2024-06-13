@@ -28,15 +28,15 @@ namespace G
         public global::G.CreateSpeechRequestVoice Voice { get; set; } = default!;
 
         /// <summary>
-        /// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.
-        /// <br/>Default Value: mp3
+        /// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.<br/>
+        /// Default Value: mp3
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
         public global::G.CreateSpeechRequestResponseFormat? ResponseFormat { get; set; } = global::G.CreateSpeechRequestResponseFormat.Mp3;
 
         /// <summary>
-        /// The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default.
-        /// <br/>Default Value: 1
+        /// The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default.<br/>
+        /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("speed")]
         public double Speed { get; set; } = 1;

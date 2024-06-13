@@ -10,10 +10,10 @@ namespace G
     public sealed partial class CreateEventSubSubscriptionBodyTransport
     {
         /// <summary>
-        /// The transport method. Possible values are:  
-        ///   
-        /// * webhook
-        /// * websocket
+        /// The transport method. Possible values are:  <br/>
+        ///   <br/>
+        /// * webhook<br/>
+        /// * websocket<br/>
         /// * conduit
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("method")]
@@ -22,7 +22,7 @@ namespace G
         public required global::G.CreateEventSubSubscriptionBodyTransportMethod Method { get; set; }
 
         /// <summary>
-        /// The callback URL where the notifications are sent. The URL must use the HTTPS protocol and port 443\. See [Processing an event](https://dev.twitch.tv/docs/eventsub/handling-webhook-events#processing-an-event). Specify this field only if `method` is set to **webhook**.
+        /// The callback URL where the notifications are sent. The URL must use the HTTPS protocol and port 443\. See [Processing an event](https://dev.twitch.tv/docs/eventsub/handling-webhook-events#processing-an-event). Specify this field only if `method` is set to **webhook**.<br/>
         /// **NOTE**: Redirects are not followed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("callback")]

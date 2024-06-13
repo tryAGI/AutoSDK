@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// IP Ranges API.
-    /// If no httpClient is provided, a new one will be created.
+    /// IP Ranges API.<br/>
+    /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
     public sealed partial class RangesClient : global::System.IDisposable

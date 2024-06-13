@@ -7,6 +7,7 @@ namespace G
     public partial class PrivacyDetectionClient
     {
         /// <summary>
+        /// Returns privacy information about the selected IP.<br/>
         /// Returns privacy information about the selected IP.
         /// </summary>
         /// <param name="ip"></param>

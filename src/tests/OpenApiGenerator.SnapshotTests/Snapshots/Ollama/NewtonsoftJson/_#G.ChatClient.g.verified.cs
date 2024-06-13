@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Given a list of messages comprising a conversation, the model will return a response.
-    /// If no httpClient is provided, a new one will be created.
+    /// Given a list of messages comprising a conversation, the model will return a response.<br/>
+    /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
     public sealed partial class ChatClient : global::System.IDisposable

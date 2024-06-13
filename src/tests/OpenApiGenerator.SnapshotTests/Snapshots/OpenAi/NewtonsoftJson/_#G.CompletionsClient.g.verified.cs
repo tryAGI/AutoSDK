@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Given a prompt, the model will return one or more predicted completions, and can also return the probabilities of alternative tokens at each position.
-    /// If no httpClient is provided, a new one will be created.
+    /// Given a prompt, the model will return one or more predicted completions, and can also return the probabilities of alternative tokens at each position.<br/>
+    /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
     public sealed partial class CompletionsClient : global::System.IDisposable

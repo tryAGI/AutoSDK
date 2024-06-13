@@ -10,25 +10,25 @@ namespace G
     public sealed partial class CreateFineTuningJobRequestHyperparameters
     {
         /// <summary>
-        /// Number of examples in each batch. A larger batch size means that model parameters
-        /// are updated less frequently, but with lower variance.
-        /// <br/>Default Value: auto
+        /// Number of examples in each batch. A larger batch size means that model parameters<br/>
+        /// are updated less frequently, but with lower variance.<br/>
+        /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("batch_size")]
         public global::System.OneOf<global::G.CreateFineTuningJobRequestHyperparametersBatchSize?, int> BatchSize { get; set; } = global::G.CreateFineTuningJobRequestHyperparametersBatchSize.Auto;
 
         /// <summary>
-        /// Scaling factor for the learning rate. A smaller learning rate may be useful to avoid
-        /// overfitting.
-        /// <br/>Default Value: auto
+        /// Scaling factor for the learning rate. A smaller learning rate may be useful to avoid<br/>
+        /// overfitting.<br/>
+        /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("learning_rate_multiplier")]
         public global::System.OneOf<global::G.CreateFineTuningJobRequestHyperparametersLearningRateMultiplier?, double> LearningRateMultiplier { get; set; } = global::G.CreateFineTuningJobRequestHyperparametersLearningRateMultiplier.Auto;
 
         /// <summary>
-        /// The number of epochs to train the model for. An epoch refers to one full cycle
-        /// through the training dataset.
-        /// <br/>Default Value: auto
+        /// The number of epochs to train the model for. An epoch refers to one full cycle<br/>
+        /// through the training dataset.<br/>
+        /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("n_epochs")]
         public global::System.OneOf<global::G.CreateFineTuningJobRequestHyperparametersNEpochs?, int> NEpochs { get; set; } = global::G.CreateFineTuningJobRequestHyperparametersNEpochs.Auto;

@@ -7,7 +7,11 @@ namespace G
     public partial class ChatClient
     {
         /// <summary>
-        /// NEW Retrieves emotes available to the user across all channels.
+        /// NEW Retrieves emotes available to the user across all channels.<br/>
+        /// NEW Retrieves emotes available to the user across all channels.<br/>
+        /// __Authorization:__<br/>
+        /// * Requires a user access token that includes the **user:read:emotes** scope.<br/>
+        /// * Query parameter `user_id` must match the `user_id` in the user access token.
         /// </summary>
         /// <param name="userId"></param>
         /// <param name="broadcasterId"></param>

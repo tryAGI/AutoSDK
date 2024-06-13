@@ -7,7 +7,11 @@ namespace G
     public partial class ModerationClient
     {
         /// <summary>
-        /// NEW Resolves an unban request by approving or denying it.
+        /// NEW Resolves an unban request by approving or denying it.<br/>
+        /// NEW Resolves an unban request by approving or denying it.<br/>
+        /// __Authorization:__<br/>
+        /// * Requires a user access token that includes the **moderator:manage:unban\\\_requests** scope.<br/>
+        /// * Query parameter `moderator_id` must match the `user_id` in the[user access token](https://dev.twitch.tv/docs/authentication/#user-access-tokens).
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>

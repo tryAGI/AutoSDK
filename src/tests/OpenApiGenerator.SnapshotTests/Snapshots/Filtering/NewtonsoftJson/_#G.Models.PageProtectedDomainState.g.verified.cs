@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The state if the domain is verified
-    /// <br/>Example: pending
+    /// The state if the domain is verified<br/>
+    /// Example: pending
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum PageProtectedDomainState

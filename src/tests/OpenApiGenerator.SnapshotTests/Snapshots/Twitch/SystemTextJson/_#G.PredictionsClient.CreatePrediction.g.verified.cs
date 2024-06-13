@@ -7,7 +7,11 @@ namespace G
     public partial class PredictionsClient
     {
         /// <summary>
-        /// Create a Channel Points Prediction.
+        /// Create a Channel Points Prediction.<br/>
+        /// Creates a Channel Points Prediction.<br/>
+        /// With a Channel Points Prediction, the broadcaster poses a question and viewers try to predict the outcome. The prediction runs as soon as it’s created. The broadcaster may run only one prediction at a time.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:predictions** scope.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -40,7 +44,11 @@ namespace G
         }
 
         /// <summary>
-        /// Create a Channel Points Prediction.
+        /// Create a Channel Points Prediction.<br/>
+        /// Creates a Channel Points Prediction.<br/>
+        /// With a Channel Points Prediction, the broadcaster poses a question and viewers try to predict the outcome. The prediction runs as soon as it’s created. The broadcaster may run only one prediction at a time.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:predictions** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="title"></param>

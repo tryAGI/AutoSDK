@@ -10,19 +10,19 @@ namespace G
     public sealed partial class DomainsResponse
     {
         /// <summary>
-        /// <br/>Example: 1.1.1.1
+        /// Example: 1.1.1.1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ip")]
         public string? Ip { get; set; }
 
         /// <summary>
-        /// <br/>Example: 1
+        /// Example: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page")]
         public int Page { get; set; }
 
         /// <summary>
-        /// <br/>Example: 17939
+        /// Example: 17939
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total")]
         [global::System.Text.Json.Serialization.JsonRequired]

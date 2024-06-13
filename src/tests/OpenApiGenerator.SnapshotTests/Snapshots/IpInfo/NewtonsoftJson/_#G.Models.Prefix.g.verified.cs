@@ -10,43 +10,43 @@ namespace G
     public sealed partial class Prefix
     {
         /// <summary>
-        /// <br/>Example: 104.69.216.0/22
+        /// Example: 104.69.216.0/22
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("netblock", Required = global::Newtonsoft.Json.Required.Always)]
         public string Netblock { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: AKAMAI
+        /// Example: AKAMAI
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public string Id { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: Akamai Technologies, Inc.
+        /// Example: Akamai Technologies, Inc.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: US
+        /// Example: US
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("country", Required = global::Newtonsoft.Json.Required.Always)]
         public string Country { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 256
+        /// Example: 256
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size")]
         public string? Size { get; set; }
 
         /// <summary>
-        /// <br/>Example: ALLOCATION
+        /// Example: ALLOCATION
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
         public string? Status { get; set; }
 
         /// <summary>
-        /// <br/>Example: quadranet.com
+        /// Example: quadranet.com
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("domain")]
         public string? Domain { get; set; }

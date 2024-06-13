@@ -7,7 +7,33 @@ namespace G
     public partial class Api
     {
         /// <summary>
-        /// Create a model
+        /// Create a model<br/>
+        /// Create a model.<br/>
+        /// Example cURL request:<br/>
+        /// ```console<br/>
+        /// curl -s -X POST \<br/>
+        ///   -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \<br/>
+        ///   -H 'Content-Type: application/json' \<br/>
+        ///   -d '{"owner": "alice", "name": "my-model", "description": "An example model", "visibility": "public", "hardware": "cpu"}' \<br/>
+        ///   https://api.replicate.com/v1/models<br/>
+        /// ```<br/>
+        /// The response will be a model object in the following format:<br/>
+        /// ```json<br/>
+        /// {<br/>
+        ///   "url": "https://replicate.com/alice/my-model",<br/>
+        ///   "owner": "alice",<br/>
+        ///   "name": "my-model",<br/>
+        ///   "description": "An example model",<br/>
+        ///   "visibility": "public",<br/>
+        ///   "github_url": null,<br/>
+        ///   "paper_url": null,<br/>
+        ///   "license_url": null,<br/>
+        ///   "run_count": 0,<br/>
+        ///   "cover_image_url": null,<br/>
+        ///   "default_example": null,<br/>
+        ///   "latest_version": null,<br/>
+        /// }<br/>
+        /// ```
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -34,7 +60,33 @@ namespace G
         }
 
         /// <summary>
-        /// Create a model
+        /// Create a model<br/>
+        /// Create a model.<br/>
+        /// Example cURL request:<br/>
+        /// ```console<br/>
+        /// curl -s -X POST \<br/>
+        ///   -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \<br/>
+        ///   -H 'Content-Type: application/json' \<br/>
+        ///   -d '{"owner": "alice", "name": "my-model", "description": "An example model", "visibility": "public", "hardware": "cpu"}' \<br/>
+        ///   https://api.replicate.com/v1/models<br/>
+        /// ```<br/>
+        /// The response will be a model object in the following format:<br/>
+        /// ```json<br/>
+        /// {<br/>
+        ///   "url": "https://replicate.com/alice/my-model",<br/>
+        ///   "owner": "alice",<br/>
+        ///   "name": "my-model",<br/>
+        ///   "description": "An example model",<br/>
+        ///   "visibility": "public",<br/>
+        ///   "github_url": null,<br/>
+        ///   "paper_url": null,<br/>
+        ///   "license_url": null,<br/>
+        ///   "run_count": 0,<br/>
+        ///   "cover_image_url": null,<br/>
+        ///   "default_example": null,<br/>
+        ///   "latest_version": null,<br/>
+        /// }<br/>
+        /// ```
         /// </summary>
         /// <param name="coverImageUrl"></param>
         /// <param name="description"></param>

@@ -7,6 +7,7 @@ namespace G
     public partial class SingleClient
     {
         /// <summary>
+        /// Returns a timezone for the selected IP.<br/>
         /// Returns a timezone for the selected IP.
         /// </summary>
         /// <param name="ip"></param>

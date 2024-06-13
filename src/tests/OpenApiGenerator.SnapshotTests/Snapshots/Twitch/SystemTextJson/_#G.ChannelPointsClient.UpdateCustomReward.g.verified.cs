@@ -7,7 +7,12 @@ namespace G
     public partial class ChannelPointsClient
     {
         /// <summary>
-        /// Updates a custom reward.
+        /// Updates a custom reward.<br/>
+        /// Updates a custom reward. The app used to create the reward is the only app that may update the reward.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/api/authentication#user-access-tokens) that includes the **channel:manage:redemptions** scope.<br/>
+        /// __Request Body:__<br/>
+        /// The body of the request should contain only the fields you’re updating.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="id"></param>
@@ -44,7 +49,12 @@ namespace G
         }
 
         /// <summary>
-        /// Updates a custom reward.
+        /// Updates a custom reward.<br/>
+        /// Updates a custom reward. The app used to create the reward is the only app that may update the reward.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/api/authentication#user-access-tokens) that includes the **channel:manage:redemptions** scope.<br/>
+        /// __Request Body:__<br/>
+        /// The body of the request should contain only the fields you’re updating.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="id"></param>

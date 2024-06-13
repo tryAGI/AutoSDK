@@ -5,9 +5,9 @@
 namespace G
 {
     /// <summary>
-    /// The entitlement’s fulfillment status. Possible values are:   
-    ///   
-    /// * CLAIMED
+    /// The entitlement’s fulfillment status. Possible values are:   <br/>
+    ///   <br/>
+    /// * CLAIMED<br/>
     /// * FULFILLED
     /// </summary>
     public enum DropsEntitlementFulfillmentStatus

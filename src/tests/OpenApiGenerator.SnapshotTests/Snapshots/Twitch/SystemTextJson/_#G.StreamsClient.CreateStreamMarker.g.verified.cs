@@ -7,7 +7,15 @@ namespace G
     public partial class StreamsClient
     {
         /// <summary>
-        /// Adds a marker to a live stream.
+        /// Adds a marker to a live stream.<br/>
+        /// Adds a marker to a live stream. A marker is an arbitrary point in a live stream that the broadcaster or editor wants to mark, so they can return to that spot later to create video highlights (see Video Producer, Highlights in the Twitch UX).<br/>
+        /// You may not add markers:<br/>
+        /// * If the stream is not live<br/>
+        /// * If the stream has not enabled video on demand (VOD)<br/>
+        /// * If the stream is a premiere (a live, first-viewing event that combines uploaded videos with live chat)<br/>
+        /// * If the stream is a rerun of a past broadcast, including past premieres.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:broadcast** scope.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -40,7 +48,15 @@ namespace G
         }
 
         /// <summary>
-        /// Adds a marker to a live stream.
+        /// Adds a marker to a live stream.<br/>
+        /// Adds a marker to a live stream. A marker is an arbitrary point in a live stream that the broadcaster or editor wants to mark, so they can return to that spot later to create video highlights (see Video Producer, Highlights in the Twitch UX).<br/>
+        /// You may not add markers:<br/>
+        /// * If the stream is not live<br/>
+        /// * If the stream has not enabled video on demand (VOD)<br/>
+        /// * If the stream is a premiere (a live, first-viewing event that combines uploaded videos with live chat)<br/>
+        /// * If the stream is a rerun of a past broadcast, including past premieres.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:broadcast** scope.
         /// </summary>
         /// <param name="userId"></param>
         /// <param name="description"></param>

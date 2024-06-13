@@ -5,9 +5,9 @@
 namespace G
 {
     /// <summary>
-    /// The quality of the image that will be generated. `hd` creates images with finer details and greater consistency across the image. This param is only supported for `dall-e-3`.
-    /// <br/>Default Value: standard
-    /// <br/>Example: standard
+    /// The quality of the image that will be generated. `hd` creates images with finer details and greater consistency across the image. This param is only supported for `dall-e-3`.<br/>
+    /// Default Value: standard<br/>
+    /// Example: standard
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum CreateImageRequestQuality

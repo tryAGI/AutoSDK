@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Get a vector representation of a given input.
-    /// If no httpClient is provided, a new one will be created.
+    /// Get a vector representation of a given input.<br/>
+    /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
     public sealed partial class EmbeddingsClient : global::System.IDisposable

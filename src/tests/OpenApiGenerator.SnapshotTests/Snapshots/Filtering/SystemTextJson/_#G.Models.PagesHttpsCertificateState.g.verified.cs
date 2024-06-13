@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Example: approved
+    /// Example: approved
     /// </summary>
     public enum PagesHttpsCertificateState
     {

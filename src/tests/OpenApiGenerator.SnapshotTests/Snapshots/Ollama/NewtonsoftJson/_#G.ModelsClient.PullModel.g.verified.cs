@@ -7,7 +7,8 @@ namespace G
     public partial class ModelsClient
     {
         /// <summary>
-        /// Download a model from the ollama library.
+        /// Download a model from the ollama library.<br/>
+        /// Cancelled pulls are resumed from where they left off, and multiple calls will share the same download progress.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -46,7 +47,8 @@ namespace G
         }
 
         /// <summary>
-        /// Download a model from the ollama library.
+        /// Download a model from the ollama library.<br/>
+        /// Cancelled pulls are resumed from where they left off, and multiple calls will share the same download progress.
         /// </summary>
         /// <param name="model"></param>
         /// <param name="insecure"></param>

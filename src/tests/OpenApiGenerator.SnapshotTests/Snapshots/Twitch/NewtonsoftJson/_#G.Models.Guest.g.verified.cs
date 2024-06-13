@@ -10,11 +10,11 @@ namespace G
     public sealed partial class Guest
     {
         /// <summary>
-        /// ID representing this guest’s slot assignment.   
-        ///   
-        /// * Host is always in slot "0"
-        /// * Guests are assigned the following consecutive IDs (e.g, "1", "2", "3", etc)
-        /// * Screen Share is represented as a special guest with the ID "SCREENSHARE"
+        /// ID representing this guest’s slot assignment.   <br/>
+        ///   <br/>
+        /// * Host is always in slot "0"<br/>
+        /// * Guests are assigned the following consecutive IDs (e.g, "1", "2", "3", etc)<br/>
+        /// * Screen Share is represented as a special guest with the ID "SCREENSHARE"<br/>
         /// * The identifier here matches the ID referenced in browser source links used in broadcasting software.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("slot_id", Required = global::Newtonsoft.Json.Required.Always)]

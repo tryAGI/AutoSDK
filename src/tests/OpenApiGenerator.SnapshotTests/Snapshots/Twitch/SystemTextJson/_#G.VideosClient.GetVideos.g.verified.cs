@@ -8,7 +8,11 @@ namespace G
     public partial class VideosClient
     {
         /// <summary>
-        /// Gets information about one or more published videos.
+        /// Gets information about one or more published videos.<br/>
+        /// Gets information about one or more published videos. You may get videos by ID, by user, or by game/category.<br/>
+        /// You may apply several filters to get a subset of the videos. The filters are applied as an AND operation to each video. For example, if _language_ is set to ‘de’ and _game\_id_ is set to 21779, the response includes only videos that show playing League of Legends by users that stream in German. The filters apply only if you get videos by user ID or game ID.<br/>
+        /// __Authorization:__<br/>
+        /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).
         /// </summary>
         /// <param name="id"></param>
         /// <param name="userId"></param>

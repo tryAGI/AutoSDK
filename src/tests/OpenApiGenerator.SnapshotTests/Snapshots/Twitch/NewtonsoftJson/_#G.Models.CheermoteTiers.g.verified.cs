@@ -16,14 +16,14 @@ namespace G
         public int MinBits { get; set; } = default!;
 
         /// <summary>
-        /// The tier level. Possible tiers are:  
-        ///   
-        /// * 1
-        /// * 100
-        /// * 500
-        /// * 1000
-        /// * 5000
-        /// * 10000
+        /// The tier level. Possible tiers are:  <br/>
+        ///   <br/>
+        /// * 1<br/>
+        /// * 100<br/>
+        /// * 500<br/>
+        /// * 1000<br/>
+        /// * 5000<br/>
+        /// * 10000<br/>
         /// * 100000
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]

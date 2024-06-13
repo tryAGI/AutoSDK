@@ -7,7 +7,10 @@ namespace G
     public partial class TeamsClient
     {
         /// <summary>
-        /// Gets the list of Twitch teams that the broadcaster is a member of.
+        /// Gets the list of Twitch teams that the broadcaster is a member of.<br/>
+        /// Gets the list of Twitch teams that the broadcaster is a member of.<br/>
+        /// __Authorization:__<br/>
+        /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

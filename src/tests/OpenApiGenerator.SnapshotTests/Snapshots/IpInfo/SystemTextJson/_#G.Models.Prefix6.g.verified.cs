@@ -10,47 +10,47 @@ namespace G
     public sealed partial class Prefix6
     {
         /// <summary>
-        /// <br/>Example: 2601::/20
+        /// Example: 2601::/20
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("netblock")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Netblock { get; set; }
 
         /// <summary>
-        /// <br/>Example: COMCAST6NET
+        /// Example: COMCAST6NET
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// <br/>Example: Comcast Cable Communications, LLC
+        /// Example: Comcast Cable Communications, LLC
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// <br/>Example: US
+        /// Example: US
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("country")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Country { get; set; }
 
         /// <summary>
-        /// <br/>Example: 20282409603651670423947251286016
+        /// Example: 20282409603651670423947251286016
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
         public string? Size { get; set; }
 
         /// <summary>
-        /// <br/>Example: ASSIGNMENT
+        /// Example: ASSIGNMENT
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         public string? Status { get; set; }
 
         /// <summary>
-        /// <br/>Example: comcast.com
+        /// Example: comcast.com
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("domain")]
         public string? Domain { get; set; }

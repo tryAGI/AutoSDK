@@ -115,8 +115,8 @@ namespace G
         public required float Duration { get; set; }
 
         /// <summary>
-        /// The zero-based offset, in seconds, to where the clip starts in the video (VOD). Is **null** if the video is not available or hasn’t been created yet from the live stream (see `video_id`).  
-        ///   
+        /// The zero-based offset, in seconds, to where the clip starts in the video (VOD). Is **null** if the video is not available or hasn’t been created yet from the live stream (see `video_id`).  <br/>
+        ///   <br/>
         /// Note that there’s a delay between when a clip is created during a broadcast and when the offset is set. During the delay period, `vod_offset` is **null**. The delay is indeterminant but is typically minutes long.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vod_offset")]

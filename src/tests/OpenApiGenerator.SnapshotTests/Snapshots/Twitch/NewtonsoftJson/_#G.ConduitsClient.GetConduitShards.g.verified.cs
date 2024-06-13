@@ -7,7 +7,10 @@ namespace G
     public partial class ConduitsClient
     {
         /// <summary>
-        /// NEW Gets a lists of all shards for a conduit.
+        /// NEW Gets a lists of all shards for a conduit.<br/>
+        /// NEW Gets a lists of all shards for a [conduit](https://dev.twitch.tv/docs/eventsub/handling-conduit-events).<br/>
+        /// __Authorization:__<br/>
+        /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).
         /// </summary>
         /// <param name="conduitId"></param>
         /// <param name="status"></param>

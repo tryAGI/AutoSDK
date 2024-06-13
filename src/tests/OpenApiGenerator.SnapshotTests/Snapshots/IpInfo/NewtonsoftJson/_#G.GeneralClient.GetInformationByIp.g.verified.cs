@@ -7,6 +7,7 @@ namespace G
     public partial class GeneralClient
     {
         /// <summary>
+        /// Returns information about the selected IP.<br/>
         /// Returns information about the selected IP.
         /// </summary>
         /// <param name="ip"></param>

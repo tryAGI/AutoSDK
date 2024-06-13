@@ -10,37 +10,37 @@ namespace G
     public sealed partial class PrivacyResponse
     {
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vpn", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Vpn { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: false
+        /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("proxy", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Proxy { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: false
+        /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tor", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Tor { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: false
+        /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("hosting", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Hosting { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: false
+        /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("relay", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Relay { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("service", Required = global::Newtonsoft.Json.Required.Always)]
         public string Service { get; set; } = default!;

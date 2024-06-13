@@ -17,14 +17,14 @@ namespace G
         public required string Id { get; set; }
 
         /// <summary>
-        /// The error that occurred while updating the shard. Possible errors:  
-        ///   
-        /// * The length of the string in the secret field is not valid.
-        /// * The URL in the transport's callback field is not valid. The URL must use the HTTPS protocol and the 443 port number.
-        /// * The value specified in the method field is not valid.
-        /// * The callback field is required if you specify the webhook transport method.
-        /// * The session\_id field is required if you specify the WebSocket transport method.
-        /// * The websocket session is not connected.
+        /// The error that occurred while updating the shard. Possible errors:  <br/>
+        ///   <br/>
+        /// * The length of the string in the secret field is not valid.<br/>
+        /// * The URL in the transport's callback field is not valid. The URL must use the HTTPS protocol and the 443 port number.<br/>
+        /// * The value specified in the method field is not valid.<br/>
+        /// * The callback field is required if you specify the webhook transport method.<br/>
+        /// * The session\_id field is required if you specify the WebSocket transport method.<br/>
+        /// * The websocket session is not connected.<br/>
         /// * The shard id is outside of the conduit’s range.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]

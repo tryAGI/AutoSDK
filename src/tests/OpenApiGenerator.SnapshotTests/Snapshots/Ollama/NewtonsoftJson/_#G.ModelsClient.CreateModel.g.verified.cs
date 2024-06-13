@@ -7,7 +7,8 @@ namespace G
     public partial class ModelsClient
     {
         /// <summary>
-        /// Create a model from a Modelfile.
+        /// Create a model from a Modelfile.<br/>
+        /// It is recommended to set `modelfile` to the content of the Modelfile rather than just set `path`. This is a requirement for remote create. Remote model creation should also create any file blobs, fields such as `FROM` and `ADAPTER`, explicitly with the server using Create a Blob and the value to the path indicated in the response.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -46,7 +47,8 @@ namespace G
         }
 
         /// <summary>
-        /// Create a model from a Modelfile.
+        /// Create a model from a Modelfile.<br/>
+        /// It is recommended to set `modelfile` to the content of the Modelfile rather than just set `path`. This is a requirement for remote create. Remote model creation should also create any file blobs, fields such as `FROM` and `ADAPTER`, explicitly with the server using Create a Blob and the value to the path indicated in the response.
         /// </summary>
         /// <param name="model"></param>
         /// <param name="modelfile"></param>

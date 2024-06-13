@@ -10,16 +10,16 @@ namespace G
     public sealed partial class CopyModelRequest
     {
         /// <summary>
-        /// Name of the model to copy.
-        /// <br/>Example: llama2:7b
+        /// Name of the model to copy.<br/>
+        /// Example: llama2:7b
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Source { get; set; }
 
         /// <summary>
-        /// Name of the new model.
-        /// <br/>Example: llama2-backup
+        /// Name of the new model.<br/>
+        /// Example: llama2-backup
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("destination")]
         [global::System.Text.Json.Serialization.JsonRequired]

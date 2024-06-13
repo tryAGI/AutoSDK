@@ -22,10 +22,10 @@ namespace G
         public global::System.DateTime InvitedAt { get; set; } = default!;
 
         /// <summary>
-        /// Status representing the invited user’s join state. Can be one of the following:   
-        ///   
-        /// * `INVITED`: The user has been invited to the session but has not acknowledged it.
-        /// * `ACCEPTED`: The invited user has acknowledged the invite and joined the waiting room, but may still be setting up their media devices or otherwise preparing to join the call.
+        /// Status representing the invited user’s join state. Can be one of the following:   <br/>
+        ///   <br/>
+        /// * `INVITED`: The user has been invited to the session but has not acknowledged it.<br/>
+        /// * `ACCEPTED`: The invited user has acknowledged the invite and joined the waiting room, but may still be setting up their media devices or otherwise preparing to join the call.<br/>
         /// * `READY`: The invited user has signaled they are ready to join the call from the waiting room.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]

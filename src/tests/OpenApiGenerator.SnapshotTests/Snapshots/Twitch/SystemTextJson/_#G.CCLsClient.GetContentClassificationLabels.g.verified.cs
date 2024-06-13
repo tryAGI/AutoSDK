@@ -7,7 +7,10 @@ namespace G
     public partial class CCLsClient
     {
         /// <summary>
-        /// Gets information about Twitch content classification labels.
+        /// Gets information about Twitch content classification labels.<br/>
+        /// Gets information about Twitch content classification labels.<br/>
+        /// __Authorization:__<br/>
+        /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).
         /// </summary>
         /// <param name="locale"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

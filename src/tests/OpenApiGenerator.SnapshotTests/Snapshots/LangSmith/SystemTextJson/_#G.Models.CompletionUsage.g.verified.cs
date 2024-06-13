@@ -10,19 +10,19 @@ namespace G
     public sealed partial class CompletionUsage
     {
         /// <summary>
-        /// <br/>Default Value: 0
+        /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens")]
         public int PromptTokens { get; set; } = 0;
 
         /// <summary>
-        /// <br/>Default Value: 0
+        /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens")]
         public int CompletionTokens { get; set; } = 0;
 
         /// <summary>
-        /// <br/>Default Value: 0
+        /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
         public int TotalTokens { get; set; } = 0;

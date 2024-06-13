@@ -7,7 +7,11 @@ namespace G
     public partial class GuestStarClient
     {
         /// <summary>
-        /// BETA Programmatically creates a Guest Star session on behalf of the broadcaster.
+        /// BETA Programmatically creates a Guest Star session on behalf of the broadcaster.<br/>
+        /// BETA Programmatically creates a Guest Star session on behalf of the broadcaster. Requires the broadcaster to be present in the call interface, or the call will be ended automatically.<br/>
+        /// __Authorization:__<br/>
+        /// * Query parameter `broadcaster_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)<br/>
+        /// * Requires OAuth Scope: `channel:manage:guest_star`
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

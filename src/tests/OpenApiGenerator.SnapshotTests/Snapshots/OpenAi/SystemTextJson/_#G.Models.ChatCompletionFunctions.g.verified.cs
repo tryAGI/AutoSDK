@@ -26,7 +26,7 @@ namespace G
         public required string Name { get; set; }
 
         /// <summary>
-        /// The parameters the functions accepts, described as a JSON Schema object. See the [guide](/docs/guides/text-generation/function-calling) for examples, and the [JSON Schema reference](https://json-schema.org/understanding-json-schema/) for documentation about the format. 
+        /// The parameters the functions accepts, described as a JSON Schema object. See the [guide](/docs/guides/text-generation/function-calling) for examples, and the [JSON Schema reference](https://json-schema.org/understanding-json-schema/) for documentation about the format. <br/>
         /// Omitting `parameters` defines a function with an empty parameter list.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]

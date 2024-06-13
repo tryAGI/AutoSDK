@@ -24,8 +24,8 @@ namespace G
         public required bool BitsEnabled { get; set; }
 
         /// <summary>
-        /// A Boolean value that determines whether a user can install the extension on their channel. Is **true** if a user can install the extension.  
-        ///   
+        /// A Boolean value that determines whether a user can install the extension on their channel. Is **true** if a user can install the extension.  <br/>
+        ///   <br/>
         /// Typically, this is set to **false** if the extension is currently in testing mode and requires users to be allowlisted (the allowlist is configured on Twitch’s [developer site](https://dev.twitch.tv/console/extensions) under the **Extensions** \-&gt; **Extension** \-&gt; **Version** \-&gt; **Access**).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_install")]
@@ -33,10 +33,10 @@ namespace G
         public required bool CanInstall { get; set; }
 
         /// <summary>
-        /// The location of where the extension’s configuration is stored. Possible values are:  
-        ///   
-        /// * hosted — The Extensions Configuration Service hosts the configuration.
-        /// * custom — The Extension Backend Service (EBS) hosts the configuration.
+        /// The location of where the extension’s configuration is stored. Possible values are:  <br/>
+        ///   <br/>
+        /// * hosted — The Extensions Configuration Service hosts the configuration.<br/>
+        /// * custom — The Extension Backend Service (EBS) hosts the configuration.<br/>
         /// * none — The extension doesn't require configuration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("configuration_location")]
@@ -115,16 +115,16 @@ namespace G
         public required global::System.Collections.Generic.IList<string> ScreenshotUrls { get; set; }
 
         /// <summary>
-        /// The extension’s state. Possible values are:  
-        ///   
-        /// * Approved
-        /// * AssetsUploaded
-        /// * Deleted
-        /// * Deprecated
-        /// * InReview
-        /// * InTest
-        /// * PendingAction
-        /// * Rejected
+        /// The extension’s state. Possible values are:  <br/>
+        ///   <br/>
+        /// * Approved<br/>
+        /// * AssetsUploaded<br/>
+        /// * Deleted<br/>
+        /// * Deprecated<br/>
+        /// * InReview<br/>
+        /// * InTest<br/>
+        /// * PendingAction<br/>
+        /// * Rejected<br/>
         /// * Released
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
@@ -133,9 +133,9 @@ namespace G
         public required global::G.ExtensionState State { get; set; }
 
         /// <summary>
-        /// Indicates whether the extension can view the user’s subscription level on the channel that the extension is installed on. Possible values are:  
-        ///   
-        /// * none — The extension can't view the user’s subscription level.
+        /// Indicates whether the extension can view the user’s subscription level on the channel that the extension is installed on. Possible values are:  <br/>
+        ///   <br/>
+        /// * none — The extension can't view the user’s subscription level.<br/>
         /// * optional — The extension can view the user’s subscription level.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("subscriptions_support_level")]

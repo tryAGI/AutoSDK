@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The default value for a merge commit title.
-    /// - `PR_TITLE` - default to the pull request's title.
+    /// The default value for a merge commit title.<br/>
+    /// - `PR_TITLE` - default to the pull request's title.<br/>
     /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
     /// </summary>
     public enum RepositoryMergeCommitTitle

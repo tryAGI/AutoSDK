@@ -10,55 +10,55 @@ namespace G
     public sealed partial class AsnResponse
     {
         /// <summary>
-        /// <br/>Example: AS10507
+        /// Example: AS10507
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("asn", Required = global::Newtonsoft.Json.Required.Always)]
         public string Asn { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: Sprint Personal Communications Systems
+        /// Example: Sprint Personal Communications Systems
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: US
+        /// Example: US
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("country")]
         public string? Country { get; set; }
 
         /// <summary>
-        /// <br/>Example: 1997-02-14
+        /// Example: 1997-02-14
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allocated")]
         public string? Allocated { get; set; }
 
         /// <summary>
-        /// <br/>Example: arin
+        /// Example: arin
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("registry")]
         public string? Registry { get; set; }
 
         /// <summary>
-        /// <br/>Example: sprint.net
+        /// Example: sprint.net
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("domain", Required = global::Newtonsoft.Json.Required.Always)]
         public string Domain { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 71224576
+        /// Example: 71224576
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_ips")]
         public int NumIps { get; set; }
 
         /// <summary>
-        /// <br/>Example: 66.87.125.0/24
+        /// Example: 66.87.125.0/24
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("route")]
         public string? Route { get; set; }
 
         /// <summary>
-        /// <br/>Example: isp
+        /// Example: isp
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.AsnResponseType Type { get; set; } = default!;

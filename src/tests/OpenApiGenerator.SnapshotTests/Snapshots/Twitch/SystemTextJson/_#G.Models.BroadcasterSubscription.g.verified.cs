@@ -66,10 +66,10 @@ namespace G
         public required string PlanName { get; set; }
 
         /// <summary>
-        /// The type of subscription. Possible values are:  
-        ///   
-        /// * 1000 — Tier 1
-        /// * 2000 — Tier 2
+        /// The type of subscription. Possible values are:  <br/>
+        ///   <br/>
+        /// * 1000 — Tier 1<br/>
+        /// * 2000 — Tier 2<br/>
         /// * 3000 — Tier 3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tier")]

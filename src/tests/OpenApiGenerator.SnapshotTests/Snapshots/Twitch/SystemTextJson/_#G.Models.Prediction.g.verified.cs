@@ -66,11 +66,11 @@ namespace G
         public required int PredictionWindow { get; set; }
 
         /// <summary>
-        /// The prediction’s status. Valid values are:  
-        ///   
-        /// * ACTIVE — The Prediction is running and viewers can make predictions.
-        /// * CANCELED — The broadcaster canceled the Prediction and refunded the Channel Points to the participants.
-        /// * LOCKED — The broadcaster locked the Prediction, which means viewers can no longer make predictions.
+        /// The prediction’s status. Valid values are:  <br/>
+        ///   <br/>
+        /// * ACTIVE — The Prediction is running and viewers can make predictions.<br/>
+        /// * CANCELED — The broadcaster canceled the Prediction and refunded the Channel Points to the participants.<br/>
+        /// * LOCKED — The broadcaster locked the Prediction, which means viewers can no longer make predictions.<br/>
         /// * RESOLVED — The winning outcome was determined and the Channel Points were distributed to the viewers who predicted the correct outcome.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]

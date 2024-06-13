@@ -7,7 +7,10 @@ namespace G
     public partial class PredictionsClient
     {
         /// <summary>
-        /// Locks, resolves, or cancels a Channel Points Prediction.
+        /// Locks, resolves, or cancels a Channel Points Prediction.<br/>
+        /// Locks, resolves, or cancels a Channel Points Prediction.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:predictions** scope.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -40,7 +43,10 @@ namespace G
         }
 
         /// <summary>
-        /// Locks, resolves, or cancels a Channel Points Prediction.
+        /// Locks, resolves, or cancels a Channel Points Prediction.<br/>
+        /// Locks, resolves, or cancels a Channel Points Prediction.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:predictions** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="id"></param>

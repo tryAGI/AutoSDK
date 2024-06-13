@@ -7,7 +7,11 @@ namespace G
     public partial class GuestStarClient
     {
         /// <summary>
-        /// BETA Mutates the channel settings for configuration of the Guest Star feature for a particular host.
+        /// BETA Mutates the channel settings for configuration of the Guest Star feature for a particular host.<br/>
+        /// BETA Mutates the channel settings for configuration of the Guest Star feature for a particular host.<br/>
+        /// __Authorization:__<br/>
+        /// * Query parameter `broadcaster_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)<br/>
+        /// * Requires OAuth Scope: `channel:manage:guest_star`
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="request"></param>
@@ -36,7 +40,11 @@ namespace G
         }
 
         /// <summary>
-        /// BETA Mutates the channel settings for configuration of the Guest Star feature for a particular host.
+        /// BETA Mutates the channel settings for configuration of the Guest Star feature for a particular host.<br/>
+        /// BETA Mutates the channel settings for configuration of the Guest Star feature for a particular host.<br/>
+        /// __Authorization:__<br/>
+        /// * Query parameter `broadcaster_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)<br/>
+        /// * Requires OAuth Scope: `channel:manage:guest_star`
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="isModeratorSendLiveEnabled"></param>

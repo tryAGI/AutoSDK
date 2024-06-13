@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.
-    /// <br/>Default Value: mp3
+    /// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.<br/>
+    /// Default Value: mp3
     /// </summary>
     public enum CreateSpeechRequestResponseFormat
     {

@@ -5,10 +5,10 @@
 namespace G
 {
     /// <summary>
-    /// The contribution method used. Possible values are:  
-    ///   
-    /// * BITS — Cheering with Bits.
-    /// * SUBS — Subscription activity like subscribing or gifting subscriptions.
+    /// The contribution method used. Possible values are:  <br/>
+    ///   <br/>
+    /// * BITS — Cheering with Bits.<br/>
+    /// * SUBS — Subscription activity like subscribing or gifting subscriptions.<br/>
     /// * OTHER — Covers other contribution methods not listed.
     /// </summary>
     public enum HypeTrainEventEventDataLastContributionType

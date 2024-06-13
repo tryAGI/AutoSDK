@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The image URLs for the emote. These image URLs always provide a static, non-animated emote image with a light background.  
-    ///   
+    /// The image URLs for the emote. These image URLs always provide a static, non-animated emote image with a light background.  <br/>
+    ///   <br/>
     /// **NOTE:** You should use the templated URL in the `template` field to fetch the image instead of using these URLs.
     /// </summary>
     public sealed partial class EmoteImages

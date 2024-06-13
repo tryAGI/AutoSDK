@@ -10,19 +10,19 @@ namespace G
     public sealed partial class Pet
     {
         /// <summary>
-        /// <br/>Example: 1234
+        /// Example: 1234
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("4")]
         public string? _4 { get; set; }
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("1.5")]
         public bool _1_5 { get; set; }
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("16:9")]
         public bool _16_9 { get; set; }

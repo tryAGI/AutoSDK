@@ -5,10 +5,10 @@
 namespace G
 {
     /// <summary>
-    /// The transport method. Possible values are:  
-    ///   
-    /// * webhook
-    /// * websocket
+    /// The transport method. Possible values are:  <br/>
+    ///   <br/>
+    /// * webhook<br/>
+    /// * websocket<br/>
     /// * conduit
     /// </summary>
     public enum CreateEventSubSubscriptionBodyTransportMethod

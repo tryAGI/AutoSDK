@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Learn how to turn audio into text or text into audio.
-    /// If no httpClient is provided, a new one will be created.
+    /// Learn how to turn audio into text or text into audio.<br/>
+    /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
     public sealed partial class AudioClient : global::System.IDisposable

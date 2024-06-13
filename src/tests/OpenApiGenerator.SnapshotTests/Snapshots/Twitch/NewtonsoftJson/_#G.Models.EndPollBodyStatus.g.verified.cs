@@ -5,9 +5,9 @@
 namespace G
 {
     /// <summary>
-    /// The status to set the poll to. Possible case-sensitive values are:  
-    ///   
-    /// * TERMINATED — Ends the poll before the poll is scheduled to end. The poll remains publicly visible.
+    /// The status to set the poll to. Possible case-sensitive values are:  <br/>
+    ///   <br/>
+    /// * TERMINATED — Ends the poll before the poll is scheduled to end. The poll remains publicly visible.<br/>
     /// * ARCHIVED — Ends the poll before the poll is scheduled to end, and then archives it so it's no longer publicly visible.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]

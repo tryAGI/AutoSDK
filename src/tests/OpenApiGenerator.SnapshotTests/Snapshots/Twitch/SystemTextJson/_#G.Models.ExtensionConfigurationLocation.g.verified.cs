@@ -5,10 +5,10 @@
 namespace G
 {
     /// <summary>
-    /// The location of where the extension’s configuration is stored. Possible values are:  
-    ///   
-    /// * hosted — The Extensions Configuration Service hosts the configuration.
-    /// * custom — The Extension Backend Service (EBS) hosts the configuration.
+    /// The location of where the extension’s configuration is stored. Possible values are:  <br/>
+    ///   <br/>
+    /// * hosted — The Extensions Configuration Service hosts the configuration.<br/>
+    /// * custom — The Extension Backend Service (EBS) hosts the configuration.<br/>
     /// * none — The extension doesn't require configuration.
     /// </summary>
     public enum ExtensionConfigurationLocation

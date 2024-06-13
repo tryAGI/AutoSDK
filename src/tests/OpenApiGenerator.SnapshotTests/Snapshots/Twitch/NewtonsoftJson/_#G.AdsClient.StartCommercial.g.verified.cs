@@ -7,7 +7,12 @@ namespace G
     public partial class AdsClient
     {
         /// <summary>
-        /// Starts a commercial on the specified channel.
+        /// Starts a commercial on the specified channel.<br/>
+        /// Starts a commercial on the specified channel.<br/>
+        /// **NOTE**: Only partners and affiliates may run commercials and they must be streaming live at the time.<br/>
+        /// **NOTE**: Only the broadcaster may start a commercial; the broadcaster’s editors and moderators may not start commercials on behalf of the broadcaster.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:edit:commercial** scope.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -40,7 +45,12 @@ namespace G
         }
 
         /// <summary>
-        /// Starts a commercial on the specified channel.
+        /// Starts a commercial on the specified channel.<br/>
+        /// Starts a commercial on the specified channel.<br/>
+        /// **NOTE**: Only partners and affiliates may run commercials and they must be streaming live at the time.<br/>
+        /// **NOTE**: Only the broadcaster may start a commercial; the broadcaster’s editors and moderators may not start commercials on behalf of the broadcaster.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:edit:commercial** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="length"></param>

@@ -55,7 +55,7 @@ namespace G
         public string? Error { get; set; }
 
         /// <summary>
-        /// <br/>Default Value: 1
+        /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("execution_order")]
         public int ExecutionOrder { get; set; } = 1;

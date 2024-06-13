@@ -76,9 +76,9 @@ namespace G
         public string Text { get; set; } = default!;
 
         /// <summary>
-        /// Status of the request. One of:   
-        ///   
-        /// * approved
+        /// Status of the request. One of:   <br/>
+        ///   <br/>
+        /// * approved<br/>
         /// * denied
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]

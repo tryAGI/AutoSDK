@@ -7,7 +7,7 @@ namespace G
     public partial class Api
     {
         /// <summary>
-        /// 
+        /// Returns all pets from the system that the user has access to
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

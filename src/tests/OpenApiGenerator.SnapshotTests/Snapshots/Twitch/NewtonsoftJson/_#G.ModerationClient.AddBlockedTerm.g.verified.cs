@@ -7,7 +7,10 @@ namespace G
     public partial class ModerationClient
     {
         /// <summary>
-        /// Adds a word or phrase to the broadcaster’s list of blocked terms.
+        /// Adds a word or phrase to the broadcaster’s list of blocked terms.<br/>
+        /// Adds a word or phrase to the broadcaster’s list of blocked terms. These are the terms that the broadcaster doesn’t want used in their chat room.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **moderator:manage:blocked\_terms** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>
@@ -44,7 +47,10 @@ namespace G
         }
 
         /// <summary>
-        /// Adds a word or phrase to the broadcaster’s list of blocked terms.
+        /// Adds a word or phrase to the broadcaster’s list of blocked terms.<br/>
+        /// Adds a word or phrase to the broadcaster’s list of blocked terms. These are the terms that the broadcaster doesn’t want used in their chat room.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **moderator:manage:blocked\_terms** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>

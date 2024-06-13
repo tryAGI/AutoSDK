@@ -70,9 +70,7 @@ namespace {endPoint.Namespace}
             : string.Empty;
         
         return $@" 
-        /// <summary>
-        /// {endPoint.Summary}
-        /// </summary>
+        {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
 {endPoint.Properties.Where(x => x.ParameterLocation != null).Select(x => $@"
         /// <param name=""{x.ParameterName}""></param>").Inject()}
 {(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : @" 
@@ -165,9 +163,7 @@ namespace {endPoint.Namespace}
             : string.Empty;
         
         return $@"
-        /// <summary>
-        /// {endPoint.Summary}
-        /// </summary>
+        {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
 {endPoint.Properties.Select(x => $@"
         /// <param name=""{x.ParameterName}""></param>").Inject()}
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>

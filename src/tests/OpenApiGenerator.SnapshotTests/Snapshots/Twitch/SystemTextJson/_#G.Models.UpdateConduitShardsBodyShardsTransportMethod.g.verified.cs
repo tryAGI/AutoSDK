@@ -5,9 +5,9 @@
 namespace G
 {
     /// <summary>
-    /// The transport method. Possible values are:  
-    ///   
-    /// * webhook
+    /// The transport method. Possible values are:  <br/>
+    ///   <br/>
+    /// * webhook<br/>
     /// * websocket
     /// </summary>
     public enum UpdateConduitShardsBodyShardsTransportMethod

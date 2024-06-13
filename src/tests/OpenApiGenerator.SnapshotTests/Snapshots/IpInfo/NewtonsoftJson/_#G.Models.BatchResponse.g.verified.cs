@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Example: 
+    /// 
     /// </summary>
     public sealed partial class BatchResponse
     {

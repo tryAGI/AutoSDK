@@ -7,7 +7,11 @@ namespace G
     public partial class ExtensionsClient
     {
         /// <summary>
-        /// Updates a configuration segment.
+        /// Updates a configuration segment.<br/>
+        /// Updates a configuration segment. The segment is limited to 5 KB. Extensions that are active on a channel do not receive the updated configuration.<br/>
+        /// **Rate Limits**: You may update the configuration a maximum of 20 times per minute.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt). The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to _external_.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -34,7 +38,11 @@ namespace G
         }
 
         /// <summary>
-        /// Updates a configuration segment.
+        /// Updates a configuration segment.<br/>
+        /// Updates a configuration segment. The segment is limited to 5 KB. Extensions that are active on a channel do not receive the updated configuration.<br/>
+        /// **Rate Limits**: You may update the configuration a maximum of 20 times per minute.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt). The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to _external_.
         /// </summary>
         /// <param name="extensionId"></param>
         /// <param name="segment"></param>

@@ -18,8 +18,8 @@ namespace G
         public required global::G.MessageRole Role { get; set; }
 
         /// <summary>
-        /// The content of the message
-        /// <br/>Example: Why is the sky blue?
+        /// The content of the message<br/>
+        /// Example: Why is the sky blue?
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -76,12 +76,12 @@ namespace G
         public string Text { get; set; } = default!;
 
         /// <summary>
-        /// Status of the request. One of:  
-        ///   
-        /// * pending
-        /// * approved
-        /// * denied
-        /// * acknowledged
+        /// Status of the request. One of:  <br/>
+        ///   <br/>
+        /// * pending<br/>
+        /// * approved<br/>
+        /// * denied<br/>
+        /// * acknowledged<br/>
         /// * canceled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]

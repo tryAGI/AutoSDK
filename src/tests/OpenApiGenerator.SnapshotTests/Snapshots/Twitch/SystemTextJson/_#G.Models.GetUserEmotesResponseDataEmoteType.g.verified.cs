@@ -5,10 +5,10 @@
 namespace G
 {
     /// <summary>
-    /// The type of emote. The possible values are:   
-    ///   
-    /// * **bitstier** — A Bits tier emote.
-    /// * **follower** — A follower emote.
+    /// The type of emote. The possible values are:   <br/>
+    ///   <br/>
+    /// * **bitstier** — A Bits tier emote.<br/>
+    /// * **follower** — A follower emote.<br/>
     /// * **subscriptions** — A subscriber emote.
     /// </summary>
     public enum GetUserEmotesResponseDataEmoteType

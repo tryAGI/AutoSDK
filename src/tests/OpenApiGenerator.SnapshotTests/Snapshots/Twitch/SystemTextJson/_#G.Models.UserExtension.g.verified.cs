@@ -38,11 +38,11 @@ namespace G
         public required bool CanActivate { get; set; }
 
         /// <summary>
-        /// The extension types that you can activate for this extension. Possible values are:  
-        ///   
-        /// * component
-        /// * mobile
-        /// * overlay
+        /// The extension types that you can activate for this extension. Possible values are:  <br/>
+        ///   <br/>
+        /// * component<br/>
+        /// * mobile<br/>
+        /// * overlay<br/>
         /// * panel
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

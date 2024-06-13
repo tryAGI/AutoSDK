@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Example: isp
+    /// Example: isp
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum AsnResponseType

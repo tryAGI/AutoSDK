@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Example: approved
+    /// Example: approved
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum PagesHttpsCertificateState

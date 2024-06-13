@@ -10,47 +10,47 @@ namespace G
     public sealed partial class Prefix
     {
         /// <summary>
-        /// <br/>Example: 104.69.216.0/22
+        /// Example: 104.69.216.0/22
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("netblock")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Netblock { get; set; }
 
         /// <summary>
-        /// <br/>Example: AKAMAI
+        /// Example: AKAMAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// <br/>Example: Akamai Technologies, Inc.
+        /// Example: Akamai Technologies, Inc.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// <br/>Example: US
+        /// Example: US
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("country")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Country { get; set; }
 
         /// <summary>
-        /// <br/>Example: 256
+        /// Example: 256
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
         public string? Size { get; set; }
 
         /// <summary>
-        /// <br/>Example: ALLOCATION
+        /// Example: ALLOCATION
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         public string? Status { get; set; }
 
         /// <summary>
-        /// <br/>Example: quadranet.com
+        /// Example: quadranet.com
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("domain")]
         public string? Domain { get; set; }

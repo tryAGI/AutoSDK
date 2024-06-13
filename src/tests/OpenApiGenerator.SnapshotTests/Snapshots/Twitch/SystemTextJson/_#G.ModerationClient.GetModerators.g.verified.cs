@@ -8,7 +8,10 @@ namespace G
     public partial class ModerationClient
     {
         /// <summary>
-        /// Gets all users allowed to moderate the broadcaster’s chat room.
+        /// Gets all users allowed to moderate the broadcaster’s chat room.<br/>
+        /// Gets all users allowed to moderate the broadcaster’s chat room.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **moderation:read** scope. If your app also adds and removes moderators, you can use the **channel:manage:moderators** scope instead.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="userId"></param>

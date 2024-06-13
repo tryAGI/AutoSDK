@@ -7,7 +7,8 @@ namespace G
     public partial class MigrationsClient
     {
         /// <summary>
-        /// List repositories in an organization migration
+        /// List repositories in an organization migration<br/>
+        /// List all the repositories for this organization migration.
         /// </summary>
         /// <param name="org"></param>
         /// <param name="migrationId"></param>

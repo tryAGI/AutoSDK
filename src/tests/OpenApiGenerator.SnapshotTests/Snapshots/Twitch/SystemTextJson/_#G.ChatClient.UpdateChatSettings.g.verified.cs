@@ -7,7 +7,15 @@ namespace G
     public partial class ChatClient
     {
         /// <summary>
-        /// Updates the broadcaster’s chat settings.
+        /// Updates the broadcaster’s chat settings.<br/>
+        /// Updates the broadcaster’s chat settings.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **moderator:manage:chat\_settings** scope.<br/>
+        /// __Request Body:__<br/>
+        /// All fields are optional. Specify only those fields that you want to update.<br/>
+        /// To set the `slow_mode_wait_time` or `follower_mode_duration` field to its default value, set the corresponding `slow_mode` or `follower_mode` field to **true** (and don’t include the `slow_mode_wait_time` or `follower_mode_duration` field).<br/>
+        /// To set the `slow_mode_wait_time`, `follower_mode_duration`, or `non_moderator_chat_delay_duration` field’s value, you must set the corresponding `slow_mode`, `follower_mode`, or `non_moderator_chat_delay` field to **true**.<br/>
+        /// To remove the `slow_mode_wait_time`, `follower_mode_duration`, or `non_moderator_chat_delay_duration` field’s value, set the corresponding `slow_mode`, `follower_mode`, or `non_moderator_chat_delay` field to **false** (and don’t include the `slow_mode_wait_time`, `follower_mode_duration`, or `non_moderator_chat_delay_duration` field).
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>
@@ -44,7 +52,15 @@ namespace G
         }
 
         /// <summary>
-        /// Updates the broadcaster’s chat settings.
+        /// Updates the broadcaster’s chat settings.<br/>
+        /// Updates the broadcaster’s chat settings.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **moderator:manage:chat\_settings** scope.<br/>
+        /// __Request Body:__<br/>
+        /// All fields are optional. Specify only those fields that you want to update.<br/>
+        /// To set the `slow_mode_wait_time` or `follower_mode_duration` field to its default value, set the corresponding `slow_mode` or `follower_mode` field to **true** (and don’t include the `slow_mode_wait_time` or `follower_mode_duration` field).<br/>
+        /// To set the `slow_mode_wait_time`, `follower_mode_duration`, or `non_moderator_chat_delay_duration` field’s value, you must set the corresponding `slow_mode`, `follower_mode`, or `non_moderator_chat_delay` field to **true**.<br/>
+        /// To remove the `slow_mode_wait_time`, `follower_mode_duration`, or `non_moderator_chat_delay_duration` field’s value, set the corresponding `slow_mode`, `follower_mode`, or `non_moderator_chat_delay` field to **false** (and don’t include the `slow_mode_wait_time`, `follower_mode_duration`, or `non_moderator_chat_delay_duration` field).
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>

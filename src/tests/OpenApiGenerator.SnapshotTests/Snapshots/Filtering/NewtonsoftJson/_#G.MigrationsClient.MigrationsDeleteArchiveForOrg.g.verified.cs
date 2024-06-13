@@ -7,7 +7,8 @@ namespace G
     public partial class MigrationsClient
     {
         /// <summary>
-        /// Delete an organization migration archive
+        /// Delete an organization migration archive<br/>
+        /// Deletes a previous migration archive. Migration archives are automatically deleted after seven days.
         /// </summary>
         /// <param name="org"></param>
         /// <param name="migrationId"></param>

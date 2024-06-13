@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// An optional field that will only be present when you set `stream_options: {"include_usage": true}` in your request.
+    /// An optional field that will only be present when you set `stream_options: {"include_usage": true}` in your request.<br/>
     /// When present, it contains a null value except for the last chunk which contains the token usage statistics for the entire request.
     /// </summary>
     public sealed partial class CreateChatCompletionStreamResponseUsage

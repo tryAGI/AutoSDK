@@ -8,7 +8,10 @@ namespace G
     public partial class ChannelPointsClient
     {
         /// <summary>
-        /// Updates a redemption’s status.
+        /// Updates a redemption’s status.<br/>
+        /// Updates a redemption’s status. You may update a redemption only if its status is UNFULFILLED. The app used to create the reward is the only app that may update the redemption.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:redemptions** scope.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="broadcasterId"></param>
@@ -47,7 +50,10 @@ namespace G
         }
 
         /// <summary>
-        /// Updates a redemption’s status.
+        /// Updates a redemption’s status.<br/>
+        /// Updates a redemption’s status. You may update a redemption only if its status is UNFULFILLED. The app used to create the reward is the only app that may update the redemption.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:redemptions** scope.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="broadcasterId"></param>

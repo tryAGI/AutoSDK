@@ -10,7 +10,7 @@ namespace G
     public sealed partial class ListThreadsResponse
     {
         /// <summary>
-        /// <br/>Example: list
+        /// Example: list
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,21 +24,21 @@ namespace G
         public required global::System.Collections.Generic.IList<global::G.ThreadObject> Data { get; set; }
 
         /// <summary>
-        /// <br/>Example: asst_abc123
+        /// Example: asst_abc123
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string FirstId { get; set; }
 
         /// <summary>
-        /// <br/>Example: asst_abc456
+        /// Example: asst_abc456
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string LastId { get; set; }
 
         /// <summary>
-        /// <br/>Example: false
+        /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
         [global::System.Text.Json.Serialization.JsonRequired]

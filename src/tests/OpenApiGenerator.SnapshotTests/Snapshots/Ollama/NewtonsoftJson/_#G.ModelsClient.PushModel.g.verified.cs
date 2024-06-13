@@ -7,7 +7,8 @@ namespace G
     public partial class ModelsClient
     {
         /// <summary>
-        /// Upload a model to a model library.
+        /// Upload a model to a model library.<br/>
+        /// Requires registering for ollama.ai and adding a public key first.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -46,7 +47,8 @@ namespace G
         }
 
         /// <summary>
-        /// Upload a model to a model library.
+        /// Upload a model to a model library.<br/>
+        /// Requires registering for ollama.ai and adding a public key first.
         /// </summary>
         /// <param name="model"></param>
         /// <param name="insecure"></param>

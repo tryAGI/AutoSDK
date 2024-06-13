@@ -7,6 +7,7 @@ namespace G
     public partial class GeneralClient
     {
         /// <summary>
+        /// Returns information about the current IP.<br/>
         /// Returns information about the current IP.
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

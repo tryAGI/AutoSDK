@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Create large batches of API requests to run asynchronously.
-    /// If no httpClient is provided, a new one will be created.
+    /// Create large batches of API requests to run asynchronously.<br/>
+    /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
     public sealed partial class BatchClient : global::System.IDisposable

@@ -5,16 +5,16 @@
 namespace G
 {
     /// <summary>
-    /// The extension’s state. Possible values are:  
-    ///   
-    /// * Approved
-    /// * AssetsUploaded
-    /// * Deleted
-    /// * Deprecated
-    /// * InReview
-    /// * InTest
-    /// * PendingAction
-    /// * Rejected
+    /// The extension’s state. Possible values are:  <br/>
+    ///   <br/>
+    /// * Approved<br/>
+    /// * AssetsUploaded<br/>
+    /// * Deleted<br/>
+    /// * Deprecated<br/>
+    /// * InReview<br/>
+    /// * InTest<br/>
+    /// * PendingAction<br/>
+    /// * Rejected<br/>
     /// * Released
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]

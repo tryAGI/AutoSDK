@@ -7,6 +7,7 @@ namespace G
     public partial class GeneralClient
     {
         /// <summary>
+        /// Returns information about the selected values.<br/>
         /// Returns information about the selected values.
         /// </summary>
         /// <param name="request"></param>

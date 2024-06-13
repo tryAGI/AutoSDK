@@ -7,7 +7,8 @@ namespace G
     public partial class ChatClient
     {
         /// <summary>
-        /// Generate the next message in a chat with a provided model.
+        /// Generate the next message in a chat with a provided model.<br/>
+        /// This is a streaming endpoint, so there will be a series of responses. The final response object will include statistics and additional data from the request.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -46,7 +47,8 @@ namespace G
         }
 
         /// <summary>
-        /// Generate the next message in a chat with a provided model.
+        /// Generate the next message in a chat with a provided model.<br/>
+        /// This is a streaming endpoint, so there will be a series of responses. The final response object will include statistics and additional data from the request.
         /// </summary>
         /// <param name="model"></param>
         /// <param name="messages"></param>

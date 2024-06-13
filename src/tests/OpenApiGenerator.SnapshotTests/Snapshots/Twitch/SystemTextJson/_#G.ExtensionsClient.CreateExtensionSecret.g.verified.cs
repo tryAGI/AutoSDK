@@ -7,7 +7,10 @@ namespace G
     public partial class ExtensionsClient
     {
         /// <summary>
-        /// Creates a shared secret used to sign and verify JWT tokens.
+        /// Creates a shared secret used to sign and verify JWT tokens.<br/>
+        /// Creates a shared secret used to sign and verify JWT tokens. Creating a new secret removes the current secrets from service. Use this function only when you are ready to use the new secret it returns.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt). The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to _external_.
         /// </summary>
         /// <param name="extensionId"></param>
         /// <param name="delay"></param>

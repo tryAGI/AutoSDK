@@ -7,7 +7,8 @@ namespace G
     public partial class MigrationsClient
     {
         /// <summary>
-        /// List repositories for a user migration
+        /// List repositories for a user migration<br/>
+        /// Lists all the repositories for this user migration.
         /// </summary>
         /// <param name="migrationId"></param>
         /// <param name="perPage"></param>

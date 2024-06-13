@@ -7,7 +7,13 @@ namespace G
     public partial class MigrationsClient
     {
         /// <summary>
-        /// Update an import
+        /// Update an import<br/>
+        /// An import can be updated with credentials or a project choice by passing in the appropriate parameters in this API<br/>
+        /// request. If no parameters are provided, the import will be restarted.<br/>
+        /// Some servers (e.g. TFS servers) can have several projects at a single URL. In those cases the import progress will<br/>
+        /// have the status `detection_found_multiple` and the Import Progress response will include a `project_choices` array.<br/>
+        /// You can select the project to import by providing one of the objects in the `project_choices` array in the update request.<br/>
+        /// **Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
@@ -44,7 +50,13 @@ namespace G
         }
 
         /// <summary>
-        /// Update an import
+        /// Update an import<br/>
+        /// An import can be updated with credentials or a project choice by passing in the appropriate parameters in this API<br/>
+        /// request. If no parameters are provided, the import will be restarted.<br/>
+        /// Some servers (e.g. TFS servers) can have several projects at a single URL. In those cases the import progress will<br/>
+        /// have the status `detection_found_multiple` and the Import Progress response will include a `project_choices` array.<br/>
+        /// You can select the project to import by providing one of the objects in the `project_choices` array in the update request.<br/>
+        /// **Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>

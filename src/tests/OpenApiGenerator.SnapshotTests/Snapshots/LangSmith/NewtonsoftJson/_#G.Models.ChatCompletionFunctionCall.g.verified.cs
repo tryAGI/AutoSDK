@@ -10,13 +10,13 @@ namespace G
     public sealed partial class ChatCompletionFunctionCall
     {
         /// <summary>
-        /// <br/>Default Value: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
         public string? Name { get; set; } = "";
 
         /// <summary>
-        /// <br/>Default Value: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("arguments")]
         public string? Arguments { get; set; } = "";

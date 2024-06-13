@@ -7,7 +7,11 @@ namespace G
     public partial class PollsClient
     {
         /// <summary>
-        /// Creates a poll that viewers in the broadcaster’s channel can vote on.
+        /// Creates a poll that viewers in the broadcaster’s channel can vote on.<br/>
+        /// Creates a poll that viewers in the broadcaster’s channel can vote on.<br/>
+        /// The poll begins as soon as it’s created. You may run only one poll at a time.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:polls** scope.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -40,7 +44,11 @@ namespace G
         }
 
         /// <summary>
-        /// Creates a poll that viewers in the broadcaster’s channel can vote on.
+        /// Creates a poll that viewers in the broadcaster’s channel can vote on.<br/>
+        /// Creates a poll that viewers in the broadcaster’s channel can vote on.<br/>
+        /// The poll begins as soon as it’s created. You may run only one poll at a time.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:polls** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="title"></param>

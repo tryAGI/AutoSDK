@@ -10,19 +10,19 @@ namespace G
     public sealed partial class CreateChatCompletionRequest
     {
         /// <summary>
-        /// <br/>Default Value: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
         public string? Model { get; set; } = "";
 
         /// <summary>
-        /// <br/>Default Value: []
+        /// Default Value: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("messages")]
         public global::System.Collections.Generic.IList<global::G.ChatCompletionRequestMessage>? Messages { get; set; }
 
         /// <summary>
-        /// <br/>Default Value: []
+        /// Default Value: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("functions")]
         public global::System.Collections.Generic.IList<global::G.ChatCompletionFunctions>? Functions { get; set; }

@@ -7,7 +7,19 @@ namespace G
     public partial class Api
     {
         /// <summary>
-        /// Delete a model
+        /// Delete a model<br/>
+        /// Delete a model<br/>
+        /// Model deletion has some restrictions:<br/>
+        /// - You can only delete models you own.<br/>
+        /// - You can only delete private models.<br/>
+        /// - You can only delete models that have versions associated with them (currently these will need to be deleted seperately).<br/>
+        /// Example cURL request:<br/>
+        /// ```command<br/>
+        /// curl -s -X DELETE \<br/>
+        ///   -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \<br/>
+        ///   https://api.replicate.com/v1/models/replicate/hello-world<br/>
+        /// ```<br/>
+        /// The response will be an empty 204, indicating the model has been deleted.
         /// </summary>
         /// <param name="modelOwner"></param>
         /// <param name="modelName"></param>

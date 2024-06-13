@@ -7,7 +7,10 @@ namespace G
     public partial class UsersClient
     {
         /// <summary>
-        /// Gets the list of users that the broadcaster has blocked.
+        /// Gets the list of users that the broadcaster has blocked.<br/>
+        /// Gets the list of users that the broadcaster has blocked. [Read More](https://help.twitch.tv/s/article/how-to-manage-harassment-in-chat?language=en%5FUS#BlockWhispersandMessagesfromStrangers)<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **user:read:blocked\_users** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="first"></param>

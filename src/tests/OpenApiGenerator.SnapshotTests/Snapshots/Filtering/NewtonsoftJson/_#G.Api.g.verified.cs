@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// GitHub's v3 REST API.
-    /// If no httpClient is provided, a new one will be created.
+    /// GitHub's v3 REST API.<br/>
+    /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
     public sealed partial class Api : global::System.IDisposable

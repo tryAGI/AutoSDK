@@ -11,7 +11,29 @@
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
-    Summary: Get the authenticated account,
+    Summary:
+Get the authenticated account<br/>
+Returns information about the user or organization associated with the provided API token.
+
+Example cURL request:
+
+```console
+curl -s \
+  -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \
+  https://api.replicate.com/v1/account
+```
+
+The response will be a JSON object describing the account:
+
+```json
+{
+  "type": "organization",
+  "username": "acme",
+  "name": "Acme Corp, Inc.",
+  "github_url": "https://github.com/acme",
+}
+```
+,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
@@ -81,7 +103,32 @@
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
-    Summary: List collections of models,
+    Summary:
+List collections of models<br/>
+Example cURL request:
+
+```console
+curl -s \
+  -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \
+  https://api.replicate.com/v1/collections
+```
+
+The response will be a paginated JSON list of collection objects:
+
+```json
+{
+  "next": "null",
+  "previous": null,
+  "results": [
+    {
+      "name": "Super resolution",
+      "slug": "super-resolution",
+      "description": "Upscaling models that create high-quality images from low-quality images."
+    }
+  ]
+}
+```
+,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
@@ -165,7 +212,27 @@
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
-    Summary: Get a collection of models,
+    Summary:
+Get a collection of models<br/>
+Example cURL request:
+
+```console
+curl -s \
+  -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \
+  https://api.replicate.com/v1/collections/super-resolution
+```
+
+The response will be a collection object with a nested list of the models in that collection:
+
+```json
+{
+  "name": "Super resolution",
+  "slug": "super-resolution",
+  "description": "Upscaling models that create high-quality images from low-quality images.",
+  "models": [...]
+}
+```
+,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
@@ -218,7 +285,50 @@
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
-    Summary: List deployments,
+    Summary:
+List deployments<br/>
+Get a list of deployments associated with the current account, including the latest release configuration for each deployment.
+
+Example cURL request:
+
+```console
+curl -s \
+  -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \
+  https://api.replicate.com/v1/deployments
+```
+
+The response will be a paginated JSON array of deployment objects, sorted with the most recent deployment first:
+
+```json
+{
+  "next": "http://api.replicate.com/v1/deployments?cursor=cD0yMDIzLTA2LTA2KzIzJTNBNDAlM0EwOC45NjMwMDAlMkIwMCUzQTAw",
+  "previous": null,
+  "results": [
+    {
+      "owner": "replicate",
+      "name": "my-app-image-generator",
+      "current_release": {
+        "number": 1,
+        "model": "stability-ai/sdxl",
+        "version": "da77bc59ee60423279fd632efb4795ab731d9e3ca9705ef3341091fb989b7eaf",
+        "created_at": "2024-02-15T16:32:57.018467Z",
+        "created_by": {
+          "type": "organization",
+          "username": "acme",
+          "name": "Acme Corp, Inc.",
+          "github_url": "https://github.com/acme",
+        },
+        "configuration": {
+          "hardware": "gpu-t4",
+          "min_instances": 1,
+          "max_instances": 5
+        }
+      }
+    }
+  ]
+}
+```
+,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
@@ -452,7 +562,54 @@
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
-    Summary: Create a deployment,
+    Summary:
+Create a deployment<br/>
+Create a new deployment:
+
+Example cURL request:
+
+```console
+curl -s \
+  -X POST \
+  -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \
+  -H "Content-Type: application/json" \
+  -d '{
+        "name": "my-app-image-generator",
+        "model": "stability-ai/sdxl",
+        "version": "da77bc59ee60423279fd632efb4795ab731d9e3ca9705ef3341091fb989b7eaf",
+        "hardware": "gpu-t4",
+        "min_instances": 0,
+        "max_instances": 3
+      }' \
+  https://api.replicate.com/v1/deployments
+```
+
+The response will be a JSON object describing the deployment:
+
+```json
+{
+  "owner": "acme",
+  "name": "my-app-image-generator",
+  "current_release": {
+    "number": 1,
+    "model": "stability-ai/sdxl",
+    "version": "da77bc59ee60423279fd632efb4795ab731d9e3ca9705ef3341091fb989b7eaf",
+    "created_at": "2024-02-15T16:32:57.018467Z",
+    "created_by": {
+      "type": "organization",
+      "username": "acme",
+      "name": "Acme Corp, Inc.",
+      "github_url": "https://github.com/acme",
+    },
+    "configuration": {
+      "hardware": "gpu-t4",
+      "min_instances": 1,
+      "max_instances": 5
+    }
+  }
+}
+```
+,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateDeploymentsRequest,
@@ -600,7 +757,24 @@
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
-    Summary: Delete a deployment,
+    Summary:
+Delete a deployment<br/>
+Delete a deployment
+
+Deployment deletion has some restrictions:
+
+- You can only delete deployments that have been offline and unused for at least 15 minutes.
+
+Example cURL request:
+
+```command
+curl -s -X DELETE \
+  -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \
+  https://api.replicate.com/v1/deployments/acme/my-app-image-generator
+```
+
+The response will be an empty 204, indicating the deployment has been deleted.
+,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
@@ -714,7 +888,44 @@
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
-    Summary: Get a deployment,
+    Summary:
+Get a deployment<br/>
+Get information about a deployment by name including the current release.
+
+Example cURL request:
+
+```console
+curl -s \
+  -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \
+  https://api.replicate.com/v1/deployments/replicate/my-app-image-generator
+```
+
+The response will be a JSON object describing the deployment:
+
+```json
+{
+  "owner": "acme",
+  "name": "my-app-image-generator",
+  "current_release": {
+    "number": 1,
+    "model": "stability-ai/sdxl",
+    "version": "da77bc59ee60423279fd632efb4795ab731d9e3ca9705ef3341091fb989b7eaf",
+    "created_at": "2024-02-15T16:32:57.018467Z",
+    "created_by": {
+      "type": "organization",
+      "username": "acme",
+      "name": "Acme Corp, Inc.",
+      "github_url": "https://github.com/acme",
+    },
+    "configuration": {
+      "hardware": "gpu-t4",
+      "min_instances": 1,
+      "max_instances": 5
+    }
+  }
+}
+```
+,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
@@ -954,7 +1165,49 @@
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Patch,
-    Summary: Update a deployment,
+    Summary:
+Update a deployment<br/>
+Update properties of an existing deployment, including hardware, min/max instances, and the deployment's underlying model [version](https://replicate.com/docs/how-does-replicate-work#versions).
+
+Example cURL request:
+
+```console
+curl -s \
+  -X PATCH \
+  -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \
+  -H "Content-Type: application/json" \
+  -d '{"min_instances": 3, "max_instances": 10}' \
+  https://api.replicate.com/v1/deployments/acme/my-app-image-generator
+```
+
+The response will be a JSON object describing the deployment:
+
+```json
+{
+  "owner": "acme",
+  "name": "my-app-image-generator",
+  "current_release": {
+    "number": 2,
+    "model": "stability-ai/sdxl",
+    "version": "da77bc59ee60423279fd632efb4795ab731d9e3ca9705ef3341091fb989b7eaf",
+    "created_at": "2024-02-15T16:32:57.018467Z",
+    "created_by": {
+      "type": "organization",
+      "username": "acme",
+      "name": "Acme Corp, Inc.",
+      "github_url": "https://github.com/acme",
+    },
+    "configuration": {
+      "hardware": "gpu-t4",
+      "min_instances": 3,
+      "max_instances": 10
+    }
+  }
+}
+```
+
+Updating any deployment properties will increment the `number` field of the `current_release`.
+,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.UpdateDeploymentsRequest,
@@ -1253,7 +1506,57 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
-    Summary: Create a prediction using a deployment,
+    Summary:
+Create a prediction using a deployment<br/>
+Start a new prediction for a deployment of a model using inputs you provide.
+
+Example request body:
+
+```json
+{
+  "input": {
+    "text": "Alice"
+  }
+}
+```
+
+Example cURL request:
+
+```console
+curl -s -X POST \
+  -d '{"input": {"text": "Alice"}}' \
+  -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \
+  -H 'Content-Type: application/json' \
+  "https://api.replicate.com/v1/deployments/replicate/hello-world/predictions"
+```
+
+The response will be the prediction object:
+
+```json
+{
+  "id": "86b6trbv99rgp0cf1h886f69ew",
+  "model": "replicate/hello-world",
+  "version": "dp-8e43d61c333b5ddc7a921130bc3ab3ea",
+  "input": {
+    "text": "Alice"
+  },
+  "logs": "",
+  "error": null,
+  "status": "starting",
+  "created_at": "2024-04-23T18:55:52.138Z",
+  "urls": {
+    "cancel": "https://api.replicate.com/v1/predictions/86b6trbv99rgp0cf1h886f69ew/cancel",
+    "get": "https://api.replicate.com/v1/predictions/86b6trbv99rgp0cf1h886f69ew"
+  }
+}
+```
+
+As models can take several seconds or more to run, the output will not be available immediately. To get the final result of the prediction you should either provide a `webhook` HTTPS URL for us to call when the results are ready, or poll the [get a prediction](#predictions.get) endpoint until it has finished.
+
+Input and output (including any files) will be automatically deleted after an hour, so you must save a copy of any files in the output if you'd like to continue using them.
+
+Output files are served by `replicate.delivery` and its subdomains. If you use an allow list of external domains for your assets, add `replicate.delivery` and `*.replicate.delivery` to it.
+,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.PredictionRequest,
@@ -1333,7 +1636,27 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
-    Summary: List available hardware for models,
+    Summary:
+List available hardware for models<br/>
+Example cURL request:
+
+```console
+curl -s \
+  -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \
+  https://api.replicate.com/v1/hardware
+```
+
+The response will be a JSON array of hardware objects:
+
+```json
+[
+    {"name": "CPU", "sku": "cpu"},
+    {"name": "Nvidia T4 GPU", "sku": "gpu-t4"},
+    {"name": "Nvidia A40 GPU", "sku": "gpu-a40-small"},
+    {"name": "Nvidia A40 (Large) GPU", "sku": "gpu-a40-large"},
+]
+```
+,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
@@ -1403,7 +1726,50 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
-    Summary: List public models,
+    Summary:
+List public models<br/>
+Get a paginated list of public models.
+
+Example cURL request:
+
+```console
+curl -s \
+  -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \
+  https://api.replicate.com/v1/models
+```
+
+The response will be a paginated JSON array of model objects:
+
+```json
+{
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "url": "https://replicate.com/acme/hello-world",
+      "owner": "acme",
+      "name": "hello-world",
+      "description": "A tiny model that says hello",
+      "visibility": "public",
+      "github_url": "https://github.com/replicate/cog-examples",
+      "paper_url": null,
+      "license_url": null,
+      "run_count": 5681081,
+      "cover_image_url": "...",
+      "default_example": {...},
+      "latest_version": {...}
+    }
+  ]
+}
+```
+
+The `cover_image_url` string is an HTTPS URL for an image file. This can be:
+
+- An image uploaded by the model author.
+- The output file of the example prediction, if the model author has not set a cover image.
+- The input file of the example prediction, if the model author has not set a cover image and the example prediction has no output file.
+- A generic fallback image.
+,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
@@ -1707,7 +2073,39 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
-    Summary: Create a model,
+    Summary:
+Create a model<br/>
+Create a model.
+
+Example cURL request:
+
+```console
+curl -s -X POST \
+  -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \
+  -H 'Content-Type: application/json' \
+  -d '{"owner": "alice", "name": "my-model", "description": "An example model", "visibility": "public", "hardware": "cpu"}' \
+  https://api.replicate.com/v1/models
+```
+
+The response will be a model object in the following format:
+
+```json
+{
+  "url": "https://replicate.com/alice/my-model",
+  "owner": "alice",
+  "name": "my-model",
+  "description": "An example model",
+  "visibility": "public",
+  "github_url": null,
+  "paper_url": null,
+  "license_url": null,
+  "run_count": 0,
+  "cover_image_url": null,
+  "default_example": null,
+  "latest_version": null,
+}
+```
+,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateModelsRequest,
@@ -1839,7 +2237,26 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
-    Summary: Delete a model,
+    Summary:
+Delete a model<br/>
+Delete a model
+
+Model deletion has some restrictions:
+
+- You can only delete models you own.
+- You can only delete private models.
+- You can only delete models that have versions associated with them (currently these will need to be deleted seperately).
+
+Example cURL request:
+
+```command
+curl -s -X DELETE \
+  -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \
+  https://api.replicate.com/v1/models/replicate/hello-world
+```
+
+The response will be an empty 204, indicating the model has been deleted.
+,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
@@ -1953,7 +2370,46 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
-    Summary: Get a model,
+    Summary:
+Get a model<br/>
+Example cURL request:
+
+```console
+curl -s \
+  -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \
+  https://api.replicate.com/v1/models/replicate/hello-world
+```
+
+The response will be a model object in the following format:
+
+```json
+{
+  "url": "https://replicate.com/replicate/hello-world",
+  "owner": "replicate",
+  "name": "hello-world",
+  "description": "A tiny model that says hello",
+  "visibility": "public",
+  "github_url": "https://github.com/replicate/cog-examples",
+  "paper_url": null,
+  "license_url": null,
+  "run_count": 5681081,
+  "cover_image_url": "...",
+  "default_example": {...},
+  "latest_version": {...},
+}
+```
+
+The `cover_image_url` string is an HTTPS URL for an image file. This can be:
+
+- An image uploaded by the model author.
+- The output file of the example prediction, if the model author has not set a cover image.
+- The input file of the example prediction, if the model author has not set a cover image and the example prediction has no output file.
+- A generic fallback image.
+
+The `default_example` object is a [prediction](#predictions.get) created with this model.
+
+The `latest_version` object is the model's most recently pushed [version](#models.versions.get).
+,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
@@ -2219,7 +2675,57 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
-    Summary: Create a prediction using an official model,
+    Summary:
+Create a prediction using an official model<br/>
+Start a new prediction for an official model using the inputs you provide.
+
+Example request body:
+
+```json
+{
+  "input": {
+    "prompt": "Write a short poem about the weather."
+  }
+}
+```
+
+Example cURL request:
+
+```console
+curl -s -X POST \
+  -d '{"input": {"prompt": "Write a short poem about the weather."}}' \
+  -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \
+  -H 'Content-Type: application/json' \
+  https://api.replicate.com/v1/models/meta/meta-llama-3-70b-instruct/predictions
+```
+
+The response will be the prediction object:
+
+```json
+{
+  "id": "25s2s4n7rdrgg0cf1httb3myk0",
+  "model": "replicate-internal/llama3-70b-chat-vllm-unquantized",
+  "version": "dp-cf04fe09351e25db628e8b6181276547",
+  "input": {
+    "prompt": "Write a short poem about the weather."
+  },
+  "logs": "",
+  "error": null,
+  "status": "starting",
+  "created_at": "2024-04-23T19:36:28.355Z",
+  "urls": {
+    "cancel": "https://api.replicate.com/v1/predictions/25s2s4n7rdrgg0cf1httb3myk0/cancel",
+    "get": "https://api.replicate.com/v1/predictions/25s2s4n7rdrgg0cf1httb3myk0"
+  }
+}
+```
+
+As models can take several seconds or more to run, the output will not be available immediately. To get the final result of the prediction you should either provide a `webhook` HTTPS URL for us to call when the results are ready, or poll the [get a prediction](#predictions.get) endpoint until it has finished.
+
+Input and output (including any files) will be automatically deleted after an hour, so you must save a copy of any files in the output if you'd like to continue using them.
+
+Output files are served by `replicate.delivery` and its subdomains. If you use an allow list of external domains for your assets, add `replicate.delivery` and `*.replicate.delivery` to it.
+,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.PredictionRequest,
@@ -2360,7 +2866,33 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
-    Summary: List model versions,
+    Summary:
+List model versions<br/>
+Example cURL request:
+
+```console
+curl -s \
+  -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \
+  https://api.replicate.com/v1/models/replicate/hello-world/versions
+```
+
+The response will be a JSON array of model version objects, sorted with the most recent version first:
+
+```json
+{
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": "5c7d5dc6dd8bf75c1acaa8565735e7986bc5b66206b55cca93cb72c9bf15ccaa",
+      "created_at": "2022-04-26T19:29:04.418669Z",
+      "cog_version": "0.3.0",
+      "openapi_schema": {...}
+    }
+  ]
+}
+```
+,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
@@ -2505,7 +3037,29 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
-    Summary: Delete a model version,
+    Summary:
+Delete a model version<br/>
+Delete a model version and all associated predictions, including all output files.
+
+Model version deletion has some restrictions:
+
+- You can only delete versions from models you own.
+- You can only delete versions from private models.
+- You cannot delete a version if someone other than you has run predictions with it.
+- You cannot delete a version if it is being used as the base model for a fine tune/training.
+- You cannot delete a version if it has an associated deployment.
+- You cannot delete a version if another model version is overridden to use it.
+
+Example cURL request:
+
+```command
+curl -s -X DELETE \
+  -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \
+  https://api.replicate.com/v1/models/replicate/hello-world/versions/5c7d5dc6dd8bf75c1acaa8565735e7986bc5b66206b55cca93cb72c9bf15ccaa
+```
+
+The response will be an empty 202, indicating the deletion request has been accepted. It might take a few minutes to be processed.
+,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
@@ -2649,7 +3203,60 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
-    Summary: Get a model version,
+    Summary:
+Get a model version<br/>
+Example cURL request:
+
+```console
+curl -s \
+  -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \
+  https://api.replicate.com/v1/models/replicate/hello-world/versions/5c7d5dc6dd8bf75c1acaa8565735e7986bc5b66206b55cca93cb72c9bf15ccaa
+```
+
+The response will be the version object:
+
+```json
+{
+  "id": "5c7d5dc6dd8bf75c1acaa8565735e7986bc5b66206b55cca93cb72c9bf15ccaa",
+  "created_at": "2022-04-26T19:29:04.418669Z",
+  "cog_version": "0.3.0",
+  "openapi_schema": {...}
+}
+```
+
+Every model describes its inputs and outputs with [OpenAPI Schema Objects](https://spec.openapis.org/oas/latest.html#schemaObject) in the `openapi_schema` property.
+
+The `openapi_schema.components.schemas.Input` property for the [replicate/hello-world](https://replicate.com/replicate/hello-world) model looks like this:
+
+```json
+{
+  "type": "object",
+  "title": "Input",
+  "required": [
+    "text"
+  ],
+  "properties": {
+    "text": {
+      "x-order": 0,
+      "type": "string",
+      "title": "Text",
+      "description": "Text to prefix with 'hello '"
+    }
+  }
+}
+```
+
+The `openapi_schema.components.schemas.Output` property for the [replicate/hello-world](https://replicate.com/replicate/hello-world) model looks like this:
+
+```json
+{
+  "type": "string",
+  "title": "Output"
+}
+```
+
+For more details, see the docs on [Cog's supported input and output types](https://github.com/replicate/cog/blob/75b7802219e7cd4cee845e34c4c22139558615d4/docs/python.md#input-and-output-types)
+,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
@@ -2928,7 +3535,59 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
-    Summary: Create a training,
+    Summary:
+Create a training<br/>
+Start a new training of the model version you specify.
+
+Example request body:
+
+```json
+{
+  "destination": "{new_owner}/{new_name}",
+  "input": {
+    "train_data": "https://example.com/my-input-images.zip",
+  },
+  "webhook": "https://example.com/my-webhook",
+}
+```
+
+Example cURL request:
+
+```console
+curl -s -X POST \
+  -d '{"destination": "{new_owner}/{new_name}", "input": {"input_images": "https://example.com/my-input-images.zip"}}' \
+  -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \
+  -H 'Content-Type: application/json' \
+  https://api.replicate.com/v1/models/stability-ai/sdxl/versions/da77bc59ee60423279fd632efb4795ab731d9e3ca9705ef3341091fb989b7eaf/trainings
+```
+
+The response will be the training object:
+
+```json
+{
+  "id": "zz4ibbonubfz7carwiefibzgga",
+  "model": "stability-ai/sdxl",
+  "version": "da77bc59ee60423279fd632efb4795ab731d9e3ca9705ef3341091fb989b7eaf",
+  "input": {
+    "input_images": "https://example.com/my-input-images.zip"
+  },
+  "logs": "",
+  "error": null,
+  "status": "starting",
+  "created_at": "2023-09-08T16:32:56.990893084Z",
+  "urls": {
+    "cancel": "https://api.replicate.com/v1/predictions/zz4ibbonubfz7carwiefibzgga/cancel",
+    "get": "https://api.replicate.com/v1/predictions/zz4ibbonubfz7carwiefibzgga"
+  }
+}
+```
+
+As models can take several minutes or more to train, the result will not be available immediately. To get the final result of the training you should either provide a `webhook` HTTPS URL for us to call when the results are ready, or poll the [get a training](#trainings.get) endpoint until it has finished.
+
+When a training completes, it creates a new [version](https://replicate.com/docs/how-does-replicate-work#terminology) of the model at the specified destination.
+
+To find some models to train on, check out the [trainable language models collection](https://replicate.com/collections/trainable-language-models).
+,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.TrainingRequest,
@@ -3008,7 +3667,63 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
-    Summary: List predictions,
+    Summary:
+List predictions<br/>
+Get a paginated list of predictions that you've created. This will include predictions created from the API and the website. It will return 100 records per page.
+
+Example cURL request:
+
+```console
+curl -s \
+  -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \
+  https://api.replicate.com/v1/predictions
+```
+
+The response will be a paginated JSON array of prediction objects, sorted with the most recent prediction first:
+
+```json
+{
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "completed_at": "2023-09-08T16:19:34.791859Z",
+      "created_at": "2023-09-08T16:19:34.907244Z",
+      "error": null,
+      "id": "gm3qorzdhgbfurvjtvhg6dckhu",
+      "input": {
+        "text": "Alice"
+      },
+      "metrics": {
+        "predict_time": 0.012683
+      },
+      "output": "hello Alice",
+      "started_at": "2023-09-08T16:19:34.779176Z",
+      "source": "api",
+      "status": "succeeded",
+      "urls": {
+        "get": "https://api.replicate.com/v1/predictions/gm3qorzdhgbfurvjtvhg6dckhu",
+        "cancel": "https://api.replicate.com/v1/predictions/gm3qorzdhgbfurvjtvhg6dckhu/cancel"
+      },
+      "model": "replicate/hello-world",
+      "version": "5c7d5dc6dd8bf75c1acaa8565735e7986bc5b66206b55cca93cb72c9bf15ccaa",
+    }
+  ]
+}
+```
+
+`id` will be the unique ID of the prediction.
+
+`source` will indicate how the prediction was created. Possible values are `web` or `api`.
+
+`status` will be the status of the prediction. Refer to [get a single prediction](#predictions.get) for possible values.
+
+`urls` will be a convenience object that can be used to construct new API requests for the given prediction.
+
+`model` will be the model identifier string in the format of `{model_owner}/{model_name}`.
+
+`version` will be the unique ID of model version used to create the prediction.
+,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
@@ -3242,7 +3957,58 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
-    Summary: Create a prediction,
+    Summary:
+Create a prediction<br/>
+Start a new prediction for the model version and inputs you provide.
+
+Example request body:
+
+```json
+{
+  "version": "5c7d5dc6dd8bf75c1acaa8565735e7986bc5b66206b55cca93cb72c9bf15ccaa",
+  "input": {
+    "text": "Alice"
+  }
+}
+```
+
+Example cURL request:
+
+```console
+curl -s -X POST \
+  -d '{"version": "5c7d5dc6dd8bf75c1acaa8565735e7986bc5b66206b55cca93cb72c9bf15ccaa", "input": {"text": "Alice"}}' \
+  -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \
+  -H 'Content-Type: application/json' \
+  https://api.replicate.com/v1/predictions
+```
+
+The response will be the prediction object:
+
+```json
+{
+  "id": "gm3qorzdhgbfurvjtvhg6dckhu",
+  "model": "replicate/hello-world",
+  "version": "5c7d5dc6dd8bf75c1acaa8565735e7986bc5b66206b55cca93cb72c9bf15ccaa",
+  "input": {
+    "text": "Alice"
+  },
+  "logs": "",
+  "error": null,
+  "status": "starting",
+  "created_at": "2023-09-08T16:19:34.765994657Z",
+  "urls": {
+    "cancel": "https://api.replicate.com/v1/predictions/gm3qorzdhgbfurvjtvhg6dckhu/cancel",
+    "get": "https://api.replicate.com/v1/predictions/gm3qorzdhgbfurvjtvhg6dckhu"
+  }
+}
+```
+
+As models can take several seconds or more to run, the output will not be available immediately. To get the final result of the prediction you should either provide a `webhook` HTTPS URL for us to call when the results are ready, or poll the [get a prediction](#predictions.get) endpoint until it has finished.
+
+Input and output (including any files) will be automatically deleted after an hour, so you must save a copy of any files in the output if you'd like to continue using them.
+
+Output files are served by `replicate.delivery` and its subdomains. If you use an allow list of external domains for your assets, add `replicate.delivery` and `*.replicate.delivery` to it.
+,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.VersionPredictionRequest,
@@ -3355,7 +4121,63 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
-    Summary: Get a prediction,
+    Summary:
+Get a prediction<br/>
+Get the current state of a prediction.
+
+Example cURL request:
+
+```console
+curl -s \
+  -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \
+  https://api.replicate.com/v1/predictions/gm3qorzdhgbfurvjtvhg6dckhu
+```
+
+The response will be the prediction object:
+
+```json
+{
+  "id": "gm3qorzdhgbfurvjtvhg6dckhu",
+  "model": "replicate/hello-world",
+  "version": "5c7d5dc6dd8bf75c1acaa8565735e7986bc5b66206b55cca93cb72c9bf15ccaa",
+  "input": {
+    "text": "Alice"
+  },
+  "logs": "",
+  "output": "hello Alice",
+  "error": null,
+  "status": "succeeded",
+  "created_at": "2023-09-08T16:19:34.765994Z",
+  "started_at": "2023-09-08T16:19:34.779176Z",
+  "completed_at": "2023-09-08T16:19:34.791859Z",
+  "metrics": {
+    "predict_time": 0.012683
+  },
+  "urls": {
+    "cancel": "https://api.replicate.com/v1/predictions/gm3qorzdhgbfurvjtvhg6dckhu/cancel",
+    "get": "https://api.replicate.com/v1/predictions/gm3qorzdhgbfurvjtvhg6dckhu"
+  }
+}
+```
+
+`status` will be one of:
+
+- `starting`: the prediction is starting up. If this status lasts longer than a few seconds, then it's typically because a new worker is being started to run the prediction.
+- `processing`: the `predict()` method of the model is currently running.
+- `succeeded`: the prediction completed successfully.
+- `failed`: the prediction encountered an error during processing.
+- `canceled`: the prediction was canceled by its creator.
+
+In the case of success, `output` will be an object containing the output of the model. Any files will be represented as HTTPS URLs. You'll need to pass the `Authorization` header to request them.
+
+In the case of failure, `error` will contain the error encountered during the prediction.
+
+Terminated predictions (with a status of `succeeded`, `failed`, or `canceled`) will include a `metrics` object with a `predict_time` property showing the amount of CPU or GPU time, in seconds, that the prediction used while running. It won't include time waiting for the prediction to start.
+
+Input and output (including any files) are automatically deleted after an hour, so you must save a copy of any files in the output if you'd like to continue using them.
+
+Output files are served by `replicate.delivery` and its subdomains. If you use an allow list of external domains for your assets, add `replicate.delivery` and `*.replicate.delivery` to it.
+,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
@@ -3493,7 +4315,64 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
-    Summary: List trainings,
+    Summary:
+List trainings<br/>
+Get a paginated list of trainings that you've created. This will include trainings created from the API and the website. It will return 100 records per page.
+
+Example cURL request:
+
+```console
+curl -s \
+  -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \
+  https://api.replicate.com/v1/trainings
+```
+
+The response will be a paginated JSON array of training objects, sorted with the most recent training first:
+
+```json
+{
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "completed_at": "2023-09-08T16:41:19.826523Z",
+      "created_at": "2023-09-08T16:32:57.018467Z",
+      "error": null,
+      "id": "zz4ibbonubfz7carwiefibzgga",
+      "input": {
+        "input_images": "https://example.com/my-input-images.zip"
+      },
+      "metrics": {
+        "predict_time": 502.713876
+      },
+      "output": {
+        "version": "...",
+        "weights": "..."
+      },
+      "started_at": "2023-09-08T16:32:57.112647Z",
+      "source": "api",
+      "status": "succeeded",
+      "urls": {
+        "get": "https://api.replicate.com/v1/trainings/zz4ibbonubfz7carwiefibzgga",
+        "cancel": "https://api.replicate.com/v1/trainings/zz4ibbonubfz7carwiefibzgga/cancel"
+      },
+      "model": "stability-ai/sdxl",
+      "version": "da77bc59ee60423279fd632efb4795ab731d9e3ca9705ef3341091fb989b7eaf",
+    }
+  ]
+}
+```
+
+`id` will be the unique ID of the training.
+
+`source` will indicate how the training was created. Possible values are `web` or `api`.
+
+`status` will be the status of the training. Refer to [get a single training](#trainings.get) for possible values.
+
+`urls` will be a convenience object that can be used to construct new API requests for the given training.
+
+`version` will be the unique ID of model version used to create the training.
+,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
@@ -3577,7 +4456,62 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
-    Summary: Get a training,
+    Summary:
+Get a training<br/>
+Get the current state of a training.
+
+Example cURL request:
+
+```console
+curl -s \
+  -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \
+  https://api.replicate.com/v1/trainings/zz4ibbonubfz7carwiefibzgga
+```
+
+The response will be the training object:
+
+```json
+{
+  "completed_at": "2023-09-08T16:41:19.826523Z",
+  "created_at": "2023-09-08T16:32:57.018467Z",
+  "error": null,
+  "id": "zz4ibbonubfz7carwiefibzgga",
+  "input": {
+    "input_images": "https://example.com/my-input-images.zip"
+  },
+  "logs": "...",
+  "metrics": {
+    "predict_time": 502.713876
+  },
+  "output": {
+    "version": "...",
+    "weights": "..."
+  },
+  "started_at": "2023-09-08T16:32:57.112647Z",
+  "status": "succeeded",
+  "urls": {
+    "get": "https://api.replicate.com/v1/trainings/zz4ibbonubfz7carwiefibzgga",
+    "cancel": "https://api.replicate.com/v1/trainings/zz4ibbonubfz7carwiefibzgga/cancel"
+  },
+  "model": "stability-ai/sdxl",
+  "version": "da77bc59ee60423279fd632efb4795ab731d9e3ca9705ef3341091fb989b7eaf",
+}
+```
+
+`status` will be one of:
+
+- `starting`: the training is starting up. If this status lasts longer than a few seconds, then it's typically because a new worker is being started to run the training.
+- `processing`: the `train()` method of the model is currently running.
+- `succeeded`: the training completed successfully.
+- `failed`: the training encountered an error during processing.
+- `canceled`: the training was canceled by its creator.
+
+In the case of success, `output` will be an object containing the output of the model. Any files will be represented as HTTPS URLs. You'll need to pass the `Authorization` header to request them.
+
+In the case of failure, `error` will contain the error encountered during the training.
+
+Terminated trainings (with a status of `succeeded`, `failed`, or `canceled`) will include a `metrics` object with a `predict_time` property showing the amount of CPU or GPU time, in seconds, that the training used while running. It won't include time waiting for the training to start.
+,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
@@ -3715,7 +4649,26 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
-    Summary: Get the signing secret for the default webhook,
+    Summary:
+Get the signing secret for the default webhook<br/>
+Get the signing secret for the default webhook endpoint. This is used to verify that webhook requests are coming from Replicate.
+
+Example cURL request:
+
+```console
+curl -s \
+  -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \
+  https://api.replicate.com/v1/webhooks/default/secret
+```
+
+The response will be a JSON object with a `key` property:
+
+```json
+{
+  "key": "..."
+}
+```
+,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,

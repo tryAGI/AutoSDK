@@ -10,18 +10,18 @@ namespace G
     public sealed partial class UpdateChatSettingsBody
     {
         /// <summary>
-        /// A Boolean value that determines whether chat messages must contain only emotes.  
-        ///   
+        /// A Boolean value that determines whether chat messages must contain only emotes.  <br/>
+        ///   <br/>
         /// Set to **true** if only emotes are allowed; otherwise, **false**. The default is **false**.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("emote_mode")]
         public bool EmoteMode { get; set; }
 
         /// <summary>
-        /// A Boolean value that determines whether the broadcaster restricts the chat room to followers only.  
-        ///   
-        /// Set to **true** if the broadcaster restricts the chat room to followers only; otherwise, **false**. The default is **true**.  
-        ///   
+        /// A Boolean value that determines whether the broadcaster restricts the chat room to followers only.  <br/>
+        ///   <br/>
+        /// Set to **true** if the broadcaster restricts the chat room to followers only; otherwise, **false**. The default is **true**.  <br/>
+        ///   <br/>
         /// To specify how long users must follow the broadcaster before being able to participate in the chat room, see the `follower_mode_duration` field.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("follower_mode")]
@@ -34,52 +34,52 @@ namespace G
         public int FollowerModeDuration { get; set; }
 
         /// <summary>
-        /// A Boolean value that determines whether the broadcaster adds a short delay before chat messages appear in the chat room. This gives chat moderators and bots a chance to remove them before viewers can see the message.  
-        ///   
-        /// Set to **true** if the broadcaster applies a delay; otherwise, **false**. The default is **false**.  
-        ///   
+        /// A Boolean value that determines whether the broadcaster adds a short delay before chat messages appear in the chat room. This gives chat moderators and bots a chance to remove them before viewers can see the message.  <br/>
+        ///   <br/>
+        /// Set to **true** if the broadcaster applies a delay; otherwise, **false**. The default is **false**.  <br/>
+        ///   <br/>
         /// To specify the length of the delay, see the `non_moderator_chat_delay_duration` field.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("non_moderator_chat_delay")]
         public bool NonModeratorChatDelay { get; set; }
 
         /// <summary>
-        /// The amount of time, in seconds, that messages are delayed before appearing in chat. Set only if `non_moderator_chat_delay` is **true**. Possible values are:  
-        ///   
-        /// * 2 — 2 second delay (recommended)
-        /// * 4 — 4 second delay
+        /// The amount of time, in seconds, that messages are delayed before appearing in chat. Set only if `non_moderator_chat_delay` is **true**. Possible values are:  <br/>
+        ///   <br/>
+        /// * 2 — 2 second delay (recommended)<br/>
+        /// * 4 — 4 second delay<br/>
         /// * 6 — 6 second delay
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("non_moderator_chat_delay_duration")]
         public int NonModeratorChatDelayDuration { get; set; }
 
         /// <summary>
-        /// A Boolean value that determines whether the broadcaster limits how often users in the chat room are allowed to send messages. Set to **true** if the broadcaster applies a wait period between messages; otherwise, **false**. The default is **false**.  
-        ///   
+        /// A Boolean value that determines whether the broadcaster limits how often users in the chat room are allowed to send messages. Set to **true** if the broadcaster applies a wait period between messages; otherwise, **false**. The default is **false**.  <br/>
+        ///   <br/>
         /// To specify the delay, see the `slow_mode_wait_time` field.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("slow_mode")]
         public bool SlowMode { get; set; }
 
         /// <summary>
-        /// The amount of time, in seconds, that users must wait between sending messages. Set only if `slow_mode` is **true**.  
-        ///   
+        /// The amount of time, in seconds, that users must wait between sending messages. Set only if `slow_mode` is **true**.  <br/>
+        ///   <br/>
         /// Possible values are: 3 (3 second delay) through 120 (2 minute delay). The default is 30 seconds.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("slow_mode_wait_time")]
         public int SlowModeWaitTime { get; set; }
 
         /// <summary>
-        /// A Boolean value that determines whether only users that subscribe to the broadcaster’s channel may talk in the chat room.  
-        ///   
+        /// A Boolean value that determines whether only users that subscribe to the broadcaster’s channel may talk in the chat room.  <br/>
+        ///   <br/>
         /// Set to **true** if the broadcaster restricts the chat room to subscribers only; otherwise, **false**. The default is **false**.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("subscriber_mode")]
         public bool SubscriberMode { get; set; }
 
         /// <summary>
-        /// A Boolean value that determines whether the broadcaster requires users to post only unique messages in the chat room.  
-        ///   
+        /// A Boolean value that determines whether the broadcaster requires users to post only unique messages in the chat room.  <br/>
+        ///   <br/>
         /// Set to **true** if the broadcaster allows only unique messages; otherwise, **false**. The default is **false**.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("unique_chat_mode")]

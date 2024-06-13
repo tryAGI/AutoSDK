@@ -7,7 +7,10 @@ namespace G
     public partial class ModerationClient
     {
         /// <summary>
-        /// Gets the broadcaster’s AutoMod settings.
+        /// Gets the broadcaster’s AutoMod settings.<br/>
+        /// Gets the broadcaster’s AutoMod settings. The settings are used to automatically block inappropriate or harassing messages from appearing in the broadcaster’s chat room.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **moderator:read:automod\_settings** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>

@@ -10,12 +10,12 @@ namespace G
     public sealed partial class SendExtensionPubSubMessageBody
     {
         /// <summary>
-        /// The target of the message. Possible values are:  
-        ///   
-        /// * broadcast
-        /// * global
-        /// * whisper-&lt;user-id&gt;
-        ///   
+        /// The target of the message. Possible values are:  <br/>
+        ///   <br/>
+        /// * broadcast<br/>
+        /// * global<br/>
+        /// * whisper-&lt;user-id&gt;<br/>
+        ///   <br/>
         /// If `is_global_broadcast` is **true**, you must set this field to global. The broadcast and global values are mutually exclusive; specify only one of them.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target")]

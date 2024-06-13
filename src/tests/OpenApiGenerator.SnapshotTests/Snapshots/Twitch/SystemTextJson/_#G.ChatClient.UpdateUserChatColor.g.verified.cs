@@ -7,7 +7,10 @@ namespace G
     public partial class ChatClient
     {
         /// <summary>
-        /// Updates the color used for the user’s name in chat.
+        /// Updates the color used for the user’s name in chat.<br/>
+        /// Updates the color used for the user’s name in chat.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **user:manage:chat\_color** scope.
         /// </summary>
         /// <param name="userId"></param>
         /// <param name="color"></param>

@@ -8,7 +8,10 @@ namespace G
     public partial class ChannelPointsClient
     {
         /// <summary>
-        /// Gets a list of redemptions for a custom reward.
+        /// Gets a list of redemptions for a custom reward.<br/>
+        /// Gets a list of redemptions for the specified custom reward. The app used to create the reward is the only app that may get the redemptions.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:read:redemptions** or **channel:manage:redemptions** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="rewardId"></param>

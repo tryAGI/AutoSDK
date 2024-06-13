@@ -5,9 +5,9 @@
 namespace G
 {
     /// <summary>
-    /// The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.
-    /// <br/>Default Value: 1024x1024
-    /// <br/>Example: 1024x1024
+    /// The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.<br/>
+    /// Default Value: 1024x1024<br/>
+    /// Example: 1024x1024
     /// </summary>
     public enum CreateImageEditRequestSize
     {

@@ -28,11 +28,11 @@ namespace G
         public bool IsBrowserSourceAudioEnabled { get; set; }
 
         /// <summary>
-        /// This setting determines how the guests within a session should be laid out within the browser source. Can be one of the following values:   
-        ///   
-        /// * `TILED_LAYOUT`: All live guests are tiled within the browser source with the same size.
-        /// * `SCREENSHARE_LAYOUT`: All live guests are tiled within the browser source with the same size. If there is an active screen share, it is sized larger than the other guests.
-        /// * `HORIZONTAL_LAYOUT`: All live guests are arranged in a horizontal bar within the browser source
+        /// This setting determines how the guests within a session should be laid out within the browser source. Can be one of the following values:   <br/>
+        ///   <br/>
+        /// * `TILED_LAYOUT`: All live guests are tiled within the browser source with the same size.<br/>
+        /// * `SCREENSHARE_LAYOUT`: All live guests are tiled within the browser source with the same size. If there is an active screen share, it is sized larger than the other guests.<br/>
+        /// * `HORIZONTAL_LAYOUT`: All live guests are arranged in a horizontal bar within the browser source<br/>
         /// * `VERTICAL_LAYOUT`: All live guests are arranged in a vertical bar within the browser source
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_layout")]

@@ -10,19 +10,19 @@ namespace G
     public sealed partial class Carrier
     {
         /// <summary>
-        /// <br/>Example: Sprint Corporation
+        /// Example: Sprint Corporation
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 310
+        /// Example: 310
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mcc", Required = global::Newtonsoft.Json.Required.Always)]
         public string Mcc { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 120
+        /// Example: 120
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mnc", Required = global::Newtonsoft.Json.Required.Always)]
         public string Mnc { get; set; } = default!;

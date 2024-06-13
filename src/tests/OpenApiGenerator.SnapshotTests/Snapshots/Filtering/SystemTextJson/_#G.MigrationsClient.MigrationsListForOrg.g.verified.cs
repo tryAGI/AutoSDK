@@ -8,7 +8,9 @@ namespace G
     public partial class MigrationsClient
     {
         /// <summary>
-        /// List organization migrations
+        /// List organization migrations<br/>
+        /// Lists the most recent migrations, including both exports (which can be started through the REST API) and imports (which cannot be started using the REST API).<br/>
+        /// A list of `repositories` is only returned for export migrations.
         /// </summary>
         /// <param name="org"></param>
         /// <param name="perPage"></param>

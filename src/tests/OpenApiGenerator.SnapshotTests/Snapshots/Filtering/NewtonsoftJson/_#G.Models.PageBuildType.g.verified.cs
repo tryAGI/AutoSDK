@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The process in which the Page will be built.
-    /// <br/>Example: legacy
+    /// The process in which the Page will be built.<br/>
+    /// Example: legacy
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum PageBuildType

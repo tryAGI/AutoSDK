@@ -64,10 +64,10 @@ namespace G
         public string UserInput { get; set; } = default!;
 
         /// <summary>
-        /// The state of the redemption. Possible values are:  
-        ///   
-        /// * CANCELED
-        /// * FULFILLED
+        /// The state of the redemption. Possible values are:  <br/>
+        ///   <br/>
+        /// * CANCELED<br/>
+        /// * FULFILLED<br/>
         /// * UNFULFILLED
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]

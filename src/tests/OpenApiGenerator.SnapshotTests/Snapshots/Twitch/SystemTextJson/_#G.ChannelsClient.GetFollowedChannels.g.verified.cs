@@ -7,7 +7,10 @@ namespace G
     public partial class ChannelsClient
     {
         /// <summary>
-        /// Gets a list of broadcasters that the specified user follows. You can also use this endpoint to see whether a user follows a specific broadcaster.
+        /// Gets a list of broadcasters that the specified user follows. You can also use this endpoint to see whether a user follows a specific broadcaster.<br/>
+        /// Gets a list of broadcasters that the specified user follows. You can also use this endpoint to see whether a user follows a specific broadcaster.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **user:read:follows** scope.
         /// </summary>
         /// <param name="userId"></param>
         /// <param name="broadcasterId"></param>

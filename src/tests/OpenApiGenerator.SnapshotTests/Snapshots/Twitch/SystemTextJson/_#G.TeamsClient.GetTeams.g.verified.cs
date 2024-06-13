@@ -7,7 +7,10 @@ namespace G
     public partial class TeamsClient
     {
         /// <summary>
-        /// Gets information about the specified Twitch team.
+        /// Gets information about the specified Twitch team.<br/>
+        /// Gets information about the specified Twitch team. [Read More](https://help.twitch.tv/s/article/twitch-teams)<br/>
+        /// __Authorization:__<br/>
+        /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).
         /// </summary>
         /// <param name="name"></param>
         /// <param name="id"></param>

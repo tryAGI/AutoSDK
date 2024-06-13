@@ -10,8 +10,8 @@ namespace G
     public sealed partial class CreateBatchRequest
     {
         /// <summary>
-        /// The ID of an uploaded file that contains requests for the new batch.
-        /// See [upload file](/docs/api-reference/files/create) for how to upload a file.
+        /// The ID of an uploaded file that contains requests for the new batch.<br/>
+        /// See [upload file](/docs/api-reference/files/create) for how to upload a file.<br/>
         /// Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/requestInput), and must be uploaded with the purpose `batch`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_file_id", Required = global::Newtonsoft.Json.Required.Always)]

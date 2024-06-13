@@ -10,7 +10,7 @@ namespace G
     public sealed partial class ListVectorStoreFilesResponse
     {
         /// <summary>
-        /// <br/>Example: list
+        /// Example: list
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
         public string Object { get; set; } = default!;
@@ -22,19 +22,19 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.VectorStoreFileObject> Data { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: file-abc123
+        /// Example: file-abc123
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("first_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string FirstId { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: file-abc456
+        /// Example: file-abc456
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string LastId { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: false
+        /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_more", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasMore { get; set; } = default!;

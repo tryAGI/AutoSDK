@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The type of version control system you are migrating from.
-    /// <br/>Example: "git"
+    /// The type of version control system you are migrating from.<br/>
+    /// Example: "git"
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum MigrationsUpdateImportRequestVcs

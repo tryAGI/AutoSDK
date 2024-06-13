@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through.   
-    ///   
+    /// Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through.   <br/>
+    ///   <br/>
     ///  For more information about pagination support, see [Twitch API Guide - Pagination](https://dev.twitch.tv/docs/api/guide#pagination).
     /// </summary>
     public sealed partial class GetUserEmotesResponsePagination

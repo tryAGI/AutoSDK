@@ -40,9 +40,9 @@ namespace G
         public string GameId { get; set; } = default!;
 
         /// <summary>
-        /// The entitlement’s fulfillment status. Possible values are:   
-        ///   
-        /// * CLAIMED
+        /// The entitlement’s fulfillment status. Possible values are:   <br/>
+        ///   <br/>
+        /// * CLAIMED<br/>
         /// * FULFILLED
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fulfillment_status", Required = global::Newtonsoft.Json.Required.Always)]

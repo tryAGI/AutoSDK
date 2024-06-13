@@ -7,7 +7,11 @@ namespace G
     public partial class ConduitsClient
     {
         /// <summary>
-        /// NEW Updates shard(s) for a conduit.
+        /// NEW Updates shard(s) for a conduit.<br/>
+        /// NEW Updates shard(s) for a [conduit](https://dev.twitch.tv/docs/eventsub/handling-conduit-events).<br/>
+        /// **NOTE:** Shard IDs are indexed starting at 0, so a conduit with a `shard_count` of 5 will have shards with IDs 0 through 4.<br/>
+        /// __Authorization:__<br/>
+        /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -40,7 +44,11 @@ namespace G
         }
 
         /// <summary>
-        /// NEW Updates shard(s) for a conduit.
+        /// NEW Updates shard(s) for a conduit.<br/>
+        /// NEW Updates shard(s) for a [conduit](https://dev.twitch.tv/docs/eventsub/handling-conduit-events).<br/>
+        /// **NOTE:** Shard IDs are indexed starting at 0, so a conduit with a `shard_count` of 5 will have shards with IDs 0 through 4.<br/>
+        /// __Authorization:__<br/>
+        /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).
         /// </summary>
         /// <param name="conduitId"></param>
         /// <param name="shards"></param>

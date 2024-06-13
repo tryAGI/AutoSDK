@@ -34,7 +34,7 @@ namespace G
         public string Model { get; set; } = default!;
 
         /// <summary>
-        /// This fingerprint represents the backend configuration that the model runs with.
+        /// This fingerprint represents the backend configuration that the model runs with.<br/>
         /// Can be used in conjunction with the `seed` request parameter to understand when backend changes have been made that might impact determinism.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("system_fingerprint")]

@@ -7,7 +7,8 @@ namespace G
     public partial class FineTuningClient
     {
         /// <summary>
-        /// Get info about a fine-tuning job.[Learn more about fine-tuning](/docs/guides/fine-tuning)
+        /// Get info about a fine-tuning job.<br/>
+        /// [Learn more about fine-tuning](/docs/guides/fine-tuning)
         /// </summary>
         /// <param name="fineTuningJobId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

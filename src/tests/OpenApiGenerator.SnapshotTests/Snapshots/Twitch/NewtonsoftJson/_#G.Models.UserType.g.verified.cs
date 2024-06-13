@@ -5,11 +5,11 @@
 namespace G
 {
     /// <summary>
-    /// The type of user. Possible values are:  
-    ///   
-    /// * admin — Twitch administrator
-    /// * global\_mod
-    /// * staff — Twitch staff
+    /// The type of user. Possible values are:  <br/>
+    ///   <br/>
+    /// * admin — Twitch administrator<br/>
+    /// * global\_mod<br/>
+    /// * staff — Twitch staff<br/>
     /// * "" — Normal user
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]

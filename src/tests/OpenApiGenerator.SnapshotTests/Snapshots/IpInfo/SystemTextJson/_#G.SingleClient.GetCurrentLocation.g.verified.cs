@@ -7,6 +7,7 @@ namespace G
     public partial class SingleClient
     {
         /// <summary>
+        /// Returns the current location.<br/>
         /// Returns the current location.
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

@@ -7,7 +7,48 @@ namespace G
     public partial class Api
     {
         /// <summary>
-        /// Create a training
+        /// Create a training<br/>
+        /// Start a new training of the model version you specify.<br/>
+        /// Example request body:<br/>
+        /// ```json<br/>
+        /// {<br/>
+        ///   "destination": "{new_owner}/{new_name}",<br/>
+        ///   "input": {<br/>
+        ///     "train_data": "https://example.com/my-input-images.zip",<br/>
+        ///   },<br/>
+        ///   "webhook": "https://example.com/my-webhook",<br/>
+        /// }<br/>
+        /// ```<br/>
+        /// Example cURL request:<br/>
+        /// ```console<br/>
+        /// curl -s -X POST \<br/>
+        ///   -d '{"destination": "{new_owner}/{new_name}", "input": {"input_images": "https://example.com/my-input-images.zip"}}' \<br/>
+        ///   -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \<br/>
+        ///   -H 'Content-Type: application/json' \<br/>
+        ///   https://api.replicate.com/v1/models/stability-ai/sdxl/versions/da77bc59ee60423279fd632efb4795ab731d9e3ca9705ef3341091fb989b7eaf/trainings<br/>
+        /// ```<br/>
+        /// The response will be the training object:<br/>
+        /// ```json<br/>
+        /// {<br/>
+        ///   "id": "zz4ibbonubfz7carwiefibzgga",<br/>
+        ///   "model": "stability-ai/sdxl",<br/>
+        ///   "version": "da77bc59ee60423279fd632efb4795ab731d9e3ca9705ef3341091fb989b7eaf",<br/>
+        ///   "input": {<br/>
+        ///     "input_images": "https://example.com/my-input-images.zip"<br/>
+        ///   },<br/>
+        ///   "logs": "",<br/>
+        ///   "error": null,<br/>
+        ///   "status": "starting",<br/>
+        ///   "created_at": "2023-09-08T16:32:56.990893084Z",<br/>
+        ///   "urls": {<br/>
+        ///     "cancel": "https://api.replicate.com/v1/predictions/zz4ibbonubfz7carwiefibzgga/cancel",<br/>
+        ///     "get": "https://api.replicate.com/v1/predictions/zz4ibbonubfz7carwiefibzgga"<br/>
+        ///   }<br/>
+        /// }<br/>
+        /// ```<br/>
+        /// As models can take several minutes or more to train, the result will not be available immediately. To get the final result of the training you should either provide a `webhook` HTTPS URL for us to call when the results are ready, or poll the [get a training](#trainings.get) endpoint until it has finished.<br/>
+        /// When a training completes, it creates a new [version](https://replicate.com/docs/how-does-replicate-work#terminology) of the model at the specified destination.<br/>
+        /// To find some models to train on, check out the [trainable language models collection](https://replicate.com/collections/trainable-language-models).
         /// </summary>
         /// <param name="modelOwner"></param>
         /// <param name="modelName"></param>
@@ -40,7 +81,48 @@ namespace G
         }
 
         /// <summary>
-        /// Create a training
+        /// Create a training<br/>
+        /// Start a new training of the model version you specify.<br/>
+        /// Example request body:<br/>
+        /// ```json<br/>
+        /// {<br/>
+        ///   "destination": "{new_owner}/{new_name}",<br/>
+        ///   "input": {<br/>
+        ///     "train_data": "https://example.com/my-input-images.zip",<br/>
+        ///   },<br/>
+        ///   "webhook": "https://example.com/my-webhook",<br/>
+        /// }<br/>
+        /// ```<br/>
+        /// Example cURL request:<br/>
+        /// ```console<br/>
+        /// curl -s -X POST \<br/>
+        ///   -d '{"destination": "{new_owner}/{new_name}", "input": {"input_images": "https://example.com/my-input-images.zip"}}' \<br/>
+        ///   -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \<br/>
+        ///   -H 'Content-Type: application/json' \<br/>
+        ///   https://api.replicate.com/v1/models/stability-ai/sdxl/versions/da77bc59ee60423279fd632efb4795ab731d9e3ca9705ef3341091fb989b7eaf/trainings<br/>
+        /// ```<br/>
+        /// The response will be the training object:<br/>
+        /// ```json<br/>
+        /// {<br/>
+        ///   "id": "zz4ibbonubfz7carwiefibzgga",<br/>
+        ///   "model": "stability-ai/sdxl",<br/>
+        ///   "version": "da77bc59ee60423279fd632efb4795ab731d9e3ca9705ef3341091fb989b7eaf",<br/>
+        ///   "input": {<br/>
+        ///     "input_images": "https://example.com/my-input-images.zip"<br/>
+        ///   },<br/>
+        ///   "logs": "",<br/>
+        ///   "error": null,<br/>
+        ///   "status": "starting",<br/>
+        ///   "created_at": "2023-09-08T16:32:56.990893084Z",<br/>
+        ///   "urls": {<br/>
+        ///     "cancel": "https://api.replicate.com/v1/predictions/zz4ibbonubfz7carwiefibzgga/cancel",<br/>
+        ///     "get": "https://api.replicate.com/v1/predictions/zz4ibbonubfz7carwiefibzgga"<br/>
+        ///   }<br/>
+        /// }<br/>
+        /// ```<br/>
+        /// As models can take several minutes or more to train, the result will not be available immediately. To get the final result of the training you should either provide a `webhook` HTTPS URL for us to call when the results are ready, or poll the [get a training](#trainings.get) endpoint until it has finished.<br/>
+        /// When a training completes, it creates a new [version](https://replicate.com/docs/how-does-replicate-work#terminology) of the model at the specified destination.<br/>
+        /// To find some models to train on, check out the [trainable language models collection](https://replicate.com/collections/trainable-language-models).
         /// </summary>
         /// <param name="modelOwner"></param>
         /// <param name="modelName"></param>

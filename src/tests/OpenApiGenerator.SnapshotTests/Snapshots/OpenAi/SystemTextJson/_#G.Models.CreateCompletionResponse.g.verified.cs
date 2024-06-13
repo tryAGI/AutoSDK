@@ -38,7 +38,7 @@ namespace G
         public required string Model { get; set; }
 
         /// <summary>
-        /// This fingerprint represents the backend configuration that the model runs with.
+        /// This fingerprint represents the backend configuration that the model runs with.<br/>
         /// Can be used in conjunction with the `seed` request parameter to understand when backend changes have been made that might impact determinism.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("system_fingerprint")]

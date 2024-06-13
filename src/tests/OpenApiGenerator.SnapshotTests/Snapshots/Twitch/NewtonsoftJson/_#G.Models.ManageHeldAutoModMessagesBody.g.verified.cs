@@ -22,9 +22,9 @@ namespace G
         public string MsgId { get; set; } = default!;
 
         /// <summary>
-        /// The action to take for the message. Possible values are:  
-        ///   
-        /// * ALLOW
+        /// The action to take for the message. Possible values are:  <br/>
+        ///   <br/>
+        /// * ALLOW<br/>
         /// * DENY
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("action", Required = global::Newtonsoft.Json.Required.Always)]

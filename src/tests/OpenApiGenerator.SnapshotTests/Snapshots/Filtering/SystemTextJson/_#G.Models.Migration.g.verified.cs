@@ -10,7 +10,7 @@ namespace G
     public sealed partial class Migration
     {
         /// <summary>
-        /// <br/>Example: 79
+        /// Example: 79
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,21 +24,21 @@ namespace G
         public required global::G.NullableSimpleUser? Owner { get; set; }
 
         /// <summary>
-        /// <br/>Example: 0b989ba4-242f-11e5-81e1-c7b6966d2516
+        /// Example: 0b989ba4-242f-11e5-81e1-c7b6966d2516
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("guid")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Guid { get; set; }
 
         /// <summary>
-        /// <br/>Example: pending
+        /// Example: pending
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string State { get; set; }
 
         /// <summary>
-        /// <br/>Example: true
+        /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lock_repositories")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -94,21 +94,21 @@ namespace G
         public required global::System.Collections.Generic.IList<global::G.Repository> Repositories { get; set; }
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/orgs/octo-org/migrations/79
+        /// Example: https://api.github.com/orgs/octo-org/migrations/79
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// <br/>Example: 
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]

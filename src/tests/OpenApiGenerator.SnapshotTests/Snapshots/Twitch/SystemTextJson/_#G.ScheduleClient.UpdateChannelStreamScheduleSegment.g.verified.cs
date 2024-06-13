@@ -7,7 +7,11 @@ namespace G
     public partial class ScheduleClient
     {
         /// <summary>
-        /// Updates a scheduled broadcast segment.
+        /// Updates a scheduled broadcast segment.<br/>
+        /// Updates a scheduled broadcast segment.<br/>
+        /// For recurring segments, updating a segment’s title, category, duration, and timezone, changes all segments in the recurring schedule, not just the specified segment.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:schedule** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="id"></param>
@@ -44,7 +48,11 @@ namespace G
         }
 
         /// <summary>
-        /// Updates a scheduled broadcast segment.
+        /// Updates a scheduled broadcast segment.<br/>
+        /// Updates a scheduled broadcast segment.<br/>
+        /// For recurring segments, updating a segment’s title, category, duration, and timezone, changes all segments in the recurring schedule, not just the specified segment.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:schedule** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="id"></param>

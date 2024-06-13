@@ -17,10 +17,10 @@ namespace G
         public required string UserId { get; set; }
 
         /// <summary>
-        /// To ban a user indefinitely, don’t include this field.  
-        ///   
-        /// To put a user in a timeout, include this field and specify the timeout period, in seconds. The minimum timeout is 1 second and the maximum is 1,209,600 seconds (2 weeks).  
-        ///   
+        /// To ban a user indefinitely, don’t include this field.  <br/>
+        ///   <br/>
+        /// To put a user in a timeout, include this field and specify the timeout period, in seconds. The minimum timeout is 1 second and the maximum is 1,209,600 seconds (2 weeks).  <br/>
+        ///   <br/>
         /// To end a user’s timeout early, set this field to 1, or use the [Unban user](https://dev.twitch.tv/docs/api/reference#unban-user) endpoint.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("duration")]

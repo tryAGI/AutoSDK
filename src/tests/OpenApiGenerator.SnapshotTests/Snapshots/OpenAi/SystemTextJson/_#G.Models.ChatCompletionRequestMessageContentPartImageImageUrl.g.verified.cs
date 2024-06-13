@@ -17,8 +17,8 @@ namespace G
         public required string Url { get; set; }
 
         /// <summary>
-        /// Specifies the detail level of the image. Learn more in the [Vision guide](/docs/guides/vision/low-or-high-fidelity-image-understanding).
-        /// <br/>Default Value: auto
+        /// Specifies the detail level of the image. Learn more in the [Vision guide](/docs/guides/vision/low-or-high-fidelity-image-understanding).<br/>
+        /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartImageImageUrlDetailJsonConverter))]

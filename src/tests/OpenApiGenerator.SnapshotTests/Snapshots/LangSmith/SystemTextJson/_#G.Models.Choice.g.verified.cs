@@ -10,13 +10,13 @@ namespace G
     public sealed partial class Choice
     {
         /// <summary>
-        /// <br/>Default Value: 
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         public string? Text { get; set; } = "";
 
         /// <summary>
-        /// <br/>Default Value: 0
+        /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         public int Index { get; set; } = 0;
@@ -28,7 +28,7 @@ namespace G
         public global::G.Logprobs? Logprobs { get; set; }
 
         /// <summary>
-        /// <br/>Default Value: 
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
         public string? FinishReason { get; set; } = "";

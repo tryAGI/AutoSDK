@@ -7,7 +7,10 @@ namespace G
     public partial class ScheduleClient
     {
         /// <summary>
-        /// Updates the broadcaster’s schedule settings, such as scheduling a vacation.
+        /// Updates the broadcaster’s schedule settings, such as scheduling a vacation.<br/>
+        /// Updates the broadcaster’s schedule settings, such as scheduling a vacation.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:schedule** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="isVacationEnabled"></param>

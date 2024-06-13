@@ -7,7 +7,8 @@ namespace G
     public partial class SingleClient
     {
         /// <summary>
-        /// Get a location for the selected IP.
+        /// Get a location for the selected IP.<br/>
+        /// Returns a location for the selected IP.
         /// </summary>
         /// <param name="ip"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

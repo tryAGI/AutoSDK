@@ -7,7 +7,11 @@ namespace G
     public partial class GuestStarClient
     {
         /// <summary>
-        /// BETA Revokes a previously sent invite for a Guest Star session.
+        /// BETA Revokes a previously sent invite for a Guest Star session.<br/>
+        /// BETA Revokes a previously sent invite for a Guest Star session.<br/>
+        /// __Authorization:__<br/>
+        /// * Query parameter `moderator_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)<br/>
+        /// * Requires OAuth Scope: `channel:manage:guest_star` or `moderator:manage:guest_star`
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>

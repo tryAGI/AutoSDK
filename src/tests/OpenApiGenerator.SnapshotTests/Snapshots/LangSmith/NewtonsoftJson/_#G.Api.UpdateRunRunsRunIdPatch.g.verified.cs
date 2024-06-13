@@ -7,7 +7,8 @@ namespace G
     public partial class Api
     {
         /// <summary>
-        /// Update Run
+        /// Update Run<br/>
+        /// Update a run.
         /// </summary>
         /// <param name="runId"></param>
         /// <param name="request"></param>
@@ -42,7 +43,8 @@ namespace G
         }
 
         /// <summary>
-        /// Update Run
+        /// Update Run<br/>
+        /// Update a run.
         /// </summary>
         /// <param name="runId"></param>
         /// <param name="endTime"></param>

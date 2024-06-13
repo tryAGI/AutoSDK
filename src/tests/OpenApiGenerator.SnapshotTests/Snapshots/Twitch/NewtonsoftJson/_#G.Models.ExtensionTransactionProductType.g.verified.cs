@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The type of transaction. Possible values are:  
-    ///   
+    /// The type of transaction. Possible values are:  <br/>
+    ///   <br/>
     /// * BITS\_IN\_EXTENSION
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]

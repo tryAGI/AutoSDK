@@ -183,8 +183,7 @@
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: ,
+        Summary: ,
         ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
@@ -212,8 +211,7 @@
         IsRequired: false,
         DefaultValue: ,
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: [],
+        Summary: Default Value: [],
         ConverterType: ,
         ParameterName: messages,
         ArgumentName: messages,
@@ -241,8 +239,7 @@
         IsRequired: false,
         DefaultValue: ,
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: [],
+        Summary: Default Value: [],
         ConverterType: ,
         ParameterName: functions,
         ArgumentName: functions,
@@ -533,8 +530,7 @@
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: ,
+        Summary: ,
         ConverterType: ,
         ParameterName: role,
         ArgumentName: role,
@@ -664,8 +660,7 @@
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: ,
+        Summary: ,
         ConverterType: ,
         ParameterName: name,
         ArgumentName: name,
@@ -693,8 +688,7 @@
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: ,
+        Summary: ,
         ConverterType: ,
         ParameterName: arguments,
         ArgumentName: arguments,
@@ -740,8 +734,7 @@
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: ,
+        Summary: ,
         ConverterType: ,
         ParameterName: name,
         ArgumentName: name,
@@ -769,8 +762,7 @@
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: ,
+        Summary: ,
         ConverterType: ,
         ParameterName: description,
         ArgumentName: description,
@@ -846,8 +838,7 @@
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: ,
+        Summary: ,
         ConverterType: ,
         ParameterName: type,
         ArgumentName: type,
@@ -875,8 +866,7 @@
         IsRequired: false,
         DefaultValue: ,
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: ,
+        Summary: ,
         ConverterType: ,
         ParameterName: properties,
         ArgumentName: properties,
@@ -1376,8 +1366,7 @@
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: ,
+        Summary: ,
         ConverterType: ,
         ParameterName: id,
         ArgumentName: id,
@@ -1405,8 +1394,7 @@
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: ,
+        Summary: ,
         ConverterType: ,
         ParameterName: @object,
         ArgumentName: @object,
@@ -1434,8 +1422,7 @@
         IsRequired: false,
         DefaultValue: 0,
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: 0,
+        Summary: Default Value: 0,
         ConverterType: ,
         ParameterName: created,
         ArgumentName: created,
@@ -1463,8 +1450,7 @@
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: ,
+        Summary: ,
         ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
@@ -1492,8 +1478,7 @@
         IsRequired: false,
         DefaultValue: ,
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: [],
+        Summary: Default Value: [],
         ConverterType: ,
         ParameterName: choices,
         ArgumentName: choices,
@@ -1570,8 +1555,7 @@
         IsRequired: false,
         DefaultValue: 0,
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: 0,
+        Summary: Default Value: 0,
         ConverterType: ,
         ParameterName: index,
         ArgumentName: index,
@@ -1630,8 +1614,7 @@
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: ,
+        Summary: ,
         ConverterType: ,
         ParameterName: finishReason,
         ArgumentName: finishReason,
@@ -1677,8 +1660,7 @@
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: ,
+        Summary: ,
         ConverterType: ,
         ParameterName: role,
         ArgumentName: role,
@@ -1781,8 +1763,7 @@
         IsRequired: false,
         DefaultValue: 0,
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: 0,
+        Summary: Default Value: 0,
         ConverterType: ,
         ParameterName: promptTokens,
         ArgumentName: promptTokens,
@@ -1810,8 +1791,7 @@
         IsRequired: false,
         DefaultValue: 0,
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: 0,
+        Summary: Default Value: 0,
         ConverterType: ,
         ParameterName: completionTokens,
         ArgumentName: completionTokens,
@@ -1839,8 +1819,7 @@
         IsRequired: false,
         DefaultValue: 0,
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: 0,
+        Summary: Default Value: 0,
         ConverterType: ,
         ParameterName: totalTokens,
         ArgumentName: totalTokens,
@@ -1994,8 +1973,7 @@
         IsRequired: false,
         DefaultValue: ,
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: [],
+        Summary: Default Value: [],
         ConverterType: ,
         ParameterName: choices,
         ArgumentName: choices,
@@ -2072,8 +2050,7 @@
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: ,
+        Summary: ,
         ConverterType: ,
         ParameterName: text,
         ArgumentName: text,
@@ -2101,8 +2078,7 @@
         IsRequired: false,
         DefaultValue: 0,
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: 0,
+        Summary: Default Value: 0,
         ConverterType: ,
         ParameterName: index,
         ArgumentName: index,
@@ -2162,8 +2138,7 @@
         IsRequired: false,
         DefaultValue: "",
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: ,
+        Summary: ,
         ConverterType: ,
         ParameterName: finishReason,
         ArgumentName: finishReason,
@@ -2209,8 +2184,7 @@
         IsRequired: false,
         DefaultValue: ,
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: [],
+        Summary: Default Value: [],
         ConverterType: ,
         ParameterName: tokens,
         ArgumentName: tokens,
@@ -2238,8 +2212,7 @@
         IsRequired: false,
         DefaultValue: ,
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: [],
+        Summary: Default Value: [],
         ConverterType: ,
         ParameterName: tokenLogprobs,
         ArgumentName: tokenLogprobs,
@@ -2267,8 +2240,7 @@
         IsRequired: false,
         DefaultValue: ,
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: [],
+        Summary: Default Value: [],
         ConverterType: ,
         ParameterName: topLogprobs,
         ArgumentName: topLogprobs,
@@ -2296,8 +2268,7 @@
         IsRequired: false,
         DefaultValue: ,
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: [],
+        Summary: Default Value: [],
         ConverterType: ,
         ParameterName: textOffset,
         ArgumentName: textOffset,
@@ -2694,8 +2665,7 @@
         IsRequired: false,
         DefaultValue: 1,
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: 1,
+        Summary: Default Value: 1,
         ConverterType: ,
         ParameterName: executionOrder,
         ArgumentName: executionOrder,
@@ -3455,8 +3425,7 @@
         IsRequired: false,
         DefaultValue: 1,
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: 1,
+        Summary: Default Value: 1,
         ConverterType: ,
         ParameterName: executionOrder,
         ArgumentName: executionOrder,

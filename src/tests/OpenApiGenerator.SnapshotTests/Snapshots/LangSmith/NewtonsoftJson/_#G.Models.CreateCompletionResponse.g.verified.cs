@@ -34,7 +34,7 @@ namespace G
         public string? Model { get; set; }
 
         /// <summary>
-        /// <br/>Default Value: []
+        /// Default Value: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("choices")]
         public global::System.Collections.Generic.IList<global::G.Choice>? Choices { get; set; }

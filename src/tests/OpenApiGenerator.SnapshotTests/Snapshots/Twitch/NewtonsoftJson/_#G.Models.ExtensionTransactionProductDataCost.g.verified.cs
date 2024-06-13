@@ -16,8 +16,8 @@ namespace G
         public int Amount { get; set; } = default!;
 
         /// <summary>
-        /// The type of currency exchanged. Possible values are:  
-        ///   
+        /// The type of currency exchanged. Possible values are:  <br/>
+        ///   <br/>
         /// * bits
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]

@@ -16,8 +16,8 @@ namespace G
         public byte[] File { get; set; } = default!;
 
         /// <summary>
-        /// ID of the model to use. Only `whisper-1` (which is powered by our open source Whisper V2 model) is currently available.
-        /// <br/>Example: whisper-1
+        /// ID of the model to use. Only `whisper-1` (which is powered by our open source Whisper V2 model) is currently available.<br/>
+        /// Example: whisper-1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.AnyOf<string, global::G.CreateTranscriptionRequestModel> Model { get; set; } = default!;
@@ -35,15 +35,15 @@ namespace G
         public string? Prompt { get; set; }
 
         /// <summary>
-        /// The format of the transcript output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.
-        /// <br/>Default Value: json
+        /// The format of the transcript output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.<br/>
+        /// Default Value: json
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
         public global::G.CreateTranscriptionRequestResponseFormat? ResponseFormat { get; set; } = global::G.CreateTranscriptionRequestResponseFormat.Json;
 
         /// <summary>
-        /// The sampling temperature, between 0 and 1. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. If set to 0, the model will use [log probability](https://en.wikipedia.org/wiki/Log_probability) to automatically increase the temperature until certain thresholds are hit.
-        /// <br/>Default Value: 0
+        /// The sampling temperature, between 0 and 1. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. If set to 0, the model will use [log probability](https://en.wikipedia.org/wiki/Log_probability) to automatically increase the temperature until certain thresholds are hit.<br/>
+        /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("temperature")]
         public double Temperature { get; set; } = 0;

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: desc
+    /// Default Value: desc
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum ListRunsOrder

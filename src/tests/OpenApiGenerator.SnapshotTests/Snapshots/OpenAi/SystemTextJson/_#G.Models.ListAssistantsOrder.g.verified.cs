@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Default Value: desc
+    /// Default Value: desc
     /// </summary>
     public enum ListAssistantsOrder
     {

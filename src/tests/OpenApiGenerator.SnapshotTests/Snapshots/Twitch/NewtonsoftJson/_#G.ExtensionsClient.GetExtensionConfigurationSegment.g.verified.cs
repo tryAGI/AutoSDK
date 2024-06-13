@@ -7,7 +7,11 @@ namespace G
     public partial class ExtensionsClient
     {
         /// <summary>
-        /// Gets the specified configuration segment from the specified extension.
+        /// Gets the specified configuration segment from the specified extension.<br/>
+        /// Gets the specified configuration segment from the specified extension.<br/>
+        /// **Rate Limits**: You may retrieve each segment a maximum of 20 times per minute.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt). The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to _external_.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="extensionId"></param>

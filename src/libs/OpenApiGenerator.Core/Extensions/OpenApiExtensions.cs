@@ -114,14 +114,46 @@ public static class OpenApiExtensions
 
         // Remove any XML tags from the description
         var summary = schema.Description?.ClearForXml() ?? string.Empty;
-        if (schema.Default != null)
+        var @default = schema.Default.GetString()?.ClearForXml();
+        if (!string.IsNullOrWhiteSpace(@default))
         {
-            summary += $"\n<br/>Default Value: {schema.Default.GetString()?.ClearForXml()}";
+            if (!string.IsNullOrWhiteSpace(summary))
+            {
+                summary += "\n";
+            }
+
+            summary += $"Default Value: {@default}";
         }
 
-        if (schema.Example != null)
+        var example = schema.Example.GetString()?.ClearForXml();
+        if (!string.IsNullOrWhiteSpace(example))
         {
-            summary += $"\n<br/>Example: {schema.Example.GetString()?.ClearForXml()}";
+            if (!string.IsNullOrWhiteSpace(summary))
+            {
+                summary += "\n";
+            }
+
+            summary += $"Example: {example}";
+        }
+
+        return summary;
+    }
+
+    public static string GetXmlDocumentationSummary(this OpenApiOperation operation)
+    {
+        operation = operation ?? throw new ArgumentNullException(nameof(operation));
+
+        // Remove any XML tags from the description
+        var summary = operation.Summary?.ClearForXml() ?? string.Empty;
+        var description = operation.Description?.ClearForXml();
+        if (!string.IsNullOrWhiteSpace(description))
+        {
+            if (!string.IsNullOrWhiteSpace(summary))
+            {
+                summary += "\n";
+            }
+            
+            summary += $"{description}";
         }
 
         return summary;

@@ -16,8 +16,8 @@ namespace G
         public int Amount { get; set; } = default!;
 
         /// <summary>
-        /// The type of currency. Possible values are:  
-        ///   
+        /// The type of currency. Possible values are:  <br/>
+        ///   <br/>
         /// * bits — The minimum price is 1 and the maximum is 10000.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]

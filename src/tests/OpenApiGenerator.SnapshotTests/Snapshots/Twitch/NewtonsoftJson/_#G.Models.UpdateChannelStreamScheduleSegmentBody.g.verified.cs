@@ -10,8 +10,8 @@ namespace G
     public sealed partial class UpdateChannelStreamScheduleSegmentBody
     {
         /// <summary>
-        /// The date and time that the broadcast segment starts. Specify the date and time in RFC3339 format (for example, 2022-08-02T06:00:00Z).  
-        ///   
+        /// The date and time that the broadcast segment starts. Specify the date and time in RFC3339 format (for example, 2022-08-02T06:00:00Z).  <br/>
+        ///   <br/>
         /// **NOTE**: Only partners and affiliates may update a broadcast’s start time and only for non-recurring segments.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start_time")]
@@ -36,8 +36,8 @@ namespace G
         public string? Title { get; set; }
 
         /// <summary>
-        /// A Boolean value that indicates whether the broadcast is canceled. Set to **true** to cancel the segment.  
-        ///   
+        /// A Boolean value that indicates whether the broadcast is canceled. Set to **true** to cancel the segment.  <br/>
+        ///   <br/>
         /// **NOTE**: For recurring segments, the API cancels the first segment after the current UTC date and time and not the specified segment (unless the specified segment is the next segment after the current UTC date and time).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_canceled")]

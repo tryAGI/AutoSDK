@@ -7,7 +7,11 @@ namespace G
     public partial class GuestStarClient
     {
         /// <summary>
-        /// BETA Sends an invite to a specified guest on behalf of the broadcaster for a Guest Star session in progress.
+        /// BETA Sends an invite to a specified guest on behalf of the broadcaster for a Guest Star session in progress.<br/>
+        /// BETA Sends an invite to a specified guest on behalf of the broadcaster for a Guest Star session in progress.<br/>
+        /// __Authorization:__<br/>
+        /// * Query parameter `moderator_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)<br/>
+        /// * Requires OAuth Scope: `channel:manage:guest_star` or `moderator:manage:guest_star`
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>

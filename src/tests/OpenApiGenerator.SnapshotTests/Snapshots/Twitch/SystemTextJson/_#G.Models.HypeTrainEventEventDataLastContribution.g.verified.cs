@@ -17,10 +17,10 @@ namespace G
         public required int Total { get; set; }
 
         /// <summary>
-        /// The contribution method used. Possible values are:  
-        ///   
-        /// * BITS — Cheering with Bits.
-        /// * SUBS — Subscription activity like subscribing or gifting subscriptions.
+        /// The contribution method used. Possible values are:  <br/>
+        ///   <br/>
+        /// * BITS — Cheering with Bits.<br/>
+        /// * SUBS — Subscription activity like subscribing or gifting subscriptions.<br/>
         /// * OTHER — Covers other contribution methods not listed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

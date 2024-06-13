@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The status of the most recent build of the Page.
-    /// <br/>Example: built
+    /// The status of the most recent build of the Page.<br/>
+    /// Example: built
     /// </summary>
     public enum PageStatus
     {

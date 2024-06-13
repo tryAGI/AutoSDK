@@ -149,7 +149,7 @@ public static class StringExtensions
         
         var spaces = new string(' ', level);
         var value = string.Join("\n", lines
-            .Select(line => $"{spaces}/// {line}"));
+            .Select((line, i) => $"{spaces}/// {line}{(i != lines.Length - 1 ? "<br/>" : string.Empty)}"));
         
         return addSummary
             ? $@"/// <summary>

@@ -22,15 +22,15 @@ namespace G
         public string? VcsPassword { get; set; }
 
         /// <summary>
-        /// The type of version control system you are migrating from.
-        /// <br/>Example: "git"
+        /// The type of version control system you are migrating from.<br/>
+        /// Example: "git"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vcs")]
         public global::G.MigrationsUpdateImportRequestVcs? Vcs { get; set; }
 
         /// <summary>
-        /// For a tfvc import, the name of the project that is being imported.
-        /// <br/>Example: "project1"
+        /// For a tfvc import, the name of the project that is being imported.<br/>
+        /// Example: "project1"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tfvc_project")]
         public string? TfvcProject { get; set; }

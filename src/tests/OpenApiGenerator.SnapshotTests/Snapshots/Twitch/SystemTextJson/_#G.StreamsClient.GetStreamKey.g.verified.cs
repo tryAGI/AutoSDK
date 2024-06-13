@@ -7,7 +7,10 @@ namespace G
     public partial class StreamsClient
     {
         /// <summary>
-        /// Gets the channel’s stream key.
+        /// Gets the channel’s stream key.<br/>
+        /// Gets the channel’s stream key.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:read:stream\_key** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

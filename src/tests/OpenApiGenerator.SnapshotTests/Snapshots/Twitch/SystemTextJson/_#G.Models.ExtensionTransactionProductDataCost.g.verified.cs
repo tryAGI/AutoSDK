@@ -17,8 +17,8 @@ namespace G
         public required int Amount { get; set; }
 
         /// <summary>
-        /// The type of currency exchanged. Possible values are:  
-        ///   
+        /// The type of currency exchanged. Possible values are:  <br/>
+        ///   <br/>
         /// * bits
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

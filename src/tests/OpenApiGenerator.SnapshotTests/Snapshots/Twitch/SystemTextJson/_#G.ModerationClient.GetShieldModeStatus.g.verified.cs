@@ -7,7 +7,11 @@ namespace G
     public partial class ModerationClient
     {
         /// <summary>
-        /// Gets the broadcaster’s Shield Mode activation status.
+        /// Gets the broadcaster’s Shield Mode activation status.<br/>
+        /// Gets the broadcaster’s Shield Mode activation status.<br/>
+        /// To receive notification when the broadcaster activates and deactivates Shield Mode, subscribe to the [channel.shield\_mode.begin](https://dev.twitch.tv/docs/eventsub/eventsub-subscription-types#channelshield%5Fmodebegin) and [channel.shield\_mode.end](https://dev.twitch.tv/docs/eventsub/eventsub-subscription-types#channelshield%5Fmodeend) subscription types.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **moderator:read:shield\_mode** or **moderator:manage:shield\_mode** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>

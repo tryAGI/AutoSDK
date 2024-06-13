@@ -16,8 +16,8 @@ namespace G
         public string FileId { get; set; } = default!;
 
         /// <summary>
-        /// Specifies the detail level of the image if specified by the user. `low` uses fewer tokens, you can opt in to high resolution using `high`.
-        /// <br/>Default Value: auto
+        /// Specifies the detail level of the image if specified by the user. `low` uses fewer tokens, you can opt in to high resolution using `high`.<br/>
+        /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("detail")]
         public global::G.MessageContentImageFileObjectImageFileDetail? Detail { get; set; } = global::G.MessageContentImageFileObjectImageFileDetail.Auto;

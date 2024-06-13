@@ -7,7 +7,10 @@ namespace G
     public partial class MigrationsClient
     {
         /// <summary>
-        /// Map a commit author
+        /// Map a commit author<br/>
+        /// Update an author's identity for the import. Your application can continue updating authors any time before you push<br/>
+        /// new commits to the repository.<br/>
+        /// **Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
@@ -46,7 +49,10 @@ namespace G
         }
 
         /// <summary>
-        /// Map a commit author
+        /// Map a commit author<br/>
+        /// Update an author's identity for the import. Your application can continue updating authors any time before you push<br/>
+        /// new commits to the repository.<br/>
+        /// **Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>

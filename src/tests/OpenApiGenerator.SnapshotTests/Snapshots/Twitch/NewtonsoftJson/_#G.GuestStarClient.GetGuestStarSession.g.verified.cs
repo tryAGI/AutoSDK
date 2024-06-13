@@ -7,7 +7,11 @@ namespace G
     public partial class GuestStarClient
     {
         /// <summary>
-        /// BETA Gets information about an ongoing Guest Star session for a particular channel.
+        /// BETA Gets information about an ongoing Guest Star session for a particular channel.<br/>
+        /// BETA Gets information about an ongoing Guest Star session for a particular channel.<br/>
+        /// __Authorization:__<br/>
+        /// * Requires OAuth Scope: `channel:read:guest_star`, `channel:manage:guest_star`, `moderator:read:guest_star` or `moderator:manage:guest_star`<br/>
+        /// * Guests must be either invited or assigned a slot within the session
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>

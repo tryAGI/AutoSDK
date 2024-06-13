@@ -5,16 +5,16 @@
 namespace G
 {
     /// <summary>
-    /// Unofficial Swagger UI for Twitch API.
-    /// All endpoints are generated automatically from the [twitch docs](https://dev.twitch.tv/docs/api/reference) page.
-    /// __Features:__
-    /// * Swagger UI for all Twitch API endpoints
-    /// * Schemas for _Request Query Parameters_, _Request Body_, _Response Body_
-    /// * Some additional schemas like _Clip_, _ChatBadge_, _Prediction_, _Game_, _Channel_, _Video_ etc.
-    /// * Response codes and examples
-    /// * Generated types for TypeScript: [ts-twitch-api](https://github.com/DmitryScaletta/ts-twitch-api)
-    /// __Repository:__ [github.com/DmitryScaletta/twitch-api-swagger](https://github.com/DmitryScaletta/twitch-api-swagger)
-    /// If no httpClient is provided, a new one will be created.
+    /// Unofficial Swagger UI for Twitch API.<br/>
+    /// All endpoints are generated automatically from the [twitch docs](https://dev.twitch.tv/docs/api/reference) page.<br/>
+    /// __Features:__<br/>
+    /// * Swagger UI for all Twitch API endpoints<br/>
+    /// * Schemas for _Request Query Parameters_, _Request Body_, _Response Body_<br/>
+    /// * Some additional schemas like _Clip_, _ChatBadge_, _Prediction_, _Game_, _Channel_, _Video_ etc.<br/>
+    /// * Response codes and examples<br/>
+    /// * Generated types for TypeScript: [ts-twitch-api](https://github.com/DmitryScaletta/ts-twitch-api)<br/>
+    /// __Repository:__ [github.com/DmitryScaletta/twitch-api-swagger](https://github.com/DmitryScaletta/twitch-api-swagger)<br/>
+    /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
     public sealed partial class Api : global::System.IDisposable

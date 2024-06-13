@@ -7,7 +7,10 @@ namespace G
     public partial class ScheduleClient
     {
         /// <summary>
-        /// Adds a single or recurring broadcast to the broadcaster’s streaming schedule.
+        /// Adds a single or recurring broadcast to the broadcaster’s streaming schedule.<br/>
+        /// Adds a single or recurring broadcast to the broadcaster’s streaming schedule. For information about scheduling broadcasts, see [Stream Schedule](https://help.twitch.tv/s/article/channel-page-setup#Schedule).<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:schedule** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="request"></param>
@@ -42,7 +45,10 @@ namespace G
         }
 
         /// <summary>
-        /// Adds a single or recurring broadcast to the broadcaster’s streaming schedule.
+        /// Adds a single or recurring broadcast to the broadcaster’s streaming schedule.<br/>
+        /// Adds a single or recurring broadcast to the broadcaster’s streaming schedule. For information about scheduling broadcasts, see [Stream Schedule](https://help.twitch.tv/s/article/channel-page-setup#Schedule).<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:schedule** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="startTime"></param>

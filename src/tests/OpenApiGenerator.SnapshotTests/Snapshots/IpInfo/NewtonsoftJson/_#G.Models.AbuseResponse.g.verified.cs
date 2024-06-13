@@ -10,37 +10,37 @@ namespace G
     public sealed partial class AbuseResponse
     {
         /// <summary>
-        /// <br/>Example: US, CA, Mountain View, 1600 Amphitheatre Parkway, 94043
+        /// Example: US, CA, Mountain View, 1600 Amphitheatre Parkway, 94043
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("address")]
         public string? Address { get; set; }
 
         /// <summary>
-        /// <br/>Example: US
+        /// Example: US
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("country")]
         public string? Country { get; set; }
 
         /// <summary>
-        /// <br/>Example: network-abuse@google.com
+        /// Example: network-abuse@google.com
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("email")]
         public string? Email { get; set; }
 
         /// <summary>
-        /// <br/>Example: Abuse
+        /// Example: Abuse
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// <br/>Example: 8.8.8.0/24
+        /// Example: 8.8.8.0/24
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("network")]
         public string? Network { get; set; }
 
         /// <summary>
-        /// <br/>Example: +1-650-253-0000
+        /// Example: +1-650-253-0000
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("phone")]
         public string? Phone { get; set; }

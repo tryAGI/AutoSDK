@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Allowed values that can be passed to the exclude param.
-    /// <br/>Example: repositories
+    /// Allowed values that can be passed to the exclude param.<br/>
+    /// Example: repositories
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum MigrationsStartForAuthenticatedUserRequestExclude

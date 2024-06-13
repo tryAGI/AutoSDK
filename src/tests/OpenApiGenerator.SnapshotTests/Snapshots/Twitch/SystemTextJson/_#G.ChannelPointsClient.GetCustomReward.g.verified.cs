@@ -8,7 +8,11 @@ namespace G
     public partial class ChannelPointsClient
     {
         /// <summary>
-        /// Gets a list of custom rewards that the specified broadcaster created.
+        /// Gets a list of custom rewards that the specified broadcaster created.<br/>
+        /// Gets a list of custom rewards that the specified broadcaster created.<br/>
+        /// **NOTE**: A channel may offer a maximum of 50 rewards, which includes both enabled and disabled rewards.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:read:redemptions** or **channel:manage:redemptions** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="id"></param>

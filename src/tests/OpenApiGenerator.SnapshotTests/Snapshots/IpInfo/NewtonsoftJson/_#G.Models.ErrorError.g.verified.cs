@@ -10,13 +10,13 @@ namespace G
     public sealed partial class ErrorError
     {
         /// <summary>
-        /// <br/>Example: Wrong ip
+        /// Example: Wrong ip
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("title", Required = global::Newtonsoft.Json.Required.Always)]
         public string Title { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: Please provide a valid IP address
+        /// Example: Please provide a valid IP address
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("message", Required = global::Newtonsoft.Json.Required.Always)]
         public string Message { get; set; } = default!;

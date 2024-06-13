@@ -10,16 +10,16 @@ namespace G
     public sealed partial class PushModelRequest
     {
         /// <summary>
-        /// The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt;tag&gt;.
-        /// <br/>Example: mattw/pygmalion:latest
+        /// The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt;tag&gt;.<br/>
+        /// Example: mattw/pygmalion:latest
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
         public string Model { get; set; } = default!;
 
         /// <summary>
-        /// Allow insecure connections to the library. 
-        /// Only use this if you are pushing to your library during development.
-        /// <br/>Default Value: false
+        /// Allow insecure connections to the library. <br/>
+        /// Only use this if you are pushing to your library during development.<br/>
+        /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("insecure")]
         public bool Insecure { get; set; } = false;
@@ -37,8 +37,8 @@ namespace G
         public string? Password { get; set; }
 
         /// <summary>
-        /// If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
-        /// <br/>Default Value: true
+        /// If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.<br/>
+        /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stream")]
         public bool Stream { get; set; } = true;

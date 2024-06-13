@@ -106,8 +106,8 @@ namespace G
         public string Instructions { get; set; } = default!;
 
         /// <summary>
-        /// The list of tools that the [assistant](/docs/api-reference/assistants) used for this run.
-        /// <br/>Default Value: []
+        /// The list of tools that the [assistant](/docs/api-reference/assistants) used for this run.<br/>
+        /// Default Value: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tools", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode, global::G.AssistantToolsFileSearch, global::G.AssistantToolsFunction>> Tools { get; set; } = default!;
@@ -155,18 +155,18 @@ namespace G
         public global::G.TruncationObject TruncationStrategy { get; set; } = default!;
 
         /// <summary>
-        /// Controls which (if any) tool is called by the model.
-        /// `none` means the model will not call any tools and instead generates a message.
-        /// `auto` is the default value and means the model can pick between generating a message or calling one or more tools.
-        /// `required` means the model must call one or more tools before responding to the user.
+        /// Controls which (if any) tool is called by the model.<br/>
+        /// `none` means the model will not call any tools and instead generates a message.<br/>
+        /// `auto` is the default value and means the model can pick between generating a message or calling one or more tools.<br/>
+        /// `required` means the model must call one or more tools before responding to the user.<br/>
         /// Specifying a particular tool like `{"type": "file_search"}` or `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_choice", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.OneOf<global::G.RunObjectToolChoice, global::G.AssistantsNamedToolChoice> ToolChoice { get; set; } = default!;
 
         /// <summary>
-        /// Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
-        /// Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.
+        /// Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>
+        /// Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.<br/>
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format", Required = global::Newtonsoft.Json.Required.Always)]

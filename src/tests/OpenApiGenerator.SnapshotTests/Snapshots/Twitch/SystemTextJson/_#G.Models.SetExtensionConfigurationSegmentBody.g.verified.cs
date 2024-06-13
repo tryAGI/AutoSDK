@@ -17,10 +17,10 @@ namespace G
         public required string ExtensionId { get; set; }
 
         /// <summary>
-        /// The configuration segment to update. Possible case-sensitive values are:  
-        ///   
-        /// * broadcaster
-        /// * developer
+        /// The configuration segment to update. Possible case-sensitive values are:  <br/>
+        ///   <br/>
+        /// * broadcaster<br/>
+        /// * developer<br/>
         /// * global
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("segment")]

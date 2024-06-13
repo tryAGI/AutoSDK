@@ -10,9 +10,9 @@ namespace G
     public sealed partial class UpdateConduitShardsBodyShardsTransport
     {
         /// <summary>
-        /// The transport method. Possible values are:  
-        ///   
-        /// * webhook
+        /// The transport method. Possible values are:  <br/>
+        ///   <br/>
+        /// * webhook<br/>
         /// * websocket
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("method")]

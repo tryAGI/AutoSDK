@@ -5,10 +5,10 @@
 namespace G
 {
     /// <summary>
-    /// The type of segment. Possible values are:   
-    ///   
-    /// * broadcaster
-    /// * developer
+    /// The type of segment. Possible values are:   <br/>
+    ///   <br/>
+    /// * broadcaster<br/>
+    /// * developer<br/>
     /// * global
     /// </summary>
     public enum ExtensionConfigurationSegmentSegment

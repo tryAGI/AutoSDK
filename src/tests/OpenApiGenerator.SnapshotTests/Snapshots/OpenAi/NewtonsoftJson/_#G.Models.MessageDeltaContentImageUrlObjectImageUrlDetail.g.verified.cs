@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// Specifies the detail level of the image. `low` uses fewer tokens, you can opt in to high resolution using `high`.
-    /// <br/>Default Value: auto
+    /// Specifies the detail level of the image. `low` uses fewer tokens, you can opt in to high resolution using `high`.<br/>
+    /// Default Value: auto
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum MessageDeltaContentImageUrlObjectImageUrlDetail

@@ -33,16 +33,16 @@ namespace G
         public required global::G.CreateSpeechRequestVoice Voice { get; set; }
 
         /// <summary>
-        /// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.
-        /// <br/>Default Value: mp3
+        /// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.<br/>
+        /// Default Value: mp3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateSpeechRequestResponseFormatJsonConverter))]
         public global::G.CreateSpeechRequestResponseFormat? ResponseFormat { get; set; } = global::G.CreateSpeechRequestResponseFormat.Mp3;
 
         /// <summary>
-        /// The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default.
-        /// <br/>Default Value: 1
+        /// The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default.<br/>
+        /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
         public double Speed { get; set; } = 1;

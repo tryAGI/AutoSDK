@@ -7,7 +7,11 @@ namespace G
     public partial class GuestStarClient
     {
         /// <summary>
-        /// BETA Allows a previously invited user to be assigned a slot within the active Guest Star session.
+        /// BETA Allows a previously invited user to be assigned a slot within the active Guest Star session.<br/>
+        /// BETA Allows a previously invited user to be assigned a slot within the active Guest Star session, once that guest has indicated they are ready to join.<br/>
+        /// __Authorization:__<br/>
+        /// * Query parameter `moderator_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)<br/>
+        /// * Requires OAuth Scope: `channel:manage:guest_star` or `moderator:manage:guest_star`
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>

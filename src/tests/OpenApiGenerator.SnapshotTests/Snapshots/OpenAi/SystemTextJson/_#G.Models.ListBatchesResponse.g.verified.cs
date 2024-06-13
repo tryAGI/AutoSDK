@@ -17,13 +17,13 @@ namespace G
         public required global::System.Collections.Generic.IList<global::G.Batch> Data { get; set; }
 
         /// <summary>
-        /// <br/>Example: batch_abc123
+        /// Example: batch_abc123
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_id")]
         public string? FirstId { get; set; }
 
         /// <summary>
-        /// <br/>Example: batch_abc456
+        /// Example: batch_abc456
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
         public string? LastId { get; set; }

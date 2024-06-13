@@ -5,10 +5,10 @@
 namespace G
 {
     /// <summary>
-    /// The type of emote. The possible values are:  
-    ///   
-    /// * bitstier — A custom Bits tier emote.
-    /// * follower — A custom follower emote.
+    /// The type of emote. The possible values are:  <br/>
+    ///   <br/>
+    /// * bitstier — A custom Bits tier emote.<br/>
+    /// * follower — A custom follower emote.<br/>
     /// * subscriptions — A custom subscriber emote.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]

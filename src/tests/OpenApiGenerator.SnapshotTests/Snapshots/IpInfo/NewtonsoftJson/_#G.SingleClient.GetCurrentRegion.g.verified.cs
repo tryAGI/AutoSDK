@@ -7,7 +7,8 @@ namespace G
     public partial class SingleClient
     {
         /// <summary>
-        /// Returns the current region.
+        /// Returns the current region.<br/>
+        /// Returns current region.
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

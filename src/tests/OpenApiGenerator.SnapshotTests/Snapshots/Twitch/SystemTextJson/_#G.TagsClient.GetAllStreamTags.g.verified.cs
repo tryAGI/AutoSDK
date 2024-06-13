@@ -8,7 +8,11 @@ namespace G
     public partial class TagsClient
     {
         /// <summary>
-        /// Gets the list of all stream tags that Twitch defines. You can also filter the list by one or more tag IDs.
+        /// Gets the list of all stream tags that Twitch defines. You can also filter the list by one or more tag IDs.<br/>
+        /// **IMPORTANT** Twitch is moving from Twitch-defined tags to channel-defined tags. **IMPORTANT** As of February 28, 2023, this endpoint returns an empty array. On July 13, 2023, it will return a 410 response.<br/>
+        /// Gets a list of all stream tags that Twitch defines. The broadcaster may apply any of these to their channel except automatic tags. For an online list of the possible tags, see [List of All Tags](https://www.twitch.tv/directory/all/tags).<br/>
+        /// __Authorization:__<br/>
+        /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).
         /// </summary>
         /// <param name="tagId"></param>
         /// <param name="first"></param>

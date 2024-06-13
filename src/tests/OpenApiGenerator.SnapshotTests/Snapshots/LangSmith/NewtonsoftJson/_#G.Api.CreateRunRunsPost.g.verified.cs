@@ -7,7 +7,8 @@ namespace G
     public partial class Api
     {
         /// <summary>
-        /// Create Run
+        /// Create Run<br/>
+        /// Create a new run.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -40,7 +41,8 @@ namespace G
         }
 
         /// <summary>
-        /// Create Run
+        /// Create Run<br/>
+        /// Create a new run.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="inputs"></param>

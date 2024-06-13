@@ -8,7 +8,10 @@ namespace G
     public partial class StreamsClient
     {
         /// <summary>
-        /// Gets a list of all streams.
+        /// Gets a list of all streams.<br/>
+        /// Gets a list of all streams. The list is in descending order by the number of viewers watching the stream. Because viewers come and go during a stream, it’s possible to find duplicate or missing streams in the list as you page through the results.<br/>
+        /// __Authorization:__<br/>
+        /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).
         /// </summary>
         /// <param name="userId"></param>
         /// <param name="userLogin"></param>

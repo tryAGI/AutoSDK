@@ -7,7 +7,10 @@ namespace G
     public partial class AnalyticsClient
     {
         /// <summary>
-        /// Gets an analytics report for one or more games.
+        /// Gets an analytics report for one or more games.<br/>
+        /// Gets an analytics report for one or more games. The response contains the URLs used to download the reports (CSV files). [Learn more](https://dev.twitch.tv/docs/insights)<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **analytics:read:games** scope.
         /// </summary>
         /// <param name="gameId"></param>
         /// <param name="type"></param>

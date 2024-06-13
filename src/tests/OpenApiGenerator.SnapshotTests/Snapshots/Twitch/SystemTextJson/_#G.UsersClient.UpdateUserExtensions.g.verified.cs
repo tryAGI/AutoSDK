@@ -7,7 +7,11 @@ namespace G
     public partial class UsersClient
     {
         /// <summary>
-        /// Updates an installed extension’s information.
+        /// Updates an installed extension’s information.<br/>
+        /// Updates an installed extension’s information. You can update the extension’s activation state, ID, and version number. The user ID in the access token identifies the broadcaster whose extensions you’re updating.<br/>
+        /// NOTE: If you try to activate an extension under multiple extension types, the last write wins (and there is no guarantee of write order).<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **user:edit:broadcast** scope.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -40,7 +44,11 @@ namespace G
         }
 
         /// <summary>
-        /// Updates an installed extension’s information.
+        /// Updates an installed extension’s information.<br/>
+        /// Updates an installed extension’s information. You can update the extension’s activation state, ID, and version number. The user ID in the access token identifies the broadcaster whose extensions you’re updating.<br/>
+        /// NOTE: If you try to activate an extension under multiple extension types, the last write wins (and there is no guarantee of write order).<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **user:edit:broadcast** scope.
         /// </summary>
         /// <param name="data"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

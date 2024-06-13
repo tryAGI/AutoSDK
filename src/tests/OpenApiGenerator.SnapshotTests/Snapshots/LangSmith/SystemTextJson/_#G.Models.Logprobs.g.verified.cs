@@ -10,25 +10,25 @@ namespace G
     public sealed partial class Logprobs
     {
         /// <summary>
-        /// <br/>Default Value: []
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tokens")]
         public global::System.Collections.Generic.IList<string?>? Tokens { get; set; }
 
         /// <summary>
-        /// <br/>Default Value: []
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token_logprobs")]
         public global::System.Collections.Generic.IList<double>? TokenLogprobs { get; set; }
 
         /// <summary>
-        /// <br/>Default Value: []
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_logprobs")]
         public global::System.Collections.Generic.IList<object?>? TopLogprobs { get; set; }
 
         /// <summary>
-        /// <br/>Default Value: []
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text_offset")]
         public global::System.Collections.Generic.IList<int>? TextOffset { get; set; }

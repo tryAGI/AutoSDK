@@ -16,13 +16,13 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.Batch> Data { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: batch_abc123
+        /// Example: batch_abc123
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("first_id")]
         public string? FirstId { get; set; }
 
         /// <summary>
-        /// <br/>Example: batch_abc456
+        /// Example: batch_abc456
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_id")]
         public string? LastId { get; set; }

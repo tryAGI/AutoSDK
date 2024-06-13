@@ -16,8 +16,8 @@ namespace G
         public string Url { get; set; } = default!;
 
         /// <summary>
-        /// Specifies the detail level of the image. Learn more in the [Vision guide](/docs/guides/vision/low-or-high-fidelity-image-understanding).
-        /// <br/>Default Value: auto
+        /// Specifies the detail level of the image. Learn more in the [Vision guide](/docs/guides/vision/low-or-high-fidelity-image-understanding).<br/>
+        /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("detail")]
         public global::G.ChatCompletionRequestMessageContentPartImageImageUrlDetail? Detail { get; set; } = global::G.ChatCompletionRequestMessageContentPartImageImageUrlDetail.Auto;

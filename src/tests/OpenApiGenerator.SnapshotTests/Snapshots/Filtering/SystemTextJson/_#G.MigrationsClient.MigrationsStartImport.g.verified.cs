@@ -7,7 +7,11 @@ namespace G
     public partial class MigrationsClient
     {
         /// <summary>
-        /// Start an import
+        /// Start an import<br/>
+        /// Start a source import to a GitHub repository using GitHub Importer.<br/>
+        /// Importing into a GitHub repository with GitHub Actions enabled is not supported and will<br/>
+        /// return a status `422 Unprocessable Entity` response.<br/>
+        /// **Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
@@ -44,7 +48,11 @@ namespace G
         }
 
         /// <summary>
-        /// Start an import
+        /// Start an import<br/>
+        /// Start a source import to a GitHub repository using GitHub Importer.<br/>
+        /// Importing into a GitHub repository with GitHub Actions enabled is not supported and will<br/>
+        /// return a status `422 Unprocessable Entity` response.<br/>
+        /// **Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>

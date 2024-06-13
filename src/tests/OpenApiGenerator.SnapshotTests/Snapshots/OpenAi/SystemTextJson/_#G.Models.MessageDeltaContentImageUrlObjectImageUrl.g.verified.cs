@@ -16,8 +16,8 @@ namespace G
         public string? Url { get; set; }
 
         /// <summary>
-        /// Specifies the detail level of the image. `low` uses fewer tokens, you can opt in to high resolution using `high`.
-        /// <br/>Default Value: auto
+        /// Specifies the detail level of the image. `low` uses fewer tokens, you can opt in to high resolution using `high`.<br/>
+        /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageDeltaContentImageUrlObjectImageUrlDetailJsonConverter))]

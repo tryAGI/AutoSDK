@@ -5,10 +5,10 @@
 namespace G
 {
     /// <summary>
-    /// The type of broadcaster. Possible values are:  
-    ///   
-    /// * affiliate — An [affiliate broadcaster](https://help.twitch.tv/s/article/joining-the-affiliate-program)
-    /// * partner — A [partner broadcaster](https://help.twitch.tv/s/article/partner-program-overview)
+    /// The type of broadcaster. Possible values are:  <br/>
+    ///   <br/>
+    /// * affiliate — An [affiliate broadcaster](https://help.twitch.tv/s/article/joining-the-affiliate-program)<br/>
+    /// * partner — A [partner broadcaster](https://help.twitch.tv/s/article/partner-program-overview)<br/>
     /// * "" — A normal broadcaster
     /// </summary>
     public enum UserBroadcasterType

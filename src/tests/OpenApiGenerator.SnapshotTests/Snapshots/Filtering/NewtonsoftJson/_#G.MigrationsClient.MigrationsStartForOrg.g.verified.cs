@@ -7,7 +7,8 @@ namespace G
     public partial class MigrationsClient
     {
         /// <summary>
-        /// Start an organization migration
+        /// Start an organization migration<br/>
+        /// Initiates the generation of a migration archive.
         /// </summary>
         /// <param name="org"></param>
         /// <param name="request"></param>
@@ -42,7 +43,8 @@ namespace G
         }
 
         /// <summary>
-        /// Start an organization migration
+        /// Start an organization migration<br/>
+        /// Initiates the generation of a migration archive.
         /// </summary>
         /// <param name="org"></param>
         /// <param name="repositories"></param>

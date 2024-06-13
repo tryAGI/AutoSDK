@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// <br/>Example: isp
+    /// Example: isp
     /// </summary>
     public enum CompanyType
     {

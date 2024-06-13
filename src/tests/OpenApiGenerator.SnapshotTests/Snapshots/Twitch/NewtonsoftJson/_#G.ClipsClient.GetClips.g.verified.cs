@@ -8,7 +8,12 @@ namespace G
     public partial class ClipsClient
     {
         /// <summary>
-        /// Gets one or more video clips.
+        /// Gets one or more video clips.<br/>
+        /// Gets one or more video clips that were captured from streams. For information about clips, see [How to use clips](https://help.twitch.tv/s/article/how-to-use-clips).<br/>
+        /// __Authorization:__<br/>
+        /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).<br/>
+        /// __Request Query Parameters:__<br/>
+        /// The _id_, _game\_id_, and _broadcaster\_id_ query parameters are mutually exclusive.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="gameId"></param>

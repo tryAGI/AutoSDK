@@ -16,8 +16,8 @@ namespace G
         public global::G.FineTuningIntegrationType Type { get; set; } = default!;
 
         /// <summary>
-        /// The settings for your integration with Weights and Biases. This payload specifies the project that
-        /// metrics will be sent to. Optionally, you can set an explicit display name for your run, add tags
+        /// The settings for your integration with Weights and Biases. This payload specifies the project that<br/>
+        /// metrics will be sent to. Optionally, you can set an explicit display name for your run, add tags<br/>
         /// to your run, and set a default entity (team, username, etc) to be associated with your run.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("wandb", Required = global::Newtonsoft.Json.Required.Always)]

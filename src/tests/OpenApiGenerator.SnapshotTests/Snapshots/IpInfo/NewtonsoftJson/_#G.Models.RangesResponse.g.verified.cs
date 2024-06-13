@@ -10,13 +10,13 @@ namespace G
     public sealed partial class RangesResponse
     {
         /// <summary>
-        /// <br/>Example: comcast.net
+        /// Example: comcast.net
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("domain", Required = global::Newtonsoft.Json.Required.Always)]
         public string Domain { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: 37330
+        /// Example: 37330
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_ranges", Required = global::Newtonsoft.Json.Required.Always)]
         public string NumRanges { get; set; } = default!;

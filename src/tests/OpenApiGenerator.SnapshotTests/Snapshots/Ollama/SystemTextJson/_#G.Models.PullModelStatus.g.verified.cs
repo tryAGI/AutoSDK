@@ -7,8 +7,8 @@ using System.Linq;
 namespace G
 {
     /// <summary>
-    /// Status pulling the model.
-    /// <br/>Example: pulling manifest
+    /// Status pulling the model.<br/>
+    /// Example: pulling manifest
     /// </summary>
     public readonly struct PullModelStatus : global::System.IEquatable<PullModelStatus>
     {

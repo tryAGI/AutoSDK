@@ -16,8 +16,8 @@ namespace G
         public global::G.MessageRole Role { get; set; } = default!;
 
         /// <summary>
-        /// The content of the message
-        /// <br/>Example: Why is the sky blue?
+        /// The content of the message<br/>
+        /// Example: Why is the sky blue?
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
         public string Content { get; set; } = default!;

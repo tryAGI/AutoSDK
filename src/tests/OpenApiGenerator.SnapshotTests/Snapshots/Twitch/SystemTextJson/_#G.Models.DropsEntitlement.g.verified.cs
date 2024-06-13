@@ -45,9 +45,9 @@ namespace G
         public required string GameId { get; set; }
 
         /// <summary>
-        /// The entitlement’s fulfillment status. Possible values are:   
-        ///   
-        /// * CLAIMED
+        /// The entitlement’s fulfillment status. Possible values are:   <br/>
+        ///   <br/>
+        /// * CLAIMED<br/>
         /// * FULFILLED
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fulfillment_status")]

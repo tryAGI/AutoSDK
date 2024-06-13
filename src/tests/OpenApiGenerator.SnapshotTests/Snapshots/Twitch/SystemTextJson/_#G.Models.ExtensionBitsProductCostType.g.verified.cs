@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The type of currency. Possible values are:  
-    ///   
+    /// The type of currency. Possible values are:  <br/>
+    ///   <br/>
     /// * bits
     /// </summary>
     public enum ExtensionBitsProductCostType

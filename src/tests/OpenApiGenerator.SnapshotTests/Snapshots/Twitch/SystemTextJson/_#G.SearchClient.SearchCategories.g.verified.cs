@@ -7,7 +7,11 @@ namespace G
     public partial class SearchClient
     {
         /// <summary>
-        /// Gets the games or categories that match the specified query.
+        /// Gets the games or categories that match the specified query.<br/>
+        /// Gets the games or categories that match the specified query.<br/>
+        /// To match, the category’s name must contain all parts of the query string. For example, if the query string is 42, the response includes any category name that contains 42 in the title. If the query string is a phrase like _love computer_, the response includes any category name that contains the words love and computer anywhere in the name. The comparison is case insensitive.<br/>
+        /// __Authorization:__<br/>
+        /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).
         /// </summary>
         /// <param name="query"></param>
         /// <param name="first"></param>

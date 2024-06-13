@@ -10,19 +10,19 @@ namespace G
     public sealed partial class Company
     {
         /// <summary>
-        /// <br/>Example: Sprint Springfield POP
+        /// Example: Sprint Springfield POP
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: sprint.com
+        /// Example: sprint.com
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("domain", Required = global::Newtonsoft.Json.Required.Always)]
         public string Domain { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: isp
+        /// Example: isp
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.CompanyType Type { get; set; } = default!;

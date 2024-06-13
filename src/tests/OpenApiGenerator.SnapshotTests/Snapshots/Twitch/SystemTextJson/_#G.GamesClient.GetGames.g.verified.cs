@@ -8,7 +8,11 @@ namespace G
     public partial class GamesClient
     {
         /// <summary>
-        /// Gets information about specified games.
+        /// Gets information about specified games.<br/>
+        /// Gets information about specified categories or games.<br/>
+        /// You may get up to 100 categories or games by specifying their ID or name. You may specify all IDs, all names, or a combination of IDs and names. If you specify a combination of IDs and names, the total number of IDs and names must not exceed 100.<br/>
+        /// __Authorization:__<br/>
+        /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).
         /// </summary>
         /// <param name="id"></param>
         /// <param name="name"></param>

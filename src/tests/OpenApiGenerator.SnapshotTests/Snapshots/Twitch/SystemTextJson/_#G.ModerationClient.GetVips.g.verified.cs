@@ -8,7 +8,10 @@ namespace G
     public partial class ModerationClient
     {
         /// <summary>
-        /// Gets a list of the broadcaster’s VIPs.
+        /// Gets a list of the broadcaster’s VIPs.<br/>
+        /// Gets a list of the broadcaster’s VIPs.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:read:vips** scope. If your app also adds and removes VIP status, you can use the **channel:manage:vips** scope instead.
         /// </summary>
         /// <param name="userId"></param>
         /// <param name="broadcasterId"></param>

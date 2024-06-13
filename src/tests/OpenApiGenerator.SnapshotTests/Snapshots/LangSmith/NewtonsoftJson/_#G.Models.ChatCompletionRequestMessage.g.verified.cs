@@ -10,7 +10,7 @@ namespace G
     public sealed partial class ChatCompletionRequestMessage
     {
         /// <summary>
-        /// <br/>Default Value: 
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
         public string? Role { get; set; } = "";

@@ -10,9 +10,9 @@ namespace G
     public sealed partial class EventSubSubscriptionTransport
     {
         /// <summary>
-        /// The transport method. Possible values are:  
-        ///   
-        /// * webhook
+        /// The transport method. Possible values are:  <br/>
+        ///   <br/>
+        /// * webhook<br/>
         /// * websocket
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("method", Required = global::Newtonsoft.Json.Required.Always)]

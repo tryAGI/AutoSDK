@@ -7,6 +7,7 @@ namespace G
     public partial class AbuseClient
     {
         /// <summary>
+        /// Our abuse contact API returns data containing information belonging to the abuse contact of every IP address on the Internet. Fields included in this response are the abuse contact's email address, postal/ZIP code, city, state, country, name, network, and phone number.<br/>
         /// Our abuse contact API returns data containing information belonging to the abuse contact of every IP address on the Internet. Fields included in this response are the abuse contact's email address, postal/ZIP code, city, state, country, name, network, and phone number.
         /// </summary>
         /// <param name="ip"></param>

@@ -7,7 +7,10 @@ namespace G
     public partial class ChatClient
     {
         /// <summary>
-        /// Sends an announcement to the broadcaster’s chat room.
+        /// Sends an announcement to the broadcaster’s chat room.<br/>
+        /// Sends an announcement to the broadcaster’s chat room.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **moderator:manage:announcements** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>
@@ -38,7 +41,10 @@ namespace G
         }
 
         /// <summary>
-        /// Sends an announcement to the broadcaster’s chat room.
+        /// Sends an announcement to the broadcaster’s chat room.<br/>
+        /// Sends an announcement to the broadcaster’s chat room.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **moderator:manage:announcements** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>

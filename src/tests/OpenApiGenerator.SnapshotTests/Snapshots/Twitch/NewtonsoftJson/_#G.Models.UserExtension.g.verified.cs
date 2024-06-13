@@ -34,11 +34,11 @@ namespace G
         public bool CanActivate { get; set; } = default!;
 
         /// <summary>
-        /// The extension types that you can activate for this extension. Possible values are:  
-        ///   
-        /// * component
-        /// * mobile
-        /// * overlay
+        /// The extension types that you can activate for this extension. Possible values are:  <br/>
+        ///   <br/>
+        /// * component<br/>
+        /// * mobile<br/>
+        /// * overlay<br/>
         /// * panel
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]

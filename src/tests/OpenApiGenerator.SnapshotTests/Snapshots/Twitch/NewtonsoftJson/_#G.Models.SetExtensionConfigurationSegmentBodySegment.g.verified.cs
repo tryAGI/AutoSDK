@@ -5,10 +5,10 @@
 namespace G
 {
     /// <summary>
-    /// The configuration segment to update. Possible case-sensitive values are:  
-    ///   
-    /// * broadcaster
-    /// * developer
+    /// The configuration segment to update. Possible case-sensitive values are:  <br/>
+    ///   <br/>
+    /// * broadcaster<br/>
+    /// * developer<br/>
     /// * global
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]

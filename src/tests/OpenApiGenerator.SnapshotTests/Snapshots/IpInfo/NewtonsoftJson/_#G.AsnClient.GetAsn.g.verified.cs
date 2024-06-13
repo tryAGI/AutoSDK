@@ -7,7 +7,8 @@ namespace G
     public partial class AsnClient
     {
         /// <summary>
-        /// Returns information about an ASN, such as the assigned prefixes, related domain, and more.
+        /// Returns information about an ASN, such as the assigned prefixes, related domain, and more.<br/>
+        /// Returns information about an AS.
         /// </summary>
         /// <param name="asn"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

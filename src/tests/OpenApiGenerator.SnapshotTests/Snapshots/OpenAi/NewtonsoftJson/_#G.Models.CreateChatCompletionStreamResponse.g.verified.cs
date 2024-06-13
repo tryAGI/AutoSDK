@@ -16,7 +16,7 @@ namespace G
         public string Id { get; set; } = default!;
 
         /// <summary>
-        /// A list of chat completion choices. Can contain more than one elements if `n` is greater than 1. Can also be empty for the
+        /// A list of chat completion choices. Can contain more than one elements if `n` is greater than 1. Can also be empty for the<br/>
         /// last chunk if you set `stream_options: {"include_usage": true}`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("choices", Required = global::Newtonsoft.Json.Required.Always)]
@@ -35,7 +35,7 @@ namespace G
         public string Model { get; set; } = default!;
 
         /// <summary>
-        /// This fingerprint represents the backend configuration that the model runs with.
+        /// This fingerprint represents the backend configuration that the model runs with.<br/>
         /// Can be used in conjunction with the `seed` request parameter to understand when backend changes have been made that might impact determinism.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("system_fingerprint")]
@@ -48,7 +48,7 @@ namespace G
         public global::G.CreateChatCompletionStreamResponseObject Object { get; set; } = default!;
 
         /// <summary>
-        /// An optional field that will only be present when you set `stream_options: {"include_usage": true}` in your request.
+        /// An optional field that will only be present when you set `stream_options: {"include_usage": true}` in your request.<br/>
         /// When present, it contains a null value except for the last chunk which contains the token usage statistics for the entire request.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("usage")]

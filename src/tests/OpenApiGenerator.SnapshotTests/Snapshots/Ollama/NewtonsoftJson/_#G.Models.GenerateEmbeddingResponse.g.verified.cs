@@ -10,8 +10,8 @@ namespace G
     public sealed partial class GenerateEmbeddingResponse
     {
         /// <summary>
-        /// The embedding for the prompt.
-        /// <br/>Example: [0.5670403838157654, 0.009260174818336964, ...]
+        /// The embedding for the prompt.<br/>
+        /// Example: [0.5670403838157654, 0.009260174818336964, ...]
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("embedding")]
         public global::System.Collections.Generic.IList<double>? Embedding { get; set; }

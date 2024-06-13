@@ -87,12 +87,12 @@ namespace G
         public required string Text { get; set; }
 
         /// <summary>
-        /// Status of the request. One of:  
-        ///   
-        /// * pending
-        /// * approved
-        /// * denied
-        /// * acknowledged
+        /// Status of the request. One of:  <br/>
+        ///   <br/>
+        /// * pending<br/>
+        /// * approved<br/>
+        /// * denied<br/>
+        /// * acknowledged<br/>
         /// * canceled
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]

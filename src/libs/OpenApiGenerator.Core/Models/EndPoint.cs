@@ -196,7 +196,7 @@ public readonly record struct EndPoint(
             JsonSerializerContext: settings.JsonSerializerContext,
             GenerateJsonSerializerContextTypes: settings.GenerateJsonSerializerContextTypes,
             HttpMethod: operation.Key,
-            Summary: operation.Value.Summary?.Replace("\n", string.Empty) ?? string.Empty,
+            Summary: operation.Value.GetXmlDocumentationSummary(),
             BaseUrlSummary: string.Empty,
             RequestType: requestType ?? TypeData.Default,
             ResponseType: responseType ?? TypeData.Default,

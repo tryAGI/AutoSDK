@@ -7,7 +7,10 @@ namespace G
     public partial class ExtensionsClient
     {
         /// <summary>
-        /// Gets information about an extension.
+        /// Gets information about an extension.<br/>
+        /// Gets information about an extension.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt). The signed JWT must include the `role` field (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)), and the `role` field must be set to _external_.
         /// </summary>
         /// <param name="extensionId"></param>
         /// <param name="extensionVersion"></param>

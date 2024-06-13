@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The format of the transcript output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.
-    /// <br/>Default Value: json
+    /// The format of the transcript output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.<br/>
+    /// Default Value: json
     /// </summary>
     public enum CreateTranscriptionRequestResponseFormat
     {

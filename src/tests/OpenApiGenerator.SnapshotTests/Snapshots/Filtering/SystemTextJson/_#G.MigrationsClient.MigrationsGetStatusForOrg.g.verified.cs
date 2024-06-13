@@ -8,7 +8,13 @@ namespace G
     public partial class MigrationsClient
     {
         /// <summary>
-        /// Get an organization migration status
+        /// Get an organization migration status<br/>
+        /// Fetches the status of a migration.<br/>
+        /// The `state` of a migration can be one of the following values:<br/>
+        /// *   `pending`, which means the migration hasn't started yet.<br/>
+        /// *   `exporting`, which means the migration is in progress.<br/>
+        /// *   `exported`, which means the migration finished successfully.<br/>
+        /// *   `failed`, which means the migration failed.
         /// </summary>
         /// <param name="org"></param>
         /// <param name="migrationId"></param>

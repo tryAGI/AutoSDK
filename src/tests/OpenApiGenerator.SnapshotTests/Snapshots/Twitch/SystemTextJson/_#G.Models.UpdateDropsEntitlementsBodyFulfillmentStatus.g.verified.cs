@@ -5,9 +5,9 @@
 namespace G
 {
     /// <summary>
-    /// The fulfillment status to set the entitlements to. Possible values are:  
-    ///   
-    /// * CLAIMED — The user claimed the benefit.
+    /// The fulfillment status to set the entitlements to. Possible values are:  <br/>
+    ///   <br/>
+    /// * CLAIMED — The user claimed the benefit.<br/>
     /// * FULFILLED — The developer granted the benefit that the user claimed.
     /// </summary>
     public enum UpdateDropsEntitlementsBodyFulfillmentStatus

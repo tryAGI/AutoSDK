@@ -10,19 +10,19 @@ namespace G
     public sealed partial class DomainsResponse
     {
         /// <summary>
-        /// <br/>Example: 1.1.1.1
+        /// Example: 1.1.1.1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ip")]
         public string? Ip { get; set; }
 
         /// <summary>
-        /// <br/>Example: 1
+        /// Example: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("page")]
         public int Page { get; set; }
 
         /// <summary>
-        /// <br/>Example: 17939
+        /// Example: 17939
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total", Required = global::Newtonsoft.Json.Required.Always)]
         public int Total { get; set; } = default!;

@@ -16,10 +16,10 @@ namespace G
         public string ExtensionId { get; set; } = default!;
 
         /// <summary>
-        /// The configuration segment to update. Possible case-sensitive values are:  
-        ///   
-        /// * broadcaster
-        /// * developer
+        /// The configuration segment to update. Possible case-sensitive values are:  <br/>
+        ///   <br/>
+        /// * broadcaster<br/>
+        /// * developer<br/>
         /// * global
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("segment", Required = global::Newtonsoft.Json.Required.Always)]

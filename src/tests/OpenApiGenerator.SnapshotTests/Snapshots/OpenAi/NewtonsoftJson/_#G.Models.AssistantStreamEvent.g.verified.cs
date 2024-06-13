@@ -7,20 +7,20 @@ using System.Linq;
 namespace G
 {
     /// <summary>
-    /// Represents an event emitted when streaming a Run.
-    /// Each event in a server-sent events stream has an `event` and `data` property:
-    /// ```
-    /// event: thread.created
-    /// data: {"id": "thread_123", "object": "thread", ...}
-    /// ```
-    /// We emit events whenever a new object is created, transitions to a new state, or is being
-    /// streamed in parts (deltas). For example, we emit `thread.run.created` when a new run
-    /// is created, `thread.run.completed` when a run completes, and so on. When an Assistant chooses
-    /// to create a message during a run, we emit a `thread.message.created event`, a
-    /// `thread.message.in_progress` event, many `thread.message.delta` events, and finally a
-    /// `thread.message.completed` event.
-    /// We may add additional events over time, so we recommend handling unknown events gracefully
-    /// in your code. See the [Assistants API quickstart](/docs/assistants/overview) to learn how to
+    /// Represents an event emitted when streaming a Run.<br/>
+    /// Each event in a server-sent events stream has an `event` and `data` property:<br/>
+    /// ```<br/>
+    /// event: thread.created<br/>
+    /// data: {"id": "thread_123", "object": "thread", ...}<br/>
+    /// ```<br/>
+    /// We emit events whenever a new object is created, transitions to a new state, or is being<br/>
+    /// streamed in parts (deltas). For example, we emit `thread.run.created` when a new run<br/>
+    /// is created, `thread.run.completed` when a run completes, and so on. When an Assistant chooses<br/>
+    /// to create a message during a run, we emit a `thread.message.created event`, a<br/>
+    /// `thread.message.in_progress` event, many `thread.message.delta` events, and finally a<br/>
+    /// `thread.message.completed` event.<br/>
+    /// We may add additional events over time, so we recommend handling unknown events gracefully<br/>
+    /// in your code. See the [Assistants API quickstart](/docs/assistants/overview) to learn how to<br/>
     /// integrate the Assistants API with streaming.
     /// </summary>
     public readonly struct AssistantStreamEvent : global::System.IEquatable<AssistantStreamEvent>

@@ -16,10 +16,10 @@ namespace G
         public global::System.OneOf<string, global::System.Collections.Generic.IList<string>> Input { get; set; } = default!;
 
         /// <summary>
-        /// Two content moderations models are available: `text-moderation-stable` and `text-moderation-latest`.
-        /// The default is `text-moderation-latest` which will be automatically upgraded over time. This ensures you are always using our most accurate model. If you use `text-moderation-stable`, we will provide advanced notice before updating the model. Accuracy of `text-moderation-stable` may be slightly lower than for `text-moderation-latest`.
-        /// <br/>Default Value: text-moderation-latest
-        /// <br/>Example: text-moderation-stable
+        /// Two content moderations models are available: `text-moderation-stable` and `text-moderation-latest`.<br/>
+        /// The default is `text-moderation-latest` which will be automatically upgraded over time. This ensures you are always using our most accurate model. If you use `text-moderation-stable`, we will provide advanced notice before updating the model. Accuracy of `text-moderation-stable` may be slightly lower than for `text-moderation-latest`.<br/>
+        /// Default Value: text-moderation-latest<br/>
+        /// Example: text-moderation-stable
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
         public global::System.AnyOf<string?, global::G.CreateModerationRequestModel?> Model { get; set; } = global::G.CreateModerationRequestModel.TextModerationLatest;

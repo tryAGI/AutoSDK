@@ -5,10 +5,10 @@
 namespace G
 {
     /// <summary>
-    /// The type of stream. Possible values are:  
-    ///   
-    /// * live
-    ///   
+    /// The type of stream. Possible values are:  <br/>
+    ///   <br/>
+    /// * live<br/>
+    ///   <br/>
     /// If an error occurs, this field is set to an empty string.
     /// </summary>
     public enum StreamType

@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// List and describe the various models available.
-    /// If no httpClient is provided, a new one will be created.
+    /// List and describe the various models available.<br/>
+    /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
     public sealed partial class ModelsClient : global::System.IDisposable

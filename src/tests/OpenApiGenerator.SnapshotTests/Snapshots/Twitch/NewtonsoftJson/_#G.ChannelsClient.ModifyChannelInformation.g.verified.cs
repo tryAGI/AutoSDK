@@ -7,7 +7,12 @@ namespace G
     public partial class ChannelsClient
     {
         /// <summary>
-        /// Updates a channel’s properties.
+        /// Updates a channel’s properties.<br/>
+        /// Updates a channel’s properties.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:broadcast** scope.<br/>
+        /// __Request Body:__<br/>
+        /// All fields are optional, but you must specify at least one field.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="request"></param>
@@ -36,7 +41,12 @@ namespace G
         }
 
         /// <summary>
-        /// Updates a channel’s properties.
+        /// Updates a channel’s properties.<br/>
+        /// Updates a channel’s properties.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:broadcast** scope.<br/>
+        /// __Request Body:__<br/>
+        /// All fields are optional, but you must specify at least one field.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="gameId"></param>

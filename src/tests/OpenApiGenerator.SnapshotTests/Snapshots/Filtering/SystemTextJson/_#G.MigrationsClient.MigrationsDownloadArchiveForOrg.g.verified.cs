@@ -7,7 +7,8 @@ namespace G
     public partial class MigrationsClient
     {
         /// <summary>
-        /// Download an organization migration archive
+        /// Download an organization migration archive<br/>
+        /// Fetches the URL to a migration archive.
         /// </summary>
         /// <param name="org"></param>
         /// <param name="migrationId"></param>

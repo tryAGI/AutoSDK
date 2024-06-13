@@ -7,7 +7,10 @@ namespace G
     public partial class ChannelsClient
     {
         /// <summary>
-        /// Gets the broadcaster’s list editors.
+        /// Gets the broadcaster’s list editors.<br/>
+        /// Gets the broadcaster’s list editors.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:read:editors** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

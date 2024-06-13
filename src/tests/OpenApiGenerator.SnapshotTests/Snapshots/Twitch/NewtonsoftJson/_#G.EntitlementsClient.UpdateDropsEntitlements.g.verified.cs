@@ -7,7 +7,15 @@ namespace G
     public partial class EntitlementsClient
     {
         /// <summary>
-        /// Updates the Drop entitlement’s fulfillment status.
+        /// Updates the Drop entitlement’s fulfillment status.<br/>
+        /// Updates the Drop entitlement’s fulfillment status.<br/>
+        /// The following table identifies which entitlements are updated based on the type of access token used.<br/>
+        /// | Access token type | Data that’s updated |<br/>
+        /// | - | - |<br/>
+        /// | App | Updates all entitlements with benefits owned by the organization in the access token. |<br/>
+        /// | User | Updates all entitlements owned by the user in the access token and where the benefits are owned by the organization in the access token. |<br/>
+        /// __Authorization:__<br/>
+        /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens). The client ID in the access token must own the game.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -40,7 +48,15 @@ namespace G
         }
 
         /// <summary>
-        /// Updates the Drop entitlement’s fulfillment status.
+        /// Updates the Drop entitlement’s fulfillment status.<br/>
+        /// Updates the Drop entitlement’s fulfillment status.<br/>
+        /// The following table identifies which entitlements are updated based on the type of access token used.<br/>
+        /// | Access token type | Data that’s updated |<br/>
+        /// | - | - |<br/>
+        /// | App | Updates all entitlements with benefits owned by the organization in the access token. |<br/>
+        /// | User | Updates all entitlements owned by the user in the access token and where the benefits are owned by the organization in the access token. |<br/>
+        /// __Authorization:__<br/>
+        /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens). The client ID in the access token must own the game.
         /// </summary>
         /// <param name="entitlementIds"></param>
         /// <param name="fulfillmentStatus"></param>

@@ -7,6 +7,7 @@ namespace G
     public partial class SingleClient
     {
         /// <summary>
+        /// Returns a ip for the selected IP. Yes, I know this is a pointless method.<br/>
         /// Returns a ip for the selected IP. Yes, I know this is a pointless method.
         /// </summary>
         /// <param name="ip"></param>

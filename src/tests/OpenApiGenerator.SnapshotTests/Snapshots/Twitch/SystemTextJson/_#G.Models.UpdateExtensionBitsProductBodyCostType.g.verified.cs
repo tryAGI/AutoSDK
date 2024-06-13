@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The type of currency. Possible values are:  
-    ///   
+    /// The type of currency. Possible values are:  <br/>
+    ///   <br/>
     /// * bits — The minimum price is 1 and the maximum is 10000.
     /// </summary>
     public enum UpdateExtensionBitsProductBodyCostType

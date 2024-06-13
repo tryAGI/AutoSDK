@@ -7,7 +7,10 @@ namespace G
     public partial class GamesClient
     {
         /// <summary>
-        /// Gets information about all broadcasts on Twitch.
+        /// Gets information about all broadcasts on Twitch.<br/>
+        /// Gets information about all broadcasts on Twitch.<br/>
+        /// __Authorization:__<br/>
+        /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).
         /// </summary>
         /// <param name="first"></param>
         /// <param name="after"></param>

@@ -5,12 +5,12 @@
 namespace G
 {
     /// <summary>
-    /// A string that indicates whether the status of the entitlements in the `ids` field were successfully updated. Possible values are:  
-    ///   
-    /// * INVALID\_ID — The entitlement IDs in the `ids` field are not valid.
-    /// * NOT\_FOUND — The entitlement IDs in the `ids` field were not found.
-    /// * SUCCESS — The status of the entitlements in the `ids` field were successfully updated.
-    /// * UNAUTHORIZED — The user or organization identified by the user access token is not authorized to update the entitlements.
+    /// A string that indicates whether the status of the entitlements in the `ids` field were successfully updated. Possible values are:  <br/>
+    ///   <br/>
+    /// * INVALID\_ID — The entitlement IDs in the `ids` field are not valid.<br/>
+    /// * NOT\_FOUND — The entitlement IDs in the `ids` field were not found.<br/>
+    /// * SUCCESS — The status of the entitlements in the `ids` field were successfully updated.<br/>
+    /// * UNAUTHORIZED — The user or organization identified by the user access token is not authorized to update the entitlements.<br/>
     /// * UPDATE\_FAILED — The update failed. These are considered transient errors and the request should be retried later.
     /// </summary>
     public enum DropsEntitlementUpdatedStatus

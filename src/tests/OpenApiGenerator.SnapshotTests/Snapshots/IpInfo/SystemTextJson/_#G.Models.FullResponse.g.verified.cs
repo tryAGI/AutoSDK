@@ -10,62 +10,62 @@ namespace G
     public sealed partial class FullResponse
     {
         /// <summary>
-        /// <br/>Example: 66.87.125.72
+        /// Example: 66.87.125.72
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ip")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Ip { get; set; }
 
         /// <summary>
-        /// <br/>Example: false
+        /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bogon")]
         public bool Bogon { get; set; }
 
         /// <summary>
-        /// <br/>Example: ip-66-87-125-72.spfdma.spcsdns.net
+        /// Example: ip-66-87-125-72.spfdma.spcsdns.net
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hostname")]
         public string? Hostname { get; set; }
 
         /// <summary>
-        /// <br/>Example: Springfield
+        /// Example: Springfield
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("city")]
         public string? City { get; set; }
 
         /// <summary>
-        /// <br/>Example: Massachusetts
+        /// Example: Massachusetts
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("region")]
         public string? Region { get; set; }
 
         /// <summary>
-        /// <br/>Example: US
+        /// Example: US
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("country")]
         public string? Country { get; set; }
 
         /// <summary>
-        /// <br/>Example: 42.0999,-72.5783
+        /// Example: 42.0999,-72.5783
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("loc")]
         public string? Loc { get; set; }
 
         /// <summary>
-        /// <br/>Example: 01105
+        /// Example: 01105
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("postal")]
         public string? Postal { get; set; }
 
         /// <summary>
-        /// <br/>Example: America/New_York
+        /// Example: America/New_York
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("timezone")]
         public string? Timezone { get; set; }
 
         /// <summary>
-        /// <br/>Example: AS51501 Khabarovsk home networks Ltd
+        /// Example: AS51501 Khabarovsk home networks Ltd
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("org")]
         public string? Org { get; set; }

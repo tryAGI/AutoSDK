@@ -8,7 +8,10 @@ namespace G
     public partial class ChatClient
     {
         /// <summary>
-        /// Gets the color used for the user’s name in chat.
+        /// Gets the color used for the user’s name in chat.<br/>
+        /// Gets the color used for the user’s name in chat.<br/>
+        /// __Authorization:__<br/>
+        /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).
         /// </summary>
         /// <param name="userId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

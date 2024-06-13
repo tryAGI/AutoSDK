@@ -10,31 +10,31 @@ namespace G
     public sealed partial class NullableLicenseSimple
     {
         /// <summary>
-        /// <br/>Example: mit
+        /// Example: mit
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("key", Required = global::Newtonsoft.Json.Required.Always)]
         public string Key { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: MIT License
+        /// Example: MIT License
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: https://api.github.com/licenses/mit
+        /// Example: https://api.github.com/licenses/mit
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Url { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: MIT
+        /// Example: MIT
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("spdx_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string? SpdxId { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: MDc6TGljZW5zZW1pdA==
+        /// Example: MDc6TGljZW5zZW1pdA==
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;

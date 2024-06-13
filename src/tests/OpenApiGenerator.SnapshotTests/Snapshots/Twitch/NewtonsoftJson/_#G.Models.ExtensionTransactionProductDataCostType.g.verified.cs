@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The type of currency exchanged. Possible values are:  
-    ///   
+    /// The type of currency exchanged. Possible values are:  <br/>
+    ///   <br/>
     /// * bits
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]

@@ -27,8 +27,7 @@
         },
         IsRequired: false,
         IsDeprecated: false,
-        Summary:
-<br/>Example: 1234,
+        Summary: Example: 1234,
         ConverterType: ,
         ParameterName: _4,
         ArgumentName: _4,
@@ -55,8 +54,7 @@
         },
         IsRequired: false,
         IsDeprecated: false,
-        Summary:
-<br/>Example: true,
+        Summary: Example: true,
         ConverterType: ,
         ParameterName: _1_5,
         ArgumentName: _1_5,
@@ -83,8 +81,7 @@
         },
         IsRequired: false,
         IsDeprecated: false,
-        Summary:
-<br/>Example: true,
+        Summary: Example: true,
         ConverterType: ,
         ParameterName: _16_9,
         ArgumentName: _16_9,

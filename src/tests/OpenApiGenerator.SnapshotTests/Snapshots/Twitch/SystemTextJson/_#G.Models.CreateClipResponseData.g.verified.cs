@@ -10,8 +10,8 @@ namespace G
     public sealed partial class CreateClipResponseData
     {
         /// <summary>
-        /// A URL that you can use to edit the clip’s title, identify the part of the clip to publish, and publish the clip. [Learn More](https://help.twitch.tv/s/article/how-to-use-clips)  
-        ///   
+        /// A URL that you can use to edit the clip’s title, identify the part of the clip to publish, and publish the clip. [Learn More](https://help.twitch.tv/s/article/how-to-use-clips)  <br/>
+        ///   <br/>
         /// The URL is valid for up to 24 hours or until the clip is published, whichever comes first.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("edit_url")]

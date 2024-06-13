@@ -6,7 +6,6 @@ namespace G
 {
     /// <summary>
     /// Options for streaming response. Only set this when you set `stream: true`.
-    /// <br/>Default Value: 
     /// </summary>
     public sealed partial class ChatCompletionStreamOptions
     {

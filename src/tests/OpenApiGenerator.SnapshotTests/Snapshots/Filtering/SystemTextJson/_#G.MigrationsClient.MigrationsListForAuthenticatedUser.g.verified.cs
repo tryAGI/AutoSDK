@@ -7,7 +7,8 @@ namespace G
     public partial class MigrationsClient
     {
         /// <summary>
-        /// List user migrations
+        /// List user migrations<br/>
+        /// Lists all migrations a user has started.
         /// </summary>
         /// <param name="perPage"></param>
         /// <param name="page"></param>

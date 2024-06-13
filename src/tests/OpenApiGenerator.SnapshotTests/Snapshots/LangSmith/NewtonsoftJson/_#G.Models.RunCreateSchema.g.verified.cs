@@ -52,7 +52,7 @@ namespace G
         public string? Error { get; set; }
 
         /// <summary>
-        /// <br/>Default Value: 1
+        /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("execution_order")]
         public int ExecutionOrder { get; set; } = 1;

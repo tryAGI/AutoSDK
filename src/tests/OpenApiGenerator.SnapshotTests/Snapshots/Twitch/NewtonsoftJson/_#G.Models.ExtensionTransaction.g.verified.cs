@@ -58,8 +58,8 @@ namespace G
         public string UserName { get; set; } = default!;
 
         /// <summary>
-        /// The type of transaction. Possible values are:  
-        ///   
+        /// The type of transaction. Possible values are:  <br/>
+        ///   <br/>
         /// * BITS\_IN\_EXTENSION
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("product_type", Required = global::Newtonsoft.Json.Required.Always)]

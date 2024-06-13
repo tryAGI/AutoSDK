@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The OpenAI REST API. Please see https://platform.openai.com/docs/api-reference for more details.
-    /// If no httpClient is provided, a new one will be created.
+    /// The OpenAI REST API. Please see https://platform.openai.com/docs/api-reference for more details.<br/>
+    /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
     public sealed partial class OpenAiClient : global::System.IDisposable

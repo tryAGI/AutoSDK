@@ -66,8 +66,8 @@ namespace G
         public required string UserName { get; set; }
 
         /// <summary>
-        /// The type of transaction. Possible values are:  
-        ///   
+        /// The type of transaction. Possible values are:  <br/>
+        ///   <br/>
         /// * BITS\_IN\_EXTENSION
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("product_type")]

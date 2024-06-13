@@ -52,10 +52,10 @@ namespace G
         public required string GameName { get; set; }
 
         /// <summary>
-        /// The type of stream. Possible values are:  
-        ///   
-        /// * live
-        ///   
+        /// The type of stream. Possible values are:  <br/>
+        ///   <br/>
+        /// * live<br/>
+        ///   <br/>
         /// If an error occurs, this field is set to an empty string.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -99,8 +99,8 @@ namespace G
         public required string ThumbnailUrl { get; set; }
 
         /// <summary>
-        /// **IMPORTANT** As of February 28, 2023, this field is deprecated and returns only an empty array. If you use this field, please update your code to use the `tags` field.  
-        ///   
+        /// **IMPORTANT** As of February 28, 2023, this field is deprecated and returns only an empty array. If you use this field, please update your code to use the `tags` field.  <br/>
+        ///   <br/>
         /// The list of tags that apply to the stream. The list contains IDs only when the channel is steaming live. For a list of possible tags, see [List of All Tags](https://www.twitch.tv/directory/all/tags). The list doesn’t include Category Tags.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag_ids")]

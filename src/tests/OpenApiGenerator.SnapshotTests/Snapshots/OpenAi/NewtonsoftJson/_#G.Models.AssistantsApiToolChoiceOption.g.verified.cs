@@ -7,10 +7,10 @@ using System.Linq;
 namespace G
 {
     /// <summary>
-    /// Controls which (if any) tool is called by the model.
-    /// `none` means the model will not call any tools and instead generates a message.
-    /// `auto` is the default value and means the model can pick between generating a message or calling one or more tools.
-    /// `required` means the model must call one or more tools before responding to the user.
+    /// Controls which (if any) tool is called by the model.<br/>
+    /// `none` means the model will not call any tools and instead generates a message.<br/>
+    /// `auto` is the default value and means the model can pick between generating a message or calling one or more tools.<br/>
+    /// `required` means the model must call one or more tools before responding to the user.<br/>
     /// Specifying a particular tool like `{"type": "file_search"}` or `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.
     /// </summary>
     public readonly struct AssistantsApiToolChoiceOption : global::System.IEquatable<AssistantsApiToolChoiceOption>

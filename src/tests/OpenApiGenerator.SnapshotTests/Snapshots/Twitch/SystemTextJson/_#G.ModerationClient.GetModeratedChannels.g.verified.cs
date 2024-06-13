@@ -7,7 +7,11 @@ namespace G
     public partial class ModerationClient
     {
         /// <summary>
-        /// Gets a list of channels that the specified user has moderator privileges in.
+        /// Gets a list of channels that the specified user has moderator privileges in.<br/>
+        /// Gets a list of channels that the specified user has moderator privileges in.<br/>
+        /// __Authorization:__<br/>
+        /// * Query parameter `user_id` must match the user ID in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)<br/>
+        /// * Requires OAuth Scope: `user:read:moderated_channels`
         /// </summary>
         /// <param name="userId"></param>
         /// <param name="after"></param>

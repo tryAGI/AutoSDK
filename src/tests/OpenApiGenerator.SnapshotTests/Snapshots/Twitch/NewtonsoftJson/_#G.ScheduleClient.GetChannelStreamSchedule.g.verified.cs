@@ -8,7 +8,10 @@ namespace G
     public partial class ScheduleClient
     {
         /// <summary>
-        /// Gets the broadcaster’s streaming schedule.
+        /// Gets the broadcaster’s streaming schedule.<br/>
+        /// Gets the broadcaster’s streaming schedule. You can get the entire schedule or specific segments of the schedule. [Learn More](https://help.twitch.tv/s/article/channel-page-setup#Schedule)<br/>
+        /// __Authorization:__<br/>
+        /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="id"></param>

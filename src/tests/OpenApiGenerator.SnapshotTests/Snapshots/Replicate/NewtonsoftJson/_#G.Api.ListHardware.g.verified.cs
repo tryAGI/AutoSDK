@@ -7,7 +7,22 @@ namespace G
     public partial class Api
     {
         /// <summary>
-        /// List available hardware for models
+        /// List available hardware for models<br/>
+        /// Example cURL request:<br/>
+        /// ```console<br/>
+        /// curl -s \<br/>
+        ///   -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \<br/>
+        ///   https://api.replicate.com/v1/hardware<br/>
+        /// ```<br/>
+        /// The response will be a JSON array of hardware objects:<br/>
+        /// ```json<br/>
+        /// [<br/>
+        ///     {"name": "CPU", "sku": "cpu"},<br/>
+        ///     {"name": "Nvidia T4 GPU", "sku": "gpu-t4"},<br/>
+        ///     {"name": "Nvidia A40 GPU", "sku": "gpu-a40-small"},<br/>
+        ///     {"name": "Nvidia A40 (Large) GPU", "sku": "gpu-a40-large"},<br/>
+        /// ]<br/>
+        /// ```
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

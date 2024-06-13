@@ -8,7 +8,11 @@ namespace G
     public partial class PollsClient
     {
         /// <summary>
-        /// Gets a list of polls that the broadcaster created.
+        /// Gets a list of polls that the broadcaster created.<br/>
+        /// Gets a list of polls that the broadcaster created.<br/>
+        /// Polls are available for 90 days after they’re created.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:read:polls** or **channel:manage:polls** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="id"></param>

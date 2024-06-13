@@ -10,21 +10,21 @@ namespace G
     public sealed partial class Carrier
     {
         /// <summary>
-        /// <br/>Example: Sprint Corporation
+        /// Example: Sprint Corporation
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// <br/>Example: 310
+        /// Example: 310
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mcc")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Mcc { get; set; }
 
         /// <summary>
-        /// <br/>Example: 120
+        /// Example: 120
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mnc")]
         [global::System.Text.Json.Serialization.JsonRequired]

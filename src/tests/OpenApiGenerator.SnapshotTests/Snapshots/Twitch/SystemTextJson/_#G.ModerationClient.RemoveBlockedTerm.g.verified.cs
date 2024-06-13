@@ -7,7 +7,10 @@ namespace G
     public partial class ModerationClient
     {
         /// <summary>
-        /// Removes the word or phrase from the broadcaster’s list of blocked terms.
+        /// Removes the word or phrase from the broadcaster’s list of blocked terms.<br/>
+        /// Removes the word or phrase from the broadcaster’s list of blocked terms.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **moderator:manage:blocked\_terms** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>

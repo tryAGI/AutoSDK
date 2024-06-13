@@ -94,10 +94,10 @@ namespace G
         public string Language { get; set; } = default!;
 
         /// <summary>
-        /// The video's type. Possible values are:  
-        ///   
-        /// * archive — An on-demand video (VOD) of one of the broadcaster's past streams.
-        /// * highlight — A highlight reel of one of the broadcaster's past streams. See [Creating Highlights](https://help.twitch.tv/s/article/creating-highlights-and-stream-markers).
+        /// The video's type. Possible values are:  <br/>
+        ///   <br/>
+        /// * archive — An on-demand video (VOD) of one of the broadcaster's past streams.<br/>
+        /// * highlight — A highlight reel of one of the broadcaster's past streams. See [Creating Highlights](https://help.twitch.tv/s/article/creating-highlights-and-stream-markers).<br/>
         /// * upload — A video that the broadcaster uploaded to their video library. See Upload under [Video Producer](https://help.twitch.tv/s/article/video-on-demand?language=en%5FUS#videoproducer).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]

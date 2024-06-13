@@ -45,8 +45,8 @@ namespace G
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// The UTC date and time (in RFC3339 format) that the term was updated.  
-        ///   
+        /// The UTC date and time (in RFC3339 format) that the term was updated.  <br/>
+        ///   <br/>
         /// When the term is added, this timestamp is the same as `created_at`. The timestamp changes as AutoMod continues to deny the term.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
@@ -54,8 +54,8 @@ namespace G
         public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
-        /// The UTC date and time (in RFC3339 format) that the blocked term is set to expire. After the block expires, users may use the term in the broadcaster’s chat room.  
-        ///   
+        /// The UTC date and time (in RFC3339 format) that the blocked term is set to expire. After the block expires, users may use the term in the broadcaster’s chat room.  <br/>
+        ///   <br/>
         /// This field is **null** if the term was added manually or was permanently blocked by AutoMod.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]

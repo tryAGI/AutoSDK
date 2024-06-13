@@ -5,8 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// A web service for running Replicate models
-    /// If no httpClient is provided, a new one will be created.
+    /// A web service for running Replicate models<br/>
+    /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
     public sealed partial class Api : global::System.IDisposable

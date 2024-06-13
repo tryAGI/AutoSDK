@@ -33,8 +33,8 @@
 The model name. 
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
-
-<br/>Example: llama2:7b,
+<br/>
+Example: llama2:7b,
         ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
@@ -62,8 +62,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         IsRequired: true,
         IsDeprecated: false,
         Summary:
-The prompt to generate a response.
-<br/>Example: Why is the sky blue?,
+The prompt to generate a response.<br/>
+Example: Why is the sky blue?,
         ConverterType: ,
         ParameterName: prompt,
         ArgumentName: prompt,
@@ -327,8 +327,8 @@ You may choose to use the `raw` parameter if you are specifying a full templated
         IsDeprecated: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
-
-<br/>Default Value: true,
+<br/>
+Default Value: true,
         ConverterType: ,
         ParameterName: stream,
         ArgumentName: stream,
@@ -373,7 +373,9 @@ How long (in minutes) to keep the model loaded in memory.
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
-    Summary: Generate a response for a given prompt with a provided model.,
+    Summary:
+Generate a response for a given prompt with a provided model.<br/>
+The final response object will include statistics and additional data from the request.,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.GenerateCompletionRequest,
@@ -529,8 +531,8 @@ How long (in minutes) to keep the model loaded in memory.
 The model name. 
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
-
-<br/>Example: llama2:7b,
+<br/>
+Example: llama2:7b,
         ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
@@ -682,8 +684,8 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
         IsDeprecated: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
-
-<br/>Default Value: true,
+<br/>
+Default Value: true,
         ConverterType: ,
         ParameterName: stream,
         ArgumentName: stream,
@@ -728,7 +730,9 @@ How long (in minutes) to keep the model loaded in memory.
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
-    Summary: Generate the next message in a chat with a provided model.,
+    Summary:
+Generate the next message in a chat with a provided model.<br/>
+This is a streaming endpoint, so there will be a series of responses. The final response object will include statistics and additional data from the request.,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.GenerateChatCompletionRequest,
@@ -874,8 +878,8 @@ How long (in minutes) to keep the model loaded in memory.
 The model name. 
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
-
-<br/>Example: llama2:7b,
+<br/>
+Example: llama2:7b,
         ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
@@ -903,8 +907,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         IsRequired: true,
         IsDeprecated: false,
         Summary:
-Text to generate embeddings for.
-<br/>Example: Here is an article about llamas...,
+Text to generate embeddings for.<br/>
+Example: Here is an article about llamas...,
         ConverterType: ,
         ParameterName: prompt,
         ArgumentName: prompt,
@@ -1129,8 +1133,8 @@ How long (in minutes) to keep the model loaded in memory.
 The model name. 
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
-
-<br/>Example: mario,
+<br/>
+Example: mario,
         ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
@@ -1158,8 +1162,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         IsRequired: true,
         IsDeprecated: false,
         Summary:
-The contents of the Modelfile.
-<br/>Example: FROM llama2\nSYSTEM You are mario from Super Mario Bros.,
+The contents of the Modelfile.<br/>
+Example: FROM llama2\nSYSTEM You are mario from Super Mario Bros.,
         ConverterType: ,
         ParameterName: modelfile,
         ArgumentName: modelfile,
@@ -1243,8 +1247,8 @@ The contents of the Modelfile.
         IsDeprecated: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
-
-<br/>Default Value: true,
+<br/>
+Default Value: true,
         ConverterType: ,
         ParameterName: stream,
         ArgumentName: stream,
@@ -1255,7 +1259,9 @@ If `false` the response will be returned as a single response object, otherwise 
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
-    Summary: Create a model from a Modelfile.,
+    Summary:
+Create a model from a Modelfile.<br/>
+It is recommended to set `modelfile` to the content of the Modelfile rather than just set `path`. This is a requirement for remote create. Remote model creation should also create any file blobs, fields such as `FROM` and `ADAPTER`, explicitly with the server using Create a Blob and the value to the path indicated in the response.,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateModelRequest,
@@ -1453,8 +1459,8 @@ If `false` the response will be returned as a single response object, otherwise 
 The model name. 
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
-
-<br/>Example: llama2:7b,
+<br/>
+Example: llama2:7b,
         ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
@@ -1590,8 +1596,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
         IsRequired: true,
         IsDeprecated: false,
         Summary:
-Name of the model to copy.
-<br/>Example: llama2:7b,
+Name of the model to copy.<br/>
+Example: llama2:7b,
         ConverterType: ,
         ParameterName: source,
         ArgumentName: source,
@@ -1619,8 +1625,8 @@ Name of the model to copy.
         IsRequired: true,
         IsDeprecated: false,
         Summary:
-Name of the new model.
-<br/>Example: llama2-backup,
+Name of the new model.<br/>
+Example: llama2-backup,
         ConverterType: ,
         ParameterName: destination,
         ArgumentName: destination,
@@ -1729,8 +1735,8 @@ Name of the new model.
 The model name. 
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
-
-<br/>Example: llama2:13b,
+<br/>
+Example: llama2:13b,
         ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
@@ -1837,8 +1843,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 The model name. 
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
-
-<br/>Example: llama2:7b,
+<br/>
+Example: llama2:7b,
         ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
@@ -1870,8 +1876,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
 Allow insecure connections to the library. 
 
 Only use this if you are pulling from your own library during development.
-
-<br/>Default Value: false,
+<br/>
+Default Value: false,
         ConverterType: ,
         ParameterName: insecure,
         ArgumentName: insecure,
@@ -1955,8 +1961,8 @@ Only use this if you are pulling from your own library during development.
         IsDeprecated: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
-
-<br/>Default Value: true,
+<br/>
+Default Value: true,
         ConverterType: ,
         ParameterName: stream,
         ArgumentName: stream,
@@ -1967,7 +1973,9 @@ If `false` the response will be returned as a single response object, otherwise 
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
-    Summary: Download a model from the ollama library.,
+    Summary:
+Download a model from the ollama library.<br/>
+Cancelled pulls are resumed from where they left off, and multiple calls will share the same download progress.,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.PullModelRequest,
@@ -2094,8 +2102,8 @@ If `false` the response will be returned as a single response object, otherwise 
         IsRequired: true,
         IsDeprecated: false,
         Summary:
-The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt;tag&gt;.
-<br/>Example: mattw/pygmalion:latest,
+The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt;tag&gt;.<br/>
+Example: mattw/pygmalion:latest,
         ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
@@ -2127,8 +2135,8 @@ The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt
 Allow insecure connections to the library. 
 
 Only use this if you are pushing to your library during development.
-
-<br/>Default Value: false,
+<br/>
+Default Value: false,
         ConverterType: ,
         ParameterName: insecure,
         ArgumentName: insecure,
@@ -2212,8 +2220,8 @@ Only use this if you are pushing to your library during development.
         IsDeprecated: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
-
-<br/>Default Value: true,
+<br/>
+Default Value: true,
         ConverterType: ,
         ParameterName: stream,
         ArgumentName: stream,
@@ -2224,7 +2232,9 @@ If `false` the response will be returned as a single response object, otherwise 
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
-    Summary: Upload a model to a model library.,
+    Summary:
+Upload a model to a model library.<br/>
+Requires registering for ollama.ai and adding a public key first.,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.PushModelRequest,

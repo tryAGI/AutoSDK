@@ -7,7 +7,10 @@ namespace G
     public partial class StreamsClient
     {
         /// <summary>
-        /// Gets the list of broadcasters that the user follows and that are streaming live.
+        /// Gets the list of broadcasters that the user follows and that are streaming live.<br/>
+        /// Gets the list of broadcasters that the user follows and that are streaming live.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **user:read:follows** scope.
         /// </summary>
         /// <param name="userId"></param>
         /// <param name="first"></param>

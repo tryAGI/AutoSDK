@@ -8,7 +8,10 @@ namespace G
     public partial class PredictionsClient
     {
         /// <summary>
-        /// Gets a list of Channel Points Predictions that the broadcaster created.
+        /// Gets a list of Channel Points Predictions that the broadcaster created.<br/>
+        /// Gets a list of Channel Points Predictions that the broadcaster created.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:read:predictions** or **channel:manage:predictions** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="id"></param>

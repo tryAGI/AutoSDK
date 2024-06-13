@@ -180,7 +180,9 @@
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Patch,
-    Summary: Update Run,
+    Summary:
+Update Run<br/>
+Update a run.,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.RunUpdateSchemaExtended,
@@ -522,8 +524,7 @@
         IsRequired: false,
         DefaultValue: 1,
         IsDeprecated: false,
-        Summary:
-<br/>Default Value: 1,
+        Summary: Default Value: 1,
         ConverterType: ,
         ParameterName: executionOrder,
         ArgumentName: executionOrder,
@@ -833,7 +834,9 @@
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
-    Summary: Create Run,
+    Summary:
+Create Run<br/>
+Create a new run.,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.RunCreateSchemaExtended,

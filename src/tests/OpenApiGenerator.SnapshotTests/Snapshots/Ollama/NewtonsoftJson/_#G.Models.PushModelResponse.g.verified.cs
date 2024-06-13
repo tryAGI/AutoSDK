@@ -16,22 +16,22 @@ namespace G
         public global::System.AnyOf<string?, global::G.PushModelResponseStatus?> Status { get; set; }
 
         /// <summary>
-        /// the model's digest
-        /// <br/>Example: sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a
+        /// the model's digest<br/>
+        /// Example: sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("digest")]
         public string? Digest { get; set; }
 
         /// <summary>
-        /// total size of the model
-        /// <br/>Example: 2142590208
+        /// total size of the model<br/>
+        /// Example: 2142590208
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total")]
         public long Total { get; set; }
 
         /// <summary>
-        /// Total bytes transferred.
-        /// <br/>Example: 2142590208
+        /// Total bytes transferred.<br/>
+        /// Example: 2142590208
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completed")]
         public long Completed { get; set; }

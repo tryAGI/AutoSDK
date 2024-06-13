@@ -7,7 +7,10 @@ namespace G
     public partial class ExtensionsClient
     {
         /// <summary>
-        /// Gets information about a released extension.
+        /// Gets information about a released extension.<br/>
+        /// Gets information about a released extension. Returns the extension if its `state` is Released.<br/>
+        /// __Authorization:__<br/>
+        /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).
         /// </summary>
         /// <param name="extensionId"></param>
         /// <param name="extensionVersion"></param>

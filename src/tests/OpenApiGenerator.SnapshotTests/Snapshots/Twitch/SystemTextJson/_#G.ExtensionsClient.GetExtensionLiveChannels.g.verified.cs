@@ -7,7 +7,11 @@ namespace G
     public partial class ExtensionsClient
     {
         /// <summary>
-        /// Gets a list of broadcasters that are streaming live and have installed or activated the extension.
+        /// Gets a list of broadcasters that are streaming live and have installed or activated the extension.<br/>
+        /// Gets a list of broadcasters that are streaming live and have installed or activated the extension.<br/>
+        /// It may take a few minutes for the list to include or remove broadcasters that have recently gone live or stopped broadcasting.<br/>
+        /// __Authorization:__<br/>
+        /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).
         /// </summary>
         /// <param name="extensionId"></param>
         /// <param name="first"></param>

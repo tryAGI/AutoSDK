@@ -73,10 +73,10 @@ namespace G
         public required string UserInput { get; set; }
 
         /// <summary>
-        /// The state of the redemption. Possible values are:  
-        ///   
-        /// * CANCELED
-        /// * FULFILLED
+        /// The state of the redemption. Possible values are:  <br/>
+        ///   <br/>
+        /// * CANCELED<br/>
+        /// * FULFILLED<br/>
         /// * UNFULFILLED
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]

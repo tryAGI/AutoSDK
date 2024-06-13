@@ -8,7 +8,10 @@ namespace G
     public partial class ModerationClient
     {
         /// <summary>
-        /// Gets all users that the broadcaster banned or put in a timeout.
+        /// Gets all users that the broadcaster banned or put in a timeout.<br/>
+        /// Gets all users that the broadcaster banned or put in a timeout.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **moderation:read** or **moderator:manage:banned\_users** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="userId"></param>

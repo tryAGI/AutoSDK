@@ -8,7 +8,11 @@ namespace G
     public partial class SubscriptionsClient
     {
         /// <summary>
-        /// Gets a list of users that subscribe to the specified broadcaster.
+        /// Gets a list of users that subscribe to the specified broadcaster.<br/>
+        /// Gets a list of users that subscribe to the specified broadcaster.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:read:subscriptions** scope.<br/>
+        /// A Twitch extensions may use an app access token if the broadcaster has granted the **channel:read:subscriptions** scope from within the Twitch Extensions manager.
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="userId"></param>

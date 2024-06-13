@@ -10,20 +10,20 @@ namespace G
     public sealed partial class PagesHttpsCertificate
     {
         /// <summary>
-        /// <br/>Example: approved
+        /// Example: approved
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.PagesHttpsCertificateState State { get; set; } = default!;
 
         /// <summary>
-        /// <br/>Example: Certificate is approved
+        /// Example: Certificate is approved
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
         public string Description { get; set; } = default!;
 
         /// <summary>
-        /// Array of the domain set and its alternate name (if it is configured)
-        /// <br/>Example: [example.com, www.example.com]
+        /// Array of the domain set and its alternate name (if it is configured)<br/>
+        /// Example: [example.com, www.example.com]
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("domains", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<string> Domains { get; set; } = default!;

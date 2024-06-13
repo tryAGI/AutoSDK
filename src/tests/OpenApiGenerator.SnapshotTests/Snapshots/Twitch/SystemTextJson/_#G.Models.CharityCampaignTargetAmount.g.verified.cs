@@ -17,8 +17,8 @@ namespace G
         public required int Value { get; set; }
 
         /// <summary>
-        /// The number of decimal places used by the currency. For example, USD uses two decimal places. Use this number to translate `value` from minor units to major units by using the formula:  
-        ///   
+        /// The number of decimal places used by the currency. For example, USD uses two decimal places. Use this number to translate `value` from minor units to major units by using the formula:  <br/>
+        ///   <br/>
         /// `value / 10^decimal_places`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("decimal_places")]

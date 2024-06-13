@@ -7,7 +7,8 @@ namespace G
     public partial class MigrationsClient
     {
         /// <summary>
-        /// Start a user migration
+        /// Start a user migration<br/>
+        /// Initiates the generation of a user migration archive.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -40,7 +41,8 @@ namespace G
         }
 
         /// <summary>
-        /// Start a user migration
+        /// Start a user migration<br/>
+        /// Initiates the generation of a user migration archive.
         /// </summary>
         /// <param name="lockRepositories"></param>
         /// <param name="excludeMetadata"></param>

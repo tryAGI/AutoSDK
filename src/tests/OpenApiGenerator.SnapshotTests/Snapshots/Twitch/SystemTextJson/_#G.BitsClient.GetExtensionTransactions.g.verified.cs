@@ -8,7 +8,10 @@ namespace G
     public partial class BitsClient
     {
         /// <summary>
-        /// Gets an extension’s list of transactions.
+        /// Gets an extension’s list of transactions.<br/>
+        /// Gets an extension’s list of transactions. A transaction records the exchange of a currency (for example, Bits) for a digital product.<br/>
+        /// __Authorization:__<br/>
+        /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).
         /// </summary>
         /// <param name="extensionId"></param>
         /// <param name="id"></param>

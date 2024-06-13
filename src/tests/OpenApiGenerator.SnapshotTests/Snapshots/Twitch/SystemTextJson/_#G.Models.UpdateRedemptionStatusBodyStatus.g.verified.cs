@@ -5,11 +5,11 @@
 namespace G
 {
     /// <summary>
-    /// The status to set the redemption to. Possible values are:  
-    ///   
-    /// * CANCELED
-    /// * FULFILLED
-    ///   
+    /// The status to set the redemption to. Possible values are:  <br/>
+    ///   <br/>
+    /// * CANCELED<br/>
+    /// * FULFILLED<br/>
+    ///   <br/>
     /// Setting the status to CANCELED refunds the user’s channel points.
     /// </summary>
     public enum UpdateRedemptionStatusBodyStatus

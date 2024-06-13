@@ -5,12 +5,12 @@
 namespace G
 {
     /// <summary>
-    /// ID of the [Content Classification Labels](https://blog.twitch.tv/en/2023/06/20/introducing-content-classification-labels/) that must be added/removed from the channel. Can be one of the following values:  
-    ///   
-    /// * DrugsIntoxication
-    /// * SexualThemes
-    /// * ViolentGraphic
-    /// * Gambling
+    /// ID of the [Content Classification Labels](https://blog.twitch.tv/en/2023/06/20/introducing-content-classification-labels/) that must be added/removed from the channel. Can be one of the following values:  <br/>
+    ///   <br/>
+    /// * DrugsIntoxication<br/>
+    /// * SexualThemes<br/>
+    /// * ViolentGraphic<br/>
+    /// * Gambling<br/>
     /// * ProfanityVulgarity
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]

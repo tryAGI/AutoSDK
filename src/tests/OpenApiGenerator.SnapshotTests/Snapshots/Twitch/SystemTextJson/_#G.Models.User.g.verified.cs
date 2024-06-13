@@ -31,11 +31,11 @@ namespace G
         public required string DisplayName { get; set; }
 
         /// <summary>
-        /// The type of user. Possible values are:  
-        ///   
-        /// * admin — Twitch administrator
-        /// * global\_mod
-        /// * staff — Twitch staff
+        /// The type of user. Possible values are:  <br/>
+        ///   <br/>
+        /// * admin — Twitch administrator<br/>
+        /// * global\_mod<br/>
+        /// * staff — Twitch staff<br/>
         /// * "" — Normal user
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -44,10 +44,10 @@ namespace G
         public required global::G.UserType Type { get; set; }
 
         /// <summary>
-        /// The type of broadcaster. Possible values are:  
-        ///   
-        /// * affiliate — An [affiliate broadcaster](https://help.twitch.tv/s/article/joining-the-affiliate-program)
-        /// * partner — A [partner broadcaster](https://help.twitch.tv/s/article/partner-program-overview)
+        /// The type of broadcaster. Possible values are:  <br/>
+        ///   <br/>
+        /// * affiliate — An [affiliate broadcaster](https://help.twitch.tv/s/article/joining-the-affiliate-program)<br/>
+        /// * partner — A [partner broadcaster](https://help.twitch.tv/s/article/partner-program-overview)<br/>
         /// * "" — A normal broadcaster
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("broadcaster_type")]
@@ -77,8 +77,8 @@ namespace G
         public required string OfflineImageUrl { get; set; }
 
         /// <summary>
-        /// The number of times the user's channel has been viewed.  
-        ///   
+        /// The number of times the user's channel has been viewed.  <br/>
+        ///   <br/>
         /// **NOTE**: This field has been deprecated (see [Get Users API endpoint – "view\_count" deprecation](https://discuss.dev.twitch.tv/t/get-users-api-endpoint-view-count-deprecation/37777)). Any data in this field is not valid and should not be used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("view_count")]
@@ -86,8 +86,8 @@ namespace G
         public required int ViewCount { get; set; }
 
         /// <summary>
-        /// The user's verified email address. The object includes this field only if the user access token includes the **user:read:email** scope.  
-        ///   
+        /// The user's verified email address. The object includes this field only if the user access token includes the **user:read:email** scope.  <br/>
+        ///   <br/>
         /// If the request contains more than one user, only the user associated with the access token that provided consent will include an email address — the email address for all other users will be empty.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
