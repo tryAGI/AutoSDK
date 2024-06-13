@@ -12,6 +12,7 @@
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Get the authenticated account,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -81,6 +82,7 @@
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: List collections of models,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -164,6 +166,7 @@
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Get a collection of models,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -216,6 +219,7 @@
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: List deployments,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -449,6 +453,7 @@
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a deployment,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateDeploymentsRequest,
       IsArray: false,
@@ -596,6 +601,7 @@
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary: Delete a deployment,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -709,6 +715,7 @@
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Get a deployment,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -948,6 +955,7 @@
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Patch,
     Summary: Update a deployment,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.UpdateDeploymentsRequest,
       IsArray: false,
@@ -1246,6 +1254,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a prediction using a deployment,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.PredictionRequest,
       IsArray: false,
@@ -1325,6 +1334,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: List available hardware for models,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -1394,6 +1404,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: List public models,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -1697,6 +1708,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a model,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateModelsRequest,
       IsArray: false,
@@ -1828,6 +1840,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary: Delete a model,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -1941,6 +1954,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Get a model,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2206,6 +2220,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a prediction using an official model,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.PredictionRequest,
       IsArray: false,
@@ -2346,6 +2361,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: List model versions,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2490,6 +2506,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary: Delete a model version,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2633,6 +2650,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Get a model version,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2911,6 +2929,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a training,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.TrainingRequest,
       IsArray: false,
@@ -2990,6 +3009,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: List predictions,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3223,6 +3243,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a prediction,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.VersionPredictionRequest,
       IsArray: false,
@@ -3335,6 +3356,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Get a prediction,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3419,6 +3441,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Cancel a prediction,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3471,6 +3494,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: List trainings,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3554,6 +3578,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Get a training,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3638,6 +3663,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Cancel a training,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3690,6 +3716,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Get the signing secret for the default webhook,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3759,6 +3786,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: ,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3811,6 +3839,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: A web service for running Replicate models,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,

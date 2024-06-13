@@ -678,6 +678,7 @@ A list of functions the model may generate JSON inputs for.
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Creates a model response for the given chat conversation.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateChatCompletionRequest,
       IsArray: false,
@@ -1412,6 +1413,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Creates a completion for the provided prompt and parameters.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateCompletionRequest,
       IsArray: false,
@@ -1829,6 +1831,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Creates an image given a prompt.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateImageRequest,
       IsArray: false,
@@ -2192,6 +2195,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Creates an edited or extended image given an original image and a prompt.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateImageEditRequest,
       IsArray: false,
@@ -2499,6 +2503,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Creates a variation of a given image.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateImageVariationRequest,
       IsArray: false,
@@ -2764,6 +2769,7 @@ A unique identifier representing your end-user, which can help OpenAI to monitor
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Creates an embedding vector representing the input text.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateEmbeddingRequest,
       IsArray: false,
@@ -3045,6 +3051,7 @@ The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is 
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Generates audio from the input text.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateSpeechRequest,
       IsArray: false,
@@ -3336,6 +3343,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Transcribes audio into the input language.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateTranscriptionRequest,
       IsArray: false,
@@ -3590,6 +3598,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Translates audio into English.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateTranslationRequest,
       IsArray: false,
@@ -3720,6 +3729,7 @@ The sampling temperature, between 0 and 1. Higher values like 0.8 will make the 
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of files that belong to the user's organization.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3865,6 +3875,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Upload a file that can be used across various endpoints. The size of all the files uploaded by one organization can be up to 100 GB.The size of individual files can be a maximum of 512 MB or 2 million tokens for Assistants. See the [Assistants Tools guide](/docs/assistants/tools) to learn more about the types of files supported. The Fine-tuning API only supports `.jsonl` files.Please [contact us](https://help.openai.com/) if you need to increase these storage limits.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateFileRequest,
       IsArray: false,
@@ -4006,6 +4017,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary: Delete a file.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4114,6 +4126,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Returns information about a specific file.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4232,6 +4245,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Returns the contents of the specified file.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4527,6 +4541,7 @@ If a seed is not specified, one will be generated for you.
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Creates a fine-tuning job which begins the process of creating a new model from a given dataset.Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.[Learn more about fine-tuning](/docs/guides/fine-tuning),
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateFineTuningJobRequest,
       IsArray: false,
@@ -4727,6 +4742,7 @@ If a seed is not specified, one will be generated for you.
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: List your organization's fine-tuning jobs,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4836,6 +4852,7 @@ If a seed is not specified, one will be generated for you.
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Get info about a fine-tuning job.[Learn more about fine-tuning](/docs/guides/fine-tuning),
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5035,6 +5052,7 @@ If a seed is not specified, one will be generated for you.
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Get status updates for a fine-tuning job.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5143,6 +5161,7 @@ If a seed is not specified, one will be generated for you.
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Immediately cancel a fine-tune job.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5342,6 +5361,7 @@ If a seed is not specified, one will be generated for you.
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: List checkpoints for a fine-tuning job.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5423,6 +5443,7 @@ If a seed is not specified, one will be generated for you.
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Lists the currently available models, and provides basic information about each one such as the owner and availability.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5530,6 +5551,7 @@ If a seed is not specified, one will be generated for you.
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a model instance, providing basic information about the model such as the owner and permissioning.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5642,6 +5664,7 @@ If a seed is not specified, one will be generated for you.
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary: Delete a fine-tuned model. You must have the Owner role in your organization to delete a model.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5784,6 +5807,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Classifies if text is potentially harmful.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateModerationRequest,
       IsArray: false,
@@ -6014,6 +6038,7 @@ The default is `text-moderation-latest` which will be automatically upgraded ove
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of assistants.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -6405,6 +6430,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create an assistant with a model and instructions.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateAssistantRequest,
       IsArray: false,
@@ -6571,6 +6597,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves an assistant.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -7007,6 +7034,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Modifies an assistant.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.ModifyAssistantRequest,
       IsArray: false,
@@ -7174,6 +7202,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary: Delete an assistant.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -7339,6 +7368,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a thread.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateThreadRequest,
       IsArray: false,
@@ -7475,6 +7505,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a thread.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -7647,6 +7678,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Modifies a thread.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.ModifyThreadRequest,
       IsArray: false,
@@ -7782,6 +7814,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary: Delete a thread.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -8050,6 +8083,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of messages for a given thread.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -8285,6 +8319,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a message.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateMessageRequest,
       IsArray: false,
@@ -8471,6 +8506,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Retrieve a message.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -8662,6 +8698,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Modifies a message.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.ModifyMessageRequest,
       IsArray: false,
@@ -8843,6 +8880,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary: Deletes a message.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -9374,6 +9412,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a thread and run it in one request.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateThreadAndRunRequest,
       IsArray: false,
@@ -9706,6 +9745,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of runs belonging to a thread.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -10265,6 +10305,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a run.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateRunRequest,
       IsArray: false,
@@ -10497,6 +10538,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a run.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -10712,6 +10754,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Modifies a run.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.ModifyRunRequest,
       IsArray: false,
@@ -10973,6 +11016,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: When a run has the `status: "requires_action"` and `required_action.type` is `submit_tool_outputs`, this endpoint can be used to submit the outputs from the tool calls once they're all completed. All outputs must be submitted in a single request.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.SubmitToolOutputsRunRequest,
       IsArray: false,
@@ -11180,6 +11224,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Cancels a run that is `in_progress`.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -11494,6 +11539,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of run steps belonging to a run.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -11666,6 +11712,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a run step.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -11900,6 +11947,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of vector stores.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -12097,6 +12145,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a vector store.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateVectorStoreRequest,
       IsArray: false,
@@ -12247,6 +12296,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a vector store.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -12459,6 +12509,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Modifies a vector store.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.UpdateVectorStoreRequest,
       IsArray: false,
@@ -12608,6 +12659,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary: Delete a vector store.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -12886,6 +12938,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of vector store files.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -13027,6 +13080,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a vector store file by attaching a [File](/docs/api-reference/files) to a [vector store](/docs/api-reference/vector-stores/object).,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateVectorStoreFileRequest,
       IsArray: false,
@@ -13195,6 +13249,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a vector store file.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -13342,6 +13397,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary: Delete a vector store file. This will remove the file from the vector store but the file itself will not be deleted. To delete the file, use the [delete file](/docs/api-reference/files/delete) endpoint.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -13479,6 +13535,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a vector store file batch.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateVectorStoreFileBatchRequest,
       IsArray: false,
@@ -13645,6 +13702,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a vector store file batch.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -13790,6 +13848,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Cancel a vector store file batch. This attempts to cancel the processing of files in this batch as soon as possible.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -14104,6 +14163,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of vector store files in a batch.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -14312,6 +14372,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Creates and executes a batch from an uploaded file of requests,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateBatchRequest,
       IsArray: false,
@@ -14502,6 +14563,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: List your organization's batches.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -14614,6 +14676,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a batch.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -14757,6 +14820,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Cancels an in-progress batch.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -14868,6 +14932,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: ,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -15245,6 +15310,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: The OpenAI REST API. Please see https://platform.openai.com/docs/api-reference for more details.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -15690,6 +15756,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Build Assistants that can call models and use tools.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -15742,6 +15809,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Learn how to turn audio into text or text into audio.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -15794,6 +15862,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Given a list of messages comprising a conversation, the model will return a response.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -15846,6 +15915,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Given a prompt, the model will return one or more predicted completions, and can also return the probabilities of alternative tokens at each position.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -15898,6 +15968,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Get a vector representation of a given input that can be easily consumed by machine learning models and algorithms.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -15950,6 +16021,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Manage fine-tuning jobs to tailor a model to your specific training data.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -16002,6 +16074,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Create large batches of API requests to run asynchronously.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -16054,6 +16127,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Files are used to upload documents that can be used with features like Assistants and Fine-tuning.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -16106,6 +16180,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Given a prompt and/or an input image, the model will generate a new image.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -16158,6 +16233,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: List and describe the various models available in the API.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -16210,6 +16286,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Given a input text, outputs if the model classifies it as potentially harmful.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -16262,6 +16339,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: ,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,

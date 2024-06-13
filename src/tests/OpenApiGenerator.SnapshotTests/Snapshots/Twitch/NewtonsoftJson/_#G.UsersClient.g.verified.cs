@@ -11,7 +11,7 @@ namespace G
     public sealed partial class UsersClient : global::System.IDisposable
     {
         /// <summary>
-        /// 
+        /// Helix
         /// </summary>
         public const string BaseUrl = "https://api.twitch.tv/helix";
 

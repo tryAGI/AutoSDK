@@ -12,7 +12,7 @@ namespace G
     public sealed partial class Api : global::System.IDisposable
     {
         /// <summary>
-        /// 
+        /// Ollama server URL
         /// </summary>
         public const string BaseUrl = "http://localhost:11434/api";
 

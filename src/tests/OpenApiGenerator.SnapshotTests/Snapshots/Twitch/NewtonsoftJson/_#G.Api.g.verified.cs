@@ -20,7 +20,7 @@ namespace G
     public sealed partial class Api : global::System.IDisposable
     {
         /// <summary>
-        /// 
+        /// Helix
         /// </summary>
         public const string BaseUrl = "https://api.twitch.tv/helix";
 

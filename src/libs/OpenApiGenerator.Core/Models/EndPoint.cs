@@ -20,6 +20,7 @@ public readonly record struct EndPoint(
     bool GenerateJsonSerializerContextTypes,
     OperationType HttpMethod,
     string Summary,
+    string BaseUrlSummary,
     TypeData RequestType,
     TypeData ResponseType,
     ImmutableArray<ModelData> AdditionalModels,
@@ -196,6 +197,7 @@ public readonly record struct EndPoint(
             GenerateJsonSerializerContextTypes: settings.GenerateJsonSerializerContextTypes,
             HttpMethod: operation.Key,
             Summary: operation.Value.Summary?.Replace("\n", string.Empty) ?? string.Empty,
+            BaseUrlSummary: string.Empty,
             RequestType: requestType ?? TypeData.Default,
             ResponseType: responseType ?? TypeData.Default,
             AdditionalModels: [
@@ -232,6 +234,7 @@ public readonly record struct EndPoint(
             GenerateJsonSerializerContextTypes: settings.GenerateJsonSerializerContextTypes,
             HttpMethod: default,
             Summary: string.Empty,
+            BaseUrlSummary: string.Empty,
             RequestType: TypeData.Default,
             ResponseType: TypeData.Default,
             AdditionalModels: [],

@@ -43,6 +43,7 @@
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: List all pets,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -132,6 +133,7 @@
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a pet,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -238,6 +240,7 @@
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: Info for a specific pet,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -340,6 +343,7 @@
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: ,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,

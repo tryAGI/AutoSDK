@@ -181,6 +181,7 @@
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Patch,
     Summary: Update Run,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.RunUpdateSchemaExtended,
       IsArray: false,
@@ -833,6 +834,7 @@
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create Run,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.RunCreateSchemaExtended,
       IsArray: false,
@@ -976,6 +978,7 @@
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary: From https://github.com/langchain-ai/langsmith-sdk/blob/main/openapi/openapi.yaml,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,

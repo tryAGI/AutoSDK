@@ -374,6 +374,7 @@ How long (in minutes) to keep the model loaded in memory.
     GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
     Summary: Generate a response for a given prompt with a provided model.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.GenerateCompletionRequest,
       IsArray: false,
@@ -728,6 +729,7 @@ How long (in minutes) to keep the model loaded in memory.
     GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
     Summary: Generate the next message in a chat with a provided model.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.GenerateChatCompletionRequest,
       IsArray: false,
@@ -1006,6 +1008,7 @@ How long (in minutes) to keep the model loaded in memory.
     GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
     Summary: Generate embeddings from a model.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.GenerateEmbeddingRequest,
       IsArray: false,
@@ -1253,6 +1256,7 @@ If `false` the response will be returned as a single response object, otherwise 
     GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
     Summary: Create a model from a Modelfile.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CreateModelRequest,
       IsArray: false,
@@ -1354,6 +1358,7 @@ If `false` the response will be returned as a single response object, otherwise 
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: true,
     Summary: List models that are available locally.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -1461,6 +1466,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
     Summary: Show details about a model including modelfile, template, parameters, license, and system prompt.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.ModelInfoRequest,
       IsArray: false,
@@ -1626,6 +1632,7 @@ Name of the new model.
     GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
     Summary: Creates a model with another name from an existing model.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.CopyModelRequest,
       IsArray: false,
@@ -1735,6 +1742,7 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
     GenerateJsonSerializerContextTypes: true,
     HttpMethod: Delete,
     Summary: Delete a model and its data.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.DeleteModelRequest,
       IsArray: false,
@@ -1960,6 +1968,7 @@ If `false` the response will be returned as a single response object, otherwise 
     GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
     Summary: Download a model from the ollama library.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.PullModelRequest,
       IsArray: false,
@@ -2216,6 +2225,7 @@ If `false` the response will be returned as a single response object, otherwise 
     GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
     Summary: Upload a model to a model library.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: global::G.PushModelRequest,
       IsArray: false,
@@ -2355,6 +2365,7 @@ If `false` the response will be returned as a single response object, otherwise 
     GenerateJsonSerializerContextTypes: true,
     HttpMethod: Head,
     Summary: Check to see if a blob exists on the Ollama server which is useful when creating models.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2439,6 +2450,7 @@ If `false` the response will be returned as a single response object, otherwise 
     GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
     Summary: Create a blob from a file. Returns the server file path.,
+    BaseUrlSummary: ,
     RequestType: {
       CSharpType: byte[],
       IsArray: false,
@@ -2617,6 +2629,7 @@ If `false` the response will be returned as a single response object, otherwise 
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: true,
     Summary: API Spec for Ollama API. Please see https://github.com/jmorganca/ollama/blob/main/docs/api.md for more details.,
+    BaseUrlSummary: Ollama server URL,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2686,6 +2699,7 @@ If `false` the response will be returned as a single response object, otherwise 
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: true,
     Summary: Given a prompt, the model will generate a completion.,
+    BaseUrlSummary: Ollama server URL,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2738,6 +2752,7 @@ If `false` the response will be returned as a single response object, otherwise 
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: true,
     Summary: Given a list of messages comprising a conversation, the model will return a response.,
+    BaseUrlSummary: Ollama server URL,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2790,6 +2805,7 @@ If `false` the response will be returned as a single response object, otherwise 
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: true,
     Summary: Get a vector representation of a given input.,
+    BaseUrlSummary: Ollama server URL,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2842,6 +2858,7 @@ If `false` the response will be returned as a single response object, otherwise 
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: true,
     Summary: List and describe the various models available.,
+    BaseUrlSummary: Ollama server URL,
     RequestType: {
       CSharpType: ,
       IsArray: false,

@@ -11,7 +11,7 @@ namespace G
     public sealed partial class HypeTrainClient : global::System.IDisposable
     {
         /// <summary>
-        /// 
+        /// Helix
         /// </summary>
         public const string BaseUrl = "https://api.twitch.tv/helix";
 
