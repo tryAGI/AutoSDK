@@ -11,6 +11,9 @@ namespace G
     /// </summary>
     public sealed partial class Api : global::System.IDisposable
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public const string BaseUrl = "";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;

@@ -10,6 +10,9 @@ namespace G
     /// </summary>
     public sealed partial class Api : global::System.IDisposable
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public const string BaseUrl = "http://petstore.swagger.io/v1";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;

@@ -11,6 +11,9 @@ namespace G
     /// </summary>
     public sealed partial class FineTuningClient : global::System.IDisposable
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public const string BaseUrl = "https://api.openai.com/v1";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;

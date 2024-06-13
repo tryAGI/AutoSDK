@@ -11,6 +11,9 @@ namespace G
     /// </summary>
     public sealed partial class GeneralClient : global::System.IDisposable
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public const string BaseUrl = "https://ipinfo.io/";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
