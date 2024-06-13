@@ -14,6 +14,12 @@
     <OpenApiGenerator_GenerateJsonSerializerContextTypes>true</OpenApiGenerator_GenerateJsonSerializerContextTypes>
   </PropertyGroup>
 
+  <PropertyGroup Label="Analyzers">
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <AnalysisMode>All</AnalysisMode>
+  </PropertyGroup>
+
   <ItemGroup>
     <AdditionalFiles Include="Resources\openapi.json" />
   </ItemGroup>

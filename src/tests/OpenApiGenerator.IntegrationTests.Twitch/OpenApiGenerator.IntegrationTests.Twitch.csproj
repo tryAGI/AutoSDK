@@ -13,6 +13,12 @@
     <OpenApiGenerator_JsonSerializerContext>OpenApiGenerator.IntegrationTests.Twitch.SourceGenerationContext</OpenApiGenerator_JsonSerializerContext>
   </PropertyGroup>
 
+  <PropertyGroup Label="Analyzers">
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <AnalysisMode>All</AnalysisMode>
+  </PropertyGroup>
+
   <ItemGroup Label="Base packages">
     <PackageReference Include="GitHubActionsTestLogger" Version="2.4.1">
       <PrivateAssets>all</PrivateAssets>
