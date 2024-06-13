@@ -84,6 +84,8 @@
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.ChatCompletionRequestMessageContentPartText,
         CSharpTypeWithNullability: global::G.ChatCompletionRequestMessageContentPartText?,
+        ShortCSharpTypeWithoutNullability: ChatCompletionRequestMessageContentPartText,
+        ShortCSharpTypeWithNullability: ChatCompletionRequestMessageContentPartText?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -101,6 +103,8 @@
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.ChatCompletionRequestMessageContentPartImage,
         CSharpTypeWithNullability: global::G.ChatCompletionRequestMessageContentPartImage?,
+        ShortCSharpTypeWithoutNullability: ChatCompletionRequestMessageContentPartImage,
+        ShortCSharpTypeWithNullability: ChatCompletionRequestMessageContentPartImage?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -129,6 +133,8 @@
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.ChatCompletionRequestSystemMessage,
         CSharpTypeWithNullability: global::G.ChatCompletionRequestSystemMessage?,
+        ShortCSharpTypeWithoutNullability: ChatCompletionRequestSystemMessage,
+        ShortCSharpTypeWithNullability: ChatCompletionRequestSystemMessage?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -147,6 +153,8 @@
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.ChatCompletionRequestUserMessage,
         CSharpTypeWithNullability: global::G.ChatCompletionRequestUserMessage?,
+        ShortCSharpTypeWithoutNullability: ChatCompletionRequestUserMessage,
+        ShortCSharpTypeWithNullability: ChatCompletionRequestUserMessage?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -167,6 +175,8 @@
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.ChatCompletionRequestAssistantMessage,
         CSharpTypeWithNullability: global::G.ChatCompletionRequestAssistantMessage?,
+        ShortCSharpTypeWithoutNullability: ChatCompletionRequestAssistantMessage,
+        ShortCSharpTypeWithNullability: ChatCompletionRequestAssistantMessage?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -185,6 +195,8 @@
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.ChatCompletionRequestToolMessage,
         CSharpTypeWithNullability: global::G.ChatCompletionRequestToolMessage?,
+        ShortCSharpTypeWithoutNullability: ChatCompletionRequestToolMessage,
+        ShortCSharpTypeWithNullability: ChatCompletionRequestToolMessage?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -203,6 +215,8 @@
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.ChatCompletionRequestFunctionMessage,
         CSharpTypeWithNullability: global::G.ChatCompletionRequestFunctionMessage?,
+        ShortCSharpTypeWithoutNullability: ChatCompletionRequestFunctionMessage,
+        ShortCSharpTypeWithNullability: ChatCompletionRequestFunctionMessage?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -243,6 +257,8 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.ChatCompletionToolChoiceOptionVariant1,
         CSharpTypeWithNullability: global::G.ChatCompletionToolChoiceOptionVariant1?,
+        ShortCSharpTypeWithoutNullability: ChatCompletionToolChoiceOptionVariant1,
+        ShortCSharpTypeWithNullability: ChatCompletionToolChoiceOptionVariant1?,
         IsAnyOf: false,
         ConverterType: global::OpenApiGenerator.JsonConverters.ChatCompletionToolChoiceOptionVariant1JsonConverter
       },
@@ -260,6 +276,8 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.ChatCompletionNamedToolChoice,
         CSharpTypeWithNullability: global::G.ChatCompletionNamedToolChoice?,
+        ShortCSharpTypeWithoutNullability: ChatCompletionNamedToolChoice,
+        ShortCSharpTypeWithNullability: ChatCompletionNamedToolChoice?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -296,6 +314,8 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.AssistantsApiResponseFormatOptionVariant1,
         CSharpTypeWithNullability: global::G.AssistantsApiResponseFormatOptionVariant1?,
+        ShortCSharpTypeWithoutNullability: AssistantsApiResponseFormatOptionVariant1,
+        ShortCSharpTypeWithNullability: AssistantsApiResponseFormatOptionVariant1?,
         IsAnyOf: false,
         ConverterType: global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatOptionVariant1JsonConverter
       },
@@ -312,6 +332,8 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.AssistantsApiResponseFormat,
         CSharpTypeWithNullability: global::G.AssistantsApiResponseFormat?,
+        ShortCSharpTypeWithoutNullability: AssistantsApiResponseFormat,
+        ShortCSharpTypeWithNullability: AssistantsApiResponseFormat?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -350,6 +372,8 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.AssistantsApiToolChoiceOptionVariant1,
         CSharpTypeWithNullability: global::G.AssistantsApiToolChoiceOptionVariant1?,
+        ShortCSharpTypeWithoutNullability: AssistantsApiToolChoiceOptionVariant1,
+        ShortCSharpTypeWithNullability: AssistantsApiToolChoiceOptionVariant1?,
         IsAnyOf: false,
         ConverterType: global::OpenApiGenerator.JsonConverters.AssistantsApiToolChoiceOptionVariant1JsonConverter
       },
@@ -367,6 +391,8 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.AssistantsNamedToolChoice,
         CSharpTypeWithNullability: global::G.AssistantsNamedToolChoice?,
+        ShortCSharpTypeWithoutNullability: AssistantsNamedToolChoice,
+        ShortCSharpTypeWithNullability: AssistantsNamedToolChoice?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -412,6 +438,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.ThreadStreamEvent,
         CSharpTypeWithNullability: global::G.ThreadStreamEvent?,
+        ShortCSharpTypeWithoutNullability: ThreadStreamEvent,
+        ShortCSharpTypeWithNullability: ThreadStreamEvent?,
         IsAnyOf: true,
         ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory1
       },
@@ -427,6 +455,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.RunStreamEvent,
         CSharpTypeWithNullability: global::G.RunStreamEvent?,
+        ShortCSharpTypeWithoutNullability: RunStreamEvent,
+        ShortCSharpTypeWithNullability: RunStreamEvent?,
         IsAnyOf: true,
         ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory9
       },
@@ -442,6 +472,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.RunStepStreamEvent,
         CSharpTypeWithNullability: global::G.RunStepStreamEvent?,
+        ShortCSharpTypeWithoutNullability: RunStepStreamEvent,
+        ShortCSharpTypeWithNullability: RunStepStreamEvent?,
         IsAnyOf: true,
         ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory7
       },
@@ -457,6 +489,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.MessageStreamEvent,
         CSharpTypeWithNullability: global::G.MessageStreamEvent?,
+        ShortCSharpTypeWithoutNullability: MessageStreamEvent,
+        ShortCSharpTypeWithNullability: MessageStreamEvent?,
         IsAnyOf: true,
         ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory5
       },
@@ -474,6 +508,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.ErrorEvent,
         CSharpTypeWithNullability: global::G.ErrorEvent?,
+        ShortCSharpTypeWithoutNullability: ErrorEvent,
+        ShortCSharpTypeWithNullability: ErrorEvent?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -491,6 +527,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.DoneEvent,
         CSharpTypeWithNullability: global::G.DoneEvent?,
+        ShortCSharpTypeWithoutNullability: DoneEvent,
+        ShortCSharpTypeWithNullability: DoneEvent?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -515,6 +553,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.ThreadStreamEventVariant1,
         CSharpTypeWithNullability: global::G.ThreadStreamEventVariant1?,
+        ShortCSharpTypeWithoutNullability: ThreadStreamEventVariant1,
+        ShortCSharpTypeWithNullability: ThreadStreamEventVariant1?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -539,6 +579,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.RunStreamEventVariant1,
         CSharpTypeWithNullability: global::G.RunStreamEventVariant1?,
+        ShortCSharpTypeWithoutNullability: RunStreamEventVariant1,
+        ShortCSharpTypeWithNullability: RunStreamEventVariant1?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -553,6 +595,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.RunStreamEventVariant2,
         CSharpTypeWithNullability: global::G.RunStreamEventVariant2?,
+        ShortCSharpTypeWithoutNullability: RunStreamEventVariant2,
+        ShortCSharpTypeWithNullability: RunStreamEventVariant2?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -567,6 +611,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.RunStreamEventVariant3,
         CSharpTypeWithNullability: global::G.RunStreamEventVariant3?,
+        ShortCSharpTypeWithoutNullability: RunStreamEventVariant3,
+        ShortCSharpTypeWithNullability: RunStreamEventVariant3?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -581,6 +627,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.RunStreamEventVariant4,
         CSharpTypeWithNullability: global::G.RunStreamEventVariant4?,
+        ShortCSharpTypeWithoutNullability: RunStreamEventVariant4,
+        ShortCSharpTypeWithNullability: RunStreamEventVariant4?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -595,6 +643,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.RunStreamEventVariant5,
         CSharpTypeWithNullability: global::G.RunStreamEventVariant5?,
+        ShortCSharpTypeWithoutNullability: RunStreamEventVariant5,
+        ShortCSharpTypeWithNullability: RunStreamEventVariant5?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -609,6 +659,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.RunStreamEventVariant6,
         CSharpTypeWithNullability: global::G.RunStreamEventVariant6?,
+        ShortCSharpTypeWithoutNullability: RunStreamEventVariant6,
+        ShortCSharpTypeWithNullability: RunStreamEventVariant6?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -623,6 +675,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.RunStreamEventVariant7,
         CSharpTypeWithNullability: global::G.RunStreamEventVariant7?,
+        ShortCSharpTypeWithoutNullability: RunStreamEventVariant7,
+        ShortCSharpTypeWithNullability: RunStreamEventVariant7?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -637,6 +691,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.RunStreamEventVariant8,
         CSharpTypeWithNullability: global::G.RunStreamEventVariant8?,
+        ShortCSharpTypeWithoutNullability: RunStreamEventVariant8,
+        ShortCSharpTypeWithNullability: RunStreamEventVariant8?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -651,6 +707,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.RunStreamEventVariant9,
         CSharpTypeWithNullability: global::G.RunStreamEventVariant9?,
+        ShortCSharpTypeWithoutNullability: RunStreamEventVariant9,
+        ShortCSharpTypeWithNullability: RunStreamEventVariant9?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -675,6 +733,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.RunStepStreamEventVariant1,
         CSharpTypeWithNullability: global::G.RunStepStreamEventVariant1?,
+        ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant1,
+        ShortCSharpTypeWithNullability: RunStepStreamEventVariant1?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -689,6 +749,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.RunStepStreamEventVariant2,
         CSharpTypeWithNullability: global::G.RunStepStreamEventVariant2?,
+        ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant2,
+        ShortCSharpTypeWithNullability: RunStepStreamEventVariant2?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -703,6 +765,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.RunStepStreamEventVariant3,
         CSharpTypeWithNullability: global::G.RunStepStreamEventVariant3?,
+        ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant3,
+        ShortCSharpTypeWithNullability: RunStepStreamEventVariant3?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -717,6 +781,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.RunStepStreamEventVariant4,
         CSharpTypeWithNullability: global::G.RunStepStreamEventVariant4?,
+        ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant4,
+        ShortCSharpTypeWithNullability: RunStepStreamEventVariant4?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -731,6 +797,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.RunStepStreamEventVariant5,
         CSharpTypeWithNullability: global::G.RunStepStreamEventVariant5?,
+        ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant5,
+        ShortCSharpTypeWithNullability: RunStepStreamEventVariant5?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -745,6 +813,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.RunStepStreamEventVariant6,
         CSharpTypeWithNullability: global::G.RunStepStreamEventVariant6?,
+        ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant6,
+        ShortCSharpTypeWithNullability: RunStepStreamEventVariant6?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -759,6 +829,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.RunStepStreamEventVariant7,
         CSharpTypeWithNullability: global::G.RunStepStreamEventVariant7?,
+        ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant7,
+        ShortCSharpTypeWithNullability: RunStepStreamEventVariant7?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -783,6 +855,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.MessageStreamEventVariant1,
         CSharpTypeWithNullability: global::G.MessageStreamEventVariant1?,
+        ShortCSharpTypeWithoutNullability: MessageStreamEventVariant1,
+        ShortCSharpTypeWithNullability: MessageStreamEventVariant1?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -797,6 +871,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.MessageStreamEventVariant2,
         CSharpTypeWithNullability: global::G.MessageStreamEventVariant2?,
+        ShortCSharpTypeWithoutNullability: MessageStreamEventVariant2,
+        ShortCSharpTypeWithNullability: MessageStreamEventVariant2?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -811,6 +887,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.MessageStreamEventVariant3,
         CSharpTypeWithNullability: global::G.MessageStreamEventVariant3?,
+        ShortCSharpTypeWithoutNullability: MessageStreamEventVariant3,
+        ShortCSharpTypeWithNullability: MessageStreamEventVariant3?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -825,6 +903,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.MessageStreamEventVariant4,
         CSharpTypeWithNullability: global::G.MessageStreamEventVariant4?,
+        ShortCSharpTypeWithoutNullability: MessageStreamEventVariant4,
+        ShortCSharpTypeWithNullability: MessageStreamEventVariant4?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -839,6 +919,8 @@ integrate the Assistants API with streaming.
         GenerateJsonSerializerContextTypes: false,
         CSharpTypeWithoutNullability: global::G.MessageStreamEventVariant5,
         CSharpTypeWithNullability: global::G.MessageStreamEventVariant5?,
+        ShortCSharpTypeWithoutNullability: MessageStreamEventVariant5,
+        ShortCSharpTypeWithNullability: MessageStreamEventVariant5?,
         IsAnyOf: false,
         ConverterType: 
       }

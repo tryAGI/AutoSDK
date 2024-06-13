@@ -7,6 +7,7 @@
   <Import Project="../../libs/OpenApiGenerator/OpenApiGenerator.props" />
 
   <PropertyGroup>
+    <OpenApiGenerator_Namespace>OpenApiGenerator.IntegrationTests</OpenApiGenerator_Namespace>
     <OpenApiGenerator_GenerateSdk>false</OpenApiGenerator_GenerateSdk>
     <OpenApiGenerator_GenerateMethods>true</OpenApiGenerator_GenerateMethods>
     <OpenApiGenerator_GenerateConstructors>true</OpenApiGenerator_GenerateConstructors>

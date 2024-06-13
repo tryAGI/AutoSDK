@@ -35,10 +35,12 @@ public readonly record struct TypeData(
     
     public string CSharpTypeWithoutNullability => CSharpType.TrimEnd('?');
     public string CSharpTypeWithNullability => CSharpTypeWithoutNullability + "?";
+    public string ShortCSharpTypeWithoutNullability => CSharpTypeWithoutNullability.Replace($"global::{Namespace}.", string.Empty);
+    public string ShortCSharpTypeWithNullability => ShortCSharpTypeWithoutNullability + "?";
     public bool IsAnyOf => AnyOfCount > 0 || OneOfCount > 0 || AllOfCount > 0;
     
     public string ConverterType => IsEnum
-        ? $"global::OpenApiGenerator.JsonConverters.{CSharpTypeWithoutNullability.Replace($"global::{Namespace}.", string.Empty)}JsonConverter"
+        ? $"global::OpenApiGenerator.JsonConverters.{ShortCSharpTypeWithoutNullability}JsonConverter"
         : AnyOfCount > 0
             ? $"global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory{AnyOfCount}"
             : OneOfCount > 0

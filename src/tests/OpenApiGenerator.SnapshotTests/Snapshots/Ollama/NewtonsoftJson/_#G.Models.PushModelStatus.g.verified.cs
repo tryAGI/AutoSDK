@@ -1,5 +1,6 @@
 ﻿//HintName: G.Models.PushModelStatus.g.cs
 using System.Linq;
+#pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
 

@@ -104,7 +104,7 @@ namespace {endPoint.Namespace}
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + {endPoint.Path}, global::System.UriKind.RelativeOrAbsolute));
 {(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : $@" 
             httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: {jsonSerializer.GenerateSerializeCall(endPoint.RequestType.CSharpTypeWithoutNullability, endPoint.JsonSerializerContext)},
+                content: {jsonSerializer.GenerateSerializeCall(endPoint.RequestType, endPoint.JsonSerializerContext)},
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: ""application/json"");")}
 
@@ -117,7 +117,7 @@ namespace {endPoint.Namespace}
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType.CSharpTypeWithNullability, endPoint.JsonSerializerContext)} ??
+                {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType, endPoint.JsonSerializerContext)} ??
                 throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");")}
 {(endPoint.Stream ? $@"
             using var stream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
@@ -126,7 +126,7 @@ namespace {endPoint.Namespace}
             while (!reader.EndOfStream && !cancellationToken.IsCancellationRequested)
             {{
                 var __content = await reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
-                var streamedResponse = {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType.CSharpTypeWithNullability, endPoint.JsonSerializerContext)} ??
+                var streamedResponse = {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType, endPoint.JsonSerializerContext)} ??
                                        throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");
 
                 yield return streamedResponse;

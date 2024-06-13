@@ -20,6 +20,8 @@
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: object,
           CSharpTypeWithNullability: object?,
+          ShortCSharpTypeWithoutNullability: object,
+          ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -61,6 +63,8 @@ Use a data URL when:
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: bool,
           CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -90,6 +94,8 @@ If the requested model version supports streaming, the returned prediction will 
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -117,6 +123,8 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.PredictionRequestWebhookEventsFilter?>,
           CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.PredictionRequestWebhookEventsFilter?>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -182,6 +190,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -207,6 +217,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -232,6 +244,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -257,6 +271,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -300,6 +316,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -327,6 +345,8 @@ A string representing the desired model to push to in the format `{destination_m
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: object,
           CSharpTypeWithNullability: object?,
+          ShortCSharpTypeWithoutNullability: object,
+          ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -354,6 +374,8 @@ An object containing inputs to the Cog model's `train()` function.
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -379,6 +401,8 @@ An object containing inputs to the Cog model's `train()` function.
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.TrainingRequestWebhookEventsFilter?>,
           CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.TrainingRequestWebhookEventsFilter?>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<TrainingRequestWebhookEventsFilter?>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<TrainingRequestWebhookEventsFilter?>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -445,6 +469,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -470,6 +496,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -495,6 +523,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -520,6 +550,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -563,6 +595,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: object,
           CSharpTypeWithNullability: object?,
+          ShortCSharpTypeWithoutNullability: object,
+          ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -604,6 +638,8 @@ Use a data URL when:
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: bool,
           CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -633,6 +669,8 @@ If the requested model version supports streaming, the returned prediction will 
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -658,6 +696,8 @@ If the requested model version supports streaming, the returned prediction will 
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -685,6 +725,8 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.VersionPredictionRequestWebhookEventsFilter?>,
           CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.VersionPredictionRequestWebhookEventsFilter?>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<VersionPredictionRequestWebhookEventsFilter?>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<VersionPredictionRequestWebhookEventsFilter?>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -751,6 +793,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -776,6 +820,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -801,6 +847,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -826,6 +874,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -869,6 +919,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -894,6 +946,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -925,6 +979,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: global::G.GetAccountResponseType,
           CSharpTypeWithNullability: global::G.GetAccountResponseType?,
+          ShortCSharpTypeWithoutNullability: GetAccountResponseType,
+          ShortCSharpTypeWithNullability: GetAccountResponseType?,
           IsAnyOf: false,
           ConverterType: global::OpenApiGenerator.JsonConverters.GetAccountResponseTypeJsonConverter
         },
@@ -950,6 +1006,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -994,6 +1052,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1019,6 +1079,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1062,6 +1124,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1087,6 +1151,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1112,6 +1178,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.ListDeploymentsResponseResults?>,
           CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.ListDeploymentsResponseResults?>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ListDeploymentsResponseResults?>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<ListDeploymentsResponseResults?>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1155,6 +1223,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: global::G.ListDeploymentsResponseResultsCurrentRelease,
           CSharpTypeWithNullability: global::G.ListDeploymentsResponseResultsCurrentRelease?,
+          ShortCSharpTypeWithoutNullability: ListDeploymentsResponseResultsCurrentRelease,
+          ShortCSharpTypeWithNullability: ListDeploymentsResponseResultsCurrentRelease?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1180,6 +1250,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1205,6 +1277,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1248,6 +1322,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: global::G.ListDeploymentsResponseResultsCurrentReleaseConfiguration,
           CSharpTypeWithNullability: global::G.ListDeploymentsResponseResultsCurrentReleaseConfiguration?,
+          ShortCSharpTypeWithoutNullability: ListDeploymentsResponseResultsCurrentReleaseConfiguration,
+          ShortCSharpTypeWithNullability: ListDeploymentsResponseResultsCurrentReleaseConfiguration?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1273,6 +1349,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: global::System.DateTime,
           CSharpTypeWithNullability: global::System.DateTime?,
+          ShortCSharpTypeWithoutNullability: global::System.DateTime,
+          ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1298,6 +1376,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: global::G.ListDeploymentsResponseResultsCurrentReleaseCreatedBy,
           CSharpTypeWithNullability: global::G.ListDeploymentsResponseResultsCurrentReleaseCreatedBy?,
+          ShortCSharpTypeWithoutNullability: ListDeploymentsResponseResultsCurrentReleaseCreatedBy,
+          ShortCSharpTypeWithNullability: ListDeploymentsResponseResultsCurrentReleaseCreatedBy?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1323,6 +1403,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1348,6 +1430,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1373,6 +1457,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1416,6 +1502,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1441,6 +1529,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1466,6 +1556,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1509,6 +1601,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1534,6 +1628,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1565,6 +1661,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: global::G.ListDeploymentsResponseResultsCurrentReleaseCreatedByType,
           CSharpTypeWithNullability: global::G.ListDeploymentsResponseResultsCurrentReleaseCreatedByType?,
+          ShortCSharpTypeWithoutNullability: ListDeploymentsResponseResultsCurrentReleaseCreatedByType,
+          ShortCSharpTypeWithNullability: ListDeploymentsResponseResultsCurrentReleaseCreatedByType?,
           IsAnyOf: false,
           ConverterType: global::OpenApiGenerator.JsonConverters.ListDeploymentsResponseResultsCurrentReleaseCreatedByTypeJsonConverter
         },
@@ -1590,6 +1688,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1634,6 +1734,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1659,6 +1761,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1702,6 +1806,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1727,6 +1833,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1752,6 +1860,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1777,6 +1887,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1802,6 +1914,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1827,6 +1941,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1870,6 +1986,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: global::G.CreateDeploymentsResponseCurrentRelease,
           CSharpTypeWithNullability: global::G.CreateDeploymentsResponseCurrentRelease?,
+          ShortCSharpTypeWithoutNullability: CreateDeploymentsResponseCurrentRelease,
+          ShortCSharpTypeWithNullability: CreateDeploymentsResponseCurrentRelease?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1895,6 +2013,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1920,6 +2040,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1963,6 +2085,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: global::G.CreateDeploymentsResponseCurrentReleaseConfiguration,
           CSharpTypeWithNullability: global::G.CreateDeploymentsResponseCurrentReleaseConfiguration?,
+          ShortCSharpTypeWithoutNullability: CreateDeploymentsResponseCurrentReleaseConfiguration,
+          ShortCSharpTypeWithNullability: CreateDeploymentsResponseCurrentReleaseConfiguration?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1988,6 +2112,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: global::System.DateTime,
           CSharpTypeWithNullability: global::System.DateTime?,
+          ShortCSharpTypeWithoutNullability: global::System.DateTime,
+          ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2013,6 +2139,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: global::G.CreateDeploymentsResponseCurrentReleaseCreatedBy,
           CSharpTypeWithNullability: global::G.CreateDeploymentsResponseCurrentReleaseCreatedBy?,
+          ShortCSharpTypeWithoutNullability: CreateDeploymentsResponseCurrentReleaseCreatedBy,
+          ShortCSharpTypeWithNullability: CreateDeploymentsResponseCurrentReleaseCreatedBy?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2038,6 +2166,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2063,6 +2193,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2088,6 +2220,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2131,6 +2265,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2156,6 +2292,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2181,6 +2319,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2224,6 +2364,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2249,6 +2391,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2280,6 +2424,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: global::G.CreateDeploymentsResponseCurrentReleaseCreatedByType,
           CSharpTypeWithNullability: global::G.CreateDeploymentsResponseCurrentReleaseCreatedByType?,
+          ShortCSharpTypeWithoutNullability: CreateDeploymentsResponseCurrentReleaseCreatedByType,
+          ShortCSharpTypeWithNullability: CreateDeploymentsResponseCurrentReleaseCreatedByType?,
           IsAnyOf: false,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter
         },
@@ -2305,6 +2451,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2349,6 +2497,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2374,6 +2524,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2417,6 +2569,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: global::G.GetDeploymentsResponseCurrentRelease,
           CSharpTypeWithNullability: global::G.GetDeploymentsResponseCurrentRelease?,
+          ShortCSharpTypeWithoutNullability: GetDeploymentsResponseCurrentRelease,
+          ShortCSharpTypeWithNullability: GetDeploymentsResponseCurrentRelease?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2442,6 +2596,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2467,6 +2623,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2510,6 +2668,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: global::G.GetDeploymentsResponseCurrentReleaseConfiguration,
           CSharpTypeWithNullability: global::G.GetDeploymentsResponseCurrentReleaseConfiguration?,
+          ShortCSharpTypeWithoutNullability: GetDeploymentsResponseCurrentReleaseConfiguration,
+          ShortCSharpTypeWithNullability: GetDeploymentsResponseCurrentReleaseConfiguration?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2535,6 +2695,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: global::System.DateTime,
           CSharpTypeWithNullability: global::System.DateTime?,
+          ShortCSharpTypeWithoutNullability: global::System.DateTime,
+          ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2560,6 +2722,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: global::G.GetDeploymentsResponseCurrentReleaseCreatedBy,
           CSharpTypeWithNullability: global::G.GetDeploymentsResponseCurrentReleaseCreatedBy?,
+          ShortCSharpTypeWithoutNullability: GetDeploymentsResponseCurrentReleaseCreatedBy,
+          ShortCSharpTypeWithNullability: GetDeploymentsResponseCurrentReleaseCreatedBy?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2585,6 +2749,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2610,6 +2776,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2635,6 +2803,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2678,6 +2848,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2703,6 +2875,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2728,6 +2902,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2771,6 +2947,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2796,6 +2974,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2827,6 +3007,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: global::G.GetDeploymentsResponseCurrentReleaseCreatedByType,
           CSharpTypeWithNullability: global::G.GetDeploymentsResponseCurrentReleaseCreatedByType?,
+          ShortCSharpTypeWithoutNullability: GetDeploymentsResponseCurrentReleaseCreatedByType,
+          ShortCSharpTypeWithNullability: GetDeploymentsResponseCurrentReleaseCreatedByType?,
           IsAnyOf: false,
           ConverterType: global::OpenApiGenerator.JsonConverters.GetDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter
         },
@@ -2852,6 +3034,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2896,6 +3080,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2921,6 +3107,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2964,6 +3152,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2989,6 +3179,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3014,6 +3206,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3039,6 +3233,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3082,6 +3278,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: global::G.UpdateDeploymentsResponseCurrentRelease,
           CSharpTypeWithNullability: global::G.UpdateDeploymentsResponseCurrentRelease?,
+          ShortCSharpTypeWithoutNullability: UpdateDeploymentsResponseCurrentRelease,
+          ShortCSharpTypeWithNullability: UpdateDeploymentsResponseCurrentRelease?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3107,6 +3305,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3132,6 +3332,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3175,6 +3377,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: global::G.UpdateDeploymentsResponseCurrentReleaseConfiguration,
           CSharpTypeWithNullability: global::G.UpdateDeploymentsResponseCurrentReleaseConfiguration?,
+          ShortCSharpTypeWithoutNullability: UpdateDeploymentsResponseCurrentReleaseConfiguration,
+          ShortCSharpTypeWithNullability: UpdateDeploymentsResponseCurrentReleaseConfiguration?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3200,6 +3404,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: global::System.DateTime,
           CSharpTypeWithNullability: global::System.DateTime?,
+          ShortCSharpTypeWithoutNullability: global::System.DateTime,
+          ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3225,6 +3431,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: global::G.UpdateDeploymentsResponseCurrentReleaseCreatedBy,
           CSharpTypeWithNullability: global::G.UpdateDeploymentsResponseCurrentReleaseCreatedBy?,
+          ShortCSharpTypeWithoutNullability: UpdateDeploymentsResponseCurrentReleaseCreatedBy,
+          ShortCSharpTypeWithNullability: UpdateDeploymentsResponseCurrentReleaseCreatedBy?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3250,6 +3458,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3275,6 +3485,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3300,6 +3512,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3343,6 +3557,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3368,6 +3584,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3393,6 +3611,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3436,6 +3656,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3461,6 +3683,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3492,6 +3716,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: global::G.UpdateDeploymentsResponseCurrentReleaseCreatedByType,
           CSharpTypeWithNullability: global::G.UpdateDeploymentsResponseCurrentReleaseCreatedByType?,
+          ShortCSharpTypeWithoutNullability: UpdateDeploymentsResponseCurrentReleaseCreatedByType,
+          ShortCSharpTypeWithNullability: UpdateDeploymentsResponseCurrentReleaseCreatedByType?,
           IsAnyOf: false,
           ConverterType: global::OpenApiGenerator.JsonConverters.UpdateDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter
         },
@@ -3517,6 +3743,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3561,6 +3789,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3586,6 +3816,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3629,6 +3861,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3654,6 +3888,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3697,6 +3933,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3722,6 +3960,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3747,6 +3987,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3772,6 +4014,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3797,6 +4041,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3822,6 +4068,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3847,6 +4095,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3872,6 +4122,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3903,6 +4155,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: global::G.CreateModelsRequestVisibility,
           CSharpTypeWithNullability: global::G.CreateModelsRequestVisibility?,
+          ShortCSharpTypeWithoutNullability: CreateModelsRequestVisibility,
+          ShortCSharpTypeWithNullability: CreateModelsRequestVisibility?,
           IsAnyOf: false,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateModelsRequestVisibilityJsonConverter
         },
@@ -3947,6 +4201,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3972,6 +4228,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -4015,6 +4273,8 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },

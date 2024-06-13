@@ -1,4 +1,5 @@
 using OpenApiGenerator.Core.Extensions;
+using OpenApiGenerator.Core.Models;
 
 namespace OpenApiGenerator.Core.Json;
 
@@ -37,13 +38,13 @@ public class NewtonsoftJsonSerializer : IJsonSerializer
         return string.Empty;
     }
     
-    public string GenerateSerializeCall(string type, string jsonSerializerContext)
+    public string GenerateSerializeCall(TypeData type, string jsonSerializerContext)
     {
         return "global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions)";
     }
     
-    public string GenerateDeserializeCall(string type, string jsonSerializerContext)
+    public string GenerateDeserializeCall(TypeData type, string jsonSerializerContext)
     {
-        return $"global::Newtonsoft.Json.JsonConvert.DeserializeObject<{type}>(__content, _jsonSerializerOptions)";
+        return $"global::Newtonsoft.Json.JsonConvert.DeserializeObject<{type.CSharpTypeWithNullability}>(__content, _jsonSerializerOptions)";
     }
 }

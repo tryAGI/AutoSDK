@@ -1,5 +1,6 @@
 ﻿//HintName: JsonConverters.AssistantStreamEvent.g.cs
 #nullable enable
+#pragma warning disable CS0618 // Type or member is obsolete
 
 namespace OpenApiGenerator.JsonConverters
 {

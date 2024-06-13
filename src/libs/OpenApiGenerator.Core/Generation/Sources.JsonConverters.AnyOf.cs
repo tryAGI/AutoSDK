@@ -43,7 +43,8 @@ public static partial class Sources
             }).ToImmutableArray();
         
         return $@"#nullable enable
-
+{(fixedTypes.IsEmpty ? "" : @"#pragma warning disable CS0618 // Type or member is obsolete
+")}
 namespace OpenApiGenerator.JsonConverters
 {{
     /// <inheritdoc />

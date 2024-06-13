@@ -20,6 +20,8 @@
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -46,6 +48,8 @@
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: bool,
           CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -72,6 +76,8 @@
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: bool,
           CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -98,6 +104,8 @@
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: long,
           CSharpTypeWithNullability: long?,
+          ShortCSharpTypeWithoutNullability: long,
+          ShortCSharpTypeWithNullability: long?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -123,6 +131,8 @@
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -148,6 +158,8 @@
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -191,6 +203,8 @@
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -216,6 +230,8 @@
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },

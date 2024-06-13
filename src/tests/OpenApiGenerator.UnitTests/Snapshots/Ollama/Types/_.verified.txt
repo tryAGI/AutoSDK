@@ -10,6 +10,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: string,
     CSharpTypeWithNullability: string?,
+    ShortCSharpTypeWithoutNullability: string,
+    ShortCSharpTypeWithNullability: string?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -24,6 +26,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
     CSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
+    ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
+    ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -38,6 +42,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<long>,
     CSharpTypeWithNullability: global::System.Collections.Generic.IList<long>?,
+    ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<long>,
+    ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<long>?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -83,6 +89,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::G.RequestOptions,
     CSharpTypeWithNullability: global::G.RequestOptions?,
+    ShortCSharpTypeWithoutNullability: RequestOptions,
+    ShortCSharpTypeWithNullability: RequestOptions?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -101,6 +109,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::G.ResponseFormat,
     CSharpTypeWithNullability: global::G.ResponseFormat?,
+    ShortCSharpTypeWithoutNullability: ResponseFormat,
+    ShortCSharpTypeWithNullability: ResponseFormat?,
     IsAnyOf: false,
     ConverterType: global::OpenApiGenerator.JsonConverters.ResponseFormatJsonConverter
   },
@@ -115,6 +125,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: bool,
     CSharpTypeWithNullability: bool?,
+    ShortCSharpTypeWithoutNullability: bool,
+    ShortCSharpTypeWithNullability: bool?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -129,6 +141,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: int,
     CSharpTypeWithNullability: int?,
+    ShortCSharpTypeWithoutNullability: int,
+    ShortCSharpTypeWithNullability: int?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -143,6 +157,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: float,
     CSharpTypeWithNullability: float?,
+    ShortCSharpTypeWithoutNullability: float,
+    ShortCSharpTypeWithNullability: float?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -157,6 +173,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::System.DateTime,
     CSharpTypeWithNullability: global::System.DateTime?,
+    ShortCSharpTypeWithoutNullability: global::System.DateTime,
+    ShortCSharpTypeWithNullability: global::System.DateTime?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -171,6 +189,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: long,
     CSharpTypeWithNullability: long?,
+    ShortCSharpTypeWithoutNullability: long,
+    ShortCSharpTypeWithNullability: long?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -185,6 +205,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.Message>,
     CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.Message>?,
+    ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Message>,
+    ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<Message>?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -203,6 +225,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::G.Message,
     CSharpTypeWithNullability: global::G.Message?,
+    ShortCSharpTypeWithoutNullability: Message,
+    ShortCSharpTypeWithNullability: Message?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -225,6 +249,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::G.MessageRole,
     CSharpTypeWithNullability: global::G.MessageRole?,
+    ShortCSharpTypeWithoutNullability: MessageRole,
+    ShortCSharpTypeWithNullability: MessageRole?,
     IsAnyOf: false,
     ConverterType: global::OpenApiGenerator.JsonConverters.MessageRoleJsonConverter
   },
@@ -239,6 +265,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<double>,
     CSharpTypeWithNullability: global::System.Collections.Generic.IList<double>?,
+    ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<double>,
+    ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<double>?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -254,6 +282,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::System.AnyOf<string?, global::G.CreateModelResponseStatus?>,
     CSharpTypeWithNullability: global::System.AnyOf<string?, global::G.CreateModelResponseStatus?>?,
+    ShortCSharpTypeWithoutNullability: global::System.AnyOf<string?, CreateModelResponseStatus?>,
+    ShortCSharpTypeWithNullability: global::System.AnyOf<string?, CreateModelResponseStatus?>?,
     IsAnyOf: true,
     ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
   },
@@ -268,6 +298,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.LocalModel>,
     CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.LocalModel>?,
+    ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<LocalModel>,
+    ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<LocalModel>?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -289,6 +321,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::G.ModelDetails,
     CSharpTypeWithNullability: global::G.ModelDetails?,
+    ShortCSharpTypeWithoutNullability: ModelDetails,
+    ShortCSharpTypeWithNullability: ModelDetails?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -304,6 +338,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::System.AnyOf<string?, global::G.PullModelResponseStatus?>,
     CSharpTypeWithNullability: global::System.AnyOf<string?, global::G.PullModelResponseStatus?>?,
+    ShortCSharpTypeWithoutNullability: global::System.AnyOf<string?, PullModelResponseStatus?>,
+    ShortCSharpTypeWithNullability: global::System.AnyOf<string?, PullModelResponseStatus?>?,
     IsAnyOf: true,
     ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
   },
@@ -319,6 +355,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::System.AnyOf<string?, global::G.PushModelResponseStatus?>,
     CSharpTypeWithNullability: global::System.AnyOf<string?, global::G.PushModelResponseStatus?>?,
+    ShortCSharpTypeWithoutNullability: global::System.AnyOf<string?, PushModelResponseStatus?>,
+    ShortCSharpTypeWithNullability: global::System.AnyOf<string?, PushModelResponseStatus?>?,
     IsAnyOf: true,
     ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
   },
@@ -345,6 +383,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::G.GenerateCompletionRequest,
     CSharpTypeWithNullability: global::G.GenerateCompletionRequest?,
+    ShortCSharpTypeWithoutNullability: GenerateCompletionRequest,
+    ShortCSharpTypeWithNullability: GenerateCompletionRequest?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -371,6 +411,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::G.GenerateCompletionResponse,
     CSharpTypeWithNullability: global::G.GenerateCompletionResponse?,
+    ShortCSharpTypeWithoutNullability: GenerateCompletionResponse,
+    ShortCSharpTypeWithNullability: GenerateCompletionResponse?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -392,6 +434,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::G.GenerateChatCompletionRequest,
     CSharpTypeWithNullability: global::G.GenerateChatCompletionRequest?,
+    ShortCSharpTypeWithoutNullability: GenerateChatCompletionRequest,
+    ShortCSharpTypeWithNullability: GenerateChatCompletionRequest?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -418,6 +462,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::G.GenerateChatCompletionResponse,
     CSharpTypeWithNullability: global::G.GenerateChatCompletionResponse?,
+    ShortCSharpTypeWithoutNullability: GenerateChatCompletionResponse,
+    ShortCSharpTypeWithNullability: GenerateChatCompletionResponse?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -437,6 +483,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::G.GenerateEmbeddingRequest,
     CSharpTypeWithNullability: global::G.GenerateEmbeddingRequest?,
+    ShortCSharpTypeWithoutNullability: GenerateEmbeddingRequest,
+    ShortCSharpTypeWithNullability: GenerateEmbeddingRequest?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -453,6 +501,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::G.GenerateEmbeddingResponse,
     CSharpTypeWithNullability: global::G.GenerateEmbeddingResponse?,
+    ShortCSharpTypeWithoutNullability: GenerateEmbeddingResponse,
+    ShortCSharpTypeWithNullability: GenerateEmbeddingResponse?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -473,6 +523,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::G.CreateModelRequest,
     CSharpTypeWithNullability: global::G.CreateModelRequest?,
+    ShortCSharpTypeWithoutNullability: CreateModelRequest,
+    ShortCSharpTypeWithNullability: CreateModelRequest?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -489,6 +541,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::G.CreateModelResponse,
     CSharpTypeWithNullability: global::G.CreateModelResponse?,
+    ShortCSharpTypeWithoutNullability: CreateModelResponse,
+    ShortCSharpTypeWithNullability: CreateModelResponse?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -505,6 +559,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::G.ModelsResponse,
     CSharpTypeWithNullability: global::G.ModelsResponse?,
+    ShortCSharpTypeWithoutNullability: ModelsResponse,
+    ShortCSharpTypeWithNullability: ModelsResponse?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -521,6 +577,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::G.ModelInfoRequest,
     CSharpTypeWithNullability: global::G.ModelInfoRequest?,
+    ShortCSharpTypeWithoutNullability: ModelInfoRequest,
+    ShortCSharpTypeWithNullability: ModelInfoRequest?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -543,6 +601,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::G.ModelInfo,
     CSharpTypeWithNullability: global::G.ModelInfo?,
+    ShortCSharpTypeWithoutNullability: ModelInfo,
+    ShortCSharpTypeWithNullability: ModelInfo?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -560,6 +620,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::G.CopyModelRequest,
     CSharpTypeWithNullability: global::G.CopyModelRequest?,
+    ShortCSharpTypeWithoutNullability: CopyModelRequest,
+    ShortCSharpTypeWithNullability: CopyModelRequest?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -576,6 +638,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::G.DeleteModelRequest,
     CSharpTypeWithNullability: global::G.DeleteModelRequest?,
+    ShortCSharpTypeWithoutNullability: DeleteModelRequest,
+    ShortCSharpTypeWithNullability: DeleteModelRequest?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -596,6 +660,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::G.PullModelRequest,
     CSharpTypeWithNullability: global::G.PullModelRequest?,
+    ShortCSharpTypeWithoutNullability: PullModelRequest,
+    ShortCSharpTypeWithNullability: PullModelRequest?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -615,6 +681,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::G.PullModelResponse,
     CSharpTypeWithNullability: global::G.PullModelResponse?,
+    ShortCSharpTypeWithoutNullability: PullModelResponse,
+    ShortCSharpTypeWithNullability: PullModelResponse?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -635,6 +703,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::G.PushModelRequest,
     CSharpTypeWithNullability: global::G.PushModelRequest?,
+    ShortCSharpTypeWithoutNullability: PushModelRequest,
+    ShortCSharpTypeWithNullability: PushModelRequest?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -654,6 +724,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: global::G.PushModelResponse,
     CSharpTypeWithNullability: global::G.PushModelResponse?,
+    ShortCSharpTypeWithoutNullability: PushModelResponse,
+    ShortCSharpTypeWithNullability: PushModelResponse?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -668,6 +740,8 @@
     GenerateJsonSerializerContextTypes: true,
     CSharpTypeWithoutNullability: byte[],
     CSharpTypeWithNullability: byte[]?,
+    ShortCSharpTypeWithoutNullability: byte[],
+    ShortCSharpTypeWithNullability: byte[]?,
     IsAnyOf: false,
     ConverterType: 
   }

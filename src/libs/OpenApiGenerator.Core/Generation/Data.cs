@@ -220,7 +220,7 @@ public static class Data
                 .Select(x => new AnyOfData("AllOf", x.Items.AllOf.Count, settings.JsonSerializerType, isTrimming, "System", string.Empty, string.Empty, ImmutableArray<TypeData>.Empty)))
             .Distinct()
             .ToImmutableArray();
-        anyOfs = anyOfs
+        anyOfs = settings.GenerateSdk || settings.GenerateModels ? anyOfs
             .Concat(includedSchemas
                 .Where(x => x.Value.AnyOf is { Count: >0 })
                 .Select(schema => new AnyOfData(
@@ -232,8 +232,8 @@ public static class Data
                     schema.Key,
                     schema.Value.GetSummary(),
                     schema.Value.AnyOf.Select((x, i) => TypeData.FromSchema(x.UseReferenceIdOrKey(schema.Key + $"Variant{i + 1}"), settings)).ToImmutableArray())))
-            .ToImmutableArray();
-        oneOfs = oneOfs
+            .ToImmutableArray() : [];
+        oneOfs = settings.GenerateSdk || settings.GenerateModels ? oneOfs
             .Concat(includedSchemas
                 .Where(x => x.Value.OneOf is { Count: >0 })
                 .Select(schema => new AnyOfData(
@@ -245,8 +245,8 @@ public static class Data
                     schema.Key,
                     schema.Value.GetSummary(),
                     schema.Value.OneOf.Select((x, i) => TypeData.FromSchema(x.UseReferenceIdOrKey(schema.Key + $"Variant{i + 1}"), settings)).ToImmutableArray())))
-            .ToImmutableArray();
-        allOfs = allOfs
+            .ToImmutableArray() : [];
+        allOfs = settings.GenerateSdk || settings.GenerateModels ? allOfs
             .Concat(includedSchemas
                 .Where(x => x.Value.AllOf is { Count: >0 })
                 .Select(schema => new AnyOfData(
@@ -258,7 +258,7 @@ public static class Data
                     schema.Key,
                     schema.Value.GetSummary(),
                     schema.Value.AllOf.Select((x, i) => TypeData.FromSchema(x.UseReferenceIdOrKey(schema.Key + $"Variant{i + 1}"), settings)).ToImmutableArray())))
-            .ToImmutableArray();
+            .ToImmutableArray() : [];
 
         AnyOfData[] anyOfDatas =
         [

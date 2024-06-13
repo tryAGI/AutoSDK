@@ -1,4 +1,5 @@
 using OpenApiGenerator.Core.Extensions;
+using OpenApiGenerator.Core.Models;
 
 namespace OpenApiGenerator.Core.Json;
 
@@ -93,21 +94,17 @@ public class SystemTextJsonSerializer : IJsonSerializer
         return result;
     }
     
-    public string GenerateSerializeCall(string type, string jsonSerializerContext)
+    public string GenerateSerializeCall(TypeData type, string jsonSerializerContext)
     {
-        type = type ?? throw new ArgumentNullException(nameof(type));
-        
         return string.IsNullOrWhiteSpace(jsonSerializerContext)
             ? "global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions)"
-            : $"global::System.Text.Json.JsonSerializer.Serialize(request, global::{jsonSerializerContext}.Default.{GetContextType(type)})";
+            : $"global::System.Text.Json.JsonSerializer.Serialize(request, global::{jsonSerializerContext}.Default.{GetContextType(type.ShortCSharpTypeWithoutNullability)})";
     }
     
-    public string GenerateDeserializeCall(string type, string jsonSerializerContext)
+    public string GenerateDeserializeCall(TypeData type, string jsonSerializerContext)
     {
-        type = type ?? throw new ArgumentNullException(nameof(type));
-
         return string.IsNullOrWhiteSpace(jsonSerializerContext)
-            ? $"global::System.Text.Json.JsonSerializer.Deserialize<{type}>(__content, _jsonSerializerOptions)"
-            : $"global::System.Text.Json.JsonSerializer.Deserialize(__content, global::{jsonSerializerContext}.Default.{GetContextType(type)})";
+            ? $"global::System.Text.Json.JsonSerializer.Deserialize<{type.CSharpTypeWithNullability}>(__content, _jsonSerializerOptions)"
+            : $"global::System.Text.Json.JsonSerializer.Deserialize(__content, global::{jsonSerializerContext}.Default.{GetContextType(type.ShortCSharpTypeWithNullability)})";
     }
 }

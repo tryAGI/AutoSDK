@@ -20,6 +20,8 @@
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -50,6 +52,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -77,6 +81,8 @@ The prompt to generate a response.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
           CSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -102,6 +108,8 @@ The prompt to generate a response.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -127,6 +135,8 @@ The prompt to generate a response.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -152,6 +162,8 @@ The prompt to generate a response.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<long>,
           CSharpTypeWithNullability: global::System.Collections.Generic.IList<long>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<long>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<long>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -208,6 +220,8 @@ The prompt to generate a response.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: global::G.RequestOptions,
           CSharpTypeWithNullability: global::G.RequestOptions?,
+          ShortCSharpTypeWithoutNullability: RequestOptions,
+          ShortCSharpTypeWithNullability: RequestOptions?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -237,6 +251,8 @@ The prompt to generate a response.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: global::G.ResponseFormat,
           CSharpTypeWithNullability: global::G.ResponseFormat?,
+          ShortCSharpTypeWithoutNullability: ResponseFormat,
+          ShortCSharpTypeWithNullability: ResponseFormat?,
           IsAnyOf: false,
           ConverterType: global::OpenApiGenerator.JsonConverters.ResponseFormatJsonConverter
         },
@@ -268,6 +284,8 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: bool,
           CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -297,6 +315,8 @@ You may choose to use the `raw` parameter if you are specifying a full templated
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: bool,
           CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -326,6 +346,8 @@ If `false` the response will be returned as a single response object, otherwise 
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -376,6 +398,8 @@ How long (in minutes) to keep the model loaded in memory.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -403,6 +427,8 @@ Number of tokens to keep from the prompt.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -430,6 +456,8 @@ Sets the random number seed to use for generation. Setting this to a specific nu
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -457,6 +485,8 @@ Maximum number of tokens to predict when generating text. (Default: 128, -1 = in
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -484,6 +514,8 @@ Reduces the probability of generating nonsense. A higher value (e.g. 100) will g
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: float,
           CSharpTypeWithNullability: float?,
+          ShortCSharpTypeWithoutNullability: float,
+          ShortCSharpTypeWithNullability: float?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -511,6 +543,8 @@ Works together with top-k. A higher value (e.g., 0.95) will lead to more diverse
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: float,
           CSharpTypeWithNullability: float?,
+          ShortCSharpTypeWithoutNullability: float,
+          ShortCSharpTypeWithNullability: float?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -538,6 +572,8 @@ Tail free sampling is used to reduce the impact of less probable tokens from the
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: float,
           CSharpTypeWithNullability: float?,
+          ShortCSharpTypeWithoutNullability: float,
+          ShortCSharpTypeWithNullability: float?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -565,6 +601,8 @@ Typical p is used to reduce the impact of less probable tokens from the output.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -592,6 +630,8 @@ Sets how far back for the model to look back to prevent repetition. (Default: 64
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: float,
           CSharpTypeWithNullability: float?,
+          ShortCSharpTypeWithoutNullability: float,
+          ShortCSharpTypeWithNullability: float?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -619,6 +659,8 @@ The temperature of the model. Increasing the temperature will make the model ans
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: float,
           CSharpTypeWithNullability: float?,
+          ShortCSharpTypeWithoutNullability: float,
+          ShortCSharpTypeWithNullability: float?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -646,6 +688,8 @@ Sets how strongly to penalize repetitions. A higher value (e.g., 1.5) will penal
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: float,
           CSharpTypeWithNullability: float?,
+          ShortCSharpTypeWithoutNullability: float,
+          ShortCSharpTypeWithNullability: float?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -673,6 +717,8 @@ Positive values penalize new tokens based on whether they appear in the text so 
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: float,
           CSharpTypeWithNullability: float?,
+          ShortCSharpTypeWithoutNullability: float,
+          ShortCSharpTypeWithNullability: float?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -700,6 +746,8 @@ Positive values penalize new tokens based on their existing frequency in the tex
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -727,6 +775,8 @@ Enable Mirostat sampling for controlling perplexity. (default: 0, 0 = disabled, 
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: float,
           CSharpTypeWithNullability: float?,
+          ShortCSharpTypeWithoutNullability: float,
+          ShortCSharpTypeWithNullability: float?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -754,6 +804,8 @@ Controls the balance between coherence and diversity of the output. A lower valu
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: float,
           CSharpTypeWithNullability: float?,
+          ShortCSharpTypeWithoutNullability: float,
+          ShortCSharpTypeWithNullability: float?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -781,6 +833,8 @@ Influences how quickly the algorithm responds to feedback from the generated tex
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: bool,
           CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -808,6 +862,8 @@ Penalize newlines in the output. (Default: false)
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
           CSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -833,6 +889,8 @@ Penalize newlines in the output. (Default: false)
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: bool,
           CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -860,6 +918,8 @@ Enable NUMA support. (Default: false)
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -887,6 +947,8 @@ Sets the size of the context window used to generate the next token.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -914,6 +976,8 @@ Sets the number of batches to use for generation. (Default: 1)
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -941,6 +1005,8 @@ The number of GQA groups in the transformer layer. Required for some models, for
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -968,6 +1034,8 @@ The number of layers to send to the GPU(s). On macOS it defaults to 1 to enable 
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -995,6 +1063,8 @@ The GPU to use for the main model. Default is 0.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: bool,
           CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1022,6 +1092,8 @@ Enable low VRAM mode. (Default: false)
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: bool,
           CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1049,6 +1121,8 @@ Enable f16 key/value. (Default: false)
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: bool,
           CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1076,6 +1150,8 @@ Enable logits all. (Default: false)
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: bool,
           CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1103,6 +1179,8 @@ Enable vocab only. (Default: false)
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: bool,
           CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1130,6 +1208,8 @@ Enable mmap. (Default: false)
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: bool,
           CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1157,6 +1237,8 @@ Enable mlock. (Default: false)
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1203,6 +1285,8 @@ Sets the number of threads to use during computation. By default, Ollama will de
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1252,6 +1336,8 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1282,6 +1368,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: global::System.DateTime,
           CSharpTypeWithNullability: global::System.DateTime?,
+          ShortCSharpTypeWithoutNullability: global::System.DateTime,
+          ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1309,6 +1397,8 @@ Date on which a model was created.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1336,6 +1426,8 @@ The response for a given prompt with a provided model.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: bool,
           CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1363,6 +1455,8 @@ Whether the response has completed.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<long>,
           CSharpTypeWithNullability: global::System.Collections.Generic.IList<long>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<long>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<long>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1391,6 +1485,8 @@ An encoding of the conversation used in this response, this can be sent in the n
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: long,
           CSharpTypeWithNullability: long?,
+          ShortCSharpTypeWithoutNullability: long,
+          ShortCSharpTypeWithNullability: long?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1418,6 +1514,8 @@ Time spent generating the response.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: long,
           CSharpTypeWithNullability: long?,
+          ShortCSharpTypeWithoutNullability: long,
+          ShortCSharpTypeWithNullability: long?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1445,6 +1543,8 @@ Time spent in nanoseconds loading the model.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1472,6 +1572,8 @@ Number of tokens in the prompt.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: long,
           CSharpTypeWithNullability: long?,
+          ShortCSharpTypeWithoutNullability: long,
+          ShortCSharpTypeWithNullability: long?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1499,6 +1601,8 @@ Time spent in nanoseconds evaluating the prompt.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1526,6 +1630,8 @@ Number of tokens the response.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: long,
           CSharpTypeWithNullability: long?,
+          ShortCSharpTypeWithoutNullability: long,
+          ShortCSharpTypeWithNullability: long?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1571,6 +1677,8 @@ Time in nanoseconds spent generating the response.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1601,6 +1709,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.Message>,
           CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.Message>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Message>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<Message>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1630,6 +1740,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: global::G.ResponseFormat,
           CSharpTypeWithNullability: global::G.ResponseFormat?,
+          ShortCSharpTypeWithoutNullability: ResponseFormat,
+          ShortCSharpTypeWithNullability: ResponseFormat?,
           IsAnyOf: false,
           ConverterType: global::OpenApiGenerator.JsonConverters.ResponseFormatJsonConverter
         },
@@ -1692,6 +1804,8 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: global::G.RequestOptions,
           CSharpTypeWithNullability: global::G.RequestOptions?,
+          ShortCSharpTypeWithoutNullability: RequestOptions,
+          ShortCSharpTypeWithNullability: RequestOptions?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1717,6 +1831,8 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: bool,
           CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1746,6 +1862,8 @@ If `false` the response will be returned as a single response object, otherwise 
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1800,6 +1918,8 @@ How long (in minutes) to keep the model loaded in memory.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: global::G.Message,
           CSharpTypeWithNullability: global::G.Message?,
+          ShortCSharpTypeWithoutNullability: Message,
+          ShortCSharpTypeWithNullability: Message?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1825,6 +1945,8 @@ How long (in minutes) to keep the model loaded in memory.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1855,6 +1977,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: global::System.DateTime,
           CSharpTypeWithNullability: global::System.DateTime?,
+          ShortCSharpTypeWithoutNullability: global::System.DateTime,
+          ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1882,6 +2006,8 @@ Date on which a model was created.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: bool,
           CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1909,6 +2035,8 @@ Whether the response has completed.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1934,6 +2062,8 @@ Whether the response has completed.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: long,
           CSharpTypeWithNullability: long?,
+          ShortCSharpTypeWithoutNullability: long,
+          ShortCSharpTypeWithNullability: long?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1961,6 +2091,8 @@ Time spent generating the response.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: long,
           CSharpTypeWithNullability: long?,
+          ShortCSharpTypeWithoutNullability: long,
+          ShortCSharpTypeWithNullability: long?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -1988,6 +2120,8 @@ Time spent in nanoseconds loading the model.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2015,6 +2149,8 @@ Number of tokens in the prompt.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: long,
           CSharpTypeWithNullability: long?,
+          ShortCSharpTypeWithoutNullability: long,
+          ShortCSharpTypeWithNullability: long?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2042,6 +2178,8 @@ Time spent in nanoseconds evaluating the prompt.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2069,6 +2207,8 @@ Number of tokens the response.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: long,
           CSharpTypeWithNullability: long?,
+          ShortCSharpTypeWithoutNullability: long,
+          ShortCSharpTypeWithNullability: long?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2122,6 +2262,8 @@ Time in nanoseconds spent generating the response.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: global::G.MessageRole,
           CSharpTypeWithNullability: global::G.MessageRole?,
+          ShortCSharpTypeWithoutNullability: MessageRole,
+          ShortCSharpTypeWithNullability: MessageRole?,
           IsAnyOf: false,
           ConverterType: global::OpenApiGenerator.JsonConverters.MessageRoleJsonConverter
         },
@@ -2147,6 +2289,8 @@ Time in nanoseconds spent generating the response.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2174,6 +2318,8 @@ The content of the message
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
           CSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2218,6 +2364,8 @@ The content of the message
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2243,6 +2391,8 @@ The content of the message
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2268,6 +2418,8 @@ The content of the message
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2311,6 +2463,8 @@ The content of the message
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2341,6 +2495,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2399,6 +2555,8 @@ Text to generate embeddings for.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: global::G.RequestOptions,
           CSharpTypeWithNullability: global::G.RequestOptions?,
+          ShortCSharpTypeWithoutNullability: RequestOptions,
+          ShortCSharpTypeWithNullability: RequestOptions?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2424,6 +2582,8 @@ Text to generate embeddings for.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: int,
           CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2474,6 +2634,8 @@ How long (in minutes) to keep the model loaded in memory.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<double>,
           CSharpTypeWithNullability: global::System.Collections.Generic.IList<double>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<double>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<double>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2519,6 +2681,8 @@ The embedding for the prompt.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2549,6 +2713,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2576,6 +2742,8 @@ The contents of the Modelfile.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2601,6 +2769,8 @@ The contents of the Modelfile.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2626,6 +2796,8 @@ The contents of the Modelfile.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: bool,
           CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2674,6 +2846,8 @@ If `false` the response will be returned as a single response object, otherwise 
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: global::System.AnyOf<string?, global::G.CreateModelResponseStatus?>,
           CSharpTypeWithNullability: global::System.AnyOf<string?, global::G.CreateModelResponseStatus?>?,
+          ShortCSharpTypeWithoutNullability: global::System.AnyOf<string?, CreateModelResponseStatus?>,
+          ShortCSharpTypeWithNullability: global::System.AnyOf<string?, CreateModelResponseStatus?>?,
           IsAnyOf: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
@@ -2718,6 +2892,8 @@ If `false` the response will be returned as a single response object, otherwise 
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2743,6 +2919,8 @@ If `false` the response will be returned as a single response object, otherwise 
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2768,6 +2946,8 @@ If `false` the response will be returned as a single response object, otherwise 
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2812,6 +2992,8 @@ If `false` the response will be returned as a single response object, otherwise 
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2837,6 +3019,8 @@ If `false` the response will be returned as a single response object, otherwise 
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2862,6 +3046,8 @@ If `false` the response will be returned as a single response object, otherwise 
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2905,6 +3091,8 @@ If `false` the response will be returned as a single response object, otherwise 
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.LocalModel>,
           CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.LocalModel>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<LocalModel>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<LocalModel>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2948,6 +3136,8 @@ If `false` the response will be returned as a single response object, otherwise 
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -2978,6 +3168,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: global::System.DateTime,
           CSharpTypeWithNullability: global::System.DateTime?,
+          ShortCSharpTypeWithoutNullability: global::System.DateTime,
+          ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3005,6 +3197,8 @@ Model modification date.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: long,
           CSharpTypeWithNullability: long?,
+          ShortCSharpTypeWithoutNullability: long,
+          ShortCSharpTypeWithNullability: long?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3032,6 +3226,8 @@ Size of the model on disk.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3066,6 +3262,8 @@ The model's digest.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: global::G.ModelDetails,
           CSharpTypeWithNullability: global::G.ModelDetails?,
+          ShortCSharpTypeWithoutNullability: ModelDetails,
+          ShortCSharpTypeWithNullability: ModelDetails?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3109,6 +3307,8 @@ The model's digest.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3134,6 +3334,8 @@ The model's digest.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3159,6 +3361,8 @@ The model's digest.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3184,6 +3388,8 @@ The model's digest.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
           CSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3209,6 +3415,8 @@ The model's digest.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3234,6 +3442,8 @@ The model's digest.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3277,6 +3487,8 @@ The model's digest.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3325,6 +3537,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3352,6 +3566,8 @@ The model's license.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3379,6 +3595,8 @@ The modelfile associated with the model.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3406,6 +3624,8 @@ The model parameters.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3433,6 +3653,8 @@ The prompt template for the model.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3465,6 +3687,8 @@ The prompt template for the model.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: global::G.ModelDetails,
           CSharpTypeWithNullability: global::G.ModelDetails?,
+          ShortCSharpTypeWithoutNullability: ModelDetails,
+          ShortCSharpTypeWithNullability: ModelDetails?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3490,6 +3714,8 @@ The prompt template for the model.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.Message>,
           CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.Message>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Message>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<Message>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3533,6 +3759,8 @@ The prompt template for the model.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3560,6 +3788,8 @@ Name of the model to copy.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3605,6 +3835,8 @@ Name of the new model.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3653,6 +3885,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3683,6 +3917,8 @@ Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` a
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: bool,
           CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3714,6 +3950,8 @@ Only use this if you are pulling from your own library during development.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3739,6 +3977,8 @@ Only use this if you are pulling from your own library during development.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3764,6 +4004,8 @@ Only use this if you are pulling from your own library during development.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: bool,
           CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3812,6 +4054,8 @@ If `false` the response will be returned as a single response object, otherwise 
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: global::System.AnyOf<string?, global::G.PullModelResponseStatus?>,
           CSharpTypeWithNullability: global::System.AnyOf<string?, global::G.PullModelResponseStatus?>?,
+          ShortCSharpTypeWithoutNullability: global::System.AnyOf<string?, PullModelResponseStatus?>,
+          ShortCSharpTypeWithNullability: global::System.AnyOf<string?, PullModelResponseStatus?>?,
           IsAnyOf: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
@@ -3839,6 +4083,8 @@ Status pulling the model.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3866,6 +4112,8 @@ The model's digest.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: long,
           CSharpTypeWithNullability: long?,
+          ShortCSharpTypeWithoutNullability: long,
+          ShortCSharpTypeWithNullability: long?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3893,6 +4141,8 @@ Total size of the model.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: long,
           CSharpTypeWithNullability: long?,
+          ShortCSharpTypeWithoutNullability: long,
+          ShortCSharpTypeWithNullability: long?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3945,6 +4195,8 @@ The number of files to be downloaded depends on the number of layers specified i
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3970,6 +4222,8 @@ The number of files to be downloaded depends on the number of layers specified i
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3995,6 +4249,8 @@ The number of files to be downloaded depends on the number of layers specified i
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -4020,6 +4276,8 @@ The number of files to be downloaded depends on the number of layers specified i
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -4045,6 +4303,8 @@ The number of files to be downloaded depends on the number of layers specified i
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -4070,6 +4330,8 @@ The number of files to be downloaded depends on the number of layers specified i
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -4114,6 +4376,8 @@ The number of files to be downloaded depends on the number of layers specified i
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -4139,6 +4403,8 @@ The number of files to be downloaded depends on the number of layers specified i
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -4164,6 +4430,8 @@ The number of files to be downloaded depends on the number of layers specified i
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -4189,6 +4457,8 @@ The number of files to be downloaded depends on the number of layers specified i
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -4214,6 +4484,8 @@ The number of files to be downloaded depends on the number of layers specified i
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -4239,6 +4511,8 @@ The number of files to be downloaded depends on the number of layers specified i
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -4282,6 +4556,8 @@ The number of files to be downloaded depends on the number of layers specified i
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -4309,6 +4585,8 @@ The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: bool,
           CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -4340,6 +4618,8 @@ Only use this if you are pushing to your library during development.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -4365,6 +4645,8 @@ Only use this if you are pushing to your library during development.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -4390,6 +4672,8 @@ Only use this if you are pushing to your library during development.
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: bool,
           CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -4438,6 +4722,8 @@ If `false` the response will be returned as a single response object, otherwise 
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: global::System.AnyOf<string?, global::G.PushModelResponseStatus?>,
           CSharpTypeWithNullability: global::System.AnyOf<string?, global::G.PushModelResponseStatus?>?,
+          ShortCSharpTypeWithoutNullability: global::System.AnyOf<string?, PushModelResponseStatus?>,
+          ShortCSharpTypeWithNullability: global::System.AnyOf<string?, PushModelResponseStatus?>?,
           IsAnyOf: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
@@ -4463,6 +4749,8 @@ If `false` the response will be returned as a single response object, otherwise 
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: string,
           CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -4490,6 +4778,8 @@ the model's digest
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: long,
           CSharpTypeWithNullability: long?,
+          ShortCSharpTypeWithoutNullability: long,
+          ShortCSharpTypeWithNullability: long?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -4517,6 +4807,8 @@ total size of the model
           GenerateJsonSerializerContextTypes: true,
           CSharpTypeWithoutNullability: long,
           CSharpTypeWithNullability: long?,
+          ShortCSharpTypeWithoutNullability: long,
+          ShortCSharpTypeWithNullability: long?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -4563,6 +4855,8 @@ Total bytes transferred.
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -4588,6 +4882,8 @@ Total bytes transferred.
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -4613,6 +4909,8 @@ Total bytes transferred.
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -4638,6 +4936,8 @@ Total bytes transferred.
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -4682,6 +4982,8 @@ Total bytes transferred.
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -4707,6 +5009,8 @@ Total bytes transferred.
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -4732,6 +5036,8 @@ Total bytes transferred.
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -4757,6 +5063,8 @@ Total bytes transferred.
           GenerateJsonSerializerContextTypes: false,
           CSharpTypeWithoutNullability: ,
           CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
           ConverterType: 
         },

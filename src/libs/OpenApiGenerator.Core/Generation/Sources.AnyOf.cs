@@ -57,7 +57,8 @@ public static partial class Sources
         }}" : " ";
         
         return $@"using System.Linq;
-
+{(fixedTypes.IsEmpty ? "" : @"#pragma warning disable CS0618 // Type or member is obsolete
+")}
 #nullable enable
 
 namespace {@namespace}

@@ -27,6 +27,8 @@
         GenerateJsonSerializerContextTypes: true,
         CSharpTypeWithoutNullability: string,
         CSharpTypeWithNullability: string?,
+        ShortCSharpTypeWithoutNullability: string,
+        ShortCSharpTypeWithNullability: string?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -49,6 +51,8 @@
         GenerateJsonSerializerContextTypes: true,
         CSharpTypeWithoutNullability: global::G.CreateModelStatusVariant2,
         CSharpTypeWithNullability: global::G.CreateModelStatusVariant2?,
+        ShortCSharpTypeWithoutNullability: CreateModelStatusVariant2,
+        ShortCSharpTypeWithNullability: CreateModelStatusVariant2?,
         IsAnyOf: false,
         ConverterType: global::OpenApiGenerator.JsonConverters.CreateModelStatusVariant2JsonConverter
       }
@@ -75,6 +79,8 @@ Status pulling the model.
         GenerateJsonSerializerContextTypes: true,
         CSharpTypeWithoutNullability: string,
         CSharpTypeWithNullability: string?,
+        ShortCSharpTypeWithoutNullability: string,
+        ShortCSharpTypeWithNullability: string?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -103,6 +109,8 @@ Status pulling the model.
         GenerateJsonSerializerContextTypes: true,
         CSharpTypeWithoutNullability: global::G.PullModelStatusVariant2,
         CSharpTypeWithNullability: global::G.PullModelStatusVariant2?,
+        ShortCSharpTypeWithoutNullability: PullModelStatusVariant2,
+        ShortCSharpTypeWithNullability: PullModelStatusVariant2?,
         IsAnyOf: false,
         ConverterType: global::OpenApiGenerator.JsonConverters.PullModelStatusVariant2JsonConverter
       }
@@ -127,6 +135,8 @@ Status pulling the model.
         GenerateJsonSerializerContextTypes: true,
         CSharpTypeWithoutNullability: string,
         CSharpTypeWithNullability: string?,
+        ShortCSharpTypeWithoutNullability: string,
+        ShortCSharpTypeWithNullability: string?,
         IsAnyOf: false,
         ConverterType: 
       },
@@ -151,6 +161,8 @@ Status pulling the model.
         GenerateJsonSerializerContextTypes: true,
         CSharpTypeWithoutNullability: global::G.PushModelStatusVariant2,
         CSharpTypeWithNullability: global::G.PushModelStatusVariant2?,
+        ShortCSharpTypeWithoutNullability: PushModelStatusVariant2,
+        ShortCSharpTypeWithNullability: PushModelStatusVariant2?,
         IsAnyOf: false,
         ConverterType: global::OpenApiGenerator.JsonConverters.PushModelStatusVariant2JsonConverter
       }
