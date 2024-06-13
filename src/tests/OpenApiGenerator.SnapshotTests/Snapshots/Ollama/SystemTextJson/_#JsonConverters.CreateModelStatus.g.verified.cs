@@ -14,14 +14,14 @@ namespace OpenApiGenerator.JsonConverters
             global::System.Text.Json.JsonSerializerOptions options)
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            options.TypeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             var
             readerCopy = reader;
             string? value1 = default;
             try
             {
-                var typeInfo = options.TypeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
                 value1 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
@@ -33,7 +33,7 @@ namespace OpenApiGenerator.JsonConverters
             global::G.CreateModelStatusVariant2? value2 = default;
             try
             {
-                var typeInfo = options.TypeInfoResolver.GetTypeInfo(typeof(global::G.CreateModelStatusVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateModelStatusVariant2> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateModelStatusVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateModelStatusVariant2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateModelStatusVariant2).Name}");
                 value2 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
@@ -52,14 +52,14 @@ namespace OpenApiGenerator.JsonConverters
 
             if (value1 != null)
             {
-                var typeInfo = options.TypeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             else if (value2 != null)
             {
-                var typeInfo = options.TypeInfoResolver.GetTypeInfo(typeof(global::G.CreateModelStatusVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateModelStatusVariant2> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateModelStatusVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateModelStatusVariant2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateModelStatusVariant2).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
@@ -73,7 +73,7 @@ namespace OpenApiGenerator.JsonConverters
             global::System.Text.Json.JsonSerializerOptions options)
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            options.TypeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (!value.Validate())
             {
@@ -82,14 +82,14 @@ namespace OpenApiGenerator.JsonConverters
 
             if (value.IsValue1)
             {
-                var typeInfo = options.TypeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeInfo);
             }
 
             else if (value.IsValue2)
             {
-                var typeInfo = options.TypeInfoResolver.GetTypeInfo(typeof(global::G.CreateModelStatusVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateModelStatusVariant2?> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateModelStatusVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateModelStatusVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateModelStatusVariant2).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeInfo);
             }

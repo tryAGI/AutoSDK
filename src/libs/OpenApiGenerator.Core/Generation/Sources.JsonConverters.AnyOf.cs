@@ -57,7 +57,7 @@ namespace OpenApiGenerator.JsonConverters
             global::System.Text.Json.JsonSerializerOptions options)
         {{
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));{(isTrimming ? @"
-            options.TypeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException(""TypeInfoResolver is not set."");" : " ")}
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException(""TypeInfoResolver is not set."");" : " ")}
 
             var
 {allTypes.Select(x => $@"
@@ -66,7 +66,7 @@ namespace OpenApiGenerator.JsonConverters
             try
             {{
 {(isTrimming ? $@" 
-                var typeInfo = options.TypeInfoResolver.GetTypeInfo(typeof({x.Type.CSharpTypeWithoutNullability}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<{x.Type.CSharpTypeWithoutNullability}> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof({x.Type.CSharpTypeWithoutNullability}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<{x.Type.CSharpTypeWithoutNullability}> ??
                                throw new global::System.InvalidOperationException($""Cannot get type info for {{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"");
                 {x.ParameterName} = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
  " : $@" 
@@ -92,7 +92,7 @@ namespace OpenApiGenerator.JsonConverters
             {(i == 0 ? "" : "else ")}if ({x.ParameterName} != null)
             {{
 {(isTrimming ? $@" 
-                var typeInfo = options.TypeInfoResolver.GetTypeInfo(typeof({x.Type.CSharpTypeWithoutNullability}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<{x.Type.CSharpTypeWithoutNullability}> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof({x.Type.CSharpTypeWithoutNullability}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<{x.Type.CSharpTypeWithoutNullability}> ??
                                throw new global::System.InvalidOperationException($""Cannot get type info for {{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
  " : $@" 
@@ -111,7 +111,7 @@ namespace OpenApiGenerator.JsonConverters
             global::System.Text.Json.JsonSerializerOptions options)
         {{
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));{(isTrimming ? @"
-            options.TypeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException(""TypeInfoResolver is not set."");" : " ")}
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException(""TypeInfoResolver is not set."");" : " ")}
 
             if (!value.Validate())
             {{
@@ -122,7 +122,7 @@ namespace OpenApiGenerator.JsonConverters
             {(i == 0 ? "" : "else ")}if (value.Is{x.Name})
             {{
 {(isTrimming ? $@" 
-                var typeInfo = options.TypeInfoResolver.GetTypeInfo(typeof({x.Type.CSharpTypeWithoutNullability}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<{x.Type.CSharpTypeWithNullability}> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof({x.Type.CSharpTypeWithoutNullability}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<{x.Type.CSharpTypeWithNullability}> ??
                                throw new global::System.InvalidOperationException($""Cannot get type info for {{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.{x.Name}, typeInfo);
  " : $@" 
