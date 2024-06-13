@@ -58,7 +58,7 @@
         IsRequired: true,
         IsDeprecated: false,
         Summary:
-ID of the model to use. See the [model endpoint compatibility](/docs/models/model-endpoint-compatibility) table for details on which models work with the Chat API.<br/>
+ID of the model to use. See the [model endpoint compatibility](/docs/models/model-endpoint-compatibility) table for details on which models work with the Chat API.
 Example: gpt-4-turbo,
         ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2,
         ParameterName: model,
@@ -91,7 +91,7 @@ Example: gpt-4-turbo,
 Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.
 
 [See more information about frequency and presence penalties.](/docs/guides/text-generation/parameter-details)
-<br/>
+
 Default Value: 0,
         ConverterType: ,
         ParameterName: frequencyPenalty,
@@ -153,7 +153,7 @@ Accepts a JSON object that maps tokens (specified by their token ID in the token
         DefaultValue: false,
         IsDeprecated: false,
         Summary:
-Whether to return log probabilities of the output tokens or not. If true, returns the log probabilities of each output token returned in the `content` of `message`.<br/>
+Whether to return log probabilities of the output tokens or not. If true, returns the log probabilities of each output token returned in the `content` of `message`.
 Default Value: false,
         ConverterType: ,
         ParameterName: logprobs,
@@ -241,8 +241,8 @@ The total length of input tokens and generated tokens is limited by the model's 
         DefaultValue: 1,
         IsDeprecated: false,
         Summary:
-How many chat completion choices to generate for each input message. Note that you will be charged based on the number of generated tokens across all of the choices. Keep `n` as `1` to minimize costs.<br/>
-Default Value: 1<br/>
+How many chat completion choices to generate for each input message. Note that you will be charged based on the number of generated tokens across all of the choices. Keep `n` as `1` to minimize costs.
+Default Value: 1
 Example: 1,
         ConverterType: ,
         ParameterName: n,
@@ -275,7 +275,7 @@ Example: 1,
 Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.
 
 [See more information about frequency and presence penalties.](/docs/guides/text-generation/parameter-details)
-<br/>
+
 Default Value: 0,
         ConverterType: ,
         ParameterName: presencePenalty,
@@ -400,7 +400,7 @@ Up to 4 sequences where the API will stop generating further tokens.
         IsDeprecated: false,
         Summary:
 If set, partial message deltas will be sent, like in ChatGPT. Tokens will be sent as data-only [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format) as they become available, with the stream terminated by a `data: [DONE]` message. [Example Python code](https://cookbook.openai.com/examples/how_to_stream_completions).
-<br/>
+
 Default Value: false,
         ConverterType: ,
         ParameterName: stream,
@@ -464,8 +464,8 @@ Options for streaming response. Only set this when you set `stream: true`.
 What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
 
 We generally recommend altering this or `top_p` but not both.
-<br/>
-Default Value: 1<br/>
+
+Default Value: 1
 Example: 1,
         ConverterType: ,
         ParameterName: temperature,
@@ -498,8 +498,8 @@ Example: 1,
 An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.
 
 We generally recommend altering this or `temperature` but not both.
-<br/>
-Default Value: 1<br/>
+
+Default Value: 1
 Example: 1,
         ConverterType: ,
         ParameterName: topP,
@@ -594,7 +594,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
         IsDeprecated: false,
         Summary:
 A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).
-<br/>
+
 Example: user-1234,
         ConverterType: ,
         ParameterName: user,
@@ -874,7 +874,7 @@ ID of the model to use. You can use the [List models](/docs/api-reference/models
 The prompt(s) to generate completions for, encoded as a string, array of strings, array of tokens, or array of token arrays.
 
 Note that &lt;|endoftext|&gt; is the document separator that the model sees during training, so if a prompt is not specified the model will generate as if from the beginning of a new document.
-<br/>
+
 Default Value: &lt;|endoftext|&gt;,
         ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory4,
         ParameterName: prompt,
@@ -909,7 +909,7 @@ Generates `best_of` completions server-side and returns the "best" (the one with
 When used with `n`, `best_of` controls the number of candidate completions and `n` specifies how many to return – `best_of` must be greater than `n`.
 
 **Note:** Because this parameter generates many completions, it can quickly consume your token quota. Use carefully and ensure that you have reasonable settings for `max_tokens` and `stop`.
-<br/>
+
 Default Value: 1,
         ConverterType: ,
         ParameterName: bestOf,
@@ -940,7 +940,7 @@ Default Value: 1,
         IsDeprecated: false,
         Summary:
 Echo back the prompt in addition to the completion
-<br/>
+
 Default Value: false,
         ConverterType: ,
         ParameterName: echo,
@@ -973,7 +973,7 @@ Default Value: false,
 Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.
 
 [See more information about frequency and presence penalties.](/docs/guides/text-generation/parameter-details)
-<br/>
+
 Default Value: 0,
         ConverterType: ,
         ParameterName: frequencyPenalty,
@@ -1071,8 +1071,8 @@ The maximum value for `logprobs` is 5.
 The maximum number of [tokens](/tokenizer) that can be generated in the completion.
 
 The token count of your prompt plus `max_tokens` cannot exceed the model's context length. [Example Python code](https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken) for counting tokens.
-<br/>
-Default Value: 16<br/>
+
+Default Value: 16
 Example: 16,
         ConverterType: ,
         ParameterName: maxTokens,
@@ -1105,8 +1105,8 @@ Example: 16,
 How many completions to generate for each prompt.
 
 **Note:** Because this parameter generates many completions, it can quickly consume your token quota. Use carefully and ensure that you have reasonable settings for `max_tokens` and `stop`.
-<br/>
-Default Value: 1<br/>
+
+Default Value: 1
 Example: 1,
         ConverterType: ,
         ParameterName: n,
@@ -1139,7 +1139,7 @@ Example: 1,
 Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.
 
 [See more information about frequency and presence penalties.](/docs/guides/text-generation/parameter-details)
-<br/>
+
 Default Value: 0,
         ConverterType: ,
         ParameterName: presencePenalty,
@@ -1231,7 +1231,7 @@ Up to 4 sequences where the API will stop generating further tokens. The returne
         IsDeprecated: false,
         Summary:
 Whether to stream back partial progress. If set, tokens will be sent as data-only [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format) as they become available, with the stream terminated by a `data: [DONE]` message. [Example Python code](https://cookbook.openai.com/examples/how_to_stream_completions).
-<br/>
+
 Default Value: false,
         ConverterType: ,
         ParameterName: stream,
@@ -1294,7 +1294,7 @@ Options for streaming response. Only set this when you set `stream: true`.
 The suffix that comes after a completion of inserted text.
 
 This parameter is only supported for `gpt-3.5-turbo-instruct`.
-<br/>
+
 Example: test.,
         ConverterType: ,
         ParameterName: suffix,
@@ -1327,8 +1327,8 @@ Example: test.,
 What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
 
 We generally recommend altering this or `top_p` but not both.
-<br/>
-Default Value: 1<br/>
+
+Default Value: 1
 Example: 1,
         ConverterType: ,
         ParameterName: temperature,
@@ -1361,8 +1361,8 @@ Example: 1,
 An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.
 
 We generally recommend altering this or `temperature` but not both.
-<br/>
-Default Value: 1<br/>
+
+Default Value: 1
 Example: 1,
         ConverterType: ,
         ParameterName: topP,
@@ -1392,7 +1392,7 @@ Example: 1,
         IsDeprecated: false,
         Summary:
 A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).
-<br/>
+
 Example: user-1234,
         ConverterType: ,
         ParameterName: user,
@@ -1563,7 +1563,7 @@ Example: user-1234,
         IsRequired: true,
         IsDeprecated: false,
         Summary:
-A text description of the desired image(s). The maximum length is 1000 characters for `dall-e-2` and 4000 characters for `dall-e-3`.<br/>
+A text description of the desired image(s). The maximum length is 1000 characters for `dall-e-2` and 4000 characters for `dall-e-3`.
 Example: A cute baby sea otter,
         ConverterType: ,
         ParameterName: prompt,
@@ -1594,8 +1594,8 @@ Example: A cute baby sea otter,
         DefaultValue: global::G.CreateImageRequestModel.DallE2,
         IsDeprecated: false,
         Summary:
-The model to use for image generation.<br/>
-Default Value: dall-e-2<br/>
+The model to use for image generation.
+Default Value: dall-e-2
 Example: dall-e-3,
         ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2,
         ParameterName: model,
@@ -1625,8 +1625,8 @@ Example: dall-e-3,
         DefaultValue: 1,
         IsDeprecated: false,
         Summary:
-The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only `n=1` is supported.<br/>
-Default Value: 1<br/>
+The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only `n=1` is supported.
+Default Value: 1
 Example: 1,
         ConverterType: ,
         ParameterName: n,
@@ -1662,8 +1662,8 @@ Example: 1,
         DefaultValue: global::G.CreateImageRequestQuality.Standard,
         IsDeprecated: false,
         Summary:
-The quality of the image that will be generated. `hd` creates images with finer details and greater consistency across the image. This param is only supported for `dall-e-3`.<br/>
-Default Value: standard<br/>
+The quality of the image that will be generated. `hd` creates images with finer details and greater consistency across the image. This param is only supported for `dall-e-3`.
+Default Value: standard
 Example: standard,
         ConverterType: global::OpenApiGenerator.JsonConverters.CreateImageRequestQualityJsonConverter,
         ParameterName: quality,
@@ -1699,8 +1699,8 @@ Example: standard,
         DefaultValue: global::G.CreateImageRequestResponseFormat.Url,
         IsDeprecated: false,
         Summary:
-The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.<br/>
-Default Value: url<br/>
+The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.
+Default Value: url
 Example: url,
         ConverterType: global::OpenApiGenerator.JsonConverters.CreateImageRequestResponseFormatJsonConverter,
         ParameterName: responseFormat,
@@ -1742,8 +1742,8 @@ Example: url,
         DefaultValue: global::G.CreateImageRequestSize._1024x1024,
         IsDeprecated: false,
         Summary:
-The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024` for `dall-e-2`. Must be one of `1024x1024`, `1792x1024`, or `1024x1792` for `dall-e-3` models.<br/>
-Default Value: 1024x1024<br/>
+The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024` for `dall-e-2`. Must be one of `1024x1024`, `1792x1024`, or `1024x1792` for `dall-e-3` models.
+Default Value: 1024x1024
 Example: 1024x1024,
         ConverterType: global::OpenApiGenerator.JsonConverters.CreateImageRequestSizeJsonConverter,
         ParameterName: size,
@@ -1779,8 +1779,8 @@ Example: 1024x1024,
         DefaultValue: global::G.CreateImageRequestStyle.Vivid,
         IsDeprecated: false,
         Summary:
-The style of the generated images. Must be one of `vivid` or `natural`. Vivid causes the model to lean towards generating hyper-real and dramatic images. Natural causes the model to produce more natural, less hyper-real looking images. This param is only supported for `dall-e-3`.<br/>
-Default Value: vivid<br/>
+The style of the generated images. Must be one of `vivid` or `natural`. Vivid causes the model to lean towards generating hyper-real and dramatic images. Natural causes the model to produce more natural, less hyper-real looking images. This param is only supported for `dall-e-3`.
+Default Value: vivid
 Example: vivid,
         ConverterType: global::OpenApiGenerator.JsonConverters.CreateImageRequestStyleJsonConverter,
         ParameterName: style,
@@ -1810,7 +1810,7 @@ Example: vivid,
         IsDeprecated: false,
         Summary:
 A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).
-<br/>
+
 Example: user-1234,
         ConverterType: ,
         ParameterName: user,
@@ -1978,7 +1978,7 @@ Example: user-1234,
         IsRequired: true,
         IsDeprecated: false,
         Summary:
-A text description of the desired image(s). The maximum length is 1000 characters.<br/>
+A text description of the desired image(s). The maximum length is 1000 characters.
 Example: A cute baby sea otter wearing a beret,
         ConverterType: ,
         ParameterName: prompt,
@@ -2036,8 +2036,8 @@ Example: A cute baby sea otter wearing a beret,
         DefaultValue: global::G.CreateImageEditRequestModel.DallE2,
         IsDeprecated: false,
         Summary:
-The model to use for image generation. Only `dall-e-2` is supported at this time.<br/>
-Default Value: dall-e-2<br/>
+The model to use for image generation. Only `dall-e-2` is supported at this time.
+Default Value: dall-e-2
 Example: dall-e-2,
         ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2,
         ParameterName: model,
@@ -2067,8 +2067,8 @@ Example: dall-e-2,
         DefaultValue: 1,
         IsDeprecated: false,
         Summary:
-The number of images to generate. Must be between 1 and 10.<br/>
-Default Value: 1<br/>
+The number of images to generate. Must be between 1 and 10.
+Default Value: 1
 Example: 1,
         ConverterType: ,
         ParameterName: n,
@@ -2106,8 +2106,8 @@ Example: 1,
         DefaultValue: global::G.CreateImageEditRequestSize._1024x1024,
         IsDeprecated: false,
         Summary:
-The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.<br/>
-Default Value: 1024x1024<br/>
+The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.
+Default Value: 1024x1024
 Example: 1024x1024,
         ConverterType: global::OpenApiGenerator.JsonConverters.CreateImageEditRequestSizeJsonConverter,
         ParameterName: size,
@@ -2143,8 +2143,8 @@ Example: 1024x1024,
         DefaultValue: global::G.CreateImageEditRequestResponseFormat.Url,
         IsDeprecated: false,
         Summary:
-The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.<br/>
-Default Value: url<br/>
+The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.
+Default Value: url
 Example: url,
         ConverterType: global::OpenApiGenerator.JsonConverters.CreateImageEditRequestResponseFormatJsonConverter,
         ParameterName: responseFormat,
@@ -2174,7 +2174,7 @@ Example: url,
         IsDeprecated: false,
         Summary:
 A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).
-<br/>
+
 Example: user-1234,
         ConverterType: ,
         ParameterName: user,
@@ -2344,8 +2344,8 @@ Example: user-1234,
         DefaultValue: global::G.CreateImageVariationRequestModel.DallE2,
         IsDeprecated: false,
         Summary:
-The model to use for image generation. Only `dall-e-2` is supported at this time.<br/>
-Default Value: dall-e-2<br/>
+The model to use for image generation. Only `dall-e-2` is supported at this time.
+Default Value: dall-e-2
 Example: dall-e-2,
         ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2,
         ParameterName: model,
@@ -2375,8 +2375,8 @@ Example: dall-e-2,
         DefaultValue: 1,
         IsDeprecated: false,
         Summary:
-The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only `n=1` is supported.<br/>
-Default Value: 1<br/>
+The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only `n=1` is supported.
+Default Value: 1
 Example: 1,
         ConverterType: ,
         ParameterName: n,
@@ -2412,8 +2412,8 @@ Example: 1,
         DefaultValue: global::G.CreateImageVariationRequestResponseFormat.Url,
         IsDeprecated: false,
         Summary:
-The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.<br/>
-Default Value: url<br/>
+The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.
+Default Value: url
 Example: url,
         ConverterType: global::OpenApiGenerator.JsonConverters.CreateImageVariationRequestResponseFormatJsonConverter,
         ParameterName: responseFormat,
@@ -2451,8 +2451,8 @@ Example: url,
         DefaultValue: global::G.CreateImageVariationRequestSize._1024x1024,
         IsDeprecated: false,
         Summary:
-The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.<br/>
-Default Value: 1024x1024<br/>
+The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.
+Default Value: 1024x1024
 Example: 1024x1024,
         ConverterType: global::OpenApiGenerator.JsonConverters.CreateImageVariationRequestSizeJsonConverter,
         ParameterName: size,
@@ -2482,7 +2482,7 @@ Example: 1024x1024,
         IsDeprecated: false,
         Summary:
 A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).
-<br/>
+
 Example: user-1234,
         ConverterType: ,
         ParameterName: user,
@@ -2621,7 +2621,7 @@ Example: user-1234,
         IsDeprecated: false,
         Summary:
 Input text to embed, encoded as a string or array of tokens. To embed multiple inputs in a single request, pass an array of strings or array of token arrays. The input must not exceed the max input tokens for the model (8192 tokens for `text-embedding-ada-002`), cannot be an empty string, and any array must be 2048 dimensions or less. [Example Python code](https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken) for counting tokens.
-<br/>
+
 Example: The quick brown fox jumped over the lazy dog,
         ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory4,
         ParameterName: input,
@@ -2652,7 +2652,7 @@ Example: The quick brown fox jumped over the lazy dog,
         IsDeprecated: false,
         Summary:
 ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models/overview) for descriptions of them.
-<br/>
+
 Example: text-embedding-3-small,
         ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2,
         ParameterName: model,
@@ -2688,8 +2688,8 @@ Example: text-embedding-3-small,
         DefaultValue: global::G.CreateEmbeddingRequestEncodingFormat.Float,
         IsDeprecated: false,
         Summary:
-The format to return the embeddings in. Can be either `float` or [`base64`](https://pypi.org/project/pybase64/).<br/>
-Default Value: float<br/>
+The format to return the embeddings in. Can be either `float` or [`base64`](https://pypi.org/project/pybase64/).
+Default Value: float
 Example: float,
         ConverterType: global::OpenApiGenerator.JsonConverters.CreateEmbeddingRequestEncodingFormatJsonConverter,
         ParameterName: encodingFormat,
@@ -2748,7 +2748,7 @@ The number of dimensions the resulting output embeddings should have. Only suppo
         IsDeprecated: false,
         Summary:
 A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).
-<br/>
+
 Example: user-1234,
         ConverterType: ,
         ParameterName: user,
@@ -3000,7 +3000,7 @@ One of the available [TTS models](/docs/models/tts): `tts-1` or `tts-1-hd`
         DefaultValue: global::G.CreateSpeechRequestResponseFormat.Mp3,
         IsDeprecated: false,
         Summary:
-The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.<br/>
+The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.
 Default Value: mp3,
         ConverterType: global::OpenApiGenerator.JsonConverters.CreateSpeechRequestResponseFormatJsonConverter,
         ParameterName: responseFormat,
@@ -3030,7 +3030,7 @@ Default Value: mp3,
         DefaultValue: 1,
         IsDeprecated: false,
         Summary:
-The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default.<br/>
+The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default.
 Default Value: 1,
         ConverterType: ,
         ParameterName: speed,
@@ -3190,7 +3190,7 @@ The audio file object (not file name) to transcribe, in one of these formats: fl
         IsDeprecated: false,
         Summary:
 ID of the model to use. Only `whisper-1` (which is powered by our open source Whisper V2 model) is currently available.
-<br/>
+
 Example: whisper-1,
         ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2,
         ParameterName: model,
@@ -3291,7 +3291,7 @@ An optional text to guide the model's style or continue a previous audio segment
         IsDeprecated: false,
         Summary:
 The format of the transcript output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.
-<br/>
+
 Default Value: json,
         ConverterType: global::OpenApiGenerator.JsonConverters.CreateTranscriptionRequestResponseFormatJsonConverter,
         ParameterName: responseFormat,
@@ -3322,7 +3322,7 @@ Default Value: json,
         IsDeprecated: false,
         Summary:
 The sampling temperature, between 0 and 1. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. If set to 0, the model will use [log probability](https://en.wikipedia.org/wiki/Log_probability) to automatically increase the temperature until certain thresholds are hit.
-<br/>
+
 Default Value: 0,
         ConverterType: ,
         ParameterName: temperature,
@@ -3486,7 +3486,7 @@ The audio file object (not file name) translate, in one of these formats: flac, 
         IsDeprecated: false,
         Summary:
 ID of the model to use. Only `whisper-1` (which is powered by our open source Whisper V2 model) is currently available.
-<br/>
+
 Example: whisper-1,
         ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2,
         ParameterName: model,
@@ -3546,7 +3546,7 @@ An optional text to guide the model's style or continue a previous audio segment
         IsDeprecated: false,
         Summary:
 The format of the transcript output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.
-<br/>
+
 Default Value: json,
         ConverterType: ,
         ParameterName: responseFormat,
@@ -3577,7 +3577,7 @@ Default Value: json,
         IsDeprecated: false,
         Summary:
 The sampling temperature, between 0 and 1. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. If set to 0, the model will use [log probability](https://en.wikipedia.org/wiki/Log_probability) to automatically increase the temperature until certain thresholds are hit.
-<br/>
+
 Default Value: 0,
         ConverterType: ,
         ParameterName: temperature,
@@ -4334,7 +4334,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
         Summary:
 The name of the model to fine-tune. You can select one of the
 [supported models](/docs/guides/fine-tuning/what-models-can-be-fine-tuned).
-<br/>
+
 Example: gpt-3.5-turbo,
         ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2,
         ParameterName: model,
@@ -4370,7 +4370,7 @@ See [upload file](/docs/api-reference/files/create) for how to upload a file.
 Your dataset must be formatted as a JSONL file. Additionally, you must upload your file with the purpose `fine-tune`.
 
 See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
-<br/>
+
 Example: file-abc123,
         ConverterType: ,
         ParameterName: trainingFile,
@@ -4467,7 +4467,7 @@ The same data should not be present in both train and validation files.
 Your dataset must be formatted as a JSONL file. You must upload your file with the purpose `fine-tune`.
 
 See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
-<br/>
+
 Example: file-abc123,
         ConverterType: ,
         ParameterName: validationFile,
@@ -4525,7 +4525,7 @@ Example: file-abc123,
         Summary:
 The seed controls the reproducibility of the job. Passing in the same seed and job parameters should produce the same results, but may differ in rare cases.
 If a seed is not specified, one will be generated for you.
-<br/>
+
 Example: 42,
         ConverterType: ,
         ParameterName: seed,
@@ -5799,8 +5799,8 @@ List checkpoints for a fine-tuning job.
 Two content moderations models are available: `text-moderation-stable` and `text-moderation-latest`.
 
 The default is `text-moderation-latest` which will be automatically upgraded over time. This ensures you are always using our most accurate model. If you use `text-moderation-stable`, we will provide advanced notice before updating the model. Accuracy of `text-moderation-stable` may be slightly lower than for `text-moderation-latest`.
-<br/>
-Default Value: text-moderation-latest<br/>
+
+Default Value: text-moderation-latest
 Example: text-moderation-stable,
         ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2,
         ParameterName: model,
@@ -6144,7 +6144,7 @@ Example: text-moderation-stable,
         IsDeprecated: false,
         Summary:
 ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models/overview) for descriptions of them.
-<br/>
+
 Example: gpt-4-turbo,
         ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2,
         ParameterName: model,
@@ -6262,7 +6262,7 @@ The system instructions that the assistant uses. The maximum length is 256,000 c
         IsDeprecated: false,
         Summary:
 A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.
-<br/>
+
 Default Value: [],
         ConverterType: ,
         ParameterName: tools,
@@ -6352,8 +6352,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         IsDeprecated: false,
         Summary:
 What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
-<br/>
-Default Value: 1<br/>
+
+Default Value: 1
 Example: 1,
         ConverterType: ,
         ParameterName: temperature,
@@ -6386,8 +6386,8 @@ Example: 1,
 An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.
 
 We generally recommend altering this or temperature but not both.
-<br/>
-Default Value: 1<br/>
+
+Default Value: 1
 Example: 1,
         ConverterType: ,
         ParameterName: topP,
@@ -6866,7 +6866,7 @@ The system instructions that the assistant uses. The maximum length is 256,000 c
         IsDeprecated: false,
         Summary:
 A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.
-<br/>
+
 Default Value: [],
         ConverterType: ,
         ParameterName: tools,
@@ -6956,8 +6956,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         IsDeprecated: false,
         Summary:
 What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
-<br/>
-Default Value: 1<br/>
+
+Default Value: 1
 Example: 1,
         ConverterType: ,
         ParameterName: temperature,
@@ -6990,8 +6990,8 @@ Example: 1,
 An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.
 
 We generally recommend altering this or temperature but not both.
-<br/>
-Default Value: 1<br/>
+
+Default Value: 1
 Example: 1,
         ConverterType: ,
         ParameterName: topP,
@@ -9037,7 +9037,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-The ID of the [Model](/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.<br/>
+The ID of the [Model](/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.
 Example: gpt-4-turbo,
         ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2,
         ParameterName: model,
@@ -9181,8 +9181,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         IsDeprecated: false,
         Summary:
 What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
-<br/>
-Default Value: 1<br/>
+
+Default Value: 1
 Example: 1,
         ConverterType: ,
         ParameterName: temperature,
@@ -9215,8 +9215,8 @@ Example: 1,
 An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.
 
 We generally recommend altering this or temperature but not both.
-<br/>
-Default Value: 1<br/>
+
+Default Value: 1
 Example: 1,
         ConverterType: ,
         ParameterName: topP,
@@ -9903,7 +9903,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-The ID of the [Model](/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.<br/>
+The ID of the [Model](/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.
 Example: gpt-4-turbo,
         ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2,
         ParameterName: model,
@@ -10072,8 +10072,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         IsDeprecated: false,
         Summary:
 What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
-<br/>
-Default Value: 1<br/>
+
+Default Value: 1
 Example: 1,
         ConverterType: ,
         ParameterName: temperature,
@@ -10106,8 +10106,8 @@ Example: 1,
 An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.
 
 We generally recommend altering this or temperature but not both.
-<br/>
-Default Value: 1<br/>
+
+Default Value: 1
 Example: 1,
         ConverterType: ,
         ParameterName: topP,

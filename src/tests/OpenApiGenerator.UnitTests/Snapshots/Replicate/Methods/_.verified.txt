@@ -12,7 +12,7 @@
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary:
-Get the authenticated account<br/>
+Get the authenticated account
 Returns information about the user or organization associated with the provided API token.
 
 Example cURL request:
@@ -104,7 +104,7 @@ The response will be a JSON object describing the account:
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary:
-List collections of models<br/>
+List collections of models
 Example cURL request:
 
 ```console
@@ -213,7 +213,7 @@ The response will be a paginated JSON list of collection objects:
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary:
-Get a collection of models<br/>
+Get a collection of models
 Example cURL request:
 
 ```console
@@ -286,7 +286,7 @@ The response will be a collection object with a nested list of the models in tha
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary:
-List deployments<br/>
+List deployments
 Get a list of deployments associated with the current account, including the latest release configuration for each deployment.
 
 Example cURL request:
@@ -563,7 +563,7 @@ The response will be a paginated JSON array of deployment objects, sorted with t
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary:
-Create a deployment<br/>
+Create a deployment
 Create a new deployment:
 
 Example cURL request:
@@ -758,7 +758,7 @@ The response will be a JSON object describing the deployment:
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary:
-Delete a deployment<br/>
+Delete a deployment
 Delete a deployment
 
 Deployment deletion has some restrictions:
@@ -889,7 +889,7 @@ The response will be an empty 204, indicating the deployment has been deleted.
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary:
-Get a deployment<br/>
+Get a deployment
 Get information about a deployment by name including the current release.
 
 Example cURL request:
@@ -1166,7 +1166,7 @@ The response will be a JSON object describing the deployment:
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Patch,
     Summary:
-Update a deployment<br/>
+Update a deployment
 Update properties of an existing deployment, including hardware, min/max instances, and the deployment's underlying model [version](https://replicate.com/docs/how-does-replicate-work#versions).
 
 Example cURL request:
@@ -1507,7 +1507,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary:
-Create a prediction using a deployment<br/>
+Create a prediction using a deployment
 Start a new prediction for a deployment of a model using inputs you provide.
 
 Example request body:
@@ -1637,7 +1637,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary:
-List available hardware for models<br/>
+List available hardware for models
 Example cURL request:
 
 ```console
@@ -1727,7 +1727,7 @@ The response will be a JSON array of hardware objects:
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary:
-List public models<br/>
+List public models
 Get a paginated list of public models.
 
 Example cURL request:
@@ -2074,7 +2074,7 @@ The `cover_image_url` string is an HTTPS URL for an image file. This can be:
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary:
-Create a model<br/>
+Create a model
 Create a model.
 
 Example cURL request:
@@ -2238,7 +2238,7 @@ The response will be a model object in the following format:
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary:
-Delete a model<br/>
+Delete a model
 Delete a model
 
 Model deletion has some restrictions:
@@ -2371,7 +2371,7 @@ The response will be an empty 204, indicating the model has been deleted.
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary:
-Get a model<br/>
+Get a model
 Example cURL request:
 
 ```console
@@ -2676,7 +2676,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary:
-Create a prediction using an official model<br/>
+Create a prediction using an official model
 Start a new prediction for an official model using the inputs you provide.
 
 Example request body:
@@ -2867,7 +2867,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary:
-List model versions<br/>
+List model versions
 Example cURL request:
 
 ```console
@@ -3038,7 +3038,7 @@ The response will be a JSON array of model version objects, sorted with the most
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary:
-Delete a model version<br/>
+Delete a model version
 Delete a model version and all associated predictions, including all output files.
 
 Model version deletion has some restrictions:
@@ -3204,7 +3204,7 @@ The response will be an empty 202, indicating the deletion request has been acce
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary:
-Get a model version<br/>
+Get a model version
 Example cURL request:
 
 ```console
@@ -3536,7 +3536,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary:
-Create a training<br/>
+Create a training
 Start a new training of the model version you specify.
 
 Example request body:
@@ -3668,7 +3668,7 @@ To find some models to train on, check out the [trainable language models collec
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary:
-List predictions<br/>
+List predictions
 Get a paginated list of predictions that you've created. This will include predictions created from the API and the website. It will return 100 records per page.
 
 Example cURL request:
@@ -3958,7 +3958,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary:
-Create a prediction<br/>
+Create a prediction
 Start a new prediction for the model version and inputs you provide.
 
 Example request body:
@@ -4122,7 +4122,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary:
-Get a prediction<br/>
+Get a prediction
 Get the current state of a prediction.
 
 Example cURL request:
@@ -4316,7 +4316,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary:
-List trainings<br/>
+List trainings
 Get a paginated list of trainings that you've created. This will include trainings created from the API and the website. It will return 100 records per page.
 
 Example cURL request:
@@ -4457,7 +4457,7 @@ The response will be a paginated JSON array of training objects, sorted with the
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary:
-Get a training<br/>
+Get a training
 Get the current state of a training.
 
 Example cURL request:
@@ -4650,7 +4650,7 @@ Terminated trainings (with a status of `succeeded`, `failed`, or `canceled`) wil
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     Summary:
-Get the signing secret for the default webhook<br/>
+Get the signing secret for the default webhook
 Get the signing secret for the default webhook endpoint. This is used to verify that webhook requests are coming from Replicate.
 
 Example cURL request:

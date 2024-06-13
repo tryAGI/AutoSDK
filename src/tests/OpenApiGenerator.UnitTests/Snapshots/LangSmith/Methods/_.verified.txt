@@ -181,7 +181,7 @@
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Patch,
     Summary:
-Update Run<br/>
+Update Run
 Update a run.,
     BaseUrlSummary: ,
     RequestType: {
@@ -835,7 +835,7 @@ Update a run.,
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary:
-Create Run<br/>
+Create Run
 Create a new run.,
     BaseUrlSummary: ,
     RequestType: {

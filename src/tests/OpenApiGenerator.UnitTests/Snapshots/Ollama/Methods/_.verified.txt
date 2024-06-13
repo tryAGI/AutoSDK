@@ -33,7 +33,7 @@
 The model name. 
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
-<br/>
+
 Example: llama2:7b,
         ConverterType: ,
         ParameterName: model,
@@ -62,7 +62,7 @@ Example: llama2:7b,
         IsRequired: true,
         IsDeprecated: false,
         Summary:
-The prompt to generate a response.<br/>
+The prompt to generate a response.
 Example: Why is the sky blue?,
         ConverterType: ,
         ParameterName: prompt,
@@ -327,7 +327,7 @@ You may choose to use the `raw` parameter if you are specifying a full templated
         IsDeprecated: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
-<br/>
+
 Default Value: true,
         ConverterType: ,
         ParameterName: stream,
@@ -374,7 +374,7 @@ How long (in minutes) to keep the model loaded in memory.
     GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
     Summary:
-Generate a response for a given prompt with a provided model.<br/>
+Generate a response for a given prompt with a provided model.
 The final response object will include statistics and additional data from the request.,
     BaseUrlSummary: ,
     RequestType: {
@@ -531,7 +531,7 @@ The final response object will include statistics and additional data from the r
 The model name. 
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
-<br/>
+
 Example: llama2:7b,
         ConverterType: ,
         ParameterName: model,
@@ -684,7 +684,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
         IsDeprecated: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
-<br/>
+
 Default Value: true,
         ConverterType: ,
         ParameterName: stream,
@@ -731,7 +731,7 @@ How long (in minutes) to keep the model loaded in memory.
     GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
     Summary:
-Generate the next message in a chat with a provided model.<br/>
+Generate the next message in a chat with a provided model.
 This is a streaming endpoint, so there will be a series of responses. The final response object will include statistics and additional data from the request.,
     BaseUrlSummary: ,
     RequestType: {
@@ -878,7 +878,7 @@ This is a streaming endpoint, so there will be a series of responses. The final 
 The model name. 
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
-<br/>
+
 Example: llama2:7b,
         ConverterType: ,
         ParameterName: model,
@@ -907,7 +907,7 @@ Example: llama2:7b,
         IsRequired: true,
         IsDeprecated: false,
         Summary:
-Text to generate embeddings for.<br/>
+Text to generate embeddings for.
 Example: Here is an article about llamas...,
         ConverterType: ,
         ParameterName: prompt,
@@ -1133,7 +1133,7 @@ How long (in minutes) to keep the model loaded in memory.
 The model name. 
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
-<br/>
+
 Example: mario,
         ConverterType: ,
         ParameterName: model,
@@ -1162,7 +1162,7 @@ Example: mario,
         IsRequired: true,
         IsDeprecated: false,
         Summary:
-The contents of the Modelfile.<br/>
+The contents of the Modelfile.
 Example: FROM llama2\nSYSTEM You are mario from Super Mario Bros.,
         ConverterType: ,
         ParameterName: modelfile,
@@ -1247,7 +1247,7 @@ Example: FROM llama2\nSYSTEM You are mario from Super Mario Bros.,
         IsDeprecated: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
-<br/>
+
 Default Value: true,
         ConverterType: ,
         ParameterName: stream,
@@ -1260,7 +1260,7 @@ Default Value: true,
     GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
     Summary:
-Create a model from a Modelfile.<br/>
+Create a model from a Modelfile.
 It is recommended to set `modelfile` to the content of the Modelfile rather than just set `path`. This is a requirement for remote create. Remote model creation should also create any file blobs, fields such as `FROM` and `ADAPTER`, explicitly with the server using Create a Blob and the value to the path indicated in the response.,
     BaseUrlSummary: ,
     RequestType: {
@@ -1459,7 +1459,7 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
 The model name. 
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
-<br/>
+
 Example: llama2:7b,
         ConverterType: ,
         ParameterName: model,
@@ -1596,7 +1596,7 @@ Example: llama2:7b,
         IsRequired: true,
         IsDeprecated: false,
         Summary:
-Name of the model to copy.<br/>
+Name of the model to copy.
 Example: llama2:7b,
         ConverterType: ,
         ParameterName: source,
@@ -1625,7 +1625,7 @@ Example: llama2:7b,
         IsRequired: true,
         IsDeprecated: false,
         Summary:
-Name of the new model.<br/>
+Name of the new model.
 Example: llama2-backup,
         ConverterType: ,
         ParameterName: destination,
@@ -1735,7 +1735,7 @@ Example: llama2-backup,
 The model name. 
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
-<br/>
+
 Example: llama2:13b,
         ConverterType: ,
         ParameterName: model,
@@ -1843,7 +1843,7 @@ Example: llama2:13b,
 The model name. 
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
-<br/>
+
 Example: llama2:7b,
         ConverterType: ,
         ParameterName: model,
@@ -1876,7 +1876,7 @@ Example: llama2:7b,
 Allow insecure connections to the library. 
 
 Only use this if you are pulling from your own library during development.
-<br/>
+
 Default Value: false,
         ConverterType: ,
         ParameterName: insecure,
@@ -1961,7 +1961,7 @@ Default Value: false,
         IsDeprecated: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
-<br/>
+
 Default Value: true,
         ConverterType: ,
         ParameterName: stream,
@@ -1974,7 +1974,7 @@ Default Value: true,
     GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
     Summary:
-Download a model from the ollama library.<br/>
+Download a model from the ollama library.
 Cancelled pulls are resumed from where they left off, and multiple calls will share the same download progress.,
     BaseUrlSummary: ,
     RequestType: {
@@ -2102,7 +2102,7 @@ Cancelled pulls are resumed from where they left off, and multiple calls will sh
         IsRequired: true,
         IsDeprecated: false,
         Summary:
-The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt;tag&gt;.<br/>
+The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt;tag&gt;.
 Example: mattw/pygmalion:latest,
         ConverterType: ,
         ParameterName: model,
@@ -2135,7 +2135,7 @@ Example: mattw/pygmalion:latest,
 Allow insecure connections to the library. 
 
 Only use this if you are pushing to your library during development.
-<br/>
+
 Default Value: false,
         ConverterType: ,
         ParameterName: insecure,
@@ -2220,7 +2220,7 @@ Default Value: false,
         IsDeprecated: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
-<br/>
+
 Default Value: true,
         ConverterType: ,
         ParameterName: stream,
@@ -2233,7 +2233,7 @@ Default Value: true,
     GenerateJsonSerializerContextTypes: true,
     HttpMethod: Post,
     Summary:
-Upload a model to a model library.<br/>
+Upload a model to a model library.
 Requires registering for ollama.ai and adding a public key first.,
     BaseUrlSummary: ,
     RequestType: {

@@ -65,7 +65,7 @@
     Namespace: G,
     Name: PullModelStatus,
     Summary:
-Status pulling the model.<br/>
+Status pulling the model.
 Example: pulling manifest,
     Types: [
       {

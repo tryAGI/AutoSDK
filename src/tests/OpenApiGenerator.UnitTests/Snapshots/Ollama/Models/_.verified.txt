@@ -31,7 +31,7 @@
 The model name. 
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
-<br/>
+
 Example: llama2:7b,
         ConverterType: ,
         ParameterName: model,
@@ -60,7 +60,7 @@ Example: llama2:7b,
         IsRequired: true,
         IsDeprecated: false,
         Summary:
-The prompt to generate a response.<br/>
+The prompt to generate a response.
 Example: Why is the sky blue?,
         ConverterType: ,
         ParameterName: prompt,
@@ -325,7 +325,7 @@ You may choose to use the `raw` parameter if you are specifying a full templated
         IsDeprecated: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
-<br/>
+
 Default Value: true,
         ConverterType: ,
         ParameterName: stream,
@@ -1347,7 +1347,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
 The model name. 
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
-<br/>
+
 Example: llama2:7b,
         ConverterType: ,
         ParameterName: model,
@@ -1403,7 +1403,7 @@ Example: llama2:7b,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-The response for a given prompt with a provided model.<br/>
+The response for a given prompt with a provided model.
 Example: The sky appears blue because of a phenomenon called Rayleigh scattering.,
         ConverterType: ,
         ParameterName: response,
@@ -1432,7 +1432,7 @@ Example: The sky appears blue because of a phenomenon called Rayleigh scattering
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Whether the response has completed.<br/>
+Whether the response has completed.
 Example: true,
         ConverterType: ,
         ParameterName: done,
@@ -1462,7 +1462,7 @@ Example: true,
         IsDeprecated: false,
         Summary:
 An encoding of the conversation used in this response, this can be sent in the next request to keep a conversational memory.
-<br/>
+
 Example: [1, 2, 3],
         ConverterType: ,
         ParameterName: context,
@@ -1491,7 +1491,7 @@ Example: [1, 2, 3],
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Time spent generating the response.<br/>
+Time spent generating the response.
 Example: 5589157167,
         ConverterType: ,
         ParameterName: totalDuration,
@@ -1520,7 +1520,7 @@ Example: 5589157167,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Time spent in nanoseconds loading the model.<br/>
+Time spent in nanoseconds loading the model.
 Example: 3013701500,
         ConverterType: ,
         ParameterName: loadDuration,
@@ -1549,7 +1549,7 @@ Example: 3013701500,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Number of tokens in the prompt.<br/>
+Number of tokens in the prompt.
 Example: 46,
         ConverterType: ,
         ParameterName: promptEvalCount,
@@ -1578,7 +1578,7 @@ Example: 46,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Time spent in nanoseconds evaluating the prompt.<br/>
+Time spent in nanoseconds evaluating the prompt.
 Example: 1160282000,
         ConverterType: ,
         ParameterName: promptEvalDuration,
@@ -1607,7 +1607,7 @@ Example: 1160282000,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Number of tokens the response.<br/>
+Number of tokens the response.
 Example: 113,
         ConverterType: ,
         ParameterName: evalCount,
@@ -1636,7 +1636,7 @@ Example: 113,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Time in nanoseconds spent generating the response.<br/>
+Time in nanoseconds spent generating the response.
 Example: 1325948000,
         ConverterType: ,
         ParameterName: evalDuration,
@@ -1686,7 +1686,7 @@ Example: 1325948000,
 The model name. 
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
-<br/>
+
 Example: llama2:7b,
         ConverterType: ,
         ParameterName: model,
@@ -1839,7 +1839,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
         IsDeprecated: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
-<br/>
+
 Default Value: true,
         ConverterType: ,
         ParameterName: stream,
@@ -1954,7 +1954,7 @@ How long (in minutes) to keep the model loaded in memory.
 The model name. 
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
-<br/>
+
 Example: llama2:7b,
         ConverterType: ,
         ParameterName: model,
@@ -2010,7 +2010,7 @@ Example: llama2:7b,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Whether the response has completed.<br/>
+Whether the response has completed.
 Example: true,
         ConverterType: ,
         ParameterName: done,
@@ -2066,7 +2066,7 @@ Example: true,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Time spent generating the response.<br/>
+Time spent generating the response.
 Example: 5589157167,
         ConverterType: ,
         ParameterName: totalDuration,
@@ -2095,7 +2095,7 @@ Example: 5589157167,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Time spent in nanoseconds loading the model.<br/>
+Time spent in nanoseconds loading the model.
 Example: 3013701500,
         ConverterType: ,
         ParameterName: loadDuration,
@@ -2124,7 +2124,7 @@ Example: 3013701500,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Number of tokens in the prompt.<br/>
+Number of tokens in the prompt.
 Example: 46,
         ConverterType: ,
         ParameterName: promptEvalCount,
@@ -2153,7 +2153,7 @@ Example: 46,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Time spent in nanoseconds evaluating the prompt.<br/>
+Time spent in nanoseconds evaluating the prompt.
 Example: 1160282000,
         ConverterType: ,
         ParameterName: promptEvalDuration,
@@ -2182,7 +2182,7 @@ Example: 1160282000,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Number of tokens the response.<br/>
+Number of tokens the response.
 Example: 113,
         ConverterType: ,
         ParameterName: evalCount,
@@ -2211,7 +2211,7 @@ Example: 113,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Time in nanoseconds spent generating the response.<br/>
+Time in nanoseconds spent generating the response.
 Example: 1325948000,
         ConverterType: ,
         ParameterName: evalDuration,
@@ -2293,7 +2293,7 @@ Example: 1325948000,
         IsRequired: true,
         IsDeprecated: false,
         Summary:
-The content of the message<br/>
+The content of the message
 Example: Why is the sky blue?,
         ConverterType: ,
         ParameterName: content,
@@ -2470,7 +2470,7 @@ Example: Why is the sky blue?,
 The model name. 
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
-<br/>
+
 Example: llama2:7b,
         ConverterType: ,
         ParameterName: model,
@@ -2499,7 +2499,7 @@ Example: llama2:7b,
         IsRequired: true,
         IsDeprecated: false,
         Summary:
-Text to generate embeddings for.<br/>
+Text to generate embeddings for.
 Example: Here is an article about llamas...,
         ConverterType: ,
         ParameterName: prompt,
@@ -2638,7 +2638,7 @@ How long (in minutes) to keep the model loaded in memory.
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-The embedding for the prompt.<br/>
+The embedding for the prompt.
 Example: [0.5670403838157654, 0.009260174818336964, ...],
         ConverterType: ,
         ParameterName: embedding,
@@ -2688,7 +2688,7 @@ Example: [0.5670403838157654, 0.009260174818336964, ...],
 The model name. 
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
-<br/>
+
 Example: mario,
         ConverterType: ,
         ParameterName: model,
@@ -2717,7 +2717,7 @@ Example: mario,
         IsRequired: true,
         IsDeprecated: false,
         Summary:
-The contents of the Modelfile.<br/>
+The contents of the Modelfile.
 Example: FROM llama2\nSYSTEM You are mario from Super Mario Bros.,
         ConverterType: ,
         ParameterName: modelfile,
@@ -2802,7 +2802,7 @@ Example: FROM llama2\nSYSTEM You are mario from Super Mario Bros.,
         IsDeprecated: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
-<br/>
+
 Default Value: true,
         ConverterType: ,
         ParameterName: stream,
@@ -3143,7 +3143,7 @@ Default Value: true,
 The model name. 
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
-<br/>
+
 Example: llama2:7b,
         ConverterType: ,
         ParameterName: model,
@@ -3199,7 +3199,7 @@ Example: llama2:7b,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Size of the model on disk.<br/>
+Size of the model on disk.
 Example: 7323310500,
         ConverterType: ,
         ParameterName: size,
@@ -3228,7 +3228,7 @@ Example: 7323310500,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-The model's digest.<br/>
+The model's digest.
 Example: sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a,
         ConverterType: ,
         ParameterName: digest,
@@ -3492,7 +3492,7 @@ Example: sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a,
 The model name. 
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
-<br/>
+
 Example: llama2:7b,
         ConverterType: ,
         ParameterName: model,
@@ -3539,7 +3539,7 @@ Example: llama2:7b,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-The model's license.<br/>
+The model's license.
 Example: &lt;contents of license block&gt;,
         ConverterType: ,
         ParameterName: license,
@@ -3568,7 +3568,7 @@ Example: &lt;contents of license block&gt;,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-The modelfile associated with the model.<br/>
+The modelfile associated with the model.
 Example: Modelfile generated by \"ollama show\"\n# To build a new Modelfile based on this one, replace the FROM line with:\n# FROM llama2:latest\n\nFROM /Users/username/.ollama/models/blobs/sha256:8daa9615cce30c259a9555b1cc250d461d1bc69980a274b44d7eda0be78076d8\nTEMPLATE \"\"\"[INST] {{ if and .First .System }}&lt;&lt;SYS&gt;&gt;{{ .System }}&lt;&lt;/SYS&gt;&gt;\n\n{{ end }}{{ .Prompt }} [/INST] \"\"\"\nSYSTEM \"\"\"\"\"\"\nPARAMETER stop [INST]\nPARAMETER stop [/INST]\nPARAMETER stop &lt;&lt;SYS&gt;&gt;\nPARAMETER stop &lt;&lt;/SYS&gt;&gt;\n",
         ConverterType: ,
         ParameterName: modelfile,
@@ -3597,7 +3597,7 @@ Example: Modelfile generated by \"ollama show\"\n# To build a new Modelfile base
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-The model parameters.<br/>
+The model parameters.
 Example: stop [INST]\nstop [/INST]\nstop &lt;&lt;SYS&gt;&gt;\nstop &lt;&lt;/SYS&gt;&gt;,
         ConverterType: ,
         ParameterName: parameters,
@@ -3626,7 +3626,7 @@ Example: stop [INST]\nstop [/INST]\nstop &lt;&lt;SYS&gt;&gt;\nstop &lt;&lt;/SYS&
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-The prompt template for the model.<br/>
+The prompt template for the model.
 Example: [INST] {{ if and .First .System }}&lt;&lt;SYS&gt;&gt;{{ .System }}&lt;&lt;/SYS&gt;&gt;\n\n{{ end }}{{ .Prompt }} [/INST],
         ConverterType: ,
         ParameterName: template,
@@ -3761,7 +3761,7 @@ Example: [INST] {{ if and .First .System }}&lt;&lt;SYS&gt;&gt;{{ .System }}&lt;&
         IsRequired: true,
         IsDeprecated: false,
         Summary:
-Name of the model to copy.<br/>
+Name of the model to copy.
 Example: llama2:7b,
         ConverterType: ,
         ParameterName: source,
@@ -3790,7 +3790,7 @@ Example: llama2:7b,
         IsRequired: true,
         IsDeprecated: false,
         Summary:
-Name of the new model.<br/>
+Name of the new model.
 Example: llama2-backup,
         ConverterType: ,
         ParameterName: destination,
@@ -3840,7 +3840,7 @@ Example: llama2-backup,
 The model name. 
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
-<br/>
+
 Example: llama2:13b,
         ConverterType: ,
         ParameterName: model,
@@ -3890,7 +3890,7 @@ Example: llama2:13b,
 The model name. 
 
 Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
-<br/>
+
 Example: llama2:7b,
         ConverterType: ,
         ParameterName: model,
@@ -3923,7 +3923,7 @@ Example: llama2:7b,
 Allow insecure connections to the library. 
 
 Only use this if you are pulling from your own library during development.
-<br/>
+
 Default Value: false,
         ConverterType: ,
         ParameterName: insecure,
@@ -4008,7 +4008,7 @@ Default Value: false,
         IsDeprecated: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
-<br/>
+
 Default Value: true,
         ConverterType: ,
         ParameterName: stream,
@@ -4056,7 +4056,7 @@ Default Value: true,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Status pulling the model.<br/>
+Status pulling the model.
 Example: pulling manifest,
         ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2,
         ParameterName: status,
@@ -4085,7 +4085,7 @@ Example: pulling manifest,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-The model's digest.<br/>
+The model's digest.
 Example: sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a,
         ConverterType: ,
         ParameterName: digest,
@@ -4114,7 +4114,7 @@ Example: sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Total size of the model.<br/>
+Total size of the model.
 Example: 2142590208,
         ConverterType: ,
         ParameterName: total,
@@ -4143,7 +4143,7 @@ Example: 2142590208,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Total bytes transferred.<br/>
+Total bytes transferred.
 Example: 2142590208,
         ConverterType: ,
         ParameterName: completed,
@@ -4558,7 +4558,7 @@ The number of files to be downloaded depends on the number of layers specified i
         IsRequired: true,
         IsDeprecated: false,
         Summary:
-The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt;tag&gt;.<br/>
+The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt;tag&gt;.
 Example: mattw/pygmalion:latest,
         ConverterType: ,
         ParameterName: model,
@@ -4591,7 +4591,7 @@ Example: mattw/pygmalion:latest,
 Allow insecure connections to the library. 
 
 Only use this if you are pushing to your library during development.
-<br/>
+
 Default Value: false,
         ConverterType: ,
         ParameterName: insecure,
@@ -4676,7 +4676,7 @@ Default Value: false,
         IsDeprecated: false,
         Summary:
 If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.
-<br/>
+
 Default Value: true,
         ConverterType: ,
         ParameterName: stream,
@@ -4751,7 +4751,7 @@ Default Value: true,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-the model's digest<br/>
+the model's digest
 Example: sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a,
         ConverterType: ,
         ParameterName: digest,
@@ -4780,7 +4780,7 @@ Example: sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-total size of the model<br/>
+total size of the model
 Example: 2142590208,
         ConverterType: ,
         ParameterName: total,
@@ -4809,7 +4809,7 @@ Example: 2142590208,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Total bytes transferred.<br/>
+Total bytes transferred.
 Example: 2142590208,
         ConverterType: ,
         ParameterName: completed,
