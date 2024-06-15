@@ -167,17 +167,17 @@ public readonly record struct EndPoint(
         var properties = parameters.ToList();
         foreach (var requestProperty in requestModel?.Properties ?? [])
         {
-            //if (properties.All(x => x.Name != requestProperty.Name))
+            if (properties.All(x => x.Name != requestProperty.Name))
             {
                 properties.Add(requestProperty);
             }
-            // else
-            // {
-            //     properties.Add(requestProperty with
-            //     {
-            //         Name = $"request{requestProperty.Name.ToPropertyName()}",
-            //     });
-            // }
+            else
+            {
+                properties.Add(requestProperty with
+                {
+                    Name = $"request{requestProperty.Name.ToPropertyName()}",
+                });
+            }
         }
         
         var endPoint = new EndPoint(

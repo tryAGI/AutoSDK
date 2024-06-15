@@ -180,7 +180,7 @@ namespace {endPoint.Namespace}
             var request = new {endPoint.RequestType.CSharpTypeWithoutNullability}
             {{
 {endPoint.Properties.Where(x => x.ParameterLocation == null && (x.IsRequired || !x.IsDeprecated)).Select(x => $@"
-                {x.Name} = {x.ParameterName},").Inject()}
+                {(x.Name.StartsWith("request", StringComparison.Ordinal) ? x.Name.Replace("request", string.Empty) : x.Name)} = {x.ParameterName},").Inject()}
             }};
 
             {response}{endPoint.MethodName}(
