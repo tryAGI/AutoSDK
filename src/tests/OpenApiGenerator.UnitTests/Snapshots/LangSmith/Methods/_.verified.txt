@@ -184,6 +184,7 @@
 Update Run
 Update a run.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.RunUpdateSchemaExtended,
       IsArray: false,
@@ -838,6 +839,7 @@ Update a run.,
 Create Run
 Create a new run.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.RunCreateSchemaExtended,
       IsArray: false,
@@ -982,6 +984,7 @@ Create a new run.,
     GenerateJsonSerializerContextTypes: false,
     Summary: From https://github.com/langchain-ai/langsmith-sdk/blob/main/openapi/openapi.yaml,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,

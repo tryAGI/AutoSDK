@@ -21,6 +21,7 @@ public readonly record struct EndPoint(
     OperationType HttpMethod,
     string Summary,
     string BaseUrlSummary,
+    bool IsDeprecated,
     TypeData RequestType,
     TypeData ResponseType,
     ImmutableArray<ModelData> AdditionalModels,
@@ -198,6 +199,7 @@ public readonly record struct EndPoint(
             HttpMethod: operation.Key,
             Summary: operation.Value.GetXmlDocumentationSummary(),
             BaseUrlSummary: string.Empty,
+            IsDeprecated: operation.Value.Deprecated,
             RequestType: requestType ?? TypeData.Default,
             ResponseType: responseType ?? TypeData.Default,
             AdditionalModels: [
@@ -235,6 +237,7 @@ public readonly record struct EndPoint(
             HttpMethod: default,
             Summary: string.Empty,
             BaseUrlSummary: string.Empty,
+            IsDeprecated: false,
             RequestType: TypeData.Default,
             ResponseType: TypeData.Default,
             AdditionalModels: [],

@@ -44,6 +44,7 @@
     GenerateJsonSerializerContextTypes: false,
     Summary: List all pets,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -134,6 +135,7 @@
     HttpMethod: Post,
     Summary: Create a pet,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -241,6 +243,7 @@
     GenerateJsonSerializerContextTypes: false,
     Summary: Info for a specific pet,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -344,6 +347,7 @@
     GenerateJsonSerializerContextTypes: false,
     Summary: ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,

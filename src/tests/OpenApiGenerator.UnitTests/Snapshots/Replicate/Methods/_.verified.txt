@@ -35,6 +35,7 @@ The response will be a JSON object describing the account:
 ```
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -130,6 +131,7 @@ The response will be a paginated JSON list of collection objects:
 ```
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -234,6 +236,7 @@ The response will be a collection object with a nested list of the models in tha
 ```
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -330,6 +333,7 @@ The response will be a paginated JSON array of deployment objects, sorted with t
 ```
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -611,6 +615,7 @@ The response will be a JSON object describing the deployment:
 ```
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.CreateDeploymentsRequest,
       IsArray: false,
@@ -776,6 +781,7 @@ curl -s -X DELETE \
 The response will be an empty 204, indicating the deployment has been deleted.
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -927,6 +933,7 @@ The response will be a JSON object describing the deployment:
 ```
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -1209,6 +1216,7 @@ The response will be a JSON object describing the deployment:
 Updating any deployment properties will increment the `number` field of the `current_release`.
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.UpdateDeploymentsRequest,
       IsArray: false,
@@ -1558,6 +1566,7 @@ Input and output (including any files) will be automatically deleted after an ho
 Output files are served by `replicate.delivery` and its subdomains. If you use an allow list of external domains for your assets, add `replicate.delivery` and `*.replicate.delivery` to it.
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.PredictionRequest,
       IsArray: false,
@@ -1658,6 +1667,7 @@ The response will be a JSON array of hardware objects:
 ```
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -1771,6 +1781,7 @@ The `cover_image_url` string is an HTTPS URL for an image file. This can be:
 - A generic fallback image.
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2107,6 +2118,7 @@ The response will be a model object in the following format:
 ```
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.CreateModelsRequest,
       IsArray: false,
@@ -2258,6 +2270,7 @@ curl -s -X DELETE \
 The response will be an empty 204, indicating the model has been deleted.
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2411,6 +2424,7 @@ The `default_example` object is a [prediction](#predictions.get) created with th
 The `latest_version` object is the model's most recently pushed [version](#models.versions.get).
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2727,6 +2741,7 @@ Input and output (including any files) will be automatically deleted after an ho
 Output files are served by `replicate.delivery` and its subdomains. If you use an allow list of external domains for your assets, add `replicate.delivery` and `*.replicate.delivery` to it.
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.PredictionRequest,
       IsArray: false,
@@ -2894,6 +2909,7 @@ The response will be a JSON array of model version objects, sorted with the most
 ```
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3061,6 +3077,7 @@ curl -s -X DELETE \
 The response will be an empty 202, indicating the deletion request has been accepted. It might take a few minutes to be processed.
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3258,6 +3275,7 @@ The `openapi_schema.components.schemas.Output` property for the [replicate/hello
 For more details, see the docs on [Cog's supported input and output types](https://github.com/replicate/cog/blob/75b7802219e7cd4cee845e34c4c22139558615d4/docs/python.md#input-and-output-types)
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3589,6 +3607,7 @@ When a training completes, it creates a new [version](https://replicate.com/docs
 To find some models to train on, check out the [trainable language models collection](https://replicate.com/collections/trainable-language-models).
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.TrainingRequest,
       IsArray: false,
@@ -3725,6 +3744,7 @@ The response will be a paginated JSON array of prediction objects, sorted with t
 `version` will be the unique ID of model version used to create the prediction.
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4010,6 +4030,7 @@ Input and output (including any files) will be automatically deleted after an ho
 Output files are served by `replicate.delivery` and its subdomains. If you use an allow list of external domains for your assets, add `replicate.delivery` and `*.replicate.delivery` to it.
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.VersionPredictionRequest,
       IsArray: false,
@@ -4179,6 +4200,7 @@ Input and output (including any files) are automatically deleted after an hour, 
 Output files are served by `replicate.delivery` and its subdomains. If you use an allow list of external domains for your assets, add `replicate.delivery` and `*.replicate.delivery` to it.
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4264,6 +4286,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
     HttpMethod: Post,
     Summary: Cancel a prediction,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4374,6 +4397,7 @@ The response will be a paginated JSON array of training objects, sorted with the
 `version` will be the unique ID of model version used to create the training.
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4513,6 +4537,7 @@ In the case of failure, `error` will contain the error encountered during the tr
 Terminated trainings (with a status of `succeeded`, `failed`, or `canceled`) will include a `metrics` object with a `predict_time` property showing the amount of CPU or GPU time, in seconds, that the training used while running. It won't include time waiting for the training to start.
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4598,6 +4623,7 @@ Terminated trainings (with a status of `succeeded`, `failed`, or `canceled`) wil
     HttpMethod: Post,
     Summary: Cancel a training,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4670,6 +4696,7 @@ The response will be a JSON object with a `key` property:
 ```
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4740,6 +4767,7 @@ The response will be a JSON object with a `key` property:
     GenerateJsonSerializerContextTypes: false,
     Summary: ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4793,6 +4821,7 @@ The response will be a JSON object with a `key` property:
     GenerateJsonSerializerContextTypes: false,
     Summary: A web service for running Replicate models,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,

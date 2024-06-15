@@ -676,6 +676,7 @@ A list of functions the model may generate JSON inputs for.
     HttpMethod: Post,
     Summary: Creates a model response for the given chat conversation.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.CreateChatCompletionRequest,
       IsArray: false,
@@ -1406,6 +1407,7 @@ Example: user-1234,
     HttpMethod: Post,
     Summary: Creates a completion for the provided prompt and parameters.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.CreateCompletionRequest,
       IsArray: false,
@@ -1824,6 +1826,7 @@ Example: user-1234,
     HttpMethod: Post,
     Summary: Creates an image given a prompt.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.CreateImageRequest,
       IsArray: false,
@@ -2188,6 +2191,7 @@ Example: user-1234,
     HttpMethod: Post,
     Summary: Creates an edited or extended image given an original image and a prompt.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.CreateImageEditRequest,
       IsArray: false,
@@ -2496,6 +2500,7 @@ Example: user-1234,
     HttpMethod: Post,
     Summary: Creates a variation of a given image.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.CreateImageVariationRequest,
       IsArray: false,
@@ -2762,6 +2767,7 @@ Example: user-1234,
     HttpMethod: Post,
     Summary: Creates an embedding vector representing the input text.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.CreateEmbeddingRequest,
       IsArray: false,
@@ -3044,6 +3050,7 @@ Default Value: 1,
     HttpMethod: Post,
     Summary: Generates audio from the input text.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.CreateSpeechRequest,
       IsArray: false,
@@ -3336,6 +3343,7 @@ Default Value: 0,
     HttpMethod: Post,
     Summary: Transcribes audio into the input language.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.CreateTranscriptionRequest,
       IsArray: false,
@@ -3591,6 +3599,7 @@ Default Value: 0,
     HttpMethod: Post,
     Summary: Translates audio into English.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.CreateTranslationRequest,
       IsArray: false,
@@ -3722,6 +3731,7 @@ Default Value: 0,
     GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of files that belong to the user's organization.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -3874,6 +3884,7 @@ The size of individual files can be a maximum of 512 MB or 2 million tokens for 
 Please [contact us](https://help.openai.com/) if you need to increase these storage limits.
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.CreateFileRequest,
       IsArray: false,
@@ -4016,6 +4027,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
     HttpMethod: Delete,
     Summary: Delete a file.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4125,6 +4137,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
     GenerateJsonSerializerContextTypes: false,
     Summary: Returns information about a specific file.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4244,6 +4257,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
     GenerateJsonSerializerContextTypes: false,
     Summary: Returns the contents of the specified file.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4545,6 +4559,7 @@ Response includes details of the enqueued job including job status and the name 
 [Learn more about fine-tuning](/docs/guides/fine-tuning)
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.CreateFineTuningJobRequest,
       IsArray: false,
@@ -4747,6 +4762,7 @@ Response includes details of the enqueued job including job status and the name 
 List your organization's fine-tuning jobs
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -4860,6 +4876,7 @@ Get info about a fine-tuning job.
 [Learn more about fine-tuning](/docs/guides/fine-tuning)
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5060,6 +5077,7 @@ Get info about a fine-tuning job.
 Get status updates for a fine-tuning job.
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5170,6 +5188,7 @@ Get status updates for a fine-tuning job.
 Immediately cancel a fine-tune job.
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5370,6 +5389,7 @@ Immediately cancel a fine-tune job.
 List checkpoints for a fine-tuning job.
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5452,6 +5472,7 @@ List checkpoints for a fine-tuning job.
     GenerateJsonSerializerContextTypes: false,
     Summary: Lists the currently available models, and provides basic information about each one such as the owner and availability.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5559,6 +5580,7 @@ List checkpoints for a fine-tuning job.
     GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a model instance, providing basic information about the model such as the owner and permissioning.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5671,6 +5693,7 @@ List checkpoints for a fine-tuning job.
     HttpMethod: Delete,
     Summary: Delete a fine-tuned model. You must have the Owner role in your organization to delete a model.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -5814,6 +5837,7 @@ Example: text-moderation-stable,
     HttpMethod: Post,
     Summary: Classifies if text is potentially harmful.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.CreateModerationRequest,
       IsArray: false,
@@ -6043,6 +6067,7 @@ Example: text-moderation-stable,
     GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of assistants.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -6435,6 +6460,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     HttpMethod: Post,
     Summary: Create an assistant with a model and instructions.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.CreateAssistantRequest,
       IsArray: false,
@@ -6602,6 +6628,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves an assistant.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -7039,6 +7066,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     HttpMethod: Post,
     Summary: Modifies an assistant.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.ModifyAssistantRequest,
       IsArray: false,
@@ -7207,6 +7235,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     HttpMethod: Delete,
     Summary: Delete an assistant.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -7373,6 +7402,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     HttpMethod: Post,
     Summary: Create a thread.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.CreateThreadRequest,
       IsArray: false,
@@ -7510,6 +7540,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a thread.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -7683,6 +7714,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     HttpMethod: Post,
     Summary: Modifies a thread.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.ModifyThreadRequest,
       IsArray: false,
@@ -7819,6 +7851,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     HttpMethod: Delete,
     Summary: Delete a thread.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -8086,6 +8119,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of messages for a given thread.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -8322,6 +8356,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     HttpMethod: Post,
     Summary: Create a message.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.CreateMessageRequest,
       IsArray: false,
@@ -8509,6 +8544,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     GenerateJsonSerializerContextTypes: false,
     Summary: Retrieve a message.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -8701,6 +8737,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     HttpMethod: Post,
     Summary: Modifies a message.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.ModifyMessageRequest,
       IsArray: false,
@@ -8883,6 +8920,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     HttpMethod: Delete,
     Summary: Deletes a message.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -9415,6 +9453,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     HttpMethod: Post,
     Summary: Create a thread and run it in one request.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.CreateThreadAndRunRequest,
       IsArray: false,
@@ -9746,6 +9785,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of runs belonging to a thread.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -10306,6 +10346,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     HttpMethod: Post,
     Summary: Create a run.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.CreateRunRequest,
       IsArray: false,
@@ -10539,6 +10580,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a run.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -10755,6 +10797,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     HttpMethod: Post,
     Summary: Modifies a run.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.ModifyRunRequest,
       IsArray: false,
@@ -11019,6 +11062,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
 When a run has the `status: "requires_action"` and `required_action.type` is `submit_tool_outputs`, this endpoint can be used to submit the outputs from the tool calls once they're all completed. All outputs must be submitted in a single request.
 ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.SubmitToolOutputsRunRequest,
       IsArray: false,
@@ -11227,6 +11271,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     HttpMethod: Post,
     Summary: Cancels a run that is `in_progress`.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -11540,6 +11585,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of run steps belonging to a run.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -11713,6 +11759,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a run step.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -11946,6 +11993,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of vector stores.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -12144,6 +12192,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     HttpMethod: Post,
     Summary: Create a vector store.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.CreateVectorStoreRequest,
       IsArray: false,
@@ -12295,6 +12344,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a vector store.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -12508,6 +12558,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     HttpMethod: Post,
     Summary: Modifies a vector store.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.UpdateVectorStoreRequest,
       IsArray: false,
@@ -12658,6 +12709,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     HttpMethod: Delete,
     Summary: Delete a vector store.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -12935,6 +12987,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of vector store files.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -13076,6 +13129,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     HttpMethod: Post,
     Summary: Create a vector store file by attaching a [File](/docs/api-reference/files) to a [vector store](/docs/api-reference/vector-stores/object).,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.CreateVectorStoreFileRequest,
       IsArray: false,
@@ -13243,6 +13297,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a vector store file.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -13391,6 +13446,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     HttpMethod: Delete,
     Summary: Delete a vector store file. This will remove the file from the vector store but the file itself will not be deleted. To delete the file, use the [delete file](/docs/api-reference/files/delete) endpoint.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -13528,6 +13584,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     HttpMethod: Post,
     Summary: Create a vector store file batch.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.CreateVectorStoreFileBatchRequest,
       IsArray: false,
@@ -13693,6 +13750,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a vector store file batch.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -13839,6 +13897,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     HttpMethod: Post,
     Summary: Cancel a vector store file batch. This attempts to cancel the processing of files in this batch as soon as possible.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -14152,6 +14211,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of vector store files in a batch.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -14361,6 +14421,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     HttpMethod: Post,
     Summary: Creates and executes a batch from an uploaded file of requests,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.CreateBatchRequest,
       IsArray: false,
@@ -14551,6 +14612,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     GenerateJsonSerializerContextTypes: false,
     Summary: List your organization's batches.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -14664,6 +14726,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a batch.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -14808,6 +14871,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     HttpMethod: Post,
     Summary: Cancels an in-progress batch.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -14920,6 +14984,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     GenerateJsonSerializerContextTypes: false,
     Summary: ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -15298,6 +15363,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     GenerateJsonSerializerContextTypes: false,
     Summary: The OpenAI REST API. Please see https://platform.openai.com/docs/api-reference for more details.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -15744,6 +15810,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     GenerateJsonSerializerContextTypes: false,
     Summary: Build Assistants that can call models and use tools.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -15797,6 +15864,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     GenerateJsonSerializerContextTypes: false,
     Summary: Learn how to turn audio into text or text into audio.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -15850,6 +15918,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     GenerateJsonSerializerContextTypes: false,
     Summary: Given a list of messages comprising a conversation, the model will return a response.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -15903,6 +15972,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     GenerateJsonSerializerContextTypes: false,
     Summary: Given a prompt, the model will return one or more predicted completions, and can also return the probabilities of alternative tokens at each position.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -15956,6 +16026,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     GenerateJsonSerializerContextTypes: false,
     Summary: Get a vector representation of a given input that can be easily consumed by machine learning models and algorithms.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -16009,6 +16080,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     GenerateJsonSerializerContextTypes: false,
     Summary: Manage fine-tuning jobs to tailor a model to your specific training data.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -16062,6 +16134,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     GenerateJsonSerializerContextTypes: false,
     Summary: Create large batches of API requests to run asynchronously.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -16115,6 +16188,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     GenerateJsonSerializerContextTypes: false,
     Summary: Files are used to upload documents that can be used with features like Assistants and Fine-tuning.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -16168,6 +16242,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     GenerateJsonSerializerContextTypes: false,
     Summary: Given a prompt and/or an input image, the model will generate a new image.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -16221,6 +16296,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     GenerateJsonSerializerContextTypes: false,
     Summary: List and describe the various models available in the API.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -16274,6 +16350,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     GenerateJsonSerializerContextTypes: false,
     Summary: Given a input text, outputs if the model classifies it as potentially harmful.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -16327,6 +16404,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     GenerateJsonSerializerContextTypes: false,
     Summary: ,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,

@@ -376,6 +376,7 @@ How long (in minutes) to keep the model loaded in memory.
 Generate a response for a given prompt with a provided model.
 The final response object will include statistics and additional data from the request.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.GenerateCompletionRequest,
       IsArray: false,
@@ -732,6 +733,7 @@ How long (in minutes) to keep the model loaded in memory.
 Generate the next message in a chat with a provided model.
 This is a streaming endpoint, so there will be a series of responses. The final response object will include statistics and additional data from the request.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.GenerateChatCompletionRequest,
       IsArray: false,
@@ -1010,6 +1012,7 @@ How long (in minutes) to keep the model loaded in memory.
     HttpMethod: Post,
     Summary: Generate embeddings from a model.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.GenerateEmbeddingRequest,
       IsArray: false,
@@ -1260,6 +1263,7 @@ Default Value: true,
 Create a model from a Modelfile.
 It is recommended to set `modelfile` to the content of the Modelfile rather than just set `path`. This is a requirement for remote create. Remote model creation should also create any file blobs, fields such as `FROM` and `ADAPTER`, explicitly with the server using Create a Blob and the value to the path indicated in the response.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.CreateModelRequest,
       IsArray: false,
@@ -1362,6 +1366,7 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
     GenerateJsonSerializerContextTypes: true,
     Summary: List models that are available locally.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -1436,6 +1441,7 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
     GenerateJsonSerializerContextTypes: true,
     Summary: List models that are running.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -1544,6 +1550,7 @@ Example: llama3:8b,
     HttpMethod: Post,
     Summary: Show details about a model including modelfile, template, parameters, license, and system prompt.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.ModelInfoRequest,
       IsArray: false,
@@ -1710,6 +1717,7 @@ Example: llama3-backup,
     HttpMethod: Post,
     Summary: Creates a model with another name from an existing model.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.CopyModelRequest,
       IsArray: false,
@@ -1820,6 +1828,7 @@ Example: llama3:13b,
     HttpMethod: Delete,
     Summary: Delete a model and its data.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.DeleteModelRequest,
       IsArray: false,
@@ -2048,6 +2057,7 @@ Default Value: true,
 Download a model from the ollama library.
 Cancelled pulls are resumed from where they left off, and multiple calls will share the same download progress.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.PullModelRequest,
       IsArray: false,
@@ -2307,6 +2317,7 @@ Default Value: true,
 Upload a model to a model library.
 Requires registering for ollama.ai and adding a public key first.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: global::G.PushModelRequest,
       IsArray: false,
@@ -2449,6 +2460,7 @@ Requires registering for ollama.ai and adding a public key first.,
 Ensures that the file blob used for a FROM or ADAPTER field exists on the server.
 This is checking your Ollama server and not Ollama.ai.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2534,6 +2546,7 @@ This is checking your Ollama server and not Ollama.ai.,
     HttpMethod: Post,
     Summary: Create a blob from a file. Returns the server file path.,
     BaseUrlSummary: ,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: byte[],
       IsArray: false,
@@ -2713,6 +2726,7 @@ This is checking your Ollama server and not Ollama.ai.,
     GenerateJsonSerializerContextTypes: true,
     Summary: API Spec for Ollama API. Please see https://github.com/jmorganca/ollama/blob/main/docs/api.md for more details.,
     BaseUrlSummary: Ollama server URL,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2787,6 +2801,7 @@ This is checking your Ollama server and not Ollama.ai.,
     GenerateJsonSerializerContextTypes: true,
     Summary: Given a prompt, the model will generate a completion.,
     BaseUrlSummary: Ollama server URL,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2840,6 +2855,7 @@ This is checking your Ollama server and not Ollama.ai.,
     GenerateJsonSerializerContextTypes: true,
     Summary: Given a list of messages comprising a conversation, the model will return a response.,
     BaseUrlSummary: Ollama server URL,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2893,6 +2909,7 @@ This is checking your Ollama server and not Ollama.ai.,
     GenerateJsonSerializerContextTypes: true,
     Summary: Get a vector representation of a given input.,
     BaseUrlSummary: Ollama server URL,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,
@@ -2946,6 +2963,7 @@ This is checking your Ollama server and not Ollama.ai.,
     GenerateJsonSerializerContextTypes: true,
     Summary: List and describe the various models available.,
     BaseUrlSummary: Ollama server URL,
+    IsDeprecated: false,
     RequestType: {
       CSharpType: ,
       IsArray: false,

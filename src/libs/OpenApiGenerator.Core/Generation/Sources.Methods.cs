@@ -77,6 +77,7 @@ namespace {endPoint.Namespace}
         /// <param name=""request""></param>")}
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::System.InvalidOperationException""></exception>
+        {(endPoint.IsDeprecated ? "[global::System.Obsolete(\"This method marked as deprecated.\")]" : " ")}
         public async {taskType} {endPoint.MethodName}(
 {endPoint.Properties.Where(x => x.ParameterLocation != null).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName},").Inject()}
@@ -168,6 +169,7 @@ namespace {endPoint.Namespace}
         /// <param name=""{x.ParameterName}""></param>").Inject()}
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::System.InvalidOperationException""></exception>
+        {(endPoint.IsDeprecated ? "[global::System.Obsolete(\"This method marked as deprecated.\")]" : " ")}
         public async {taskType} {endPoint.MethodName}(
 {endPoint.Properties.Where(static x => x.IsRequired).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName},").Inject()}
