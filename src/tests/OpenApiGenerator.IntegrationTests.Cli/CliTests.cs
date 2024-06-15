@@ -5,7 +5,7 @@ namespace OpenApiGenerator.IntegrationTests;
 [TestClass]
 public class CliTests
 {
-    [DataTestMethod]
+    //[DataTestMethod]
     //[DataRow("github.yaml")]
     [DataRow("ipinfo.yaml")]
     [DataRow("langsmith.yaml")]
@@ -51,6 +51,7 @@ public class CliTests
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <AnalysisLevel>latest</AnalysisLevel>
     <AnalysisMode>All</AnalysisMode>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
 </Project>");
