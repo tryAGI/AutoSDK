@@ -92,10 +92,16 @@ public class GenerateCommand : Command
             GenerateSdk: true
         );
 
-        var (models, methods, _, _, _) = Data.Prepare((yaml, settings));
-        var files = models
-            .Select(x => Data.GetSourceCode(x)).Concat(methods
-                .Select(x => Data.GetSourceCode(x)))
+        var data = Data.Prepare((yaml, settings));
+        var files = data.Models
+            .SelectMany(x => new [] { Sources.Model(x), Sources.EnumJsonConverter(x), Sources.EnumNullableJsonConverter(x) })
+            .Concat(data.Methods
+                .Select(x => Sources.Method(x)))
+            .Concat(data.AnyOfs
+                .SelectMany(x => new [] { Sources.AnyOf(x), Sources.AnyOfJsonConverter(x), Sources.AnyOfJsonConverterFactory(x) }))
+            .Concat([Sources.JsonSerializerContextTypes(data.Types)])
+            .Concat([Sources.JsonSerializerContextConverters(data.Converters)])
+            .Where(x => !x.IsEmpty)
             .ToArray();
         
         if (generateAsSingleFile)
