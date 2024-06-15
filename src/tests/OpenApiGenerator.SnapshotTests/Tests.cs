@@ -130,8 +130,8 @@ public partial class Tests
     // {
     //     return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
     //         new CustomAdditionalText(
-    //             path: H.Resources.api_github_com_yaml.FileName,
-    //             text: H.Resources.api_github_com_yaml.AsString())
+    //             path: H.Resources.github_yaml.FileName,
+    //             text: H.Resources.github_yaml.AsString())
     //     ]);
     // }
     

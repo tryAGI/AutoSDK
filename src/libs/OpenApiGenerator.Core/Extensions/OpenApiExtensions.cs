@@ -1,5 +1,6 @@
 using System.Globalization;
 using Microsoft.OpenApi.Any;
+using Microsoft.OpenApi.Interfaces;
 using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
 using OpenApiGenerator.Core.Json;
@@ -218,18 +219,11 @@ public static class OpenApiExtensions
         return parents.Concat([schema.Key.ToPropertyName()]).ToArray();
     }
 
-    public static OpenApiRequestBody ResolveIfRequired(this OpenApiRequestBody body)
+    public static T ResolveIfRequired<T>(this T referenceable) where T : class, IOpenApiReferenceable
     {
-        body = body ?? throw new ArgumentNullException(nameof(body));
+        referenceable = referenceable ?? throw new ArgumentNullException(nameof(referenceable));
         
-        return body.Reference?.HostDocument?.ResolveReference(body.Reference) as OpenApiRequestBody ?? body;
-    }
-
-    public static OpenApiResponse ResolveIfRequired(this OpenApiResponse response)
-    {
-        response = response ?? throw new ArgumentNullException(nameof(response));
-        
-        return response.Reference?.HostDocument?.ResolveReference(response.Reference) as OpenApiResponse ?? response;
+        return referenceable.Reference?.HostDocument?.ResolveReference(referenceable.Reference) as T ?? referenceable;
     }
 
     public static KeyValuePair<string, OpenApiSchema> WithKey(
@@ -328,6 +322,37 @@ public static class OpenApiExtensions
             .Where(x => x.Value.Tags?.Any(y => y.Name == tag) != false)
             .ToArray();
         
+        var schemas = operations
+            .SelectMany(x => x.Value.RequestBody?.ResolveIfRequired().Content.Values ?? [])
+            .Select(x => x.Schema)
+            .Concat(operations
+                .SelectMany(x => x.Value.Parameters)
+                .Select(x => x.ResolveIfRequired().Schema))
+            .Concat(operations 
+                .SelectMany(x => x.Value.Responses.Values)
+                .SelectMany(x => x.ResolveIfRequired().Content.Values)
+                .Select(x => x.Schema))
+            .Where(x => x != null)
+            .SelectMany(x => new [] { x, x.Items?.ResolveIfRequired() }
+                .Concat(x.Properties.Values.Select(y => y.ResolveIfRequired()))
+                .Concat(x.AnyOf.Select(y => y.ResolveIfRequired()))
+                .Concat(x.OneOf.Select(y => y.ResolveIfRequired()))
+                .Concat(x.AllOf.Select(y => y.ResolveIfRequired())))
+            .Where(x => x != null)
+            // .SelectMany(x => new [] { x, x!.Items?.ResolveIfRequired() }
+            //     .Concat(x.Properties.Values.Select(y => y.ResolveIfRequired()))
+            //     .Concat(x.AnyOf.Select(y => y.ResolveIfRequired()))
+            //     .Concat(x.OneOf.Select(y => y.ResolveIfRequired()))
+            //     .Concat(x.AllOf.Select(y => y.ResolveIfRequired())))
+            // .Where(x => x != null)
+            // .SelectMany(x => new [] { x, x!.Items?.ResolveIfRequired() }
+            //     .Concat(x.Properties.Values.Select(y => y.ResolveIfRequired()))
+            //     .Concat(x.AnyOf.Select(y => y.ResolveIfRequired()))
+            //     .Concat(x.OneOf.Select(y => y.ResolveIfRequired()))
+            //     .Concat(x.AllOf.Select(y => y.ResolveIfRequired())))
+            // .Where(x => x != null)
+            .ToArray();
+        
         return operations
             .Select(x => x.Value.RequestBody?.Reference?.Id)
             .Concat(operations
@@ -344,7 +369,9 @@ public static class OpenApiExtensions
                 .SelectMany(x => x.Value.Responses.Values)
                 .SelectMany(x => x.Content.Values)
                 .Select(x => x.Schema.Items?.Reference?.Id))
+            .Concat(schemas.Select(x => x?.Reference?.Id))
             .Where(x => x != null)
+            .Distinct()
             .ToArray()!;
     }
 }

@@ -81,8 +81,8 @@ public static class Data
         Dictionary<string, ModelData> classes = includedSchemas
             .SelectMany(schema => ModelData.FromSchemas(schema.Value, settings, schema.Key))
             .SelectMany(model => model.WithAdditionalModels())
-            //.GroupBy(x => x.ClassName)
-            //.Select(x => x.First())
+            .GroupBy(x => x.ClassName)
+            .Select(x => x.First())
             .ToDictionary(x => x.ClassName, x => x);
 
         var operations = openApiDocument.Paths.SelectMany(path =>
@@ -231,7 +231,7 @@ public static class Data
                     settings.JsonSerializerType,
                     isTrimming,
                     settings.Namespace,
-                    schema.Key,
+                    schema.Key.ToClassName(),
                     schema.Value.GetSummary(),
                     schema.Value.AnyOf.Select((x, i) => TypeData.FromSchema(x.UseReferenceIdOrKey(schema.Key + $"Variant{i + 1}"), settings)).ToImmutableArray())))
             .ToImmutableArray() : [];
@@ -244,7 +244,7 @@ public static class Data
                     settings.JsonSerializerType,
                     isTrimming,
                     settings.Namespace,
-                    schema.Key,
+                    schema.Key.ToClassName(),
                     schema.Value.GetSummary(),
                     schema.Value.OneOf.Select((x, i) => TypeData.FromSchema(x.UseReferenceIdOrKey(schema.Key + $"Variant{i + 1}"), settings)).ToImmutableArray())))
             .ToImmutableArray() : [];
@@ -257,7 +257,7 @@ public static class Data
                     settings.JsonSerializerType,
                     isTrimming,
                     settings.Namespace,
-                    schema.Key,
+                    schema.Key.ToClassName(),
                     schema.Value.GetSummary(),
                     schema.Value.AllOf.Select((x, i) => TypeData.FromSchema(x.UseReferenceIdOrKey(schema.Key + $"Variant{i + 1}"), settings)).ToImmutableArray())))
             .ToImmutableArray() : [];
