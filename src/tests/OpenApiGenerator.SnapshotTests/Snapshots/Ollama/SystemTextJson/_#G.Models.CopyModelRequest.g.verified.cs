@@ -11,7 +11,7 @@ namespace G
     {
         /// <summary>
         /// Name of the model to copy.<br/>
-        /// Example: llama2:7b
+        /// Example: llama3:8b
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -19,7 +19,7 @@ namespace G
 
         /// <summary>
         /// Name of the new model.<br/>
-        /// Example: llama2-backup
+        /// Example: llama3-backup
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("destination")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -7,11 +7,16 @@
   <Import Project="../../libs/OpenApiGenerator/OpenApiGenerator.props" />
 
   <PropertyGroup>
+    <OpenApiGenerator_Namespace>OpenApiGenerator.IntegrationTests</OpenApiGenerator_Namespace>
     <OpenApiGenerator_GenerateSdk>false</OpenApiGenerator_GenerateSdk>
     <OpenApiGenerator_GenerateMethods>true</OpenApiGenerator_GenerateMethods>
     <OpenApiGenerator_GenerateConstructors>true</OpenApiGenerator_GenerateConstructors>
-    <OpenApiGenerator_JsonSerializerContext>OpenApiGenerator.IntegrationTests.Twitch.SourceGenerationContext</OpenApiGenerator_JsonSerializerContext>
+    <OpenApiGenerator_JsonSerializerContext>OpenApiGenerator.IntegrationTests.SourceGenerationContext</OpenApiGenerator_JsonSerializerContext>
   </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="$(MSBuildThisFileDirectory)../../../specs/twitch.json" />
+  </ItemGroup>
 
   <PropertyGroup Label="Analyzers">
     <EnableNETAnalyzers>true</EnableNETAnalyzers>

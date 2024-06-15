@@ -6,6 +6,10 @@
   
   <Import Project="../../libs/OpenApiGenerator/OpenApiGenerator.props" />
 
+  <ItemGroup>
+    <AdditionalFiles Include="$(MSBuildThisFileDirectory)../../../specs/ollama.yaml" />
+  </ItemGroup>
+
   <PropertyGroup>
     <OpenApiGenerator_Namespace>OpenApiGenerator.IntegrationTests</OpenApiGenerator_Namespace>
     <OpenApiGenerator_GenerateSdk>false</OpenApiGenerator_GenerateSdk>

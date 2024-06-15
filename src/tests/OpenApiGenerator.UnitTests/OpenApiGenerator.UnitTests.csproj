@@ -21,6 +21,11 @@
     <Using Include="FluentAssertions" />
   </ItemGroup>
 
+  <ItemGroup Label="Resources">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)../../../specs/*.*" Visible="false" />
+    <AdditionalFiles Include="$(MSBuildThisFileDirectory)../../../specs/*.*" Visible="false" />
+  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="H.Resources.Generator" Version="1.6.0">
       <PrivateAssets>all</PrivateAssets>

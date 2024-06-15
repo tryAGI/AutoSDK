@@ -13,6 +13,56 @@
     Count: 2,
     IsTrimming: true,
     Namespace: G,
+    Name: DoneReason,
+    Summary: Reason why the model is done generating a response.,
+    Types: [
+      {
+        CSharpType: string,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: true,
+        CSharpTypeWithoutNullability: string,
+        CSharpTypeWithNullability: string?,
+        ShortCSharpTypeWithoutNullability: string,
+        ShortCSharpTypeWithNullability: string?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.DoneReasonVariant2,
+        IsArray: false,
+        IsEnum: true,
+        Properties: [
+          Stop,
+          Length,
+          Load
+        ],
+        EnumValues: [
+          stop,
+          length,
+          load
+        ],
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: true,
+        CSharpTypeWithoutNullability: global::G.DoneReasonVariant2,
+        CSharpTypeWithNullability: global::G.DoneReasonVariant2?,
+        ShortCSharpTypeWithoutNullability: DoneReasonVariant2,
+        ShortCSharpTypeWithNullability: DoneReasonVariant2?,
+        IsAnyOf: false,
+        ConverterType: global::OpenApiGenerator.JsonConverters.DoneReasonVariant2JsonConverter
+      }
+    ]
+  },
+  {
+    SubType: AnyOf,
+    Count: 2,
+    IsTrimming: true,
+    Namespace: G,
     Name: CreateModelStatus,
     Summary: Status creating the model,
     Types: [

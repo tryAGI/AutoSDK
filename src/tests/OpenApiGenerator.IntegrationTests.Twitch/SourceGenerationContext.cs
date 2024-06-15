@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace OpenApiGenerator.IntegrationTests.Twitch;
+namespace OpenApiGenerator.IntegrationTests;
 
 [JsonSourceGenerationOptions(DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull)]
 [JsonSerializable(typeof(JsonSerializerContextTypes))]

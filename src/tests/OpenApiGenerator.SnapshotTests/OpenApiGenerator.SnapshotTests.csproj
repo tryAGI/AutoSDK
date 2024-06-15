@@ -34,6 +34,11 @@
     <Using Include="FluentAssertions" />
   </ItemGroup>
 
+  <ItemGroup Label="Resources">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)../../../specs/*.*" Visible="false" />
+    <AdditionalFiles Include="$(MSBuildThisFileDirectory)../../../specs/*.*" Visible="false" />
+  </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\..\libs\OpenApiGenerator.Core\OpenApiGenerator.Core.csproj" />
     <ProjectReference Include="..\..\libs\OpenApiGenerator\OpenApiGenerator.csproj" />

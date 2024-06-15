@@ -30,9 +30,9 @@
         Summary:
 The model name. 
 
-Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
-Example: llama2:7b,
+Example: llama3:8b,
         ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
@@ -203,7 +203,6 @@ Example: Why is the sky blue?,
             numa,
             num_ctx,
             num_batch,
-            num_gqa,
             num_gpu,
             main_gpu,
             low_vram,
@@ -963,35 +962,6 @@ Sets the number of batches to use for generation. (Default: 1)
         ParameterDefaultValue: default
       },
       {
-        Id: num_gqa,
-        Name: NumGqa,
-        Type: {
-          CSharpType: int?,
-          IsArray: false,
-          IsEnum: false,
-          Properties: null,
-          EnumValues: null,
-          Namespace: G,
-          IsDeprecated: false,
-          GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: int,
-          CSharpTypeWithNullability: int?,
-          ShortCSharpTypeWithoutNullability: int,
-          ShortCSharpTypeWithNullability: int?,
-          IsAnyOf: false,
-          ConverterType: 
-        },
-        IsRequired: false,
-        IsDeprecated: false,
-        Summary:
-The number of GQA groups in the transformer layer. Required for some models, for example it is 8 for `llama2:70b`.
-,
-        ConverterType: ,
-        ParameterName: numGqa,
-        ArgumentName: numGqa,
-        ParameterDefaultValue: default
-      },
-      {
         Id: num_gpu,
         Name: NumGpu,
         Type: {
@@ -1346,9 +1316,9 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
         Summary:
 The model name. 
 
-Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
-Example: llama2:7b,
+Example: llama3:8b,
         ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
@@ -1685,9 +1655,9 @@ Example: 1325948000,
         Summary:
 The model name. 
 
-Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
-Example: llama2:7b,
+Example: llama3:8b,
         ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
@@ -1785,7 +1755,6 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
             numa,
             num_ctx,
             num_batch,
-            num_gqa,
             num_gpu,
             main_gpu,
             low_vram,
@@ -1953,9 +1922,9 @@ How long (in minutes) to keep the model loaded in memory.
         Summary:
 The model name. 
 
-Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
-Example: llama2:7b,
+Example: llama3:8b,
         ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
@@ -2021,25 +1990,26 @@ Example: true,
         Id: done_reason,
         Name: DoneReason,
         Type: {
-          CSharpType: string?,
+          CSharpType: global::System.AnyOf<string?, global::G.GenerateChatCompletionResponseDoneReason?>,
           IsArray: false,
           IsEnum: false,
+          AnyOfCount: 2,
           Properties: null,
           EnumValues: null,
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: string,
-          CSharpTypeWithNullability: string?,
-          ShortCSharpTypeWithoutNullability: string,
-          ShortCSharpTypeWithNullability: string?,
-          IsAnyOf: false,
-          ConverterType: 
+          CSharpTypeWithoutNullability: global::System.AnyOf<string?, global::G.GenerateChatCompletionResponseDoneReason?>,
+          CSharpTypeWithNullability: global::System.AnyOf<string?, global::G.GenerateChatCompletionResponseDoneReason?>?,
+          ShortCSharpTypeWithoutNullability: global::System.AnyOf<string?, GenerateChatCompletionResponseDoneReason?>,
+          ShortCSharpTypeWithNullability: global::System.AnyOf<string?, GenerateChatCompletionResponseDoneReason?>?,
+          IsAnyOf: true,
+          ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
         IsRequired: false,
         IsDeprecated: false,
-        Summary: Reason the response is done.,
-        ConverterType: ,
+        Summary: Reason why the model is done generating a response.,
+        ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2,
         ParameterName: doneReason,
         ArgumentName: doneReason,
         ParameterDefaultValue: default
@@ -2228,6 +2198,206 @@ Example: 1325948000,
     GlobalClassName: global::G.GenerateChatCompletionResponse,
     ExternalClassName: GenerateChatCompletionResponse,
     FileNameWithoutExtension: G.Models.GenerateChatCompletionResponse
+  },
+  {
+    Id: done_reason,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: stop,
+        Name: Stop,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: stop,
+        ArgumentName: stop,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: length,
+        Name: Length,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: length,
+        ArgumentName: length,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: load,
+        Name: Load,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: load,
+        ArgumentName: load,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: DoneReason,
+    ClassName: DoneReason,
+    GlobalClassName: global::G.DoneReason,
+    ExternalClassName: DoneReason,
+    FileNameWithoutExtension: G.Models.DoneReason
+  },
+  {
+    Id: DoneReasonVariant2,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: stop,
+        Name: Stop,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: stop,
+        ArgumentName: stop,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: length,
+        Name: Length,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: length,
+        ArgumentName: length,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: load,
+        Name: Load,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: load,
+        ArgumentName: load,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: DoneReasonVariant2,
+    ClassName: DoneReasonVariant2,
+    GlobalClassName: global::G.DoneReasonVariant2,
+    ExternalClassName: DoneReasonVariant2,
+    FileNameWithoutExtension: G.Models.DoneReasonVariant2
   },
   {
     Id: Message,
@@ -2469,9 +2639,9 @@ Example: Why is the sky blue?,
         Summary:
 The model name. 
 
-Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
-Example: llama2:7b,
+Example: llama3:8b,
         ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
@@ -2534,7 +2704,6 @@ Example: Here is an article about llamas...,
             numa,
             num_ctx,
             num_batch,
-            num_gqa,
             num_gpu,
             main_gpu,
             low_vram,
@@ -2687,7 +2856,7 @@ Example: [0.5670403838157654, 0.009260174818336964, ...],
         Summary:
 The model name. 
 
-Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
 Example: mario,
         ConverterType: ,
@@ -2718,7 +2887,7 @@ Example: mario,
         IsDeprecated: false,
         Summary:
 The contents of the Modelfile.
-Example: FROM llama2\nSYSTEM You are mario from Super Mario Bros.,
+Example: FROM llama3\nSYSTEM You are mario from Super Mario Bros.,
         ConverterType: ,
         ParameterName: modelfile,
         ArgumentName: modelfile,
@@ -3077,7 +3246,7 @@ Default Value: true,
         Id: models,
         Name: Models,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<global::G.LocalModel>?,
+          CSharpType: global::System.Collections.Generic.IList<global::G.Model>?,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -3085,10 +3254,10 @@ Default Value: true,
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: true,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.LocalModel>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.LocalModel>?,
-          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<LocalModel>,
-          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<LocalModel>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.Model>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.Model>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Model>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<Model>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -3112,7 +3281,7 @@ Default Value: true,
     FileNameWithoutExtension: G.Models.ModelsResponse
   },
   {
-    Id: LocalModel,
+    Id: Model,
     AddTypeName: false,
     Parents: null,
     TargetFramework: netstandard2.0,
@@ -3120,7 +3289,7 @@ Default Value: true,
     Properties: [
       {
         Id: model,
-        Name: Model,
+        Name: Model1,
         Type: {
           CSharpType: string?,
           IsArray: false,
@@ -3142,12 +3311,12 @@ Default Value: true,
         Summary:
 The model name. 
 
-Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
-Example: llama2:7b,
+Example: llama3:8b,
         ConverterType: ,
-        ParameterName: model,
-        ArgumentName: model,
+        ParameterName: model1,
+        ArgumentName: model1,
         ParameterDefaultValue: default
       },
       {
@@ -3274,11 +3443,11 @@ Example: sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a,
     IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
-    Name: LocalModel,
-    ClassName: LocalModel,
-    GlobalClassName: global::G.LocalModel,
-    ExternalClassName: LocalModel,
-    FileNameWithoutExtension: G.Models.LocalModel
+    Name: Model,
+    ClassName: Model,
+    GlobalClassName: global::G.Model,
+    ExternalClassName: Model,
+    FileNameWithoutExtension: G.Models.Model
   },
   {
     Id: ModelDetails,
@@ -3461,6 +3630,249 @@ Example: sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a,
     FileNameWithoutExtension: G.Models.ModelDetails
   },
   {
+    Id: ProcessResponse,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: models,
+        Name: Models,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<global::G.ProcessModel>?,
+          IsArray: true,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.ProcessModel>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.ProcessModel>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ProcessModel>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<ProcessModel>?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: List of running models.,
+        ConverterType: ,
+        ParameterName: models,
+        ArgumentName: models,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Response class for the list running models endpoint.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ProcessResponse,
+    ClassName: ProcessResponse,
+    GlobalClassName: global::G.ProcessResponse,
+    ExternalClassName: ProcessResponse,
+    FileNameWithoutExtension: G.Models.ProcessResponse
+  },
+  {
+    Id: ProcessModel,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: model,
+        Name: Model,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary:
+The model name. 
+
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+
+Example: llama3:8b,
+        ConverterType: ,
+        ParameterName: model,
+        ArgumentName: model,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: size,
+        Name: Size,
+        Type: {
+          CSharpType: long,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: long,
+          CSharpTypeWithNullability: long?,
+          ShortCSharpTypeWithoutNullability: long,
+          ShortCSharpTypeWithNullability: long?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary:
+Size of the model on disk.
+Example: 7323310500,
+        ConverterType: ,
+        ParameterName: size,
+        ArgumentName: size,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: digest,
+        Name: Digest,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary:
+The model's digest.
+Example: sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a,
+        ConverterType: ,
+        ParameterName: digest,
+        ArgumentName: digest,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: details,
+        Name: Details,
+        Type: {
+          CSharpType: global::G.ModelDetails?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            parent_model,
+            format,
+            family,
+            families,
+            parameter_size,
+            quantization_level
+          ],
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: global::G.ModelDetails,
+          CSharpTypeWithNullability: global::G.ModelDetails?,
+          ShortCSharpTypeWithoutNullability: ModelDetails,
+          ShortCSharpTypeWithNullability: ModelDetails?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: Details about a model.,
+        ConverterType: ,
+        ParameterName: details,
+        ArgumentName: details,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: expires_at,
+        Name: ExpiresAt,
+        Type: {
+          CSharpType: global::System.DateTime,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: global::System.DateTime,
+          CSharpTypeWithNullability: global::System.DateTime?,
+          ShortCSharpTypeWithoutNullability: global::System.DateTime,
+          ShortCSharpTypeWithNullability: global::System.DateTime?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: expiresAt,
+        ArgumentName: expiresAt,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: size_vram,
+        Name: SizeVram,
+        Type: {
+          CSharpType: long,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: true,
+          CSharpTypeWithoutNullability: long,
+          CSharpTypeWithNullability: long?,
+          ShortCSharpTypeWithoutNullability: long,
+          ShortCSharpTypeWithNullability: long?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary:
+Size of the model on disk.
+Example: 7323310500,
+        ConverterType: ,
+        ParameterName: sizeVram,
+        ArgumentName: sizeVram,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: A model that is currently loaded.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ProcessModel,
+    ClassName: ProcessModel,
+    GlobalClassName: global::G.ProcessModel,
+    ExternalClassName: ProcessModel,
+    FileNameWithoutExtension: G.Models.ProcessModel
+  },
+  {
     Id: ModelInfoRequest,
     AddTypeName: false,
     Parents: null,
@@ -3491,9 +3903,9 @@ Example: sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a,
         Summary:
 The model name. 
 
-Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
-Example: llama2:7b,
+Example: llama3:8b,
         ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
@@ -3569,7 +3981,7 @@ Example: &lt;contents of license block&gt;,
         IsDeprecated: false,
         Summary:
 The modelfile associated with the model.
-Example: Modelfile generated by \"ollama show\"\n# To build a new Modelfile based on this one, replace the FROM line with:\n# FROM llama2:latest\n\nFROM /Users/username/.ollama/models/blobs/sha256:8daa9615cce30c259a9555b1cc250d461d1bc69980a274b44d7eda0be78076d8\nTEMPLATE \"\"\"[INST] {{ if and .First .System }}&lt;&lt;SYS&gt;&gt;{{ .System }}&lt;&lt;/SYS&gt;&gt;\n\n{{ end }}{{ .Prompt }} [/INST] \"\"\"\nSYSTEM \"\"\"\"\"\"\nPARAMETER stop [INST]\nPARAMETER stop [/INST]\nPARAMETER stop &lt;&lt;SYS&gt;&gt;\nPARAMETER stop &lt;&lt;/SYS&gt;&gt;\n",
+Example: Modelfile generated by \"ollama show\"\n# To build a new Modelfile based on this one, replace the FROM line with:\n# FROM llama3:latest\n\nFROM /Users/username/.ollama/models/blobs/sha256:8daa9615cce30c259a9555b1cc250d461d1bc69980a274b44d7eda0be78076d8\nTEMPLATE \"\"\"[INST] {{ if and .First .System }}&lt;&lt;SYS&gt;&gt;{{ .System }}&lt;&lt;/SYS&gt;&gt;\n\n{{ end }}{{ .Prompt }} [/INST] \"\"\"\nSYSTEM \"\"\"\"\"\"\nPARAMETER stop [INST]\nPARAMETER stop [/INST]\nPARAMETER stop &lt;&lt;SYS&gt;&gt;\nPARAMETER stop &lt;&lt;/SYS&gt;&gt;\n",
         ConverterType: ,
         ParameterName: modelfile,
         ArgumentName: modelfile,
@@ -3762,7 +4174,7 @@ Example: [INST] {{ if and .First .System }}&lt;&lt;SYS&gt;&gt;{{ .System }}&lt;&
         IsDeprecated: false,
         Summary:
 Name of the model to copy.
-Example: llama2:7b,
+Example: llama3:8b,
         ConverterType: ,
         ParameterName: source,
         ArgumentName: source,
@@ -3791,7 +4203,7 @@ Example: llama2:7b,
         IsDeprecated: false,
         Summary:
 Name of the new model.
-Example: llama2-backup,
+Example: llama3-backup,
         ConverterType: ,
         ParameterName: destination,
         ArgumentName: destination,
@@ -3839,9 +4251,9 @@ Example: llama2-backup,
         Summary:
 The model name. 
 
-Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
-Example: llama2:13b,
+Example: llama3:13b,
         ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
@@ -3889,9 +4301,9 @@ Example: llama2:13b,
         Summary:
 The model name. 
 
-Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
-Example: llama2:7b,
+Example: llama3:8b,
         ConverterType: ,
         ParameterName: model,
         ArgumentName: model,

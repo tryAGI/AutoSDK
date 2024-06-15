@@ -72,7 +72,6 @@
       numa,
       num_ctx,
       num_batch,
-      num_gqa,
       num_gpu,
       main_gpu,
       low_vram,
@@ -231,6 +230,23 @@
     ConverterType: 
   },
   {
+    CSharpType: global::System.AnyOf<string?, global::G.GenerateChatCompletionResponseDoneReason?>,
+    IsArray: false,
+    IsEnum: false,
+    AnyOfCount: 2,
+    Properties: null,
+    EnumValues: null,
+    Namespace: G,
+    IsDeprecated: false,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: global::System.AnyOf<string?, global::G.GenerateChatCompletionResponseDoneReason?>,
+    CSharpTypeWithNullability: global::System.AnyOf<string?, global::G.GenerateChatCompletionResponseDoneReason?>?,
+    ShortCSharpTypeWithoutNullability: global::System.AnyOf<string?, GenerateChatCompletionResponseDoneReason?>,
+    ShortCSharpTypeWithNullability: global::System.AnyOf<string?, GenerateChatCompletionResponseDoneReason?>?,
+    IsAnyOf: true,
+    ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
+  },
+  {
     CSharpType: global::G.MessageRole,
     IsArray: false,
     IsEnum: true,
@@ -288,7 +304,7 @@
     ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
   },
   {
-    CSharpType: global::System.Collections.Generic.IList<global::G.LocalModel>?,
+    CSharpType: global::System.Collections.Generic.IList<global::G.Model>?,
     IsArray: true,
     IsEnum: false,
     Properties: null,
@@ -296,10 +312,10 @@
     Namespace: G,
     IsDeprecated: false,
     GenerateJsonSerializerContextTypes: true,
-    CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.LocalModel>,
-    CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.LocalModel>?,
-    ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<LocalModel>,
-    ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<LocalModel>?,
+    CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.Model>,
+    CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.Model>?,
+    ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Model>,
+    ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<Model>?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -323,6 +339,22 @@
     CSharpTypeWithNullability: global::G.ModelDetails?,
     ShortCSharpTypeWithoutNullability: ModelDetails,
     ShortCSharpTypeWithNullability: ModelDetails?,
+    IsAnyOf: false,
+    ConverterType: 
+  },
+  {
+    CSharpType: global::System.Collections.Generic.IList<global::G.ProcessModel>?,
+    IsArray: true,
+    IsEnum: false,
+    Properties: null,
+    EnumValues: null,
+    Namespace: G,
+    IsDeprecated: false,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.ProcessModel>,
+    CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.ProcessModel>?,
+    ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ProcessModel>,
+    ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<ProcessModel>?,
     IsAnyOf: false,
     ConverterType: 
   },
@@ -561,6 +593,24 @@
     CSharpTypeWithNullability: global::G.ModelsResponse?,
     ShortCSharpTypeWithoutNullability: ModelsResponse,
     ShortCSharpTypeWithNullability: ModelsResponse?,
+    IsAnyOf: false,
+    ConverterType: 
+  },
+  {
+    CSharpType: global::G.ProcessResponse,
+    IsArray: false,
+    IsEnum: false,
+    Properties: [
+      models
+    ],
+    EnumValues: null,
+    Namespace: G,
+    IsDeprecated: false,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: global::G.ProcessResponse,
+    CSharpTypeWithNullability: global::G.ProcessResponse?,
+    ShortCSharpTypeWithoutNullability: ProcessResponse,
+    ShortCSharpTypeWithNullability: ProcessResponse?,
     IsAnyOf: false,
     ConverterType: 
   },

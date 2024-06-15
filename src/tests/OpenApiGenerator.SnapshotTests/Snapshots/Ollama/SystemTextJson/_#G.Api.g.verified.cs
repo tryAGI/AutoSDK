@@ -63,6 +63,10 @@ namespace G
                 {
                     new global::OpenApiGenerator.JsonConverters.ResponseFormatJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ResponseFormatNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.GenerateChatCompletionResponseDoneReasonJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.GenerateChatCompletionResponseDoneReasonNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.DoneReasonVariant2JsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.DoneReasonVariant2NullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.MessageRoleJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.MessageRoleNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CreateModelResponseStatusJsonConverter(),

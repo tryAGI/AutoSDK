@@ -8,11 +8,15 @@
   <Import Project="../../libs/OpenApiGenerator/OpenApiGenerator.props" />
   
   <PropertyGroup>
-    <OpenApiGenerator_Namespace>OpenApiGenerator.IntegrationTests.Twitch</OpenApiGenerator_Namespace>
+    <OpenApiGenerator_Namespace>OpenApiGenerator.IntegrationTests</OpenApiGenerator_Namespace>
     <OpenApiGenerator_GenerateSdk>false</OpenApiGenerator_GenerateSdk>
     <OpenApiGenerator_GenerateModels>true</OpenApiGenerator_GenerateModels>
     <OpenApiGenerator_GenerateJsonSerializerContextTypes>true</OpenApiGenerator_GenerateJsonSerializerContextTypes>
   </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="$(MSBuildThisFileDirectory)../../../specs/twitch.json" />
+  </ItemGroup>
 
   <PropertyGroup Label="Analyzers">
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
@@ -20,27 +24,12 @@
     <AnalysisMode>All</AnalysisMode>
   </PropertyGroup>
 
-  <ItemGroup>
-    <AdditionalFiles Include="Resources\openapi.json" />
-  </ItemGroup>
-
-  <!-- for inspection -->
-  <!--<PropertyGroup>
-    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
-    <CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Remove="Generated\**\*" />
-    <None Include="Generated\**\*" />
-  </ItemGroup>-->
-  
-
   <Target Name="FetchTwitchOpenApiJson" BeforeTargets="Build;BeforeCompile;CompileDesignTime">
     <!-- Download the OpenAPI JSON file (if expired) -->
     <DownloadFile
             SourceUrl="https://twitch-api-swagger.surge.sh/openapi.json"
-            DestinationFolder="$(ProjectDir)Resources"
-            DestinationFileName="openapi.json"
+            DestinationFolder="$(MSBuildThisFileDirectory)../../../specs"
+            DestinationFileName="twitch.json"
             SkipUnchangedFiles="true"
             Retries="2" />
   </Target>

@@ -7,7 +7,8 @@ namespace G
     public partial class ModelsClient
     {
         /// <summary>
-        /// Check to see if a blob exists on the Ollama server which is useful when creating models.
+        /// Ensures that the file blob used for a FROM or ADAPTER field exists on the server.<br/>
+        /// This is checking your Ollama server and not Ollama.ai.
         /// </summary>
         /// <param name="digest"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

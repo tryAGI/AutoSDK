@@ -17,7 +17,7 @@ public partial class DataTests
     public Task Ollama()
     {
         return VerifyAsync(Data.Prepare((
-            H.Resources.ollamacurated_yaml.AsString(),
+            H.Resources.ollama_yaml.AsString(),
             DefaultSettings with
             {
                 GenerateJsonSerializerContextTypes = true,

@@ -11,7 +11,7 @@ namespace G
     {
         /// <summary>
         /// The model name. <br/>
-        /// Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.<br/>
+        /// Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.<br/>
         /// Example: mario
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
@@ -20,7 +20,7 @@ namespace G
 
         /// <summary>
         /// The contents of the Modelfile.<br/>
-        /// Example: FROM llama2\nSYSTEM You are mario from Super Mario Bros.
+        /// Example: FROM llama3\nSYSTEM You are mario from Super Mario Bros.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("modelfile")]
         [global::System.Text.Json.Serialization.JsonRequired]

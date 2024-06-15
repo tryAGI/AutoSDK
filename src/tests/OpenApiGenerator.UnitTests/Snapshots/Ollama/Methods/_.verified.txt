@@ -32,9 +32,9 @@
         Summary:
 The model name. 
 
-Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
-Example: llama2:7b,
+Example: llama3:8b,
         ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
@@ -205,7 +205,6 @@ Example: Why is the sky blue?,
             numa,
             num_ctx,
             num_batch,
-            num_gqa,
             num_gpu,
             main_gpu,
             low_vram,
@@ -530,9 +529,9 @@ The final response object will include statistics and additional data from the r
         Summary:
 The model name. 
 
-Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
-Example: llama2:7b,
+Example: llama3:8b,
         ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
@@ -630,7 +629,6 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
             numa,
             num_ctx,
             num_batch,
-            num_gqa,
             num_gpu,
             main_gpu,
             low_vram,
@@ -877,9 +875,9 @@ This is a streaming endpoint, so there will be a series of responses. The final 
         Summary:
 The model name. 
 
-Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
-Example: llama2:7b,
+Example: llama3:8b,
         ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
@@ -942,7 +940,6 @@ Example: Here is an article about llamas...,
             numa,
             num_ctx,
             num_batch,
-            num_gqa,
             num_gpu,
             main_gpu,
             low_vram,
@@ -1132,7 +1129,7 @@ How long (in minutes) to keep the model loaded in memory.
         Summary:
 The model name. 
 
-Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
 Example: mario,
         ConverterType: ,
@@ -1163,7 +1160,7 @@ Example: mario,
         IsDeprecated: false,
         Summary:
 The contents of the Modelfile.
-Example: FROM llama2\nSYSTEM You are mario from Super Mario Bros.,
+Example: FROM llama3\nSYSTEM You are mario from Super Mario Bros.,
         ConverterType: ,
         ParameterName: modelfile,
         ArgumentName: modelfile,
@@ -1426,6 +1423,80 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
     FileNameWithoutExtension: G.ModelsClient.ListModels
   },
   {
+    Id: ListRunningModels,
+    Namespace: G,
+    ClassName: ModelsClient,
+    BaseUrl: ,
+    Stream: false,
+    Path: "/ps",
+    AuthorizationScheme: ,
+    Properties: null,
+    TargetFramework: netstandard2.0,
+    JsonSerializerContext: ,
+    GenerateJsonSerializerContextTypes: true,
+    Summary: List models that are running.,
+    BaseUrlSummary: ,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      Namespace: ,
+      IsDeprecated: false,
+      GenerateJsonSerializerContextTypes: false,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ShortCSharpTypeWithoutNullability: ,
+      ShortCSharpTypeWithNullability: ?,
+      IsAnyOf: false,
+      ConverterType: 
+    },
+    ResponseType: {
+      CSharpType: global::G.ProcessResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        models
+      ],
+      EnumValues: null,
+      Namespace: G,
+      IsDeprecated: false,
+      GenerateJsonSerializerContextTypes: true,
+      CSharpTypeWithoutNullability: global::G.ProcessResponse,
+      CSharpTypeWithNullability: global::G.ProcessResponse?,
+      ShortCSharpTypeWithoutNullability: ProcessResponse,
+      ShortCSharpTypeWithNullability: ProcessResponse?,
+      IsAnyOf: false,
+      ConverterType: 
+    },
+    AdditionalModels: null,
+    AdditionalTypes: [
+      {
+        CSharpType: global::G.ProcessResponse,
+        IsArray: false,
+        IsEnum: false,
+        Properties: [
+          models
+        ],
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: true,
+        CSharpTypeWithoutNullability: global::G.ProcessResponse,
+        CSharpTypeWithNullability: global::G.ProcessResponse?,
+        ShortCSharpTypeWithoutNullability: ProcessResponse,
+        ShortCSharpTypeWithNullability: ProcessResponse?,
+        IsAnyOf: false,
+        ConverterType: 
+      }
+    ],
+    Converters: null,
+    MethodName: ListRunningModelsAsync,
+    NotAsyncMethodName: ListRunningModels,
+    FileNameWithoutExtension: G.ModelsClient.ListRunningModels
+  },
+  {
     Id: ShowModelInfo,
     Namespace: G,
     ClassName: ModelsClient,
@@ -1458,9 +1529,9 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
         Summary:
 The model name. 
 
-Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
-Example: llama2:7b,
+Example: llama3:8b,
         ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
@@ -1597,7 +1668,7 @@ Example: llama2:7b,
         IsDeprecated: false,
         Summary:
 Name of the model to copy.
-Example: llama2:7b,
+Example: llama3:8b,
         ConverterType: ,
         ParameterName: source,
         ArgumentName: source,
@@ -1626,7 +1697,7 @@ Example: llama2:7b,
         IsDeprecated: false,
         Summary:
 Name of the new model.
-Example: llama2-backup,
+Example: llama3-backup,
         ConverterType: ,
         ParameterName: destination,
         ArgumentName: destination,
@@ -1734,9 +1805,9 @@ Example: llama2-backup,
         Summary:
 The model name. 
 
-Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
-Example: llama2:13b,
+Example: llama3:13b,
         ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
@@ -1842,9 +1913,9 @@ Example: llama2:13b,
         Summary:
 The model name. 
 
-Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
+Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.
 
-Example: llama2:7b,
+Example: llama3:8b,
         ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
@@ -2374,7 +2445,9 @@ Requires registering for ollama.ai and adding a public key first.,
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: true,
     HttpMethod: Head,
-    Summary: Check to see if a blob exists on the Ollama server which is useful when creating models.,
+    Summary:
+Ensures that the file blob used for a FROM or ADAPTER field exists on the server.
+This is checking your Ollama server and not Ollama.ai.,
     BaseUrlSummary: ,
     RequestType: {
       CSharpType: ,
@@ -2677,6 +2750,10 @@ Requires registering for ollama.ai and adding a public key first.,
     Converters: [
       global::OpenApiGenerator.JsonConverters.ResponseFormatJsonConverter,
       global::OpenApiGenerator.JsonConverters.ResponseFormatNullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.GenerateChatCompletionResponseDoneReasonJsonConverter,
+      global::OpenApiGenerator.JsonConverters.GenerateChatCompletionResponseDoneReasonNullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.DoneReasonVariant2JsonConverter,
+      global::OpenApiGenerator.JsonConverters.DoneReasonVariant2NullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.MessageRoleJsonConverter,
       global::OpenApiGenerator.JsonConverters.MessageRoleNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateModelResponseStatusJsonConverter,

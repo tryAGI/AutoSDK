@@ -75,8 +75,8 @@ public partial class Tests
     {
         return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
             new CustomAdditionalText(
-                path: H.Resources.ollamacurated_yaml.FileName,
-                text: H.Resources.ollamacurated_yaml.AsString())
+                path: H.Resources.ollama_yaml.FileName,
+                text: H.Resources.ollama_yaml.AsString())
         ], new Dictionary<string, string>
         {
             ["build_property.OpenApiGenerator_GenerateJsonSerializerContextTypes"] = "true",
@@ -166,8 +166,8 @@ public partial class Tests
     {
         return CheckSourceAsync<SdkGenerator>(jsonSerializerType, [
             new CustomAdditionalText(
-                path: H.Resources.api_github_com_yaml.FileName,
-                text: H.Resources.api_github_com_yaml.AsString())
+                path: H.Resources.github_yaml.FileName,
+                text: H.Resources.github_yaml.AsString())
         ], new Dictionary<string, string>
         {
             // migrations/list-for-org

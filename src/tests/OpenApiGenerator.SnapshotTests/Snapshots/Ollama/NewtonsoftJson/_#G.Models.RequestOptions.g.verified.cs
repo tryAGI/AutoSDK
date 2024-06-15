@@ -130,12 +130,6 @@ namespace G
         public int? NumBatch { get; set; }
 
         /// <summary>
-        /// The number of GQA groups in the transformer layer. Required for some models, for example it is 8 for `llama2:70b`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("num_gqa")]
-        public int? NumGqa { get; set; }
-
-        /// <summary>
         /// The number of layers to send to the GPU(s). On macOS it defaults to 1 to enable metal support, 0 to disable.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_gpu")]

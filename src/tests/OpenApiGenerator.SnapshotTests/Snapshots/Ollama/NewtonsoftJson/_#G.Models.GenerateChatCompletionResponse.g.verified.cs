@@ -17,8 +17,8 @@ namespace G
 
         /// <summary>
         /// The model name. <br/>
-        /// Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama2:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.<br/>
-        /// Example: llama2:7b
+        /// Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.<br/>
+        /// Example: llama3:8b
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
         public string? Model { get; set; }
@@ -37,10 +37,10 @@ namespace G
         public bool Done { get; set; }
 
         /// <summary>
-        /// Reason the response is done.
+        /// Reason why the model is done generating a response.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("done_reason")]
-        public string? DoneReason { get; set; }
+        public global::System.AnyOf<string?, global::G.GenerateChatCompletionResponseDoneReason?> DoneReason { get; set; }
 
         /// <summary>
         /// Time spent generating the response.<br/>

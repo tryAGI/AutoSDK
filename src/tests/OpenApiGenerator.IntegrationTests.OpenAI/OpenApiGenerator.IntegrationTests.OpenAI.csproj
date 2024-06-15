@@ -14,6 +14,10 @@
     <OpenApiGenerator_JsonSerializerContext>OpenApiGenerator.IntegrationTests.SourceGenerationContext</OpenApiGenerator_JsonSerializerContext>
   </PropertyGroup>
 
+  <ItemGroup>
+    <AdditionalFiles Include="$(MSBuildThisFileDirectory)../../../specs/openai.yaml" />
+  </ItemGroup>
+
   <PropertyGroup Label="Analyzers">
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <AnalysisLevel>latest</AnalysisLevel>

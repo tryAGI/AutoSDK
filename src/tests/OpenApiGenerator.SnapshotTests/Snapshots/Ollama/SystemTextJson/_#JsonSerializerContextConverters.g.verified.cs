@@ -13,6 +13,10 @@ namespace G
         {
             typeof(global::OpenApiGenerator.JsonConverters.ResponseFormatJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.ResponseFormatNullableJsonConverter),
+            typeof(global::OpenApiGenerator.JsonConverters.GenerateChatCompletionResponseDoneReasonJsonConverter),
+            typeof(global::OpenApiGenerator.JsonConverters.GenerateChatCompletionResponseDoneReasonNullableJsonConverter),
+            typeof(global::OpenApiGenerator.JsonConverters.DoneReasonVariant2JsonConverter),
+            typeof(global::OpenApiGenerator.JsonConverters.DoneReasonVariant2NullableJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.MessageRoleJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.MessageRoleNullableJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.CreateModelResponseStatusJsonConverter),

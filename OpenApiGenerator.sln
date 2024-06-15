@@ -48,6 +48,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenApiGenerator.Integratio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenApiGenerator.IntegrationTests.OpenAI", "src\tests\OpenApiGenerator.IntegrationTests.OpenAI\OpenApiGenerator.IntegrationTests.OpenAI.csproj", "{7C8C2EF1-2E1E-4623-92B6-95BDDBE4A32E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "specs", "specs", "{7E829AE4-1ACD-43C0-87ED-9902566DF437}"
+	ProjectSection(SolutionItems) = preProject
+		specs\ollama.yaml = specs\ollama.yaml
+		specs\github.yaml = specs\github.yaml
+		specs\ipinfo.yaml = specs\ipinfo.yaml
+		specs\langsmith.json = specs\langsmith.json
+		specs\langsmith.yaml = specs\langsmith.yaml
+		specs\openai.yaml = specs\openai.yaml
+		specs\petstore.yaml = specs\petstore.yaml
+		specs\replicate.json = specs\replicate.json
+		specs\special-cases.yaml = specs\special-cases.yaml
+		specs\twitch.json = specs\twitch.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +143,7 @@ Global
 		{1A0514F7-12E4-496A-A1F1-2A1D4C930DB6} = {9CAA231D-7BE1-46C9-ACD6-EB2E569CEBEA}
 		{01D74ED6-33E1-456C-AD74-C7F5BE90D042} = {9CAA231D-7BE1-46C9-ACD6-EB2E569CEBEA}
 		{7C8C2EF1-2E1E-4623-92B6-95BDDBE4A32E} = {9CAA231D-7BE1-46C9-ACD6-EB2E569CEBEA}
+		{7E829AE4-1ACD-43C0-87ED-9902566DF437} = {94FE90BF-FA05-46C6-A207-6E454A236659}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1493AEE4-9211-46E9-BFE6-8F629EAC5693}
