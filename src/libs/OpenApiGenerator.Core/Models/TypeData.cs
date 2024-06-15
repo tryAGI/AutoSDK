@@ -119,7 +119,7 @@ public readonly record struct TypeData(
                 ($"global::{settings.Namespace}.{model.ExternalClassName}", true),
 
             ("string", _) when schema.Value.Enum.Any() =>
-                ($"global::{settings.Namespace}.{(schema.Value is { Reference: not null } ? $"{schema.Value.Reference.Id}" : (model with { Style = ModelStyle.Enumeration }).ExternalClassName)}", true),
+                ($"global::{settings.Namespace}.{(schema.Value is { Reference: not null } ? ModelData.FromKey(schema.Value.Reference.Id, settings).ClassName : (model with { Style = ModelStyle.Enumeration }).ExternalClassName)}", true),
             // ("string", _) when schema.Value.Enum.Any() && settings.JsonSerializerType != JsonSerializerType.NewtonsoftJson =>
             //     ("string", true),
 
