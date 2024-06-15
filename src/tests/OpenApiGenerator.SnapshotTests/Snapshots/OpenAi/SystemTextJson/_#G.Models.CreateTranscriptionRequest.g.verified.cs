@@ -53,6 +53,13 @@ namespace G
         public double Temperature { get; set; } = 0;
 
         /// <summary>
+        /// The timestamp granularities to populate for this transcription. `response_format` must be set `verbose_json` to use timestamp granularities. Either or both of these options are supported: `word`, or `segment`. Note: There is no additional latency for segment timestamps, but generating word timestamps incurs additional latency.<br/>
+        /// Default Value: [segment]
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("timestamp_granularities[]")]
+        public global::System.Collections.Generic.IList<global::G.CreateTranscriptionRequestTimestampGranularities?>? TimestampGranularities { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

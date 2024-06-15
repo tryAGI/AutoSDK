@@ -26,7 +26,7 @@ namespace G
         public AssistantsClient Assistants => new AssistantsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
 
         /// <summary>
-        /// Learn how to turn audio into text or text into audio.
+        /// Turn audio into text or text into audio.
         /// </summary>
         public AudioClient Audio => new AudioClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
 

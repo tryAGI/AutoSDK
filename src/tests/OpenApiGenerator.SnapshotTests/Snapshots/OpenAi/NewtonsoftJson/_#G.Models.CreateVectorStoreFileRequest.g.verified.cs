@@ -16,6 +16,12 @@ namespace G
         public string FileId { get; set; } = default!;
 
         /// <summary>
+        /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("chunking_strategy")]
+        public global::G.ChunkingStrategyRequestParam? ChunkingStrategy { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]

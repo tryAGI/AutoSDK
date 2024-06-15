@@ -17,13 +17,6 @@ namespace G
         public required string FileId { get; set; }
 
         /// <summary>
-        /// The specific quote in the file.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("quote")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Quote { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

@@ -46,16 +46,19 @@ namespace G
         /// </summary>
         /// <param name="vectorStoreId"></param>
         /// <param name="fileId"></param>
+        /// <param name="chunkingStrategy"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.VectorStoreFileObject> CreateVectorStoreFileAsync(
             string vectorStoreId,
             string fileId,
+            global::G.ChunkingStrategyRequestParam? chunkingStrategy = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CreateVectorStoreFileRequest
             {
                 FileId = fileId,
+                ChunkingStrategy = chunkingStrategy,
             };
 
             return await CreateVectorStoreFileAsync(

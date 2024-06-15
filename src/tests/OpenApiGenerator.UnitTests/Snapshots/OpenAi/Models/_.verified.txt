@@ -2739,6 +2739,51 @@ The contents of the assistant message. Required unless `tool_calls` or `function
     FileNameWithoutExtension: G.Models.Role
   },
   {
+    Id: FineTuneChatCompletionRequestAssistantMessageVariant1,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: weight,
+        Name: Weight,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: Controls whether the assistant message is trained against (0 or 1),
+        ConverterType: ,
+        ParameterName: weight,
+        ArgumentName: weight,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: FineTuneChatCompletionRequestAssistantMessageVariant1,
+    ClassName: FineTuneChatCompletionRequestAssistantMessageVariant1,
+    GlobalClassName: global::G.FineTuneChatCompletionRequestAssistantMessageVariant1,
+    ExternalClassName: FineTuneChatCompletionRequestAssistantMessageVariant1,
+    FileNameWithoutExtension: G.Models.FineTuneChatCompletionRequestAssistantMessageVariant1
+  },
+  {
     Id: ChatCompletionRequestToolMessage,
     AddTypeName: false,
     Parents: null,
@@ -3044,7 +3089,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
     Namespace: G,
     Properties: null,
     Summary:
-The parameters the functions accepts, described as a JSON Schema object. See the [guide](/docs/guides/text-generation/function-calling) for examples, and the [JSON Schema reference](https://json-schema.org/understanding-json-schema/) for documentation about the format. 
+The parameters the functions accepts, described as a JSON Schema object. See the [guide](/docs/guides/function-calling) for examples, and the [JSON Schema reference](https://json-schema.org/understanding-json-schema/) for documentation about the format. 
 
 Omitting `parameters` defines a function with an empty parameter list.,
     IsDeprecated: false,
@@ -3139,7 +3184,7 @@ Omitting `parameters` defines a function with an empty parameter list.,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-The parameters the functions accepts, described as a JSON Schema object. See the [guide](/docs/guides/text-generation/function-calling) for examples, and the [JSON Schema reference](https://json-schema.org/understanding-json-schema/) for documentation about the format. 
+The parameters the functions accepts, described as a JSON Schema object. See the [guide](/docs/guides/function-calling) for examples, and the [JSON Schema reference](https://json-schema.org/understanding-json-schema/) for documentation about the format. 
 
 Omitting `parameters` defines a function with an empty parameter list.,
         ConverterType: ,
@@ -3414,7 +3459,7 @@ Specifying a particular function via `{"name": "my_function"}` forces the model 
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-The parameters the functions accepts, described as a JSON Schema object. See the [guide](/docs/guides/text-generation/function-calling) for examples, and the [JSON Schema reference](https://json-schema.org/understanding-json-schema/) for documentation about the format. 
+The parameters the functions accepts, described as a JSON Schema object. See the [guide](/docs/guides/function-calling) for examples, and the [JSON Schema reference](https://json-schema.org/understanding-json-schema/) for documentation about the format. 
 
 Omitting `parameters` defines a function with an empty parameter list.,
         ConverterType: ,
@@ -5528,6 +5573,36 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
         ParameterDefaultValue: default
       },
       {
+        Id: parallel_tool_calls,
+        Name: ParallelToolCalls,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        DefaultValue: true,
+        IsDeprecated: false,
+        Summary:
+Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
+Default Value: true,
+        ConverterType: ,
+        ParameterName: parallelToolCalls,
+        ArgumentName: parallelToolCalls,
+        ParameterDefaultValue: true
+      },
+      {
         Id: user,
         Name: User,
         Type: {
@@ -5781,6 +5856,60 @@ Example: json_object,
     Namespace: G,
     Style: Enumeration,
     Properties: [
+      {
+        Id: gpt-4o,
+        Name: Gpt4o,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: gpt4o,
+        ArgumentName: gpt4o,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: gpt-4o-2024-05-13,
+        Name: Gpt4o20240513,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: gpt4o20240513,
+        ArgumentName: gpt4o20240513,
+        ParameterDefaultValue: default
+      },
       {
         Id: gpt-4-turbo,
         Name: Gpt4Turbo,
@@ -11727,12 +11856,14 @@ The File object (not file name) to be uploaded.
           Properties: [
             Assistants,
             Batch,
-            FineTune
+            FineTune,
+            Vision
           ],
           EnumValues: [
             assistants,
             batch,
-            fine-tune
+            fine-tune,
+            vision
           ],
           Namespace: G,
           IsDeprecated: false,
@@ -11854,6 +11985,33 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
         ConverterType: ,
         ParameterName: fineTune,
         ArgumentName: fineTune,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: vision,
+        Name: Vision,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: vision,
+        ArgumentName: vision,
         ParameterDefaultValue: default
       }
     ],
@@ -12086,6 +12244,8 @@ The ID of an uploaded file that contains training data.
 See [upload file](/docs/api-reference/files/create) for how to upload a file.
 
 Your dataset must be formatted as a JSONL file. Additionally, you must upload your file with the purpose `fine-tune`.
+
+The contents of the file should differ depending on if the model uses the [chat](/docs/api-reference/fine-tuning/chat-input) or [completions](/docs/api-reference/fine-tuning/completions-input) format.
 
 See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
 
@@ -14005,6 +14165,37 @@ Default Value: 0,
         ParameterName: temperature,
         ArgumentName: temperature,
         ParameterDefaultValue: 0
+      },
+      {
+        Id: timestamp_granularities[],
+        Name: TimestampGranularities,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<global::G.CreateTranscriptionRequestTimestampGranularities?>?,
+          IsArray: true,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.CreateTranscriptionRequestTimestampGranularities?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.CreateTranscriptionRequestTimestampGranularities?>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<CreateTranscriptionRequestTimestampGranularities?>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<CreateTranscriptionRequestTimestampGranularities?>?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        DefaultValue: ,
+        IsDeprecated: false,
+        Summary:
+The timestamp granularities to populate for this transcription. `response_format` must be set `verbose_json` to use timestamp granularities. Either or both of these options are supported: `word`, or `segment`. Note: There is no additional latency for segment timestamps, but generating word timestamps incurs additional latency.
+
+Default Value: [segment],
+        ConverterType: ,
+        ParameterName: timestampGranularities,
+        ArgumentName: timestampGranularities,
+        ParameterDefaultValue: default
       }
     ],
     Summary: ,
@@ -14173,6 +14364,79 @@ Default Value: json,
     GlobalClassName: global::G.ResponseFormat,
     ExternalClassName: ResponseFormat,
     FileNameWithoutExtension: G.Models.ResponseFormat
+  },
+  {
+    Id: timestamp_granularities[],
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: word,
+        Name: Word,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: word,
+        ArgumentName: word,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: segment,
+        Name: Segment,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: segment,
+        ArgumentName: segment,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: TimestampGranularities,
+    ClassName: TimestampGranularities,
+    GlobalClassName: global::G.TimestampGranularities,
+    ExternalClassName: TimestampGranularities,
+    FileNameWithoutExtension: G.Models.TimestampGranularities
   },
   {
     Id: model,
@@ -18727,6 +18991,207 @@ The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine
     FileNameWithoutExtension: G.Models.Object
   },
   {
+    Id: FinetuneChatRequestInput,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: messages,
+        Name: Messages,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<global::System.OneOf<global::G.ChatCompletionRequestSystemMessage?, global::G.ChatCompletionRequestUserMessage?, global::G.FineTuneChatCompletionRequestAssistantMessage, global::G.ChatCompletionRequestToolMessage?, global::G.ChatCompletionRequestFunctionMessage?>>?,
+          IsArray: true,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.ChatCompletionRequestSystemMessage?, global::G.ChatCompletionRequestUserMessage?, global::G.FineTuneChatCompletionRequestAssistantMessage, global::G.ChatCompletionRequestToolMessage?, global::G.ChatCompletionRequestFunctionMessage?>>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.ChatCompletionRequestSystemMessage?, global::G.ChatCompletionRequestUserMessage?, global::G.FineTuneChatCompletionRequestAssistantMessage, global::G.ChatCompletionRequestToolMessage?, global::G.ChatCompletionRequestFunctionMessage?>>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<ChatCompletionRequestSystemMessage?, ChatCompletionRequestUserMessage?, FineTuneChatCompletionRequestAssistantMessage, ChatCompletionRequestToolMessage?, ChatCompletionRequestFunctionMessage?>>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<ChatCompletionRequestSystemMessage?, ChatCompletionRequestUserMessage?, FineTuneChatCompletionRequestAssistantMessage, ChatCompletionRequestToolMessage?, ChatCompletionRequestFunctionMessage?>>?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: messages,
+        ArgumentName: messages,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: tools,
+        Name: Tools,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<global::G.ChatCompletionTool>?,
+          IsArray: true,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.ChatCompletionTool>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.ChatCompletionTool>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionTool>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<ChatCompletionTool>?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: A list of tools the model may generate JSON inputs for.,
+        ConverterType: ,
+        ParameterName: tools,
+        ArgumentName: tools,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: parallel_tool_calls,
+        Name: ParallelToolCalls,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        DefaultValue: true,
+        IsDeprecated: false,
+        Summary:
+Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
+Default Value: true,
+        ConverterType: ,
+        ParameterName: parallelToolCalls,
+        ArgumentName: parallelToolCalls,
+        ParameterDefaultValue: true
+      },
+      {
+        Id: functions,
+        Name: Functions,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<global::G.ChatCompletionFunctions>?,
+          IsArray: true,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: true,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.ChatCompletionFunctions>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.ChatCompletionFunctions>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionFunctions>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<ChatCompletionFunctions>?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: true,
+        Summary: A list of functions the model may generate JSON inputs for.,
+        ConverterType: ,
+        ParameterName: functions,
+        ArgumentName: functions,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: The per-line training example of a fine-tuning input file for chat models,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: FinetuneChatRequestInput,
+    ClassName: FinetuneChatRequestInput,
+    GlobalClassName: global::G.FinetuneChatRequestInput,
+    ExternalClassName: FinetuneChatRequestInput,
+    FileNameWithoutExtension: G.Models.FinetuneChatRequestInput
+  },
+  {
+    Id: FinetuneCompletionRequestInput,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: prompt,
+        Name: Prompt,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The input prompt for this training example.,
+        ConverterType: ,
+        ParameterName: prompt,
+        ArgumentName: prompt,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: completion,
+        Name: Completion,
+        Type: {
+          CSharpType: string?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: string,
+          CSharpTypeWithNullability: string?,
+          ShortCSharpTypeWithoutNullability: string,
+          ShortCSharpTypeWithNullability: string?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The desired completion for this training example.,
+        ConverterType: ,
+        ParameterName: completion,
+        ArgumentName: completion,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: The per-line training example of a fine-tuning input file for completions models,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: FinetuneCompletionRequestInput,
+    ClassName: FinetuneCompletionRequestInput,
+    GlobalClassName: global::G.FinetuneCompletionRequestInput,
+    ExternalClassName: FinetuneCompletionRequestInput,
+    FileNameWithoutExtension: G.Models.FinetuneCompletionRequestInput
+  },
+  {
     Id: CompletionUsage,
     AddTypeName: false,
     Parents: null,
@@ -19443,7 +19908,7 @@ The system instructions that the assistant uses. The maximum length is 256,000 c
         Id: tools,
         Name: Tools,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode, global::G.AssistantToolsFileSearch, global::G.AssistantToolsFunction>>,
+          CSharpType: global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>>,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -19451,10 +19916,10 @@ The system instructions that the assistant uses. The maximum length is 256,000 c
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode, global::G.AssistantToolsFileSearch, global::G.AssistantToolsFunction>>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode, global::G.AssistantToolsFileSearch, global::G.AssistantToolsFunction>>?,
-          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode, AssistantToolsFileSearch, AssistantToolsFunction>>,
-          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode, AssistantToolsFileSearch, AssistantToolsFunction>>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -19552,8 +20017,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         DefaultValue: 1,
         IsDeprecated: false,
         Summary:
-What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
-
+run_temperature_description | What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
 Default Value: 1
 Example: 1,
         ConverterType: ,
@@ -19618,7 +20082,7 @@ Example: 1,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
+Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4 Turbo](/docs/models/gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
 
 Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.
 
@@ -20235,7 +20699,7 @@ Example: 1,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
+Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4 Turbo](/docs/models/gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
 
 Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.
 
@@ -20494,6 +20958,35 @@ A list of [file](/docs/api-reference/files) IDs to add to the vector store. Ther
         ParameterDefaultValue: default
       },
       {
+        Id: chunking_strategy,
+        Name: ChunkingStrategy,
+        Type: {
+          CSharpType: object?,
+          IsArray: false,
+          IsEnum: false,
+          OneOfCount: 2,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
+          ShortCSharpTypeWithoutNullability: object,
+          ShortCSharpTypeWithNullability: object?,
+          IsAnyOf: true,
+          ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
+        },
+        IsRequired: false,
+        DefaultValue: ,
+        IsDeprecated: false,
+        Summary: The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.,
+        ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2,
+        ParameterName: chunkingStrategy,
+        ArgumentName: chunkingStrategy,
+        ParameterDefaultValue: default
+      },
+      {
         Id: metadata,
         Name: Metadata,
         Type: {
@@ -20535,6 +21028,145 @@ Set of 16 key-value pairs that can be attached to a vector store. This can be us
     FileNameWithoutExtension: G.Models.VectorStores
   },
   {
+    Id: chunking_strategy,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: null,
+    Summary: The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ChunkingStrategy,
+    ClassName: ChunkingStrategy,
+    GlobalClassName: global::G.ChunkingStrategy,
+    ExternalClassName: ChunkingStrategy,
+    FileNameWithoutExtension: G.Models.ChunkingStrategy
+  },
+  {
+    Id: type,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: auto,
+        Name: Auto,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: auto,
+        ArgumentName: auto,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Always `auto`.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Type,
+    ClassName: Type,
+    GlobalClassName: global::G.Type,
+    ExternalClassName: Type,
+    FileNameWithoutExtension: G.Models.Type
+  },
+  {
+    Id: static,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: max_chunk_size_tokens,
+        Name: MaxChunkSizeTokens,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: The maximum number of tokens in each chunk. The default value is `800`. The minimum value is `100` and the maximum value is `4096`.,
+        ConverterType: ,
+        ParameterName: maxChunkSizeTokens,
+        ArgumentName: maxChunkSizeTokens,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: chunk_overlap_tokens,
+        Name: ChunkOverlapTokens,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary:
+The number of tokens that overlap between chunks. The default value is `400`.
+
+Note that the overlap must not exceed half of `max_chunk_size_tokens`.
+,
+        ConverterType: ,
+        ParameterName: chunkOverlapTokens,
+        ArgumentName: chunkOverlapTokens,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Static,
+    ClassName: Static,
+    GlobalClassName: global::G.Static,
+    ExternalClassName: Static,
+    FileNameWithoutExtension: G.Models.Static
+  },
+  {
     Id: model,
     AddTypeName: false,
     Parents: null,
@@ -20542,6 +21174,60 @@ Set of 16 key-value pairs that can be attached to a vector store. This can be us
     Namespace: G,
     Style: Enumeration,
     Properties: [
+      {
+        Id: gpt-4o,
+        Name: Gpt4o,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: gpt4o,
+        ArgumentName: gpt4o,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: gpt-4o-2024-05-13,
+        Name: Gpt4o20240513,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: gpt4o20240513,
+        ArgumentName: gpt4o20240513,
+        ParameterDefaultValue: default
+      },
       {
         Id: gpt-4-turbo,
         Name: Gpt4Turbo,
@@ -21417,7 +22103,7 @@ Example: 1,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
+Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4 Turbo](/docs/models/gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
 
 Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.
 
@@ -22118,6 +22804,33 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
         ParameterName: type,
         ArgumentName: type,
         ParameterDefaultValue: default
+      },
+      {
+        Id: file_search,
+        Name: FileSearch,
+        Type: {
+          CSharpType: global::G.AssistantToolsFileSearchFileSearch?,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.AssistantToolsFileSearchFileSearch,
+          CSharpTypeWithNullability: global::G.AssistantToolsFileSearchFileSearch?,
+          ShortCSharpTypeWithoutNullability: AssistantToolsFileSearchFileSearch,
+          ShortCSharpTypeWithNullability: AssistantToolsFileSearchFileSearch?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: Overrides for the file search tool.,
+        ConverterType: ,
+        ParameterName: fileSearch,
+        ArgumentName: fileSearch,
+        ParameterDefaultValue: default
       }
     ],
     Summary: ,
@@ -22129,6 +22842,150 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
     GlobalClassName: global::G.AssistantToolsFileSearch,
     ExternalClassName: AssistantToolsFileSearch,
     FileNameWithoutExtension: G.Models.AssistantToolsFileSearch
+  },
+  {
+    Id: file_search,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: max_num_results,
+        Name: MaxNumResults,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary:
+The maximum number of results the file search tool should output. The default is 20 for gpt-4* models and 5 for gpt-3.5-turbo. This number should be between 1 and 50 inclusive.
+
+Note that the file search tool may output fewer than `max_num_results` results. See the [file search tool documentation](/docs/assistants/tools/file-search/number-of-chunks-returned) for more information.
+,
+        ConverterType: ,
+        ParameterName: maxNumResults,
+        ArgumentName: maxNumResults,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Overrides for the file search tool.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: FileSearch,
+    ClassName: FileSearch,
+    GlobalClassName: global::G.FileSearch,
+    ExternalClassName: FileSearch,
+    FileNameWithoutExtension: G.Models.FileSearch
+  },
+  {
+    Id: type,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: file_search,
+        Name: FileSearch,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: fileSearch,
+        ArgumentName: fileSearch,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: The type of tool being defined: `file_search`,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Type,
+    ClassName: Type,
+    GlobalClassName: global::G.Type,
+    ExternalClassName: Type,
+    FileNameWithoutExtension: G.Models.Type
+  },
+  {
+    Id: AssistantToolsFileSearchTypeOnly,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: type,
+        Name: Type,
+        Type: {
+          CSharpType: global::G.AssistantToolsFileSearchTypeOnlyType,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            FileSearch
+          ],
+          EnumValues: [
+            file_search
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.AssistantToolsFileSearchTypeOnlyType,
+          CSharpTypeWithNullability: global::G.AssistantToolsFileSearchTypeOnlyType?,
+          ShortCSharpTypeWithoutNullability: AssistantToolsFileSearchTypeOnlyType,
+          ShortCSharpTypeWithNullability: AssistantToolsFileSearchTypeOnlyType?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.AssistantToolsFileSearchTypeOnlyTypeJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: The type of tool being defined: `file_search`,
+        ConverterType: global::OpenApiGenerator.JsonConverters.AssistantToolsFileSearchTypeOnlyTypeJsonConverter,
+        ParameterName: type,
+        ArgumentName: type,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: AssistantToolsFileSearchTypeOnly,
+    ClassName: AssistantToolsFileSearchTypeOnly,
+    GlobalClassName: global::G.AssistantToolsFileSearchTypeOnly,
+    ExternalClassName: AssistantToolsFileSearchTypeOnly,
+    FileNameWithoutExtension: G.Models.AssistantToolsFileSearchTypeOnly
   },
   {
     Id: type,
@@ -22941,6 +23798,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
             Cancelled,
             Failed,
             Completed,
+            Incomplete,
             Expired
           ],
           EnumValues: [
@@ -22951,6 +23809,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
             cancelled,
             failed,
             completed,
+            incomplete,
             expired
           ],
           Namespace: G,
@@ -22965,7 +23824,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
         },
         IsRequired: true,
         IsDeprecated: false,
-        Summary: The status of the run, which can be either `queued`, `in_progress`, `requires_action`, `cancelling`, `cancelled`, `failed`, `completed`, or `expired`.,
+        Summary: The status of the run, which can be either `queued`, `in_progress`, `requires_action`, `cancelling`, `cancelled`, `failed`, `completed`, `incomplete`, or `expired`.,
         ConverterType: global::OpenApiGenerator.JsonConverters.RunObjectStatusJsonConverter,
         ParameterName: status,
         ArgumentName: status,
@@ -23245,7 +24104,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
         Id: tools,
         Name: Tools,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode, global::G.AssistantToolsFileSearch, global::G.AssistantToolsFunction>>,
+          CSharpType: global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>>,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -23253,10 +24112,10 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode, global::G.AssistantToolsFileSearch, global::G.AssistantToolsFunction>>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode, global::G.AssistantToolsFileSearch, global::G.AssistantToolsFunction>>?,
-          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode, AssistantToolsFileSearch, AssistantToolsFunction>>,
-          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode, AssistantToolsFileSearch, AssistantToolsFunction>>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -23478,7 +24337,7 @@ The maximum number of completion tokens specified to have been used over the cou
         Id: tool_choice,
         Name: ToolChoice,
         Type: {
-          CSharpType: global::System.OneOf<global::G.RunObjectToolChoice, global::G.AssistantsNamedToolChoice>,
+          CSharpType: global::System.OneOf<global::G.RunObjectToolChoice, global::G.AssistantsNamedToolChoice?>,
           IsArray: false,
           IsEnum: false,
           OneOfCount: 2,
@@ -23487,10 +24346,10 @@ The maximum number of completion tokens specified to have been used over the cou
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.OneOf<global::G.RunObjectToolChoice, global::G.AssistantsNamedToolChoice>,
-          CSharpTypeWithNullability: global::System.OneOf<global::G.RunObjectToolChoice, global::G.AssistantsNamedToolChoice>?,
-          ShortCSharpTypeWithoutNullability: global::System.OneOf<RunObjectToolChoice, AssistantsNamedToolChoice>,
-          ShortCSharpTypeWithNullability: global::System.OneOf<RunObjectToolChoice, AssistantsNamedToolChoice>?,
+          CSharpTypeWithoutNullability: global::System.OneOf<global::G.RunObjectToolChoice, global::G.AssistantsNamedToolChoice?>,
+          CSharpTypeWithNullability: global::System.OneOf<global::G.RunObjectToolChoice, global::G.AssistantsNamedToolChoice?>?,
+          ShortCSharpTypeWithoutNullability: global::System.OneOf<RunObjectToolChoice, AssistantsNamedToolChoice?>,
+          ShortCSharpTypeWithNullability: global::System.OneOf<RunObjectToolChoice, AssistantsNamedToolChoice?>?,
           IsAnyOf: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
         },
@@ -23509,10 +24368,40 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
         ParameterDefaultValue: default
       },
       {
+        Id: parallel_tool_calls,
+        Name: ParallelToolCalls,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        DefaultValue: true,
+        IsDeprecated: false,
+        Summary:
+Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
+Default Value: true,
+        ConverterType: ,
+        ParameterName: parallelToolCalls,
+        ArgumentName: parallelToolCalls,
+        ParameterDefaultValue: true
+      },
+      {
         Id: response_format,
         Name: ResponseFormat,
         Type: {
-          CSharpType: global::System.OneOf<global::G.RunObjectResponseFormat, global::G.AssistantsApiResponseFormat>,
+          CSharpType: global::System.OneOf<global::G.RunObjectResponseFormat, global::G.AssistantsApiResponseFormat?>,
           IsArray: false,
           IsEnum: false,
           OneOfCount: 2,
@@ -23521,17 +24410,17 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.OneOf<global::G.RunObjectResponseFormat, global::G.AssistantsApiResponseFormat>,
-          CSharpTypeWithNullability: global::System.OneOf<global::G.RunObjectResponseFormat, global::G.AssistantsApiResponseFormat>?,
-          ShortCSharpTypeWithoutNullability: global::System.OneOf<RunObjectResponseFormat, AssistantsApiResponseFormat>,
-          ShortCSharpTypeWithNullability: global::System.OneOf<RunObjectResponseFormat, AssistantsApiResponseFormat>?,
+          CSharpTypeWithoutNullability: global::System.OneOf<global::G.RunObjectResponseFormat, global::G.AssistantsApiResponseFormat?>,
+          CSharpTypeWithNullability: global::System.OneOf<global::G.RunObjectResponseFormat, global::G.AssistantsApiResponseFormat?>?,
+          ShortCSharpTypeWithoutNullability: global::System.OneOf<RunObjectResponseFormat, AssistantsApiResponseFormat?>,
+          ShortCSharpTypeWithNullability: global::System.OneOf<RunObjectResponseFormat, AssistantsApiResponseFormat?>?,
           IsAnyOf: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
         },
         IsRequired: true,
         IsDeprecated: false,
         Summary:
-Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
+Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4 Turbo](/docs/models/gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
 
 Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.
 
@@ -24268,6 +25157,33 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ParameterDefaultValue: default
       },
       {
+        Id: incomplete,
+        Name: Incomplete,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: incomplete,
+        ArgumentName: incomplete,
+        ParameterDefaultValue: default
+      },
+      {
         Id: expired,
         Name: Expired,
         Type: {
@@ -24295,7 +25211,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ParameterDefaultValue: default
       }
     ],
-    Summary: The status of the run, which can be either `queued`, `in_progress`, `requires_action`, `cancelling`, `cancelled`, `failed`, `completed`, or `expired`.,
+    Summary: The status of the run, which can be either `queued`, `in_progress`, `requires_action`, `cancelling`, `cancelled`, `failed`, `completed`, `incomplete`, or `expired`.,
     IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
@@ -24902,6 +25818,36 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
         ParameterDefaultValue: default
       },
       {
+        Id: parallel_tool_calls,
+        Name: ParallelToolCalls,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        DefaultValue: true,
+        IsDeprecated: false,
+        Summary:
+Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
+Default Value: true,
+        ConverterType: ,
+        ParameterName: parallelToolCalls,
+        ArgumentName: parallelToolCalls,
+        ParameterDefaultValue: true
+      },
+      {
         Id: response_format,
         Name: ResponseFormat,
         Type: {
@@ -24924,7 +25870,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
+Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4 Turbo](/docs/models/gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
 
 Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.
 
@@ -24954,6 +25900,60 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     Namespace: G,
     Style: Enumeration,
     Properties: [
+      {
+        Id: gpt-4o,
+        Name: Gpt4o,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: gpt4o,
+        ArgumentName: gpt4o,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: gpt-4o-2024-05-13,
+        Name: Gpt4o20240513,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: gpt4o20240513,
+        ArgumentName: gpt4o20240513,
+        ParameterDefaultValue: default
+      },
       {
         Id: gpt-4-turbo,
         Name: Gpt4Turbo,
@@ -26622,6 +27622,36 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
         ParameterDefaultValue: default
       },
       {
+        Id: parallel_tool_calls,
+        Name: ParallelToolCalls,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        DefaultValue: true,
+        IsDeprecated: false,
+        Summary:
+Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
+Default Value: true,
+        ConverterType: ,
+        ParameterName: parallelToolCalls,
+        ArgumentName: parallelToolCalls,
+        ParameterDefaultValue: true
+      },
+      {
         Id: response_format,
         Name: ResponseFormat,
         Type: {
@@ -26644,7 +27674,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
+Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4 Turbo](/docs/models/gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
 
 Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.
 
@@ -26844,6 +27874,60 @@ The ID of the [vector store](/docs/api-reference/vector-stores/object) attached 
     Namespace: G,
     Style: Enumeration,
     Properties: [
+      {
+        Id: gpt-4o,
+        Name: Gpt4o,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: gpt4o,
+        ArgumentName: gpt4o,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: gpt-4o-2024-05-13,
+        Name: Gpt4o20240513,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: gpt4o20240513,
+        ArgumentName: gpt4o20240513,
+        ParameterDefaultValue: default
+      },
       {
         Id: gpt-4-turbo,
         Name: Gpt4Turbo,
@@ -28237,6 +29321,35 @@ A list of [file](/docs/api-reference/files) IDs to add to the vector store. Ther
         ParameterDefaultValue: default
       },
       {
+        Id: chunking_strategy,
+        Name: ChunkingStrategy,
+        Type: {
+          CSharpType: object?,
+          IsArray: false,
+          IsEnum: false,
+          OneOfCount: 2,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
+          ShortCSharpTypeWithoutNullability: object,
+          ShortCSharpTypeWithNullability: object?,
+          IsAnyOf: true,
+          ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
+        },
+        IsRequired: false,
+        DefaultValue: ,
+        IsDeprecated: false,
+        Summary: The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.,
+        ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2,
+        ParameterName: chunkingStrategy,
+        ArgumentName: chunkingStrategy,
+        ParameterDefaultValue: default
+      },
+      {
         Id: metadata,
         Name: Metadata,
         Type: {
@@ -28276,6 +29389,145 @@ Set of 16 key-value pairs that can be attached to a vector store. This can be us
     GlobalClassName: global::G.VectorStores,
     ExternalClassName: VectorStores,
     FileNameWithoutExtension: G.Models.VectorStores
+  },
+  {
+    Id: chunking_strategy,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: null,
+    Summary: The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ChunkingStrategy,
+    ClassName: ChunkingStrategy,
+    GlobalClassName: global::G.ChunkingStrategy,
+    ExternalClassName: ChunkingStrategy,
+    FileNameWithoutExtension: G.Models.ChunkingStrategy
+  },
+  {
+    Id: type,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: auto,
+        Name: Auto,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: auto,
+        ArgumentName: auto,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Always `auto`.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Type,
+    ClassName: Type,
+    GlobalClassName: global::G.Type,
+    ExternalClassName: Type,
+    FileNameWithoutExtension: G.Models.Type
+  },
+  {
+    Id: static,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: max_chunk_size_tokens,
+        Name: MaxChunkSizeTokens,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: The maximum number of tokens in each chunk. The default value is `800`. The minimum value is `100` and the maximum value is `4096`.,
+        ConverterType: ,
+        ParameterName: maxChunkSizeTokens,
+        ArgumentName: maxChunkSizeTokens,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: chunk_overlap_tokens,
+        Name: ChunkOverlapTokens,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary:
+The number of tokens that overlap between chunks. The default value is `400`.
+
+Note that the overlap must not exceed half of `max_chunk_size_tokens`.
+,
+        ConverterType: ,
+        ParameterName: chunkOverlapTokens,
+        ArgumentName: chunkOverlapTokens,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Static,
+    ClassName: Static,
+    GlobalClassName: global::G.Static,
+    ExternalClassName: Static,
+    FileNameWithoutExtension: G.Models.Static
   },
   {
     Id: ModifyThreadRequest,
@@ -29098,7 +30350,7 @@ The [vector store](/docs/api-reference/vector-stores/object) attached to this th
         Id: content,
         Name: Content,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageContentTextObject>>,
+          CSharpType: global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject?, global::G.MessageContentImageUrlObject?, global::G.MessageContentTextObject?>>,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -29106,10 +30358,10 @@ The [vector store](/docs/api-reference/vector-stores/object) attached to this th
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageContentTextObject>>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageContentTextObject>>?,
-          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<MessageContentImageFileObject, MessageContentImageUrlObject, MessageContentTextObject>>,
-          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<MessageContentImageFileObject, MessageContentImageUrlObject, MessageContentTextObject>>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject?, global::G.MessageContentImageUrlObject?, global::G.MessageContentTextObject?>>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject?, global::G.MessageContentImageUrlObject?, global::G.MessageContentTextObject?>>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<MessageContentImageFileObject?, MessageContentImageUrlObject?, MessageContentTextObject?>>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<MessageContentImageFileObject?, MessageContentImageUrlObject?, MessageContentTextObject?>>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -29492,7 +30744,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Id: tools,
         Name: Tools,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?>>?,
+          CSharpType: global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearchTypeOnly?>>?,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -29500,10 +30752,10 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?>>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?>>?,
-          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?>>,
-          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?>>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearchTypeOnly?>>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearchTypeOnly?>>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearchTypeOnly?>>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearchTypeOnly?>>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -30095,7 +31347,7 @@ The role of the entity that is creating the message. Allowed values include:
         Id: content,
         Name: Content,
         Type: {
-          CSharpType: global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageRequestContentTextObject>>>,
+          CSharpType: global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject?, global::G.MessageContentImageUrlObject?, global::G.MessageRequestContentTextObject?>>>,
           IsArray: false,
           IsEnum: false,
           OneOfCount: 2,
@@ -30104,10 +31356,10 @@ The role of the entity that is creating the message. Allowed values include:
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageRequestContentTextObject>>>,
-          CSharpTypeWithNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageRequestContentTextObject>>>?,
-          ShortCSharpTypeWithoutNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<MessageContentImageFileObject, MessageContentImageUrlObject, MessageRequestContentTextObject>>>,
-          ShortCSharpTypeWithNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<MessageContentImageFileObject, MessageContentImageUrlObject, MessageRequestContentTextObject>>>?,
+          CSharpTypeWithoutNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject?, global::G.MessageContentImageUrlObject?, global::G.MessageRequestContentTextObject?>>>,
+          CSharpTypeWithNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject?, global::G.MessageContentImageUrlObject?, global::G.MessageRequestContentTextObject?>>>?,
+          ShortCSharpTypeWithoutNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<MessageContentImageFileObject?, MessageContentImageUrlObject?, MessageRequestContentTextObject?>>>,
+          ShortCSharpTypeWithNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<MessageContentImageFileObject?, MessageContentImageUrlObject?, MessageRequestContentTextObject?>>>?,
           IsAnyOf: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
         },
@@ -30225,7 +31477,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         Id: tools,
         Name: Tools,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?>>?,
+          CSharpType: global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearchTypeOnly?>>?,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -30233,10 +31485,10 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?>>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?>>?,
-          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?>>,
-          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?>>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearchTypeOnly?>>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearchTypeOnly?>>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearchTypeOnly?>>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearchTypeOnly?>>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -32082,7 +33334,7 @@ Default Value: auto,
         Id: annotations,
         Name: Annotations,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentTextAnnotationsFileCitationObject, global::G.MessageContentTextAnnotationsFilePathObject>>,
+          CSharpType: global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentTextAnnotationsFileCitationObject?, global::G.MessageContentTextAnnotationsFilePathObject?>>,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -32090,10 +33342,10 @@ Default Value: auto,
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentTextAnnotationsFileCitationObject, global::G.MessageContentTextAnnotationsFilePathObject>>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentTextAnnotationsFileCitationObject, global::G.MessageContentTextAnnotationsFilePathObject>>?,
-          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<MessageContentTextAnnotationsFileCitationObject, MessageContentTextAnnotationsFilePathObject>>,
-          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<MessageContentTextAnnotationsFileCitationObject, MessageContentTextAnnotationsFilePathObject>>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentTextAnnotationsFileCitationObject?, global::G.MessageContentTextAnnotationsFilePathObject?>>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentTextAnnotationsFileCitationObject?, global::G.MessageContentTextAnnotationsFilePathObject?>>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<MessageContentTextAnnotationsFileCitationObject?, MessageContentTextAnnotationsFilePathObject?>>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<MessageContentTextAnnotationsFileCitationObject?, MessageContentTextAnnotationsFilePathObject?>>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -32473,33 +33725,6 @@ Default Value: auto,
         ConverterType: ,
         ParameterName: fileId,
         ArgumentName: fileId,
-        ParameterDefaultValue: default
-      },
-      {
-        Id: quote,
-        Name: Quote,
-        Type: {
-          CSharpType: string,
-          IsArray: false,
-          IsEnum: false,
-          Properties: null,
-          EnumValues: null,
-          Namespace: G,
-          IsDeprecated: false,
-          GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: string,
-          CSharpTypeWithNullability: string?,
-          ShortCSharpTypeWithoutNullability: string,
-          ShortCSharpTypeWithNullability: string?,
-          IsAnyOf: false,
-          ConverterType: 
-        },
-        IsRequired: true,
-        IsDeprecated: false,
-        Summary: The specific quote in the file.,
-        ConverterType: ,
-        ParameterName: quote,
-        ArgumentName: quote,
         ParameterDefaultValue: default
       }
     ],
@@ -35272,7 +36497,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
         Id: tool_calls,
         Name: ToolCalls,
         Type: {
-          CSharpType: global::System.Collections.Generic.IList<global::System.OneOf<global::G.RunStepDetailsToolCallsCodeObject, global::G.RunStepDetailsToolCallsFileSearchObject, global::G.RunStepDetailsToolCallsFunctionObject>>,
+          CSharpType: global::System.Collections.Generic.IList<global::System.OneOf<global::G.RunStepDetailsToolCallsCodeObject?, global::G.RunStepDetailsToolCallsFileSearchObject?, global::G.RunStepDetailsToolCallsFunctionObject?>>,
           IsArray: true,
           IsEnum: false,
           Properties: null,
@@ -35280,10 +36505,10 @@ Represents a run step delta i.e. any changed fields on a run step during streami
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.RunStepDetailsToolCallsCodeObject, global::G.RunStepDetailsToolCallsFileSearchObject, global::G.RunStepDetailsToolCallsFunctionObject>>,
-          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.RunStepDetailsToolCallsCodeObject, global::G.RunStepDetailsToolCallsFileSearchObject, global::G.RunStepDetailsToolCallsFunctionObject>>?,
-          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<RunStepDetailsToolCallsCodeObject, RunStepDetailsToolCallsFileSearchObject, RunStepDetailsToolCallsFunctionObject>>,
-          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<RunStepDetailsToolCallsCodeObject, RunStepDetailsToolCallsFileSearchObject, RunStepDetailsToolCallsFunctionObject>>?,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.RunStepDetailsToolCallsCodeObject?, global::G.RunStepDetailsToolCallsFileSearchObject?, global::G.RunStepDetailsToolCallsFunctionObject?>>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<global::G.RunStepDetailsToolCallsCodeObject?, global::G.RunStepDetailsToolCallsFileSearchObject?, global::G.RunStepDetailsToolCallsFunctionObject?>>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<RunStepDetailsToolCallsCodeObject?, RunStepDetailsToolCallsFileSearchObject?, RunStepDetailsToolCallsFunctionObject?>>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<RunStepDetailsToolCallsCodeObject?, RunStepDetailsToolCallsFileSearchObject?, RunStepDetailsToolCallsFunctionObject?>>?,
           IsAnyOf: false,
           ConverterType: 
         },
@@ -38307,6 +39532,35 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterDefaultValue: default
       },
       {
+        Id: chunking_strategy,
+        Name: ChunkingStrategy,
+        Type: {
+          CSharpType: object?,
+          IsArray: false,
+          IsEnum: false,
+          OneOfCount: 2,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
+          ShortCSharpTypeWithoutNullability: object,
+          ShortCSharpTypeWithNullability: object?,
+          IsAnyOf: true,
+          ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
+        },
+        IsRequired: false,
+        DefaultValue: ,
+        IsDeprecated: false,
+        Summary: The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy. Only applicable if `file_ids` is non-empty.,
+        ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2,
+        ParameterName: chunkingStrategy,
+        ArgumentName: chunkingStrategy,
+        ParameterDefaultValue: default
+      },
+      {
         Id: metadata,
         Name: Metadata,
         Type: {
@@ -38346,6 +39600,23 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     GlobalClassName: global::G.CreateVectorStoreRequest,
     ExternalClassName: CreateVectorStoreRequest,
     FileNameWithoutExtension: G.Models.CreateVectorStoreRequest
+  },
+  {
+    Id: chunking_strategy,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: null,
+    Summary: The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy. Only applicable if `file_ids` is non-empty.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ChunkingStrategy,
+    ClassName: ChunkingStrategy,
+    GlobalClassName: global::G.ChunkingStrategy,
+    ExternalClassName: ChunkingStrategy,
+    FileNameWithoutExtension: G.Models.ChunkingStrategy
   },
   {
     Id: UpdateVectorStoreRequest,
@@ -38963,6 +40234,35 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterName: lastError,
         ArgumentName: lastError,
         ParameterDefaultValue: default
+      },
+      {
+        Id: chunking_strategy,
+        Name: ChunkingStrategy,
+        Type: {
+          CSharpType: object?,
+          IsArray: false,
+          IsEnum: false,
+          OneOfCount: 2,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
+          ShortCSharpTypeWithoutNullability: object,
+          ShortCSharpTypeWithNullability: object?,
+          IsAnyOf: true,
+          ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
+        },
+        IsRequired: false,
+        DefaultValue: ,
+        IsDeprecated: false,
+        Summary: The strategy used to chunk the file.,
+        ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2,
+        ParameterName: chunkingStrategy,
+        ArgumentName: chunkingStrategy,
+        ParameterDefaultValue: default
       }
     ],
     Summary: A list of files attached to a vector store.,
@@ -39185,6 +40485,23 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     FileNameWithoutExtension: G.Models.Code
   },
   {
+    Id: chunking_strategy,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: null,
+    Summary: The strategy used to chunk the file.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ChunkingStrategy,
+    ClassName: ChunkingStrategy,
+    GlobalClassName: global::G.ChunkingStrategy,
+    ExternalClassName: ChunkingStrategy,
+    FileNameWithoutExtension: G.Models.ChunkingStrategy
+  },
+  {
     Id: object,
     AddTypeName: false,
     Parents: null,
@@ -39358,6 +40675,522 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     FileNameWithoutExtension: G.Models.Status
   },
   {
+    Id: OtherChunkingStrategyResponseParam,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: type,
+        Name: Type,
+        Type: {
+          CSharpType: global::G.OtherChunkingStrategyResponseParamType,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            Other
+          ],
+          EnumValues: [
+            other
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.OtherChunkingStrategyResponseParamType,
+          CSharpTypeWithNullability: global::G.OtherChunkingStrategyResponseParamType?,
+          ShortCSharpTypeWithoutNullability: OtherChunkingStrategyResponseParamType,
+          ShortCSharpTypeWithNullability: OtherChunkingStrategyResponseParamType?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.OtherChunkingStrategyResponseParamTypeJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: Always `other`.,
+        ConverterType: global::OpenApiGenerator.JsonConverters.OtherChunkingStrategyResponseParamTypeJsonConverter,
+        ParameterName: type,
+        ArgumentName: type,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: This is returned when the chunking strategy is unknown. Typically, this is because the file was indexed before the `chunking_strategy` concept was introduced in the API.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: OtherChunkingStrategyResponseParam,
+    ClassName: OtherChunkingStrategyResponseParam,
+    GlobalClassName: global::G.OtherChunkingStrategyResponseParam,
+    ExternalClassName: OtherChunkingStrategyResponseParam,
+    FileNameWithoutExtension: G.Models.OtherChunkingStrategyResponseParam
+  },
+  {
+    Id: type,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: other,
+        Name: Other,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: other,
+        ArgumentName: other,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Always `other`.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Type,
+    ClassName: Type,
+    GlobalClassName: global::G.Type,
+    ExternalClassName: Type,
+    FileNameWithoutExtension: G.Models.Type
+  },
+  {
+    Id: StaticChunkingStrategyResponseParam,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: type,
+        Name: Type,
+        Type: {
+          CSharpType: global::G.StaticChunkingStrategyResponseParamType,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            Static
+          ],
+          EnumValues: [
+            static
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.StaticChunkingStrategyResponseParamType,
+          CSharpTypeWithNullability: global::G.StaticChunkingStrategyResponseParamType?,
+          ShortCSharpTypeWithoutNullability: StaticChunkingStrategyResponseParamType,
+          ShortCSharpTypeWithNullability: StaticChunkingStrategyResponseParamType?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.StaticChunkingStrategyResponseParamTypeJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: Always `static`.,
+        ConverterType: global::OpenApiGenerator.JsonConverters.StaticChunkingStrategyResponseParamTypeJsonConverter,
+        ParameterName: type,
+        ArgumentName: type,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: static,
+        Name: Static,
+        Type: {
+          CSharpType: global::G.StaticChunkingStrategy,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            max_chunk_size_tokens,
+            chunk_overlap_tokens
+          ],
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.StaticChunkingStrategy,
+          CSharpTypeWithNullability: global::G.StaticChunkingStrategy?,
+          ShortCSharpTypeWithoutNullability: StaticChunkingStrategy,
+          ShortCSharpTypeWithNullability: StaticChunkingStrategy?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: @static,
+        ArgumentName: @static,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: StaticChunkingStrategyResponseParam,
+    ClassName: StaticChunkingStrategyResponseParam,
+    GlobalClassName: global::G.StaticChunkingStrategyResponseParam,
+    ExternalClassName: StaticChunkingStrategyResponseParam,
+    FileNameWithoutExtension: G.Models.StaticChunkingStrategyResponseParam
+  },
+  {
+    Id: type,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: static,
+        Name: Static,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: @static,
+        ArgumentName: @static,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Always `static`.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Type,
+    ClassName: Type,
+    GlobalClassName: global::G.Type,
+    ExternalClassName: Type,
+    FileNameWithoutExtension: G.Models.Type
+  },
+  {
+    Id: StaticChunkingStrategy,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: max_chunk_size_tokens,
+        Name: MaxChunkSizeTokens,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: The maximum number of tokens in each chunk. The default value is `800`. The minimum value is `100` and the maximum value is `4096`.,
+        ConverterType: ,
+        ParameterName: maxChunkSizeTokens,
+        ArgumentName: maxChunkSizeTokens,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: chunk_overlap_tokens,
+        Name: ChunkOverlapTokens,
+        Type: {
+          CSharpType: int,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: int,
+          CSharpTypeWithNullability: int?,
+          ShortCSharpTypeWithoutNullability: int,
+          ShortCSharpTypeWithNullability: int?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary:
+The number of tokens that overlap between chunks. The default value is `400`.
+
+Note that the overlap must not exceed half of `max_chunk_size_tokens`.
+,
+        ConverterType: ,
+        ParameterName: chunkOverlapTokens,
+        ArgumentName: chunkOverlapTokens,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: StaticChunkingStrategy,
+    ClassName: StaticChunkingStrategy,
+    GlobalClassName: global::G.StaticChunkingStrategy,
+    ExternalClassName: StaticChunkingStrategy,
+    FileNameWithoutExtension: G.Models.StaticChunkingStrategy
+  },
+  {
+    Id: AutoChunkingStrategyRequestParam,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: type,
+        Name: Type,
+        Type: {
+          CSharpType: global::G.AutoChunkingStrategyRequestParamType,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            Auto
+          ],
+          EnumValues: [
+            auto
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.AutoChunkingStrategyRequestParamType,
+          CSharpTypeWithNullability: global::G.AutoChunkingStrategyRequestParamType?,
+          ShortCSharpTypeWithoutNullability: AutoChunkingStrategyRequestParamType,
+          ShortCSharpTypeWithNullability: AutoChunkingStrategyRequestParamType?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.AutoChunkingStrategyRequestParamTypeJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: Always `auto`.,
+        ConverterType: global::OpenApiGenerator.JsonConverters.AutoChunkingStrategyRequestParamTypeJsonConverter,
+        ParameterName: type,
+        ArgumentName: type,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: The default strategy. This strategy currently uses a `max_chunk_size_tokens` of `800` and `chunk_overlap_tokens` of `400`.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: AutoChunkingStrategyRequestParam,
+    ClassName: AutoChunkingStrategyRequestParam,
+    GlobalClassName: global::G.AutoChunkingStrategyRequestParam,
+    ExternalClassName: AutoChunkingStrategyRequestParam,
+    FileNameWithoutExtension: G.Models.AutoChunkingStrategyRequestParam
+  },
+  {
+    Id: type,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: auto,
+        Name: Auto,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: auto,
+        ArgumentName: auto,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Always `auto`.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Type,
+    ClassName: Type,
+    GlobalClassName: global::G.Type,
+    ExternalClassName: Type,
+    FileNameWithoutExtension: G.Models.Type
+  },
+  {
+    Id: StaticChunkingStrategyRequestParam,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: type,
+        Name: Type,
+        Type: {
+          CSharpType: global::G.StaticChunkingStrategyRequestParamType,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            Static
+          ],
+          EnumValues: [
+            static
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.StaticChunkingStrategyRequestParamType,
+          CSharpTypeWithNullability: global::G.StaticChunkingStrategyRequestParamType?,
+          ShortCSharpTypeWithoutNullability: StaticChunkingStrategyRequestParamType,
+          ShortCSharpTypeWithNullability: StaticChunkingStrategyRequestParamType?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.StaticChunkingStrategyRequestParamTypeJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: Always `static`.,
+        ConverterType: global::OpenApiGenerator.JsonConverters.StaticChunkingStrategyRequestParamTypeJsonConverter,
+        ParameterName: type,
+        ArgumentName: type,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: static,
+        Name: Static,
+        Type: {
+          CSharpType: global::G.StaticChunkingStrategy,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            max_chunk_size_tokens,
+            chunk_overlap_tokens
+          ],
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.StaticChunkingStrategy,
+          CSharpTypeWithNullability: global::G.StaticChunkingStrategy?,
+          ShortCSharpTypeWithoutNullability: StaticChunkingStrategy,
+          ShortCSharpTypeWithNullability: StaticChunkingStrategy?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: @static,
+        ArgumentName: @static,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: StaticChunkingStrategyRequestParam,
+    ClassName: StaticChunkingStrategyRequestParam,
+    GlobalClassName: global::G.StaticChunkingStrategyRequestParam,
+    ExternalClassName: StaticChunkingStrategyRequestParam,
+    FileNameWithoutExtension: G.Models.StaticChunkingStrategyRequestParam
+  },
+  {
+    Id: type,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: static,
+        Name: Static,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: @static,
+        ArgumentName: @static,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Always `static`.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Type,
+    ClassName: Type,
+    GlobalClassName: global::G.Type,
+    ExternalClassName: Type,
+    FileNameWithoutExtension: G.Models.Type
+  },
+  {
     Id: CreateVectorStoreFileRequest,
     AddTypeName: false,
     Parents: null,
@@ -39389,6 +41222,34 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ConverterType: ,
         ParameterName: fileId,
         ArgumentName: fileId,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: chunking_strategy,
+        Name: ChunkingStrategy,
+        Type: {
+          CSharpType: global::G.ChunkingStrategyRequestParam?,
+          IsArray: false,
+          IsEnum: false,
+          OneOfCount: 2,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.ChunkingStrategyRequestParam,
+          CSharpTypeWithNullability: global::G.ChunkingStrategyRequestParam?,
+          ShortCSharpTypeWithoutNullability: ChunkingStrategyRequestParam,
+          ShortCSharpTypeWithNullability: ChunkingStrategyRequestParam?,
+          IsAnyOf: true,
+          ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.,
+        ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2,
+        ParameterName: chunkingStrategy,
+        ArgumentName: chunkingStrategy,
         ParameterDefaultValue: default
       }
     ],
@@ -40257,6 +42118,34 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterName: fileIds,
         ArgumentName: fileIds,
         ParameterDefaultValue: default
+      },
+      {
+        Id: chunking_strategy,
+        Name: ChunkingStrategy,
+        Type: {
+          CSharpType: global::G.ChunkingStrategyRequestParam?,
+          IsArray: false,
+          IsEnum: false,
+          OneOfCount: 2,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.ChunkingStrategyRequestParam,
+          CSharpTypeWithNullability: global::G.ChunkingStrategyRequestParam?,
+          ShortCSharpTypeWithoutNullability: ChunkingStrategyRequestParam,
+          ShortCSharpTypeWithNullability: ChunkingStrategyRequestParam?,
+          IsAnyOf: true,
+          ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.,
+        ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2,
+        ParameterName: chunkingStrategy,
+        ArgumentName: chunkingStrategy,
+        ParameterDefaultValue: default
       }
     ],
     Summary: ,
@@ -40468,6 +42357,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
             max_completion_tokens,
             truncation_strategy,
             tool_choice,
+            parallel_tool_calls,
             response_format
           ],
           EnumValues: null,
@@ -40617,6 +42507,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
             max_completion_tokens,
             truncation_strategy,
             tool_choice,
+            parallel_tool_calls,
             response_format
           ],
           EnumValues: null,
@@ -40766,6 +42657,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
             max_completion_tokens,
             truncation_strategy,
             tool_choice,
+            parallel_tool_calls,
             response_format
           ],
           EnumValues: null,
@@ -40915,6 +42807,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
             max_completion_tokens,
             truncation_strategy,
             tool_choice,
+            parallel_tool_calls,
             response_format
           ],
           EnumValues: null,
@@ -41064,6 +42957,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
             max_completion_tokens,
             truncation_strategy,
             tool_choice,
+            parallel_tool_calls,
             response_format
           ],
           EnumValues: null,
@@ -41157,10 +43051,10 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsArray: false,
           IsEnum: true,
           Properties: [
-            ThreadRunFailed
+            ThreadRunIncomplete
           ],
           EnumValues: [
-            thread.run.failed
+            thread.run.incomplete
           ],
           Namespace: G,
           IsDeprecated: false,
@@ -41213,6 +43107,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
             max_completion_tokens,
             truncation_strategy,
             tool_choice,
+            parallel_tool_calls,
             response_format
           ],
           EnumValues: null,
@@ -41235,7 +43130,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterDefaultValue: default
       }
     ],
-    Summary: Occurs when a [run](/docs/api-reference/runs/object) fails.,
+    Summary: Occurs when a [run](/docs/api-reference/runs/object) ends with status `incomplete`.,
     IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
@@ -41254,8 +43149,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Style: Enumeration,
     Properties: [
       {
-        Id: thread.run.failed,
-        Name: ThreadRunFailed,
+        Id: thread.run.incomplete,
+        Name: ThreadRunIncomplete,
         Type: {
           CSharpType: ,
           IsArray: false,
@@ -41276,8 +43171,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: threadRunFailed,
-        ArgumentName: threadRunFailed,
+        ParameterName: threadRunIncomplete,
+        ArgumentName: threadRunIncomplete,
         ParameterDefaultValue: default
       }
     ],
@@ -41306,10 +43201,10 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsArray: false,
           IsEnum: true,
           Properties: [
-            ThreadRunCancelling
+            ThreadRunFailed
           ],
           EnumValues: [
-            thread.run.cancelling
+            thread.run.failed
           ],
           Namespace: G,
           IsDeprecated: false,
@@ -41362,6 +43257,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
             max_completion_tokens,
             truncation_strategy,
             tool_choice,
+            parallel_tool_calls,
             response_format
           ],
           EnumValues: null,
@@ -41384,7 +43280,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterDefaultValue: default
       }
     ],
-    Summary: Occurs when a [run](/docs/api-reference/runs/object) moves to a `cancelling` status.,
+    Summary: Occurs when a [run](/docs/api-reference/runs/object) fails.,
     IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
@@ -41403,8 +43299,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Style: Enumeration,
     Properties: [
       {
-        Id: thread.run.cancelling,
-        Name: ThreadRunCancelling,
+        Id: thread.run.failed,
+        Name: ThreadRunFailed,
         Type: {
           CSharpType: ,
           IsArray: false,
@@ -41425,8 +43321,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: threadRunCancelling,
-        ArgumentName: threadRunCancelling,
+        ParameterName: threadRunFailed,
+        ArgumentName: threadRunFailed,
         ParameterDefaultValue: default
       }
     ],
@@ -41455,10 +43351,10 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsArray: false,
           IsEnum: true,
           Properties: [
-            ThreadRunCancelled
+            ThreadRunCancelling
           ],
           EnumValues: [
-            thread.run.cancelled
+            thread.run.cancelling
           ],
           Namespace: G,
           IsDeprecated: false,
@@ -41511,6 +43407,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
             max_completion_tokens,
             truncation_strategy,
             tool_choice,
+            parallel_tool_calls,
             response_format
           ],
           EnumValues: null,
@@ -41533,7 +43430,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterDefaultValue: default
       }
     ],
-    Summary: Occurs when a [run](/docs/api-reference/runs/object) is cancelled.,
+    Summary: Occurs when a [run](/docs/api-reference/runs/object) moves to a `cancelling` status.,
     IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
@@ -41552,8 +43449,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     Style: Enumeration,
     Properties: [
       {
-        Id: thread.run.cancelled,
-        Name: ThreadRunCancelled,
+        Id: thread.run.cancelling,
+        Name: ThreadRunCancelling,
         Type: {
           CSharpType: ,
           IsArray: false,
@@ -41574,8 +43471,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
-        ParameterName: threadRunCancelled,
-        ArgumentName: threadRunCancelled,
+        ParameterName: threadRunCancelling,
+        ArgumentName: threadRunCancelling,
         ParameterDefaultValue: default
       }
     ],
@@ -41604,10 +43501,10 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           IsArray: false,
           IsEnum: true,
           Properties: [
-            ThreadRunExpired
+            ThreadRunCancelled
           ],
           EnumValues: [
-            thread.run.expired
+            thread.run.cancelled
           ],
           Namespace: G,
           IsDeprecated: false,
@@ -41660,6 +43557,157 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
             max_completion_tokens,
             truncation_strategy,
             tool_choice,
+            parallel_tool_calls,
+            response_format
+          ],
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunObject,
+          CSharpTypeWithNullability: global::G.RunObject?,
+          ShortCSharpTypeWithoutNullability: RunObject,
+          ShortCSharpTypeWithNullability: RunObject?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: Represents an execution run on a [thread](/docs/api-reference/threads).,
+        ConverterType: ,
+        ParameterName: data,
+        ArgumentName: data,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: Occurs when a [run](/docs/api-reference/runs/object) is cancelled.,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: RunStreamEventVariant9,
+    ClassName: RunStreamEventVariant9,
+    GlobalClassName: global::G.RunStreamEventVariant9,
+    ExternalClassName: RunStreamEventVariant9,
+    FileNameWithoutExtension: G.Models.RunStreamEventVariant9
+  },
+  {
+    Id: event,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: thread.run.cancelled,
+        Name: ThreadRunCancelled,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: threadRunCancelled,
+        ArgumentName: threadRunCancelled,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary: ,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: Event,
+    ClassName: Event,
+    GlobalClassName: global::G.Event,
+    ExternalClassName: Event,
+    FileNameWithoutExtension: G.Models.Event
+  },
+  {
+    Id: RunStreamEventVariant10,
+    AddTypeName: false,
+    Parents: null,
+    TargetFramework: netstandard2.0,
+    Namespace: G,
+    Properties: [
+      {
+        Id: event,
+        Name: Event,
+        Type: {
+          CSharpType: global::G.RunStreamEventVariant10Event,
+          IsArray: false,
+          IsEnum: true,
+          Properties: [
+            ThreadRunExpired
+          ],
+          EnumValues: [
+            thread.run.expired
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.RunStreamEventVariant10Event,
+          CSharpTypeWithNullability: global::G.RunStreamEventVariant10Event?,
+          ShortCSharpTypeWithoutNullability: RunStreamEventVariant10Event,
+          ShortCSharpTypeWithNullability: RunStreamEventVariant10Event?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant10EventJsonConverter
+        },
+        IsRequired: true,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: global::OpenApiGenerator.JsonConverters.RunStreamEventVariant10EventJsonConverter,
+        ParameterName: @event,
+        ArgumentName: @event,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: data,
+        Name: Data,
+        Type: {
+          CSharpType: global::G.RunObject,
+          IsArray: false,
+          IsEnum: false,
+          Properties: [
+            id,
+            object,
+            created_at,
+            thread_id,
+            assistant_id,
+            status,
+            required_action,
+            last_error,
+            expires_at,
+            started_at,
+            cancelled_at,
+            failed_at,
+            completed_at,
+            incomplete_details,
+            model,
+            instructions,
+            tools,
+            metadata,
+            usage,
+            temperature,
+            top_p,
+            max_prompt_tokens,
+            max_completion_tokens,
+            truncation_strategy,
+            tool_choice,
+            parallel_tool_calls,
             response_format
           ],
           EnumValues: null,
@@ -41686,11 +43734,11 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,
-    Name: RunStreamEventVariant9,
-    ClassName: RunStreamEventVariant9,
-    GlobalClassName: global::G.RunStreamEventVariant9,
-    ExternalClassName: RunStreamEventVariant9,
-    FileNameWithoutExtension: G.Models.RunStreamEventVariant9
+    Name: RunStreamEventVariant10,
+    ClassName: RunStreamEventVariant10,
+    GlobalClassName: global::G.RunStreamEventVariant10,
+    ExternalClassName: RunStreamEventVariant10,
+    FileNameWithoutExtension: G.Models.RunStreamEventVariant10
   },
   {
     Id: event,
@@ -44934,7 +46982,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         },
         IsRequired: false,
         IsDeprecated: false,
-        Summary: The OpenAI API relative URL to be used for the request. Currently `/v1/chat/completions` and `/v1/embeddings` are supported.,
+        Summary: The OpenAI API relative URL to be used for the request. Currently `/v1/chat/completions`, `/v1/embeddings`, and `/v1/completions` are supported.,
         ConverterType: ,
         ParameterName: url,
         ArgumentName: url,
@@ -46296,7 +48344,7 @@ The ID of an uploaded file that contains requests for the new batch.
 
 See [upload file](/docs/api-reference/files/create) for how to upload a file.
 
-Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/requestInput), and must be uploaded with the purpose `batch`.
+Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/request-input), and must be uploaded with the purpose `batch`. The file can contain up to 50,000 requests, and can be up to 100 MB in size.
 ,
         ConverterType: ,
         ParameterName: inputFileId,
@@ -46312,11 +48360,13 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           IsEnum: true,
           Properties: [
             V1ChatCompletions,
-            V1Embeddings
+            V1Embeddings,
+            V1Completions
           ],
           EnumValues: [
             /v1/chat/completions,
-            /v1/embeddings
+            /v1/embeddings,
+            /v1/completions
           ],
           Namespace: G,
           IsDeprecated: false,
@@ -46330,7 +48380,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
         },
         IsRequired: true,
         IsDeprecated: false,
-        Summary: The endpoint to be used for all requests in the batch. Currently `/v1/chat/completions` and `/v1/embeddings` are supported.,
+        Summary: The endpoint to be used for all requests in the batch. Currently `/v1/chat/completions`, `/v1/embeddings`, and `/v1/completions` are supported. Note that `/v1/embeddings` batches are also restricted to a maximum of 50,000 embedding inputs across all requests in the batch.,
         ConverterType: global::OpenApiGenerator.JsonConverters.CreateBatchRequestEndpointJsonConverter,
         ParameterName: endpoint,
         ArgumentName: endpoint,
@@ -46467,9 +48517,36 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
         ParameterName: v1Embeddings,
         ArgumentName: v1Embeddings,
         ParameterDefaultValue: default
+      },
+      {
+        Id: /v1/completions,
+        Name: V1Completions,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: v1Completions,
+        ArgumentName: v1Completions,
+        ParameterDefaultValue: default
       }
     ],
-    Summary: The endpoint to be used for all requests in the batch. Currently `/v1/chat/completions` and `/v1/embeddings` are supported.,
+    Summary: The endpoint to be used for all requests in the batch. Currently `/v1/chat/completions`, `/v1/embeddings`, and `/v1/completions` are supported. Note that `/v1/embeddings` batches are also restricted to a maximum of 50,000 embedding inputs across all requests in the batch.,
     IsDeprecated: false,
     AdditionalModels: null,
     Enumerations: null,

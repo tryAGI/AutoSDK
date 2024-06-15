@@ -26,7 +26,7 @@ namespace G
         public AssistantsClient Assistants => new AssistantsClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
 
         /// <summary>
-        /// Learn how to turn audio into text or text into audio.
+        /// Turn audio into text or text into audio.
         /// </summary>
         public AudioClient Audio => new AudioClient(_httpClient, jsonSerializerOptions: _jsonSerializerOptions);
 
@@ -216,6 +216,8 @@ namespace G
                     new global::OpenApiGenerator.JsonConverters.CreateEmbeddingResponseObjectNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CreateTranscriptionRequestResponseFormatJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CreateTranscriptionRequestResponseFormatNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.CreateTranscriptionRequestTimestampGranularitiesJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.CreateTranscriptionRequestTimestampGranularitiesNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CreateTranscriptionRequestModelJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CreateTranscriptionRequestModelNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CreateTranslationRequestModelJsonConverter(),
@@ -258,6 +260,8 @@ namespace G
                     new global::OpenApiGenerator.JsonConverters.AssistantObjectObjectNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.AssistantObjectResponseFormatJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.AssistantObjectResponseFormatNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyTypeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CreateAssistantRequestModelJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CreateAssistantRequestModelNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.CreateAssistantRequestResponseFormatJsonConverter(),
@@ -270,6 +274,8 @@ namespace G
                     new global::OpenApiGenerator.JsonConverters.AssistantToolsCodeTypeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.AssistantToolsFileSearchTypeJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.AssistantToolsFileSearchTypeNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.AssistantToolsFileSearchTypeOnlyTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.AssistantToolsFileSearchTypeOnlyTypeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.AssistantToolsFunctionTypeJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.AssistantToolsFunctionTypeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.TruncationObjectTypeJsonConverter(),
@@ -308,6 +314,8 @@ namespace G
                     new global::OpenApiGenerator.JsonConverters.CreateThreadAndRunRequestResponseFormatNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ThreadObjectObjectJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.ThreadObjectObjectNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyTypeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.DeleteThreadResponseObjectJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.DeleteThreadResponseObjectNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.MessageObjectIncompleteDetailsReasonJsonConverter(),
@@ -408,6 +416,14 @@ namespace G
                     new global::OpenApiGenerator.JsonConverters.VectorStoreFileObjectObjectNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.VectorStoreFileObjectStatusJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.VectorStoreFileObjectStatusNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.OtherChunkingStrategyResponseParamTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.OtherChunkingStrategyResponseParamTypeNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.StaticChunkingStrategyResponseParamTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.StaticChunkingStrategyResponseParamTypeNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.AutoChunkingStrategyRequestParamTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.AutoChunkingStrategyRequestParamTypeNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.StaticChunkingStrategyRequestParamTypeJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.StaticChunkingStrategyRequestParamTypeNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.DeleteVectorStoreFileResponseObjectJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.DeleteVectorStoreFileResponseObjectNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.VectorStoreFileBatchObjectObjectJsonConverter(),
@@ -434,6 +450,8 @@ namespace G
                     new global::OpenApiGenerator.JsonConverters.RunStreamEventVariant8EventNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.RunStreamEventVariant9EventJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.RunStreamEventVariant9EventNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.RunStreamEventVariant10EventJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.RunStreamEventVariant10EventNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant1EventJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant1EventNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant2EventJsonConverter(),

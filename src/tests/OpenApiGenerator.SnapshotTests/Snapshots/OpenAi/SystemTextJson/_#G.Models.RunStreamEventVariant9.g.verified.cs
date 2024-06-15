@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Occurs when a [run](/docs/api-reference/runs/object) expires.
+    /// Occurs when a [run](/docs/api-reference/runs/object) is cancelled.
     /// </summary>
     public sealed partial class RunStreamEventVariant9
     {

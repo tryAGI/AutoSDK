@@ -12,6 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Gpt4o,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt4o20240513,
+        /// <summary>
+        /// 
+        /// </summary>
         Gpt4Turbo,
         /// <summary>
         /// 
@@ -95,6 +103,8 @@ namespace G
         {
             return value switch
             {
+                CreateRunRequestModel.Gpt4o => "gpt-4o",
+                CreateRunRequestModel.Gpt4o20240513 => "gpt-4o-2024-05-13",
                 CreateRunRequestModel.Gpt4Turbo => "gpt-4-turbo",
                 CreateRunRequestModel.Gpt4Turbo20240409 => "gpt-4-turbo-2024-04-09",
                 CreateRunRequestModel.Gpt40125Preview => "gpt-4-0125-preview",
@@ -123,6 +133,8 @@ namespace G
         {
             return value switch
             {
+                "gpt-4o" => CreateRunRequestModel.Gpt4o,
+                "gpt-4o-2024-05-13" => CreateRunRequestModel.Gpt4o20240513,
                 "gpt-4-turbo" => CreateRunRequestModel.Gpt4Turbo,
                 "gpt-4-turbo-2024-04-09" => CreateRunRequestModel.Gpt4Turbo20240409,
                 "gpt-4-0125-preview" => CreateRunRequestModel.Gpt40125Preview,

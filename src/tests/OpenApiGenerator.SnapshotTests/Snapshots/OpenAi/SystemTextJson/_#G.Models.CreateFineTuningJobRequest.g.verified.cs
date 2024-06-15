@@ -23,6 +23,7 @@ namespace G
         /// The ID of an uploaded file that contains training data.<br/>
         /// See [upload file](/docs/api-reference/files/create) for how to upload a file.<br/>
         /// Your dataset must be formatted as a JSONL file. Additionally, you must upload your file with the purpose `fine-tune`.<br/>
+        /// The contents of the file should differ depending on if the model uses the [chat](/docs/api-reference/fine-tuning/chat-input) or [completions](/docs/api-reference/fine-tuning/completions-input) format.<br/>
         /// See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.<br/>
         /// Example: file-abc123
         /// </summary>

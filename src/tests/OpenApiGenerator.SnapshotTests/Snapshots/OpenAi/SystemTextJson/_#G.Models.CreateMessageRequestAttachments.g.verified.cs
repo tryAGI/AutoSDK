@@ -19,7 +19,7 @@ namespace G
         /// The tools to add this file to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?>>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearchTypeOnly?>>? Tools { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

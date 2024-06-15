@@ -23,6 +23,16 @@
     <AnalysisMode>All</AnalysisMode>
   </PropertyGroup>
 
+<!--  <Target Name="FetchOpenApi" BeforeTargets="Build;BeforeCompile;CompileDesignTime">-->
+<!--    &lt;!&ndash; Download the OpenAPI file (if expired) &ndash;&gt;-->
+<!--    <DownloadFile-->
+<!--            SourceUrl="https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml"-->
+<!--            DestinationFolder="$(MSBuildThisFileDirectory)../../../specs"-->
+<!--            DestinationFileName="openai.yaml"-->
+<!--            SkipUnchangedFiles="true"-->
+<!--            Retries="2" />-->
+<!--  </Target>-->
+
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0" />
     <PackageReference Include="Microsoft.OpenApi" Version="1.6.14" />

@@ -105,6 +105,16 @@ namespace OpenApiGenerator.JsonConverters
             catch (global::System.Text.Json.JsonException)
             {
             }
+
+            readerCopy = reader;
+            global::G.RunStreamEventVariant10? value10 = default;
+            try
+            {
+                value10 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RunStreamEventVariant10>(ref readerCopy, options);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
             var result = new global::G.RunStreamEvent(
                 value1,
 
@@ -122,11 +132,13 @@ namespace OpenApiGenerator.JsonConverters
 
                 value8,
 
-                value9
+                value9,
+
+                value10
                 );
             if (!result.Validate())
             {
-                throw new global::System.Text.Json.JsonException($"Invalid JSON format for OneOf<{typeof(global::G.RunStreamEventVariant1).Name}, {typeof(global::G.RunStreamEventVariant2).Name}, {typeof(global::G.RunStreamEventVariant3).Name}, {typeof(global::G.RunStreamEventVariant4).Name}, {typeof(global::G.RunStreamEventVariant5).Name}, {typeof(global::G.RunStreamEventVariant6).Name}, {typeof(global::G.RunStreamEventVariant7).Name}, {typeof(global::G.RunStreamEventVariant8).Name}, {typeof(global::G.RunStreamEventVariant9).Name}>");
+                throw new global::System.Text.Json.JsonException($"Invalid JSON format for OneOf<{typeof(global::G.RunStreamEventVariant1).Name}, {typeof(global::G.RunStreamEventVariant2).Name}, {typeof(global::G.RunStreamEventVariant3).Name}, {typeof(global::G.RunStreamEventVariant4).Name}, {typeof(global::G.RunStreamEventVariant5).Name}, {typeof(global::G.RunStreamEventVariant6).Name}, {typeof(global::G.RunStreamEventVariant7).Name}, {typeof(global::G.RunStreamEventVariant8).Name}, {typeof(global::G.RunStreamEventVariant9).Name}, {typeof(global::G.RunStreamEventVariant10).Name}>");
             }
 
             if (value1 != null)
@@ -173,6 +185,11 @@ namespace OpenApiGenerator.JsonConverters
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RunStreamEventVariant9>(ref reader, options);
             }
+
+            else if (value10 != null)
+            {
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RunStreamEventVariant10>(ref reader, options);
+            }
             return result;
         }
 
@@ -186,7 +203,7 @@ namespace OpenApiGenerator.JsonConverters
 
             if (!value.Validate())
             {
-                throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(global::G.RunStreamEventVariant1).Name}, {typeof(global::G.RunStreamEventVariant2).Name}, {typeof(global::G.RunStreamEventVariant3).Name}, {typeof(global::G.RunStreamEventVariant4).Name}, {typeof(global::G.RunStreamEventVariant5).Name}, {typeof(global::G.RunStreamEventVariant6).Name}, {typeof(global::G.RunStreamEventVariant7).Name}, {typeof(global::G.RunStreamEventVariant8).Name}, {typeof(global::G.RunStreamEventVariant9).Name}> object.");
+                throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(global::G.RunStreamEventVariant1).Name}, {typeof(global::G.RunStreamEventVariant2).Name}, {typeof(global::G.RunStreamEventVariant3).Name}, {typeof(global::G.RunStreamEventVariant4).Name}, {typeof(global::G.RunStreamEventVariant5).Name}, {typeof(global::G.RunStreamEventVariant6).Name}, {typeof(global::G.RunStreamEventVariant7).Name}, {typeof(global::G.RunStreamEventVariant8).Name}, {typeof(global::G.RunStreamEventVariant9).Name}, {typeof(global::G.RunStreamEventVariant10).Name}> object.");
             }
 
             if (value.IsValue1)
@@ -232,6 +249,11 @@ namespace OpenApiGenerator.JsonConverters
             else if (value.IsValue9)
             {
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value9, typeof(global::G.RunStreamEventVariant9), options);
+            }
+
+            else if (value.IsValue10)
+            {
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value10, typeof(global::G.RunStreamEventVariant10), options);
             }
         }
     }

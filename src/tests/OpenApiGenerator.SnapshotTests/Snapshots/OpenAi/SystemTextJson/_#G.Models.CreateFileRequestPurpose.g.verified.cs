@@ -22,6 +22,10 @@ namespace G
         /// 
         /// </summary>
         FineTune,
+        /// <summary>
+        /// 
+        /// </summary>
+        Vision,
     }
 
     /// <summary>
@@ -39,6 +43,7 @@ namespace G
                 CreateFileRequestPurpose.Assistants => "assistants",
                 CreateFileRequestPurpose.Batch => "batch",
                 CreateFileRequestPurpose.FineTune => "fine-tune",
+                CreateFileRequestPurpose.Vision => "vision",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,6 +57,7 @@ namespace G
                 "assistants" => CreateFileRequestPurpose.Assistants,
                 "batch" => CreateFileRequestPurpose.Batch,
                 "fine-tune" => CreateFileRequestPurpose.FineTune,
+                "vision" => CreateFileRequestPurpose.Vision,
                 _ => null,
             };
         }

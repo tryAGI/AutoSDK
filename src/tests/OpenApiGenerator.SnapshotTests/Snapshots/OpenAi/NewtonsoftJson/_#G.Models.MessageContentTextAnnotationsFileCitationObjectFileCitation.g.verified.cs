@@ -16,12 +16,6 @@ namespace G
         public string FileId { get; set; } = default!;
 
         /// <summary>
-        /// The specific quote in the file.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("quote", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Quote { get; set; } = default!;
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]

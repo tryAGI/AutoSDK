@@ -52,6 +52,12 @@ namespace G
         public global::G.VectorStoreFileObjectLastError? LastError { get; set; } = default!;
 
         /// <summary>
+        /// The strategy used to chunk the file.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("chunking_strategy")]
+        public object? ChunkingStrategy { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]

@@ -28,6 +28,13 @@ namespace G
         public global::G.VectorStoreExpirationAfter? ExpiresAfter { get; set; }
 
         /// <summary>
+        /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy. Only applicable if `file_ids` is non-empty.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("chunking_strategy")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
+        public object? ChunkingStrategy { get; set; }
+
+        /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]

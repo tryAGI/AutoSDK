@@ -195,8 +195,12 @@ public static class Data
              settings.GenerateJsonSerializerContextTypes);
         var allSchemas = settings.GenerateSdk || settings.GenerateModels ? classes.Values.Concat(methods
                 .SelectMany(x => x.AdditionalModels))
-            .SelectMany(x => x.Schema.Value.Properties.Concat([x.Schema]).ToArray())
-            .Select(x => x.Value)
+            .SelectMany(x => x.Schema.Value.Properties.Values
+                .Concat(x.Schema.Value.AnyOf)
+                .Concat(x.Schema.Value.OneOf)
+                .Concat(x.Schema.Value.AllOf)
+                .Concat([x.Schema.Value])
+                .ToArray())
             .ToArray() : [];
         var anyOfs = allSchemas
             .Where(x => x.AnyOf is { Count: > 0 })

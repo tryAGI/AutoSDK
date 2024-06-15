@@ -572,6 +572,36 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
         ParameterDefaultValue: default
       },
       {
+        Id: parallel_tool_calls,
+        Name: ParallelToolCalls,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        DefaultValue: true,
+        IsDeprecated: false,
+        Summary:
+Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
+Default Value: true,
+        ConverterType: ,
+        ParameterName: parallelToolCalls,
+        ArgumentName: parallelToolCalls,
+        ParameterDefaultValue: true
+      },
+      {
         Id: user,
         Name: User,
         Type: {
@@ -700,6 +730,7 @@ A list of functions the model may generate JSON inputs for.
         top_p,
         tools,
         tool_choice,
+        parallel_tool_calls,
         user,
         function_call,
         functions
@@ -764,6 +795,7 @@ A list of functions the model may generate JSON inputs for.
           top_p,
           tools,
           tool_choice,
+          parallel_tool_calls,
           user,
           function_call,
           functions
@@ -3335,6 +3367,37 @@ Default Value: 0,
         ParameterName: temperature,
         ArgumentName: temperature,
         ParameterDefaultValue: 0
+      },
+      {
+        Id: timestamp_granularities[],
+        Name: TimestampGranularities,
+        Type: {
+          CSharpType: global::System.Collections.Generic.IList<global::G.CreateTranscriptionRequestTimestampGranularities?>?,
+          IsArray: true,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::G.CreateTranscriptionRequestTimestampGranularities?>,
+          CSharpTypeWithNullability: global::System.Collections.Generic.IList<global::G.CreateTranscriptionRequestTimestampGranularities?>?,
+          ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<CreateTranscriptionRequestTimestampGranularities?>,
+          ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<CreateTranscriptionRequestTimestampGranularities?>?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        DefaultValue: ,
+        IsDeprecated: false,
+        Summary:
+The timestamp granularities to populate for this transcription. `response_format` must be set `verbose_json` to use timestamp granularities. Either or both of these options are supported: `word`, or `segment`. Note: There is no additional latency for segment timestamps, but generating word timestamps incurs additional latency.
+
+Default Value: [segment],
+        ConverterType: ,
+        ParameterName: timestampGranularities,
+        ArgumentName: timestampGranularities,
+        ParameterDefaultValue: default
       }
     ],
     TargetFramework: netstandard2.0,
@@ -3354,7 +3417,8 @@ Default Value: 0,
         language,
         prompt,
         response_format,
-        temperature
+        temperature,
+        timestamp_granularities[]
       ],
       EnumValues: null,
       Namespace: G,
@@ -3396,7 +3460,8 @@ Default Value: 0,
           language,
           prompt,
           response_format,
-          temperature
+          temperature,
+          timestamp_granularities[]
         ],
         EnumValues: null,
         Namespace: G,
@@ -3842,12 +3907,14 @@ The File object (not file name) to be uploaded.
           Properties: [
             Assistants,
             Batch,
-            FineTune
+            FineTune,
+            Vision
           ],
           EnumValues: [
             assistants,
             batch,
-            fine-tune
+            fine-tune,
+            vision
           ],
           Namespace: G,
           IsDeprecated: false,
@@ -3877,9 +3944,13 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary:
-Upload a file that can be used across various endpoints. The size of all the files uploaded by one organization can be up to 100 GB.
+Upload a file that can be used across various endpoints. Individual files can be up to 512 MB, and the size of all files uploaded by one organization can be up to 100 GB.
 
-The size of individual files can be a maximum of 512 MB or 2 million tokens for Assistants. See the [Assistants Tools guide](/docs/assistants/tools) to learn more about the types of files supported. The Fine-tuning API only supports `.jsonl` files.
+The Assistants API supports files up to 2 million tokens and of specific file types. See the [Assistants Tools guide](/docs/assistants/tools) for details.
+
+The Fine-tuning API only supports `.jsonl` files. The input also has certain required formats for fine-tuning [chat](/docs/api-reference/fine-tuning/chat-input) or [completions](/docs/api-reference/fine-tuning/completions-input) models.
+
+The Batch API only supports `.jsonl` files up to 100 MB in size. The input also has a specific required [format](/docs/api-reference/batch/request-input).
 
 Please [contact us](https://help.openai.com/) if you need to increase these storage limits.
 ,
@@ -4382,6 +4453,8 @@ The ID of an uploaded file that contains training data.
 See [upload file](/docs/api-reference/files/create) for how to upload a file.
 
 Your dataset must be formatted as a JSONL file. Additionally, you must upload your file with the purpose `fine-tune`.
+
+The contents of the file should differ depending on if the model uses the [chat](/docs/api-reference/fine-tuning/chat-input) or [completions](/docs/api-reference/fine-tuning/completions-input) format.
 
 See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
 
@@ -6442,7 +6515,7 @@ Example: 1,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
+Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4 Turbo](/docs/models/gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
 
 Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.
 
@@ -7048,7 +7121,7 @@ Example: 1,
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
+Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4 Turbo](/docs/models/gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
 
 Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.
 
@@ -8268,7 +8341,7 @@ The role of the entity that is creating the message. Allowed values include:
         Id: content,
         Name: Content,
         Type: {
-          CSharpType: global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageRequestContentTextObject>>>,
+          CSharpType: global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject?, global::G.MessageContentImageUrlObject?, global::G.MessageRequestContentTextObject?>>>,
           IsArray: false,
           IsEnum: false,
           OneOfCount: 2,
@@ -8277,10 +8350,10 @@ The role of the entity that is creating the message. Allowed values include:
           Namespace: G,
           IsDeprecated: false,
           GenerateJsonSerializerContextTypes: false,
-          CSharpTypeWithoutNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageRequestContentTextObject>>>,
-          CSharpTypeWithNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageRequestContentTextObject>>>?,
-          ShortCSharpTypeWithoutNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<MessageContentImageFileObject, MessageContentImageUrlObject, MessageRequestContentTextObject>>>,
-          ShortCSharpTypeWithNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<MessageContentImageFileObject, MessageContentImageUrlObject, MessageRequestContentTextObject>>>?,
+          CSharpTypeWithoutNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject?, global::G.MessageContentImageUrlObject?, global::G.MessageRequestContentTextObject?>>>,
+          CSharpTypeWithNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageContentImageFileObject?, global::G.MessageContentImageUrlObject?, global::G.MessageRequestContentTextObject?>>>?,
+          ShortCSharpTypeWithoutNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<MessageContentImageFileObject?, MessageContentImageUrlObject?, MessageRequestContentTextObject?>>>,
+          ShortCSharpTypeWithNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<MessageContentImageFileObject?, MessageContentImageUrlObject?, MessageRequestContentTextObject?>>>?,
           IsAnyOf: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
         },
@@ -9413,6 +9486,36 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
         ParameterDefaultValue: default
       },
       {
+        Id: parallel_tool_calls,
+        Name: ParallelToolCalls,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        DefaultValue: true,
+        IsDeprecated: false,
+        Summary:
+Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
+Default Value: true,
+        ConverterType: ,
+        ParameterName: parallelToolCalls,
+        ArgumentName: parallelToolCalls,
+        ParameterDefaultValue: true
+      },
+      {
         Id: response_format,
         Name: ResponseFormat,
         Type: {
@@ -9435,7 +9538,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
+Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4 Turbo](/docs/models/gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
 
 Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.
 
@@ -9473,6 +9576,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         max_completion_tokens,
         truncation_strategy,
         tool_choice,
+        parallel_tool_calls,
         response_format
       ],
       EnumValues: null,
@@ -9516,6 +9620,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         max_completion_tokens,
         truncation_strategy,
         tool_choice,
+        parallel_tool_calls,
         response_format
       ],
       EnumValues: null,
@@ -9550,6 +9655,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           max_completion_tokens,
           truncation_strategy,
           tool_choice,
+          parallel_tool_calls,
           response_format
         ],
         EnumValues: null,
@@ -9593,6 +9699,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           max_completion_tokens,
           truncation_strategy,
           tool_choice,
+          parallel_tool_calls,
           response_format
         ],
         EnumValues: null,
@@ -10306,6 +10413,36 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
         ParameterDefaultValue: default
       },
       {
+        Id: parallel_tool_calls,
+        Name: ParallelToolCalls,
+        Type: {
+          CSharpType: bool,
+          IsArray: false,
+          IsEnum: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: bool,
+          CSharpTypeWithNullability: bool?,
+          ShortCSharpTypeWithoutNullability: bool,
+          ShortCSharpTypeWithNullability: bool?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        DefaultValue: true,
+        IsDeprecated: false,
+        Summary:
+Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
+Default Value: true,
+        ConverterType: ,
+        ParameterName: parallelToolCalls,
+        ArgumentName: parallelToolCalls,
+        ParameterDefaultValue: true
+      },
+      {
         Id: response_format,
         Name: ResponseFormat,
         Type: {
@@ -10328,7 +10465,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
         IsRequired: false,
         IsDeprecated: false,
         Summary:
-Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
+Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4 Turbo](/docs/models/gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
 
 Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.
 
@@ -10366,6 +10503,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         max_completion_tokens,
         truncation_strategy,
         tool_choice,
+        parallel_tool_calls,
         response_format
       ],
       EnumValues: null,
@@ -10409,6 +10547,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         max_completion_tokens,
         truncation_strategy,
         tool_choice,
+        parallel_tool_calls,
         response_format
       ],
       EnumValues: null,
@@ -10443,6 +10582,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           max_completion_tokens,
           truncation_strategy,
           tool_choice,
+          parallel_tool_calls,
           response_format
         ],
         EnumValues: null,
@@ -10486,6 +10626,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           max_completion_tokens,
           truncation_strategy,
           tool_choice,
+          parallel_tool_calls,
           response_format
         ],
         EnumValues: null,
@@ -10627,6 +10768,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         max_completion_tokens,
         truncation_strategy,
         tool_choice,
+        parallel_tool_calls,
         response_format
       ],
       EnumValues: null,
@@ -10672,6 +10814,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           max_completion_tokens,
           truncation_strategy,
           tool_choice,
+          parallel_tool_calls,
           response_format
         ],
         EnumValues: null,
@@ -10846,6 +10989,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         max_completion_tokens,
         truncation_strategy,
         tool_choice,
+        parallel_tool_calls,
         response_format
       ],
       EnumValues: null,
@@ -10909,6 +11053,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           max_completion_tokens,
           truncation_strategy,
           tool_choice,
+          parallel_tool_calls,
           response_format
         ],
         EnumValues: null,
@@ -11112,6 +11257,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
         max_completion_tokens,
         truncation_strategy,
         tool_choice,
+        parallel_tool_calls,
         response_format
       ],
       EnumValues: null,
@@ -11176,6 +11322,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
           max_completion_tokens,
           truncation_strategy,
           tool_choice,
+          parallel_tool_calls,
           response_format
         ],
         EnumValues: null,
@@ -11318,6 +11465,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
         max_completion_tokens,
         truncation_strategy,
         tool_choice,
+        parallel_tool_calls,
         response_format
       ],
       EnumValues: null,
@@ -11363,6 +11511,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
           max_completion_tokens,
           truncation_strategy,
           tool_choice,
+          parallel_tool_calls,
           response_format
         ],
         EnumValues: null,
@@ -12156,6 +12305,35 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
         ParameterDefaultValue: default
       },
       {
+        Id: chunking_strategy,
+        Name: ChunkingStrategy,
+        Type: {
+          CSharpType: object?,
+          IsArray: false,
+          IsEnum: false,
+          OneOfCount: 2,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: object,
+          CSharpTypeWithNullability: object?,
+          ShortCSharpTypeWithoutNullability: object,
+          ShortCSharpTypeWithNullability: object?,
+          IsAnyOf: true,
+          ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
+        },
+        IsRequired: false,
+        DefaultValue: ,
+        IsDeprecated: false,
+        Summary: The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy. Only applicable if `file_ids` is non-empty.,
+        ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2,
+        ParameterName: chunkingStrategy,
+        ArgumentName: chunkingStrategy,
+        ParameterDefaultValue: default
+      },
+      {
         Id: metadata,
         Name: Metadata,
         Type: {
@@ -12201,6 +12379,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         file_ids,
         name,
         expires_after,
+        chunking_strategy,
         metadata
       ],
       EnumValues: null,
@@ -12252,6 +12431,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           file_ids,
           name,
           expires_after,
+          chunking_strategy,
           metadata
         ],
         EnumValues: null,
@@ -13121,6 +13301,34 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterName: fileId,
         ArgumentName: fileId,
         ParameterDefaultValue: default
+      },
+      {
+        Id: chunking_strategy,
+        Name: ChunkingStrategy,
+        Type: {
+          CSharpType: global::G.ChunkingStrategyRequestParam?,
+          IsArray: false,
+          IsEnum: false,
+          OneOfCount: 2,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.ChunkingStrategyRequestParam,
+          CSharpTypeWithNullability: global::G.ChunkingStrategyRequestParam?,
+          ShortCSharpTypeWithoutNullability: ChunkingStrategyRequestParam,
+          ShortCSharpTypeWithNullability: ChunkingStrategyRequestParam?,
+          IsAnyOf: true,
+          ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.,
+        ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2,
+        ParameterName: chunkingStrategy,
+        ArgumentName: chunkingStrategy,
+        ParameterDefaultValue: default
       }
     ],
     TargetFramework: netstandard2.0,
@@ -13135,7 +13343,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       IsArray: false,
       IsEnum: false,
       Properties: [
-        file_id
+        file_id,
+        chunking_strategy
       ],
       EnumValues: null,
       Namespace: G,
@@ -13159,7 +13368,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         created_at,
         vector_store_id,
         status,
-        last_error
+        last_error,
+        chunking_strategy
       ],
       EnumValues: null,
       Namespace: G,
@@ -13179,7 +13389,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         IsArray: false,
         IsEnum: false,
         Properties: [
-          file_id
+          file_id,
+          chunking_strategy
         ],
         EnumValues: null,
         Namespace: G,
@@ -13203,7 +13414,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           created_at,
           vector_store_id,
           status,
-          last_error
+          last_error,
+          chunking_strategy
         ],
         EnumValues: null,
         Namespace: G,
@@ -13325,7 +13537,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         created_at,
         vector_store_id,
         status,
-        last_error
+        last_error,
+        chunking_strategy
       ],
       EnumValues: null,
       Namespace: G,
@@ -13351,7 +13564,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           created_at,
           vector_store_id,
           status,
-          last_error
+          last_error,
+          chunking_strategy
         ],
         EnumValues: null,
         Namespace: G,
@@ -13576,6 +13790,34 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterName: fileIds,
         ArgumentName: fileIds,
         ParameterDefaultValue: default
+      },
+      {
+        Id: chunking_strategy,
+        Name: ChunkingStrategy,
+        Type: {
+          CSharpType: global::G.ChunkingStrategyRequestParam?,
+          IsArray: false,
+          IsEnum: false,
+          OneOfCount: 2,
+          Properties: null,
+          EnumValues: null,
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.ChunkingStrategyRequestParam,
+          CSharpTypeWithNullability: global::G.ChunkingStrategyRequestParam?,
+          ShortCSharpTypeWithoutNullability: ChunkingStrategyRequestParam,
+          ShortCSharpTypeWithNullability: ChunkingStrategyRequestParam?,
+          IsAnyOf: true,
+          ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.,
+        ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2,
+        ParameterName: chunkingStrategy,
+        ArgumentName: chunkingStrategy,
+        ParameterDefaultValue: default
       }
     ],
     TargetFramework: netstandard2.0,
@@ -13590,7 +13832,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       IsArray: false,
       IsEnum: false,
       Properties: [
-        file_ids
+        file_ids,
+        chunking_strategy
       ],
       EnumValues: null,
       Namespace: G,
@@ -13633,7 +13876,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         IsArray: false,
         IsEnum: false,
         Properties: [
-          file_ids
+          file_ids,
+          chunking_strategy
         ],
         EnumValues: null,
         Namespace: G,
@@ -14315,7 +14559,7 @@ The ID of an uploaded file that contains requests for the new batch.
 
 See [upload file](/docs/api-reference/files/create) for how to upload a file.
 
-Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/requestInput), and must be uploaded with the purpose `batch`.
+Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/request-input), and must be uploaded with the purpose `batch`. The file can contain up to 50,000 requests, and can be up to 100 MB in size.
 ,
         ConverterType: ,
         ParameterName: inputFileId,
@@ -14331,11 +14575,13 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           IsEnum: true,
           Properties: [
             V1ChatCompletions,
-            V1Embeddings
+            V1Embeddings,
+            V1Completions
           ],
           EnumValues: [
             /v1/chat/completions,
-            /v1/embeddings
+            /v1/embeddings,
+            /v1/completions
           ],
           Namespace: G,
           IsDeprecated: false,
@@ -14349,7 +14595,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
         },
         IsRequired: true,
         IsDeprecated: false,
-        Summary: The endpoint to be used for all requests in the batch. Currently `/v1/chat/completions` and `/v1/embeddings` are supported.,
+        Summary: The endpoint to be used for all requests in the batch. Currently `/v1/chat/completions`, `/v1/embeddings`, and `/v1/completions` are supported. Note that `/v1/embeddings` batches are also restricted to a maximum of 50,000 embedding inputs across all requests in the batch.,
         ConverterType: global::OpenApiGenerator.JsonConverters.CreateBatchRequestEndpointJsonConverter,
         ParameterName: endpoint,
         ArgumentName: endpoint,
@@ -14869,7 +15115,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
-    Summary: Cancels an in-progress batch.,
+    Summary: Cancels an in-progress batch. The batch will be in status `cancelling` for up to 10 minutes, before changing to `cancelled`, where it will have partial results (if any) available in the output file.,
     BaseUrlSummary: ,
     IsDeprecated: false,
     RequestType: {
@@ -15081,7 +15327,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
         },
         IsRequired: false,
         IsDeprecated: false,
-        Summary: Learn how to turn audio into text or text into audio.,
+        Summary: Turn audio into text or text into audio.,
         ConverterType: ,
         ParameterName: audio,
         ArgumentName: audio,
@@ -15513,6 +15759,8 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       global::OpenApiGenerator.JsonConverters.CreateEmbeddingResponseObjectNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateTranscriptionRequestResponseFormatJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateTranscriptionRequestResponseFormatNullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateTranscriptionRequestTimestampGranularitiesJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateTranscriptionRequestTimestampGranularitiesNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateTranscriptionRequestModelJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateTranscriptionRequestModelNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateTranslationRequestModelJsonConverter,
@@ -15555,6 +15803,8 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       global::OpenApiGenerator.JsonConverters.AssistantObjectObjectNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.AssistantObjectResponseFormatJsonConverter,
       global::OpenApiGenerator.JsonConverters.AssistantObjectResponseFormatNullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyTypeNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateAssistantRequestModelJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateAssistantRequestModelNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateAssistantRequestResponseFormatJsonConverter,
@@ -15567,6 +15817,8 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       global::OpenApiGenerator.JsonConverters.AssistantToolsCodeTypeNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.AssistantToolsFileSearchTypeJsonConverter,
       global::OpenApiGenerator.JsonConverters.AssistantToolsFileSearchTypeNullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.AssistantToolsFileSearchTypeOnlyTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.AssistantToolsFileSearchTypeOnlyTypeNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.AssistantToolsFunctionTypeJsonConverter,
       global::OpenApiGenerator.JsonConverters.AssistantToolsFunctionTypeNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.TruncationObjectTypeJsonConverter,
@@ -15605,6 +15857,8 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       global::OpenApiGenerator.JsonConverters.CreateThreadAndRunRequestResponseFormatNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.ThreadObjectObjectJsonConverter,
       global::OpenApiGenerator.JsonConverters.ThreadObjectObjectNullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyTypeNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.DeleteThreadResponseObjectJsonConverter,
       global::OpenApiGenerator.JsonConverters.DeleteThreadResponseObjectNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.MessageObjectIncompleteDetailsReasonJsonConverter,
@@ -15705,6 +15959,14 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       global::OpenApiGenerator.JsonConverters.VectorStoreFileObjectObjectNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.VectorStoreFileObjectStatusJsonConverter,
       global::OpenApiGenerator.JsonConverters.VectorStoreFileObjectStatusNullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.OtherChunkingStrategyResponseParamTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.OtherChunkingStrategyResponseParamTypeNullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.StaticChunkingStrategyResponseParamTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.StaticChunkingStrategyResponseParamTypeNullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.AutoChunkingStrategyRequestParamTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.AutoChunkingStrategyRequestParamTypeNullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.StaticChunkingStrategyRequestParamTypeJsonConverter,
+      global::OpenApiGenerator.JsonConverters.StaticChunkingStrategyRequestParamTypeNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.DeleteVectorStoreFileResponseObjectJsonConverter,
       global::OpenApiGenerator.JsonConverters.DeleteVectorStoreFileResponseObjectNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.VectorStoreFileBatchObjectObjectJsonConverter,
@@ -15731,6 +15993,8 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       global::OpenApiGenerator.JsonConverters.RunStreamEventVariant8EventNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.RunStreamEventVariant9EventJsonConverter,
       global::OpenApiGenerator.JsonConverters.RunStreamEventVariant9EventNullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunStreamEventVariant10EventJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunStreamEventVariant10EventNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant1EventJsonConverter,
       global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant1EventNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant2EventJsonConverter,
@@ -15862,7 +16126,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     TargetFramework: netstandard2.0,
     JsonSerializerContext: ,
     GenerateJsonSerializerContextTypes: false,
-    Summary: Learn how to turn audio into text or text into audio.,
+    Summary: Turn audio into text or text into audio.,
     BaseUrlSummary: ,
     IsDeprecated: false,
     RequestType: {

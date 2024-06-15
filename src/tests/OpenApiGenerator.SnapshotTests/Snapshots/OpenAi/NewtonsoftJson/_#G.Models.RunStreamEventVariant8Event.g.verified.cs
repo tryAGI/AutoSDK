@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="thread.run.cancelled")]
-        ThreadRunCancelled,
+        [global::System.Runtime.Serialization.EnumMember(Value="thread.run.cancelling")]
+        ThreadRunCancelling,
     }
 
     /// <summary>
@@ -29,7 +29,7 @@ namespace G
         {
             return value switch
             {
-                RunStreamEventVariant8Event.ThreadRunCancelled => "thread.run.cancelled",
+                RunStreamEventVariant8Event.ThreadRunCancelling => "thread.run.cancelling",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -40,7 +40,7 @@ namespace G
         {
             return value switch
             {
-                "thread.run.cancelled" => RunStreamEventVariant8Event.ThreadRunCancelled,
+                "thread.run.cancelling" => RunStreamEventVariant8Event.ThreadRunCancelling,
                 _ => null,
             };
         }

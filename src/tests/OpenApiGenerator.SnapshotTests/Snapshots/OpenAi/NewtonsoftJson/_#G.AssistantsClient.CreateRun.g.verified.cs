@@ -59,6 +59,7 @@ namespace G
         /// <param name="maxCompletionTokens"></param>
         /// <param name="truncationStrategy"></param>
         /// <param name="toolChoice"></param>
+        /// <param name="parallelToolCalls"></param>
         /// <param name="responseFormat"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -78,6 +79,7 @@ namespace G
             int? maxCompletionTokens = default,
             global::G.TruncationObject? truncationStrategy = default,
             global::System.OneOf<global::G.CreateRunRequestToolChoice?, global::G.AssistantsNamedToolChoice?> toolChoice = default,
+            bool parallelToolCalls = true,
             global::System.OneOf<global::G.CreateRunRequestResponseFormat?, global::G.AssistantsApiResponseFormat?> responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -97,6 +99,7 @@ namespace G
                 MaxCompletionTokens = maxCompletionTokens,
                 TruncationStrategy = truncationStrategy,
                 ToolChoice = toolChoice,
+                ParallelToolCalls = parallelToolCalls,
                 ResponseFormat = responseFormat,
             };
 

@@ -60,6 +60,7 @@ namespace G
         /// <param name="topP"></param>
         /// <param name="tools"></param>
         /// <param name="toolChoice"></param>
+        /// <param name="parallelToolCalls"></param>
         /// <param name="user"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -82,6 +83,7 @@ namespace G
             double? topP = 1,
             global::System.Collections.Generic.IList<global::G.ChatCompletionTool>? tools = default,
             global::System.OneOf<global::G.CreateChatCompletionRequestToolChoice?, global::G.ChatCompletionNamedToolChoice?> toolChoice = default,
+            bool parallelToolCalls = true,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -105,6 +107,7 @@ namespace G
                 TopP = topP,
                 Tools = tools,
                 ToolChoice = toolChoice,
+                ParallelToolCalls = parallelToolCalls,
                 User = user,
             };
 

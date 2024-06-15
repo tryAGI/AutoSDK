@@ -22,7 +22,7 @@ namespace G
         public global::G.BatchRequestInputMethod? Method { get; set; }
 
         /// <summary>
-        /// The OpenAI API relative URL to be used for the request. Currently `/v1/chat/completions` and `/v1/embeddings` are supported.
+        /// The OpenAI API relative URL to be used for the request. Currently `/v1/chat/completions`, `/v1/embeddings`, and `/v1/completions` are supported.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("url")]
         public string? Url { get; set; }

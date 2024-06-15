@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ThreadRunFailed,
+        ThreadRunIncomplete,
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ namespace G
         {
             return value switch
             {
-                RunStreamEventVariant6Event.ThreadRunFailed => "thread.run.failed",
+                RunStreamEventVariant6Event.ThreadRunIncomplete => "thread.run.incomplete",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,7 +38,7 @@ namespace G
         {
             return value switch
             {
-                "thread.run.failed" => RunStreamEventVariant6Event.ThreadRunFailed,
+                "thread.run.incomplete" => RunStreamEventVariant6Event.ThreadRunIncomplete,
                 _ => null,
             };
         }

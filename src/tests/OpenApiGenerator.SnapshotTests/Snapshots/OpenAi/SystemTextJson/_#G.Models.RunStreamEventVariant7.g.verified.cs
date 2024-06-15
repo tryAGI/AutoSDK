@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `cancelling` status.
+    /// Occurs when a [run](/docs/api-reference/runs/object) fails.
     /// </summary>
     public sealed partial class RunStreamEventVariant7
     {

@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ThreadRunCancelled,
+        ThreadRunCancelling,
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ namespace G
         {
             return value switch
             {
-                RunStreamEventVariant8Event.ThreadRunCancelled => "thread.run.cancelled",
+                RunStreamEventVariant8Event.ThreadRunCancelling => "thread.run.cancelling",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,7 +38,7 @@ namespace G
         {
             return value switch
             {
-                "thread.run.cancelled" => RunStreamEventVariant8Event.ThreadRunCancelled,
+                "thread.run.cancelling" => RunStreamEventVariant8Event.ThreadRunCancelling,
                 _ => null,
             };
         }

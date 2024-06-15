@@ -45,6 +45,7 @@ namespace G
         /// <param name="fileIds"></param>
         /// <param name="name"></param>
         /// <param name="expiresAfter"></param>
+        /// <param name="chunkingStrategy"></param>
         /// <param name="metadata"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -52,6 +53,7 @@ namespace G
             global::System.Collections.Generic.IList<string?>? fileIds = default,
             string? name = default,
             global::G.VectorStoreExpirationAfter? expiresAfter = default,
+            object? chunkingStrategy = default,
             object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -60,6 +62,7 @@ namespace G
                 FileIds = fileIds,
                 Name = name,
                 ExpiresAfter = expiresAfter,
+                ChunkingStrategy = chunkingStrategy,
                 Metadata = metadata,
             };
 

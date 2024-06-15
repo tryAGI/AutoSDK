@@ -290,7 +290,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
     Namespace: G,
     Name: AssistantsApiResponseFormatOption,
     Summary:
-Specifies the format that the model must output. Compatible with [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
+Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4 Turbo](/docs/models/gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
 
 Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.
 
@@ -400,6 +400,53 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
   },
   {
     SubType: OneOf,
+    Count: 2,
+    IsTrimming: false,
+    Namespace: G,
+    Name: ChunkingStrategyRequestParam,
+    Summary: The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.,
+    Types: [
+      {
+        CSharpType: global::G.AutoChunkingStrategyRequestParam,
+        IsArray: false,
+        IsEnum: false,
+        Properties: [
+          type
+        ],
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.AutoChunkingStrategyRequestParam,
+        CSharpTypeWithNullability: global::G.AutoChunkingStrategyRequestParam?,
+        ShortCSharpTypeWithoutNullability: AutoChunkingStrategyRequestParam,
+        ShortCSharpTypeWithNullability: AutoChunkingStrategyRequestParam?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.StaticChunkingStrategyRequestParam,
+        IsArray: false,
+        IsEnum: false,
+        Properties: [
+          type,
+          static
+        ],
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.StaticChunkingStrategyRequestParam,
+        CSharpTypeWithNullability: global::G.StaticChunkingStrategyRequestParam?,
+        ShortCSharpTypeWithoutNullability: StaticChunkingStrategyRequestParam,
+        ShortCSharpTypeWithNullability: StaticChunkingStrategyRequestParam?,
+        IsAnyOf: false,
+        ConverterType: 
+      }
+    ]
+  },
+  {
+    SubType: OneOf,
     Count: 6,
     IsTrimming: false,
     Namespace: G,
@@ -447,7 +494,7 @@ integrate the Assistants API with streaming.
         CSharpType: global::G.RunStreamEvent,
         IsArray: false,
         IsEnum: false,
-        OneOfCount: 9,
+        OneOfCount: 10,
         Properties: null,
         EnumValues: null,
         Namespace: G,
@@ -458,7 +505,7 @@ integrate the Assistants API with streaming.
         ShortCSharpTypeWithoutNullability: RunStreamEvent,
         ShortCSharpTypeWithNullability: RunStreamEvent?,
         IsAnyOf: true,
-        ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory9
+        ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory10
       },
       {
         CSharpType: global::G.RunStepStreamEvent,
@@ -562,7 +609,7 @@ integrate the Assistants API with streaming.
   },
   {
     SubType: OneOf,
-    Count: 9,
+    Count: 10,
     IsTrimming: false,
     Namespace: G,
     Name: RunStreamEvent,
@@ -709,6 +756,22 @@ integrate the Assistants API with streaming.
         CSharpTypeWithNullability: global::G.RunStreamEventVariant9?,
         ShortCSharpTypeWithoutNullability: RunStreamEventVariant9,
         ShortCSharpTypeWithNullability: RunStreamEventVariant9?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.RunStreamEventVariant10,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.RunStreamEventVariant10,
+        CSharpTypeWithNullability: global::G.RunStreamEventVariant10?,
+        ShortCSharpTypeWithoutNullability: RunStreamEventVariant10,
+        ShortCSharpTypeWithNullability: RunStreamEventVariant10?,
         IsAnyOf: false,
         ConverterType: 
       }
@@ -921,6 +984,54 @@ integrate the Assistants API with streaming.
         CSharpTypeWithNullability: global::G.MessageStreamEventVariant5?,
         ShortCSharpTypeWithoutNullability: MessageStreamEventVariant5,
         ShortCSharpTypeWithNullability: MessageStreamEventVariant5?,
+        IsAnyOf: false,
+        ConverterType: 
+      }
+    ]
+  },
+  {
+    SubType: AllOf,
+    Count: 2,
+    IsTrimming: false,
+    Namespace: G,
+    Name: FineTuneChatCompletionRequestAssistantMessage,
+    Summary: ,
+    Types: [
+      {
+        CSharpType: global::G.FineTuneChatCompletionRequestAssistantMessageVariant1,
+        IsArray: false,
+        IsEnum: false,
+        Properties: null,
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.FineTuneChatCompletionRequestAssistantMessageVariant1,
+        CSharpTypeWithNullability: global::G.FineTuneChatCompletionRequestAssistantMessageVariant1?,
+        ShortCSharpTypeWithoutNullability: FineTuneChatCompletionRequestAssistantMessageVariant1,
+        ShortCSharpTypeWithNullability: FineTuneChatCompletionRequestAssistantMessageVariant1?,
+        IsAnyOf: false,
+        ConverterType: 
+      },
+      {
+        CSharpType: global::G.ChatCompletionRequestAssistantMessage,
+        IsArray: false,
+        IsEnum: false,
+        Properties: [
+          content,
+          role,
+          name,
+          tool_calls,
+          function_call
+        ],
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: false,
+        CSharpTypeWithoutNullability: global::G.ChatCompletionRequestAssistantMessage,
+        CSharpTypeWithNullability: global::G.ChatCompletionRequestAssistantMessage?,
+        ShortCSharpTypeWithoutNullability: ChatCompletionRequestAssistantMessage,
+        ShortCSharpTypeWithNullability: ChatCompletionRequestAssistantMessage?,
         IsAnyOf: false,
         ConverterType: 
       }

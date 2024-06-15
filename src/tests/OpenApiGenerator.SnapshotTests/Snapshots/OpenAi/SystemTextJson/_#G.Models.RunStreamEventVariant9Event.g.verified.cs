@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ThreadRunExpired,
+        ThreadRunCancelled,
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ namespace G
         {
             return value switch
             {
-                RunStreamEventVariant9Event.ThreadRunExpired => "thread.run.expired",
+                RunStreamEventVariant9Event.ThreadRunCancelled => "thread.run.cancelled",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,7 +38,7 @@ namespace G
         {
             return value switch
             {
-                "thread.run.expired" => RunStreamEventVariant9Event.ThreadRunExpired,
+                "thread.run.cancelled" => RunStreamEventVariant9Event.ThreadRunCancelled,
                 _ => null,
             };
         }

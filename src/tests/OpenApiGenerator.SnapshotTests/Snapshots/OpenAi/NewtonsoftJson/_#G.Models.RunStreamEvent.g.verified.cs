@@ -329,6 +329,41 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RunStreamEventVariant10? Value10 { get; init; }
+#else
+        public global::G.RunStreamEventVariant10? Value10 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value10))]
+#endif
+        public bool IsValue10 => Value10 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RunStreamEvent(global::G.RunStreamEventVariant10 value) => new RunStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RunStreamEventVariant10?(RunStreamEvent @this) => @this.Value10;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RunStreamEvent(global::G.RunStreamEventVariant10? value)
+        {
+            Value10 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public RunStreamEvent(
             global::G.RunStreamEventVariant1? value1,
             global::G.RunStreamEventVariant2? value2,
@@ -338,7 +373,8 @@ namespace G
             global::G.RunStreamEventVariant6? value6,
             global::G.RunStreamEventVariant7? value7,
             global::G.RunStreamEventVariant8? value8,
-            global::G.RunStreamEventVariant9? value9
+            global::G.RunStreamEventVariant9? value9,
+            global::G.RunStreamEventVariant10? value10
             )
         {
             Value1 = value1;
@@ -350,12 +386,14 @@ namespace G
             Value7 = value7;
             Value8 = value8;
             Value9 = value9;
+            Value10 = value10;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Value10 as object ??
             Value9 as object ??
             Value8 as object ??
             Value7 as object ??
@@ -372,7 +410,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return !IsValue1 && IsValue2 && IsValue3 && IsValue4 && IsValue5 && IsValue6 && IsValue7 && IsValue8 && IsValue9 || IsValue1 && !IsValue2 && IsValue3 && IsValue4 && IsValue5 && IsValue6 && IsValue7 && IsValue8 && IsValue9 || IsValue1 && IsValue2 && !IsValue3 && IsValue4 && IsValue5 && IsValue6 && IsValue7 && IsValue8 && IsValue9 || IsValue1 && IsValue2 && IsValue3 && !IsValue4 && IsValue5 && IsValue6 && IsValue7 && IsValue8 && IsValue9 || IsValue1 && IsValue2 && IsValue3 && IsValue4 && !IsValue5 && IsValue6 && IsValue7 && IsValue8 && IsValue9 || IsValue1 && IsValue2 && IsValue3 && IsValue4 && IsValue5 && !IsValue6 && IsValue7 && IsValue8 && IsValue9 || IsValue1 && IsValue2 && IsValue3 && IsValue4 && IsValue5 && IsValue6 && !IsValue7 && IsValue8 && IsValue9 || IsValue1 && IsValue2 && IsValue3 && IsValue4 && IsValue5 && IsValue6 && IsValue7 && !IsValue8 && IsValue9 || IsValue1 && IsValue2 && IsValue3 && IsValue4 && IsValue5 && IsValue6 && IsValue7 && IsValue8 && !IsValue9;
+            return !IsValue1 && IsValue2 && IsValue3 && IsValue4 && IsValue5 && IsValue6 && IsValue7 && IsValue8 && IsValue9 && IsValue10 || IsValue1 && !IsValue2 && IsValue3 && IsValue4 && IsValue5 && IsValue6 && IsValue7 && IsValue8 && IsValue9 && IsValue10 || IsValue1 && IsValue2 && !IsValue3 && IsValue4 && IsValue5 && IsValue6 && IsValue7 && IsValue8 && IsValue9 && IsValue10 || IsValue1 && IsValue2 && IsValue3 && !IsValue4 && IsValue5 && IsValue6 && IsValue7 && IsValue8 && IsValue9 && IsValue10 || IsValue1 && IsValue2 && IsValue3 && IsValue4 && !IsValue5 && IsValue6 && IsValue7 && IsValue8 && IsValue9 && IsValue10 || IsValue1 && IsValue2 && IsValue3 && IsValue4 && IsValue5 && !IsValue6 && IsValue7 && IsValue8 && IsValue9 && IsValue10 || IsValue1 && IsValue2 && IsValue3 && IsValue4 && IsValue5 && IsValue6 && !IsValue7 && IsValue8 && IsValue9 && IsValue10 || IsValue1 && IsValue2 && IsValue3 && IsValue4 && IsValue5 && IsValue6 && IsValue7 && !IsValue8 && IsValue9 && IsValue10 || IsValue1 && IsValue2 && IsValue3 && IsValue4 && IsValue5 && IsValue6 && IsValue7 && IsValue8 && !IsValue9 && IsValue10 || IsValue1 && IsValue2 && IsValue3 && IsValue4 && IsValue5 && IsValue6 && IsValue7 && IsValue8 && IsValue9 && !IsValue10;
         }
 
         /// <summary>
@@ -400,6 +438,8 @@ namespace G
                 typeof(global::G.RunStreamEventVariant8),
                 Value9,
                 typeof(global::G.RunStreamEventVariant9),
+                Value10,
+                typeof(global::G.RunStreamEventVariant10),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -423,7 +463,8 @@ namespace G
                 global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEventVariant6?>.Default.Equals(Value6, other.Value6) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEventVariant7?>.Default.Equals(Value7, other.Value7) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEventVariant8?>.Default.Equals(Value8, other.Value8) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEventVariant9?>.Default.Equals(Value9, other.Value9) 
+                global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEventVariant9?>.Default.Equals(Value9, other.Value9) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEventVariant10?>.Default.Equals(Value10, other.Value10) 
                 ;
         }
 

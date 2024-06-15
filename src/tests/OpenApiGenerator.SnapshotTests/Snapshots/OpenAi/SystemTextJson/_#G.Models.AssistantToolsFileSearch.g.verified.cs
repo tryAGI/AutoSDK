@@ -18,6 +18,12 @@ namespace G
         public required global::G.AssistantToolsFileSearchType Type { get; set; }
 
         /// <summary>
+        /// Overrides for the file search tool.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("file_search")]
+        public global::G.AssistantToolsFileSearchFileSearch? FileSearch { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

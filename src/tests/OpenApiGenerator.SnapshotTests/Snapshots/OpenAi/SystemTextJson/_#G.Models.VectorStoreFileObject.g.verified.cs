@@ -61,6 +61,13 @@ namespace G
         public required global::G.VectorStoreFileObjectLastError? LastError { get; set; }
 
         /// <summary>
+        /// The strategy used to chunk the file.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("chunking_strategy")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
+        public object? ChunkingStrategy { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

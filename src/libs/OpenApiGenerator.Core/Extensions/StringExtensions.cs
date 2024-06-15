@@ -208,7 +208,7 @@ public static class StringExtensions
     {
         return text
             .ToPropertyName()
-            .UseWordSeparator('_', '-', ' ', '\\', '/');
+            .UseWordSeparator('_', '-', ' ', '\\', '/', '[', ']');
     }
     
     public static string ReplaceIfEquals(

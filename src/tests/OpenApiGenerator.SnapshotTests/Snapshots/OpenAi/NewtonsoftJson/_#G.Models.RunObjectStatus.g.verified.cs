@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// The status of the run, which can be either `queued`, `in_progress`, `requires_action`, `cancelling`, `cancelled`, `failed`, `completed`, or `expired`.
+    /// The status of the run, which can be either `queued`, `in_progress`, `requires_action`, `cancelling`, `cancelled`, `failed`, `completed`, `incomplete`, or `expired`.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum RunObjectStatus
@@ -48,6 +48,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="incomplete")]
+        Incomplete,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="expired")]
         Expired,
     }
@@ -71,6 +76,7 @@ namespace G
                 RunObjectStatus.Cancelled => "cancelled",
                 RunObjectStatus.Failed => "failed",
                 RunObjectStatus.Completed => "completed",
+                RunObjectStatus.Incomplete => "incomplete",
                 RunObjectStatus.Expired => "expired",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -89,6 +95,7 @@ namespace G
                 "cancelled" => RunObjectStatus.Cancelled,
                 "failed" => RunObjectStatus.Failed,
                 "completed" => RunObjectStatus.Completed,
+                "incomplete" => RunObjectStatus.Incomplete,
                 "expired" => RunObjectStatus.Expired,
                 _ => null,
             };

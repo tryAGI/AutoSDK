@@ -48,6 +48,7 @@ namespace G
         /// <param name="prompt"></param>
         /// <param name="responseFormat"></param>
         /// <param name="temperature"></param>
+        /// <param name="timestampGranularities"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.OneOf<global::G.CreateTranscriptionResponseJson, global::G.CreateTranscriptionResponseVerboseJson>> CreateTranscriptionAsync(
@@ -57,6 +58,7 @@ namespace G
             string? prompt = default,
             global::G.CreateTranscriptionRequestResponseFormat? responseFormat = global::G.CreateTranscriptionRequestResponseFormat.Json,
             double temperature = 0,
+            global::System.Collections.Generic.IList<global::G.CreateTranscriptionRequestTimestampGranularities?>? timestampGranularities = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CreateTranscriptionRequest
@@ -67,6 +69,7 @@ namespace G
                 Prompt = prompt,
                 ResponseFormat = responseFormat,
                 Temperature = temperature,
+                TimestampGranularities = timestampGranularities,
             };
 
             return await CreateTranscriptionAsync(

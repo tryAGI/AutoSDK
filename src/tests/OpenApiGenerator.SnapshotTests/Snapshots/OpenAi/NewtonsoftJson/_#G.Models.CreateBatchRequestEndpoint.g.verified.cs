@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// The endpoint to be used for all requests in the batch. Currently `/v1/chat/completions` and `/v1/embeddings` are supported.
+    /// The endpoint to be used for all requests in the batch. Currently `/v1/chat/completions`, `/v1/embeddings`, and `/v1/completions` are supported. Note that `/v1/embeddings` batches are also restricted to a maximum of 50,000 embedding inputs across all requests in the batch.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum CreateBatchRequestEndpoint
@@ -20,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="/v1/embeddings")]
         V1Embeddings,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="/v1/completions")]
+        V1Completions,
     }
 
     /// <summary>
@@ -36,6 +41,7 @@ namespace G
             {
                 CreateBatchRequestEndpoint.V1ChatCompletions => "/v1/chat/completions",
                 CreateBatchRequestEndpoint.V1Embeddings => "/v1/embeddings",
+                CreateBatchRequestEndpoint.V1Completions => "/v1/completions",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,6 +54,7 @@ namespace G
             {
                 "/v1/chat/completions" => CreateBatchRequestEndpoint.V1ChatCompletions,
                 "/v1/embeddings" => CreateBatchRequestEndpoint.V1Embeddings,
+                "/v1/completions" => CreateBatchRequestEndpoint.V1Completions,
                 _ => null,
             };
         }

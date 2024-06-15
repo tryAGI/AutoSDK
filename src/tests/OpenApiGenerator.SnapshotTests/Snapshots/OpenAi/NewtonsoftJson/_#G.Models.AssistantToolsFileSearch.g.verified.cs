@@ -16,6 +16,12 @@ namespace G
         public global::G.AssistantToolsFileSearchType Type { get; set; } = default!;
 
         /// <summary>
+        /// Overrides for the file search tool.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("file_search")]
+        public global::G.AssistantToolsFileSearchFileSearch? FileSearch { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]

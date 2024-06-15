@@ -17,6 +17,13 @@ namespace G
         public required string FileId { get; set; }
 
         /// <summary>
+        /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("chunking_strategy")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
+        public global::G.ChunkingStrategyRequestParam? ChunkingStrategy { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

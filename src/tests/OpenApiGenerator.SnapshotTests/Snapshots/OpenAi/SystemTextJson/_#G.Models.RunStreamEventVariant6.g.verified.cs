@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Occurs when a [run](/docs/api-reference/runs/object) fails.
+    /// Occurs when a [run](/docs/api-reference/runs/object) ends with status `incomplete`.
     /// </summary>
     public sealed partial class RunStreamEventVariant6
     {
