@@ -11,6 +11,8 @@ public static partial class Sources
         CancellationToken cancellationToken = default)
     {
         return $@"
+{(modelData.Properties.Any(x => x.Type.CSharpType.Contains("AnyOf<") || x.Type.CSharpType.Contains("OneOf<") || x.Type.CSharpType.Contains("AllOf<")) ? @"#pragma warning disable CS0618 // Type or member is obsolete
+" : " ")}
 #nullable enable
 
 namespace {modelData.Namespace}
