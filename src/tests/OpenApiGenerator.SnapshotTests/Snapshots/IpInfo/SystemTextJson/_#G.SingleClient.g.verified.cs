@@ -27,6 +27,7 @@ namespace G
         /// </summary>
         /// <param name="httpClient"></param>
         /// <param name="baseUri"></param>
+        /// <param name="jsonSerializerOptions"></param>
         public SingleClient(
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,

@@ -87,6 +87,7 @@ namespace G
         /// </summary>
         /// <param name="httpClient"></param>
         /// <param name="baseUri"></param>
+        /// <param name="jsonSerializerOptions"></param>
         public OpenAiClient(
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,

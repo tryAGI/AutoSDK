@@ -38,7 +38,8 @@ namespace {endPoint.Namespace}
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
         /// </summary>
         /// <param name=""httpClient""></param>
-        /// <param name=""baseUri""></param>
+        /// <param name=""baseUri""></param>{(hasOptions ? @"
+        /// <param name=""jsonSerializerOptions""></param>" : " ")}
         public {endPoint.ClassName}(
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null{(hasOptions ? $@",
