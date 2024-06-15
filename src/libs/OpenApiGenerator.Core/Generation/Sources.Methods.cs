@@ -165,7 +165,7 @@ namespace {endPoint.Namespace}
         
         return $@"
         {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
-{endPoint.Properties.Select(x => $@"
+{endPoint.Properties.Where(static x => x is { IsDeprecated: false } or { IsRequired:true }).Select(x => $@"
         /// <param name=""{x.ParameterName}""></param>").Inject()}
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::System.InvalidOperationException""></exception>
