@@ -10,12 +10,9 @@ public readonly record struct ModelData(
     string Id,
     bool AddTypeName,
     ImmutableArray<ModelData> Parents,
-    string TargetFramework,
     string Namespace,
-    NamingConvention NamingConvention,
+    Settings Settings,
     ModelStyle Style,
-    JsonSerializerType JsonSerializerType,
-    SdkFeatureUsage UseRequiredKeyword,
     ImmutableArray<PropertyData> Properties,
     string Summary,
     bool IsDeprecated,
@@ -48,12 +45,9 @@ public readonly record struct ModelData(
             Id: key,
             AddTypeName: false,
             Parents: parents.ToImmutableArray(),
-            TargetFramework: settings.TargetFramework,
             Namespace: settings.Namespace,
-            NamingConvention: settings.NamingConvention,
-            JsonSerializerType: settings.JsonSerializerType,
-            UseRequiredKeyword: settings.UseRequiredKeyword,
             Style: settings.ModelStyle,
+            Settings: settings,
             Properties: ImmutableArray<PropertyData>.Empty,
             Summary: string.Empty,
             IsDeprecated: false,
@@ -120,12 +114,9 @@ public readonly record struct ModelData(
             Id: schema.Key,
             AddTypeName: false,
             Parents: parents.ToImmutableArray(),
-            TargetFramework: settings.TargetFramework,
             Namespace: settings.Namespace,
-            NamingConvention: settings.NamingConvention,
-            JsonSerializerType: settings.JsonSerializerType,
-            UseRequiredKeyword: settings.UseRequiredKeyword,
             Style: settings.ModelStyle,
+            Settings: settings,
             Properties: ImmutableArray<PropertyData>.Empty,
             Summary: schema.Value.GetSummary(),
             IsDeprecated: schema.Value.Deprecated,
@@ -206,7 +197,7 @@ public readonly record struct ModelData(
             : Schema.Value.Type.ToPropertyName())
     ;
     
-    public string ClassName => NamingConvention switch
+    public string ClassName => Settings.NamingConvention switch
     {
         NamingConvention.InnerClasses => Parents.IsEmpty ? Name : $"_{Name}",
         NamingConvention.ConcatNames => Parents.IsEmpty ? Name : $"{Parents.Last().ClassName}{Name}",
@@ -215,7 +206,7 @@ public readonly record struct ModelData(
 
     public string GlobalClassName => $"global::{Namespace}.{ClassName}";
     
-    public string ExternalClassName => NamingConvention switch
+    public string ExternalClassName => Settings.NamingConvention switch
     {
         NamingConvention.InnerClasses => string.Join(".", Parents.Select(x => x.ClassName).Concat([ClassName])),
         NamingConvention.ConcatNames => ClassName,

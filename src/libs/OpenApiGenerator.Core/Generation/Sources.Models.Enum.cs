@@ -11,7 +11,7 @@ public static partial class Sources
         CancellationToken cancellationToken = default)
     {
         // Only Newtonsoft.Json supports EnumMemberAttribute
-        if (modelData.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+        if (modelData.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
         {
             return $@" 
     {modelData.Summary.ToXmlDocumentationSummary(level: 4)}

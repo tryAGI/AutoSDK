@@ -8,9 +8,6 @@
     Path: "/account",
     AuthorizationScheme: ,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary:
 Get the authenticated account
 Returns information about the user or organization associated with the provided API token.
@@ -124,9 +121,6 @@ The response will be a JSON object describing the account:
     Path: "/collections",
     AuthorizationScheme: ,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary:
 List collections of models
 Example cURL request:
@@ -257,9 +251,6 @@ The response will be a paginated JSON list of collection objects:
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary:
 Get a collection of models
 Example cURL request:
@@ -354,9 +345,6 @@ The response will be a collection object with a nested list of the models in tha
     Path: "/deployments",
     AuthorizationScheme: ,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary:
 List deployments
 Get a list of deployments associated with the current account, including the latest release configuration for each deployment.
@@ -654,9 +642,6 @@ The response will be a paginated JSON array of deployment objects, sorted with t
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary:
 Create a deployment
@@ -873,9 +858,6 @@ The response will be a JSON object describing the deployment:
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary:
 Delete a deployment
@@ -1029,9 +1011,6 @@ The response will be an empty 204, indicating the deployment has been deleted.
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary:
 Get a deployment
 Get information about a deployment by name including the current release.
@@ -1329,9 +1308,6 @@ The response will be a JSON object describing the deployment:
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Patch,
     Summary:
 Update a deployment
@@ -1694,9 +1670,6 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary:
 Create a prediction using a deployment
@@ -1849,9 +1822,6 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
     Path: "/hardware",
     AuthorizationScheme: ,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary:
 List available hardware for models
 Example cURL request:
@@ -1963,9 +1933,6 @@ The response will be a JSON array of hardware objects:
     Path: "/models",
     AuthorizationScheme: ,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary:
 List public models
 Get a paginated list of public models.
@@ -2333,9 +2300,6 @@ The `cover_image_url` string is an HTTPS URL for an image file. This can be:
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary:
 Create a model
@@ -2521,9 +2485,6 @@ The response will be a model object in the following format:
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary:
 Delete a model
@@ -2679,9 +2640,6 @@ The response will be an empty 204, indicating the model has been deleted.
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary:
 Get a model
 Example cURL request:
@@ -3007,9 +2965,6 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary:
 Create a prediction using an official model
@@ -3223,9 +3178,6 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary:
 List model versions
 Example cURL request:
@@ -3417,9 +3369,6 @@ The response will be a JSON array of model version objects, sorted with the most
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary:
 Delete a model version
@@ -3608,9 +3557,6 @@ The response will be an empty 202, indicating the deletion request has been acce
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary:
 Get a model version
 Example cURL request:
@@ -3963,9 +3909,6 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary:
 Create a training
@@ -4120,9 +4063,6 @@ To find some models to train on, check out the [trainable language models collec
     Path: "/predictions",
     AuthorizationScheme: ,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary:
 List predictions
 Get a paginated list of predictions that you've created. This will include predictions created from the API and the website. It will return 100 records per page.
@@ -4433,9 +4373,6 @@ Requests for event types `output` and `logs` will be sent at most once every 500
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary:
 Create a prediction
@@ -4622,9 +4559,6 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary:
 Get a prediction
 Get the current state of a prediction.
@@ -4786,9 +4720,6 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Cancel a prediction,
     BaseUrlSummary: ,
@@ -4864,9 +4795,6 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
     Path: "/trainings",
     AuthorizationScheme: ,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary:
 List trainings
 Get a paginated list of trainings that you've created. This will include trainings created from the API and the website. It will return 100 records per page.
@@ -5029,9 +4957,6 @@ The response will be a paginated JSON array of training objects, sorted with the
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary:
 Get a training
 Get the current state of a training.
@@ -5192,9 +5117,6 @@ Terminated trainings (with a status of `succeeded`, `failed`, or `canceled`) wil
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Cancel a training,
     BaseUrlSummary: ,
@@ -5270,9 +5192,6 @@ Terminated trainings (with a status of `succeeded`, `failed`, or `canceled`) wil
     Path: "/webhooks/default/secret",
     AuthorizationScheme: ,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary:
 Get the signing secret for the default webhook
 Get the signing secret for the default webhook endpoint. This is used to verify that webhook requests are coming from Replicate.
@@ -5383,9 +5302,6 @@ The response will be a JSON object with a `key` property:
     Path: ,
     AuthorizationScheme: bearer,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: ,
     BaseUrlSummary: ,
     Settings: {
@@ -5460,9 +5376,6 @@ The response will be a JSON object with a `key` property:
     Path: ,
     AuthorizationScheme: ,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: A web service for running Replicate models,
     BaseUrlSummary: ,
     Settings: {

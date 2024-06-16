@@ -9,7 +9,7 @@ public static partial class Sources
         ModelData model,
         CancellationToken cancellationToken = default)
     {
-        if (model.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+        if (model.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
         {
             return string.Empty;
         }
@@ -70,7 +70,7 @@ namespace OpenApiGenerator.JsonConverters
         ModelData model,
         CancellationToken cancellationToken = default)
     {
-        if (model.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+        if (model.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
         {
             return string.Empty;
         }

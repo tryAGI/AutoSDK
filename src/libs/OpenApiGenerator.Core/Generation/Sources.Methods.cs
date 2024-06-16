@@ -54,7 +54,7 @@ namespace {endPoint.Namespace}
     public static string GenerateMethod(
         EndPoint endPoint)
     {
-        var jsonSerializer = endPoint.JsonSerializerType.GetSerializer();
+        var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer();
         var taskType = endPoint.Stream
             ? string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType)
                 ? throw new InvalidOperationException($"Streamed responses must have a response type. OperationId: {endPoint.Id}.")
@@ -88,7 +88,7 @@ namespace {endPoint.Namespace}
 {(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : @" 
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 ")}
-{(endPoint.JsonSerializerType == JsonSerializerType.NewtonsoftJson ? endPoint.Properties
+{(endPoint.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson ? endPoint.Properties
     .Where(x => x is { ParameterLocation: not null, Type.EnumValues.Length: > 0 })
     .Select(x => $@"
             var {x.ArgumentName} = {x.ParameterName} switch
@@ -99,11 +99,11 @@ namespace {endPoint.Namespace}
                 _ => throw new global::System.NotImplementedException(""Enum value not implemented.""),
             }};").Inject() : " ")}
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: {GetHttpMethod(endPoint.TargetFramework, endPoint.HttpMethod)},
+                method: {GetHttpMethod(endPoint.Settings.TargetFramework, endPoint.HttpMethod)},
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + {endPoint.Path}, global::System.UriKind.RelativeOrAbsolute));
 {(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : $@" 
             httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: {jsonSerializer.GenerateSerializeCall(endPoint.RequestType, endPoint.JsonSerializerContext)},
+                content: {jsonSerializer.GenerateSerializeCall(endPoint.RequestType, endPoint.Settings.JsonSerializerContext)},
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: ""application/json"");")}
 
@@ -116,7 +116,7 @@ namespace {endPoint.Namespace}
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return
-                {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType, endPoint.JsonSerializerContext)} ??
+                {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType, endPoint.Settings.JsonSerializerContext)} ??
                 throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");")}
 {(endPoint.Stream ? $@"
             using var stream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
@@ -125,7 +125,7 @@ namespace {endPoint.Namespace}
             while (!reader.EndOfStream && !cancellationToken.IsCancellationRequested)
             {{
                 var __content = await reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
-                var streamedResponse = {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType, endPoint.JsonSerializerContext)} ??
+                var streamedResponse = {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType, endPoint.Settings.JsonSerializerContext)} ??
                                        throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");
 
                 yield return streamedResponse;

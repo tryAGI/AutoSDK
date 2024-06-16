@@ -9,8 +9,8 @@ public static partial class Sources
     public static string GenerateJsonSerializerContextConverters(
         EndPoint endPoint)
     {
-        if (!endPoint.GenerateJsonSerializerContextTypes ||
-            endPoint.JsonSerializerType != JsonSerializerType.SystemTextJson)
+        if (!endPoint.Settings.GenerateJsonSerializerContextTypes ||
+            endPoint.Settings.JsonSerializerType != JsonSerializerType.SystemTextJson)
         {
             return string.Empty;
         }

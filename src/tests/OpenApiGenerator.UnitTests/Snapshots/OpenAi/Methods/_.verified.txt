@@ -700,9 +700,6 @@ A list of functions the model may generate JSON inputs for.
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Creates a model response for the given chat conversation.,
     BaseUrlSummary: ,
@@ -1455,9 +1452,6 @@ Example: user-1234,
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Creates a completion for the provided prompt and parameters.,
     BaseUrlSummary: ,
@@ -1896,9 +1890,6 @@ Example: user-1234,
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Creates an image given a prompt.,
     BaseUrlSummary: ,
@@ -2283,9 +2274,6 @@ Example: user-1234,
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Creates an edited or extended image given an original image and a prompt.,
     BaseUrlSummary: ,
@@ -2614,9 +2602,6 @@ Example: user-1234,
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Creates a variation of a given image.,
     BaseUrlSummary: ,
@@ -2903,9 +2888,6 @@ Example: user-1234,
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Creates an embedding vector representing the input text.,
     BaseUrlSummary: ,
@@ -3208,9 +3190,6 @@ Default Value: 1,
         ParameterDefaultValue: 1
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Generates audio from the input text.,
     BaseUrlSummary: ,
@@ -3554,9 +3533,6 @@ Default Value: [segment],
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Transcribes audio into the input language.,
     BaseUrlSummary: ,
@@ -3834,9 +3810,6 @@ Default Value: 0,
         ParameterDefaultValue: 0
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Translates audio into English.,
     BaseUrlSummary: ,
@@ -3989,9 +3962,6 @@ Default Value: 0,
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of files that belong to the user's organization.,
     BaseUrlSummary: ,
     Settings: {
@@ -4159,9 +4129,6 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary:
 Upload a file that can be used across various endpoints. Individual files can be up to 512 MB, and the size of all files uploaded by one organization can be up to 100 GB.
@@ -4334,9 +4301,6 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary: Delete a file.,
     BaseUrlSummary: ,
@@ -4467,9 +4431,6 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Returns information about a specific file.,
     BaseUrlSummary: ,
     Settings: {
@@ -4609,9 +4570,6 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Returns the contents of the specified file.,
     BaseUrlSummary: ,
     Settings: {
@@ -4928,9 +4886,6 @@ Example: 42,
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary:
 Creates a fine-tuning job which begins the process of creating a new model from a given dataset.
@@ -5158,9 +5113,6 @@ Response includes details of the enqueued job including job status and the name 
         ParameterDefaultValue: 20
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary:
 List your organization's fine-tuning jobs
 ,
@@ -5292,9 +5244,6 @@ List your organization's fine-tuning jobs
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary:
 Get info about a fine-tuning job.
 
@@ -5517,9 +5466,6 @@ Get info about a fine-tuning job.
         ParameterDefaultValue: 20
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary:
 Get status updates for a fine-tuning job.
 ,
@@ -5649,9 +5595,6 @@ Get status updates for a fine-tuning job.
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary:
 Immediately cancel a fine-tune job.
@@ -5873,9 +5816,6 @@ Immediately cancel a fine-tune job.
         ParameterDefaultValue: 10
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary:
 List checkpoints for a fine-tuning job.
 ,
@@ -5980,9 +5920,6 @@ List checkpoints for a fine-tuning job.
     Path: "/models",
     AuthorizationScheme: ,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Lists the currently available models, and provides basic information about each one such as the owner and availability.,
     BaseUrlSummary: ,
     Settings: {
@@ -6110,9 +6047,6 @@ List checkpoints for a fine-tuning job.
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a model instance, providing basic information about the model such as the owner and permissioning.,
     BaseUrlSummary: ,
     Settings: {
@@ -6244,9 +6178,6 @@ List checkpoints for a fine-tuning job.
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary: Delete a fine-tuned model. You must have the Owner role in your organization to delete a model.,
     BaseUrlSummary: ,
@@ -6410,9 +6341,6 @@ Example: text-moderation-stable,
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Classifies if text is potentially harmful.,
     BaseUrlSummary: ,
@@ -6663,9 +6591,6 @@ Example: text-moderation-stable,
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of assistants.,
     BaseUrlSummary: ,
     Settings: {
@@ -7077,9 +7002,6 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create an assistant with a model and instructions.,
     BaseUrlSummary: ,
@@ -7268,9 +7190,6 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves an assistant.,
     BaseUrlSummary: ,
     Settings: {
@@ -7727,9 +7646,6 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Modifies an assistant.,
     BaseUrlSummary: ,
@@ -7918,9 +7834,6 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary: Delete an assistant.,
     BaseUrlSummary: ,
@@ -8107,9 +8020,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a thread.,
     BaseUrlSummary: ,
@@ -8268,9 +8178,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a thread.,
     BaseUrlSummary: ,
     Settings: {
@@ -8463,9 +8370,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Modifies a thread.,
     BaseUrlSummary: ,
@@ -8622,9 +8526,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary: Delete a thread.,
     BaseUrlSummary: ,
@@ -8913,9 +8814,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of messages for a given thread.,
     BaseUrlSummary: ,
     Settings: {
@@ -9171,9 +9069,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a message.,
     BaseUrlSummary: ,
@@ -9382,9 +9277,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Retrieve a message.,
     BaseUrlSummary: ,
     Settings: {
@@ -9596,9 +9488,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Modifies a message.,
     BaseUrlSummary: ,
@@ -9801,9 +9690,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary: Deletes a message.,
     BaseUrlSummary: ,
@@ -10386,9 +10272,6 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a thread and run it in one request.,
     BaseUrlSummary: ,
@@ -10745,9 +10628,6 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of runs belonging to a thread.,
     BaseUrlSummary: ,
     Settings: {
@@ -11357,9 +11237,6 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a run.,
     BaseUrlSummary: ,
@@ -11618,9 +11495,6 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a run.,
     BaseUrlSummary: ,
     Settings: {
@@ -11858,9 +11732,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Modifies a run.,
     BaseUrlSummary: ,
@@ -12145,9 +12016,6 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary:
 When a run has the `status: "requires_action"` and `required_action.type` is `submit_tool_outputs`, this endpoint can be used to submit the outputs from the tool calls once they're all completed. All outputs must be submitted in a single request.
@@ -12380,9 +12248,6 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Cancels a run that is `in_progress`.,
     BaseUrlSummary: ,
@@ -12719,9 +12584,6 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of run steps belonging to a run.,
     BaseUrlSummary: ,
     Settings: {
@@ -12915,9 +12777,6 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a run step.,
     BaseUrlSummary: ,
     Settings: {
@@ -13171,9 +13030,6 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of vector stores.,
     BaseUrlSummary: ,
     Settings: {
@@ -13420,9 +13276,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a vector store.,
     BaseUrlSummary: ,
@@ -13597,9 +13450,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a vector store.,
     BaseUrlSummary: ,
     Settings: {
@@ -13832,9 +13682,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Modifies a vector store.,
     BaseUrlSummary: ,
@@ -14005,9 +13852,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary: Delete a vector store.,
     BaseUrlSummary: ,
@@ -14306,9 +14150,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of vector store files.,
     BaseUrlSummary: ,
     Settings: {
@@ -14497,9 +14338,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a vector store file by attaching a [File](/docs/api-reference/files) to a [vector store](/docs/api-reference/vector-stores/object).,
     BaseUrlSummary: ,
@@ -14692,9 +14530,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a vector store file.,
     BaseUrlSummary: ,
     Settings: {
@@ -14864,9 +14699,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Delete,
     Summary: Delete a vector store file. This will remove the file from the vector store but the file itself will not be deleted. To delete the file, use the [delete file](/docs/api-reference/files/delete) endpoint.,
     BaseUrlSummary: ,
@@ -15052,9 +14884,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a vector store file batch.,
     BaseUrlSummary: ,
@@ -15243,9 +15072,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a vector store file batch.,
     BaseUrlSummary: ,
     Settings: {
@@ -15411,9 +15237,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Cancel a vector store file batch. This attempts to cancel the processing of files in this batch as soon as possible.,
     BaseUrlSummary: ,
@@ -15748,9 +15571,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Returns a list of vector store files in a batch.,
     BaseUrlSummary: ,
     Settings: {
@@ -15981,9 +15801,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Creates and executes a batch from an uploaded file of requests,
     BaseUrlSummary: ,
@@ -16195,9 +16012,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
         ParameterDefaultValue: 20
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: List your organization's batches.,
     BaseUrlSummary: ,
     Settings: {
@@ -16331,9 +16145,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Retrieves a batch.,
     BaseUrlSummary: ,
     Settings: {
@@ -16497,9 +16308,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Cancels an in-progress batch. The batch will be in status `cancelling` for up to 10 minutes, before changing to `cancelled`, where it will have partial results (if any) available in the output file.,
     BaseUrlSummary: ,
@@ -16633,9 +16441,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Path: ,
     AuthorizationScheme: bearer,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: ,
     BaseUrlSummary: ,
     Settings: {
@@ -17034,9 +16839,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: The OpenAI REST API. Please see https://platform.openai.com/docs/api-reference for more details.,
     BaseUrlSummary: ,
     Settings: {
@@ -17521,9 +17323,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Path: ,
     AuthorizationScheme: ,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Build Assistants that can call models and use tools.,
     BaseUrlSummary: ,
     Settings: {
@@ -17597,9 +17396,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Path: ,
     AuthorizationScheme: ,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Turn audio into text or text into audio.,
     BaseUrlSummary: ,
     Settings: {
@@ -17673,9 +17469,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Path: ,
     AuthorizationScheme: ,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Given a list of messages comprising a conversation, the model will return a response.,
     BaseUrlSummary: ,
     Settings: {
@@ -17749,9 +17542,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Path: ,
     AuthorizationScheme: ,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Given a prompt, the model will return one or more predicted completions, and can also return the probabilities of alternative tokens at each position.,
     BaseUrlSummary: ,
     Settings: {
@@ -17825,9 +17615,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Path: ,
     AuthorizationScheme: ,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Get a vector representation of a given input that can be easily consumed by machine learning models and algorithms.,
     BaseUrlSummary: ,
     Settings: {
@@ -17901,9 +17688,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Path: ,
     AuthorizationScheme: ,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Manage fine-tuning jobs to tailor a model to your specific training data.,
     BaseUrlSummary: ,
     Settings: {
@@ -17977,9 +17761,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Path: ,
     AuthorizationScheme: ,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Create large batches of API requests to run asynchronously.,
     BaseUrlSummary: ,
     Settings: {
@@ -18053,9 +17834,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Path: ,
     AuthorizationScheme: ,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Files are used to upload documents that can be used with features like Assistants and Fine-tuning.,
     BaseUrlSummary: ,
     Settings: {
@@ -18129,9 +17907,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Path: ,
     AuthorizationScheme: ,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Given a prompt and/or an input image, the model will generate a new image.,
     BaseUrlSummary: ,
     Settings: {
@@ -18205,9 +17980,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Path: ,
     AuthorizationScheme: ,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: List and describe the various models available in the API.,
     BaseUrlSummary: ,
     Settings: {
@@ -18281,9 +18053,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Path: ,
     AuthorizationScheme: ,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Given a input text, outputs if the model classifies it as potentially harmful.,
     BaseUrlSummary: ,
     Settings: {
@@ -18357,9 +18126,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     Path: ,
     AuthorizationScheme: ,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: ,
     BaseUrlSummary: ,
     Settings: {

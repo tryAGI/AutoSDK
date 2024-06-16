@@ -1,6 +1,4 @@
-﻿using System.Collections.Immutable;
-using System.Runtime.CompilerServices;
-using OpenApiGenerator.Core.Generation;
+﻿using System.Runtime.CompilerServices;
 using OpenApiGenerator.Core.Models;
 using OpenApiGenerator.Core.Naming.Methods;
 

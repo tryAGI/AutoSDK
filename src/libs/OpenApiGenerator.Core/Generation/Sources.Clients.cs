@@ -9,8 +9,8 @@ public static partial class Sources
     public static string GenerateConstructors(
         EndPoint endPoint)
     {
-        var serializer = endPoint.JsonSerializerType.GetSerializer();
-        var hasOptions = string.IsNullOrWhiteSpace(endPoint.JsonSerializerContext);
+        var serializer = endPoint.Settings.JsonSerializerType.GetSerializer();
+        var hasOptions = string.IsNullOrWhiteSpace(endPoint.Settings.JsonSerializerContext);
         
         return $@"
 #nullable enable

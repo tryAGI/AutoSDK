@@ -50,7 +50,7 @@ public static partial class Sources
         CancellationToken cancellationToken = default)
     {
         if (data.Style != ModelStyle.Enumeration ||
-            data.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+            data.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
         {
             return FileWithName.Empty;
         }
@@ -65,7 +65,7 @@ public static partial class Sources
         CancellationToken cancellationToken = default)
     {
         if (data.Style != ModelStyle.Enumeration ||
-            data.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+            data.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
         {
             return FileWithName.Empty;
         }
@@ -127,8 +127,8 @@ public static partial class Sources
         EndPoint endPoint,
         CancellationToken cancellationToken = default)
     {
-        if (!endPoint.GenerateJsonSerializerContextTypes ||
-            endPoint.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+        if (!endPoint.Settings.GenerateJsonSerializerContextTypes ||
+            endPoint.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
         {
             return FileWithName.Empty;
         }

@@ -39,9 +39,6 @@
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: List all pets,
     BaseUrlSummary: ,
     Settings: {
@@ -151,9 +148,6 @@
     Path: "/pets",
     AuthorizationScheme: ,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary: Create a pet,
     BaseUrlSummary: ,
@@ -282,9 +276,6 @@
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: Info for a specific pet,
     BaseUrlSummary: ,
     Settings: {
@@ -408,9 +399,6 @@
     Path: ,
     AuthorizationScheme: ,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: ,
     BaseUrlSummary: ,
     Settings: {

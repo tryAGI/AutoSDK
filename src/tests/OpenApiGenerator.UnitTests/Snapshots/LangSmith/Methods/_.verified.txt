@@ -176,9 +176,6 @@
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Patch,
     Summary:
 Update Run
@@ -853,9 +850,6 @@ Update a run.,
         ParameterDefaultValue: default
       }
     ],
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     HttpMethod: Post,
     Summary:
 Create Run
@@ -1023,9 +1017,6 @@ Create a new run.,
     Path: ,
     AuthorizationScheme: ,
     Properties: null,
-    TargetFramework: netstandard2.0,
-    JsonSerializerContext: ,
-    GenerateJsonSerializerContextTypes: false,
     Summary: From https://github.com/langchain-ai/langsmith-sdk/blob/main/openapi/openapi.yaml,
     BaseUrlSummary: ,
     Settings: {

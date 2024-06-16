@@ -26,7 +26,7 @@ namespace {modelData.Namespace}
         int level,
         CancellationToken cancellationToken = default)
     {
-        if (modelData.NamingConvention == NamingConvention.ConcatNames ||
+        if (modelData.Settings.NamingConvention == NamingConvention.ConcatNames ||
             level == modelData.Parents.AsSpan().Length)
         {
             return modelData.Style switch
@@ -71,8 +71,8 @@ public sealed partial class {modelData.Parents[level].ClassName}
         ModelData modelData,
         CancellationToken cancellationToken = default)
     {
-        var jsonSerializer = modelData.JsonSerializerType.GetSerializer();
-        var isRequiredKeywordSupported = IsSupported(modelData.UseRequiredKeyword, modelData.TargetFramework);
+        var jsonSerializer = modelData.Settings.JsonSerializerType.GetSerializer();
+        var isRequiredKeywordSupported = IsSupported(modelData.Settings.UseRequiredKeyword, modelData.Settings.TargetFramework);
         var requiredKeyword = isRequiredKeywordSupported
             ? " required"
             : string.Empty;

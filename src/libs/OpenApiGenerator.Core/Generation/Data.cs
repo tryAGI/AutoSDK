@@ -141,10 +141,6 @@ public static class Data
                         })
                     ]
                     : [],
-                TargetFramework: settings.TargetFramework,
-                JsonSerializerType: settings.JsonSerializerType,
-                JsonSerializerContext: settings.JsonSerializerContext,
-                GenerateJsonSerializerContextTypes: settings.GenerateJsonSerializerContextTypes,
                 HttpMethod: OperationType.Get,
                 Summary: openApiDocument.Info?.Description?.ClearForXml() ?? string.Empty,
                 BaseUrlSummary: openApiDocument.Servers.FirstOrDefault()?.Description?.ClearForXml() ?? string.Empty,
@@ -168,10 +164,6 @@ public static class Data
                         Path: string.Empty,
                         AuthorizationScheme: string.Empty,
                         Properties: ImmutableArray<PropertyData>.Empty,
-                        TargetFramework: settings.TargetFramework,
-                        JsonSerializerType: settings.JsonSerializerType,
-                        JsonSerializerContext: settings.JsonSerializerContext,
-                        GenerateJsonSerializerContextTypes: settings.GenerateJsonSerializerContextTypes,
                         HttpMethod: OperationType.Get,
                         Summary: x.Description?.ClearForXml() ?? string.Empty,
                         BaseUrlSummary: openApiDocument.Servers.FirstOrDefault()?.Description?.ClearForXml() ?? string.Empty,
@@ -304,7 +296,7 @@ public static class Data
             .ToImmutableArray() : [];
 
         var converters = models
-            .Where(x => x.Style == ModelStyle.Enumeration && x.JsonSerializerType != JsonSerializerType.NewtonsoftJson)
+            .Where(x => x.Style == ModelStyle.Enumeration && x.Settings.JsonSerializerType != JsonSerializerType.NewtonsoftJson)
             .SelectMany(x => new[]
             {
                 $"global::OpenApiGenerator.JsonConverters.{x.ClassName}JsonConverter",
@@ -339,10 +331,6 @@ public static class Data
                     Path: string.Empty,
                     AuthorizationScheme: string.Empty,
                     Properties: [],
-                    TargetFramework: settings.TargetFramework,
-                    JsonSerializerType: settings.JsonSerializerType,
-                    JsonSerializerContext: settings.JsonSerializerContext,
-                    GenerateJsonSerializerContextTypes: settings.GenerateJsonSerializerContextTypes,
                     HttpMethod: OperationType.Get,
                     Summary: string.Empty,
                     BaseUrlSummary: string.Empty,
