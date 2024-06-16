@@ -29,18 +29,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ThreadStreamEvent? Value1 { get; init; }
+        public global::G.ThreadStreamEvent? Thread { get; init; }
 #else
-        public global::G.ThreadStreamEvent? Value1 { get; }
+        public global::G.ThreadStreamEvent? Thread { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thread))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsThread => Thread != null;
 
         /// <summary>
         /// 
@@ -50,32 +50,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ThreadStreamEvent?(AssistantStreamEvent @this) => @this.Value1;
+        public static implicit operator global::G.ThreadStreamEvent?(AssistantStreamEvent @this) => @this.Thread;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.ThreadStreamEvent? value)
         {
-            Value1 = value;
+            Thread = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RunStreamEvent? Value2 { get; init; }
+        public global::G.RunStreamEvent? Run { get; init; }
 #else
-        public global::G.RunStreamEvent? Value2 { get; }
+        public global::G.RunStreamEvent? Run { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Run))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsRun => Run != null;
 
         /// <summary>
         /// 
@@ -85,32 +85,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RunStreamEvent?(AssistantStreamEvent @this) => @this.Value2;
+        public static implicit operator global::G.RunStreamEvent?(AssistantStreamEvent @this) => @this.Run;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.RunStreamEvent? value)
         {
-            Value2 = value;
+            Run = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RunStepStreamEvent? Value3 { get; init; }
+        public global::G.RunStepStreamEvent? RunStep { get; init; }
 #else
-        public global::G.RunStepStreamEvent? Value3 { get; }
+        public global::G.RunStepStreamEvent? RunStep { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStep))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsRunStep => RunStep != null;
 
         /// <summary>
         /// 
@@ -120,32 +120,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RunStepStreamEvent?(AssistantStreamEvent @this) => @this.Value3;
+        public static implicit operator global::G.RunStepStreamEvent?(AssistantStreamEvent @this) => @this.RunStep;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.RunStepStreamEvent? value)
         {
-            Value3 = value;
+            RunStep = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MessageStreamEvent? Value4 { get; init; }
+        public global::G.MessageStreamEvent? Message { get; init; }
 #else
-        public global::G.MessageStreamEvent? Value4 { get; }
+        public global::G.MessageStreamEvent? Message { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Message))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsMessage => Message != null;
 
         /// <summary>
         /// 
@@ -155,32 +155,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MessageStreamEvent?(AssistantStreamEvent @this) => @this.Value4;
+        public static implicit operator global::G.MessageStreamEvent?(AssistantStreamEvent @this) => @this.Message;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.MessageStreamEvent? value)
         {
-            Value4 = value;
+            Message = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ErrorEvent? Value5 { get; init; }
+        public global::G.ErrorEvent? Error { get; init; }
 #else
-        public global::G.ErrorEvent? Value5 { get; }
+        public global::G.ErrorEvent? Error { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
 #endif
-        public bool IsValue5 => Value5 != null;
+        public bool IsError => Error != null;
 
         /// <summary>
         /// 
@@ -190,32 +190,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ErrorEvent?(AssistantStreamEvent @this) => @this.Value5;
+        public static implicit operator global::G.ErrorEvent?(AssistantStreamEvent @this) => @this.Error;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.ErrorEvent? value)
         {
-            Value5 = value;
+            Error = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.DoneEvent? Value6 { get; init; }
+        public global::G.DoneEvent? Done { get; init; }
 #else
-        public global::G.DoneEvent? Value6 { get; }
+        public global::G.DoneEvent? Done { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value6))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Done))]
 #endif
-        public bool IsValue6 => Value6 != null;
+        public bool IsDone => Done != null;
 
         /// <summary>
         /// 
@@ -225,46 +225,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.DoneEvent?(AssistantStreamEvent @this) => @this.Value6;
+        public static implicit operator global::G.DoneEvent?(AssistantStreamEvent @this) => @this.Done;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.DoneEvent? value)
         {
-            Value6 = value;
+            Done = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(
-            global::G.ThreadStreamEvent? value1,
-            global::G.RunStreamEvent? value2,
-            global::G.RunStepStreamEvent? value3,
-            global::G.MessageStreamEvent? value4,
-            global::G.ErrorEvent? value5,
-            global::G.DoneEvent? value6
+            global::G.ThreadStreamEvent? thread,
+            global::G.RunStreamEvent? run,
+            global::G.RunStepStreamEvent? runStep,
+            global::G.MessageStreamEvent? message,
+            global::G.ErrorEvent? error,
+            global::G.DoneEvent? done
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
-            Value5 = value5;
-            Value6 = value6;
+            Thread = thread;
+            Run = run;
+            RunStep = runStep;
+            Message = message;
+            Error = error;
+            Done = done;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value6 as object ??
-            Value5 as object ??
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            Done as object ??
+            Error as object ??
+            Message as object ??
+            RunStep as object ??
+            Run as object ??
+            Thread as object 
             ;
 
         /// <summary>
@@ -272,7 +272,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return !IsValue1 && IsValue2 && IsValue3 && IsValue4 && IsValue5 && IsValue6 || IsValue1 && !IsValue2 && IsValue3 && IsValue4 && IsValue5 && IsValue6 || IsValue1 && IsValue2 && !IsValue3 && IsValue4 && IsValue5 && IsValue6 || IsValue1 && IsValue2 && IsValue3 && !IsValue4 && IsValue5 && IsValue6 || IsValue1 && IsValue2 && IsValue3 && IsValue4 && !IsValue5 && IsValue6 || IsValue1 && IsValue2 && IsValue3 && IsValue4 && IsValue5 && !IsValue6;
+            return !IsThread && IsRun && IsRunStep && IsMessage && IsError && IsDone || IsThread && !IsRun && IsRunStep && IsMessage && IsError && IsDone || IsThread && IsRun && !IsRunStep && IsMessage && IsError && IsDone || IsThread && IsRun && IsRunStep && !IsMessage && IsError && IsDone || IsThread && IsRun && IsRunStep && IsMessage && !IsError && IsDone || IsThread && IsRun && IsRunStep && IsMessage && IsError && !IsDone;
         }
 
         /// <summary>
@@ -282,17 +282,17 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Thread,
                 typeof(global::G.ThreadStreamEvent),
-                Value2,
+                Run,
                 typeof(global::G.RunStreamEvent),
-                Value3,
+                RunStep,
                 typeof(global::G.RunStepStreamEvent),
-                Value4,
+                Message,
                 typeof(global::G.MessageStreamEvent),
-                Value5,
+                Error,
                 typeof(global::G.ErrorEvent),
-                Value6,
+                Done,
                 typeof(global::G.DoneEvent),
             };
             const int offset = unchecked((int)2166136261);
@@ -309,12 +309,12 @@ namespace G
         public bool Equals(AssistantStreamEvent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ThreadStreamEvent?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEvent?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RunStepStreamEvent?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MessageStreamEvent?>.Default.Equals(Value4, other.Value4) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ErrorEvent?>.Default.Equals(Value5, other.Value5) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.DoneEvent?>.Default.Equals(Value6, other.Value6) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ThreadStreamEvent?>.Default.Equals(Thread, other.Thread) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEvent?>.Default.Equals(Run, other.Run) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RunStepStreamEvent?>.Default.Equals(RunStep, other.RunStep) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MessageStreamEvent?>.Default.Equals(Message, other.Message) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ErrorEvent?>.Default.Equals(Error, other.Error) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.DoneEvent?>.Default.Equals(Done, other.Done) 
                 ;
         }
 

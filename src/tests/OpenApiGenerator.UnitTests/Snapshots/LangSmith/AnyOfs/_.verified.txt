@@ -6,7 +6,7 @@
     Namespace: System,
     Name: ,
     Summary: ,
-    Types: null
+    Properties: null
   },
   {
     SubType: AnyOf,
@@ -15,7 +15,7 @@
     Namespace: System,
     Name: ,
     Summary: ,
-    Types: null
+    Properties: null
   },
   {
     SubType: AnyOf,
@@ -24,6 +24,6 @@
     Namespace: System,
     Name: ,
     Summary: ,
-    Types: null
+    Properties: null
   }
 ]

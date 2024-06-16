@@ -15,18 +15,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatCompletionRequestMessageContentPartText? Value1 { get; init; }
+        public global::G.ChatCompletionRequestMessageContentPartText? Text { get; init; }
 #else
-        public global::G.ChatCompletionRequestMessageContentPartText? Value1 { get; }
+        public global::G.ChatCompletionRequestMessageContentPartText? Text { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsText => Text != null;
 
         /// <summary>
         /// 
@@ -36,32 +36,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatCompletionRequestMessageContentPartText?(ChatCompletionRequestMessageContentPart @this) => @this.Value1;
+        public static implicit operator global::G.ChatCompletionRequestMessageContentPartText?(ChatCompletionRequestMessageContentPart @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionRequestMessageContentPart(global::G.ChatCompletionRequestMessageContentPartText? value)
         {
-            Value1 = value;
+            Text = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatCompletionRequestMessageContentPartImage? Value2 { get; init; }
+        public global::G.ChatCompletionRequestMessageContentPartImage? Image { get; init; }
 #else
-        public global::G.ChatCompletionRequestMessageContentPartImage? Value2 { get; }
+        public global::G.ChatCompletionRequestMessageContentPartImage? Image { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsImage => Image != null;
 
         /// <summary>
         /// 
@@ -71,34 +71,34 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatCompletionRequestMessageContentPartImage?(ChatCompletionRequestMessageContentPart @this) => @this.Value2;
+        public static implicit operator global::G.ChatCompletionRequestMessageContentPartImage?(ChatCompletionRequestMessageContentPart @this) => @this.Image;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionRequestMessageContentPart(global::G.ChatCompletionRequestMessageContentPartImage? value)
         {
-            Value2 = value;
+            Image = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionRequestMessageContentPart(
-            global::G.ChatCompletionRequestMessageContentPartText? value1,
-            global::G.ChatCompletionRequestMessageContentPartImage? value2
+            global::G.ChatCompletionRequestMessageContentPartText? text,
+            global::G.ChatCompletionRequestMessageContentPartImage? image
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Text = text;
+            Image = image;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            Image as object ??
+            Text as object 
             ;
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return !IsValue1 && IsValue2 || IsValue1 && !IsValue2;
+            return !IsText && IsImage || IsText && !IsImage;
         }
 
         /// <summary>
@@ -116,9 +116,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Text,
                 typeof(global::G.ChatCompletionRequestMessageContentPartText),
-                Value2,
+                Image,
                 typeof(global::G.ChatCompletionRequestMessageContentPartImage),
             };
             const int offset = unchecked((int)2166136261);
@@ -135,8 +135,8 @@ namespace G
         public bool Equals(ChatCompletionRequestMessageContentPart other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestMessageContentPartText?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestMessageContentPartImage?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestMessageContentPartText?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestMessageContentPartImage?>.Default.Equals(Image, other.Image) 
                 ;
         }
 

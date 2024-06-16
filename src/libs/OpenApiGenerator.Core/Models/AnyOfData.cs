@@ -11,5 +11,5 @@ public readonly record struct AnyOfData(
     string Namespace,
     string Name,
     string Summary,
-    ImmutableArray<TypeData> Types
+    ImmutableArray<PropertyData> Properties
 );

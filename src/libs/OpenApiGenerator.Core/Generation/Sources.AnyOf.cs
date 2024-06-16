@@ -12,14 +12,6 @@ public static partial class Sources
     {
         var (subType, count, _, _, @namespace, className, summary, fixedTypes) = anyOfData;
         var types = $"<{string.Join(", ", Enumerable.Range(1, count).Select(x => $"T{x}"))}>";
-        var validation = subType switch
-        {
-            "AnyOf" => string.Join(" || ", Enumerable.Range(1, count).Select(x => $"IsValue{x}")),
-            "OneOf" => string.Join(" || ", Enumerable.Range(1, count).Select(x =>
-                string.Join(" && ", Enumerable.Range(1, count).Select(y => $"{(y == x ? "!" : "")}IsValue{y}")))),
-            "AllOf" => string.Join(" && ", Enumerable.Range(1, count).Select(x => $"IsValue{x}")),
-            _ => throw new NotImplementedException(),
-        };
         var classNameWithoutTypes = string.IsNullOrWhiteSpace(className)
             ? $"{subType}"
             : className;
@@ -38,21 +30,25 @@ public static partial class Sources
                     },
                 })
                 .ToImmutableArray()
-            : fixedTypes.Select((type, i) => PropertyData.Default with
-            {
-                Name = $"Value{i + 1}",
-                Type = type,
-            }).ToImmutableArray();
+            : fixedTypes;
+        var validation = subType switch
+        {
+            "AnyOf" => string.Join(" || ", allTypes.Select(x => $"Is{x.Name}")),
+            "OneOf" => string.Join(" || ", allTypes.Select((x, xi) =>
+                string.Join(" && ", allTypes.Select((y, yi) => $"{(yi == xi ? "!" : "")}Is{y.Name}")))),
+            "AllOf" => string.Join(" && ", allTypes.Select(x => $"Is{x.Name}")),
+            _ => throw new NotImplementedException(),
+        };
         var constructorWithAllValues = count > 1 ? $@"
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public {classNameWithoutTypes}(
 {allTypes.Select(x => $@" 
-            {x.Type.CSharpTypeWithNullability} {x.Name.ToParameterName()},
+            {x.Type.CSharpTypeWithNullability} {x.ParameterName},
 ").Inject().TrimEnd(',', '\n')}
             )
         {{
 {allTypes.Select(x => $@" 
-            {x.Name} = {x.Name.ToParameterName()};
+            {x.Name} = {x.ParameterName};
 ").Inject()}
         }}" : " ";
         

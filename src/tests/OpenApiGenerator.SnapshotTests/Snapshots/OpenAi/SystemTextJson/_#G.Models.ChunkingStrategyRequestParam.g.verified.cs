@@ -15,18 +15,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AutoChunkingStrategyRequestParam? Value1 { get; init; }
+        public global::G.AutoChunkingStrategyRequestParam? Auto { get; init; }
 #else
-        public global::G.AutoChunkingStrategyRequestParam? Value1 { get; }
+        public global::G.AutoChunkingStrategyRequestParam? Auto { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Auto))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsAuto => Auto != null;
 
         /// <summary>
         /// 
@@ -36,32 +36,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AutoChunkingStrategyRequestParam?(ChunkingStrategyRequestParam @this) => @this.Value1;
+        public static implicit operator global::G.AutoChunkingStrategyRequestParam?(ChunkingStrategyRequestParam @this) => @this.Auto;
 
         /// <summary>
         /// 
         /// </summary>
         public ChunkingStrategyRequestParam(global::G.AutoChunkingStrategyRequestParam? value)
         {
-            Value1 = value;
+            Auto = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.StaticChunkingStrategyRequestParam? Value2 { get; init; }
+        public global::G.StaticChunkingStrategyRequestParam? Static { get; init; }
 #else
-        public global::G.StaticChunkingStrategyRequestParam? Value2 { get; }
+        public global::G.StaticChunkingStrategyRequestParam? Static { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Static))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsStatic => Static != null;
 
         /// <summary>
         /// 
@@ -71,34 +71,34 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.StaticChunkingStrategyRequestParam?(ChunkingStrategyRequestParam @this) => @this.Value2;
+        public static implicit operator global::G.StaticChunkingStrategyRequestParam?(ChunkingStrategyRequestParam @this) => @this.Static;
 
         /// <summary>
         /// 
         /// </summary>
         public ChunkingStrategyRequestParam(global::G.StaticChunkingStrategyRequestParam? value)
         {
-            Value2 = value;
+            Static = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ChunkingStrategyRequestParam(
-            global::G.AutoChunkingStrategyRequestParam? value1,
-            global::G.StaticChunkingStrategyRequestParam? value2
+            global::G.AutoChunkingStrategyRequestParam? auto,
+            global::G.StaticChunkingStrategyRequestParam? @static
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Auto = auto;
+            Static = @static;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            Static as object ??
+            Auto as object 
             ;
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return !IsValue1 && IsValue2 || IsValue1 && !IsValue2;
+            return !IsAuto && IsStatic || IsAuto && !IsStatic;
         }
 
         /// <summary>
@@ -116,9 +116,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Auto,
                 typeof(global::G.AutoChunkingStrategyRequestParam),
-                Value2,
+                Static,
                 typeof(global::G.StaticChunkingStrategyRequestParam),
             };
             const int offset = unchecked((int)2166136261);
@@ -135,8 +135,8 @@ namespace G
         public bool Equals(ChunkingStrategyRequestParam other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.AutoChunkingStrategyRequestParam?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.StaticChunkingStrategyRequestParam?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.AutoChunkingStrategyRequestParam?>.Default.Equals(Auto, other.Auto) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.StaticChunkingStrategyRequestParam?>.Default.Equals(Static, other.Static) 
                 ;
         }
 

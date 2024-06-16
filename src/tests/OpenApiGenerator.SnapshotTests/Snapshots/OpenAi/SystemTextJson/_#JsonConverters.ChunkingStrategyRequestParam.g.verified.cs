@@ -17,40 +17,40 @@ namespace OpenApiGenerator.JsonConverters
 
             var
             readerCopy = reader;
-            global::G.AutoChunkingStrategyRequestParam? value1 = default;
+            global::G.AutoChunkingStrategyRequestParam? auto = default;
             try
             {
-                value1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AutoChunkingStrategyRequestParam>(ref readerCopy, options);
+                auto = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AutoChunkingStrategyRequestParam>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::G.StaticChunkingStrategyRequestParam? value2 = default;
+            global::G.StaticChunkingStrategyRequestParam? @static = default;
             try
             {
-                value2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.StaticChunkingStrategyRequestParam>(ref readerCopy, options);
+                @static = global::System.Text.Json.JsonSerializer.Deserialize<global::G.StaticChunkingStrategyRequestParam>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
             var result = new global::G.ChunkingStrategyRequestParam(
-                value1,
+                auto,
 
-                value2
+                @static
                 );
             if (!result.Validate())
             {
                 throw new global::System.Text.Json.JsonException($"Invalid JSON format for OneOf<{typeof(global::G.AutoChunkingStrategyRequestParam).Name}, {typeof(global::G.StaticChunkingStrategyRequestParam).Name}>");
             }
 
-            if (value1 != null)
+            if (auto != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AutoChunkingStrategyRequestParam>(ref reader, options);
             }
 
-            else if (value2 != null)
+            else if (@static != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.StaticChunkingStrategyRequestParam>(ref reader, options);
             }
@@ -70,14 +70,14 @@ namespace OpenApiGenerator.JsonConverters
                 throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(global::G.AutoChunkingStrategyRequestParam).Name}, {typeof(global::G.StaticChunkingStrategyRequestParam).Name}> object.");
             }
 
-            if (value.IsValue1)
+            if (value.IsAuto)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeof(global::G.AutoChunkingStrategyRequestParam), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Auto, typeof(global::G.AutoChunkingStrategyRequestParam), options);
             }
 
-            else if (value.IsValue2)
+            else if (value.IsStatic)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeof(global::G.StaticChunkingStrategyRequestParam), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Static, typeof(global::G.StaticChunkingStrategyRequestParam), options);
             }
         }
     }

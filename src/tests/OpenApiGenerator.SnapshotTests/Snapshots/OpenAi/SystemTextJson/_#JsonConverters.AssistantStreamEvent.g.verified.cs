@@ -17,108 +17,108 @@ namespace OpenApiGenerator.JsonConverters
 
             var
             readerCopy = reader;
-            global::G.ThreadStreamEvent? value1 = default;
+            global::G.ThreadStreamEvent? thread = default;
             try
             {
-                value1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ThreadStreamEvent>(ref readerCopy, options);
+                thread = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ThreadStreamEvent>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::G.RunStreamEvent? value2 = default;
+            global::G.RunStreamEvent? run = default;
             try
             {
-                value2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RunStreamEvent>(ref readerCopy, options);
+                run = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RunStreamEvent>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::G.RunStepStreamEvent? value3 = default;
+            global::G.RunStepStreamEvent? runStep = default;
             try
             {
-                value3 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RunStepStreamEvent>(ref readerCopy, options);
+                runStep = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RunStepStreamEvent>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::G.MessageStreamEvent? value4 = default;
+            global::G.MessageStreamEvent? message = default;
             try
             {
-                value4 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MessageStreamEvent>(ref readerCopy, options);
+                message = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MessageStreamEvent>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::G.ErrorEvent? value5 = default;
+            global::G.ErrorEvent? error = default;
             try
             {
-                value5 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ErrorEvent>(ref readerCopy, options);
+                error = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ErrorEvent>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::G.DoneEvent? value6 = default;
+            global::G.DoneEvent? done = default;
             try
             {
-                value6 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.DoneEvent>(ref readerCopy, options);
+                done = global::System.Text.Json.JsonSerializer.Deserialize<global::G.DoneEvent>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
             var result = new global::G.AssistantStreamEvent(
-                value1,
+                thread,
 
-                value2,
+                run,
 
-                value3,
+                runStep,
 
-                value4,
+                message,
 
-                value5,
+                error,
 
-                value6
+                done
                 );
             if (!result.Validate())
             {
                 throw new global::System.Text.Json.JsonException($"Invalid JSON format for OneOf<{typeof(global::G.ThreadStreamEvent).Name}, {typeof(global::G.RunStreamEvent).Name}, {typeof(global::G.RunStepStreamEvent).Name}, {typeof(global::G.MessageStreamEvent).Name}, {typeof(global::G.ErrorEvent).Name}, {typeof(global::G.DoneEvent).Name}>");
             }
 
-            if (value1 != null)
+            if (thread != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ThreadStreamEvent>(ref reader, options);
             }
 
-            else if (value2 != null)
+            else if (run != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RunStreamEvent>(ref reader, options);
             }
 
-            else if (value3 != null)
+            else if (runStep != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RunStepStreamEvent>(ref reader, options);
             }
 
-            else if (value4 != null)
+            else if (message != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MessageStreamEvent>(ref reader, options);
             }
 
-            else if (value5 != null)
+            else if (error != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ErrorEvent>(ref reader, options);
             }
 
-            else if (value6 != null)
+            else if (done != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.DoneEvent>(ref reader, options);
             }
@@ -138,34 +138,34 @@ namespace OpenApiGenerator.JsonConverters
                 throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(global::G.ThreadStreamEvent).Name}, {typeof(global::G.RunStreamEvent).Name}, {typeof(global::G.RunStepStreamEvent).Name}, {typeof(global::G.MessageStreamEvent).Name}, {typeof(global::G.ErrorEvent).Name}, {typeof(global::G.DoneEvent).Name}> object.");
             }
 
-            if (value.IsValue1)
+            if (value.IsThread)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeof(global::G.ThreadStreamEvent), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Thread, typeof(global::G.ThreadStreamEvent), options);
             }
 
-            else if (value.IsValue2)
+            else if (value.IsRun)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeof(global::G.RunStreamEvent), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Run, typeof(global::G.RunStreamEvent), options);
             }
 
-            else if (value.IsValue3)
+            else if (value.IsRunStep)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3, typeof(global::G.RunStepStreamEvent), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunStep, typeof(global::G.RunStepStreamEvent), options);
             }
 
-            else if (value.IsValue4)
+            else if (value.IsMessage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value4, typeof(global::G.MessageStreamEvent), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Message, typeof(global::G.MessageStreamEvent), options);
             }
 
-            else if (value.IsValue5)
+            else if (value.IsError)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value5, typeof(global::G.ErrorEvent), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error, typeof(global::G.ErrorEvent), options);
             }
 
-            else if (value.IsValue6)
+            else if (value.IsDone)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value6, typeof(global::G.DoneEvent), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Done, typeof(global::G.DoneEvent), options);
             }
         }
     }

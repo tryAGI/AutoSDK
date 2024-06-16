@@ -1,8 +1,10 @@
+using System.Collections.Immutable;
 using System.Globalization;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Interfaces;
 using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
+using OpenApiGenerator.Core.Helpers;
 using OpenApiGenerator.Core.Json;
 using OpenApiGenerator.Core.Models;
 using OpenApiGenerator.Core.Naming.Methods;
@@ -196,6 +198,30 @@ public static class OpenApiExtensions
              schema.OneOf.Any() ||
              schema.Items != null ||
              schema.Enum.Any());
+    }
+
+    public static ImmutableArray<PropertyData> ToAnyOfProperties(
+        this IList<OpenApiSchema> schemas,
+        Settings settings,
+        string key)
+    {
+        var useSmartNames = schemas.All(x => x.Reference != null);
+        var className = key.ToClassName();
+        
+        return schemas.Select((x, i) =>
+        {
+            var type = TypeData.FromSchema(x.UseReferenceIdOrKey(key + $"Variant{i + 1}"), settings);
+
+            return PropertyData.Default with
+            {
+                Name = useSmartNames
+                    ? SmartNamedAnyOfNames.ComputeSmartName(
+                        type.ShortCSharpTypeWithoutNullability,
+                        className)
+                    : $"Value{i + 1}",
+                Type = type,
+            };
+        }).ToImmutableArray();
     }
 
     public static bool IsEnum(

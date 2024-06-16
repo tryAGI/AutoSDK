@@ -17,40 +17,40 @@ namespace OpenApiGenerator.JsonConverters
 
             var
             readerCopy = reader;
-            global::G.ChatCompletionRequestMessageContentPartText? value1 = default;
+            global::G.ChatCompletionRequestMessageContentPartText? text = default;
             try
             {
-                value1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChatCompletionRequestMessageContentPartText>(ref readerCopy, options);
+                text = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChatCompletionRequestMessageContentPartText>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::G.ChatCompletionRequestMessageContentPartImage? value2 = default;
+            global::G.ChatCompletionRequestMessageContentPartImage? image = default;
             try
             {
-                value2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChatCompletionRequestMessageContentPartImage>(ref readerCopy, options);
+                image = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChatCompletionRequestMessageContentPartImage>(ref readerCopy, options);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
             var result = new global::G.ChatCompletionRequestMessageContentPart(
-                value1,
+                text,
 
-                value2
+                image
                 );
             if (!result.Validate())
             {
                 throw new global::System.Text.Json.JsonException($"Invalid JSON format for OneOf<{typeof(global::G.ChatCompletionRequestMessageContentPartText).Name}, {typeof(global::G.ChatCompletionRequestMessageContentPartImage).Name}>");
             }
 
-            if (value1 != null)
+            if (text != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChatCompletionRequestMessageContentPartText>(ref reader, options);
             }
 
-            else if (value2 != null)
+            else if (image != null)
             {
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChatCompletionRequestMessageContentPartImage>(ref reader, options);
             }
@@ -70,14 +70,14 @@ namespace OpenApiGenerator.JsonConverters
                 throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(global::G.ChatCompletionRequestMessageContentPartText).Name}, {typeof(global::G.ChatCompletionRequestMessageContentPartImage).Name}> object.");
             }
 
-            if (value.IsValue1)
+            if (value.IsText)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeof(global::G.ChatCompletionRequestMessageContentPartText), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeof(global::G.ChatCompletionRequestMessageContentPartText), options);
             }
 
-            else if (value.IsValue2)
+            else if (value.IsImage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeof(global::G.ChatCompletionRequestMessageContentPartImage), options);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image, typeof(global::G.ChatCompletionRequestMessageContentPartImage), options);
             }
         }
     }

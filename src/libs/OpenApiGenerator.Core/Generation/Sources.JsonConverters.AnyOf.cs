@@ -12,7 +12,7 @@ public static partial class Sources
         CancellationToken cancellationToken = default)
     {
         var (subType, count, jsonSerializerType, isTrimming, @namespace, name, _, fixedTypes) = anyOfData;
-        if (jsonSerializerType == JsonSerializerType.NewtonsoftJson)
+        if (jsonSerializerType != JsonSerializerType.SystemTextJson)
         {
             return string.Empty;
         }
@@ -36,11 +36,7 @@ public static partial class Sources
                     },
                 })
                 .ToImmutableArray()
-            : fixedTypes.Select((type, i) => PropertyData.Default with
-            {
-                Name = $"Value{i + 1}",
-                Type = type,
-            }).ToImmutableArray();
+            : fixedTypes;
         
         return $@"#nullable enable
 {(fixedTypes.IsEmpty ? "" : @"#pragma warning disable CS0618 // Type or member is obsolete
