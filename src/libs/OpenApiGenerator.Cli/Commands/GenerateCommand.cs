@@ -83,8 +83,8 @@ public class GenerateCommand : Command
             ExcludeOperationIds: [],
             IncludeTags: [],
             ExcludeTags: [],
-            JsonSerializerContext: string.Empty,
-            GenerateJsonSerializerContextTypes: false,
+            JsonSerializerContext: $"{@namespace}.SourceGenerationContext",
+            GenerateJsonSerializerContextTypes: true,
             GenerateModels: false,
             ModelStyle: default,
             IncludeModels: [],
@@ -100,8 +100,8 @@ public class GenerateCommand : Command
                 .Select(x => Sources.Method(x)))
             .Concat(data.AnyOfs
                 .SelectMany(x => new [] { Sources.AnyOf(x), Sources.AnyOfJsonConverter(x), Sources.AnyOfJsonConverterFactory(x) }))
+            .Concat([Sources.JsonSerializerContext(data.Converters, data.Types)])
             .Concat([Sources.JsonSerializerContextTypes(data.Types)])
-            .Concat([Sources.JsonSerializerContextConverters(data.Converters)])
             .Where(x => !x.IsEmpty)
             .ToArray();
         

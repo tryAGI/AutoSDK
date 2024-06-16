@@ -106,6 +106,23 @@ public static partial class Sources
             Text: GenerateJsonSerializerContextTypes(types, cancellationToken: cancellationToken));
     }
     
+    public static FileWithName JsonSerializerContext(
+        EndPoint endPoint,
+        EquatableArray<TypeData> types,
+        CancellationToken cancellationToken = default)
+    {
+        if (!endPoint.Settings.FromCli ||
+            !endPoint.Settings.GenerateJsonSerializerContextTypes ||
+            endPoint.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+        {
+            return FileWithName.Empty;
+        }
+        
+        return new FileWithName(
+            Name: "JsonSerializerContext.g.cs",
+            Text: GenerateJsonSerializerContext(endPoint, types, cancellationToken: cancellationToken));
+    }
+    
     public static FileWithName JsonSerializerContextConverters(
         EndPoint endPoint,
         CancellationToken cancellationToken = default)
