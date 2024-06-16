@@ -31,7 +31,8 @@ public class CacheTests
         ModelStyle: default,
         IncludeModels: ImmutableArray.Create(["123", "456"]),
         ExcludeModels: [],
-        GenerateSdk: true
+        GenerateSdk: true,
+        FromCli: false
     );
     
     // [TestMethod]

@@ -89,7 +89,8 @@ public class GenerateCommand : Command
             ModelStyle: default,
             IncludeModels: [],
             ExcludeModels: [],
-            GenerateSdk: true
+            GenerateSdk: true,
+            FromCli: true
         );
 
         var data = Data.Prepare((yaml, settings));

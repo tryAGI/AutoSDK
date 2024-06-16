@@ -33,7 +33,8 @@ public partial class DataTests : VerifyBase
         ModelStyle: default,
         IncludeModels: [],
         ExcludeModels: [],
-        GenerateSdk: true
+        GenerateSdk: true,
+        FromCli: false
     );
 
     private Task VerifyAsync(

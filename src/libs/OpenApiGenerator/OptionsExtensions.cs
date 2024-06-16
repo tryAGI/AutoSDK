@@ -56,8 +56,8 @@ public static class OptionsExtensions
             ExcludeModels: (options.GetGlobalOption(nameof(Settings.ExcludeModels), prefix)?.Split(';') ??
                             []).ToImmutableArray(),
             
-            GenerateSdk: options.GetBoolGlobalOption(nameof(Settings.GenerateSdk), prefix, defaultValue: true)
-            );
+            GenerateSdk: options.GetBoolGlobalOption(nameof(Settings.GenerateSdk), prefix, defaultValue: true),
+            FromCli: false);
     }
     
     public static bool GetBoolGlobalOption(

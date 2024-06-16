@@ -31,4 +31,5 @@ public readonly record struct Settings(
     ImmutableArray<string> IncludeModels,
     ImmutableArray<string> ExcludeModels,
     
-    bool GenerateSdk);
+    bool GenerateSdk,
+    bool FromCli);
