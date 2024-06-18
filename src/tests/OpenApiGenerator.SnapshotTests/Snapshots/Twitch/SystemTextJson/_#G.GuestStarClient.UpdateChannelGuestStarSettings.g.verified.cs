@@ -27,8 +27,9 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Put,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/guest_star/channel_settings?broadcaster_id={broadcasterId}", global::System.UriKind.RelativeOrAbsolute));
+            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
             httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions),
+                content: __json,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
 

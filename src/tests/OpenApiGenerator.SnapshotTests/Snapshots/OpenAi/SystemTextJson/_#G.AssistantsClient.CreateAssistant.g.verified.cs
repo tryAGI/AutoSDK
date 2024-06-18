@@ -21,8 +21,9 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + "/assistants", global::System.UriKind.RelativeOrAbsolute));
+            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
             httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions),
+                content: __json,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
 
@@ -59,12 +60,12 @@ namespace G
             string? name = default,
             string? description = default,
             string? instructions = default,
-            global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>>? tools = default,
+            global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>?>? tools = default,
             global::G.CreateAssistantRequestToolResources? toolResources = default,
             object? metadata = default,
             double? temperature = 1,
             double? topP = 1,
-            global::System.OneOf<global::G.CreateAssistantRequestResponseFormat?, global::G.AssistantsApiResponseFormat?> responseFormat = default,
+            global::System.OneOf<global::G.CreateAssistantRequestResponseFormat?, global::G.AssistantsApiResponseFormat?>? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CreateAssistantRequest

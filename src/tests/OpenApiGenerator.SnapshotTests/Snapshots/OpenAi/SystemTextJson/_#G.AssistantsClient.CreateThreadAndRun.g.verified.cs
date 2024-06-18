@@ -21,8 +21,9 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + "/threads/runs", global::System.UriKind.RelativeOrAbsolute));
+            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
             httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions),
+                content: __json,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
 
@@ -65,7 +66,7 @@ namespace G
             global::G.CreateThreadRequest? thread = default,
             global::System.AnyOf<string?, global::G.CreateThreadAndRunRequestModel?>? model = default,
             string? instructions = default,
-            global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>>? tools = default,
+            global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>?>? tools = default,
             global::G.CreateThreadAndRunRequestToolResources? toolResources = default,
             object? metadata = default,
             double? temperature = 1,
@@ -74,9 +75,9 @@ namespace G
             int? maxPromptTokens = default,
             int? maxCompletionTokens = default,
             global::G.TruncationObject? truncationStrategy = default,
-            global::System.OneOf<global::G.CreateThreadAndRunRequestToolChoice?, global::G.AssistantsNamedToolChoice?> toolChoice = default,
+            global::System.OneOf<global::G.CreateThreadAndRunRequestToolChoice?, global::G.AssistantsNamedToolChoice?>? toolChoice = default,
             bool parallelToolCalls = true,
-            global::System.OneOf<global::G.CreateThreadAndRunRequestResponseFormat?, global::G.AssistantsApiResponseFormat?> responseFormat = default,
+            global::System.OneOf<global::G.CreateThreadAndRunRequestResponseFormat?, global::G.AssistantsApiResponseFormat?>? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CreateThreadAndRunRequest

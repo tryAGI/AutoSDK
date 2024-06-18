@@ -21,8 +21,9 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + "/moderations", global::System.UriKind.RelativeOrAbsolute));
+            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
             httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions),
+                content: __json,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
 
@@ -48,7 +49,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateModerationResponse> CreateModerationAsync(
             global::System.OneOf<string, global::System.Collections.Generic.IList<string>> input,
-            global::System.AnyOf<string?, global::G.CreateModerationRequestModel?> model = default,
+            global::System.AnyOf<string?, global::G.CreateModerationRequestModel?>? model = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CreateModerationRequest

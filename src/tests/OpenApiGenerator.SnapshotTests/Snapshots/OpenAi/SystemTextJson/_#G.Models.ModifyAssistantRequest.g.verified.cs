@@ -16,7 +16,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory1))]
-        public global::System.AnyOf<string?> Model { get; set; }
+        public global::System.AnyOf<string?>? Model { get; set; }
 
         /// <summary>
         /// The name of the assistant. The maximum length is 256 characters.
@@ -41,7 +41,7 @@ namespace G
         /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>?>? Tools { get; set; }
 
         /// <summary>
         /// A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
@@ -79,7 +79,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<global::G.ModifyAssistantRequestResponseFormat?, global::G.AssistantsApiResponseFormat?> ResponseFormat { get; set; }
+        public global::System.OneOf<global::G.ModifyAssistantRequestResponseFormat?, global::G.AssistantsApiResponseFormat?>? ResponseFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -106,7 +106,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<global::G.AssistantObjectResponseFormat?, global::G.AssistantsApiResponseFormat?> ResponseFormat { get; set; }
+        public global::System.OneOf<global::G.AssistantObjectResponseFormat?, global::G.AssistantsApiResponseFormat?>? ResponseFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

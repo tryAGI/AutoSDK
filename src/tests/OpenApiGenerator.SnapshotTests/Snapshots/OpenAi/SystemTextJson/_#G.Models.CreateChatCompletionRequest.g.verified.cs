@@ -99,7 +99,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?> Stop { get; set; }
+        public global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>? Stop { get; set; }
 
         /// <summary>
         /// If set, partial message deltas will be sent, like in ChatGPT. Tokens will be sent as data-only [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format) as they become available, with the stream terminated by a `data: [DONE]` message. [Example Python code](https://cookbook.openai.com/examples/how_to_stream_completions).<br/>
@@ -148,7 +148,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<global::G.CreateChatCompletionRequestToolChoice?, global::G.ChatCompletionNamedToolChoice?> ToolChoice { get; set; }
+        public global::System.OneOf<global::G.CreateChatCompletionRequestToolChoice?, global::G.ChatCompletionNamedToolChoice?>? ToolChoice { get; set; }
 
         /// <summary>
         /// Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.<br/>
@@ -174,7 +174,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function_call")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<global::G.CreateChatCompletionRequestFunctionCall?, global::G.ChatCompletionFunctionCallOption?> FunctionCall { get; set; }
+        public global::System.OneOf<global::G.CreateChatCompletionRequestFunctionCall?, global::G.ChatCompletionFunctionCallOption?>? FunctionCall { get; set; }
 
         /// <summary>
         /// Deprecated in favor of `tools`.<br/>

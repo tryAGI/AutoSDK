@@ -22,7 +22,7 @@ namespace G
         /// The content of the message in array of text and/or images.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageDeltaContentImageFileObject?, global::G.MessageDeltaContentTextObject?, global::G.MessageDeltaContentImageUrlObject?>>? Content { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::G.MessageDeltaContentImageFileObject?, global::G.MessageDeltaContentTextObject?, global::G.MessageDeltaContentImageUrlObject?>?>? Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

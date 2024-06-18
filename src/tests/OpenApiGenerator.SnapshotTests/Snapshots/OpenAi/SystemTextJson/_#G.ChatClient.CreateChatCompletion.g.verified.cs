@@ -21,8 +21,9 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + "/chat/completions", global::System.UriKind.RelativeOrAbsolute));
+            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
             httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions),
+                content: __json,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
 
@@ -76,13 +77,13 @@ namespace G
             double? presencePenalty = 0,
             global::G.CreateChatCompletionRequestResponseFormat? responseFormat = default,
             int? seed = default,
-            global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?> stop = default,
+            global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>? stop = default,
             bool? stream = false,
             global::G.ChatCompletionStreamOptions? streamOptions = default,
             double? temperature = 1,
             double? topP = 1,
             global::System.Collections.Generic.IList<global::G.ChatCompletionTool>? tools = default,
-            global::System.OneOf<global::G.CreateChatCompletionRequestToolChoice?, global::G.ChatCompletionNamedToolChoice?> toolChoice = default,
+            global::System.OneOf<global::G.CreateChatCompletionRequestToolChoice?, global::G.ChatCompletionNamedToolChoice?>? toolChoice = default,
             bool parallelToolCalls = true,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)

@@ -102,8 +102,9 @@ namespace {endPoint.Namespace}
                 method: {GetHttpMethod(endPoint.Settings.TargetFramework, endPoint.HttpMethod)},
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + {endPoint.Path}, global::System.UriKind.RelativeOrAbsolute));
 {(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : $@" 
+            var __json = {jsonSerializer.GenerateSerializeCall(endPoint.RequestType, endPoint.Settings.JsonSerializerContext)};
             httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: {jsonSerializer.GenerateSerializeCall(endPoint.RequestType, endPoint.Settings.JsonSerializerContext)},
+                content: __json,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: ""application/json"");")}
 

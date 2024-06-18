@@ -48,7 +48,7 @@ namespace G
         /// Override the tools the assistant can use for this run. This is useful for modifying the behavior on a per-run basis.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>?>? Tools { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -106,7 +106,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<global::G.CreateRunRequestToolChoice?, global::G.AssistantsNamedToolChoice?> ToolChoice { get; set; }
+        public global::System.OneOf<global::G.CreateRunRequestToolChoice?, global::G.AssistantsNamedToolChoice?>? ToolChoice { get; set; }
 
         /// <summary>
         /// Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.<br/>
@@ -122,7 +122,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<global::G.CreateRunRequestResponseFormat?, global::G.AssistantsApiResponseFormat?> ResponseFormat { get; set; }
+        public global::System.OneOf<global::G.CreateRunRequestResponseFormat?, global::G.AssistantsApiResponseFormat?>? ResponseFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
