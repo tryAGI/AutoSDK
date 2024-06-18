@@ -70,7 +70,7 @@ namespace G
             string? instructions = default,
             string? additionalInstructions = default,
             global::System.Collections.Generic.IList<global::G.CreateMessageRequest>? additionalMessages = default,
-            global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>>? tools = default,
+            global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>?>? tools = default,
             object? metadata = default,
             double? temperature = 1,
             double? topP = 1,
@@ -78,9 +78,9 @@ namespace G
             int? maxPromptTokens = default,
             int? maxCompletionTokens = default,
             global::G.TruncationObject? truncationStrategy = default,
-            global::System.OneOf<global::G.CreateRunRequestToolChoice?, global::G.AssistantsNamedToolChoice?> toolChoice = default,
+            global::System.OneOf<global::G.CreateRunRequestToolChoice?, global::G.AssistantsNamedToolChoice?>? toolChoice = default,
             bool parallelToolCalls = true,
-            global::System.OneOf<global::G.CreateRunRequestResponseFormat?, global::G.AssistantsApiResponseFormat?> responseFormat = default,
+            global::System.OneOf<global::G.CreateRunRequestResponseFormat?, global::G.AssistantsApiResponseFormat?>? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CreateRunRequest

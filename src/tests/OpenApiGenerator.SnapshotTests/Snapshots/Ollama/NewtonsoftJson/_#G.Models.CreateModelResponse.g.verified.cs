@@ -15,7 +15,7 @@ namespace G
         /// Status creating the model
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        public global::System.AnyOf<string?, global::G.CreateModelResponseStatus?> Status { get; set; }
+        public global::System.AnyOf<string?, global::G.CreateModelResponseStatus?>? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

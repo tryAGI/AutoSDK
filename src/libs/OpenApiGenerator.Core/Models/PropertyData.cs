@@ -231,7 +231,8 @@ public readonly record struct PropertyData(
         }
     }
     
-    public string ParameterDefaultValue => DefaultValue == null || string.IsNullOrWhiteSpace(DefaultValue) || Type.AnyOfCount > 0 || Type.OneOfCount > 0 || Type.AllOfCount > 0
+    public string ParameterDefaultValue =>
+        DefaultValue == null || string.IsNullOrWhiteSpace(DefaultValue) || Type.IsAnyOf
         ? "default"
         : DefaultValue;
 }

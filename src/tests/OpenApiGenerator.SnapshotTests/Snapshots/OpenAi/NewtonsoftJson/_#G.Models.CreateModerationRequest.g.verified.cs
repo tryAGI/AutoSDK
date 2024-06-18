@@ -24,7 +24,7 @@ namespace G
         /// Example: text-moderation-stable
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
-        public global::System.AnyOf<string?, global::G.CreateModerationRequestModel?> Model { get; set; } = global::G.CreateModerationRequestModel.TextModerationLatest;
+        public global::System.AnyOf<string?, global::G.CreateModerationRequestModel?>? Model { get; set; } = global::G.CreateModerationRequestModel.TextModerationLatest;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -59,12 +59,12 @@ namespace G
             string? name = default,
             string? description = default,
             string? instructions = default,
-            global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>>? tools = default,
+            global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>?>? tools = default,
             global::G.CreateAssistantRequestToolResources? toolResources = default,
             object? metadata = default,
             double? temperature = 1,
             double? topP = 1,
-            global::System.OneOf<global::G.CreateAssistantRequestResponseFormat?, global::G.AssistantsApiResponseFormat?> responseFormat = default,
+            global::System.OneOf<global::G.CreateAssistantRequestResponseFormat?, global::G.AssistantsApiResponseFormat?>? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CreateAssistantRequest

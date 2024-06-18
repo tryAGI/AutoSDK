@@ -65,7 +65,7 @@ namespace G
             global::G.CreateThreadRequest? thread = default,
             global::System.AnyOf<string?, global::G.CreateThreadAndRunRequestModel?>? model = default,
             string? instructions = default,
-            global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>>? tools = default,
+            global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>?>? tools = default,
             global::G.CreateThreadAndRunRequestToolResources? toolResources = default,
             object? metadata = default,
             double? temperature = 1,
@@ -74,9 +74,9 @@ namespace G
             int? maxPromptTokens = default,
             int? maxCompletionTokens = default,
             global::G.TruncationObject? truncationStrategy = default,
-            global::System.OneOf<global::G.CreateThreadAndRunRequestToolChoice?, global::G.AssistantsNamedToolChoice?> toolChoice = default,
+            global::System.OneOf<global::G.CreateThreadAndRunRequestToolChoice?, global::G.AssistantsNamedToolChoice?>? toolChoice = default,
             bool parallelToolCalls = true,
-            global::System.OneOf<global::G.CreateThreadAndRunRequestResponseFormat?, global::G.AssistantsApiResponseFormat?> responseFormat = default,
+            global::System.OneOf<global::G.CreateThreadAndRunRequestResponseFormat?, global::G.AssistantsApiResponseFormat?>? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CreateThreadAndRunRequest

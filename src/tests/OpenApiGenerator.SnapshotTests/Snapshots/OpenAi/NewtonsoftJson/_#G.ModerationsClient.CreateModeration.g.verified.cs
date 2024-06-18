@@ -48,7 +48,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateModerationResponse> CreateModerationAsync(
             global::System.OneOf<string, global::System.Collections.Generic.IList<string>> input,
-            global::System.AnyOf<string?, global::G.CreateModerationRequestModel?> model = default,
+            global::System.AnyOf<string?, global::G.CreateModerationRequestModel?>? model = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CreateModerationRequest

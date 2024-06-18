@@ -85,7 +85,7 @@
         Id: inputs,
         Name: Inputs,
         Type: {
-          CSharpType: global::System.AnyOf<object?, global::G.CreateChatCompletionRequest?, global::G.CreateCompletionRequest?>,
+          CSharpType: global::System.AnyOf<object?, global::G.CreateChatCompletionRequest?, global::G.CreateCompletionRequest?>?,
           IsArray: false,
           IsEnum: false,
           AnyOfCount: 3,
@@ -113,7 +113,7 @@
         Id: outputs,
         Name: Outputs,
         Type: {
-          CSharpType: global::System.AnyOf<object?, global::G.CreateChatCompletionResponse?, global::G.CreateCompletionResponse?>,
+          CSharpType: global::System.AnyOf<object?, global::G.CreateChatCompletionResponse?, global::G.CreateCompletionResponse?>?,
           IsArray: false,
           IsEnum: false,
           AnyOfCount: 3,
@@ -399,7 +399,7 @@
         Id: stop,
         Name: Stop,
         Type: {
-          CSharpType: global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?>,
+          CSharpType: global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?>?,
           IsArray: false,
           IsEnum: false,
           AnyOfCount: 2,
@@ -1313,7 +1313,7 @@
         Id: stop,
         Name: Stop,
         Type: {
-          CSharpType: global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?>,
+          CSharpType: global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?>?,
           IsArray: false,
           IsEnum: false,
           AnyOfCount: 2,
@@ -2824,7 +2824,7 @@
         Id: inputs,
         Name: Inputs,
         Type: {
-          CSharpType: global::System.AnyOf<object?, global::G.CreateChatCompletionRequest?, global::G.CreateCompletionRequest?>,
+          CSharpType: global::System.AnyOf<object?, global::G.CreateChatCompletionRequest?, global::G.CreateCompletionRequest?>?,
           IsArray: false,
           IsEnum: false,
           AnyOfCount: 3,
@@ -3060,7 +3060,7 @@
         Id: outputs,
         Name: Outputs,
         Type: {
-          CSharpType: global::System.AnyOf<object?, global::G.CreateChatCompletionResponse?, global::G.CreateCompletionResponse?>,
+          CSharpType: global::System.AnyOf<object?, global::G.CreateChatCompletionResponse?, global::G.CreateCompletionResponse?>?,
           IsArray: false,
           IsEnum: false,
           AnyOfCount: 3,

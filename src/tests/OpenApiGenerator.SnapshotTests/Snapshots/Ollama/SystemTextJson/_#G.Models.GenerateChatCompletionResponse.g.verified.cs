@@ -43,7 +43,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("done_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, global::G.GenerateChatCompletionResponseDoneReason?> DoneReason { get; set; }
+        public global::System.AnyOf<string?, global::G.GenerateChatCompletionResponseDoneReason?>? DoneReason { get; set; }
 
         /// <summary>
         /// Time spent generating the response.<br/>

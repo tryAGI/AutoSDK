@@ -102,13 +102,13 @@ public readonly record struct TypeData(
         var model = ModelData.FromSchema(schema, settings, parents);
         var (type, reference) = (schema.Value.Type, schema.Value.Format) switch
         {
-            (null, _) when schema.Value.AnyOf.Any() && schema.IsComponent() => ($"global::{settings.Namespace}.{schema.Key}", false),
-            (null, _) when schema.Value.OneOf.Any() && schema.IsComponent() => ($"global::{settings.Namespace}.{schema.Key}", false),
-            (null, _) when schema.Value.AllOf.Any() && schema.IsComponent() => ($"global::{settings.Namespace}.{schema.Key}", false),
+            (null, _) when schema.Value.AnyOf.Any() && schema.IsComponent() => ($"global::{settings.Namespace}.{schema.Key}", true),
+            (null, _) when schema.Value.OneOf.Any() && schema.IsComponent() => ($"global::{settings.Namespace}.{schema.Key}", true),
+            (null, _) when schema.Value.AllOf.Any() && schema.IsComponent() => ($"global::{settings.Namespace}.{schema.Key}", true),
             
-            (null, _) when schema.Value.AnyOf.Any() => ($"global::System.AnyOf<{string.Join(", ", schema.Value.AnyOf.Select(x => GetCSharpType(x.UseReferenceIdOrKey(schema.Key), settings, parents)))}>", false),
-            (null, _) when schema.Value.OneOf.Any() => ($"global::System.OneOf<{string.Join(", ", schema.Value.OneOf.Select(x => GetCSharpType(x.UseReferenceIdOrKey(schema.Key), settings, parents)))}>", false),
-            (null, _) when schema.Value.AllOf.Any() => ($"global::System.AllOf<{string.Join(", ", schema.Value.AllOf.Select(x => GetCSharpType(x.UseReferenceIdOrKey(schema.Key), settings, parents)))}>", false),
+            (null, _) when schema.Value.AnyOf.Any() => ($"global::System.AnyOf<{string.Join(", ", schema.Value.AnyOf.Select(x => GetCSharpType(x.UseReferenceIdOrKey(schema.Key), settings, parents)))}>", true),
+            (null, _) when schema.Value.OneOf.Any() => ($"global::System.OneOf<{string.Join(", ", schema.Value.OneOf.Select(x => GetCSharpType(x.UseReferenceIdOrKey(schema.Key), settings, parents)))}>", true),
+            (null, _) when schema.Value.AllOf.Any() => ($"global::System.AllOf<{string.Join(", ", schema.Value.AllOf.Select(x => GetCSharpType(x.UseReferenceIdOrKey(schema.Key), settings, parents)))}>", true),
 
             ("object", _) or (null, _) when schema.Value.Reference != null =>
                 ($"global::{settings.Namespace}.{ModelData.FromKey(schema.Value.Reference.Id, settings).ClassName}", true),

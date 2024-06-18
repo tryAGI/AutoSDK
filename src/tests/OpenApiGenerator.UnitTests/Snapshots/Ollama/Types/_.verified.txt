@@ -230,7 +230,7 @@
     ConverterType: 
   },
   {
-    CSharpType: global::System.AnyOf<string?, global::G.GenerateChatCompletionResponseDoneReason?>,
+    CSharpType: global::System.AnyOf<string?, global::G.GenerateChatCompletionResponseDoneReason?>?,
     IsArray: false,
     IsEnum: false,
     AnyOfCount: 2,
@@ -287,7 +287,7 @@
     ConverterType: 
   },
   {
-    CSharpType: global::System.AnyOf<string?, global::G.CreateModelResponseStatus?>,
+    CSharpType: global::System.AnyOf<string?, global::G.CreateModelResponseStatus?>?,
     IsArray: false,
     IsEnum: false,
     AnyOfCount: 2,
@@ -359,7 +359,7 @@
     ConverterType: 
   },
   {
-    CSharpType: global::System.AnyOf<string?, global::G.PullModelResponseStatus?>,
+    CSharpType: global::System.AnyOf<string?, global::G.PullModelResponseStatus?>?,
     IsArray: false,
     IsEnum: false,
     AnyOfCount: 2,
@@ -376,7 +376,7 @@
     ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
   },
   {
-    CSharpType: global::System.AnyOf<string?, global::G.PushModelResponseStatus?>,
+    CSharpType: global::System.AnyOf<string?, global::G.PushModelResponseStatus?>?,
     IsArray: false,
     IsEnum: false,
     AnyOfCount: 2,

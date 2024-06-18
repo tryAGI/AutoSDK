@@ -46,7 +46,7 @@ namespace G
         /// Override the tools the assistant can use for this run. This is useful for modifying the behavior on a per-run basis.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tools")]
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>?>? Tools { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
@@ -103,7 +103,7 @@ namespace G
         /// Specifying a particular tool like `{"type": "file_search"}` or `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_choice")]
-        public global::System.OneOf<global::G.CreateRunRequestToolChoice?, global::G.AssistantsNamedToolChoice?> ToolChoice { get; set; }
+        public global::System.OneOf<global::G.CreateRunRequestToolChoice?, global::G.AssistantsNamedToolChoice?>? ToolChoice { get; set; }
 
         /// <summary>
         /// Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.<br/>
@@ -118,7 +118,7 @@ namespace G
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
-        public global::System.OneOf<global::G.CreateRunRequestResponseFormat?, global::G.AssistantsApiResponseFormat?> ResponseFormat { get; set; }
+        public global::System.OneOf<global::G.CreateRunRequestResponseFormat?, global::G.AssistantsApiResponseFormat?>? ResponseFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

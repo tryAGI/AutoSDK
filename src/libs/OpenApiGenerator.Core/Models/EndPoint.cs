@@ -114,7 +114,7 @@ public readonly record struct EndPoint(
                 && x.Schema.Items?.Type == "object") ||
                 x.Schema.AnyOf is { Count: > 0 } ||
                 x.Schema.OneOf is { Count: > 0 } ||
-                x.Schema.AllOf is { Count: > 0 }) //&& x.Parameter.Schema.Items?.Type == "object"
+                x.Schema.AllOf is { Count: > 0 })
             .SelectMany(x => ModelData.FromSchemas(
                 x.Schema,
                 settings,

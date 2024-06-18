@@ -42,7 +42,7 @@ namespace G
         /// Reason why the model is done generating a response.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("done_reason")]
-        public global::System.AnyOf<string?, global::G.GenerateChatCompletionResponseDoneReason?> DoneReason { get; set; }
+        public global::System.AnyOf<string?, global::G.GenerateChatCompletionResponseDoneReason?>? DoneReason { get; set; }
 
         /// <summary>
         /// Time spent generating the response.<br/>

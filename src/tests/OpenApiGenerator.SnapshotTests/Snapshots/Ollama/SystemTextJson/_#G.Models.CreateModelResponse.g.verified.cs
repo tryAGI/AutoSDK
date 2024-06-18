@@ -16,7 +16,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, global::G.CreateModelResponseStatus?> Status { get; set; }
+        public global::System.AnyOf<string?, global::G.CreateModelResponseStatus?>? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -58,8 +58,8 @@ namespace G
             string runId,
             global::System.DateTime endTime = default,
             string? error = default,
-            global::System.AnyOf<object?, global::G.CreateChatCompletionRequest?, global::G.CreateCompletionRequest?> inputs = default,
-            global::System.AnyOf<object?, global::G.CreateChatCompletionResponse?, global::G.CreateCompletionResponse?> outputs = default,
+            global::System.AnyOf<object?, global::G.CreateChatCompletionRequest?, global::G.CreateCompletionRequest?>? inputs = default,
+            global::System.AnyOf<object?, global::G.CreateChatCompletionResponse?, global::G.CreateCompletionResponse?>? outputs = default,
             global::System.Collections.Generic.IList<object?>? events = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
