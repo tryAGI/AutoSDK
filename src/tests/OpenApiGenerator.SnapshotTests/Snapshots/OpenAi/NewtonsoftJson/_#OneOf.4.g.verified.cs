@@ -181,7 +181,7 @@ namespace System
         /// </summary>
         public bool Validate()
         {
-            return !IsValue1 && IsValue2 && IsValue3 && IsValue4 || IsValue1 && !IsValue2 && IsValue3 && IsValue4 || IsValue1 && IsValue2 && !IsValue3 && IsValue4 || IsValue1 && IsValue2 && IsValue3 && !IsValue4;
+            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4;
         }
 
         /// <summary>

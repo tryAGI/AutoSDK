@@ -220,7 +220,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return !IsSystem && IsUser && IsAssistant && IsTool && IsFunction || IsSystem && !IsUser && IsAssistant && IsTool && IsFunction || IsSystem && IsUser && !IsAssistant && IsTool && IsFunction || IsSystem && IsUser && IsAssistant && !IsTool && IsFunction || IsSystem && IsUser && IsAssistant && IsTool && !IsFunction;
+            return IsSystem && !IsUser && !IsAssistant && !IsTool && !IsFunction || !IsSystem && IsUser && !IsAssistant && !IsTool && !IsFunction || !IsSystem && !IsUser && IsAssistant && !IsTool && !IsFunction || !IsSystem && !IsUser && !IsAssistant && IsTool && !IsFunction || !IsSystem && !IsUser && !IsAssistant && !IsTool && IsFunction;
         }
 
         /// <summary>

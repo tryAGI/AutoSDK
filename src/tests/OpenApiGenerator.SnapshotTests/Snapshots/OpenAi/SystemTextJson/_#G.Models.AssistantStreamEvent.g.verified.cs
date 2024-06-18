@@ -272,7 +272,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return !IsThread && IsRun && IsRunStep && IsMessage && IsError && IsDone || IsThread && !IsRun && IsRunStep && IsMessage && IsError && IsDone || IsThread && IsRun && !IsRunStep && IsMessage && IsError && IsDone || IsThread && IsRun && IsRunStep && !IsMessage && IsError && IsDone || IsThread && IsRun && IsRunStep && IsMessage && !IsError && IsDone || IsThread && IsRun && IsRunStep && IsMessage && IsError && !IsDone;
+            return IsThread && !IsRun && !IsRunStep && !IsMessage && !IsError && !IsDone || !IsThread && IsRun && !IsRunStep && !IsMessage && !IsError && !IsDone || !IsThread && !IsRun && IsRunStep && !IsMessage && !IsError && !IsDone || !IsThread && !IsRun && !IsRunStep && IsMessage && !IsError && !IsDone || !IsThread && !IsRun && !IsRunStep && !IsMessage && IsError && !IsDone || !IsThread && !IsRun && !IsRunStep && !IsMessage && !IsError && IsDone;
         }
 
         /// <summary>

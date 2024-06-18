@@ -35,7 +35,7 @@ public static partial class Sources
         {
             "AnyOf" => string.Join(" || ", allTypes.Select(x => $"Is{x.Name}")),
             "OneOf" => string.Join(" || ", allTypes.Select((x, xi) =>
-                string.Join(" && ", allTypes.Select((y, yi) => $"{(yi == xi ? "!" : "")}Is{y.Name}")))),
+                string.Join(" && ", allTypes.Select((y, yi) => $"{(yi == xi ? "" : "!")}Is{y.Name}")))),
             "AllOf" => string.Join(" && ", allTypes.Select(x => $"Is{x.Name}")),
             _ => throw new NotImplementedException(),
         };

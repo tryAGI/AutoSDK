@@ -106,7 +106,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return !IsText && IsImage || IsText && !IsImage;
+            return IsText && !IsImage || !IsText && IsImage;
         }
 
         /// <summary>

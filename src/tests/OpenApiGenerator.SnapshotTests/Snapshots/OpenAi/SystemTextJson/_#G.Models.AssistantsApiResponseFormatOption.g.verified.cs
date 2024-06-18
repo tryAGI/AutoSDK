@@ -108,7 +108,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return !IsValue1 && IsValue2 || IsValue1 && !IsValue2;
+            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
         }
 
         /// <summary>

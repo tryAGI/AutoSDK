@@ -220,7 +220,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return !IsValue1 && IsValue2 && IsValue3 && IsValue4 && IsValue5 || IsValue1 && !IsValue2 && IsValue3 && IsValue4 && IsValue5 || IsValue1 && IsValue2 && !IsValue3 && IsValue4 && IsValue5 || IsValue1 && IsValue2 && IsValue3 && !IsValue4 && IsValue5 || IsValue1 && IsValue2 && IsValue3 && IsValue4 && !IsValue5;
+            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 && !IsValue5 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4 && !IsValue5 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && IsValue5;
         }
 
         /// <summary>

@@ -106,7 +106,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return !IsAuto && IsStatic || IsAuto && !IsStatic;
+            return IsAuto && !IsStatic || !IsAuto && IsStatic;
         }
 
         /// <summary>

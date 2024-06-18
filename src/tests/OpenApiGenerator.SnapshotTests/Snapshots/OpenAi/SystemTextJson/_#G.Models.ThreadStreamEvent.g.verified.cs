@@ -58,7 +58,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return !IsValue1;
+            return IsValue1;
         }
 
         /// <summary>
