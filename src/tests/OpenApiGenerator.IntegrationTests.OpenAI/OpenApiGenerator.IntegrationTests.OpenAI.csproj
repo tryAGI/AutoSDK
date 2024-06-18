@@ -8,6 +8,7 @@
 
   <PropertyGroup>
     <OpenApiGenerator_Namespace>OpenApiGenerator.IntegrationTests</OpenApiGenerator_Namespace>
+    <OpenApiGenerator_ClassName>OpenAiClient</OpenApiGenerator_ClassName>
     <OpenApiGenerator_GenerateSdk>false</OpenApiGenerator_GenerateSdk>
     <OpenApiGenerator_GenerateMethods>true</OpenApiGenerator_GenerateMethods>
     <OpenApiGenerator_GenerateConstructors>true</OpenApiGenerator_GenerateConstructors>
