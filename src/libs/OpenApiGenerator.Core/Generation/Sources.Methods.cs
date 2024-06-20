@@ -68,6 +68,9 @@ namespace {endPoint.Namespace}
         var cancellationTokenAttribute = endPoint.Stream
             ? "[global::System.Runtime.CompilerServices.EnumeratorCancellation] "
             : string.Empty;
+        var cancellationTokenInsideReadAsync = endPoint.Settings.TargetFramework.StartsWith("net8", StringComparison.OrdinalIgnoreCase)
+            ? "cancellationToken"
+            : string.Empty;
         
         return $@" 
         {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
