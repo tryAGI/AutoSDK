@@ -39,7 +39,7 @@ public partial class DataTests
     // public Task GitHub()
     // {
     //     return VerifyAsync(Data.Prepare((
-    //         H.Resources.api_github_com_yaml.AsString(),
+    //         H.Resources.github_yaml.AsString(),
     //         DefaultSettings)));
     // }
 
