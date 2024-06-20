@@ -6731,7 +6731,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
         Id: parallel_tool_calls,
         Name: ParallelToolCalls,
         Type: {
-          CSharpType: bool,
+          CSharpType: bool?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -6747,15 +6747,12 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: true,
         IsDeprecated: false,
-        Summary:
-Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
-Default Value: true,
+        Summary: Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.,
         ConverterType: ,
         ParameterName: parallelToolCalls,
         ArgumentName: parallelToolCalls,
-        ParameterDefaultValue: true
+        ParameterDefaultValue: default
       },
       {
         Id: user,
@@ -22562,7 +22559,7 @@ The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine
         Id: parallel_tool_calls,
         Name: ParallelToolCalls,
         Type: {
-          CSharpType: bool,
+          CSharpType: bool?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -22578,15 +22575,12 @@ The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: true,
         IsDeprecated: false,
-        Summary:
-Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
-Default Value: true,
+        Summary: Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.,
         ConverterType: ,
         ParameterName: parallelToolCalls,
         ArgumentName: parallelToolCalls,
-        ParameterDefaultValue: true
+        ParameterDefaultValue: default
       },
       {
         Id: functions,
@@ -28865,7 +28859,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
         Id: parallel_tool_calls,
         Name: ParallelToolCalls,
         Type: {
-          CSharpType: bool,
+          CSharpType: bool?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -28881,15 +28875,12 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           ConverterType: 
         },
         IsRequired: true,
-        DefaultValue: true,
         IsDeprecated: false,
-        Summary:
-Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
-Default Value: true,
+        Summary: Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.,
         ConverterType: ,
         ParameterName: parallelToolCalls,
         ArgumentName: parallelToolCalls,
-        ParameterDefaultValue: true
+        ParameterDefaultValue: default
       },
       {
         Id: response_format,
@@ -30567,7 +30558,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
         Id: parallel_tool_calls,
         Name: ParallelToolCalls,
         Type: {
-          CSharpType: bool,
+          CSharpType: bool?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -30583,15 +30574,12 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: true,
         IsDeprecated: false,
-        Summary:
-Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
-Default Value: true,
+        Summary: Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.,
         ConverterType: ,
         ParameterName: parallelToolCalls,
         ArgumentName: parallelToolCalls,
-        ParameterDefaultValue: true
+        ParameterDefaultValue: default
       },
       {
         Id: response_format,
@@ -32602,7 +32590,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
         Id: parallel_tool_calls,
         Name: ParallelToolCalls,
         Type: {
-          CSharpType: bool,
+          CSharpType: bool?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -32618,15 +32606,12 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: true,
         IsDeprecated: false,
-        Summary:
-Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
-Default Value: true,
+        Summary: Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.,
         ConverterType: ,
         ParameterName: parallelToolCalls,
         ArgumentName: parallelToolCalls,
-        ParameterDefaultValue: true
+        ParameterDefaultValue: default
       },
       {
         Id: response_format,

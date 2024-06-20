@@ -575,7 +575,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
         Id: parallel_tool_calls,
         Name: ParallelToolCalls,
         Type: {
-          CSharpType: bool,
+          CSharpType: bool?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -591,15 +591,12 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: true,
         IsDeprecated: false,
-        Summary:
-Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
-Default Value: true,
+        Summary: Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.,
         ConverterType: ,
         ParameterName: parallelToolCalls,
         ArgumentName: parallelToolCalls,
-        ParameterDefaultValue: true
+        ParameterDefaultValue: default
       },
       {
         Id: user,
@@ -10211,7 +10208,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
         Id: parallel_tool_calls,
         Name: ParallelToolCalls,
         Type: {
-          CSharpType: bool,
+          CSharpType: bool?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -10227,15 +10224,12 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: true,
         IsDeprecated: false,
-        Summary:
-Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
-Default Value: true,
+        Summary: Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.,
         ConverterType: ,
         ParameterName: parallelToolCalls,
         ArgumentName: parallelToolCalls,
-        ParameterDefaultValue: true
+        ParameterDefaultValue: default
       },
       {
         Id: response_format,
@@ -11176,7 +11170,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
         Id: parallel_tool_calls,
         Name: ParallelToolCalls,
         Type: {
-          CSharpType: bool,
+          CSharpType: bool?,
           IsArray: false,
           IsEnum: false,
           Properties: null,
@@ -11192,15 +11186,12 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: true,
         IsDeprecated: false,
-        Summary:
-Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
-Default Value: true,
+        Summary: Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.,
         ConverterType: ,
         ParameterName: parallelToolCalls,
         ArgumentName: parallelToolCalls,
-        ParameterDefaultValue: true
+        ParameterDefaultValue: default
       },
       {
         Id: response_format,
@@ -17308,7 +17299,26 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       global::OpenApiGenerator.JsonConverters.CreateBatchRequestEndpointJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateBatchRequestEndpointNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateBatchRequestCompletionWindowJsonConverter,
-      global::OpenApiGenerator.JsonConverters.CreateBatchRequestCompletionWindowNullableJsonConverter
+      global::OpenApiGenerator.JsonConverters.CreateBatchRequestCompletionWindowNullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2,
+      global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory1,
+      global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory4,
+      global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2,
+      global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory1,
+      global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory5,
+      global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory3,
+      global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ChatCompletionToolChoiceOptionJsonConverter,
+      global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatOptionJsonConverter,
+      global::OpenApiGenerator.JsonConverters.AssistantsApiToolChoiceOptionJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ChunkingStrategyRequestParamJsonConverter,
+      global::OpenApiGenerator.JsonConverters.AssistantStreamEventJsonConverter,
+      global::OpenApiGenerator.JsonConverters.ThreadStreamEventJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunStreamEventJsonConverter,
+      global::OpenApiGenerator.JsonConverters.RunStepStreamEventJsonConverter,
+      global::OpenApiGenerator.JsonConverters.MessageStreamEventJsonConverter,
+      global::OpenApiGenerator.JsonConverters.FineTuneChatCompletionRequestAssistantMessageJsonConverter
     ],
     MethodName: MainConstructorAsync,
     NotAsyncMethodName: MainConstructor,

@@ -1078,7 +1078,10 @@ Create a new run.,
     AdditionalTypes: null,
     Converters: [
       global::OpenApiGenerator.JsonConverters.RunTypeEnumJsonConverter,
-      global::OpenApiGenerator.JsonConverters.RunTypeEnumNullableJsonConverter
+      global::OpenApiGenerator.JsonConverters.RunTypeEnumNullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3,
+      global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2,
+      global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory4
     ],
     MethodName: MainConstructorAsync,
     NotAsyncMethodName: MainConstructor,

@@ -3047,7 +3047,12 @@ This is checking your Ollama server and not Ollama.ai.,
       global::OpenApiGenerator.JsonConverters.PushModelResponseStatusJsonConverter,
       global::OpenApiGenerator.JsonConverters.PushModelResponseStatusNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.PushModelStatusVariant2JsonConverter,
-      global::OpenApiGenerator.JsonConverters.PushModelStatusVariant2NullableJsonConverter
+      global::OpenApiGenerator.JsonConverters.PushModelStatusVariant2NullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2,
+      global::OpenApiGenerator.JsonConverters.DoneReasonJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateModelStatusJsonConverter,
+      global::OpenApiGenerator.JsonConverters.PullModelStatusJsonConverter,
+      global::OpenApiGenerator.JsonConverters.PushModelStatusJsonConverter
     ],
     MethodName: MainConstructorAsync,
     NotAsyncMethodName: MainConstructor,
