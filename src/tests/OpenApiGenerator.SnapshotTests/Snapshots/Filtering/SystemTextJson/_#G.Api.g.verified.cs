@@ -87,6 +87,7 @@ namespace G
                     new global::OpenApiGenerator.JsonConverters.MigrationsSetLfsPreferenceRequestUseLfsNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.MigrationsStartForAuthenticatedUserRequestExcludeJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.MigrationsStartForAuthenticatedUserRequestExcludeNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory3(),
                 }
             };
         }

@@ -302,6 +302,12 @@ public static class Data
                 $"global::OpenApiGenerator.JsonConverters.{x.ClassName}JsonConverter",
                 $"global::OpenApiGenerator.JsonConverters.{x.ClassName}NullableJsonConverter"
             })
+            .Concat(anyOfDatas
+                .Where(x => x.JsonSerializerType == JsonSerializerType.SystemTextJson)
+                .Select(x =>
+                    string.IsNullOrWhiteSpace(x.Name)
+                        ? $"global::OpenApiGenerator.JsonConverters.{x.SubType}JsonConverterFactory{x.Count}"
+                        : $"global::OpenApiGenerator.JsonConverters.{x.Name}JsonConverter"))
             .ToImmutableArray();
         for (var i = 0; i < methods.Length; i++)
         {

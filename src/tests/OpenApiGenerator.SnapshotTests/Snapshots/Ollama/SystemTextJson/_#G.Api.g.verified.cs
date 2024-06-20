@@ -82,6 +82,11 @@ namespace G
                     new global::OpenApiGenerator.JsonConverters.PushModelResponseStatusNullableJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.PushModelStatusVariant2JsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.PushModelStatusVariant2NullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2(),
+                    new global::OpenApiGenerator.JsonConverters.DoneReasonJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.CreateModelStatusJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.PullModelStatusJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.PushModelStatusJsonConverter(),
                 }
             };
         }

@@ -31,6 +31,11 @@ namespace G
             typeof(global::OpenApiGenerator.JsonConverters.PushModelResponseStatusNullableJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.PushModelStatusVariant2JsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.PushModelStatusVariant2NullableJsonConverter),
+            typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2),
+            typeof(global::OpenApiGenerator.JsonConverters.DoneReasonJsonConverter),
+            typeof(global::OpenApiGenerator.JsonConverters.CreateModelStatusJsonConverter),
+            typeof(global::OpenApiGenerator.JsonConverters.PullModelStatusJsonConverter),
+            typeof(global::OpenApiGenerator.JsonConverters.PushModelStatusJsonConverter),
         };
     }
 }

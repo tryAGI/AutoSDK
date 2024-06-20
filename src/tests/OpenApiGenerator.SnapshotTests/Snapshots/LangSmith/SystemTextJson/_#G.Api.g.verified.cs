@@ -44,6 +44,9 @@ namespace G
                 {
                     new global::OpenApiGenerator.JsonConverters.RunTypeEnumJsonConverter(),
                     new global::OpenApiGenerator.JsonConverters.RunTypeEnumNullableJsonConverter(),
+                    new global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3(),
+                    new global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2(),
+                    new global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory4(),
                 }
             };
         }
