@@ -167,11 +167,10 @@ namespace G
         public global::System.OneOf<global::G.RunObjectToolChoice, global::G.AssistantsNamedToolChoice?> ToolChoice { get; set; } = default!;
 
         /// <summary>
-        /// Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.<br/>
-        /// Default Value: true
+        /// Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parallel_tool_calls", Required = global::Newtonsoft.Json.Required.Always)]
-        public bool ParallelToolCalls { get; set; } = default!;
+        public bool? ParallelToolCalls { get; set; } = default!;
 
         /// <summary>
         /// Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4 Turbo](/docs/models/gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>

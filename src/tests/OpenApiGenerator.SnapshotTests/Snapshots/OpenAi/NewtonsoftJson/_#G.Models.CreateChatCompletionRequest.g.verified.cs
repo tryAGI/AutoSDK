@@ -146,11 +146,10 @@ namespace G
         public global::System.OneOf<global::G.CreateChatCompletionRequestToolChoice?, global::G.ChatCompletionNamedToolChoice?>? ToolChoice { get; set; }
 
         /// <summary>
-        /// Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.<br/>
-        /// Default Value: true
+        /// Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parallel_tool_calls")]
-        public bool ParallelToolCalls { get; set; } = true;
+        public bool? ParallelToolCalls { get; set; }
 
         /// <summary>
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).<br/>

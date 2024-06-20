@@ -31,9 +31,17 @@ namespace G
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
-            response.EnsureSuccessStatusCode();
 
-            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException ex)
+            {
+                throw new global::System.InvalidOperationException(__content, ex);
+            }
 
             return
                 global::System.Text.Json.JsonSerializer.Deserialize<global::G.CreateChatCompletionResponse?>(__content, _jsonSerializerOptions) ??
@@ -84,7 +92,7 @@ namespace G
             double? topP = 1,
             global::System.Collections.Generic.IList<global::G.ChatCompletionTool>? tools = default,
             global::System.OneOf<global::G.CreateChatCompletionRequestToolChoice?, global::G.ChatCompletionNamedToolChoice?>? toolChoice = default,
-            bool parallelToolCalls = true,
+            bool? parallelToolCalls = default,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

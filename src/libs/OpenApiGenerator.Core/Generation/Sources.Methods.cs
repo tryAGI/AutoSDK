@@ -115,15 +115,25 @@ namespace {endPoint.Namespace}
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.{httpCompletionOption},
                 cancellationToken: cancellationToken).ConfigureAwait(false);
+{(string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType) || endPoint.Stream ? @" 
             response.EnsureSuccessStatusCode();
-{(string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType) || endPoint.Stream ? " " : $@"
-            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+ " : $@"
+            var __content = await response.Content.ReadAsStringAsync({cancellationTokenInsideReadAsync}).ConfigureAwait(false);
+
+            try
+            {{
+                response.EnsureSuccessStatusCode();
+            }}
+            catch (global::System.Net.Http.HttpRequestException ex)
+            {{
+                throw new global::System.InvalidOperationException(__content, ex);
+            }}
 
             return
                 {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType, endPoint.Settings.JsonSerializerContext)} ??
                 throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");")}
 {(endPoint.Stream ? $@"
-            using var stream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
+            using var stream = await response.Content.ReadAsStreamAsync({cancellationTokenInsideReadAsync}).ConfigureAwait(false);
             using var reader = new global::System.IO.StreamReader(stream);
 
             while (!reader.EndOfStream && !cancellationToken.IsCancellationRequested)
