@@ -15,6 +15,55 @@ public static class Data
         var (text, settings) = tuple;
 
         var openApiDocument = text.GetOpenApiDocument(cancellationToken);
+
+        var allOperations = openApiDocument.Paths
+            .SelectMany(x => x.Value.Operations.Select(y => (OperationPath: x.Key, OperationType: y.Key, Operation: y.Value)))
+            .ToArray();
+        var schemaContexts = openApiDocument.Components.Schemas
+            .SelectMany(schema => SchemaContext.FromSchema(
+                schema: schema.Value,
+                settings: settings,
+                componentId: schema.Key))
+            .Concat(allOperations
+                .Where(x => x.Operation.RequestBody != null)
+                .SelectMany(x => x.Operation.RequestBody!.Content.Select(y => (x.OperationPath, x.OperationType, x.Operation, ContentType: y.Key, MediaType: y.Value)))
+                .SelectMany(x => SchemaContext.FromSchema(
+                    schema: x.MediaType.Schema,
+                    settings: settings,
+                    operationPath: x.OperationPath,
+                    operationType: x.OperationType,
+                    operation: x.Operation,
+                    contentType: x.ContentType,
+                    mediaType: x.MediaType,
+                    hint: Hint.Request)))
+            .Concat(allOperations
+                .SelectMany(x => x.Operation.Parameters.Select(y => (x.OperationPath, x.OperationType, x.Operation, Parameter: y)))
+                .SelectMany(x => x.Parameter.Content.Select(y => (x.OperationPath, x.OperationType, x.Operation, x.Parameter, ContentType: y.Key, MediaType: y.Value)))
+                .SelectMany(x => SchemaContext.FromSchema(
+                    schema: x.MediaType.Schema,
+                    settings: settings,
+                    operationPath: x.OperationPath,
+                    operationType: x.OperationType,
+                    operation: x.Operation,
+                    contentType: x.ContentType,
+                    mediaType: x.MediaType,
+                    parameter: x.Parameter,
+                    hint: Hint.Parameter)))
+            .Concat(allOperations
+                .SelectMany(x => x.Operation.Responses.Select(y => (x.OperationPath, x.OperationType, x.Operation, ResponseStatusCode: y.Key, Response: y.Value)))
+                .SelectMany(x => x.Response.Content.Select(y => (x.OperationPath, x.OperationType, x.Operation, x.ResponseStatusCode, x.Response, ContentType: y.Key, MediaType: y.Value)))
+                .SelectMany(x => SchemaContext.FromSchema(
+                    schema: x.MediaType.Schema,
+                    settings: settings,
+                    operationPath: x.OperationPath,
+                    operationType: x.OperationType,
+                    operation: x.Operation,
+                    contentType: x.ContentType,
+                    mediaType: x.MediaType,
+                    responseStatusCode: x.ResponseStatusCode,
+                    response: x.Response,
+                    hint: Hint.Response)))
+            .ToArray();
         
         var includedOperationIds = new HashSet<string>(settings.IncludeOperationIds);
         var excludedOperationIds = new HashSet<string>(settings.ExcludeOperationIds);

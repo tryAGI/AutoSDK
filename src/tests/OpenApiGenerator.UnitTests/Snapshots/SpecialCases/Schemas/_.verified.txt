@@ -1,0 +1,19 @@
+﻿[
+  Pet(class),
+    _4(string),
+    _1_5(bool),
+    _16_9(bool),
+    Id(long),
+    Name(string),
+    Tag(string),
+  Pets(array),
+    Pet(ref),
+  Error(class),
+    Code(int),
+    Message(string),
+  Pets(ref),
+  Error(ref),
+  Error(ref),
+  Pet(ref),
+  Error(ref)
+]

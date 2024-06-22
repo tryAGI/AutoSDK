@@ -224,6 +224,20 @@ public static class OpenApiExtensions
         }).ToImmutableArray();
     }
 
+    internal static string ToCSharpName(this string text, SchemaContext? parent)
+    {
+        var name = text.ToPropertyName();
+        
+        name = PropertyData.HandleWordSeparators(name);
+
+        if (parent != null)
+        {
+            name = name.FixPropertyName(parent.Id);
+        }
+
+        return PropertyData.SanitizeName(name, true);
+    }
+    
     public static bool IsEnum(
         this OpenApiSchema schema)
     {

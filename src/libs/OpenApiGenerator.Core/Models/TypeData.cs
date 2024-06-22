@@ -92,6 +92,101 @@ public readonly record struct TypeData(
             GenerateJsonSerializerContextTypes: settings.GenerateJsonSerializerContextTypes);
     }
     
+    public static TypeData FromSchemaContext(SchemaContext context, IReadOnlyCollection<SchemaContext> children)
+    {
+        context = context ?? throw new ArgumentNullException(nameof(context));
+        
+        var properties = ImmutableArray<string>.Empty;
+        if (context.Schema.Reference?.HostDocument?.ResolveReference(context.Schema.Reference) is OpenApiSchema referenceSchema)
+        {
+            properties = referenceSchema.Properties
+                .Select(x => x.Key)
+                .ToImmutableArray();
+        }
+        
+        var enumValues = ImmutableArray<string>.Empty;
+        if (context.Schema.IsEnum())
+        {
+            var values = context.Schema.Enum
+                .Select(value => value.ToEnumValue()).ToArray();
+            properties = values
+                .Select(x => x.Name)
+                .ToImmutableArray();
+            enumValues = values
+                .Select(x => x.Id)
+                .ToImmutableArray();
+        }
+        
+        return new TypeData(
+            CSharpType: GetCSharpType(context, children),
+            IsArray: context.Schema.Type == "array",
+            IsEnum: context.Schema.IsEnum(),
+            AnyOfCount: context.Schema.AnyOf?.Count ?? 0,
+            OneOfCount: context.Schema.OneOf?.Count ?? 0,
+            AllOfCount: context.Schema.AllOf?.Count ?? 0,
+            Properties: properties,
+            EnumValues: enumValues,
+            Namespace: context.Settings.Namespace,
+            IsDeprecated: context.Schema.Deprecated,
+            JsonSerializerType: context.Settings.JsonSerializerType,
+            GenerateJsonSerializerContextTypes: context.Settings.GenerateJsonSerializerContextTypes);
+    }
+    
+    public static string GetCSharpType(SchemaContext context, IReadOnlyCollection<SchemaContext> children)
+    {
+        context = context ?? throw new ArgumentNullException(nameof(context));
+        children = children ?? throw new ArgumentNullException(nameof(children));
+        
+        var (type, reference) = (context.Schema.Type, context.Schema.Format) switch
+        {
+            (null, _) when context.Schema.AnyOf.Any() && context.IsComponent => ($"global::{context.Settings.Namespace}.{context.Id}", true),
+            (null, _) when context.Schema.OneOf.Any() && context.IsComponent => ($"global::{context.Settings.Namespace}.{context.Id}", true),
+            (null, _) when context.Schema.AllOf.Any() && context.IsComponent => ($"global::{context.Settings.Namespace}.{context.Id}", true),
+            
+            (null, _) when context.Schema.AnyOf.Any() => ($"global::System.AnyOf<{string.Join(", ", children.Where(x => x.Hint == Hint.AnyOf).Select(x => x.TypeData?.CSharpType))}>", true),
+            (null, _) when context.Schema.OneOf.Any() => ($"global::System.OneOf<{string.Join(", ", children.Where(x => x.Hint == Hint.OneOf).Select(x => x.TypeData?.CSharpType))}>", true),
+            (null, _) when context.Schema.AllOf.Any() => ($"global::System.AllOf<{string.Join(", ", children.Where(x => x.Hint == Hint.AllOf).Select(x => x.TypeData?.CSharpType))}>", true),
+
+            ("object", _) or (null, _) when context.Schema.Reference != null =>
+                ($"global::{context.Settings.Namespace}.{context.Id}", true),
+            ("object", _) when context.Schema.Reference == null &&
+                               children.Count == 1 =>
+                ("object", true),
+            ("object", _) when context.Schema.Reference == null =>
+                ($"global::{context.Settings.Namespace}.{context.Id}", true),
+
+            ("string", _) when context.Schema.Enum.Any() =>
+                ($"global::{context.Settings.Namespace}.{context.Id}", true),
+
+            ("boolean", _) => ("bool", false),
+            ("integer", "int32") => ("int", false),
+            ("integer", "int64") => ("long", false),
+            ("number", "float") => ("float", false),
+            ("number", "double") => ("double", false),
+            ("string", "byte") => ("byte", false),
+            ("string", "binary") => ("byte[]", true),
+            ("string", "date") => ("global::System.DateTime", false),
+            ("string", "date-time") => ("global::System.DateTime", false),
+            ("string", "password") => ("string", true),
+            //("string", "uri") => ("global::System.Uri", true),
+
+            ("integer", _) => ("int", false),
+            ("number", _) => ("double", false),
+            ("string", _) => ("string", true),
+            ("object", _) => ("object", true),
+            ("array", _) =>
+                ($"{children.FirstOrDefault(x => x.Hint == Hint.ArrayItem)?.TypeData?.CSharpType}".AsArray(), true),
+            
+            (null, null)  => ("object", true),
+            _ => throw new NotSupportedException($"Type {context.Schema.Type} is not supported."),
+        };
+
+        return context.Schema.Nullable ||
+               reference && !context.IsRequired
+            ? type + "?"
+            : type;
+    }
+    
     public static string GetCSharpType(
         KeyValuePair<string, OpenApiSchema> schema,
         Settings settings,
@@ -133,6 +228,7 @@ public readonly record struct TypeData(
             ("string", "date") => ("global::System.DateTime", false),
             ("string", "date-time") => ("global::System.DateTime", false),
             ("string", "password") => ("string", true),
+            //("string", "uri") => ("global::System.Uri", true),
 
             ("integer", _) => ("int", false),
             ("number", _) => ("double", false),
