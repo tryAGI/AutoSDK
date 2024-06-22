@@ -36,25 +36,25 @@ public partial class DataTests : VerifyBase
     );
 
     private Task VerifyAsync(
-        (EquatableArray<ModelData> Models, EquatableArray<EndPoint> Methods, EquatableArray<AnyOfData> AnyOfs, EquatableArray<TypeData> Types, EndPoint Converters) tuple,
+        Data data,
         [CallerMemberName] string? callerName = null)
     {
         var modelsTask =
-            Verify(tuple.Models
+            Verify(data.Models
                     .Select(x => x with { Parents = [] })
                     .ToArray())
                 .UseDirectory($"Snapshots/{callerName}/Models")
                 .UseFileName("_");
         var methodsTask =
-            Verify(tuple.Methods)
+            Verify(data.Methods)
                 .UseDirectory($"Snapshots/{callerName}/Methods")
                 .UseFileName("_");
         var anyOfsTask =
-            Verify(tuple.AnyOfs)
+            Verify(data.AnyOfs)
                 .UseDirectory($"Snapshots/{callerName}/AnyOfs")
                 .UseFileName("_");
         var typesTask =
-            Verify(tuple.Types)
+            Verify(data.Types)
                 .UseDirectory($"Snapshots/{callerName}/Types")
                 .UseFileName("_");
         

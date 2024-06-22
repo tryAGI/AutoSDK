@@ -93,7 +93,7 @@ public class GenerateCommand : Command
             FromCli: true
         );
 
-        var data = Data.Prepare((yaml, settings));
+        var data = Core.Generation.Data.Prepare((yaml, settings));
         var files = data.Models
             .SelectMany(x => new [] { Sources.Model(x), Sources.EnumJsonConverter(x), Sources.EnumNullableJsonConverter(x) })
             .Concat(data.Methods

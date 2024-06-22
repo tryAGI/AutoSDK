@@ -8,7 +8,7 @@ namespace OpenApiGenerator.Core.Generation;
 
 public static class Data
 {
-    public static (EquatableArray<ModelData> Models, EquatableArray<EndPoint> Methods, EquatableArray<AnyOfData> AnyOfs, EquatableArray<TypeData> Types, EndPoint Converters) Prepare(
+    public static Models.Data Prepare(
         (string text, Settings settings) tuple,
         CancellationToken cancellationToken = default)
     {
@@ -322,30 +322,32 @@ public static class Data
             };
         }
         
-        return (Models: models,
-                Methods: settings.GenerateSdk || settings.GenerateMethods
-                    ? methods.Select(x => x with{ AdditionalModels = []}).ToImmutableArray()
-                    : [],
-                AnyOfs: anyOfDatas.ToImmutableArray(),
-                Types: types,
-                Converters: new EndPoint(
-                    Id: "Converters",
-                    Namespace: settings.Namespace,
-                    ClassName: string.Empty,
-                    BaseUrl: string.Empty,
-                    Stream: false,
-                    Path: string.Empty,
-                    AuthorizationScheme: string.Empty,
-                    Properties: [],
-                    HttpMethod: OperationType.Get,
-                    Summary: string.Empty,
-                    BaseUrlSummary: string.Empty,
-                    Settings: settings,
-                    IsDeprecated: false,
-                    RequestType: TypeData.Default,
-                    ResponseType: TypeData.Default,
-                    AdditionalModels: [],
-                    AdditionalTypes: [],
-                    Converters: converters));
+        return new Models.Data(
+            Models: models,
+            Methods: settings.GenerateSdk || settings.GenerateMethods
+                ? methods.Select(x => x with{ AdditionalModels = []}).ToImmutableArray()
+                : [],
+            AnyOfs: anyOfDatas.ToImmutableArray(),
+            Types: types,
+            Converters: new EndPoint(
+                Id: "Converters",
+                Namespace: settings.Namespace,
+                ClassName: string.Empty,
+                BaseUrl: string.Empty,
+                Stream: false,
+                Path: string.Empty,
+                AuthorizationScheme: string.Empty,
+                Properties: [],
+                HttpMethod: OperationType.Get,
+                Summary: string.Empty,
+                BaseUrlSummary: string.Empty,
+                Settings: settings,
+                IsDeprecated: false,
+                RequestType: TypeData.Default,
+                ResponseType: TypeData.Default,
+                AdditionalModels: [],
+                AdditionalTypes: [],
+                Converters: converters),
+            Schemas: schemaContexts);
     }
 }
