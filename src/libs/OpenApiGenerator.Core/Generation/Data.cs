@@ -99,9 +99,9 @@ public static class Data
                     
                         return (includedOperationIds.Count == 0 ||
                                 includedOperationIds.Contains(methodName) ||
-                                includedOperationIds.Contains(x.Value.OperationId)) &&
+                                (x.Value.OperationId != null && includedOperationIds.Contains(x.Value.OperationId))) &&
                                !excludedOperationIds.Contains(methodName) &&
-                               !excludedOperationIds.Contains(x.Value.OperationId);
+                               (x.Value.OperationId == null || !excludedOperationIds.Contains(x.Value.OperationId));
                     })
                     .Select(x => (Path: path, Operation: x)))
             .ToArray();

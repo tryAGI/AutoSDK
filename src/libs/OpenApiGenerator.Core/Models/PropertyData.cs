@@ -38,7 +38,7 @@ public readonly record struct PropertyData(
         ParameterLocation? parameterLocation,
         ParameterStyle? parameterStyle,
         bool? parameterExplode,
-        string operationId,
+        string? operationId,
         Settings settings,
         params ModelData[] parents)
     {
@@ -56,7 +56,7 @@ public readonly record struct PropertyData(
 
         name = SanitizeName(name, true);
         
-        var type = TypeData.FromSchema(schema, settings, string.IsNullOrWhiteSpace(operationId)
+        var type = TypeData.FromSchema(schema, settings, operationId == null || string.IsNullOrWhiteSpace(operationId)
             ? parents
             : parents.Concat([ModelData.FromKey(operationId, settings) with { Schema = default }]).ToArray());
         
@@ -128,7 +128,7 @@ public readonly record struct PropertyData(
         return buf.ToString();
     }
 
-    private static string HandleWordSeparators(string name)
+    internal static string HandleWordSeparators(string name)
     {
         return name
             .ReplacePlusAndMinusOnStart()

@@ -333,7 +333,8 @@ public static class OpenApiExtensions
         return openApiDocument.Paths
             .SelectMany(path => path.Value.Operations)
             .Where(x => x.Value.Tags?.Any(y => y.Name == tag) != false)
-            .Select(x => x.Value.OperationId)
+            .Where(x => x.Value.OperationId != null)
+            .Select(x => x.Value.OperationId!)
             .ToArray();
     }
     
