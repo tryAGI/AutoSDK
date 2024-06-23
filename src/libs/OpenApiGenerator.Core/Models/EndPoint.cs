@@ -11,7 +11,6 @@ public readonly record struct EndPoint(
     string BaseUrl,
     bool Stream,
     string Path,
-    string AuthorizationScheme,
     ImmutableArray<PropertyData> Properties,
     OperationType HttpMethod,
     string Summary,
@@ -28,11 +27,9 @@ public readonly record struct EndPoint(
     public string MethodName => $"{NotAsyncMethodName}Async";
     public string NotAsyncMethodName => Id.ToPropertyName();
     
-    public string FileNameWithoutExtension => !string.IsNullOrWhiteSpace(AuthorizationScheme)
-        ? $"{Namespace}.{ClassName}.Authorization"
-        : string.IsNullOrWhiteSpace(Path)
-            ? $"{Namespace}.{ClassName}"
-            : $"{Namespace}.{ClassName}.{Id.ToPropertyName()}";
+    public string FileNameWithoutExtension => string.IsNullOrWhiteSpace(Path)
+        ? $"{Namespace}.{ClassName}"
+        : $"{Namespace}.{ClassName}.{Id.ToPropertyName()}";
     
     public static EndPoint FromSchema(
         KeyValuePair<OperationType, OpenApiOperation> operation,
@@ -191,7 +188,6 @@ public readonly record struct EndPoint(
             Stream: responses
                 .Any(x => x.MediaType.Key.Contains("application/x-ndjson")),
             Path: preparedPath,
-            AuthorizationScheme: string.Empty,
             Properties: properties.ToImmutableArray(),
             HttpMethod: operation.Key,
             Summary: operation.Value.GetXmlDocumentationSummary(),
@@ -210,33 +206,6 @@ public readonly record struct EndPoint(
                 ..requestBodyTypes,
                 ..responseTypes,
             ],
-            Converters: []);
-        
-        return endPoint;
-    }
-    
-    public static EndPoint FromAuthorization(
-        string scheme,
-        Settings settings)
-    {
-        var endPoint = new EndPoint(
-            Id: $"AuthorizeUsing{scheme.ToPropertyName()}",
-            Namespace: settings.Namespace,
-            ClassName: settings.ClassName.Replace(".", string.Empty),
-            BaseUrl: string.Empty,
-            Stream: false,
-            Path: string.Empty,
-            AuthorizationScheme: scheme,
-            Properties: [],
-            HttpMethod: default,
-            Summary: string.Empty,
-            BaseUrlSummary: string.Empty,
-            Settings: settings,
-            IsDeprecated: false,
-            RequestType: TypeData.Default,
-            ResponseType: TypeData.Default,
-            AdditionalModels: [],
-            AdditionalTypes: [],
             Converters: []);
         
         return endPoint;

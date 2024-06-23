@@ -1,4 +1,5 @@
-﻿using OpenApiGenerator.Core.Json;
+﻿using OpenApiGenerator.Core.Extensions;
+using OpenApiGenerator.Core.Json;
 using OpenApiGenerator.Core.Models;
 
 namespace OpenApiGenerator.Core.Generation;
@@ -145,5 +146,14 @@ public static partial class Sources
         return new FileWithName(
             Name: $"{endPoint.FileNameWithoutExtension}.g.cs",
             Text: GenerateEndPoint(endPoint, cancellationToken: cancellationToken));
+    }
+    
+    public static FileWithName Authorization(
+        Authorization authorization,
+        CancellationToken cancellationToken = default)
+    {
+        return new FileWithName(
+            Name: $"{authorization.Settings.Namespace}.{authorization.Settings.ClassName}.Authorizations.{authorization.Scheme.ToPropertyName()}.g.cs",
+            Text: GenerateAuthorization(authorization));
     }
 }

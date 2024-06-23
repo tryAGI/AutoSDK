@@ -11,10 +11,6 @@ public static partial class Sources
         EndPoint endPoint,
         CancellationToken cancellationToken = default)
     {
-        if (!string.IsNullOrWhiteSpace(endPoint.AuthorizationScheme))
-        {
-            return GenerateAuthorizationMethod(endPoint);
-        }
         if (string.IsNullOrWhiteSpace(endPoint.Path))
         {
             return GenerateConstructors(endPoint);

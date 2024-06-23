@@ -6,7 +6,6 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/runs/{runId}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: run_id,
@@ -313,7 +312,6 @@ Update a run.,
     BaseUrl: ,
     Stream: false,
     Path: "/runs",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: name,
@@ -1015,7 +1013,6 @@ Create a new run.,
     BaseUrl: ,
     Stream: false,
     Path: ,
-    AuthorizationScheme: ,
     Properties: null,
     Summary: From https://github.com/langchain-ai/langsmith-sdk/blob/main/openapi/openapi.yaml,
     BaseUrlSummary: ,

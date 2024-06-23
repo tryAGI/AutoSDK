@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.Authorization.g.cs
+﻿//HintName: G.Api.Authorizations.Bearer.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     public sealed partial class Api
     {
         /// <summary>
-        /// 
+        /// Authorize using bearer authentication.
         /// </summary>
         /// <param name="apiKey"></param>
         public void AuthorizeUsingBearer(

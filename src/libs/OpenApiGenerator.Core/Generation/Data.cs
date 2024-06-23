@@ -163,7 +163,7 @@ public static class Data
             .ToArray();
         var authorizations = openApiDocument.SecurityRequirements
             .SelectMany(requirement => requirement)
-            .Select(x => EndPoint.FromAuthorization(x.Key.Scheme, settings))
+            .Select(x => Authorization.FromOpenApiSecurityScheme(x.Key, settings))
             .ToArray();
         
         var includedTags = allTags
@@ -179,7 +179,6 @@ public static class Data
                 BaseUrl: openApiDocument.Servers.FirstOrDefault()?.Url ?? string.Empty,
                 Stream: false,
                 Path: string.Empty,
-                AuthorizationScheme: string.Empty,
                 Properties: settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors)
                     ? [
                         .. includedTags.Select(x => PropertyData.Default with
@@ -214,7 +213,6 @@ public static class Data
                         BaseUrl: openApiDocument.Servers.FirstOrDefault()?.Url ?? string.Empty,
                         Stream: false,
                         Path: string.Empty,
-                        AuthorizationScheme: string.Empty,
                         Properties: ImmutableArray<PropertyData>.Empty,
                         HttpMethod: OperationType.Get,
                         Summary: x.Description?.ClearForXml() ?? string.Empty,
@@ -231,7 +229,6 @@ public static class Data
             
         EndPoint[] methods = [
             ..operationsAsMethods,
-            ..authorizations,
             ..constructors,
         ];
         
@@ -381,6 +378,7 @@ public static class Data
                 : [],
             AnyOfs: anyOfDatas.ToImmutableArray(),
             Types: types,
+            Authorizations: authorizations.ToImmutableArray(),
             Converters: new EndPoint(
                 Id: "Converters",
                 Namespace: settings.Namespace,
@@ -388,7 +386,6 @@ public static class Data
                 BaseUrl: string.Empty,
                 Stream: false,
                 Path: string.Empty,
-                AuthorizationScheme: string.Empty,
                 Properties: [],
                 HttpMethod: OperationType.Get,
                 Summary: string.Empty,

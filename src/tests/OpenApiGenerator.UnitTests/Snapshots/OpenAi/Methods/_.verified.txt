@@ -6,7 +6,6 @@
     BaseUrl: ,
     Stream: false,
     Path: "/chat/completions",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: messages,
@@ -864,7 +863,6 @@ A list of functions the model may generate JSON inputs for.
     BaseUrl: ,
     Stream: false,
     Path: "/completions",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: model,
@@ -1608,7 +1606,6 @@ Example: user-1234,
     BaseUrl: ,
     Stream: false,
     Path: "/images/generations",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: prompt,
@@ -2016,7 +2013,6 @@ Example: user-1234,
     BaseUrl: ,
     Stream: false,
     Path: "/images/edits",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: image,
@@ -2400,7 +2396,6 @@ Example: user-1234,
     BaseUrl: ,
     Stream: false,
     Path: "/images/variations",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: image,
@@ -2724,7 +2719,6 @@ Example: user-1234,
     BaseUrl: ,
     Stream: false,
     Path: "/embeddings",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: input,
@@ -3012,7 +3006,6 @@ Example: user-1234,
     BaseUrl: ,
     Stream: false,
     Path: "/audio/speech",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: model,
@@ -3304,7 +3297,6 @@ Default Value: 1,
     BaseUrl: ,
     Stream: false,
     Path: "/audio/transcriptions",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: file,
@@ -3653,7 +3645,6 @@ Default Value: [segment],
     BaseUrl: ,
     Stream: false,
     Path: "/audio/translations",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: file,
@@ -3926,7 +3917,6 @@ Default Value: 0,
     BaseUrl: ,
     Stream: false,
     Path: $"/files?purpose={purpose}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: purpose,
@@ -4053,7 +4043,6 @@ Default Value: 0,
     BaseUrl: ,
     Stream: false,
     Path: "/files",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: file,
@@ -4265,7 +4254,6 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
     BaseUrl: ,
     Stream: false,
     Path: $"/files/{fileId}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: file_id,
@@ -4395,7 +4383,6 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
     BaseUrl: ,
     Stream: false,
     Path: $"/files/{fileId}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: file_id,
@@ -4534,7 +4521,6 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
     BaseUrl: ,
     Stream: false,
     Path: $"/files/{fileId}/content",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: file_id,
@@ -4655,7 +4641,6 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
     BaseUrl: ,
     Stream: false,
     Path: "/fine_tuning/jobs",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: model,
@@ -5046,7 +5031,6 @@ Response includes details of the enqueued job including job status and the name 
     BaseUrl: ,
     Stream: false,
     Path: $"/fine_tuning/jobs?after={after}&limit={limit}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: after,
@@ -5208,7 +5192,6 @@ List your organization's fine-tuning jobs
     BaseUrl: ,
     Stream: false,
     Path: $"/fine_tuning/jobs/{fineTuningJobId}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: fine_tuning_job_id,
@@ -5369,7 +5352,6 @@ Get info about a fine-tuning job.
     BaseUrl: ,
     Stream: false,
     Path: $"/fine_tuning/jobs/{fineTuningJobId}/events?after={after}&limit={limit}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: fine_tuning_job_id,
@@ -5559,7 +5541,6 @@ Get status updates for a fine-tuning job.
     BaseUrl: ,
     Stream: false,
     Path: $"/fine_tuning/jobs/{fineTuningJobId}/cancel",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: fine_tuning_job_id,
@@ -5719,7 +5700,6 @@ Immediately cancel a fine-tune job.
     BaseUrl: ,
     Stream: false,
     Path: $"/fine_tuning/jobs/{fineTuningJobId}/checkpoints?after={after}&limit={limit}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: fine_tuning_job_id,
@@ -5915,7 +5895,6 @@ List checkpoints for a fine-tuning job.
     BaseUrl: ,
     Stream: false,
     Path: "/models",
-    AuthorizationScheme: ,
     Properties: null,
     Summary: Lists the currently available models, and provides basic information about each one such as the owner and availability.,
     BaseUrlSummary: ,
@@ -6011,7 +5990,6 @@ List checkpoints for a fine-tuning job.
     BaseUrl: ,
     Stream: false,
     Path: $"/models/{model}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: model,
@@ -6142,7 +6120,6 @@ List checkpoints for a fine-tuning job.
     BaseUrl: ,
     Stream: false,
     Path: $"/models/{model}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: model,
@@ -6272,7 +6249,6 @@ List checkpoints for a fine-tuning job.
     BaseUrl: ,
     Stream: false,
     Path: "/moderations",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: input,
@@ -6457,7 +6433,6 @@ Example: text-moderation-stable,
     BaseUrl: ,
     Stream: false,
     Path: $"/assistants?limit={limit}&order={order}&after={after}&before={before}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: limit,
@@ -6688,7 +6663,6 @@ Example: text-moderation-stable,
     BaseUrl: ,
     Stream: false,
     Path: "/assistants",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: model,
@@ -7154,7 +7128,6 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     BaseUrl: ,
     Stream: false,
     Path: $"/assistants/{assistantId}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: assistant_id,
@@ -7303,7 +7276,6 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     BaseUrl: ,
     Stream: false,
     Path: $"/assistants/{assistantId}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: assistant_id,
@@ -7798,7 +7770,6 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     BaseUrl: ,
     Stream: false,
     Path: $"/assistants/{assistantId}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: assistant_id,
@@ -7928,7 +7899,6 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     BaseUrl: ,
     Stream: false,
     Path: "/threads",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: messages,
@@ -8142,7 +8112,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -8275,7 +8244,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -8490,7 +8458,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -8620,7 +8587,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/messages?limit={limit}&order={order}&after={after}&before={before}&run_id={runId}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -8911,7 +8877,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/messages",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -9211,7 +9176,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/messages/{messageId}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -9392,7 +9356,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/messages/{messageId}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -9624,7 +9587,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/messages/{messageId}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -9784,7 +9746,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: "/threads/runs",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: assistant_id,
@@ -10461,7 +10422,6 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs?limit={limit}&order={order}&after={after}&before={before}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -10722,7 +10682,6 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -11423,7 +11382,6 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs/{runId}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -11630,7 +11588,6 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs/{runId}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -11888,7 +11845,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs/{runId}/submit_tool_outputs",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -12176,7 +12132,6 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs/{runId}/cancel",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -12384,7 +12339,6 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs/{runId}/steps?limit={limit}&order={order}&after={after}&before={before}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -12675,7 +12629,6 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     BaseUrl: ,
     Stream: false,
     Path: $"/threads/{threadId}/runs/{runId}/steps/{stepId}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: thread_id,
@@ -12890,7 +12843,6 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores?limit={limit}&order={order}&after={after}&before={before}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: limit,
@@ -13121,7 +13073,6 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
     BaseUrl: ,
     Stream: false,
     Path: "/vector_stores",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: file_ids,
@@ -13408,7 +13359,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: vector_store_id,
@@ -13553,7 +13503,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: vector_store_id,
@@ -13810,7 +13759,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: vector_store_id,
@@ -13940,7 +13888,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/files?limit={limit}&order={order}&after={after}&before={before}&filter={filter}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: vector_store_id,
@@ -14241,7 +14188,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/files",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: vector_store_id,
@@ -14458,7 +14404,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/files/{fileId}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: vector_store_id,
@@ -14627,7 +14572,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/files/{fileId}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: vector_store_id,
@@ -14787,7 +14731,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/file_batches",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: vector_store_id,
@@ -15000,7 +14943,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/file_batches/{batchId}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: vector_store_id,
@@ -15165,7 +15107,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/file_batches/{batchId}/cancel",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: vector_store_id,
@@ -15331,7 +15272,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: $"/vector_stores/{vectorStoreId}/file_batches/{batchId}/files?limit={limit}&order={order}&after={after}&before={before}&filter={filter}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: vector_store_id,
@@ -15662,7 +15602,6 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
     BaseUrl: ,
     Stream: false,
     Path: "/batches",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: input_file_id,
@@ -15939,7 +15878,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: ,
     Stream: false,
     Path: $"/batches?after={after}&limit={limit}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: after,
@@ -16103,7 +16041,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: ,
     Stream: false,
     Path: $"/batches/{batchId}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: batch_id,
@@ -16266,7 +16203,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: ,
     Stream: false,
     Path: $"/batches/{batchId}/cancel",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: batch_id,
@@ -16424,86 +16360,12 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     FileNameWithoutExtension: G.BatchClient.CancelBatch
   },
   {
-    Id: AuthorizeUsingBearer,
-    Namespace: G,
-    ClassName: Api,
-    BaseUrl: ,
-    Stream: false,
-    Path: ,
-    AuthorizationScheme: bearer,
-    Properties: null,
-    Summary: ,
-    BaseUrlSummary: ,
-    Settings: {
-      TargetFramework: netstandard2.0,
-      Namespace: G,
-      ClassName: Api,
-      GenerateConstructors: false,
-      GroupByTags: true,
-      GenerateMethods: false,
-      MethodNamingConventionFallback: MethodAndPath,
-      GenerateMethodsAsHttpClientExtensions: false,
-      GenerateMethodsUsingSystemNetHttpJson: false,
-      IncludeOperationIds: null,
-      ExcludeOperationIds: null,
-      IncludeTags: null,
-      ExcludeTags: null,
-      JsonSerializerContext: ,
-      GenerateJsonSerializerContextTypes: false,
-      GenerateModels: false,
-      IncludeModels: null,
-      ExcludeModels: null,
-      GenerateSdk: true,
-      FromCli: false
-    },
-    IsDeprecated: false,
-    RequestType: {
-      CSharpType: ,
-      IsArray: false,
-      IsEnum: false,
-      Properties: null,
-      EnumValues: null,
-      Namespace: ,
-      IsDeprecated: false,
-      GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: ,
-      CSharpTypeWithNullability: ?,
-      ShortCSharpTypeWithoutNullability: ,
-      ShortCSharpTypeWithNullability: ?,
-      IsAnyOf: false,
-      ConverterType: 
-    },
-    ResponseType: {
-      CSharpType: ,
-      IsArray: false,
-      IsEnum: false,
-      Properties: null,
-      EnumValues: null,
-      Namespace: ,
-      IsDeprecated: false,
-      GenerateJsonSerializerContextTypes: false,
-      CSharpTypeWithoutNullability: ,
-      CSharpTypeWithNullability: ?,
-      ShortCSharpTypeWithoutNullability: ,
-      ShortCSharpTypeWithNullability: ?,
-      IsAnyOf: false,
-      ConverterType: 
-    },
-    AdditionalModels: null,
-    AdditionalTypes: null,
-    Converters: null,
-    MethodName: AuthorizeUsingBearerAsync,
-    NotAsyncMethodName: AuthorizeUsingBearer,
-    FileNameWithoutExtension: G.Api.Authorization
-  },
-  {
     Id: MainConstructor,
     Namespace: G,
     ClassName: Api,
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: ,
@@ -17331,7 +17193,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
-    AuthorizationScheme: ,
     Properties: null,
     Summary: Build Assistants that can call models and use tools.,
     BaseUrlSummary: ,
@@ -17404,7 +17265,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
-    AuthorizationScheme: ,
     Properties: null,
     Summary: Turn audio into text or text into audio.,
     BaseUrlSummary: ,
@@ -17477,7 +17337,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
-    AuthorizationScheme: ,
     Properties: null,
     Summary: Given a list of messages comprising a conversation, the model will return a response.,
     BaseUrlSummary: ,
@@ -17550,7 +17409,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
-    AuthorizationScheme: ,
     Properties: null,
     Summary: Given a prompt, the model will return one or more predicted completions, and can also return the probabilities of alternative tokens at each position.,
     BaseUrlSummary: ,
@@ -17623,7 +17481,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
-    AuthorizationScheme: ,
     Properties: null,
     Summary: Get a vector representation of a given input that can be easily consumed by machine learning models and algorithms.,
     BaseUrlSummary: ,
@@ -17696,7 +17553,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
-    AuthorizationScheme: ,
     Properties: null,
     Summary: Manage fine-tuning jobs to tailor a model to your specific training data.,
     BaseUrlSummary: ,
@@ -17769,7 +17625,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
-    AuthorizationScheme: ,
     Properties: null,
     Summary: Create large batches of API requests to run asynchronously.,
     BaseUrlSummary: ,
@@ -17842,7 +17697,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
-    AuthorizationScheme: ,
     Properties: null,
     Summary: Files are used to upload documents that can be used with features like Assistants and Fine-tuning.,
     BaseUrlSummary: ,
@@ -17915,7 +17769,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
-    AuthorizationScheme: ,
     Properties: null,
     Summary: Given a prompt and/or an input image, the model will generate a new image.,
     BaseUrlSummary: ,
@@ -17988,7 +17841,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
-    AuthorizationScheme: ,
     Properties: null,
     Summary: List and describe the various models available in the API.,
     BaseUrlSummary: ,
@@ -18061,7 +17913,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
-    AuthorizationScheme: ,
     Properties: null,
     Summary: Given a input text, outputs if the model classifies it as potentially harmful.,
     BaseUrlSummary: ,
@@ -18134,7 +17985,6 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     BaseUrl: https://api.openai.com/v1,
     Stream: false,
     Path: ,
-    AuthorizationScheme: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,

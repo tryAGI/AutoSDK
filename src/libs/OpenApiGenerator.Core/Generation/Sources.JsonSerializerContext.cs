@@ -33,7 +33,8 @@ namespace {endPoint.Namespace}
             typeof({x}),
 ").Inject()}
         }})]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::{endPoint.Namespace}.JsonSerializerContextTypes))]
+{(types.IsEmpty ? " " : $@"
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::{endPoint.Namespace}.JsonSerializerContextTypes))]")}
     internal sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {{
     }}

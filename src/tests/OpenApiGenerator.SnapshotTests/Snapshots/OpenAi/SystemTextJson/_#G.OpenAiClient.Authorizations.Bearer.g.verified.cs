@@ -1,4 +1,4 @@
-﻿//HintName: G.OpenAiClient.Authorization.g.cs
+﻿//HintName: G.OpenAiClient.Authorizations.Bearer.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     public sealed partial class OpenAiClient
     {
         /// <summary>
-        /// 
+        /// Authorize using bearer authentication.
         /// </summary>
         /// <param name="apiKey"></param>
         public void AuthorizeUsingBearer(

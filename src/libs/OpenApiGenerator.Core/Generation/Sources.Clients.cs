@@ -60,31 +60,4 @@ namespace {endPoint.Namespace}
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
-    
-    public static string GenerateAuthorizationMethod(
-        EndPoint endPoint)
-    {
-        return $@"
-#nullable enable
-
-namespace {endPoint.Namespace}
-{{
-    public sealed partial class {endPoint.ClassName}
-    {{
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name=""apiKey""></param>
-        public void {endPoint.NotAsyncMethodName}(
-            string apiKey)
-        {{
-            apiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
-
-            _httpClient.DefaultRequestHeaders.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                scheme: ""{endPoint.AuthorizationScheme.ToPropertyName()}"",
-                parameter: apiKey);
-        }}
-    }}
-}}".RemoveBlankLinesWhereOnlyWhitespaces();
-    }
 }

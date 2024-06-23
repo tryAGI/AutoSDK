@@ -6,7 +6,6 @@
     BaseUrl: ,
     Stream: true,
     Path: "/generate",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: model,
@@ -523,7 +522,6 @@ The final response object will include statistics and additional data from the r
     BaseUrl: ,
     Stream: true,
     Path: "/chat",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: model,
@@ -889,7 +887,6 @@ This is a streaming endpoint, so there will be a series of responses. The final 
     BaseUrl: ,
     Stream: false,
     Path: "/embeddings",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: model,
@@ -1163,7 +1160,6 @@ How long (in minutes) to keep the model loaded in memory.
     BaseUrl: ,
     Stream: true,
     Path: "/create",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: model,
@@ -1435,7 +1431,6 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
     BaseUrl: ,
     Stream: false,
     Path: "/tags",
-    AuthorizationScheme: ,
     Properties: null,
     Summary: List models that are available locally.,
     BaseUrlSummary: ,
@@ -1529,7 +1524,6 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
     BaseUrl: ,
     Stream: false,
     Path: "/ps",
-    AuthorizationScheme: ,
     Properties: null,
     Summary: List models that are running.,
     BaseUrlSummary: ,
@@ -1623,7 +1617,6 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
     BaseUrl: ,
     Stream: false,
     Path: "/show",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: model,
@@ -1783,7 +1776,6 @@ Example: llama3:8b,
     BaseUrl: ,
     Stream: false,
     Path: "/copy",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: source,
@@ -1939,7 +1931,6 @@ Example: llama3-backup,
     BaseUrl: ,
     Stream: false,
     Path: "/delete",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: model,
@@ -2067,7 +2058,6 @@ Example: llama3:13b,
     BaseUrl: ,
     Stream: true,
     Path: "/pull",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: model,
@@ -2349,7 +2339,6 @@ Cancelled pulls are resumed from where they left off, and multiple calls will sh
     BaseUrl: ,
     Stream: true,
     Path: "/push",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: model,
@@ -2628,7 +2617,6 @@ Requires registering for ollama.ai and adding a public key first.,
     BaseUrl: ,
     Stream: false,
     Path: $"/blobs/{digest}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: digest,
@@ -2735,7 +2723,6 @@ This is checking your Ollama server and not Ollama.ai.,
     BaseUrl: ,
     Stream: false,
     Path: $"/blobs/{digest}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: digest,
@@ -2857,7 +2844,6 @@ This is checking your Ollama server and not Ollama.ai.,
     BaseUrl: http://localhost:11434/api,
     Stream: false,
     Path: ,
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: ,
@@ -3065,7 +3051,6 @@ This is checking your Ollama server and not Ollama.ai.,
     BaseUrl: http://localhost:11434/api,
     Stream: false,
     Path: ,
-    AuthorizationScheme: ,
     Properties: null,
     Summary: Given a prompt, the model will generate a completion.,
     BaseUrlSummary: Ollama server URL,
@@ -3138,7 +3123,6 @@ This is checking your Ollama server and not Ollama.ai.,
     BaseUrl: http://localhost:11434/api,
     Stream: false,
     Path: ,
-    AuthorizationScheme: ,
     Properties: null,
     Summary: Given a list of messages comprising a conversation, the model will return a response.,
     BaseUrlSummary: Ollama server URL,
@@ -3211,7 +3195,6 @@ This is checking your Ollama server and not Ollama.ai.,
     BaseUrl: http://localhost:11434/api,
     Stream: false,
     Path: ,
-    AuthorizationScheme: ,
     Properties: null,
     Summary: Get a vector representation of a given input.,
     BaseUrlSummary: Ollama server URL,
@@ -3284,7 +3267,6 @@ This is checking your Ollama server and not Ollama.ai.,
     BaseUrl: http://localhost:11434/api,
     Stream: false,
     Path: ,
-    AuthorizationScheme: ,
     Properties: null,
     Summary: List and describe the various models available.,
     BaseUrlSummary: Ollama server URL,

@@ -98,6 +98,8 @@ public class GenerateCommand : Command
             .SelectMany(x => new [] { Sources.Model(x), Sources.EnumJsonConverter(x), Sources.EnumNullableJsonConverter(x) })
             .Concat(data.Methods
                 .Select(x => Sources.Method(x)))
+            .Concat(data.Authorizations
+                .Select(x => Sources.Authorization(x)))
             .Concat(data.AnyOfs
                 .SelectMany(x => new [] { Sources.AnyOf(x), Sources.AnyOfJsonConverter(x), Sources.AnyOfJsonConverterFactory(x) }))
             .Concat([Sources.JsonSerializerContext(data.Converters, data.Types)])

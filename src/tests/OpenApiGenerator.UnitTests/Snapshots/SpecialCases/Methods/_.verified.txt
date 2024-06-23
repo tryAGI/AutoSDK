@@ -6,7 +6,6 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/pets?limit={limit}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: limit,
@@ -146,7 +145,6 @@
     BaseUrl: ,
     Stream: false,
     Path: "/pets",
-    AuthorizationScheme: ,
     Properties: null,
     HttpMethod: Post,
     Summary: Create a pet,
@@ -243,7 +241,6 @@
     BaseUrl: ,
     Stream: false,
     Path: $"/pets/{petId}",
-    AuthorizationScheme: ,
     Properties: [
       {
         Id: petId,
@@ -397,7 +394,6 @@
     BaseUrl: http://petstore.swagger.io/v1,
     Stream: false,
     Path: ,
-    AuthorizationScheme: ,
     Properties: null,
     Summary: ,
     BaseUrlSummary: ,

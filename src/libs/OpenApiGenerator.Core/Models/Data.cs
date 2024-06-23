@@ -5,5 +5,6 @@ public readonly record struct Data(
     EquatableArray<EndPoint> Methods,
     EquatableArray<AnyOfData> AnyOfs,
     EquatableArray<TypeData> Types,
+    EquatableArray<Authorization> Authorizations,
     EndPoint Converters,
     IReadOnlyList<SchemaContext> Schemas);
