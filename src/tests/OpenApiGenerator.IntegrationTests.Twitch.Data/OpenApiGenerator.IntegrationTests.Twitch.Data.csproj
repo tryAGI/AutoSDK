@@ -24,15 +24,15 @@
     <AnalysisMode>All</AnalysisMode>
   </PropertyGroup>
 
-  <Target Name="FetchTwitchOpenApiJson" BeforeTargets="Build;BeforeCompile;CompileDesignTime">
-    <!-- Download the OpenAPI JSON file (if expired) -->
-    <DownloadFile
-            SourceUrl="https://twitch-api-swagger.surge.sh/openapi.json"
-            DestinationFolder="$(MSBuildThisFileDirectory)../../../specs"
-            DestinationFileName="twitch.json"
-            SkipUnchangedFiles="true"
-            Retries="2" />
-  </Target>
+<!--  <Target Name="FetchTwitchOpenApiJson" BeforeTargets="Build;BeforeCompile;CompileDesignTime">-->
+<!--    &lt;!&ndash; Download the OpenAPI JSON file (if expired) &ndash;&gt;-->
+<!--    <DownloadFile-->
+<!--            SourceUrl="https://twitch-api-swagger.surge.sh/openapi.json"-->
+<!--            DestinationFolder="$(MSBuildThisFileDirectory)../../../specs"-->
+<!--            DestinationFileName="twitch.json"-->
+<!--            SkipUnchangedFiles="true"-->
+<!--            Retries="2" />-->
+<!--  </Target>-->
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0" />
