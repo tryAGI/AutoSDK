@@ -27,8 +27,9 @@ public static class Data
             .Concat(allOperations
                 .Where(x => x.Operation.RequestBody != null)
                 .SelectMany(x => x.Operation.RequestBody!.Content.Select(y => (x.OperationPath, x.OperationType, x.Operation, ContentType: y.Key, MediaType: y.Value)))
+                .Where(x => x.MediaType.Schema != null)
                 .SelectMany(x => SchemaContext.FromSchema(
-                    schema: x.MediaType.Schema,
+                    schema: x.MediaType.Schema!,
                     settings: settings,
                     operationPath: x.OperationPath,
                     operationType: x.OperationType,
@@ -39,8 +40,9 @@ public static class Data
             .Concat(allOperations
                 .SelectMany(x => x.Operation.Parameters.Select(y => (x.OperationPath, x.OperationType, x.Operation, Parameter: y)))
                 .SelectMany(x => x.Parameter.Content.Select(y => (x.OperationPath, x.OperationType, x.Operation, x.Parameter, ContentType: y.Key, MediaType: y.Value)))
+                .Where(x => x.MediaType.Schema != null)
                 .SelectMany(x => SchemaContext.FromSchema(
-                    schema: x.MediaType.Schema,
+                    schema: x.MediaType.Schema!,
                     settings: settings,
                     operationPath: x.OperationPath,
                     operationType: x.OperationType,
@@ -52,8 +54,9 @@ public static class Data
             .Concat(allOperations
                 .SelectMany(x => x.Operation.Responses.Select(y => (x.OperationPath, x.OperationType, x.Operation, ResponseStatusCode: y.Key, Response: y.Value)))
                 .SelectMany(x => x.Response.Content.Select(y => (x.OperationPath, x.OperationType, x.Operation, x.ResponseStatusCode, x.Response, ContentType: y.Key, MediaType: y.Value)))
+                .Where(x => x.MediaType.Schema != null)
                 .SelectMany(x => SchemaContext.FromSchema(
-                    schema: x.MediaType.Schema,
+                    schema: x.MediaType.Schema!,
                     settings: settings,
                     operationPath: x.OperationPath,
                     operationType: x.OperationType,

@@ -1,7 +1,6 @@
 using System.Collections.Immutable;
 using Microsoft.OpenApi.Models;
 using OpenApiGenerator.Core.Extensions;
-using OpenApiGenerator.Core.Json;
 
 namespace OpenApiGenerator.Core.Models;
 
@@ -109,21 +108,23 @@ public readonly record struct EndPoint(
         var requestMediaTypes = operation.Value.RequestBody?.ResolveIfRequired().Content?.Values ?? [];
         var requestBodyModels = requestMediaTypes
             .Where(x =>
-                x.Schema.Type == "object" ||
+                x.Schema != null &&
+                (x.Schema.Type == "object" ||
                 (x.Schema.Type == "array"
                 && x.Schema.Items?.Type == "object") ||
                 x.Schema.AnyOf is { Count: > 0 } ||
                 x.Schema.OneOf is { Count: > 0 } ||
-                x.Schema.AllOf is { Count: > 0 })
+                x.Schema.AllOf is { Count: > 0 }))
             .SelectMany(x => ModelData.FromSchemas(
-                x.Schema,
+                x.Schema!,
                 settings,
                 id + "Request"))
             .SelectMany(model => model.WithAdditionalModels())
             .ToArray();
         var requestBodyTypes = requestMediaTypes
+            .Where(x => x.Schema != null)
             .Select(x => TypeData.FromSchema(
-                x.Schema.UseReferenceIdOrKey(id + "Request"),
+                x.Schema!.UseReferenceIdOrKey(id + "Request"),
                 settings))
             .ToArray();
         
@@ -138,24 +139,27 @@ public readonly record struct EndPoint(
             .SelectMany(x => x.Value?.ResolveIfRequired().Content?.Select(y => (Response: x, MediaType: y)) ?? [])
             .ToArray();
         var responseModels = responses
-            .Where(x =>
-                x.MediaType.Value.Schema != null &&
-                (x.MediaType.Value.Schema.Type == "object" ||
-                 (x.MediaType.Value.Schema.Type == "array"
-                  && x.MediaType.Value.Schema.Items?.Type == "object") ||
-                 x.MediaType.Value.Schema.AnyOf is { Count: > 0 } ||
-                 x.MediaType.Value.Schema.OneOf is { Count: > 0 } ||
-                 x.MediaType.Value.Schema.AllOf is { Count: > 0 }))
-            .SelectMany(x => ModelData.FromSchemas(
-                x.MediaType.Value.Schema,
+            .Select(x => x.MediaType.Value.Schema)
+            .Where(schema =>
+                schema != null &&
+                (schema.Type == "object" ||
+                 schema is { Type: "array", Items.Type: "object" } ||
+                 schema.AnyOf is { Count: > 0 } ||
+                 schema.OneOf is { Count: > 0 } ||
+                 schema.AllOf is { Count: > 0 }))
+            .SelectMany(schema => ModelData.FromSchemas(
+                schema!,
                 settings,
                 key: id + "Response"))
             .SelectMany(model => model.WithAdditionalModels())
             .ToArray();
         var responseTypes = responses
-            .Select(x => x.MediaType.Value.Schema != null ? TypeData.FromSchema(
-                x.MediaType.Value.Schema.UseReferenceIdOrKey(id + "Response"),
-                settings) : TypeData.Default)
+            .Select(x => x.MediaType.Value.Schema)
+            .Select(schema => schema != null
+                ? TypeData.FromSchema(
+                    schema.UseReferenceIdOrKey(id + "Response"),
+                    settings)
+                : TypeData.Default)
             .ToArray();
         TypeData? responseType = responseTypes.Length == 0
             ? null

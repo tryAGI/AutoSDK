@@ -374,7 +374,7 @@ public static class OpenApiExtensions
                 .SelectMany(x => x.ResolveIfRequired().Content.Values)
                 .Select(x => x.Schema))
             .Where(x => x != null)
-            .SelectMany(x => new [] { x, x.Items?.ResolveIfRequired() }
+            .SelectMany(x => new [] { x, x!.Items?.ResolveIfRequired() }
                 .Concat(x.Properties.Values.Select(y => y.ResolveIfRequired()))
                 .Concat(x.AnyOf.Select(y => y.ResolveIfRequired()))
                 .Concat(x.OneOf.Select(y => y.ResolveIfRequired()))
@@ -405,11 +405,13 @@ public static class OpenApiExtensions
             .Concat(operations 
                 .SelectMany(x => x.Value.Responses.Values)
                 .SelectMany(x => x.Content.Values)
-                .Select(x => x.Schema.Reference?.Id))
+                .Where(x => x.Schema != null)
+                .Select(x => x.Schema!.Reference?.Id))
             .Concat(operations 
                 .SelectMany(x => x.Value.Responses.Values)
                 .SelectMany(x => x.Content.Values)
-                .Select(x => x.Schema.Items?.Reference?.Id))
+                .Where(x => x.Schema != null)
+                .Select(x => x.Schema!.Items?.Reference?.Id))
             .Concat(schemas.Select(x => x?.Reference?.Id))
             .Where(x => x != null)
             .Distinct()
