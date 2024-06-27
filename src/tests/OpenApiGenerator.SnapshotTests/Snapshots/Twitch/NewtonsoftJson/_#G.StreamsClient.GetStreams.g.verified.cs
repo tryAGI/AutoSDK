@@ -42,7 +42,7 @@ namespace G
             };
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/streams?{string.Join("&", userId.Select(static x => $"userId={x}"))}&{string.Join("&", userLogin.Select(static x => $"userLogin={x}"))}&{string.Join("&", gameId.Select(static x => $"gameId={x}"))}&type={typeValue}&{string.Join("&", language.Select(static x => $"language={x}"))}&first={first}&before={before}&after={after}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.GetLeftPart(global::System.UriPartial.Authority) + $"/streams?{string.Join("&", userId.Select(static x => $"userId={x}"))}&{string.Join("&", userLogin.Select(static x => $"userLogin={x}"))}&{string.Join("&", gameId.Select(static x => $"gameId={x}"))}&type={typeValue}&{string.Join("&", language.Select(static x => $"language={x}"))}&first={first}&before={before}&after={after}", global::System.UriKind.RelativeOrAbsolute));
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

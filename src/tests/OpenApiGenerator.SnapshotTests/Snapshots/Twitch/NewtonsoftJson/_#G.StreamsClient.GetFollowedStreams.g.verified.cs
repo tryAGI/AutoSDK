@@ -25,7 +25,7 @@ namespace G
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/streams/followed?user_id={userId}&first={first}&after={after}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.GetLeftPart(global::System.UriPartial.Authority) + $"/streams/followed?user_id={userId}&first={first}&after={after}", global::System.UriKind.RelativeOrAbsolute));
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

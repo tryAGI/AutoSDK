@@ -99,7 +99,7 @@ namespace {endPoint.Namespace}
             }};").Inject() : " ")}
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: {GetHttpMethod(endPoint.Settings.TargetFramework, endPoint.HttpMethod)},
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + {endPoint.Path}, global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.GetLeftPart(global::System.UriPartial.Authority) + {endPoint.Path}, global::System.UriKind.RelativeOrAbsolute));
 {(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : $@" 
             var __json = {jsonSerializer.GenerateSerializeCall(endPoint.RequestType, endPoint.Settings.JsonSerializerContext)};
             httpRequest.Content = new global::System.Net.Http.StringContent(

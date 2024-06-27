@@ -24,7 +24,7 @@ namespace G
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/guest_star/session?broadcaster_id={broadcasterId}&session_id={sessionId}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.GetLeftPart(global::System.UriPartial.Authority) + $"/guest_star/session?broadcaster_id={broadcasterId}&session_id={sessionId}", global::System.UriKind.RelativeOrAbsolute));
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

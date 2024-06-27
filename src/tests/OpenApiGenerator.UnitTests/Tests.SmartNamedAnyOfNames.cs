@@ -12,4 +12,13 @@ public partial class Tests
             typeName: "ChatCompletionRequestMessageContentPartText",
             className: "ChatCompletionRequestMessageContentPart").Should().Be("Text");
     }
+    
+    [TestMethod]
+    public void Url_Concat()
+    {
+        var baseUri = new Uri("https://localhost:7293");
+        
+        new Uri(baseUri.GetLeftPart(UriPartial.Authority) + "/api/Stats", UriKind.RelativeOrAbsolute)
+            .Should().Be(new Uri("https://localhost:7293/api/Stats"));
+    }
 }

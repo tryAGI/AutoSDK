@@ -23,7 +23,7 @@ namespace G
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Put,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/chat/color?user_id={userId}&color={color}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.GetLeftPart(global::System.UriPartial.Authority) + $"/chat/color?user_id={userId}&color={color}", global::System.UriKind.RelativeOrAbsolute));
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

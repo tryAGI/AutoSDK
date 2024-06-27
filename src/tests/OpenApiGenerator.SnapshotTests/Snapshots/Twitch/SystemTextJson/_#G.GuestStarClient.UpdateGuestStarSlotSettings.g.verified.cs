@@ -36,7 +36,7 @@ namespace G
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Patch,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/guest_star/slot_settings?broadcaster_id={broadcasterId}&moderator_id={moderatorId}&session_id={sessionId}&slot_id={slotId}&is_audio_enabled={isAudioEnabled}&is_video_enabled={isVideoEnabled}&is_live={isLive}&volume={volume}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.GetLeftPart(global::System.UriPartial.Authority) + $"/guest_star/slot_settings?broadcaster_id={broadcasterId}&moderator_id={moderatorId}&session_id={sessionId}&slot_id={slotId}&is_audio_enabled={isAudioEnabled}&is_video_enabled={isVideoEnabled}&is_live={isLive}&volume={volume}", global::System.UriKind.RelativeOrAbsolute));
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

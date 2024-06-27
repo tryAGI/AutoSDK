@@ -27,7 +27,7 @@ namespace G
         {
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri + $"/games?{string.Join("&", id.Select(static x => $"id={x}"))}&{string.Join("&", name.Select(static x => $"name={x}"))}&{string.Join("&", igdbId.Select(static x => $"igdbId={x}"))}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.GetLeftPart(global::System.UriPartial.Authority) + $"/games?{string.Join("&", id.Select(static x => $"id={x}"))}&{string.Join("&", name.Select(static x => $"name={x}"))}&{string.Join("&", igdbId.Select(static x => $"igdbId={x}"))}", global::System.UriKind.RelativeOrAbsolute));
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
