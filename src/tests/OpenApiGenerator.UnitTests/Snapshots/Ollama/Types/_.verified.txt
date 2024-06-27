@@ -359,6 +359,27 @@
     ConverterType: 
   },
   {
+    CSharpType: global::G.ModelInformation?,
+    IsArray: false,
+    IsEnum: false,
+    Properties: [
+      general.architecture,
+      general.file_type,
+      general.parameter_count,
+      general.quantization_version
+    ],
+    EnumValues: null,
+    Namespace: G,
+    IsDeprecated: false,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: global::G.ModelInformation,
+    CSharpTypeWithNullability: global::G.ModelInformation?,
+    ShortCSharpTypeWithoutNullability: ModelInformation,
+    ShortCSharpTypeWithNullability: ModelInformation?,
+    IsAnyOf: false,
+    ConverterType: 
+  },
+  {
     CSharpType: global::System.AnyOf<string?, global::G.PullModelResponseStatus?>?,
     IsArray: false,
     IsEnum: false,
@@ -391,6 +412,24 @@
     ShortCSharpTypeWithNullability: global::System.AnyOf<string?, PushModelResponseStatus?>?,
     IsAnyOf: true,
     ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
+  },
+  {
+    CSharpType: global::G.VersionResponse,
+    IsArray: false,
+    IsEnum: false,
+    Properties: [
+      version
+    ],
+    EnumValues: null,
+    Namespace: G,
+    IsDeprecated: false,
+    GenerateJsonSerializerContextTypes: true,
+    CSharpTypeWithoutNullability: global::G.VersionResponse,
+    CSharpTypeWithNullability: global::G.VersionResponse?,
+    ShortCSharpTypeWithoutNullability: VersionResponse,
+    ShortCSharpTypeWithNullability: VersionResponse?,
+    IsAnyOf: false,
+    ConverterType: 
   },
   {
     CSharpType: global::G.GenerateCompletionRequest,
@@ -643,6 +682,7 @@
       template,
       system,
       details,
+      model_info,
       messages
     ],
     EnumValues: null,

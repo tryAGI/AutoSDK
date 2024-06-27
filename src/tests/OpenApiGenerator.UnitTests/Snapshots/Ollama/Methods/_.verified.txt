@@ -1,5 +1,100 @@
 ﻿[
   {
+    Id: GetVersion,
+    Namespace: G,
+    ClassName: Client,
+    BaseUrl: ,
+    Stream: false,
+    Path: "/version",
+    Properties: null,
+    Summary:
+Returns the version of the Ollama server.
+This endpoint returns the version of the Ollama server.,
+    BaseUrlSummary: ,
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: true,
+      GenerateModels: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GenerateSdk: true,
+      FromCli: false
+    },
+    IsDeprecated: false,
+    RequestType: {
+      CSharpType: ,
+      IsArray: false,
+      IsEnum: false,
+      Properties: null,
+      EnumValues: null,
+      Namespace: ,
+      IsDeprecated: false,
+      GenerateJsonSerializerContextTypes: false,
+      CSharpTypeWithoutNullability: ,
+      CSharpTypeWithNullability: ?,
+      ShortCSharpTypeWithoutNullability: ,
+      ShortCSharpTypeWithNullability: ?,
+      IsAnyOf: false,
+      ConverterType: 
+    },
+    ResponseType: {
+      CSharpType: global::G.VersionResponse,
+      IsArray: false,
+      IsEnum: false,
+      Properties: [
+        version
+      ],
+      EnumValues: null,
+      Namespace: G,
+      IsDeprecated: false,
+      GenerateJsonSerializerContextTypes: true,
+      CSharpTypeWithoutNullability: global::G.VersionResponse,
+      CSharpTypeWithNullability: global::G.VersionResponse?,
+      ShortCSharpTypeWithoutNullability: VersionResponse,
+      ShortCSharpTypeWithNullability: VersionResponse?,
+      IsAnyOf: false,
+      ConverterType: 
+    },
+    AdditionalModels: null,
+    AdditionalTypes: [
+      {
+        CSharpType: global::G.VersionResponse,
+        IsArray: false,
+        IsEnum: false,
+        Properties: [
+          version
+        ],
+        EnumValues: null,
+        Namespace: G,
+        IsDeprecated: false,
+        GenerateJsonSerializerContextTypes: true,
+        CSharpTypeWithoutNullability: global::G.VersionResponse,
+        CSharpTypeWithNullability: global::G.VersionResponse?,
+        ShortCSharpTypeWithoutNullability: VersionResponse,
+        ShortCSharpTypeWithNullability: VersionResponse?,
+        IsAnyOf: false,
+        ConverterType: 
+      }
+    ],
+    Converters: null,
+    MethodName: GetVersionAsync,
+    NotAsyncMethodName: GetVersion,
+    FileNameWithoutExtension: G.Client.GetVersion
+  },
+  {
     Id: GenerateCompletion,
     Namespace: G,
     ClassName: CompletionsClient,
@@ -1706,6 +1801,7 @@ Example: llama3:8b,
         template,
         system,
         details,
+        model_info,
         messages
       ],
       EnumValues: null,
@@ -1750,6 +1846,7 @@ Example: llama3:8b,
           template,
           system,
           details,
+          model_info,
           messages
         ],
         EnumValues: null,
