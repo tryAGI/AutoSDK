@@ -378,7 +378,9 @@ public static class Data
                 : [],
             AnyOfs: anyOfDatas.ToImmutableArray(),
             Types: types,
-            Authorizations: authorizations.ToImmutableArray(),
+            Authorizations: settings.GenerateSdk || settings.GenerateConstructors
+                ? authorizations.ToImmutableArray()
+                : [],
             Converters: new EndPoint(
                 Id: "Converters",
                 Namespace: settings.Namespace,
