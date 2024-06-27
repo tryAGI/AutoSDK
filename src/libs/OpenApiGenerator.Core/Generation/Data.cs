@@ -16,10 +16,10 @@ public static class Data
 
         var openApiDocument = text.GetOpenApiDocument(cancellationToken);
 
-        var allOperations = openApiDocument.Paths
+        var allOperations = openApiDocument.Paths!
             .SelectMany(x => x.Value.Operations.Select(y => (OperationPath: x.Key, OperationType: y.Key, Operation: y.Value)))
             .ToArray();
-        var schemaContexts = openApiDocument.Components.Schemas
+        var schemaContexts = openApiDocument.Components!.Schemas!
             .SelectMany(schema => SchemaContext.FromSchema(
                 schema: schema.Value,
                 settings: settings,
@@ -38,7 +38,7 @@ public static class Data
                     mediaType: x.MediaType,
                     hint: Hint.Request)))
             .Concat(allOperations
-                .SelectMany(x => x.Operation.Parameters.Select(y => (x.OperationPath, x.OperationType, x.Operation, Parameter: y)))
+                .SelectMany(x => (x.Operation.Parameters ?? []).Select(y => (x.OperationPath, x.OperationType, x.Operation, Parameter: y)))
                 .SelectMany(x => x.Parameter.Content.Select(y => (x.OperationPath, x.OperationType, x.Operation, x.Parameter, ContentType: y.Key, MediaType: y.Value)))
                 .Where(x => x.MediaType.Schema != null)
                 .SelectMany(x => SchemaContext.FromSchema(
@@ -52,7 +52,7 @@ public static class Data
                     parameter: x.Parameter,
                     hint: Hint.Parameter)))
             .Concat(allOperations
-                .SelectMany(x => x.Operation.Responses.Select(y => (x.OperationPath, x.OperationType, x.Operation, ResponseStatusCode: y.Key, Response: y.Value)))
+                .SelectMany(x => (x.Operation.Responses ?? []).Select(y => (x.OperationPath, x.OperationType, x.Operation, ResponseStatusCode: y.Key, Response: y.Value)))
                 .SelectMany(x => x.Response.Content.Select(y => (x.OperationPath, x.OperationType, x.Operation, x.ResponseStatusCode, x.Response, ContentType: y.Key, MediaType: y.Value)))
                 .Where(x => x.MediaType.Schema != null)
                 .SelectMany(x => SchemaContext.FromSchema(
@@ -80,12 +80,12 @@ public static class Data
         }
         
         // Find all tags used in operations besides the ones defined in the document
-        var allTags = openApiDocument.Tags;
-        foreach (var operation in openApiDocument.Paths
+        var allTags = openApiDocument.Tags!;
+        foreach (var operation in openApiDocument.Paths!
                      .SelectMany(x => x.Value.Operations)
                      .Select(x => x.Value))
         {
-            foreach (var tag in operation.Tags)
+            foreach (var tag in operation.Tags ?? Array.Empty<OpenApiTag>())
             {
                 var existingTag = allTags.FirstOrDefault(x => x.Name == tag.Name);
                 if (existingTag is null)
@@ -115,7 +115,7 @@ public static class Data
         }
         var referencesOfIncludedModels = includedModels.Count == 0
             ? []
-            : new HashSet<string>(openApiDocument.Components.Schemas
+            : new HashSet<string>(openApiDocument.Components.Schemas!
                 .Where(schema =>
                     (includedModels.Count == 0 ||
                     includedModels.Contains(schema.Key)) &&
@@ -123,7 +123,7 @@ public static class Data
                 .SelectMany(schema => schema.GetReferences())
                 .Select(reference => reference.Id));
 
-        var includedSchemas = openApiDocument.Components.Schemas
+        var includedSchemas = openApiDocument.Components.Schemas!
             .Where(schema =>
                 (includedModels.Count == 0 ||
                  includedModels.Contains(schema.Key) ||
@@ -137,7 +137,7 @@ public static class Data
             .Select(x => x.First())
             .ToDictionary(x => x.ClassName, x => x);
 
-        var operations = openApiDocument.Paths.SelectMany(path =>
+        var operations = openApiDocument.Paths!.SelectMany(path =>
                 path.Value.Operations
                     .Where(x =>
                     {
@@ -161,7 +161,7 @@ public static class Data
         var operationsAsMethods = operations
             .Select(x => EndPoint.FromSchema(x.Operation, settings, x.Path.Key))
             .ToArray();
-        var authorizations = openApiDocument.SecurityRequirements
+        var authorizations = openApiDocument.SecurityRequirements!
             .SelectMany(requirement => requirement)
             .Select(x => Authorization.FromOpenApiSecurityScheme(x.Key, settings))
             .ToArray();
@@ -176,7 +176,7 @@ public static class Data
                 Id: "MainConstructor",
                 Namespace: settings.Namespace,
                 ClassName: settings.ClassName.Replace(".", string.Empty),
-                BaseUrl: openApiDocument.Servers.FirstOrDefault()?.Url ?? string.Empty,
+                BaseUrl: openApiDocument.Servers!.FirstOrDefault()?.Url ?? string.Empty,
                 Stream: false,
                 Path: string.Empty,
                 Properties: settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors)
@@ -194,7 +194,7 @@ public static class Data
                     : [],
                 HttpMethod: OperationType.Get,
                 Summary: openApiDocument.Info?.Description?.ClearForXml() ?? string.Empty,
-                BaseUrlSummary: openApiDocument.Servers.FirstOrDefault()?.Description?.ClearForXml() ?? string.Empty,
+                BaseUrlSummary: openApiDocument.Servers!.FirstOrDefault()?.Description?.ClearForXml() ?? string.Empty,
                 Settings: settings,
                 IsDeprecated: false,
                 RequestType: TypeData.Default,
@@ -210,13 +210,13 @@ public static class Data
                         Id: "Constructors",
                         Namespace: settings.Namespace,
                         ClassName: $"{x.Name.ToClassName()}Client",
-                        BaseUrl: openApiDocument.Servers.FirstOrDefault()?.Url ?? string.Empty,
+                        BaseUrl: openApiDocument.Servers!.FirstOrDefault()?.Url ?? string.Empty,
                         Stream: false,
                         Path: string.Empty,
                         Properties: ImmutableArray<PropertyData>.Empty,
                         HttpMethod: OperationType.Get,
                         Summary: x.Description?.ClearForXml() ?? string.Empty,
-                        BaseUrlSummary: openApiDocument.Servers.FirstOrDefault()?.Description?.ClearForXml() ?? string.Empty,
+                        BaseUrlSummary: openApiDocument.Servers!.FirstOrDefault()?.Description?.ClearForXml() ?? string.Empty,
                         Settings: settings,
                         IsDeprecated: false,
                         RequestType: TypeData.Default,

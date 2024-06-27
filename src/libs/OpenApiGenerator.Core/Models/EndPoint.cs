@@ -38,10 +38,10 @@ public readonly record struct EndPoint(
     {
         path = path ?? throw new ArgumentNullException(nameof(path));
         
-        var requiredParameters = new HashSet<string>(operation.Value.Parameters
+        var requiredParameters = new HashSet<string>((operation.Value.Parameters ?? [])
             .Where(x => x.Required || x.In == ParameterLocation.Path)
             .Select(x => x.Name));
-        var parameters = operation.Value.Parameters
+        var parameters = (operation.Value.Parameters ?? [])
             .Select(x => PropertyData.FromSchema(
                 schema: x.Schema.WithKey(x.Name),
                 requiredProperties: requiredParameters,
@@ -81,13 +81,13 @@ public readonly record struct EndPoint(
             operationType: operation.Key,
             settings.MethodNamingConvention,
             settings.MethodNamingConventionFallback);
-        var objectParameters = operation.Value.Parameters
+        var objectParameters = (operation.Value.Parameters ?? [])
             .Where(x => x.Schema.Type == "object")
             .Select(x => ModelData.FromSchema(
                     x.Schema.WithKey(id + x.Name.ToPropertyName()),
                     settings))
             .ToArray();
-        var enumParameters = operation.Value.Parameters
+        var enumParameters = (operation.Value.Parameters ?? [])
             .Where(x => x.Schema.Enum?.Any() == true || x.Schema.Items?.Enum?.Any() == true)
             .Select(x => ModelData.FromSchema(
                     x.Schema.WithKey(operation.Value.OperationId + x.Name.ToPropertyName()),
@@ -132,7 +132,7 @@ public readonly record struct EndPoint(
             ? null
             : requestBodyTypes.First();
         
-        var responses = operation.Value.Responses
+        var responses = (operation.Value.Responses ?? [])
             .SelectMany(x => x.Value?.ResolveIfRequired().Content?.Select(y => (Response: x, MediaType: y)) ?? [])
             .ToArray();
         var responseModels = responses
@@ -182,7 +182,7 @@ public readonly record struct EndPoint(
             Id: id,
             Namespace: settings.Namespace,
             ClassName: settings.GroupByTags
-                ? operation.Value.Tags.FirstOrDefault()?.Name.ToClassName() + "Client" ?? settings.ClassName.Replace(".", string.Empty)
+                ? (operation.Value.Tags ?? []).FirstOrDefault()?.Name.ToClassName() + "Client" ?? settings.ClassName.Replace(".", string.Empty)
                 : settings.ClassName.Replace(".", string.Empty),
             BaseUrl: string.Empty,
             Stream: responses

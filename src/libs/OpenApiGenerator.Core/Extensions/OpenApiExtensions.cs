@@ -30,6 +30,10 @@ public static class OpenApiExtensions
 
         openApiDocument.Components ??= new OpenApiComponents();
         openApiDocument.Components.Schemas ??= new Dictionary<string, OpenApiSchema>();
+        openApiDocument.Paths ??= new OpenApiPaths();
+        openApiDocument.Tags ??= new List<OpenApiTag>();
+        openApiDocument.SecurityRequirements ??= new List<OpenApiSecurityRequirement>();
+        openApiDocument.Servers ??= new List<OpenApiServer>();
 
         return openApiDocument;
     }
@@ -344,7 +348,7 @@ public static class OpenApiExtensions
     {
         openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
         
-        return openApiDocument.Paths
+        return openApiDocument.Paths!
             .SelectMany(path => path.Value.Operations)
             .Where(x => x.Value.Tags?.Any(y => y.Name == tag) != false)
             .Where(x => x.Value.OperationId != null)
@@ -358,7 +362,7 @@ public static class OpenApiExtensions
     {
         openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
         
-        var operations = openApiDocument.Paths
+        var operations = openApiDocument.Paths!
             .SelectMany(path => path.Value.Operations)
             .Where(x => x.Value.Tags?.Any(y => y.Name == tag) != false)
             .ToArray();
@@ -367,10 +371,10 @@ public static class OpenApiExtensions
             .SelectMany(x => x.Value.RequestBody?.ResolveIfRequired().Content.Values ?? [])
             .Select(x => x.Schema)
             .Concat(operations
-                .SelectMany(x => x.Value.Parameters)
+                .SelectMany(x => x.Value.Parameters ?? [])
                 .Select(x => x.ResolveIfRequired().Schema))
             .Concat(operations 
-                .SelectMany(x => x.Value.Responses.Values)
+                .SelectMany(x => x.Value.Responses?.Values ?? new Dictionary<string, OpenApiResponse>().Values)
                 .SelectMany(x => x.ResolveIfRequired().Content.Values)
                 .Select(x => x.Schema))
             .Where(x => x != null)
@@ -397,18 +401,18 @@ public static class OpenApiExtensions
         return operations
             .Select(x => x.Value.RequestBody?.Reference?.Id)
             .Concat(operations
-                .SelectMany(x => x.Value.Parameters)
+                .SelectMany(x => x.Value.Parameters ?? [])
                 .Select(x => x.Reference?.Id))
             .Concat(operations 
-                .SelectMany(x => x.Value.Responses.Values)
+                .SelectMany(x => x.Value.Responses?.Values ?? new Dictionary<string, OpenApiResponse>().Values)
                 .Select(x => x.Reference?.Id))
             .Concat(operations 
-                .SelectMany(x => x.Value.Responses.Values)
+                .SelectMany(x => x.Value.Responses?.Values ?? new Dictionary<string, OpenApiResponse>().Values)
                 .SelectMany(x => x.Content.Values)
                 .Where(x => x.Schema != null)
                 .Select(x => x.Schema!.Reference?.Id))
             .Concat(operations 
-                .SelectMany(x => x.Value.Responses.Values)
+                .SelectMany(x => x.Value.Responses?.Values ?? new Dictionary<string, OpenApiResponse>().Values)
                 .SelectMany(x => x.Content.Values)
                 .Where(x => x.Schema != null)
                 .Select(x => x.Schema!.Items?.Reference?.Id))
