@@ -178,11 +178,12 @@ public readonly record struct EndPoint(
             }
         }
         
+        var firstTag = (operation.Value.Tags ?? []).FirstOrDefault();
         var endPoint = new EndPoint(
             Id: id,
             Namespace: settings.Namespace,
-            ClassName: settings.GroupByTags
-                ? (operation.Value.Tags ?? []).FirstOrDefault()?.Name.ToClassName() + "Client" ?? settings.ClassName.Replace(".", string.Empty)
+            ClassName: settings.GroupByTags && firstTag != null
+                ? firstTag.Name.ToClassName() + "Client"
                 : settings.ClassName.Replace(".", string.Empty),
             BaseUrl: string.Empty,
             Stream: responses

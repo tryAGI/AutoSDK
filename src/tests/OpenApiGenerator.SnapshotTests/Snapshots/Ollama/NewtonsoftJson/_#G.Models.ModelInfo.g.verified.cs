@@ -50,6 +50,12 @@ namespace G
         public global::G.ModelDetails? Details { get; set; }
 
         /// <summary>
+        /// Details about a model.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("model_info")]
+        public global::G.ModelInformation? ModelInfo1 { get; set; }
+
+        /// <summary>
         /// The default messages for the model.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("messages")]
