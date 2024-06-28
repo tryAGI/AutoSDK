@@ -16,6 +16,7 @@ public class CliTests
     [DataRow("replicate.json")]
     //[DataRow("special-cases.yaml")]
     [DataRow("twitch.json")]
+    [DataRow("https://dedoose-rest-api.onrender.com/swagger/v1/swagger.json")]
     public async Task Run(string spec)
     {
         var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
@@ -29,7 +30,7 @@ public class CliTests
                 .WithArguments([
                     "run",
                     "--project", "src/libs/OpenApiGenerator.Cli",
-                    "generate", $"specs/{spec}",
+                    "generate", spec.StartsWith("http") ? spec : $"specs/{spec}",
                     "--output", tempDirectory,
                     "--namespace", "Oag",
                     // --json-serializer-type SystemTextJson --target-framework netstandard2.0 --generate-sdk

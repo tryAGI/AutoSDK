@@ -52,7 +52,10 @@ public class GenerateCommand : Command
         string clientClassName,
         bool generateAsSingleFile)
     {
-        var yaml = await File.ReadAllTextAsync(inputPath).ConfigureAwait(false);
+        using var client = new HttpClient();
+        var yaml = inputPath.StartsWith("http", StringComparison.OrdinalIgnoreCase)
+            ? await client.GetStringAsync(new Uri(inputPath)).ConfigureAwait(false)
+            : await File.ReadAllTextAsync(inputPath).ConfigureAwait(false);
         
         var name = Path.GetFileNameWithoutExtension(inputPath);
         
