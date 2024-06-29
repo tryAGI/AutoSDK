@@ -77,6 +77,7 @@
           CSharpType: global::G.ChatCompletionRequestMessageContentPartText,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: [
             type,
             text
@@ -107,6 +108,7 @@
           CSharpType: global::G.ChatCompletionRequestMessageContentPartImage,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: [
             type,
             image_url
@@ -147,6 +149,7 @@
           CSharpType: global::G.ChatCompletionRequestSystemMessage,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: [
             content,
             role,
@@ -178,6 +181,7 @@
           CSharpType: global::G.ChatCompletionRequestUserMessage,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: [
             content,
             role,
@@ -209,6 +213,7 @@
           CSharpType: global::G.ChatCompletionRequestAssistantMessage,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: [
             content,
             role,
@@ -242,6 +247,7 @@
           CSharpType: global::G.ChatCompletionRequestToolMessage,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: [
             role,
             content,
@@ -273,6 +279,7 @@
           CSharpType: global::G.ChatCompletionRequestFunctionMessage,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: [
             role,
             content,
@@ -322,6 +329,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
           CSharpType: global::G.ChatCompletionToolChoiceOptionVariant1,
           IsArray: false,
           IsEnum: true,
+          IsBase64: false,
           Properties: [
             None,
             Auto,
@@ -357,6 +365,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
           CSharpType: global::G.ChatCompletionNamedToolChoice,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: [
             type,
             function
@@ -403,6 +412,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           CSharpType: global::G.AssistantsApiResponseFormatOptionVariant1,
           IsArray: false,
           IsEnum: true,
+          IsBase64: false,
           Properties: [
             None,
             Auto
@@ -436,6 +446,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           CSharpType: global::G.AssistantsApiResponseFormat,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: [
             type
           ],
@@ -481,6 +492,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           CSharpType: global::G.AssistantsApiToolChoiceOptionVariant1,
           IsArray: false,
           IsEnum: true,
+          IsBase64: false,
           Properties: [
             None,
             Auto,
@@ -516,6 +528,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           CSharpType: global::G.AssistantsNamedToolChoice,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: [
             type,
             function
@@ -556,6 +569,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           CSharpType: global::G.AutoChunkingStrategyRequestParam,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: [
             type
           ],
@@ -585,6 +599,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           CSharpType: global::G.StaticChunkingStrategyRequestParam,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: [
             type,
             static
@@ -645,6 +660,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.ThreadStreamEvent,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           OneOfCount: 1,
           Properties: null,
           EnumValues: null,
@@ -673,6 +689,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.RunStreamEvent,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           OneOfCount: 10,
           Properties: null,
           EnumValues: null,
@@ -701,6 +718,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.RunStepStreamEvent,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           OneOfCount: 7,
           Properties: null,
           EnumValues: null,
@@ -729,6 +747,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.MessageStreamEvent,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           OneOfCount: 5,
           Properties: null,
           EnumValues: null,
@@ -757,6 +776,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.ErrorEvent,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: [
             event,
             data
@@ -787,6 +807,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.DoneEvent,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: [
             event,
             data
@@ -827,6 +848,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.ThreadStreamEventVariant1,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -864,6 +886,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.RunStreamEventVariant1,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -891,6 +914,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.RunStreamEventVariant2,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -918,6 +942,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.RunStreamEventVariant3,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -945,6 +970,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.RunStreamEventVariant4,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -972,6 +998,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.RunStreamEventVariant5,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -999,6 +1026,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.RunStreamEventVariant6,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1026,6 +1054,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.RunStreamEventVariant7,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1053,6 +1082,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.RunStreamEventVariant8,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1080,6 +1110,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.RunStreamEventVariant9,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1107,6 +1138,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.RunStreamEventVariant10,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1144,6 +1176,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.RunStepStreamEventVariant1,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1171,6 +1204,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.RunStepStreamEventVariant2,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1198,6 +1232,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.RunStepStreamEventVariant3,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1225,6 +1260,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.RunStepStreamEventVariant4,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1252,6 +1288,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.RunStepStreamEventVariant5,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1279,6 +1316,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.RunStepStreamEventVariant6,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1306,6 +1344,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.RunStepStreamEventVariant7,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1343,6 +1382,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.MessageStreamEventVariant1,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1370,6 +1410,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.MessageStreamEventVariant2,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1397,6 +1438,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.MessageStreamEventVariant3,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1424,6 +1466,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.MessageStreamEventVariant4,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1451,6 +1494,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.MessageStreamEventVariant5,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1488,6 +1532,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.FineTuneChatCompletionRequestAssistantMessageVariant1,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: null,
           EnumValues: null,
           Namespace: G,
@@ -1515,6 +1560,7 @@ integrate the Assistants API with streaming.
           CSharpType: global::G.ChatCompletionRequestAssistantMessage,
           IsArray: false,
           IsEnum: false,
+          IsBase64: false,
           Properties: [
             content,
             role,

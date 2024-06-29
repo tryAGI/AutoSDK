@@ -100,12 +100,18 @@ namespace {endPoint.Namespace}
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: {GetHttpMethod(endPoint.Settings.TargetFramework, endPoint.HttpMethod)},
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.GetLeftPart(global::System.UriPartial.Authority) + {endPoint.Path}, global::System.UriKind.RelativeOrAbsolute));
-{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : $@" 
+{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) || endPoint.RequestType.IsBase64 ? " " : $@" 
             var __json = {jsonSerializer.GenerateSerializeCall(endPoint.RequestType, endPoint.Settings.JsonSerializerContext)};
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: __json,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: ""application/json"");")}
+{(!endPoint.RequestType.IsBase64 ? " " : $@" 
+            var __base64 = global::System.Convert.ToBase64String(request);
+            httpRequest.Content = new global::System.Net.Http.StringContent(
+                content: __base64,
+                encoding: global::System.Text.Encoding.UTF8,
+                mediaType: ""application/octet-stream"");")}
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
@@ -149,7 +155,8 @@ namespace {endPoint.Namespace}
     {
         if (string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ||
             endPoint.RequestType.IsArray ||
-            endPoint.RequestType.IsEnum)
+            endPoint.RequestType.IsEnum ||
+            endPoint.RequestType.IsBase64)
         {
             return " ";
         }

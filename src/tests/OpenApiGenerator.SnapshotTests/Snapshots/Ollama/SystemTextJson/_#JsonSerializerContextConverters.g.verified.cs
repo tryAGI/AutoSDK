@@ -9,7 +9,7 @@ namespace G
     /// </summary>
     internal sealed partial class JsonSerializerContextConverters
     {
-        private readonly global::System.Type[] _types = new[]
+        private readonly global::System.Type[] _types = new global::System.Type[]
         {
             typeof(global::OpenApiGenerator.JsonConverters.ResponseFormatJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.ResponseFormatNullableJsonConverter),

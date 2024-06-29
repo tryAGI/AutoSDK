@@ -23,7 +23,7 @@ namespace {endPoint.Namespace}
     {string.Empty.ToXmlDocumentationSummary(level: 4)}
     internal sealed partial class JsonSerializerContextConverters
     {{
-        private readonly global::System.Type[] _types = new[]
+        private readonly global::System.Type[] _types = new global::System.Type[]
         {{
 {endPoint.Converters.Select(x => $@" 
             typeof({x}),

@@ -249,6 +249,14 @@ public static class OpenApiExtensions
 
         return schema.Type == "string" && schema.Enum.Any();
     }
+    
+    public static bool IsBase64(
+        this OpenApiSchema schema)
+    {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+
+        return schema.Type == "string" && schema.Format == "byte";
+    }
 
     public static bool IsComponent(
         this KeyValuePair<string, OpenApiSchema> schema)

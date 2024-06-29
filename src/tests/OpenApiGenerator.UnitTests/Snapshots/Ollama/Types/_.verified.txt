@@ -3,6 +3,7 @@
     CSharpType: string,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
@@ -19,6 +20,7 @@
     CSharpType: global::System.Collections.Generic.IList<string?>?,
     IsArray: true,
     IsEnum: false,
+    IsBase64: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
@@ -35,6 +37,7 @@
     CSharpType: global::System.Collections.Generic.IList<long>?,
     IsArray: true,
     IsEnum: false,
+    IsBase64: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
@@ -51,6 +54,7 @@
     CSharpType: global::G.RequestOptions?,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: [
       num_keep,
       seed,
@@ -97,6 +101,7 @@
     CSharpType: global::G.ResponseFormat?,
     IsArray: false,
     IsEnum: true,
+    IsBase64: false,
     Properties: [
       Json
     ],
@@ -117,6 +122,7 @@
     CSharpType: bool,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
@@ -133,6 +139,7 @@
     CSharpType: int?,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
@@ -149,6 +156,7 @@
     CSharpType: float?,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
@@ -165,6 +173,7 @@
     CSharpType: global::System.DateTime,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
@@ -181,6 +190,7 @@
     CSharpType: long,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
@@ -197,6 +207,7 @@
     CSharpType: global::System.Collections.Generic.IList<global::G.Message>,
     IsArray: true,
     IsEnum: false,
+    IsBase64: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
@@ -213,6 +224,7 @@
     CSharpType: global::G.Message?,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: [
       role,
       content,
@@ -233,6 +245,7 @@
     CSharpType: global::System.AnyOf<string?, global::G.GenerateChatCompletionResponseDoneReason?>?,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     AnyOfCount: 2,
     Properties: null,
     EnumValues: null,
@@ -250,6 +263,7 @@
     CSharpType: global::G.MessageRole,
     IsArray: false,
     IsEnum: true,
+    IsBase64: false,
     Properties: [
       System,
       User,
@@ -274,6 +288,7 @@
     CSharpType: global::System.Collections.Generic.IList<double>?,
     IsArray: true,
     IsEnum: false,
+    IsBase64: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
@@ -290,6 +305,7 @@
     CSharpType: global::System.AnyOf<string?, global::G.CreateModelResponseStatus?>?,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     AnyOfCount: 2,
     Properties: null,
     EnumValues: null,
@@ -307,6 +323,7 @@
     CSharpType: global::System.Collections.Generic.IList<global::G.Model>?,
     IsArray: true,
     IsEnum: false,
+    IsBase64: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
@@ -323,6 +340,7 @@
     CSharpType: global::G.ModelDetails?,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: [
       parent_model,
       format,
@@ -346,6 +364,7 @@
     CSharpType: global::System.Collections.Generic.IList<global::G.ProcessModel>?,
     IsArray: true,
     IsEnum: false,
+    IsBase64: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
@@ -362,6 +381,7 @@
     CSharpType: global::G.ModelInformation?,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: [
       general.architecture,
       general.file_type,
@@ -383,6 +403,7 @@
     CSharpType: global::System.AnyOf<string?, global::G.PullModelResponseStatus?>?,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     AnyOfCount: 2,
     Properties: null,
     EnumValues: null,
@@ -400,6 +421,7 @@
     CSharpType: global::System.AnyOf<string?, global::G.PushModelResponseStatus?>?,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     AnyOfCount: 2,
     Properties: null,
     EnumValues: null,
@@ -417,6 +439,7 @@
     CSharpType: global::G.VersionResponse,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: [
       version
     ],
@@ -435,6 +458,7 @@
     CSharpType: global::G.GenerateCompletionRequest,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: [
       model,
       prompt,
@@ -463,6 +487,7 @@
     CSharpType: global::G.GenerateCompletionResponse,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: [
       model,
       created_at,
@@ -491,6 +516,7 @@
     CSharpType: global::G.GenerateChatCompletionRequest,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: [
       model,
       messages,
@@ -514,6 +540,7 @@
     CSharpType: global::G.GenerateChatCompletionResponse,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: [
       message,
       model,
@@ -542,6 +569,7 @@
     CSharpType: global::G.GenerateEmbeddingRequest,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: [
       model,
       prompt,
@@ -563,6 +591,7 @@
     CSharpType: global::G.GenerateEmbeddingResponse,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: [
       embedding
     ],
@@ -581,6 +610,7 @@
     CSharpType: global::G.CreateModelRequest,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: [
       model,
       modelfile,
@@ -603,6 +633,7 @@
     CSharpType: global::G.CreateModelResponse,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: [
       status
     ],
@@ -621,6 +652,7 @@
     CSharpType: global::G.ModelsResponse,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: [
       models
     ],
@@ -639,6 +671,7 @@
     CSharpType: global::G.ProcessResponse,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: [
       models
     ],
@@ -657,6 +690,7 @@
     CSharpType: global::G.ModelInfoRequest,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: [
       model
     ],
@@ -675,6 +709,7 @@
     CSharpType: global::G.ModelInfo,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: [
       license,
       modelfile,
@@ -700,6 +735,7 @@
     CSharpType: global::G.CopyModelRequest,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: [
       source,
       destination
@@ -719,6 +755,7 @@
     CSharpType: global::G.DeleteModelRequest,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: [
       model
     ],
@@ -737,6 +774,7 @@
     CSharpType: global::G.PullModelRequest,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: [
       model,
       insecure,
@@ -759,6 +797,7 @@
     CSharpType: global::G.PullModelResponse,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: [
       status,
       digest,
@@ -780,6 +819,7 @@
     CSharpType: global::G.PushModelRequest,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: [
       model,
       insecure,
@@ -802,6 +842,7 @@
     CSharpType: global::G.PushModelResponse,
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: [
       status,
       digest,
@@ -823,6 +864,7 @@
     CSharpType: byte[],
     IsArray: false,
     IsEnum: false,
+    IsBase64: false,
     Properties: null,
     EnumValues: null,
     Namespace: G,
