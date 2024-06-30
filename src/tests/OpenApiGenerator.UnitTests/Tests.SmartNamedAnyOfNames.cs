@@ -14,6 +14,13 @@ public partial class Tests
     }
     
     [TestMethod]
+    public void DateTimeParameterSerialization_Valid()
+    {
+        $"{new DateTime(year: 2022, 1, 1):yyyy-MM-dd}".Should().Be("2022-01-01");
+        $"{new DateTime(year: 2022, 1, 1):yyyy-MM-ddTHH:mm:ssZ}".Should().Be("2022-01-01T00:00:00Z");
+    }
+    
+    [TestMethod]
     public void Url_Concat()
     {
         var baseUri = new Uri("https://localhost:7293");

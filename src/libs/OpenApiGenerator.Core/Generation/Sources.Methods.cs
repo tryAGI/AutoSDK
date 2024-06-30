@@ -106,7 +106,7 @@ namespace {endPoint.Namespace}
                 content: __json,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: ""application/json"");")}
-{(!endPoint.RequestType.IsBase64 ? " " : $@" 
+{(!endPoint.RequestType.IsBase64 ? " " : @" 
             var __base64 = global::System.Convert.ToBase64String(request);
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: __base64,

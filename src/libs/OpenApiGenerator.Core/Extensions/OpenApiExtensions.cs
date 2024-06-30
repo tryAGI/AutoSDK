@@ -257,6 +257,22 @@ public static class OpenApiExtensions
 
         return schema.Type == "string" && schema.Format == "byte";
     }
+    
+    public static bool IsDate(
+        this OpenApiSchema schema)
+    {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+
+        return schema.Type == "string" && schema.Format == "date";
+    }
+    
+    public static bool IsDateTime(
+        this OpenApiSchema schema)
+    {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+
+        return schema.Type == "string" && schema.Format == "date-time";
+    }
 
     public static bool IsComponent(
         this KeyValuePair<string, OpenApiSchema> schema)

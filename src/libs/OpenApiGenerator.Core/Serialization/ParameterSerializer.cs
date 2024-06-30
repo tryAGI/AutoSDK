@@ -80,6 +80,15 @@ public static class ParameterSerializer
             }
         }
         
+        if (parameter.Type.IsDate)
+        {
+            return $"{parameter.Id}={{{parameter.ArgumentName}:yyyy-MM-dd)}}";
+        }
+        if (parameter.Type.IsDateTime)
+        {
+            return $"{parameter.Id}={{{parameter.ArgumentName}:yyyy-MM-ddTHH:mm:ssZ)}}";
+        }
+        
         return $"{parameter.Id}={{{parameter.ArgumentName}}}";
     }
 }
