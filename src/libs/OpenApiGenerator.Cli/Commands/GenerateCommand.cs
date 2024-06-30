@@ -18,6 +18,10 @@ public class GenerateCommand : Command
             aliases: ["--output", "-o"],
             getDefaultValue: () => string.Empty,
             description: "Output file path");
+        var targetFrameworkOption = new Option<string>(
+            aliases: ["--targetFramework", "-t"],
+            getDefaultValue: () =>  "netstandard2.0",
+            description: "TargetFramework for the generated code");
         var namespaceOption = new Option<string>(
             aliases: ["--namespace", "-n"],
             getDefaultValue: () => string.Empty,
@@ -32,6 +36,7 @@ public class GenerateCommand : Command
             description: "Generate all models in a single file");
         AddArgument(inputOption);
         AddOption(outputOption);
+        AddOption(targetFrameworkOption);
         AddOption(namespaceOption);
         AddOption(clientClassNameOption);
         AddOption(singleFileOption);
@@ -40,6 +45,7 @@ public class GenerateCommand : Command
             HandleAsync,
             inputOption,
             outputOption,
+            targetFrameworkOption,
             namespaceOption,
             clientClassNameOption,
             singleFileOption);
@@ -48,6 +54,7 @@ public class GenerateCommand : Command
     private static async Task HandleAsync(
         string inputPath,
         string outputPath,
+        string targetFramework,
         string @namespace,
         string clientClassName,
         bool generateAsSingleFile)
@@ -69,7 +76,7 @@ public class GenerateCommand : Command
         }
         
         var settings = new Settings(
-            TargetFramework: "netstandard2.0",
+            TargetFramework: targetFramework,
             Namespace: @namespace,
             ClassName: clientClassName,
             NamingConvention: default,
