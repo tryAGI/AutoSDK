@@ -56,7 +56,7 @@ public static class OptionsExtensions
             ExcludeModels: (options.GetGlobalOption(nameof(Settings.ExcludeModels), prefix)?.Split(';') ??
                             []).ToImmutableArray(),
             
-            GeneratePolyfills: options.GetBoolGlobalOption(nameof(Settings.GeneratePolyfills), prefix),
+            GeneratePolyfills: options.GetBoolGlobalOption(nameof(Settings.GeneratePolyfills), prefix, defaultValue: true),
             
             GenerateSdk: options.GetBoolGlobalOption(nameof(Settings.GenerateSdk), prefix, defaultValue: true),
             FromCli: false);
