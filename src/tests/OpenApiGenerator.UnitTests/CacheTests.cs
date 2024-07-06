@@ -31,6 +31,7 @@ public class CacheTests
         ModelStyle: default,
         IncludeModels: ImmutableArray.Create(["123", "456"]),
         ExcludeModels: [],
+        GeneratePolyfills: true,
         GenerateSdk: true,
         FromCli: false
     );

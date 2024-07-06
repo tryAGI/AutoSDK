@@ -24,6 +24,7 @@
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -227,6 +228,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -388,6 +390,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -574,6 +577,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -735,6 +739,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -969,6 +974,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -1130,6 +1136,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -1296,6 +1303,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -1397,6 +1405,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -1527,6 +1536,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -1657,6 +1667,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -1877,6 +1888,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2007,6 +2019,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2173,6 +2186,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2274,6 +2288,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2494,6 +2509,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2624,6 +2640,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2844,6 +2861,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2974,6 +2992,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3140,6 +3159,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3241,6 +3261,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3371,6 +3392,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3591,6 +3613,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3721,6 +3744,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3887,6 +3911,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3988,6 +4013,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4148,6 +4174,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4278,6 +4305,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4498,6 +4526,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4628,6 +4657,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4794,6 +4824,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4895,6 +4926,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4995,6 +5027,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -5311,6 +5344,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -5412,6 +5446,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },

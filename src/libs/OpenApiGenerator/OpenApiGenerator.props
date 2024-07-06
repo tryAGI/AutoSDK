@@ -63,6 +63,9 @@
     <!-- List of ids separated by ;. Default: Empty -->
     <CompilerVisibleProperty Include="OpenApiGenerator_ExcludeModels"/>
     
+    <!-- true/false. Default: true -->
+    <CompilerVisibleProperty Include="OpenApiGenerator_GeneratePolyfills"/>
+    
     <!-- Generates full sdk(all methods/models) -->
     <!-- true/false. Default: true -->
     <CompilerVisibleProperty Include="OpenApiGenerator_GenerateSdk"/>

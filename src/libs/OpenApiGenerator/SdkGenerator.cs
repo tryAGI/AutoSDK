@@ -18,6 +18,10 @@ public class SdkGenerator : IIncrementalGenerator
     public void Initialize(IncrementalGeneratorInitializationContext context)
     {
         var settings = context.DetectSettings();
+        settings
+            .SelectAndReportExceptions((x, c) => Sources.Polyfills(x, c)
+                .AsFileWithName(), context, Id)
+            .AddSource(context);
         
         var data = context.AdditionalTextsProvider
             .Where(static text => text.Path.EndsWith(".yaml", StringComparison.InvariantCultureIgnoreCase) ||

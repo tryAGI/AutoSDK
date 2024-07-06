@@ -51,6 +51,7 @@ The response will be a JSON object describing the account:
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -175,6 +176,7 @@ The response will be a paginated JSON list of collection objects:
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -308,6 +310,7 @@ The response will be a collection object with a nested list of the models in tha
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -430,6 +433,7 @@ The response will be a paginated JSON array of deployment objects, sorted with t
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -758,6 +762,7 @@ The response will be a JSON object describing the deployment:
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -961,6 +966,7 @@ The response will be an empty 204, indicating the deployment has been deleted.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -1144,6 +1150,7 @@ The response will be a JSON object describing the deployment:
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -1473,6 +1480,7 @@ Updating any deployment properties will increment the `number` field of the `cur
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -1872,6 +1880,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2001,6 +2010,7 @@ The response will be a JSON array of hardware objects:
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2143,6 +2153,7 @@ The `cover_image_url` string is an HTTPS URL for an image file. This can be:
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2532,6 +2543,7 @@ The response will be a model object in the following format:
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2718,6 +2730,7 @@ The response will be an empty 204, indicating the model has been deleted.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2903,6 +2916,7 @@ The `latest_version` object is the model's most recently pushed [version](#model
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3263,6 +3277,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3465,6 +3480,7 @@ The response will be a JSON array of model version objects, sorted with the most
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3667,6 +3683,7 @@ The response will be an empty 202, indicating the deletion request has been acce
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3899,6 +3916,7 @@ For more details, see the docs on [Cog's supported input and output types](https
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4277,6 +4295,7 @@ To find some models to train on, check out the [trainable language models collec
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4442,6 +4461,7 @@ The response will be a paginated JSON array of prediction objects, sorted with t
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4768,6 +4788,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4969,6 +4990,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -5083,6 +5105,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -5219,6 +5242,7 @@ The response will be a paginated JSON array of training objects, sorted with the
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -5387,6 +5411,7 @@ Terminated trainings (with a status of `succeeded`, `failed`, or `canceled`) wil
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -5501,6 +5526,7 @@ Terminated trainings (with a status of `succeeded`, `failed`, or `canceled`) wil
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -5599,6 +5625,7 @@ The response will be a JSON object with a `key` property:
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -5698,6 +5725,7 @@ The response will be a JSON object with a `key` property:
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },

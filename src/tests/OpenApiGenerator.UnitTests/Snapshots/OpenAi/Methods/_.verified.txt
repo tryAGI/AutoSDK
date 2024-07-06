@@ -784,6 +784,7 @@ A list of functions the model may generate JSON inputs for.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -1601,6 +1602,7 @@ Example: user-1234,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2074,6 +2076,7 @@ Example: user-1234,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2493,6 +2496,7 @@ Example: user-1234,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2850,6 +2854,7 @@ Example: user-1234,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3162,6 +3167,7 @@ Example: user-1234,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3490,6 +3496,7 @@ Default Value: 1,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3865,6 +3872,7 @@ Default Value: [segment],
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4168,6 +4176,7 @@ Default Value: 0,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4333,6 +4342,7 @@ Default Value: 0,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4525,6 +4535,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4701,6 +4712,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4841,6 +4853,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4991,6 +5004,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -5343,6 +5357,7 @@ Response includes details of the enqueued job including job status and the name 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -5582,6 +5597,7 @@ List your organization's fine-tuning jobs
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -5726,6 +5742,7 @@ Get info about a fine-tuning job.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -5963,6 +5980,7 @@ Get status updates for a fine-tuning job.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -6104,6 +6122,7 @@ Immediately cancel a fine-tune job.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -6341,6 +6360,7 @@ List checkpoints for a fine-tuning job.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -6451,6 +6471,7 @@ List checkpoints for a fine-tuning job.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -6589,6 +6610,7 @@ List checkpoints for a fine-tuning job.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -6732,6 +6754,7 @@ List checkpoints for a fine-tuning job.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -6909,6 +6932,7 @@ Example: text-moderation-stable,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -7181,6 +7205,7 @@ Example: text-moderation-stable,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -7631,6 +7656,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -7832,6 +7858,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -8330,6 +8357,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -8532,6 +8560,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -8735,6 +8764,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -8906,6 +8936,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -9116,6 +9147,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -9286,6 +9318,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -9599,6 +9632,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -9878,6 +9912,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -10102,6 +10137,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -10331,6 +10367,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -10550,6 +10587,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -11185,6 +11223,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -11566,6 +11605,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -12232,6 +12272,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -12506,6 +12547,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -12761,6 +12803,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -13070,6 +13113,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -13317,6 +13361,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -13678,6 +13723,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -13888,6 +13934,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -14161,6 +14208,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -14431,6 +14479,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -14618,6 +14667,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -14871,6 +14921,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -15055,6 +15106,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -15378,6 +15430,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -15584,6 +15637,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -15792,6 +15846,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -15976,6 +16031,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -16178,6 +16234,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -16382,6 +16439,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -16562,6 +16620,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -16924,6 +16983,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -17175,6 +17235,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -17402,6 +17463,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -17546,6 +17608,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -17721,6 +17784,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -18222,6 +18286,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -18730,6 +18795,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -18808,6 +18874,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -18886,6 +18953,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -18964,6 +19032,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -19042,6 +19111,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -19120,6 +19190,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -19198,6 +19269,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -19276,6 +19348,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -19354,6 +19427,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -19432,6 +19506,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -19510,6 +19585,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -19588,6 +19664,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },

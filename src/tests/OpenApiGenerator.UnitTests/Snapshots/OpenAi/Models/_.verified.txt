@@ -23,6 +23,7 @@
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -182,6 +183,7 @@
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -256,6 +258,7 @@
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -359,6 +362,7 @@
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -429,6 +433,7 @@
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -558,6 +563,7 @@
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -1233,6 +1239,7 @@ Example: user-1234,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -1363,6 +1370,7 @@ Example: user-1234,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -1626,6 +1634,7 @@ Represents a completion response from the API. Note: both the streamed and non-s
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -1797,6 +1806,7 @@ or `content_filter` if content was omitted due to a flag from our content filter
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -1956,6 +1966,7 @@ or `content_filter` if content was omitted due to a flag from our content filter
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2090,6 +2101,7 @@ or `content_filter` if content was omitted due to a flag from our content filter
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2160,6 +2172,7 @@ or `content_filter` if content was omitted due to a flag from our content filter
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2263,6 +2276,7 @@ or `content_filter` if content was omitted due to a flag from our content filter
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2373,6 +2387,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2505,6 +2520,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2575,6 +2591,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2678,6 +2695,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2748,6 +2766,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2881,6 +2900,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2951,6 +2971,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3087,6 +3108,7 @@ The contents of the user message.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3157,6 +3179,7 @@ The contents of the user message.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3352,6 +3375,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3451,6 +3475,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3521,6 +3546,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3590,6 +3616,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3723,6 +3750,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3793,6 +3821,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3926,6 +3955,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3996,6 +4026,7 @@ The contents of the assistant message. Required unless `tool_calls` or `function
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4037,6 +4068,7 @@ Omitting `parameters` defines a function with an empty parameter list.,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4169,6 +4201,7 @@ Omitting `parameters` defines a function with an empty parameter list.,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4240,6 +4273,7 @@ Specifying a particular function via `{"name": "my_function"}` forces the model 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4347,6 +4381,7 @@ Specifying a particular function via `{"name": "my_function"}` forces the model 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4417,6 +4452,7 @@ Specifying a particular function via `{"name": "my_function"}` forces the model 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4549,6 +4585,7 @@ Omitting `parameters` defines a function with an empty parameter list.,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4681,6 +4718,7 @@ Omitting `parameters` defines a function with an empty parameter list.,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4784,6 +4822,7 @@ Omitting `parameters` defines a function with an empty parameter list.,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4853,6 +4892,7 @@ Omitting `parameters` defines a function with an empty parameter list.,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -4923,6 +4963,7 @@ Omitting `parameters` defines a function with an empty parameter list.,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -5056,6 +5097,7 @@ Omitting `parameters` defines a function with an empty parameter list.,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -5155,6 +5197,7 @@ Omitting `parameters` defines a function with an empty parameter list.,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -5225,6 +5268,7 @@ Omitting `parameters` defines a function with an empty parameter list.,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -5388,6 +5432,7 @@ Omitting `parameters` defines a function with an empty parameter list.,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -5487,6 +5532,7 @@ Omitting `parameters` defines a function with an empty parameter list.,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -5557,6 +5603,7 @@ Omitting `parameters` defines a function with an empty parameter list.,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -5747,6 +5794,7 @@ Omitting `parameters` defines a function with an empty parameter list.,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -5820,6 +5868,7 @@ Options for streaming response. Only set this when you set `stream: true`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -5983,6 +6032,7 @@ Options for streaming response. Only set this when you set `stream: true`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -6082,6 +6132,7 @@ Options for streaming response. Only set this when you set `stream: true`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -6152,6 +6203,7 @@ Options for streaming response. Only set this when you set `stream: true`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -6321,6 +6373,7 @@ Options for streaming response. Only set this when you set `stream: true`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -6420,6 +6473,7 @@ Options for streaming response. Only set this when you set `stream: true`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -6580,6 +6634,7 @@ Options for streaming response. Only set this when you set `stream: true`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -7373,6 +7428,7 @@ A list of functions the model may generate JSON inputs for.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -7458,6 +7514,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -7561,6 +7618,7 @@ Example: json_object,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -8231,6 +8289,7 @@ Example: json_object,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -8363,6 +8422,7 @@ Example: json_object,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -8465,6 +8525,7 @@ Example: json_object,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -8726,6 +8787,7 @@ Can be used in conjunction with the `seed` request parameter to understand when 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -8907,6 +8969,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -8976,6 +9039,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -9171,6 +9235,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -9241,6 +9306,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -9502,6 +9568,7 @@ Can be used in conjunction with the `seed` request parameter to understand when 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -9648,6 +9715,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -9810,6 +9878,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -9880,6 +9949,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -10039,6 +10109,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -10168,6 +10239,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -10301,6 +10373,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -10371,6 +10444,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -10633,6 +10707,7 @@ When present, it contains a null value except for the last chunk which contains 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -10765,6 +10840,7 @@ When present, it contains a null value except for the last chunk which contains 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -10946,6 +11022,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -11015,6 +11092,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -11210,6 +11288,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -11280,6 +11359,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -11318,6 +11398,7 @@ The reason the model stopped generating tokens. This will be `stop` if the model
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -11657,6 +11738,7 @@ Example: user-1234,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -11760,6 +11842,7 @@ Example: standard,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -11863,6 +11946,7 @@ Example: url,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -12056,6 +12140,7 @@ Example: 1024x1024,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -12159,6 +12244,7 @@ Example: vivid,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -12259,6 +12345,7 @@ Example: vivid,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -12358,6 +12445,7 @@ Example: vivid,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -12487,6 +12575,7 @@ Example: vivid,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -12802,6 +12891,7 @@ Example: user-1234,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -12935,6 +13025,7 @@ Example: 1024x1024,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -13038,6 +13129,7 @@ Example: url,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -13108,6 +13200,7 @@ Example: url,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -13361,6 +13454,7 @@ Example: user-1234,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -13464,6 +13558,7 @@ Example: url,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -13597,6 +13692,7 @@ Example: 1024x1024,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -13667,6 +13763,7 @@ Example: 1024x1024,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -13775,6 +13872,7 @@ Example: text-moderation-stable,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -13875,6 +13973,7 @@ Example: text-moderation-stable,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -14004,6 +14103,7 @@ Example: text-moderation-stable,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -14133,6 +14233,7 @@ Example: text-moderation-stable,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -14502,6 +14603,7 @@ Example: text-moderation-stable,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -14871,6 +14973,7 @@ Example: text-moderation-stable,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -14974,6 +15077,7 @@ Example: text-moderation-stable,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -15044,6 +15148,7 @@ Example: text-moderation-stable,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -15159,6 +15264,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -15323,6 +15429,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -15456,6 +15563,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -15526,6 +15634,7 @@ Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -15811,6 +15920,7 @@ Example: 42,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -15958,6 +16068,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -16028,6 +16139,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -16098,6 +16210,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -16168,6 +16281,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -16274,6 +16388,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -16448,6 +16563,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -16518,6 +16634,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -16648,6 +16765,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -16751,6 +16869,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -16821,6 +16940,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -17014,6 +17134,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -17084,6 +17205,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -17296,6 +17418,7 @@ Example: user-1234,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -17399,6 +17522,7 @@ Example: float,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -17529,6 +17653,7 @@ Example: float,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -17692,6 +17817,7 @@ Example: float,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -17791,6 +17917,7 @@ Example: float,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -17861,6 +17988,7 @@ Example: float,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -18144,6 +18272,7 @@ Default Value: [segment],
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -18337,6 +18466,7 @@ Default Value: json,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -18437,6 +18567,7 @@ Default Value: json,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -18507,6 +18638,7 @@ Default Value: json,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -18576,6 +18708,7 @@ Default Value: json,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -18915,6 +19048,7 @@ Default Value: json,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -19044,6 +19178,7 @@ Default Value: json,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -19233,6 +19368,7 @@ Default Value: json,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -19438,6 +19574,7 @@ Default Value: 0,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -19508,6 +19645,7 @@ Default Value: 0,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -19577,6 +19715,7 @@ Default Value: 0,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -19736,6 +19875,7 @@ Default Value: 0,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -19962,6 +20102,7 @@ Default Value: 1,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -20182,6 +20323,7 @@ Default Value: 1,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -20404,6 +20546,7 @@ Default Value: mp3,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -20504,6 +20647,7 @@ Default Value: mp3,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -20667,6 +20811,7 @@ Default Value: mp3,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -20737,6 +20882,7 @@ Default Value: mp3,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -21044,6 +21190,7 @@ Default Value: mp3,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -21114,6 +21261,7 @@ Default Value: mp3,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -21364,6 +21512,7 @@ Default Value: mp3,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -21494,6 +21643,7 @@ Default Value: mp3,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -21631,6 +21781,7 @@ Represents an embedding vector returned by embedding endpoint.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -21701,6 +21852,7 @@ Represents an embedding vector returned by embedding endpoint.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -22270,6 +22422,7 @@ The `fine_tuning.job` object represents a fine-tuning job that has been created 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -22399,6 +22552,7 @@ The `fine_tuning.job` object represents a fine-tuning job that has been created 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -22473,6 +22627,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -22543,6 +22698,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -22613,6 +22769,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -22833,6 +22990,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -22940,6 +23098,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -23114,6 +23273,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -23184,6 +23344,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -23385,6 +23546,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -23515,6 +23677,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -23585,6 +23748,7 @@ to your run, and set a default entity (team, username, etc) to be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -23840,6 +24004,7 @@ The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -24089,6 +24254,7 @@ The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -24159,6 +24325,7 @@ The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -24318,6 +24485,7 @@ The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -24417,6 +24585,7 @@ The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -24546,6 +24715,7 @@ The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -24675,6 +24845,7 @@ The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -24804,6 +24975,7 @@ The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -24906,6 +25078,7 @@ The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -24987,6 +25160,7 @@ An object describing the expected output of the model. If `json_object` only `fu
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -25090,6 +25264,7 @@ Example: json_object,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -25558,6 +25733,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -25659,6 +25835,7 @@ A set of resources that are used by the assistant's tools. The resources are spe
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -25732,6 +25909,7 @@ Default Value: [],
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -25803,6 +25981,7 @@ The ID of the [vector store](/docs/api-reference/vector-stores/object) attached 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -25873,6 +26052,7 @@ The ID of the [vector store](/docs/api-reference/vector-stores/object) attached 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -25975,6 +26155,7 @@ The ID of the [vector store](/docs/api-reference/vector-stores/object) attached 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -26352,6 +26533,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -26454,6 +26636,7 @@ A set of resources that are used by the assistant's tools. The resources are spe
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -26527,6 +26710,7 @@ Default Value: [],
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -26630,6 +26814,7 @@ A helper to create a [vector store](/docs/api-reference/vector-stores/object) wi
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -26766,6 +26951,7 @@ Set of 16 key-value pairs that can be attached to a vector store. This can be us
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -26804,6 +26990,7 @@ Set of 16 key-value pairs that can be attached to a vector store. This can be us
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -26874,6 +27061,7 @@ Set of 16 key-value pairs that can be attached to a vector store. This can be us
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -26977,6 +27165,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -27617,6 +27806,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -27719,6 +27909,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -28095,6 +28286,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -28196,6 +28388,7 @@ A set of resources that are used by the assistant's tools. The resources are spe
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -28269,6 +28462,7 @@ Default Value: [],
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -28340,6 +28534,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -28442,6 +28637,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -28575,6 +28771,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -28645,6 +28842,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -28834,6 +29032,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -28907,6 +29106,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -28977,6 +29177,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -29080,6 +29281,7 @@ Overrides the [vector store](/docs/api-reference/vector-stores/object) attached 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -29153,6 +29355,7 @@ Note that the file search tool may output fewer than `max_num_results` results. 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -29223,6 +29426,7 @@ Note that the file search tool may output fewer than `max_num_results` results. 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -29296,6 +29500,7 @@ Note that the file search tool may output fewer than `max_num_results` results. 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -29366,6 +29571,7 @@ Note that the file search tool may output fewer than `max_num_results` results. 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -29473,6 +29679,7 @@ Note that the file search tool may output fewer than `max_num_results` results. 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -29543,6 +29750,7 @@ Note that the file search tool may output fewer than `max_num_results` results. 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -29648,6 +29856,7 @@ Note that the file search tool may output fewer than `max_num_results` results. 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -29748,6 +29957,7 @@ Note that the file search tool may output fewer than `max_num_results` results. 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -29880,6 +30090,7 @@ Note that the file search tool may output fewer than `max_num_results` results. 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -29987,6 +30198,7 @@ Note that the file search tool may output fewer than `max_num_results` results. 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -30056,6 +30268,7 @@ Note that the file search tool may output fewer than `max_num_results` results. 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -30186,6 +30399,7 @@ Note that the file search tool may output fewer than `max_num_results` results. 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -31090,6 +31304,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -31193,6 +31408,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -31262,6 +31478,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -31332,6 +31549,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -31439,6 +31657,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -31569,6 +31788,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -31644,6 +31864,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -31744,6 +31965,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -31814,6 +32036,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -32124,6 +32347,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -32256,6 +32480,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -32358,6 +32583,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -32918,6 +33144,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -33558,6 +33785,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -33690,6 +33918,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -33792,6 +34021,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -33981,6 +34211,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -34053,6 +34284,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -34154,6 +34386,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -34253,6 +34486,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -34386,6 +34620,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -34485,6 +34720,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -34555,6 +34791,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -35121,6 +35358,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -35222,6 +35460,7 @@ A set of resources that are used by the assistant's tools. The resources are spe
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -35295,6 +35534,7 @@ Default Value: [],
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -35366,6 +35606,7 @@ The ID of the [vector store](/docs/api-reference/vector-stores/object) attached 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -36006,6 +36247,7 @@ The ID of the [vector store](/docs/api-reference/vector-stores/object) attached 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -36138,6 +36380,7 @@ The ID of the [vector store](/docs/api-reference/vector-stores/object) attached 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -36240,6 +36483,7 @@ The ID of the [vector store](/docs/api-reference/vector-stores/object) attached 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -36438,6 +36682,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -36539,6 +36784,7 @@ A set of resources that are made available to the assistant's tools in this thre
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -36612,6 +36858,7 @@ Default Value: [],
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -36683,6 +36930,7 @@ The [vector store](/docs/api-reference/vector-stores/object) attached to this th
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -36753,6 +37001,7 @@ The [vector store](/docs/api-reference/vector-stores/object) attached to this th
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -36887,6 +37136,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -36989,6 +37239,7 @@ A set of resources that are made available to the assistant's tools in this thre
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -37062,6 +37313,7 @@ Default Value: [],
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -37165,6 +37417,7 @@ A helper to create a [vector store](/docs/api-reference/vector-stores/object) wi
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -37301,6 +37554,7 @@ Set of 16 key-value pairs that can be attached to a vector store. This can be us
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -37339,6 +37593,7 @@ Set of 16 key-value pairs that can be attached to a vector store. This can be us
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -37409,6 +37664,7 @@ Set of 16 key-value pairs that can be attached to a vector store. This can be us
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -37512,6 +37768,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -37616,6 +37873,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -37717,6 +37975,7 @@ A set of resources that are made available to the assistant's tools in this thre
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -37790,6 +38049,7 @@ Default Value: [],
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -37861,6 +38121,7 @@ The [vector store](/docs/api-reference/vector-stores/object) attached to this th
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -37994,6 +38255,7 @@ The [vector store](/docs/api-reference/vector-stores/object) attached to this th
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -38064,6 +38326,7 @@ The [vector store](/docs/api-reference/vector-stores/object) attached to this th
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -38253,6 +38516,7 @@ The [vector store](/docs/api-reference/vector-stores/object) attached to this th
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -38733,6 +38997,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -38814,6 +39079,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -39004,6 +39270,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -39103,6 +39370,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -39173,6 +39441,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -39303,6 +39572,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -39403,6 +39673,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -39538,6 +39809,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -39643,6 +39915,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -39743,6 +40016,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -39813,6 +40087,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -39986,6 +40261,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -40085,6 +40361,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -40189,6 +40466,7 @@ The role of the entity that is creating the message. Allowed values include:
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -40261,6 +40539,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -40394,6 +40673,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -40464,6 +40744,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -40653,6 +40934,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -40756,6 +41038,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -40866,6 +41149,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -40998,6 +41282,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -41068,6 +41353,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -41201,6 +41487,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -41311,6 +41598,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -41443,6 +41731,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -41513,6 +41802,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -41616,6 +41906,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -41726,6 +42017,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -41858,6 +42150,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -41928,6 +42221,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -42061,6 +42355,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -42171,6 +42466,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -42303,6 +42599,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -42373,6 +42670,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -42476,6 +42774,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -42575,6 +42874,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -42645,6 +42945,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -42748,6 +43049,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -42818,6 +43120,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -43011,6 +43314,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -43080,6 +43384,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -43150,6 +43455,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -43343,6 +43649,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -43412,6 +43719,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -43482,6 +43790,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -43615,6 +43924,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -43714,6 +44024,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -43784,6 +44095,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -44007,6 +44319,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -44106,6 +44419,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -44176,6 +44490,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -44399,6 +44714,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -44468,6 +44784,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -44538,6 +44855,7 @@ Default Value: auto,
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -45089,6 +45407,7 @@ Represents a step in execution of a run.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -45127,6 +45446,7 @@ Represents a step in execution of a run.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -45232,6 +45552,7 @@ Represents a step in execution of a run.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -45332,6 +45653,7 @@ Represents a step in execution of a run.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -45402,6 +45724,7 @@ Represents a step in execution of a run.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -45502,6 +45825,7 @@ Represents a step in execution of a run.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -45692,6 +46016,7 @@ Represents a step in execution of a run.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -45827,6 +46152,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -45898,6 +46224,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -45936,6 +46263,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -46006,6 +46334,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -46195,6 +46524,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -46298,6 +46628,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -46367,6 +46698,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -46437,6 +46769,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -46540,6 +46873,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -46609,6 +46943,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -46679,6 +47014,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -46784,6 +47120,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -46854,6 +47191,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -46959,6 +47297,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -47029,6 +47368,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -47162,6 +47502,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -47261,6 +47602,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -47299,6 +47641,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -47369,6 +47712,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -47532,6 +47876,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -47631,6 +47976,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -47669,6 +48015,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -47739,6 +48086,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -47842,6 +48190,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -47912,6 +48261,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -48045,6 +48395,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -48115,6 +48466,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -48218,6 +48570,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -48287,6 +48640,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -48357,6 +48711,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -48490,6 +48845,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -48559,6 +48915,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -48629,6 +48986,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -48762,6 +49120,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -48832,6 +49191,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -48995,6 +49355,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -49065,6 +49426,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -49198,6 +49560,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -49327,6 +49690,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -49397,6 +49761,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -49560,6 +49925,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -49689,6 +50055,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -49759,6 +50126,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -49862,6 +50230,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -49932,6 +50301,7 @@ An array of tool calls the run step was involved in. These can be associated wit
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -50319,6 +50689,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -50508,6 +50879,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -50578,6 +50950,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -50708,6 +51081,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -50905,6 +51279,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -50943,6 +51318,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -51078,6 +51454,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -51267,6 +51644,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -51400,6 +51778,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -51470,6 +51849,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -51765,6 +52145,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -51874,6 +52255,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -52034,6 +52416,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -52072,6 +52455,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -52142,6 +52526,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -52302,6 +52687,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -52375,6 +52761,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -52445,6 +52832,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -52551,6 +52939,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -52621,6 +53010,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -52724,6 +53114,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -52797,6 +53188,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -52867,6 +53259,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -52973,6 +53366,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -53043,6 +53437,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -53143,6 +53538,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -53332,6 +53728,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -53465,6 +53862,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -53535,6 +53933,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -53768,6 +54167,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -53957,6 +54357,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -54027,6 +54428,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -54187,6 +54589,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -54287,6 +54690,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -54396,6 +54800,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -54466,6 +54871,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -54597,6 +55003,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -54667,6 +55074,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -54798,6 +55206,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -54868,6 +55277,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -54999,6 +55409,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -55069,6 +55480,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -55200,6 +55612,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -55270,6 +55683,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -55401,6 +55815,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -55471,6 +55886,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -55602,6 +56018,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -55672,6 +56089,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -55803,6 +56221,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -55873,6 +56292,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -56004,6 +56424,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -56074,6 +56495,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -56205,6 +56627,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -56275,6 +56698,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -56406,6 +56830,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -56476,6 +56901,7 @@ Note that the overlap must not exceed half of `max_chunk_size_tokens`.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -56598,6 +57024,7 @@ Represents a step in execution of a run.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -56668,6 +57095,7 @@ Represents a step in execution of a run.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -56790,6 +57218,7 @@ Represents a step in execution of a run.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -56860,6 +57289,7 @@ Represents a step in execution of a run.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -56969,6 +57399,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -57039,6 +57470,7 @@ Represents a run step delta i.e. any changed fields on a run step during streami
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -57161,6 +57593,7 @@ Represents a step in execution of a run.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -57231,6 +57664,7 @@ Represents a step in execution of a run.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -57353,6 +57787,7 @@ Represents a step in execution of a run.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -57423,6 +57858,7 @@ Represents a step in execution of a run.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -57545,6 +57981,7 @@ Represents a step in execution of a run.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -57615,6 +58052,7 @@ Represents a step in execution of a run.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -57737,6 +58175,7 @@ Represents a step in execution of a run.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -57807,6 +58246,7 @@ Represents a step in execution of a run.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -57925,6 +58365,7 @@ Represents a step in execution of a run.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -57995,6 +58436,7 @@ Represents a step in execution of a run.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -58113,6 +58555,7 @@ Represents a step in execution of a run.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -58183,6 +58626,7 @@ Represents a step in execution of a run.
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -58292,6 +58736,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -58362,6 +58807,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -58480,6 +58926,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -58550,6 +58997,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -58668,6 +59116,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -58738,6 +59187,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -58846,6 +59296,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -58916,6 +59367,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -59023,6 +59475,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -59093,6 +59546,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -59163,6 +59617,7 @@ Represents a message delta i.e. any changed fields on a message during streaming
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -59827,6 +60282,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -59926,6 +60382,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -60085,6 +60542,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -60214,6 +60672,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -60284,6 +60743,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -60564,6 +61024,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -60697,6 +61158,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -60767,6 +61229,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -60926,6 +61389,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -61056,6 +61520,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -61155,6 +61620,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -61348,6 +61814,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -61418,6 +61885,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -61518,6 +61986,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -61618,6 +62087,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -61718,6 +62188,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -61818,6 +62289,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -61918,6 +62390,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -62018,6 +62491,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -62178,6 +62652,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -62278,6 +62753,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -62438,6 +62914,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -62616,6 +63093,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -62746,6 +63224,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },

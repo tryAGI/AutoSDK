@@ -23,6 +23,7 @@
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -214,6 +215,7 @@
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -618,6 +620,7 @@
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -781,6 +784,7 @@
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -882,6 +886,7 @@
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -1016,6 +1021,7 @@
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -1117,6 +1123,7 @@
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -1640,6 +1647,7 @@
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -1868,6 +1876,7 @@
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2003,6 +2012,7 @@
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2136,6 +2146,7 @@
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2268,6 +2279,7 @@
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2492,6 +2504,7 @@
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2659,6 +2672,7 @@
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2822,6 +2836,7 @@
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -2891,6 +2906,7 @@
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3020,6 +3036,7 @@
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3650,6 +3667,7 @@
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },
@@ -3900,6 +3918,7 @@
       GenerateModels: false,
       IncludeModels: null,
       ExcludeModels: null,
+      GeneratePolyfills: true,
       GenerateSdk: true,
       FromCli: false
     },

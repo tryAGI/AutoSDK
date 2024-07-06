@@ -99,6 +99,7 @@ public class GenerateCommand : Command
             ModelStyle: default,
             IncludeModels: [],
             ExcludeModels: [],
+            GeneratePolyfills: true,
             GenerateSdk: true,
             FromCli: true
         );
@@ -114,6 +115,7 @@ public class GenerateCommand : Command
                 .SelectMany(x => new [] { Sources.AnyOf(x), Sources.AnyOfJsonConverter(x), Sources.AnyOfJsonConverterFactory(x) }))
             .Concat([Sources.JsonSerializerContext(data.Converters, data.Types)])
             .Concat([Sources.JsonSerializerContextTypes(data.Types)])
+            .Concat([Sources.Polyfills(settings)])
             .Where(x => !x.IsEmpty)
             .ToArray();
         

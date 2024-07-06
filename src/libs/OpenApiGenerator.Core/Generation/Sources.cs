@@ -156,4 +156,13 @@ public static partial class Sources
             Name: $"{authorization.Settings.Namespace}.{authorization.Settings.ClassName}.Authorizations.{authorization.Scheme.ToPropertyName()}.g.cs",
             Text: GenerateAuthorization(authorization));
     }
+    
+    public static FileWithName Polyfills(
+        Settings settings,
+        CancellationToken cancellationToken = default)
+    {
+        return new FileWithName(
+            Name: $"{settings.Namespace}.Polyfills.g.cs",
+            Text: GeneratePolyfills(settings));
+    }
 }
