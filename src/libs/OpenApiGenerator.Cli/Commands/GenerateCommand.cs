@@ -16,7 +16,7 @@ public class GenerateCommand : Command
             description: "Input file path");
         var outputOption = new Option<string>(
             aliases: ["--output", "-o"],
-            getDefaultValue: () => string.Empty,
+            getDefaultValue: () => "Generated",
             description: "Output file path");
         var targetFrameworkOption = new Option<string>(
             aliases: ["--targetFramework", "-t"],
@@ -83,7 +83,7 @@ public class GenerateCommand : Command
             JsonSerializerType: default,
             UseRequiredKeyword: default,
             GenerateConstructors: false,
-            GroupByTags: false,
+            GroupByTags: true,
             GenerateMethods: false,
             MethodNamingConvention: default,
             MethodNamingConventionFallback: MethodNamingConvention.MethodAndPath,
@@ -117,17 +117,13 @@ public class GenerateCommand : Command
             .Where(x => !x.IsEmpty)
             .ToArray();
         
+        Directory.CreateDirectory(outputPath);
+        
         if (generateAsSingleFile)
         {
             var text = string.Join(Environment.NewLine, files.Select(x => x.Text));
             await File.WriteAllTextAsync(Path.Combine(outputPath, $"{name}.cs"), text).ConfigureAwait(false);
             return;
-        }
-        
-        if (string.IsNullOrWhiteSpace(outputPath))
-        {
-            outputPath = name;
-            Directory.CreateDirectory(outputPath);
         }
         
         foreach (var file in files)
