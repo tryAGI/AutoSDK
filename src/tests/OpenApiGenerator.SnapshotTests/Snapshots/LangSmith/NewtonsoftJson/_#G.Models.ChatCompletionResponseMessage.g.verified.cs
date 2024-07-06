@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
-        public string? Role { get; set; } = "";
+        public string? Role { get; set; }
 
         /// <summary>
         /// 

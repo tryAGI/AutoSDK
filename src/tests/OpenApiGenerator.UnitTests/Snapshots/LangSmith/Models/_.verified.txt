@@ -243,13 +243,12 @@
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: "",
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
-        ParameterDefaultValue: ""
+        ParameterDefaultValue: default
       },
       {
         Id: messages,
@@ -648,13 +647,12 @@
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: "",
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
         ParameterName: role,
         ArgumentName: role,
-        ParameterDefaultValue: ""
+        ParameterDefaultValue: default
       },
       {
         Id: content,
@@ -812,13 +810,12 @@
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: "",
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
         ParameterName: name,
         ArgumentName: name,
-        ParameterDefaultValue: ""
+        ParameterDefaultValue: default
       },
       {
         Id: arguments,
@@ -843,13 +840,12 @@
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: "",
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
         ParameterName: arguments,
         ArgumentName: arguments,
-        ParameterDefaultValue: ""
+        ParameterDefaultValue: default
       }
     ],
     Summary: ,
@@ -914,13 +910,12 @@
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: "",
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
         ParameterName: name,
         ArgumentName: name,
-        ParameterDefaultValue: ""
+        ParameterDefaultValue: default
       },
       {
         Id: description,
@@ -945,13 +940,12 @@
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: "",
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
         ParameterName: description,
         ArgumentName: description,
-        ParameterDefaultValue: ""
+        ParameterDefaultValue: default
       },
       {
         Id: parameters,
@@ -1049,13 +1043,12 @@
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: "",
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
         ParameterName: type,
         ArgumentName: type,
-        ParameterDefaultValue: ""
+        ParameterDefaultValue: default
       },
       {
         Id: properties,
@@ -1675,13 +1668,12 @@
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: "",
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
         ParameterName: id,
         ArgumentName: id,
-        ParameterDefaultValue: ""
+        ParameterDefaultValue: default
       },
       {
         Id: object,
@@ -1706,13 +1698,12 @@
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: "",
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
         ParameterName: @object,
         ArgumentName: @object,
-        ParameterDefaultValue: ""
+        ParameterDefaultValue: default
       },
       {
         Id: created,
@@ -1768,13 +1759,12 @@
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: "",
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
         ParameterName: model,
         ArgumentName: model,
-        ParameterDefaultValue: ""
+        ParameterDefaultValue: default
       },
       {
         Id: choices,
@@ -1969,13 +1959,12 @@
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: "",
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
         ParameterName: finishReason,
         ArgumentName: finishReason,
-        ParameterDefaultValue: ""
+        ParameterDefaultValue: default
       }
     ],
     Summary: ,
@@ -2040,13 +2029,12 @@
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: "",
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
         ParameterName: role,
         ArgumentName: role,
-        ParameterDefaultValue: ""
+        ParameterDefaultValue: default
       },
       {
         Id: content,
@@ -2532,13 +2520,12 @@
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: "",
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
         ParameterName: text,
         ArgumentName: text,
-        ParameterDefaultValue: ""
+        ParameterDefaultValue: default
       },
       {
         Id: index,
@@ -2629,13 +2616,12 @@
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: "",
         IsDeprecated: false,
         Summary: ,
         ConverterType: ,
         ParameterName: finishReason,
         ArgumentName: finishReason,
-        ParameterDefaultValue: ""
+        ParameterDefaultValue: default
       }
     ],
     Summary: ,

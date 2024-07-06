@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public string? Id { get; set; } = "";
+        public string? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
-        public string? Object { get; set; } = "";
+        public string? Object { get; set; }
 
         /// <summary>
         /// Default Value: 0
@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
-        public string? Model { get; set; } = "";
+        public string? Model { get; set; }
 
         /// <summary>
         /// Default Value: []

@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finish_reason")]
-        public string? FinishReason { get; set; } = "";
+        public string? FinishReason { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

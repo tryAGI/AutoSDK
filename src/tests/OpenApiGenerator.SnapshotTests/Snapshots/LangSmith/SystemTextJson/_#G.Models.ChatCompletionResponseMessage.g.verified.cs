@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        public string? Role { get; set; } = "";
+        public string? Role { get; set; }
 
         /// <summary>
         /// 

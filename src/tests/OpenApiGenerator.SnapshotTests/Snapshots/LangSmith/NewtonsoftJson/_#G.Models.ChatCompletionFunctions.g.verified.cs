@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
-        public string? Name { get; set; } = "";
+        public string? Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public string? Description { get; set; } = "";
+        public string? Description { get; set; }
 
         /// <summary>
         /// 

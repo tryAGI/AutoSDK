@@ -62,8 +62,7 @@ namespace G
         public required string? Instructions { get; set; }
 
         /// <summary>
-        /// A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.<br/>
-        /// Default Value: []
+        /// A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -83,7 +82,7 @@ namespace G
         public required object? Metadata { get; set; }
 
         /// <summary>
-        /// run_temperature_description | What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.<br/>
+        /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.<br/>
         /// Default Value: 1<br/>
         /// Example: 1
         /// </summary>

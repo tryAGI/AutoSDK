@@ -108,8 +108,7 @@ namespace G
         public string Instructions { get; set; } = default!;
 
         /// <summary>
-        /// The list of tools that the [assistant](/docs/api-reference/assistants) used for this run.<br/>
-        /// Default Value: []
+        /// The list of tools that the [assistant](/docs/api-reference/assistants) used for this run.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tools", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>> Tools { get; set; } = default!;

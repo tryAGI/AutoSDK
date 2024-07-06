@@ -126,8 +126,7 @@ namespace G
         public required string Instructions { get; set; }
 
         /// <summary>
-        /// The list of tools that the [assistant](/docs/api-reference/assistants) used for this run.<br/>
-        /// Default Value: []
+        /// The list of tools that the [assistant](/docs/api-reference/assistants) used for this run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         [global::System.Text.Json.Serialization.JsonRequired]

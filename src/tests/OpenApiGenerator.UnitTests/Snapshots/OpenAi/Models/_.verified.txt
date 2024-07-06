@@ -7011,6 +7011,48 @@ Determinism is not guaranteed, and you should refer to the `system_fingerprint` 
         ParameterDefaultValue: default
       },
       {
+        Id: service_tier,
+        Name: ServiceTier,
+        Type: {
+          CSharpType: global::G.CreateChatCompletionRequestServiceTier?,
+          IsArray: false,
+          IsEnum: true,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          Properties: [
+            Auto,
+            Default
+          ],
+          EnumValues: [
+            auto,
+            default
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.CreateChatCompletionRequestServiceTier,
+          CSharpTypeWithNullability: global::G.CreateChatCompletionRequestServiceTier?,
+          ShortCSharpTypeWithoutNullability: CreateChatCompletionRequestServiceTier,
+          ShortCSharpTypeWithNullability: CreateChatCompletionRequestServiceTier?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.CreateChatCompletionRequestServiceTierJsonConverter
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary:
+Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:
+  - If set to 'auto', the system will utilize scale tier credits until they are exhausted.
+  - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.
+
+  When this parameter is set, the response body will include the `service_tier` utilized.
+,
+        ConverterType: global::OpenApiGenerator.JsonConverters.CreateChatCompletionRequestServiceTierJsonConverter,
+        ParameterName: serviceTier,
+        ArgumentName: serviceTier,
+        ParameterDefaultValue: default
+      },
+      {
         Id: stop,
         Name: Stop,
         Type: {
@@ -7593,6 +7635,113 @@ Example: json_object,
     GlobalClassName: global::G.Type,
     ExternalClassName: Type,
     FileNameWithoutExtension: G.Models.Type
+  },
+  {
+    Id: service_tier,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    },
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: auto,
+        Name: Auto,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: auto,
+        ArgumentName: auto,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: default,
+        Name: Default,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: @default,
+        ArgumentName: @default,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary:
+Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:
+  - If set to 'auto', the system will utilize scale tier credits until they are exhausted.
+  - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.
+
+  When this parameter is set, the response body will include the `service_tier` utilized.
+,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ServiceTier,
+    ClassName: ServiceTier,
+    GlobalClassName: global::G.ServiceTier,
+    ExternalClassName: ServiceTier,
+    FileNameWithoutExtension: G.Models.ServiceTier
   },
   {
     Id: model,
@@ -8651,6 +8800,44 @@ Example: json_object,
         ParameterDefaultValue: default
       },
       {
+        Id: service_tier,
+        Name: ServiceTier,
+        Type: {
+          CSharpType: global::G.CreateChatCompletionResponseServiceTier?,
+          IsArray: false,
+          IsEnum: true,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          Properties: [
+            Scale,
+            Default
+          ],
+          EnumValues: [
+            scale,
+            default
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.CreateChatCompletionResponseServiceTier,
+          CSharpTypeWithNullability: global::G.CreateChatCompletionResponseServiceTier?,
+          ShortCSharpTypeWithoutNullability: CreateChatCompletionResponseServiceTier,
+          ShortCSharpTypeWithNullability: CreateChatCompletionResponseServiceTier?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.CreateChatCompletionResponseServiceTierJsonConverter
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary:
+The service tier used for processing the request. This field is only included if the `service_tier` parameter is specified in the request.
+Example: scale,
+        ConverterType: global::OpenApiGenerator.JsonConverters.CreateChatCompletionResponseServiceTierJsonConverter,
+        ParameterName: serviceTier,
+        ArgumentName: serviceTier,
+        ParameterDefaultValue: default
+      },
+      {
         Id: system_fingerprint,
         Name: SystemFingerprint,
         Type: {
@@ -9210,6 +9397,109 @@ The reason the model stopped generating tokens. This will be `stop` if the model
     GlobalClassName: global::G.FinishReason,
     ExternalClassName: FinishReason,
     FileNameWithoutExtension: G.Models.FinishReason
+  },
+  {
+    Id: service_tier,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    },
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: scale,
+        Name: Scale,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: scale,
+        ArgumentName: scale,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: default,
+        Name: Default,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: @default,
+        ArgumentName: @default,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary:
+The service tier used for processing the request. This field is only included if the `service_tier` parameter is specified in the request.
+Example: scale,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ServiceTier,
+    ClassName: ServiceTier,
+    GlobalClassName: global::G.ServiceTier,
+    ExternalClassName: ServiceTier,
+    FileNameWithoutExtension: G.Models.ServiceTier
   },
   {
     Id: object,
@@ -10573,6 +10863,44 @@ last chunk if you set `stream_options: {"include_usage": true}`.
         ParameterDefaultValue: default
       },
       {
+        Id: service_tier,
+        Name: ServiceTier,
+        Type: {
+          CSharpType: global::G.CreateChatCompletionStreamResponseServiceTier?,
+          IsArray: false,
+          IsEnum: true,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          Properties: [
+            Scale,
+            Default
+          ],
+          EnumValues: [
+            scale,
+            default
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.CreateChatCompletionStreamResponseServiceTier,
+          CSharpTypeWithNullability: global::G.CreateChatCompletionStreamResponseServiceTier?,
+          ShortCSharpTypeWithoutNullability: CreateChatCompletionStreamResponseServiceTier,
+          ShortCSharpTypeWithNullability: CreateChatCompletionStreamResponseServiceTier?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.CreateChatCompletionStreamResponseServiceTierJsonConverter
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary:
+The service tier used for processing the request. This field is only included if the `service_tier` parameter is specified in the request.
+Example: scale,
+        ConverterType: global::OpenApiGenerator.JsonConverters.CreateChatCompletionStreamResponseServiceTierJsonConverter,
+        ParameterName: serviceTier,
+        ArgumentName: serviceTier,
+        ParameterDefaultValue: default
+      },
+      {
         Id: system_fingerprint,
         Name: SystemFingerprint,
         Type: {
@@ -11263,6 +11591,109 @@ The reason the model stopped generating tokens. This will be `stop` if the model
     GlobalClassName: global::G.FinishReason,
     ExternalClassName: FinishReason,
     FileNameWithoutExtension: G.Models.FinishReason
+  },
+  {
+    Id: service_tier,
+    AddTypeName: false,
+    Parents: null,
+    Namespace: G,
+    Settings: {
+      TargetFramework: netstandard2.0,
+      Namespace: G,
+      ClassName: Api,
+      GenerateConstructors: false,
+      GroupByTags: true,
+      GenerateMethods: false,
+      MethodNamingConventionFallback: MethodAndPath,
+      GenerateMethodsAsHttpClientExtensions: false,
+      GenerateMethodsUsingSystemNetHttpJson: false,
+      IncludeOperationIds: null,
+      ExcludeOperationIds: null,
+      IncludeTags: null,
+      ExcludeTags: null,
+      JsonSerializerContext: ,
+      GenerateJsonSerializerContextTypes: false,
+      GenerateModels: false,
+      IncludeModels: null,
+      ExcludeModels: null,
+      GeneratePolyfills: true,
+      GenerateSdk: true,
+      FromCli: false
+    },
+    Style: Enumeration,
+    Properties: [
+      {
+        Id: scale,
+        Name: Scale,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: scale,
+        ArgumentName: scale,
+        ParameterDefaultValue: default
+      },
+      {
+        Id: default,
+        Name: Default,
+        Type: {
+          CSharpType: ,
+          IsArray: false,
+          IsEnum: false,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          Properties: null,
+          EnumValues: null,
+          Namespace: ,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: ,
+          CSharpTypeWithNullability: ?,
+          ShortCSharpTypeWithoutNullability: ,
+          ShortCSharpTypeWithNullability: ?,
+          IsAnyOf: false,
+          ConverterType: 
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary: ,
+        ConverterType: ,
+        ParameterName: @default,
+        ArgumentName: @default,
+        ParameterDefaultValue: default
+      }
+    ],
+    Summary:
+The service tier used for processing the request. This field is only included if the `service_tier` parameter is specified in the request.
+Example: scale,
+    IsDeprecated: false,
+    AdditionalModels: null,
+    Enumerations: null,
+    Name: ServiceTier,
+    ClassName: ServiceTier,
+    GlobalClassName: global::G.ServiceTier,
+    ExternalClassName: ServiceTier,
+    FileNameWithoutExtension: G.Models.ServiceTier
   },
   {
     Id: object,
@@ -25514,12 +25945,10 @@ The system instructions that the assistant uses. The maximum length is 256,000 c
           ConverterType: 
         },
         IsRequired: true,
-        DefaultValue: ,
         IsDeprecated: false,
         Summary:
 A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.
-
-Default Value: [],
+,
         ConverterType: ,
         ParameterName: tools,
         ArgumentName: tools,
@@ -25616,7 +26045,8 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         DefaultValue: 1,
         IsDeprecated: false,
         Summary:
-run_temperature_description | What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
+What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
+
 Default Value: 1
 Example: 1,
         ConverterType: ,
@@ -25863,12 +26293,10 @@ A set of resources that are used by the assistant's tools. The resources are spe
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: ,
         IsDeprecated: false,
         Summary:
 A list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter`` tool. There can be a maximum of 20 files associated with the tool.
-
-Default Value: [],
+,
         ConverterType: ,
         ParameterName: fileIds,
         ArgumentName: fileIds,
@@ -26313,12 +26741,10 @@ The system instructions that the assistant uses. The maximum length is 256,000 c
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: ,
         IsDeprecated: false,
         Summary:
 A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.
-
-Default Value: [],
+,
         ConverterType: ,
         ParameterName: tools,
         ArgumentName: tools,
@@ -26664,12 +27090,10 @@ A set of resources that are used by the assistant's tools. The resources are spe
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: ,
         IsDeprecated: false,
         Summary:
 A list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.
-
-Default Value: [],
+,
         ConverterType: ,
         ParameterName: fileIds,
         ArgumentName: fileIds,
@@ -28066,12 +28490,10 @@ The system instructions that the assistant uses. The maximum length is 256,000 c
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: ,
         IsDeprecated: false,
         Summary:
 A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.
-
-Default Value: [],
+,
         ConverterType: ,
         ParameterName: tools,
         ArgumentName: tools,
@@ -28168,8 +28590,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         DefaultValue: 1,
         IsDeprecated: false,
         Summary:
-What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
-
+empty
 Default Value: 1
 Example: 1,
         ConverterType: ,
@@ -28416,12 +28837,10 @@ A set of resources that are used by the assistant's tools. The resources are spe
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: ,
         IsDeprecated: false,
         Summary:
 Overrides the list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.
-
-Default Value: [],
+,
         ConverterType: ,
         ParameterName: fileIds,
         ArgumentName: fileIds,
@@ -30931,11 +31350,8 @@ Note that the file search tool may output fewer than `max_num_results` results. 
           ConverterType: 
         },
         IsRequired: true,
-        DefaultValue: ,
         IsDeprecated: false,
-        Summary:
-The list of tools that the [assistant](/docs/api-reference/assistants) used for this run.
-Default Value: [],
+        Summary: The list of tools that the [assistant](/docs/api-reference/assistants) used for this run.,
         ConverterType: ,
         ParameterName: tools,
         ArgumentName: tools,
@@ -32830,8 +33246,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         DefaultValue: 1,
         IsDeprecated: false,
         Summary:
-What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
-
+empty
 Default Value: 1
 Example: 1,
         ConverterType: ,
@@ -35044,8 +35459,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         DefaultValue: 1,
         IsDeprecated: false,
         Summary:
-What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
-
+empty
 Default Value: 1
 Example: 1,
         ConverterType: ,
@@ -35079,10 +35493,7 @@ Example: 1,
         DefaultValue: 1,
         IsDeprecated: false,
         Summary:
-An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.
-
-We generally recommend altering this or temperature but not both.
-
+empty
 Default Value: 1
 Example: 1,
         ConverterType: ,
@@ -35488,12 +35899,10 @@ A set of resources that are used by the assistant's tools. The resources are spe
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: ,
         IsDeprecated: false,
         Summary:
 A list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.
-
-Default Value: [],
+,
         ConverterType: ,
         ParameterName: fileIds,
         ArgumentName: fileIds,
@@ -36812,12 +37221,10 @@ A set of resources that are made available to the assistant's tools in this thre
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: ,
         IsDeprecated: false,
         Summary:
 A list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.
-
-Default Value: [],
+,
         ConverterType: ,
         ParameterName: fileIds,
         ArgumentName: fileIds,
@@ -37267,12 +37674,10 @@ A set of resources that are made available to the assistant's tools in this thre
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: ,
         IsDeprecated: false,
         Summary:
 A list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.
-
-Default Value: [],
+,
         ConverterType: ,
         ParameterName: fileIds,
         ArgumentName: fileIds,
@@ -38003,12 +38408,10 @@ A set of resources that are made available to the assistant's tools in this thre
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: ,
         IsDeprecated: false,
         Summary:
 A list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.
-
-Default Value: [],
+,
         ConverterType: ,
         ParameterName: fileIds,
         ArgumentName: fileIds,

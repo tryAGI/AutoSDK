@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text")]
-        public string? Text { get; set; } = "";
+        public string? Text { get; set; }
 
         /// <summary>
         /// Default Value: 0
@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finish_reason")]
-        public string? FinishReason { get; set; } = "";
+        public string? FinishReason { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

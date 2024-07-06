@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
-        public string? Model { get; set; } = "";
+        public string? Model { get; set; }
 
         /// <summary>
         /// Default Value: []

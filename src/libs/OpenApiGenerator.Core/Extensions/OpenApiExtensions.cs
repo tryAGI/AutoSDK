@@ -87,7 +87,7 @@ public static class OpenApiExtensions
         {
             return string.Empty;
         }
-        if (schema.Value.Enum.Any() && schema.Value.Default != null)
+        if (schema.Value.Enum.Any() && schema.Value.Default is OpenApiString enumString && !string.IsNullOrWhiteSpace(enumString.Value))
         {
             return type.CSharpType.TrimEnd('?') + "." + schema.Value.Default.ToEnumValue().Name;
         }
@@ -107,7 +107,7 @@ public static class OpenApiExtensions
             }, parents);
             return typeData.CSharpType.TrimEnd('?') + "." + schema.Value.Default.ToEnumValue().Name;
         }
-        if (schema.Value.Default is OpenApiString @string)
+        if (schema.Value.Default is OpenApiString @string && !string.IsNullOrWhiteSpace(@string.Value))
         {
             return $"\"{@string.Value}\"";
         }
@@ -180,7 +180,7 @@ public static class OpenApiExtensions
         return any switch
         {
             OpenApiNull => null,
-            OpenApiString @string => @string.Value,
+            OpenApiString @string => string.IsNullOrWhiteSpace(@string.Value) ? null : @string.Value,
             OpenApiInteger integer => integer.Value.ToString(CultureInfo.InvariantCulture),
             OpenApiLong @long => @long.Value.ToString(CultureInfo.InvariantCulture),
             OpenApiFloat @float => @float.Value.ToString(CultureInfo.InvariantCulture),
@@ -188,7 +188,7 @@ public static class OpenApiExtensions
             OpenApiBoolean boolean => boolean.Value ? "true" : "false",
             OpenApiArray array => $"[{string.Join(", ", array.Select(GetString))}]",
             //OpenApiObject @object => $"{{{string.Join(", ", @object.Select(x => $"{x.Key}: {GetString(x.Value)}"))}}}",
-            _ => string.Empty,
+            _ => null,
         };
     }
 

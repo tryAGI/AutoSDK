@@ -95,6 +95,16 @@ namespace G
         public int? Seed { get; set; }
 
         /// <summary>
+        /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
+        ///   - If set to 'auto', the system will utilize scale tier credits until they are exhausted.<br/>
+        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
+        ///   When this parameter is set, the response body will include the `service_tier` utilized.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateChatCompletionRequestServiceTierJsonConverter))]
+        public global::G.CreateChatCompletionRequestServiceTier? ServiceTier { get; set; }
+
+        /// <summary>
         /// Up to 4 sequences where the API will stop generating further tokens.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop")]

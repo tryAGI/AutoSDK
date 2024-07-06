@@ -379,6 +379,48 @@ Determinism is not guaranteed, and you should refer to the `system_fingerprint` 
         ParameterDefaultValue: default
       },
       {
+        Id: service_tier,
+        Name: ServiceTier,
+        Type: {
+          CSharpType: global::G.CreateChatCompletionRequestServiceTier?,
+          IsArray: false,
+          IsEnum: true,
+          IsBase64: false,
+          IsDate: false,
+          IsDateTime: false,
+          Properties: [
+            Auto,
+            Default
+          ],
+          EnumValues: [
+            auto,
+            default
+          ],
+          Namespace: G,
+          IsDeprecated: false,
+          GenerateJsonSerializerContextTypes: false,
+          CSharpTypeWithoutNullability: global::G.CreateChatCompletionRequestServiceTier,
+          CSharpTypeWithNullability: global::G.CreateChatCompletionRequestServiceTier?,
+          ShortCSharpTypeWithoutNullability: CreateChatCompletionRequestServiceTier,
+          ShortCSharpTypeWithNullability: CreateChatCompletionRequestServiceTier?,
+          IsAnyOf: false,
+          ConverterType: global::OpenApiGenerator.JsonConverters.CreateChatCompletionRequestServiceTierJsonConverter
+        },
+        IsRequired: false,
+        IsDeprecated: false,
+        Summary:
+Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:
+  - If set to 'auto', the system will utilize scale tier credits until they are exhausted.
+  - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.
+
+  When this parameter is set, the response body will include the `service_tier` utilized.
+,
+        ConverterType: global::OpenApiGenerator.JsonConverters.CreateChatCompletionRequestServiceTierJsonConverter,
+        ParameterName: serviceTier,
+        ArgumentName: serviceTier,
+        ParameterDefaultValue: default
+      },
+      {
         Id: stop,
         Name: Stop,
         Type: {
@@ -808,6 +850,7 @@ A list of functions the model may generate JSON inputs for.
         presence_penalty,
         response_format,
         seed,
+        service_tier,
         stop,
         stream,
         stream_options,
@@ -843,6 +886,7 @@ A list of functions the model may generate JSON inputs for.
         choices,
         created,
         model,
+        service_tier,
         system_fingerprint,
         object,
         usage
@@ -879,6 +923,7 @@ A list of functions the model may generate JSON inputs for.
           presence_penalty,
           response_format,
           seed,
+          service_tier,
           stop,
           stream,
           stream_options,
@@ -914,6 +959,7 @@ A list of functions the model may generate JSON inputs for.
           choices,
           created,
           model,
+          service_tier,
           system_fingerprint,
           object,
           usage
@@ -7448,12 +7494,10 @@ The system instructions that the assistant uses. The maximum length is 256,000 c
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: ,
         IsDeprecated: false,
         Summary:
 A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.
-
-Default Value: [],
+,
         ConverterType: ,
         ParameterName: tools,
         ArgumentName: tools,
@@ -8149,12 +8193,10 @@ The system instructions that the assistant uses. The maximum length is 256,000 c
           ConverterType: 
         },
         IsRequired: false,
-        DefaultValue: ,
         IsDeprecated: false,
         Summary:
 A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.
-
-Default Value: [],
+,
         ConverterType: ,
         ParameterName: tools,
         ArgumentName: tools,
@@ -8251,8 +8293,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         DefaultValue: 1,
         IsDeprecated: false,
         Summary:
-What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
-
+empty
 Default Value: 1
 Example: 1,
         ConverterType: ,
@@ -10921,8 +10962,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         DefaultValue: 1,
         IsDeprecated: false,
         Summary:
-What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
-
+empty
 Default Value: 1
 Example: 1,
         ConverterType: ,
@@ -10956,10 +10996,7 @@ Example: 1,
         DefaultValue: 1,
         IsDeprecated: false,
         Summary:
-An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.
-
-We generally recommend altering this or temperature but not both.
-
+empty
 Default Value: 1
 Example: 1,
         ConverterType: ,
@@ -11970,8 +12007,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         DefaultValue: 1,
         IsDeprecated: false,
         Summary:
-What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
-
+empty
 Default Value: 1
 Example: 1,
         ConverterType: ,
@@ -18374,6 +18410,8 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       global::OpenApiGenerator.JsonConverters.ChatCompletionStreamResponseDeltaRoleNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateChatCompletionRequestResponseFormatTypeJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateChatCompletionRequestResponseFormatTypeNullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateChatCompletionRequestServiceTierJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateChatCompletionRequestServiceTierNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateChatCompletionRequestModelJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateChatCompletionRequestModelNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateChatCompletionRequestToolChoiceJsonConverter,
@@ -18382,6 +18420,8 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       global::OpenApiGenerator.JsonConverters.CreateChatCompletionRequestFunctionCallNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateChatCompletionResponseChoicesFinishReasonJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateChatCompletionResponseChoicesFinishReasonNullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateChatCompletionResponseServiceTierJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateChatCompletionResponseServiceTierNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateChatCompletionResponseObjectJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateChatCompletionResponseObjectNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateChatCompletionFunctionResponseChoicesFinishReasonJsonConverter,
@@ -18392,6 +18432,8 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       global::OpenApiGenerator.JsonConverters.ListPaginatedFineTuningJobsResponseObjectNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateChatCompletionStreamResponseChoicesFinishReasonJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateChatCompletionStreamResponseChoicesFinishReasonNullableJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateChatCompletionStreamResponseServiceTierJsonConverter,
+      global::OpenApiGenerator.JsonConverters.CreateChatCompletionStreamResponseServiceTierNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateChatCompletionStreamResponseObjectJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateChatCompletionStreamResponseObjectNullableJsonConverter,
       global::OpenApiGenerator.JsonConverters.CreateImageRequestQualityJsonConverter,

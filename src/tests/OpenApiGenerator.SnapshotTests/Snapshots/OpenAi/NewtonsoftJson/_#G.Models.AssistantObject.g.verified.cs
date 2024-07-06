@@ -54,8 +54,7 @@ namespace G
         public string? Instructions { get; set; } = default!;
 
         /// <summary>
-        /// A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.<br/>
-        /// Default Value: []
+        /// A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tools", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::System.OneOf<global::G.AssistantToolsCode?, global::G.AssistantToolsFileSearch?, global::G.AssistantToolsFunction?>> Tools { get; set; } = default!;
@@ -73,7 +72,7 @@ namespace G
         public object? Metadata { get; set; } = default!;
 
         /// <summary>
-        /// run_temperature_description | What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.<br/>
+        /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.<br/>
         /// Default Value: 1<br/>
         /// Example: 1
         /// </summary>

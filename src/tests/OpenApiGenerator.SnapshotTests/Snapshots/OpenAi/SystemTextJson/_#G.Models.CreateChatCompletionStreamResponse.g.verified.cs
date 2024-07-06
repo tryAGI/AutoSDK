@@ -39,6 +39,14 @@ namespace G
         public required string Model { get; set; }
 
         /// <summary>
+        /// The service tier used for processing the request. This field is only included if the `service_tier` parameter is specified in the request.<br/>
+        /// Example: scale
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateChatCompletionStreamResponseServiceTierJsonConverter))]
+        public global::G.CreateChatCompletionStreamResponseServiceTier? ServiceTier { get; set; }
+
+        /// <summary>
         /// This fingerprint represents the backend configuration that the model runs with.<br/>
         /// Can be used in conjunction with the `seed` request parameter to understand when backend changes have been made that might impact determinism.
         /// </summary>

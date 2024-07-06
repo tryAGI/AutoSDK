@@ -62,6 +62,7 @@ namespace G
         /// <param name="presencePenalty"></param>
         /// <param name="responseFormat"></param>
         /// <param name="seed"></param>
+        /// <param name="serviceTier"></param>
         /// <param name="stop"></param>
         /// <param name="stream"></param>
         /// <param name="streamOptions"></param>
@@ -85,6 +86,7 @@ namespace G
             double? presencePenalty = 0,
             global::G.CreateChatCompletionRequestResponseFormat? responseFormat = default,
             int? seed = default,
+            global::G.CreateChatCompletionRequestServiceTier? serviceTier = default,
             global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>? stop = default,
             bool? stream = false,
             global::G.ChatCompletionStreamOptions? streamOptions = default,
@@ -109,6 +111,7 @@ namespace G
                 PresencePenalty = presencePenalty,
                 ResponseFormat = responseFormat,
                 Seed = seed,
+                ServiceTier = serviceTier,
                 Stop = stop,
                 Stream = stream,
                 StreamOptions = streamOptions,
