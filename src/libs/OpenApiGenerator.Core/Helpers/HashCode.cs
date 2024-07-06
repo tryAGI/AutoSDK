@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 
 #pragma warning disable CS0809
+#pragma warning disable CA1065
 
 namespace System;
 
