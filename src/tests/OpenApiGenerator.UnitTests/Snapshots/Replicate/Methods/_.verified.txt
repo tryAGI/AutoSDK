@@ -73,6 +73,7 @@ The response will be a JSON object describing the account:
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -92,6 +93,7 @@ The response will be a JSON object describing the account:
       ShortCSharpTypeWithoutNullability: GetAccountResponse,
       ShortCSharpTypeWithNullability: GetAccountResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -113,6 +115,7 @@ The response will be a JSON object describing the account:
         ShortCSharpTypeWithoutNullability: GetAccountResponse,
         ShortCSharpTypeWithNullability: GetAccountResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -198,6 +201,7 @@ The response will be a paginated JSON list of collection objects:
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -217,6 +221,7 @@ The response will be a paginated JSON list of collection objects:
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -254,6 +259,7 @@ The response will be a paginated JSON list of collection objects:
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -332,6 +338,7 @@ The response will be a collection object with a nested list of the models in tha
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -351,6 +358,7 @@ The response will be a collection object with a nested list of the models in tha
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -455,6 +463,7 @@ The response will be a paginated JSON array of deployment objects, sorted with t
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -474,6 +483,7 @@ The response will be a paginated JSON array of deployment objects, sorted with t
       ShortCSharpTypeWithoutNullability: ListDeploymentsResponse,
       ShortCSharpTypeWithNullability: ListDeploymentsResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -495,6 +505,7 @@ The response will be a paginated JSON array of deployment objects, sorted with t
         ShortCSharpTypeWithoutNullability: ListDeploymentsResponse,
         ShortCSharpTypeWithNullability: ListDeploymentsResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -531,6 +542,7 @@ The response will be a paginated JSON array of deployment objects, sorted with t
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -561,6 +573,7 @@ The response will be a paginated JSON array of deployment objects, sorted with t
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -591,6 +604,7 @@ The response will be a paginated JSON array of deployment objects, sorted with t
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -621,6 +635,7 @@ The response will be a paginated JSON array of deployment objects, sorted with t
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -651,6 +666,7 @@ The response will be a paginated JSON array of deployment objects, sorted with t
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -681,6 +697,7 @@ The response will be a paginated JSON array of deployment objects, sorted with t
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -784,6 +801,7 @@ The response will be a JSON object describing the deployment:
       ShortCSharpTypeWithoutNullability: CreateDeploymentsRequest,
       ShortCSharpTypeWithNullability: CreateDeploymentsRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -803,6 +821,7 @@ The response will be a JSON object describing the deployment:
       ShortCSharpTypeWithoutNullability: CreateDeploymentsResponse,
       ShortCSharpTypeWithNullability: CreateDeploymentsResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -824,6 +843,7 @@ The response will be a JSON object describing the deployment:
         ShortCSharpTypeWithoutNullability: CreateDeploymentsRequest,
         ShortCSharpTypeWithNullability: CreateDeploymentsRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -843,6 +863,7 @@ The response will be a JSON object describing the deployment:
         ShortCSharpTypeWithoutNullability: CreateDeploymentsResponse,
         ShortCSharpTypeWithNullability: CreateDeploymentsResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -879,6 +900,7 @@ The response will be a JSON object describing the deployment:
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -912,6 +934,7 @@ The response will be a JSON object describing the deployment:
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -988,6 +1011,7 @@ The response will be an empty 204, indicating the deployment has been deleted.
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -1007,6 +1031,7 @@ The response will be an empty 204, indicating the deployment has been deleted.
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -1044,6 +1069,7 @@ The response will be an empty 204, indicating the deployment has been deleted.
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -1077,6 +1103,7 @@ The response will be an empty 204, indicating the deployment has been deleted.
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -1172,6 +1199,7 @@ The response will be a JSON object describing the deployment:
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -1191,6 +1219,7 @@ The response will be a JSON object describing the deployment:
       ShortCSharpTypeWithoutNullability: GetDeploymentsResponse,
       ShortCSharpTypeWithNullability: GetDeploymentsResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -1212,6 +1241,7 @@ The response will be a JSON object describing the deployment:
         ShortCSharpTypeWithoutNullability: GetDeploymentsResponse,
         ShortCSharpTypeWithNullability: GetDeploymentsResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -1248,6 +1278,7 @@ The response will be a JSON object describing the deployment:
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -1281,6 +1312,7 @@ The response will be a JSON object describing the deployment:
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -1314,6 +1346,7 @@ The response will be a JSON object describing the deployment:
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1344,6 +1377,7 @@ The response will be a JSON object describing the deployment:
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1374,6 +1408,7 @@ The response will be a JSON object describing the deployment:
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1404,6 +1439,7 @@ The response will be a JSON object describing the deployment:
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1502,6 +1538,7 @@ Updating any deployment properties will increment the `number` field of the `cur
       ShortCSharpTypeWithoutNullability: UpdateDeploymentsRequest,
       ShortCSharpTypeWithNullability: UpdateDeploymentsRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -1521,6 +1558,7 @@ Updating any deployment properties will increment the `number` field of the `cur
       ShortCSharpTypeWithoutNullability: UpdateDeploymentsResponse,
       ShortCSharpTypeWithNullability: UpdateDeploymentsResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -1542,6 +1580,7 @@ Updating any deployment properties will increment the `number` field of the `cur
         ShortCSharpTypeWithoutNullability: UpdateDeploymentsRequest,
         ShortCSharpTypeWithNullability: UpdateDeploymentsRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -1561,6 +1600,7 @@ Updating any deployment properties will increment the `number` field of the `cur
         ShortCSharpTypeWithoutNullability: UpdateDeploymentsResponse,
         ShortCSharpTypeWithNullability: UpdateDeploymentsResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -1597,6 +1637,7 @@ Updating any deployment properties will increment the `number` field of the `cur
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -1630,6 +1671,7 @@ Updating any deployment properties will increment the `number` field of the `cur
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -1663,6 +1705,7 @@ Updating any deployment properties will increment the `number` field of the `cur
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: true,
@@ -1709,6 +1752,7 @@ Use a data URL when:
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1743,6 +1787,7 @@ If the requested model version supports streaming, the returned prediction will 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1775,6 +1820,7 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1907,6 +1953,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
       ShortCSharpTypeWithoutNullability: PredictionRequest,
       ShortCSharpTypeWithNullability: PredictionRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -1926,6 +1973,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -1952,6 +2000,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
         ShortCSharpTypeWithoutNullability: PredictionRequest,
         ShortCSharpTypeWithNullability: PredictionRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -2032,6 +2081,7 @@ The response will be a JSON array of hardware objects:
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -2051,6 +2101,7 @@ The response will be a JSON array of hardware objects:
       ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ListHardwareResponse>,
       ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<ListHardwareResponse>?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -2072,6 +2123,7 @@ The response will be a JSON array of hardware objects:
         ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ListHardwareResponse>,
         ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<ListHardwareResponse>?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -2175,6 +2227,7 @@ The `cover_image_url` string is an HTTPS URL for an image file. This can be:
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -2194,6 +2247,7 @@ The `cover_image_url` string is an HTTPS URL for an image file. This can be:
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -2231,6 +2285,7 @@ The `cover_image_url` string is an HTTPS URL for an image file. This can be:
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2261,6 +2316,7 @@ The `cover_image_url` string is an HTTPS URL for an image file. This can be:
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2291,6 +2347,7 @@ The `cover_image_url` string is an HTTPS URL for an image file. This can be:
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2321,6 +2378,7 @@ The `cover_image_url` string is an HTTPS URL for an image file. This can be:
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -2351,6 +2409,7 @@ The `cover_image_url` string is an HTTPS URL for an image file. This can be:
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2381,6 +2440,7 @@ The `cover_image_url` string is an HTTPS URL for an image file. This can be:
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -2411,6 +2471,7 @@ The `cover_image_url` string is an HTTPS URL for an image file. This can be:
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -2441,6 +2502,7 @@ The `cover_image_url` string is an HTTPS URL for an image file. This can be:
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2477,6 +2539,7 @@ The `cover_image_url` string is an HTTPS URL for an image file. This can be:
           ShortCSharpTypeWithoutNullability: CreateModelsRequestVisibility,
           ShortCSharpTypeWithNullability: CreateModelsRequestVisibility?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateModelsRequestVisibilityJsonConverter
         },
         IsRequired: true,
@@ -2565,6 +2628,7 @@ The response will be a model object in the following format:
       ShortCSharpTypeWithoutNullability: CreateModelsRequest,
       ShortCSharpTypeWithNullability: CreateModelsRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -2584,6 +2648,7 @@ The response will be a model object in the following format:
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -2605,6 +2670,7 @@ The response will be a model object in the following format:
         ShortCSharpTypeWithoutNullability: CreateModelsRequest,
         ShortCSharpTypeWithNullability: CreateModelsRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -2641,6 +2707,7 @@ The response will be a model object in the following format:
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -2674,6 +2741,7 @@ The response will be a model object in the following format:
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -2752,6 +2820,7 @@ The response will be an empty 204, indicating the model has been deleted.
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -2771,6 +2840,7 @@ The response will be an empty 204, indicating the model has been deleted.
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -2808,6 +2878,7 @@ The response will be an empty 204, indicating the model has been deleted.
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -2841,6 +2912,7 @@ The response will be an empty 204, indicating the model has been deleted.
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -2938,6 +3010,7 @@ The `latest_version` object is the model's most recently pushed [version](#model
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -2957,6 +3030,7 @@ The `latest_version` object is the model's most recently pushed [version](#model
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -2994,6 +3068,7 @@ The `latest_version` object is the model's most recently pushed [version](#model
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -3027,6 +3102,7 @@ The `latest_version` object is the model's most recently pushed [version](#model
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -3060,6 +3136,7 @@ The `latest_version` object is the model's most recently pushed [version](#model
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: true,
@@ -3106,6 +3183,7 @@ Use a data URL when:
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3140,6 +3218,7 @@ If the requested model version supports streaming, the returned prediction will 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3172,6 +3251,7 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3304,6 +3384,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
       ShortCSharpTypeWithoutNullability: PredictionRequest,
       ShortCSharpTypeWithNullability: PredictionRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -3323,6 +3404,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -3349,6 +3431,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
         ShortCSharpTypeWithoutNullability: PredictionRequest,
         ShortCSharpTypeWithNullability: PredictionRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -3385,6 +3468,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -3418,6 +3502,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -3502,6 +3587,7 @@ The response will be a JSON array of model version objects, sorted with the most
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -3521,6 +3607,7 @@ The response will be a JSON array of model version objects, sorted with the most
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -3558,6 +3645,7 @@ The response will be a JSON array of model version objects, sorted with the most
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -3591,6 +3679,7 @@ The response will be a JSON array of model version objects, sorted with the most
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -3624,6 +3713,7 @@ The response will be a JSON array of model version objects, sorted with the most
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -3705,6 +3795,7 @@ The response will be an empty 202, indicating the deletion request has been acce
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -3724,6 +3815,7 @@ The response will be an empty 202, indicating the deletion request has been acce
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -3761,6 +3853,7 @@ The response will be an empty 202, indicating the deletion request has been acce
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -3794,6 +3887,7 @@ The response will be an empty 202, indicating the deletion request has been acce
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -3827,6 +3921,7 @@ The response will be an empty 202, indicating the deletion request has been acce
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -3938,6 +4033,7 @@ For more details, see the docs on [Cog's supported input and output types](https
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -3957,6 +4053,7 @@ For more details, see the docs on [Cog's supported input and output types](https
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -3994,6 +4091,7 @@ For more details, see the docs on [Cog's supported input and output types](https
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -4027,6 +4125,7 @@ For more details, see the docs on [Cog's supported input and output types](https
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -4060,6 +4159,7 @@ For more details, see the docs on [Cog's supported input and output types](https
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -4093,6 +4193,7 @@ For more details, see the docs on [Cog's supported input and output types](https
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -4125,6 +4226,7 @@ A string representing the desired model to push to in the format `{destination_m
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: true,
@@ -4157,6 +4259,7 @@ An object containing inputs to the Cog model's `train()` function.
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4187,6 +4290,7 @@ An object containing inputs to the Cog model's `train()` function.
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<TrainingRequestWebhookEventsFilter?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<TrainingRequestWebhookEventsFilter?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -4322,6 +4426,7 @@ To find some models to train on, check out the [trainable language models collec
       ShortCSharpTypeWithoutNullability: TrainingRequest,
       ShortCSharpTypeWithNullability: TrainingRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -4341,6 +4446,7 @@ To find some models to train on, check out the [trainable language models collec
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -4367,6 +4473,7 @@ To find some models to train on, check out the [trainable language models collec
         ShortCSharpTypeWithoutNullability: TrainingRequest,
         ShortCSharpTypeWithNullability: TrainingRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -4483,6 +4590,7 @@ The response will be a paginated JSON array of prediction objects, sorted with t
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -4502,6 +4610,7 @@ The response will be a paginated JSON array of prediction objects, sorted with t
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -4539,6 +4648,7 @@ The response will be a paginated JSON array of prediction objects, sorted with t
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: true,
@@ -4585,6 +4695,7 @@ Use a data URL when:
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4619,6 +4730,7 @@ If the requested model version supports streaming, the returned prediction will 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -4649,6 +4761,7 @@ If the requested model version supports streaming, the returned prediction will 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4681,6 +4794,7 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<VersionPredictionRequestWebhookEventsFilter?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<VersionPredictionRequestWebhookEventsFilter?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -4816,6 +4930,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
       ShortCSharpTypeWithoutNullability: VersionPredictionRequest,
       ShortCSharpTypeWithNullability: VersionPredictionRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -4835,6 +4950,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -4862,6 +4978,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
         ShortCSharpTypeWithoutNullability: VersionPredictionRequest,
         ShortCSharpTypeWithNullability: VersionPredictionRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -4898,6 +5015,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -5012,6 +5130,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -5031,6 +5150,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -5068,6 +5188,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -5127,6 +5248,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -5146,6 +5268,7 @@ Output files are served by `replicate.delivery` and its subdomains. If you use a
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -5264,6 +5387,7 @@ The response will be a paginated JSON array of training objects, sorted with the
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -5283,6 +5407,7 @@ The response will be a paginated JSON array of training objects, sorted with the
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -5320,6 +5445,7 @@ The response will be a paginated JSON array of training objects, sorted with the
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -5433,6 +5559,7 @@ Terminated trainings (with a status of `succeeded`, `failed`, or `canceled`) wil
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -5452,6 +5579,7 @@ Terminated trainings (with a status of `succeeded`, `failed`, or `canceled`) wil
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -5489,6 +5617,7 @@ Terminated trainings (with a status of `succeeded`, `failed`, or `canceled`) wil
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -5548,6 +5677,7 @@ Terminated trainings (with a status of `succeeded`, `failed`, or `canceled`) wil
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -5567,6 +5697,7 @@ Terminated trainings (with a status of `succeeded`, `failed`, or `canceled`) wil
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -5647,6 +5778,7 @@ The response will be a JSON object with a `key` property:
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -5666,6 +5798,7 @@ The response will be a JSON object with a `key` property:
       ShortCSharpTypeWithoutNullability: GetSecretDefaultWebhooksResponse,
       ShortCSharpTypeWithNullability: GetSecretDefaultWebhooksResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -5687,6 +5820,7 @@ The response will be a JSON object with a `key` property:
         ShortCSharpTypeWithoutNullability: GetSecretDefaultWebhooksResponse,
         ShortCSharpTypeWithNullability: GetSecretDefaultWebhooksResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -5747,6 +5881,7 @@ The response will be a JSON object with a `key` property:
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -5766,6 +5901,7 @@ The response will be a JSON object with a `key` property:
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,

@@ -36,6 +36,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -74,6 +75,7 @@
           ShortCSharpTypeWithoutNullability: DoneReasonVariant2,
           ShortCSharpTypeWithNullability: DoneReasonVariant2?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.DoneReasonVariant2JsonConverter
         },
         IsRequired: false,
@@ -114,6 +116,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -152,6 +155,7 @@
           ShortCSharpTypeWithoutNullability: CreateModelStatusVariant2,
           ShortCSharpTypeWithNullability: CreateModelStatusVariant2?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateModelStatusVariant2JsonConverter
         },
         IsRequired: false,
@@ -194,6 +198,7 @@ Example: pulling manifest,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -238,6 +243,7 @@ Example: pulling manifest,
           ShortCSharpTypeWithoutNullability: PullModelStatusVariant2,
           ShortCSharpTypeWithNullability: PullModelStatusVariant2?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.PullModelStatusVariant2JsonConverter
         },
         IsRequired: false,
@@ -278,6 +284,7 @@ Example: pulling manifest,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -318,6 +325,7 @@ Example: pulling manifest,
           ShortCSharpTypeWithoutNullability: PushModelStatusVariant2,
           ShortCSharpTypeWithNullability: PushModelStatusVariant2?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.PushModelStatusVariant2JsonConverter
         },
         IsRequired: false,

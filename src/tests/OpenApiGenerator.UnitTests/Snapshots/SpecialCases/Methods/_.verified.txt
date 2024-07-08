@@ -27,6 +27,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -84,6 +85,7 @@
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -103,6 +105,7 @@
       ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Pet>,
       ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<Pet>?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -124,6 +127,7 @@
         ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Pet>,
         ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<Pet>?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -146,6 +150,7 @@
         ShortCSharpTypeWithoutNullability: Error,
         ShortCSharpTypeWithNullability: Error?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -206,6 +211,7 @@
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -228,6 +234,7 @@
       ShortCSharpTypeWithoutNullability: Error,
       ShortCSharpTypeWithNullability: Error?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -252,6 +259,7 @@
         ShortCSharpTypeWithoutNullability: Error,
         ShortCSharpTypeWithNullability: Error?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -288,6 +296,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -345,6 +354,7 @@
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -371,6 +381,7 @@
       ShortCSharpTypeWithoutNullability: Pet,
       ShortCSharpTypeWithNullability: Pet?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -399,6 +410,7 @@
         ShortCSharpTypeWithoutNullability: Pet,
         ShortCSharpTypeWithNullability: Pet?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -421,6 +433,7 @@
         ShortCSharpTypeWithoutNullability: Error,
         ShortCSharpTypeWithNullability: Error?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -480,6 +493,7 @@
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -499,6 +513,7 @@
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,

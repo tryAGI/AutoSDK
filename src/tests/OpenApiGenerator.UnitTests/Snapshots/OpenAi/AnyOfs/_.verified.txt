@@ -93,6 +93,7 @@
           ShortCSharpTypeWithoutNullability: ChatCompletionRequestMessageContentPartText,
           ShortCSharpTypeWithNullability: ChatCompletionRequestMessageContentPartText?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -126,6 +127,7 @@
           ShortCSharpTypeWithoutNullability: ChatCompletionRequestMessageContentPartImage,
           ShortCSharpTypeWithNullability: ChatCompletionRequestMessageContentPartImage?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -170,6 +172,7 @@
           ShortCSharpTypeWithoutNullability: ChatCompletionRequestSystemMessage,
           ShortCSharpTypeWithNullability: ChatCompletionRequestSystemMessage?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -204,6 +207,7 @@
           ShortCSharpTypeWithoutNullability: ChatCompletionRequestUserMessage,
           ShortCSharpTypeWithNullability: ChatCompletionRequestUserMessage?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -240,6 +244,7 @@
           ShortCSharpTypeWithoutNullability: ChatCompletionRequestAssistantMessage,
           ShortCSharpTypeWithNullability: ChatCompletionRequestAssistantMessage?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -274,6 +279,7 @@
           ShortCSharpTypeWithoutNullability: ChatCompletionRequestToolMessage,
           ShortCSharpTypeWithNullability: ChatCompletionRequestToolMessage?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -308,6 +314,7 @@
           ShortCSharpTypeWithoutNullability: ChatCompletionRequestFunctionMessage,
           ShortCSharpTypeWithNullability: ChatCompletionRequestFunctionMessage?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -364,6 +371,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
           ShortCSharpTypeWithoutNullability: ChatCompletionToolChoiceOptionVariant1,
           ShortCSharpTypeWithNullability: ChatCompletionToolChoiceOptionVariant1?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ChatCompletionToolChoiceOptionVariant1JsonConverter
         },
         IsRequired: false,
@@ -397,6 +405,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
           ShortCSharpTypeWithoutNullability: ChatCompletionNamedToolChoice,
           ShortCSharpTypeWithNullability: ChatCompletionNamedToolChoice?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -449,6 +458,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ShortCSharpTypeWithoutNullability: AssistantsApiResponseFormatOptionVariant1,
           ShortCSharpTypeWithNullability: AssistantsApiResponseFormatOptionVariant1?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatOptionVariant1JsonConverter
         },
         IsRequired: false,
@@ -481,6 +491,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ShortCSharpTypeWithoutNullability: AssistantsApiResponseFormat,
           ShortCSharpTypeWithNullability: AssistantsApiResponseFormat?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -535,6 +546,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           ShortCSharpTypeWithoutNullability: AssistantsApiToolChoiceOptionVariant1,
           ShortCSharpTypeWithNullability: AssistantsApiToolChoiceOptionVariant1?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AssistantsApiToolChoiceOptionVariant1JsonConverter
         },
         IsRequired: false,
@@ -568,6 +580,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           ShortCSharpTypeWithoutNullability: AssistantsNamedToolChoice,
           ShortCSharpTypeWithNullability: AssistantsNamedToolChoice?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -610,6 +623,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           ShortCSharpTypeWithoutNullability: AutoChunkingStrategyRequestParam,
           ShortCSharpTypeWithNullability: AutoChunkingStrategyRequestParam?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -643,6 +657,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           ShortCSharpTypeWithoutNullability: StaticChunkingStrategyRequestParam,
           ShortCSharpTypeWithNullability: StaticChunkingStrategyRequestParam?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -704,6 +719,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: ThreadStreamEvent,
           ShortCSharpTypeWithNullability: ThreadStreamEvent?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory1
         },
         IsRequired: false,
@@ -735,6 +751,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStreamEvent,
           ShortCSharpTypeWithNullability: RunStreamEvent?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory10
         },
         IsRequired: false,
@@ -766,6 +783,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStepStreamEvent,
           ShortCSharpTypeWithNullability: RunStepStreamEvent?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory7
         },
         IsRequired: false,
@@ -797,6 +815,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: MessageStreamEvent,
           ShortCSharpTypeWithNullability: MessageStreamEvent?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory5
         },
         IsRequired: false,
@@ -830,6 +849,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: ErrorEvent,
           ShortCSharpTypeWithNullability: ErrorEvent?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -863,6 +883,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: DoneEvent,
           ShortCSharpTypeWithNullability: DoneEvent?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -903,6 +924,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: ThreadStreamEventVariant1,
           ShortCSharpTypeWithNullability: ThreadStreamEventVariant1?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -943,6 +965,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStreamEventVariant1,
           ShortCSharpTypeWithNullability: RunStreamEventVariant1?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -973,6 +996,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStreamEventVariant2,
           ShortCSharpTypeWithNullability: RunStreamEventVariant2?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1003,6 +1027,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStreamEventVariant3,
           ShortCSharpTypeWithNullability: RunStreamEventVariant3?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1033,6 +1058,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStreamEventVariant4,
           ShortCSharpTypeWithNullability: RunStreamEventVariant4?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1063,6 +1089,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStreamEventVariant5,
           ShortCSharpTypeWithNullability: RunStreamEventVariant5?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1093,6 +1120,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStreamEventVariant6,
           ShortCSharpTypeWithNullability: RunStreamEventVariant6?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1123,6 +1151,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStreamEventVariant7,
           ShortCSharpTypeWithNullability: RunStreamEventVariant7?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1153,6 +1182,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStreamEventVariant8,
           ShortCSharpTypeWithNullability: RunStreamEventVariant8?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1183,6 +1213,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStreamEventVariant9,
           ShortCSharpTypeWithNullability: RunStreamEventVariant9?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1213,6 +1244,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStreamEventVariant10,
           ShortCSharpTypeWithNullability: RunStreamEventVariant10?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1253,6 +1285,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant1,
           ShortCSharpTypeWithNullability: RunStepStreamEventVariant1?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1283,6 +1316,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant2,
           ShortCSharpTypeWithNullability: RunStepStreamEventVariant2?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1313,6 +1347,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant3,
           ShortCSharpTypeWithNullability: RunStepStreamEventVariant3?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1343,6 +1378,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant4,
           ShortCSharpTypeWithNullability: RunStepStreamEventVariant4?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1373,6 +1409,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant5,
           ShortCSharpTypeWithNullability: RunStepStreamEventVariant5?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1403,6 +1440,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant6,
           ShortCSharpTypeWithNullability: RunStepStreamEventVariant6?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1433,6 +1471,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: RunStepStreamEventVariant7,
           ShortCSharpTypeWithNullability: RunStepStreamEventVariant7?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1473,6 +1512,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: MessageStreamEventVariant1,
           ShortCSharpTypeWithNullability: MessageStreamEventVariant1?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1503,6 +1543,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: MessageStreamEventVariant2,
           ShortCSharpTypeWithNullability: MessageStreamEventVariant2?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1533,6 +1574,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: MessageStreamEventVariant3,
           ShortCSharpTypeWithNullability: MessageStreamEventVariant3?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1563,6 +1605,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: MessageStreamEventVariant4,
           ShortCSharpTypeWithNullability: MessageStreamEventVariant4?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1593,6 +1636,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: MessageStreamEventVariant5,
           ShortCSharpTypeWithNullability: MessageStreamEventVariant5?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1633,6 +1677,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: FineTuneChatCompletionRequestAssistantMessageVariant1,
           ShortCSharpTypeWithNullability: FineTuneChatCompletionRequestAssistantMessageVariant1?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1669,6 +1714,7 @@ integrate the Assistants API with streaming.
           ShortCSharpTypeWithoutNullability: ChatCompletionRequestAssistantMessage,
           ShortCSharpTypeWithNullability: ChatCompletionRequestAssistantMessage?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,

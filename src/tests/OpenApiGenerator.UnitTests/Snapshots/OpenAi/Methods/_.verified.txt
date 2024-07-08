@@ -27,6 +27,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionRequestMessage>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<ChatCompletionRequestMessage>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: true,
@@ -58,6 +59,7 @@
           ShortCSharpTypeWithoutNullability: global::System.AnyOf<string, CreateChatCompletionRequestModel>,
           ShortCSharpTypeWithNullability: global::System.AnyOf<string, CreateChatCompletionRequestModel>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
         IsRequired: true,
@@ -90,6 +92,7 @@ Example: gpt-4-turbo,
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -126,6 +129,7 @@ Default Value: 0,
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -161,6 +165,7 @@ Accepts a JSON object that maps tokens (specified by their token ID in the token
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -194,6 +199,7 @@ Default Value: false,
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -224,6 +230,7 @@ Default Value: false,
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -258,6 +265,7 @@ The total length of input tokens and generated tokens is limited by the model's 
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -292,6 +300,7 @@ Example: 1,
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -328,6 +337,7 @@ Default Value: 0,
           ShortCSharpTypeWithoutNullability: CreateChatCompletionRequestResponseFormat,
           ShortCSharpTypeWithNullability: CreateChatCompletionRequestResponseFormat?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -364,6 +374,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -404,6 +415,7 @@ Determinism is not guaranteed, and you should refer to the `system_fingerprint` 
           ShortCSharpTypeWithoutNullability: CreateChatCompletionRequestServiceTier,
           ShortCSharpTypeWithNullability: CreateChatCompletionRequestServiceTier?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateChatCompletionRequestServiceTierJsonConverter
         },
         IsRequired: false,
@@ -441,6 +453,7 @@ Specifies the latency tier to use for processing the request. This parameter is 
           ShortCSharpTypeWithoutNullability: global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>,
           ShortCSharpTypeWithNullability: global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -473,6 +486,7 @@ Up to 4 sequences where the API will stop generating further tokens.
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -509,6 +523,7 @@ Default Value: false,
           ShortCSharpTypeWithoutNullability: ChatCompletionStreamOptions,
           ShortCSharpTypeWithNullability: ChatCompletionStreamOptions?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -541,6 +556,7 @@ Options for streaming response. Only set this when you set `stream: true`.
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -578,6 +594,7 @@ Example: 1,
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -615,6 +632,7 @@ Example: 1,
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionTool>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<ChatCompletionTool>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -648,6 +666,7 @@ A list of tools the model may call. Currently, only functions are supported as a
           ShortCSharpTypeWithoutNullability: global::System.OneOf<CreateChatCompletionRequestToolChoice?, ChatCompletionNamedToolChoice?>,
           ShortCSharpTypeWithNullability: global::System.OneOf<CreateChatCompletionRequestToolChoice?, ChatCompletionNamedToolChoice?>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -686,6 +705,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -716,6 +736,7 @@ Specifying a particular tool via `{"type": "function", "function": {"name": "my_
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -750,6 +771,7 @@ Example: user-1234,
           ShortCSharpTypeWithoutNullability: global::System.OneOf<CreateChatCompletionRequestFunctionCall?, ChatCompletionFunctionCallOption?>,
           ShortCSharpTypeWithNullability: global::System.OneOf<CreateChatCompletionRequestFunctionCall?, ChatCompletionFunctionCallOption?>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -789,6 +811,7 @@ Specifying a particular function via `{"name": "my_function"}` forces the model 
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionFunctions>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<ChatCompletionFunctions>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -872,6 +895,7 @@ A list of functions the model may generate JSON inputs for.
       ShortCSharpTypeWithoutNullability: CreateChatCompletionRequest,
       ShortCSharpTypeWithNullability: CreateChatCompletionRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -900,6 +924,7 @@ A list of functions the model may generate JSON inputs for.
       ShortCSharpTypeWithoutNullability: CreateChatCompletionResponse,
       ShortCSharpTypeWithNullability: CreateChatCompletionResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -945,6 +970,7 @@ A list of functions the model may generate JSON inputs for.
         ShortCSharpTypeWithoutNullability: CreateChatCompletionRequest,
         ShortCSharpTypeWithNullability: CreateChatCompletionRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -973,6 +999,7 @@ A list of functions the model may generate JSON inputs for.
         ShortCSharpTypeWithoutNullability: CreateChatCompletionResponse,
         ShortCSharpTypeWithNullability: CreateChatCompletionResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -1010,6 +1037,7 @@ A list of functions the model may generate JSON inputs for.
           ShortCSharpTypeWithoutNullability: global::System.AnyOf<string, CreateCompletionRequestModel>,
           ShortCSharpTypeWithNullability: global::System.AnyOf<string, CreateCompletionRequestModel>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
         IsRequired: true,
@@ -1043,6 +1071,7 @@ ID of the model to use. You can use the [List models](/docs/api-reference/models
           ShortCSharpTypeWithoutNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>,
           ShortCSharpTypeWithNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory4
         },
         IsRequired: true,
@@ -1079,6 +1108,7 @@ Default Value: &lt;|endoftext|&gt;,
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1117,6 +1147,7 @@ Default Value: 1,
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1151,6 +1182,7 @@ Default Value: false,
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1187,6 +1219,7 @@ Default Value: 0,
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1224,6 +1257,7 @@ As an example, you can pass `{"50256": -100}` to prevent the &lt;|endoftext|&gt;
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1258,6 +1292,7 @@ The maximum value for `logprobs` is 5.
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1295,6 +1330,7 @@ Example: 16,
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1332,6 +1368,7 @@ Example: 1,
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1368,6 +1405,7 @@ Default Value: 0,
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1403,6 +1441,7 @@ Determinism is not guaranteed, and you should refer to the `system_fingerprint` 
           ShortCSharpTypeWithoutNullability: global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>,
           ShortCSharpTypeWithNullability: global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -1435,6 +1474,7 @@ Up to 4 sequences where the API will stop generating further tokens. The returne
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1471,6 +1511,7 @@ Default Value: false,
           ShortCSharpTypeWithoutNullability: ChatCompletionStreamOptions,
           ShortCSharpTypeWithNullability: ChatCompletionStreamOptions?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1503,6 +1544,7 @@ Options for streaming response. Only set this when you set `stream: true`.
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1538,6 +1580,7 @@ Example: test.,
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1575,6 +1618,7 @@ Example: 1,
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1612,6 +1656,7 @@ Example: 1,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1689,6 +1734,7 @@ Example: user-1234,
       ShortCSharpTypeWithoutNullability: CreateCompletionRequest,
       ShortCSharpTypeWithNullability: CreateCompletionRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -1716,6 +1762,7 @@ Example: user-1234,
       ShortCSharpTypeWithoutNullability: CreateCompletionResponse,
       ShortCSharpTypeWithNullability: CreateCompletionResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -1756,6 +1803,7 @@ Example: user-1234,
         ShortCSharpTypeWithoutNullability: CreateCompletionRequest,
         ShortCSharpTypeWithNullability: CreateCompletionRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -1783,6 +1831,7 @@ Example: user-1234,
         ShortCSharpTypeWithoutNullability: CreateCompletionResponse,
         ShortCSharpTypeWithNullability: CreateCompletionResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -1819,6 +1868,7 @@ Example: user-1234,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -1852,6 +1902,7 @@ Example: A cute baby sea otter,
           ShortCSharpTypeWithoutNullability: global::System.AnyOf<string?, CreateImageRequestModel?>,
           ShortCSharpTypeWithNullability: global::System.AnyOf<string?, CreateImageRequestModel?>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -1886,6 +1937,7 @@ Example: dall-e-3,
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1926,6 +1978,7 @@ Example: 1,
           ShortCSharpTypeWithoutNullability: CreateImageRequestQuality,
           ShortCSharpTypeWithNullability: CreateImageRequestQuality?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateImageRequestQualityJsonConverter
         },
         IsRequired: false,
@@ -1966,6 +2019,7 @@ Example: standard,
           ShortCSharpTypeWithoutNullability: CreateImageRequestResponseFormat,
           ShortCSharpTypeWithNullability: CreateImageRequestResponseFormat?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateImageRequestResponseFormatJsonConverter
         },
         IsRequired: false,
@@ -2012,6 +2066,7 @@ Example: url,
           ShortCSharpTypeWithoutNullability: CreateImageRequestSize,
           ShortCSharpTypeWithNullability: CreateImageRequestSize?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateImageRequestSizeJsonConverter
         },
         IsRequired: false,
@@ -2052,6 +2107,7 @@ Example: 1024x1024,
           ShortCSharpTypeWithoutNullability: CreateImageRequestStyle,
           ShortCSharpTypeWithNullability: CreateImageRequestStyle?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateImageRequestStyleJsonConverter
         },
         IsRequired: false,
@@ -2086,6 +2142,7 @@ Example: vivid,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2153,6 +2210,7 @@ Example: user-1234,
       ShortCSharpTypeWithoutNullability: CreateImageRequest,
       ShortCSharpTypeWithNullability: CreateImageRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -2175,6 +2233,7 @@ Example: user-1234,
       ShortCSharpTypeWithoutNullability: ImagesResponse,
       ShortCSharpTypeWithNullability: ImagesResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -2205,6 +2264,7 @@ Example: user-1234,
         ShortCSharpTypeWithoutNullability: CreateImageRequest,
         ShortCSharpTypeWithNullability: CreateImageRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -2227,6 +2287,7 @@ Example: user-1234,
         ShortCSharpTypeWithoutNullability: ImagesResponse,
         ShortCSharpTypeWithNullability: ImagesResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -2263,6 +2324,7 @@ Example: user-1234,
           ShortCSharpTypeWithoutNullability: byte[],
           ShortCSharpTypeWithNullability: byte[]?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: true,
@@ -2293,6 +2355,7 @@ Example: user-1234,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -2325,6 +2388,7 @@ Example: A cute baby sea otter wearing a beret,
           ShortCSharpTypeWithoutNullability: byte[],
           ShortCSharpTypeWithNullability: byte[]?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -2356,6 +2420,7 @@ Example: A cute baby sea otter wearing a beret,
           ShortCSharpTypeWithoutNullability: global::System.AnyOf<string?, CreateImageEditRequestModel?>,
           ShortCSharpTypeWithNullability: global::System.AnyOf<string?, CreateImageEditRequestModel?>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -2390,6 +2455,7 @@ Example: dall-e-2,
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2432,6 +2498,7 @@ Example: 1,
           ShortCSharpTypeWithoutNullability: CreateImageEditRequestSize,
           ShortCSharpTypeWithNullability: CreateImageEditRequestSize?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateImageEditRequestSizeJsonConverter
         },
         IsRequired: false,
@@ -2472,6 +2539,7 @@ Example: 1024x1024,
           ShortCSharpTypeWithoutNullability: CreateImageEditRequestResponseFormat,
           ShortCSharpTypeWithNullability: CreateImageEditRequestResponseFormat?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateImageEditRequestResponseFormatJsonConverter
         },
         IsRequired: false,
@@ -2506,6 +2574,7 @@ Example: url,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2573,6 +2642,7 @@ Example: user-1234,
       ShortCSharpTypeWithoutNullability: CreateImageEditRequest,
       ShortCSharpTypeWithNullability: CreateImageEditRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -2595,6 +2665,7 @@ Example: user-1234,
       ShortCSharpTypeWithoutNullability: ImagesResponse,
       ShortCSharpTypeWithNullability: ImagesResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -2625,6 +2696,7 @@ Example: user-1234,
         ShortCSharpTypeWithoutNullability: CreateImageEditRequest,
         ShortCSharpTypeWithNullability: CreateImageEditRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -2647,6 +2719,7 @@ Example: user-1234,
         ShortCSharpTypeWithoutNullability: ImagesResponse,
         ShortCSharpTypeWithNullability: ImagesResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -2683,6 +2756,7 @@ Example: user-1234,
           ShortCSharpTypeWithoutNullability: byte[],
           ShortCSharpTypeWithNullability: byte[]?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: true,
@@ -2714,6 +2788,7 @@ Example: user-1234,
           ShortCSharpTypeWithoutNullability: global::System.AnyOf<string?, CreateImageVariationRequestModel?>,
           ShortCSharpTypeWithNullability: global::System.AnyOf<string?, CreateImageVariationRequestModel?>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -2748,6 +2823,7 @@ Example: dall-e-2,
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2788,6 +2864,7 @@ Example: 1,
           ShortCSharpTypeWithoutNullability: CreateImageVariationRequestResponseFormat,
           ShortCSharpTypeWithNullability: CreateImageVariationRequestResponseFormat?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateImageVariationRequestResponseFormatJsonConverter
         },
         IsRequired: false,
@@ -2830,6 +2907,7 @@ Example: url,
           ShortCSharpTypeWithoutNullability: CreateImageVariationRequestSize,
           ShortCSharpTypeWithNullability: CreateImageVariationRequestSize?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateImageVariationRequestSizeJsonConverter
         },
         IsRequired: false,
@@ -2864,6 +2942,7 @@ Example: 1024x1024,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2929,6 +3008,7 @@ Example: user-1234,
       ShortCSharpTypeWithoutNullability: CreateImageVariationRequest,
       ShortCSharpTypeWithNullability: CreateImageVariationRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -2951,6 +3031,7 @@ Example: user-1234,
       ShortCSharpTypeWithoutNullability: ImagesResponse,
       ShortCSharpTypeWithNullability: ImagesResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -2979,6 +3060,7 @@ Example: user-1234,
         ShortCSharpTypeWithoutNullability: CreateImageVariationRequest,
         ShortCSharpTypeWithNullability: CreateImageVariationRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -3001,6 +3083,7 @@ Example: user-1234,
         ShortCSharpTypeWithoutNullability: ImagesResponse,
         ShortCSharpTypeWithNullability: ImagesResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -3038,6 +3121,7 @@ Example: user-1234,
           ShortCSharpTypeWithoutNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>,
           ShortCSharpTypeWithNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory4
         },
         IsRequired: true,
@@ -3072,6 +3156,7 @@ Example: The quick brown fox jumped over the lazy dog,
           ShortCSharpTypeWithoutNullability: global::System.AnyOf<string, CreateEmbeddingRequestModel>,
           ShortCSharpTypeWithNullability: global::System.AnyOf<string, CreateEmbeddingRequestModel>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
         IsRequired: true,
@@ -3111,6 +3196,7 @@ Example: text-embedding-3-small,
           ShortCSharpTypeWithoutNullability: CreateEmbeddingRequestEncodingFormat,
           ShortCSharpTypeWithNullability: CreateEmbeddingRequestEncodingFormat?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateEmbeddingRequestEncodingFormatJsonConverter
         },
         IsRequired: false,
@@ -3145,6 +3231,7 @@ Example: float,
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3177,6 +3264,7 @@ The number of dimensions the resulting output embeddings should have. Only suppo
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3241,6 +3329,7 @@ Example: user-1234,
       ShortCSharpTypeWithoutNullability: CreateEmbeddingRequest,
       ShortCSharpTypeWithNullability: CreateEmbeddingRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -3265,6 +3354,7 @@ Example: user-1234,
       ShortCSharpTypeWithoutNullability: CreateEmbeddingResponse,
       ShortCSharpTypeWithNullability: CreateEmbeddingResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -3292,6 +3382,7 @@ Example: user-1234,
         ShortCSharpTypeWithoutNullability: CreateEmbeddingRequest,
         ShortCSharpTypeWithNullability: CreateEmbeddingRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -3316,6 +3407,7 @@ Example: user-1234,
         ShortCSharpTypeWithoutNullability: CreateEmbeddingResponse,
         ShortCSharpTypeWithNullability: CreateEmbeddingResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -3353,6 +3445,7 @@ Example: user-1234,
           ShortCSharpTypeWithoutNullability: global::System.AnyOf<string, CreateSpeechRequestModel>,
           ShortCSharpTypeWithNullability: global::System.AnyOf<string, CreateSpeechRequestModel>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
         IsRequired: true,
@@ -3385,6 +3478,7 @@ One of the available [TTS models](/docs/models/tts): `tts-1` or `tts-1-hd`
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -3429,6 +3523,7 @@ One of the available [TTS models](/docs/models/tts): `tts-1` or `tts-1-hd`
           ShortCSharpTypeWithoutNullability: CreateSpeechRequestVoice,
           ShortCSharpTypeWithNullability: CreateSpeechRequestVoice?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateSpeechRequestVoiceJsonConverter
         },
         IsRequired: true,
@@ -3473,6 +3568,7 @@ One of the available [TTS models](/docs/models/tts): `tts-1` or `tts-1-hd`
           ShortCSharpTypeWithoutNullability: CreateSpeechRequestResponseFormat,
           ShortCSharpTypeWithNullability: CreateSpeechRequestResponseFormat?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateSpeechRequestResponseFormatJsonConverter
         },
         IsRequired: false,
@@ -3506,6 +3602,7 @@ Default Value: mp3,
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3570,6 +3667,7 @@ Default Value: 1,
       ShortCSharpTypeWithoutNullability: CreateSpeechRequest,
       ShortCSharpTypeWithNullability: CreateSpeechRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -3589,6 +3687,7 @@ Default Value: 1,
       ShortCSharpTypeWithoutNullability: byte[],
       ShortCSharpTypeWithNullability: byte[]?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -3616,6 +3715,7 @@ Default Value: 1,
         ShortCSharpTypeWithoutNullability: CreateSpeechRequest,
         ShortCSharpTypeWithNullability: CreateSpeechRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -3635,6 +3735,7 @@ Default Value: 1,
         ShortCSharpTypeWithoutNullability: byte[],
         ShortCSharpTypeWithNullability: byte[]?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -3671,6 +3772,7 @@ Default Value: 1,
           ShortCSharpTypeWithoutNullability: byte[],
           ShortCSharpTypeWithNullability: byte[]?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: true,
@@ -3704,6 +3806,7 @@ The audio file object (not file name) to transcribe, in one of these formats: fl
           ShortCSharpTypeWithoutNullability: global::System.AnyOf<string, CreateTranscriptionRequestModel>,
           ShortCSharpTypeWithNullability: global::System.AnyOf<string, CreateTranscriptionRequestModel>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
         IsRequired: true,
@@ -3737,6 +3840,7 @@ Example: whisper-1,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3769,6 +3873,7 @@ The language of the input audio. Supplying the input language in [ISO-639-1](htt
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3813,6 +3918,7 @@ An optional text to guide the model's style or continue a previous audio segment
           ShortCSharpTypeWithoutNullability: CreateTranscriptionRequestResponseFormat,
           ShortCSharpTypeWithNullability: CreateTranscriptionRequestResponseFormat?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateTranscriptionRequestResponseFormatJsonConverter
         },
         IsRequired: false,
@@ -3847,6 +3953,7 @@ Default Value: json,
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3881,6 +3988,7 @@ Default Value: 0,
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<CreateTranscriptionRequestTimestampGranularities?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<CreateTranscriptionRequestTimestampGranularities?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3948,6 +4056,7 @@ Default Value: [segment],
       ShortCSharpTypeWithoutNullability: CreateTranscriptionRequest,
       ShortCSharpTypeWithNullability: CreateTranscriptionRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -3968,6 +4077,7 @@ Default Value: [segment],
       ShortCSharpTypeWithoutNullability: global::System.OneOf<CreateTranscriptionResponseJson, CreateTranscriptionResponseVerboseJson>,
       ShortCSharpTypeWithNullability: global::System.OneOf<CreateTranscriptionResponseJson, CreateTranscriptionResponseVerboseJson>?,
       IsAnyOf: true,
+      IsReferenceable: true,
       ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
     },
     AdditionalModels: null,
@@ -3997,6 +4107,7 @@ Default Value: [segment],
         ShortCSharpTypeWithoutNullability: CreateTranscriptionRequest,
         ShortCSharpTypeWithNullability: CreateTranscriptionRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -4017,6 +4128,7 @@ Default Value: [segment],
         ShortCSharpTypeWithoutNullability: global::System.OneOf<CreateTranscriptionResponseJson, CreateTranscriptionResponseVerboseJson>,
         ShortCSharpTypeWithNullability: global::System.OneOf<CreateTranscriptionResponseJson, CreateTranscriptionResponseVerboseJson>?,
         IsAnyOf: true,
+        IsReferenceable: true,
         ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
       }
     ],
@@ -4053,6 +4165,7 @@ Default Value: [segment],
           ShortCSharpTypeWithoutNullability: byte[],
           ShortCSharpTypeWithNullability: byte[]?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: true,
@@ -4086,6 +4199,7 @@ The audio file object (not file name) translate, in one of these formats: flac, 
           ShortCSharpTypeWithoutNullability: global::System.AnyOf<string, CreateTranslationRequestModel>,
           ShortCSharpTypeWithNullability: global::System.AnyOf<string, CreateTranslationRequestModel>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
         IsRequired: true,
@@ -4119,6 +4233,7 @@ Example: whisper-1,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4151,6 +4266,7 @@ An optional text to guide the model's style or continue a previous audio segment
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4185,6 +4301,7 @@ Default Value: json,
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4250,6 +4367,7 @@ Default Value: 0,
       ShortCSharpTypeWithoutNullability: CreateTranslationRequest,
       ShortCSharpTypeWithNullability: CreateTranslationRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -4270,6 +4388,7 @@ Default Value: 0,
       ShortCSharpTypeWithoutNullability: global::System.OneOf<CreateTranslationResponseJson, CreateTranslationResponseVerboseJson>,
       ShortCSharpTypeWithNullability: global::System.OneOf<CreateTranslationResponseJson, CreateTranslationResponseVerboseJson>?,
       IsAnyOf: true,
+      IsReferenceable: true,
       ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
     },
     AdditionalModels: null,
@@ -4297,6 +4416,7 @@ Default Value: 0,
         ShortCSharpTypeWithoutNullability: CreateTranslationRequest,
         ShortCSharpTypeWithNullability: CreateTranslationRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -4317,6 +4437,7 @@ Default Value: 0,
         ShortCSharpTypeWithoutNullability: global::System.OneOf<CreateTranslationResponseJson, CreateTranslationResponseVerboseJson>,
         ShortCSharpTypeWithNullability: global::System.OneOf<CreateTranslationResponseJson, CreateTranslationResponseVerboseJson>?,
         IsAnyOf: true,
+        IsReferenceable: true,
         ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
       }
     ],
@@ -4353,6 +4474,7 @@ Default Value: 0,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4410,6 +4532,7 @@ Default Value: 0,
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -4432,6 +4555,7 @@ Default Value: 0,
       ShortCSharpTypeWithoutNullability: ListFilesResponse,
       ShortCSharpTypeWithNullability: ListFilesResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -4456,6 +4580,7 @@ Default Value: 0,
         ShortCSharpTypeWithoutNullability: ListFilesResponse,
         ShortCSharpTypeWithNullability: ListFilesResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -4492,6 +4617,7 @@ Default Value: 0,
           ShortCSharpTypeWithoutNullability: byte[],
           ShortCSharpTypeWithNullability: byte[]?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: true,
@@ -4534,6 +4660,7 @@ The File object (not file name) to be uploaded.
           ShortCSharpTypeWithoutNullability: CreateFileRequestPurpose,
           ShortCSharpTypeWithNullability: CreateFileRequestPurpose?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateFileRequestPurposeJsonConverter
         },
         IsRequired: true,
@@ -4606,6 +4733,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
       ShortCSharpTypeWithoutNullability: CreateFileRequest,
       ShortCSharpTypeWithNullability: CreateFileRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -4634,6 +4762,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
       ShortCSharpTypeWithoutNullability: OpenAIFile,
       ShortCSharpTypeWithNullability: OpenAIFile?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -4658,6 +4787,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
         ShortCSharpTypeWithoutNullability: CreateFileRequest,
         ShortCSharpTypeWithNullability: CreateFileRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -4686,6 +4816,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
         ShortCSharpTypeWithoutNullability: OpenAIFile,
         ShortCSharpTypeWithNullability: OpenAIFile?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -4722,6 +4853,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -4780,6 +4912,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -4803,6 +4936,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
       ShortCSharpTypeWithoutNullability: DeleteFileResponse,
       ShortCSharpTypeWithNullability: DeleteFileResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -4828,6 +4962,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
         ShortCSharpTypeWithoutNullability: DeleteFileResponse,
         ShortCSharpTypeWithNullability: DeleteFileResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -4864,6 +4999,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -4921,6 +5057,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -4949,6 +5086,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
       ShortCSharpTypeWithoutNullability: OpenAIFile,
       ShortCSharpTypeWithNullability: OpenAIFile?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -4979,6 +5117,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
         ShortCSharpTypeWithoutNullability: OpenAIFile,
         ShortCSharpTypeWithNullability: OpenAIFile?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -5015,6 +5154,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -5072,6 +5212,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -5091,6 +5232,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
       ShortCSharpTypeWithoutNullability: string,
       ShortCSharpTypeWithNullability: string?,
       IsAnyOf: false,
+      IsReferenceable: true,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -5112,6 +5254,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
         ShortCSharpTypeWithoutNullability: string,
         ShortCSharpTypeWithNullability: string?,
         IsAnyOf: false,
+        IsReferenceable: true,
         ConverterType: 
       }
     ],
@@ -5149,6 +5292,7 @@ Please [contact us](https://help.openai.com/) if you need to increase these stor
           ShortCSharpTypeWithoutNullability: global::System.AnyOf<string, CreateFineTuningJobRequestModel>,
           ShortCSharpTypeWithNullability: global::System.AnyOf<string, CreateFineTuningJobRequestModel>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
         IsRequired: true,
@@ -5183,6 +5327,7 @@ Example: gpt-3.5-turbo,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -5224,6 +5369,7 @@ Example: file-abc123,
           ShortCSharpTypeWithoutNullability: CreateFineTuningJobRequestHyperparameters,
           ShortCSharpTypeWithNullability: CreateFineTuningJobRequestHyperparameters?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -5254,6 +5400,7 @@ Example: file-abc123,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5288,6 +5435,7 @@ For example, a `suffix` of "custom-model-name" would produce a model name like `
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5330,6 +5478,7 @@ Example: file-abc123,
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<CreateFineTuningJobRequestIntegrations?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<CreateFineTuningJobRequestIntegrations?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -5360,6 +5509,7 @@ Example: file-abc123,
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5433,6 +5583,7 @@ Response includes details of the enqueued job including job status and the name 
       ShortCSharpTypeWithoutNullability: CreateFineTuningJobRequest,
       ShortCSharpTypeWithNullability: CreateFineTuningJobRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -5470,6 +5621,7 @@ Response includes details of the enqueued job including job status and the name 
       ShortCSharpTypeWithoutNullability: FineTuningJob,
       ShortCSharpTypeWithNullability: FineTuningJob?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -5499,6 +5651,7 @@ Response includes details of the enqueued job including job status and the name 
         ShortCSharpTypeWithoutNullability: CreateFineTuningJobRequest,
         ShortCSharpTypeWithNullability: CreateFineTuningJobRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -5536,6 +5689,7 @@ Response includes details of the enqueued job including job status and the name 
         ShortCSharpTypeWithoutNullability: FineTuningJob,
         ShortCSharpTypeWithNullability: FineTuningJob?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -5572,6 +5726,7 @@ Response includes details of the enqueued job including job status and the name 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5605,6 +5760,7 @@ Response includes details of the enqueued job including job status and the name 
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5665,6 +5821,7 @@ List your organization's fine-tuning jobs
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -5688,6 +5845,7 @@ List your organization's fine-tuning jobs
       ShortCSharpTypeWithoutNullability: ListPaginatedFineTuningJobsResponse,
       ShortCSharpTypeWithNullability: ListPaginatedFineTuningJobsResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -5713,6 +5871,7 @@ List your organization's fine-tuning jobs
         ShortCSharpTypeWithoutNullability: ListPaginatedFineTuningJobsResponse,
         ShortCSharpTypeWithNullability: ListPaginatedFineTuningJobsResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -5749,6 +5908,7 @@ List your organization's fine-tuning jobs
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -5810,6 +5970,7 @@ Get info about a fine-tuning job.
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -5847,6 +6008,7 @@ Get info about a fine-tuning job.
       ShortCSharpTypeWithoutNullability: FineTuningJob,
       ShortCSharpTypeWithNullability: FineTuningJob?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -5886,6 +6048,7 @@ Get info about a fine-tuning job.
         ShortCSharpTypeWithoutNullability: FineTuningJob,
         ShortCSharpTypeWithNullability: FineTuningJob?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -5922,6 +6085,7 @@ Get info about a fine-tuning job.
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -5955,6 +6119,7 @@ Get info about a fine-tuning job.
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5988,6 +6153,7 @@ Get info about a fine-tuning job.
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -6048,6 +6214,7 @@ Get status updates for a fine-tuning job.
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -6070,6 +6237,7 @@ Get status updates for a fine-tuning job.
       ShortCSharpTypeWithoutNullability: ListFineTuningJobEventsResponse,
       ShortCSharpTypeWithNullability: ListFineTuningJobEventsResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -6094,6 +6262,7 @@ Get status updates for a fine-tuning job.
         ShortCSharpTypeWithoutNullability: ListFineTuningJobEventsResponse,
         ShortCSharpTypeWithNullability: ListFineTuningJobEventsResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -6130,6 +6299,7 @@ Get status updates for a fine-tuning job.
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -6190,6 +6360,7 @@ Immediately cancel a fine-tune job.
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -6227,6 +6398,7 @@ Immediately cancel a fine-tune job.
       ShortCSharpTypeWithoutNullability: FineTuningJob,
       ShortCSharpTypeWithNullability: FineTuningJob?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -6266,6 +6438,7 @@ Immediately cancel a fine-tune job.
         ShortCSharpTypeWithoutNullability: FineTuningJob,
         ShortCSharpTypeWithNullability: FineTuningJob?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -6302,6 +6475,7 @@ Immediately cancel a fine-tune job.
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -6335,6 +6509,7 @@ Immediately cancel a fine-tune job.
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -6368,6 +6543,7 @@ Immediately cancel a fine-tune job.
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -6428,6 +6604,7 @@ List checkpoints for a fine-tuning job.
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -6453,6 +6630,7 @@ List checkpoints for a fine-tuning job.
       ShortCSharpTypeWithoutNullability: ListFineTuningJobCheckpointsResponse,
       ShortCSharpTypeWithNullability: ListFineTuningJobCheckpointsResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -6480,6 +6658,7 @@ List checkpoints for a fine-tuning job.
         ShortCSharpTypeWithoutNullability: ListFineTuningJobCheckpointsResponse,
         ShortCSharpTypeWithNullability: ListFineTuningJobCheckpointsResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -6539,6 +6718,7 @@ List checkpoints for a fine-tuning job.
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -6561,6 +6741,7 @@ List checkpoints for a fine-tuning job.
       ShortCSharpTypeWithoutNullability: ListModelsResponse,
       ShortCSharpTypeWithNullability: ListModelsResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -6585,6 +6766,7 @@ List checkpoints for a fine-tuning job.
         ShortCSharpTypeWithoutNullability: ListModelsResponse,
         ShortCSharpTypeWithNullability: ListModelsResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -6621,6 +6803,7 @@ List checkpoints for a fine-tuning job.
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -6678,6 +6861,7 @@ List checkpoints for a fine-tuning job.
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -6702,6 +6886,7 @@ List checkpoints for a fine-tuning job.
       ShortCSharpTypeWithoutNullability: Model,
       ShortCSharpTypeWithNullability: Model?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -6728,6 +6913,7 @@ List checkpoints for a fine-tuning job.
         ShortCSharpTypeWithoutNullability: Model,
         ShortCSharpTypeWithNullability: Model?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -6764,6 +6950,7 @@ List checkpoints for a fine-tuning job.
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -6822,6 +7009,7 @@ List checkpoints for a fine-tuning job.
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -6845,6 +7033,7 @@ List checkpoints for a fine-tuning job.
       ShortCSharpTypeWithoutNullability: DeleteModelResponse,
       ShortCSharpTypeWithNullability: DeleteModelResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -6870,6 +7059,7 @@ List checkpoints for a fine-tuning job.
         ShortCSharpTypeWithoutNullability: DeleteModelResponse,
         ShortCSharpTypeWithNullability: DeleteModelResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -6907,6 +7097,7 @@ List checkpoints for a fine-tuning job.
           ShortCSharpTypeWithoutNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<string>>,
           ShortCSharpTypeWithNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<string>>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
         },
         IsRequired: true,
@@ -6938,6 +7129,7 @@ List checkpoints for a fine-tuning job.
           ShortCSharpTypeWithoutNullability: global::System.AnyOf<string?, CreateModerationRequestModel?>,
           ShortCSharpTypeWithNullability: global::System.AnyOf<string?, CreateModerationRequestModel?>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -7003,6 +7195,7 @@ Example: text-moderation-stable,
       ShortCSharpTypeWithoutNullability: CreateModerationRequest,
       ShortCSharpTypeWithNullability: CreateModerationRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -7026,6 +7219,7 @@ Example: text-moderation-stable,
       ShortCSharpTypeWithoutNullability: CreateModerationResponse,
       ShortCSharpTypeWithNullability: CreateModerationResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -7050,6 +7244,7 @@ Example: text-moderation-stable,
         ShortCSharpTypeWithoutNullability: CreateModerationRequest,
         ShortCSharpTypeWithNullability: CreateModerationRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -7073,6 +7268,7 @@ Example: text-moderation-stable,
         ShortCSharpTypeWithoutNullability: CreateModerationResponse,
         ShortCSharpTypeWithNullability: CreateModerationResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -7109,6 +7305,7 @@ Example: text-moderation-stable,
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7149,6 +7346,7 @@ Example: text-moderation-stable,
           ShortCSharpTypeWithoutNullability: ListAssistantsOrder,
           ShortCSharpTypeWithNullability: ListAssistantsOrder?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ListAssistantsOrderJsonConverter
         },
         IsRequired: false,
@@ -7183,6 +7381,7 @@ Example: text-moderation-stable,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7216,6 +7415,7 @@ Example: text-moderation-stable,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7273,6 +7473,7 @@ Example: text-moderation-stable,
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -7298,6 +7499,7 @@ Example: text-moderation-stable,
       ShortCSharpTypeWithoutNullability: ListAssistantsResponse,
       ShortCSharpTypeWithNullability: ListAssistantsResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -7325,6 +7527,7 @@ Example: text-moderation-stable,
         ShortCSharpTypeWithoutNullability: ListAssistantsResponse,
         ShortCSharpTypeWithNullability: ListAssistantsResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -7362,6 +7565,7 @@ Example: text-moderation-stable,
           ShortCSharpTypeWithoutNullability: global::System.AnyOf<string, CreateAssistantRequestModel>,
           ShortCSharpTypeWithNullability: global::System.AnyOf<string, CreateAssistantRequestModel>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
         IsRequired: true,
@@ -7395,6 +7599,7 @@ Example: gpt-4-turbo,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7427,6 +7632,7 @@ The name of the assistant. The maximum length is 256 characters.
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7459,6 +7665,7 @@ The description of the assistant. The maximum length is 512 characters.
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7491,6 +7698,7 @@ The system instructions that the assistant uses. The maximum length is 256,000 c
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -7523,6 +7731,7 @@ A list of tool enabled on the assistant. There can be a maximum of 128 tools per
           ShortCSharpTypeWithoutNullability: CreateAssistantRequestToolResources,
           ShortCSharpTypeWithNullability: CreateAssistantRequestToolResources?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -7555,6 +7764,7 @@ A set of resources that are used by the assistant's tools. The resources are spe
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -7588,6 +7798,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7623,6 +7834,7 @@ Example: 1,
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7661,6 +7873,7 @@ Example: 1,
           ShortCSharpTypeWithoutNullability: global::System.OneOf<CreateAssistantRequestResponseFormat?, AssistantsApiResponseFormat?>,
           ShortCSharpTypeWithNullability: global::System.OneOf<CreateAssistantRequestResponseFormat?, AssistantsApiResponseFormat?>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -7733,6 +7946,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ShortCSharpTypeWithoutNullability: CreateAssistantRequest,
       ShortCSharpTypeWithNullability: CreateAssistantRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -7766,6 +7980,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ShortCSharpTypeWithoutNullability: AssistantObject,
       ShortCSharpTypeWithNullability: AssistantObject?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -7798,6 +8013,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ShortCSharpTypeWithoutNullability: CreateAssistantRequest,
         ShortCSharpTypeWithNullability: CreateAssistantRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -7831,6 +8047,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ShortCSharpTypeWithoutNullability: AssistantObject,
         ShortCSharpTypeWithNullability: AssistantObject?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -7867,6 +8084,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -7924,6 +8142,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -7957,6 +8176,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ShortCSharpTypeWithoutNullability: AssistantObject,
       ShortCSharpTypeWithNullability: AssistantObject?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -7992,6 +8212,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ShortCSharpTypeWithoutNullability: AssistantObject,
         ShortCSharpTypeWithNullability: AssistantObject?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -8028,6 +8249,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -8062,6 +8284,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ShortCSharpTypeWithoutNullability: global::System.AnyOf<string?>,
           ShortCSharpTypeWithNullability: global::System.AnyOf<string?>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory1
         },
         IsRequired: false,
@@ -8094,6 +8317,7 @@ ID of the model to use. You can use the [List models](/docs/api-reference/models
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8126,6 +8350,7 @@ The name of the assistant. The maximum length is 256 characters.
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8158,6 +8383,7 @@ The description of the assistant. The maximum length is 512 characters.
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8190,6 +8416,7 @@ The system instructions that the assistant uses. The maximum length is 256,000 c
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -8222,6 +8449,7 @@ A list of tool enabled on the assistant. There can be a maximum of 128 tools per
           ShortCSharpTypeWithoutNullability: ModifyAssistantRequestToolResources,
           ShortCSharpTypeWithNullability: ModifyAssistantRequestToolResources?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -8254,6 +8482,7 @@ A set of resources that are used by the assistant's tools. The resources are spe
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -8287,6 +8516,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8321,6 +8551,7 @@ Example: 1,
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8359,6 +8590,7 @@ Example: 1,
           ShortCSharpTypeWithoutNullability: global::System.OneOf<ModifyAssistantRequestResponseFormat?, AssistantsApiResponseFormat?>,
           ShortCSharpTypeWithNullability: global::System.OneOf<ModifyAssistantRequestResponseFormat?, AssistantsApiResponseFormat?>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -8431,6 +8663,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ShortCSharpTypeWithoutNullability: ModifyAssistantRequest,
       ShortCSharpTypeWithNullability: ModifyAssistantRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -8464,6 +8697,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ShortCSharpTypeWithoutNullability: AssistantObject,
       ShortCSharpTypeWithNullability: AssistantObject?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -8496,6 +8730,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ShortCSharpTypeWithoutNullability: ModifyAssistantRequest,
         ShortCSharpTypeWithNullability: ModifyAssistantRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -8529,6 +8764,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ShortCSharpTypeWithoutNullability: AssistantObject,
         ShortCSharpTypeWithNullability: AssistantObject?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -8565,6 +8801,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -8623,6 +8860,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -8646,6 +8884,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ShortCSharpTypeWithoutNullability: DeleteAssistantResponse,
       ShortCSharpTypeWithNullability: DeleteAssistantResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -8671,6 +8910,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ShortCSharpTypeWithoutNullability: DeleteAssistantResponse,
         ShortCSharpTypeWithNullability: DeleteAssistantResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -8707,6 +8947,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<CreateMessageRequest>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<CreateMessageRequest>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -8737,6 +8978,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ShortCSharpTypeWithoutNullability: CreateThreadRequestToolResources,
           ShortCSharpTypeWithNullability: CreateThreadRequestToolResources?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -8769,6 +9011,7 @@ A set of resources that are made available to the assistant's tools in this thre
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -8831,6 +9074,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: CreateThreadRequest,
       ShortCSharpTypeWithNullability: CreateThreadRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -8856,6 +9100,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: ThreadObject,
       ShortCSharpTypeWithNullability: ThreadObject?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -8881,6 +9126,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: CreateThreadRequest,
         ShortCSharpTypeWithNullability: CreateThreadRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -8906,6 +9152,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: ThreadObject,
         ShortCSharpTypeWithNullability: ThreadObject?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -8942,6 +9189,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -8999,6 +9247,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -9024,6 +9273,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: ThreadObject,
       ShortCSharpTypeWithNullability: ThreadObject?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -9051,6 +9301,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: ThreadObject,
         ShortCSharpTypeWithNullability: ThreadObject?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -9087,6 +9338,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -9120,6 +9372,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: ModifyThreadRequestToolResources,
           ShortCSharpTypeWithNullability: ModifyThreadRequestToolResources?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -9152,6 +9405,7 @@ A set of resources that are made available to the assistant's tools in this thre
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -9213,6 +9467,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: ModifyThreadRequest,
       ShortCSharpTypeWithNullability: ModifyThreadRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -9238,6 +9493,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: ThreadObject,
       ShortCSharpTypeWithNullability: ThreadObject?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -9262,6 +9518,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: ModifyThreadRequest,
         ShortCSharpTypeWithNullability: ModifyThreadRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -9287,6 +9544,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: ThreadObject,
         ShortCSharpTypeWithNullability: ThreadObject?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -9323,6 +9581,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -9381,6 +9640,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -9404,6 +9664,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: DeleteThreadResponse,
       ShortCSharpTypeWithNullability: DeleteThreadResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -9429,6 +9690,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: DeleteThreadResponse,
         ShortCSharpTypeWithNullability: DeleteThreadResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -9465,6 +9727,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -9498,6 +9761,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -9538,6 +9802,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: ListMessagesOrder,
           ShortCSharpTypeWithNullability: ListMessagesOrder?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ListMessagesOrderJsonConverter
         },
         IsRequired: false,
@@ -9572,6 +9837,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -9605,6 +9871,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -9638,6 +9905,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -9695,6 +9963,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -9720,6 +9989,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: ListMessagesResponse,
       ShortCSharpTypeWithNullability: ListMessagesResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -9747,6 +10017,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: ListMessagesResponse,
         ShortCSharpTypeWithNullability: ListMessagesResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -9783,6 +10054,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -9822,6 +10094,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: CreateMessageRequestRole,
           ShortCSharpTypeWithNullability: CreateMessageRequestRole?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateMessageRequestRoleJsonConverter
         },
         IsRequired: true,
@@ -9857,6 +10130,7 @@ The role of the entity that is creating the message. Allowed values include:
           ShortCSharpTypeWithoutNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<MessageContentImageFileObject?, MessageContentImageUrlObject?, MessageRequestContentTextObject?>>>,
           ShortCSharpTypeWithNullability: global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<MessageContentImageFileObject?, MessageContentImageUrlObject?, MessageRequestContentTextObject?>>>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
         },
         IsRequired: true,
@@ -9887,6 +10161,7 @@ The role of the entity that is creating the message. Allowed values include:
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<CreateMessageRequestAttachments?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<CreateMessageRequestAttachments?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -9917,6 +10192,7 @@ The role of the entity that is creating the message. Allowed values include:
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -9980,6 +10256,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: CreateMessageRequest,
       ShortCSharpTypeWithNullability: CreateMessageRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -10014,6 +10291,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: MessageObject,
       ShortCSharpTypeWithNullability: MessageObject?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -10040,6 +10318,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: CreateMessageRequest,
         ShortCSharpTypeWithNullability: CreateMessageRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -10074,6 +10353,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: MessageObject,
         ShortCSharpTypeWithNullability: MessageObject?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -10110,6 +10390,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -10143,6 +10424,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -10200,6 +10482,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -10234,6 +10517,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: MessageObject,
       ShortCSharpTypeWithNullability: MessageObject?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -10270,6 +10554,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: MessageObject,
         ShortCSharpTypeWithNullability: MessageObject?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -10306,6 +10591,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -10339,6 +10625,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -10372,6 +10659,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -10432,6 +10720,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: ModifyMessageRequest,
       ShortCSharpTypeWithNullability: ModifyMessageRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -10466,6 +10755,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: MessageObject,
       ShortCSharpTypeWithNullability: MessageObject?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -10489,6 +10779,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: ModifyMessageRequest,
         ShortCSharpTypeWithNullability: ModifyMessageRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -10523,6 +10814,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: MessageObject,
         ShortCSharpTypeWithNullability: MessageObject?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -10559,6 +10851,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -10592,6 +10885,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -10650,6 +10944,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -10673,6 +10968,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: DeleteMessageResponse,
       ShortCSharpTypeWithNullability: DeleteMessageResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -10698,6 +10994,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: DeleteMessageResponse,
         ShortCSharpTypeWithNullability: DeleteMessageResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -10734,6 +11031,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -10768,6 +11066,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: CreateThreadRequest,
           ShortCSharpTypeWithNullability: CreateThreadRequest?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -10799,6 +11098,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: global::System.AnyOf<string?, CreateThreadAndRunRequestModel?>,
           ShortCSharpTypeWithNullability: global::System.AnyOf<string?, CreateThreadAndRunRequestModel?>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -10831,6 +11131,7 @@ Example: gpt-4-turbo,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -10861,6 +11162,7 @@ Example: gpt-4-turbo,
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -10891,6 +11193,7 @@ Example: gpt-4-turbo,
           ShortCSharpTypeWithoutNullability: CreateThreadAndRunRequestToolResources,
           ShortCSharpTypeWithNullability: CreateThreadAndRunRequestToolResources?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -10923,6 +11226,7 @@ A set of resources that are used by the assistant's tools. The resources are spe
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -10956,6 +11260,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -10990,6 +11295,7 @@ Example: 1,
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11024,6 +11330,7 @@ Example: 1,
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11056,6 +11363,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11088,6 +11396,7 @@ The maximum number of prompt tokens that may be used over the course of the run.
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11123,6 +11432,7 @@ The maximum number of completion tokens that may be used over the course of the 
           ShortCSharpTypeWithoutNullability: TruncationObject,
           ShortCSharpTypeWithNullability: TruncationObject?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -11154,6 +11464,7 @@ The maximum number of completion tokens that may be used over the course of the 
           ShortCSharpTypeWithoutNullability: global::System.OneOf<CreateThreadAndRunRequestToolChoice?, AssistantsNamedToolChoice?>,
           ShortCSharpTypeWithNullability: global::System.OneOf<CreateThreadAndRunRequestToolChoice?, AssistantsNamedToolChoice?>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -11190,6 +11501,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11221,6 +11533,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           ShortCSharpTypeWithoutNullability: global::System.OneOf<CreateThreadAndRunRequestResponseFormat?, AssistantsApiResponseFormat?>,
           ShortCSharpTypeWithNullability: global::System.OneOf<CreateThreadAndRunRequestResponseFormat?, AssistantsApiResponseFormat?>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -11299,6 +11612,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ShortCSharpTypeWithoutNullability: CreateThreadAndRunRequest,
       ShortCSharpTypeWithNullability: CreateThreadAndRunRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -11346,6 +11660,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ShortCSharpTypeWithoutNullability: RunObject,
       ShortCSharpTypeWithNullability: RunObject?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -11384,6 +11699,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ShortCSharpTypeWithoutNullability: CreateThreadAndRunRequest,
         ShortCSharpTypeWithNullability: CreateThreadAndRunRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -11431,6 +11747,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ShortCSharpTypeWithoutNullability: RunObject,
         ShortCSharpTypeWithNullability: RunObject?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -11467,6 +11784,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -11500,6 +11818,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11540,6 +11859,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ShortCSharpTypeWithoutNullability: ListRunsOrder,
           ShortCSharpTypeWithNullability: ListRunsOrder?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ListRunsOrderJsonConverter
         },
         IsRequired: false,
@@ -11574,6 +11894,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11607,6 +11928,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11664,6 +11986,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -11689,6 +12012,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ShortCSharpTypeWithoutNullability: ListRunsResponse,
       ShortCSharpTypeWithNullability: ListRunsResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -11716,6 +12040,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ShortCSharpTypeWithoutNullability: ListRunsResponse,
         ShortCSharpTypeWithNullability: ListRunsResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -11752,6 +12077,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -11785,6 +12111,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -11816,6 +12143,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ShortCSharpTypeWithoutNullability: global::System.AnyOf<string?, CreateRunRequestModel?>,
           ShortCSharpTypeWithNullability: global::System.AnyOf<string?, CreateRunRequestModel?>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -11848,6 +12176,7 @@ Example: gpt-4-turbo,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11878,6 +12207,7 @@ Example: gpt-4-turbo,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11908,6 +12238,7 @@ Example: gpt-4-turbo,
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<CreateMessageRequest>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<CreateMessageRequest>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -11938,6 +12269,7 @@ Example: gpt-4-turbo,
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.OneOf<AssistantToolsCode?, AssistantToolsFileSearch?, AssistantToolsFunction?>?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -11968,6 +12300,7 @@ Example: gpt-4-turbo,
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -12001,6 +12334,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12035,6 +12369,7 @@ Example: 1,
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12072,6 +12407,7 @@ Example: 1,
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12104,6 +12440,7 @@ If `true`, returns a stream of events that happen during the Run as server-sent 
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12136,6 +12473,7 @@ The maximum number of prompt tokens that may be used over the course of the run.
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12171,6 +12509,7 @@ The maximum number of completion tokens that may be used over the course of the 
           ShortCSharpTypeWithoutNullability: TruncationObject,
           ShortCSharpTypeWithNullability: TruncationObject?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -12202,6 +12541,7 @@ The maximum number of completion tokens that may be used over the course of the 
           ShortCSharpTypeWithoutNullability: global::System.OneOf<CreateRunRequestToolChoice?, AssistantsNamedToolChoice?>,
           ShortCSharpTypeWithNullability: global::System.OneOf<CreateRunRequestToolChoice?, AssistantsNamedToolChoice?>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -12238,6 +12578,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12269,6 +12610,7 @@ Specifying a particular tool like `{"type": "file_search"}` or `{"type": "functi
           ShortCSharpTypeWithoutNullability: global::System.OneOf<CreateRunRequestResponseFormat?, AssistantsApiResponseFormat?>,
           ShortCSharpTypeWithNullability: global::System.OneOf<CreateRunRequestResponseFormat?, AssistantsApiResponseFormat?>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -12347,6 +12689,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ShortCSharpTypeWithoutNullability: CreateRunRequest,
       ShortCSharpTypeWithNullability: CreateRunRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -12394,6 +12737,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ShortCSharpTypeWithoutNullability: RunObject,
       ShortCSharpTypeWithNullability: RunObject?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -12432,6 +12776,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ShortCSharpTypeWithoutNullability: CreateRunRequest,
         ShortCSharpTypeWithNullability: CreateRunRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -12479,6 +12824,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ShortCSharpTypeWithoutNullability: RunObject,
         ShortCSharpTypeWithNullability: RunObject?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -12515,6 +12861,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -12548,6 +12895,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -12605,6 +12953,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -12652,6 +13001,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
       ShortCSharpTypeWithoutNullability: RunObject,
       ShortCSharpTypeWithNullability: RunObject?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -12701,6 +13051,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
         ShortCSharpTypeWithoutNullability: RunObject,
         ShortCSharpTypeWithNullability: RunObject?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -12737,6 +13088,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -12770,6 +13122,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -12803,6 +13156,7 @@ Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the m
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -12863,6 +13217,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: ModifyRunRequest,
       ShortCSharpTypeWithNullability: ModifyRunRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -12910,6 +13265,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: RunObject,
       ShortCSharpTypeWithNullability: RunObject?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -12933,6 +13289,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: ModifyRunRequest,
         ShortCSharpTypeWithNullability: ModifyRunRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -12980,6 +13337,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: RunObject,
         ShortCSharpTypeWithNullability: RunObject?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -13016,6 +13374,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -13049,6 +13408,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -13082,6 +13442,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<SubmitToolOutputsRunRequestToolOutputs>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<SubmitToolOutputsRunRequestToolOutputs>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: true,
@@ -13112,6 +13473,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13174,6 +13536,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       ShortCSharpTypeWithoutNullability: SubmitToolOutputsRunRequest,
       ShortCSharpTypeWithNullability: SubmitToolOutputsRunRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -13221,6 +13584,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       ShortCSharpTypeWithoutNullability: RunObject,
       ShortCSharpTypeWithNullability: RunObject?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -13245,6 +13609,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
         ShortCSharpTypeWithoutNullability: SubmitToolOutputsRunRequest,
         ShortCSharpTypeWithNullability: SubmitToolOutputsRunRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -13292,6 +13657,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
         ShortCSharpTypeWithoutNullability: RunObject,
         ShortCSharpTypeWithNullability: RunObject?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -13328,6 +13694,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -13361,6 +13728,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -13419,6 +13787,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -13466,6 +13835,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       ShortCSharpTypeWithoutNullability: RunObject,
       ShortCSharpTypeWithNullability: RunObject?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -13515,6 +13885,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
         ShortCSharpTypeWithoutNullability: RunObject,
         ShortCSharpTypeWithNullability: RunObject?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -13551,6 +13922,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -13584,6 +13956,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -13617,6 +13990,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13657,6 +14031,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
           ShortCSharpTypeWithoutNullability: ListRunStepsOrder,
           ShortCSharpTypeWithNullability: ListRunStepsOrder?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ListRunStepsOrderJsonConverter
         },
         IsRequired: false,
@@ -13691,6 +14066,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13724,6 +14100,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13781,6 +14158,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -13806,6 +14184,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       ShortCSharpTypeWithoutNullability: ListRunStepsResponse,
       ShortCSharpTypeWithNullability: ListRunStepsResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -13833,6 +14212,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
         ShortCSharpTypeWithoutNullability: ListRunStepsResponse,
         ShortCSharpTypeWithNullability: ListRunStepsResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -13869,6 +14249,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -13902,6 +14283,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -13935,6 +14317,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -13992,6 +14375,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -14028,6 +14412,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       ShortCSharpTypeWithoutNullability: RunStepObject,
       ShortCSharpTypeWithNullability: RunStepObject?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -14066,6 +14451,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
         ShortCSharpTypeWithoutNullability: RunStepObject,
         ShortCSharpTypeWithNullability: RunStepObject?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -14102,6 +14488,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14142,6 +14529,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
           ShortCSharpTypeWithoutNullability: ListVectorStoresOrder,
           ShortCSharpTypeWithNullability: ListVectorStoresOrder?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ListVectorStoresOrderJsonConverter
         },
         IsRequired: false,
@@ -14176,6 +14564,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14209,6 +14598,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14266,6 +14656,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -14291,6 +14682,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
       ShortCSharpTypeWithoutNullability: ListVectorStoresResponse,
       ShortCSharpTypeWithNullability: ListVectorStoresResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -14318,6 +14710,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
         ShortCSharpTypeWithoutNullability: ListVectorStoresResponse,
         ShortCSharpTypeWithNullability: ListVectorStoresResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -14354,6 +14747,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -14384,6 +14778,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14417,6 +14812,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
           ShortCSharpTypeWithoutNullability: VectorStoreExpirationAfter,
           ShortCSharpTypeWithNullability: VectorStoreExpirationAfter?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -14448,6 +14844,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -14479,6 +14876,7 @@ When a run has the `status: "requires_action"` and `required_action.type` is `su
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -14543,6 +14941,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: CreateVectorStoreRequest,
       ShortCSharpTypeWithNullability: CreateVectorStoreRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -14574,6 +14973,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: VectorStoreObject,
       ShortCSharpTypeWithNullability: VectorStoreObject?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -14601,6 +15001,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: CreateVectorStoreRequest,
         ShortCSharpTypeWithNullability: CreateVectorStoreRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -14632,6 +15033,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: VectorStoreObject,
         ShortCSharpTypeWithNullability: VectorStoreObject?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -14668,6 +15070,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -14725,6 +15128,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -14756,6 +15160,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: VectorStoreObject,
       ShortCSharpTypeWithNullability: VectorStoreObject?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -14789,6 +15194,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: VectorStoreObject,
         ShortCSharpTypeWithNullability: VectorStoreObject?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -14825,6 +15231,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -14858,6 +15265,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14891,6 +15299,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: VectorStoreExpirationAfter,
           ShortCSharpTypeWithNullability: VectorStoreExpirationAfter?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -14921,6 +15330,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -14983,6 +15393,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: UpdateVectorStoreRequest,
       ShortCSharpTypeWithNullability: UpdateVectorStoreRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -15014,6 +15425,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: VectorStoreObject,
       ShortCSharpTypeWithNullability: VectorStoreObject?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -15039,6 +15451,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: UpdateVectorStoreRequest,
         ShortCSharpTypeWithNullability: UpdateVectorStoreRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -15070,6 +15483,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: VectorStoreObject,
         ShortCSharpTypeWithNullability: VectorStoreObject?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -15106,6 +15520,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -15164,6 +15579,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -15187,6 +15603,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: DeleteVectorStoreResponse,
       ShortCSharpTypeWithNullability: DeleteVectorStoreResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -15212,6 +15629,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: DeleteVectorStoreResponse,
         ShortCSharpTypeWithNullability: DeleteVectorStoreResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -15248,6 +15666,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -15281,6 +15700,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15321,6 +15741,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: ListVectorStoreFilesOrder,
           ShortCSharpTypeWithNullability: ListVectorStoreFilesOrder?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ListVectorStoreFilesOrderJsonConverter
         },
         IsRequired: false,
@@ -15355,6 +15776,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15388,6 +15810,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15431,6 +15854,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: ListVectorStoreFilesFilter,
           ShortCSharpTypeWithNullability: ListVectorStoreFilesFilter?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ListVectorStoreFilesFilterJsonConverter
         },
         IsRequired: false,
@@ -15488,6 +15912,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -15513,6 +15938,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: ListVectorStoreFilesResponse,
       ShortCSharpTypeWithNullability: ListVectorStoreFilesResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -15540,6 +15966,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: ListVectorStoreFilesResponse,
         ShortCSharpTypeWithNullability: ListVectorStoreFilesResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -15576,6 +16003,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -15609,6 +16037,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -15640,6 +16069,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: ChunkingStrategyRequestParam,
           ShortCSharpTypeWithNullability: ChunkingStrategyRequestParam?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -15698,6 +16128,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: CreateVectorStoreFileRequest,
       ShortCSharpTypeWithNullability: CreateVectorStoreFileRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -15726,6 +16157,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: VectorStoreFileObject,
       ShortCSharpTypeWithNullability: VectorStoreFileObject?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -15750,6 +16182,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: CreateVectorStoreFileRequest,
         ShortCSharpTypeWithNullability: CreateVectorStoreFileRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -15778,6 +16211,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: VectorStoreFileObject,
         ShortCSharpTypeWithNullability: VectorStoreFileObject?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -15814,6 +16248,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -15847,6 +16282,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -15904,6 +16340,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -15932,6 +16369,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: VectorStoreFileObject,
       ShortCSharpTypeWithNullability: VectorStoreFileObject?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -15962,6 +16400,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: VectorStoreFileObject,
         ShortCSharpTypeWithNullability: VectorStoreFileObject?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -15998,6 +16437,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -16031,6 +16471,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -16089,6 +16530,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -16112,6 +16554,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: DeleteVectorStoreFileResponse,
       ShortCSharpTypeWithNullability: DeleteVectorStoreFileResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -16137,6 +16580,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: DeleteVectorStoreFileResponse,
         ShortCSharpTypeWithNullability: DeleteVectorStoreFileResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -16173,6 +16617,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -16206,6 +16651,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<string>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: true,
@@ -16237,6 +16683,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: ChunkingStrategyRequestParam,
           ShortCSharpTypeWithNullability: ChunkingStrategyRequestParam?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -16295,6 +16742,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: CreateVectorStoreFileBatchRequest,
       ShortCSharpTypeWithNullability: CreateVectorStoreFileBatchRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -16321,6 +16769,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: VectorStoreFileBatchObject,
       ShortCSharpTypeWithNullability: VectorStoreFileBatchObject?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -16345,6 +16794,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: CreateVectorStoreFileBatchRequest,
         ShortCSharpTypeWithNullability: CreateVectorStoreFileBatchRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -16371,6 +16821,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: VectorStoreFileBatchObject,
         ShortCSharpTypeWithNullability: VectorStoreFileBatchObject?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -16407,6 +16858,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -16440,6 +16892,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -16497,6 +16950,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -16523,6 +16977,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: VectorStoreFileBatchObject,
       ShortCSharpTypeWithNullability: VectorStoreFileBatchObject?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -16551,6 +17006,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: VectorStoreFileBatchObject,
         ShortCSharpTypeWithNullability: VectorStoreFileBatchObject?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -16587,6 +17043,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -16620,6 +17077,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -16678,6 +17136,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -16704,6 +17163,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: VectorStoreFileBatchObject,
       ShortCSharpTypeWithNullability: VectorStoreFileBatchObject?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -16732,6 +17192,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: VectorStoreFileBatchObject,
         ShortCSharpTypeWithNullability: VectorStoreFileBatchObject?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -16768,6 +17229,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -16801,6 +17263,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -16834,6 +17297,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16874,6 +17338,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: ListFilesInVectorStoreBatchOrder,
           ShortCSharpTypeWithNullability: ListFilesInVectorStoreBatchOrder?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ListFilesInVectorStoreBatchOrderJsonConverter
         },
         IsRequired: false,
@@ -16908,6 +17373,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16941,6 +17407,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16984,6 +17451,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: ListFilesInVectorStoreBatchFilter,
           ShortCSharpTypeWithNullability: ListFilesInVectorStoreBatchFilter?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ListFilesInVectorStoreBatchFilterJsonConverter
         },
         IsRequired: false,
@@ -17041,6 +17509,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -17066,6 +17535,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
       ShortCSharpTypeWithoutNullability: ListVectorStoreFilesResponse,
       ShortCSharpTypeWithNullability: ListVectorStoreFilesResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -17093,6 +17563,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
         ShortCSharpTypeWithoutNullability: ListVectorStoreFilesResponse,
         ShortCSharpTypeWithNullability: ListVectorStoreFilesResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -17129,6 +17600,7 @@ Set of 16 key-value pairs that can be attached to an object. This can be useful 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -17173,6 +17645,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           ShortCSharpTypeWithoutNullability: CreateBatchRequestEndpoint,
           ShortCSharpTypeWithNullability: CreateBatchRequestEndpoint?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateBatchRequestEndpointJsonConverter
         },
         IsRequired: true,
@@ -17207,6 +17680,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           ShortCSharpTypeWithoutNullability: CreateBatchRequestCompletionWindow,
           ShortCSharpTypeWithNullability: CreateBatchRequestCompletionWindow?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateBatchRequestCompletionWindowJsonConverter
         },
         IsRequired: true,
@@ -17237,6 +17711,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -17293,6 +17768,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: CreateBatchRequest,
       ShortCSharpTypeWithNullability: CreateBatchRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -17333,6 +17809,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: Batch,
       ShortCSharpTypeWithNullability: Batch?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -17354,6 +17831,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
         ShortCSharpTypeWithoutNullability: CreateBatchRequest,
         ShortCSharpTypeWithNullability: CreateBatchRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -17394,6 +17872,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
         ShortCSharpTypeWithoutNullability: Batch,
         ShortCSharpTypeWithNullability: Batch?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -17430,6 +17909,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -17463,6 +17943,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -17521,6 +18002,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -17546,6 +18028,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ListBatchesResponse,
       ShortCSharpTypeWithNullability: ListBatchesResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -17573,6 +18056,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
         ShortCSharpTypeWithoutNullability: ListBatchesResponse,
         ShortCSharpTypeWithNullability: ListBatchesResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -17609,6 +18093,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -17666,6 +18151,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -17706,6 +18192,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: Batch,
       ShortCSharpTypeWithNullability: Batch?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -17748,6 +18235,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
         ShortCSharpTypeWithoutNullability: Batch,
         ShortCSharpTypeWithNullability: Batch?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -17784,6 +18272,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -17842,6 +18331,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -17882,6 +18372,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: Batch,
       ShortCSharpTypeWithNullability: Batch?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -17924,6 +18415,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
         ShortCSharpTypeWithoutNullability: Batch,
         ShortCSharpTypeWithNullability: Batch?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -17960,6 +18452,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           ShortCSharpTypeWithoutNullability: AssistantsClient,
           ShortCSharpTypeWithNullability: AssistantsClient?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -17990,6 +18483,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           ShortCSharpTypeWithoutNullability: AudioClient,
           ShortCSharpTypeWithNullability: AudioClient?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -18020,6 +18514,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           ShortCSharpTypeWithoutNullability: ChatClient,
           ShortCSharpTypeWithNullability: ChatClient?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -18050,6 +18545,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           ShortCSharpTypeWithoutNullability: CompletionsClient,
           ShortCSharpTypeWithNullability: CompletionsClient?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -18080,6 +18576,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           ShortCSharpTypeWithoutNullability: EmbeddingsClient,
           ShortCSharpTypeWithNullability: EmbeddingsClient?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -18110,6 +18607,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           ShortCSharpTypeWithoutNullability: FineTuningClient,
           ShortCSharpTypeWithNullability: FineTuningClient?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -18140,6 +18638,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           ShortCSharpTypeWithoutNullability: BatchClient,
           ShortCSharpTypeWithNullability: BatchClient?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -18170,6 +18669,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           ShortCSharpTypeWithoutNullability: FilesClient,
           ShortCSharpTypeWithNullability: FilesClient?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -18200,6 +18700,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           ShortCSharpTypeWithoutNullability: ImagesClient,
           ShortCSharpTypeWithNullability: ImagesClient?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -18230,6 +18731,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           ShortCSharpTypeWithoutNullability: ModelsClient,
           ShortCSharpTypeWithNullability: ModelsClient?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -18260,6 +18762,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           ShortCSharpTypeWithoutNullability: ModerationsClient,
           ShortCSharpTypeWithNullability: ModerationsClient?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -18290,6 +18793,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
           ShortCSharpTypeWithoutNullability: VectorStoresClient,
           ShortCSharpTypeWithNullability: VectorStoresClient?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -18344,6 +18848,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -18363,6 +18868,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -18859,6 +19365,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -18878,6 +19385,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -18938,6 +19446,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -18957,6 +19466,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -19017,6 +19527,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -19036,6 +19547,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -19096,6 +19608,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -19115,6 +19628,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -19175,6 +19689,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -19194,6 +19709,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -19254,6 +19770,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -19273,6 +19790,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -19333,6 +19851,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -19352,6 +19871,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -19412,6 +19932,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -19431,6 +19952,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -19491,6 +20013,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -19510,6 +20033,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -19570,6 +20094,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -19589,6 +20114,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -19649,6 +20175,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -19668,6 +20195,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -19728,6 +20256,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -19747,6 +20276,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,

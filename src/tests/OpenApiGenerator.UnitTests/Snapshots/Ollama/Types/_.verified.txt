@@ -16,6 +16,7 @@
     ShortCSharpTypeWithoutNullability: string,
     ShortCSharpTypeWithNullability: string?,
     IsAnyOf: false,
+    IsReferenceable: true,
     ConverterType: 
   },
   {
@@ -35,6 +36,7 @@
     ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
     ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -54,6 +56,7 @@
     ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<long>,
     ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<long>?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -103,6 +106,7 @@
     ShortCSharpTypeWithoutNullability: RequestOptions,
     ShortCSharpTypeWithNullability: RequestOptions?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -126,6 +130,7 @@
     ShortCSharpTypeWithoutNullability: ResponseFormat,
     ShortCSharpTypeWithNullability: ResponseFormat?,
     IsAnyOf: false,
+    IsReferenceable: true,
     ConverterType: global::OpenApiGenerator.JsonConverters.ResponseFormatJsonConverter
   },
   {
@@ -145,6 +150,7 @@
     ShortCSharpTypeWithoutNullability: bool,
     ShortCSharpTypeWithNullability: bool?,
     IsAnyOf: false,
+    IsReferenceable: true,
     ConverterType: 
   },
   {
@@ -164,6 +170,7 @@
     ShortCSharpTypeWithoutNullability: int,
     ShortCSharpTypeWithNullability: int?,
     IsAnyOf: false,
+    IsReferenceable: true,
     ConverterType: 
   },
   {
@@ -183,6 +190,7 @@
     ShortCSharpTypeWithoutNullability: float,
     ShortCSharpTypeWithNullability: float?,
     IsAnyOf: false,
+    IsReferenceable: true,
     ConverterType: 
   },
   {
@@ -202,6 +210,7 @@
     ShortCSharpTypeWithoutNullability: global::System.DateTime,
     ShortCSharpTypeWithNullability: global::System.DateTime?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -221,6 +230,7 @@
     ShortCSharpTypeWithoutNullability: long,
     ShortCSharpTypeWithNullability: long?,
     IsAnyOf: false,
+    IsReferenceable: true,
     ConverterType: 
   },
   {
@@ -240,6 +250,7 @@
     ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Message>,
     ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<Message>?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -263,6 +274,7 @@
     ShortCSharpTypeWithoutNullability: Message,
     ShortCSharpTypeWithNullability: Message?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -283,6 +295,7 @@
     ShortCSharpTypeWithoutNullability: global::System.AnyOf<string?, GenerateChatCompletionResponseDoneReason?>,
     ShortCSharpTypeWithNullability: global::System.AnyOf<string?, GenerateChatCompletionResponseDoneReason?>?,
     IsAnyOf: true,
+    IsReferenceable: true,
     ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
   },
   {
@@ -310,6 +323,7 @@
     ShortCSharpTypeWithoutNullability: MessageRole,
     ShortCSharpTypeWithNullability: MessageRole?,
     IsAnyOf: false,
+    IsReferenceable: true,
     ConverterType: global::OpenApiGenerator.JsonConverters.MessageRoleJsonConverter
   },
   {
@@ -329,6 +343,7 @@
     ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<double>,
     ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<double>?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -349,6 +364,7 @@
     ShortCSharpTypeWithoutNullability: global::System.AnyOf<string?, CreateModelResponseStatus?>,
     ShortCSharpTypeWithNullability: global::System.AnyOf<string?, CreateModelResponseStatus?>?,
     IsAnyOf: true,
+    IsReferenceable: true,
     ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
   },
   {
@@ -368,6 +384,7 @@
     ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Model>,
     ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<Model>?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -394,6 +411,7 @@
     ShortCSharpTypeWithoutNullability: ModelDetails,
     ShortCSharpTypeWithNullability: ModelDetails?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -413,6 +431,7 @@
     ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ProcessModel>,
     ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<ProcessModel>?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -437,6 +456,7 @@
     ShortCSharpTypeWithoutNullability: ModelInformation,
     ShortCSharpTypeWithNullability: ModelInformation?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -457,6 +477,7 @@
     ShortCSharpTypeWithoutNullability: global::System.AnyOf<string?, PullModelResponseStatus?>,
     ShortCSharpTypeWithNullability: global::System.AnyOf<string?, PullModelResponseStatus?>?,
     IsAnyOf: true,
+    IsReferenceable: true,
     ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
   },
   {
@@ -477,6 +498,7 @@
     ShortCSharpTypeWithoutNullability: global::System.AnyOf<string?, PushModelResponseStatus?>,
     ShortCSharpTypeWithNullability: global::System.AnyOf<string?, PushModelResponseStatus?>?,
     IsAnyOf: true,
+    IsReferenceable: true,
     ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
   },
   {
@@ -498,6 +520,7 @@
     ShortCSharpTypeWithoutNullability: VersionResponse,
     ShortCSharpTypeWithNullability: VersionResponse?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -529,6 +552,7 @@
     ShortCSharpTypeWithoutNullability: GenerateCompletionRequest,
     ShortCSharpTypeWithNullability: GenerateCompletionRequest?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -560,6 +584,7 @@
     ShortCSharpTypeWithoutNullability: GenerateCompletionResponse,
     ShortCSharpTypeWithNullability: GenerateCompletionResponse?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -586,6 +611,7 @@
     ShortCSharpTypeWithoutNullability: GenerateChatCompletionRequest,
     ShortCSharpTypeWithNullability: GenerateChatCompletionRequest?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -617,6 +643,7 @@
     ShortCSharpTypeWithoutNullability: GenerateChatCompletionResponse,
     ShortCSharpTypeWithNullability: GenerateChatCompletionResponse?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -641,6 +668,7 @@
     ShortCSharpTypeWithoutNullability: GenerateEmbeddingRequest,
     ShortCSharpTypeWithNullability: GenerateEmbeddingRequest?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -662,6 +690,7 @@
     ShortCSharpTypeWithoutNullability: GenerateEmbeddingResponse,
     ShortCSharpTypeWithNullability: GenerateEmbeddingResponse?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -687,6 +716,7 @@
     ShortCSharpTypeWithoutNullability: CreateModelRequest,
     ShortCSharpTypeWithNullability: CreateModelRequest?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -708,6 +738,7 @@
     ShortCSharpTypeWithoutNullability: CreateModelResponse,
     ShortCSharpTypeWithNullability: CreateModelResponse?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -729,6 +760,7 @@
     ShortCSharpTypeWithoutNullability: ModelsResponse,
     ShortCSharpTypeWithNullability: ModelsResponse?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -750,6 +782,7 @@
     ShortCSharpTypeWithoutNullability: ProcessResponse,
     ShortCSharpTypeWithNullability: ProcessResponse?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -771,6 +804,7 @@
     ShortCSharpTypeWithoutNullability: ModelInfoRequest,
     ShortCSharpTypeWithNullability: ModelInfoRequest?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -799,6 +833,7 @@
     ShortCSharpTypeWithoutNullability: ModelInfo,
     ShortCSharpTypeWithNullability: ModelInfo?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -821,6 +856,7 @@
     ShortCSharpTypeWithoutNullability: CopyModelRequest,
     ShortCSharpTypeWithNullability: CopyModelRequest?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -842,6 +878,7 @@
     ShortCSharpTypeWithoutNullability: DeleteModelRequest,
     ShortCSharpTypeWithNullability: DeleteModelRequest?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -867,6 +904,7 @@
     ShortCSharpTypeWithoutNullability: PullModelRequest,
     ShortCSharpTypeWithNullability: PullModelRequest?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -891,6 +929,7 @@
     ShortCSharpTypeWithoutNullability: PullModelResponse,
     ShortCSharpTypeWithNullability: PullModelResponse?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -916,6 +955,7 @@
     ShortCSharpTypeWithoutNullability: PushModelRequest,
     ShortCSharpTypeWithNullability: PushModelRequest?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -940,6 +980,7 @@
     ShortCSharpTypeWithoutNullability: PushModelResponse,
     ShortCSharpTypeWithNullability: PushModelResponse?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   },
   {
@@ -959,6 +1000,7 @@
     ShortCSharpTypeWithoutNullability: byte[],
     ShortCSharpTypeWithNullability: byte[]?,
     IsAnyOf: false,
+    IsReferenceable: false,
     ConverterType: 
   }
 ]

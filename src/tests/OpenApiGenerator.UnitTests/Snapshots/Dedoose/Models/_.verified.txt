@@ -48,6 +48,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -78,6 +79,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -108,6 +110,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -138,6 +141,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -168,6 +172,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -198,6 +203,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -228,6 +234,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -258,6 +265,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -288,6 +296,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -318,6 +327,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -388,6 +398,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -418,6 +429,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -448,6 +460,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -478,6 +491,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -508,6 +522,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -538,6 +553,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -568,6 +584,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -598,6 +615,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -695,6 +713,7 @@
           ShortCSharpTypeWithoutNullability: AccountVO,
           ShortCSharpTypeWithNullability: AccountVO?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -725,6 +744,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<User>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<User>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -795,6 +815,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -825,6 +846,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -855,6 +877,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -885,6 +908,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -915,6 +939,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -945,6 +970,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -975,6 +1001,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1005,6 +1032,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1035,6 +1063,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1065,6 +1094,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1095,6 +1125,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1125,6 +1156,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1155,6 +1187,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1185,6 +1218,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1215,6 +1249,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1245,6 +1280,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1275,6 +1311,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1305,6 +1342,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1335,6 +1373,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1365,6 +1404,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1395,6 +1435,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1425,6 +1466,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1455,6 +1497,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1485,6 +1528,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1515,6 +1559,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1545,6 +1590,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1642,6 +1688,7 @@
           ShortCSharpTypeWithoutNullability: AccountVO,
           ShortCSharpTypeWithNullability: AccountVO?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1672,6 +1719,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<BillingTransaction>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<BillingTransaction>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1702,6 +1750,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<CreditTransaction>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<CreditTransaction>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1772,6 +1821,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1802,6 +1852,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1832,6 +1883,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1862,6 +1914,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1892,6 +1945,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1922,6 +1976,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1952,6 +2007,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1982,6 +2038,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -2012,6 +2069,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2042,6 +2100,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2072,6 +2131,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2142,6 +2202,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2172,6 +2233,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2202,6 +2264,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -2232,6 +2295,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2262,6 +2326,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2292,6 +2357,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2362,6 +2428,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2392,6 +2459,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2422,6 +2490,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2452,6 +2521,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2522,6 +2592,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2552,6 +2623,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChartSeriesInfo>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<ChartSeriesInfo>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -2622,6 +2694,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2652,6 +2725,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChartItemInfo>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<ChartItemInfo>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -2722,6 +2796,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2752,6 +2827,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2822,6 +2898,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2852,6 +2929,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChartItemInfo>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<ChartItemInfo>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -2922,6 +3000,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2952,6 +3031,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2982,6 +3062,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3012,6 +3093,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3042,6 +3124,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3072,6 +3155,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3142,6 +3226,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3172,6 +3257,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3202,6 +3288,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3232,6 +3319,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3262,6 +3350,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3292,6 +3381,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3322,6 +3412,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3352,6 +3443,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3422,6 +3514,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3452,6 +3545,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3482,6 +3576,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3512,6 +3607,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3542,6 +3638,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3572,6 +3669,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3642,6 +3740,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3672,6 +3771,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3702,6 +3802,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3732,6 +3833,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3762,6 +3864,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3792,6 +3895,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3822,6 +3926,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3859,6 +3964,7 @@
           ShortCSharpTypeWithoutNullability: DataSetObjectIds,
           ShortCSharpTypeWithNullability: DataSetObjectIds?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3889,6 +3995,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3919,6 +4026,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3949,6 +4057,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3979,6 +4088,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4009,6 +4119,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4079,6 +4190,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4109,6 +4221,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4139,6 +4252,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4169,6 +4283,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4199,6 +4314,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -4229,6 +4345,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4259,6 +4376,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4289,6 +4407,7 @@
           ShortCSharpTypeWithoutNullability: byte[],
           ShortCSharpTypeWithNullability: byte[]?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -4319,6 +4438,7 @@
           ShortCSharpTypeWithoutNullability: byte[],
           ShortCSharpTypeWithNullability: byte[]?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -4389,6 +4509,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4419,6 +4540,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4449,6 +4571,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4479,6 +4602,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4509,6 +4633,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4539,6 +4664,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4569,6 +4695,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4599,6 +4726,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4629,6 +4757,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4659,6 +4788,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4729,6 +4859,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4759,6 +4890,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4789,6 +4921,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4819,6 +4952,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4849,6 +4983,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4879,6 +5014,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4909,6 +5045,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4939,6 +5076,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5020,6 +5158,7 @@
           ShortCSharpTypeWithoutNullability: DescriptorField,
           ShortCSharpTypeWithNullability: DescriptorField?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -5050,6 +5189,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<DescriptorFieldOption>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<DescriptorFieldOption>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -5120,6 +5260,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5150,6 +5291,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<FieldValueDTO>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<FieldValueDTO>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -5220,6 +5362,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5250,6 +5393,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5280,6 +5424,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5310,6 +5455,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5340,6 +5486,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5370,6 +5517,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5440,6 +5588,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5470,6 +5619,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5540,6 +5690,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5570,6 +5721,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5600,6 +5752,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5630,6 +5783,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5660,6 +5814,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5690,6 +5845,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5720,6 +5876,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -5750,6 +5907,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5820,6 +5978,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5850,6 +6009,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5880,6 +6040,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5910,6 +6071,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5940,6 +6102,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5970,6 +6133,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -6000,6 +6164,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -6080,6 +6245,7 @@
           ShortCSharpTypeWithoutNullability: Descriptor,
           ShortCSharpTypeWithNullability: Descriptor?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -6110,6 +6276,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<DescriptorValueDTO>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<DescriptorValueDTO>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -6180,6 +6347,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -6210,6 +6378,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -6240,6 +6409,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -6270,6 +6440,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -6300,6 +6471,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -6330,6 +6502,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -6360,6 +6533,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -6390,6 +6564,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -6420,6 +6595,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -6490,6 +6666,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -6520,6 +6697,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -6550,6 +6728,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -6580,6 +6759,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -6610,6 +6790,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -6640,6 +6821,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -6670,6 +6852,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -6700,6 +6883,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -6730,6 +6914,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -6760,6 +6945,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -6790,6 +6976,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -6820,6 +7007,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -6850,6 +7038,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -6880,6 +7069,7 @@
           ShortCSharpTypeWithoutNullability: byte[],
           ShortCSharpTypeWithNullability: byte[]?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -6965,6 +7155,7 @@
           ShortCSharpTypeWithoutNullability: Excerpt,
           ShortCSharpTypeWithNullability: Excerpt?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -6995,6 +7186,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<TagAppDTO>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<TagAppDTO>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -7065,6 +7257,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7095,6 +7288,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7125,6 +7319,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7155,6 +7350,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -7185,6 +7381,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7255,6 +7452,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7285,6 +7483,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7315,6 +7514,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7385,6 +7585,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7415,6 +7616,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7445,6 +7647,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7475,6 +7678,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7505,6 +7709,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7535,6 +7740,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7565,6 +7771,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7635,6 +7842,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7665,6 +7873,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7695,6 +7904,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7725,6 +7935,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7795,6 +8006,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7825,6 +8037,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7895,6 +8108,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7925,6 +8139,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7955,6 +8170,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -7985,6 +8201,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8015,6 +8232,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8045,6 +8263,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8075,6 +8294,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -8105,6 +8325,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -8135,6 +8356,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8165,6 +8387,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8246,6 +8469,7 @@
           ShortCSharpTypeWithoutNullability: Memo,
           ShortCSharpTypeWithNullability: Memo?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -8276,6 +8500,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<MemoLink>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<MemoLink>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -8306,6 +8531,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<MemoFolderLink>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<MemoFolderLink>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -8376,6 +8602,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8406,6 +8633,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8436,6 +8664,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8466,6 +8695,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8536,6 +8766,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8566,6 +8797,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8596,6 +8828,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8626,6 +8859,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8656,6 +8890,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8686,6 +8921,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8756,6 +8992,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8786,6 +9023,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8816,6 +9054,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8846,6 +9085,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8876,6 +9116,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8906,6 +9147,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8936,6 +9178,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8966,6 +9209,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -8996,6 +9240,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -9026,6 +9271,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -9056,6 +9302,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -9126,6 +9373,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Memo>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<Memo>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -9156,6 +9404,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<MemoFolder>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<MemoFolder>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -9186,6 +9435,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<MemoLink>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<MemoLink>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -9216,6 +9466,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<MemoFolderLink>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<MemoFolderLink>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -9286,6 +9537,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -9316,6 +9568,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -9386,6 +9639,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -9416,6 +9670,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -9446,6 +9701,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -9485,6 +9741,7 @@
           ShortCSharpTypeWithoutNullability: CreditTransaction,
           ShortCSharpTypeWithNullability: CreditTransaction?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -9522,6 +9779,7 @@
           ShortCSharpTypeWithoutNullability: BillingTransaction,
           ShortCSharpTypeWithNullability: BillingTransaction?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -9592,6 +9850,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -9622,6 +9881,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -9652,6 +9912,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -9682,6 +9943,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -9712,6 +9974,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -9742,6 +10005,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -9772,6 +10036,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -9842,6 +10107,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -9872,6 +10138,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -9902,6 +10169,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -9932,6 +10200,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -9962,6 +10231,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -10032,6 +10302,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<DescriptorSet>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<DescriptorSet>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -10062,6 +10333,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<DescriptorField>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<DescriptorField>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -10092,6 +10364,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<DescriptorFieldOption>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<DescriptorFieldOption>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -10162,6 +10435,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -10192,6 +10466,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -10222,6 +10497,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -10252,6 +10528,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -10282,6 +10559,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -10312,6 +10590,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -10342,6 +10621,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -10372,6 +10652,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -10442,6 +10723,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -10472,6 +10754,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -10542,6 +10825,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -10572,6 +10856,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -10602,6 +10887,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -10632,6 +10918,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -10662,6 +10949,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -10692,6 +10980,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -10722,6 +11011,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -10752,6 +11042,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -10782,6 +11073,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -10812,6 +11104,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -10842,6 +11135,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -10872,6 +11166,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -10902,6 +11197,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -10986,6 +11282,7 @@
           ShortCSharpTypeWithoutNullability: Resource,
           ShortCSharpTypeWithNullability: Resource?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -11016,6 +11313,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Excerpt>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<Excerpt>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -11046,6 +11344,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<TrainingTestTagApp>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<TrainingTestTagApp>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -11116,6 +11415,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11146,6 +11446,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11176,6 +11477,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11206,6 +11508,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11236,6 +11539,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11266,6 +11570,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11296,6 +11601,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -11366,6 +11672,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11396,6 +11703,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -11426,6 +11734,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -11456,6 +11765,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11526,6 +11836,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11556,6 +11867,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -11586,6 +11898,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11656,6 +11969,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11686,6 +12000,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11716,6 +12031,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11746,6 +12062,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11776,6 +12093,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11806,6 +12124,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11836,6 +12155,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11866,6 +12186,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11896,6 +12217,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11926,6 +12248,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11956,6 +12279,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -11986,6 +12310,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12016,6 +12341,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12086,6 +12412,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12116,6 +12443,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12146,6 +12474,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12176,6 +12505,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12206,6 +12536,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12236,6 +12567,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12266,6 +12598,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12296,6 +12629,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -12366,6 +12700,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12396,6 +12731,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12466,6 +12802,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12496,6 +12833,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12526,6 +12864,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12556,6 +12895,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12586,6 +12926,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12616,6 +12957,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12646,6 +12988,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12676,6 +13019,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12706,6 +13050,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12776,6 +13121,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12806,6 +13152,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12836,6 +13183,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12866,6 +13214,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12896,6 +13245,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12926,6 +13276,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -12956,6 +13307,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13026,6 +13378,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13056,6 +13409,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13086,6 +13440,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13116,6 +13471,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13146,6 +13502,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13176,6 +13533,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -13206,6 +13564,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13236,6 +13595,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13266,6 +13626,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13296,6 +13657,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13366,6 +13728,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13396,6 +13759,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13426,6 +13790,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13456,6 +13821,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -13486,6 +13852,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13516,6 +13883,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13546,6 +13914,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13576,6 +13945,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13606,6 +13976,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13636,6 +14007,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13706,6 +14078,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13736,6 +14109,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13766,6 +14140,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13796,6 +14171,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13826,6 +14202,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -13856,6 +14233,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13886,6 +14264,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13916,6 +14295,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -13946,6 +14326,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14016,6 +14397,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14046,6 +14428,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14076,6 +14459,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14106,6 +14490,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14136,6 +14521,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14166,6 +14552,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -14196,6 +14583,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14226,6 +14614,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14256,6 +14645,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14326,6 +14716,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14356,6 +14747,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14386,6 +14778,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14416,6 +14809,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14446,6 +14840,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14476,6 +14871,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14506,6 +14902,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -14536,6 +14933,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14566,6 +14964,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14596,6 +14995,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14626,6 +15026,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14656,6 +15057,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14686,6 +15088,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14716,6 +15119,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14786,6 +15190,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14816,6 +15221,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14846,6 +15252,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14876,6 +15283,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14906,6 +15314,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -14936,6 +15345,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14966,6 +15376,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -14996,6 +15407,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15026,6 +15438,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15056,6 +15469,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15126,6 +15540,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15156,6 +15571,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15186,6 +15602,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15216,6 +15633,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15246,6 +15664,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15276,6 +15695,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15306,6 +15726,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15376,6 +15797,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15406,6 +15828,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15476,6 +15899,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15506,6 +15930,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15536,6 +15961,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15566,6 +15992,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15596,6 +16023,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15626,6 +16054,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15656,6 +16085,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -15686,6 +16116,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15716,6 +16147,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -15746,6 +16178,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15776,6 +16209,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15806,6 +16240,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15836,6 +16271,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15866,6 +16302,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15896,6 +16333,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15926,6 +16364,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15956,6 +16395,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -15986,6 +16426,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -16016,6 +16457,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16046,6 +16488,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -16076,6 +16519,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16146,6 +16590,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16176,6 +16621,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16206,6 +16652,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16236,6 +16683,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16266,6 +16714,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16296,6 +16745,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16326,6 +16776,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -16356,6 +16807,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -16386,6 +16838,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16416,6 +16869,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16486,6 +16940,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16516,6 +16971,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16546,6 +17002,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16576,6 +17033,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16606,6 +17064,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16636,6 +17095,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16706,6 +17166,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16736,6 +17197,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16766,6 +17228,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16796,6 +17259,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16826,6 +17290,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16856,6 +17321,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16926,6 +17392,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16956,6 +17423,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -16986,6 +17454,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -17016,6 +17485,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -17046,6 +17516,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -17076,6 +17547,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -17106,6 +17578,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -17136,6 +17609,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -17166,6 +17640,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -17196,6 +17671,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -17226,6 +17702,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -17318,6 +17795,7 @@
           ShortCSharpTypeWithoutNullability: User,
           ShortCSharpTypeWithNullability: User?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -17355,6 +17833,7 @@
           ShortCSharpTypeWithoutNullability: UserGroupLink,
           ShortCSharpTypeWithNullability: UserGroupLink?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -17447,6 +17926,7 @@
           ShortCSharpTypeWithoutNullability: User,
           ShortCSharpTypeWithNullability: User?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -17477,6 +17957,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -17507,6 +17988,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -17537,6 +18019,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -17567,6 +18050,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -17597,6 +18081,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,

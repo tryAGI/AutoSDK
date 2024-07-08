@@ -52,6 +52,7 @@ This endpoint returns the version of the Ollama server.,
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -73,6 +74,7 @@ This endpoint returns the version of the Ollama server.,
       ShortCSharpTypeWithoutNullability: VersionResponse,
       ShortCSharpTypeWithNullability: VersionResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -96,6 +98,7 @@ This endpoint returns the version of the Ollama server.,
         ShortCSharpTypeWithoutNullability: VersionResponse,
         ShortCSharpTypeWithNullability: VersionResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -132,6 +135,7 @@ This endpoint returns the version of the Ollama server.,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -167,6 +171,7 @@ Example: llama3:8b,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -199,6 +204,7 @@ Example: Why is the sky blue?,
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -229,6 +235,7 @@ Example: Why is the sky blue?,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -259,6 +266,7 @@ Example: Why is the sky blue?,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -289,6 +297,7 @@ Example: Why is the sky blue?,
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<long>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<long>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -349,6 +358,7 @@ Example: Why is the sky blue?,
           ShortCSharpTypeWithoutNullability: RequestOptions,
           ShortCSharpTypeWithNullability: RequestOptions?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -383,6 +393,7 @@ Example: Why is the sky blue?,
           ShortCSharpTypeWithoutNullability: ResponseFormat,
           ShortCSharpTypeWithNullability: ResponseFormat?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ResponseFormatJsonConverter
         },
         IsRequired: false,
@@ -419,6 +430,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -453,6 +465,7 @@ You may choose to use the `raw` parameter if you are specifying a full templated
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -487,6 +500,7 @@ Default Value: true,
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -563,6 +577,7 @@ The final response object will include statistics and additional data from the r
       ShortCSharpTypeWithoutNullability: GenerateCompletionRequest,
       ShortCSharpTypeWithNullability: GenerateCompletionRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -594,6 +609,7 @@ The final response object will include statistics and additional data from the r
       ShortCSharpTypeWithoutNullability: GenerateCompletionResponse,
       ShortCSharpTypeWithNullability: GenerateCompletionResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -627,6 +643,7 @@ The final response object will include statistics and additional data from the r
         ShortCSharpTypeWithoutNullability: GenerateCompletionRequest,
         ShortCSharpTypeWithNullability: GenerateCompletionRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -658,6 +675,7 @@ The final response object will include statistics and additional data from the r
         ShortCSharpTypeWithoutNullability: GenerateCompletionResponse,
         ShortCSharpTypeWithNullability: GenerateCompletionResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -694,6 +712,7 @@ The final response object will include statistics and additional data from the r
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -729,6 +748,7 @@ Example: llama3:8b,
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Message>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<Message>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: true,
@@ -763,6 +783,7 @@ Example: llama3:8b,
           ShortCSharpTypeWithoutNullability: ResponseFormat,
           ShortCSharpTypeWithNullability: ResponseFormat?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ResponseFormatJsonConverter
         },
         IsRequired: false,
@@ -829,6 +850,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           ShortCSharpTypeWithoutNullability: RequestOptions,
           ShortCSharpTypeWithNullability: RequestOptions?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -859,6 +881,7 @@ Note: it's important to instruct the model to use JSON in the prompt. Otherwise,
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -893,6 +916,7 @@ Default Value: true,
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -964,6 +988,7 @@ This is a streaming endpoint, so there will be a series of responses. The final 
       ShortCSharpTypeWithoutNullability: GenerateChatCompletionRequest,
       ShortCSharpTypeWithNullability: GenerateChatCompletionRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -995,6 +1020,7 @@ This is a streaming endpoint, so there will be a series of responses. The final 
       ShortCSharpTypeWithoutNullability: GenerateChatCompletionResponse,
       ShortCSharpTypeWithNullability: GenerateChatCompletionResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -1023,6 +1049,7 @@ This is a streaming endpoint, so there will be a series of responses. The final 
         ShortCSharpTypeWithoutNullability: GenerateChatCompletionRequest,
         ShortCSharpTypeWithNullability: GenerateChatCompletionRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -1054,6 +1081,7 @@ This is a streaming endpoint, so there will be a series of responses. The final 
         ShortCSharpTypeWithoutNullability: GenerateChatCompletionResponse,
         ShortCSharpTypeWithNullability: GenerateChatCompletionResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -1090,6 +1118,7 @@ This is a streaming endpoint, so there will be a series of responses. The final 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -1125,6 +1154,7 @@ Example: llama3:8b,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -1187,6 +1217,7 @@ Example: Here is an article about llamas...,
           ShortCSharpTypeWithoutNullability: RequestOptions,
           ShortCSharpTypeWithNullability: RequestOptions?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1217,6 +1248,7 @@ Example: Here is an article about llamas...,
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1284,6 +1316,7 @@ How long (in minutes) to keep the model loaded in memory.
       ShortCSharpTypeWithoutNullability: GenerateEmbeddingRequest,
       ShortCSharpTypeWithNullability: GenerateEmbeddingRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -1305,6 +1338,7 @@ How long (in minutes) to keep the model loaded in memory.
       ShortCSharpTypeWithoutNullability: GenerateEmbeddingResponse,
       ShortCSharpTypeWithNullability: GenerateEmbeddingResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -1331,6 +1365,7 @@ How long (in minutes) to keep the model loaded in memory.
         ShortCSharpTypeWithoutNullability: GenerateEmbeddingRequest,
         ShortCSharpTypeWithNullability: GenerateEmbeddingRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -1352,6 +1387,7 @@ How long (in minutes) to keep the model loaded in memory.
         ShortCSharpTypeWithoutNullability: GenerateEmbeddingResponse,
         ShortCSharpTypeWithNullability: GenerateEmbeddingResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -1388,6 +1424,7 @@ How long (in minutes) to keep the model loaded in memory.
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -1423,6 +1460,7 @@ Example: mario,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -1455,6 +1493,7 @@ Example: FROM llama3\nSYSTEM You are mario from Super Mario Bros.,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1485,6 +1524,7 @@ Example: FROM llama3\nSYSTEM You are mario from Super Mario Bros.,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1515,6 +1555,7 @@ Example: FROM llama3\nSYSTEM You are mario from Super Mario Bros.,
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1582,6 +1623,7 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
       ShortCSharpTypeWithoutNullability: CreateModelRequest,
       ShortCSharpTypeWithNullability: CreateModelRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -1603,6 +1645,7 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
       ShortCSharpTypeWithoutNullability: CreateModelResponse,
       ShortCSharpTypeWithNullability: CreateModelResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -1630,6 +1673,7 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
         ShortCSharpTypeWithoutNullability: CreateModelRequest,
         ShortCSharpTypeWithNullability: CreateModelRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -1651,6 +1695,7 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
         ShortCSharpTypeWithoutNullability: CreateModelResponse,
         ShortCSharpTypeWithNullability: CreateModelResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -1710,6 +1755,7 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -1731,6 +1777,7 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
       ShortCSharpTypeWithoutNullability: ModelsResponse,
       ShortCSharpTypeWithNullability: ModelsResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -1754,6 +1801,7 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
         ShortCSharpTypeWithoutNullability: ModelsResponse,
         ShortCSharpTypeWithNullability: ModelsResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -1813,6 +1861,7 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -1834,6 +1883,7 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
       ShortCSharpTypeWithoutNullability: ProcessResponse,
       ShortCSharpTypeWithNullability: ProcessResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -1857,6 +1907,7 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
         ShortCSharpTypeWithoutNullability: ProcessResponse,
         ShortCSharpTypeWithNullability: ProcessResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -1893,6 +1944,7 @@ It is recommended to set `modelfile` to the content of the Modelfile rather than
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -1955,6 +2007,7 @@ Example: llama3:8b,
       ShortCSharpTypeWithoutNullability: ModelInfoRequest,
       ShortCSharpTypeWithNullability: ModelInfoRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -1983,6 +2036,7 @@ Example: llama3:8b,
       ShortCSharpTypeWithoutNullability: ModelInfo,
       ShortCSharpTypeWithNullability: ModelInfo?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -2006,6 +2060,7 @@ Example: llama3:8b,
         ShortCSharpTypeWithoutNullability: ModelInfoRequest,
         ShortCSharpTypeWithNullability: ModelInfoRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -2034,6 +2089,7 @@ Example: llama3:8b,
         ShortCSharpTypeWithoutNullability: ModelInfo,
         ShortCSharpTypeWithNullability: ModelInfo?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -2070,6 +2126,7 @@ Example: llama3:8b,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -2102,6 +2159,7 @@ Example: llama3:8b,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -2162,6 +2220,7 @@ Example: llama3-backup,
       ShortCSharpTypeWithoutNullability: CopyModelRequest,
       ShortCSharpTypeWithNullability: CopyModelRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -2181,6 +2240,7 @@ Example: llama3-backup,
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -2205,6 +2265,7 @@ Example: llama3-backup,
         ShortCSharpTypeWithoutNullability: CopyModelRequest,
         ShortCSharpTypeWithNullability: CopyModelRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -2241,6 +2302,7 @@ Example: llama3-backup,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -2303,6 +2365,7 @@ Example: llama3:13b,
       ShortCSharpTypeWithoutNullability: DeleteModelRequest,
       ShortCSharpTypeWithNullability: DeleteModelRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -2322,6 +2385,7 @@ Example: llama3:13b,
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -2345,6 +2409,7 @@ Example: llama3:13b,
         ShortCSharpTypeWithoutNullability: DeleteModelRequest,
         ShortCSharpTypeWithNullability: DeleteModelRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -2381,6 +2446,7 @@ Example: llama3:13b,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -2416,6 +2482,7 @@ Example: llama3:8b,
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2452,6 +2519,7 @@ Default Value: false,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2482,6 +2550,7 @@ Default Value: false,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2512,6 +2581,7 @@ Default Value: false,
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2579,6 +2649,7 @@ Cancelled pulls are resumed from where they left off, and multiple calls will sh
       ShortCSharpTypeWithoutNullability: PullModelRequest,
       ShortCSharpTypeWithNullability: PullModelRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -2603,6 +2674,7 @@ Cancelled pulls are resumed from where they left off, and multiple calls will sh
       ShortCSharpTypeWithoutNullability: PullModelResponse,
       ShortCSharpTypeWithNullability: PullModelResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -2630,6 +2702,7 @@ Cancelled pulls are resumed from where they left off, and multiple calls will sh
         ShortCSharpTypeWithoutNullability: PullModelRequest,
         ShortCSharpTypeWithNullability: PullModelRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -2654,6 +2727,7 @@ Cancelled pulls are resumed from where they left off, and multiple calls will sh
         ShortCSharpTypeWithoutNullability: PullModelResponse,
         ShortCSharpTypeWithNullability: PullModelResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -2690,6 +2764,7 @@ Cancelled pulls are resumed from where they left off, and multiple calls will sh
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -2722,6 +2797,7 @@ Example: mattw/pygmalion:latest,
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2758,6 +2834,7 @@ Default Value: false,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2788,6 +2865,7 @@ Default Value: false,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2818,6 +2896,7 @@ Default Value: false,
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2885,6 +2964,7 @@ Requires registering for ollama.ai and adding a public key first.,
       ShortCSharpTypeWithoutNullability: PushModelRequest,
       ShortCSharpTypeWithNullability: PushModelRequest?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -2909,6 +2989,7 @@ Requires registering for ollama.ai and adding a public key first.,
       ShortCSharpTypeWithoutNullability: PushModelResponse,
       ShortCSharpTypeWithNullability: PushModelResponse?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -2936,6 +3017,7 @@ Requires registering for ollama.ai and adding a public key first.,
         ShortCSharpTypeWithoutNullability: PushModelRequest,
         ShortCSharpTypeWithNullability: PushModelRequest?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       },
       {
@@ -2960,6 +3042,7 @@ Requires registering for ollama.ai and adding a public key first.,
         ShortCSharpTypeWithoutNullability: PushModelResponse,
         ShortCSharpTypeWithNullability: PushModelResponse?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -2996,6 +3079,7 @@ Requires registering for ollama.ai and adding a public key first.,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -3056,6 +3140,7 @@ This is checking your Ollama server and not Ollama.ai.,
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -3075,6 +3160,7 @@ This is checking your Ollama server and not Ollama.ai.,
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -3112,6 +3198,7 @@ This is checking your Ollama server and not Ollama.ai.,
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -3170,6 +3257,7 @@ This is checking your Ollama server and not Ollama.ai.,
       ShortCSharpTypeWithoutNullability: byte[],
       ShortCSharpTypeWithNullability: byte[]?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -3189,6 +3277,7 @@ This is checking your Ollama server and not Ollama.ai.,
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -3210,6 +3299,7 @@ This is checking your Ollama server and not Ollama.ai.,
         ShortCSharpTypeWithoutNullability: byte[],
         ShortCSharpTypeWithNullability: byte[]?,
         IsAnyOf: false,
+        IsReferenceable: false,
         ConverterType: 
       }
     ],
@@ -3246,6 +3336,7 @@ This is checking your Ollama server and not Ollama.ai.,
           ShortCSharpTypeWithoutNullability: CompletionsClient,
           ShortCSharpTypeWithNullability: CompletionsClient?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3276,6 +3367,7 @@ This is checking your Ollama server and not Ollama.ai.,
           ShortCSharpTypeWithoutNullability: ChatClient,
           ShortCSharpTypeWithNullability: ChatClient?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3306,6 +3398,7 @@ This is checking your Ollama server and not Ollama.ai.,
           ShortCSharpTypeWithoutNullability: EmbeddingsClient,
           ShortCSharpTypeWithNullability: EmbeddingsClient?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3336,6 +3429,7 @@ This is checking your Ollama server and not Ollama.ai.,
           ShortCSharpTypeWithoutNullability: ModelsClient,
           ShortCSharpTypeWithNullability: ModelsClient?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3390,6 +3484,7 @@ This is checking your Ollama server and not Ollama.ai.,
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -3409,6 +3504,7 @@ This is checking your Ollama server and not Ollama.ai.,
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -3495,6 +3591,7 @@ This is checking your Ollama server and not Ollama.ai.,
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -3514,6 +3611,7 @@ This is checking your Ollama server and not Ollama.ai.,
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -3574,6 +3672,7 @@ This is checking your Ollama server and not Ollama.ai.,
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -3593,6 +3692,7 @@ This is checking your Ollama server and not Ollama.ai.,
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -3653,6 +3753,7 @@ This is checking your Ollama server and not Ollama.ai.,
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -3672,6 +3773,7 @@ This is checking your Ollama server and not Ollama.ai.,
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,
@@ -3732,6 +3834,7 @@ This is checking your Ollama server and not Ollama.ai.,
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     ResponseType: {
@@ -3751,6 +3854,7 @@ This is checking your Ollama server and not Ollama.ai.,
       ShortCSharpTypeWithoutNullability: ,
       ShortCSharpTypeWithNullability: ?,
       IsAnyOf: false,
+      IsReferenceable: false,
       ConverterType: 
     },
     AdditionalModels: null,

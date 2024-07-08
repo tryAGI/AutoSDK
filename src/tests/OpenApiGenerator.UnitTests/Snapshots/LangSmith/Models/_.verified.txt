@@ -48,6 +48,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -78,6 +79,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -109,6 +111,7 @@
           ShortCSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>,
           ShortCSharpTypeWithNullability: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3
         },
         IsRequired: false,
@@ -140,6 +143,7 @@
           ShortCSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>,
           ShortCSharpTypeWithNullability: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3
         },
         IsRequired: false,
@@ -170,6 +174,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<object?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -240,6 +245,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -270,6 +276,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionRequestMessage>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<ChatCompletionRequestMessage>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -301,6 +308,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionFunctions>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<ChatCompletionFunctions>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -332,6 +340,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -362,6 +371,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -392,6 +402,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -422,6 +433,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -453,6 +465,7 @@
           ShortCSharpTypeWithoutNullability: global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?>,
           ShortCSharpTypeWithNullability: global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -483,6 +496,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -513,6 +527,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -543,6 +558,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -573,6 +589,7 @@
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -644,6 +661,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -674,6 +692,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -704,6 +723,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -737,6 +757,7 @@
           ShortCSharpTypeWithoutNullability: ChatCompletionFunctionCall,
           ShortCSharpTypeWithNullability: ChatCompletionFunctionCall?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -807,6 +828,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -837,6 +859,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -907,6 +930,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -937,6 +961,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -970,6 +995,7 @@
           ShortCSharpTypeWithoutNullability: ChatCompletionFunctionParameters,
           ShortCSharpTypeWithNullability: ChatCompletionFunctionParameters?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1040,6 +1066,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1070,6 +1097,7 @@
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1142,6 +1170,7 @@
           ShortCSharpTypeWithoutNullability: global::System.AnyOf<string, object>,
           ShortCSharpTypeWithNullability: global::System.AnyOf<string, object>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
         IsRequired: true,
@@ -1173,6 +1202,7 @@
           ShortCSharpTypeWithoutNullability: global::System.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>,
           ShortCSharpTypeWithNullability: global::System.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory4
         },
         IsRequired: true,
@@ -1203,6 +1233,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1233,6 +1264,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1263,6 +1295,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1293,6 +1326,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1323,6 +1357,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1353,6 +1388,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1383,6 +1419,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1413,6 +1450,7 @@
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1444,6 +1482,7 @@
           ShortCSharpTypeWithoutNullability: global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?>,
           ShortCSharpTypeWithNullability: global::System.AnyOf<string?, global::System.Collections.Generic.IList<string?>?>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2
         },
         IsRequired: false,
@@ -1474,6 +1513,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1504,6 +1544,7 @@
           ShortCSharpTypeWithoutNullability: double,
           ShortCSharpTypeWithNullability: double?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1534,6 +1575,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1564,6 +1606,7 @@
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1595,6 +1638,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1665,6 +1709,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1695,6 +1740,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1725,6 +1771,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1756,6 +1803,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1786,6 +1834,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ChatCompletionChoice>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<ChatCompletionChoice>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1821,6 +1870,7 @@
           ShortCSharpTypeWithoutNullability: CompletionUsage,
           ShortCSharpTypeWithNullability: CompletionUsage?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1891,6 +1941,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1926,6 +1977,7 @@
           ShortCSharpTypeWithoutNullability: ChatCompletionResponseMessage,
           ShortCSharpTypeWithNullability: ChatCompletionResponseMessage?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1956,6 +2008,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2026,6 +2079,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2056,6 +2110,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2089,6 +2144,7 @@
           ShortCSharpTypeWithoutNullability: ChatCompletionFunctionCall,
           ShortCSharpTypeWithNullability: ChatCompletionFunctionCall?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -2159,6 +2215,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2190,6 +2247,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2221,6 +2279,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2292,6 +2351,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2322,6 +2382,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2352,6 +2413,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2382,6 +2444,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2412,6 +2475,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<Choice>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<Choice>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -2447,6 +2511,7 @@
           ShortCSharpTypeWithoutNullability: CompletionUsage,
           ShortCSharpTypeWithNullability: CompletionUsage?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -2517,6 +2582,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2547,6 +2613,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2583,6 +2650,7 @@
           ShortCSharpTypeWithoutNullability: Logprobs,
           ShortCSharpTypeWithNullability: Logprobs?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -2613,6 +2681,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2683,6 +2752,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -2714,6 +2784,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<double>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<double>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -2745,6 +2816,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<object?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -2776,6 +2848,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<int>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<int>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -2847,6 +2920,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ValidationError>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<ValidationError>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -2917,6 +2991,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<global::System.AnyOf<string, int>>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<global::System.AnyOf<string, int>>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: true,
@@ -2947,6 +3022,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -2977,6 +3053,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -3047,6 +3124,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -3078,6 +3156,7 @@
           ShortCSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>,
           ShortCSharpTypeWithNullability: global::System.AnyOf<object?, CreateChatCompletionRequest?, CreateCompletionRequest?>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3
         },
         IsRequired: false,
@@ -3124,6 +3203,7 @@
           ShortCSharpTypeWithoutNullability: RunTypeEnum,
           ShortCSharpTypeWithNullability: RunTypeEnum?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunTypeEnumJsonConverter
         },
         IsRequired: true,
@@ -3154,6 +3234,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3184,6 +3265,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3214,6 +3296,7 @@
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3245,6 +3328,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3275,6 +3359,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3306,6 +3391,7 @@
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3338,6 +3424,7 @@
           ShortCSharpTypeWithoutNullability: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>,
           ShortCSharpTypeWithNullability: global::System.AnyOf<object?, CreateChatCompletionResponse?, CreateCompletionResponse?>?,
           IsAnyOf: true,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory3
         },
         IsRequired: false,
@@ -3368,6 +3455,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3398,6 +3486,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3428,6 +3517,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<object?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3458,6 +3548,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3488,6 +3579,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3518,6 +3610,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3548,6 +3641,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3578,6 +3672,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<RunCreateSchema>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<RunCreateSchema>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3608,6 +3703,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3679,6 +3775,7 @@
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3709,6 +3806,7 @@
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3739,6 +3837,7 @@
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3769,6 +3868,7 @@
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3799,6 +3899,7 @@
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3829,6 +3930,7 @@
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3859,6 +3961,7 @@
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3929,6 +4032,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -3959,6 +4063,7 @@
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -4006,6 +4111,7 @@
           ShortCSharpTypeWithoutNullability: RunTypeEnum,
           ShortCSharpTypeWithNullability: RunTypeEnum?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.RunTypeEnumJsonConverter
         },
         IsRequired: true,
@@ -4036,6 +4142,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -4066,6 +4173,7 @@
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -4096,6 +4204,7 @@
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -4127,6 +4236,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4157,6 +4267,7 @@
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4188,6 +4299,7 @@
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -4219,6 +4331,7 @@
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -4250,6 +4363,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4280,6 +4394,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4310,6 +4425,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<object?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<object?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -4340,6 +4456,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<string?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<string?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -4370,6 +4487,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4400,6 +4518,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4430,6 +4549,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4460,6 +4580,7 @@
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<RunCreateSchema>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<RunCreateSchema>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -4490,6 +4611,7 @@
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,

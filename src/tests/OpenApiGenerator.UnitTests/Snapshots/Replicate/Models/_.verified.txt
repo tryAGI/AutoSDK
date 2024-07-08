@@ -49,6 +49,7 @@
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: true,
@@ -95,6 +96,7 @@ Use a data URL when:
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -129,6 +131,7 @@ If the requested model version supports streaming, the returned prediction will 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -161,6 +164,7 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<PredictionRequestWebhookEventsFilter?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -254,6 +258,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -284,6 +289,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -314,6 +320,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -344,6 +351,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -415,6 +423,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -447,6 +456,7 @@ A string representing the desired model to push to in the format `{destination_m
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: true,
@@ -479,6 +489,7 @@ An object containing inputs to the Cog model's `train()` function.
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -509,6 +520,7 @@ An object containing inputs to the Cog model's `train()` function.
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<TrainingRequestWebhookEventsFilter?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<TrainingRequestWebhookEventsFilter?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -603,6 +615,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -633,6 +646,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -663,6 +677,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -693,6 +708,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -764,6 +780,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: object,
           ShortCSharpTypeWithNullability: object?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: true,
@@ -810,6 +827,7 @@ Use a data URL when:
           ShortCSharpTypeWithoutNullability: bool,
           ShortCSharpTypeWithNullability: bool?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -844,6 +862,7 @@ If the requested model version supports streaming, the returned prediction will 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -874,6 +893,7 @@ If the requested model version supports streaming, the returned prediction will 
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -906,6 +926,7 @@ An HTTPS URL for receiving a webhook when the prediction has new output. The web
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<VersionPredictionRequestWebhookEventsFilter?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<VersionPredictionRequestWebhookEventsFilter?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1000,6 +1021,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1030,6 +1052,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1060,6 +1083,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1090,6 +1114,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1161,6 +1186,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1191,6 +1217,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1227,6 +1254,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: GetAccountResponseType,
           ShortCSharpTypeWithNullability: GetAccountResponseType?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.GetAccountResponseTypeJsonConverter
         },
         IsRequired: false,
@@ -1257,6 +1285,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1329,6 +1358,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1359,6 +1389,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1430,6 +1461,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1460,6 +1492,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1490,6 +1523,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: global::System.Collections.Generic.IList<ListDeploymentsResponseResults?>,
           ShortCSharpTypeWithNullability: global::System.Collections.Generic.IList<ListDeploymentsResponseResults?>?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1561,6 +1595,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ListDeploymentsResponseResultsCurrentRelease,
           ShortCSharpTypeWithNullability: ListDeploymentsResponseResultsCurrentRelease?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1591,6 +1626,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1621,6 +1657,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1692,6 +1729,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ListDeploymentsResponseResultsCurrentReleaseConfiguration,
           ShortCSharpTypeWithNullability: ListDeploymentsResponseResultsCurrentReleaseConfiguration?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1722,6 +1760,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1752,6 +1791,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ListDeploymentsResponseResultsCurrentReleaseCreatedBy,
           ShortCSharpTypeWithNullability: ListDeploymentsResponseResultsCurrentReleaseCreatedBy?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -1782,6 +1822,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1812,6 +1853,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1842,6 +1884,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1913,6 +1956,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1943,6 +1987,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -1973,6 +2018,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2044,6 +2090,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2074,6 +2121,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2110,6 +2158,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ListDeploymentsResponseResultsCurrentReleaseCreatedByType,
           ShortCSharpTypeWithNullability: ListDeploymentsResponseResultsCurrentReleaseCreatedByType?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.ListDeploymentsResponseResultsCurrentReleaseCreatedByTypeJsonConverter
         },
         IsRequired: false,
@@ -2140,6 +2189,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2212,6 +2262,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -2242,6 +2293,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -2313,6 +2365,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -2343,6 +2396,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -2373,6 +2427,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -2403,6 +2458,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -2433,6 +2489,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -2463,6 +2520,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -2534,6 +2592,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: CreateDeploymentsResponseCurrentRelease,
           ShortCSharpTypeWithNullability: CreateDeploymentsResponseCurrentRelease?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -2564,6 +2623,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2594,6 +2654,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2665,6 +2726,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: CreateDeploymentsResponseCurrentReleaseConfiguration,
           ShortCSharpTypeWithNullability: CreateDeploymentsResponseCurrentReleaseConfiguration?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -2695,6 +2757,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -2725,6 +2788,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: CreateDeploymentsResponseCurrentReleaseCreatedBy,
           ShortCSharpTypeWithNullability: CreateDeploymentsResponseCurrentReleaseCreatedBy?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -2755,6 +2819,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2785,6 +2850,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2815,6 +2881,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2886,6 +2953,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2916,6 +2984,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -2946,6 +3015,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3017,6 +3087,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3047,6 +3118,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3083,6 +3155,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: CreateDeploymentsResponseCurrentReleaseCreatedByType,
           ShortCSharpTypeWithNullability: CreateDeploymentsResponseCurrentReleaseCreatedByType?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter
         },
         IsRequired: false,
@@ -3113,6 +3186,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3185,6 +3259,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3215,6 +3290,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3286,6 +3362,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: GetDeploymentsResponseCurrentRelease,
           ShortCSharpTypeWithNullability: GetDeploymentsResponseCurrentRelease?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3316,6 +3393,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3346,6 +3424,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3417,6 +3496,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: GetDeploymentsResponseCurrentReleaseConfiguration,
           ShortCSharpTypeWithNullability: GetDeploymentsResponseCurrentReleaseConfiguration?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3447,6 +3527,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3477,6 +3558,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: GetDeploymentsResponseCurrentReleaseCreatedBy,
           ShortCSharpTypeWithNullability: GetDeploymentsResponseCurrentReleaseCreatedBy?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3507,6 +3589,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3537,6 +3620,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3567,6 +3651,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3638,6 +3723,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3668,6 +3754,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3698,6 +3785,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3769,6 +3857,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3799,6 +3888,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3835,6 +3925,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: GetDeploymentsResponseCurrentReleaseCreatedByType,
           ShortCSharpTypeWithNullability: GetDeploymentsResponseCurrentReleaseCreatedByType?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.GetDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter
         },
         IsRequired: false,
@@ -3865,6 +3956,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -3937,6 +4029,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -3967,6 +4060,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -4038,6 +4132,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4068,6 +4163,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4098,6 +4194,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4128,6 +4225,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4199,6 +4297,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: UpdateDeploymentsResponseCurrentRelease,
           ShortCSharpTypeWithNullability: UpdateDeploymentsResponseCurrentRelease?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -4229,6 +4328,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4259,6 +4359,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4330,6 +4431,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: UpdateDeploymentsResponseCurrentReleaseConfiguration,
           ShortCSharpTypeWithNullability: UpdateDeploymentsResponseCurrentReleaseConfiguration?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -4360,6 +4462,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: global::System.DateTime,
           ShortCSharpTypeWithNullability: global::System.DateTime?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -4390,6 +4493,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: UpdateDeploymentsResponseCurrentReleaseCreatedBy,
           ShortCSharpTypeWithNullability: UpdateDeploymentsResponseCurrentReleaseCreatedBy?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -4420,6 +4524,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4450,6 +4555,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4480,6 +4586,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4551,6 +4658,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4581,6 +4689,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4611,6 +4720,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: int,
           ShortCSharpTypeWithNullability: int?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4682,6 +4792,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4712,6 +4823,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4748,6 +4860,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: UpdateDeploymentsResponseCurrentReleaseCreatedByType,
           ShortCSharpTypeWithNullability: UpdateDeploymentsResponseCurrentReleaseCreatedByType?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.UpdateDeploymentsResponseCurrentReleaseCreatedByTypeJsonConverter
         },
         IsRequired: false,
@@ -4778,6 +4891,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4850,6 +4964,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -4880,6 +4995,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -4951,6 +5067,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -4981,6 +5098,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5052,6 +5170,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5082,6 +5201,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5112,6 +5232,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5142,6 +5263,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -5172,6 +5294,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5202,6 +5325,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -5232,6 +5356,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: true,
@@ -5262,6 +5387,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
@@ -5298,6 +5424,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: CreateModelsRequestVisibility,
           ShortCSharpTypeWithNullability: CreateModelsRequestVisibility?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: global::OpenApiGenerator.JsonConverters.CreateModelsRequestVisibilityJsonConverter
         },
         IsRequired: true,
@@ -5370,6 +5497,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -5400,6 +5528,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: ,
           ShortCSharpTypeWithNullability: ?,
           IsAnyOf: false,
+          IsReferenceable: false,
           ConverterType: 
         },
         IsRequired: false,
@@ -5471,6 +5600,7 @@ Requests for event types `output` and `logs` will be sent at most once every 500
           ShortCSharpTypeWithoutNullability: string,
           ShortCSharpTypeWithNullability: string?,
           IsAnyOf: false,
+          IsReferenceable: true,
           ConverterType: 
         },
         IsRequired: false,
