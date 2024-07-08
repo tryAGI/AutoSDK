@@ -6,6 +6,29 @@ namespace G
 {
     public partial class AdminClient
     {
+        partial void PrepareAdminUpdateUserInfoArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string userId,
+            ref string username,
+            ref string email,
+            ref string phone);
+        partial void PrepareAdminUpdateUserInfoRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string userId,
+            string username,
+            string email,
+            string phone);
+        partial void ProcessAdminUpdateUserInfoResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAdminUpdateUserInfoResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// UpdateUserInfo.
         /// </summary>

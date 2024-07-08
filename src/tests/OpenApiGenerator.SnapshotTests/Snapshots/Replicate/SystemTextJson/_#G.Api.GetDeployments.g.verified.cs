@@ -6,6 +6,23 @@ namespace G
 {
     public partial class Api
     {
+        partial void PrepareGetDeploymentsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string deploymentOwner,
+            ref string deploymentName);
+        partial void PrepareGetDeploymentsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string deploymentOwner,
+            string deploymentName);
+        partial void ProcessGetDeploymentsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetDeploymentsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Get a deployment<br/>
         /// Get information about a deployment by name including the current release.<br/>

@@ -6,6 +6,19 @@ namespace G
 {
     public partial class Api
     {
+        partial void PrepareListHardwareArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareListHardwareRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessListHardwareResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessListHardwareResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// List available hardware for models<br/>
         /// Example cURL request:<br/>

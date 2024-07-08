@@ -27,6 +27,32 @@ namespace {endPoint.Namespace}
 {{
     public partial class {endPoint.ClassName}
     {{
+        partial void Prepare{endPoint.NotAsyncMethodName}Arguments(
+            global::System.Net.Http.HttpClient httpClient{endPoint.Properties
+                .Where(x => x.ParameterLocation != null)
+                .Select(x => $@",
+            {(x.Type.IsReferenceable ? "ref " : "")}{x.Type.CSharpType} {x.ParameterName}").Inject(emptyValue: "")}{
+(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @$",
+            {endPoint.RequestType.CSharpTypeWithoutNullability} request")});
+        
+        partial void Prepare{endPoint.NotAsyncMethodName}Request(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage{endPoint.Properties
+                .Where(x => x.ParameterLocation != null)
+                .Select(x => $@",
+            {x.Type.CSharpType} {x.ParameterName}").Inject(emptyValue: "")}{
+(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @$",
+            {endPoint.RequestType.CSharpTypeWithoutNullability} request")});
+        
+        partial void Process{endPoint.NotAsyncMethodName}Response(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        
+        partial void Process{endPoint.NotAsyncMethodName}ResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
 {GenerateMethod(endPoint)}
 {GenerateExtensionMethod(endPoint)}
     }}

@@ -6,6 +6,27 @@ namespace G
 {
     public partial class AdminClient
     {
+        partial void PrepareAdminUpdateProjectArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string title,
+            ref string adminId);
+        partial void PrepareAdminUpdateProjectRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string title,
+            string adminId);
+        partial void ProcessAdminUpdateProjectResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAdminUpdateProjectResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// UpdateProject.
         /// </summary>

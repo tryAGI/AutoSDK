@@ -6,6 +6,21 @@ namespace G
 {
     public partial class StreamsClient
     {
+        partial void PrepareCreateStreamMarkerArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.CreateStreamMarkerBody request);
+        partial void PrepareCreateStreamMarkerRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.CreateStreamMarkerBody request);
+        partial void ProcessCreateStreamMarkerResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreateStreamMarkerResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Adds a marker to a live stream.<br/>
         /// Adds a marker to a live stream. A marker is an arbitrary point in a live stream that the broadcaster or editor wants to mark, so they can return to that spot later to create video highlights (see Video Producer, Highlights in the Twitch UX).<br/>

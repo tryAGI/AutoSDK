@@ -6,6 +6,25 @@ namespace G
 {
     public partial class StreamsClient
     {
+        partial void PrepareGetFollowedStreamsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string userId,
+            ref int first,
+            ref string after);
+        partial void PrepareGetFollowedStreamsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string userId,
+            int first,
+            string after);
+        partial void ProcessGetFollowedStreamsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetFollowedStreamsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets the list of broadcasters that the user follows and that are streaming live.<br/>
         /// Gets the list of broadcasters that the user follows and that are streaming live.<br/>

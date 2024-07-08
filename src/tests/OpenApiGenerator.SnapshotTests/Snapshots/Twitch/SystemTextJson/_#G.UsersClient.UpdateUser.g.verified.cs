@@ -6,6 +6,21 @@ namespace G
 {
     public partial class UsersClient
     {
+        partial void PrepareUpdateUserArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string description);
+        partial void PrepareUpdateUserRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string description);
+        partial void ProcessUpdateUserResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUpdateUserResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Updates the user’s information.<br/>
         /// Updates the specified user’s information. The user ID in the OAuth token identifies the user whose information you want to update.<br/>

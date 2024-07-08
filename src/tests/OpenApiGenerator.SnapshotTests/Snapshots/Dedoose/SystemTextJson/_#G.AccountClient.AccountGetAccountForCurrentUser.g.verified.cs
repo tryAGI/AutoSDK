@@ -6,6 +6,21 @@ namespace G
 {
     public partial class AccountClient
     {
+        partial void PrepareAccountGetAccountForCurrentUserArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token);
+        partial void PrepareAccountGetAccountForCurrentUserRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token);
+        partial void ProcessAccountGetAccountForCurrentUserResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAccountGetAccountForCurrentUserResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GetAccountForCurrentUser.
         /// </summary>

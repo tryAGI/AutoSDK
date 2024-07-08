@@ -6,6 +6,25 @@ namespace G
 {
     public partial class CharityClient
     {
+        partial void PrepareGetCharityCampaignDonationsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref int first,
+            ref string after);
+        partial void PrepareGetCharityCampaignDonationsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            int first,
+            string after);
+        partial void ProcessGetCharityCampaignDonationsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetCharityCampaignDonationsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets the list of donations that users have made to the broadcaster’s active charity campaign.<br/>
         /// Gets the list of donations that users have made to the broadcaster’s active charity campaign.<br/>

@@ -6,6 +6,21 @@ namespace G
 {
     public partial class LoginClient
     {
+        partial void PrepareCreateApiV1LoginArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.LoginRequest request);
+        partial void PrepareCreateApiV1LoginRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.LoginRequest request);
+        partial void ProcessCreateApiV1LoginResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreateApiV1LoginResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Login to Dedoose API use encrypted password.
         /// </summary>

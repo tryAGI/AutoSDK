@@ -6,6 +6,21 @@ namespace G
 {
     public partial class UserClient
     {
+        partial void PrepareUserDoesUserEmailExistArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string email);
+        partial void PrepareUserDoesUserEmailExistRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string email);
+        partial void ProcessUserDoesUserEmailExistResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUserDoesUserEmailExistResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// DoesUserEmailExist.
         /// </summary>

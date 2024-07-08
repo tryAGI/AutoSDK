@@ -6,6 +6,21 @@ namespace G
 {
     public partial class PredictionsClient
     {
+        partial void PrepareEndPredictionArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.EndPredictionBody request);
+        partial void PrepareEndPredictionRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.EndPredictionBody request);
+        partial void ProcessEndPredictionResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessEndPredictionResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Locks, resolves, or cancels a Channel Points Prediction.<br/>
         /// Locks, resolves, or cancels a Channel Points Prediction.<br/>

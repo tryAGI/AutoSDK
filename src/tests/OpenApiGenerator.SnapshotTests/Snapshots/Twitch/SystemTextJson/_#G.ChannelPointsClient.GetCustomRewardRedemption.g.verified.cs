@@ -7,6 +7,33 @@ namespace G
 {
     public partial class ChannelPointsClient
     {
+        partial void PrepareGetCustomRewardRedemptionArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref string rewardId,
+            ref global::G.GetCustomRewardRedemptionStatus status,
+            global::System.Collections.Generic.IList<string> id,
+            ref global::G.GetCustomRewardRedemptionSort sort,
+            ref string after,
+            ref int first);
+        partial void PrepareGetCustomRewardRedemptionRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            string rewardId,
+            global::G.GetCustomRewardRedemptionStatus status,
+            global::System.Collections.Generic.IList<string> id,
+            global::G.GetCustomRewardRedemptionSort sort,
+            string after,
+            int first);
+        partial void ProcessGetCustomRewardRedemptionResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetCustomRewardRedemptionResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets a list of redemptions for a custom reward.<br/>
         /// Gets a list of redemptions for the specified custom reward. The app used to create the reward is the only app that may get the redemptions.<br/>

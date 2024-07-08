@@ -11,15 +11,16 @@ public static class StringExtensions
     /// Returns " " if collection is empty(to use with <see cref="RemoveBlankLinesWhereOnlyWhitespaces(string)"/>).
     /// </summary>
     /// <param name="values"></param>
+    /// <param name="emptyValue"></param>
     /// <returns></returns>
-    public static string Inject(this IEnumerable<string> values)
+    public static string Inject(this IEnumerable<string> values, string emptyValue = " ")
     {
         var text = string.Concat(values)
             .TrimStart('\r', '\n')
             .TrimEnd('\r', '\n');
         if (string.IsNullOrWhiteSpace(text))
         {
-            return " ";
+            return emptyValue;
         }
 
         return text;

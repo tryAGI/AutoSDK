@@ -6,6 +6,25 @@ namespace G
 {
     public partial class AdminClient
     {
+        partial void PrepareAdminAddUserToAccountArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string userId,
+            ref string accountId);
+        partial void PrepareAdminAddUserToAccountRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string userId,
+            string accountId);
+        partial void ProcessAdminAddUserToAccountResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAdminAddUserToAccountResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// AddUserToAccount.
         /// </summary>

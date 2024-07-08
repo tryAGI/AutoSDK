@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+        partial void PrepareUpdateDeploymentsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string deploymentOwner,
+            ref string deploymentName,
+            global::G.UpdateDeploymentsRequest request);
+        partial void PrepareUpdateDeploymentsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string deploymentOwner,
+            string deploymentName,
+            global::G.UpdateDeploymentsRequest request);
+        partial void ProcessUpdateDeploymentsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUpdateDeploymentsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Update a deployment<br/>
         /// Update properties of an existing deployment, including hardware, min/max instances, and the deployment's underlying model [version](https://replicate.com/docs/how-does-replicate-work#versions).<br/>

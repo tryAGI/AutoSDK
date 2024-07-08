@@ -6,6 +6,23 @@ namespace G
 {
     public partial class MigrationsClient
     {
+        partial void PrepareMigrationsListForAuthenticatedUserArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref int perPage,
+            ref int page);
+        partial void PrepareMigrationsListForAuthenticatedUserRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int perPage,
+            int page);
+        partial void ProcessMigrationsListForAuthenticatedUserResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMigrationsListForAuthenticatedUserResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// List user migrations<br/>
         /// Lists all migrations a user has started.

@@ -6,6 +6,21 @@ namespace G
 {
     public partial class SingleClient
     {
+        partial void PrepareGetOrganizationByIpArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string ip);
+        partial void PrepareGetOrganizationByIpRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string ip);
+        partial void ProcessGetOrganizationByIpResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetOrganizationByIpResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Returns a organization for the selected IP.<br/>
         /// Returns a organization for the selected IP.

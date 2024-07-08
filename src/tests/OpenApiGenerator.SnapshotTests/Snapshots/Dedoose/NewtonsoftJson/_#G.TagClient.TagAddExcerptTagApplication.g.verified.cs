@@ -6,6 +6,33 @@ namespace G
 {
     public partial class TagClient
     {
+        partial void PrepareTagAddExcerptTagApplicationArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string userId,
+            ref string projectId,
+            ref string resourceId,
+            ref string excerptId,
+            ref string tagId,
+            ref double weight);
+        partial void PrepareTagAddExcerptTagApplicationRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string userId,
+            string projectId,
+            string resourceId,
+            string excerptId,
+            string tagId,
+            double weight);
+        partial void ProcessTagAddExcerptTagApplicationResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessTagAddExcerptTagApplicationResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// AddExcerptTagApplication.
         /// </summary>

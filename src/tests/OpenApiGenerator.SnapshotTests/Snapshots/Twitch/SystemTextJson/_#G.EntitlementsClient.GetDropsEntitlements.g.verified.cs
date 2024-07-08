@@ -7,6 +7,31 @@ namespace G
 {
     public partial class EntitlementsClient
     {
+        partial void PrepareGetDropsEntitlementsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Collections.Generic.IList<string> id,
+            ref string userId,
+            ref string gameId,
+            ref global::G.GetDropsEntitlementsFulfillmentStatus fulfillmentStatus,
+            ref string after,
+            ref int first);
+        partial void PrepareGetDropsEntitlementsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::System.Collections.Generic.IList<string> id,
+            string userId,
+            string gameId,
+            global::G.GetDropsEntitlementsFulfillmentStatus fulfillmentStatus,
+            string after,
+            int first);
+        partial void ProcessGetDropsEntitlementsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetDropsEntitlementsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets an organization’s list of entitlements that have been granted to a game, a user, or both.<br/>
         /// Gets an organization’s list of entitlements that have been granted to a game, a user, or both.<br/>

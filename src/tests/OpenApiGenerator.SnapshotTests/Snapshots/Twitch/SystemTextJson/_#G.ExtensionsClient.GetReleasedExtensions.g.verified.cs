@@ -6,6 +6,23 @@ namespace G
 {
     public partial class ExtensionsClient
     {
+        partial void PrepareGetReleasedExtensionsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string extensionId,
+            ref string extensionVersion);
+        partial void PrepareGetReleasedExtensionsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string extensionId,
+            string extensionVersion);
+        partial void ProcessGetReleasedExtensionsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetReleasedExtensionsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets information about a released extension.<br/>
         /// Gets information about a released extension. Returns the extension if its `state` is Released.<br/>

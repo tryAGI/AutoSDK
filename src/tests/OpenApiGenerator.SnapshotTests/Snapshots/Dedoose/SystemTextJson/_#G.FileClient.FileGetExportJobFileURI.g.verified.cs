@@ -6,6 +6,23 @@ namespace G
 {
     public partial class FileClient
     {
+        partial void PrepareFileGetExportJobFileURIArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string jobId);
+        partial void PrepareFileGetExportJobFileURIRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string jobId);
+        partial void ProcessFileGetExportJobFileURIResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessFileGetExportJobFileURIResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GetExportJobFileURI.
         /// </summary>

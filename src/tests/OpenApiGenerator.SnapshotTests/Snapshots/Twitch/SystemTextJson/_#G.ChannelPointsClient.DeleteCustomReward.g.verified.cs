@@ -6,6 +6,23 @@ namespace G
 {
     public partial class ChannelPointsClient
     {
+        partial void PrepareDeleteCustomRewardArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref string id);
+        partial void PrepareDeleteCustomRewardRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            string id);
+        partial void ProcessDeleteCustomRewardResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDeleteCustomRewardResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Deletes a custom reward that the broadcaster created.<br/>
         /// Deletes a custom reward that the broadcaster created.<br/>

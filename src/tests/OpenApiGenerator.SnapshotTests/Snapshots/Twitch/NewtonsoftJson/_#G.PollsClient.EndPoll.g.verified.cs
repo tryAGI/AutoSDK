@@ -6,6 +6,21 @@ namespace G
 {
     public partial class PollsClient
     {
+        partial void PrepareEndPollArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.EndPollBody request);
+        partial void PrepareEndPollRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.EndPollBody request);
+        partial void ProcessEndPollResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessEndPollResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// End an active poll.<br/>
         /// Ends an active poll. You have the option to end it or end it and archive it.<br/>

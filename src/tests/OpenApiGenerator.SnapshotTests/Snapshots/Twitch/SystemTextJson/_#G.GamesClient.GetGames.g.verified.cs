@@ -7,6 +7,25 @@ namespace G
 {
     public partial class GamesClient
     {
+        partial void PrepareGetGamesArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Collections.Generic.IList<string> id,
+            global::System.Collections.Generic.IList<string> name,
+            global::System.Collections.Generic.IList<string> igdbId);
+        partial void PrepareGetGamesRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::System.Collections.Generic.IList<string> id,
+            global::System.Collections.Generic.IList<string> name,
+            global::System.Collections.Generic.IList<string> igdbId);
+        partial void ProcessGetGamesResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetGamesResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets information about specified games.<br/>
         /// Gets information about specified categories or games.<br/>

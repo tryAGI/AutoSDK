@@ -6,6 +6,27 @@ namespace G
 {
     public partial class AdminClient
     {
+        partial void PrepareAdminAddCreditsToAccountArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string accountId,
+            ref double credits,
+            ref string reason);
+        partial void PrepareAdminAddCreditsToAccountRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string accountId,
+            double credits,
+            string reason);
+        partial void ProcessAdminAddCreditsToAccountResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAdminAddCreditsToAccountResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// AddCreditsToAccount.
         /// </summary>

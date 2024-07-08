@@ -6,6 +6,23 @@ namespace G
 {
     public partial class ChannelsClient
     {
+        partial void PrepareModifyChannelInformationArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            global::G.ModifyChannelInformationBody request);
+        partial void PrepareModifyChannelInformationRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            global::G.ModifyChannelInformationBody request);
+        partial void ProcessModifyChannelInformationResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessModifyChannelInformationResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Updates a channel’s properties.<br/>
         /// Updates a channel’s properties.<br/>

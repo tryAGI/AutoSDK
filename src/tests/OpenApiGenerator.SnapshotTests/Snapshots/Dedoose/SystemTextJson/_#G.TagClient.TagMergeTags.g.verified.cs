@@ -6,6 +6,27 @@ namespace G
 {
     public partial class TagClient
     {
+        partial void PrepareTagMergeTagsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string tag1Id,
+            ref string tag2Id);
+        partial void PrepareTagMergeTagsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string tag1Id,
+            string tag2Id);
+        partial void ProcessTagMergeTagsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessTagMergeTagsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// MergeTags.
         /// </summary>

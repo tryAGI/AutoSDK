@@ -6,6 +6,19 @@ namespace G
 {
     public partial class LoginClient
     {
+        partial void PrepareGetTopBlogPostsArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareGetTopBlogPostsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessGetTopBlogPostsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetTopBlogPostsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Returns top blog posts.
         /// </summary>

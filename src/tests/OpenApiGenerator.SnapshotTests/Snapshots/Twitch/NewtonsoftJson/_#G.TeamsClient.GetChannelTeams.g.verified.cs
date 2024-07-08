@@ -6,6 +6,21 @@ namespace G
 {
     public partial class TeamsClient
     {
+        partial void PrepareGetChannelTeamsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId);
+        partial void PrepareGetChannelTeamsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId);
+        partial void ProcessGetChannelTeamsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetChannelTeamsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets the list of Twitch teams that the broadcaster is a member of.<br/>
         /// Gets the list of Twitch teams that the broadcaster is a member of.<br/>

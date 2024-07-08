@@ -7,6 +7,29 @@ namespace G
 {
     public partial class ResourceClient
     {
+        partial void PrepareResourceStartExportResourcesJobArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            global::System.Collections.Generic.IList<string> resourceIds,
+            ref bool includeDescriptorInfo,
+            ref bool includeCodeCounts);
+        partial void PrepareResourceStartExportResourcesJobRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            global::System.Collections.Generic.IList<string> resourceIds,
+            bool includeDescriptorInfo,
+            bool includeCodeCounts);
+        partial void ProcessResourceStartExportResourcesJobResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessResourceStartExportResourcesJobResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StartExportResourcesJob.
         /// </summary>

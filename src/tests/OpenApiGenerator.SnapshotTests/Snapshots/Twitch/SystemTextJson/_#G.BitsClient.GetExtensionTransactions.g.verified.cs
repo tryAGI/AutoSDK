@@ -7,6 +7,27 @@ namespace G
 {
     public partial class BitsClient
     {
+        partial void PrepareGetExtensionTransactionsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string extensionId,
+            global::System.Collections.Generic.IList<string> id,
+            ref int first,
+            ref string after);
+        partial void PrepareGetExtensionTransactionsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string extensionId,
+            global::System.Collections.Generic.IList<string> id,
+            int first,
+            string after);
+        partial void ProcessGetExtensionTransactionsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetExtensionTransactionsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets an extension’s list of transactions.<br/>
         /// Gets an extension’s list of transactions. A transaction records the exchange of a currency (for example, Bits) for a digital product.<br/>

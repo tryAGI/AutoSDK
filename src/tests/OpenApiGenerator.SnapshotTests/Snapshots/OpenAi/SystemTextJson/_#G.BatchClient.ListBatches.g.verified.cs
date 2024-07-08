@@ -6,6 +6,23 @@ namespace G
 {
     public partial class BatchClient
     {
+        partial void PrepareListBatchesArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string after,
+            ref int limit);
+        partial void PrepareListBatchesRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string after,
+            int limit);
+        partial void ProcessListBatchesResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessListBatchesResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// List your organization's batches.
         /// </summary>

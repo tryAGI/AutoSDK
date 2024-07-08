@@ -6,6 +6,23 @@ namespace G
 {
     public partial class TagClient
     {
+        partial void PrepareTagGetTagLinksByProjectArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId);
+        partial void PrepareTagGetTagLinksByProjectRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId);
+        partial void ProcessTagGetTagLinksByProjectResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessTagGetTagLinksByProjectResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GetTagLinksByProject.
         /// </summary>

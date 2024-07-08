@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ProjectClient
     {
+        partial void PrepareProjectStartDeleteProjectArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string userId);
+        partial void PrepareProjectStartDeleteProjectRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string userId);
+        partial void ProcessProjectStartDeleteProjectResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessProjectStartDeleteProjectResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StartDeleteProject.
         /// </summary>

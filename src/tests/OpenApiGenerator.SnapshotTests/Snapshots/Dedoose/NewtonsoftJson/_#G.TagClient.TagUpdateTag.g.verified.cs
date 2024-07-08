@@ -6,6 +6,47 @@ namespace G
 {
     public partial class TagClient
     {
+        partial void PrepareTagUpdateTagArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectIdKey,
+            ref string projectId,
+            ref string id,
+            ref string projectIDL,
+            ref string title,
+            ref string description,
+            ref bool isWeighted,
+            ref double weightMin,
+            ref double weightMax,
+            ref double weightDefault,
+            ref int sortOrder,
+            ref int color,
+            ref bool allowDecimalWeight);
+        partial void PrepareTagUpdateTagRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectIdKey,
+            string projectId,
+            string id,
+            string projectIDL,
+            string title,
+            string description,
+            bool isWeighted,
+            double weightMin,
+            double weightMax,
+            double weightDefault,
+            int sortOrder,
+            int color,
+            bool allowDecimalWeight);
+        partial void ProcessTagUpdateTagResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessTagUpdateTagResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// UpdateTag.
         /// </summary>

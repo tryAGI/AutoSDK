@@ -6,6 +6,33 @@ namespace G
 {
     public partial class ExcerptClient
     {
+        partial void PrepareExcerptUpdateExcerptRangeArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string userId,
+            ref string excerptId,
+            ref int newStart,
+            ref int newEnd,
+            ref string updatedTextURI);
+        partial void PrepareExcerptUpdateExcerptRangeRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string userId,
+            string excerptId,
+            int newStart,
+            int newEnd,
+            string updatedTextURI);
+        partial void ProcessExcerptUpdateExcerptRangeResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessExcerptUpdateExcerptRangeResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// UpdateExcerptRange.
         /// </summary>

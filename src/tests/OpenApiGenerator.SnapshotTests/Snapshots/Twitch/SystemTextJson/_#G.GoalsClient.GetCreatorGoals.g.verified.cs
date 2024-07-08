@@ -6,6 +6,21 @@ namespace G
 {
     public partial class GoalsClient
     {
+        partial void PrepareGetCreatorGoalsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId);
+        partial void PrepareGetCreatorGoalsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId);
+        partial void ProcessGetCreatorGoalsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetCreatorGoalsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets the broadcaster’s list of active goals.<br/>
         /// Gets the broadcaster’s list of active goals. Use this endpoint to get the current progress of each goal.<br/>

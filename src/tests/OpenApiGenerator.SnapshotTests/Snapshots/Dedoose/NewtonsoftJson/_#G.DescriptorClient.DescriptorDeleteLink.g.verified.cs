@@ -6,6 +6,27 @@ namespace G
 {
     public partial class DescriptorClient
     {
+        partial void PrepareDescriptorDeleteLinkArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string resourceId,
+            ref string descriptorId);
+        partial void PrepareDescriptorDeleteLinkRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string resourceId,
+            string descriptorId);
+        partial void ProcessDescriptorDeleteLinkResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDescriptorDeleteLinkResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// DeleteLink.
         /// </summary>

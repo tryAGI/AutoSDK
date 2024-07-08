@@ -7,6 +7,25 @@ namespace G
 {
     public partial class ExportClient
     {
+        partial void PrepareExportStartExportSingleSeriesChartJobArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            global::System.Collections.Generic.IList<global::G.ChartExportInfo> exportInfo);
+        partial void PrepareExportStartExportSingleSeriesChartJobRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            global::System.Collections.Generic.IList<global::G.ChartExportInfo> exportInfo);
+        partial void ProcessExportStartExportSingleSeriesChartJobResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessExportStartExportSingleSeriesChartJobResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StartExportSingleSeriesChartJob.
         /// </summary>

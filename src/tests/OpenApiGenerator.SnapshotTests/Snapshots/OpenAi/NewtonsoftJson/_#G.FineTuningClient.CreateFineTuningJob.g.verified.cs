@@ -6,6 +6,21 @@ namespace G
 {
     public partial class FineTuningClient
     {
+        partial void PrepareCreateFineTuningJobArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.CreateFineTuningJobRequest request);
+        partial void PrepareCreateFineTuningJobRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.CreateFineTuningJobRequest request);
+        partial void ProcessCreateFineTuningJobResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreateFineTuningJobResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Creates a fine-tuning job which begins the process of creating a new model from a given dataset.<br/>
         /// Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.<br/>

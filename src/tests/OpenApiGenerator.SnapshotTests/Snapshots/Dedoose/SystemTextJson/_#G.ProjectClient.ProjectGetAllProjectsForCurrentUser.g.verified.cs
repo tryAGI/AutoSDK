@@ -6,6 +6,21 @@ namespace G
 {
     public partial class ProjectClient
     {
+        partial void PrepareProjectGetAllProjectsForCurrentUserArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token);
+        partial void PrepareProjectGetAllProjectsForCurrentUserRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token);
+        partial void ProcessProjectGetAllProjectsForCurrentUserResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessProjectGetAllProjectsForCurrentUserResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GetAllProjectsForCurrentUser.
         /// </summary>

@@ -6,6 +6,27 @@ namespace G
 {
     public partial class AccountClient
     {
+        partial void PrepareAccountSendPaymentReceiptArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string accountId,
+            ref string transactionId,
+            ref string email);
+        partial void PrepareAccountSendPaymentReceiptRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string accountId,
+            string transactionId,
+            string email);
+        partial void ProcessAccountSendPaymentReceiptResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAccountSendPaymentReceiptResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// SendPaymentReceipt.
         /// </summary>

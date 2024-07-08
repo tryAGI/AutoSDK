@@ -6,6 +6,29 @@ namespace G
 {
     public partial class ProjectClient
     {
+        partial void PrepareProjectAddProjectEncryptedByUserArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string userId,
+            ref string title,
+            ref string decription,
+            ref string symKeyHash);
+        partial void PrepareProjectAddProjectEncryptedByUserRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string userId,
+            string title,
+            string decription,
+            string symKeyHash);
+        partial void ProcessProjectAddProjectEncryptedByUserResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessProjectAddProjectEncryptedByUserResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// AddProjectEncryptedByUser.
         /// </summary>

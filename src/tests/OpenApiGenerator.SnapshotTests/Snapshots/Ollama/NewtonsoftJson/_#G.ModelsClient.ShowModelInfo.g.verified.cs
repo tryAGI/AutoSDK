@@ -6,6 +6,21 @@ namespace G
 {
     public partial class ModelsClient
     {
+        partial void PrepareShowModelInfoArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.ModelInfoRequest request);
+        partial void PrepareShowModelInfoRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.ModelInfoRequest request);
+        partial void ProcessShowModelInfoResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessShowModelInfoResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Show details about a model including modelfile, template, parameters, license, and system prompt.
         /// </summary>

@@ -6,6 +6,27 @@ namespace G
 {
     public partial class AdminClient
     {
+        partial void PrepareAdminSetAccountCPUPMOverrideArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string accountId,
+            ref double cpupmOverride,
+            global::System.DateTime endDate);
+        partial void PrepareAdminSetAccountCPUPMOverrideRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string accountId,
+            double cpupmOverride,
+            global::System.DateTime endDate);
+        partial void ProcessAdminSetAccountCPUPMOverrideResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAdminSetAccountCPUPMOverrideResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// SetAccountCPUPMOverride.
         /// </summary>

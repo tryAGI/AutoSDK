@@ -6,6 +6,25 @@ namespace G
 {
     public partial class DescriptorClient
     {
+        partial void PrepareDescriptorForceDeleteDescriptorSetPolledArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectIDL,
+            ref string descriptorSetId);
+        partial void PrepareDescriptorForceDeleteDescriptorSetPolledRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectIDL,
+            string descriptorSetId);
+        partial void ProcessDescriptorForceDeleteDescriptorSetPolledResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDescriptorForceDeleteDescriptorSetPolledResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// ForceDeleteDescriptorSetPolled.
         /// </summary>

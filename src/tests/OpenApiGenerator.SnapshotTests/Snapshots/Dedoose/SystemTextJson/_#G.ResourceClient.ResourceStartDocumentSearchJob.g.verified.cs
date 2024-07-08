@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ResourceClient
     {
+        partial void PrepareResourceStartDocumentSearchJobArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string searchText);
+        partial void PrepareResourceStartDocumentSearchJobRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string searchText);
+        partial void ProcessResourceStartDocumentSearchJobResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessResourceStartDocumentSearchJobResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StartDocumentSearchJob.
         /// </summary>

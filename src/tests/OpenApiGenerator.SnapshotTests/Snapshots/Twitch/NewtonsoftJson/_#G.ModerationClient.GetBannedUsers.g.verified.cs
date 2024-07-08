@@ -7,6 +7,29 @@ namespace G
 {
     public partial class ModerationClient
     {
+        partial void PrepareGetBannedUsersArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            global::System.Collections.Generic.IList<string> userId,
+            ref int first,
+            ref string after,
+            ref string before);
+        partial void PrepareGetBannedUsersRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            global::System.Collections.Generic.IList<string> userId,
+            int first,
+            string after,
+            string before);
+        partial void ProcessGetBannedUsersResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetBannedUsersResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets all users that the broadcaster banned or put in a timeout.<br/>
         /// Gets all users that the broadcaster banned or put in a timeout.<br/>

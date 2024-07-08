@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ProjectClient
     {
+        partial void PrepareProjectRenameProjectArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string newTitle);
+        partial void PrepareProjectRenameProjectRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string newTitle);
+        partial void ProcessProjectRenameProjectResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessProjectRenameProjectResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// RenameProject.
         /// </summary>

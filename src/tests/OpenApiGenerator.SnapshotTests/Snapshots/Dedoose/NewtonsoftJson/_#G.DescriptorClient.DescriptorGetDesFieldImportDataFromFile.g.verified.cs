@@ -6,6 +6,23 @@ namespace G
 {
     public partial class DescriptorClient
     {
+        partial void PrepareDescriptorGetDesFieldImportDataFromFileArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string relativeFileURL);
+        partial void PrepareDescriptorGetDesFieldImportDataFromFileRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string relativeFileURL);
+        partial void ProcessDescriptorGetDesFieldImportDataFromFileResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDescriptorGetDesFieldImportDataFromFileResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GetDesFieldImportDataFromFile.
         /// </summary>

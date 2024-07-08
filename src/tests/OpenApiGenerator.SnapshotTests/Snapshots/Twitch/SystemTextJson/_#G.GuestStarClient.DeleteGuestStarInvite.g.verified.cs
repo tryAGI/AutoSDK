@@ -6,6 +6,27 @@ namespace G
 {
     public partial class GuestStarClient
     {
+        partial void PrepareDeleteGuestStarInviteArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref string moderatorId,
+            ref string sessionId,
+            ref string guestId);
+        partial void PrepareDeleteGuestStarInviteRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            string moderatorId,
+            string sessionId,
+            string guestId);
+        partial void ProcessDeleteGuestStarInviteResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDeleteGuestStarInviteResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// BETA Revokes a previously sent invite for a Guest Star session.<br/>
         /// BETA Revokes a previously sent invite for a Guest Star session.<br/>

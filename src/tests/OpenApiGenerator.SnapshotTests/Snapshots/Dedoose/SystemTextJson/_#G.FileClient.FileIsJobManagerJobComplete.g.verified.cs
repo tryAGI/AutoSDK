@@ -6,6 +6,23 @@ namespace G
 {
     public partial class FileClient
     {
+        partial void PrepareFileIsJobManagerJobCompleteArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string jobId);
+        partial void PrepareFileIsJobManagerJobCompleteRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string jobId);
+        partial void ProcessFileIsJobManagerJobCompleteResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessFileIsJobManagerJobCompleteResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// IsJobManagerJobComplete.
         /// </summary>

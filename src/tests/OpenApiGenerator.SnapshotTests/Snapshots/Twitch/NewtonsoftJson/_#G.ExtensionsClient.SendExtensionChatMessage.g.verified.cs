@@ -6,6 +6,23 @@ namespace G
 {
     public partial class ExtensionsClient
     {
+        partial void PrepareSendExtensionChatMessageArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            global::G.SendExtensionChatMessageBody request);
+        partial void PrepareSendExtensionChatMessageRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            global::G.SendExtensionChatMessageBody request);
+        partial void ProcessSendExtensionChatMessageResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessSendExtensionChatMessageResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Sends a message to the specified broadcaster’s chat room.<br/>
         /// Sends a message to the specified broadcaster’s chat room. The extension’s name is used as the username for the message in the chat room. To send a chat message, your extension must enable **Chat Capabilities** (under your extension’s **Capabilities** tab).<br/>

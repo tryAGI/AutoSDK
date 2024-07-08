@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+        partial void PrepareDeleteVersionsModelsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string modelOwner,
+            ref string modelName,
+            ref string versionId);
+        partial void PrepareDeleteVersionsModelsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string modelOwner,
+            string modelName,
+            string versionId);
+        partial void ProcessDeleteVersionsModelsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDeleteVersionsModelsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Delete a model version<br/>
         /// Delete a model version and all associated predictions, including all output files.<br/>

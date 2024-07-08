@@ -6,6 +6,25 @@ namespace G
 {
     public partial class HypeTrainClient
     {
+        partial void PrepareGetHypeTrainEventsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref int first,
+            ref string after);
+        partial void PrepareGetHypeTrainEventsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            int first,
+            string after);
+        partial void ProcessGetHypeTrainEventsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetHypeTrainEventsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets information about the broadcaster’s current or most recent Hype Train event.<br/>
         /// Gets information about the broadcaster’s current or most recent Hype Train event.<br/>

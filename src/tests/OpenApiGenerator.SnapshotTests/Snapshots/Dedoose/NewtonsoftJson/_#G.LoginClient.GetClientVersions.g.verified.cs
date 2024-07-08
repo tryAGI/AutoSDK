@@ -6,6 +6,19 @@ namespace G
 {
     public partial class LoginClient
     {
+        partial void PrepareGetClientVersionsArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareGetClientVersionsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessGetClientVersionsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetClientVersionsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Returns client versions.
         /// </summary>

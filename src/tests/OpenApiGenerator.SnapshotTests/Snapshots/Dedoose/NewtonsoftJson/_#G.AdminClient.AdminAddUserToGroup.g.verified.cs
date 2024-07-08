@@ -6,6 +6,27 @@ namespace G
 {
     public partial class AdminClient
     {
+        partial void PrepareAdminAddUserToGroupArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string userId,
+            ref string groupId);
+        partial void PrepareAdminAddUserToGroupRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string userId,
+            string groupId);
+        partial void ProcessAdminAddUserToGroupResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAdminAddUserToGroupResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// AddUserToGroup.
         /// </summary>

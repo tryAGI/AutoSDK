@@ -6,6 +6,21 @@ namespace G
 {
     public partial class CompletionsClient
     {
+        partial void PrepareGenerateCompletionArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.GenerateCompletionRequest request);
+        partial void PrepareGenerateCompletionRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.GenerateCompletionRequest request);
+        partial void ProcessGenerateCompletionResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGenerateCompletionResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Generate a response for a given prompt with a provided model.<br/>
         /// The final response object will include statistics and additional data from the request.

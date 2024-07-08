@@ -7,6 +7,27 @@ namespace G
 {
     public partial class MigrationsClient
     {
+        partial void PrepareMigrationsListForOrgArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string org,
+            ref int perPage,
+            ref int page,
+            global::System.Collections.Generic.IList<global::G.MigrationsListForOrgExclude> exclude);
+        partial void PrepareMigrationsListForOrgRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string org,
+            int perPage,
+            int page,
+            global::System.Collections.Generic.IList<global::G.MigrationsListForOrgExclude> exclude);
+        partial void ProcessMigrationsListForOrgResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMigrationsListForOrgResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// List organization migrations<br/>
         /// Lists the most recent migrations, including both exports (which can be started through the REST API) and imports (which cannot be started using the REST API).<br/>

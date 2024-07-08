@@ -6,6 +6,21 @@ namespace G
 {
     public partial class ExtensionsClient
     {
+        partial void PrepareSetExtensionConfigurationSegmentArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.SetExtensionConfigurationSegmentBody request);
+        partial void PrepareSetExtensionConfigurationSegmentRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.SetExtensionConfigurationSegmentBody request);
+        partial void ProcessSetExtensionConfigurationSegmentResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessSetExtensionConfigurationSegmentResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Updates a configuration segment.<br/>
         /// Updates a configuration segment. The segment is limited to 5 KB. Extensions that are active on a channel do not receive the updated configuration.<br/>

@@ -6,6 +6,21 @@ namespace G
 {
     public partial class AudioClient
     {
+        partial void PrepareCreateSpeechArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.CreateSpeechRequest request);
+        partial void PrepareCreateSpeechRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.CreateSpeechRequest request);
+        partial void ProcessCreateSpeechResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreateSpeechResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Generates audio from the input text.
         /// </summary>

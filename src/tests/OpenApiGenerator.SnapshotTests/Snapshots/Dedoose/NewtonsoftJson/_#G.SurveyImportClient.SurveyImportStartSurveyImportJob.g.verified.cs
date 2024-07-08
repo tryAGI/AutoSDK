@@ -6,6 +6,27 @@ namespace G
 {
     public partial class SurveyImportClient
     {
+        partial void PrepareSurveyImportStartSurveyImportJobArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string surveyUploadedFileURL,
+            ref string encryptedSymKey);
+        partial void PrepareSurveyImportStartSurveyImportJobRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string surveyUploadedFileURL,
+            string encryptedSymKey);
+        partial void ProcessSurveyImportStartSurveyImportJobResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessSurveyImportStartSurveyImportJobResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StartSurveyImportJob.
         /// </summary>

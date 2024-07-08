@@ -6,6 +6,23 @@ namespace G
 {
     public partial class ModerationClient
     {
+        partial void PrepareAddChannelModeratorArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref string userId);
+        partial void PrepareAddChannelModeratorRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            string userId);
+        partial void ProcessAddChannelModeratorResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAddChannelModeratorResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Adds a moderator to the broadcaster’s chat room.<br/>
         /// Adds a moderator to the broadcaster’s chat room.<br/>

@@ -6,6 +6,21 @@ namespace G
 {
     public partial class SingleClient
     {
+        partial void PrepareGetCountryByIpArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string ip);
+        partial void PrepareGetCountryByIpRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string ip);
+        partial void ProcessGetCountryByIpResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetCountryByIpResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Returns a country for the selected IP.<br/>
         /// Returns a country for the selected IP.

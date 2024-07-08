@@ -6,6 +6,27 @@ namespace G
 {
     public partial class GuestStarClient
     {
+        partial void PrepareSendGuestStarInviteArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref string moderatorId,
+            ref string sessionId,
+            ref string guestId);
+        partial void PrepareSendGuestStarInviteRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            string moderatorId,
+            string sessionId,
+            string guestId);
+        partial void ProcessSendGuestStarInviteResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessSendGuestStarInviteResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// BETA Sends an invite to a specified guest on behalf of the broadcaster for a Guest Star session in progress.<br/>
         /// BETA Sends an invite to a specified guest on behalf of the broadcaster for a Guest Star session in progress.<br/>

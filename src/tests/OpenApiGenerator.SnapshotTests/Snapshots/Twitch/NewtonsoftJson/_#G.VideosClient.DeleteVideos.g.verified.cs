@@ -7,6 +7,21 @@ namespace G
 {
     public partial class VideosClient
     {
+        partial void PrepareDeleteVideosArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Collections.Generic.IList<string> id);
+        partial void PrepareDeleteVideosRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::System.Collections.Generic.IList<string> id);
+        partial void ProcessDeleteVideosResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDeleteVideosResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Deletes one or more videos.<br/>
         /// Deletes one or more videos. You may delete past broadcasts, highlights, or uploads.<br/>

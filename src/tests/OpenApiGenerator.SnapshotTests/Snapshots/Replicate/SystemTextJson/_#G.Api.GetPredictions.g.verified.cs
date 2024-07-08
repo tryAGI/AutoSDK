@@ -6,6 +6,21 @@ namespace G
 {
     public partial class Api
     {
+        partial void PrepareGetPredictionsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string predictionId);
+        partial void PrepareGetPredictionsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string predictionId);
+        partial void ProcessGetPredictionsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetPredictionsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Get a prediction<br/>
         /// Get the current state of a prediction.<br/>

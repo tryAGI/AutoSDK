@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ModerationClient
     {
+        partial void PrepareDeleteChatMessagesArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref string moderatorId,
+            ref string messageId);
+        partial void PrepareDeleteChatMessagesRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            string moderatorId,
+            string messageId);
+        partial void ProcessDeleteChatMessagesResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDeleteChatMessagesResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Removes a single chat message or all chat messages from the broadcaster’s chat room.<br/>
         /// Removes a single chat message or all chat messages from the broadcaster’s chat room.<br/>

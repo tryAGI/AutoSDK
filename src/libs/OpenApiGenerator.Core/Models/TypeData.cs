@@ -44,6 +44,11 @@ public readonly record struct TypeData(
     public string ShortCSharpTypeWithoutNullability => CSharpTypeWithoutNullability.Replace($"global::{Namespace}.", string.Empty);
     public string ShortCSharpTypeWithNullability => ShortCSharpTypeWithoutNullability + "?";
     public bool IsAnyOf => AnyOfCount > 0 || OneOfCount > 0 || AllOfCount > 0;
+
+    public bool IsReferenceable =>
+        CSharpTypeWithoutNullability is "string" or "int" or "long" or "float" or "double" or "bool" ||
+        IsAnyOf ||
+        IsEnum;
     
     public string ConverterType => IsEnum
         ? $"global::OpenApiGenerator.JsonConverters.{ShortCSharpTypeWithoutNullability}JsonConverter"

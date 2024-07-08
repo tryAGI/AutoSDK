@@ -6,6 +6,21 @@ namespace G
 {
     public partial class ImagesClient
     {
+        partial void PrepareCreateImageArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.CreateImageRequest request);
+        partial void PrepareCreateImageRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.CreateImageRequest request);
+        partial void ProcessCreateImageResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreateImageResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Creates an image given a prompt.
         /// </summary>

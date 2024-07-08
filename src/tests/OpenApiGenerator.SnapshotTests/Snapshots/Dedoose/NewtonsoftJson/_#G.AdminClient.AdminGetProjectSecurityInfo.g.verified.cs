@@ -6,6 +6,23 @@ namespace G
 {
     public partial class AdminClient
     {
+        partial void PrepareAdminGetProjectSecurityInfoArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId);
+        partial void PrepareAdminGetProjectSecurityInfoRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId);
+        partial void ProcessAdminGetProjectSecurityInfoResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAdminGetProjectSecurityInfoResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GetProjectSecurityInfo.
         /// </summary>

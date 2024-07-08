@@ -7,6 +7,39 @@ namespace G
 {
     public partial class VideosClient
     {
+        partial void PrepareGetVideosArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Collections.Generic.IList<string> id,
+            ref string userId,
+            ref string gameId,
+            ref string language,
+            ref global::G.GetVideosPeriod period,
+            ref global::G.GetVideosSort sort,
+            ref global::G.GetVideosType type,
+            ref string first,
+            ref string after,
+            ref string before);
+        partial void PrepareGetVideosRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::System.Collections.Generic.IList<string> id,
+            string userId,
+            string gameId,
+            string language,
+            global::G.GetVideosPeriod period,
+            global::G.GetVideosSort sort,
+            global::G.GetVideosType type,
+            string first,
+            string after,
+            string before);
+        partial void ProcessGetVideosResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetVideosResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets information about one or more published videos.<br/>
         /// Gets information about one or more published videos. You may get videos by ID, by user, or by game/category.<br/>

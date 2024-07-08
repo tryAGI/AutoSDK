@@ -6,6 +6,23 @@ namespace G
 {
     public partial class MigrationsClient
     {
+        partial void PrepareMigrationsGetLargeFilesArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string owner,
+            ref string repo);
+        partial void PrepareMigrationsGetLargeFilesRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string owner,
+            string repo);
+        partial void ProcessMigrationsGetLargeFilesResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMigrationsGetLargeFilesResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Get large files<br/>
         /// List files larger than 100MB found during the import<br/>

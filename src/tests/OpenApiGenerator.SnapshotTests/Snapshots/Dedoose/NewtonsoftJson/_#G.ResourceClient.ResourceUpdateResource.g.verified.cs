@@ -6,6 +6,29 @@ namespace G
 {
     public partial class ResourceClient
     {
+        partial void PrepareResourceUpdateResourceArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string resourceId,
+            ref string title,
+            ref string description);
+        partial void PrepareResourceUpdateResourceRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string resourceId,
+            string title,
+            string description);
+        partial void ProcessResourceUpdateResourceResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessResourceUpdateResourceResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// UpdateResource.
         /// </summary>

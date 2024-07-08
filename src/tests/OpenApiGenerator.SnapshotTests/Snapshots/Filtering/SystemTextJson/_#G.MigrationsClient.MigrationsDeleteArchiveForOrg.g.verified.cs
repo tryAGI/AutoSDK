@@ -6,6 +6,23 @@ namespace G
 {
     public partial class MigrationsClient
     {
+        partial void PrepareMigrationsDeleteArchiveForOrgArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string org,
+            ref int migrationId);
+        partial void PrepareMigrationsDeleteArchiveForOrgRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string org,
+            int migrationId);
+        partial void ProcessMigrationsDeleteArchiveForOrgResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMigrationsDeleteArchiveForOrgResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Delete an organization migration archive<br/>
         /// Deletes a previous migration archive. Migration archives are automatically deleted after seven days.

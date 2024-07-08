@@ -6,6 +6,25 @@ namespace G
 {
     public partial class SearchClient
     {
+        partial void PrepareSearchCategoriesArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string query,
+            ref int first,
+            ref string after);
+        partial void PrepareSearchCategoriesRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string query,
+            int first,
+            string after);
+        partial void ProcessSearchCategoriesResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessSearchCategoriesResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets the games or categories that match the specified query.<br/>
         /// Gets the games or categories that match the specified query.<br/>

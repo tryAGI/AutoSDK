@@ -6,6 +6,21 @@ namespace G
 {
     public partial class UsersClient
     {
+        partial void PrepareGetConnectionKeyArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token);
+        partial void PrepareGetConnectionKeyRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token);
+        partial void ProcessGetConnectionKeyResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetConnectionKeyResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Returns current connection key.
         /// </summary>

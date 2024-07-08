@@ -6,6 +6,21 @@ namespace G
 {
     public partial class TagsClient
     {
+        partial void PrepareGetStreamTagsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId);
+        partial void PrepareGetStreamTagsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId);
+        partial void ProcessGetStreamTagsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetStreamTagsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets the list of stream tags that the broadcaster or Twitch added to their channel.<br/>
         /// **IMPORTANT** Twitch is moving from Twitch-defined tags to channel-defined tags. **IMPORTANT** As of February 28, 2023, this endpoint returns an empty array. On July 13, 2023, it will return a 410 response. If you use this endpoint, please update your code to use [Get Channel Information](https://dev.twitch.tv/docs/api/reference#get-channel-information).<br/>

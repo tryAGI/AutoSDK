@@ -6,6 +6,31 @@ namespace G
 {
     public partial class ProjectClient
     {
+        partial void PrepareProjectStartProjectExportJobArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string password,
+            ref string email,
+            ref string extension,
+            ref string encryptedSymKey);
+        partial void PrepareProjectStartProjectExportJobRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string password,
+            string email,
+            string extension,
+            string encryptedSymKey);
+        partial void ProcessProjectStartProjectExportJobResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessProjectStartProjectExportJobResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StartProjectExportJob.
         /// </summary>

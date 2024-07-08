@@ -7,6 +7,33 @@ namespace G
 {
     public partial class TrainingClient
     {
+        partial void PrepareTrainingSaveTestResultArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string traineeUserId,
+            ref string testId,
+            ref double overallRating,
+            global::System.Collections.Generic.IList<global::G.TrainingTestTagApp> traineeTagApps,
+            ref bool completed);
+        partial void PrepareTrainingSaveTestResultRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string traineeUserId,
+            string testId,
+            double overallRating,
+            global::System.Collections.Generic.IList<global::G.TrainingTestTagApp> traineeTagApps,
+            bool completed);
+        partial void ProcessTrainingSaveTestResultResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessTrainingSaveTestResultResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// SaveTestResult.
         /// </summary>

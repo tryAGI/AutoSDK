@@ -6,6 +6,21 @@ namespace G
 {
     public partial class UsersClient
     {
+        partial void PrepareGetUserActiveExtensionsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string userId);
+        partial void PrepareGetUserActiveExtensionsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string userId);
+        partial void ProcessGetUserActiveExtensionsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetUserActiveExtensionsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets the active extensions that the broadcaster has installed for each configuration.<br/>
         /// Gets the active extensions that the broadcaster has installed for each configuration.<br/>

@@ -6,6 +6,23 @@ namespace G
 {
     public partial class ResourceClient
     {
+        partial void PrepareResourceIsResourceAudioConversionCompleteArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string jobId);
+        partial void PrepareResourceIsResourceAudioConversionCompleteRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string jobId);
+        partial void ProcessResourceIsResourceAudioConversionCompleteResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessResourceIsResourceAudioConversionCompleteResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// IsResourceAudioConversionComplete.
         /// </summary>

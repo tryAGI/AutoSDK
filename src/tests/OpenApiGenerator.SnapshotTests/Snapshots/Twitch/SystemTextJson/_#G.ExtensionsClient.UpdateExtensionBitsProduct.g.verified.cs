@@ -6,6 +6,21 @@ namespace G
 {
     public partial class ExtensionsClient
     {
+        partial void PrepareUpdateExtensionBitsProductArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.UpdateExtensionBitsProductBody request);
+        partial void PrepareUpdateExtensionBitsProductRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.UpdateExtensionBitsProductBody request);
+        partial void ProcessUpdateExtensionBitsProductResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUpdateExtensionBitsProductResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Adds or updates a Bits product that the extension created.<br/>
         /// Adds or updates a Bits product that the extension created. If the SKU doesn’t exist, the product is added. You may update all fields except the `sku` field.<br/>

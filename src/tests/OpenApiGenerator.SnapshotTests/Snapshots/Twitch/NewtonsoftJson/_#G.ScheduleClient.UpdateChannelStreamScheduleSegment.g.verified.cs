@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ScheduleClient
     {
+        partial void PrepareUpdateChannelStreamScheduleSegmentArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref string id,
+            global::G.UpdateChannelStreamScheduleSegmentBody request);
+        partial void PrepareUpdateChannelStreamScheduleSegmentRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            string id,
+            global::G.UpdateChannelStreamScheduleSegmentBody request);
+        partial void ProcessUpdateChannelStreamScheduleSegmentResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUpdateChannelStreamScheduleSegmentResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Updates a scheduled broadcast segment.<br/>
         /// Updates a scheduled broadcast segment.<br/>

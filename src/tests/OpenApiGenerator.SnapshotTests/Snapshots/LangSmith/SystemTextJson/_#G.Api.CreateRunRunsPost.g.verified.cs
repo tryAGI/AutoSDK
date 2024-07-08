@@ -6,6 +6,21 @@ namespace G
 {
     public partial class Api
     {
+        partial void PrepareCreateRunRunsPostArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.RunCreateSchemaExtended request);
+        partial void PrepareCreateRunRunsPostRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.RunCreateSchemaExtended request);
+        partial void ProcessCreateRunRunsPostResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreateRunRunsPostResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Create Run<br/>
         /// Create a new run.

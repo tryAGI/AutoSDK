@@ -7,6 +7,39 @@ namespace G
 {
     public partial class MemoClient
     {
+        partial void PrepareMemoStartExportMemosArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            global::System.Collections.Generic.IList<string> memoIds,
+            ref string description,
+            ref string extension,
+            ref bool includeCodes,
+            ref bool includeMedia,
+            ref bool includeExcerpts,
+            ref bool includeDescriptors,
+            ref string symKey);
+        partial void PrepareMemoStartExportMemosRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            global::System.Collections.Generic.IList<string> memoIds,
+            string description,
+            string extension,
+            bool includeCodes,
+            bool includeMedia,
+            bool includeExcerpts,
+            bool includeDescriptors,
+            string symKey);
+        partial void ProcessMemoStartExportMemosResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMemoStartExportMemosResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StartExportMemos.
         /// </summary>

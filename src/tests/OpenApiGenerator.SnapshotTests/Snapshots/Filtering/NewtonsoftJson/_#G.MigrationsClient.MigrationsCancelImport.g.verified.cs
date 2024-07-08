@@ -6,6 +6,23 @@ namespace G
 {
     public partial class MigrationsClient
     {
+        partial void PrepareMigrationsCancelImportArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string owner,
+            ref string repo);
+        partial void PrepareMigrationsCancelImportRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string owner,
+            string repo);
+        partial void ProcessMigrationsCancelImportResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMigrationsCancelImportResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Cancel an import<br/>
         /// Stop an import for a repository.<br/>

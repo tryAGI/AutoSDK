@@ -6,6 +6,21 @@ namespace G
 {
     public partial class Api
     {
+        partial void PrepareCancelTrainingsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string trainingId);
+        partial void PrepareCancelTrainingsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string trainingId);
+        partial void ProcessCancelTrainingsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCancelTrainingsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Cancel a training
         /// </summary>

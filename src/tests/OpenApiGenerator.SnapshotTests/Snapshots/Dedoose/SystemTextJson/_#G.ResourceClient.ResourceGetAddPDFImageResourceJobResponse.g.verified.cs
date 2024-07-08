@@ -6,6 +6,23 @@ namespace G
 {
     public partial class ResourceClient
     {
+        partial void PrepareResourceGetAddPDFImageResourceJobResponseArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string jobId);
+        partial void PrepareResourceGetAddPDFImageResourceJobResponseRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string jobId);
+        partial void ProcessResourceGetAddPDFImageResourceJobResponseResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessResourceGetAddPDFImageResourceJobResponseResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GetAddPDFImageResourceJobResponse.
         /// </summary>

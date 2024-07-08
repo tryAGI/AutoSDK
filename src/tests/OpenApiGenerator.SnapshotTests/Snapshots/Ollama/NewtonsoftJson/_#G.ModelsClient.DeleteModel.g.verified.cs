@@ -6,6 +6,21 @@ namespace G
 {
     public partial class ModelsClient
     {
+        partial void PrepareDeleteModelArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.DeleteModelRequest request);
+        partial void PrepareDeleteModelRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.DeleteModelRequest request);
+        partial void ProcessDeleteModelResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDeleteModelResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Delete a model and its data.
         /// </summary>

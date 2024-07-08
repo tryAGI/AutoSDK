@@ -7,6 +7,23 @@ namespace G
 {
     public partial class MigrationsClient
     {
+        partial void PrepareMigrationsGetStatusForAuthenticatedUserArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref int migrationId,
+            global::System.Collections.Generic.IList<string> exclude);
+        partial void PrepareMigrationsGetStatusForAuthenticatedUserRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int migrationId,
+            global::System.Collections.Generic.IList<string> exclude);
+        partial void ProcessMigrationsGetStatusForAuthenticatedUserResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMigrationsGetStatusForAuthenticatedUserResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Get a user migration status<br/>
         /// Fetches a single user migration. The response includes the `state` of the migration, which can be one of the following values:<br/>

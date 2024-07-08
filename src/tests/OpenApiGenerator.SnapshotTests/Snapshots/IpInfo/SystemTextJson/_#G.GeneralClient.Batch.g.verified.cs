@@ -6,6 +6,21 @@ namespace G
 {
     public partial class GeneralClient
     {
+        partial void PrepareBatchArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Collections.Generic.IList<string> request);
+        partial void PrepareBatchRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::System.Collections.Generic.IList<string> request);
+        partial void ProcessBatchResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessBatchResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Returns information about the selected values.<br/>
         /// Returns information about the selected values.

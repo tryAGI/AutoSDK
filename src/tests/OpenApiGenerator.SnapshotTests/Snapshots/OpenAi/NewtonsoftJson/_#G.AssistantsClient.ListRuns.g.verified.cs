@@ -6,6 +6,29 @@ namespace G
 {
     public partial class AssistantsClient
     {
+        partial void PrepareListRunsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string threadId,
+            ref int limit,
+            ref global::G.ListRunsOrder order,
+            ref string after,
+            ref string before);
+        partial void PrepareListRunsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string threadId,
+            int limit,
+            global::G.ListRunsOrder order,
+            string after,
+            string before);
+        partial void ProcessListRunsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessListRunsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Returns a list of runs belonging to a thread.
         /// </summary>

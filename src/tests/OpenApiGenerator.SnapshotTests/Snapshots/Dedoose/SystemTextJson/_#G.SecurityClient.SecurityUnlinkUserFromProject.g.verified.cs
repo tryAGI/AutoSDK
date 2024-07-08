@@ -6,6 +6,25 @@ namespace G
 {
     public partial class SecurityClient
     {
+        partial void PrepareSecurityUnlinkUserFromProjectArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string userId,
+            ref string projectId);
+        partial void PrepareSecurityUnlinkUserFromProjectRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string userId,
+            string projectId);
+        partial void ProcessSecurityUnlinkUserFromProjectResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessSecurityUnlinkUserFromProjectResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// UnlinkUserFromProject.
         /// </summary>

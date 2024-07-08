@@ -6,6 +6,27 @@ namespace G
 {
     public partial class DescriptorClient
     {
+        partial void PrepareDescriptorGetProjectDescriptorsPagedArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref int page,
+            ref int pageSize);
+        partial void PrepareDescriptorGetProjectDescriptorsPagedRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            int page,
+            int pageSize);
+        partial void ProcessDescriptorGetProjectDescriptorsPagedResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDescriptorGetProjectDescriptorsPagedResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GetProjectDescriptorsPaged.
         /// </summary>

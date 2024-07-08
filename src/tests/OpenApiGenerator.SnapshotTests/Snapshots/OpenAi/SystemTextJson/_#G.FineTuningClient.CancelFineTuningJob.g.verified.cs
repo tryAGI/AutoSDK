@@ -6,6 +6,21 @@ namespace G
 {
     public partial class FineTuningClient
     {
+        partial void PrepareCancelFineTuningJobArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string fineTuningJobId);
+        partial void PrepareCancelFineTuningJobRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string fineTuningJobId);
+        partial void ProcessCancelFineTuningJobResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCancelFineTuningJobResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Immediately cancel a fine-tune job.
         /// </summary>

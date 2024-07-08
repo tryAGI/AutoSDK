@@ -6,6 +6,31 @@ namespace G
 {
     public partial class ModerationClient
     {
+        partial void PrepareGetUnbanRequestsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref string moderatorId,
+            ref string status,
+            ref string userId,
+            ref string after,
+            ref int first);
+        partial void PrepareGetUnbanRequestsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            string moderatorId,
+            string status,
+            string userId,
+            string after,
+            int first);
+        partial void ProcessGetUnbanRequestsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetUnbanRequestsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// NEW Gets a list of unban requests for a broadcaster’s channel.<br/>
         /// NEW Gets a list of unban requests for a broadcaster’s channel.<br/>

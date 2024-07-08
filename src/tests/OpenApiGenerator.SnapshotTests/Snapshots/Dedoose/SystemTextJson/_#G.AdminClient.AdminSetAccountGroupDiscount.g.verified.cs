@@ -6,6 +6,23 @@ namespace G
 {
     public partial class AdminClient
     {
+        partial void PrepareAdminSetAccountGroupDiscountArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string accountId);
+        partial void PrepareAdminSetAccountGroupDiscountRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string accountId);
+        partial void ProcessAdminSetAccountGroupDiscountResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAdminSetAccountGroupDiscountResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// SetAccountGroupDiscount.
         /// </summary>

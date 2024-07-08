@@ -6,6 +6,41 @@ namespace G
 {
     public partial class TagClient
     {
+        partial void PrepareTagAddTagWithParentArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string proejctId,
+            ref string parentTagId,
+            ref string title,
+            ref string description,
+            ref bool isWeighted,
+            ref double weightMin,
+            ref double weightMax,
+            ref double weightDefault,
+            ref bool allowDecimalWeights,
+            ref double color);
+        partial void PrepareTagAddTagWithParentRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string proejctId,
+            string parentTagId,
+            string title,
+            string description,
+            bool isWeighted,
+            double weightMin,
+            double weightMax,
+            double weightDefault,
+            bool allowDecimalWeights,
+            double color);
+        partial void ProcessTagAddTagWithParentResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessTagAddTagWithParentResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// AddTagWithParent.
         /// </summary>

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class AccountClient
     {
+        partial void PrepareAccountRevokeAdminArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string accountId,
+            ref string userId);
+        partial void PrepareAccountRevokeAdminRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string accountId,
+            string userId);
+        partial void ProcessAccountRevokeAdminResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAccountRevokeAdminResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// RevokeAdmin.
         /// </summary>

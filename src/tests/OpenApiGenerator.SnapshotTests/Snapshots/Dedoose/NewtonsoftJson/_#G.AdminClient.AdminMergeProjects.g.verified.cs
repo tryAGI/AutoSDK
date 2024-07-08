@@ -6,6 +6,33 @@ namespace G
 {
     public partial class AdminClient
     {
+        partial void PrepareAdminMergeProjectsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string project1Id,
+            ref string project2Id,
+            ref string newTitle,
+            ref string newDescription,
+            ref string creatorId,
+            ref bool mergeCodes);
+        partial void PrepareAdminMergeProjectsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string project1Id,
+            string project2Id,
+            string newTitle,
+            string newDescription,
+            string creatorId,
+            bool mergeCodes);
+        partial void ProcessAdminMergeProjectsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAdminMergeProjectsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// MergeProjects.
         /// </summary>

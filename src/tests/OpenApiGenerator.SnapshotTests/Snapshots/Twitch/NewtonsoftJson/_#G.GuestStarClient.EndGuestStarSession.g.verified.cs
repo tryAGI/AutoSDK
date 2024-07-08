@@ -6,6 +6,23 @@ namespace G
 {
     public partial class GuestStarClient
     {
+        partial void PrepareEndGuestStarSessionArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref string sessionId);
+        partial void PrepareEndGuestStarSessionRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            string sessionId);
+        partial void ProcessEndGuestStarSessionResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessEndGuestStarSessionResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// BETA Programmatically ends a Guest Star session on behalf of the broadcaster.<br/>
         /// BETA Programmatically ends a Guest Star session on behalf of the broadcaster. Performs the same action as if the host clicked the “End Call” button in the Guest Star UI.<br/>

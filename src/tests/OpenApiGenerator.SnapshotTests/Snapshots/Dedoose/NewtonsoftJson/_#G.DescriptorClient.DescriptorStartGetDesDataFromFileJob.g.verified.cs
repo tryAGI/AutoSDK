@@ -6,6 +6,27 @@ namespace G
 {
     public partial class DescriptorClient
     {
+        partial void PrepareDescriptorStartGetDesDataFromFileJobArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string localFileURL,
+            ref string setId,
+            ref string projectId);
+        partial void PrepareDescriptorStartGetDesDataFromFileJobRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string localFileURL,
+            string setId,
+            string projectId);
+        partial void ProcessDescriptorStartGetDesDataFromFileJobResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDescriptorStartGetDesDataFromFileJobResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StartGetDesDataFromFileJob.
         /// </summary>

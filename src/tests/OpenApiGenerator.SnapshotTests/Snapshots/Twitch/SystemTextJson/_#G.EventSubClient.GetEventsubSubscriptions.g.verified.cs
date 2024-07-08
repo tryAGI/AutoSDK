@@ -6,6 +6,27 @@ namespace G
 {
     public partial class EventSubClient
     {
+        partial void PrepareGetEventsubSubscriptionsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref global::G.GetEventsubSubscriptionsStatus status,
+            ref global::G.GetEventsubSubscriptionsType type,
+            ref string userId,
+            ref string after);
+        partial void PrepareGetEventsubSubscriptionsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.GetEventsubSubscriptionsStatus status,
+            global::G.GetEventsubSubscriptionsType type,
+            string userId,
+            string after);
+        partial void ProcessGetEventsubSubscriptionsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetEventsubSubscriptionsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets a list of EventSub subscriptions that the client in the access token created.<br/>
         /// Gets a list of EventSub subscriptions that the client in the access token created.<br/>

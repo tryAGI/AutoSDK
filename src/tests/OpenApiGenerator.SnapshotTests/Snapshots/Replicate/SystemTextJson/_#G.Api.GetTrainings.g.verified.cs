@@ -6,6 +6,21 @@ namespace G
 {
     public partial class Api
     {
+        partial void PrepareGetTrainingsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string trainingId);
+        partial void PrepareGetTrainingsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string trainingId);
+        partial void ProcessGetTrainingsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetTrainingsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Get a training<br/>
         /// Get the current state of a training.<br/>

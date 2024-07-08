@@ -6,6 +6,25 @@ namespace G
 {
     public partial class AccountClient
     {
+        partial void PrepareAccountGrantAdminArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string accountId,
+            ref string userId);
+        partial void PrepareAccountGrantAdminRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string accountId,
+            string userId);
+        partial void ProcessAccountGrantAdminResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAccountGrantAdminResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GrantAdmin.
         /// </summary>

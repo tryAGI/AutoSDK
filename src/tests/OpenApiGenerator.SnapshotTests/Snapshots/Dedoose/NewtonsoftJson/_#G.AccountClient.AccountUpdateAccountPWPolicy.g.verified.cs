@@ -6,6 +6,43 @@ namespace G
 {
     public partial class AccountClient
     {
+        partial void PrepareAccountUpdateAccountPWPolicyArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string accountId,
+            ref bool enforcePolicy,
+            ref int minLength,
+            ref bool requireChar,
+            ref bool requireUpper,
+            ref bool requireNumber,
+            ref bool requireSymbol,
+            ref double maxAgeInDays,
+            ref bool require2Auth,
+            ref bool relogin2Auth,
+            ref int idleTimeoutInMinutes);
+        partial void PrepareAccountUpdateAccountPWPolicyRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string accountId,
+            bool enforcePolicy,
+            int minLength,
+            bool requireChar,
+            bool requireUpper,
+            bool requireNumber,
+            bool requireSymbol,
+            double maxAgeInDays,
+            bool require2Auth,
+            bool relogin2Auth,
+            int idleTimeoutInMinutes);
+        partial void ProcessAccountUpdateAccountPWPolicyResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAccountUpdateAccountPWPolicyResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// UpdateAccountPWPolicy.
         /// </summary>

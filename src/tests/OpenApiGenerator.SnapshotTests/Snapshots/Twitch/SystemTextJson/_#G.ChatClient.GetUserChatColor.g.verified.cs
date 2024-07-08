@@ -7,6 +7,21 @@ namespace G
 {
     public partial class ChatClient
     {
+        partial void PrepareGetUserChatColorArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Collections.Generic.IList<string> userId);
+        partial void PrepareGetUserChatColorRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::System.Collections.Generic.IList<string> userId);
+        partial void ProcessGetUserChatColorResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetUserChatColorResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets the color used for the user’s name in chat.<br/>
         /// Gets the color used for the user’s name in chat.<br/>

@@ -6,6 +6,23 @@ namespace G
 {
     public partial class MigrationsClient
     {
+        partial void PrepareMigrationsUnlockRepoForAuthenticatedUserArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref int migrationId,
+            ref string repoName);
+        partial void PrepareMigrationsUnlockRepoForAuthenticatedUserRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int migrationId,
+            string repoName);
+        partial void ProcessMigrationsUnlockRepoForAuthenticatedUserResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMigrationsUnlockRepoForAuthenticatedUserResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Unlock a user repository<br/>
         /// Unlocks a repository. You can lock repositories when you [start a user migration](https://docs.github.com/rest/migrations/users#start-a-user-migration). Once the migration is complete you can unlock each repository to begin using it again or [delete the repository](https://docs.github.com/rest/repos/repos#delete-a-repository) if you no longer need the source data. Returns a status of `404 Not Found` if the repository is not locked.

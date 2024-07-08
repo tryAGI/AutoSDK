@@ -7,6 +7,23 @@ namespace G
 {
     public partial class UsersClient
     {
+        partial void PrepareGetUsersArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Collections.Generic.IList<string> id,
+            global::System.Collections.Generic.IList<string> login);
+        partial void PrepareGetUsersRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::System.Collections.Generic.IList<string> id,
+            global::System.Collections.Generic.IList<string> login);
+        partial void ProcessGetUsersResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetUsersResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets information about one or more users.<br/>
         /// Gets information about one or more users.  <br/>

@@ -6,6 +6,29 @@ namespace G
 {
     public partial class ResourceClient
     {
+        partial void PrepareResourceAddTranscriptArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string currentUserId,
+            ref string resourceId,
+            ref string transcriptData);
+        partial void PrepareResourceAddTranscriptRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string currentUserId,
+            string resourceId,
+            string transcriptData);
+        partial void ProcessResourceAddTranscriptResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessResourceAddTranscriptResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// AddTranscript.
         /// </summary>

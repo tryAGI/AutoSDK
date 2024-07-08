@@ -6,6 +6,21 @@ namespace G
 {
     public partial class MigrationsClient
     {
+        partial void PrepareMigrationsGetArchiveForAuthenticatedUserArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref int migrationId);
+        partial void PrepareMigrationsGetArchiveForAuthenticatedUserRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int migrationId);
+        partial void ProcessMigrationsGetArchiveForAuthenticatedUserResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMigrationsGetArchiveForAuthenticatedUserResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Download a user migration archive<br/>
         /// Fetches the URL to download the migration archive as a `tar.gz` file. Depending on the resources your repository uses, the migration archive can contain JSON files with data for these objects:<br/>

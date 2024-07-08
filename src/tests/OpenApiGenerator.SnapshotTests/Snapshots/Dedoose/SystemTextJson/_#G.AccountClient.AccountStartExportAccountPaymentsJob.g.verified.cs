@@ -6,6 +6,23 @@ namespace G
 {
     public partial class AccountClient
     {
+        partial void PrepareAccountStartExportAccountPaymentsJobArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string accountId);
+        partial void PrepareAccountStartExportAccountPaymentsJobRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string accountId);
+        partial void ProcessAccountStartExportAccountPaymentsJobResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAccountStartExportAccountPaymentsJobResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StartExportAccountPaymentsJob.
         /// </summary>

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+        partial void PrepareCreatePredictionsModelsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string modelOwner,
+            ref string modelName,
+            global::G.PredictionRequest request);
+        partial void PrepareCreatePredictionsModelsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string modelOwner,
+            string modelName,
+            global::G.PredictionRequest request);
+        partial void ProcessCreatePredictionsModelsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreatePredictionsModelsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Create a prediction using an official model<br/>
         /// Start a new prediction for an official model using the inputs you provide.<br/>

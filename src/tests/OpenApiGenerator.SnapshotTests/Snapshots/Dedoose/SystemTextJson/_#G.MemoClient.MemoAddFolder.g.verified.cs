@@ -6,6 +6,27 @@ namespace G
 {
     public partial class MemoClient
     {
+        partial void PrepareMemoAddFolderArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string title,
+            ref string parentFolderId);
+        partial void PrepareMemoAddFolderRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string title,
+            string parentFolderId);
+        partial void ProcessMemoAddFolderResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMemoAddFolderResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// AddFolder.
         /// </summary>

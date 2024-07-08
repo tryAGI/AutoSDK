@@ -6,6 +6,21 @@ namespace G
 {
     public partial class EntitlementsClient
     {
+        partial void PrepareUpdateDropsEntitlementsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.UpdateDropsEntitlementsBody request);
+        partial void PrepareUpdateDropsEntitlementsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.UpdateDropsEntitlementsBody request);
+        partial void ProcessUpdateDropsEntitlementsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUpdateDropsEntitlementsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Updates the Drop entitlement’s fulfillment status.<br/>
         /// Updates the Drop entitlement’s fulfillment status.<br/>

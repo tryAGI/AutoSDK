@@ -6,6 +6,29 @@ namespace G
 {
     public partial class MemoClient
     {
+        partial void PrepareMemoDeleteFolderArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectIdKey,
+            ref string id,
+            ref string projectId,
+            ref string title);
+        partial void PrepareMemoDeleteFolderRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectIdKey,
+            string id,
+            string projectId,
+            string title);
+        partial void ProcessMemoDeleteFolderResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMemoDeleteFolderResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// DeleteFolder.
         /// </summary>

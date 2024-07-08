@@ -6,6 +6,23 @@ namespace G
 {
     public partial class TeamsClient
     {
+        partial void PrepareGetTeamsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string name,
+            ref string id);
+        partial void PrepareGetTeamsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string name,
+            string id);
+        partial void ProcessGetTeamsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetTeamsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets information about the specified Twitch team.<br/>
         /// Gets information about the specified Twitch team. [Read More](https://help.twitch.tv/s/article/twitch-teams)<br/>

@@ -6,6 +6,21 @@ namespace G
 {
     public partial class AdsClient
     {
+        partial void PrepareSnoozeNextAdArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId);
+        partial void PrepareSnoozeNextAdRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId);
+        partial void ProcessSnoozeNextAdResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessSnoozeNextAdResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Pushes back the timestamp of the upcoming automatic mid-roll ad by 5 minutes.<br/>
         /// If available, pushes back the timestamp of the upcoming automatic mid-roll ad by 5 minutes. This endpoint duplicates the snooze functionality in the creator dashboard’s Ads Manager.<br/>

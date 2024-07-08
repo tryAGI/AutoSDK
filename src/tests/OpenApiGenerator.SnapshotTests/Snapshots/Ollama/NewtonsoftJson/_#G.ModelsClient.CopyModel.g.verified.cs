@@ -6,6 +6,21 @@ namespace G
 {
     public partial class ModelsClient
     {
+        partial void PrepareCopyModelArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.CopyModelRequest request);
+        partial void PrepareCopyModelRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.CopyModelRequest request);
+        partial void ProcessCopyModelResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCopyModelResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Creates a model with another name from an existing model.
         /// </summary>

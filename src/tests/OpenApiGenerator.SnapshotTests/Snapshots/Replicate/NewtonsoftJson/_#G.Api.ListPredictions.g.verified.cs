@@ -6,6 +6,19 @@ namespace G
 {
     public partial class Api
     {
+        partial void PrepareListPredictionsArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareListPredictionsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessListPredictionsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessListPredictionsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// List predictions<br/>
         /// Get a paginated list of predictions that you've created. This will include predictions created from the API and the website. It will return 100 records per page.<br/>

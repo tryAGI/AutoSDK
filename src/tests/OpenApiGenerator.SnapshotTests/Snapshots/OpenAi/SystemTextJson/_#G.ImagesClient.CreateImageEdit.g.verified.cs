@@ -6,6 +6,21 @@ namespace G
 {
     public partial class ImagesClient
     {
+        partial void PrepareCreateImageEditArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.CreateImageEditRequest request);
+        partial void PrepareCreateImageEditRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.CreateImageEditRequest request);
+        partial void ProcessCreateImageEditResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreateImageEditResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Creates an edited or extended image given an original image and a prompt.
         /// </summary>

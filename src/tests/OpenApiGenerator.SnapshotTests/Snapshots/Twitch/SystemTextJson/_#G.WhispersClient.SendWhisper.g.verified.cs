@@ -6,6 +6,25 @@ namespace G
 {
     public partial class WhispersClient
     {
+        partial void PrepareSendWhisperArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string fromUserId,
+            ref string toUserId,
+            global::G.SendWhisperBody request);
+        partial void PrepareSendWhisperRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string fromUserId,
+            string toUserId,
+            global::G.SendWhisperBody request);
+        partial void ProcessSendWhisperResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessSendWhisperResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Sends a whisper message to the specified user.<br/>
         /// Sends a whisper message to the specified user.<br/>

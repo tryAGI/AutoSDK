@@ -7,6 +7,33 @@ namespace G
 {
     public partial class ResourceClient
     {
+        partial void PrepareResourceUpdateDocumentDataAndExcerptsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string userId,
+            ref string resourceId,
+            ref string updatedTextDataURI,
+            ref int updatedLength,
+            global::System.Collections.Generic.IList<global::G.Excerpt> excerpts);
+        partial void PrepareResourceUpdateDocumentDataAndExcerptsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string userId,
+            string resourceId,
+            string updatedTextDataURI,
+            int updatedLength,
+            global::System.Collections.Generic.IList<global::G.Excerpt> excerpts);
+        partial void ProcessResourceUpdateDocumentDataAndExcerptsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessResourceUpdateDocumentDataAndExcerptsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// UpdateDocumentDataAndExcerpts.
         /// </summary>

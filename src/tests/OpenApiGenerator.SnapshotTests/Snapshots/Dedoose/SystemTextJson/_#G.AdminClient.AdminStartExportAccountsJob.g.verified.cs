@@ -6,6 +6,21 @@ namespace G
 {
     public partial class AdminClient
     {
+        partial void PrepareAdminStartExportAccountsJobArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token);
+        partial void PrepareAdminStartExportAccountsJobRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token);
+        partial void ProcessAdminStartExportAccountsJobResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAdminStartExportAccountsJobResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StartExportAccountsJob.
         /// </summary>

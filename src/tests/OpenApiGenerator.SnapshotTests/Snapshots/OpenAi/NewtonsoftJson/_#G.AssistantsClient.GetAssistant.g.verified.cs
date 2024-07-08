@@ -6,6 +6,21 @@ namespace G
 {
     public partial class AssistantsClient
     {
+        partial void PrepareGetAssistantArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string assistantId);
+        partial void PrepareGetAssistantRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string assistantId);
+        partial void ProcessGetAssistantResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetAssistantResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Retrieves an assistant.
         /// </summary>

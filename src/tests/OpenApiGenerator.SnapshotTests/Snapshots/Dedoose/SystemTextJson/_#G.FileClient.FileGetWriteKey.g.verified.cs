@@ -6,6 +6,21 @@ namespace G
 {
     public partial class FileClient
     {
+        partial void PrepareFileGetWriteKeyArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token);
+        partial void PrepareFileGetWriteKeyRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token);
+        partial void ProcessFileGetWriteKeyResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessFileGetWriteKeyResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GetWriteKey.
         /// </summary>

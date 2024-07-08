@@ -7,6 +7,37 @@ namespace G
 {
     public partial class ClipsClient
     {
+        partial void PrepareGetClipsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref string gameId,
+            global::System.Collections.Generic.IList<string> id,
+            global::System.DateTime startedAt,
+            global::System.DateTime endedAt,
+            ref int first,
+            ref string before,
+            ref string after,
+            ref bool isFeatured);
+        partial void PrepareGetClipsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            string gameId,
+            global::System.Collections.Generic.IList<string> id,
+            global::System.DateTime startedAt,
+            global::System.DateTime endedAt,
+            int first,
+            string before,
+            string after,
+            bool isFeatured);
+        partial void ProcessGetClipsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetClipsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets one or more video clips.<br/>
         /// Gets one or more video clips that were captured from streams. For information about clips, see [How to use clips](https://help.twitch.tv/s/article/how-to-use-clips).<br/>

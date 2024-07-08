@@ -7,6 +7,39 @@ namespace G
 {
     public partial class ResourceClient
     {
+        partial void PrepareResourceUpdateTranscriptDataArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectIdKey,
+            ref string id,
+            ref string creator,
+            ref string projectId,
+            ref string resourceId,
+            ref string dataPath,
+            global::System.DateTime created,
+            ref string transcriptData,
+            global::System.Collections.Generic.IList<global::G.TranscriptSyncItem> syncItems);
+        partial void PrepareResourceUpdateTranscriptDataRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectIdKey,
+            string id,
+            string creator,
+            string projectId,
+            string resourceId,
+            string dataPath,
+            global::System.DateTime created,
+            string transcriptData,
+            global::System.Collections.Generic.IList<global::G.TranscriptSyncItem> syncItems);
+        partial void ProcessResourceUpdateTranscriptDataResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessResourceUpdateTranscriptDataResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// UpdateTranscriptData.
         /// </summary>

@@ -6,6 +6,21 @@ namespace G
 {
     public partial class EmbeddingsClient
     {
+        partial void PrepareCreateEmbeddingArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.CreateEmbeddingRequest request);
+        partial void PrepareCreateEmbeddingRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.CreateEmbeddingRequest request);
+        partial void ProcessCreateEmbeddingResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreateEmbeddingResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Creates an embedding vector representing the input text.
         /// </summary>

@@ -6,6 +6,23 @@ namespace G
 {
     public partial class ScheduleClient
     {
+        partial void PrepareCreateChannelStreamScheduleSegmentArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            global::G.CreateChannelStreamScheduleSegmentBody request);
+        partial void PrepareCreateChannelStreamScheduleSegmentRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            global::G.CreateChannelStreamScheduleSegmentBody request);
+        partial void ProcessCreateChannelStreamScheduleSegmentResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreateChannelStreamScheduleSegmentResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Adds a single or recurring broadcast to the broadcaster’s streaming schedule.<br/>
         /// Adds a single or recurring broadcast to the broadcaster’s streaming schedule. For information about scheduling broadcasts, see [Stream Schedule](https://help.twitch.tv/s/article/channel-page-setup#Schedule).<br/>

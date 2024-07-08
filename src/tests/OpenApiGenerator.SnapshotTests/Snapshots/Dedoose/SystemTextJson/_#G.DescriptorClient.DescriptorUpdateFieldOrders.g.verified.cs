@@ -7,6 +7,25 @@ namespace G
 {
     public partial class DescriptorClient
     {
+        partial void PrepareDescriptorUpdateFieldOrdersArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            global::System.Collections.Generic.IList<global::G.FieldVO> fields);
+        partial void PrepareDescriptorUpdateFieldOrdersRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            global::System.Collections.Generic.IList<global::G.FieldVO> fields);
+        partial void ProcessDescriptorUpdateFieldOrdersResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDescriptorUpdateFieldOrdersResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// UpdateFieldOrders.
         /// </summary>

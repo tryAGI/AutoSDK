@@ -6,6 +6,19 @@ namespace G
 {
     public partial class LoginClient
     {
+        partial void PrepareGetServiceMessagesControllerArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareGetServiceMessagesControllerRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessGetServiceMessagesControllerResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetServiceMessagesControllerResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Returns service messages.
         /// </summary>

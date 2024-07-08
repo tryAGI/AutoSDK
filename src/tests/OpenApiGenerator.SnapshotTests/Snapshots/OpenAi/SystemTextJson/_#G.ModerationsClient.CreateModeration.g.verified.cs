@@ -6,6 +6,21 @@ namespace G
 {
     public partial class ModerationsClient
     {
+        partial void PrepareCreateModerationArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.CreateModerationRequest request);
+        partial void PrepareCreateModerationRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.CreateModerationRequest request);
+        partial void ProcessCreateModerationResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreateModerationResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Classifies if text is potentially harmful.
         /// </summary>

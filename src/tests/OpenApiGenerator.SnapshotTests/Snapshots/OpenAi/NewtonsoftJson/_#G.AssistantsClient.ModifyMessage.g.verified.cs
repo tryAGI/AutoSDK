@@ -6,6 +6,25 @@ namespace G
 {
     public partial class AssistantsClient
     {
+        partial void PrepareModifyMessageArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string threadId,
+            ref string messageId,
+            global::G.ModifyMessageRequest request);
+        partial void PrepareModifyMessageRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string threadId,
+            string messageId,
+            global::G.ModifyMessageRequest request);
+        partial void ProcessModifyMessageResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessModifyMessageResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Modifies a message.
         /// </summary>

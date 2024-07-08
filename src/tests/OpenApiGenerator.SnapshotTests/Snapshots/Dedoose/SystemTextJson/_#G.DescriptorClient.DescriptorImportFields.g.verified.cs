@@ -7,6 +7,31 @@ namespace G
 {
     public partial class DescriptorClient
     {
+        partial void PrepareDescriptorImportFieldsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string userId,
+            global::System.Collections.Generic.IList<global::G.FieldInfo> fieldInfos,
+            ref string existingSetId,
+            ref string newSetTitle);
+        partial void PrepareDescriptorImportFieldsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string userId,
+            global::System.Collections.Generic.IList<global::G.FieldInfo> fieldInfos,
+            string existingSetId,
+            string newSetTitle);
+        partial void ProcessDescriptorImportFieldsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDescriptorImportFieldsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// ImportFields.
         /// </summary>

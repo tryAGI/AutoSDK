@@ -6,6 +6,23 @@ namespace G
 {
     public partial class ExcerptClient
     {
+        partial void PrepareExcerptGetSearchExcerptsJobResultsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string jobId);
+        partial void PrepareExcerptGetSearchExcerptsJobResultsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string jobId);
+        partial void ProcessExcerptGetSearchExcerptsJobResultsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessExcerptGetSearchExcerptsJobResultsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GetSearchExcerptsJobResults.
         /// </summary>

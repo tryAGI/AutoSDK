@@ -6,6 +6,33 @@ namespace G
 {
     public partial class UserClient
     {
+        partial void PrepareUserSendContactRequestEmailArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string firstname,
+            ref string lastname,
+            ref string email,
+            ref string phone,
+            ref string institution,
+            ref string comments);
+        partial void PrepareUserSendContactRequestEmailRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string firstname,
+            string lastname,
+            string email,
+            string phone,
+            string institution,
+            string comments);
+        partial void ProcessUserSendContactRequestEmailResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUserSendContactRequestEmailResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// SendContactRequestEmail.
         /// </summary>

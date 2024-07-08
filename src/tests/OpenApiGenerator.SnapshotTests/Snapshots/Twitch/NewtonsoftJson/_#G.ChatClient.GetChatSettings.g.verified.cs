@@ -6,6 +6,23 @@ namespace G
 {
     public partial class ChatClient
     {
+        partial void PrepareGetChatSettingsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref string moderatorId);
+        partial void PrepareGetChatSettingsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            string moderatorId);
+        partial void ProcessGetChatSettingsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetChatSettingsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets the broadcaster’s chat settings.<br/>
         /// Gets the broadcaster’s chat settings.<br/>

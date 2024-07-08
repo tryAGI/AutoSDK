@@ -6,6 +6,21 @@ namespace G
 {
     public partial class Api
     {
+        partial void PrepareListPetsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref int limit);
+        partial void PrepareListPetsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int limit);
+        partial void ProcessListPetsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessListPetsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// List all pets
         /// </summary>

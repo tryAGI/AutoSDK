@@ -6,6 +6,21 @@ namespace G
 {
     public partial class SingleClient
     {
+        partial void PrepareGetCityByIpArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string ip);
+        partial void PrepareGetCityByIpRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string ip);
+        partial void ProcessGetCityByIpResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetCityByIpResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Returns a city for the selected IP.<br/>
         /// Returns a city for the selected IP.

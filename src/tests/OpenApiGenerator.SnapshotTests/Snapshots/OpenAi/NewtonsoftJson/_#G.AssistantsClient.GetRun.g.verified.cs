@@ -6,6 +6,23 @@ namespace G
 {
     public partial class AssistantsClient
     {
+        partial void PrepareGetRunArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string threadId,
+            ref string runId);
+        partial void PrepareGetRunRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string threadId,
+            string runId);
+        partial void ProcessGetRunResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetRunResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Retrieves a run.
         /// </summary>

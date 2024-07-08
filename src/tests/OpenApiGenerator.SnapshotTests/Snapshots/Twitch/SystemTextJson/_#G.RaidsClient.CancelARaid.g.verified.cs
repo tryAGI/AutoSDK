@@ -6,6 +6,21 @@ namespace G
 {
     public partial class RaidsClient
     {
+        partial void PrepareCancelARaidArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId);
+        partial void PrepareCancelARaidRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId);
+        partial void ProcessCancelARaidResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCancelARaidResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Cancel a pending raid.<br/>
         /// Cancel a pending raid.<br/>

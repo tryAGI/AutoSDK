@@ -6,6 +6,23 @@ namespace G
 {
     public partial class SecurityClient
     {
+        partial void PrepareSecurityGetProjectGroupLinksArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId);
+        partial void PrepareSecurityGetProjectGroupLinksRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId);
+        partial void ProcessSecurityGetProjectGroupLinksResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessSecurityGetProjectGroupLinksResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GetProjectGroupLinks.
         /// </summary>

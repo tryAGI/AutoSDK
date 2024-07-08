@@ -7,6 +7,29 @@ namespace G
 {
     public partial class SubscriptionsClient
     {
+        partial void PrepareGetBroadcasterSubscriptionsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            global::System.Collections.Generic.IList<string> userId,
+            ref string first,
+            ref string after,
+            ref string before);
+        partial void PrepareGetBroadcasterSubscriptionsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            global::System.Collections.Generic.IList<string> userId,
+            string first,
+            string after,
+            string before);
+        partial void ProcessGetBroadcasterSubscriptionsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetBroadcasterSubscriptionsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets a list of users that subscribe to the specified broadcaster.<br/>
         /// Gets a list of users that subscribe to the specified broadcaster.<br/>

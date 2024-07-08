@@ -7,6 +7,37 @@ namespace G
 {
     public partial class ExcerptClient
     {
+        partial void PrepareExcerptAddPDFSwfTextExcerptArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string userId,
+            ref string resourceId,
+            ref int pageIndex,
+            ref int start,
+            ref int end,
+            ref string text,
+            global::System.Collections.Generic.IList<global::G.TagAppSimple> tagApps);
+        partial void PrepareExcerptAddPDFSwfTextExcerptRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string userId,
+            string resourceId,
+            int pageIndex,
+            int start,
+            int end,
+            string text,
+            global::System.Collections.Generic.IList<global::G.TagAppSimple> tagApps);
+        partial void ProcessExcerptAddPDFSwfTextExcerptResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessExcerptAddPDFSwfTextExcerptResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// AddPDFSwfTextExcerpt.
         /// </summary>

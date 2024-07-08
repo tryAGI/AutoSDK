@@ -6,6 +6,19 @@ namespace G
 {
     public partial class ConduitsClient
     {
+        partial void PrepareGetConduitsArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareGetConduitsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessGetConduitsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetConduitsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// NEW  Gets the conduits for a client ID.<br/>
         /// NEW Gets the [conduits](https://dev.twitch.tv/docs/eventsub/handling-conduit-events) for a client ID.<br/>

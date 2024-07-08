@@ -6,6 +6,37 @@ namespace G
 {
     public partial class UserClient
     {
+        partial void PrepareUserAddNewUserToAccountArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string username,
+            ref string firstName,
+            ref string lastName,
+            ref string email,
+            ref string phone,
+            ref string encryptedPass,
+            ref string groupId);
+        partial void PrepareUserAddNewUserToAccountRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string username,
+            string firstName,
+            string lastName,
+            string email,
+            string phone,
+            string encryptedPass,
+            string groupId);
+        partial void ProcessUserAddNewUserToAccountResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUserAddNewUserToAccountResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// AddNewUserToAccount.
         /// </summary>

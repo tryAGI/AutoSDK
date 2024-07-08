@@ -6,6 +6,23 @@ namespace G
 {
     public partial class AdminClient
     {
+        partial void PrepareAdminOverrideVerifyArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string userId);
+        partial void PrepareAdminOverrideVerifyRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string userId);
+        partial void ProcessAdminOverrideVerifyResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAdminOverrideVerifyResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// OverrideVerify.
         /// </summary>

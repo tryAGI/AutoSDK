@@ -6,6 +6,27 @@ namespace G
 {
     public partial class TagClient
     {
+        partial void PrepareTagUpdateTagAppWeightArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string currentProjectId,
+            ref string tagAppId,
+            ref double newWeight);
+        partial void PrepareTagUpdateTagAppWeightRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string currentProjectId,
+            string tagAppId,
+            double newWeight);
+        partial void ProcessTagUpdateTagAppWeightResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessTagUpdateTagAppWeightResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// UpdateTagAppWeight.
         /// </summary>

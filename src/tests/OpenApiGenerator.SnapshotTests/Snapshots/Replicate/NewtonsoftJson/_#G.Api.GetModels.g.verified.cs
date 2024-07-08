@@ -6,6 +6,23 @@ namespace G
 {
     public partial class Api
     {
+        partial void PrepareGetModelsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string modelOwner,
+            ref string modelName);
+        partial void PrepareGetModelsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string modelOwner,
+            string modelName);
+        partial void ProcessGetModelsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetModelsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Get a model<br/>
         /// Example cURL request:<br/>

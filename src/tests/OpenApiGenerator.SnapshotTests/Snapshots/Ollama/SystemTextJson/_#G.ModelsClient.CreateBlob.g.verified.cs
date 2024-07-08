@@ -6,6 +6,23 @@ namespace G
 {
     public partial class ModelsClient
     {
+        partial void PrepareCreateBlobArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string digest,
+            byte[] request);
+        partial void PrepareCreateBlobRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string digest,
+            byte[] request);
+        partial void ProcessCreateBlobResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreateBlobResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Create a blob from a file. Returns the server file path.
         /// </summary>

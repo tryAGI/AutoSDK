@@ -6,6 +6,27 @@ namespace G
 {
     public partial class ChatClient
     {
+        partial void PrepareChatSubmitProjectChatMessageArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string userId,
+            ref string message);
+        partial void PrepareChatSubmitProjectChatMessageRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string userId,
+            string message);
+        partial void ProcessChatSubmitProjectChatMessageResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessChatSubmitProjectChatMessageResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// SubmitProjectChatMessage.
         /// </summary>

@@ -6,6 +6,37 @@ namespace G
 {
     public partial class DescriptorClient
     {
+        partial void PrepareDescriptorUpdateDescriptorSetArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectIdKey,
+            ref string projectId,
+            ref string id,
+            ref string projectIDL,
+            ref string title,
+            ref string description,
+            global::System.DateTime createStamp,
+            ref string createdByUserId);
+        partial void PrepareDescriptorUpdateDescriptorSetRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectIdKey,
+            string projectId,
+            string id,
+            string projectIDL,
+            string title,
+            string description,
+            global::System.DateTime createStamp,
+            string createdByUserId);
+        partial void ProcessDescriptorUpdateDescriptorSetResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDescriptorUpdateDescriptorSetResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// UpdateDescriptorSet.
         /// </summary>

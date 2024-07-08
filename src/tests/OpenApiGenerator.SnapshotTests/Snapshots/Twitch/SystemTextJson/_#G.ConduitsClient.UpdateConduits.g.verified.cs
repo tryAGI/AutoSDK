@@ -6,6 +6,21 @@ namespace G
 {
     public partial class ConduitsClient
     {
+        partial void PrepareUpdateConduitsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.UpdateConduitsBody request);
+        partial void PrepareUpdateConduitsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.UpdateConduitsBody request);
+        partial void ProcessUpdateConduitsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUpdateConduitsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// NEW Updates a conduit’s shard count.<br/>
         /// NEW Updates a [conduit’s](https://dev.twitch.tv/docs/eventsub/handling-conduit-events) shard count. To delete shards, update the count to a lower number, and the shards above the count will be deleted. For example, if the existing shard count is 100, by resetting shard count to 50, shards 50-99 are disabled.<br/>

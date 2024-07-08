@@ -6,6 +6,27 @@ namespace G
 {
     public partial class AdminClient
     {
+        partial void PrepareAdminSetAccountUserAdminStatusArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string accountId,
+            ref string userId,
+            ref bool isAdmin);
+        partial void PrepareAdminSetAccountUserAdminStatusRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string accountId,
+            string userId,
+            bool isAdmin);
+        partial void ProcessAdminSetAccountUserAdminStatusResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAdminSetAccountUserAdminStatusResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// SetAccountUserAdminStatus.
         /// </summary>

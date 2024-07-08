@@ -6,6 +6,19 @@ namespace G
 {
     public partial class SingleClient
     {
+        partial void PrepareGetCurrentRegionArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareGetCurrentRegionRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessGetCurrentRegionResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetCurrentRegionResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Returns the current region.<br/>
         /// Returns current region.

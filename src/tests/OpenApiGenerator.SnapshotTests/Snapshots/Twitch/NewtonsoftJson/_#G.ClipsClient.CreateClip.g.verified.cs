@@ -6,6 +6,23 @@ namespace G
 {
     public partial class ClipsClient
     {
+        partial void PrepareCreateClipArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref bool hasDelay);
+        partial void PrepareCreateClipRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            bool hasDelay);
+        partial void ProcessCreateClipResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreateClipResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Creates a clip from the broadcaster’s stream.<br/>
         /// Creates a clip from the broadcaster’s stream.<br/>

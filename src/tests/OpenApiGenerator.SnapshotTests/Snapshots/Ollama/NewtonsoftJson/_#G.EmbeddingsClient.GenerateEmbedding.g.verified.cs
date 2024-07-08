@@ -6,6 +6,21 @@ namespace G
 {
     public partial class EmbeddingsClient
     {
+        partial void PrepareGenerateEmbeddingArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.GenerateEmbeddingRequest request);
+        partial void PrepareGenerateEmbeddingRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.GenerateEmbeddingRequest request);
+        partial void ProcessGenerateEmbeddingResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGenerateEmbeddingResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Generate embeddings from a model.
         /// </summary>

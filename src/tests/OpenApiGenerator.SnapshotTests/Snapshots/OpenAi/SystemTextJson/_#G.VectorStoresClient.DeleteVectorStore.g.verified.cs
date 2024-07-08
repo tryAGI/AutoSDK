@@ -6,6 +6,21 @@ namespace G
 {
     public partial class VectorStoresClient
     {
+        partial void PrepareDeleteVectorStoreArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string vectorStoreId);
+        partial void PrepareDeleteVectorStoreRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string vectorStoreId);
+        partial void ProcessDeleteVectorStoreResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDeleteVectorStoreResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Delete a vector store.
         /// </summary>

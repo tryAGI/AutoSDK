@@ -7,6 +7,51 @@ namespace G
 {
     public partial class DataSetClient
     {
+        partial void PrepareDataSetAddDataSetArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string userId,
+            ref string title,
+            ref string description,
+            ref bool areExcerptsFiltered,
+            ref bool areResourcesFiltered,
+            ref bool areDescriptorsFiltered,
+            ref bool areTagsFiltered,
+            ref bool areUsersFiltered,
+            global::System.Collections.Generic.IList<string> excerptIds,
+            global::System.Collections.Generic.IList<string> descriptorIds,
+            global::System.Collections.Generic.IList<string> userIds,
+            global::System.Collections.Generic.IList<string> resourceIds,
+            global::System.Collections.Generic.IList<string> tagIds,
+            global::System.Collections.Generic.IList<string> excludedExcerptIds);
+        partial void PrepareDataSetAddDataSetRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string userId,
+            string title,
+            string description,
+            bool areExcerptsFiltered,
+            bool areResourcesFiltered,
+            bool areDescriptorsFiltered,
+            bool areTagsFiltered,
+            bool areUsersFiltered,
+            global::System.Collections.Generic.IList<string> excerptIds,
+            global::System.Collections.Generic.IList<string> descriptorIds,
+            global::System.Collections.Generic.IList<string> userIds,
+            global::System.Collections.Generic.IList<string> resourceIds,
+            global::System.Collections.Generic.IList<string> tagIds,
+            global::System.Collections.Generic.IList<string> excludedExcerptIds);
+        partial void ProcessDataSetAddDataSetResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDataSetAddDataSetResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// AddDataSet.
         /// </summary>

@@ -6,6 +6,23 @@ namespace G
 {
     public partial class VectorStoresClient
     {
+        partial void PrepareModifyVectorStoreArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string vectorStoreId,
+            global::G.UpdateVectorStoreRequest request);
+        partial void PrepareModifyVectorStoreRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string vectorStoreId,
+            global::G.UpdateVectorStoreRequest request);
+        partial void ProcessModifyVectorStoreResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessModifyVectorStoreResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Modifies a vector store.
         /// </summary>

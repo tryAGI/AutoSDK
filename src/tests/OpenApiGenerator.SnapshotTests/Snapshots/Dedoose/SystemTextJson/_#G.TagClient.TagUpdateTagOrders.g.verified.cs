@@ -7,6 +7,25 @@ namespace G
 {
     public partial class TagClient
     {
+        partial void PrepareTagUpdateTagOrdersArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            global::System.Collections.Generic.IList<global::G.Tag> tags);
+        partial void PrepareTagUpdateTagOrdersRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            global::System.Collections.Generic.IList<global::G.Tag> tags);
+        partial void ProcessTagUpdateTagOrdersResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessTagUpdateTagOrdersResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// UpdateTagOrders.
         /// </summary>

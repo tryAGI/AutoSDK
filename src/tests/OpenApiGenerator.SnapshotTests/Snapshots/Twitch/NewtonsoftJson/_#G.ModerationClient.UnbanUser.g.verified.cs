@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ModerationClient
     {
+        partial void PrepareUnbanUserArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref string moderatorId,
+            ref string userId);
+        partial void PrepareUnbanUserRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            string moderatorId,
+            string userId);
+        partial void ProcessUnbanUserResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUnbanUserResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Removes the ban or timeout that was placed on the specified user.<br/>
         /// Removes the ban or timeout that was placed on the specified user.<br/>

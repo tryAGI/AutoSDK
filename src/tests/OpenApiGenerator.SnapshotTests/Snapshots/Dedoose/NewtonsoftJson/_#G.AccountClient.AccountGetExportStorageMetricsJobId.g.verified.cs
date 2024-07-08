@@ -6,6 +6,23 @@ namespace G
 {
     public partial class AccountClient
     {
+        partial void PrepareAccountGetExportStorageMetricsJobIdArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string accountId);
+        partial void PrepareAccountGetExportStorageMetricsJobIdRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string accountId);
+        partial void ProcessAccountGetExportStorageMetricsJobIdResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAccountGetExportStorageMetricsJobIdResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GetExportStorageMetricsJobId.
         /// </summary>

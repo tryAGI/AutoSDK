@@ -6,6 +6,19 @@ namespace G
 {
     public partial class SingleClient
     {
+        partial void PrepareGetCurrentCityArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareGetCurrentCityRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessGetCurrentCityResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetCurrentCityResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Returns the current city.<br/>
         /// Returns the current city.

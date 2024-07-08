@@ -6,6 +6,21 @@ namespace G
 {
     public partial class EventSubClient
     {
+        partial void PrepareDeleteEventsubSubscriptionArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string id);
+        partial void PrepareDeleteEventsubSubscriptionRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string id);
+        partial void ProcessDeleteEventsubSubscriptionResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDeleteEventsubSubscriptionResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Deletes an EventSub subscription.<br/>
         /// Deletes an EventSub subscription.<br/>

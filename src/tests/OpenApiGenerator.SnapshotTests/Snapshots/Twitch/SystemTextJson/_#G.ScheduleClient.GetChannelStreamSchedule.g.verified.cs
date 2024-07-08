@@ -7,6 +7,31 @@ namespace G
 {
     public partial class ScheduleClient
     {
+        partial void PrepareGetChannelStreamScheduleArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            global::System.Collections.Generic.IList<string> id,
+            global::System.DateTime startTime,
+            ref string utcOffset,
+            ref int first,
+            ref string after);
+        partial void PrepareGetChannelStreamScheduleRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            global::System.Collections.Generic.IList<string> id,
+            global::System.DateTime startTime,
+            string utcOffset,
+            int first,
+            string after);
+        partial void ProcessGetChannelStreamScheduleResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetChannelStreamScheduleResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets the broadcaster’s streaming schedule.<br/>
         /// Gets the broadcaster’s streaming schedule. You can get the entire schedule or specific segments of the schedule. [Learn More](https://help.twitch.tv/s/article/channel-page-setup#Schedule)<br/>

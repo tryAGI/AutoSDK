@@ -6,6 +6,51 @@ namespace G
 {
     public partial class UserClient
     {
+        partial void PrepareUserSubmitCurrentAccountPaymentArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref double amount,
+            ref string firstName,
+            ref string lastName,
+            ref string address1,
+            ref string address2,
+            ref string city,
+            ref string state,
+            ref string country,
+            ref string zip,
+            ref int cardType,
+            ref string cardNum,
+            ref string cardCCV,
+            ref int expMonth,
+            ref int expYear,
+            ref bool saveAsReoccuring);
+        partial void PrepareUserSubmitCurrentAccountPaymentRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            double amount,
+            string firstName,
+            string lastName,
+            string address1,
+            string address2,
+            string city,
+            string state,
+            string country,
+            string zip,
+            int cardType,
+            string cardNum,
+            string cardCCV,
+            int expMonth,
+            int expYear,
+            bool saveAsReoccuring);
+        partial void ProcessUserSubmitCurrentAccountPaymentResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUserSubmitCurrentAccountPaymentResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// SubmitCurrentAccountPayment.
         /// </summary>

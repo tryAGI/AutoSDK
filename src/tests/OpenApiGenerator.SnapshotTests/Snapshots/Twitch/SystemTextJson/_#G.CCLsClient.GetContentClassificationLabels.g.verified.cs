@@ -6,6 +6,21 @@ namespace G
 {
     public partial class CCLsClient
     {
+        partial void PrepareGetContentClassificationLabelsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string locale);
+        partial void PrepareGetContentClassificationLabelsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string locale);
+        partial void ProcessGetContentClassificationLabelsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetContentClassificationLabelsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets information about Twitch content classification labels.<br/>
         /// Gets information about Twitch content classification labels.<br/>

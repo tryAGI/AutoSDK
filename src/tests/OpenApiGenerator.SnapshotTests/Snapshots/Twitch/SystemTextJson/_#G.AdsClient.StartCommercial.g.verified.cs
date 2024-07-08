@@ -6,6 +6,21 @@ namespace G
 {
     public partial class AdsClient
     {
+        partial void PrepareStartCommercialArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.StartCommercialBody request);
+        partial void PrepareStartCommercialRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.StartCommercialBody request);
+        partial void ProcessStartCommercialResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessStartCommercialResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Starts a commercial on the specified channel.<br/>
         /// Starts a commercial on the specified channel.<br/>

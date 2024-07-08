@@ -6,6 +6,23 @@ namespace G
 {
     public partial class Api
     {
+        partial void PrepareDeleteModelsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string modelOwner,
+            ref string modelName);
+        partial void PrepareDeleteModelsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string modelOwner,
+            string modelName);
+        partial void ProcessDeleteModelsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDeleteModelsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Delete a model<br/>
         /// Delete a model<br/>

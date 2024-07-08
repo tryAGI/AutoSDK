@@ -6,6 +6,27 @@ namespace G
 {
     public partial class SearchClient
     {
+        partial void PrepareSearchChannelsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string query,
+            ref bool liveOnly,
+            ref int first,
+            ref string after);
+        partial void PrepareSearchChannelsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string query,
+            bool liveOnly,
+            int first,
+            string after);
+        partial void ProcessSearchChannelsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessSearchChannelsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets the channels that match the specified query and have streamed content within the past 6 months.<br/>
         /// Gets the channels that match the specified query and have streamed content within the past 6 months.<br/>

@@ -6,6 +6,23 @@ namespace G
 {
     public partial class MigrationsClient
     {
+        partial void PrepareMigrationsDownloadArchiveForOrgArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string org,
+            ref int migrationId);
+        partial void PrepareMigrationsDownloadArchiveForOrgRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string org,
+            int migrationId);
+        partial void ProcessMigrationsDownloadArchiveForOrgResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMigrationsDownloadArchiveForOrgResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Download an organization migration archive<br/>
         /// Fetches the URL to a migration archive.

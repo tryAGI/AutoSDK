@@ -6,6 +6,21 @@ namespace G
 {
     public partial class UserClient
     {
+        partial void PrepareUserGetCurrentUserPendingInvitationsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token);
+        partial void PrepareUserGetCurrentUserPendingInvitationsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token);
+        partial void ProcessUserGetCurrentUserPendingInvitationsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUserGetCurrentUserPendingInvitationsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GetCurrentUserPendingInvitations.
         /// </summary>

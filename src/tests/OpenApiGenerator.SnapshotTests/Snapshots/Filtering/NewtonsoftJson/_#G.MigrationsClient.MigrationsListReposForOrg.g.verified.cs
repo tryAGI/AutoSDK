@@ -6,6 +6,27 @@ namespace G
 {
     public partial class MigrationsClient
     {
+        partial void PrepareMigrationsListReposForOrgArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string org,
+            ref int migrationId,
+            ref int perPage,
+            ref int page);
+        partial void PrepareMigrationsListReposForOrgRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string org,
+            int migrationId,
+            int perPage,
+            int page);
+        partial void ProcessMigrationsListReposForOrgResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMigrationsListReposForOrgResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// List repositories in an organization migration<br/>
         /// List all the repositories for this organization migration.

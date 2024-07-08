@@ -6,6 +6,19 @@ namespace G
 {
     public partial class Api
     {
+        partial void PrepareGetSecretDefaultWebhooksArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareGetSecretDefaultWebhooksRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessGetSecretDefaultWebhooksResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetSecretDefaultWebhooksResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Get the signing secret for the default webhook<br/>
         /// Get the signing secret for the default webhook endpoint. This is used to verify that webhook requests are coming from Replicate.<br/>

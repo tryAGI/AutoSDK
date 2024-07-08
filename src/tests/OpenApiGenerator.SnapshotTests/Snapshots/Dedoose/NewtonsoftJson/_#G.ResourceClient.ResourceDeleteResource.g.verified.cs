@@ -6,6 +6,49 @@ namespace G
 {
     public partial class ResourceClient
     {
+        partial void PrepareResourceDeleteResourceArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string currentProjectId,
+            ref string projectIdKey,
+            ref string projectId,
+            ref string id,
+            ref string projectIDL,
+            ref string title,
+            ref string description,
+            ref int type,
+            ref string dataPath,
+            ref int length,
+            global::System.DateTime createStamp,
+            ref string createByUserIDL,
+            ref bool isDataLocked,
+            ref string metaData);
+        partial void PrepareResourceDeleteResourceRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string currentProjectId,
+            string projectIdKey,
+            string projectId,
+            string id,
+            string projectIDL,
+            string title,
+            string description,
+            int type,
+            string dataPath,
+            int length,
+            global::System.DateTime createStamp,
+            string createByUserIDL,
+            bool isDataLocked,
+            string metaData);
+        partial void ProcessResourceDeleteResourceResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessResourceDeleteResourceResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// DeleteResource.
         /// </summary>

@@ -6,6 +6,21 @@ namespace G
 {
     public partial class FilesClient
     {
+        partial void PrepareDeleteFileArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string fileId);
+        partial void PrepareDeleteFileRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string fileId);
+        partial void ProcessDeleteFileResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDeleteFileResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Delete a file.
         /// </summary>

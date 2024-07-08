@@ -6,6 +6,21 @@ namespace G
 {
     public partial class SingleClient
     {
+        partial void PrepareGetLocationByIpArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string ip);
+        partial void PrepareGetLocationByIpRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string ip);
+        partial void ProcessGetLocationByIpResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetLocationByIpResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Get a location for the selected IP.<br/>
         /// Returns a location for the selected IP.

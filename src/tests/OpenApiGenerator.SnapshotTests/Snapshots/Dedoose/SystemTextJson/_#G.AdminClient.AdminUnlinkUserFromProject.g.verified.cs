@@ -6,6 +6,25 @@ namespace G
 {
     public partial class AdminClient
     {
+        partial void PrepareAdminUnlinkUserFromProjectArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string userId);
+        partial void PrepareAdminUnlinkUserFromProjectRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string userId);
+        partial void ProcessAdminUnlinkUserFromProjectResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAdminUnlinkUserFromProjectResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// UnlinkUserFromProject.
         /// </summary>

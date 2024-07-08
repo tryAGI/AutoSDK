@@ -6,6 +6,25 @@ namespace G
 {
     public partial class AssistantsClient
     {
+        partial void PrepareGetRunStepArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string threadId,
+            ref string runId,
+            ref string stepId);
+        partial void PrepareGetRunStepRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string threadId,
+            string runId,
+            string stepId);
+        partial void ProcessGetRunStepResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetRunStepResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Retrieves a run step.
         /// </summary>

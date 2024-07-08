@@ -6,6 +6,21 @@ namespace G
 {
     public partial class SingleClient
     {
+        partial void PrepareGetIpByIpArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string ip);
+        partial void PrepareGetIpByIpRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string ip);
+        partial void ProcessGetIpByIpResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetIpByIpResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Returns a ip for the selected IP. Yes, I know this is a pointless method.<br/>
         /// Returns a ip for the selected IP. Yes, I know this is a pointless method.

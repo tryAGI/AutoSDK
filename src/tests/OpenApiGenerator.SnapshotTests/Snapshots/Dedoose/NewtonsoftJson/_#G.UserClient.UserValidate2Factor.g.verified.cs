@@ -6,6 +6,27 @@ namespace G
 {
     public partial class UserClient
     {
+        partial void PrepareUserValidate2FactorArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string username,
+            ref string connectionKey,
+            ref string encryptedAuthToken);
+        partial void PrepareUserValidate2FactorRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string username,
+            string connectionKey,
+            string encryptedAuthToken);
+        partial void ProcessUserValidate2FactorResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUserValidate2FactorResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Validate2Factor.
         /// </summary>

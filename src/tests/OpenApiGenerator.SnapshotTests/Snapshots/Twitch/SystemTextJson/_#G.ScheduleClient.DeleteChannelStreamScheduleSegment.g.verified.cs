@@ -6,6 +6,23 @@ namespace G
 {
     public partial class ScheduleClient
     {
+        partial void PrepareDeleteChannelStreamScheduleSegmentArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref string id);
+        partial void PrepareDeleteChannelStreamScheduleSegmentRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            string id);
+        partial void ProcessDeleteChannelStreamScheduleSegmentResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDeleteChannelStreamScheduleSegmentResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Deletes a broadcast from the broadcaster’s streaming schedule.<br/>
         /// Removes a broadcast segment from the broadcaster’s streaming schedule.<br/>

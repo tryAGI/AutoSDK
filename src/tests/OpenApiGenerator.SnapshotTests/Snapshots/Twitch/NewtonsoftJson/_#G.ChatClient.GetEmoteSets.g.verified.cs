@@ -7,6 +7,21 @@ namespace G
 {
     public partial class ChatClient
     {
+        partial void PrepareGetEmoteSetsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Collections.Generic.IList<string> emoteSetId);
+        partial void PrepareGetEmoteSetsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::System.Collections.Generic.IList<string> emoteSetId);
+        partial void ProcessGetEmoteSetsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetEmoteSetsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets emotes for one or more specified emote sets.<br/>
         /// Gets emotes for one or more specified emote sets.<br/>

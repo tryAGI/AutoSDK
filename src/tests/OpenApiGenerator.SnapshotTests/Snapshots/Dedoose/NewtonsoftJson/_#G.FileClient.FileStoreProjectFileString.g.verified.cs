@@ -6,6 +6,29 @@ namespace G
 {
     public partial class FileClient
     {
+        partial void PrepareFileStoreProjectFileStringArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref int fileStorageType,
+            ref string extension,
+            ref string text);
+        partial void PrepareFileStoreProjectFileStringRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            int fileStorageType,
+            string extension,
+            string text);
+        partial void ProcessFileStoreProjectFileStringResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessFileStoreProjectFileStringResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StoreProjectFileString.
         /// </summary>

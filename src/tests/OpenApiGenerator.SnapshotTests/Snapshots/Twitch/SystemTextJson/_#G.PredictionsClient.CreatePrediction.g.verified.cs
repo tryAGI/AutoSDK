@@ -6,6 +6,21 @@ namespace G
 {
     public partial class PredictionsClient
     {
+        partial void PrepareCreatePredictionArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.CreatePredictionBody request);
+        partial void PrepareCreatePredictionRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.CreatePredictionBody request);
+        partial void ProcessCreatePredictionResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreatePredictionResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Create a Channel Points Prediction.<br/>
         /// Creates a Channel Points Prediction.<br/>

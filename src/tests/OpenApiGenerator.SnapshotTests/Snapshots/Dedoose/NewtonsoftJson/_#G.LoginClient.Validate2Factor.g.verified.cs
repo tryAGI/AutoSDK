@@ -6,6 +6,25 @@ namespace G
 {
     public partial class LoginClient
     {
+        partial void PrepareValidate2FactorArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string username,
+            ref string authToken);
+        partial void PrepareValidate2FactorRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string username,
+            string authToken);
+        partial void ProcessValidate2FactorResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessValidate2FactorResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Validates 2 factor.
         /// </summary>

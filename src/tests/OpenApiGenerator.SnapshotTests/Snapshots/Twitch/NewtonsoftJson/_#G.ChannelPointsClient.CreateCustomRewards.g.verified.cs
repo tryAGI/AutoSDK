@@ -6,6 +6,23 @@ namespace G
 {
     public partial class ChannelPointsClient
     {
+        partial void PrepareCreateCustomRewardsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            global::G.CreateCustomRewardsBody request);
+        partial void PrepareCreateCustomRewardsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            global::G.CreateCustomRewardsBody request);
+        partial void ProcessCreateCustomRewardsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreateCustomRewardsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Creates a Custom Reward in the broadcaster’s channel.<br/>
         /// Creates a Custom Reward in the broadcaster’s channel. The maximum number of custom rewards per channel is 50, which includes both enabled and disabled rewards.<br/>

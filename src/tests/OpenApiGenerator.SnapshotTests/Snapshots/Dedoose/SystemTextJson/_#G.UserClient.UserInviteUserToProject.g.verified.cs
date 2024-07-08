@@ -6,6 +6,27 @@ namespace G
 {
     public partial class UserClient
     {
+        partial void PrepareUserInviteUserToProjectArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string email,
+            ref string groupId);
+        partial void PrepareUserInviteUserToProjectRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string email,
+            string groupId);
+        partial void ProcessUserInviteUserToProjectResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUserInviteUserToProjectResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// InviteUserToProject.
         /// </summary>

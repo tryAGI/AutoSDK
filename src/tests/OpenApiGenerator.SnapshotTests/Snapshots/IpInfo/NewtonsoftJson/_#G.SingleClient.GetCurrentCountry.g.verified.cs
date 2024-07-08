@@ -6,6 +6,19 @@ namespace G
 {
     public partial class SingleClient
     {
+        partial void PrepareGetCurrentCountryArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareGetCurrentCountryRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessGetCurrentCountryResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetCurrentCountryResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Returns the current country.<br/>
         /// Returns the current country.

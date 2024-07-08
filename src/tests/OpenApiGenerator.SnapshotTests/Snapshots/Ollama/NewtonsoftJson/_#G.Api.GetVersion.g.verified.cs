@@ -6,6 +6,19 @@ namespace G
 {
     public partial class Api
     {
+        partial void PrepareGetVersionArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareGetVersionRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessGetVersionResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetVersionResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Returns the version of the Ollama server.<br/>
         /// This endpoint returns the version of the Ollama server.

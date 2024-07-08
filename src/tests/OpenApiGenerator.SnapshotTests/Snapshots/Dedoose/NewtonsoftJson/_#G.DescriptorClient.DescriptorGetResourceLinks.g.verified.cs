@@ -6,6 +6,25 @@ namespace G
 {
     public partial class DescriptorClient
     {
+        partial void PrepareDescriptorGetResourceLinksArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string resourceId);
+        partial void PrepareDescriptorGetResourceLinksRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string resourceId);
+        partial void ProcessDescriptorGetResourceLinksResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDescriptorGetResourceLinksResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GetResourceLinks.
         /// </summary>

@@ -6,6 +6,21 @@ namespace G
 {
     public partial class MigrationsClient
     {
+        partial void PrepareMigrationsDeleteArchiveForAuthenticatedUserArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref int migrationId);
+        partial void PrepareMigrationsDeleteArchiveForAuthenticatedUserRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int migrationId);
+        partial void ProcessMigrationsDeleteArchiveForAuthenticatedUserResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMigrationsDeleteArchiveForAuthenticatedUserResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Delete a user migration archive<br/>
         /// Deletes a previous migration archive. Downloadable migration archives are automatically deleted after seven days. Migration metadata, which is returned in the [List user migrations](https://docs.github.com/rest/migrations/users#list-user-migrations) and [Get a user migration status](https://docs.github.com/rest/migrations/users#get-a-user-migration-status) endpoints, will continue to be available even after an archive is deleted.

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ModerationClient
     {
+        partial void PrepareAddBlockedTermArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref string moderatorId,
+            global::G.AddBlockedTermBody request);
+        partial void PrepareAddBlockedTermRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            string moderatorId,
+            global::G.AddBlockedTermBody request);
+        partial void ProcessAddBlockedTermResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAddBlockedTermResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Adds a word or phrase to the broadcaster’s list of blocked terms.<br/>
         /// Adds a word or phrase to the broadcaster’s list of blocked terms. These are the terms that the broadcaster doesn’t want used in their chat room.<br/>

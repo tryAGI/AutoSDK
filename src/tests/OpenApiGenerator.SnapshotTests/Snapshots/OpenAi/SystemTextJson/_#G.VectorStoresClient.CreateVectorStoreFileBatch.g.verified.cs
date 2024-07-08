@@ -6,6 +6,23 @@ namespace G
 {
     public partial class VectorStoresClient
     {
+        partial void PrepareCreateVectorStoreFileBatchArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string vectorStoreId,
+            global::G.CreateVectorStoreFileBatchRequest request);
+        partial void PrepareCreateVectorStoreFileBatchRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string vectorStoreId,
+            global::G.CreateVectorStoreFileBatchRequest request);
+        partial void ProcessCreateVectorStoreFileBatchResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreateVectorStoreFileBatchResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Create a vector store file batch.
         /// </summary>

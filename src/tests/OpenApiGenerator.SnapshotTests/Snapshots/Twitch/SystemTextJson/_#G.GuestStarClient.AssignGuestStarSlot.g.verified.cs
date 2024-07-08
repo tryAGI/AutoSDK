@@ -6,6 +6,29 @@ namespace G
 {
     public partial class GuestStarClient
     {
+        partial void PrepareAssignGuestStarSlotArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref string moderatorId,
+            ref string sessionId,
+            ref string guestId,
+            ref string slotId);
+        partial void PrepareAssignGuestStarSlotRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            string moderatorId,
+            string sessionId,
+            string guestId,
+            string slotId);
+        partial void ProcessAssignGuestStarSlotResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAssignGuestStarSlotResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// BETA Allows a previously invited user to be assigned a slot within the active Guest Star session.<br/>
         /// BETA Allows a previously invited user to be assigned a slot within the active Guest Star session, once that guest has indicated they are ready to join.<br/>

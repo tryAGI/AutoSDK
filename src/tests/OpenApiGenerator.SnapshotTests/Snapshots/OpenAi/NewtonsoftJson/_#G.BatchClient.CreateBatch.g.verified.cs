@@ -6,6 +6,21 @@ namespace G
 {
     public partial class BatchClient
     {
+        partial void PrepareCreateBatchArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.CreateBatchRequest request);
+        partial void PrepareCreateBatchRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.CreateBatchRequest request);
+        partial void ProcessCreateBatchResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreateBatchResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Creates and executes a batch from an uploaded file of requests
         /// </summary>

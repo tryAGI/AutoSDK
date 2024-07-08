@@ -7,6 +7,27 @@ namespace G
 {
     public partial class ChannelPointsClient
     {
+        partial void PrepareUpdateRedemptionStatusArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Collections.Generic.IList<string> id,
+            ref string broadcasterId,
+            ref string rewardId,
+            global::G.UpdateRedemptionStatusBody request);
+        partial void PrepareUpdateRedemptionStatusRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::System.Collections.Generic.IList<string> id,
+            string broadcasterId,
+            string rewardId,
+            global::G.UpdateRedemptionStatusBody request);
+        partial void ProcessUpdateRedemptionStatusResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUpdateRedemptionStatusResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Updates a redemption’s status.<br/>
         /// Updates a redemption’s status. You may update a redemption only if its status is UNFULFILLED. The app used to create the reward is the only app that may update the redemption.<br/>

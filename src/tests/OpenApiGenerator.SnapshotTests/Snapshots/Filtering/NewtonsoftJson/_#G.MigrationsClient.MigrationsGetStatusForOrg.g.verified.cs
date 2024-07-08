@@ -7,6 +7,25 @@ namespace G
 {
     public partial class MigrationsClient
     {
+        partial void PrepareMigrationsGetStatusForOrgArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string org,
+            ref int migrationId,
+            global::System.Collections.Generic.IList<global::G.MigrationsGetStatusForOrgExclude> exclude);
+        partial void PrepareMigrationsGetStatusForOrgRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string org,
+            int migrationId,
+            global::System.Collections.Generic.IList<global::G.MigrationsGetStatusForOrgExclude> exclude);
+        partial void ProcessMigrationsGetStatusForOrgResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMigrationsGetStatusForOrgResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Get an organization migration status<br/>
         /// Fetches the status of a migration.<br/>

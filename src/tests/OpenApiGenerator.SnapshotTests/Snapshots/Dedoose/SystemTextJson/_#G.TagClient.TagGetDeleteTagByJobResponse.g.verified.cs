@@ -6,6 +6,23 @@ namespace G
 {
     public partial class TagClient
     {
+        partial void PrepareTagGetDeleteTagByJobResponseArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string jobId);
+        partial void PrepareTagGetDeleteTagByJobResponseRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string jobId);
+        partial void ProcessTagGetDeleteTagByJobResponseResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessTagGetDeleteTagByJobResponseResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GetDeleteTagByJobResponse.
         /// </summary>

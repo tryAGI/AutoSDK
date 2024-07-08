@@ -6,6 +6,21 @@ namespace G
 {
     public partial class FilesClient
     {
+        partial void PrepareDownloadFileArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string fileId);
+        partial void PrepareDownloadFileRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string fileId);
+        partial void ProcessDownloadFileResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDownloadFileResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Returns the contents of the specified file.
         /// </summary>

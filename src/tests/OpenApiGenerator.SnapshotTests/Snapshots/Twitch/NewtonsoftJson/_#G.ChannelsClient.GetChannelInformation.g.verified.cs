@@ -7,6 +7,21 @@ namespace G
 {
     public partial class ChannelsClient
     {
+        partial void PrepareGetChannelInformationArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Collections.Generic.IList<string> broadcasterId);
+        partial void PrepareGetChannelInformationRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::System.Collections.Generic.IList<string> broadcasterId);
+        partial void ProcessGetChannelInformationResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetChannelInformationResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets information about one or more channels.<br/>
         /// Gets information about one or more channels.<br/>

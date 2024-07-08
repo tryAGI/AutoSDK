@@ -6,6 +6,19 @@ namespace G
 {
     public partial class ModelsClient
     {
+        partial void PrepareListRunningModelsArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareListRunningModelsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessListRunningModelsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessListRunningModelsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// List models that are running.
         /// </summary>

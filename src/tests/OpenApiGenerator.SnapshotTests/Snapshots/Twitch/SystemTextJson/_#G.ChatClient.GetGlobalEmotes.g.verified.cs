@@ -6,6 +6,19 @@ namespace G
 {
     public partial class ChatClient
     {
+        partial void PrepareGetGlobalEmotesArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareGetGlobalEmotesRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessGetGlobalEmotesResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetGlobalEmotesResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets all global emotes.<br/>
         /// Gets the list of [global emotes](https://www.twitch.tv/creatorcamp/en/learn-the-basics/emotes/). Global emotes are Twitch-created emotes that users can use in any Twitch chat.<br/>

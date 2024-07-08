@@ -6,6 +6,25 @@ namespace G
 {
     public partial class TagClient
     {
+        partial void PrepareTagRemoveTagApplicationArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string tagAppId);
+        partial void PrepareTagRemoveTagApplicationRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string tagAppId);
+        partial void ProcessTagRemoveTagApplicationResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessTagRemoveTagApplicationResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// RemoveTagApplication.
         /// </summary>

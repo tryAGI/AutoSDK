@@ -6,6 +6,21 @@ namespace G
 {
     public partial class ModelsClient
     {
+        partial void PreparePushModelArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.PushModelRequest request);
+        partial void PreparePushModelRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.PushModelRequest request);
+        partial void ProcessPushModelResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessPushModelResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Upload a model to a model library.<br/>
         /// Requires registering for ollama.ai and adding a public key first.

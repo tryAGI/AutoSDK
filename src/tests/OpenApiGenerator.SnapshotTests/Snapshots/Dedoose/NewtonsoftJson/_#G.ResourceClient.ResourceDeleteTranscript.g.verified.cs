@@ -6,6 +6,35 @@ namespace G
 {
     public partial class ResourceClient
     {
+        partial void PrepareResourceDeleteTranscriptArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectIdKey,
+            ref string id,
+            ref string creator,
+            ref string projectId,
+            ref string resourceId,
+            ref string dataPath,
+            global::System.DateTime created);
+        partial void PrepareResourceDeleteTranscriptRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectIdKey,
+            string id,
+            string creator,
+            string projectId,
+            string resourceId,
+            string dataPath,
+            global::System.DateTime created);
+        partial void ProcessResourceDeleteTranscriptResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessResourceDeleteTranscriptResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// DeleteTranscript.
         /// </summary>

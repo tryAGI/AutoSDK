@@ -6,6 +6,27 @@ namespace G
 {
     public partial class ChatClient
     {
+        partial void PrepareGetChattersArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref string moderatorId,
+            ref int first,
+            ref string after);
+        partial void PrepareGetChattersRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            string moderatorId,
+            int first,
+            string after);
+        partial void ProcessGetChattersResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetChattersResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets the list of users that are connected to the broadcaster’s chat session.<br/>
         /// Gets the list of users that are connected to the broadcaster’s chat session.<br/>

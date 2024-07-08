@@ -6,6 +6,21 @@ namespace G
 {
     public partial class AccountClient
     {
+        partial void PrepareAccountGetAccountBillingLogsForCurrentUserArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token);
+        partial void PrepareAccountGetAccountBillingLogsForCurrentUserRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token);
+        partial void ProcessAccountGetAccountBillingLogsForCurrentUserResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAccountGetAccountBillingLogsForCurrentUserResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GetAccountBillingLogsForCurrentUser.
         /// </summary>

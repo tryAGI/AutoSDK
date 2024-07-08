@@ -6,6 +6,21 @@ namespace G
 {
     public partial class EventSubClient
     {
+        partial void PrepareCreateEventsubSubscriptionArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.CreateEventSubSubscriptionBody request);
+        partial void PrepareCreateEventsubSubscriptionRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.CreateEventSubSubscriptionBody request);
+        partial void ProcessCreateEventsubSubscriptionResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreateEventsubSubscriptionResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Creates an EventSub subscription.<br/>
         /// Creates an EventSub subscription.<br/>

@@ -6,6 +6,31 @@ namespace G
 {
     public partial class ResourceClient
     {
+        partial void PrepareResourceAddAudioResourceArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string userId,
+            ref string title,
+            ref string description,
+            ref string videoUploadURL);
+        partial void PrepareResourceAddAudioResourceRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string userId,
+            string title,
+            string description,
+            string videoUploadURL);
+        partial void ProcessResourceAddAudioResourceResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessResourceAddAudioResourceResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// AddAudioResource.
         /// </summary>

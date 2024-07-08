@@ -6,6 +6,23 @@ namespace G
 {
     public partial class RaidsClient
     {
+        partial void PrepareStartARaidArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string fromBroadcasterId,
+            ref string toBroadcasterId);
+        partial void PrepareStartARaidRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string fromBroadcasterId,
+            string toBroadcasterId);
+        partial void ProcessStartARaidResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessStartARaidResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Raid another channel by sending the broadcaster’s viewers to the targeted channel.<br/>
         /// Raid another channel by sending the broadcaster’s viewers to the targeted channel.<br/>

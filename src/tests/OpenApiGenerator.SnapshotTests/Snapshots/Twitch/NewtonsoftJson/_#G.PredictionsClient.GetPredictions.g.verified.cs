@@ -7,6 +7,27 @@ namespace G
 {
     public partial class PredictionsClient
     {
+        partial void PrepareGetPredictionsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            global::System.Collections.Generic.IList<string> id,
+            ref string first,
+            ref string after);
+        partial void PrepareGetPredictionsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            global::System.Collections.Generic.IList<string> id,
+            string first,
+            string after);
+        partial void ProcessGetPredictionsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetPredictionsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets a list of Channel Points Predictions that the broadcaster created.<br/>
         /// Gets a list of Channel Points Predictions that the broadcaster created.<br/>

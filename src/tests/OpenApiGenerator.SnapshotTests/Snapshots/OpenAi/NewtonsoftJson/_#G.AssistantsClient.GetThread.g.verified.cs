@@ -6,6 +6,21 @@ namespace G
 {
     public partial class AssistantsClient
     {
+        partial void PrepareGetThreadArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string threadId);
+        partial void PrepareGetThreadRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string threadId);
+        partial void ProcessGetThreadResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetThreadResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Retrieves a thread.
         /// </summary>

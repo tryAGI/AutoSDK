@@ -6,6 +6,21 @@ namespace G
 {
     public partial class AsnClient
     {
+        partial void PrepareGetAsnArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref int asn);
+        partial void PrepareGetAsnRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int asn);
+        partial void ProcessGetAsnResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetAsnResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Returns information about an ASN, such as the assigned prefixes, related domain, and more.<br/>
         /// Returns information about an AS.

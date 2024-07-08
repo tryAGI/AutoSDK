@@ -6,6 +6,25 @@ namespace G
 {
     public partial class TagClient
     {
+        partial void PrepareTagStartRetroUpcodeJobArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string userId);
+        partial void PrepareTagStartRetroUpcodeJobRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string userId);
+        partial void ProcessTagStartRetroUpcodeJobResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessTagStartRetroUpcodeJobResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StartRetroUpcodeJob.
         /// </summary>

@@ -7,6 +7,33 @@ namespace G
 {
     public partial class ExcerptClient
     {
+        partial void PrepareExcerptAddImageExcerptArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string userId,
+            ref string resourceId,
+            ref int start,
+            ref int end,
+            global::System.Collections.Generic.IList<string> tagIdsToApply);
+        partial void PrepareExcerptAddImageExcerptRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string userId,
+            string resourceId,
+            int start,
+            int end,
+            global::System.Collections.Generic.IList<string> tagIdsToApply);
+        partial void ProcessExcerptAddImageExcerptResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessExcerptAddImageExcerptResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// AddImageExcerpt.
         /// </summary>

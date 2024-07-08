@@ -6,6 +6,27 @@ namespace G
 {
     public partial class ProjectClient
     {
+        partial void PrepareProjectStartProjectImportJobArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string fileURI,
+            ref string password);
+        partial void PrepareProjectStartProjectImportJobRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string fileURI,
+            string password);
+        partial void ProcessProjectStartProjectImportJobResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessProjectStartProjectImportJobResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StartProjectImportJob.
         /// </summary>

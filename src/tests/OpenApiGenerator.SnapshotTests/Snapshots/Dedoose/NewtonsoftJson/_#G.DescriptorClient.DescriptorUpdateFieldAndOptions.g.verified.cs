@@ -7,6 +7,33 @@ namespace G
 {
     public partial class DescriptorClient
     {
+        partial void PrepareDescriptorUpdateFieldAndOptionsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string fieldId,
+            ref string title,
+            ref string description,
+            global::System.Collections.Generic.IList<string> deletedOptionIds,
+            global::System.Collections.Generic.IList<global::G.FieldOptionVO> request);
+        partial void PrepareDescriptorUpdateFieldAndOptionsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string fieldId,
+            string title,
+            string description,
+            global::System.Collections.Generic.IList<string> deletedOptionIds,
+            global::System.Collections.Generic.IList<global::G.FieldOptionVO> request);
+        partial void ProcessDescriptorUpdateFieldAndOptionsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDescriptorUpdateFieldAndOptionsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// UpdateFieldAndOptions.
         /// </summary>

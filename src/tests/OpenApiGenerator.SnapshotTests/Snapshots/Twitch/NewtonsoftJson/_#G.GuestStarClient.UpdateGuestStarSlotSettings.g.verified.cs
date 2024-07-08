@@ -6,6 +6,35 @@ namespace G
 {
     public partial class GuestStarClient
     {
+        partial void PrepareUpdateGuestStarSlotSettingsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref string moderatorId,
+            ref string sessionId,
+            ref string slotId,
+            ref bool isAudioEnabled,
+            ref bool isVideoEnabled,
+            ref bool isLive,
+            ref int volume);
+        partial void PrepareUpdateGuestStarSlotSettingsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            string moderatorId,
+            string sessionId,
+            string slotId,
+            bool isAudioEnabled,
+            bool isVideoEnabled,
+            bool isLive,
+            int volume);
+        partial void ProcessUpdateGuestStarSlotSettingsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUpdateGuestStarSlotSettingsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// BETA Allows a user to update slot settings for a particular guest within a Guest Star session.<br/>
         /// BETA Allows a user to update slot settings for a particular guest within a Guest Star session, such as allowing the user to share audio or video within the call as a host. These settings will be broadcasted to all subscribers which control their view of the guest in that slot. One or more of the optional parameters to this API can be specified at any time.<br/>

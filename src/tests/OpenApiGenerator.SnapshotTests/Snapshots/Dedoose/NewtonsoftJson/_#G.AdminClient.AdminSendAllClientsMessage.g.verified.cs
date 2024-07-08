@@ -6,6 +6,25 @@ namespace G
 {
     public partial class AdminClient
     {
+        partial void PrepareAdminSendAllClientsMessageArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string title,
+            ref string message);
+        partial void PrepareAdminSendAllClientsMessageRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string title,
+            string message);
+        partial void ProcessAdminSendAllClientsMessageResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAdminSendAllClientsMessageResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// SendAllClientsMessage.
         /// </summary>

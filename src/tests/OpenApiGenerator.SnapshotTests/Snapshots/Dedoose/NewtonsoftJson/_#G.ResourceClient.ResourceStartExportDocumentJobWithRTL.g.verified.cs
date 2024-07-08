@@ -6,6 +6,33 @@ namespace G
 {
     public partial class ResourceClient
     {
+        partial void PrepareResourceStartExportDocumentJobWithRTLArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string resourceId,
+            ref bool includeExRegions,
+            ref bool rtl,
+            ref string exportExtension,
+            ref string encryptedSymKey);
+        partial void PrepareResourceStartExportDocumentJobWithRTLRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string resourceId,
+            bool includeExRegions,
+            bool rtl,
+            string exportExtension,
+            string encryptedSymKey);
+        partial void ProcessResourceStartExportDocumentJobWithRTLResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessResourceStartExportDocumentJobWithRTLResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StartExportDocumentJobWithRTL.
         /// </summary>

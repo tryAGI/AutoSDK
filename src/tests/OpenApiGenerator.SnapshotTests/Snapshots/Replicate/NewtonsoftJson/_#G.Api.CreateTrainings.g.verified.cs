@@ -6,6 +6,27 @@ namespace G
 {
     public partial class Api
     {
+        partial void PrepareCreateTrainingsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string modelOwner,
+            ref string modelName,
+            ref string versionId,
+            global::G.TrainingRequest request);
+        partial void PrepareCreateTrainingsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string modelOwner,
+            string modelName,
+            string versionId,
+            global::G.TrainingRequest request);
+        partial void ProcessCreateTrainingsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreateTrainingsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Create a training<br/>
         /// Start a new training of the model version you specify.<br/>

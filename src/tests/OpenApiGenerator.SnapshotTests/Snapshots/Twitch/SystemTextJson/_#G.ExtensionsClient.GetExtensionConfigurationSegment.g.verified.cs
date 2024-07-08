@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ExtensionsClient
     {
+        partial void PrepareGetExtensionConfigurationSegmentArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref string extensionId,
+            ref global::G.GetExtensionConfigurationSegmentSegment segment);
+        partial void PrepareGetExtensionConfigurationSegmentRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            string extensionId,
+            global::G.GetExtensionConfigurationSegmentSegment segment);
+        partial void ProcessGetExtensionConfigurationSegmentResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetExtensionConfigurationSegmentResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets the specified configuration segment from the specified extension.<br/>
         /// Gets the specified configuration segment from the specified extension.<br/>

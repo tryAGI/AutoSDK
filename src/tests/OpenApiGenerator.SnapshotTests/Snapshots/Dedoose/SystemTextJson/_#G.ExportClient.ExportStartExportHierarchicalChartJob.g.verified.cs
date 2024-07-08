@@ -7,6 +7,27 @@ namespace G
 {
     public partial class ExportClient
     {
+        partial void PrepareExportStartExportHierarchicalChartJobArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string title,
+            global::System.Collections.Generic.IList<global::G.ChartHierarchicalItemInfo> parentItems);
+        partial void PrepareExportStartExportHierarchicalChartJobRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string title,
+            global::System.Collections.Generic.IList<global::G.ChartHierarchicalItemInfo> parentItems);
+        partial void ProcessExportStartExportHierarchicalChartJobResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessExportStartExportHierarchicalChartJobResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StartExportHierarchicalChartJob.
         /// </summary>

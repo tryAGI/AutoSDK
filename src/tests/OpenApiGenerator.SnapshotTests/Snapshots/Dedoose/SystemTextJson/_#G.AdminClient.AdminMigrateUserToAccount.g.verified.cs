@@ -6,6 +6,25 @@ namespace G
 {
     public partial class AdminClient
     {
+        partial void PrepareAdminMigrateUserToAccountArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string userToBeMovedId,
+            ref string accountIdToMoveTo);
+        partial void PrepareAdminMigrateUserToAccountRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string userToBeMovedId,
+            string accountIdToMoveTo);
+        partial void ProcessAdminMigrateUserToAccountResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAdminMigrateUserToAccountResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// MigrateUserToAccount.
         /// </summary>

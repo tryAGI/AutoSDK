@@ -6,6 +6,27 @@ namespace G
 {
     public partial class MigrationsClient
     {
+        partial void PrepareMigrationsMapCommitAuthorArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string owner,
+            ref string repo,
+            ref int authorId,
+            global::G.MigrationsMapCommitAuthorRequest request);
+        partial void PrepareMigrationsMapCommitAuthorRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string owner,
+            string repo,
+            int authorId,
+            global::G.MigrationsMapCommitAuthorRequest request);
+        partial void ProcessMigrationsMapCommitAuthorResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMigrationsMapCommitAuthorResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Map a commit author<br/>
         /// Update an author's identity for the import. Your application can continue updating authors any time before you push<br/>

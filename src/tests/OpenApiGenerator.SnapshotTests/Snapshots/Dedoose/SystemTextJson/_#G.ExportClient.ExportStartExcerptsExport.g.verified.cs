@@ -6,6 +6,55 @@ namespace G
 {
     public partial class ExportClient
     {
+        partial void PrepareExportStartExcerptsExportArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string fileExtension,
+            ref int exCopyMode,
+            ref int sortMode,
+            ref bool exRange,
+            ref bool exCreator,
+            ref bool exDate,
+            ref bool desInfo,
+            ref bool docTitle,
+            ref bool docCreator,
+            ref bool docDate,
+            ref bool tagApplied,
+            ref bool tagWeight,
+            ref bool tagRange,
+            ref bool memos,
+            ref string symKeyEncrypted,
+            global::System.Collections.Generic.IList<string> request);
+        partial void PrepareExportStartExcerptsExportRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string fileExtension,
+            int exCopyMode,
+            int sortMode,
+            bool exRange,
+            bool exCreator,
+            bool exDate,
+            bool desInfo,
+            bool docTitle,
+            bool docCreator,
+            bool docDate,
+            bool tagApplied,
+            bool tagWeight,
+            bool tagRange,
+            bool memos,
+            string symKeyEncrypted,
+            global::System.Collections.Generic.IList<string> request);
+        partial void ProcessExportStartExcerptsExportResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessExportStartExcerptsExportResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StartExcerptsExport.
         /// </summary>

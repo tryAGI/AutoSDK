@@ -6,6 +6,23 @@ namespace G
 {
     public partial class ModerationClient
     {
+        partial void PrepareCheckAutomodStatusArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            global::G.CheckAutoModStatusBody request);
+        partial void PrepareCheckAutomodStatusRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            global::G.CheckAutoModStatusBody request);
+        partial void ProcessCheckAutomodStatusResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCheckAutomodStatusResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Checks whether AutoMod would flag the specified message for review.<br/>
         /// Checks whether AutoMod would flag the specified message for review.<br/>

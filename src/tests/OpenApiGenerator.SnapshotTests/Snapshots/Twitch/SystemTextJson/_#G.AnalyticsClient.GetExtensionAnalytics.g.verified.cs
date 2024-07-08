@@ -6,6 +6,31 @@ namespace G
 {
     public partial class AnalyticsClient
     {
+        partial void PrepareGetExtensionAnalyticsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string extensionId,
+            ref global::G.GetExtensionAnalyticsType type,
+            global::System.DateTime startedAt,
+            global::System.DateTime endedAt,
+            ref int first,
+            ref string after);
+        partial void PrepareGetExtensionAnalyticsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string extensionId,
+            global::G.GetExtensionAnalyticsType type,
+            global::System.DateTime startedAt,
+            global::System.DateTime endedAt,
+            int first,
+            string after);
+        partial void ProcessGetExtensionAnalyticsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetExtensionAnalyticsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets an analytics report for one or more extensions.<br/>
         /// Gets an analytics report for one or more extensions. The response contains the URLs used to download the reports (CSV files). [Learn More](https://dev.twitch.tv/docs/insights)<br/>

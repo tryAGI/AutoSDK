@@ -7,6 +7,37 @@ namespace G
 {
     public partial class ExportClient
     {
+        partial void PrepareExportStartGridChartExportJobArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string title,
+            global::System.Collections.Generic.IList<string> columnLabels,
+            global::System.Collections.Generic.IList<string> rowLabels,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> rows,
+            ref float maxCount,
+            ref bool colorByTotal,
+            ref string extension);
+        partial void PrepareExportStartGridChartExportJobRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string title,
+            global::System.Collections.Generic.IList<string> columnLabels,
+            global::System.Collections.Generic.IList<string> rowLabels,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> rows,
+            float maxCount,
+            bool colorByTotal,
+            string extension);
+        partial void ProcessExportStartGridChartExportJobResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessExportStartGridChartExportJobResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StartGridChartExportJob.
         /// </summary>

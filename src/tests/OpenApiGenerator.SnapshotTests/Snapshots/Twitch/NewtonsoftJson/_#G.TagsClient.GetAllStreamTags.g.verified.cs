@@ -7,6 +7,25 @@ namespace G
 {
     public partial class TagsClient
     {
+        partial void PrepareGetAllStreamTagsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Collections.Generic.IList<string> tagId,
+            ref int first,
+            ref string after);
+        partial void PrepareGetAllStreamTagsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::System.Collections.Generic.IList<string> tagId,
+            int first,
+            string after);
+        partial void ProcessGetAllStreamTagsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetAllStreamTagsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets the list of all stream tags that Twitch defines. You can also filter the list by one or more tag IDs.<br/>
         /// **IMPORTANT** Twitch is moving from Twitch-defined tags to channel-defined tags. **IMPORTANT** As of February 28, 2023, this endpoint returns an empty array. On July 13, 2023, it will return a 410 response.<br/>

@@ -6,6 +6,27 @@ namespace G
 {
     public partial class DescriptorClient
     {
+        partial void PrepareDescriptorStartExportFieldsJobArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string setId,
+            ref string fileExtension);
+        partial void PrepareDescriptorStartExportFieldsJobRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string setId,
+            string fileExtension);
+        partial void ProcessDescriptorStartExportFieldsJobResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDescriptorStartExportFieldsJobResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StartExportFieldsJob.
         /// </summary>

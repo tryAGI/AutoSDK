@@ -6,6 +6,29 @@ namespace G
 {
     public partial class TagClient
     {
+        partial void PrepareTagGetProjectTagsExportFileURLJobIdArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string fileExtension,
+            ref bool includeExcerpts,
+            ref string encryptedSymKey);
+        partial void PrepareTagGetProjectTagsExportFileURLJobIdRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string fileExtension,
+            bool includeExcerpts,
+            string encryptedSymKey);
+        partial void ProcessTagGetProjectTagsExportFileURLJobIdResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessTagGetProjectTagsExportFileURLJobIdResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GetProjectTagsExportFileURLJobId.
         /// </summary>

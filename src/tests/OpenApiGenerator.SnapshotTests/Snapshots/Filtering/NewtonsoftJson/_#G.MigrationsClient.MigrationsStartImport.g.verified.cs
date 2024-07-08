@@ -6,6 +6,25 @@ namespace G
 {
     public partial class MigrationsClient
     {
+        partial void PrepareMigrationsStartImportArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string owner,
+            ref string repo,
+            global::G.MigrationsStartImportRequest request);
+        partial void PrepareMigrationsStartImportRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string owner,
+            string repo,
+            global::G.MigrationsStartImportRequest request);
+        partial void ProcessMigrationsStartImportResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMigrationsStartImportResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Start an import<br/>
         /// Start a source import to a GitHub repository using GitHub Importer.<br/>

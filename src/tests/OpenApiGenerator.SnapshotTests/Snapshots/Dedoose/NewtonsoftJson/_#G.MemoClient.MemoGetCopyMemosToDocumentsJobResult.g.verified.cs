@@ -6,6 +6,23 @@ namespace G
 {
     public partial class MemoClient
     {
+        partial void PrepareMemoGetCopyMemosToDocumentsJobResultArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string jobId);
+        partial void PrepareMemoGetCopyMemosToDocumentsJobResultRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string jobId);
+        partial void ProcessMemoGetCopyMemosToDocumentsJobResultResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMemoGetCopyMemosToDocumentsJobResultResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GetCopyMemosToDocumentsJobResult.
         /// </summary>

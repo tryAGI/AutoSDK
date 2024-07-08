@@ -6,6 +6,23 @@ namespace G
 {
     public partial class ResourceClient
     {
+        partial void PrepareResourceGetAddImageResourceJobResponseArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string jobId);
+        partial void PrepareResourceGetAddImageResourceJobResponseRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string jobId);
+        partial void ProcessResourceGetAddImageResourceJobResponseResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessResourceGetAddImageResourceJobResponseResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GetAddImageResourceJobResponse.
         /// </summary>

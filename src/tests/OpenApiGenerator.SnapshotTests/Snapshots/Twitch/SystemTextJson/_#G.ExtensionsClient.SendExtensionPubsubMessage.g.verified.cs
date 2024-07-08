@@ -6,6 +6,21 @@ namespace G
 {
     public partial class ExtensionsClient
     {
+        partial void PrepareSendExtensionPubsubMessageArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.SendExtensionPubSubMessageBody request);
+        partial void PrepareSendExtensionPubsubMessageRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.SendExtensionPubSubMessageBody request);
+        partial void ProcessSendExtensionPubsubMessageResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessSendExtensionPubsubMessageResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Sends a message to one or more viewers.<br/>
         /// Sends a message to one or more viewers. You can send messages to a specific channel or to all channels where your extension is active. This endpoint uses the same mechanism as the [send](https://dev.twitch.tv/docs/extensions/reference#send) JavaScript helper function used to send messages.<br/>

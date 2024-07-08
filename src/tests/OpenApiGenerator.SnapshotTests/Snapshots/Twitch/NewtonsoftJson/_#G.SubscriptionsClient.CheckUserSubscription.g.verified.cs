@@ -6,6 +6,23 @@ namespace G
 {
     public partial class SubscriptionsClient
     {
+        partial void PrepareCheckUserSubscriptionArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref string userId);
+        partial void PrepareCheckUserSubscriptionRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            string userId);
+        partial void ProcessCheckUserSubscriptionResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCheckUserSubscriptionResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Checks whether the user subscribes to the broadcaster’s channel.<br/>
         /// Checks whether the user subscribes to the broadcaster’s channel.<br/>

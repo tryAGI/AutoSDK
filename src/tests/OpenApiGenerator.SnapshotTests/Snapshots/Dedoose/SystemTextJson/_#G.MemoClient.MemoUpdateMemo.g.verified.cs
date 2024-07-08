@@ -7,6 +7,51 @@ namespace G
 {
     public partial class MemoClient
     {
+        partial void PrepareMemoUpdateMemoArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectIdKey,
+            ref string id,
+            ref string projectId,
+            ref string title,
+            ref string createdUserId,
+            ref string lastEditUserId,
+            global::System.DateTime createStamp,
+            global::System.DateTime lastEditStamp,
+            ref string folderId,
+            ref string dataURI,
+            global::System.Collections.Generic.IList<string> folderIds,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> resources,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> excerpts,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> descriptors,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> tags);
+        partial void PrepareMemoUpdateMemoRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectIdKey,
+            string id,
+            string projectId,
+            string title,
+            string createdUserId,
+            string lastEditUserId,
+            global::System.DateTime createStamp,
+            global::System.DateTime lastEditStamp,
+            string folderId,
+            string dataURI,
+            global::System.Collections.Generic.IList<string> folderIds,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> resources,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> excerpts,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> descriptors,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> tags);
+        partial void ProcessMemoUpdateMemoResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMemoUpdateMemoResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// UpdateMemo.
         /// </summary>

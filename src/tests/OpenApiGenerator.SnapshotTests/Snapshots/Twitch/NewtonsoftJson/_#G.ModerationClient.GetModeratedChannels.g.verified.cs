@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ModerationClient
     {
+        partial void PrepareGetModeratedChannelsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string userId,
+            ref string after,
+            ref int first);
+        partial void PrepareGetModeratedChannelsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string userId,
+            string after,
+            int first);
+        partial void ProcessGetModeratedChannelsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetModeratedChannelsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets a list of channels that the specified user has moderator privileges in.<br/>
         /// Gets a list of channels that the specified user has moderator privileges in.<br/>

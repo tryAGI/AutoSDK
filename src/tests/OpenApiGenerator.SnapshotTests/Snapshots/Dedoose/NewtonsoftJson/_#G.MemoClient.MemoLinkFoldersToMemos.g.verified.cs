@@ -7,6 +7,27 @@ namespace G
 {
     public partial class MemoClient
     {
+        partial void PrepareMemoLinkFoldersToMemosArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            global::System.Collections.Generic.IList<string> folderIds,
+            global::System.Collections.Generic.IList<string> memoIds);
+        partial void PrepareMemoLinkFoldersToMemosRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            global::System.Collections.Generic.IList<string> folderIds,
+            global::System.Collections.Generic.IList<string> memoIds);
+        partial void ProcessMemoLinkFoldersToMemosResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMemoLinkFoldersToMemosResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// LinkFoldersToMemos.
         /// </summary>

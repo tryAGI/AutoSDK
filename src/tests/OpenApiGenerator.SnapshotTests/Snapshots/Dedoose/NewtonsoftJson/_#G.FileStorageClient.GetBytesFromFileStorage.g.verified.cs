@@ -6,6 +6,23 @@ namespace G
 {
     public partial class FileStorageClient
     {
+        partial void PrepareGetBytesFromFileStorageArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string dataPath);
+        partial void PrepareGetBytesFromFileStorageRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string dataPath);
+        partial void ProcessGetBytesFromFileStorageResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetBytesFromFileStorageResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Returns file data by a data path.
         /// </summary>

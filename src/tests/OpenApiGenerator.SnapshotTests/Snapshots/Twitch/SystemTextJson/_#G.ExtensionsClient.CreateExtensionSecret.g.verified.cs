@@ -6,6 +6,23 @@ namespace G
 {
     public partial class ExtensionsClient
     {
+        partial void PrepareCreateExtensionSecretArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string extensionId,
+            ref int delay);
+        partial void PrepareCreateExtensionSecretRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string extensionId,
+            int delay);
+        partial void ProcessCreateExtensionSecretResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreateExtensionSecretResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Creates a shared secret used to sign and verify JWT tokens.<br/>
         /// Creates a shared secret used to sign and verify JWT tokens. Creating a new secret removes the current secrets from service. Use this function only when you are ready to use the new secret it returns.<br/>

@@ -6,6 +6,31 @@ namespace G
 {
     public partial class GuestStarClient
     {
+        partial void PrepareDeleteGuestStarSlotArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref string moderatorId,
+            ref string sessionId,
+            ref string guestId,
+            ref string slotId,
+            ref string shouldReinviteGuest);
+        partial void PrepareDeleteGuestStarSlotRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            string moderatorId,
+            string sessionId,
+            string guestId,
+            string slotId,
+            string shouldReinviteGuest);
+        partial void ProcessDeleteGuestStarSlotResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDeleteGuestStarSlotResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// BETA Allows a caller to remove a slot assignment from a user participating in an active Guest Star session.<br/>
         /// BETA Allows a caller to remove a slot assignment from a user participating in an active Guest Star session. This revokes their access to the session immediately and disables their access to publish or subscribe to media within the session.<br/>

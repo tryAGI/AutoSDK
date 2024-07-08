@@ -6,6 +6,19 @@ namespace G
 {
     public partial class SingleClient
     {
+        partial void PrepareGetCurrentIpArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareGetCurrentIpRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessGetCurrentIpResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetCurrentIpResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Returns the current IP.<br/>
         /// Returns the current IP.

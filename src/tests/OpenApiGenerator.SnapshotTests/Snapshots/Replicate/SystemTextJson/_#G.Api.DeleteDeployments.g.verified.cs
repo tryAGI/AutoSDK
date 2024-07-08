@@ -6,6 +6,23 @@ namespace G
 {
     public partial class Api
     {
+        partial void PrepareDeleteDeploymentsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string deploymentOwner,
+            ref string deploymentName);
+        partial void PrepareDeleteDeploymentsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string deploymentOwner,
+            string deploymentName);
+        partial void ProcessDeleteDeploymentsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDeleteDeploymentsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Delete a deployment<br/>
         /// Delete a deployment<br/>

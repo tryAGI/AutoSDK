@@ -6,6 +6,33 @@ namespace G
 {
     public partial class AdminClient
     {
+        partial void PrepareAdminUpdateUserGroupArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectIdKey,
+            ref string projectId,
+            ref string id,
+            ref string projectIDL,
+            ref string title,
+            ref string accessListIDL);
+        partial void PrepareAdminUpdateUserGroupRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectIdKey,
+            string projectId,
+            string id,
+            string projectIDL,
+            string title,
+            string accessListIDL);
+        partial void ProcessAdminUpdateUserGroupResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAdminUpdateUserGroupResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// UpdateUserGroup.
         /// </summary>

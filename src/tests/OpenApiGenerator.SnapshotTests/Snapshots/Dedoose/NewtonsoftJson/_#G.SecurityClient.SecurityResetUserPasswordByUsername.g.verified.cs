@@ -6,6 +6,21 @@ namespace G
 {
     public partial class SecurityClient
     {
+        partial void PrepareSecurityResetUserPasswordByUsernameArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string username);
+        partial void PrepareSecurityResetUserPasswordByUsernameRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string username);
+        partial void ProcessSecurityResetUserPasswordByUsernameResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessSecurityResetUserPasswordByUsernameResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// ResetUserPasswordByUsername.
         /// </summary>

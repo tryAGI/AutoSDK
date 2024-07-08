@@ -6,6 +6,33 @@ namespace G
 {
     public partial class UserClient
     {
+        partial void PrepareUserUpdateUserArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string userId,
+            ref string firstName,
+            ref string lastName,
+            ref string phone,
+            ref string email,
+            ref string password);
+        partial void PrepareUserUpdateUserRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string userId,
+            string firstName,
+            string lastName,
+            string phone,
+            string email,
+            string password);
+        partial void ProcessUserUpdateUserResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUserUpdateUserResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// UpdateUser.
         /// </summary>

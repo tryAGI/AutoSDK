@@ -7,6 +7,57 @@ namespace G
 {
     public partial class DataSetClient
     {
+        partial void PrepareDataSetUpdateDataSetArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string id,
+            ref string projectId,
+            ref string projectIdKey,
+            ref string createdById,
+            global::System.DateTime createStamp,
+            ref string title,
+            ref string desciption,
+            global::System.Collections.Generic.IList<string> objectIdLists_IncludedTagIds,
+            global::System.Collections.Generic.IList<string> objectIdLists_IncludedDescriptorIds,
+            global::System.Collections.Generic.IList<string> objectIdLists_IncludedResourceIds,
+            global::System.Collections.Generic.IList<string> objectIdLists_IncludedExcerptIds,
+            global::System.Collections.Generic.IList<string> objectIdLists_IncludedUserIds,
+            global::System.Collections.Generic.IList<string> objectIdLists_ExcludedExcerptIds,
+            ref bool areExcerptsFiltered,
+            ref bool areResourcesFiltered,
+            ref bool areTagsFiltered,
+            ref bool areUsersFiltered,
+            ref bool areDescriptorsFiltered);
+        partial void PrepareDataSetUpdateDataSetRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string id,
+            string projectId,
+            string projectIdKey,
+            string createdById,
+            global::System.DateTime createStamp,
+            string title,
+            string desciption,
+            global::System.Collections.Generic.IList<string> objectIdLists_IncludedTagIds,
+            global::System.Collections.Generic.IList<string> objectIdLists_IncludedDescriptorIds,
+            global::System.Collections.Generic.IList<string> objectIdLists_IncludedResourceIds,
+            global::System.Collections.Generic.IList<string> objectIdLists_IncludedExcerptIds,
+            global::System.Collections.Generic.IList<string> objectIdLists_IncludedUserIds,
+            global::System.Collections.Generic.IList<string> objectIdLists_ExcludedExcerptIds,
+            bool areExcerptsFiltered,
+            bool areResourcesFiltered,
+            bool areTagsFiltered,
+            bool areUsersFiltered,
+            bool areDescriptorsFiltered);
+        partial void ProcessDataSetUpdateDataSetResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDataSetUpdateDataSetResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// UpdateDataSet.
         /// </summary>

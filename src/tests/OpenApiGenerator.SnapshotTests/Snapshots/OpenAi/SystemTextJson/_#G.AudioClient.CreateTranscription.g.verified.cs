@@ -6,6 +6,21 @@ namespace G
 {
     public partial class AudioClient
     {
+        partial void PrepareCreateTranscriptionArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.CreateTranscriptionRequest request);
+        partial void PrepareCreateTranscriptionRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.CreateTranscriptionRequest request);
+        partial void ProcessCreateTranscriptionResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreateTranscriptionResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Transcribes audio into the input language.
         /// </summary>

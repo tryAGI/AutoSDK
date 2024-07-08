@@ -6,6 +6,25 @@ namespace G
 {
     public partial class MigrationsClient
     {
+        partial void PrepareMigrationsListReposForAuthenticatedUserArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref int migrationId,
+            ref int perPage,
+            ref int page);
+        partial void PrepareMigrationsListReposForAuthenticatedUserRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int migrationId,
+            int perPage,
+            int page);
+        partial void ProcessMigrationsListReposForAuthenticatedUserResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMigrationsListReposForAuthenticatedUserResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// List repositories for a user migration<br/>
         /// Lists all the repositories for this user migration.

@@ -6,6 +6,35 @@ namespace G
 {
     public partial class ErrorClient
     {
+        partial void PrepareErrorProcessUIErrorArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string userId,
+            ref string workspace,
+            ref string errorCode,
+            ref string message,
+            ref string currentTarget,
+            ref string stacktrace);
+        partial void PrepareErrorProcessUIErrorRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string userId,
+            string workspace,
+            string errorCode,
+            string message,
+            string currentTarget,
+            string stacktrace);
+        partial void ProcessErrorProcessUIErrorResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessErrorProcessUIErrorResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// ProcessUIError.
         /// </summary>

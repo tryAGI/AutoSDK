@@ -6,6 +6,29 @@ namespace G
 {
     public partial class GuestStarClient
     {
+        partial void PrepareUpdateGuestStarSlotArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref string moderatorId,
+            ref string sessionId,
+            ref string sourceSlotId,
+            ref string destinationSlotId);
+        partial void PrepareUpdateGuestStarSlotRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            string moderatorId,
+            string sessionId,
+            string sourceSlotId,
+            string destinationSlotId);
+        partial void ProcessUpdateGuestStarSlotResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUpdateGuestStarSlotResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// BETA Allows a user to update the assigned slot for a particular user within the active Guest Star session.<br/>
         /// BETA Allows a user to update the assigned slot for a particular user within the active Guest Star session.<br/>

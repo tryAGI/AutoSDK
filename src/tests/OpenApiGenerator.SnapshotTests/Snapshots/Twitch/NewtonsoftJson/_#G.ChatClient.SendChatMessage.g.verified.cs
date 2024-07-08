@@ -6,6 +6,21 @@ namespace G
 {
     public partial class ChatClient
     {
+        partial void PrepareSendChatMessageArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.SendChatMessageBody request);
+        partial void PrepareSendChatMessageRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.SendChatMessageBody request);
+        partial void ProcessSendChatMessageResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessSendChatMessageResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// NEW Sends a message to the broadcaster’s chat room.<br/>
         /// NEW Sends a message to the broadcaster’s chat room.<br/>

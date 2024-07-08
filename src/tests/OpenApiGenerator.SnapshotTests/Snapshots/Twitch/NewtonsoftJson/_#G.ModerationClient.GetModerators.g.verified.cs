@@ -7,6 +7,27 @@ namespace G
 {
     public partial class ModerationClient
     {
+        partial void PrepareGetModeratorsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            global::System.Collections.Generic.IList<string> userId,
+            ref string first,
+            ref string after);
+        partial void PrepareGetModeratorsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            global::System.Collections.Generic.IList<string> userId,
+            string first,
+            string after);
+        partial void ProcessGetModeratorsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetModeratorsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets all users allowed to moderate the broadcaster’s chat room.<br/>
         /// Gets all users allowed to moderate the broadcaster’s chat room.<br/>

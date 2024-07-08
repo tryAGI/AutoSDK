@@ -6,6 +6,19 @@ namespace G
 {
     public partial class SingleClient
     {
+        partial void PrepareGetCurrentOrganizationArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareGetCurrentOrganizationRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessGetCurrentOrganizationResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetCurrentOrganizationResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Returns the current organization.<br/>
         /// Returns the current organization.

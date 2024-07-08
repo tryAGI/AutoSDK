@@ -6,6 +6,21 @@ namespace G
 {
     public partial class ModelsClient
     {
+        partial void PrepareCreateModelArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.CreateModelRequest request);
+        partial void PrepareCreateModelRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.CreateModelRequest request);
+        partial void ProcessCreateModelResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreateModelResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Create a model from a Modelfile.<br/>
         /// It is recommended to set `modelfile` to the content of the Modelfile rather than just set `path`. This is a requirement for remote create. Remote model creation should also create any file blobs, fields such as `FROM` and `ADAPTER`, explicitly with the server using Create a Blob and the value to the path indicated in the response.

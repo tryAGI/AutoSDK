@@ -6,6 +6,29 @@ namespace G
 {
     public partial class FileStorageClient
     {
+        partial void PrepareUploadToFileStorageArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string name,
+            ref string projectId,
+            ref int uploadType,
+            byte[] request);
+        partial void PrepareUploadToFileStorageRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string name,
+            string projectId,
+            int uploadType,
+            byte[] request);
+        partial void ProcessUploadToFileStorageResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUploadToFileStorageResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Returns data path.
         /// </summary>

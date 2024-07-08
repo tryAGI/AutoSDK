@@ -6,6 +6,19 @@ namespace G
 {
     public partial class LoginClient
     {
+        partial void PrepareGetApiV1RsaArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareGetApiV1RsaRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessGetApiV1RsaResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetApiV1RsaResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Returns RSA public information.
         /// </summary>

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class UsersClient
     {
+        partial void PrepareBlockUserArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string targetUserId,
+            ref global::G.BlockUserSourceContext sourceContext,
+            ref global::G.BlockUserReason reason);
+        partial void PrepareBlockUserRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string targetUserId,
+            global::G.BlockUserSourceContext sourceContext,
+            global::G.BlockUserReason reason);
+        partial void ProcessBlockUserResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessBlockUserResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Blocks the specified user from interacting with or having contact with the broadcaster.<br/>
         /// Blocks the specified user from interacting with or having contact with the broadcaster. The user ID in the OAuth token identifies the broadcaster who is blocking the user.<br/>

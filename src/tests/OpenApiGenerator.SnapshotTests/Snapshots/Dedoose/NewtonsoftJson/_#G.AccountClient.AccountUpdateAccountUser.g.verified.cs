@@ -6,6 +6,33 @@ namespace G
 {
     public partial class AccountClient
     {
+        partial void PrepareAccountUpdateAccountUserArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string userId,
+            ref string firstName,
+            ref string lastName,
+            ref string phone,
+            ref string email,
+            ref bool active);
+        partial void PrepareAccountUpdateAccountUserRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string userId,
+            string firstName,
+            string lastName,
+            string phone,
+            string email,
+            bool active);
+        partial void ProcessAccountUpdateAccountUserResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAccountUpdateAccountUserResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// UpdateAccountUser.
         /// </summary>

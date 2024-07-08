@@ -6,6 +6,23 @@ namespace G
 {
     public partial class ChatClient
     {
+        partial void PrepareUpdateUserChatColorArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string userId,
+            ref global::G.UpdateUserChatColorColor color);
+        partial void PrepareUpdateUserChatColorRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string userId,
+            global::G.UpdateUserChatColorColor color);
+        partial void ProcessUpdateUserChatColorResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUpdateUserChatColorResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Updates the color used for the user’s name in chat.<br/>
         /// Updates the color used for the user’s name in chat.<br/>

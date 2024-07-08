@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ChatClient
     {
+        partial void PrepareSendAShoutoutArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string fromBroadcasterId,
+            ref string toBroadcasterId,
+            ref string moderatorId);
+        partial void PrepareSendAShoutoutRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string fromBroadcasterId,
+            string toBroadcasterId,
+            string moderatorId);
+        partial void ProcessSendAShoutoutResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessSendAShoutoutResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Sends a Shoutout to the specified broadcaster.<br/>
         /// Sends a Shoutout to the specified broadcaster. Typically, you send Shoutouts when you or one of your moderators notice another broadcaster in your chat, the other broadcaster is coming up in conversation, or after they raid your broadcast.<br/>

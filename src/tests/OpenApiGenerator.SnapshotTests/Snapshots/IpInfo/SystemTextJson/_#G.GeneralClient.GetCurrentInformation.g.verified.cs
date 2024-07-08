@@ -6,6 +6,19 @@ namespace G
 {
     public partial class GeneralClient
     {
+        partial void PrepareGetCurrentInformationArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareGetCurrentInformationRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessGetCurrentInformationResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetCurrentInformationResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Returns information about the current IP.<br/>
         /// Returns information about the current IP.

@@ -6,6 +6,23 @@ namespace G
 {
     public partial class ExtensionsClient
     {
+        partial void PrepareGetExtensionsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string extensionId,
+            ref string extensionVersion);
+        partial void PrepareGetExtensionsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string extensionId,
+            string extensionVersion);
+        partial void ProcessGetExtensionsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetExtensionsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets information about an extension.<br/>
         /// Gets information about an extension.<br/>

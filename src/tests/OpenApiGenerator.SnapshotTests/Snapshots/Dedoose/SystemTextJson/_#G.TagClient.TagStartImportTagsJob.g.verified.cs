@@ -7,6 +7,25 @@ namespace G
 {
     public partial class TagClient
     {
+        partial void PrepareTagStartImportTagsJobArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            global::System.Collections.Generic.IList<global::G.TagImportVO> tagVOs);
+        partial void PrepareTagStartImportTagsJobRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            global::System.Collections.Generic.IList<global::G.TagImportVO> tagVOs);
+        partial void ProcessTagStartImportTagsJobResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessTagStartImportTagsJobResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StartImportTagsJob.
         /// </summary>

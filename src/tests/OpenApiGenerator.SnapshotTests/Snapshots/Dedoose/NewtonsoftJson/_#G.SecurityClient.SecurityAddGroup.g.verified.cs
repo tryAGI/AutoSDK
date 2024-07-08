@@ -6,6 +6,27 @@ namespace G
 {
     public partial class SecurityClient
     {
+        partial void PrepareSecurityAddGroupArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string title,
+            ref string accessListId);
+        partial void PrepareSecurityAddGroupRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string title,
+            string accessListId);
+        partial void ProcessSecurityAddGroupResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessSecurityAddGroupResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// AddGroup.
         /// </summary>

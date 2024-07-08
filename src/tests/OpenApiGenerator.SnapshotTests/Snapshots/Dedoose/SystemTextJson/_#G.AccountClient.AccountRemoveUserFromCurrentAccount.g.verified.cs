@@ -6,6 +6,23 @@ namespace G
 {
     public partial class AccountClient
     {
+        partial void PrepareAccountRemoveUserFromCurrentAccountArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string userId);
+        partial void PrepareAccountRemoveUserFromCurrentAccountRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string userId);
+        partial void ProcessAccountRemoveUserFromCurrentAccountResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAccountRemoveUserFromCurrentAccountResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// RemoveUserFromCurrentAccount.
         /// </summary>

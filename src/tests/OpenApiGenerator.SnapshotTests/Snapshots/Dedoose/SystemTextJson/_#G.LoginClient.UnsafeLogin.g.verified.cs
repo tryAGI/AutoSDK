@@ -6,6 +6,21 @@ namespace G
 {
     public partial class LoginClient
     {
+        partial void PrepareUnsafeLoginArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.UnsafeLoginRequest request);
+        partial void PrepareUnsafeLoginRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.UnsafeLoginRequest request);
+        partial void ProcessUnsafeLoginResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUnsafeLoginResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Login to Dedoose API use raw password.
         /// </summary>

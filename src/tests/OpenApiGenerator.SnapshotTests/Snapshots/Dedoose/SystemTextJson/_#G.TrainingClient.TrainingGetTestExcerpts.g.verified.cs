@@ -6,6 +6,25 @@ namespace G
 {
     public partial class TrainingClient
     {
+        partial void PrepareTrainingGetTestExcerptsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string testId);
+        partial void PrepareTrainingGetTestExcerptsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string testId);
+        partial void ProcessTrainingGetTestExcerptsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessTrainingGetTestExcerptsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GetTestExcerpts.
         /// </summary>

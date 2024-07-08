@@ -6,6 +6,41 @@ namespace G
 {
     public partial class TrainingClient
     {
+        partial void PrepareTrainingDeleteTestArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectIdKey,
+            ref string id,
+            ref int testType,
+            ref string title,
+            ref string description,
+            global::System.DateTime createdOn,
+            ref string projectId,
+            ref int excerptCount,
+            ref int tagCount,
+            ref string creator);
+        partial void PrepareTrainingDeleteTestRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectIdKey,
+            string id,
+            int testType,
+            string title,
+            string description,
+            global::System.DateTime createdOn,
+            string projectId,
+            int excerptCount,
+            int tagCount,
+            string creator);
+        partial void ProcessTrainingDeleteTestResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessTrainingDeleteTestResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// DeleteTest.
         /// </summary>

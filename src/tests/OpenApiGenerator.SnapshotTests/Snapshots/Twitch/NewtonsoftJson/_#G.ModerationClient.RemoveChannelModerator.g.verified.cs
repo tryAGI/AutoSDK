@@ -6,6 +6,23 @@ namespace G
 {
     public partial class ModerationClient
     {
+        partial void PrepareRemoveChannelModeratorArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref string userId);
+        partial void PrepareRemoveChannelModeratorRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            string userId);
+        partial void ProcessRemoveChannelModeratorResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessRemoveChannelModeratorResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Removes a moderator from the broadcaster’s chat room.<br/>
         /// Removes a moderator from the broadcaster’s chat room.<br/>

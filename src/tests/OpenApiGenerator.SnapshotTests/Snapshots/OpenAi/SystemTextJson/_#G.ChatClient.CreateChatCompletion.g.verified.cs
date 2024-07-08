@@ -6,6 +6,21 @@ namespace G
 {
     public partial class ChatClient
     {
+        partial void PrepareCreateChatCompletionArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.CreateChatCompletionRequest request);
+        partial void PrepareCreateChatCompletionRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.CreateChatCompletionRequest request);
+        partial void ProcessCreateChatCompletionResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreateChatCompletionResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Creates a model response for the given chat conversation.
         /// </summary>

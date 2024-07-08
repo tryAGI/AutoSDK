@@ -6,6 +6,23 @@ namespace G
 {
     public partial class VectorStoresClient
     {
+        partial void PrepareDeleteVectorStoreFileArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string vectorStoreId,
+            ref string fileId);
+        partial void PrepareDeleteVectorStoreFileRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string vectorStoreId,
+            string fileId);
+        partial void ProcessDeleteVectorStoreFileResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDeleteVectorStoreFileResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Delete a vector store file. This will remove the file from the vector store but the file itself will not be deleted. To delete the file, use the [delete file](/docs/api-reference/files/delete) endpoint.
         /// </summary>

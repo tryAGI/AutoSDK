@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ResourceClient
     {
+        partial void PrepareResourceStartExportPDFSwfJobArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string resourceId);
+        partial void PrepareResourceStartExportPDFSwfJobRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string resourceId);
+        partial void ProcessResourceStartExportPDFSwfJobResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessResourceStartExportPDFSwfJobResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StartExportPDFSwfJob.
         /// </summary>

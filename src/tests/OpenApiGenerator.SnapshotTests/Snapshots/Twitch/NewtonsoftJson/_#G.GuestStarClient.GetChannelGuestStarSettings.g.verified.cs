@@ -6,6 +6,23 @@ namespace G
 {
     public partial class GuestStarClient
     {
+        partial void PrepareGetChannelGuestStarSettingsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref string moderatorId);
+        partial void PrepareGetChannelGuestStarSettingsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            string moderatorId);
+        partial void ProcessGetChannelGuestStarSettingsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetChannelGuestStarSettingsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// BETA Gets the channel settings for configuration of the Guest Star feature for a particular host.<br/>
         /// BETA Gets the channel settings for configuration of the Guest Star feature for a particular host.<br/>

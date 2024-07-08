@@ -7,6 +7,37 @@ namespace G
 {
     public partial class MemoClient
     {
+        partial void PrepareMemoAddMemoArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string title,
+            ref string dataPath,
+            global::System.Collections.Generic.IList<string> folderIds,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> resources,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> excerpts,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> descriptors,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> tags);
+        partial void PrepareMemoAddMemoRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string title,
+            string dataPath,
+            global::System.Collections.Generic.IList<string> folderIds,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> resources,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> excerpts,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> descriptors,
+            global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> tags);
+        partial void ProcessMemoAddMemoResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMemoAddMemoResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// AddMemo.
         /// </summary>

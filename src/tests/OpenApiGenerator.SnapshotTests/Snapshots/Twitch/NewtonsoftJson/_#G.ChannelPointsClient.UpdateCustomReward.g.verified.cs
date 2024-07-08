@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ChannelPointsClient
     {
+        partial void PrepareUpdateCustomRewardArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref string id,
+            global::G.UpdateCustomRewardBody request);
+        partial void PrepareUpdateCustomRewardRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            string id,
+            global::G.UpdateCustomRewardBody request);
+        partial void ProcessUpdateCustomRewardResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUpdateCustomRewardResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Updates a custom reward.<br/>
         /// Updates a custom reward. The app used to create the reward is the only app that may update the reward.<br/>

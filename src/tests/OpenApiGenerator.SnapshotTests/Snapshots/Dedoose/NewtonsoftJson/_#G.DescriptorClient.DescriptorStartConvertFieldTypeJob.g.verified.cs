@@ -6,6 +6,29 @@ namespace G
 {
     public partial class DescriptorClient
     {
+        partial void PrepareDescriptorStartConvertFieldTypeJobArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string setId,
+            ref string fieldId,
+            ref int newFieldType);
+        partial void PrepareDescriptorStartConvertFieldTypeJobRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string setId,
+            string fieldId,
+            int newFieldType);
+        partial void ProcessDescriptorStartConvertFieldTypeJobResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDescriptorStartConvertFieldTypeJobResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StartConvertFieldTypeJob.
         /// </summary>

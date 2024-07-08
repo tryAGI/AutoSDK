@@ -6,6 +6,21 @@ namespace G
 {
     public partial class AssistantsClient
     {
+        partial void PrepareDeleteThreadArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string threadId);
+        partial void PrepareDeleteThreadRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string threadId);
+        partial void ProcessDeleteThreadResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDeleteThreadResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Delete a thread.
         /// </summary>

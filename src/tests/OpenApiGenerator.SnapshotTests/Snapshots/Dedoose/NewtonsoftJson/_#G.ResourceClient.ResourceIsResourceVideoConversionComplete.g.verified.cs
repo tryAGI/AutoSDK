@@ -6,6 +6,23 @@ namespace G
 {
     public partial class ResourceClient
     {
+        partial void PrepareResourceIsResourceVideoConversionCompleteArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string jobId);
+        partial void PrepareResourceIsResourceVideoConversionCompleteRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string jobId);
+        partial void ProcessResourceIsResourceVideoConversionCompleteResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessResourceIsResourceVideoConversionCompleteResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// IsResourceVideoConversionComplete.
         /// </summary>

@@ -6,6 +6,23 @@ namespace G
 {
     public partial class AdminClient
     {
+        partial void PrepareAdminStartAddDemoProjectArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string userId);
+        partial void PrepareAdminStartAddDemoProjectRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string userId);
+        partial void ProcessAdminStartAddDemoProjectResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAdminStartAddDemoProjectResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StartAddDemoProject.
         /// </summary>

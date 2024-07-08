@@ -6,6 +6,25 @@ namespace G
 {
     public partial class FileClient
     {
+        partial void PrepareFileStartConvertPDF2SwfArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string pdfURI);
+        partial void PrepareFileStartConvertPDF2SwfRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string pdfURI);
+        partial void ProcessFileStartConvertPDF2SwfResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessFileStartConvertPDF2SwfResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StartConvertPDF2Swf.
         /// </summary>

@@ -7,6 +7,25 @@ namespace G
 {
     public partial class ChannelPointsClient
     {
+        partial void PrepareGetCustomRewardArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            global::System.Collections.Generic.IList<string> id,
+            ref bool onlyManageableRewards);
+        partial void PrepareGetCustomRewardRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            global::System.Collections.Generic.IList<string> id,
+            bool onlyManageableRewards);
+        partial void ProcessGetCustomRewardResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetCustomRewardResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets a list of custom rewards that the specified broadcaster created.<br/>
         /// Gets a list of custom rewards that the specified broadcaster created.<br/>

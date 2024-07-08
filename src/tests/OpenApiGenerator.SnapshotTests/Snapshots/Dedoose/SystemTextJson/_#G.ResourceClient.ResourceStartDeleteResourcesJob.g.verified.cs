@@ -7,6 +7,25 @@ namespace G
 {
     public partial class ResourceClient
     {
+        partial void PrepareResourceStartDeleteResourcesJobArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            global::System.Collections.Generic.IList<string> resourceIds);
+        partial void PrepareResourceStartDeleteResourcesJobRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            global::System.Collections.Generic.IList<string> resourceIds);
+        partial void ProcessResourceStartDeleteResourcesJobResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessResourceStartDeleteResourcesJobResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StartDeleteResourcesJob.
         /// </summary>

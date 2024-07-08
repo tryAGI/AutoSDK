@@ -6,6 +6,29 @@ namespace G
 {
     public partial class ModerationClient
     {
+        partial void PrepareResolveUnbanRequestsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref string moderatorId,
+            ref string unbanRequestId,
+            ref string status,
+            ref string resolutionText);
+        partial void PrepareResolveUnbanRequestsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            string moderatorId,
+            string unbanRequestId,
+            string status,
+            string resolutionText);
+        partial void ProcessResolveUnbanRequestsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessResolveUnbanRequestsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// NEW Resolves an unban request by approving or denying it.<br/>
         /// NEW Resolves an unban request by approving or denying it.<br/>

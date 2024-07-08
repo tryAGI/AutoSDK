@@ -6,6 +6,21 @@ namespace G
 {
     public partial class BatchClient
     {
+        partial void PrepareRetrieveBatchArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string batchId);
+        partial void PrepareRetrieveBatchRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string batchId);
+        partial void ProcessRetrieveBatchResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessRetrieveBatchResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Retrieves a batch.
         /// </summary>

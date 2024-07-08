@@ -6,6 +6,29 @@ namespace G
 {
     public partial class ResourceClient
     {
+        partial void PrepareResourceCloneDocumentArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string resourceId,
+            ref bool cloneExcerpts,
+            ref bool cloneTagApps);
+        partial void PrepareResourceCloneDocumentRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string resourceId,
+            bool cloneExcerpts,
+            bool cloneTagApps);
+        partial void ProcessResourceCloneDocumentResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessResourceCloneDocumentResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// CloneDocument.
         /// </summary>

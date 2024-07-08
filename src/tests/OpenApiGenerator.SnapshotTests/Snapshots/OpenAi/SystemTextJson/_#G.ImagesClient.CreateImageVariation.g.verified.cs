@@ -6,6 +6,21 @@ namespace G
 {
     public partial class ImagesClient
     {
+        partial void PrepareCreateImageVariationArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.CreateImageVariationRequest request);
+        partial void PrepareCreateImageVariationRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.CreateImageVariationRequest request);
+        partial void ProcessCreateImageVariationResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreateImageVariationResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Creates a variation of a given image.
         /// </summary>

@@ -6,6 +6,21 @@ namespace G
 {
     public partial class ModelsClient
     {
+        partial void PreparePullModelArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.PullModelRequest request);
+        partial void PreparePullModelRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.PullModelRequest request);
+        partial void ProcessPullModelResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessPullModelResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Download a model from the ollama library.<br/>
         /// Cancelled pulls are resumed from where they left off, and multiple calls will share the same download progress.

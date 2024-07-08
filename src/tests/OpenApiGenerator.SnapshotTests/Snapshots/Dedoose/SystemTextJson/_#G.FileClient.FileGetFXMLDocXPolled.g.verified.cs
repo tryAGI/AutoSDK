@@ -6,6 +6,25 @@ namespace G
 {
     public partial class FileClient
     {
+        partial void PrepareFileGetFXMLDocXPolledArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string fileURL);
+        partial void PrepareFileGetFXMLDocXPolledRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string fileURL);
+        partial void ProcessFileGetFXMLDocXPolledResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessFileGetFXMLDocXPolledResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GetFXMLDocXPolled.
         /// </summary>

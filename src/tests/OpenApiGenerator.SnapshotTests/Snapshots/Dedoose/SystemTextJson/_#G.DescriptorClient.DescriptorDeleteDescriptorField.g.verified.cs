@@ -6,6 +6,41 @@ namespace G
 {
     public partial class DescriptorClient
     {
+        partial void PrepareDescriptorDeleteDescriptorFieldArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectIdKey,
+            ref string projectId,
+            ref string id,
+            ref string projectIDL,
+            ref string descriptorSetIDL,
+            ref int type,
+            ref string title,
+            ref string description,
+            ref bool isDynamicField,
+            ref int sortOrder);
+        partial void PrepareDescriptorDeleteDescriptorFieldRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectIdKey,
+            string projectId,
+            string id,
+            string projectIDL,
+            string descriptorSetIDL,
+            int type,
+            string title,
+            string description,
+            bool isDynamicField,
+            int sortOrder);
+        partial void ProcessDescriptorDeleteDescriptorFieldResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDescriptorDeleteDescriptorFieldResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// DeleteDescriptorField.
         /// </summary>

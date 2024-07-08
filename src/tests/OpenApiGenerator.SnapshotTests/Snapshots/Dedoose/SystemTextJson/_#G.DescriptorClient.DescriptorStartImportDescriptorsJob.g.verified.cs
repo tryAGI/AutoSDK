@@ -7,6 +7,29 @@ namespace G
 {
     public partial class DescriptorClient
     {
+        partial void PrepareDescriptorStartImportDescriptorsJobArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string userId,
+            ref string setId,
+            global::System.Collections.Generic.IList<global::G.DescriptorInfo> descriptorInfos);
+        partial void PrepareDescriptorStartImportDescriptorsJobRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string userId,
+            string setId,
+            global::System.Collections.Generic.IList<global::G.DescriptorInfo> descriptorInfos);
+        partial void ProcessDescriptorStartImportDescriptorsJobResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDescriptorStartImportDescriptorsJobResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StartImportDescriptorsJob.
         /// </summary>

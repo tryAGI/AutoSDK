@@ -6,6 +6,21 @@ namespace G
 {
     public partial class ModerationClient
     {
+        partial void PrepareManageHeldAutomodMessagesArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.ManageHeldAutoModMessagesBody request);
+        partial void PrepareManageHeldAutomodMessagesRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.ManageHeldAutoModMessagesBody request);
+        partial void ProcessManageHeldAutomodMessagesResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessManageHeldAutomodMessagesResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Allow or deny the message that AutoMod flagged for review.<br/>
         /// Allow or deny the message that AutoMod flagged for review. For information about AutoMod, see [How to Use AutoMod](https://help.twitch.tv/s/article/how-to-use-automod).<br/>

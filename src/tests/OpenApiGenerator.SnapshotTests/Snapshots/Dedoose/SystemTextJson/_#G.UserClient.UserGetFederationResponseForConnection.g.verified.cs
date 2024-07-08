@@ -6,6 +6,23 @@ namespace G
 {
     public partial class UserClient
     {
+        partial void PrepareUserGetFederationResponseForConnectionArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string connectionKey);
+        partial void PrepareUserGetFederationResponseForConnectionRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string connectionKey);
+        partial void ProcessUserGetFederationResponseForConnectionResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUserGetFederationResponseForConnectionResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GetFederationResponseForConnection.
         /// </summary>

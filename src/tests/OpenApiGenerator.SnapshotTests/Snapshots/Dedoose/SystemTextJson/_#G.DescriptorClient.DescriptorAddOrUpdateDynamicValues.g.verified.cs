@@ -7,6 +7,31 @@ namespace G
 {
     public partial class DescriptorClient
     {
+        partial void PrepareDescriptorAddOrUpdateDynamicValuesArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string resourceId,
+            ref string setId,
+            ref string descriptorId,
+            global::System.Collections.Generic.IList<global::G.DynamicDescriptorValueDTO> values);
+        partial void PrepareDescriptorAddOrUpdateDynamicValuesRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string resourceId,
+            string setId,
+            string descriptorId,
+            global::System.Collections.Generic.IList<global::G.DynamicDescriptorValueDTO> values);
+        partial void ProcessDescriptorAddOrUpdateDynamicValuesResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessDescriptorAddOrUpdateDynamicValuesResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// AddOrUpdateDynamicValues.
         /// </summary>

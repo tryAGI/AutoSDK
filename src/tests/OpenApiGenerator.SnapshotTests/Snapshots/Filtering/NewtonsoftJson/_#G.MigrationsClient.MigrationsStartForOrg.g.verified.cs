@@ -6,6 +6,23 @@ namespace G
 {
     public partial class MigrationsClient
     {
+        partial void PrepareMigrationsStartForOrgArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string org,
+            global::G.MigrationsStartForOrgRequest request);
+        partial void PrepareMigrationsStartForOrgRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string org,
+            global::G.MigrationsStartForOrgRequest request);
+        partial void ProcessMigrationsStartForOrgResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMigrationsStartForOrgResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Start an organization migration<br/>
         /// Initiates the generation of a migration archive.

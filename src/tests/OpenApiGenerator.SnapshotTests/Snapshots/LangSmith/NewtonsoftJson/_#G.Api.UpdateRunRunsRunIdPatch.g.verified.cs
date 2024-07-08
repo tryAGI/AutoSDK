@@ -6,6 +6,23 @@ namespace G
 {
     public partial class Api
     {
+        partial void PrepareUpdateRunRunsRunIdPatchArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string runId,
+            global::G.RunUpdateSchemaExtended request);
+        partial void PrepareUpdateRunRunsRunIdPatchRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string runId,
+            global::G.RunUpdateSchemaExtended request);
+        partial void ProcessUpdateRunRunsRunIdPatchResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUpdateRunRunsRunIdPatchResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Update Run<br/>
         /// Update a run.

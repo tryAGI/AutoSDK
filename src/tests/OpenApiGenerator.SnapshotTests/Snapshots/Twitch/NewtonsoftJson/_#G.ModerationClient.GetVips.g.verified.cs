@@ -7,6 +7,27 @@ namespace G
 {
     public partial class ModerationClient
     {
+        partial void PrepareGetVipsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Collections.Generic.IList<string> userId,
+            ref string broadcasterId,
+            ref int first,
+            ref string after);
+        partial void PrepareGetVipsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::System.Collections.Generic.IList<string> userId,
+            string broadcasterId,
+            int first,
+            string after);
+        partial void ProcessGetVipsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetVipsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets a list of the broadcaster’s VIPs.<br/>
         /// Gets a list of the broadcaster’s VIPs.<br/>

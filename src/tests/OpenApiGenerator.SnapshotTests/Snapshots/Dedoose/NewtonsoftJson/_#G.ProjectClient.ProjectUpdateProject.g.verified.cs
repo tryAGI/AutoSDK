@@ -6,6 +6,27 @@ namespace G
 {
     public partial class ProjectClient
     {
+        partial void PrepareProjectUpdateProjectArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string updatedTitle,
+            ref string updatedDescription);
+        partial void PrepareProjectUpdateProjectRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string updatedTitle,
+            string updatedDescription);
+        partial void ProcessProjectUpdateProjectResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessProjectUpdateProjectResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// UpdateProject.
         /// </summary>

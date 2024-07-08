@@ -6,6 +6,27 @@ namespace G
 {
     public partial class UserClient
     {
+        partial void PrepareUserGetFilteredUsersArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string filter,
+            ref int maxResults);
+        partial void PrepareUserGetFilteredUsersRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string filter,
+            int maxResults);
+        partial void ProcessUserGetFilteredUsersResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUserGetFilteredUsersResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GetFilteredUsers.
         /// </summary>

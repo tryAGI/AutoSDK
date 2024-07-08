@@ -6,6 +6,19 @@ namespace G
 {
     public partial class ModelsClient
     {
+        partial void PrepareListModelsArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareListModelsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessListModelsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessListModelsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// List models that are available locally.
         /// </summary>

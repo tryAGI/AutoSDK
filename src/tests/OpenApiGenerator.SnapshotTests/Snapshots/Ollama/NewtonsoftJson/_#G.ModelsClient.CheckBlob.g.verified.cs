@@ -6,6 +6,21 @@ namespace G
 {
     public partial class ModelsClient
     {
+        partial void PrepareCheckBlobArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string digest);
+        partial void PrepareCheckBlobRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string digest);
+        partial void ProcessCheckBlobResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCheckBlobResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Ensures that the file blob used for a FROM or ADAPTER field exists on the server.<br/>
         /// This is checking your Ollama server and not Ollama.ai.

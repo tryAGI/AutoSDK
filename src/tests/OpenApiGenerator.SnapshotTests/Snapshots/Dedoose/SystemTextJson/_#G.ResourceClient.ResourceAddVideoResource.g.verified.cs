@@ -6,6 +6,31 @@ namespace G
 {
     public partial class ResourceClient
     {
+        partial void PrepareResourceAddVideoResourceArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string userId,
+            ref string title,
+            ref string description,
+            ref string videoUploadURL);
+        partial void PrepareResourceAddVideoResourceRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string userId,
+            string title,
+            string description,
+            string videoUploadURL);
+        partial void ProcessResourceAddVideoResourceResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessResourceAddVideoResourceResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// AddVideoResource.
         /// </summary>

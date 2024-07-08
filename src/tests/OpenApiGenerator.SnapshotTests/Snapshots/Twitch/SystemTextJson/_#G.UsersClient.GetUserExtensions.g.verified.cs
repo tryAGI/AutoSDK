@@ -6,6 +6,19 @@ namespace G
 {
     public partial class UsersClient
     {
+        partial void PrepareGetUserExtensionsArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareGetUserExtensionsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessGetUserExtensionsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetUserExtensionsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets a list of all extensions (both active and inactive) that the broadcaster has installed.<br/>
         /// Gets a list of all extensions (both active and inactive) that the broadcaster has installed. The user ID in the access token identifies the broadcaster.<br/>

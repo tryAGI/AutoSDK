@@ -6,6 +6,29 @@ namespace G
 {
     public partial class ScheduleClient
     {
+        partial void PrepareUpdateChannelStreamScheduleArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref bool isVacationEnabled,
+            global::System.DateTime vacationStartTime,
+            global::System.DateTime vacationEndTime,
+            ref string timezone);
+        partial void PrepareUpdateChannelStreamScheduleRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            bool isVacationEnabled,
+            global::System.DateTime vacationStartTime,
+            global::System.DateTime vacationEndTime,
+            string timezone);
+        partial void ProcessUpdateChannelStreamScheduleResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUpdateChannelStreamScheduleResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Updates the broadcaster’s schedule settings, such as scheduling a vacation.<br/>
         /// Updates the broadcaster’s schedule settings, such as scheduling a vacation.<br/>

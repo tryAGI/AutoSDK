@@ -6,6 +6,19 @@ namespace G
 {
     public partial class ExtensionsClient
     {
+        partial void PrepareGetExtensionSecretsArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareGetExtensionSecretsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessGetExtensionSecretsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetExtensionSecretsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets an extension’s list of shared secrets.<br/>
         /// Gets an extension’s list of shared secrets.<br/>

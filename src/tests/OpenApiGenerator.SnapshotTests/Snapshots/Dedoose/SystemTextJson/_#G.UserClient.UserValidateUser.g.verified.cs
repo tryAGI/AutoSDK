@@ -6,6 +6,27 @@ namespace G
 {
     public partial class UserClient
     {
+        partial void PrepareUserValidateUserArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string username,
+            ref string passSalt,
+            ref string connectionKey);
+        partial void PrepareUserValidateUserRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string username,
+            string passSalt,
+            string connectionKey);
+        partial void ProcessUserValidateUserResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUserValidateUserResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// ValidateUser.
         /// </summary>

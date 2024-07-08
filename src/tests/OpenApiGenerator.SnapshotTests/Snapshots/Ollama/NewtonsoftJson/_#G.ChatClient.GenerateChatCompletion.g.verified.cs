@@ -6,6 +6,21 @@ namespace G
 {
     public partial class ChatClient
     {
+        partial void PrepareGenerateChatCompletionArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.GenerateChatCompletionRequest request);
+        partial void PrepareGenerateChatCompletionRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.GenerateChatCompletionRequest request);
+        partial void ProcessGenerateChatCompletionResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGenerateChatCompletionResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Generate the next message in a chat with a provided model.<br/>
         /// This is a streaming endpoint, so there will be a series of responses. The final response object will include statistics and additional data from the request.

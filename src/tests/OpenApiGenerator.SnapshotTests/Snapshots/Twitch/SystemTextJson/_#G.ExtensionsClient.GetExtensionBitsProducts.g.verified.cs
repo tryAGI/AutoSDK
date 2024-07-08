@@ -6,6 +6,21 @@ namespace G
 {
     public partial class ExtensionsClient
     {
+        partial void PrepareGetExtensionBitsProductsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref bool shouldIncludeAll);
+        partial void PrepareGetExtensionBitsProductsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            bool shouldIncludeAll);
+        partial void ProcessGetExtensionBitsProductsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetExtensionBitsProductsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets the list of Bits products that belongs to the extension.<br/>
         /// Gets the list of Bits products that belongs to the extension. The client ID in the app access token identifies the extension.<br/>

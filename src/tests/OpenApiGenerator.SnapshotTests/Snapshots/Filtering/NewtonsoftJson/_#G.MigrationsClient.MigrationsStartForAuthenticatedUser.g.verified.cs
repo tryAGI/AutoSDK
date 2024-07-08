@@ -6,6 +6,21 @@ namespace G
 {
     public partial class MigrationsClient
     {
+        partial void PrepareMigrationsStartForAuthenticatedUserArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.MigrationsStartForAuthenticatedUserRequest request);
+        partial void PrepareMigrationsStartForAuthenticatedUserRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.MigrationsStartForAuthenticatedUserRequest request);
+        partial void ProcessMigrationsStartForAuthenticatedUserResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMigrationsStartForAuthenticatedUserResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Start a user migration<br/>
         /// Initiates the generation of a user migration archive.

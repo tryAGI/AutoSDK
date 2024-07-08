@@ -6,6 +6,21 @@ namespace G
 {
     public partial class UsersClient
     {
+        partial void PrepareUpdateUserExtensionsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.UpdateUserExtensionsBody request);
+        partial void PrepareUpdateUserExtensionsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.UpdateUserExtensionsBody request);
+        partial void ProcessUpdateUserExtensionsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUpdateUserExtensionsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Updates an installed extension’s information.<br/>
         /// Updates an installed extension’s information. You can update the extension’s activation state, ID, and version number. The user ID in the access token identifies the broadcaster whose extensions you’re updating.<br/>

@@ -6,6 +6,23 @@ namespace G
 {
     public partial class ModerationClient
     {
+        partial void PrepareRemoveChannelVipArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string userId,
+            ref string broadcasterId);
+        partial void PrepareRemoveChannelVipRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string userId,
+            string broadcasterId);
+        partial void ProcessRemoveChannelVipResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessRemoveChannelVipResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Removes the specified user as a VIP in the broadcaster’s channel.<br/>
         /// Removes the specified user as a VIP in the broadcaster’s channel.<br/>

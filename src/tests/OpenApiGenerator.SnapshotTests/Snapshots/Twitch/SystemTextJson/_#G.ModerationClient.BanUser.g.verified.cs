@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ModerationClient
     {
+        partial void PrepareBanUserArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            ref string moderatorId,
+            global::G.BanUserBody request);
+        partial void PrepareBanUserRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            string moderatorId,
+            global::G.BanUserBody request);
+        partial void ProcessBanUserResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessBanUserResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Bans a user from participating in a broadcaster’s chat room or puts them in a timeout.<br/>
         /// Bans a user from participating in the specified broadcaster’s chat room or puts them in a timeout.<br/>

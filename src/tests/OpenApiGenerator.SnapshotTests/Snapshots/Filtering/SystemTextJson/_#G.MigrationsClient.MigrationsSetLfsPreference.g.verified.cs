@@ -6,6 +6,25 @@ namespace G
 {
     public partial class MigrationsClient
     {
+        partial void PrepareMigrationsSetLfsPreferenceArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string owner,
+            ref string repo,
+            global::G.MigrationsSetLfsPreferenceRequest request);
+        partial void PrepareMigrationsSetLfsPreferenceRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string owner,
+            string repo,
+            global::G.MigrationsSetLfsPreferenceRequest request);
+        partial void ProcessMigrationsSetLfsPreferenceResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMigrationsSetLfsPreferenceResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Update Git LFS preference<br/>
         /// You can import repositories from Subversion, Mercurial, and TFS that include files larger than 100MB. This ability<br/>

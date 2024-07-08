@@ -7,6 +7,27 @@ namespace G
 {
     public partial class PollsClient
     {
+        partial void PrepareGetPollsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string broadcasterId,
+            global::System.Collections.Generic.IList<string> id,
+            ref string first,
+            ref string after);
+        partial void PrepareGetPollsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string broadcasterId,
+            global::System.Collections.Generic.IList<string> id,
+            string first,
+            string after);
+        partial void ProcessGetPollsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetPollsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets a list of polls that the broadcaster created.<br/>
         /// Gets a list of polls that the broadcaster created.<br/>

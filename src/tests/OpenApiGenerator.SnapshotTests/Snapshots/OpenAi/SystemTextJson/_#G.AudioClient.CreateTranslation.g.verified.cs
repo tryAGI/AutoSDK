@@ -6,6 +6,21 @@ namespace G
 {
     public partial class AudioClient
     {
+        partial void PrepareCreateTranslationArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.CreateTranslationRequest request);
+        partial void PrepareCreateTranslationRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.CreateTranslationRequest request);
+        partial void ProcessCreateTranslationResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreateTranslationResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Translates audio into English.
         /// </summary>

@@ -7,6 +7,35 @@ namespace G
 {
     public partial class StreamsClient
     {
+        partial void PrepareGetStreamsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Collections.Generic.IList<string> userId,
+            global::System.Collections.Generic.IList<string> userLogin,
+            global::System.Collections.Generic.IList<string> gameId,
+            ref global::G.GetStreamsType type,
+            global::System.Collections.Generic.IList<string> language,
+            ref int first,
+            ref string before,
+            ref string after);
+        partial void PrepareGetStreamsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::System.Collections.Generic.IList<string> userId,
+            global::System.Collections.Generic.IList<string> userLogin,
+            global::System.Collections.Generic.IList<string> gameId,
+            global::G.GetStreamsType type,
+            global::System.Collections.Generic.IList<string> language,
+            int first,
+            string before,
+            string after);
+        partial void ProcessGetStreamsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetStreamsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets a list of all streams.<br/>
         /// Gets a list of all streams. The list is in descending order by the number of viewers watching the stream. Because viewers come and go during a stream, it’s possible to find duplicate or missing streams in the list as you page through the results.<br/>

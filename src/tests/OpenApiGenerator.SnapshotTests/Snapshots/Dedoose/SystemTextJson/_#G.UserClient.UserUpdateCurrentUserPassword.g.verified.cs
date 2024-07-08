@@ -6,6 +6,25 @@ namespace G
 {
     public partial class UserClient
     {
+        partial void PrepareUserUpdateCurrentUserPasswordArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string userId,
+            ref string encryptedPass);
+        partial void PrepareUserUpdateCurrentUserPasswordRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string userId,
+            string encryptedPass);
+        partial void ProcessUserUpdateCurrentUserPasswordResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUserUpdateCurrentUserPasswordResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// UpdateCurrentUserPassword.
         /// </summary>

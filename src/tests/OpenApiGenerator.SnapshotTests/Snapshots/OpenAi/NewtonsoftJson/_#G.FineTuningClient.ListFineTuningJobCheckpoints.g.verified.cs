@@ -6,6 +6,25 @@ namespace G
 {
     public partial class FineTuningClient
     {
+        partial void PrepareListFineTuningJobCheckpointsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string fineTuningJobId,
+            ref string after,
+            ref int limit);
+        partial void PrepareListFineTuningJobCheckpointsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string fineTuningJobId,
+            string after,
+            int limit);
+        partial void ProcessListFineTuningJobCheckpointsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessListFineTuningJobCheckpointsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// List checkpoints for a fine-tuning job.
         /// </summary>

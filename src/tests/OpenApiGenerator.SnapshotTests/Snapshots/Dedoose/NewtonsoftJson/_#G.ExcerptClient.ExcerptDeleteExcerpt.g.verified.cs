@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ExcerptClient
     {
+        partial void PrepareExcerptDeleteExcerptArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string excerptId);
+        partial void PrepareExcerptDeleteExcerptRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string excerptId);
+        partial void ProcessExcerptDeleteExcerptResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessExcerptDeleteExcerptResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// DeleteExcerpt.
         /// </summary>

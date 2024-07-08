@@ -6,6 +6,41 @@ namespace G
 {
     public partial class MemoClient
     {
+        partial void PrepareMemoLinkObjectArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string memoId,
+            ref string id1,
+            ref int position1,
+            ref string id2,
+            ref int position2,
+            ref string id3,
+            ref int position3,
+            ref string id4,
+            ref int position4);
+        partial void PrepareMemoLinkObjectRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string memoId,
+            string id1,
+            int position1,
+            string id2,
+            int position2,
+            string id3,
+            int position3,
+            string id4,
+            int position4);
+        partial void ProcessMemoLinkObjectResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMemoLinkObjectResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// LinkObject.
         /// </summary>

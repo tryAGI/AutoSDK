@@ -6,6 +6,25 @@ namespace G
 {
     public partial class UserClient
     {
+        partial void PrepareUserRegisterConnectionArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string userId,
+            ref string connectionKey);
+        partial void PrepareUserRegisterConnectionRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string userId,
+            string connectionKey);
+        partial void ProcessUserRegisterConnectionResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUserRegisterConnectionResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// RegisterConnection.
         /// </summary>

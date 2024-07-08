@@ -6,6 +6,27 @@ namespace G
 {
     public partial class VectorStoresClient
     {
+        partial void PrepareListVectorStoresArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref int limit,
+            ref global::G.ListVectorStoresOrder order,
+            ref string after,
+            ref string before);
+        partial void PrepareListVectorStoresRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int limit,
+            global::G.ListVectorStoresOrder order,
+            string after,
+            string before);
+        partial void ProcessListVectorStoresResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessListVectorStoresResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Returns a list of vector stores.
         /// </summary>

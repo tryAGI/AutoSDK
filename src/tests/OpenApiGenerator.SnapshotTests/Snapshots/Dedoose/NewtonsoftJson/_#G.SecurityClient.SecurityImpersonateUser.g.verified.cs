@@ -6,6 +6,25 @@ namespace G
 {
     public partial class SecurityClient
     {
+        partial void PrepareSecurityImpersonateUserArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string username,
+            ref string email);
+        partial void PrepareSecurityImpersonateUserRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string username,
+            string email);
+        partial void ProcessSecurityImpersonateUserResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessSecurityImpersonateUserResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// ImpersonateUser.
         /// </summary>

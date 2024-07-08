@@ -6,6 +6,27 @@ namespace G
 {
     public partial class ExcerptClient
     {
+        partial void PrepareExcerptGetExcerptsByProjectIdArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref int page,
+            ref int pageSize);
+        partial void PrepareExcerptGetExcerptsByProjectIdRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            int page,
+            int pageSize);
+        partial void ProcessExcerptGetExcerptsByProjectIdResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessExcerptGetExcerptsByProjectIdResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GetExcerptsByProjectId.
         /// </summary>

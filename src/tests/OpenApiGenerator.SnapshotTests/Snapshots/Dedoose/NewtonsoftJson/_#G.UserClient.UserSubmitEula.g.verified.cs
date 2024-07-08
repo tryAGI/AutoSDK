@@ -6,6 +6,23 @@ namespace G
 {
     public partial class UserClient
     {
+        partial void PrepareUserSubmitEulaArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string userId);
+        partial void PrepareUserSubmitEulaRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string userId);
+        partial void ProcessUserSubmitEulaResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUserSubmitEulaResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// SubmitEula.
         /// </summary>

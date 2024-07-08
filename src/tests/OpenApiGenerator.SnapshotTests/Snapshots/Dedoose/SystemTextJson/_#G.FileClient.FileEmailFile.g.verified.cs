@@ -6,6 +6,29 @@ namespace G
 {
     public partial class FileClient
     {
+        partial void PrepareFileEmailFileArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string fileURI,
+            ref string attachmentFileName,
+            ref string emailAddress,
+            ref string subject);
+        partial void PrepareFileEmailFileRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string fileURI,
+            string attachmentFileName,
+            string emailAddress,
+            string subject);
+        partial void ProcessFileEmailFileResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessFileEmailFileResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// EmailFile.
         /// </summary>

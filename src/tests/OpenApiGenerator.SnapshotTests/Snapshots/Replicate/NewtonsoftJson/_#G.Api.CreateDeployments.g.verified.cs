@@ -6,6 +6,21 @@ namespace G
 {
     public partial class Api
     {
+        partial void PrepareCreateDeploymentsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.CreateDeploymentsRequest request);
+        partial void PrepareCreateDeploymentsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.CreateDeploymentsRequest request);
+        partial void ProcessCreateDeploymentsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreateDeploymentsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Create a deployment<br/>
         /// Create a new deployment:<br/>

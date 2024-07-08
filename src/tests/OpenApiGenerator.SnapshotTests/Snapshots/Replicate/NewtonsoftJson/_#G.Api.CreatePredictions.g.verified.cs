@@ -6,6 +6,21 @@ namespace G
 {
     public partial class Api
     {
+        partial void PrepareCreatePredictionsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.VersionPredictionRequest request);
+        partial void PrepareCreatePredictionsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.VersionPredictionRequest request);
+        partial void ProcessCreatePredictionsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreatePredictionsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Create a prediction<br/>
         /// Start a new prediction for the model version and inputs you provide.<br/>

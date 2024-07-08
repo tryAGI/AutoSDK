@@ -6,6 +6,25 @@ namespace G
 {
     public partial class MemoClient
     {
+        partial void PrepareMemoStartSearchMemosJobArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string searchText);
+        partial void PrepareMemoStartSearchMemosJobRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string searchText);
+        partial void ProcessMemoStartSearchMemosJobResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMemoStartSearchMemosJobResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StartSearchMemosJob.
         /// </summary>

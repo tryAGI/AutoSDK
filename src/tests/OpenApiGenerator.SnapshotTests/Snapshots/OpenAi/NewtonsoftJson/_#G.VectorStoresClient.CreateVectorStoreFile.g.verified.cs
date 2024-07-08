@@ -6,6 +6,23 @@ namespace G
 {
     public partial class VectorStoresClient
     {
+        partial void PrepareCreateVectorStoreFileArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string vectorStoreId,
+            global::G.CreateVectorStoreFileRequest request);
+        partial void PrepareCreateVectorStoreFileRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string vectorStoreId,
+            global::G.CreateVectorStoreFileRequest request);
+        partial void ProcessCreateVectorStoreFileResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreateVectorStoreFileResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Create a vector store file by attaching a [File](/docs/api-reference/files) to a [vector store](/docs/api-reference/vector-stores/object).
         /// </summary>

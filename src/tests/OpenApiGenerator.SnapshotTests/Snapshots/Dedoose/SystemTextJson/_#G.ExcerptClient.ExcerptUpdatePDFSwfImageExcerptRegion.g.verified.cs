@@ -6,6 +6,31 @@ namespace G
 {
     public partial class ExcerptClient
     {
+        partial void PrepareExcerptUpdatePDFSwfImageExcerptRegionArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string projectId,
+            ref string currentUserId,
+            ref string excerptId,
+            ref int newStart,
+            ref int newEnd);
+        partial void PrepareExcerptUpdatePDFSwfImageExcerptRegionRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string projectId,
+            string currentUserId,
+            string excerptId,
+            int newStart,
+            int newEnd);
+        partial void ProcessExcerptUpdatePDFSwfImageExcerptRegionResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessExcerptUpdatePDFSwfImageExcerptRegionResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// UpdatePDFSwfImageExcerptRegion.
         /// </summary>

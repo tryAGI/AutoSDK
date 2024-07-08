@@ -6,6 +6,21 @@ namespace G
 {
     public partial class CompletionsClient
     {
+        partial void PrepareCreateCompletionArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.CreateCompletionRequest request);
+        partial void PrepareCreateCompletionRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.CreateCompletionRequest request);
+        partial void ProcessCreateCompletionResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreateCompletionResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Creates a completion for the provided prompt and parameters.
         /// </summary>

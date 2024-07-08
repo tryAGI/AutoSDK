@@ -6,6 +6,23 @@ namespace G
 {
     public partial class MemoClient
     {
+        partial void PrepareMemoGetImportMemosXMLResponseArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string jobId);
+        partial void PrepareMemoGetImportMemosXMLResponseRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string jobId);
+        partial void ProcessMemoGetImportMemosXMLResponseResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMemoGetImportMemosXMLResponseResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GetImportMemosXMLResponse.
         /// </summary>

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class AdminClient
     {
+        partial void PrepareAdminGetFilteredProjectsAndUsersArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string filter,
+            ref int maxResults);
+        partial void PrepareAdminGetFilteredProjectsAndUsersRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string filter,
+            int maxResults);
+        partial void ProcessAdminGetFilteredProjectsAndUsersResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessAdminGetFilteredProjectsAndUsersResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// GetFilteredProjectsAndUsers.
         /// </summary>

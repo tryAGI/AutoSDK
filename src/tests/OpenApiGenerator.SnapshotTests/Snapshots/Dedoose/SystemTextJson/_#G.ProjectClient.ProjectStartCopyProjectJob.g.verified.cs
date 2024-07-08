@@ -6,6 +6,29 @@ namespace G
 {
     public partial class ProjectClient
     {
+        partial void PrepareProjectStartCopyProjectJobArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string userId,
+            ref string projectId,
+            ref string title,
+            ref string decription);
+        partial void PrepareProjectStartCopyProjectJobRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string userId,
+            string projectId,
+            string title,
+            string decription);
+        partial void ProcessProjectStartCopyProjectJobResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessProjectStartCopyProjectJobResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// StartCopyProjectJob.
         /// </summary>

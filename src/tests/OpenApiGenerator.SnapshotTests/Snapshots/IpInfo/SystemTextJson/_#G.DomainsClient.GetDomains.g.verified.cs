@@ -6,6 +6,25 @@ namespace G
 {
     public partial class DomainsClient
     {
+        partial void PrepareGetDomainsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string ip,
+            ref int page,
+            ref int limit);
+        partial void PrepareGetDomainsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string ip,
+            int page,
+            int limit);
+        partial void ProcessGetDomainsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetDomainsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Our Hosted Domains, or Reverse IP API returns a list of all of the domains hosted on the provided IP address.<br/>
         /// Returns a list of all of the domains hosted on the provided IP address.

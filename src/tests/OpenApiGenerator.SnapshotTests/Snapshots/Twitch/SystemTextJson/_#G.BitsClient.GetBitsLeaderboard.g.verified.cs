@@ -6,6 +6,27 @@ namespace G
 {
     public partial class BitsClient
     {
+        partial void PrepareGetBitsLeaderboardArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref int count,
+            ref global::G.GetBitsLeaderboardPeriod period,
+            global::System.DateTime startedAt,
+            ref string userId);
+        partial void PrepareGetBitsLeaderboardRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int count,
+            global::G.GetBitsLeaderboardPeriod period,
+            global::System.DateTime startedAt,
+            string userId);
+        partial void ProcessGetBitsLeaderboardResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetBitsLeaderboardResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets the Bits leaderboard for the authenticated broadcaster.<br/>
         /// Gets the Bits leaderboard for the authenticated broadcaster.<br/>

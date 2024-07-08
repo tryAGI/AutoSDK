@@ -6,6 +6,27 @@ namespace G
 {
     public partial class ChannelsClient
     {
+        partial void PrepareGetFollowedChannelsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string userId,
+            ref string broadcasterId,
+            ref int first,
+            ref string after);
+        partial void PrepareGetFollowedChannelsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string userId,
+            string broadcasterId,
+            int first,
+            string after);
+        partial void ProcessGetFollowedChannelsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetFollowedChannelsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets a list of broadcasters that the specified user follows. You can also use this endpoint to see whether a user follows a specific broadcaster.<br/>
         /// Gets a list of broadcasters that the specified user follows. You can also use this endpoint to see whether a user follows a specific broadcaster.<br/>

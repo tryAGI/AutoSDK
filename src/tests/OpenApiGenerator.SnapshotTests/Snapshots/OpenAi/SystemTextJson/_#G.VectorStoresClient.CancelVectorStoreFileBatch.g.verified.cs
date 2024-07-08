@@ -6,6 +6,23 @@ namespace G
 {
     public partial class VectorStoresClient
     {
+        partial void PrepareCancelVectorStoreFileBatchArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string vectorStoreId,
+            ref string batchId);
+        partial void PrepareCancelVectorStoreFileBatchRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string vectorStoreId,
+            string batchId);
+        partial void ProcessCancelVectorStoreFileBatchResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCancelVectorStoreFileBatchResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Cancel a vector store file batch. This attempts to cancel the processing of files in this batch as soon as possible.
         /// </summary>

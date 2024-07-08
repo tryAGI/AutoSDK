@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ExtensionsClient
     {
+        partial void PrepareGetExtensionLiveChannelsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string extensionId,
+            ref int first,
+            ref string after);
+        partial void PrepareGetExtensionLiveChannelsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string extensionId,
+            int first,
+            string after);
+        partial void ProcessGetExtensionLiveChannelsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetExtensionLiveChannelsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets a list of broadcasters that are streaming live and have installed or activated the extension.<br/>
         /// Gets a list of broadcasters that are streaming live and have installed or activated the extension.<br/>

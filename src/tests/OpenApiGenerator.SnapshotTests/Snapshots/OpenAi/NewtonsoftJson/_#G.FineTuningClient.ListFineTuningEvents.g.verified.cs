@@ -6,6 +6,25 @@ namespace G
 {
     public partial class FineTuningClient
     {
+        partial void PrepareListFineTuningEventsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string fineTuningJobId,
+            ref string after,
+            ref int limit);
+        partial void PrepareListFineTuningEventsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string fineTuningJobId,
+            string after,
+            int limit);
+        partial void ProcessListFineTuningEventsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessListFineTuningEventsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Get status updates for a fine-tuning job.
         /// </summary>

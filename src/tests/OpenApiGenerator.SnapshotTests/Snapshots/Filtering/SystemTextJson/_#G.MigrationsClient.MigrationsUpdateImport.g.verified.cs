@@ -6,6 +6,25 @@ namespace G
 {
     public partial class MigrationsClient
     {
+        partial void PrepareMigrationsUpdateImportArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string owner,
+            ref string repo,
+            global::G.MigrationsUpdateImportRequest request);
+        partial void PrepareMigrationsUpdateImportRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string owner,
+            string repo,
+            global::G.MigrationsUpdateImportRequest request);
+        partial void ProcessMigrationsUpdateImportResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessMigrationsUpdateImportResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Update an import<br/>
         /// An import can be updated with credentials or a project choice by passing in the appropriate parameters in this API<br/>

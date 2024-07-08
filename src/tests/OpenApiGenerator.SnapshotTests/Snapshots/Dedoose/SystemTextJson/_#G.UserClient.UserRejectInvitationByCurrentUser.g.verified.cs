@@ -6,6 +6,23 @@ namespace G
 {
     public partial class UserClient
     {
+        partial void PrepareUserRejectInvitationByCurrentUserArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string token,
+            ref string invitationId);
+        partial void PrepareUserRejectInvitationByCurrentUserRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token,
+            string invitationId);
+        partial void ProcessUserRejectInvitationByCurrentUserResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessUserRejectInvitationByCurrentUserResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// RejectInvitationByCurrentUser.
         /// </summary>

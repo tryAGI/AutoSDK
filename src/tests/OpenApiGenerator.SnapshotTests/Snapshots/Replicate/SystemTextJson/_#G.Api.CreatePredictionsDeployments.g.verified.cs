@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+        partial void PrepareCreatePredictionsDeploymentsArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string deploymentOwner,
+            ref string deploymentName,
+            global::G.PredictionRequest request);
+        partial void PrepareCreatePredictionsDeploymentsRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string deploymentOwner,
+            string deploymentName,
+            global::G.PredictionRequest request);
+        partial void ProcessCreatePredictionsDeploymentsResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessCreatePredictionsDeploymentsResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Create a prediction using a deployment<br/>
         /// Start a new prediction for a deployment of a model using inputs you provide.<br/>

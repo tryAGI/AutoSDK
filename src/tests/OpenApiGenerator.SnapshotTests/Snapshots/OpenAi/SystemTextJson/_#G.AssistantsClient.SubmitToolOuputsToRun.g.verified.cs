@@ -6,6 +6,25 @@ namespace G
 {
     public partial class AssistantsClient
     {
+        partial void PrepareSubmitToolOuputsToRunArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string threadId,
+            ref string runId,
+            global::G.SubmitToolOutputsRunRequest request);
+        partial void PrepareSubmitToolOuputsToRunRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string threadId,
+            string runId,
+            global::G.SubmitToolOutputsRunRequest request);
+        partial void ProcessSubmitToolOuputsToRunResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessSubmitToolOuputsToRunResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// When a run has the `status: "requires_action"` and `required_action.type` is `submit_tool_outputs`, this endpoint can be used to submit the outputs from the tool calls once they're all completed. All outputs must be submitted in a single request.
         /// </summary>

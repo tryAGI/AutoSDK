@@ -6,6 +6,25 @@ namespace G
 {
     public partial class GamesClient
     {
+        partial void PrepareGetTopGamesArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref int first,
+            ref string after,
+            ref string before);
+        partial void PrepareGetTopGamesRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int first,
+            string after,
+            string before);
+        partial void ProcessGetTopGamesResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+        partial void ProcessGetTopGamesResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets information about all broadcasts on Twitch.<br/>
         /// Gets information about all broadcasts on Twitch.<br/>
