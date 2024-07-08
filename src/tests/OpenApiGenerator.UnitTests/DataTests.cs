@@ -58,4 +58,12 @@ public partial class DataTests
             H.Resources.specialcases_yaml.AsString(),
             DefaultSettings)));
     }
+
+    [TestMethod]
+    public Task Dedoose()
+    {
+        return VerifyAsync(Data.Prepare((
+            H.Resources.dedoose_json.AsString(),
+            DefaultSettings)));
+    }
 }

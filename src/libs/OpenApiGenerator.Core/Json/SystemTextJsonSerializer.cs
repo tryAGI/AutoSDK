@@ -85,6 +85,20 @@ public class SystemTextJsonSerializer : IJsonSerializer
                 _ => x.Trim(),
             }));
         result =
+            ((result.StartsWith("Boolean", StringComparison.Ordinal) ||
+            result.StartsWith("Int16", StringComparison.Ordinal) ||
+            result.StartsWith("Int32", StringComparison.Ordinal) ||
+            result.StartsWith("Int64", StringComparison.Ordinal) ||
+            result.StartsWith("SByte", StringComparison.Ordinal) ||
+            result.StartsWith("UInt16", StringComparison.Ordinal) ||
+            result.StartsWith("UInt32", StringComparison.Ordinal) ||
+            result.StartsWith("UInt64", StringComparison.Ordinal) ||
+            result.StartsWith("Single", StringComparison.Ordinal) ||
+            result.StartsWith("Double", StringComparison.Ordinal) ||
+            result.StartsWith("Decimal", StringComparison.Ordinal) ||
+            result.StartsWith("Char", StringComparison.Ordinal) ||
+            result.StartsWith("Byte", StringComparison.Ordinal)) &&
+            !result.EndsWith("Array", StringComparison.Ordinal)) ||
             result.StartsWith("AnyOf", StringComparison.Ordinal) ||
             result.StartsWith("OneOf", StringComparison.Ordinal) ||
             result.StartsWith("AllOf", StringComparison.Ordinal)

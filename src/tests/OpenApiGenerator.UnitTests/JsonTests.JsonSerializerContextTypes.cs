@@ -13,5 +13,6 @@ public partial class JsonTests
         GetContextType("byte[][]").Should().Be("ByteArrayArray");
         GetContextType("global::System.Collections.Generic.List<byte[]>").Should().Be("ListByteArray");
         GetContextType("global::System.Collections.Generic.List<byte[][]>").Should().Be("ListByteArrayArray");
+        GetContextType("bool").Should().Be("NullableBoolean");
     }
 }
