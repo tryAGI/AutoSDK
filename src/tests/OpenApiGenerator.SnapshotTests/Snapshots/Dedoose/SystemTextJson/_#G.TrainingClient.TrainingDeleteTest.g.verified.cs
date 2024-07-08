@@ -36,6 +36,7 @@ namespace G
         partial void ProcessTrainingDeleteTestResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         partial void ProcessTrainingDeleteTestResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -71,16 +72,66 @@ namespace G
             string creator,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareTrainingDeleteTestArguments(
+                httpClient: _httpClient,
+                token: ref token,
+                projectIdKey: ref projectIdKey,
+                id: ref id,
+                testType: ref testType,
+                title: ref title,
+                description: ref description,
+                createdOn: createdOn,
+                projectId: ref projectId,
+                excerptCount: ref excerptCount,
+                tagCount: ref tagCount,
+                creator: ref creator);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/training/deletetest?ProjectIdKey={projectIdKey}&Id={id}&TestType={testType}&Title={title}&Description={description}&CreatedOn={createdOn:yyyy-MM-ddTHH:mm:ssZ}&ProjectId={projectId}&ExcerptCount={excerptCount}&TagCount={tagCount}&Creator={creator}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareTrainingDeleteTestRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                token: token,
+                projectIdKey: projectIdKey,
+                id: id,
+                testType: testType,
+                title: title,
+                description: description,
+                createdOn: createdOn,
+                projectId: projectId,
+                excerptCount: excerptCount,
+                tagCount: tagCount,
+                creator: creator);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessTrainingDeleteTestResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessTrainingDeleteTestResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

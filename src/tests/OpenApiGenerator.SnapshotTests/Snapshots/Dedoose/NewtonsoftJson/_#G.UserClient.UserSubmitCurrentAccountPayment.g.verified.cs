@@ -46,6 +46,7 @@ namespace G
         partial void ProcessUserSubmitCurrentAccountPaymentResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         partial void ProcessUserSubmitCurrentAccountPaymentResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -91,16 +92,76 @@ namespace G
             bool saveAsReoccuring,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareUserSubmitCurrentAccountPaymentArguments(
+                httpClient: _httpClient,
+                token: ref token,
+                amount: ref amount,
+                firstName: ref firstName,
+                lastName: ref lastName,
+                address1: ref address1,
+                address2: ref address2,
+                city: ref city,
+                state: ref state,
+                country: ref country,
+                zip: ref zip,
+                cardType: ref cardType,
+                cardNum: ref cardNum,
+                cardCCV: ref cardCCV,
+                expMonth: ref expMonth,
+                expYear: ref expYear,
+                saveAsReoccuring: ref saveAsReoccuring);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/user/submitcurrentaccountpayment?amount={amount}&firstName={firstName}&lastName={lastName}&address1={address1}&address2={address2}&city={city}&state={state}&country={country}&zip={zip}&cardType={cardType}&cardNum={cardNum}&cardCCV={cardCCV}&expMonth={expMonth}&expYear={expYear}&saveAsReoccuring={saveAsReoccuring}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareUserSubmitCurrentAccountPaymentRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                token: token,
+                amount: amount,
+                firstName: firstName,
+                lastName: lastName,
+                address1: address1,
+                address2: address2,
+                city: city,
+                state: state,
+                country: country,
+                zip: zip,
+                cardType: cardType,
+                cardNum: cardNum,
+                cardCCV: cardCCV,
+                expMonth: expMonth,
+                expYear: expYear,
+                saveAsReoccuring: saveAsReoccuring);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessUserSubmitCurrentAccountPaymentResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessUserSubmitCurrentAccountPaymentResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

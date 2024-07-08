@@ -22,10 +22,6 @@ namespace G
         partial void ProcessSendGuestStarInviteResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
-        partial void ProcessSendGuestStarInviteResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
 
         /// <summary>
         /// BETA Sends an invite to a specified guest on behalf of the broadcaster for a Guest Star session in progress.<br/>
@@ -47,14 +43,41 @@ namespace G
             string guestId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareSendGuestStarInviteArguments(
+                httpClient: _httpClient,
+                broadcasterId: ref broadcasterId,
+                moderatorId: ref moderatorId,
+                sessionId: ref sessionId,
+                guestId: ref guestId);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/guest_star/invites?broadcaster_id={broadcasterId}&moderator_id={moderatorId}&session_id={sessionId}&guest_id={guestId}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareSendGuestStarInviteRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                broadcasterId: broadcasterId,
+                moderatorId: moderatorId,
+                sessionId: sessionId,
+                guestId: guestId);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessSendGuestStarInviteResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
             response.EnsureSuccessStatusCode();
         }
     }

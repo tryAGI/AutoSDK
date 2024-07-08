@@ -32,6 +32,7 @@ namespace G
         partial void ProcessUserAddNewUserToAccountResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         partial void ProcessUserAddNewUserToAccountResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -63,16 +64,62 @@ namespace G
             string groupId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareUserAddNewUserToAccountArguments(
+                httpClient: _httpClient,
+                token: ref token,
+                projectId: ref projectId,
+                username: ref username,
+                firstName: ref firstName,
+                lastName: ref lastName,
+                email: ref email,
+                phone: ref phone,
+                encryptedPass: ref encryptedPass,
+                groupId: ref groupId);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/user/addnewusertoaccount?projectId={projectId}&username={username}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone}&encryptedPass={encryptedPass}&groupId={groupId}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareUserAddNewUserToAccountRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                token: token,
+                projectId: projectId,
+                username: username,
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                phone: phone,
+                encryptedPass: encryptedPass,
+                groupId: groupId);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessUserAddNewUserToAccountResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessUserAddNewUserToAccountResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

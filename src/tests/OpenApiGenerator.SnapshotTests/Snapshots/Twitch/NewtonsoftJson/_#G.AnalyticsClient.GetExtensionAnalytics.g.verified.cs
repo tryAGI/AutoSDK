@@ -26,6 +26,7 @@ namespace G
         partial void ProcessGetExtensionAnalyticsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         partial void ProcessGetExtensionAnalyticsResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -54,6 +55,17 @@ namespace G
             string after,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareGetExtensionAnalyticsArguments(
+                httpClient: _httpClient,
+                extensionId: ref extensionId,
+                type: ref type,
+                startedAt: startedAt,
+                endedAt: endedAt,
+                first: ref first,
+                after: ref after);
+
             var typeValue = type switch
             {
                 global::G.GetExtensionAnalyticsType.OverviewV2 => "overview_v2",
@@ -63,12 +75,41 @@ namespace G
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/analytics/extensions?extension_id={extensionId}&type={typeValue}&started_at={startedAt:yyyy-MM-ddTHH:mm:ssZ}&ended_at={endedAt:yyyy-MM-ddTHH:mm:ssZ}&first={first}&after={after}", global::System.UriKind.RelativeOrAbsolute));
 
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareGetExtensionAnalyticsRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                extensionId: extensionId,
+                type: type,
+                startedAt: startedAt,
+                endedAt: endedAt,
+                first: first,
+                after: after);
+
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessGetExtensionAnalyticsResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessGetExtensionAnalyticsResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

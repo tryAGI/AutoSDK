@@ -22,6 +22,7 @@ namespace G
         partial void ProcessSurveyImportStartSurveyImportJobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         partial void ProcessSurveyImportStartSurveyImportJobResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -43,16 +44,52 @@ namespace G
             string encryptedSymKey,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareSurveyImportStartSurveyImportJobArguments(
+                httpClient: _httpClient,
+                token: ref token,
+                projectId: ref projectId,
+                surveyUploadedFileURL: ref surveyUploadedFileURL,
+                encryptedSymKey: ref encryptedSymKey);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/surveyimport/startsurveyimportjob?projectId={projectId}&surveyUploadedFileURL={surveyUploadedFileURL}&encryptedSymKey={encryptedSymKey}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareSurveyImportStartSurveyImportJobRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                token: token,
+                projectId: projectId,
+                surveyUploadedFileURL: surveyUploadedFileURL,
+                encryptedSymKey: encryptedSymKey);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessSurveyImportStartSurveyImportJobResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessSurveyImportStartSurveyImportJobResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

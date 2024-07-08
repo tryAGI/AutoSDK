@@ -36,6 +36,7 @@ namespace G
         partial void ProcessTagAddTagWithParentResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         partial void ProcessTagAddTagWithParentResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -71,16 +72,66 @@ namespace G
             double color,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareTagAddTagWithParentArguments(
+                httpClient: _httpClient,
+                token: ref token,
+                proejctId: ref proejctId,
+                parentTagId: ref parentTagId,
+                title: ref title,
+                description: ref description,
+                isWeighted: ref isWeighted,
+                weightMin: ref weightMin,
+                weightMax: ref weightMax,
+                weightDefault: ref weightDefault,
+                allowDecimalWeights: ref allowDecimalWeights,
+                color: ref color);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/tag/addtagwithparent?proejctId={proejctId}&parentTagId={parentTagId}&title={title}&description={description}&isWeighted={isWeighted}&weightMin={weightMin}&weightMax={weightMax}&weightDefault={weightDefault}&allowDecimalWeights={allowDecimalWeights}&color={color}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareTagAddTagWithParentRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                token: token,
+                proejctId: proejctId,
+                parentTagId: parentTagId,
+                title: title,
+                description: description,
+                isWeighted: isWeighted,
+                weightMin: weightMin,
+                weightMax: weightMax,
+                weightDefault: weightDefault,
+                allowDecimalWeights: allowDecimalWeights,
+                color: color);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessTagAddTagWithParentResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessTagAddTagWithParentResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

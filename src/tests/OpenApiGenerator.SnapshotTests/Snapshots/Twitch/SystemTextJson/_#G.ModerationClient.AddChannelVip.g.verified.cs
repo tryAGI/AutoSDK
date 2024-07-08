@@ -18,10 +18,6 @@ namespace G
         partial void ProcessAddChannelVipResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
-        partial void ProcessAddChannelVipResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
 
         /// <summary>
         /// Adds the specified user as a VIP in the broadcaster’s channel.<br/>
@@ -39,14 +35,37 @@ namespace G
             string broadcasterId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareAddChannelVipArguments(
+                httpClient: _httpClient,
+                userId: ref userId,
+                broadcasterId: ref broadcasterId);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/channels/vips?user_id={userId}&broadcaster_id={broadcasterId}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareAddChannelVipRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                userId: userId,
+                broadcasterId: broadcasterId);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessAddChannelVipResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
             response.EnsureSuccessStatusCode();
         }
     }

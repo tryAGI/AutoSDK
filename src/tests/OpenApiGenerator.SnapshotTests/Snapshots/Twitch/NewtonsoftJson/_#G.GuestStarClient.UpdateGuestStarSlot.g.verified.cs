@@ -24,10 +24,6 @@ namespace G
         partial void ProcessUpdateGuestStarSlotResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
-        partial void ProcessUpdateGuestStarSlotResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
 
         /// <summary>
         /// BETA Allows a user to update the assigned slot for a particular user within the active Guest Star session.<br/>
@@ -51,14 +47,43 @@ namespace G
             string destinationSlotId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareUpdateGuestStarSlotArguments(
+                httpClient: _httpClient,
+                broadcasterId: ref broadcasterId,
+                moderatorId: ref moderatorId,
+                sessionId: ref sessionId,
+                sourceSlotId: ref sourceSlotId,
+                destinationSlotId: ref destinationSlotId);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Patch,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/guest_star/slot?broadcaster_id={broadcasterId}&moderator_id={moderatorId}&session_id={sessionId}&source_slot_id={sourceSlotId}&destination_slot_id={destinationSlotId}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareUpdateGuestStarSlotRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                broadcasterId: broadcasterId,
+                moderatorId: moderatorId,
+                sessionId: sessionId,
+                sourceSlotId: sourceSlotId,
+                destinationSlotId: destinationSlotId);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessUpdateGuestStarSlotResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
             response.EnsureSuccessStatusCode();
         }
     }

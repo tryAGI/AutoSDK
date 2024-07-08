@@ -18,10 +18,6 @@ namespace G
         partial void ProcessCreateBlobResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
-        partial void ProcessCreateBlobResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
 
         /// <summary>
         /// Create a blob from a file. Returns the server file path.
@@ -37,6 +33,13 @@ namespace G
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
+            PrepareArguments(
+                client: _httpClient);
+            PrepareCreateBlobArguments(
+                httpClient: _httpClient,
+                digest: ref digest,
+                request: request);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/blobs/{digest}", global::System.UriKind.RelativeOrAbsolute));
@@ -46,10 +49,26 @@ namespace G
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
 
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareCreateBlobRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                digest: digest,
+                request: request);
+
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessCreateBlobResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
             response.EnsureSuccessStatusCode();
         }
 

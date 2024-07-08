@@ -20,10 +20,6 @@ namespace G
         partial void ProcessSendChatAnnouncementResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
-        partial void ProcessSendChatAnnouncementResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
 
         /// <summary>
         /// Sends an announcement to the broadcaster’s chat room.<br/>
@@ -44,6 +40,14 @@ namespace G
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
+            PrepareArguments(
+                client: _httpClient);
+            PrepareSendChatAnnouncementArguments(
+                httpClient: _httpClient,
+                broadcasterId: ref broadcasterId,
+                moderatorId: ref moderatorId,
+                request: request);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/chat/announcements?broadcaster_id={broadcasterId}&moderator_id={moderatorId}", global::System.UriKind.RelativeOrAbsolute));
@@ -53,10 +57,27 @@ namespace G
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
 
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareSendChatAnnouncementRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                broadcasterId: broadcasterId,
+                moderatorId: moderatorId,
+                request: request);
+
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessSendChatAnnouncementResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
             response.EnsureSuccessStatusCode();
         }
 

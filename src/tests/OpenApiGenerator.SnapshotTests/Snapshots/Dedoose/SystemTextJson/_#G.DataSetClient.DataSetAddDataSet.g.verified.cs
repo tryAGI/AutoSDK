@@ -47,6 +47,7 @@ namespace G
         partial void ProcessDataSetAddDataSetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         partial void ProcessDataSetAddDataSetResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -92,16 +93,76 @@ namespace G
             global::System.Collections.Generic.IList<string> excludedExcerptIds,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareDataSetAddDataSetArguments(
+                httpClient: _httpClient,
+                token: ref token,
+                projectId: ref projectId,
+                userId: ref userId,
+                title: ref title,
+                description: ref description,
+                areExcerptsFiltered: ref areExcerptsFiltered,
+                areResourcesFiltered: ref areResourcesFiltered,
+                areDescriptorsFiltered: ref areDescriptorsFiltered,
+                areTagsFiltered: ref areTagsFiltered,
+                areUsersFiltered: ref areUsersFiltered,
+                excerptIds: excerptIds,
+                descriptorIds: descriptorIds,
+                userIds: userIds,
+                resourceIds: resourceIds,
+                tagIds: tagIds,
+                excludedExcerptIds: excludedExcerptIds);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/dataset/adddataset?projectId={projectId}&userId={userId}&title={title}&description={description}&areExcerptsFiltered={areExcerptsFiltered}&areResourcesFiltered={areResourcesFiltered}&areDescriptorsFiltered={areDescriptorsFiltered}&areTagsFiltered={areTagsFiltered}&areUsersFiltered={areUsersFiltered}&{string.Join("&", excerptIds.Select(static x => $"excerptIds={x}"))}&{string.Join("&", descriptorIds.Select(static x => $"descriptorIds={x}"))}&{string.Join("&", userIds.Select(static x => $"userIds={x}"))}&{string.Join("&", resourceIds.Select(static x => $"resourceIds={x}"))}&{string.Join("&", tagIds.Select(static x => $"tagIds={x}"))}&{string.Join("&", excludedExcerptIds.Select(static x => $"excludedExcerptIds={x}"))}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareDataSetAddDataSetRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                token: token,
+                projectId: projectId,
+                userId: userId,
+                title: title,
+                description: description,
+                areExcerptsFiltered: areExcerptsFiltered,
+                areResourcesFiltered: areResourcesFiltered,
+                areDescriptorsFiltered: areDescriptorsFiltered,
+                areTagsFiltered: areTagsFiltered,
+                areUsersFiltered: areUsersFiltered,
+                excerptIds: excerptIds,
+                descriptorIds: descriptorIds,
+                userIds: userIds,
+                resourceIds: resourceIds,
+                tagIds: tagIds,
+                excludedExcerptIds: excludedExcerptIds);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessDataSetAddDataSetResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessDataSetAddDataSetResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

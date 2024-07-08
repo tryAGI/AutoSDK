@@ -18,10 +18,6 @@ namespace G
         partial void ProcessDeleteChannelStreamScheduleSegmentResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
-        partial void ProcessDeleteChannelStreamScheduleSegmentResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
 
         /// <summary>
         /// Deletes a broadcast from the broadcaster’s streaming schedule.<br/>
@@ -39,14 +35,37 @@ namespace G
             string id,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareDeleteChannelStreamScheduleSegmentArguments(
+                httpClient: _httpClient,
+                broadcasterId: ref broadcasterId,
+                id: ref id);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/schedule/segment?broadcaster_id={broadcasterId}&id={id}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareDeleteChannelStreamScheduleSegmentRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                broadcasterId: broadcasterId,
+                id: id);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessDeleteChannelStreamScheduleSegmentResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
             response.EnsureSuccessStatusCode();
         }
     }

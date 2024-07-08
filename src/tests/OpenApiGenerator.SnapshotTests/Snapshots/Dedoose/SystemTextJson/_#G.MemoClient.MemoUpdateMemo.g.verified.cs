@@ -47,6 +47,7 @@ namespace G
         partial void ProcessMemoUpdateMemoResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         partial void ProcessMemoUpdateMemoResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -92,16 +93,76 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ObjectIdWithPos> tags,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareMemoUpdateMemoArguments(
+                httpClient: _httpClient,
+                token: ref token,
+                projectIdKey: ref projectIdKey,
+                id: ref id,
+                projectId: ref projectId,
+                title: ref title,
+                createdUserId: ref createdUserId,
+                lastEditUserId: ref lastEditUserId,
+                createStamp: createStamp,
+                lastEditStamp: lastEditStamp,
+                folderId: ref folderId,
+                dataURI: ref dataURI,
+                folderIds: folderIds,
+                resources: resources,
+                excerpts: excerpts,
+                descriptors: descriptors,
+                tags: tags);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/memo/updatememo?ProjectIdKey={projectIdKey}&Id={id}&ProjectId={projectId}&Title={title}&CreatedUserId={createdUserId}&LastEditUserId={lastEditUserId}&CreateStamp={createStamp:yyyy-MM-ddTHH:mm:ssZ}&LastEditStamp={lastEditStamp:yyyy-MM-ddTHH:mm:ssZ}&FolderId={folderId}&DataURI={dataURI}&{string.Join("&", folderIds.Select(static x => $"folderIds={x}"))}&{string.Join("&", resources.Select(static x => $"resources={x}"))}&{string.Join("&", excerpts.Select(static x => $"excerpts={x}"))}&{string.Join("&", descriptors.Select(static x => $"descriptors={x}"))}&{string.Join("&", tags.Select(static x => $"tags={x}"))}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareMemoUpdateMemoRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                token: token,
+                projectIdKey: projectIdKey,
+                id: id,
+                projectId: projectId,
+                title: title,
+                createdUserId: createdUserId,
+                lastEditUserId: lastEditUserId,
+                createStamp: createStamp,
+                lastEditStamp: lastEditStamp,
+                folderId: folderId,
+                dataURI: dataURI,
+                folderIds: folderIds,
+                resources: resources,
+                excerpts: excerpts,
+                descriptors: descriptors,
+                tags: tags);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessMemoUpdateMemoResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessMemoUpdateMemoResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

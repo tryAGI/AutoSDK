@@ -34,7 +34,6 @@ namespace {endPoint.Namespace}
             {(x.Type.IsReferenceable ? "ref " : "")}{x.Type.CSharpType} {x.ParameterName}").Inject(emptyValue: "")}{
 (string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @$",
             {endPoint.RequestType.CSharpTypeWithoutNullability} request")});
-        
         partial void Prepare{endPoint.NotAsyncMethodName}Request(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage{endPoint.Properties
@@ -43,15 +42,14 @@ namespace {endPoint.Namespace}
             {x.Type.CSharpType} {x.ParameterName}").Inject(emptyValue: "")}{
 (string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @$",
             {endPoint.RequestType.CSharpTypeWithoutNullability} request")});
-        
         partial void Process{endPoint.NotAsyncMethodName}Response(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
-        
+{(string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType) || endPoint.Stream ? " " : $@"
         partial void Process{endPoint.NotAsyncMethodName}ResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
+            ref string content);")}
 
 {GenerateMethod(endPoint)}
 {GenerateExtensionMethod(endPoint)}
@@ -113,6 +111,16 @@ namespace {endPoint.Namespace}
 {(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : @" 
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 ")}
+            PrepareArguments(
+                client: _httpClient);
+            Prepare{endPoint.NotAsyncMethodName}Arguments(
+                httpClient: _httpClient{endPoint.Properties
+                    .Where(x => x.ParameterLocation != null)
+                    .Select(x => $@",
+                {x.ParameterName}: {(x.Type.IsReferenceable ? "ref " : "")}{x.ParameterName}").Inject(emptyValue: "")}{
+                (string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @",
+                request: request")});
+
 {(endPoint.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson ? endPoint.Properties
     .Where(x => x is { ParameterLocation: not null, Type.EnumValues.Length: > 0 })
     .Select(x => $@"
@@ -139,14 +147,42 @@ namespace {endPoint.Namespace}
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: ""application/octet-stream"");")}
 
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            Prepare{endPoint.NotAsyncMethodName}Request(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest{endPoint.Properties
+                    .Where(x => x.ParameterLocation != null)
+                    .Select(x => $@",
+                {x.ParameterName}: {x.ParameterName}").Inject(emptyValue: "")}{
+                (string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @",
+                request: request")});
+
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.{httpCompletionOption},
                 cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            Process{endPoint.NotAsyncMethodName}Response(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
 {(string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType) || endPoint.Stream ? @" 
             response.EnsureSuccessStatusCode();
  " : $@"
             var __content = await response.Content.ReadAsStringAsync({cancellationTokenInsideReadAsync}).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            Process{endPoint.NotAsyncMethodName}ResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {{

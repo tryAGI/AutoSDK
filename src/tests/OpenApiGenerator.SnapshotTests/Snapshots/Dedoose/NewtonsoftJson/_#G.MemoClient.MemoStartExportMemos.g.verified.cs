@@ -35,6 +35,7 @@ namespace G
         partial void ProcessMemoStartExportMemosResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         partial void ProcessMemoStartExportMemosResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -68,16 +69,64 @@ namespace G
             string symKey,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareMemoStartExportMemosArguments(
+                httpClient: _httpClient,
+                token: ref token,
+                projectId: ref projectId,
+                memoIds: memoIds,
+                description: ref description,
+                extension: ref extension,
+                includeCodes: ref includeCodes,
+                includeMedia: ref includeMedia,
+                includeExcerpts: ref includeExcerpts,
+                includeDescriptors: ref includeDescriptors,
+                symKey: ref symKey);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/memo/startexportmemos?projectId={projectId}&{string.Join("&", memoIds.Select(static x => $"memoIds={x}"))}&description={description}&extension={extension}&includeCodes={includeCodes}&includeMedia={includeMedia}&includeExcerpts={includeExcerpts}&includeDescriptors={includeDescriptors}&symKey={symKey}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareMemoStartExportMemosRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                token: token,
+                projectId: projectId,
+                memoIds: memoIds,
+                description: description,
+                extension: extension,
+                includeCodes: includeCodes,
+                includeMedia: includeMedia,
+                includeExcerpts: includeExcerpts,
+                includeDescriptors: includeDescriptors,
+                symKey: symKey);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessMemoStartExportMemosResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessMemoStartExportMemosResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

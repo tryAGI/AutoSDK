@@ -20,10 +20,6 @@ namespace G
         partial void ProcessSendAShoutoutResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
-        partial void ProcessSendAShoutoutResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
 
         /// <summary>
         /// Sends a Shoutout to the specified broadcaster.<br/>
@@ -45,14 +41,39 @@ namespace G
             string moderatorId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareSendAShoutoutArguments(
+                httpClient: _httpClient,
+                fromBroadcasterId: ref fromBroadcasterId,
+                toBroadcasterId: ref toBroadcasterId,
+                moderatorId: ref moderatorId);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/chat/shoutouts?from_broadcaster_id={fromBroadcasterId}&to_broadcaster_id={toBroadcasterId}&moderator_id={moderatorId}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareSendAShoutoutRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                fromBroadcasterId: fromBroadcasterId,
+                toBroadcasterId: toBroadcasterId,
+                moderatorId: moderatorId);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessSendAShoutoutResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
             response.EnsureSuccessStatusCode();
         }
     }

@@ -34,6 +34,7 @@ namespace G
         partial void ProcessDescriptorDeleteDescriptorResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         partial void ProcessDescriptorDeleteDescriptorResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -67,16 +68,64 @@ namespace G
             byte[] dynamicValuesData,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareDescriptorDeleteDescriptorArguments(
+                httpClient: _httpClient,
+                token: ref token,
+                projectIdKey: ref projectIdKey,
+                projectId: ref projectId,
+                id: ref id,
+                projectIDL: ref projectIDL,
+                createStamp: createStamp,
+                createByIDL: ref createByIDL,
+                descriptorSetIDL: ref descriptorSetIDL,
+                valuesData: valuesData,
+                dynamicValuesData: dynamicValuesData);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/descriptor/deletedescriptor?ProjectIdKey={projectIdKey}&ProjectId={projectId}&Id={id}&ProjectIDL={projectIDL}&CreateStamp={createStamp:yyyy-MM-ddTHH:mm:ssZ}&CreateByIDL={createByIDL}&DescriptorSetIDL={descriptorSetIDL}&ValuesData={valuesData}&DynamicValuesData={dynamicValuesData}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareDescriptorDeleteDescriptorRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                token: token,
+                projectIdKey: projectIdKey,
+                projectId: projectId,
+                id: id,
+                projectIDL: projectIDL,
+                createStamp: createStamp,
+                createByIDL: createByIDL,
+                descriptorSetIDL: descriptorSetIDL,
+                valuesData: valuesData,
+                dynamicValuesData: dynamicValuesData);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessDescriptorDeleteDescriptorResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessDescriptorDeleteDescriptorResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

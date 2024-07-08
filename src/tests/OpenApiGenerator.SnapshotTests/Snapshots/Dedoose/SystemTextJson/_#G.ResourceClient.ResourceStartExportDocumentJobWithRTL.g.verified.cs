@@ -28,6 +28,7 @@ namespace G
         partial void ProcessResourceStartExportDocumentJobWithRTLResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         partial void ProcessResourceStartExportDocumentJobWithRTLResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -55,16 +56,58 @@ namespace G
             string encryptedSymKey,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareResourceStartExportDocumentJobWithRTLArguments(
+                httpClient: _httpClient,
+                token: ref token,
+                projectId: ref projectId,
+                resourceId: ref resourceId,
+                includeExRegions: ref includeExRegions,
+                rtl: ref rtl,
+                exportExtension: ref exportExtension,
+                encryptedSymKey: ref encryptedSymKey);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/resource/startexportdocumentjobwithrtl?projectId={projectId}&resourceId={resourceId}&includeExRegions={includeExRegions}&rtl={rtl}&exportExtension={exportExtension}&encryptedSymKey={encryptedSymKey}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareResourceStartExportDocumentJobWithRTLRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                token: token,
+                projectId: projectId,
+                resourceId: resourceId,
+                includeExRegions: includeExRegions,
+                rtl: rtl,
+                exportExtension: exportExtension,
+                encryptedSymKey: encryptedSymKey);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessResourceStartExportDocumentJobWithRTLResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessResourceStartExportDocumentJobWithRTLResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

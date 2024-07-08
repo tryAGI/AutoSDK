@@ -28,6 +28,7 @@ namespace G
         partial void ProcessTagAddExcerptTagApplicationResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         partial void ProcessTagAddExcerptTagApplicationResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -55,16 +56,58 @@ namespace G
             double weight,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareTagAddExcerptTagApplicationArguments(
+                httpClient: _httpClient,
+                token: ref token,
+                userId: ref userId,
+                projectId: ref projectId,
+                resourceId: ref resourceId,
+                excerptId: ref excerptId,
+                tagId: ref tagId,
+                weight: ref weight);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/tag/addexcerpttagapplication?userId={userId}&projectId={projectId}&resourceId={resourceId}&excerptId={excerptId}&tagId={tagId}&weight={weight}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareTagAddExcerptTagApplicationRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                token: token,
+                userId: userId,
+                projectId: projectId,
+                resourceId: resourceId,
+                excerptId: excerptId,
+                tagId: tagId,
+                weight: weight);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessTagAddExcerptTagApplicationResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessTagAddExcerptTagApplicationResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

@@ -36,6 +36,7 @@ namespace G
         partial void ProcessUserUpdateUserInfoResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         partial void ProcessUserUpdateUserInfoResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -71,16 +72,66 @@ namespace G
             string zip,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareUserUpdateUserInfoArguments(
+                httpClient: _httpClient,
+                token: ref token,
+                userId: ref userId,
+                firstName: ref firstName,
+                lastName: ref lastName,
+                email: ref email,
+                phone: ref phone,
+                address: ref address,
+                city: ref city,
+                state: ref state,
+                country: ref country,
+                zip: ref zip);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/user/updateuserinfo?userId={userId}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone}&address={address}&city={city}&state={state}&country={country}&zip={zip}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareUserUpdateUserInfoRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                token: token,
+                userId: userId,
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                phone: phone,
+                address: address,
+                city: city,
+                state: state,
+                country: country,
+                zip: zip);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessUserUpdateUserInfoResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessUserUpdateUserInfoResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

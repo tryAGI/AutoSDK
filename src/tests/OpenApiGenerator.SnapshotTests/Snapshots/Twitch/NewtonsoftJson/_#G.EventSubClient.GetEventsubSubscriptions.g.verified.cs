@@ -22,6 +22,7 @@ namespace G
         partial void ProcessGetEventsubSubscriptionsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         partial void ProcessGetEventsubSubscriptionsResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -49,6 +50,15 @@ namespace G
             string after,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareGetEventsubSubscriptionsArguments(
+                httpClient: _httpClient,
+                status: ref status,
+                type: ref type,
+                userId: ref userId,
+                after: ref after);
+
             var statusValue = status switch
             {
                 global::G.GetEventsubSubscriptionsStatus.Enabled => "enabled",
@@ -147,12 +157,39 @@ namespace G
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/eventsub/subscriptions?status={statusValue}&type={typeValue}&user_id={userId}&after={after}", global::System.UriKind.RelativeOrAbsolute));
 
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareGetEventsubSubscriptionsRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                status: status,
+                type: type,
+                userId: userId,
+                after: after);
+
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessGetEventsubSubscriptionsResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessGetEventsubSubscriptionsResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

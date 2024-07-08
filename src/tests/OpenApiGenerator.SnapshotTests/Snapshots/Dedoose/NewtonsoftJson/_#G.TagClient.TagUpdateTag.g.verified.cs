@@ -42,6 +42,7 @@ namespace G
         partial void ProcessTagUpdateTagResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         partial void ProcessTagUpdateTagResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -83,16 +84,72 @@ namespace G
             bool allowDecimalWeight,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareTagUpdateTagArguments(
+                httpClient: _httpClient,
+                token: ref token,
+                projectIdKey: ref projectIdKey,
+                projectId: ref projectId,
+                id: ref id,
+                projectIDL: ref projectIDL,
+                title: ref title,
+                description: ref description,
+                isWeighted: ref isWeighted,
+                weightMin: ref weightMin,
+                weightMax: ref weightMax,
+                weightDefault: ref weightDefault,
+                sortOrder: ref sortOrder,
+                color: ref color,
+                allowDecimalWeight: ref allowDecimalWeight);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/tag/updatetag?ProjectIdKey={projectIdKey}&ProjectId={projectId}&Id={id}&ProjectIDL={projectIDL}&Title={title}&Description={description}&IsWeighted={isWeighted}&WeightMin={weightMin}&WeightMax={weightMax}&WeightDefault={weightDefault}&SortOrder={sortOrder}&Color={color}&AllowDecimalWeight={allowDecimalWeight}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareTagUpdateTagRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                token: token,
+                projectIdKey: projectIdKey,
+                projectId: projectId,
+                id: id,
+                projectIDL: projectIDL,
+                title: title,
+                description: description,
+                isWeighted: isWeighted,
+                weightMin: weightMin,
+                weightMax: weightMax,
+                weightDefault: weightDefault,
+                sortOrder: sortOrder,
+                color: color,
+                allowDecimalWeight: allowDecimalWeight);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessTagUpdateTagResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessTagUpdateTagResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

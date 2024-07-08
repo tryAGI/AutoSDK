@@ -33,6 +33,7 @@ namespace G
         partial void ProcessExcerptAddPDFSwfTextExcerptResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         partial void ProcessExcerptAddPDFSwfTextExcerptResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -64,16 +65,62 @@ namespace G
             global::System.Collections.Generic.IList<global::G.TagAppSimple> tagApps,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareExcerptAddPDFSwfTextExcerptArguments(
+                httpClient: _httpClient,
+                token: ref token,
+                projectId: ref projectId,
+                userId: ref userId,
+                resourceId: ref resourceId,
+                pageIndex: ref pageIndex,
+                start: ref start,
+                end: ref end,
+                text: ref text,
+                tagApps: tagApps);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/excerpt/addpdfswftextexcerpt?projectId={projectId}&userId={userId}&resourceId={resourceId}&pageIndex={pageIndex}&start={start}&end={end}&text={text}&{string.Join("&", tagApps.Select(static x => $"tagApps={x}"))}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareExcerptAddPDFSwfTextExcerptRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                token: token,
+                projectId: projectId,
+                userId: userId,
+                resourceId: resourceId,
+                pageIndex: pageIndex,
+                start: start,
+                end: end,
+                text: text,
+                tagApps: tagApps);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessExcerptAddPDFSwfTextExcerptResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessExcerptAddPDFSwfTextExcerptResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

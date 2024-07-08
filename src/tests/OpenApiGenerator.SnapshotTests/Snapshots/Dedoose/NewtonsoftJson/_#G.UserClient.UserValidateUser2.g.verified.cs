@@ -22,6 +22,7 @@ namespace G
         partial void ProcessUserValidateUser2Response(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         partial void ProcessUserValidateUser2ResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -43,16 +44,52 @@ namespace G
             string connectionKey,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareUserValidateUser2Arguments(
+                httpClient: _httpClient,
+                token: ref token,
+                username: ref username,
+                rsaEncryptedPass: ref rsaEncryptedPass,
+                connectionKey: ref connectionKey);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/user/validateuser2?username={username}&rsaEncryptedPass={rsaEncryptedPass}&connectionKey={connectionKey}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareUserValidateUser2Request(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                token: token,
+                username: username,
+                rsaEncryptedPass: rsaEncryptedPass,
+                connectionKey: connectionKey);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessUserValidateUser2Response(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessUserValidateUser2ResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

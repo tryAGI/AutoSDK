@@ -31,6 +31,7 @@ namespace G
         partial void ProcessGetStreamsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         partial void ProcessGetStreamsResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -63,6 +64,19 @@ namespace G
             string after,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareGetStreamsArguments(
+                httpClient: _httpClient,
+                userId: userId,
+                userLogin: userLogin,
+                gameId: gameId,
+                type: ref type,
+                language: language,
+                first: ref first,
+                before: ref before,
+                after: ref after);
+
             var typeValue = type switch
             {
                 global::G.GetStreamsType.All => "all",
@@ -73,12 +87,43 @@ namespace G
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/streams?{string.Join("&", userId.Select(static x => $"userId={x}"))}&{string.Join("&", userLogin.Select(static x => $"userLogin={x}"))}&{string.Join("&", gameId.Select(static x => $"gameId={x}"))}&type={typeValue}&{string.Join("&", language.Select(static x => $"language={x}"))}&first={first}&before={before}&after={after}", global::System.UriKind.RelativeOrAbsolute));
 
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareGetStreamsRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                userId: userId,
+                userLogin: userLogin,
+                gameId: gameId,
+                type: type,
+                language: language,
+                first: first,
+                before: before,
+                after: after);
+
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessGetStreamsResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessGetStreamsResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

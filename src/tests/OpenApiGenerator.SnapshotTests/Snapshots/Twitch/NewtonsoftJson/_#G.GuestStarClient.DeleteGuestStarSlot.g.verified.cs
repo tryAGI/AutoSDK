@@ -26,10 +26,6 @@ namespace G
         partial void ProcessDeleteGuestStarSlotResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
-        partial void ProcessDeleteGuestStarSlotResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
 
         /// <summary>
         /// BETA Allows a caller to remove a slot assignment from a user participating in an active Guest Star session.<br/>
@@ -55,14 +51,45 @@ namespace G
             string shouldReinviteGuest,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareDeleteGuestStarSlotArguments(
+                httpClient: _httpClient,
+                broadcasterId: ref broadcasterId,
+                moderatorId: ref moderatorId,
+                sessionId: ref sessionId,
+                guestId: ref guestId,
+                slotId: ref slotId,
+                shouldReinviteGuest: ref shouldReinviteGuest);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/guest_star/slot?broadcaster_id={broadcasterId}&moderator_id={moderatorId}&session_id={sessionId}&guest_id={guestId}&slot_id={slotId}&should_reinvite_guest={shouldReinviteGuest}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareDeleteGuestStarSlotRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                broadcasterId: broadcasterId,
+                moderatorId: moderatorId,
+                sessionId: sessionId,
+                guestId: guestId,
+                slotId: slotId,
+                shouldReinviteGuest: shouldReinviteGuest);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessDeleteGuestStarSlotResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
             response.EnsureSuccessStatusCode();
         }
     }

@@ -50,6 +50,7 @@ namespace G
         partial void ProcessExportStartExcerptsExportResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         partial void ProcessExportStartExcerptsExportResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -101,6 +102,29 @@ namespace G
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
+            PrepareArguments(
+                client: _httpClient);
+            PrepareExportStartExcerptsExportArguments(
+                httpClient: _httpClient,
+                token: ref token,
+                projectId: ref projectId,
+                fileExtension: ref fileExtension,
+                exCopyMode: ref exCopyMode,
+                sortMode: ref sortMode,
+                exRange: ref exRange,
+                exCreator: ref exCreator,
+                exDate: ref exDate,
+                desInfo: ref desInfo,
+                docTitle: ref docTitle,
+                docCreator: ref docCreator,
+                docDate: ref docDate,
+                tagApplied: ref tagApplied,
+                tagWeight: ref tagWeight,
+                tagRange: ref tagRange,
+                memos: ref memos,
+                symKeyEncrypted: ref symKeyEncrypted,
+                request: request);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/export/startexcerptsexport?projectId={projectId}&FileExtension={fileExtension}&ExCopyMode={exCopyMode}&SortMode={sortMode}&ExRange={exRange}&ExCreator={exCreator}&ExDate={exDate}&DesInfo={desInfo}&DocTitle={docTitle}&DocCreator={docCreator}&DocDate={docDate}&TagApplied={tagApplied}&TagWeight={tagWeight}&TagRange={tagRange}&Memos={memos}&symKeyEncrypted={symKeyEncrypted}", global::System.UriKind.RelativeOrAbsolute));
@@ -110,12 +134,53 @@ namespace G
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
 
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareExportStartExcerptsExportRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                token: token,
+                projectId: projectId,
+                fileExtension: fileExtension,
+                exCopyMode: exCopyMode,
+                sortMode: sortMode,
+                exRange: exRange,
+                exCreator: exCreator,
+                exDate: exDate,
+                desInfo: desInfo,
+                docTitle: docTitle,
+                docCreator: docCreator,
+                docDate: docDate,
+                tagApplied: tagApplied,
+                tagWeight: tagWeight,
+                tagRange: tagRange,
+                memos: memos,
+                symKeyEncrypted: symKeyEncrypted,
+                request: request);
+
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessExportStartExcerptsExportResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessExportStartExcerptsExportResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

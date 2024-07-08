@@ -38,6 +38,7 @@ namespace G
         partial void ProcessAccountUpdateAccountPWPolicyResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         partial void ProcessAccountUpdateAccountPWPolicyResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -75,16 +76,68 @@ namespace G
             int idleTimeoutInMinutes,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareAccountUpdateAccountPWPolicyArguments(
+                httpClient: _httpClient,
+                token: ref token,
+                accountId: ref accountId,
+                enforcePolicy: ref enforcePolicy,
+                minLength: ref minLength,
+                requireChar: ref requireChar,
+                requireUpper: ref requireUpper,
+                requireNumber: ref requireNumber,
+                requireSymbol: ref requireSymbol,
+                maxAgeInDays: ref maxAgeInDays,
+                require2Auth: ref require2Auth,
+                relogin2Auth: ref relogin2Auth,
+                idleTimeoutInMinutes: ref idleTimeoutInMinutes);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/account/updateaccountpwpolicy?accountId={accountId}&enforcePolicy={enforcePolicy}&minLength={minLength}&requireChar={requireChar}&requireUpper={requireUpper}&requireNumber={requireNumber}&requireSymbol={requireSymbol}&maxAgeInDays={maxAgeInDays}&require2Auth={require2Auth}&relogin2Auth={relogin2Auth}&idleTimeoutInMinutes={idleTimeoutInMinutes}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareAccountUpdateAccountPWPolicyRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                token: token,
+                accountId: accountId,
+                enforcePolicy: enforcePolicy,
+                minLength: minLength,
+                requireChar: requireChar,
+                requireUpper: requireUpper,
+                requireNumber: requireNumber,
+                requireSymbol: requireSymbol,
+                maxAgeInDays: maxAgeInDays,
+                require2Auth: require2Auth,
+                relogin2Auth: relogin2Auth,
+                idleTimeoutInMinutes: idleTimeoutInMinutes);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessAccountUpdateAccountPWPolicyResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessAccountUpdateAccountPWPolicyResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

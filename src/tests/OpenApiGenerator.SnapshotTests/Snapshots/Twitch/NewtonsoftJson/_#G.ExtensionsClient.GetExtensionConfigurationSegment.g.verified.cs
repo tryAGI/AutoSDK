@@ -20,6 +20,7 @@ namespace G
         partial void ProcessGetExtensionConfigurationSegmentResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         partial void ProcessGetExtensionConfigurationSegmentResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -43,6 +44,14 @@ namespace G
             global::G.GetExtensionConfigurationSegmentSegment segment,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareGetExtensionConfigurationSegmentArguments(
+                httpClient: _httpClient,
+                broadcasterId: ref broadcasterId,
+                extensionId: ref extensionId,
+                segment: ref segment);
+
             var segmentValue = segment switch
             {
                 global::G.GetExtensionConfigurationSegmentSegment.Broadcaster => "broadcaster",
@@ -54,12 +63,38 @@ namespace G
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/extensions/configurations?broadcaster_id={broadcasterId}&extension_id={extensionId}&segment={segmentValue}", global::System.UriKind.RelativeOrAbsolute));
 
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareGetExtensionConfigurationSegmentRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                broadcasterId: broadcasterId,
+                extensionId: extensionId,
+                segment: segment);
+
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessGetExtensionConfigurationSegmentResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessGetExtensionConfigurationSegmentResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

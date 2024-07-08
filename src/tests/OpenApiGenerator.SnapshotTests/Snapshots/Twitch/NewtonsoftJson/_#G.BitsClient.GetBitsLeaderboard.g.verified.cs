@@ -22,6 +22,7 @@ namespace G
         partial void ProcessGetBitsLeaderboardResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         partial void ProcessGetBitsLeaderboardResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -46,6 +47,15 @@ namespace G
             string userId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareGetBitsLeaderboardArguments(
+                httpClient: _httpClient,
+                count: ref count,
+                period: ref period,
+                startedAt: startedAt,
+                userId: ref userId);
+
             var periodValue = period switch
             {
                 global::G.GetBitsLeaderboardPeriod.Day => "day",
@@ -59,12 +69,39 @@ namespace G
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/bits/leaderboard?count={count}&period={periodValue}&started_at={startedAt:yyyy-MM-ddTHH:mm:ssZ}&user_id={userId}", global::System.UriKind.RelativeOrAbsolute));
 
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareGetBitsLeaderboardRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                count: count,
+                period: period,
+                startedAt: startedAt,
+                userId: userId);
+
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessGetBitsLeaderboardResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessGetBitsLeaderboardResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

@@ -26,6 +26,7 @@ namespace G
         partial void ProcessListMessagesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         partial void ProcessListMessagesResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -51,6 +52,17 @@ namespace G
             string runId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareListMessagesArguments(
+                httpClient: _httpClient,
+                threadId: ref threadId,
+                limit: ref limit,
+                order: ref order,
+                after: ref after,
+                before: ref before,
+                runId: ref runId);
+
             var orderValue = order switch
             {
                 global::G.ListMessagesOrder.Asc => "asc",
@@ -61,12 +73,41 @@ namespace G
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/threads/{threadId}/messages?limit={limit}&order={orderValue}&after={after}&before={before}&run_id={runId}", global::System.UriKind.RelativeOrAbsolute));
 
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareListMessagesRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                threadId: threadId,
+                limit: limit,
+                order: order,
+                after: after,
+                before: before,
+                runId: runId);
+
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessListMessagesResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessListMessagesResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

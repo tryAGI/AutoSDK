@@ -60,15 +60,12 @@ namespace {endPoint.Namespace}
 
         partial void PrepareArguments(
             global::System.Net.Http.HttpClient client);
-        
         partial void PrepareRequest(
             global::System.Net.Http.HttpClient client,
             global::System.Net.Http.HttpRequestMessage request);
-        
         partial void ProcessResponse(
             global::System.Net.Http.HttpClient client,
             global::System.Net.Http.HttpResponseMessage response);
-        
         partial void ProcessResponseContent(
             global::System.Net.Http.HttpClient client,
             global::System.Net.Http.HttpResponseMessage response,

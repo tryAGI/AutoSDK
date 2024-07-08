@@ -44,6 +44,7 @@ namespace G
         partial void ProcessResourceDeleteResourceResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         partial void ProcessResourceDeleteResourceResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -87,16 +88,74 @@ namespace G
             string metaData,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareResourceDeleteResourceArguments(
+                httpClient: _httpClient,
+                token: ref token,
+                currentProjectId: ref currentProjectId,
+                projectIdKey: ref projectIdKey,
+                projectId: ref projectId,
+                id: ref id,
+                projectIDL: ref projectIDL,
+                title: ref title,
+                description: ref description,
+                type: ref type,
+                dataPath: ref dataPath,
+                length: ref length,
+                createStamp: createStamp,
+                createByUserIDL: ref createByUserIDL,
+                isDataLocked: ref isDataLocked,
+                metaData: ref metaData);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/api/v1/resource/deleteresource?currentProjectId={currentProjectId}&ProjectIdKey={projectIdKey}&ProjectId={projectId}&Id={id}&ProjectIDL={projectIDL}&Title={title}&Description={description}&Type={type}&DataPath={dataPath}&Length={length}&CreateStamp={createStamp:yyyy-MM-ddTHH:mm:ssZ}&CreateByUserIDL={createByUserIDL}&IsDataLocked={isDataLocked}&MetaData={metaData}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareResourceDeleteResourceRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                token: token,
+                currentProjectId: currentProjectId,
+                projectIdKey: projectIdKey,
+                projectId: projectId,
+                id: id,
+                projectIDL: projectIDL,
+                title: title,
+                description: description,
+                type: type,
+                dataPath: dataPath,
+                length: length,
+                createStamp: createStamp,
+                createByUserIDL: createByUserIDL,
+                isDataLocked: isDataLocked,
+                metaData: metaData);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessResourceDeleteResourceResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessResourceDeleteResourceResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

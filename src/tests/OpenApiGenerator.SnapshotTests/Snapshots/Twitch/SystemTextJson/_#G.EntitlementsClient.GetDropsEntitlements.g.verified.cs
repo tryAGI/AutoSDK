@@ -27,6 +27,7 @@ namespace G
         partial void ProcessGetDropsEntitlementsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
         partial void ProcessGetDropsEntitlementsResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -67,16 +68,56 @@ namespace G
             int first,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareGetDropsEntitlementsArguments(
+                httpClient: _httpClient,
+                id: id,
+                userId: ref userId,
+                gameId: ref gameId,
+                fulfillmentStatus: ref fulfillmentStatus,
+                after: ref after,
+                first: ref first);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/entitlements/drops?{string.Join("&", id.Select(static x => $"id={x}"))}&user_id={userId}&game_id={gameId}&fulfillment_status={fulfillmentStatus}&after={after}&first={first}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareGetDropsEntitlementsRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                id: id,
+                userId: userId,
+                gameId: gameId,
+                fulfillmentStatus: fulfillmentStatus,
+                after: after,
+                first: first);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessGetDropsEntitlementsResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessGetDropsEntitlementsResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {
