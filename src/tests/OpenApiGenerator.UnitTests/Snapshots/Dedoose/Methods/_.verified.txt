@@ -38907,7 +38907,7 @@
     FileNameWithoutExtension: G.LoginClient.GetTopBlogPosts
   },
   {
-    Id: createApiV1Login,
+    Id: createLogin,
     Namespace: G,
     ClassName: LoginClient,
     BaseUrl: ,
@@ -39180,12 +39180,12 @@
       }
     ],
     Converters: null,
-    MethodName: CreateApiV1LoginAsync,
-    NotAsyncMethodName: CreateApiV1Login,
-    FileNameWithoutExtension: G.LoginClient.CreateApiV1Login
+    MethodName: CreateLoginAsync,
+    NotAsyncMethodName: CreateLogin,
+    FileNameWithoutExtension: G.LoginClient.CreateLogin
   },
   {
-    Id: getApiV1Me,
+    Id: getMe,
     Namespace: G,
     ClassName: UsersClient,
     BaseUrl: ,
@@ -39371,9 +39371,9 @@
       }
     ],
     Converters: null,
-    MethodName: GetApiV1MeAsync,
-    NotAsyncMethodName: GetApiV1Me,
-    FileNameWithoutExtension: G.UsersClient.GetApiV1Me
+    MethodName: GetMeAsync,
+    NotAsyncMethodName: GetMe,
+    FileNameWithoutExtension: G.UsersClient.GetMe
   },
   {
     Id: MemoAddFolder,
@@ -61422,7 +61422,7 @@
     FileNameWithoutExtension: G.ResourceClient.ResourceUpdateTranscriptData
   },
   {
-    Id: getApiV1Rsa,
+    Id: getRsa,
     Namespace: G,
     ClassName: LoginClient,
     BaseUrl: ,
@@ -61525,9 +61525,9 @@
       }
     ],
     Converters: null,
-    MethodName: GetApiV1RsaAsync,
-    NotAsyncMethodName: GetApiV1Rsa,
-    FileNameWithoutExtension: G.LoginClient.GetApiV1Rsa
+    MethodName: GetRsaAsync,
+    NotAsyncMethodName: GetRsa,
+    FileNameWithoutExtension: G.LoginClient.GetRsa
   },
   {
     Id: SecurityAddGroup,

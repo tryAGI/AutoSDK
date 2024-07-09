@@ -22,6 +22,10 @@ public class MethodAndPathGenerator : IMethodNameGenerator
             _ => throw new NotSupportedException($"OperationType {operationType} is not supported."),
         };
         
+        path = path.StartsWith("/api", StringComparison.OrdinalIgnoreCase) ? path[4..] : path;
+        path = path.StartsWith("/v1", StringComparison.OrdinalIgnoreCase) ? path[3..] : path;
+        path = path.StartsWith("/api", StringComparison.OrdinalIgnoreCase) ? path[4..] : path;
+        
         return $"{prefix}{path.TrimStart('/').ToPropertyName().UseWordSeparator('/')}";
     }
 }

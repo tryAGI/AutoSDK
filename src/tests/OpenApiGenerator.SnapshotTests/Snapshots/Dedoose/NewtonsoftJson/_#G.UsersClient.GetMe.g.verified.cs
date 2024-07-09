@@ -1,48 +1,54 @@
-﻿//HintName: G.LoginClient.GetApiV1Rsa.g.cs
+﻿//HintName: G.UsersClient.GetMe.g.cs
 
 #nullable enable
 
 namespace G
 {
-    public partial class LoginClient
+    public partial class UsersClient
     {
-        partial void PrepareGetApiV1RsaArguments(
-            global::System.Net.Http.HttpClient httpClient);
-        partial void PrepareGetApiV1RsaRequest(
+        partial void PrepareGetMeArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
-        partial void ProcessGetApiV1RsaResponse(
+            ref string token);
+        partial void PrepareGetMeRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string token);
+        partial void ProcessGetMeResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetApiV1RsaResponseContent(
+        partial void ProcessGetMeResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Returns RSA public information.
+        /// Returns current account and user data.
         /// </summary>
+        /// <param name="token"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.RSAWriteKeyInfo> GetApiV1RsaAsync(
+        public async global::System.Threading.Tasks.Task<global::G.ValidateUserResult> GetMeAsync(
+            string token,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: _httpClient);
-            PrepareGetApiV1RsaArguments(
-                httpClient: _httpClient);
+            PrepareGetMeArguments(
+                httpClient: _httpClient,
+                token: ref token);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/api/v1/rsa", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/api/v1/me", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PrepareGetApiV1RsaRequest(
+            PrepareGetMeRequest(
                 httpClient: _httpClient,
-                httpRequestMessage: httpRequest);
+                httpRequestMessage: httpRequest,
+                token: token);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
@@ -52,7 +58,7 @@ namespace G
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessGetApiV1RsaResponse(
+            ProcessGetMeResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
@@ -62,7 +68,7 @@ namespace G
                 client: _httpClient,
                 response: response,
                 content: ref __content);
-            ProcessGetApiV1RsaResponseContent(
+            ProcessGetMeResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
@@ -77,7 +83,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.RSAWriteKeyInfo?>(__content, _jsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.ValidateUserResult?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

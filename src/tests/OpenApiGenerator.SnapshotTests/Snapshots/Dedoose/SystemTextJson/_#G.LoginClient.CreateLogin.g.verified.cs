@@ -1,4 +1,4 @@
-﻿//HintName: G.LoginClient.CreateApiV1Login.g.cs
+﻿//HintName: G.LoginClient.CreateLogin.g.cs
 
 #nullable enable
 
@@ -6,18 +6,18 @@ namespace G
 {
     public partial class LoginClient
     {
-        partial void PrepareCreateApiV1LoginArguments(
+        partial void PrepareCreateLoginArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.LoginRequest request);
-        partial void PrepareCreateApiV1LoginRequest(
+        partial void PrepareCreateLoginRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::G.LoginRequest request);
-        partial void ProcessCreateApiV1LoginResponse(
+        partial void ProcessCreateLoginResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateApiV1LoginResponseContent(
+        partial void ProcessCreateLoginResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
@@ -28,7 +28,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> CreateApiV1LoginAsync(
+        public async global::System.Threading.Tasks.Task<string> CreateLoginAsync(
             global::G.LoginRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -36,14 +36,14 @@ namespace G
 
             PrepareArguments(
                 client: _httpClient);
-            PrepareCreateApiV1LoginArguments(
+            PrepareCreateLoginArguments(
                 httpClient: _httpClient,
                 request: request);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/api/v1/login", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, _jsonSerializerOptions);
+            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, _jsonSerializerOptions);
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: __json,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -52,7 +52,7 @@ namespace G
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PrepareCreateApiV1LoginRequest(
+            PrepareCreateLoginRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
                 request: request);
@@ -65,17 +65,17 @@ namespace G
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessCreateApiV1LoginResponse(
+            ProcessCreateLoginResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
-            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
             ProcessResponseContent(
                 client: _httpClient,
                 response: response,
                 content: ref __content);
-            ProcessCreateApiV1LoginResponseContent(
+            ProcessCreateLoginResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
@@ -90,7 +90,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<string?>(__content, _jsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<string?>(__content, _jsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -101,7 +101,7 @@ namespace G
         /// <param name="rsaEncryptedPassword"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> CreateApiV1LoginAsync(
+        public async global::System.Threading.Tasks.Task<string> CreateLoginAsync(
             string? username = default,
             string? rsaEncryptedPassword = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -112,7 +112,7 @@ namespace G
                 RsaEncryptedPassword = rsaEncryptedPassword,
             };
 
-            return await CreateApiV1LoginAsync(
+            return await CreateLoginAsync(
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }
