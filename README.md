@@ -17,7 +17,22 @@ Inspired by [NSwag](https://github.com/RicoSuter/NSwag) ❤️.
 - Supports OneOf/AnyOf/AllOf/Not schemas
 - Supports Enums for System.Text.Json
 
-## 🚀Quick start🚀
+# 🚀Quick start🚀
+## CLI(Recommended)
+You can use the CLI to generate the code.
+```bash
+dotnet tool install --global openapigenerator.cli --prerelease
+rm -rf Generated
+oag generate openapi.yaml \
+    --namespace Namespace \
+    --clientClassName YourApi \
+    --targetFramework net8.0 \
+    --output Generated
+```
+It will generate the code in the "Generated" subdirectory.  
+It also will include polyfills for .Net Framework/.Net Standard TargetFrameworks.
+
+## Source generator
 - Install the package
 ```bash
 dotnet add package OpenApiGenerator
@@ -49,16 +64,8 @@ dotnet add package OpenApiGenerator
 - It's all! Now you can build your project and use the generated code. You also can use IDE to see the generated code in any moment, this is a example for Rider:  
 ![rider_show_generated_code.png](assets/rider_show_generated_code.png)
 
-## CLI
-You can use the CLI to generate the code.  
-```bash
-dotnet tool install --global openapigenerator.cli --prerelease
-oag --help
-oag generate openapi.yaml
-```
-It will generate the code in the "openapi" subdirectory.
-
-## Trimming support
+# Trimming support
+## Source generator
 Since there are two source generators involved, we will have to create a second project so that the generator for the JsonSerializerContext will “see” our models
 - Create new project for your models. And disable methods/constructors generation:
 ```xml
@@ -101,4 +108,5 @@ internal sealed partial class SourceGenerationContext : JsonSerializerContext;
 - It's all! Now you can build your project and use the generated code with full trimming/nativeAOT support.
 
 ## 📚Examples of use in real SDKs📚
+- https://github.com/tryAGI/OpenAI
 - https://github.com/tryAGI/Ollama
