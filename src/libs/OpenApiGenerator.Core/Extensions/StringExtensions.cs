@@ -135,10 +135,9 @@ public static class StringExtensions
         return type + postfix;
     }
     
-    public static string ToXmlDocumentationSummary(
+    public static string ToXmlDocumentation(
         this string text,
-        int level = 4,
-        bool addSummary = true)
+        int level = 4)
     {
         text = text ?? throw new ArgumentNullException(nameof(text));
         
@@ -152,10 +151,38 @@ public static class StringExtensions
         var value = string.Join("\n", lines
             .Select((line, i) => $"{spaces}/// {line}{(i != lines.Length - 1 ? "<br/>" : string.Empty)}"));
         
-        return addSummary
-            ? $@"/// <summary>
+        return value;
+    }
+    
+    public static string ToXmlDocumentationSummary(
+        this string text,
+        int level = 4)
+    {
+        text = text ?? throw new ArgumentNullException(nameof(text));
+        
+        var spaces = new string(' ', level);
+        var value = ToXmlDocumentation(text, level);
+        
+        return $@"/// <summary>
 {value}
-{spaces}/// </summary>" : value;
+{spaces}/// </summary>";
+    }
+    
+    public static string ToXmlDocumentationForParam(
+        this string text,
+        string parameterName,
+        int level = 4)
+    {
+        text = text ?? throw new ArgumentNullException(nameof(text));
+        
+        var spaces = new string(' ', level);
+        var value = ToXmlDocumentation(text, level);
+        
+        return string.IsNullOrWhiteSpace(text)
+            ? $@"/// <param name=""{parameterName}""></param>"
+            : $@"/// <param name=""{parameterName}"">
+{value}
+{spaces}/// </param>";
     }
     
     public static string UseWordSeparator(

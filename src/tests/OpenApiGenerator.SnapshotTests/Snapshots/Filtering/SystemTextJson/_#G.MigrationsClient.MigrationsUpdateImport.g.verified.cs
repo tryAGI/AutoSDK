@@ -124,10 +124,20 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-        /// <param name="vcsUsername"></param>
-        /// <param name="vcsPassword"></param>
-        /// <param name="vcs"></param>
-        /// <param name="tfvcProject"></param>
+        /// <param name="vcsUsername">
+        /// The username to provide to the originating repository.
+        /// </param>
+        /// <param name="vcsPassword">
+        /// The password to provide to the originating repository.
+        /// </param>
+        /// <param name="vcs">
+        /// The type of version control system you are migrating from.<br/>
+        /// Example: "git"
+        /// </param>
+        /// <param name="tfvcProject">
+        /// For a tfvc import, the name of the project that is being imported.<br/>
+        /// Example: "project1"
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]

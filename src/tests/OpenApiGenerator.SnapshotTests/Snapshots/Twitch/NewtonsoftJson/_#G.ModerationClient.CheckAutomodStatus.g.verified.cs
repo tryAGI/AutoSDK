@@ -126,7 +126,9 @@ namespace G
         /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **moderation:read** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
-        /// <param name="data"></param>
+        /// <param name="data">
+        /// The list of messages to check. The list must contain at least one message and may contain up to a maximum of 100 messages.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CheckAutoModStatusResponse> CheckAutomodStatusAsync(

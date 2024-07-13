@@ -117,7 +117,13 @@ namespace G
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>
-        /// <param name="text"></param>
+        /// <param name="text">
+        /// The word or phrase to block from being used in the broadcaster’s chat room. The term must contain a minimum of 2 characters and may contain up to a maximum of 500 characters.  <br/>
+        ///   <br/>
+        /// Terms may include a wildcard character (\*). The wildcard character must appear at the beginning or end of a word or set of characters. For example, \*foo or foo\*.  <br/>
+        ///   <br/>
+        /// If the blocked term already exists, the response contains the existing blocked term.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AddBlockedTermResponse> AddBlockedTermAsync(

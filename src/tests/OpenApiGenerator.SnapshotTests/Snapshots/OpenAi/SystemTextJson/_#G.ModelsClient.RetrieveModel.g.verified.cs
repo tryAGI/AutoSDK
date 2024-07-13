@@ -25,7 +25,9 @@ namespace G
         /// <summary>
         /// Retrieves a model instance, providing basic information about the model such as the owner and permissioning.
         /// </summary>
-        /// <param name="model"></param>
+        /// <param name="model">
+        /// Example: gpt-3.5-turbo
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Model> RetrieveModelAsync(

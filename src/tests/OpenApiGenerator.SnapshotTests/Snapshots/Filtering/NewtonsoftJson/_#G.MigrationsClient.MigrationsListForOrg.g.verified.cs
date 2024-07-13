@@ -35,8 +35,12 @@ namespace G
         /// A list of `repositories` is only returned for export migrations.
         /// </summary>
         /// <param name="org"></param>
-        /// <param name="perPage"></param>
-        /// <param name="page"></param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
         /// <param name="exclude"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

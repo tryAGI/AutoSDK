@@ -86,13 +86,29 @@ namespace G
         /// All fields are optional, but you must specify at least one field.
         /// </summary>
         /// <param name="broadcasterId"></param>
-        /// <param name="gameId"></param>
-        /// <param name="broadcasterLanguage"></param>
-        /// <param name="title"></param>
-        /// <param name="delay"></param>
-        /// <param name="tags"></param>
-        /// <param name="contentClassificationLabels"></param>
-        /// <param name="isBrandedContent"></param>
+        /// <param name="gameId">
+        /// The ID of the game that the user plays. The game is not updated if the ID isn’t a game ID that Twitch recognizes. To unset this field, use “0” or “” (an empty string).
+        /// </param>
+        /// <param name="broadcasterLanguage">
+        /// The user’s preferred language. Set the value to an ISO 639-1 two-letter language code (for example, _en_ for English). Set to “other” if the user’s preferred language is not a Twitch supported language. The language isn’t updated if the language code isn’t a Twitch supported language.
+        /// </param>
+        /// <param name="title">
+        /// The title of the user’s stream. You may not set this field to an empty string.
+        /// </param>
+        /// <param name="delay">
+        /// The number of seconds you want your broadcast buffered before streaming it live. The delay helps ensure fairness during competitive play. Only users with Partner status may set this field. The maximum delay is 900 seconds (15 minutes).
+        /// </param>
+        /// <param name="tags">
+        /// A list of channel-defined tags to apply to the channel. To remove all tags from the channel, set tags to an empty array. Tags help identify the content that the channel streams. [Learn More](https://help.twitch.tv/s/article/guide-to-tags)  <br/>
+        ///   <br/>
+        /// A channel may specify a maximum of 10 tags. Each tag is limited to a maximum of 25 characters and may not be an empty string or contain spaces or special characters. Tags are case insensitive. For readability, consider using camelCasing or PascalCasing.
+        /// </param>
+        /// <param name="contentClassificationLabels">
+        /// List of labels that should be set as the Channel’s CCLs.
+        /// </param>
+        /// <param name="isBrandedContent">
+        /// Boolean flag indicating if the channel has branded content.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task ModifyChannelInformationAsync(

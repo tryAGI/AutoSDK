@@ -82,9 +82,15 @@ namespace G
         /// Requires a signed JSON Web Token (JWT) created by an EBS. For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt). The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). Set the `role` field to _external_ and the `user_id` field to the ID of the user that owns the extension.
         /// </summary>
         /// <param name="broadcasterId"></param>
-        /// <param name="extensionId"></param>
-        /// <param name="extensionVersion"></param>
-        /// <param name="requiredConfiguration"></param>
+        /// <param name="extensionId">
+        /// The ID of the extension to update.
+        /// </param>
+        /// <param name="extensionVersion">
+        /// The version of the extension to update.
+        /// </param>
+        /// <param name="requiredConfiguration">
+        /// The required\_configuration string to use with the extension.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task SetExtensionRequiredConfigurationAsync(

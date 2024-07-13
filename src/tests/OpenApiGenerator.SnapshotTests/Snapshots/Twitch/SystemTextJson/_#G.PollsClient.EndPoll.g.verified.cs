@@ -103,9 +103,18 @@ namespace G
         /// __Authorization:__<br/>
         /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:polls** scope.
         /// </summary>
-        /// <param name="broadcasterId"></param>
-        /// <param name="id"></param>
-        /// <param name="status"></param>
+        /// <param name="broadcasterId">
+        /// The ID of the broadcaster that’s running the poll. This ID must match the user ID in the user access token.
+        /// </param>
+        /// <param name="id">
+        /// The ID of the poll to update.
+        /// </param>
+        /// <param name="status">
+        /// The status to set the poll to. Possible case-sensitive values are:  <br/>
+        ///   <br/>
+        /// * TERMINATED — Ends the poll before the poll is scheduled to end. The poll remains publicly visible.<br/>
+        /// * ARCHIVED — Ends the poll before the poll is scheduled to end, and then archives it so it's no longer publicly visible.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.EndPollResponse> EndPollAsync(

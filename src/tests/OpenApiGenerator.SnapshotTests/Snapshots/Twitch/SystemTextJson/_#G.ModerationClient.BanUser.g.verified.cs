@@ -123,7 +123,9 @@ namespace G
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>
-        /// <param name="data"></param>
+        /// <param name="data">
+        /// Identifies the user and type of ban.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.BanUserResponse> BanUserAsync(

@@ -77,9 +77,18 @@ namespace G
         /// __Authorization:__<br/>
         /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **moderator:manage:automod** scope.
         /// </summary>
-        /// <param name="userId"></param>
-        /// <param name="msgId"></param>
-        /// <param name="action"></param>
+        /// <param name="userId">
+        /// The moderator who is approving or denying the held message. This ID must match the user ID in the access token.
+        /// </param>
+        /// <param name="msgId">
+        /// The ID of the message to allow or deny.
+        /// </param>
+        /// <param name="action">
+        /// The action to take for the message. Possible values are:  <br/>
+        ///   <br/>
+        /// * ALLOW<br/>
+        /// * DENY
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task ManageHeldAutomodMessagesAsync(

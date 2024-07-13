@@ -125,8 +125,12 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="authorId"></param>
-        /// <param name="email"></param>
-        /// <param name="name"></param>
+        /// <param name="email">
+        /// The new Git author email.
+        /// </param>
+        /// <param name="name">
+        /// The new Git author name.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]

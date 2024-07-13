@@ -36,8 +36,12 @@ namespace G
         /// Returns a list of vector store files.
         /// </summary>
         /// <param name="vectorStoreId"></param>
-        /// <param name="limit"></param>
-        /// <param name="order"></param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="order">
+        /// Default Value: desc
+        /// </param>
         /// <param name="after"></param>
         /// <param name="before"></param>
         /// <param name="filter"></param>

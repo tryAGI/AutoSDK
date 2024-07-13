@@ -95,7 +95,7 @@ namespace {endPoint.Namespace}
         return $@" 
         {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
 {endPoint.Properties.Where(x => x.ParameterLocation != null).Select(x => $@"
-        /// <param name=""{x.ParameterName}""></param>").Inject()}
+        {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
 {(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : @" 
         /// <param name=""request""></param>")}
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
@@ -245,7 +245,7 @@ namespace {endPoint.Namespace}
         return $@"
         {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
 {endPoint.Properties.Where(static x => x is { IsDeprecated: false } or { IsRequired:true }).Select(x => $@"
-        /// <param name=""{x.ParameterName}""></param>").Inject()}
+        {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::System.InvalidOperationException""></exception>
         {(endPoint.IsDeprecated ? "[global::System.Obsolete(\"This method marked as deprecated.\")]" : " ")}

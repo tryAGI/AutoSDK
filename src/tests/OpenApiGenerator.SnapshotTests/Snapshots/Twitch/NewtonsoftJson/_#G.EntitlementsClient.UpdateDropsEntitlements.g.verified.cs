@@ -113,8 +113,15 @@ namespace G
         /// __Authorization:__<br/>
         /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens). The client ID in the access token must own the game.
         /// </summary>
-        /// <param name="entitlementIds"></param>
-        /// <param name="fulfillmentStatus"></param>
+        /// <param name="entitlementIds">
+        /// A list of IDs that identify the entitlements to update. You may specify a maximum of 100 IDs.
+        /// </param>
+        /// <param name="fulfillmentStatus">
+        /// The fulfillment status to set the entitlements to. Possible values are:  <br/>
+        ///   <br/>
+        /// * CLAIMED — The user claimed the benefit.<br/>
+        /// * FULFILLED — The developer granted the benefit that the user claimed.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateDropsEntitlementsResponse> UpdateDropsEntitlementsAsync(

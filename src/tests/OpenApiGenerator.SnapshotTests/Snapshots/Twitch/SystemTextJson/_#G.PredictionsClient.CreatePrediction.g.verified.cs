@@ -105,10 +105,18 @@ namespace G
         /// __Authorization:__<br/>
         /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:predictions** scope.
         /// </summary>
-        /// <param name="broadcasterId"></param>
-        /// <param name="title"></param>
-        /// <param name="outcomes"></param>
-        /// <param name="predictionWindow"></param>
+        /// <param name="broadcasterId">
+        /// The ID of the broadcaster that’s running the prediction. This ID must match the user ID in the user access token.
+        /// </param>
+        /// <param name="title">
+        /// The question that the broadcaster is asking. For example, _Will I finish this entire pizza?_ The title is limited to a maximum of 45 characters.
+        /// </param>
+        /// <param name="outcomes">
+        /// The list of possible outcomes that the viewers may choose from. The list must contain a minimum of 2 choices and up to a maximum of 10 choices.
+        /// </param>
+        /// <param name="predictionWindow">
+        /// The length of time (in seconds) that the prediction will run for. The minimum is 30 seconds and the maximum is 1800 seconds (30 minutes).
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreatePredictionResponse> CreatePredictionAsync(

@@ -27,8 +27,12 @@ namespace G
         /// <summary>
         /// Retrieves a vector store file.
         /// </summary>
-        /// <param name="vectorStoreId"></param>
-        /// <param name="fileId"></param>
+        /// <param name="vectorStoreId">
+        /// Example: vs_abc123
+        /// </param>
+        /// <param name="fileId">
+        /// Example: file-abc123
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.VectorStoreFileObject> GetVectorStoreFileAsync(

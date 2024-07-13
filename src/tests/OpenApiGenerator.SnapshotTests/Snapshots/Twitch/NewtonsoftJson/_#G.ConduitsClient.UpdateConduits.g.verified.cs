@@ -103,8 +103,12 @@ namespace G
         /// __Authorization:__<br/>
         /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="shardCount"></param>
+        /// <param name="id">
+        /// Conduit ID.
+        /// </param>
+        /// <param name="shardCount">
+        /// The new number of shards for this conduit.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateConduitsResponse> UpdateConduitsAsync(

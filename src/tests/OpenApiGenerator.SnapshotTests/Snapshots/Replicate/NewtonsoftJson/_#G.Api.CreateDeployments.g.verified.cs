@@ -179,12 +179,24 @@ namespace G
         /// }<br/>
         /// ```
         /// </summary>
-        /// <param name="hardware"></param>
-        /// <param name="maxInstances"></param>
-        /// <param name="minInstances"></param>
-        /// <param name="model"></param>
-        /// <param name="name"></param>
-        /// <param name="version"></param>
+        /// <param name="hardware">
+        /// The SKU for the hardware used to run the model. Possible values can be retrieved from the `hardware.list` endpoint.
+        /// </param>
+        /// <param name="maxInstances">
+        /// The maximum number of instances for scaling.
+        /// </param>
+        /// <param name="minInstances">
+        /// The minimum number of instances for scaling.
+        /// </param>
+        /// <param name="model">
+        /// The full name of the model that you want to deploy e.g. stability-ai/sdxl.
+        /// </param>
+        /// <param name="name">
+        /// The name of the deployment.
+        /// </param>
+        /// <param name="version">
+        /// The 64-character string ID of the model version that you want to deploy.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateDeploymentsResponse> CreateDeploymentsAsync(

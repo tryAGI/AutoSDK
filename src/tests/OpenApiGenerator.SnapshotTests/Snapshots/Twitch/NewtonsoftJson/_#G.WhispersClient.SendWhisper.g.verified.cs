@@ -95,7 +95,16 @@ namespace G
         /// </summary>
         /// <param name="fromUserId"></param>
         /// <param name="toUserId"></param>
-        /// <param name="message"></param>
+        /// <param name="message">
+        /// The whisper message to send. The message must not be empty.  <br/>
+        ///   <br/>
+        /// The maximum message lengths are:  <br/>
+        ///   <br/>
+        /// * 500 characters if the user you're sending the message to hasn't whispered you before.<br/>
+        /// * 10,000 characters if the user you're sending the message to has whispered you before.<br/>
+        ///   <br/>
+        /// Messages that exceed the maximum length are truncated.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task SendWhisperAsync(

@@ -89,8 +89,20 @@ namespace G
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>
-        /// <param name="message"></param>
-        /// <param name="color"></param>
+        /// <param name="message">
+        /// The announcement to make in the broadcaster’s chat room. Announcements are limited to a maximum of 500 characters; announcements longer than 500 characters are truncated.
+        /// </param>
+        /// <param name="color">
+        /// The color used to highlight the announcement. Possible case-sensitive values are:  <br/>
+        ///   <br/>
+        /// * blue<br/>
+        /// * green<br/>
+        /// * orange<br/>
+        /// * purple<br/>
+        /// * primary (default)<br/>
+        ///   <br/>
+        /// If `color` is set to _primary_ or is not set, the channel’s accent color is used to highlight the announcement (see **Profile Accent Color** under [profile settings](https://www.twitch.tv/settings/profile), **Channel and Videos**, and **Brand**).
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task SendChatAnnouncementAsync(

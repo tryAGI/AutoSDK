@@ -133,10 +133,24 @@ namespace G
         /// }<br/>
         /// ```
         /// </summary>
-        /// <param name="target"></param>
-        /// <param name="broadcasterId"></param>
-        /// <param name="isGlobalBroadcast"></param>
-        /// <param name="message"></param>
+        /// <param name="target">
+        /// The target of the message. Possible values are:  <br/>
+        ///   <br/>
+        /// * broadcast<br/>
+        /// * global<br/>
+        /// * whisper-&lt;user-id&gt;<br/>
+        ///   <br/>
+        /// If `is_global_broadcast` is **true**, you must set this field to global. The broadcast and global values are mutually exclusive; specify only one of them.
+        /// </param>
+        /// <param name="broadcasterId">
+        /// The ID of the broadcaster to send the message to. Don’t include this field if `is_global_broadcast` is set to **true**.
+        /// </param>
+        /// <param name="isGlobalBroadcast">
+        /// A Boolean value that determines whether the message should be sent to all channels where your extension is active. Set to **true** if the message should be sent to all channels. The default is **false**.
+        /// </param>
+        /// <param name="message">
+        /// The message to send. The message can be a plain-text string or a string-encoded JSON object. The message is limited to a maximum of 5 KB.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task SendExtensionPubsubMessageAsync(

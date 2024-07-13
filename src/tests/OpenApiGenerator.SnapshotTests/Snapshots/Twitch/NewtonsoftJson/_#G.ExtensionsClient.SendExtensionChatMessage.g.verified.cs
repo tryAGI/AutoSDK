@@ -84,9 +84,15 @@ namespace G
         /// Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt). The signed JWT must include the `role` and `user_id` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to _external_.
         /// </summary>
         /// <param name="broadcasterId"></param>
-        /// <param name="text"></param>
-        /// <param name="extensionId"></param>
-        /// <param name="extensionVersion"></param>
+        /// <param name="text">
+        /// The message. The message may contain a maximum of 280 characters.
+        /// </param>
+        /// <param name="extensionId">
+        /// The ID of the extension that’s sending the chat message.
+        /// </param>
+        /// <param name="extensionVersion">
+        /// The extension’s version number.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task SendExtensionChatMessageAsync(

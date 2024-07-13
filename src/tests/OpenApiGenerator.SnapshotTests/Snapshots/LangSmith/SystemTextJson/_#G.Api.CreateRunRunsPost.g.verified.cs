@@ -101,12 +101,16 @@ namespace G
         /// </summary>
         /// <param name="name"></param>
         /// <param name="inputs"></param>
-        /// <param name="runType"></param>
+        /// <param name="runType">
+        /// Enum for run types.
+        /// </param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="extra"></param>
         /// <param name="error"></param>
-        /// <param name="executionOrder"></param>
+        /// <param name="executionOrder">
+        /// Default Value: 1
+        /// </param>
         /// <param name="serialized"></param>
         /// <param name="outputs"></param>
         /// <param name="parentRunId"></param>

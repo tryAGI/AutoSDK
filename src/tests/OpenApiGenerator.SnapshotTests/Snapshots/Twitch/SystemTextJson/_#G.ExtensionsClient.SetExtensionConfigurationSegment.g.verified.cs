@@ -77,11 +77,25 @@ namespace G
         /// __Authorization:__<br/>
         /// Requires a signed JSON Web Token (JWT) created by an Extension Backend Service (EBS). For signing requirements, see [Signing the JWT](https://dev.twitch.tv/docs/extensions/building/#signing-the-jwt). The signed JWT must include the `role`, `user_id`, and `exp` fields (see [JWT Schema](https://dev.twitch.tv/docs/extensions/reference/#jwt-schema)). The `role` field must be set to _external_.
         /// </summary>
-        /// <param name="extensionId"></param>
-        /// <param name="segment"></param>
-        /// <param name="broadcasterId"></param>
-        /// <param name="content"></param>
-        /// <param name="version"></param>
+        /// <param name="extensionId">
+        /// The ID of the extension to update.
+        /// </param>
+        /// <param name="segment">
+        /// The configuration segment to update. Possible case-sensitive values are:  <br/>
+        ///   <br/>
+        /// * broadcaster<br/>
+        /// * developer<br/>
+        /// * global
+        /// </param>
+        /// <param name="broadcasterId">
+        /// The ID of the broadcaster that installed the extension. Include this field only if the `segment` is set to developer or broadcaster.
+        /// </param>
+        /// <param name="content">
+        /// The contents of the segment. This string may be a plain-text string or a string-encoded JSON object.
+        /// </param>
+        /// <param name="version">
+        /// The version number that identifies this definition of the segment’s data. If not specified, the latest definition is updated.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task SetExtensionConfigurationSegmentAsync(

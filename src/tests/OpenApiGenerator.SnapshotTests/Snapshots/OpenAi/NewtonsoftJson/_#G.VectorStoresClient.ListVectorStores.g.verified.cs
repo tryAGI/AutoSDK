@@ -31,8 +31,12 @@ namespace G
         /// <summary>
         /// Returns a list of vector stores.
         /// </summary>
-        /// <param name="limit"></param>
-        /// <param name="order"></param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="order">
+        /// Default Value: desc
+        /// </param>
         /// <param name="after"></param>
         /// <param name="before"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

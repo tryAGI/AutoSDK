@@ -131,15 +131,33 @@ namespace G
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>
-        /// <param name="aggression"></param>
-        /// <param name="bullying"></param>
-        /// <param name="disability"></param>
-        /// <param name="misogyny"></param>
-        /// <param name="overallLevel"></param>
-        /// <param name="raceEthnicityOrReligion"></param>
-        /// <param name="sexBasedTerms"></param>
-        /// <param name="sexualitySexOrGender"></param>
-        /// <param name="swearing"></param>
+        /// <param name="aggression">
+        /// The Automod level for hostility involving aggression.
+        /// </param>
+        /// <param name="bullying">
+        /// The Automod level for hostility involving name calling or insults.
+        /// </param>
+        /// <param name="disability">
+        /// The Automod level for discrimination against disability.
+        /// </param>
+        /// <param name="misogyny">
+        /// The Automod level for discrimination against women.
+        /// </param>
+        /// <param name="overallLevel">
+        /// The default AutoMod level for the broadcaster.
+        /// </param>
+        /// <param name="raceEthnicityOrReligion">
+        /// The Automod level for racial discrimination.
+        /// </param>
+        /// <param name="sexBasedTerms">
+        /// The Automod level for sexual content.
+        /// </param>
+        /// <param name="sexualitySexOrGender">
+        /// The AutoMod level for discrimination based on sexuality, sex, or gender.
+        /// </param>
+        /// <param name="swearing">
+        /// The Automod level for profanity.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateAutoModSettingsResponse> UpdateAutomodSettingsAsync(

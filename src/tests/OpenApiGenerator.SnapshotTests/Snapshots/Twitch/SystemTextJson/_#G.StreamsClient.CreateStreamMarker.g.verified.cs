@@ -113,8 +113,12 @@ namespace G
         /// __Authorization:__<br/>
         /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:broadcast** scope.
         /// </summary>
-        /// <param name="userId"></param>
-        /// <param name="description"></param>
+        /// <param name="userId">
+        /// The ID of the broadcaster that’s streaming content. This ID must match the user ID in the access token or the user in the access token must be one of the broadcaster’s editors.
+        /// </param>
+        /// <param name="description">
+        /// A short description of the marker to help the user remember why they marked the location. The maximum length of the description is 140 characters.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateStreamMarkerResponse> CreateStreamMarkerAsync(

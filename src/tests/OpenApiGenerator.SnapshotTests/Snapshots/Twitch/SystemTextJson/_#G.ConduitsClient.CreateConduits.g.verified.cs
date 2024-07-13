@@ -103,7 +103,9 @@ namespace G
         /// __Authorization:__<br/>
         /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).
         /// </summary>
-        /// <param name="shardCount"></param>
+        /// <param name="shardCount">
+        /// The number of shards to create for this conduit.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateConduitsResponse> CreateConduitsAsync(

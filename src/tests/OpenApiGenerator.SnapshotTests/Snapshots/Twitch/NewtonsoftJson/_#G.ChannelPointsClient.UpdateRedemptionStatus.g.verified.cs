@@ -125,7 +125,14 @@ namespace G
         /// <param name="id"></param>
         /// <param name="broadcasterId"></param>
         /// <param name="rewardId"></param>
-        /// <param name="status"></param>
+        /// <param name="status">
+        /// The status to set the redemption to. Possible values are:  <br/>
+        ///   <br/>
+        /// * CANCELED<br/>
+        /// * FULFILLED<br/>
+        ///   <br/>
+        /// Setting the status to CANCELED refunds the user’s channel points.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateRedemptionStatusResponse> UpdateRedemptionStatusAsync(

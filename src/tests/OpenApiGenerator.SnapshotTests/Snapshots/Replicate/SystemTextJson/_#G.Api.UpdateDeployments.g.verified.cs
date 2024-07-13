@@ -181,10 +181,18 @@ namespace G
         /// </summary>
         /// <param name="deploymentOwner"></param>
         /// <param name="deploymentName"></param>
-        /// <param name="hardware"></param>
-        /// <param name="maxInstances"></param>
-        /// <param name="minInstances"></param>
-        /// <param name="version"></param>
+        /// <param name="hardware">
+        /// The SKU for the hardware used to run the model. Possible values can be retrieved from the `hardware.list` endpoint.
+        /// </param>
+        /// <param name="maxInstances">
+        /// The maximum number of instances for scaling.
+        /// </param>
+        /// <param name="minInstances">
+        /// The minimum number of instances for scaling.
+        /// </param>
+        /// <param name="version">
+        /// The ID of the model version that you want to deploy
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateDeploymentsResponse> UpdateDeploymentsAsync(

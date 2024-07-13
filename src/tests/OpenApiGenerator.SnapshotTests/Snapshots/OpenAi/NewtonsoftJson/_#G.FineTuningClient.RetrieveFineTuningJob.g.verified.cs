@@ -26,7 +26,9 @@ namespace G
         /// Get info about a fine-tuning job.<br/>
         /// [Learn more about fine-tuning](/docs/guides/fine-tuning)
         /// </summary>
-        /// <param name="fineTuningJobId"></param>
+        /// <param name="fineTuningJobId">
+        /// Example: ft-AF1WoRqd3aJAHsqc9NY7iL8F
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.FineTuningJob> RetrieveFineTuningJobAsync(

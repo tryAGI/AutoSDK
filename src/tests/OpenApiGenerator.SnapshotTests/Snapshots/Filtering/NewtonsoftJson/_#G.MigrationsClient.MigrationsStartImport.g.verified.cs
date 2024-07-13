@@ -120,11 +120,21 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
-        /// <param name="vcsUrl"></param>
-        /// <param name="vcs"></param>
-        /// <param name="vcsUsername"></param>
-        /// <param name="vcsPassword"></param>
-        /// <param name="tfvcProject"></param>
+        /// <param name="vcsUrl">
+        /// The URL of the originating repository.
+        /// </param>
+        /// <param name="vcs">
+        /// The originating VCS type. Without this parameter, the import job will take additional time to detect the VCS type before beginning the import. This detection step will be reflected in the response.
+        /// </param>
+        /// <param name="vcsUsername">
+        /// If authentication is required, the username to provide to `vcs_url`.
+        /// </param>
+        /// <param name="vcsPassword">
+        /// If authentication is required, the password to provide to `vcs_url`.
+        /// </param>
+        /// <param name="tfvcProject">
+        /// For a tfvc import, the name of the project that is being imported.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
