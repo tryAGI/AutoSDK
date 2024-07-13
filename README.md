@@ -18,7 +18,7 @@ Inspired by [NSwag](https://github.com/RicoSuter/NSwag) ❤️.
 - Supports Enums for System.Text.Json
 
 # 🚀Quick start🚀
-## CLI(Recommended)
+## CLI (Recommended)
 You can use the CLI to generate the code.
 ```bash
 dotnet tool install --global openapigenerator.cli --prerelease
@@ -65,6 +65,9 @@ dotnet add package OpenApiGenerator
 ![rider_show_generated_code.png](assets/rider_show_generated_code.png)
 
 # Trimming support
+## CLI
+CLI generates Trimming/NativeAOT compatible code by default.
+
 ## Source generator
 Since there are two source generators involved, we will have to create a second project so that the generator for the JsonSerializerContext will “see” our models
 - Create new project for your models. And disable methods/constructors generation:
