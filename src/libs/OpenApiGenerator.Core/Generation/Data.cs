@@ -193,6 +193,7 @@ public static class Data
                     ]
                     : [],
                 HttpMethod: OperationType.Get,
+                ContentType: ContentType.String,
                 Summary: openApiDocument.Info?.Description?.ClearForXml() ?? string.Empty,
                 BaseUrlSummary: openApiDocument.Servers!.FirstOrDefault()?.Description?.ClearForXml() ?? string.Empty,
                 Settings: settings,
@@ -215,6 +216,7 @@ public static class Data
                         Path: string.Empty,
                         Properties: ImmutableArray<PropertyData>.Empty,
                         HttpMethod: OperationType.Get,
+                        ContentType: ContentType.String,
                         Summary: x.Description?.ClearForXml() ?? string.Empty,
                         BaseUrlSummary: openApiDocument.Servers!.FirstOrDefault()?.Description?.ClearForXml() ?? string.Empty,
                         Settings: settings,
@@ -390,6 +392,7 @@ public static class Data
                 Path: string.Empty,
                 Properties: [],
                 HttpMethod: OperationType.Get,
+                ContentType: ContentType.String,
                 Summary: string.Empty,
                 BaseUrlSummary: string.Empty,
                 Settings: settings,

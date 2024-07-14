@@ -3618,6 +3618,7 @@ Default Value: 1,
       }
     ],
     HttpMethod: Post,
+    ContentType: ByteArray,
     Summary: Generates audio from the input text.,
     BaseUrlSummary: ,
     Settings: {

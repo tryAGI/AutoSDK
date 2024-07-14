@@ -20,7 +20,7 @@ namespace G
         partial void ProcessCreateSpeechResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
+            ref byte[] content);
 
         /// <summary>
         /// Generates audio from the input text.
@@ -69,29 +69,17 @@ namespace G
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
-            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var __content = await response.Content.ReadAsByteArrayAsync().ConfigureAwait(false);
 
-            ProcessResponseContent(
-                client: _httpClient,
-                response: response,
-                content: ref __content);
             ProcessCreateSpeechResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
 
-            try
-            {
-                response.EnsureSuccessStatusCode();
-            }
-            catch (global::System.Net.Http.HttpRequestException ex)
-            {
-                throw new global::System.InvalidOperationException(__content, ex);
-            }
 
-            return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<byte[]?>(__content, _jsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            response.EnsureSuccessStatusCode();
+
+            return __content;
         }
 
         /// <summary>

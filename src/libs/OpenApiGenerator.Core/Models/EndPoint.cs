@@ -13,6 +13,7 @@ public readonly record struct EndPoint(
     string Path,
     ImmutableArray<PropertyData> Properties,
     OperationType HttpMethod,
+    ContentType ContentType,
     string Summary,
     string BaseUrlSummary,
     Settings Settings,
@@ -191,6 +192,10 @@ public readonly record struct EndPoint(
             Path: preparedPath,
             Properties: properties.ToImmutableArray(),
             HttpMethod: operation.Key,
+            ContentType: responses
+                .Any(x => x.MediaType.Key.Contains("application/octet-stream"))
+                ? ContentType.ByteArray
+                : ContentType.String,
             Summary: operation.Value.GetXmlDocumentationSummary(),
             BaseUrlSummary: string.Empty,
             Settings: settings,

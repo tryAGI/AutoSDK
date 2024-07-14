@@ -19,6 +19,12 @@ public static partial class Sources
         var usings = endPoint.Properties.Any(x => x.Type.IsArray && x.ParameterExplode == true)
             ? "using System.Linq;\n"
             : "";
+        var contentType = endPoint.ContentType switch
+        {
+            ContentType.String => "string",
+            ContentType.Stream => "global::System.IO.Stream",
+            _ => "byte[]",
+        };
         
         return $@"{usings}
 #nullable enable
@@ -49,7 +55,7 @@ namespace {endPoint.Namespace}
         partial void Process{endPoint.NotAsyncMethodName}ResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);")}
+            ref {contentType} content);")}
 
 {GenerateMethod(endPoint)}
 {GenerateExtensionMethod(endPoint)}
@@ -91,6 +97,12 @@ namespace {endPoint.Namespace}
         var cancellationTokenInsideReadAsync = endPoint.Settings.TargetFramework.StartsWith("net8", StringComparison.OrdinalIgnoreCase)
             ? "cancellationToken"
             : string.Empty;
+        var contentType = endPoint.ContentType switch
+        {
+            ContentType.String => "String",
+            ContentType.Stream => "Stream",
+            _ => "ByteArray",
+        };
         
         return $@" 
         {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
@@ -173,29 +185,34 @@ namespace {endPoint.Namespace}
 {(string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType) || endPoint.Stream ? @" 
             response.EnsureSuccessStatusCode();
  " : $@"
-            var __content = await response.Content.ReadAsStringAsync({cancellationTokenInsideReadAsync}).ConfigureAwait(false);
+            var __content = await response.Content.ReadAs{contentType}Async({cancellationTokenInsideReadAsync}).ConfigureAwait(false);
 
+{(endPoint.ContentType == ContentType.String ? @" 
             ProcessResponseContent(
                 client: _httpClient,
                 response: response,
-                content: ref __content);
+                content: ref __content);" : " ")}
             Process{endPoint.NotAsyncMethodName}ResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
 
+{(endPoint.ContentType == ContentType.String ? @" 
             try
-            {{
+            {
                 response.EnsureSuccessStatusCode();
-            }}
+            }
             catch (global::System.Net.Http.HttpRequestException ex)
-            {{
+            {
                 throw new global::System.InvalidOperationException(__content, ex);
-            }}
+            }" : @"
+            response.EnsureSuccessStatusCode();")}
 
+{(endPoint.ContentType == ContentType.String ? $@" 
             return
                 {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType, endPoint.Settings.JsonSerializerContext)} ??
-                throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");")}
+                throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");" : @" 
+            return __content;")}")}
 {(endPoint.Stream ? $@"
             using var stream = await response.Content.ReadAsStreamAsync({cancellationTokenInsideReadAsync}).ConfigureAwait(false);
             using var reader = new global::System.IO.StreamReader(stream);
