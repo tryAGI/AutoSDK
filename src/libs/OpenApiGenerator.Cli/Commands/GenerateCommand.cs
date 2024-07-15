@@ -59,10 +59,14 @@ public class GenerateCommand : Command
         string clientClassName,
         bool generateAsSingleFile)
     {
+        Console.WriteLine($"Loading {inputPath}...");
+        
         using var client = new HttpClient();
         var yaml = inputPath.StartsWith("http", StringComparison.OrdinalIgnoreCase)
             ? await client.GetStringAsync(new Uri(inputPath)).ConfigureAwait(false)
             : await File.ReadAllTextAsync(inputPath).ConfigureAwait(false);
+        
+        Console.WriteLine("Generating...");
         
         var name = Path.GetFileNameWithoutExtension(inputPath);
         
@@ -132,5 +136,7 @@ public class GenerateCommand : Command
         {
             await File.WriteAllTextAsync(Path.Combine(outputPath, file.Name), file.Text).ConfigureAwait(false);
         }
+        
+        Console.WriteLine("Done.");
     }
 }
