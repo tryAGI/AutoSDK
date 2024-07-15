@@ -60,7 +60,7 @@ public class SystemTextJsonSerializer : IJsonSerializer
         
         var result = string.Concat(type
             .Replace("global::", string.Empty)
-            .TrimEnd('?')
+            .Replace("?", string.Empty)
             .Replace("System.Collections.Generic.", string.Empty)
             .Replace("System.", string.Empty)
             .Split(ContextTypeSeparators, StringSplitOptions.RemoveEmptyEntries)

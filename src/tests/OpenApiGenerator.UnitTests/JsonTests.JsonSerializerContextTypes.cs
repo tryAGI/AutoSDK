@@ -14,5 +14,6 @@ public partial class JsonTests
         GetContextType("global::System.Collections.Generic.List<byte[]>").Should().Be("ListByteArray");
         GetContextType("global::System.Collections.Generic.List<byte[][]>").Should().Be("ListByteArrayArray");
         GetContextType("bool").Should().Be("NullableBoolean");
+        GetContextType("global::System.AllOf<Integration?, AppsCreateFromManifestResponse>").Should().Be("NullableAllOfIntegrationAppsCreateFromManifestResponse");
     }
 }
